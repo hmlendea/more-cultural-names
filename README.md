@@ -16,6 +16,7 @@ There are a few ways you can do so:
 1. You can create git pull requests for this repository (This requires git knowledge)
 2. You can create a new "[issue](https://github.com/HoratiuMl/CK2-HIP-MoreCulturalNames/issues)" for this project
 3. You can reply on the [forum thread](https://forum.paradoxplaza.com/forum/index.php?threads/submod-mcn-more-cultural-names.980621/)
+4. You can reply on the [Steam discussion thread](https://steamcommunity.com/groups/ck2hip/discussions/0/282992646980457966/)
 
 ## Development focus
 
