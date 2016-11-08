@@ -46,4 +46,6 @@ English:
 - [Word and Power in Mediaeval Bulgaria](https://books.google.co.uk/books?id=O-j66lYzINEC)
 
 Non-english:
+- RO [Dregătorie](https://ro.wikipedia.org/wiki/Dreg%C4%83torie)
 - RO [Institutii feudale in Tarile Romane sec XIV - XVI](http://www.ebacalaureat.ro/c/institutii-feudale-in-tarile-romane-sec-xiv---xvi/1158)
+- RO [Institutii Medievale Romanesti](https://www.scribd.com/doc/103239549/Institutii-Medievale-Romanesti)
