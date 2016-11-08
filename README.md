@@ -24,6 +24,7 @@ Currently, the development is focues on the following areas:
 
 1. Landed title names for your native language (you can start with neighbouring countries)
 2. Missing HIP names for counties and baronies that both have the same name but only one (usually the county) has culture-specific names associated
+3. Minor titles and jobs localisations
 
 ## Development guidelines
 
