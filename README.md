@@ -18,6 +18,8 @@ There are a few ways you can do so:
 3. You can reply on the [forum thread](https://forum.paradoxplaza.com/forum/index.php?threads/submod-mcn-more-cultural-names.980621/)
 4. You can reply on the [Steam discussion thread](https://steamcommunity.com/groups/ck2hip/discussions/0/282992646980457966/)
 
+It would also be very helpful if you could provide a link to a source that can atest the authenticity of the names you submitted, when possible.
+
 ## Development focus
 
 Currently, the development is focues on the following areas:
@@ -33,3 +35,15 @@ Currently, the development is focues on the following areas:
 3. Do not override names already provided by HIP, unless you have a strong reason to do so
 4. Check with the original HIP files and take note of the already existing names (especially for similar cultures) and the name displayed ingame (which might be very different from the internal name in the files, e.g. `d_galich` is Halych ingame)
 5. Make sure there are no other dependancies than the default HIP modules. Do not add names for optional modules or other submods.
+
+
+## Bibliography - Sources
+
+The following is a list of sources that atest the authenticity of the names provided by this mod:
+
+English:
+- [Historical Romanian ranks and titles](https://en.wikipedia.org/wiki/Historical_Romanian_ranks_and_titles)
+- [Word and Power in Mediaeval Bulgaria](https://books.google.co.uk/books?id=O-j66lYzINEC)
+
+Non-english:
+- RO [Institutii feudale in Tarile Romane sec XIV - XVI](http://www.ebacalaureat.ro/c/institutii-feudale-in-tarile-romane-sec-xiv---xvi/1158)
