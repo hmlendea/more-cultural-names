@@ -42,6 +42,7 @@ Currently, the development is focues on the following areas:
 The following is a list of sources that atest the authenticity of the names provided by this mod:
 
 English:
+- [Bulgar titles and names](http://www.chitatel.net/forum/topic/375-bulgar-titles-and-names/)
 - [Historical Romanian ranks and titles](https://en.wikipedia.org/wiki/Historical_Romanian_ranks_and_titles)
 - [Word and Power in Mediaeval Bulgaria](https://books.google.co.uk/books?id=O-j66lYzINEC)
 
