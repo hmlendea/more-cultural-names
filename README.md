@@ -41,6 +41,8 @@ There are a few ways you can do so:
 
 It would also be very helpful if you could provide a link to a source that can atest the authenticity of the names you submitted, when possible.
 
+The guidelines and roadmap can be found in the github project description.
+
 # Development focus
 
 Currently, the development focuses on the following areas:
@@ -57,6 +59,8 @@ Currently, the development focuses on the following areas:
 - Check with the original HIP files and take note of the already existing names (especially for similar cultures) and the name displayed ingame (which might be very different from the internal name in the files, e.g. `d_galich` is Halych ingame)
 - Make sure there are no other dependencies than the default HIP modules. Do not add names for optional modules or other submods.
 
+Additional guidelines and rules can be found in header comments inside specific files
+
 # Bibliography - Sources
 
 The following is a list of sources that attest the authenticity of the names provided by this mod:
@@ -70,3 +74,6 @@ Non-english:
 - RO [Dregătorie](https://ro.wikipedia.org/wiki/Dreg%C4%83torie)
 - RO [Institutii feudale in Tarile Romane sec XIV - XVI](http://www.ebacalaureat.ro/c/institutii-feudale-in-tarile-romane-sec-xiv---xvi/1158)
 - RO [Institutii Medievale Romanesti](https://www.scribd.com/doc/103239549/Institutii-Medievale-Romanesti)
+
+Other:
+- Wikipedia pages of cities and places, in various languages
