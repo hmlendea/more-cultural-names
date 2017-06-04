@@ -1,5 +1,8 @@
 # About
 
+
+**This project is currently ON HOLD at least until I buy the recently released DLCs of the game (most probably during the summer sale)**
+
 This is a sub-mod for CK2's Historical Immersion Project that add new culture-specific names and localisations.
 This mod expects a standard HIP installation, with all the default modules installed, especially SWMH.
 
