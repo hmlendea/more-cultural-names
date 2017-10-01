@@ -37,6 +37,18 @@ e_hre = {
         saxon = "Fresland"
         swabian = "Frisia"
 
+        d_holland = {
+            romanian = "Olanda"
+
+            c_holland = {
+                romanian = "Olanda"
+
+                b_sgravenhage = {
+                    romanian = "Haga"
+                }
+            }
+        }
+
         d_frisia = {
             gothic = "Frisia"
             lombard = "Frieslant"
@@ -55,6 +67,19 @@ e_hre = {
             }
         }
     }
+    k_lower_lorraine = {
+        d_koln = {
+            romanian = "Colonia"
+
+            c_koln = {
+                romanian = "Colonia"
+
+                b_koln = {
+                    romanian = "Colonia"
+                }
+            }
+        }
+    }
     k_saxony = {
         bohemian = "Sasko"
         dutch = "Saksen"
@@ -69,6 +94,30 @@ e_hre = {
         romanian = "Sasonia"
         szekely = "Szászország"
         swabian = "Sahsen"
+
+        d_bremen = {
+            romanian = "Brema"
+
+            c_bremen = {
+                romanian = "Brema"
+
+                b_bremen = {
+                    romanian = "Brema"
+                }
+            }
+        }
+        d_meissen = {
+            c_meissen = {
+                b_dresden = {
+                    romanian = "Dresda"
+                }
+            }
+            c_merseburg = {
+                b_leipzig = {
+                    romanian = "Lipsca"
+                }
+            }
+        }
     }
     k_franconia = {
         frankish = "Franconie"
@@ -120,6 +169,18 @@ e_hre = {
         turkmen = "Bavyera" # not sure - copied from turkish
         ugricbaltic = "Baieri"
         welsh = "Bafaria"
+
+        d_osterreich = {
+            romanian = "Austria"
+
+            c_osterreich = {
+                romanian = "Austria"
+
+                b_wien = {
+                    romanian = "Viena"
+                }
+            }
+        }
     }
     k_carinthia = {
         bohemian = "Korutany"
@@ -146,6 +207,20 @@ e_hre = {
             roman = "Carinthia"
             romanian = "Carintia"
             szekely = "Karintia"
+        }
+
+        d_istria = {
+            romanian = "Istria"
+
+            c_istria = {
+                romanian = "Meran"
+            }
+
+            c_trieste = {
+                b_pula = {
+                    romanian = "Pola"
+                }
+            }
         }
     }
     k_schwaben = {
@@ -181,6 +256,11 @@ e_hre = {
                     polish = "Berno"
                     roman = "Berna"
                     romanian = "Berna"
+                }
+            }
+            c_st_gallen = {
+                b_konstanz = {
+                    romanian = "Constanta" # last t has , underneath
                 }
             }
         }
@@ -220,6 +300,29 @@ e_hre = {
             turkish = "Bohemya"
             turkmen = "Bohemya" # not sure - copied from turkish
             ugricbaltic = "Cechy"
+
+            c_praha = {
+                romanian = "Praga"
+
+                b_praha = {
+                    romanian = "Praga"
+                }
+            }
+            c_boleslav = {
+                roman = "Glacio"
+
+                b_glatz = {
+                    roman = "Glacio"
+                }
+                b_broumovkladsko = {
+                    romanian = "Brumã" # ã is A-breve
+                }
+            }
+            c_litomerice = {
+                b_bilina = {
+                    romanian = "Bilnita" # t has , underneath
+                }
+            }
         }
     }
     k_germany = {
@@ -287,13 +390,18 @@ e_byzantium = {
         polish = "Tesalonika"
         pommeranian = "Solun"
         roman = "Thessalonica"
-        romanian = "Sãluna" # ? is A-breve
+        romanian = "Sãluna" # ã is A-breve
         russian = "Solun"
         serbian = "Solun"
         szekely = "Szaloniki"
         turkish = "Selânik"
         turkmen = "Selânik"
 
+        d_aegean_islands = {
+            c_naxos = {
+                romanian = "Ciclade"
+            }
+        }
         d_thrace = {
             romanian = "Tracia"
 
@@ -331,7 +439,7 @@ e_byzantium = {
             polish = "Tesalonika"
             pommeranian = "Solun"
             roman = "Thessalonica"
-            romanian = "Sãluna" # ? is A-breve
+            romanian = "Sãluna" # ã is A-breve
             russian = "Solun"
             szekely = "Szaloniki"
 
@@ -375,6 +483,10 @@ e_byzantium = {
             c_upper_wallachia = {
                 polish = "Wielka Woloszczyzna" # not sure if historical, translated
                 romanian = "Rumânia Mare" # not sure if historical, translated
+
+                b_trikala = {
+                    romanian = "Tricolj" # Aromanian; k instead of c ?
+                }
             }
         }
     }
@@ -418,19 +530,47 @@ e_byzantium = {
         oghuz = "Ahaya"
         turkmen = "Ahaya"
         turkish = "Ahaya"
-turkmen = "Ahaya" # not sure - copied from turkish
+        turkmen = "Ahaya" # not sure - copied from turkish
         pecheneg = "Ahaya"
         polish = "Achaja"
 
+        d_athens = {
+            c_atheniai = {
+                romanian = "Atena"
+
+                b_athens = {
+                    romanian = "Athens"
+                }
+            }
+        }
         d_achaia = {
             german = "Achäa"
             polish = "Achaja"
             roman = "Achaea"
+            romanian = "Peloponez"
 
             c_achaia = {
                 german = "Achäa"
                 polish = "Achaja"
                 roman = "Achaea"
+                romanian = "Ahaia"
+
+                b_glarentza = {
+                    romanian = "Glarenta" # t has , underneath
+                }
+            }
+            c_korinthos = {
+                romanian = "Corint"
+            
+                b_acrokorinthos = {
+                    romanian = "Cetatea Corint"
+                }
+                b_corinth = {
+                    romanian = "Corint"
+                }
+                b_aegina = {
+                    romanian = "Eghina"
+                }
             }
         }
     }
@@ -472,6 +612,23 @@ turkmen = "Ahaya" # not sure - copied from turkish
         roman = "Nicaea"
         turkish = "Iznik"
         turkmen = "Iznik" # not sure - copied from turkish
+
+        d_paphlagonia = {
+            romanian = "Paflagonia"
+
+            c_paphlagonia = {
+                romanian = "Paflagonia"
+            }
+        }
+        d_thracesia = {
+            c_philadelphia = {
+                romanian = "Filadelfia"
+
+                b_philadelpheia = {
+                    romanian = "Filadelfia"
+                }
+            }
+        }
     }
     k_anatolia = {
         roman = "Asia Minor"
@@ -479,6 +636,21 @@ turkmen = "Ahaya" # not sure - copied from turkish
 
         d_anatolia = {
             german = "Anatolien"
+        }
+    }
+    k_cyprus = {
+        romanian = "Cipru"
+
+        d_cyprus = {
+            romanian = "Cipru"
+
+            c_nicosia = {
+                romanian = "Nicosia"
+
+                b_nikosia = {
+                    romanian = "Nicosia"
+                }
+            }
         }
     }
     k_trebizond = {
@@ -496,6 +668,17 @@ turkmen = "Ahaya" # not sure - copied from turkish
                 b_cherson = {
                     romanian = "Herson"
                 }
+            }
+        }
+    }
+    k_cilician = {
+        romanian = "Cilicia"
+    
+        d_armenia_minor = {
+            romanian = "Cilicia"
+
+            c_alexandretta = {
+                romanian = "Alexandria Micã" # ã is A-breve
             }
         }
     }
@@ -751,11 +934,18 @@ turkmen = "Ahaya" # not sure - copied from turkish
                     romanian = "Scopia"
                     szekely = "Szkopje"
                 }
+                b_veles = {
+                    romanian = "Velescir" # Aromanian; Not sure if it is accurate: Is b_veles the same as Veletinon?
+                }
             }
             c_strumica = {
                 b_petrich = {
                     polish = "Petricz"
                     romanian = "Petrici"
+                }
+
+                b_stip = {
+                    romanian = "Shtip" # Aromanian; Romanian has s with , instead of sh, I guess
                 }
             }
             c_ochrid = {
@@ -843,6 +1033,7 @@ turkmen = "Ahaya" # not sure - copied from turkish
             c_belgrade = {
                 frankish = "Belgrade"
                 italian = "Belgrado"
+                romanian = "Belgrad"
 
                 b_smederevo = {
                     german = "Semendria"
@@ -851,6 +1042,7 @@ turkmen = "Ahaya" # not sure - copied from turkish
                 b_belgrade = {
                     frankish = "Belgrade"
                     italian = "Belgrado"
+                    romanian = "Belgrad"
                 }
             }
         }
@@ -946,6 +1138,19 @@ e_scandinavia = {
     }
 }
 e_russia = {
+    k_vladimir = {
+        d_moskva = {
+            romanian = "Moscova"
+
+            c_moskva = {
+                romanian = "Moscova"
+
+                b_moskva = {
+                    romanian = "Moscova"
+                }
+            }
+        }
+    }
     k_ruthenia = {
         ashkenazi = "Kiyev"   
         avar = "Kyjevu"
@@ -1070,7 +1275,7 @@ e_russia = {
                     romanian = "Ovruci"
                 }
                 b_chernobel = {
-                    romanian = "Cernobâl"
+                    romanian = "Cernobâl" # â may be î
                 }
             }
         }
@@ -1383,6 +1588,11 @@ e_poland = {
                     saxon = "Krakau"
                 }
             }
+            c_sacz = {
+                b_tarnow = {
+                    romanian = "Tarnovia"
+                }
+            }
         }
         d_kuyavia = {
             gothic = "Cuiavia"
@@ -1392,6 +1602,11 @@ e_poland = {
             romanian = "Cuiava"
             saxon = "Cuiavia"
             
+            c_chelminskie = {
+                b_thorn = {
+                    romanian = "Turnu"
+                }
+            }
             c_kujawy = {
                 gothic = "Cuiavia"
                 lombard = "Cuiavia"
@@ -1784,6 +1999,17 @@ e_arabia = {
         turkish = "Suriye"
         turkmen = "Suriye" # not sure - copied from turkish
 
+        d_aleppo = {
+            romanian = "Alep"
+
+            c_aleppo = {
+                romanian = "Alep"
+
+                b_aleppo = {
+                    romanian = "Alep"
+                }
+            }
+        }
         d_damascus = {
             armenian = "Damaskos"
             assyrian = "Darmsûq"
@@ -1939,7 +2165,7 @@ e_carpathia = {
                     moravian = "Stolicný Belehrad"
                     polish = "Bialogród Stoleczny"
                     roman = "Alba Regia"
-                    romanian = "Alba Regala"
+                    romanian = "Alba Regalã" # ã is actually A-breve
                     serbian = "Stolni Beograd"
                     turkish = "Ístolni Belgrad"
                     turkmen = "Ístolni Belgrad" # not sure - copied from turkish
@@ -2670,6 +2896,30 @@ e_france = {
         saxon = "Burgendaland"
         swabian = "Burgundia"
 
+        d_savoie = {
+            c_geneve = {
+                romanian = "Geneva"
+
+                b_geneve = {
+                    romanian = "Geneva"
+                }
+            }
+        }
+        d_provence = {
+            c_provence = {
+                b_marseille = {
+                    romanian = "Marsilia"
+                }
+            }
+            c_nice = {
+                romanian = "Nisa"
+
+                b_nizza = {
+                    romanian = "Nisa"
+                }
+            }
+        }
+
         d_burgundy = {
             german = "Burgund"
             gothic = "Burgundia"
@@ -2979,9 +3229,27 @@ e_spain = {
     k_portugal = {
         lombard = "Portucale"
         prussian = "Portugalin"
+        romanian = "Portugalia"
         saxon = "Portucale"
         swabian = "Portucale"
         gothic = "Portucale"
+
+        d_ribatejo = {
+            c_lisboa = {
+                romanian = "Lisabona" # Not sure if it is historical - it is the modern form
+
+                b_lisboa = {
+                    romanian = "Lisabona" # Not sure if it is historical - it is the modern form
+                }
+            }
+            c_castelo_branco = {
+                romanian = "Castelu Alb" # Not sure if it is historical - translated
+            
+                b_castelobranco = {
+                    romanian = "Castelu Alb" # Not sure if it is historical - translated
+                }
+            }
+        }
     }
     k_andalusia = {
         basque = "Andaluzia"
@@ -2990,6 +3258,7 @@ e_spain = {
         lombard = "Vandalusia"
         occitan = "Andalosia"
         portuguese = "Andaluzia"
+        romanian = "Andalusia"
         saxon = "Vandalusia"
         swabian = "Vandalusia"
         gothic = "Vandalusia"
@@ -3227,6 +3496,17 @@ e_italy = {
                 }
             }
         }
+        d_toscana = {
+            romanian = "Florenta" # t has , underneath
+
+            c_firenze = {
+                romanian  = "Florenta" # t has , underneath
+
+                b_firenze = {
+                    romanian  = "Florenta" # t has , underneath
+                }
+            }
+        }
         d_pisa = {
             frankish = "Pise"
             greek = "Pisai"
@@ -3311,6 +3591,7 @@ e_italy = {
         greek = "Benetía"
         italian = "Venezia"
         roman = "Venetiae"
+        romanian = "Venetia" # t has , underneath
         saxon = "Venetia"
         swabian = "Venetia"
         visigothic = "Venetia"
@@ -3322,6 +3603,7 @@ e_italy = {
             greek = "Benetía"
             italian = "Venezia"
             roman = "Venetiae"
+            romanian = "Venetia" # t has , underneath
             saxon = "Venetia"
             swabian = "Venetia"
             visigothic = "Venetia"
@@ -3333,6 +3615,7 @@ e_italy = {
                 greek = "Benetía"
                 italian = "Venezia"
                 roman = "Venetiae"
+                romanian = "Venetia" # t has , underneath
                 saxon = "Venetia"
                 swabian = "Venetia"
                 visigothic = "Venetia"
@@ -3344,6 +3627,7 @@ e_italy = {
                     greek = "Benetía"
                     italian = "Venezia"
                     roman = "Venetiae"
+                    romanian = "Venetia" # t has , underneath
                     saxon = "Venetia"
                     swabian = "Venetia"
                     visigothic = "Venetia"
@@ -3362,6 +3646,34 @@ e_mali = {
     }
 }
 e_null = {
+    k_armenia = {
+        romanian = "Armenia"
+
+        d_armenia = {
+            romanian = "Armenia"
+        }
+    }
+    k_jerusalem = {
+        romanian = "Ierusalim"
+    
+        d_jerusalem = {
+            romanian = "Ierusalim"
+
+            c_jerusalem = {
+                romanian = "Ierusalim"
+            
+                b_towerofdavid = {
+                    romanian = "Turnu lu David" # Or lui instead of lu - not sure about which one was used back then
+                }
+                b_bethlehem = {
+                    romanian = "Betleem"
+                }
+                b_jerusalem = {
+                    romanian = "Ierusalim"
+                }
+            }
+        }
+    }
     k_pomerania = {
         bohemian = "Pomoransko"
         german = "Pommern"
@@ -3456,6 +3768,17 @@ e_null = {
             }
         }
     }
+    k_terra = {
+        d_esthonia = {
+            romanian = "Estonia"
+
+            c_reval = {
+                b_tallin = {
+                    romanian = "Talin"
+                }
+            }
+        }
+    }
     k_taurica = {
         roman = "Taurica"
         romanian = "Crimeea"
@@ -3522,6 +3845,8 @@ e_null = {
             }
         }
         d_tmutarkan = {
+            romanian = "Hazaria"
+
             c_korchev = {
                 romanian = "Bosfor" # Not sure if it is historical
 
