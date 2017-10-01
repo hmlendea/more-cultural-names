@@ -67,6 +67,15 @@ e_hre = {
             }
         }
     }
+    k_upper_lorraine = {
+        d_luxembourg = {
+            romanian = "Luxemburg"
+
+            c_luxembourg = {
+                romanian = "Luxemburg"
+            }
+        }
+    }
     k_lower_lorraine = {
         d_koln = {
             romanian = "Colonia"
@@ -321,6 +330,31 @@ e_hre = {
             c_litomerice = {
                 b_bilina = {
                     romanian = "Bilnita" # t has , underneath
+                }
+            }
+        }
+        d_moravia = {
+            andalusian_arabic = "Murafia"
+            bulgarian = "Moraviya"
+            croatian = "Velika Moravska"
+            frankish = "Moravie"
+            gothic = "Morawien"
+            lettigallish = "Moravija"
+            lithuanian = "Moravija"
+            maghreb_arabic = "Murafia"
+            norman = "Moravie"
+            prussian = "Morawija" 
+            romanian = "Moravia"
+            russian = "Moraviya"
+            severian = "Moravija"
+            turkish = "Moravya"
+            turkmen = "Moravya" #
+            ugricbaltic = "Morava"
+            welsh = "Morafia"
+
+            c_olomouc = {
+                b_hradiste = {
+                    romanian = "Grãdishtea" # sh is s with , underneath; ã is A-breve
                 }
             }
         }
@@ -1061,15 +1095,18 @@ e_byzantium = {
             bulgarian = "Duklja"
             croatian = "Duklja"
             german = "Dioklitien"
+            romanian = "Doclea"
             serbian = "Duklja"
             
             c_zeta = {
                 german = "Dioklitien"
+                romanian = "Doclea"
 
                 b_dioclea = {
                     bulgarian = "Duklja"
                     croatian = "Duklja"
                     german = "Dioklitien"
+                    romanian = "Doclea"
                     serbian = "Duklja"
                 }
                 b_podgorica = {
@@ -1086,6 +1123,37 @@ e_byzantium = {
 e_scandinavia = {
     roman = "Scandinavia"
 
+    k_denmark = {
+        romanian = "Danemarca"
+    }
+    k_iceland = {
+        romanian = "Islanda"
+
+        d_iceland = {
+            romanian = "Islanda"
+        }
+    }
+    k_sweden = {
+        romanian = "Suedia"
+
+        d_ostergotland = {
+            romanian = "Ostrogotia" # last t has , underneath
+        
+            c_ostergotland = {
+                romanian = "Ostrogotia" # last t has , underneath
+            }
+        }
+        d_vastergotland = {
+            romanian = "Vizigotia" # last t has , underneath
+        }
+        d_gotland = {
+            romanian = "Gotia" # t has , underneath
+
+            c_gotland = {
+                romanian = "Gotia" # t has , underneath
+            }
+        }
+    }
     k_norway = {
         andalusian_arabic = "Alnnarwij"
         armenian = "Norvegia"
@@ -3673,6 +3741,49 @@ e_null = {
                 }
             }
         }
+        d_acre = {
+            romanian = "Acra"
+
+            c_acre = {
+                romanian = "Acra"
+
+                b_acre = {
+                    romanian = "Acra"
+                }
+                b_tyrus = {
+                    romanian = "Tir"
+                }
+            }
+            c_caesarea = {
+                romanian = "Cezaria"
+            }
+        }
+        d_galilee = {
+            romanian = "Gelileea"
+
+            c_tiberias = {
+                romanian = "Tiberiada"
+
+                b_nazareth = {
+                    romanian = "Nazaret"
+                }
+            }
+        }
+    }
+    k_antioch = {
+        romanian = "Antiohia"
+
+        d_antioch = {
+            romanian = "Antiohia"
+
+            c_antiocheia = {
+                romanian = "Antiohia"
+
+                b_antiocheia = {
+                    romanian = "Antiohia"
+                }
+            }
+        }
     }
     k_pomerania = {
         bohemian = "Pomoransko"
@@ -3859,13 +3970,22 @@ e_null = {
 }
 k_moravia = { # I think that all names should have "Great" in the name, but I can't find each form.
     andalusian_arabic = "Murafia"
+    ashkenazi = "Mehren"
+    bavarian = "Mährn"
     bulgarian = "Velikomoraviya"
     croatian = "Velika Moravska"
+    franconian = "Mähren"
+    dutch = "Moravië"
     frankish = "Grande Moravie"
     german = "Großmähren"
     gothic = "Morawien"
+    greek = "Moravías"
+    hungarian = "Morvaország"
     lettigallish = "Moravija"
     lithuanian = "Moravija"
+	low_frankish = "Moravië"
+	low_german = "Mähren"
+    low_saxon = "Moravië"
     maghreb_arabic = "Murafia"
     norman = "Moravie"
     polish = "Wielkie Morawy"
@@ -3873,7 +3993,8 @@ k_moravia = { # I think that all names should have "Great" in the name, but I ca
     romanian = "Moravia Mare" # not sure if it's historical
     russian = "Velikaya Moraviya"
     severian = "Moravija"
-    swabian = "Morawien"
+    swabian = "Mähre"
+    thuringian = "Mähren"
     turkish = "Moravya"
     turkmen = "Moravya" # not sure - copied from turkish
     ugricbaltic = "Morava"
