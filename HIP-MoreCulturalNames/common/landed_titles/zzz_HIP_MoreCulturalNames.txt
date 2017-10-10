@@ -3502,44 +3502,170 @@ e_france = {
         gothic = "Burgundia"
         lombard = "Burgundia"
         occitan = "Borgonha"
-        roman = "Burgundia"
+        roman = "Maxima Sequanorum" # Or "Burgundia"
         romanian = "Burgundia"
         saxon = "Burgendaland"
         swabian = "Burgundia"
 
         d_savoie = {
+            roman = "Sapaudia Magna"
+
+            c_savoie = {
+                roman = "Sapaudia"
+
+                b_ciamberi = {
+                    roman = "Lemincum"
+                }
+            }
             c_geneve = {
                 romanian = "Geneva"
 
                 b_geneve = {
                     romanian = "Geneva"
                 }
+                b_nyon = {
+                    romanian = "Julia Equestis"
+                }
+                b_lausanne = {
+                    roman = "Lovsonna"
+                }
+                b_orbe = {
+                    roman = "Urba"
+                }
+            }
+            c_valais = {
+                roman = "Acaunum"
+            }
+            c_chablais = {
+                roman = "Octodurus"
+
+                b_monthey = {
+                    roman = "Acaunum"
+                }
+                b_martigny = {
+                    roman = "Octodurus"
+                }
             }
         }
         d_provence = {
+            roman = "Aquae Sextiae"
+
             c_provence = {
                 b_marseille = {
                     romanian = "Marsilia"
                 }
+                b_grimaud = {
+                    roman = "Athenopolis"
+                }
+                b_castellane = {
+                    roman = "Salinae"
+                }
+                b_tarascon = {
+                    roman = "Tarasco"
+                }
+            }
+            c_forcalquier = {
+                roman = "Furnus Calcarius"
+
+                b_forcalquier = {
+                    roman = "Furnus Calcarius"
+                }
             }
             c_nice = {
+                roman = "Cemenelum" # Or "Antipolis"
                 romanian = "Nisa"
 
                 b_nizza = {
                     romanian = "Nisa"
                 }
+                b_contes = {
+                    roman = "Cuntinus"
+                }
+            }
+            c_venaissin = {
+                roman = "Venisus" # Or "Avenio"
+
+                b_venasque = {
+                    roman = "Vindisca"
+                }
+                b_carpentras = {
+                    roman = "Carpentorate"
+                }
+                b_stpaul = {
+                    roman = "Augusta Tricastinorum"
+                }
+            }
+            c_viviers = {
+                roman = "Vivaris"
+
+                b_viviers = {
+                    roman = "Vivaris"
+                }
             }
         }
+        d_lyon = {
+            roman = "Lugdunum Prima"
 
-        d_burgundy = {
-            german = "Burgund"
-            gothic = "Burgundia"
-            lombard = "Burgundia"
-            occitan = "Borgonha"
-            roman = "Burgundia"
-            romanian = "Burgundia"
-            saxon = "Burgendaland"
-            swabian = "Burgundia"
+            c_lyon = {
+                b_anse = {
+                    roman = "Asa Pavlini"
+                }
+            }
+        }
+        d_dauphine = {
+            roman = "Delphini"
+
+            c_dauphine_viennois = {
+                roman = "Delphini Venus"
+
+                b_albon = {
+                    roman = "Figlinae"
+                }
+            }
+            c_valentinois = {
+                b_montelimar = {
+                    roman = "Acunum"
+                }
+            }
+            c_gapencais = {
+                b_embrun = {
+                    roman = "Eburodunum"
+                }
+                b_briancon = {
+                    roman = "Brigantio"
+                }
+            }
+            c_graisivaudan = {
+                b_grenoble = {
+                    roman = "Cularo"
+                }
+            }
+        }
+        d_basel = {
+            roman = "Basilica"
+        }
+        d_upper_burgundy = {
+            roman = "Maxima Sequanorum"
+
+            c_portois = {
+                roman = "Porto"
+            }
+            c_varais = {
+                roman = "Ariolica"
+            }
+            c_montebeliard = {
+                roman = "Argentorate"
+            }
+            c_neuchatel = {
+                roman = "Novum Castellum"
+
+                b_neuchatel = {
+                    roman = "Novum Castellum"
+                }
+                b_avences = {
+                    roman = "Aventicum"
+                }
+            }
         }
     }
     k_brittany = {
@@ -3548,7 +3674,7 @@ e_france = {
         irish = "Bhriotáin"
         lombard = "Britannia Minor"
         norman = "Bretannie"
-        roman = "Britannia Minor"
+        #roman = "Aremorica" # Or "Britannia Minor"
         saxon = "Britannia Minor"
         swabian = "Britannia Minor"
         welsh = "Arymôr"
@@ -3559,16 +3685,66 @@ e_france = {
             irish = "Bhriotáin"
             lombard = "Britannia Minor"
             norman = "Bretannie"
-            roman = "Aremorica Superior"
+            roman = "Aremorica Superior" # Or simply "Aremorica"?
             saxon = "Britannia Minor"
             swabian = "Britannia Minor"
             welsh = "Arymôr"
 
             c_vannes = {
                 frankish = "Vannes"
+
+                b_pontivy = {
+                    roman = "Sulis"
+                }
+            }
+            c_cornouaille = {
+                roman = "Cornovius"
+
+                b_quimper = {
+                    roman = "Aquilonia"
+                }
+                b_quimperle = {
+                    roman = "Quimperlacum"
+                }
+            }
+            c_french_leon = {
+                roman = "Vorigum"
+
+                b_brest = {
+                    roman = "Gesocribate"
+                }
+            }
+            c_nantes = {
+                roman = "Condevincum"
+
+                b_chateaubriant = {
+                    roman = "Castrum Brieni"
+                }
+                b_guerande = {
+                    roman = "Grannona"
+                }
+                b_clisson = {
+                    roman = "Clissonium"
+                }
+            }
+            c_penthievre = {
+                roman = "Fanum Martis"
+
+                b_monkontour = {
+                    roman = "Moncontor"
+                }
+            }
+            c_porhoet = {
+                roman = "Pagus Trans Silvam"
+
+                b_st_malo = {
+                    roman = "Reginca"
+                }
+                b_porhoet = {
+                    roman = "Pagus Trans Silvam"
+                }
             }
         }
-
         d_lowerbrittany = {
             roman = "Aremorica Inferior"
         }
@@ -3601,7 +3777,7 @@ e_france = {
         pictish = "Fhraing"
         pommeranian = "Francja"
         prussian = "Prancuzija"
-        roman = "Francia"
+        roman = "Lugdunensis" # Or "Francia", or "Galliae"
         romanian = "Franta" # t has ,
         russian = "Frantsiya"
         scottish = "Fhraing"
@@ -3612,6 +3788,345 @@ e_france = {
         turkmen = "Fransa" # not sure - copied from turkish
         ugricbaltic = "Prantsusmaa"
         welsh = "Ffrainc"
+
+        d_flanders = {
+            roman = "Camaracum"
+
+            c_gent = {
+                roman = "Gontia"
+
+                b_gent = {
+                    roman = "Gontia"
+                }
+            }
+            c_brugge = {
+                roman = "Bruciam"
+
+                b_brugge = {
+                    roman = "Bruciam"
+                }
+            }
+        }
+        d_artois = {
+            roman = "Nemetacum"
+
+            c_artois = {
+                roman = "Nemetacum"
+
+                b_arras = {
+                    roman = "Nemetacum"
+                }
+            }
+            c_boulogne = {
+                roman = "Gesoriacum"
+
+                b_boulogne = {
+                    roman = "Gesoriacum"
+                }
+            }
+            c_guines = {
+                roman = "Guisnes"
+
+                b_guines = {
+                    roman = "Guisnes"
+                }
+            }
+        }
+        d_burgundy = {
+            german = "Burgund"
+            gothic = "Burgundia"
+            lombard = "Burgundia"
+            occitan = "Borgonha"
+            roman = "Lugdunum Secunda" # Or "Burgundia"
+            romanian = "Burgundia"
+            saxon = "Burgendaland"
+            swabian = "Burgundia"
+
+            c_dijon = {
+                roman = "Divio"
+
+                b_dijon = {
+                    roman = "Divio"
+                }
+                b_beaune = {
+                    roman = "Beleno"
+                }
+            }
+            c_auxois = {
+                b_semur = {
+                    roman = "Sene Muros"
+                }
+                b_avallon = {
+                    roman = "Cora Vicus"
+                }
+                b_vezelay = {
+                    roman = "Vizeliacum"
+                }
+            }
+            c_macon = {
+                roman = "Matiscus"
+
+                b_macon = {
+                    roman = "Matiscus"
+                }
+            }
+            c_charolais = {
+                roman = "Caesaria"
+
+                b_digoine = {
+                    roman = "Pocrinium"
+                }
+            }
+            c_chalons = {
+                roman = "Catalaunian"
+
+                b_chalons = {
+                    roman = "Catalaunian"
+                }
+            }
+        }
+        d_bourbon = {
+            roman = "Aquitanica Borbonius"
+
+            c_bourbon = {
+                roman = "Borbonius"
+
+                b_bourbon = {
+                    roman = "Borbonius"
+                }
+            }
+            c_forez = {
+                roman = "Externa Castra"
+
+                b_montbrison = {
+                    roman = "Aquae Segetae"
+                }
+                b_feurs = {
+                    roman = "Forum Segusiavorum"
+                }
+                b_rosanne = {
+                    roman = "Rodumna"
+                }
+            }
+        }
+        d_anjou = {
+            roman = "Lugdunensis Tertia"
+
+            c_anjou = {
+                b_vihiers = {
+                    roman = "Vierium"
+                }
+                b_saumur = {
+                    roman = "Robrica"
+                }
+                b_cholet = {
+                    roman = "Segora"
+                }
+            }
+            c_maine = {
+                roman = "Cenomannicus"
+
+                b_laval = {
+                    roman = "Vallis Guidonis"
+                }
+            }
+            c_tourraine = {
+                b_chinon = {
+                    roman = "Caino"
+                }
+                b_amboise = {
+                    roman = "Ambiacum"
+                }
+                b_loches = {
+                    roman = "Lucas"
+                }
+                b_langeais = {
+                    roman = "Alingavia"
+                }
+            }
+            c_vendome = {
+                roman = "Vindocinum"
+
+                b_lavardin = {
+                    roman = "Labrocinum"
+                }
+                b_vendome = {
+                    roman = "Vindocinum"
+                }
+            }
+        }
+        d_normandy = {
+            roman = "Lugdunensis Secunda"
+
+            c_evreux = {
+                roman = "Mediolanum"
+
+                b_evreux = {
+                    roman = "Mediolanum"
+                }
+            }
+            c_avranches = {
+                roman = "Ligedia"
+            }
+            c_bayeux = {
+                roman = "Augustodurum" # Or "Baiocassium"
+            }
+            c_coustance = {
+                roman = "Cosedia" # Or "Constantia"
+            }
+            c_vexin = {
+                roman = "Veccinus Superior"
+            }
+            c_arques = {
+                roman = "Rotomagus"
+            }
+            c_eu {
+                roman = "Juliobona"
+
+                b_eu = {
+                    roman = "Juliobona"
+                }
+            }
+        }
+        d_alencon = {
+            roman = "Celtica"
+
+            c_alencon = {
+                roman = "Celtica"
+
+                b_alencon = {
+                    roman = "Celtica"
+                }
+            }
+            c_dreux = {
+                roman = "Durocassium"
+            }
+        }
+        d_orleans = {
+            roman = "Gallia Prima"
+
+            c_orleans = {
+                roman = "Aurelianum"
+
+                b_orleans = {
+                    roman = "Aurelianum"
+                }
+            }
+        }
+        d_blois = {
+            roman = "Gallia Secunda"
+
+            c_blois = {
+                roman = "Praesidii Romani"
+
+                b_blois = {
+                    roman = "Blaesum"
+                }
+                b_montrichard = {
+                    roman = "Tasciaca"
+                }
+            }
+            c_chateadun = {
+                roman = "Dunense"
+
+                b_chateadun = {
+                    roman = "Dunense Castrum"
+                }
+            }
+        }
+        d_berry = {
+            roman = "Bacanensis"
+
+            c_bourges = {
+                b_chateauroux = {
+                    roman = "Dolum"
+                }
+                b_issoudun = {
+                    roman = "Exolidunum"
+                }
+            }
+        }
+        d_nevers = {
+            roman = "Nevirensis"
+
+            c_nevers = {
+                b_chateauchinon = {
+                    roman = "Castrum Canium"
+                }
+            }
+            c_auxerre = {
+                b_crisenon = {
+                    roman = "Bacema"
+                }
+            }
+        }
+        d_archreims = {
+            c_reims = {
+                roman = "Durocotorum"
+
+                b_reims = {
+                    roman = "Durocotorum"
+                }
+                b_chalons = {
+                    roman = "Catalaunum"
+                }
+            }
+        }
+        d_champagne = {
+            roman = "Lugdunensis Quarta"
+
+            c_champagne = {
+                roman = "Novus Campania" # Or "Augustobona"
+            }
+            c_langres = {
+                roman = "Andemantunnum"
+
+                b_langres = {
+                    roman = "Andemantunnum"
+                }
+            }
+        }
+        d_valois = {
+            roman = "Noviodunum"
+
+            c_ile_de_france = {
+                b_melun = {
+                    roman = "Metlosedum"
+                }
+                b_stdenis = {
+                    roman = "Catculliacum"
+                }
+                b_etampes = {
+                    roman = "Stampae"
+                }
+                b_compiegne = {
+                    roman = "Compendium"
+                }
+            }
+            c_valois = {
+                roman = "Soissons"
+
+                b_noyon = {
+                    roman = "Noviomium"
+                }
+                b_senliscastle = {
+                    roman = "Augustomagnus Castra"
+                }
+            }
+            c_southvexin = {
+                roman = "Veccinus Inferior"
+            }
+            c_vermandois = {
+                roman = "Castra Romani"
+
+                b_stquentin = {
+                    roman = "Augusta Viromanduorum"
+                }
+                b_guise = {
+                    roman = "Gusia"
+                }
+            }
+        }
     }
     k_aquitaine = {
         ashkenazi = "Akvitain"
@@ -3630,7 +4145,7 @@ e_france = {
         norse = "Akvitanien"
         norwegian = "Akvitanien"
         polish = "Akwitania"
-        roman = "Aquitania"
+        roman = "Septem Provinciae" # Or "Aquitania"
         romanian = "Aquitania"
         russian = "Akvitaniya"
         serbian = "Akuitaine"
@@ -3638,6 +4153,106 @@ e_france = {
         swedish = "Akvitanien"
         volhynian = "Akvitaniya"
 
+        d_toulouse = {
+            roman = "Narbo Martius"
+
+            c_toulouse = {
+                b_castelnaudary = {
+                    roman = "Sostomagus"
+                }
+                b_montauban = {
+                    roman = "Montalbani"
+                }
+            }
+            c_rouergue = {
+                roman = "Rodicus"
+
+                b_rodez = {
+                    roman = "Segodunum"
+                }
+            }
+            c_albi = {
+                roman = "Albiga"
+
+                b_castres = {
+                    roman = "Castrum"
+                }
+            }
+        }
+        d_gevaudan = {
+            roman = "Gebalum"
+
+            c_milau = {
+                roman = "Condatomagus"
+
+                b_millau = {
+                    roman = "Condatomagus"
+                }
+            }
+            c_gevaudan = {
+                roman = "Gabalum"
+
+                b_mende = {
+                    roman = "Mimate"
+                }
+            }
+        }
+        d_foix = {
+            roman = "Saxacastellum"
+
+            c_foix = {
+                roman = "Saxacastellum"
+
+                b_foix = {
+                    roman = "Saxacastellum"
+                }
+            }
+            c_comminges = {
+                roman = "Lugdunum Convenarum"
+
+                b_stbertrand = {
+                    roman = "Lugdunum Convenarum"
+                }
+            }
+            c_bearn = {
+                roman = "Beneharnum"
+
+                b_lescar = {
+                    roman = "Beneharnum"
+                }
+            }
+        }
+        d_septimania = {
+            roman = "Narbonensis"
+
+            c_montpellier = {
+                roman = "Novus Cives"
+
+                b_montpellier = {
+                    roman = "Novus Cives"
+                }
+                b_maguelone = {
+                    roman = "Magalona"
+                }
+            }
+        }
+        d_gascogne = {
+            roman = "Novempopulana"
+
+            c_armagnac = {
+                roman = "Ausciorum"
+            }
+            c_albret = {
+                roman = "Quam Primum"
+
+                b_labrit = {
+                    roman = "Quam Primum"
+                }
+                b_bazas = {
+                    roman = "Cossium"
+                }
+            }
+        }
         d_aquitaine = {
             ashkenazi = "Akvitain"
             basque = "Akitania"
@@ -3655,13 +4270,137 @@ e_france = {
             norse = "Akvitanien"
             norwegian = "Akvitanien"
             polish = "Akwitania"
-            roman = "Aquitania"
+            roman = "Novempopulana Superior" # Or "Aquitania"
             romanian = "Aquitania"
             russian = "Akvitaniya"
             serbian = "Akuitaine"
             severian = "Akvitaniya"
             swedish = "Akvitanien"
             volhynian = "Akvitaniya"
+
+            c_bordeaux = {
+                b_castillon = {
+                    roman = "Castellum"
+                }
+                b_blaye = {
+                    roman = "Blavia"
+                }
+                b_lasauve = {
+                    roman = "Sylva Major"
+                }
+                b_libourne = {
+                    roman = "Liburnium"
+                }
+            }
+            c_agen = {
+                roman = "Aquae Garonus"
+
+                b_agen = {
+                    roman = "Aginnum"
+                }
+                b_luzech = {
+                    roman = "Uxellodunum" # Or "Vxellodunum"
+                }
+                b_moissas = {
+                    roman = "Mustius"
+                }
+            }
+            c_perigord = {
+                roman = "Cives Perigus" # Or "Vesunna"
+
+                b_baneuil = {
+                    roman = "Diolindum"
+                }
+            }
+        }
+        d_auvergne = {
+            roman = "Aquitanica Secunda"
+
+            c_auvergne = {
+                roman = "Avernus"
+
+                b_brioude = {
+                    roman = "Brivas"
+                }
+                b_clairmont = {
+                    roman = "Augustonemetum"
+                }
+            }
+            c_dauphinedeauvergne = {
+                roman = "Augustonemetum"
+            }
+            c_carlades = {
+                roman = "Brivas"
+            }
+            c_velay = {
+                roman = "Anicium"
+
+                b_lepuy = {
+                    roman = "Anicium"
+                }
+            }
+        }
+        d_poitou = {
+            roman = "Limonum"
+
+            c_lusignan = {
+                roman = "Lusignus"
+
+                b_lusignan = {
+                    roman = "Lusignus"
+                }
+                b_niort = {
+                    roman = "Novioritum"
+                }
+            }
+            c_saintonge = {
+                roman = "Cives Saintes"
+
+                b_saintes = {
+                    roman = "Mediolanum"
+                }
+                b_villeneuve = {
+                    roman = "Excisum"
+                }
+                b_aulnay = {
+                    roman = "Avnedonnacum"
+                }
+            }
+            c_poitiers = {
+                roman = "Pictavium" # Or "Lemonum"
+            }
+            c_thouars = {
+                roman = "Peregrinatio"
+
+                b_thouars = {
+                    roman = "Peregrinatio"
+                }
+            }
+            c_aunis = {
+                roman = "Santonon Limen"
+            }
+            c_angouleme = {
+                roman = "Lemovicus" # Or "Iculisma"
+            
+                b_cognac = {
+                    roman = "Condate"
+                }
+            }
+        }
+        d_limousin = {
+            roman = "Aquitanica Prima"
+
+            c_la_marche = {
+                roman = "Marchia"
+            }
+            c_limousin = {
+                b_rochechouart = {
+                    roman = "Casinomagus"
+                }
+            }
+            c_ventadour = {
+                roman = "Casinomagus"
+            }
         }
     }
 }
