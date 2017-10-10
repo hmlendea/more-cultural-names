@@ -2607,9 +2607,21 @@ e_carpathia = {
         d_oltenia = {
             german = "Kleine Walachei"
             hungarian = "Kis-Havasalföld" # not sure if historical - just based on hungarian name for d_wallachia
+            roman = "Malvensis"
             szekely = "Kis-Havasalföld" # not sure if historical - just based on hungarian name for d_wallachia
 
+            c_severin = {
+                roman = "Romula-Malva"
+
+                b_severin = {
+                    roman = "Sucidava"
+                }
+                b_calafat = {
+                    roman = "Turris"
+                }
+            }
             c_targujiu = {
+                roman = "Drobeta"
                 romanian = "Târgu Jiu"
                 
                 b_targujiu = {
@@ -2631,6 +2643,15 @@ e_carpathia = {
         szekely = "Moldva"
         turkish = "Bogdan Prensligi"
         turkmen = "Bogdan Prensligi" # not sure - copied from turkish
+    
+        d_moldau = {
+            greek = "Dolor Secunda"
+            roman = "Dolor Secunda"
+        }
+        d_basarabia = {
+            greek = "Dolor Prima"
+            roman = "Dolor Prima"
+        }
     }
     k_hungary = {
         avar = "Avaria"
@@ -2778,11 +2799,13 @@ e_carpathia = {
                 croatian = "Vesprim"  
                 german = "Weißbrunn"
                 karantanci = "Belomost"
+                roman = "Caminia"
 
                 b_veszpramvar = {
                     croatian = "Vesprim"
                     german = "Weißbrunn"
                     karantanci = "Belomost"
+                    roman = "Caminia"
                 }
                 b_dobronte = {
                     german = "Dewerenten"
@@ -2953,6 +2976,7 @@ e_carpathia = {
             }
             c_vas = {
                 karantanci = "Zelezna"
+                roman = "Savaria"
 
                 b_sumeg = {
                     croatian = "Šimeg"
@@ -2983,6 +3007,7 @@ e_carpathia = {
                 karantanci = "Šomod"
                 lithuanian = "Šomodis"
                 moravian = "Šomod"
+                roman = "Beregia"
                 serbian = "Šomod" # the d is cut
 
                 b_fonyod = {
@@ -2990,6 +3015,9 @@ e_carpathia = {
                 }
                 b_zselicszentjakab = {
                     romanian = "Sfântul Apostol Iacob" # Not sure - just a translation
+                }
+                b_somogyvar = {
+                    roman = "Beregia"
                 }
                 b_szigetvar = {
                     croatian = "Siget"
@@ -3080,6 +3108,8 @@ e_carpathia = {
         }
         d_csanad = {
             c_krasso = {
+                roman = "Dierna"
+
                 b_orsova = {
                     greek = "Dierna"
                     bolghar = "Orsovo"
@@ -3087,6 +3117,8 @@ e_carpathia = {
                 }
             }
             c_temes = {
+                roman = "Temesiense"
+
                 b_lugos = {
                     east_gothic = "Lugas"
                     lombard = "Lugas"
@@ -3096,6 +3128,7 @@ e_carpathia = {
                 b_temesvar = {
                     bolghar = "Beguey"
                     lombard = "Temeschburg"
+                    roman = "Temesiense"
                     saxon = "Temeschburg"
                 }
                 b_rekas = {
@@ -3103,10 +3136,29 @@ e_carpathia = {
                 }
             }
         }
+        d_bacs = {
+            roman = "Pannonia Rosia"
+
+            c_bacs = {
+                roman = "Colonia Justinia"
+
+                b_bacs = {
+                    roman = "Colonia Justinia"
+                }
+            }
+            c_szekezfehervar = {
+                roman = "Partiscum"
+
+                b_csongrad = {
+                    roman = "Partiscum"
+                }
+            }
+        }
         d_syrmia = {
             romanian = "Srem"
 
             c_syrmia = {
+                roman = "Sirmium"
                 romanian = "Srem"
 
                 b_sremska_mitrovica = {
@@ -3115,10 +3167,11 @@ e_carpathia = {
             }
         }
         d_pest = {
-            roman = "Biharia"
+            roman = "Porolissensis" # Or "Biharia" maybe?
             romanian = "Biharia"
 
             c_zarand = {
+                roman = "Ampelum"
                 romanian = "Zãrand" # ã is A-breve
 
                 b_lippa = {
@@ -3155,22 +3208,27 @@ e_carpathia = {
                     serbian = "Veliki Varadin"
                     spanish = "Varadino"
                 }
+                b_bihar = {
+                    roman = "Biharia" # not sure if historical
+                }
                 b_elesd = {
                     german = "Ellesch"
                     roman = "Elusd" # not sure
                 }
-                b_bihar = {
-                    roman = "Biharia" # not sure if historical
-                }
             }
             c_bekes = {
+                roman = "Porolissum"
+
                 b_szeghalom = {
                     romanian = "Cuieni"
+                }
+                b_bekesvar = {
+                    roman = "Porolissum"
                 }
             }
         }
         d_transylvania = {
-            roman = "Transsilvania"
+            roman = "Apulensis" # Or "Transsilvania"
             saxon = "Siweberjen"
             turkish = "Erdel"
             turkmen = "Erdel"
@@ -3179,21 +3237,22 @@ e_carpathia = {
                 roman = "Potaissa"
 
                 b_torda = {
-                    roman = "Potaissa"
+                    roman = "Terra Siculorum" # Or "Potaissa"?
                 }
                 b_kolozsvar = {
                     romanian = "Cetatea de Baltã" # ã is A-breve
                 }
             }
             c_feher = {
-                roman = "Albensis"
+                roman = "Albensis" # Or "Apulum"?
                 #romanian = "Alba"
 
                 b_gyulafehervar = {
-                    roman = "Apulum"
+                    roman = "Albinia" # Or "Apulum"?
                 }
             }
             c_burzenland = {
+                roman = "Angusta"
                 romanian = "Teara Bârsei" # T is T with ,
 
                 b_brasso = {
@@ -3237,8 +3296,32 @@ e_carpathia = {
             turkish = "Bosznia"
             turkmen = "Bosznia" # not sure - copied from turkish
             
+            c_rama = {
+                roman = "Ramia"
+
+                b_prozor_rama = {
+                    roman = "Bistua Nova"
+                }
+            }
+            c_donjikraji = {
+                roman = "Doselio"
+            }
             c_zavrsje = {
                 dalmatian = "Dumno"
+            }
+        }
+        d_usora_i_soli = {
+            roman = "Bosnensis et Salines"
+
+            c_usora = {
+                roman = "Bosnensis"
+
+                b_tesanj = {
+                    roman = "Adladios"
+                }
+                b_dobojgrad = {
+                    roman = "Raetinium"
+                }
             }
         }
     }
@@ -3266,6 +3349,7 @@ e_carpathia = {
             german = "Dalmatien"
             italian = "Dalmazia"
             polish = "Dalmacja"
+            roman = "Salona"
             romanian = "Dalmatia"
 
             c_knin = {
@@ -3286,6 +3370,7 @@ e_carpathia = {
 
                 b_knin = {
                     hungarian = "Tinin"
+                    roman = "Burnum"
                     szekely = "Tinin"
                 }
             }
@@ -3325,6 +3410,7 @@ e_carpathia = {
             mongol = "Horvat"
             polish = "Chorwacja"
             prussian = "Kroatija"
+            roman = "Andautonia"
             romanian = "Croatia"
             russian = "Xorvátija"
             szekely = "Horvátország"
@@ -3347,6 +3433,28 @@ e_carpathia = {
                 b_grobnik_vinodol = {
                     romanian = "Grobnic"
                 }
+            }
+            c_senj = {
+                roman = "Senia"
+
+                b_udbina_krbava = {
+                    roman = "Urbina"
+                }
+            }
+            c_okic = {
+                roman = "Neviodunum"
+
+                b_samobor = {
+                    roman = "Neviodunum"
+                }
+                b_ozalj = {
+                    roman = "Ossalia"
+                }
+            }
+        }
+        d_slavonia = {
+            c_varadzin = {
+                roman = "Crisium"
             }
         }
     }
