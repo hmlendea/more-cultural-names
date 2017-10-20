@@ -3,6 +3,8 @@
 This is a sub-mod for CK2's Historical Immersion Project that add new culture-specific names and localisations.
 This mod expects a standard HIP installation, with all the default modules installed, especially SWMH.
 
+It currently brings **3,489** new cultural landed title names!
+
 # Useful links
 
 - [Project homepage](https://github.com/HoratiuMl/CK2-HIP-MoreCulturalNames)
