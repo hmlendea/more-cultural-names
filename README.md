@@ -11,11 +11,13 @@ It currently brings **3,489** new cultural landed title names!
 - [Issue/suggestion tracker](https://github.com/HoratiuMl/CK2-HIP-MoreCulturalNames/issues)
 - [Changelog / Version history](https://github.com/HoratiuMl/CK2-HIP-MoreCulturalNames/commits/master)
 - [Paradox Plaza thread](https://forum.paradoxplaza.com/forum/index.php?threads/submod-mcn-more-cultural-names.980621/)
-- [Steam discussion thread](https://steamcommunity.com/groups/ck2hip/discussions/0/282992646980457966/)
+- [Steam Workshop page](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
 
 # Installation
 
-Just download the [ZIP](https://github.com/HoratiuMl/CK2-HIP-MoreCulturalNames/archive/master.zip) and extract the contents into your "mod" directory alongside your current HIP installation.
+Just subscribe to the [Steam Workshop page](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675) of this mod.
+
+If you don't own this game on Steam, or you want to try the in-development version, just download the  [ZIP](https://github.com/HoratiuMl/CK2-HIP-MoreCulturalNames/archive/master.zip) and extract the contents into your "mod" directory alongside your current HIP installation.
 
 **Note:** This mod is OS-agnostic, which means it will work on all operating systems supported by CK2 and HIP (Windows, Linux and Mac)
 
@@ -39,7 +41,7 @@ There are a few ways you can do so:
 1. You can create git pull requests for this repository (This requires git knowledge)
 2. You can raise a new "[issue](https://github.com/HoratiuMl/CK2-HIP-MoreCulturalNames/issues)" for this project
 3. You can reply on the [forum thread](https://forum.paradoxplaza.com/forum/index.php?threads/submod-mcn-more-cultural-names.980621/)
-4. You can reply on the [Steam discussion thread](https://steamcommunity.com/groups/ck2hip/discussions/0/282992646980457966/)
+4. You can reply on the [Steam Workshop page](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
 
 It would also be very helpful if you could provide a link to a source that can atest the authenticity of the names you submitted, when possible.
 
