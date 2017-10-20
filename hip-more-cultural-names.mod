@@ -1,3 +1,3 @@
 name = "HIP - More cultural names"
-path = "mod/HIP-MoreCulturalNames"
+path = "mod/hip-more-cultural-names"
 dependencies = { "HIP" }
