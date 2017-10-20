@@ -1242,7 +1242,8 @@ e_byzantium = {
             c_cherson = {
                 romanian = "Herson"
 
-                b_cherson = {
+                b_kherson = {
+                    greek = "Cherson"
                     romanian = "Herson"
                 }
             }
@@ -2798,7 +2799,7 @@ e_carpathia = {
         bulgarian = "Vlaško"
         frankish = "Valachie"
         german = "Walachei"
-        greek = "Vlachía"
+        greek = "Blakhía" # Or "Vlachía"
         hungarian = "Havasalföld"
         polish = "Woloszczyzna"
         roman = "Valachia" # Or "Scythia Major" 
@@ -3217,6 +3218,7 @@ e_carpathia = {
         }
         d_pecs = {
             c_pecs = {
+                croatian = "Pecuh"
                 lithuanian = "Pecas"
                 polish = "Pecz"
                 romanian = "Beci"
@@ -3376,6 +3378,8 @@ e_carpathia = {
         }
         d_ujavar = {
             c_abauj = {
+                bohemian = "Abov"
+
                 b_kassa = {
                     romanian = "Cashovia" # sh is s with ,
                 }
@@ -4221,9 +4225,27 @@ e_france = {
             }
         }
         d_anjou = {
+			english = "Angeow"
+			frisian="Angeow"
+			old_frankish="Anjou"
+			old_saxon="Angeow"
             roman = "Lugdunensis Tertia"
+			saxon="Angeow"
 
             c_anjou = {
+                english = "Angeow"
+                frisian="Angeow"
+                old_frankish="Anjou"
+                old_saxon="Angeow"
+                saxon="Angeow"
+
+                b_angers = {
+                    english = "Angeow"
+                    frisian="Angeow"
+                    old_frankish="Anjou"
+                    old_saxon="Angeow"
+                    saxon="Angeow"
+                }
                 b_vihiers = {
                     roman = "Vierium"
                 }
@@ -4352,6 +4374,9 @@ e_france = {
                 b_chateauroux = {
                     roman = "Dolum"
                 }
+                b_deols = {
+                    roman="Dolus"
+                }
                 b_issoudun = {
                     roman = "Exolidunum"
                 }
@@ -4384,10 +4409,20 @@ e_france = {
             }
         }
         d_champagne = {
+			english="Campaine"
+			frisian="Campaine"
+			old_frankish="Champaigne"
+			old_saxon="Campaine"
             roman = "Lugdunensis Quarta"
-
+			saxon="Campaine"
+			
             c_champagne = {
+                english="Campaine"
+                frisian="Campaine"
+                old_frankish="Champaigne"
+                old_saxon="Campaine"
                 roman = "Novus Campania" # Or "Augustobona"
+			    saxon="Campaine"
             }
             c_langres = {
                 roman = "Andemantunnum"
@@ -5403,6 +5438,16 @@ e_africa = {
     }
 }
 e_persia = {
+    greek = "Persike"
+    prussian = "Persija"
+    romanian = "Persia"
+
+    k_persia = {
+        greek = "Persike"
+        prussian = "Persija"
+        roman = "Parthia"
+        romanian = "Persia"
+    }
     k_daylam = {
         d_azerbaijan = {
             c_tabriz = {
@@ -5420,9 +5465,14 @@ e_persia = {
                 greek = "Azerbaijan"
                 roman = "Azerbaijan"
             }
+            c_suenik = {
+                persian = "Kafan"
+            }
         }
     }
     k_mesopotamia = {
+        greek = "Mesopotamía"
+        prussian = "Sirzdauappiskan"
         roman = "Mesopotamia"
 
         d_tigris = {
@@ -6799,6 +6849,7 @@ e_null = {
         romanian = "Crimeea"
 
         d_crimea = {
+            east_gothic = "Gothia"
             roman = "Taurica"
             romanian = "Crimeea"
 
@@ -6822,6 +6873,11 @@ e_null = {
                     romanian = "Simferopol"
                 }
                 b_kirim = {
+					alan = "Taurike"
+					arberian = "Taurike"
+					armenian = "Taurike"
+					east_gothic="Taurike"
+					georgian = "Taurike"
 					greek="Taurike"
 					roman="Taurica"
                 }
@@ -6906,6 +6962,8 @@ e_null = {
                     roman = "Zapaxi"
                 }
                 b_kuban = {
+                    arberian = "Oukrouch"
+					east_gothic = "Oukrouch"
                     greek = "Oukrouch"
                     roman = "Vardanus"
                 }
@@ -6931,6 +6989,13 @@ e_null = {
                 b_khumar = {
                     roman = "Skhimar"
                 }
+            }
+        }
+    }
+    k_turkestan = {
+        d_zhetysu = {
+            b_balasagun = {
+                mongol = "Gobalik"
             }
         }
     }
