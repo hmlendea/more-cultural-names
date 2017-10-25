@@ -17,7 +17,7 @@ It currently brings **3,489** new cultural landed title names!
 
 Just subscribe to the [Steam Workshop page](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675) of this mod.
 
-If you don't own this game on Steam, or you want to try the in-development version, just download the  [ZIP](https://github.com/HoratiuMl/CK2-HIP-MoreCulturalNames/archive/master.zip) and extract the contents into your "mod" directory alongside your current HIP installation.
+If you don't own this game on Steam, or you want to try the in-development version, you can download the latest release from the [GitHub page](https://github.com/hmlendea/ck2-hip-more-cultural-names/releases) and extract the contents into your "mod" directory alongside your current HIP installation.
 
 **Note:** This mod is OS-agnostic, which means it will work on all operating systems supported by CK2 and HIP (Windows, Linux and Mac)
 
