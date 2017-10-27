@@ -79,5 +79,8 @@ Non-english:
 - RO [Institutii feudale in Tarile Romane sec XIV - XVI](http://www.ebacalaureat.ro/c/institutii-feudale-in-tarile-romane-sec-xiv---xvi/1158)
 - RO [Institutii Medievale Romanesti](https://www.scribd.com/doc/103239549/Institutii-Medievale-Romanesti)
 
+Mods:
+- [Schattenzeitalter](http://www.moddb.com/mods/schattenzeitalter)
+
 Other:
 - Wikipedia pages of cities and places, in various languages
