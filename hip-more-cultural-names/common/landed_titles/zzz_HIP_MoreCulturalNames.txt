@@ -52,10 +52,6 @@ e_hre = {
             c_zeeland = {
                 roman = "Nehalennia"
             }
-        }
-        d_utrecht = {
-            roman = "Traiectum"
-
             c_sticht = {
                 roman = "Isalania"
 
@@ -69,6 +65,8 @@ e_hre = {
                     roman = "Castrum Isalania"
                 }
             }
+        }
+        d_gelre = {
             c_oversticht = {
                 roman = "Transisalania"
             }
@@ -90,6 +88,9 @@ e_hre = {
                 swabian = "Frisia"
             }
         }
+        d_utrecht = {
+            roman = "Traiectum"
+        }
     }
     k_upper_lorraine = {
         roman = "Germania Superior"
@@ -101,13 +102,6 @@ e_hre = {
             roman = "Verodunum Secunda"
             romanian = "Luxemburg"
 
-            c_arlon = {
-                roman = "Orolanum"
-
-                b_arlon = {
-                    roman = "Orolanum"
-                }
-            }
             c_luxembourg = {
                 roman = "Lucilinburhuc"
                 romanian = "Luxemburg"
@@ -117,36 +111,22 @@ e_hre = {
                     romanian = "Luxemburg"
                 }
             }
+            c_arlon = {
+                roman = "Orolanum"
+
+                b_arlon = {
+                    roman = "Orolanum"
+                }
+            }
+            c_vianden = {
+                roman = "Viennensis"
+
+                b_vianden = {
+                    roman = "Viennensis"
+                }
+            }
             c_laroche = {
                 roman = "Mediomatrici"
-            }
-            c_chiny = {
-                roman = "Ivosium"
-
-                b_chiny = {
-                    roman = "Ivosium"
-                }
-            }
-        }
-        d_pfalz = {
-            roman = "Belgica Prima"
-
-            c_pfalz = {
-                roman = "Vormatia"
-            }
-            c_sponheim = {
-                roman = "Cruciniacum"
-
-                b_kreuznach = {
-                    roman = "Cruciniacum"
-                }
-            }
-            c_zweibrucken = {
-                roman = "Bipontium"
-
-                b_zweibrucken = {
-                    roman = "Bipontium" # Or "Vicus Saravus"
-                }
             }
         }
         d_upper_lorraine = {
@@ -180,6 +160,14 @@ e_hre = {
         d_barleduc = {
             roman = "Verodunum Tertia"
 
+            c_bar
+            {
+                roman = "Taberna"
+
+                b_toul = {
+                    roman = "Tullum"
+                }
+            }
             c_verdun = {
                 roman = "Verodunum"
 
@@ -188,16 +176,11 @@ e_hre = {
                     roman = "Verodunum"
                 }
             }
-            c_bar
-            {
-                roman = "Taberna"
-            }
-            c_pontamousson = {
-                roman = "Tullum"
-                german = "Tull"
+            c_chiny = {
+                roman = "Ivosium"
 
-                b_toul = {
-                    roman = "Tullum"
+                b_chiny = {
+                    roman = "Ivosium"
                 }
             }
         }
@@ -223,24 +206,6 @@ e_hre = {
 
                 b_antwerpen = {
                     roman = "Antverpia"
-                }
-            }
-            c_namur = {
-                roman = "Pago Namurcensis"
-
-                b_namur = {
-                    roman = "Pago Namurcensis"
-                }
-            }
-        }
-        d_liege = {
-            roman = "Leudica"
-
-            c_liege = {
-                roman = "Leudica"
-
-                b_liege = {
-                    roman = "Leudica"
                 }
             }
             c_loon = {
@@ -287,32 +252,27 @@ e_hre = {
                     roman = "Toxandria"
                 }
             }
-            c_vianden = {
-                roman = "Viennensis"
+        }
+        d_bouillon = {
+            #roman = "Leudica" # NEEDS RECHECK
 
-                b_vianden = {
-                    roman = "Viennensis"
+            c_liege = {
+                roman = "Leudica"
+
+                b_liege = {
+                    roman = "Leudica"
+                }
+            }
+            c_namur = {
+                roman = "Pago Namurcensis"
+
+                b_namur = {
+                    roman = "Pago Namurcensis"
                 }
             }
         }
-        d_koln = {
-            roman = "Agrippinensis"
-            romanian = "Colonia"
-
-            c_koln = {
-                roman = "Agrippinensis"
-                romanian = "Colonia"
-
-                b_koln = {
-                    romanian = "Colonia"
-                }
-                b_bonn = {
-                    roman = "Bona" # Or "Bonna"
-                }
-            }
-        }
-        d_berg = {
-            roman = "Ripurja"
+        d_julich = {
+            roman = "Juliacum"
 
             c_julich = {
                 roman = "Juliacum"
@@ -339,6 +299,25 @@ e_hre = {
                 roman = "Aquae Granni"
             }
         }
+        d_koln = {
+            roman = "Agrippinensis"
+            romanian = "Colonia"
+
+            c_koln = {
+                roman = "Agrippinensis"
+                romanian = "Colonia"
+
+                b_koln = {
+                    romanian = "Colonia"
+                }
+                b_bonn = {
+                    roman = "Bona" # Or "Bonna"
+                }
+            }
+        }
+        #d_berg = {
+        #    roman = "Ripurja"
+        #}
     }
     k_saxony = {
         bohemian = "Sasko"
@@ -355,9 +334,7 @@ e_hre = {
         szekely = "Szászország"
         swabian = "Sahsen"
 
-        d_bremen = {
-            romanian = "Brema"
-
+        d_angria = {
             c_bremen = {
                 romanian = "Brema"
 
@@ -372,7 +349,7 @@ e_hre = {
                     romanian = "Dresda"
                 }
             }
-            c_merseburg = {
+            c_landsberg = {
                 b_leipzig = {
                     romanian = "Lipsca"
                 }
@@ -392,39 +369,10 @@ e_hre = {
         d_rheinfranken = {
             roman = "Franconium Occidentalis"
 
-            c_leiningen = {
-                roman = "Lacoritum"
-
-                b_wertheim = {
-                    roman = "Castrum Lacoritum"
+            c_hanau = {
+                b_frankfurt = {
+                    roman = "Nida"
                 }
-                b_burgwertheim = {
-                    roman = "Urbem Lacoritum"
-                }
-            }
-            c_lauffen = {
-                roman = "Rustica"
-
-                b_lauffen = {
-                    roman = "Villa Rustica"
-                }
-            }
-            c_frankfurt = {
-                roman = "Nida"
-            }
-            c_konigssondergau = {
-                roman = "Civitas Mattiacorum"
-
-                b_sonnenberg = {
-                    roman = "Urbem Sonnen"
-                }
-            }
-        }
-        d_hessen = {
-            roman = "Hassia"
-
-            c_hessen = {
-                roman = "Hassia"
             }
             c_nassau = {
                 roman = "Nassova"
@@ -435,6 +383,62 @@ e_hre = {
                 b_falkenstein_nassau = {
                     roman = "Castrum Nassova"
                 }
+            }
+            c_lauffen = {
+                roman = "Rustica"
+
+                b_lauffen = {
+                    roman = "Villa Rustica"
+                }
+            }
+            c_konigssondergau = {
+                roman = "Civitas Mattiacorum"
+
+                b_sonnenberg = {
+                    roman = "Urbem Sonnen"
+                }
+            }
+        }
+        d_pfalz = {
+            roman = "Belgica Prima"
+
+            c_pfalz = {
+                roman = "Vormatia"
+            }
+            c_leiningen = {
+                roman = "Lacoritum"
+
+                b_burgwertheim = {
+                    roman = "Urbem Lacoritum"
+                }
+            }
+            c_sponheim = {
+                roman = "Cruciniacum"
+
+                b_kreuznach = {
+                    roman = "Cruciniacum"
+                }
+            }
+            c_zweibrucken = {
+                roman = "Bipontium"
+
+                b_zweibrucken = {
+                    roman = "Bipontium" # Or "Vicus Saravus"
+                }
+            }
+        }
+        d_ostfranken = {
+            c_wertheim = {
+                b_wertheim = {
+                    roman = "Castrum Lacoritum"
+                }
+            }
+        }
+        d_hessen = {
+            roman = "Hassia"
+
+            c_hessen = {
+                roman = "Hassia"
             }
         }
     }
@@ -517,9 +521,6 @@ e_hre = {
                 b_steyr = {
                     roman = "Veldidena"
                 }
-                b_linz = {
-                    roman = "Aguntum"
-                }
                 b_sanktflorian = {
                     roman = "Sanctus Florian"
                 }
@@ -529,6 +530,11 @@ e_hre = {
 
                 b_kuhenring = {
                     roman = "Municipium Aelium Cetium"
+                }
+            }
+            c_schaunberg = {
+                b_linz = {
+                    roman = "Aguntum"
                 }
             }
             c_pitten = {
