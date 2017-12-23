@@ -16,7 +16,7 @@ BUILDDIR_STEAM="$BUILDDIR/steam"
 function buildDefault {
     echo "Building the default package..."
 
-    [ "$(ls -A $BUILDDIR_DEFAULT)" ] && rm -rf "$BUILDDIR_DEFAULT/*"
+    [ "$(ls -A "$BUILDDIR_DEFAULT")" ] && rm -rf "$BUILDDIR_DEFAULT/*"
 
     cp -R "./$MODNAME" "$BUILDDIR_DEFAULT/"
     cp "./$MODNAME.mod" "$BUILDDIR_DEFAULT/"
@@ -35,7 +35,7 @@ function buildDefault {
 function buildSteam {
     echo "Building the Steam package..."
 
-    [ "$(ls -A $BUILDDIR_STEAM)" ] && rm -rf "$BUILDDIR_STEAM"
+    [ "$(ls -A "$BUILDDIR_STEAM")" ] && rm -rf "$BUILDDIR_STEAM"
 
     cp -R "./$MODNAME/." "$BUILDDIR_STEAM/"
     cp "./$MODNAME.mod" "$BUILDDIR_STEAM/descriptor.mod"
