@@ -1999,18 +1999,18 @@ e_byzantium = {
             c_serdica = {
                 croatian = "Sofia"
                 polish = "Sofia"
-                romanian = "Sredet" # t has ,
+                romanian = "Sredet" # t has , underneath
                 russian = "Sofia"
                 serbian = "Sofia"
 
                 b_vratsa = {
                     polish = "Wraca"
-                    romanian = "Vrata"
+                    romanian = "Vrata" # t has , underneath
                 }
                 b_serdica = {
                     croatian = "Sofia"
                     polish = "Sofia"
-                    romanian = "Sredet" # t has ,
+                    romanian = "Sredet" # t has , underneath
                     russian = "Sofia"
                     serbian = "Sofia"
                 }
@@ -2049,6 +2049,9 @@ e_byzantium = {
                     polish = "Prowadija"
                     romanian = "Provadia"
                 }
+                b_kaliakra = {
+                    italian = "Capo Caliacria"
+                }
                 b_varna = {
                     polish = "Warna"
                     german = "Warna"
@@ -2078,11 +2081,11 @@ e_byzantium = {
                 b_tulcea = {
                     avar = "Tulca"
                     bolghar = "Tulca"
-                    bulgarian = "Tulca"
+                    bulgarian = "Tulcha"
                     croatian = "Tulca"
                     hungarian = "Tulcsa"
                     polish = "Tulcza" # Or "Tulsza"
-                    russian = "Tulca"
+                    russian = "Tulcha"
                     serbian = "Tulca"
                     szekely = "Tulcsa"
                     turkish = "Tulça"
@@ -2116,7 +2119,11 @@ e_byzantium = {
 
             c_adrianopolis = {
                 polish = "Adrianopol"
+                romanian = "Adrianopol"
 
+                b_matochina = {
+                    romanian = "Matocina"
+                }
                 b_adrianopolis = {
                     polish = "Adrianopol"
                     romanian = "Adrianopol"
@@ -2130,13 +2137,22 @@ e_byzantium = {
                 polish = "Plowdiw"
                 romanian = "Pulpudeva"
 
+                b_bachkovo = {
+                    german = "Batschkowo"
+                    polish = "Baczkowie"
+                }
                 b_perushtitsa = {
                     polish = "Perusztica"
                     romanian = "Perushtita" # sh is s with , and last t has ,
                 }
                 b_plovdiv = {
+                    german = "Peruschtiza"
                     polish = "Plowdiw"
                     romanian = "Pulpudeva"
+                }
+                b_asenscastle_petrich = {
+                    german = "Petritsch"
+                    romanian = "Petrici"
                 }
             }
             c_mesembria = {
@@ -2146,6 +2162,8 @@ e_byzantium = {
                 romanian = "Nesebar"
 
                 b_aetos_bulgaria = {
+                    german = "Ajtos"
+                    lithuanian = "Aitosas"
                     polish = "Ajtos"
                     romanian = "Aitos"
                 }
@@ -2168,8 +2186,12 @@ e_byzantium = {
                 polish = "Widyn"
 
                 b_belogradchik = {
+                    german = "Belogradtschik"
                     polish = "Belogradczik"
                     romanian = "Belgradul Mic"
+                }
+                b_archar = {
+                    romanian = "Arcear"
                 }
                 b_vidin = {
                     polish = "Widyn"
@@ -3605,89 +3627,279 @@ e_carpathia = {
         bohemian = "Valašsko"
         bolghar = "Vlashko"
         bulgarian = "Vlaško"
-        frankish = "Valachie"
+        catalan = "Valàquia"
+        croatian = "Vlaška"
+        danish = "Valakiet"
+        dutch = "Walachije"
+        finnish = "Valakia"
+        frankish = "Valaquie"
         german = "Walachei"
         greek = "Blakhía" # Or "Vlachía"
         hungarian = "Havasalföld"
-        polish = "Woloszczyzna"
-        roman = "Valachia" # Or "Scythia Major" 
+        italian = "Valacchia"
+        norwegian = "Valakia"
+        polish = "Woloszczyzna" # l is cut
+        roman = "Valachia"
         romanian = "Teara Rumâneascã" # T is T with , and ã is A-breve
         russian = "Valaxija"
+        serbian = "Vlaška"
+        spanish = "Valaquia"
+        swedish = "Valakiet"
         szekely = "Havasalföld"
         turkish = "Eflak"
         turkmen = "Eflak" # not sure - copied from turkish
 
         d_wallachia = {
+            bohemian = "Velká Valašska"
+            catalan = "Gran Valàquia"
             danish = "Muntenien"
-            frankish = "Munténie"
+            dutch = "Groot-Walachije"
+            finnish = "Iso-Valakia"
+            frankish = "Grande Valaquie"
             german = "Großse Walachei"
             hungarian = "Nagy-Havasalföld"
-            lithuanian = "Muntenija"
-            roman = "Scythia Major"
+            italian = "Grande Valacchia"
+            lithuanian = "Velika Vlaška" # Not sure, base on d_oltenia
+            norwegian = "Stor-Valakia"
+            polish = "Veliki Woloszczyzna" # Not sure, based on d_oltenia. Last l is cut. Or "Multany"
+            portuguese = "Muntênia"
+            roman = "Wallachia Major"
+            swedish = "Stor Valakiet" # Not sure, based on norwegian and d_oltenia
             szekely = "Nagy-Havasalföld"
+            turkish = "Muntenya"
+            turkmen = "Muntenya" # not sure - copied from turkish 
 
             c_tirgoviste = {
+                bohemian = "Trhovište"
+                german = "Tergowiste"
+                hungarian = "Tergovistye"
+                lithuanian = "Tirgovišt?"
+                moravian = "Trhovište"
+                polish = "Targowica"
                 roman = "Berzovia"
 
                 b_targoviste = {
                     roman = "Berzovia"
                 }
+                b_pitesti = {
+                    bohemian = "Pitešt'"
+                    bulgarian = "Pitešt"
+                    croatian = "Pitešti"
+                    german = "Pitesk"
+                    lithuanian = "Piteštis"
+                    moravian = "Pitešt'"
+                    polish = "Piteszt"
+                    serbian = "Pitešti"
+                }
+                b_curteadearges = {
+                    croatian = "Ardeš" # d has a small line on top
+                    frankish = "Curté d'Argis"
+                    german = "Argisch"
+                    hungarian = "Argyasudvarhely"
+                    lithuanian = "Ardžešas"
+                    polish = "Ardzesz" # z has . on top
+                }
+                b_campulung = {
+                    bohemian = "Dl?gopole"
+                    bosnian = "Dl?gopole"
+                    bulgarian = "Dl?gopole"
+                    croatian = "Dl?gopole"
+                    german = "Langenau"
+                    hungarian = "Hosszúmez?"
+                    karantanci = "Dl?gopole"
+                    lithuanian = "Kimpulungas"
+                    moravian = "Dl?gopole"
+                    roman = "Campus Longus"
+                    russian = "Dl?gopole"
+                    serbian = "Dl?gopole"
+                }
             }
             c_turnu = {
+                croatian = "Turn"
+                german = "Bezeichnung" # Or "Turm"?
+                italian = "Tournoul"
                 roman = "Oescus"
+                serbian = "Turn"
 
+                b_bucuresti = {
+                    aragonese = "Bucarest"
+                    arpitan = "Bucarèst"
+                    basque = "Bukarest"
+                    bohemian = "Bukurešt" # t has '
+                    bosnian = "Bukurešt"
+                    breton = "Bukarest"
+                    catalan = "Bucarest"
+                    croatian = "Bukurešt"
+                    danish = "Bukarest"
+                    dutch = "Boekarest"
+                    finnish = "Bukarest"
+                    frankish = "Bucarest"
+                    frisian = "Bûkarest"
+                    galician = "Bucarest"
+                    german = "Bukarest"
+                    greek = "Hilariopolis" # Not historical. Name invented later and never really used
+                    hungarian = "Bukarest"
+                    irish = "Búcairist"
+                    italian = "Bucarest"
+                    karantanci = "Bukarešta"
+                    kurdish = "Bûkarest" # s has , underneath
+                    ligurian = "Bucarest"
+                    lithuanian = "Bukareštas"
+                    lombard = "Bucarest"
+                    neapolitan = "Bucarest"
+                    moravian = "Bukurešt" # t has '
+                    occitan = "Bucarèst"
+                    polish = "Bukareszt"
+                    portuguese = "Bucareste"
+                    roman = "Bucaresta"
+                    sardinian = "Bucarest"
+                    scottish = "Bucharest"
+                    sephardi = "Bukureshti"
+                    serbian = "Bukurešt"
+                    sicilian = "Bucarest"
+                    spanish = "Bucarest"
+                    swabian = "Bukarescht"
+                    swedish = "Bukarest"
+                    venetian = "Bùcarest"
+                    welsh = "Bwcarést"
+                }
+                b_rosiorriidevede = {
+                    lithuanian = "Rušii de Vede" # e has . on top
+                }
                 b_giurgiu = {
+                    bulgarian = "Gíurgyevo"
+                    german = "Zurz"
+                    hungarian = "Gyurgyevó"
+                    italian = "Giurgevo"
+                    ligurian = "San Giorgio"
+                    lithuanian = "Džurdžu"
                     roman = "Oescus"
+                    swedish = "Dschurschewo" # Or "Giurgewo"
+                    turkish = "Yergögü" # g has a cup above
+                    turkmen = "Yergögü" # Not sure - copied from turkish
+                }
+                b_turnu = {
+                    croatian = "Turn"
+                    german = "Bezeichnung"
+                    italian = "Tournoul"
+                    serbian = "Turn"
                 }
             }
             c_ialomita = {
-                roman = "Praetorium"
+                bulgarian = "Jalomica"
+                croatian = "Jalomica"
+                hungarian = "Ilonca"
+                lithuanian = "Jalomica"
+                polish = "Jalomica" # l is cut
+                roman = "Helibacia" # Or "Praetorium"
+                serbian = "Jalomica"
 
                 b_braila = {
                     bulgarian = "Brailov"
-                    german = "Uebereyl"
+                    catalan = "Drinago"
+                    croatian = "Brailov"
+                    german = "Uebereyl" # Maybe "Braylan"?
                     greek = "Proilabum" # Or "Proilava"
+                    lithuanian = "Breila"
+                    polish = "Braila" # l is cut
+                    roman = "Proilabum" # Or "Proilava"
+                    serbian = "Brailov"
+                    spanish = "Drinago"
                     turkish = "Ibrail"
                     turkmen = "Ibrail" # Not sure - copied from turkish
+                }
             }
             c_buzau = {
+                croatian = "Buzaj"
+                german = "Busäu"
                 greek = "Mousaios"
+                hungarian = "Bodzavásár" # Or "Oláhbodza"
+                lithuanian = "Buzeu"
                 roman = "Mousaios"
                 romanian = "Buzãu"
+                serbian = "Buzaj"
 
                 b_buzau = {
+                    croatian = "Buzaj"
+                    german = "Busäu"
                     greek = "Mousaios"
+                    hungarian = "Bodzavásár" # Or "Oláhbodza"
+                    lithuanian = "Buzeu"
                     roman = "Mousaios"
                     romanian = "Buzãu"
+                    serbian = "Buzaj"
+                    turkish = "Boze"
+                    turkmen = "Boze" # Not sure - copied from turkish
                 }
             }
         }
-
         d_oltenia = {
+            bohemian = "Olténie"
+            catalan = "Oltènia"
+            croatian = "Oltenija"
+            dutch = "Klein-Walachije" # Or "Oltenië"
+            finnish = "Vähä-Valakia"
+            frankish = "Petit Valaquie" # Or "Petit Valachie", or "Olténie"
             german = "Kleine Walachei"
-            hungarian = "Kis-Havasalföld" # not sure if historical - just based on hungarian name for d_wallachia
-            roman = "Malvensis"
-            szekely = "Kis-Havasalföld" # not sure if historical - just based on hungarian name for d_wallachia
+            hungarian = "Kis-Havasalföld" # not sure if historical - just based on hungarian name for d_wallachia and "Kis-Oláhország"
+            italian = "Valacchia Minore"
+            karantanci = "Mala Vlaška"
+            norwegian = "Vesle-Valakia"
+            polish = "Mala Woloszczyzna" # both l are cut
+            portuguese = "Oltênia"
+            roman = "Wallachia Minor" # Or "Malvensis"
+            serbian = "Oltenija"
+            swedish = "Lilla Valakiet"
+            szekely = "Kis-Havasalföld" # Not sure - copied from hungarian
 
             c_severin = {
-                roman = "Romula-Malva"
+                lithuanian = "Severinas"
+                roman = "Drobetae" # Or "Romula-Malva"
 
                 b_severin = {
-                    roman = "Sucidava"
+                    lithuanian = "Severinas"
+                    roman = "Drobetae"
                 }
                 b_calafat = {
+                    lithuanian = "Kalafatas"
                     roman = "Turris"
                 }
                 b_craiova = {
-                    roman = "Pelendeva" # Or simply "Craiova"
+                    bohemian = "Krajova"
+                    croatian = "Krajova"
+                    german = "Krajowa"
+                    hungarian = "Királyi"
+                    lithuanian = "Krajova"
+                    moravian = "Krajova"
+                    polish = "Krajowa"
+                    roman = "Pelendeva" # This is dacian. Or simply "Craiova"
+                    serbian = "Krajova"
                 }
             }
             c_targujiu = {
-                roman = "Drobeta"
+                croatian = "Targu Žiju"
+                german = "Tergoschwyl" # Or "Turgukukuli"
+                lithuanian = "Tirgu Žiu"
+                roman = "Forum Rabonum" # forum=târg and Rabon is Jiu
                 romanian = "Târgu Jiu"
+                serbian = "Targu Žiju"
                 
+                b_baiadaarama = {
+                    hungarian = "Arámabánya"
+                }
+                b_ramnicu_valcea = {
+                    croatian = "Ramniku Val?a"
+                    german = "Königsberg" # Or "Rümnick"
+                    lithuanian = "Rimniku Vil?a"
+                    romanian = "Râmnic" # Or "Râmnicu Vâlcea"
+                    serbian = "Ramniku Val?a"
+                }
                 b_targujiu = {
+                    croatian = "Targu Žiju"
+                    lithuanian = "Tirgu Žiu"
+                    roman = "Forum Rabonum" # forum=târg and Rabon is Jiu
                     romanian = "Târgu Jiu"
+                    serbian = "Targu Žiju"
                 }
             }
         }
