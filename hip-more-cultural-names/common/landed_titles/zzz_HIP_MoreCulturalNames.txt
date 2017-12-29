@@ -17,7 +17,7 @@
 ####################
 # Notes:
 # - For all romanian names:
-#   - Every single "sh" is actually a s with , under it.
+#   - Every single "sh" is actually a s with , under it (s-comma).
 #   - Every single ã is actually A-breve
 # - Nahua (aztec) names are not historical (obviously) but encouraged.
 ####################
@@ -1046,8 +1046,8 @@ e_hre = {
         norse = "Saxland"
         polish = "Saksonia"
         portuguese = "Saxónia" # Or "Saxe"
-        roman = "Saxonia"
-        romanian = "Saxonia"
+        roman = "Saxones Magna" # Or "Saxonia"
+        romanian = "Saxonia" # Or "Sasonia"?
         serbian = "Saksonija"
         spanish = "Sajonia"
         swabian = "Sahsen"
@@ -1055,31 +1055,624 @@ e_hre = {
         turkish = "Saksonya"
         turkmen = "Saksonya" # Not sure - copied from turkish
 
+        d_brunswick = {
+            roman = "Brunonis Vicus"
+
+            c_luneburg = {
+                roman = "Leuphana"
+
+                b_luneburg = {
+                    roman = "Leuphana"
+                }
+                b_st_michael_lunbeburg = {
+                    roman = "Sanctus Michael"
+                }
+                b_bardowick = {
+                    roman = "Bardorum Vicus"
+                }
+                b_celle = {
+                    roman = "Cellensis"
+                }
+                b_hannover = {
+                    roman = "Hanovra"
+                }
+                b_ahlden = {
+                    roman = "Ascalingium"
+                }
+            }
+            c_braunschweig = {
+                roman = "Brunonis Vicus"
+
+                b_wolfenbuttel = {
+                    roman = "Vadum Lupi"
+                }
+                b_braunschweig = {
+                    roman = "Brunonis Vicus"
+                }
+                b_suepplingenburg = {
+                    roman = "Suepplingaburgum"
+                }
+                b_helmstedt = {
+                    roman = "Helmonstadensis"
+                }
+                b_st_ludgeri = {
+                    roman = "Sanctus Ludgerus"
+                }
+                b_asseburg = {
+                    roman = "Assaburgum"
+                }
+            }
+            c_gottingen = {
+                roman = "Gottinga"
+                
+                b_pfalzgrona = {
+                    roman = "Palatiolum Grona"
+                }
+                b_gandersheim = {
+                    roman = "Gandesium"
+                }
+                b_gottingen = {
+                    roman = "Gottinga"
+                }
+                b_northeim = {
+                    roman = "Northeimonis"
+                }
+                b_plesse = {
+                    roman = "Plesseium"
+                }
+            }
+            c_blankenburg = {
+                roman = "Blancoberga"
+
+                b_regenstein = {
+                    roman = "Regisburgium"
+                }
+                b_quedlinburg = {
+                    roman = "Cotelini Aura"
+                }
+                b_blankenburg = {
+                    roman = "Blancoberga"
+                }
+                b_wernigerode = {
+                    roman = "Werningroda"
+                }
+                b_halberstadt = {
+                    roman = "Halapia"
+                }
+                b_groningen_blankenburg = {
+                    roman = "Groninga"
+                }
+            }
+            c_everstein = {
+                roman = "Eberstenium"
+
+                b_everstein = {
+                    roman = "Eberstenium" # Or "Castrum Eberstenium"
+                    }
+                b_hildesheim = {
+                    roman = "Hildinensis"
+                }
+                b_alfeld = {
+                    roman = "Alfelda"
+                }
+                b_homburg = {
+                    roman = "Homburgum"
+                }
+            }
+        }
         d_angria = {
+            roman = "Engaria"
+
             c_bremen = {
+                roman = "Bremensis"
                 romanian = "Brema"
 
                 b_bremen = {
+                    roman = "Bremensis"
                     romanian = "Brema"
+                }
+                b_verden = {
+                    roman = "Verdensis"
+                }
+                b_rotenburg = {
+                    roman = "Rotenburgum"
+                }
+                b_luneberg = {
+                    roman = "Leuphana"
+                }
+            }
+            c_stade = {
+                roman = "Statium"
+
+                b_stade = {
+                    roman = "Statium"
+                }
+                b_stotel = {
+                    roman = "Stotlo"
+                }
+                b_bederkesa = {
+                    roman = "Bederekesa Castrum"
+                }
+                b_harsefeld = {
+                    roman = "Harzefeldensis" # Or "Harzefeldensis Vicus"
+                }
+                b_hadeln = {
+                    roman = "Hadelensis"
+                }
+            }
+            c_hoya = {
+                b_hoya = {
+                    roman = "Hogia"
+                }
+                b_bucken = {
+                    roman = "Buccensis"
+                }
+                b_nienburg = {
+                    roman = "Nienburgensis"
+                }
+                b_bruchhausen = {
+                    roman = "Bruchalium"
+                }
+                b_hodenberg = {
+                    roman = "Hodenbergum"
+                }
+            }
+            c_lippe = {
+                roman = "Lippia"
+
+                b_lippe = {
+                    roman = "Lippia"
+                }
+                b_detmold = {
+                    roman = "Detmoldia"
+                }
+                b_paderborn = {
+                    roman = "Padelbronnensis"
+                }
+                b_corvey = {
+                    roman = "Nova Corbeia"
+                }
+                b_schwalenberg = {
+                    roman = "Sualabergum"
+                }
+                b_rietberg = {
+                    roman = "Rietbergum"
+                }
+            }
+            c_schaumburg = {
+                roman = "Specula Halcyonia"
+
+                b_schauenburg = {
+                    roman = "Schauenburgum"
+                }
+                b_minden = {
+                    roman = "Mindonensis"
+                }
+                b_roden = {
+                    roman = "Ruber Vallis"
+                }
+                b_rinteln = {
+                    roman = "Iulenburgum"
+                }
+                b_berge = {
+                    roman = "Berga"
+                }
+                b_ricklingen = {
+                    roman = "Ricklinga"
+                }
+            }
+            c_oldenburg = {
+                roman = "Branesia"
+
+                b_oldenburg = {
+                    roman = "Branesia"
+                }
+                b_wildeshausen = {
+                    roman = "Wolada Civitas"
+                }
+                b_rastede = {
+                    roman = "Rastedensis Vicus"
+                }
+                b_delmenhorst = {
+                    roman = "Delmenhorstium"
+                }
+                b_varel = {
+                    roman = "Varelensis"
+                }
+                b_wardenburg = {
+                    roman = "Wardenburgum"
+                }
+            }
+        }
+        d_westfalen = {
+            roman = "Saxones Occidens"
+
+            c_arnsberg = {
+                roman = "Arnsburgum"
+
+                b_arnsberg = {
+                    roman = "Arnsburgum"
+                }
+                b_soest = {
+                    roman = "Sosatium"
+                }
+                b_bueren = {
+                    roman = "Bura"
+                }
+                b_ruthen = {
+                    roman "Rutenicus"
+                }
+                b_padberg = {
+                    roman = "Padbergum"
+                }
+                b_werl = {
+                    roman = "Werla"
+                }
+            }
+            c_mark = {
+                roman = "Marchia"
+
+                b_altena = {
+                    roman = "Altenachium"
+                }
+                b_dortmund = {
+                    roman = "Tremonia"
+                }
+                b_essen = {
+                    roman = "Essenia"
+                }
+                b_recklinghausen = {
+                    roman = "Recklinga Villa"
+                }
+            }
+            c_munster = {
+                roman = "Monasterium"
+
+                b_munster = {
+                    roman = "Monasterium"
+                }
+                b_gronau = {
+                    roman = "Grona"
+                }
+                b_werden = {
+                    roman = "Werdinensis"
+                }
+                b_ahaus = {
+                    roman = "Aarhusum"
+                }
+                b_ahlen = {
+                    roman = "Ahlensis"
+                }
+                b_cappenberg = {
+                    roman = "Cappenbergensis"
+                }
+            }
+            c_tecklenburg = {
+                roman = "Tecklenburgum"
+
+                b_tecklenburg = {
+                    roman = "Tecklenburgum"
+                }
+                b_meppen = {
+                    roman = "Meppia"
+                }
+                b_iburg = {
+                    roman = "Juburgo"
+                }
+                b_cloppenburg = {
+                    roman = "Cloppenburgum"
+                }
+                b_quakenbruck = {
+                    roman = "Quaccenbrugga"
+                }
+            }
+            c_bentheim = {
+                roman = "Benthemium"
+
+                b_bentheim = {
+                    roman = "Benthemium"
+                }
+                b_lingen = {
+                    roman = "Linga"
+                }
+                b_steinfurt = {
+                    roman = "Steinvortova"
+                }
+                b_horstmar = {
+                    roman = "Horstmaria"
+                }
+            }
+            c_osnabruck = {
+                roman = "Asenbruggensis"
+
+                b_ravensberg = {
+                    roman = "Ravensburgum"
+                }
+                b_osnabruck = {
+                    roman = "Asenbruggensis"
+                }
+                b_wiedenbruck = {
+                    roman = "Wydenbrucca"
+                }
+                b_vechta = {
+                    roman = "Vaconna"
+                }
+                b_rheda = {
+                    roman = "Rehei"
+                }
+                b_herford_westfalen = {
+                    roman = "Herevordia"
+                }
+            }
+        }
+        d_holstein = {
+            roman = "Holsatia"
+
+            c_holstein = {
+                roman = "Holsatia"
+
+                b_rendsburg = {
+                    roman = "Rendsburgum"
+                }
+                b_krummediek = {
+                    roman = "Nova Monasterium"
+                }
+            }
+            c_hamburg = {
+                roman = "Hamaburgensis"
+
+                b_pinneberg = {
+                    roman = "Pinneburgum"
+                }
+                b_hamburg = {
+                    roman = "Hamaburgensis"
+                }
+                b_reinfeld = {
+                    roman = "Runa Agri"
+                }
+            }
+            c_dithmarschen = {
+                roman = "Ditmarcia"
+
+                b_meldorf = { 
+                    roman = "Meldorpium"
                 }
             }
         }
         d_saxewittenberg = {
+            roman = "Saxones Wittenburgum"
+            
+            c_wittenberg = {
+                roman = "Wittenburgum"
+
+                b_kemberg = {
+                    roman = "Kemburgum"
+                }
+                b_wittenberg = {
+                    roman = "Wittenburgum"
+                }
+                b_zinna = {
+                    roman = "Zinnensis"
+                }
+                b_juterbog = {
+                    roman = "Jutrebocum"
+                }
+                b_lichtenburg = {
+                    roman = "Lichtenburgum"
+                }
+            }
             c_anhalt = {
                 bohemian = "Anhaltsko"
+                roman = "Anhaltinum"
+
+                b_bernburg = {
+                    roman = "Bernburgum"
+                }
+                b_zerbst = {
+                    roman = "Servesta"
+                }
+                b_gernrode = {
+                    roman = "Geronis Saltus"
+                }
+                b_aschersleben = {
+                    roman = "Ascania"
+                }
+                b_anhalt = {
+                    roman = "Anhaltinum"
+                }
+                b_lindau_sachsen = {
+                    roman = "Daugensis"
+                }
+                b_barby = {
+                    roman = "Barbium"
+                }
+            }
+            c_brehna = {
+                b_halle = {
+                    roman = "Hallensis"
+                }
+                b_lauterberg = {
+                    roman = "Lauterbergense"
+                }
+                b_herzberg = {
+                    roman = "Hertzberga"
+                }
+            }
+            c_mansfeld = {
+                roman = "Mansfelda"
+
+                b_mansfeld = {
+                    roman = "Mansfelda"
+                }
+                b_nordhausen = {
+                    roman = "Northusensis"
+                }
+                b_walkenried = {
+                    roman = "Walkenreidensis"
+                }
+                b_hohnstein = {
+                    roman = "Hoensteinium"
+                }
+                b_sangerhausen = {
+                    roman = "Sangerhusa"
+                }
+                b_querfurt = {
+                    roman = "Quernofurtum"
+                }
+                b_arnstein = {
+                    roman "Arnstanacum"
+                }
+            }
+        }
+        d_lauenburg = {
+            roman = "Leoburgum"
+
+            c_ratzeburg = {
+                roman = "Raceburgensis"
+
+                b_ratzeburg = {
+                    roman = "Raceburgensis"
+                }
+                b_lauenburg = {
+                    roman = "Leoburgum"
+                }
+            }
+            c_dannenberg = {
+                roman = "Dannenbergense"
+
+                b_dannenberg = {
+                    roman = "Dannenbergense"
+                }
+                b_hitzacker = {
+                    roman = "Hitgera"
+                }
+                b_schnackenburg = {
+                    roman = "Schnackenburgum"
+                }
+            }
+            c_schwerin = {
+                roman = "Zuarinensis"
+
+                b_schwerin = {
+                    roman = "Zuarinensis"
+                }
+                b_wittenburg = {
+                    roman = "Wittenburgum"
+                }
+                b_neustadt_glewe = {
+                    roman = "Neostadium"
+                }
             }
         }
         d_meissen = {
+            roman = "Misenae"
+
             c_meissen = {
+                roman = "Misenae"
+
+                b_misni = {
+                    roman = "Misninensis"
+                }
+                b_freiberg = {
+                    roman = "Freibergum"
+                }
+                b_meissen = {
+                    roman = "Misenae"
+                }
+                b_chemnitz = {
+                    roman = "Caminizi Rivus"
+                }
+                b_hartenstein = {
+                    roman = "Hartensteinium"
+                }
                 b_dresden = {
+                    roman = "Dresda"
                     romanian = "Dresda"
                 }
             }
-            c_landsberg = {
-                b_leipzig = {
-                    romanian = "Lipsca"
+            c_plauen = {
+                roman = "Plavia"
+
+                b_weida = {
+                    roman = "Weyda"
+                }
+                b_plauen = {
+                    roman = "Plavia"
+                }
+                b_zwickau = {
+                    roman = "Cygneum"
+                }
+                b_schoenburg = {
+                    roman = "Schoenburgum"
+                }
+                b_gera = {
+                    roman = "Gerapolis"
+                }
+                b_lobenstein = {
+                    roman = "Lobensteinium"
                 }
             }
+            c_landsberg = {
+                b_duben = {
+                    roman = "Thebae Saxonicae"
+                }
+                b_merseburg = {
+                    roman = "Marsinopolis"
+                }
+                b_leipzig = {
+                    roman = "Leisnicium"
+                    romanian = "Lipsca" # s has ,
+                }
+                b_landsberg = {
+                    roman = "Lantsberga"
+                }
+                b_torgau = {
+                    roman = "Ocellus Civitas"
+                }
+                b_eilenburg = {
+                    roman = "Ilenburgum"
+                }
+                b_muhlberg = {
+                    roman = "Muhlbergum"
+                }
+            }
+            c_groitzsch = {
+                roman = "Groisca"
+
+                b_groitzsch = {
+                    roman = "Groisca"
+                }
+                b_leisnig = {
+                    roman = "Leisnicium"
+                }
+                b_zeitz = {
+                    roman = "Cicia"
+                }
+                b_naumburg = {
+                    roman = "Naumburgum"
+                }
+                b_altenburg = {
+                    roman = "Palaeopyrgum"
+                }
+                b_waldenburg = {
+                    roman = "Waldenburgum"
+                }
+                b_starkenberg = {
+                    roman = "Selingostadium"
+                }
+            }
+        }
+        d_osnabruck = {
+            roman = "Asenbruggensis"
+        }
+        d_bishopmunster = {
+            roman = "Monasterium"
+        }
+        d_bremen = {
+            roman = "Bremensis"
+        }
+        d_magdeburg = {
+            roman = "Parthenopolis"
         }
     }
     k_franconia = {
