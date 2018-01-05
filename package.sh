@@ -13,6 +13,8 @@ BUILDDIR_STEAM="$BUILDDIR/steam"
 [ ! -d "$BUILDDIR_DEFAULT" ] && mkdir "$BUILDDIR_DEFAULT"
 [ ! -d "$BUILDDIR_STEAM" ] && mkdir "$BUILDDIR_STEAM"
 
+NAMES_COUNT=$(cat hip-more-cultural-names/common/landed_titles/zzz_HIP_MoreCulturalNames.txt | grep " * = *\".*\"" | sed 's/\(\ \|\t\)//g' | grep -Ev "{|}|^#|^$" | wc -l)
+
 function buildDefault {
     echo "Building the default package..."
 
@@ -53,3 +55,6 @@ function buildSteam {
 
 buildDefault
 buildSteam
+
+echo "Current number of dynamic names: $NAMES_COUNT"
+
