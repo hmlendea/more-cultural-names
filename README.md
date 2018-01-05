@@ -7,7 +7,7 @@ It currently brings **7,808** new cultural landed title names!
 
 # Useful links
 
-- [GitHub page](https://github.com/HoratiuMl/CK2-HIP-MoreCulturalNames)
+- [GitHub page](https://github.com/hmlendea/CK2-HIP-MoreCulturalNames)
 - [Steam Workshop page](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
 
 # Installation
@@ -36,7 +36,7 @@ You are welcome to bring any suggestion, feedback or modification to this projec
 There are a few ways you can do so:
 
 1. You can create git pull requests for this repository (This requires git knowledge)
-2. You can raise a new "[issue](https://github.com/HoratiuMl/CK2-HIP-MoreCulturalNames/issues)" for this project
+2. You can raise a new "[issue](https://github.com/hmlendea/ck2-hip-more-cultural-names/issues)" for this project
 4. You can reply on the [Steam discussion thread](http://steamcommunity.com/workshop/filedetails/discussion/1175098675/1479856439031332646/)
 
 It would also be very helpful if you could provide a link to a source that can atest the authenticity of the names you submitted, when possible.
