@@ -229,11 +229,17 @@ e_hre = {
             }
         }
         d_frisia = {
+            bavarian = "Friesland" # Historical? Copied from German
+            franconian = "Friesland" # Historical? Copied from German
             gothic = "Frisia"
             lombard = "Frieslant"
+            low_frankish = "Friesland" # Historical? Copied from German
+            low_saxon = "Friesland" # Historical? Copied from German
             polish = "Fryzja"
             roman = "Frisiorum" # Or "Frisia"
             saxon = "Fresland"
+            swabian = "Friesland" # Historical? Copied from German
+            thuringian = "Friesland" # Historical? Copied from German
             
             c_ostfriesland = {
                 bavarian = "Ostfriesland" # Historical? Copied from German
@@ -5360,7 +5366,7 @@ e_poland = {
         franconian = "Halytsch-Wolin" # Historical? Copied from German
         german = "Halytsch-Wolin" # Historical? Translated. Or "Galicien"
         lithuanian = "Halicas-Voluine" # Historical? Translated
-        #lombard = Gallaecia"
+        #lombard = "Gallaecia"
         #portuguese = "Galiza"
         low_frankish = "Halytsch-Wolin" # Historical? Copied from German
         low_german = "Halytsch-Wolin" # Historical? Copied from German
@@ -6873,7 +6879,13 @@ e_carpathia = {
             roman = "Dolor Secunda"
             
             c_bacau = {
+				low_frankish = "Barchau" # Historical? Copied from German
                 romanian = "Bacãu"
+
+                b_bacau = {
+				    low_frankish = "Barchau" # Historical? Copied from German
+                    romanian = "Bacãu"
+                }
             }
             c_iasi = {
                 greek = "Iásio"
@@ -8200,15 +8212,12 @@ e_carpathia = {
             laziale = "Sirmia" # Historical? Copied from Italian
             ligurian = "Sirmia" # Historical? Copied from Italian
             neapolitan = "Sirmia" # Historical? Copied from Italian
-            oghuz = "Sirem" # Historical? Copied from Turkish
-            pecheneg = "Sirem" # Historical? Copied from Turkish
             portuguese = "Sírmia"
             russian = "Srim"
             sardinian = "Sirmia" # Historical? Copied from Italian
             serbian = "Srijem" # Historical? Copied from Croatian
             sicilian = "Sirmia" # Historical? Copied from Italian
             spanish = "Sirmia"
-            turkmen = "Sirem" # Historical? Copied from Turkish
             tuscan = "Sirmia" # Historical? Copied from Italian
             umbrian = "Sirmia" # Historical? Copied from Italian
             venetian = "Sirmia" # Historical? Copied from Italian
@@ -9135,12 +9144,14 @@ e_france = {
                 }
             }
             c_saintpol = {
+                italian = "San Paolo" # Historical? Translated
                 roman = "Sanctus Paulus"
-                romanian = Sfântul Paul" # Historical? Translated
+                romanian = "Sfântul Paul" # Historical? Translated
 
                 b_saintpol = {
+                    italian = "San Paolo" # Historical? Translated
                     roman = "Sanctus Paulus"
-                    romanian = Sfântul Paul" # Historical? Translated
+                    romanian = "Sfântul Paul" # Historical? Translated
                 }
             }
             c_ponthieu = {
@@ -12544,6 +12555,11 @@ e_italy = {
             c_malta = {
                 roman = "Melita"
                 greek = "Melitta"
+
+                b_sanpawl = {
+                    dutch = "Sint Pols" # Historical? Translated
+                    romanian = "Sfântul Paul" # Historical? Translated
+                }
             }
         }
     }
