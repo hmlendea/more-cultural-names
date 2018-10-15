@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -17,6 +19,12 @@ namespace McnTests.Tests
         const string dynastyFileNamePattern = @"99_.*_dynasties\.txt";
         const string landedTitlesFileNamePattern = @"zzz_.*\.txt";
         const string localisationFileNamePattern = @"0_.*\.csv";
+
+        [TestInitialize]
+        public void SetUp()
+        {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+        }
 
         [TestMethod]
         public void TestModDirectories()
@@ -49,10 +57,18 @@ namespace McnTests.Tests
             List<string> landedTitlesFiles = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
             List<string> localisationFiles = Directory.GetFiles(ApplicationPaths.LocalisationDirectory).ToList();
 
-            culturesFiles.ForEach(x => Assert.IsTrue(Regex.IsMatch(x, cultureFileNamePattern)));
-            dynastiesFiles.ForEach(x => Assert.IsTrue(Regex.IsMatch(x, dynastyFileNamePattern)));
-            landedTitlesFiles.ForEach(x => Assert.IsTrue(Regex.IsMatch(x, landedTitlesFileNamePattern)));
-            localisationFiles.ForEach(x => Assert.IsTrue(Regex.IsMatch(x, localisationFileNamePattern)));
+            culturesFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, cultureFileNamePattern)));
+            dynastiesFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, dynastyFileNamePattern)));
+            landedTitlesFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, landedTitlesFileNamePattern)));
+            localisationFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, localisationFileNamePattern)));
+        }
+
+        [TestMethod]
+        public void TestFileEncodings()
+        {
+            List<string> landedTitlesFiles = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
+
+            landedTitlesFiles.ForEach(file => Assert.IsTrue(EncodingChecker.IsWindows1252(file)));
         }
     }
 }
