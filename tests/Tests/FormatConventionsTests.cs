@@ -52,12 +52,7 @@ namespace McnTests.Tests
 
             foreach (string file in allFiles)
             {
-                string content = null;
-
-                using (StreamReader reader = new StreamReader(file, Encoding.GetEncoding(1252), true))
-                {
-                    content = reader.ReadToEnd();
-                }
+                string content = FileLoader.ReadAllText(FileEncoding.Windows1252, file);
 
                 Assert.IsFalse(content.Contains("\t"));
             }
