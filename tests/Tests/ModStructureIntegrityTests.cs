@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -15,11 +14,6 @@ namespace McnTests.Tests
     [TestClass]
     public class ModStructureIntegrityTests
     {
-        const string cultureFileNamePattern = @"zzz_.*\.txt";
-        const string dynastyFileNamePattern = @"99_.*_dynasties\.txt";
-        const string landedTitlesFileNamePattern = @"zzz_.*\.txt";
-        const string localisationFileNamePattern = @"0_.*\.csv";
-
         [TestInitialize]
         public void SetUp()
         {
@@ -47,20 +41,6 @@ namespace McnTests.Tests
 
             Assert.IsTrue(File.Exists(picturePath));
             Assert.AreEqual($"mod/{Path.GetFileName(ApplicationPaths.ModDirectory)}", descriptor.Path);
-        }
-
-        [TestMethod]
-        public void TestFileNamesAndExtensions()
-        {
-            List<string> culturesFiles = Directory.GetFiles(ApplicationPaths.CulturesDirectory).ToList();
-            List<string> dynastiesFiles = Directory.GetFiles(ApplicationPaths.DynastiesDirectory).ToList();
-            List<string> landedTitlesFiles = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
-            List<string> localisationFiles = Directory.GetFiles(ApplicationPaths.LocalisationDirectory).ToList();
-
-            culturesFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, cultureFileNamePattern)));
-            dynastiesFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, dynastyFileNamePattern)));
-            landedTitlesFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, landedTitlesFileNamePattern)));
-            localisationFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, localisationFileNamePattern)));
         }
 
         [TestMethod]
