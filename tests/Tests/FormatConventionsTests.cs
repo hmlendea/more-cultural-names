@@ -20,6 +20,9 @@ namespace McnTests.Tests
         const string landedTitlesFileNamePattern = @"zzz_.*\.txt";
         const string localisationFileNamePattern = @"0_.*\.csv";
 
+        const string invalidEqualsSpacingPattern = @"([^\ ]=|=[^\ ]|\ \ =|=\ \ )";
+        const string invalidIndentationPattern = @"^\ [^\ ]|^\ \ [^\ ]|^\ \ \ [^\ ]|^(\ \ \ \ )*\ [^\ ]|^(\ \ \ \ )*\ \ [^\ ]|^(\ \ \ \ )*\ \ \ [^\ ]";
+
         [TestInitialize]
         public void SetUp()
         {
@@ -27,34 +30,151 @@ namespace McnTests.Tests
         }
 
         [TestMethod]
-        public void TestFileNamesAndExtensions()
+        public void TestCultureFileNamingConventions()
         {
-            List<string> culturesFiles = Directory.GetFiles(ApplicationPaths.CulturesDirectory).ToList();
-            List<string> dynastiesFiles = Directory.GetFiles(ApplicationPaths.DynastiesDirectory).ToList();
-            List<string> landedTitlesFiles = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
-            List<string> localisationFiles = Directory.GetFiles(ApplicationPaths.LocalisationDirectory).ToList();
+            List<string> files = Directory.GetFiles(ApplicationPaths.CulturesDirectory).ToList();
 
-            culturesFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, cultureFileNamePattern)));
-            dynastiesFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, dynastyFileNamePattern)));
-            landedTitlesFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, landedTitlesFileNamePattern)));
-            localisationFiles.ForEach(file => Assert.IsTrue(Regex.IsMatch(file, localisationFileNamePattern)));
+            foreach (string file in files)
+            {
+                string fileName = Path.GetFileName(file);
+
+                Assert.IsTrue(Regex.IsMatch(file, cultureFileNamePattern), $"The '{fileName}' file's name does not respect the conventions");
+            }
         }
 
         [TestMethod]
-        public void TestTabs()
+        public void TestDynastyFileNamingConventions()
+        {
+            List<string> files = Directory.GetFiles(ApplicationPaths.DynastiesDirectory).ToList();
+
+            foreach (string file in files)
+            {
+                string fileName = Path.GetFileName(file);
+                
+                Assert.IsTrue(Regex.IsMatch(file, dynastyFileNamePattern), $"The '{fileName}' file's name does not respect the conventions");
+            }
+        }
+
+        [TestMethod]
+        public void TestLandedTitlesFileNamingConventions()
+        {
+            List<string> files = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
+
+            foreach (string file in files)
+            {
+                string fileName = Path.GetFileName(file);
+                
+                Assert.IsTrue(Regex.IsMatch(file, landedTitlesFileNamePattern), $"The '{fileName}' file's name does not respect the conventions");
+            }
+        }
+
+        [TestMethod]
+        public void TestLocalisationFileNamingConventions()
+        {
+            List<string> files = Directory.GetFiles(ApplicationPaths.LocalisationDirectory).ToList();
+
+            foreach (string file in files)
+            {
+                string fileName = Path.GetFileName(file);
+                
+                Assert.IsTrue(Regex.IsMatch(file, localisationFileNamePattern), $"The '{fileName}' file's name does not respect the conventions");
+            }
+        }
+
+        [TestMethod]
+        public void TestCultureFilesFormatConventions()
         {
             List<string> cultureFiles = Directory.GetFiles(ApplicationPaths.CulturesDirectory).ToList();
-            List<string> dynastyFiles = Directory.GetFiles(ApplicationPaths.DynastiesDirectory).ToList();
-            List<string> landedTitleFiles = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
-            List<string> localisationFiles = Directory.GetFiles(ApplicationPaths.LocalisationDirectory).ToList();
-
-            List<string> allFiles = cultureFiles.Concat(dynastyFiles).Concat(landedTitleFiles).Concat(localisationFiles).ToList();
-
-            foreach (string file in allFiles)
+            
+            foreach (string file in cultureFiles)
             {
-                string content = FileLoader.ReadAllText(FileEncoding.Windows1252, file);
+                List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                
+                TestTabs(lines, file);
+                TestIndentation(lines, file);
+                TestEqualsSpacings(lines, file);
+            }
+        }
 
-                Assert.IsFalse(content.Contains("\t"));
+        [TestMethod]
+        public void TestDynastyFilesFormatConventions()
+        {
+            List<string> dynastyFiles = Directory.GetFiles(ApplicationPaths.DynastiesDirectory).ToList();
+            
+            foreach (string file in dynastyFiles)
+            {
+                List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                
+                TestTabs(lines, file);
+                TestIndentation(lines, file);
+                TestEqualsSpacings(lines, file);
+            }
+        }
+
+        [TestMethod]
+        public void TestLandedTitlesFilesFormatConventions()
+        {
+            List<string> landedTitlesFiles = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
+            
+            foreach (string file in landedTitlesFiles)
+            {
+                List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                
+                TestTabs(lines, file);
+                TestIndentation(lines, file);
+                TestEqualsSpacings(lines, file);
+            }
+        }
+
+        [TestMethod]
+        public void TestLocalisationFilesFormatConventions()
+        {
+            List<string> localisationFiles = Directory.GetFiles(ApplicationPaths.LocalisationDirectory).ToList();
+            
+            foreach (string file in localisationFiles)
+            {
+                List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                
+                TestTabs(lines, file);
+            }
+        }
+
+        void TestTabs(IEnumerable<string> lines, string file)
+        {
+            string fileName = Path.GetFileName(file);
+
+            int lineNumber = 0;
+            foreach (string line in lines)
+            {
+                lineNumber += 1;
+
+                Assert.IsFalse(line.Contains("\t"), $"The '{fileName}' contains tabs, at line {lineNumber}");
+            }
+        }
+
+        void TestIndentation(IEnumerable<string> lines, string file)
+        {
+            string fileName = Path.GetFileName(file);
+
+            int lineNumber = 0;
+            foreach (string line in lines)
+            {
+                lineNumber += 1;
+
+                Assert.IsFalse(Regex.IsMatch(line, invalidIndentationPattern), $"Invalid indentation in the '{fileName}' file, at line {lineNumber}");
+            }
+        }
+
+        void TestEqualsSpacings(IEnumerable<string> lines, string file)
+        {
+            string fileName = Path.GetFileName(file);
+
+            int lineNumber = 0;
+            foreach (string line in lines)
+            {
+                lineNumber += 1;
+
+                Assert.IsFalse(Regex.IsMatch(line, invalidEqualsSpacingPattern), $"Invalid spacing around '=' in the '{fileName}' file, at line {lineNumber}");
             }
         }
     }

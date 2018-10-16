@@ -1,22 +1,32 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace McnTests.Helpers
 {
     public static class FileLoader
     {
-        public static string ReadAllText(FileEncoding encoding, string path)
+        public static string ReadAllText(FileEncoding encoding, string path, bool loadComments = false)
         {
+            string content = null;
+
             using (StreamReader reader = new StreamReader(path, GetEncoding(encoding), true))
             {
-                return reader.ReadToEnd();
+                content = reader.ReadToEnd();
             }
+
+            if (!loadComments)
+            {
+                // TODO: Implement this
+            }
+
+            return content;
         }
 
-        public static IEnumerable<string> ReadAllLines(FileEncoding encoding, string path)
+        public static IEnumerable<string> ReadAllLines(FileEncoding encoding, string path, bool loadComments = false)
         {
-            IList<string> lines = new List<string>();
+            IList<string> completeLines = new List<string>();
 
             using (StreamReader reader = new StreamReader(path, GetEncoding(encoding), true))
             {
@@ -24,8 +34,27 @@ namespace McnTests.Helpers
 
                 while ((line = reader.ReadLine()) != null)
                 {
-                    lines.Add(line);
+                    completeLines.Add(line);
                 }
+            }
+
+            if (loadComments)
+            {
+                return completeLines;
+            }
+            
+            IList<string> lines = new List<string>();
+
+            foreach (string completeLine in completeLines)
+            {
+                string line = completeLine;
+
+                if (line.Contains('#'))
+                {
+                    line = line.Substring(0, line.IndexOf('#'));
+                }
+
+                lines.Add(line);
             }
 
             return lines;
