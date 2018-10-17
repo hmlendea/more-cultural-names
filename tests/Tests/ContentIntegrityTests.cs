@@ -69,15 +69,11 @@ namespace McnTests.Tests
                     
                     string[] fields = line.Split(';');
                     
-                    Assert.IsFalse(string.IsNullOrWhiteSpace(fields[0]), $"Code is undefined in {fileName} at line {lineNumber}");
-                    Assert.IsFalse(string.IsNullOrWhiteSpace(fields[1]), $"English is undefined in {fileName} at line {lineNumber}");
-                    Assert.IsFalse(string.IsNullOrWhiteSpace(fields[2]), $"French is undefined in {fileName} at line {lineNumber}");
-                    Assert.IsFalse(string.IsNullOrWhiteSpace(fields[3]), $"German is undefined in {fileName} at line {lineNumber}");
-                    Assert.IsFalse(string.IsNullOrWhiteSpace(fields[5]), $"Spanish is undefined in {fileName} at line {lineNumber}");
-
-                    //Assert.AreEqual(fields[1], fields[2], "French localisation is different from english in {fileName} at line {lineNumber}");
-                    //Assert.AreEqual(fields[1], fields[3], "German localisation is different from english in {fileName} at line {lineNumber}");
-                    //Assert.AreEqual(fields[1], fields[5], "Spanish localisation is different from english in {fileName} at line {lineNumber}");
+                    Assert.IsFalse(string.IsNullOrWhiteSpace(fields[0]), $"Localisation code is undefined in {fileName} at line {lineNumber}");
+                    Assert.IsFalse(string.IsNullOrWhiteSpace(fields[1]), $"English localisation is undefined in {fileName} at line {lineNumber}");
+                    Assert.IsFalse(string.IsNullOrWhiteSpace(fields[2]), $"French localisation is undefined in {fileName} at line {lineNumber}");
+                    Assert.IsFalse(string.IsNullOrWhiteSpace(fields[3]), $"German localisation is undefined in {fileName} at line {lineNumber}");
+                    Assert.IsFalse(string.IsNullOrWhiteSpace(fields[5]), $"Spanish localisation is undefined in {fileName} at line {lineNumber}");
                 }
             }
         }

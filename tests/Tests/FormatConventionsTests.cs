@@ -90,9 +90,8 @@ namespace McnTests.Tests
             {
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
                 
-                TestTabs(lines, file);
-                TestIndentation(lines, file);
-                TestEqualsSpacings(lines, file);
+                AssertIndentation(lines, file);
+                AssertSpacingsAroundEquals(lines, file);
             }
         }
 
@@ -105,9 +104,8 @@ namespace McnTests.Tests
             {
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
                 
-                TestTabs(lines, file);
-                TestIndentation(lines, file);
-                TestEqualsSpacings(lines, file);
+                AssertIndentation(lines, file);
+                AssertSpacingsAroundEquals(lines, file);
             }
         }
 
@@ -120,9 +118,8 @@ namespace McnTests.Tests
             {
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
                 
-                TestTabs(lines, file);
-                TestIndentation(lines, file);
-                TestEqualsSpacings(lines, file);
+                AssertIndentation(lines, file);
+                AssertSpacingsAroundEquals(lines, file);
             }
         }
 
@@ -135,11 +132,11 @@ namespace McnTests.Tests
             {
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
                 
-                TestTabs(lines, file);
+                AssertIndentation(lines, file);
             }
         }
 
-        void TestTabs(IEnumerable<string> lines, string file)
+        void AssertIndentation(IEnumerable<string> lines, string file)
         {
             string fileName = Path.GetFileName(file);
 
@@ -149,23 +146,11 @@ namespace McnTests.Tests
                 lineNumber += 1;
 
                 Assert.IsFalse(line.Contains("\t"), $"The '{fileName}' contains tabs, at line {lineNumber}");
-            }
-        }
-
-        void TestIndentation(IEnumerable<string> lines, string file)
-        {
-            string fileName = Path.GetFileName(file);
-
-            int lineNumber = 0;
-            foreach (string line in lines)
-            {
-                lineNumber += 1;
-
                 Assert.IsFalse(Regex.IsMatch(line, invalidIndentationPattern), $"Invalid indentation in the '{fileName}' file, at line {lineNumber}");
             }
         }
 
-        void TestEqualsSpacings(IEnumerable<string> lines, string file)
+        void AssertSpacingsAroundEquals(IEnumerable<string> lines, string file)
         {
             string fileName = Path.GetFileName(file);
 
