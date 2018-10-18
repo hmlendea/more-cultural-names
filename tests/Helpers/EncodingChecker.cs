@@ -19,10 +19,20 @@ namespace McnTests.Helpers
 
             foreach (char c in content)
             {
-                if (!windows1252chars.Contains(c))
+                if (!IsWindows1252(c))
                 {
                     return false;
                 }
+            }
+
+            return true;
+        }
+
+        public static bool IsWindows1252(char c)
+        {
+            if (!windows1252chars.Contains(c))
+            {
+                return false;
             }
 
             return true;
