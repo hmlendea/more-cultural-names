@@ -48,8 +48,6 @@ namespace McnTests.Tests
         {
             List<string> landedTitlesFiles = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
 
-            landedTitlesFiles.ForEach(file => Assert.IsTrue(EncodingChecker.IsWindows1252(file)));
-
             foreach (string file in landedTitlesFiles)
             {
                 string fileName = Path.GetFileName(file);
