@@ -89,8 +89,10 @@ namespace McnTests.Tests
             foreach (string file in cultureFiles)
             {
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
                 
                 AssertIndentation(lines, file);
+                AssertRepeatedBlankLines(fullLines, file);
                 AssertSpacingsAroundEquals(lines, file);
             }
         }
@@ -103,8 +105,10 @@ namespace McnTests.Tests
             foreach (string file in dynastyFiles)
             {
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
                 
                 AssertIndentation(lines, file);
+                AssertRepeatedBlankLines(fullLines, file);
                 AssertSpacingsAroundEquals(lines, file);
             }
         }
@@ -117,8 +121,10 @@ namespace McnTests.Tests
             foreach (string file in landedTitlesFiles)
             {
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
                 
                 AssertIndentation(lines, file);
+                AssertRepeatedBlankLines(fullLines, file);
                 AssertSpacingsAroundEquals(lines, file);
             }
         }
@@ -131,8 +137,10 @@ namespace McnTests.Tests
             foreach (string file in localisationFiles)
             {
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
                 
                 AssertIndentation(lines, file);
+                AssertRepeatedBlankLines(fullLines, file);
             }
         }
 
@@ -160,6 +168,30 @@ namespace McnTests.Tests
                 lineNumber += 1;
 
                 Assert.IsFalse(Regex.IsMatch(line, invalidEqualsSpacingPattern), $"Invalid spacing around '=' in the '{fileName}' file, at line {lineNumber}");
+            }
+        }
+
+        void AssertRepeatedBlankLines(IEnumerable<string> lines, string file)
+        {
+            string fileName = Path.GetFileName(file);
+
+            int lineNumber = 0;
+            foreach(string line in lines)
+            {
+                lineNumber += 1;
+
+                bool lastWasBlank = false;
+                bool currentIsBlank = string.IsNullOrWhiteSpace(line);
+
+                if (currentIsBlank && lineNumber > 1)
+                {
+                    if (string.IsNullOrWhiteSpace(lines.ElementAt(lineNumber - 2)))
+                    {
+                        lastWasBlank = true;
+                    }
+                }
+
+                Assert.IsFalse(currentIsBlank && lastWasBlank, $"The '{fileName}' file contains repeated blank lines, at line {lineNumber}");
             }
         }
     }
