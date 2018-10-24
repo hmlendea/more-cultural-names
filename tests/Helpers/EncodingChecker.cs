@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Linq;
@@ -6,7 +7,14 @@ namespace McnTests.Helpers
 {
     public static class EncodingChecker
     {
-        const string windows1252chars = " \r\n\t!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ";
+        static readonly List<char> windows1252chars;
+
+        static EncodingChecker()
+        {
+            string charsetFilePath = Path.Combine(ApplicationPaths.TestDataDirectory, "windows1252chars.txt");
+
+            windows1252chars = FileLoader.ReadAllText(FileEncoding.Windows1252, charsetFilePath).ToCharArray().ToList();
+        }
 
         public static bool IsWindows1252(string path)
         {
