@@ -26,6 +26,10 @@ namespace McnTests.Helpers
             }
         }
 
+        public static string TestsDirectory => Path.Combine(RootDirectory, "tests");
+
+        public static string TestDataDirectory => Path.Combine(TestsDirectory, "Data");
+
         public static string DescriptorFile => Path.Combine(RootDirectory, "hip-more-cultural-names.mod");
 
         public static string ModDirectory => Path.Combine(RootDirectory, "hip-more-cultural-names");
