@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using McnTests.Entities;
+using McnTests.Extensions;
 using McnTests.Helpers;
 using McnTests.IO;
 
@@ -32,11 +33,10 @@ namespace McnTests.Tests
 
             foreach (string file in files)
             {
-                string fileName = Path.GetFileName(file);
+                string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
 
                 List<string> lines = FileLoader
                     .ReadAllLines(FileEncoding.Windows1252, file)
-                    .Select(line => GetLineWithoutComments(line))
                     .ToList();
 
                 List<LandedTitle> landedTitles = LandedTitlesFile
@@ -61,17 +61,15 @@ namespace McnTests.Tests
 
             foreach (string file in files)
             {
-                string fileName = Path.GetFileName(file);
+                string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
 
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
 
                 int lineNumber = 0;
 
-                foreach(string completeLine in lines)
+                foreach(string line in lines)
                 {
                     lineNumber += 1;
-
-                    string line = GetLineWithoutComments(completeLine);
 
                     if (string.IsNullOrWhiteSpace(line))
                     {
@@ -91,7 +89,7 @@ namespace McnTests.Tests
 
         void AssertLandedTitlesQuotes(IEnumerable<string> lines, string file)
         {
-            string fileName = Path.GetFileName(file);
+            string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
 
             int lineNumber = 0;
             foreach (string line in lines)
@@ -104,17 +102,13 @@ namespace McnTests.Tests
 
         void AssertLandedTitleDynamicNames(IEnumerable<LandedTitle> landedTitles, string file)
         {
-            string fileName = Path.GetFileName(file);
+            string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
 
             foreach (LandedTitle title in landedTitles)
             {
                 Assert.AreEqual(
                     1, landedTitles.Count(x => x.Id == title.Id),
                     $"The '{fileName}' file contains a duplicated landed title '{title.Id}'");
-
-                Assert.IsTrue(
-                    title.DynamicNames.Keys.SequenceEqual(title.DynamicNames.Keys.OrderBy(x => x)),
-                    $"The '{fileName}' file contains unsorted dynamic names for {title.Id}");
 
                 foreach (string culture in title.DynamicNames.Keys)
                 {
@@ -128,16 +122,6 @@ namespace McnTests.Tests
                     AssertLandedTitleDynamicNames(title.Children, file);
                 }
             }
-        }
-
-        string GetLineWithoutComments(string line)
-        {
-            if (line.Contains('#'))
-            {
-                return line.Substring(0, line.IndexOf('#'));
-            }
-
-            return line;
         }
     }
 }
