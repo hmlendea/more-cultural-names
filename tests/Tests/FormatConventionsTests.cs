@@ -8,7 +8,9 @@ using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using McnTests.Entities;
+using McnTests.Extensions;
 using McnTests.Helpers;
+using McnTests.IO;
 
 namespace McnTests.Tests
 {
@@ -22,6 +24,7 @@ namespace McnTests.Tests
 
         const string invalidEqualsSpacingPattern = @"([^\ ]=|=[^\ ]|\ \ =|=\ \ )";
         const string invalidIndentationPattern = @"^\ [^\ ]|^\ \ [^\ ]|^\ \ \ [^\ ]|^(\ \ \ \ )*\ [^\ ]|^(\ \ \ \ )*\ \ [^\ ]|^(\ \ \ \ )*\ \ \ [^\ ]";
+        const string trailingWhitespacePattern = @"\s+$";
 
         [TestInitialize]
         public void SetUp()
@@ -36,7 +39,7 @@ namespace McnTests.Tests
 
             foreach (string file in files)
             {
-                string fileName = Path.GetFileName(file);
+                string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
 
                 Assert.IsTrue(Regex.IsMatch(file, cultureFileNamePattern), $"The '{fileName}' file's name does not respect the conventions");
             }
@@ -49,7 +52,7 @@ namespace McnTests.Tests
 
             foreach (string file in files)
             {
-                string fileName = Path.GetFileName(file);
+                string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
                 
                 Assert.IsTrue(Regex.IsMatch(file, dynastyFileNamePattern), $"The '{fileName}' file's name does not respect the conventions");
             }
@@ -62,7 +65,7 @@ namespace McnTests.Tests
 
             foreach (string file in files)
             {
-                string fileName = Path.GetFileName(file);
+                string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
                 
                 Assert.IsTrue(Regex.IsMatch(file, landedTitlesFileNamePattern), $"The '{fileName}' file's name does not respect the conventions");
             }
@@ -75,7 +78,7 @@ namespace McnTests.Tests
 
             foreach (string file in files)
             {
-                string fileName = Path.GetFileName(file);
+                string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
                 
                 Assert.IsTrue(Regex.IsMatch(file, localisationFileNamePattern), $"The '{fileName}' file's name does not respect the conventions");
             }
@@ -92,6 +95,7 @@ namespace McnTests.Tests
                 List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
                 
                 AssertIndentation(lines, file);
+                AssertTrailingWhitespaces(fullLines, file);
                 AssertRepeatedBlankLines(fullLines, file);
                 AssertSpacingsAroundEquals(lines, file);
             }
@@ -108,6 +112,7 @@ namespace McnTests.Tests
                 List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
                 
                 AssertIndentation(lines, file);
+                AssertTrailingWhitespaces(fullLines, file);
                 AssertRepeatedBlankLines(fullLines, file);
                 AssertSpacingsAroundEquals(lines, file);
             }
@@ -122,8 +127,13 @@ namespace McnTests.Tests
             {
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
                 List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
+
+                List<LandedTitle> landedTitles = LandedTitlesFile
+                    .ReadAllTitles(file)
+                    .ToList();
                 
                 AssertIndentation(lines, file);
+                AssertTrailingWhitespaces(fullLines, file);
                 AssertRepeatedBlankLines(fullLines, file);
                 AssertSpacingsAroundEquals(lines, file);
             }
@@ -140,13 +150,14 @@ namespace McnTests.Tests
                 List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
                 
                 AssertIndentation(lines, file);
+                AssertTrailingWhitespaces(fullLines, file);
                 AssertRepeatedBlankLines(fullLines, file);
             }
         }
 
         void AssertIndentation(IEnumerable<string> lines, string file)
         {
-            string fileName = Path.GetFileName(file);
+            string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
 
             int lineNumber = 0;
             foreach (string line in lines)
@@ -158,9 +169,22 @@ namespace McnTests.Tests
             }
         }
 
+        void AssertTrailingWhitespaces(IEnumerable<string> lines, string file)
+        {
+            string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
+
+            int lineNumber = 0;
+            foreach (string line in lines)
+            {
+                lineNumber += 1;
+
+                Assert.IsFalse(Regex.IsMatch(line, trailingWhitespacePattern), $"The '{fileName}' file contains trailing whitespaces , at line {lineNumber}");
+            }
+        }
+
         void AssertSpacingsAroundEquals(IEnumerable<string> lines, string file)
         {
-            string fileName = Path.GetFileName(file);
+            string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
 
             int lineNumber = 0;
             foreach (string line in lines)
@@ -173,7 +197,7 @@ namespace McnTests.Tests
 
         void AssertRepeatedBlankLines(IEnumerable<string> lines, string file)
         {
-            string fileName = Path.GetFileName(file);
+            string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
 
             int lineNumber = 0;
             foreach(string line in lines)
@@ -192,6 +216,23 @@ namespace McnTests.Tests
                 }
 
                 Assert.IsFalse(currentIsBlank && lastWasBlank, $"The '{fileName}' file contains repeated blank lines, at line {lineNumber}");
+            }
+        }
+
+        void AssertLandedTitleDynamicNames(IEnumerable<LandedTitle> landedTitles, string file)
+        {
+            string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
+
+            foreach (LandedTitle title in landedTitles)
+            {
+                Assert.IsTrue(
+                    title.DynamicNames.Keys.SequenceEqual(title.DynamicNames.Keys.OrderBy(x => x)),
+                    $"The '{fileName}' file contains unsorted dynamic names for {title.Id}");
+
+                if (title.Children.Count > 0)
+                {
+                    AssertLandedTitleDynamicNames(title.Children, file);
+                }
             }
         }
     }

@@ -7,6 +7,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using McnTests.Entities;
+using McnTests.Extensions;
 using McnTests.Helpers;
 
 namespace McnTests.Tests
@@ -50,7 +51,7 @@ namespace McnTests.Tests
 
             foreach (string file in landedTitlesFiles)
             {
-                string fileName = Path.GetFileName(file);
+                string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
                 List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
 
                 int lineNumber = 0;
