@@ -1,0 +1,10 @@
+language: csharp
+mono: none
+dotnet: 2.0.0
+
+install:
+- dotnet restore tests
+
+script:
+ - dotnet build tests
+ - dotnet test tests
