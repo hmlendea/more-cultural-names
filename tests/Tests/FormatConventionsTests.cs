@@ -19,7 +19,7 @@ namespace McnTests.Tests
     {
         const string cultureFileNamePattern = @"zzz_.*\.txt";
         const string dynastyFileNamePattern = @"99_.*_dynasties\.txt";
-        const string landedTitlesFileNamePattern = @"zzz_.*\.txt";
+        const string landedTitlesFileNamePattern = @"0_.*\.txt";
         const string localisationFileNamePattern = @"0_.*\.csv";
 
         const string invalidEqualsSpacingPattern = @"([^\ ]=|=[^\ ]|\ \ =|=\ \ )";
