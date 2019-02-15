@@ -19,6 +19,7 @@ namespace McnTests.Tests
     {
         const string InvalidQuotesPattern = "(^ *[^_]* = \"[^\"]*$|^ *[^_]* = [^\"]*\"$)";
         const string InvalidSpacingPattern = @"(^.*\ \ .*$|^\ .*$|^.*\ $)";
+        const string MissingEquaitySignPattern = "^ *[a-z]* +\"[A-Za-z]*\"$";
 
         [TestInitialize]
         public void SetUp()
@@ -50,6 +51,7 @@ namespace McnTests.Tests
 
                 Assert.AreEqual(openingBrackets, closingBrackets, $"There are mismatching brackets in {fileName}");
                 AssertLandedTitlesQuotes(lines, file);
+                AssertLandedTitlesEqualSigns(lines, file);
                 AssertLandedTitleDynamicNames(landedTitles, file);
             }
         }
@@ -97,6 +99,19 @@ namespace McnTests.Tests
                 lineNumber += 1;
 
                 Assert.IsFalse(Regex.IsMatch(line, InvalidQuotesPattern), $"The '{fileName}' file contains invalid quotes, at line {lineNumber}");
+            }
+        }
+
+        void AssertLandedTitlesEqualSigns(IEnumerable<string> lines, string file)
+        {
+            string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
+
+            int lineNumber = 0;
+            foreach (string line in lines)
+            {
+                lineNumber += 1;
+
+                Assert.IsFalse(Regex.IsMatch(line, MissingEquaitySignPattern), $"The '{fileName}' file has a missing equality sign, at line {lineNumber}");
             }
         }
 
