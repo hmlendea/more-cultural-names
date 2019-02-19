@@ -1,10 +1,12 @@
 language: csharp
 mono: none
-dotnet: 2.0.0
+dotnet: 2.2
+dist: xenial
 
 install:
-- dotnet restore tests
+- dotnet restore ck2-mod-tests
 
 script:
- - dotnet build tests
- - dotnet test tests
+ - dotnet build ck2-mod-tests
+ - dotnet test ck2-mod-tests
+ 
