@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Linq;
 
-namespace McnTests.Helpers
+namespace CK2ModTests.Helpers
 {
     public static class EncodingChecker
     {
@@ -13,7 +13,7 @@ namespace McnTests.Helpers
         {
             string charsetFilePath = Path.Combine(ApplicationPaths.TestDataDirectory, "windows1252chars.txt");
 
-            windows1252chars = FileLoader.ReadAllText(FileEncoding.Windows1252, charsetFilePath).ToCharArray().ToList();
+            windows1252chars = FileProvider.ReadAllText(FileEncoding.Windows1252, charsetFilePath).ToCharArray().ToList();
         }
 
         public static bool IsWindows1252(string path)

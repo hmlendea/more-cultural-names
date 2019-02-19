@@ -7,12 +7,12 @@ using System.Text.RegularExpressions;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using McnTests.Entities;
-using McnTests.Extensions;
-using McnTests.Helpers;
-using McnTests.IO;
+using CK2ModTests.Entities;
+using CK2ModTests.Extensions;
+using CK2ModTests.Helpers;
+using CK2ModTests.IO;
 
-namespace McnTests.Tests
+namespace CK2ModTests.Tests
 {
     [TestClass]
     public class ContentIntegrityTests
@@ -30,13 +30,13 @@ namespace McnTests.Tests
         [TestMethod]
         public void TestLandedTitleFilesIntegrity()
         {
-            List<string> files = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
+            List<string> files = FileProvider.GetFilesInDirectory(ApplicationPaths.LandedTitlesDirectory).ToList();
 
             foreach (string file in files)
             {
                 string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
 
-                List<string> lines = FileLoader
+                List<string> lines = FileProvider
                     .ReadAllLines(FileEncoding.Windows1252, file)
                     .ToList();
 
@@ -59,13 +59,13 @@ namespace McnTests.Tests
         [TestMethod]
         public void TestLocalisationFilesIntegrity()
         {
-            List<string> files = Directory.GetFiles(ApplicationPaths.LocalisationDirectory).ToList();
+            List<string> files = FileProvider.GetFilesInDirectory(ApplicationPaths.LocalisationDirectory).ToList();
 
             foreach (string file in files)
             {
                 string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
 
-                List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                List<string> lines = FileProvider.ReadAllLines(FileEncoding.Windows1252, file).ToList();
 
                 int lineNumber = 0;
 

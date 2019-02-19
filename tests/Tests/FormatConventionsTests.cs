@@ -7,12 +7,12 @@ using System.Text.RegularExpressions;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using McnTests.Entities;
-using McnTests.Extensions;
-using McnTests.Helpers;
-using McnTests.IO;
+using CK2ModTests.Entities;
+using CK2ModTests.Extensions;
+using CK2ModTests.Helpers;
+using CK2ModTests.IO;
 
-namespace McnTests.Tests
+namespace CK2ModTests.Tests
 {
     [TestClass]
     public class FormatConventionsTests
@@ -35,7 +35,12 @@ namespace McnTests.Tests
         [TestMethod]
         public void TestCultureFileNamingConventions()
         {
-            List<string> files = Directory.GetFiles(ApplicationPaths.CulturesDirectory).ToList();
+            if (!Directory.Exists(ApplicationPaths.CulturesDirectory))
+            {
+                return;
+            }
+
+            List<string> files = FileProvider.GetFilesInDirectory(ApplicationPaths.CulturesDirectory).ToList();
 
             foreach (string file in files)
             {
@@ -48,7 +53,12 @@ namespace McnTests.Tests
         [TestMethod]
         public void TestDynastyFileNamingConventions()
         {
-            List<string> files = Directory.GetFiles(ApplicationPaths.DynastiesDirectory).ToList();
+            if (!Directory.Exists(ApplicationPaths.DynastiesDirectory))
+            {
+                return;
+            }
+
+            List<string> files = FileProvider.GetFilesInDirectory(ApplicationPaths.DynastiesDirectory).ToList();
 
             foreach (string file in files)
             {
@@ -61,7 +71,12 @@ namespace McnTests.Tests
         [TestMethod]
         public void TestLandedTitlesFileNamingConventions()
         {
-            List<string> files = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
+            if (!Directory.Exists(ApplicationPaths.LandedTitlesDirectory))
+            {
+                return;
+            }
+
+            List<string> files = FileProvider.GetFilesInDirectory(ApplicationPaths.LandedTitlesDirectory).ToList();
 
             foreach (string file in files)
             {
@@ -74,7 +89,12 @@ namespace McnTests.Tests
         [TestMethod]
         public void TestLocalisationFileNamingConventions()
         {
-            List<string> files = Directory.GetFiles(ApplicationPaths.LocalisationDirectory).ToList();
+            if (!Directory.Exists(ApplicationPaths.LocalisationDirectory))
+            {
+                return;
+            }
+
+            List<string> files = FileProvider.GetFilesInDirectory(ApplicationPaths.LocalisationDirectory).ToList();
 
             foreach (string file in files)
             {
@@ -87,12 +107,17 @@ namespace McnTests.Tests
         [TestMethod]
         public void TestCultureFilesFormatConventions()
         {
-            List<string> cultureFiles = Directory.GetFiles(ApplicationPaths.CulturesDirectory).ToList();
+            if (!Directory.Exists(ApplicationPaths.CulturesDirectory))
+            {
+                return;
+            }
+
+            List<string> cultureFiles = FileProvider.GetFilesInDirectory(ApplicationPaths.CulturesDirectory).ToList();
             
             foreach (string file in cultureFiles)
             {
-                List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
-                List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
+                List<string> lines = FileProvider.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                List<string> fullLines = FileProvider.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
                 
                 AssertIndentation(lines, file);
                 AssertTrailingWhitespaces(fullLines, file);
@@ -104,12 +129,12 @@ namespace McnTests.Tests
         [TestMethod]
         public void TestDynastyFilesFormatConventions()
         {
-            List<string> dynastyFiles = Directory.GetFiles(ApplicationPaths.DynastiesDirectory).ToList();
+            List<string> dynastyFiles = FileProvider.GetFilesInDirectory(ApplicationPaths.DynastiesDirectory).ToList();
             
             foreach (string file in dynastyFiles)
             {
-                List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
-                List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
+                List<string> lines = FileProvider.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                List<string> fullLines = FileProvider.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
                 
                 AssertIndentation(lines, file);
                 AssertTrailingWhitespaces(fullLines, file);
@@ -121,12 +146,12 @@ namespace McnTests.Tests
         [TestMethod]
         public void TestLandedTitlesFilesFormatConventions()
         {
-            List<string> landedTitlesFiles = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
+            List<string> landedTitlesFiles = FileProvider.GetFilesInDirectory(ApplicationPaths.LandedTitlesDirectory).ToList();
             
             foreach (string file in landedTitlesFiles)
             {
-                List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
-                List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
+                List<string> lines = FileProvider.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                List<string> fullLines = FileProvider.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
 
                 List<LandedTitle> landedTitles = LandedTitlesFile
                     .ReadAllTitles(file)
@@ -142,12 +167,12 @@ namespace McnTests.Tests
         [TestMethod]
         public void TestLocalisationFilesFormatConventions()
         {
-            List<string> localisationFiles = Directory.GetFiles(ApplicationPaths.LocalisationDirectory).ToList();
+            List<string> localisationFiles = FileProvider.GetFilesInDirectory(ApplicationPaths.LocalisationDirectory).ToList();
             
             foreach (string file in localisationFiles)
             {
-                List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
-                List<string> fullLines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
+                List<string> lines = FileProvider.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                List<string> fullLines = FileProvider.ReadAllLines(FileEncoding.Windows1252, file, true).ToList();
                 
                 AssertIndentation(lines, file);
                 AssertTrailingWhitespaces(fullLines, file);

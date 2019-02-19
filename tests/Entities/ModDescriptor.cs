@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-using McnTests.Helpers;
+using CK2ModTests.Helpers;
 
-namespace McnTests.Entities
+namespace CK2ModTests.Entities
 {
     public class ModDescriptor
     {
@@ -17,6 +17,8 @@ namespace McnTests.Entities
         public List<string> Tags { get; set; }
 
         public string Picture { get; set; }
+
+        public bool HasPicture => !string.IsNullOrWhiteSpace(Picture);
 
         public static ModDescriptor FromFile(string path)
         {
@@ -33,11 +35,19 @@ namespace McnTests.Entities
 
         static string GetStringValue(List<string> lines, string key)
         {
-            string value = lines.FirstOrDefault(x => x.StartsWith(key))
-                                .Split('=')[1]
-                                .Trim();
+            string line = lines.FirstOrDefault(x => x.TrimStart().StartsWith(key));
 
-            return value.Replace("\"", "");
+            if (string.IsNullOrWhiteSpace(line))
+            {
+                return null;
+            }
+
+            string value = line
+                .Split('=')[1]
+                .Trim()
+                .Replace("\"", "");
+
+            return value;
         }
     }
 }

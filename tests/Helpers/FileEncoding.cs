@@ -1,4 +1,4 @@
-namespace McnTests.Helpers
+namespace CK2ModTests.Helpers
 {
     public enum FileEncoding
     {

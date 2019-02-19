@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using McnTests.Entities;
-using McnTests.Extensions;
+using CK2ModTests.Entities;
+using CK2ModTests.Extensions;
 
 using Pdoxcl2Sharp;
 
-namespace McnTests.IO
+namespace CK2ModTests.IO
 {
     public sealed class LandedTitleDefinition : IParadoxRead, IParadoxWrite
     {

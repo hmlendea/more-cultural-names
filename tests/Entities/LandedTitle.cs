@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace McnTests.Entities
+namespace CK2ModTests.Entities
 {
     public class LandedTitle
     {

@@ -1,8 +1,8 @@
 using System.IO;
 
-using McnTests.Helpers;
+using CK2ModTests.Helpers;
 
-namespace McnTests.Extensions
+namespace CK2ModTests.Extensions
 {
     /// <summary>
     /// Path extensions.
