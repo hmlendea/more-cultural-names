@@ -6,11 +6,11 @@ using System.Text;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using McnTests.Entities;
-using McnTests.Extensions;
-using McnTests.Helpers;
+using CK2ModTests.Entities;
+using CK2ModTests.Extensions;
+using CK2ModTests.Helpers;
 
-namespace McnTests.Tests
+namespace CK2ModTests.Tests
 {
     [TestClass]
     public class ModStructureIntegrityTests
@@ -22,37 +22,30 @@ namespace McnTests.Tests
         }
 
         [TestMethod]
-        public void TestModDirectories()
-        {
-            Assert.IsTrue(Directory.Exists(ApplicationPaths.CommonDirectory), "The 'common' directory is missing");
-            Assert.IsTrue(Directory.Exists(ApplicationPaths.CulturesDirectory), "The 'common/cultures' directory is missing");
-            Assert.IsTrue(Directory.Exists(ApplicationPaths.DynastiesDirectory), "The 'common/dynasties' directory is missing");
-            Assert.IsTrue(Directory.Exists(ApplicationPaths.LandedTitlesDirectory), "The 'common/landed_titles' directory is missing");
-            Assert.IsTrue(Directory.Exists(ApplicationPaths.LocalisationDirectory), "The 'localisation' directory is missing");
-        }
-
-        [TestMethod]
         public void TestModDescriptor()
         {
             Assert.IsTrue(File.Exists(ApplicationPaths.DescriptorFile), "The mod descriptor file is missing");
 
             ModDescriptor descriptor = ModDescriptor.FromFile(ApplicationPaths.DescriptorFile);
 
-            string picturePath = Path.Combine(ApplicationPaths.ModDirectory, descriptor.Picture);
+            if (descriptor.HasPicture)
+            {
+                string picturePath = Path.Combine(ApplicationPaths.ModDirectory, descriptor.Picture);
+                Assert.IsTrue(File.Exists(picturePath), $"The mod picture ({descriptor.Picture}) is missing");
+            }
 
-            Assert.IsTrue(File.Exists(picturePath), $"The mod picture ({descriptor.Picture}) is missing");
             Assert.AreEqual($"mod/{Path.GetFileName(ApplicationPaths.ModDirectory)}", descriptor.Path, "The mod name defined in the descriptor, and the mod directory name do not match");
         }
 
         [TestMethod]
         public void AssertEncodings()
         {
-            List<string> landedTitlesFiles = Directory.GetFiles(ApplicationPaths.LandedTitlesDirectory).ToList();
+            List<string> landedTitlesFiles = FileProvider.GetFilesInDirectory(ApplicationPaths.LandedTitlesDirectory).ToList();
 
             foreach (string file in landedTitlesFiles)
             {
                 string fileName = PathExt.GetFileNameWithoutRootDirectory(file);
-                List<string> lines = FileLoader.ReadAllLines(FileEncoding.Windows1252, file).ToList();
+                List<string> lines = FileProvider.ReadAllLines(FileEncoding.Windows1252, file).ToList();
 
                 int lineNumber = 0;
                 foreach (string line in lines)

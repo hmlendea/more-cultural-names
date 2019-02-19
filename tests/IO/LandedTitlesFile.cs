@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-using McnTests.Entities;
+using CK2ModTests.Entities;
 
 using Pdoxcl2Sharp;
 
-namespace McnTests.IO
+namespace CK2ModTests.IO
 {
     public sealed class LandedTitlesFile : IParadoxRead
     {

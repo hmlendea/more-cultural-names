@@ -3,10 +3,21 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace McnTests.Helpers
+namespace CK2ModTests.Helpers
 {
-    public static class FileLoader
+    public static class FileProvider
     {
+        public static IEnumerable<string> GetFilesInDirectory(string path)
+        {
+            IEnumerable<string> files = new List<string>();
+
+            if (Directory.Exists(path))
+            {
+                files = Directory.GetFiles(path);
+            }
+
+            return files;
+        }
         public static string ReadAllText(FileEncoding encoding, string path, bool loadComments = false)
         {
             string content = null;

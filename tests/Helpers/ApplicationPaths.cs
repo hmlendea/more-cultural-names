@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace McnTests.Helpers
+namespace CK2ModTests.Helpers
 {
     public sealed class ApplicationPaths
     {
@@ -30,9 +30,9 @@ namespace McnTests.Helpers
 
         public static string TestDataDirectory => Path.Combine(TestsDirectory, "Data");
 
-        public static string DescriptorFile => Path.Combine(RootDirectory, "hip-more-cultural-names.mod");
+        public static string DescriptorFile => Path.Combine(RootDirectory, "ek-more-cultural-names.mod");
 
-        public static string ModDirectory => Path.Combine(RootDirectory, "hip-more-cultural-names");
+        public static string ModDirectory => Path.Combine(RootDirectory, "ek-more-cultural-names");
 
         public static string CommonDirectory => Path.Combine(ModDirectory, "common");
         

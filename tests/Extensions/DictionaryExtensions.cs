@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace McnTests.Extensions
+namespace CK2ModTests.Extensions
 {
     /// <summary>
     /// Dictionary extensions.
