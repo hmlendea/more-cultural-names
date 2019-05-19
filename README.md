@@ -27,10 +27,8 @@ If you don't own this game on Steam, or you want to try the in-development versi
 - Also, this mod officially supports HIP with only the default modules installed, but it should work with any setup as long as SWMH is there.
 
 **UPDATING THE MOD:**
-- This mod gets updated very frequently.
-- Instead on making versioned releases, I decided to make a single "rolling release", so check regularly for changes (the date especially).
-You can see the changes in the changelog.
-- It's also always recommended to delete the old files when updating a mod (any mod).
+- This mod gets updated more frequently on GIT than on the Steam Workshop.
+- When manually updating, please remove all the previous files of this mod.
 
 # Contributions
 
@@ -51,7 +49,6 @@ The guidelines and roadmap can be found in the github project description.
 Currently, the development focuses on the following areas:
 
 - Landed title names for your native language (you can start with neighbouring countries)
-- Missing HIP names for counties and baronies that both have the same name but only one (usually the county) has culture-specific names associated
 - Minor titles and jobs localisations
 
 # Development guidelines
@@ -62,7 +59,7 @@ Currently, the development focuses on the following areas:
 - Check with the original HIP files and take note of the already existing names (especially for similar cultures) and the name displayed ingame (which might be very different from the internal name in the files, e.g. `d_galich` is Halych ingame)
 - Make sure there are no other dependencies than the default HIP modules. Do not add names for optional modules or other submods.
 
-Additional guidelines and rules can be found in header comments inside specific files
+Additional guidelines and rules can be found in header comments inside specific files.
 
 # Bibliography - Sources
 
