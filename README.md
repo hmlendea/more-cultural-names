@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/hmlendea/ck2-hip-more-cultural-names.svg?branch=master)](https://travis-ci.com/hmlendea/ck2-hip-more-cultural-names)
+[![Build Status](https://travis-ci.com/hmlendea/ck2-hip-mcn.svg?branch=master)](https://travis-ci.com/hmlendea/ck2-hip-mcn)
 
 # About
 
@@ -10,14 +10,14 @@ It was last updated for HIP version Furry 7 from 18.05.2019, CK2 version 3.1.1
 
 # Useful links
 
-- [GitHub page](https://github.com/hmlendea/CK2-HIP-MoreCulturalNames)
+- [GitHub page](https://github.com/hmlendea/ck2-hip-mcn)
 - [Steam Workshop page](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
 
 # Installation
 
 Just subscribe to the [Steam Workshop page](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675) of this mod.
 
-If you don't own this game on Steam, or you want to try the in-development version, you can download the latest release from the [GitHub page](https://github.com/hmlendea/ck2-hip-more-cultural-names/releases) and extract the contents into your "mod" directory alongside your current HIP installation.
+If you don't own this game on Steam, or you want to try the in-development version, you can download the latest release from the [GitHub page](https://github.com/hmlendea/ck2-hip-mcn/releases) and extract the contents into your "mod" directory alongside your current HIP installation.
 
 **Note:** This mod is OS-agnostic, which means it will work on all operating systems supported by CK2 and HIP (Windows, Linux and Mac)
 
@@ -37,7 +37,7 @@ You are welcome to bring any suggestion, feedback or modification to this projec
 There are a few ways you can do so:
 
 1. You can create git pull requests for this repository (This requires git knowledge)
-2. You can raise a new "[issue](https://github.com/hmlendea/ck2-hip-more-cultural-names/issues)" for this project
+2. You can raise a new "[issue](https://github.com/hmlendea/ck2-hip-mcn/issues)" for this project
 4. You can reply on the [Steam discussion thread](http://steamcommunity.com/workshop/filedetails/discussion/1175098675/1479856439031332646/)
 
 It would also be very helpful if you could provide a link to a source that can atest the authenticity of the names you submitted, when possible.
