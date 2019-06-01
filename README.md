@@ -12,6 +12,7 @@ It was last updated for HIP version Golden1 from 30/05/2019, CK2 version 3.2
 
 - [GitHub page](https://github.com/hmlendea/ck2-hip-mcn)
 - [Steam Workshop page](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
+- [ParadoxPlaza Thread](https://forum.paradoxplaza.com/forum/index.php?threads/submod-more-cultural-names-v19-151-31-05.1184632/)
 
 # Installation
 
