@@ -17,8 +17,9 @@
 ####################
 # Notes:
 # - For all romanian names:
-#   - Every single "sh" is actually an s with , under it (S-comma).
 #   - Every single ã is actually A-breve
+# - For all lettigalish names:
+#   - Every single ã is actually A-macron
 # - Nahua (aztec) names are not historical (obviously) but encouraged.
 ####################
 
@@ -49,6 +50,7 @@ d_zealots = {
 d_holy_sepulchre = {
 }
 d_saint_anthony = {
+    romanian = "Sfântul Anton" # Translated
 }
 d_saint_addai = {
 }
@@ -260,7 +262,14 @@ e_hre = {
     k_eastern_marches = {
     }
     k_hansa = {
+        dalmatian = "Hãnsa"
+        langobardisch = "Hãnsa"
+        ligurian = "Hãnsa"
+        nahuatl = "Hãnsa"
+        neapolitan = "Hãnsa"
         roman = "Hanseaticae"
+        umbrian = "Hãnsa"
+        venetian = "Hãnsa"
     }
     k_frisia = {
         arpitan = "Frise" # Historical? Copied from Frankish
@@ -294,6 +303,10 @@ e_hre = {
                 romanian = "Olanda"
 
                 b_haarlem = {
+                    lettigallish = "Harlemas" # Historical? Copied from Lithuanian
+                    lithuanian = "Harlemas"
+                    prussian = "Harlemas" # Historical? Copied from Lithuanian
+                    roman = "Harlemum"
                 }
                 b_amsterdam = {
                     adhari = "Âmesterdâm" # Copied from Persian
@@ -307,6 +320,7 @@ e_hre = {
                     crimean_gothic = "Amstelodamon" # Historical? Copied from Greek
                     cumbric = "Amstardam" # Historical? Copied from Scottish
                     egyptian_arabic = "Amstardam"
+                    galician = "Ámsterdan"
                     greek = "Amstelodamon"
                     han = "Amusitedan"
                     hijazi = "Amstardam" # Historical? Copied from AndalusianArabic
@@ -318,7 +332,6 @@ e_hre = {
                     levantine_arabic = "Amstardam"
                     lithuanian = "Amsterdamas"
                     maghreb_arabic = "Amstardam"
-                    slovieni = "Amsterodam" # Historical? Copied from Bohemian
                     persian = "Âmesterdâm"
                     pictish = "Amstardam" # Historical? Copied from Scottish
                     portuguese = "Amsterdã"
@@ -326,6 +339,8 @@ e_hre = {
                     roman = "Amsterodamum"
                     scottish = "Amstardam" # Historical? Copied from Irish
                     sicilian_arabic = "Amstardam"
+                    slovieni = "Amsterodam" # Historical? Copied from Bohemian
+                    somali = "Amistardam"
                     szekely = "Amszterdam" # Historical? Copied from Hungarian
                     tajik = "Âmesterdâm" # Copied from Persian
                     welsh = "Amstardam" # Historical? Copied from Irish
@@ -340,16 +355,36 @@ e_hre = {
                 b_dordrecht = {
                     arpitan = "Dort" # Historical? Copied from Frankish
                     norman = "Dort" # Historical? Copied from Frankish
+                    portuguese = "Dordreque"
                     roman = "Dordrectum"
                 }
                 b_brederode = {
                 }
                 b_leiden = {
                     arpitan = "Leyde" # Historical? Copied from Frankish
+                    dalmatian = "Leida" # Historical? Copied from Italian
+                    italian = "Leida"
+                    langobardisch = "Leida" # Historical? Copied from Italian
+                    laziale = "Leida" # Historical? Copied from Italian
+                    lettigallish = "Leidenas" # Historical? Copied from Lithuanian
+                    ligurian = "Leida" # Historical? Copied from Italian
+                    lithuanian = "Leidenas"
+                    neapolitan = "Leida" # Historical? Copied from Italian
                     norman = "Leyde" # Historical? Copied from Frankish
+                    occitan = "Lèida"
+                    polish = "Lejda"
+                    pommeranian = "Lejda" # Historical? Copied from Polish
+                    portuguese = "Leida"
+                    prussian = "Leidenas" # Historical? Copied from Lithuanian
                     roman = "Lugdunum Batavorum"
+                    sardinian = "Leida" # Historical? Copied from Italian
+                    sicilian = "Leida" # Historical? Copied from Italian
+                    tuscan = "Leida" # Historical? Copied from Italian
+                    umbrian = "Leida" # Historical? Copied from Italian
+                    venetian = "Leida" # Historical? Copied from Italian
                 }
                 b_rijnsburg = {
+                    frisian = "Rynsburch"
                     roman = "Rinaburgum"
                 }
             }
@@ -358,7 +393,11 @@ e_hre = {
 
                 b_middelburg = {
                     arpitan = "Middelbourg" # Historical? Copied from Frankish
+                    lettigallish = "Midelburgas" # Historical? Copied from Lithuanian
+                    lithuanian = "Midelburgas"
                     norman = "Middelbourg" # Historical? Copied from Frankish
+                    portuguese = "Midelburgo"
+                    prussian = "Midelburgas" # Historical? Copied from Lithuanian
                     roman = "Medioburgum"
                 }
                 b_tholen = {
@@ -366,6 +405,8 @@ e_hre = {
                 }
                 b_vlissingen = {
                     arpitan = "Flessingue" # Historical? Copied from Frankish
+                    castillan = "Flesinga"
+                    galician = "Flesinga"
                     norman = "Flessingue" # Historical? Copied from Frankish
                     roman = "Flessinga"
                 }
@@ -376,6 +417,9 @@ e_hre = {
                 b_renesse = {
                 }
                 b_goes = {
+                    lettigallish = "Gusas" # Historical? Copied from Lithuanian
+                    lithuanian = "Gusas"
+                    prussian = "Gusas" # Historical? Copied from Lithuanian
                     roman = "Goderea"
                 }
                 b_zierikzee = {
@@ -388,11 +432,17 @@ e_hre = {
                     roman = "Castellum Laurum"
                 }
                 b_utrecht = {
+                    karelian = "Utreht" # Historical? Copied from Vespian
+                    khanty = "Utreht" # Historical? Copied from Vespian
                     lettigallish = "Utrechtas" # Historical? Copied from Lithuanian
                     lithuanian = "Utrechtas"
+                    mari = "Utreht" # Historical? Copied from Vespian
+                    mordvin = "Utreht" # Historical? Copied from Vespian
                     portuguese = "Utreque"
                     prussian = "Utrechtas" # Historical? Copied from Lithuanian
                     roman = "Castrum Traiectum"
+                    samoyed = "Utreht" # Historical? Copied from Vespian
+                    vespian = "Utreht"
                 }
                 b_ijsselstein = {
                     roman = "Transisalania Castra"
@@ -428,23 +478,46 @@ e_hre = {
                 b_arnhem = {
                     bavarian = "Arnheim" # Historical? Copied from German
                     franconian = "Arnheim" # Historical? Copied from German
+                    lettigallish = "Arnhemas" # Historical? Copied from Lithuanian
+                    lithuanian = "Arnhemas"
                     low_frankish = "Arnheim" # Historical? Copied from German
                     low_saxon = "Arnheim" # Historical? Copied from German
+                    portuguese = "Arnhemia"
+                    prussian = "Arnhemas" # Historical? Copied from Lithuanian
                     roman = "Arnhemium"
                     swabian = "Arnheim" # Historical? Copied from German
                     thuringian = "Arnheim" # Historical? Copied from German
                 }
                 b_nijmegen = {
                     arpitan = "Nimègue" # Historical? Copied from Frankish
+                    basque = "Nimega"
                     bavarian = "Nimwegen" # Historical? Copied from German
+                    castillan = "Nimega"
+                    catalan = "Nimega"
                     crimean_gothic = "Noiomagos" # Historical? Copied from Greek
+                    dalmatian = "Nimega" # Historical? Copied from Italian
                     franconian = "Nimwegen" # Historical? Copied from German
+                    galician = "Nimega"
+                    italian = "Nimega"
+                    langobardisch = "Nimega" # Historical? Copied from Italian
+                    laziale = "Nimega" # Historical? Copied from Italian
+                    lettigallish = "Neimegenas" # Historical? Copied from Lithuanian
+                    ligurian = "Nimega" # Historical? Copied from Italian
+                    lithuanian = "Neimegenas"
                     low_frankish = "Nimwegen" # Historical? Copied from German
                     low_german = "Nimwegen" # Historical? Copied from German
                     low_saxon = "Nimwegen" # Historical? Copied from German
+                    neapolitan = "Nimega" # Historical? Copied from Italian
                     norman = "Nimègue" # Historical? Copied from Frankish
+                    portuguese = "Nimegue"
+                    prussian = "Neimegenas" # Historical? Copied from Lithuanian
+                    sardinian = "Nimega" # Historical? Copied from Italian
+                    sicilian = "Nimega" # Historical? Copied from Italian
                     swabian = "Nimwegen" # Historical? Copied from German
                     thuringian = "Nimwegen" # Historical? Copied from German
+                    tuscan = "Nimega" # Historical? Copied from Italian
+                    umbrian = "Nimega" # Historical? Copied from Italian
+                    venetian = "Nimega" # Historical? Copied from Italian
                 }
                 b_tiel = {
                     roman = "Tillium"
@@ -498,6 +571,8 @@ e_hre = {
                     arpitan = "Ruremonde" # Historical? Copied from Frankish
                     lettigallish = "Rurmondas" # Historical? Copied from Lithuanian
                     lithuanian = "Rurmondas"
+                    low_german = "Reurmond"
+                    low_saxon = "Reurmond"
                     norman = "Ruremonde" # Historical? Copied from Frankish
                     prussian = "Rurmondas" # Historical? Copied from Lithuanian
                     roman = "Munda Rurae"
@@ -549,6 +624,7 @@ e_hre = {
                 b_deventer = {
                     lettigallish = "Deventeris" # Historical? Copied from Lithuanian
                     lithuanian = "Deventeris"
+                    low_saxon = "Dèventer"
                     prussian = "Deventeris" # Historical? Copied from Lithuanian
                     roman = "Devonturum"
                 }
@@ -563,6 +639,8 @@ e_hre = {
                     lettigallish = "Groningenas" # Historical? Copied from Lithuanian
                     ligurian = "Groninga" # Historical? Copied from Italian
                     lithuanian = "Groningenas"
+                    lombard = "Groninga"
+                    low_saxon = "Grunneng"
                     neapolitan = "Groninga" # Historical? Copied from Italian
                     norman = "Groningue" # Historical? Copied from Frankish
                     occitan = "Groninga"
@@ -622,6 +700,7 @@ e_hre = {
                 b_aurich = {
                     lettigallish = "Aurichas" # Historical? Copied from Lithuanian
                     lithuanian = "Aurichas"
+                    low_saxon = "Auerk"
                     prussian = "Aurichas" # Historical? Copied from Lithuanian
                     roman = "Auriacum"
                 }
@@ -741,6 +820,8 @@ e_hre = {
                     catalan = "Ljouwert"
                     lettigallish = "Leuvardenas" # Historical? Copied from Lithuanian
                     lithuanian = "Leuvardenas"
+                    low_german = "Liwwadden"
+                    low_saxon = "Liwwadden"
                     norman = "Leuvarde" # Historical? Copied from Frankish
                     prussian = "Leuvardenas" # Historical? Copied from Lithuanian
                     roman = "Leovardia"
@@ -748,11 +829,17 @@ e_hre = {
             }
         }
         d_utrecht = {
+            karelian = "Utreht" # Historical? Copied from Vespian
+            khanty = "Utreht" # Historical? Copied from Vespian
             lettigallish = "Utrechtas" # Historical? Copied from Lithuanian
             lithuanian = "Utrechtas"
+            mari = "Utreht" # Historical? Copied from Vespian
+            mordvin = "Utreht" # Historical? Copied from Vespian
             portuguese = "Utreque"
             prussian = "Utrechtas" # Historical? Copied from Lithuanian
             roman = "Ultraiectensis"
+            samoyed = "Utreht" # Historical? Copied from Vespian
+            vespian = "Utreht"
         }
     }
     k_lower_lorraine = {
@@ -964,6 +1051,7 @@ e_hre = {
                     lettigallish = "Antverpenas" # Historical? Copied from Lithuanian
                     ligurian = "Anversa" # Historical? Copied from Italian
                     lithuanian = "Antverpenas"
+                    lombard = "Anversa"
                     low_frankish = "Antorf" # Historical? Copied from German
                     low_german = "Antorf" # Historical? Copied from German
                     low_saxon = "Antorf" # Historical? Copied from German
@@ -1130,6 +1218,9 @@ e_hre = {
                     roman = "Chimacum"
                 }
                 b_beaumont_hainaut = {
+                    lettigallish = "Bomontas" # Historical? Copied from Lithuanian
+                    lithuanian = "Bomontas"
+                    prussian = "Bomontas" # Historical? Copied from Lithuanian
                     roman = "Bellomontium"
                 }
                 b_ath = {
@@ -1137,18 +1228,30 @@ e_hre = {
                 }
             }
             c_valenciennes = {
+                karelian = "Valansjen" # Historical? Copied from Vespian
+                khanty = "Valansjen" # Historical? Copied from Vespian
                 lettigallish = "Valansjenas" # Historical? Copied from Lithuanian
                 lithuanian = "Valansjenas"
+                mari = "Valansjen" # Historical? Copied from Vespian
+                mordvin = "Valansjen" # Historical? Copied from Vespian
                 occitan = "Valencianas"
                 prussian = "Valansjenas" # Historical? Copied from Lithuanian
                 roman = "Valencenae" # Or "Valentiana"
+                samoyed = "Valansjen" # Historical? Copied from Vespian
+                vespian = "Valansjen"
 
                 b_valenciennes = {
+                    karelian = "Valansjen" # Historical? Copied from Vespian
+                    khanty = "Valansjen" # Historical? Copied from Vespian
                     lettigallish = "Valansjenas" # Historical? Copied from Lithuanian
                     lithuanian = "Valansjenas"
+                    mari = "Valansjen" # Historical? Copied from Vespian
+                    mordvin = "Valansjen" # Historical? Copied from Vespian
                     occitan = "Valencianas"
                     prussian = "Valansjenas" # Historical? Copied from Lithuanian
                     roman = "Valencenae" # Or "Valentiana"
+                    samoyed = "Valansjen" # Historical? Copied from Vespian
+                    vespian = "Valansjen"
                 }
                 b_maroilles = {
                 }
@@ -1340,19 +1443,26 @@ e_hre = {
                 dalmatian = "Liegi" # Historical? Copied from Italian
                 franconian = "Lüttich" # Historical? Copied from German
                 italian = "Liegi"
+                karelian = "Ljež" # Historical? Copied from Vespian
+                khanty = "Ljež" # Historical? Copied from Vespian
                 langobardisch = "Liegi" # Historical? Copied from Italian
                 laziale = "Liegi" # Historical? Copied from Italian
+                leonese = "Liex"
                 lettigallish = "Lježas" # Historical? Copied from Lithuanian
                 ligurian = "Liegi" # Historical? Copied from Italian
                 lithuanian = "Lježas"
+                lombard = "Liegi"
                 low_frankish = "Lüttich" # Historical? Copied from German
                 low_german = "Lüttich" # Historical? Copied from German
                 low_saxon = "Lüttich" # Historical? Copied from German
+                mari = "Ljež" # Historical? Copied from Vespian
+                mordvin = "Ljež" # Historical? Copied from Vespian
                 neapolitan = "Liegi" # Historical? Copied from Italian
                 norman = "Liége" # Historical? Copied from Frankish
                 occitan = "Lièja"
                 prussian = "Lježas" # Historical? Copied from Lithuanian
                 roman = "Leodicum"
+                samoyed = "Ljež" # Historical? Copied from Vespian
                 sardinian = "Liegi" # Historical? Copied from Italian
                 sicilian = "Liegi" # Historical? Copied from Italian
                 swabian = "Lüttich" # Historical? Copied from German
@@ -1360,6 +1470,7 @@ e_hre = {
                 tuscan = "Liegi" # Historical? Copied from Italian
                 umbrian = "Liegi" # Historical? Copied from Italian
                 venetian = "Liegi" # Historical? Copied from Italian
+                vespian = "Ljež"
 
                 b_liege = {
                     aragonese = "Lidje"
@@ -1371,19 +1482,26 @@ e_hre = {
                     dalmatian = "Liegi" # Historical? Copied from Italian
                     franconian = "Lüttich" # Historical? Copied from German
                     italian = "Liegi"
+                    karelian = "Ljež" # Historical? Copied from Vespian
+                    khanty = "Ljež" # Historical? Copied from Vespian
                     langobardisch = "Liegi" # Historical? Copied from Italian
                     laziale = "Liegi" # Historical? Copied from Italian
+                    leonese = "Liex"
                     lettigallish = "Lježas" # Historical? Copied from Lithuanian
                     ligurian = "Liegi" # Historical? Copied from Italian
                     lithuanian = "Lježas"
+                    lombard = "Liegi"
                     low_frankish = "Lüttich" # Historical? Copied from German
                     low_german = "Lüttich" # Historical? Copied from German
                     low_saxon = "Lüttich" # Historical? Copied from German
+                    mari = "Ljež" # Historical? Copied from Vespian
+                    mordvin = "Ljež" # Historical? Copied from Vespian
                     neapolitan = "Liegi" # Historical? Copied from Italian
                     norman = "Liége" # Historical? Copied from Frankish
                     occitan = "Lièja"
                     prussian = "Lježas" # Historical? Copied from Lithuanian
                     roman = "Leodicum"
+                    samoyed = "Ljež" # Historical? Copied from Vespian
                     sardinian = "Liegi" # Historical? Copied from Italian
                     sicilian = "Liegi" # Historical? Copied from Italian
                     swabian = "Lüttich" # Historical? Copied from German
@@ -1391,6 +1509,7 @@ e_hre = {
                     tuscan = "Liegi" # Historical? Copied from Italian
                     umbrian = "Liegi" # Historical? Copied from Italian
                     venetian = "Liegi" # Historical? Copied from Italian
+                    vespian = "Ljež"
                 }
                 b_bouillon = {
                     bavarian = "Beulen" # Historical? Copied from German
@@ -1424,7 +1543,7 @@ e_hre = {
             c_namur = {
                 bavarian = "Namür" # Historical? Copied from German
                 franconian = "Namür" # Historical? Copied from German
-                lettigallish = "Namiuras" # Historical? Copied from Lithuanian
+                lettigallish = "Namira"
                 lithuanian = "Namiuras"
                 low_frankish = "Namür" # Historical? Copied from German
                 low_german = "Namür" # Historical? Copied from German
@@ -1437,7 +1556,7 @@ e_hre = {
                 b_namur = {
                     bavarian = "Namür" # Historical? Copied from German
                     franconian = "Namür" # Historical? Copied from German
-                    lettigallish = "Namiuras" # Historical? Copied from Lithuanian
+                    lettigallish = "Namira"
                     lithuanian = "Namiuras"
                     low_frankish = "Namür" # Historical? Copied from German
                     low_german = "Namür" # Historical? Copied from German
@@ -1545,15 +1664,20 @@ e_hre = {
                     dutch = "Moersa"
                     lettigallish = "Mersas" # Historical? Copied from Lithuanian
                     lithuanian = "Mersas"
+                    low_german = "Meurs"
+                    low_saxon = "Meurs"
                     prussian = "Mersas" # Historical? Copied from Lithuanian
                 }
                 b_duisburg = {
                     arpitan = "Duisbourg" # Historical? Copied from Frankish
                     castillan = "Duisburgo"
                     frankish = "Duisbourg"
+                    frisian = "Duisbörj"
                     galician = "Duisburgo"
                     lettigallish = "Duisburgas" # Historical? Copied from Lithuanian
                     lithuanian = "Duisburgas"
+                    low_german = "Duisborg"
+                    low_saxon = "Duisborg"
                     norman = "Duisbourg" # Historical? Copied from Frankish
                     portuguese = "Duisburgo"
                     prussian = "Duisburgas" # Historical? Copied from Lithuanian
@@ -1595,6 +1719,10 @@ e_hre = {
                     roman = "Deucensis Urbs"
                 }
                 b_dusseldorf = {
+                    bavarian = "Düssldorf"
+                    low_german = "Düsseldörp"
+                    low_saxon = "Düsseldörp"
+                    basque = "Dusseldorf"
                     lettigallish = "Diuseldorfas" # Historical? Copied from Lithuanian
                     lithuanian = "Diuseldorfas"
                     prussian = "Diuseldorfas" # Historical? Copied from Lithuanian
@@ -1629,6 +1757,9 @@ e_hre = {
                 lettigallish = "Achenas" # Historical? Copied from Lithuanian
                 ligurian = "Aquisgrana" # Historical? Copied from Italian
                 lithuanian = "Achenas"
+                lombard = "Aquisgrana"
+                low_german = "Aken"
+                low_saxon = "Aken"
                 neapolitan = "Aquisgrana" # Historical? Copied from Italian
                 norman = "Aix-la-Chapelle" # Historical? Copied from Frankish
                 occitan = "Aquisgran"
@@ -1663,6 +1794,9 @@ e_hre = {
                     lettigallish = "Achenas" # Historical? Copied from Lithuanian
                     ligurian = "Aquisgrana" # Historical? Copied from Italian
                     lithuanian = "Achenas"
+                    lombard = "Aquisgrana"
+                    low_german = "Aken"
+                    low_saxon = "Aken"
                     neapolitan = "Aquisgrana" # Historical? Copied from Italian
                     norman = "Aix-la-Chapelle" # Historical? Copied from Frankish
                     occitan = "Aquisgran"
@@ -1856,28 +1990,41 @@ e_hre = {
             castillan = "Lieja"
             catalan = "Lieja"
             dalmatian = "Liegi" # Historical? Copied from Italian
+            finnish = "Liege"
             franconian = "Lüttich" # Historical? Copied from German
             italian = "Liegi"
+            karelian = "Ljež" # Historical? Copied from Vespian
+            khanty = "Ljež" # Historical? Copied from Vespian
+            komi = "Liege" # Historical? Copied from Finnish
             langobardisch = "Liegi" # Historical? Copied from Italian
+            lappish = "Liege" # Historical? Copied from Finnish
             laziale = "Liegi" # Historical? Copied from Italian
+            leonese = "Liex"
             lettigallish = "Lježas" # Historical? Copied from Lithuanian
             ligurian = "Liegi" # Historical? Copied from Italian
             lithuanian = "Lježas"
+            livonian = "Liege" # Historical? Copied from Finnish
+            lombard = "Liegi"
             low_frankish = "Lüttich" # Historical? Copied from German
             low_german = "Lüttich" # Historical? Copied from German
             low_saxon = "Lüttich" # Historical? Copied from German
+            mari = "Ljež" # Historical? Copied from Vespian
+            mordvin = "Ljež" # Historical? Copied from Vespian
             neapolitan = "Liegi" # Historical? Copied from Italian
             norman = "Liége" # Historical? Copied from Frankish
             occitan = "Lièja"
             prussian = "Lježas" # Historical? Copied from Lithuanian
             roman = "Leodicum"
+            samoyed = "Ljež" # Historical? Copied from Vespian
             sardinian = "Liegi" # Historical? Copied from Italian
             sicilian = "Liegi" # Historical? Copied from Italian
             swabian = "Lüttich" # Historical? Copied from German
             thuringian = "Lüttich" # Historical? Copied from German
             tuscan = "Liegi" # Historical? Copied from Italian
+            ugricbaltic = "Liege" # Historical? Copied from Finnish
             umbrian = "Liegi" # Historical? Copied from Italian
             venetian = "Liegi" # Historical? Copied from Italian
+            vespian = "Ljež"
         }
     }
     k_upper_lorraine = {
@@ -1998,18 +2145,24 @@ e_hre = {
                 cumbric = "Sárbrúch" # Historical? Copied from Scottish
                 franconian = "Saarbrücken" # Historical? Copied from German
                 irish = "Sárbrúch"
+                karelian = "Saarbrükken" # Historical? Copied from Vespian
+                khanty = "Saarbrükken" # Historical? Copied from Vespian
                 lettigallish = "Sarbriukenas" # Historical? Copied from Lithuanian
                 lithuanian = "Sarbriukenas"
                 low_frankish = "Saarbrücken" # Historical? Copied from German
                 low_german = "Saarbrücken" # Historical? Copied from German
                 low_saxon = "Saarbrücken" # Historical? Copied from German
+                mari = "Saarbrükken" # Historical? Copied from Vespian
+                mordvin = "Saarbrükken" # Historical? Copied from Vespian
                 norman = "Sarrebruck" # Historical? Copied from Frankish
                 pictish = "Sárbrúch" # Historical? Copied from Scottish
                 prussian = "Sarbriukenas" # Historical? Copied from Lithuanian
                 roman = "Saaraepontum"
+                samoyed = "Saarbrükken" # Historical? Copied from Vespian
                 scottish = "Sárbrúch" # Historical? Copied from Irish
                 swabian = "Saarbrücken" # Historical? Copied from German
                 thuringian = "Saarbrücken" # Historical? Copied from German
+                vespian = "Saarbrükken"
                 welsh = "Sárbrúch" # Historical? Copied from Irish
 
                 b_homburg_saar = {
@@ -2027,18 +2180,24 @@ e_hre = {
                     cumbric = "Sárbrúch" # Historical? Copied from Scottish
                     franconian = "Saarbrücken" # Historical? Copied from German
                     irish = "Sárbrúch"
+                    karelian = "Saarbrükken" # Historical? Copied from Vespian
+                    khanty = "Saarbrükken" # Historical? Copied from Vespian
                     lettigallish = "Sarbriukenas" # Historical? Copied from Lithuanian
                     lithuanian = "Sarbriukenas"
                     low_frankish = "Saarbrücken" # Historical? Copied from German
                     low_german = "Saarbrücken" # Historical? Copied from German
                     low_saxon = "Saarbrücken" # Historical? Copied from German
+                    mari = "Saarbrükken" # Historical? Copied from Vespian
+                    mordvin = "Saarbrükken" # Historical? Copied from Vespian
                     norman = "Sarrebruck" # Historical? Copied from Frankish
                     pictish = "Sárbrúch" # Historical? Copied from Scottish
                     prussian = "Sarbriukenas" # Historical? Copied from Lithuanian
                     roman = "Saaraepontum"
+                    samoyed = "Saarbrükken" # Historical? Copied from Vespian
                     scottish = "Sárbrúch" # Historical? Copied from Irish
                     swabian = "Saarbrücken" # Historical? Copied from German
                     thuringian = "Saarbrücken" # Historical? Copied from German
+                    vespian = "Saarbrükken"
                     welsh = "Sárbrúch" # Historical? Copied from Irish
                 }
                 b_tholey = {
@@ -2104,6 +2263,7 @@ e_hre = {
                     roman = "Valdemontium"
                 }
                 b_st_die = {
+                    occitan = "Diá"
                     roman = "Sanctus Deodatus"
                     romanian = "Sfântul Deodat" # Historical? Translated
                 }
@@ -2484,6 +2644,9 @@ e_hre = {
             }
         }
         d_barleduc = {
+            lettigallish = "Baras" # Historical? Copied from Lithuanian
+            lithuanian = "Baras"
+            prussian = "Baras" # Historical? Copied from Lithuanian
             roman = "Barrum Ducis"
 
             c_bar = {
@@ -2645,6 +2808,7 @@ e_hre = {
             lettigallish = "Tryras" # Historical? Copied from Lithuanian
             ligurian = "Treviri" # Historical? Copied from Italian
             lithuanian = "Tryras"
+            lombard = "Trevir"
             neapolitan = "Treviri" # Historical? Copied from Italian
             norman = "Trèves" # Historical? Copied from Frankish
             occitan = "Trevèri"
@@ -2675,7 +2839,7 @@ e_hre = {
                 lettigallish = "Tryras" # Historical? Copied from Lithuanian
                 ligurian = "Treviri" # Historical? Copied from Italian
                 lithuanian = "Tryras"
-                lithuanian = "Tryras"
+                lombard = "Trevir"
                 neapolitan = "Treviri" # Historical? Copied from Italian
                 norman = "Trèves" # Historical? Copied from Frankish
                 occitan = "Trevèri"
@@ -2704,6 +2868,7 @@ e_hre = {
                     lettigallish = "Tryras" # Historical? Copied from Lithuanian
                     ligurian = "Treviri" # Historical? Copied from Italian
                     lithuanian = "Tryras"
+                    lombard = "Trevir"
                     neapolitan = "Treviri" # Historical? Copied from Italian
                     norman = "Trèves" # Historical? Copied from Frankish
                     occitan = "Trevèri"
@@ -2841,6 +3006,8 @@ e_hre = {
                 langobardisch = "Luneburgo" # Historical? Copied from Italian
                 laziale = "Luneburgo" # Historical? Copied from Italian
                 ligurian = "Luneburgo" # Historical? Copied from Italian
+                low_german = "Lümborg"
+                low_saxon = "Lümborg"
                 neapolitan = "Luneburgo" # Historical? Copied from Italian
                 norman = "Lunebourg" # Historical? Copied from Frankish
                 portuguese = "Luneburgo"
@@ -2860,6 +3027,8 @@ e_hre = {
                     langobardisch = "Luneburgo" # Historical? Copied from Italian
                     laziale = "Luneburgo" # Historical? Copied from Italian
                     ligurian = "Luneburgo" # Historical? Copied from Italian
+                    low_german = "Lümborg"
+                    low_saxon = "Lümborg"
                     neapolitan = "Luneburgo" # Historical? Copied from Italian
                     norman = "Lunebourg" # Historical? Copied from Frankish
                     portuguese = "Luneburgo"
@@ -2875,6 +3044,8 @@ e_hre = {
                     romanian = "Arhanghelul Mihail" # Historical? Translated
                 }
                 b_bardowick = {
+                    low_german = "Bewick"
+                    low_saxon = "Bewick"
                     roman = "Bardorum Vicus"
                 }
                 b_celle = {
@@ -2887,6 +3058,7 @@ e_hre = {
                 }
                 b_hannover = {
                     arpitan = "Hanovre" # Historical? Copied from Frankish
+                    bavarian = "Hannova"
                     breton = "Hànobhar" # Historical? Copied from Welsh
                     castillan = "Hanóver"
                     cornish = "Hànobhar" # Historical? Copied from Welsh
@@ -2896,6 +3068,8 @@ e_hre = {
                     irish = "Hànobhar" # Historical? Copied from Scottish
                     lettigallish = "Hanoveris" # Historical? Copied from Lithuanian
                     lithuanian = "Hanoveris"
+                    low_german = "Hannauver"
+                    low_saxon = "Hannauver"
                     norman = "Hanovre" # Historical? Copied from Frankish
                     pictish = "Hànobhar" # Historical? Copied from Scottish
                     polish = "Hanower"
@@ -2914,30 +3088,42 @@ e_hre = {
                 }
             }
             c_braunschweig = {
+                arpitan = "Brunswick" # Historical? Copied from Frankish
+                castillan = "Brunswick"
+                frankish = "Brunswick"
                 frisian = "Brunswyk"
                 icelandic = "Brúnsvík"
                 lettigallish = "Braunšveigas" # Historical? Copied from Lithuanian
                 lithuanian = "Braunšveigas"
+                low_german = "Bronswiek"
+                low_saxon = "Bronswiek"
+                norman = "Brunswick" # Historical? Copied from Frankish
                 norse = "Brúnsvík" # Historical? Copied from Icelandic
                 polish = "Brunszwik"
                 pommeranian = "Brunszwik" # Historical? Copied from Polish
                 prussian = "Braunšveigas" # Historical? Copied from Lithuanian
                 roman = "Brunonis Vicus"
-                
 
                 b_wolfenbuttel = {
                     portuguese = "Volfembutel"
                     roman = "Vadum Lupi"
                 }
                 b_braunschweig = {
+                    arpitan = "Brunswick" # Historical? Copied from Frankish
+                    castillan = "Brunswick"
+                    frankish = "Brunswick"
                     frisian = "Brunswyk"
                     icelandic = "Brúnsvík"
                     lettigallish = "Braunšveigas" # Historical? Copied from Lithuanian
                     lithuanian = "Braunšveigas"
+                    low_german = "Bronswiek"
+                    low_saxon = "Bronswiek"
+                    norman = "Brunswick" # Historical? Copied from Frankish
                     norse = "Brúnsvík" # Historical? Copied from Icelandic
                     polish = "Brunszwik"
                     pommeranian = "Brunszwik" # Historical? Copied from Polish
                     prussian = "Braunšveigas" # Historical? Copied from Lithuanian
+                    roman = "Brunsvicum"
                 }
                 b_lutter = {
                 }
@@ -2945,6 +3131,8 @@ e_hre = {
                     roman = "Suepplingaburgum"
                 }
                 b_helmstedt = {
+                    low_german = "Helmstidde"
+                    low_saxon = "Helmstidde"
                     roman = "Helmonstadensis"
                 }
                 b_st_ludgeri = {
@@ -2964,6 +3152,8 @@ e_hre = {
                 lettigallish = "Getingenas" # Historical? Copied from Lithuanian
                 ligurian = "Gottinga" # Historical? Copied from Italian
                 lithuanian = "Getingenas"
+                low_german = "Chöttingen"
+                low_saxon = "Chöttingen"
                 neapolitan = "Gottinga" # Historical? Copied from Italian
                 polish = "Getynga"
                 pommeranian = "Getynga" # Historical? Copied from Polish
@@ -2983,21 +3173,23 @@ e_hre = {
                     roman = "Gandesium"
                 }
                 b_gottingen = {
-                    roman = "Gottinga"
                     castillan = "Gotinga"
+                    dalmatian = "Gottinga" # Historical? Copied from Italian
                     galician = "Gotinga"
                     italian = "Gottinga"
-                    lithuanian = "Getingenas"
-                    polish = "Getynga"
-                    portuguese = "Gotinga"
-                    dalmatian = "Gottinga" # Historical? Copied from Italian
                     langobardisch = "Gottinga" # Historical? Copied from Italian
                     laziale = "Gottinga" # Historical? Copied from Italian
                     lettigallish = "Getingenas" # Historical? Copied from Lithuanian
                     ligurian = "Gottinga" # Historical? Copied from Italian
+                    lithuanian = "Getingenas"
+                    low_german = "Chöttingen"
+                    low_saxon = "Chöttingen"
                     neapolitan = "Gottinga" # Historical? Copied from Italian
+                    polish = "Getynga"
                     pommeranian = "Getynga" # Historical? Copied from Polish
+                    portuguese = "Gotinga"
                     prussian = "Getingenas" # Historical? Copied from Lithuanian
+                    roman = "Gottinga"
                     sardinian = "Gottinga" # Historical? Copied from Italian
                     sicilian = "Gottinga" # Historical? Copied from Italian
                     tuscan = "Gottinga" # Historical? Copied from Italian
@@ -3014,6 +3206,8 @@ e_hre = {
                     roman = "Plesseium"
                 }
                 b_einbeck = {
+                    low_german = "Aimbeck"
+                    low_saxon = "Aimbeck"
                 }
                 b_eschwege = {
                     roman = "Escevegia"
@@ -3030,6 +3224,8 @@ e_hre = {
                     frankish = "Quedlinbourg"
                     lettigallish = "Kvedlinburgas" # Historical? Copied from Lithuanian
                     lithuanian = "Kvedlinburgas"
+                    low_german = "Queddelnborg"
+                    low_saxon = "Queddelnborg"
                     norman = "Quedlinbourg" # Historical? Copied from Frankish
                     portuguese = "Quedlimburgo"
                     prussian = "Kvedlinburgas" # Historical? Copied from Lithuanian
@@ -3086,10 +3282,14 @@ e_hre = {
                 b_hildesheim = {
                     lettigallish = "Hildesheimas" # Historical? Copied from Lithuanian
                     lithuanian = "Hildesheimas"
+                    low_german = "Hilmessen"
+                    low_saxon = "Hilmessen"
                     prussian = "Hildesheimas" # Historical? Copied from Lithuanian
                     roman = "Hildinensis"
                 }
                 b_goslar = {
+                    low_german = "Goslär"
+                    low_saxon = "Goslär"
                     roman = "Goslaria"
                 }
                 b_dassel = {
@@ -3099,6 +3299,8 @@ e_hre = {
                 b_alfeld = {
                     lettigallish = "Alfeldas" # Historical? Copied from Lithuanian
                     lithuanian = "Alfeldas"
+                    low_german = "Allefelle"
+                    low_saxon = "Allefelle"
                     prussian = "Alfeldas" # Historical? Copied from Lithuanian
                     roman = "Alfelda"
                 }
@@ -3173,6 +3375,8 @@ e_hre = {
                     venetian = "Brema" # Historical? Copied from Italian
                 }
                 b_verden = {
+                    low_german = "Veern"
+                    low_saxon = "Veern"
                     roman = "Verdensis"
                 }
                 b_versfleth = {
@@ -3183,6 +3387,8 @@ e_hre = {
                 b_voerde = {
                 }
                 b_achim = {
+                    low_german = "Achem"
+                    low_saxon = "Achem"
                     swedish = "Uphusen"
                 }
                 b_luneberg = {
@@ -3194,6 +3400,8 @@ e_hre = {
                     langobardisch = "Luneburgo" # Historical? Copied from Italian
                     laziale = "Luneburgo" # Historical? Copied from Italian
                     ligurian = "Luneburgo" # Historical? Copied from Italian
+                    low_german = "Lümborg"
+                    low_saxon = "Lümborg"
                     neapolitan = "Luneburgo" # Historical? Copied from Italian
                     norman = "Lunebourg" # Historical? Copied from Frankish
                     portuguese = "Luneburgo"
@@ -3206,9 +3414,13 @@ e_hre = {
                 }
             }
             c_stade = {
+                low_german = "Stood"
+                low_saxon = "Stood"
                 roman = "Statium"
 
                 b_stade = {
+                    low_german = "Stood"
+                    low_saxon = "Stood"
                     roman = "Statium"
                 }
                 b_stotel = {
@@ -3218,12 +3430,18 @@ e_hre = {
                     roman = "Bederekesa Castrum"
                 }
                 b_otterndorf = {
+                    low_german = "Oterndörp"
+                    low_saxon = "Oterndörp"
                     roman = "Vicus Lutrarum"
                 }
                 b_harsefeld = {
+                    low_german = "Harsfeld"
+                    low_saxon = "Harsfeld"
                     roman = "Harzefeldensis" # Or "Harzefeldensis Vicus"
                 }
                 b_buxtehude = {
+                    low_german = "Buxthu"
+                    low_saxon = "Buxthu"
                 }
                 b_hadeln = {
                     roman = "Hadelensis"
@@ -3239,6 +3457,11 @@ e_hre = {
                     roman = "Buccensis"
                 }
                 b_nienburg = {
+                    lettigallish = "Ninburga pie Vezeres"
+                    lithuanian = "Ninburga pie Vezeres" # Historical? Copied from Lettigallish
+                    low_german = "Nienborg"
+                    low_saxon = "Nienborg"
+                    prussian = "Ninburga pie Vezeres" # Historical? Copied from Lettigallish
                     roman = "Nienburgensis"
                 }
                 b_wolpe = {
@@ -3265,6 +3488,8 @@ e_hre = {
                 b_paderborn = {
                     lettigallish = "Paderbornas" # Historical? Copied from Lithuanian
                     lithuanian = "Paderbornas"
+                    low_german = "Patterbuorn"
+                    low_saxon = "Patterbuorn"
                     prussian = "Paderbornas" # Historical? Copied from Lithuanian
                     roman = "Padelbronnensis"
                 }
@@ -3287,6 +3512,8 @@ e_hre = {
                     roman = "Schauenburgum"
                 }
                 b_minden = {
+                    low_german = "Minn"
+                    low_saxon = "Minn"
                     roman = "Mindonensis"
                 }
                 b_wunstorf = {
@@ -3312,6 +3539,9 @@ e_hre = {
                 icelandic = "Aldinborg"
                 lettigallish = "Oldenburgas" # Historical? Copied from Lithuanian
                 lithuanian = "Oldenburgas"
+                lombard = "Oldemburgh"
+                low_german = "Ollnborg"
+                low_saxon = "Ollnborg"
                 norman = "Oldenbourg" # Historical? Copied from Frankish
                 norse = "Aldinborg" # Historical? Copied from Icelandic
                 portuguese = "Oldemburgo"
@@ -3326,6 +3556,9 @@ e_hre = {
                     icelandic = "Aldinborg"
                     lettigallish = "Oldenburgas" # Historical? Copied from Lithuanian
                     lithuanian = "Oldenburgas"
+                    lombard = "Oldemburgh"
+                    low_german = "Ollnborg"
+                    low_saxon = "Ollnborg"
                     norman = "Oldenbourg" # Historical? Copied from Frankish
                     norse = "Aldinborg" # Historical? Copied from Icelandic
                     portuguese = "Oldemburgo"
@@ -3333,12 +3566,18 @@ e_hre = {
                     roman = "Branesia"
                 }
                 b_wildeshausen = {
+                    low_german = "Wilshusen"
+                    low_saxon = "Wilshusen"
                     roman = "Wolada Civitas"
                 }
                 b_rastede = {
+                    low_german = "Raastäe"
+                    low_saxon = "Raastäe"
                     roman = "Rastedensis Vicus"
                 }
                 b_delmenhorst = {
+                    low_german = "Demost"
+                    low_saxon = "Demost"
                     roman = "Delmenhorstium"
                 }
                 b_varel = {
@@ -3357,16 +3596,22 @@ e_hre = {
             c_arnsberg = {
                 lettigallish = "Arnsbergas" # Historical? Copied from Lithuanian
                 lithuanian = "Arnsbergas"
+                low_german = "Arensperg"
+                low_saxon = "Arensperg"
                 prussian = "Arnsbergas" # Historical? Copied from Lithuanian
                 roman = "Arnsburgum"
 
                 b_arnsberg = {
                     lettigallish = "Arnsbergas" # Historical? Copied from Lithuanian
                     lithuanian = "Arnsbergas"
+                    low_german = "Arensperg"
+                    low_saxon = "Arensperg"
                     prussian = "Arnsbergas" # Historical? Copied from Lithuanian
                     roman = "Arnsburgum"
                 }
                 b_soest = {
+                    low_german = "Saust"
+                    low_saxon = "Saust"
                     roman = "Sosatium"
                 }
                 b_wedinghausen = {
@@ -3375,6 +3620,8 @@ e_hre = {
                     roman = "Bura"
                 }
                 b_ruthen = {
+                    low_german = "Ruihen"
+                    low_saxon = "Ruihen"
                     roman = "Rutenicus"
                 }
                 b_padberg = {
@@ -3410,6 +3657,8 @@ e_hre = {
                 b_recklinghausen = {
                     lettigallish = "Reklinghauzenas" # Historical? Copied from Lithuanian
                     lithuanian = "Reklinghauzenas"
+                    low_german = "Riäkelhusen"
+                    low_saxon = "Riäkelhusen"
                     prussian = "Reklinghauzenas" # Historical? Copied from Lithuanian
                     roman = "Recklinga Villa"
                 }
@@ -3419,12 +3668,17 @@ e_hre = {
             c_munster = {
                 lettigallish = "Miunsteris" # Historical? Copied from Lithuanian
                 lithuanian = "Miunsteris"
+                low_german = "Mönster"
+                low_saxon = "Mönster"
                 prussian = "Miunsteris" # Historical? Copied from Lithuanian
                 roman = "Monasterium"
 
                 b_munster = {
+                    frisian = "Munster"
                     lettigallish = "Miunsteris" # Historical? Copied from Lithuanian
                     lithuanian = "Miunsteris"
+                    low_german = "Mönster"
+                    low_saxon = "Mönster"
                     prussian = "Miunsteris" # Historical? Copied from Lithuanian
                     roman = "Monasterium"
                 }
@@ -3435,6 +3689,8 @@ e_hre = {
                     roman = "Werdinensis"
                 }
                 b_coesfeld = {
+                    low_german = "Koosfeld"
+                    low_saxon = "Koosfeld"
                     roman = "Cosfeldia"
                 }
                 b_ahaus = {
@@ -3443,6 +3699,8 @@ e_hre = {
                 b_ahlen = {
                     lettigallish = "Alenas" # Historical? Copied from Lithuanian
                     lithuanian = "Alenas"
+                    low_german = "Aulen"
+                    low_saxon = "Aulen"
                     prussian = "Alenas" # Historical? Copied from Lithuanian
                     roman = "Ahlensis"
                 }
@@ -3474,9 +3732,13 @@ e_hre = {
                 }
                 b_cloppenburg = {
                     frisian = "Kloppenboarch"
+                    low_german = "Cloppenborg"
+                    low_saxon = "Cloppenborg"
                     roman = "Cloppenburgum"
                 }
                 b_quakenbruck = {
+                    low_german = "Quokenbrügge"
+                    low_saxon = "Quokenbrügge"
                     roman = "Quaccenbrugga"
                 }
             }
@@ -3495,6 +3757,8 @@ e_hre = {
                     roman = "Steinvortova"
                 }
                 b_schuttorf = {
+                    low_german = "Schüttrup"
+                    low_saxon = "Schüttrup"
                 }
                 b_horstmar = {
                     roman = "Horstmaria"
@@ -3505,6 +3769,8 @@ e_hre = {
             c_osnabruck = {
                 lettigallish = "Osnabriukas" # Historical? Copied from Lithuanian
                 lithuanian = "Osnabriukas"
+                low_german = "Ossenbrügge"
+                low_saxon = "Ossenbrügge"
                 prussian = "Osnabriukas" # Historical? Copied from Lithuanian
                 roman = "Asenbruggensis"
 
@@ -3520,6 +3786,8 @@ e_hre = {
                 b_osnabruck = {
                     lettigallish = "Osnabriukas" # Historical? Copied from Lithuanian
                     lithuanian = "Osnabriukas"
+                    low_german = "Ossenbrügge"
+                    low_saxon = "Ossenbrügge"
                     prussian = "Osnabriukas" # Historical? Copied from Lithuanian
                     roman = "Asenbruggensis"
                 }
@@ -3527,6 +3795,8 @@ e_hre = {
                     roman = "Wydenbrucca"
                 }
                 b_vechta = {
+                    low_german = "Vechte"
+                    low_saxon = "Vechte"
                     roman = "Vaconna"
                 }
                 b_diepholz = {
@@ -3535,7 +3805,15 @@ e_hre = {
                     roman = "Rehei"
                 }
                 b_herford_westfalen = {
+                    breton = "Henffordd" # Historical? Copied from Welsh
+                    cornish = "Henffordd" # Historical? Copied from Welsh
+                    irish = "Henffordd" # Historical? Copied from Welsh
+                    lettigallish = "Herefordas" # Historical? Copied from Lithuanian
+                    lithuanian = "Herefordas"
+                    prussian = "Herefordas" # Historical? Copied from Lithuanian
                     roman = "Herevordia"
+                    scottish = "Henffordd" # Historical? Copied from Welsh
+                    welsh = "Henffordd"
                 }
             }
         }
@@ -3557,7 +3835,10 @@ e_hre = {
                 b_rendsburg = {
                     arpitan = "Rendsbourg" # Historical? Copied from Frankish
                     frankish = "Rendsbourg"
+                    frisian = "Rendsborag"
                     gothic = "Reinoldsborg" # Historical? Copied from Norwegian
+                    low_german = "Rendsborg"
+                    low_saxon = "Rendsborg"
                     norman = "Rendsbourg" # Historical? Copied from Frankish
                     roman = "Rendsburgum"
                 }
@@ -3566,6 +3847,9 @@ e_hre = {
                     roman = "Nova Monasterium"
                 }
                 b_neumunster = {
+                    frisian = "Naimünster"
+                    low_german = "Niemünster"
+                    low_saxon = "Niemünster"
                     roman = "Novum Monasterium"
                 }
                 b_bornhoved = {
@@ -3593,6 +3877,8 @@ e_hre = {
                 ligurian = "Amburgo" # Historical? Copied from Italian
                 lithuanian = "Hamburgas"
                 livonian = "Hampuri" # Historical? Copied from Finnish
+                low_german = "Hamborg"
+                low_saxon = "Hamborg"
                 neapolitan = "Amburgo" # Historical? Copied from Italian
                 norman = "Hambourg" # Historical? Copied from Frankish
                 norse = "Hamborg" # Historical? Copied from Icelandic
@@ -3610,6 +3896,8 @@ e_hre = {
                 b_pinneberg = {
                     lettigallish = "Pinebergas" # Historical? Copied from Lithuanian
                     lithuanian = "Pinebergas"
+                    low_german = "Pinnbarg"
+                    low_saxon = "Pinnbarg"
                     prussian = "Pinebergas" # Historical? Copied from Lithuanian
                     roman = "Pinneburgum"
                 }
@@ -3631,6 +3919,8 @@ e_hre = {
                     ligurian = "Amburgo" # Historical? Copied from Italian
                     lithuanian = "Hamburgas"
                     livonian = "Hampuri" # Historical? Copied from Finnish
+                    low_german = "Hamborg"
+                    low_saxon = "Hamborg"
                     neapolitan = "Amburgo" # Historical? Copied from Italian
                     norman = "Hambourg" # Historical? Copied from Frankish
                     norse = "Hamborg" # Historical? Copied from Icelandic
@@ -3656,14 +3946,19 @@ e_hre = {
                 }
                 b_wedel = {
                     lettigallish = "Vedelis" # Historical? Copied from Lithuanian
-                    lithuanian = "Vedelis"                
+                    lithuanian = "Vedelis"
                     prussian = "Vedelis" # Historical? Copied from Lithuanian
                 }
             }
             c_dithmarschen = {
+                icelandic = "Þéttmerski"
+                norse = "Þéttmerski" # Historical? Copied from Icelandic
+                norwegian = "Ditmarsken"
                 roman = "Ditmarcia"
 
                 b_meldorf = {
+                    low_german = "Meldörp"
+                    low_saxon = "Meldörp"
                     roman = "Meldorpium"
                 }
                 b_bokelnburg = {
@@ -3724,6 +4019,8 @@ e_hre = {
                     roman = "Geronis Saltus"
                 }
                 b_aschersleben = {
+                    low_german = "Ascherslebbe"
+                    low_saxon = "Ascherslebbe"
                     roman = "Ascania"
                 }
                 b_anhalt = {
@@ -3806,16 +4103,26 @@ e_hre = {
                     roman = "Leoburgum"
                 }
                 b_gadebusch = {
+                    lettigallish = "Gãdebuša"
+                    lithuanian = "Gãdebuša" # Historical? Copied from Lettigallish
+                    prussian = "Gãdebuša" # Historical? Copied from Lettigallish
                 }
                 b_rehna = {
+                    lettigallish = "Rena"
+                    lithuanian = "Rena" # Historical? Copied from Lettigallish
+                    prussian = "Rena" # Historical? Copied from Lettigallish
                 }
                 b_linau = {
                 }
             }
             c_dannenberg = {
+                low_german = "Dannenbarg"
+                low_saxon = "Dannenbarg"
                 roman = "Dannenbergense"
 
                 b_dannenberg = {
+                    low_german = "Dannenbarg"
+                    low_saxon = "Dannenbarg"
                     roman = "Dannenbergense"
                 }
                 b_luchow = {
@@ -3826,6 +4133,9 @@ e_hre = {
                 b_ebstorf = {
                 }
                 b_domitz = {
+                    lettigallish = "Demica"
+                    lithuanian = "Demica" # Historical? Copied from Lettigallish
+                    prussian = "Demica" # Historical? Copied from Lettigallish
                 }
                 b_wustrow = {
                 }
@@ -3836,16 +4146,23 @@ e_hre = {
             c_schwerin = {
                 lettigallish = "Šverinas" # Historical? Copied from Lithuanian
                 lithuanian = "Šverinas"
+                low_german = "Swerin"
+                low_saxon = "Swerin"
                 prussian = "Šverinas" # Historical? Copied from Lithuanian
                 roman = "Zuarinensis"
 
                 b_crivitz = {
                 }
                 b_boizenburg = {
+                    lettigallish = "Boicenburga"
+                    lithuanian = "Boicenburga" # Historical? Copied from Lettigallish
+                    prussian = "Boicenburga" # Historical? Copied from Lettigallish
                 }
                 b_schwerin = {
                     lettigallish = "Šverinas" # Historical? Copied from Lithuanian
                     lithuanian = "Šverinas"
+                    low_german = "Swerin"
+                    low_saxon = "Swerin"
                     prussian = "Šverinas" # Historical? Copied from Lithuanian
                     roman = "Zuarinensis"
                 }
@@ -3896,7 +4213,10 @@ e_hre = {
                     roman = "Misninensis"
                 }
                 b_freiberg = {
+                    lettigallish = "Freiberga"
+                    lithuanian = "Freiberga" # Historical? Copied from Lettigallish
                     portuguese = "Freiberga"
+                    prussian = "Freiberga" # Historical? Copied from Lettigallish
                     roman = "Freibergum"
                 }
                 b_meissen = {
@@ -3924,13 +4244,14 @@ e_hre = {
                     prussian = "Chemnicas" # Historical? Copied from Lithuanian
                     roman = "Caminizi Rivus"
                     slovieni = "Kamenica"
-                    romanian = "Camenita" # Translated. t has , 
+                    romanian = "Camenita" # Translated. t has ,
                 }
                 b_hartenstein = {
                     roman = "Hartensteinium"
                 }
                 b_dresden = {
                     arpitan = "Dresde" # Historical? Copied from Frankish
+                    bavarian = "Dresdn"
                     bohemian = "Dráždany" # Historical? Copied from Slovieni
                     castillan = "Dresde"
                     dalmatian = "Dresda" # Historical? Copied from Italian
@@ -3940,9 +4261,11 @@ e_hre = {
                     italian = "Dresda"
                     langobardisch = "Dresda" # Historical? Copied from Italian
                     laziale = "Dresda" # Historical? Copied from Italian
+                    leonese = "Dresde"
                     lettigallish = "Dresdenas" # Historical? Copied from Lithuanian
                     ligurian = "Dresda" # Historical? Copied from Italian
                     lithuanian = "Dresdenas"
+                    lombard = "Dresda"
                     neapolitan = "Dresda" # Historical? Copied from Italian
                     norman = "Dresde" # Historical? Copied from Frankish
                     occitan = "Drèsda"
@@ -4012,11 +4335,16 @@ e_hre = {
                     dalmatian = "Lipsia" # Historical? Copied from Italian
                     hungarian = "Lipcse"
                     italian = "Lipsia"
+                    karelian = "Läipcig" # Historical? Copied from Vespian
+                    khanty = "Läipcig" # Historical? Copied from Vespian
                     langobardisch = "Lipsia" # Historical? Copied from Italian
                     laziale = "Lipsia" # Historical? Copied from Italian
                     lettigallish = "Leipcigas" # Historical? Copied from Lithuanian
                     ligurian = "Lipsia" # Historical? Copied from Italian
                     lithuanian = "Leipcigas"
+                    lombard = "Lipsia"
+                    mari = "Läipcig" # Historical? Copied from Vespian
+                    mordvin = "Läipcig" # Historical? Copied from Vespian
                     neapolitan = "Lipsia" # Historical? Copied from Italian
                     polish = "Lipsk"
                     pommeranian = "Lipsk" # Historical? Copied from Polish
@@ -4024,6 +4352,7 @@ e_hre = {
                     prussian = "Leipcigas" # Historical? Copied from Lithuanian
                     roman = "Leisnicium"
                     romanian = "Lipsca" # s has ,
+                    samoyed = "Läipcig" # Historical? Copied from Vespian
                     sardinian = "Lipsia" # Historical? Copied from Italian
                     sicilian = "Lipsia" # Historical? Copied from Italian
                     slovieni = "Lipsko"
@@ -4031,14 +4360,21 @@ e_hre = {
                     tuscan = "Lipsia" # Historical? Copied from Italian
                     umbrian = "Lipsia" # Historical? Copied from Italian
                     venetian = "Lipsia" # Historical? Copied from Italian
+                    vespian = "Läipcig"
                 }
                 b_landsberg = {
                     roman = "Lantsberga"
                 }
                 b_torgau = {
+                    lettigallish = "Torgava"
+                    lithuanian = "Torgava" # Historical? Copied from Lettigallish
+                    prussian = "Torgava" # Historical? Copied from Lettigallish
                     roman = "Ocellus Civitas"
                 }
                 b_eilenburg = {
+                    lettigallish = "Eilenburga"
+                    lithuanian = "Eilenburga" # Historical? Copied from Lettigallish
+                    prussian = "Eilenburga" # Historical? Copied from Lettigallish
                     roman = "Ilenburgum"
                 }
                 b_muhlberg = {
@@ -4052,6 +4388,9 @@ e_hre = {
                     roman = "Groisca"
                 }
                 b_leisnig = {
+                    lettigallish = "Leisniga"
+                    lithuanian = "Leisniga" # Historical? Copied from Lettigallish
+                    prussian = "Leisniga" # Historical? Copied from Lettigallish
                     roman = "Leisnicium"
                 }
                 b_zeitz = {
@@ -4064,10 +4403,15 @@ e_hre = {
                     arpitan = "Naumbourg" # Historical? Copied from Frankish
                     castillan = "Naumburgo"
                     frankish = "Naumbourg"
+                    low_german = "Naumborg"
+                    low_saxon = "Naumborg"
                     norman = "Naumbourg" # Historical? Copied from Frankish
                     roman = "Naumburgum"
                 }
                 b_colditz = {
+                    lettigallish = "Koldica"
+                    lithuanian = "Koldica" # Historical? Copied from Lettigallish
+                    prussian = "Koldica" # Historical? Copied from Lettigallish
                 }
                 b_altenburg = {
                     arpitan = "Altenbourg" # Historical? Copied from Frankish
@@ -4119,15 +4463,21 @@ e_hre = {
         d_magdeburg = {
             aragonese = "Magdeburgo"
             arpitan = "Magdebourg" # Historical? Copied from Frankish
+            bavarian = "Magdebuag"
             castillan = "Magdeburgo"
             dalmatian = "Magdeburgo" # Historical? Copied from Italian
+            dutch = "Maagdenburg"
             frankish = "Magdebourg"
+            frisian = "Magdebörj"
             italian = "Magdeburgo"
             langobardisch = "Magdeburgo" # Historical? Copied from Italian
             laziale = "Magdeburgo" # Historical? Copied from Italian
             lettigallish = "Magdeburgas" # Historical? Copied from Lithuanian
             ligurian = "Magdeburgo" # Historical? Copied from Italian
             lithuanian = "Magdeburgas"
+            lombard = "Magdeburgh"
+            low_german = "Madeborch"
+            low_saxon = "Madeborch"
             neapolitan = "Magdeburgo" # Historical? Copied from Italian
             norman = "Magdebourg" # Historical? Copied from Frankish
             occitan = "Magdeborg"
@@ -4143,6 +4493,7 @@ e_hre = {
     }
     k_franconia = {
         arpitan = "Franconie" # Historical? Copied from Frankish
+        castillan = "Franconia"
         frankish = "Franconie"
         lombard = "Franconia"
         norman = "Franconie" # Historical? Copied from Frankish
@@ -4167,7 +4518,10 @@ e_hre = {
                 b_aschaffenburg = {
                     arpitan = "Aschaffenbourg" # Historical? Copied from Frankish
                     frankish = "Aschaffenbourg"
+                    lettigallish = "Ašafenburga"
+                    lithuanian = "Ašafenburga" # Historical? Copied from Lettigallish
                     norman = "Aschaffenbourg" # Historical? Copied from Frankish
+                    prussian = "Ašafenburga" # Historical? Copied from Lettigallish
                     roman = "Aschaffenburgum"
                 }
                 b_nidda = {
@@ -4270,9 +4624,12 @@ e_hre = {
                 thuringian = "Pfalz" # Historical? Copied from German
 
                 b_heidelberg = {
+                    bavarian = "Heidlberg"
                     frisian = "Heidelberch"
                     lettigallish = "Heidelbergas" # Historical? Copied from Lithuanian
                     lithuanian = "Heidelbergas"
+                    low_german = "Heidelbarg"
+                    low_saxon = "Heidelbarg"
                     prussian = "Heidelbergas" # Historical? Copied from Lithuanian
                     roman = "Heidelberga"
                 }
@@ -4414,8 +4771,10 @@ e_hre = {
         d_ostfranken = {
             c_wurzburg = {
                 arpitan = "Wurtzbourg" # Historical? Copied from Frankish
+                bavarian = "Wiazburg"
                 castillan = "Wurzburgo"
                 frankish = "Wurtzbourg"
+                frisian = "Würzbörj"
                 lettigallish = "Viurcburgas" # Historical? Copied from Lithuanian
                 lithuanian = "Viurcburgas"
                 norman = "Wurtzbourg" # Historical? Copied from Frankish
@@ -4427,8 +4786,10 @@ e_hre = {
                 }
                 b_wurzburg = {
                     arpitan = "Wurtzbourg" # Historical? Copied from Frankish
+                    bavarian = "Wiazburg"
                     castillan = "Wurzburgo"
                     frankish = "Wurtzbourg"
+                    frisian = "Würzbörj"
                     lettigallish = "Viurcburgas" # Historical? Copied from Lithuanian
                     lithuanian = "Viurcburgas"
                     norman = "Wurtzbourg" # Historical? Copied from Frankish
@@ -4437,6 +4798,7 @@ e_hre = {
                     roman = "Vuirziburga"
                 }
                 b_ochsenfurt = {
+                    bavarian = "Oxnfuat"
                 }
                 b_schluchtern = {
                 }
@@ -4528,6 +4890,8 @@ e_hre = {
                 lettigallish = "Bambergas" # Historical? Copied from Lithuanian
                 ligurian = "Bamberga" # Historical? Copied from Italian
                 lithuanian = "Bambergas"
+                low_german = "Bambarg"
+                low_saxon = "Bambarg"
                 neapolitan = "Bamberga" # Historical? Copied from Italian
                 prussian = "Bambergas" # Historical? Copied from Lithuanian
                 roman = "Bamberga"
@@ -4554,6 +4918,8 @@ e_hre = {
                     lettigallish = "Bambergas" # Historical? Copied from Lithuanian
                     ligurian = "Bamberga" # Historical? Copied from Italian
                     lithuanian = "Bambergas"
+                    low_german = "Bambarg"
+                    low_saxon = "Bambarg"
                     neapolitan = "Bamberga" # Historical? Copied from Italian
                     prussian = "Bambergas" # Historical? Copied from Lithuanian
                     roman = "Bamberga"
@@ -4566,6 +4932,7 @@ e_hre = {
                 b_pottenstein = {
                 }
                 b_erlangen = {
+                    bavarian = "Erlanga"
                     lettigallish = "Erlangenas" # Historical? Copied from Lithuanian
                     lithuanian = "Erlangenas"
                     prussian = "Erlangenas" # Historical? Copied from Lithuanian
@@ -4589,6 +4956,7 @@ e_hre = {
             lettigallish = "Maincas" # Historical? Copied from Lithuanian
             ligurian = "Magonza" # Historical? Copied from Italian
             lithuanian = "Maincas"
+            lombard = "Magunza"
             neapolitan = "Magonza" # Historical? Copied from Italian
             norman = "Mayence" # Historical? Copied from Frankish
             occitan = "Maiança"
@@ -4620,6 +4988,7 @@ e_hre = {
                 lettigallish = "Maincas" # Historical? Copied from Lithuanian
                 ligurian = "Magonza" # Historical? Copied from Italian
                 lithuanian = "Maincas"
+                lombard = "Magunza"
                 neapolitan = "Magonza" # Historical? Copied from Italian
                 norman = "Mayence" # Historical? Copied from Frankish
                 occitan = "Maiança"
@@ -4650,6 +5019,7 @@ e_hre = {
                     lettigallish = "Maincas" # Historical? Copied from Lithuanian
                     ligurian = "Magonza" # Historical? Copied from Italian
                     lithuanian = "Maincas"
+                    lombard = "Magunza"
                     neapolitan = "Magonza" # Historical? Copied from Italian
                     norman = "Mayence" # Historical? Copied from Frankish
                     occitan = "Maiança"
@@ -4787,6 +5157,8 @@ e_hre = {
                 b_reinhardsbrunn = {
                 }
                 b_eisenach = {
+                    low_german = "Iesenack"
+                    low_saxon = "Iesenack"
                     roman = "Ysenacum"
                 }
                 b_salza = {
@@ -4795,16 +5167,27 @@ e_hre = {
                 }
             }
             c_weimar = {
+                karelian = "Veimar" # Historical? Copied from Vespian
+                khanty = "Veimar" # Historical? Copied from Vespian
                 lettigallish = "Veimaras" # Historical? Copied from Lithuanian
                 lithuanian = "Veimaras"
+                mari = "Veimar" # Historical? Copied from Vespian
+                mordvin = "Veimar" # Historical? Copied from Vespian
                 prussian = "Veimaras" # Historical? Copied from Lithuanian
                 roman = "Vimaria"
+                samoyed = "Veimar" # Historical? Copied from Vespian
+                vespian = "Veimar"
 
                 b_weimar = {
+                    karelian = "Veimar" # Historical? Copied from Vespian
+                    khanty = "Veimar" # Historical? Copied from Vespian
                     lettigallish = "Veimaras" # Historical? Copied from Lithuanian
                     lithuanian = "Veimaras"
+                    mari = "Veimar" # Historical? Copied from Vespian
+                    mordvin = "Veimar" # Historical? Copied from Vespian
                     prussian = "Veimaras" # Historical? Copied from Lithuanian
                     roman = "Vimaria"
+                    samoyed = "Veimar" # Historical? Copied from Vespian
                 }
                 b_erfurt = {
                     castillan = "Érfurt"
@@ -4851,6 +5234,8 @@ e_hre = {
         d_hessen = {
             lettigallish = "Esenas" # Historical? Copied from Lithuanian
             lithuanian = "Esenas"
+            polish = "Hesja"
+            pommeranian = "Hesja" # Historical? Copied from Polish
             prussian = "Esenas" # Historical? Copied from Lithuanian
             roman = "Hassia"
 
@@ -4880,6 +5265,7 @@ e_hre = {
                 b_hersfeld = {
                 }
                 b_kassel = {
+                    dutch = "Kassel"
                     lettigallish = "Kaselis" # Historical? Copied from Lithuanian
                     lithuanian = "Kaselis"
                     prussian = "Kaselis" # Historical? Copied from Lithuanian
@@ -4915,10 +5301,50 @@ e_hre = {
             }
         }
         d_nuremberg = {
+            arpitan = "Nuremberg" # Historical? Copied from Frankish
+            basque = "Nuremberg"
+            bavarian = "Niamberg"
+            bohemian = "Norimberg" # Historical? Copied from Slovieni
+            castillan = "Nuremberg"
+            catalan = "Nuremberg"
+            dalmatian = "Norimberga" # Historical? Copied from Italian
+            dutch = "Neurenberg"
+            frankish = "Nuremberg"
+            frisian = "Neurenberch"
+            galician = "Núremberg"
+            italian = "Norimberga"
+            langobardisch = "Norimberga" # Historical? Copied from Italian
+            laziale = "Norimberga" # Historical? Copied from Italian
+            lettigallish = "Niurnbergas" # Historical? Copied from Lithuanian
+            ligurian = "Norimberga" # Historical? Copied from Italian
+            lithuanian = "Niurnbergas"
+            lombard = "Norimbèrga"
+            low_german = "Nürnbarg"
+            low_saxon = "Nürnbarg"
+            neapolitan = "Norimberga" # Historical? Copied from Italian
+            norman = "Nuremberg" # Historical? Copied from Frankish
+            occitan = "Nurembèrg"
+            oghuz = "Nuremberg" # Historical? Copied from Turkish
+            pecheneg = "Nuremberg" # Historical? Copied from Turkish
+            polish = "Norymberga"
+            pommeranian = "Norymberga" # Historical? Copied from Polish
+            portuguese = "Nuremberga"
+            prussian = "Niurnbergas" # Historical? Copied from Lithuanian
+            roman = "Norimberga"
+            sardinian = "Norimberga"
+            sicilian = "Norimberga" # Historical? Copied from Italian
+            slovieni = "Norimberg"
+            turkish = "Nuremberg"
+            turkmen = "Nuremberg" # Historical? Copied from Turkish
+            tuscan = "Norimberga" # Historical? Copied from Italian
+            umbrian = "Norimberga" # Historical? Copied from Italian
+            venetian = "Norimberga" # Historical? Copied from Italian
+
             c_sonneberg = {
                 b_plassenburg = {
                 }
                 b_bayreuth = {
+                    bavarian = "Bayreith"
                     roman = "Baruthum"
                 }
                 b_banz = {
@@ -4959,10 +5385,12 @@ e_hre = {
             c_nurnberg = {
                 arpitan = "Nuremberg" # Historical? Copied from Frankish
                 basque = "Nuremberg"
+                bavarian = "Niamberg"
                 bohemian = "Norimberg" # Historical? Copied from Slovieni
                 castillan = "Nuremberg"
                 catalan = "Nuremberg"
                 dalmatian = "Norimberga" # Historical? Copied from Italian
+                dutch = "Neurenberg"
                 frankish = "Nuremberg"
                 frisian = "Neurenberch"
                 galician = "Núremberg"
@@ -4972,6 +5400,9 @@ e_hre = {
                 lettigallish = "Niurnbergas" # Historical? Copied from Lithuanian
                 ligurian = "Norimberga" # Historical? Copied from Italian
                 lithuanian = "Niurnbergas"
+                lombard = "Norimbèrga"
+                low_german = "Nürnbarg"
+                low_saxon = "Nürnbarg"
                 neapolitan = "Norimberga" # Historical? Copied from Italian
                 norman = "Nuremberg" # Historical? Copied from Frankish
                 occitan = "Nurembèrg"
@@ -4998,10 +5429,12 @@ e_hre = {
                 b_nurnberg = {
                     arpitan = "Nuremberg" # Historical? Copied from Frankish
                     basque = "Nuremberg"
+                    bavarian = "Niamberg"
                     bohemian = "Norimberg" # Historical? Copied from Slovieni
                     castillan = "Nuremberg"
                     catalan = "Nuremberg"
                     dalmatian = "Norimberga" # Historical? Copied from Italian
+                    dutch = "Neurenberg"
                     frankish = "Nuremberg"
                     frisian = "Neurenberch"
                     galician = "Núremberg"
@@ -5011,6 +5444,9 @@ e_hre = {
                     lettigallish = "Niurnbergas" # Historical? Copied from Lithuanian
                     ligurian = "Norimberga" # Historical? Copied from Italian
                     lithuanian = "Niurnbergas"
+                    lombard = "Norimbèrga"
+                    low_german = "Nürnbarg"
+                    low_saxon = "Nürnbarg"
                     neapolitan = "Norimberga" # Historical? Copied from Italian
                     norman = "Nuremberg" # Historical? Copied from Frankish
                     occitan = "Nurembèrg"
@@ -5137,6 +5573,7 @@ e_hre = {
                 b_degenberg = {
                 }
                 b_deggendorf = {
+                    bavarian = "Degndorf"
                     lettigallish = "Degendorfas" # Historical? Copied from Lithuanian
                     lithuanian = "Degendorfas"
                     prussian = "Degendorfas" # Historical? Copied from Lithuanian
@@ -5145,6 +5582,7 @@ e_hre = {
                 }
             }
             c_abensberg = {
+                bavarian = "Omschberg"
                 roman = "Aventinum"
 
                 b_vohburg = {
@@ -5153,11 +5591,13 @@ e_hre = {
                     aragonese = "Ratisbona"
                     arpitan = "Ratisbonne" # Historical? Copied from Frankish
                     basque = "Ratisbona"
+                    bavarian = "Rengschburg"
                     castillan = "Ratisbona"
                     catalan = "Ratisbona"
                     crimean_gothic = "Kastra Regina" # Copied from Greek
                     dalmatian = "Ratisbona" # Historical? Copied from Italian
                     frankish = "Ratisbonne"
+                    frisian = "Regensbörj"
                     galician = "Ratisbona"
                     italian = "Ratisbona"
                     langobardisch = "Ratisbona" # Historical? Copied from Italian
@@ -5165,6 +5605,7 @@ e_hre = {
                     lettigallish = "Regensburgas" # Historical? Copied from Lithuanian
                     ligurian = "Ratisbona" # Historical? Copied from Italian
                     lithuanian = "Regensburgas"
+                    lombard = "Ratisbona"
                     neapolitan = "Ratisbona" # Historical? Copied from Italian
                     norman = "Ratisbonne" # Historical? Copied from Frankish
                     polish = "Ratyzbona"
@@ -5180,12 +5621,14 @@ e_hre = {
                 b_sankt_emmeran = {
                 }
                 b_landshut = {
+                    bavarian = "Landshuad"
                     lettigallish = "Landshutas" # Historical? Copied from Lithuanian
                     lithuanian = "Landshutas"
                     prussian = "Landshutas" # Historical? Copied from Lithuanian
                     roman = "Landishuta"
                 }
                 b_abensberg = {
+                    bavarian = "Omschberg"
                     roman = "Aventinum"
                 }
                 b_rottenburg = {
@@ -5194,6 +5637,7 @@ e_hre = {
                 }
             }
             c_passau = {
+                bavarian = "Båssa"
                 crimean_gothic = "Batavinon" # Copied from Greek
                 dalmatian = "Passavia" # Historical? Copied from Italian
                 italian = "Passavia"
@@ -5215,6 +5659,7 @@ e_hre = {
                 b_formbach = {
                 }
                 b_passau = {
+                    bavarian = "Båssa"
                     crimean_gothic = "Batavinon" # Copied from Greek
                     dalmatian = "Passavia" # Historical? Copied from Italian
                     italian = "Passavia"
@@ -5236,6 +5681,7 @@ e_hre = {
                 b_scharding = {
                 }
                 b_niederaltaich = {
+                    bavarian = "Niadaoida"
                     roman = "Altaha Inferior"
                 }
                 b_hals = {
@@ -5251,6 +5697,7 @@ e_hre = {
                 b_landau = {
                 }
                 b_aldersbach = {
+                    bavarian = "Oidaschbo"
                 }
                 b_leonberg = {
                     roman = "Leomontium"
@@ -5274,6 +5721,7 @@ e_hre = {
                 b_wittelsbach = {
                 }
                 b_dachau = {
+                    bavarian = "Dochau"
                     roman = "Dachanum"
                 }
                 b_freising = {
@@ -5333,6 +5781,7 @@ e_hre = {
                 b_wasserburg = {
                 }
                 b_berchtesgaden = {
+                    bavarian = "Berchtsgoan"
                 }
                 b_reichenhall = {
                 }
@@ -5345,6 +5794,7 @@ e_hre = {
                 aragonese = "Salzburgo"
                 arpitan = "Salzbourg" # Historical? Copied from Frankish
                 basque = "Salzburgo"
+                bavarian = "Såizburg"
                 bohemian = "Salzbursko" # Historical? Copied from Slovieni
                 castillan = "Salzburgo"
                 crimean_gothic = "Iuvavum" # Copied from Greek
@@ -5357,6 +5807,7 @@ e_hre = {
                 lettigallish = "Zalcburgas" # Historical? Copied from Lithuanian
                 ligurian = "Salisburgo" # Historical? Copied from Italian
                 lithuanian = "Zalcburgas"
+                lombard = "Salisburgh"
                 neapolitan = "Salisburgo" # Historical? Copied from Italian
                 norman = "Salzbourg" # Historical? Copied from Frankish
                 occitan = "Salzborg"
@@ -5373,6 +5824,7 @@ e_hre = {
                     aragonese = "Salzburgo"
                     arpitan = "Salzbourg" # Historical? Copied from Frankish
                     basque = "Salzburgo"
+                    bavarian = "Såizburg"
                     bohemian = "Salzbursko" # Historical? Copied from Slovieni
                     castillan = "Salzburgo"
                     crimean_gothic = "Iuvavon" # Copied from Greek
@@ -5385,6 +5837,7 @@ e_hre = {
                     lettigallish = "Zalcburgas" # Historical? Copied from Lithuanian
                     ligurian = "Salisburgo" # Historical? Copied from Italian
                     lithuanian = "Zalcburgas"
+                    lombard = "Salisburgh"
                     neapolitan = "Salisburgo" # Historical? Copied from Italian
                     norman = "Salzbourg" # Historical? Copied from Frankish
                     occitan = "Salzborg"
@@ -5422,11 +5875,13 @@ e_hre = {
                 b_reichenbach = {
                 }
                 b_kastl = {
+                    dutch = "Markt Kastl"
                 }
                 b_amberg = {
                     lettigallish = "Ambergas" # Historical? Copied from Lithuanian
                     lithuanian = "Ambergas"
                     prussian = "Ambergas" # Historical? Copied from Lithuanian
+                    venetian = "Anberg"
                 }
                 b_trausnitz = {
                 }
@@ -5452,6 +5907,7 @@ e_hre = {
                     thuringian = "Eger" # Historical? Copied from German
                 }
                 b_waldsassen = {
+                    bavarian = "Woidsassen"
                 }
                 b_sternstein = {
                 }
@@ -5528,9 +5984,12 @@ e_hre = {
                     dutch = "Sankt Pölten"
                     franconian = "Sankt Pölten"
                     german = "Sankt Pölten"
+                    lettigallish = "Sankt Peltenas" # Historical? Copied from Lithuanian
+                    lithuanian = "Sankt Peltenas"
                     low_frankish = "Sankt Pölten"
                     low_german = "Sankt Pölten"
                     low_saxon = "Sankt Pölten"
+                    prussian = "Sankt Peltenas" # Historical? Copied from Lithuanian
                     serbian = "Sveti Hipolit"
                     swabian = "Sankt Pölten"
                     thuringian = "Sankt Pölten"
@@ -5866,31 +6325,48 @@ e_hre = {
         }
     }
     k_carinthia = {
+        aragonese = "Carintia"
         arpitan = "Carinthie" # Historical? Copied from Frankish
+        arpitan = "Carinthie" # Historical? Copied from Frankish
+        basque = "Karintia"
         bohemian = "Korutany"
         bosnian = "Karantanija"
+        breton = "Karintia"
         bulgarian = "Karantanija"
         carantanian = "Karantanija"
+        castillan = "Carintia"
+        catalan = "Caríntia"
+        cornish = "Karintia" # Historical? Copied from Breton
         croatian = "Karantanija"
         dalmatian = "Carinzia" # Historical? Copied from Italian
         frankish = "Carinthie"
+        galician = "Carintia"
         hungarian = "Karintia"
         italian = "Carinzia"
         langobardisch = "Carinzia" # Historical? Copied from Italian
         laziale = "Carinzia" # Historical? Copied from Italian
+        lettigallish = "Karintija" # Historical? Copied from Lithuanian
         ligurian = "Carinzia" # Historical? Copied from Italian
+        lithuanian = "Karintija"
         lombard = "Foroiuliana"
-        slovieni = "Korutany" # Historical? Copied from Bohemian
         neapolitan = "Carinzia" # Historical? Copied from Italian
         norman = "Carinthie" # Historical? Copied from Frankish
+        occitan = "Caríntia"
+        oghuz = "Karintiya" # Historical? Copied from Turkish
+        pecheneg = "Karintiya" # Historical? Copied from Turkish
         polish = "Karyntia"
         pommeranian = "Karyntia" # Historical? Copied from Polish
+        portuguese = "Caríntia"
+        prussian = "Karintija" # Historical? Copied from Lithuanian
         roman = "Noricum Prima" # Or "Carinthia"
         romanian = "Carintia"
         sardinian = "Carinzia" # Historical? Copied from Italian
         serbian = "Karantanija"
         sicilian = "Carinzia" # Historical? Copied from Italian
+        slovieni = "Korutany" # Historical? Copied from Bohemian
         szekely = "Karintia"
+        turkish = "Karintiya"
+        turkmen = "Karintiya" # Historical? Copied from Turkish
         tuscan = "Carinzia" # Historical? Copied from Italian
         umbrian = "Carinzia" # Historical? Copied from Italian
         venetian = "Carinzia" # Historical? Copied from Italian
@@ -6160,31 +6636,48 @@ e_hre = {
             }
         }
         d_carinthia = {
+            aragonese = "Carintia"
             arpitan = "Carinthie" # Historical? Copied from Frankish
+            arpitan = "Carinthie" # Historical? Copied from Frankish
+            basque = "Karintia"
             bohemian = "Korutany"
             bosnian = "Koruška" # Historical? Copied from Croatian
+            breton = "Karintia"
             bulgarian = "Koruška"
             carantanian = "Koroška"
+            castillan = "Carintia"
+            catalan = "Caríntia"
+            cornish = "Karintia" # Historical? Copied from Breton
             crimean_gothic = "Noricum Mediterraneum" # Historical? Copied from Greek
             croatian = "Koruška"
             dalmatian = "Carinzia" # Historical? Copied from Italian
             frankish = "Carinthie"
+            galician = "Carintia"
             hungarian = "Karintia"
             italian = "Carinzia"
             langobardisch = "Carinzia" # Historical? Copied from Italian
             laziale = "Carinzia" # Historical? Copied from Italian
+            lettigallish = "Karintija" # Historical? Copied from Lithuanian
             ligurian = "Carinzia" # Historical? Copied from Italian
+            lithuanian = "Karintija"
             lombard = "Foroiuliana"
-            slovieni = "Korutany" # Historical? Copied from Bohemian
             neapolitan = "Carinzia" # Historical? Copied from Italian
             norman = "Carinthie" # Historical? Copied from Frankish
+            occitan = "Caríntia"
+            oghuz = "Karintiya" # Historical? Copied from Turkish
+            pecheneg = "Karintiya" # Historical? Copied from Turkish
             polish = "Karyntia"
             pommeranian = "Karyntia" # Historical? Copied from Polish
+            portuguese = "Caríntia"
+            prussian = "Karintija" # Historical? Copied from Lithuanian
             romanian = "Carintia"
             sardinian = "Carinzia" # Historical? Copied from Italian
             serbian = "Koruška" # Historical? Copied from Croatian
             sicilian = "Carinzia" # Historical? Copied from Italian
+            slovieni = "Korutany" # Historical? Copied from Bohemian
             szekely = "Karintia"
+            turkish = "Karintiya"
+            turkmen = "Karintiya" # Historical? Copied from Turkish
             tuscan = "Carinzia" # Historical? Copied from Italian
             umbrian = "Carinzia" # Historical? Copied from Italian
             venetian = "Carinzia" # Historical? Copied from Italian
@@ -6340,6 +6833,7 @@ e_hre = {
                     norman = "Altenbourg" # Historical? Copied from Frankish
                     portuguese = "Altemburgo"
                     prussian = "Altenburgas" # Historical? Copied from Lithuanian
+                    roman = "Altenburgum"
                     serbian = "Nazarje"
                 }
                 b_sittich = {
@@ -6437,6 +6931,9 @@ e_hre = {
                 venetian = "Duin"
 
                 b_triest = {
+                    lettigallish = "Triestas" # Historical? Copied from Lithuanian
+                    lithuanian = "Triestas"
+                    prussian = "Triestas" # Historical? Copied from Lithuanian
                 }
                 b_pula = {
                     bosnian = "Pula"
@@ -6445,6 +6942,16 @@ e_hre = {
                     serbian = "Pula"
                 }
                 b_pirano = {
+                    dalmatian = "Pirano" # Historical? Copied from Italian
+                    italian = "Pirano"
+                    langobardisch = "Pirano" # Historical? Copied from Italian
+                    laziale = "Pirano" # Historical? Copied from Italian
+                    ligurian = "Pirano" # Historical? Copied from Italian
+                    neapolitan = "Pirano" # Historical? Copied from Italian
+                    sardinian = "Pirano" # Historical? Copied from Italian
+                    sicilian = "Pirano" # Historical? Copied from Italian
+                    tuscan = "Pirano" # Historical? Copied from Italian
+                    umbrian = "Pirano" # Historical? Copied from Italian
                     venetian = "Piràn"
                 }
                 b_koper = {
@@ -7053,6 +7560,9 @@ e_hre = {
                 b_burgau = {
                 }
                 b_donauworth = {
+                    arpitan = "Donauworth" # Historical? Copied from Frankish
+                    frankish = "Donauworth"
+                    norman = "Donauworth" # Historical? Copied from Frankish
                 }
                 b_ochsenhausen = {
                 }
@@ -7064,6 +7574,12 @@ e_hre = {
                 roman = "Brigantinus"
 
                 b_ravensburg = {
+                    arpitan = "Ravensbourg" # Historical? Copied from Frankish
+                    frankish = "Ravensbourg"
+                    lettigallish = "Ravensburgas" # Historical? Copied from Lithuanian
+                    lithuanian = "Ravensburgas"
+                    norman = "Ravensbourg" # Historical? Copied from Frankish
+                    prussian = "Ravensburgas" # Historical? Copied from Lithuanian
                 }
                 b_kempten = {
                     crimean_gothic = "Kambodunum" # Copied from Greek
@@ -7180,10 +7696,12 @@ e_hre = {
                     catalan = "Estrasburg"
                     cornish = "Strasbwrg" # Historical? Copied from Welsh
                     crimean_gothic = "Argentor" # Copied from Greek
+                    cumbric = "Strasbwrg" # Historical? Copied from Scottish
                     dalmatian = "Strasburgo" # Historical? Copied from Italian
                     franconian = "Straßburg" # Copied from German
                     frisian = "Straasburch"
                     galician = "Estrasburgo"
+                    icelandic = "Strassborg"
                     irish = "Strasbwrg" # Historical? Copied from Welsh
                     italian = "Strasburgo"
                     langobardisch = "Strasburgo" # Historical? Copied from Italian
@@ -7196,9 +7714,11 @@ e_hre = {
                     low_saxon = "Straßburg" # Copied from German
                     neapolitan = "Strasburgo" # Historical? Copied from Italian
                     norman = "Strasbourg" # Historical? Copied from Frankish
+                    norse = "Strassborg" # Historical? Copied from Icelandic
                     occitan = "Estrasborg"
                     oghuz = "Strazburg" # Historical? Copied from Turkish
                     pecheneg = "Strazburg" # Historical? Copied from Turkish
+                    pictish = "Strasbwrg" # Historical? Copied from Scottish
                     polish = "Strasburg"
                     pommeranian = "Strasburg" # Historical? Copied from Polish
                     portuguese = "Estrasburgo"
@@ -7279,6 +7799,23 @@ e_hre = {
             }
         }
         d_ratien = {
+            arpitan = "Rhétie" # Historical? Copied from Frankish
+            castillan = "Recia"
+            dalmatian = "Rezia" # Historical? Copied from Italian
+            frankish = "Rhétie"
+            italian = "Rezia"
+            langobardisch = "Rezia" # Historical? Copied from Italian
+            laziale = "Rezia" # Historical? Copied from Italian
+            ligurian = "Rezia" # Historical? Copied from Italian
+            neapolitan = "Rezia" # Historical? Copied from Italian
+            norman = "Rhétie" # Historical? Copied from Frankish
+            roman = "Raetia et Vindelicia"
+            sardinian = "Rezia" # Historical? Copied from Italian
+            sicilian = "Rezia" # Historical? Copied from Italian
+            tuscan = "Rezia" # Historical? Copied from Italian
+            umbrian = "Rezia" # Historical? Copied from Italian
+            venetian = "Rezia" # Historical? Copied from Italian
+
             c_montfort = {
                 b_montfort = {
                 }
@@ -7288,6 +7825,8 @@ e_hre = {
                     lettigallish = "Bregencas" # Historical? Copied from Lithuanian
                     lithuanian = "Bregencas"
                     norman = "Brégence" # Historical? Copied from Frankish
+                    polish = "Bregencja"
+                    pommeranian = "Bregencja" # Historical? Copied from Polish
                     prussian = "Bregencas" # Historical? Copied from Lithuanian
                     roman = "Brigantium"
                 }
@@ -7304,12 +7843,15 @@ e_hre = {
                 }
             }
             c_schwyz = {
+                arpitan = "Schwytz" # Historical? Copied from Frankish
                 dalmatian = "Svitto" # Historical? Copied from Italian
+                frankish = "Schwytz"
                 italian = "Svitto"
                 langobardisch = "Svitto" # Historical? Copied from Italian
                 laziale = "Svitto" # Historical? Copied from Italian
                 ligurian = "Svitto" # Historical? Copied from Italian
                 neapolitan = "Svitto" # Historical? Copied from Italian
+                norman = "Schwytz" # Historical? Copied from Frankish
                 roman = "Turicum"
                 sardinian = "Svitto" # Historical? Copied from Italian
                 sicilian = "Svitto" # Historical? Copied from Italian
@@ -7405,14 +7947,39 @@ e_hre = {
                     roman = "Magia"
                 }
                 b_stgallen = {
+                    arpitan = "Saint-Gall" # Historical? Copied from Frankish
+                    bavarian = "St" # Historical? Copied from German
+                    castillan = "San Galo"
+                    dalmatian = "San Gallo" # Historical? Copied from Italian
+                    franconian = "St" # Historical? Copied from German
+                    frankish = "Saint-Gall"
+                    german = "St"
+                    italian = "San Gallo"
+                    langobardisch = "San Gallo" # Historical? Copied from Italian
+                    laziale = "San Gallo" # Historical? Copied from Italian
+                    ligurian = "San Gallo" # Historical? Copied from Italian
+                    low_frankish = "St" # Historical? Copied from German
+                    low_german = "St" # Historical? Copied from German
+                    low_saxon = "St" # Historical? Copied from German
+                    neapolitan = "San Gallo" # Historical? Copied from Italian
+                    norman = "Saint-Gall" # Historical? Copied from Frankish
                     roman = "Sanctus Gallus"
                     romanian = "Sfântul Gallus" # Historical? Translated.
+                    sardinian = "San Gallo" # Historical? Copied from Italian
+                    sicilian = "San Gallo" # Historical? Copied from Italian
+                    swabian = "St" # Historical? Copied from German
+                    thuringian = "St" # Historical? Copied from German
+                    tuscan = "San Gallo" # Historical? Copied from Italian
+                    umbrian = "San Gallo" # Historical? Copied from Italian
+                    venetian = "San Gallo" # Historical? Copied from Italian
                 }
                 b_zurich = {
                     aragonese = "Zúrich"
+                    arpitan = "Zurich" # Historical? Copied from Frankish
                     castillan = "Zúrich"
                     catalan = "Zuric"
                     dalmatian = "Zurigo" # Historical? Copied from Italian
+                    frankish = "Zurich"
                     galician = "Zúric"
                     italian = "Zurigo"
                     langobardisch = "Zurigo" # Historical? Copied from Italian
@@ -7421,6 +7988,7 @@ e_hre = {
                     ligurian = "Zurigo" # Historical? Copied from Italian
                     lithuanian = "Ciurichas"
                     neapolitan = "Zurigo" # Historical? Copied from Italian
+                    norman = "Zurich" # Historical? Copied from Frankish
                     occitan = "Zuric"
                     oghuz = "Zürih" # Historical? Copied from Turkish
                     pecheneg = "Zürih" # Historical? Copied from Turkish
@@ -7436,6 +8004,7 @@ e_hre = {
                     tuscan = "Zurigo" # Historical? Copied from Italian
                     umbrian = "Zurigo" # Historical? Copied from Italian
                     venetian = "Zurigo" # Historical? Copied from Italian
+                    wolof = "Zurich"
                 }
                 b_toggenburg = {
                 }
@@ -7707,11 +8276,16 @@ e_hre = {
                     roman = "Glacio"
                 }
                 b_jicin = {
+                    bosnian = "Jicín" # Historical? Copied from Croatian
+                    carantanian = "Jicín" # Historical? Copied from Croatian
+                    croatian = "Jicín"
+                    galician = "Jicín"
                     pommeranian = "Jiczyn" # Copied from Polish
                     roman = "Gitzinum"
                 }
                 b_broumovkladsko = {
                     pommeranian = "Brumow" # Historical? Copied from Polish
+                    roman = "Brunoviensis"
                     romanian = "Brumã" # ã is A-breve
                 }
                 b_nachod = {
@@ -7915,13 +8489,18 @@ e_hre = {
                 b_edelstejn = {
                 }
                 b_hlucin = {
+                    dutch = "Hlucín"
                 }
             }
             c_znojmo = {
                 lettigallish = "Znoimas" # Historical? Copied from Lithuanian
                 lithuanian = "Znoimas"
+                oghuz = "Znaym" # Historical? Copied from Turkish
+                pecheneg = "Znaym" # Historical? Copied from Turkish
                 prussian = "Znoimas" # Historical? Copied from Lithuanian
                 roman = "Znoyma"
+                turkish = "Znaym"
+                turkmen = "Znaym" # Historical? Copied from Turkish
 
                 b_znojmo = {
                     lettigallish = "Znoimas" # Historical? Copied from Lithuanian
@@ -7974,6 +8553,7 @@ e_hre = {
                     pommeranian = "Zdziar" # Copied from Polish
                 }
                 b_mikulov = {
+                    castillan = "Míkulov"
                     oghuz = "Nikolsburg" # Historical? Copied from Turkish
                     pecheneg = "Nikolsburg" # Historical? Copied from Turkish
                     romanian = "Miclãush" # Translated
@@ -8090,6 +8670,7 @@ e_byzantium = {
     szekely = "Római Birodalom" # Copied from Hungarian
 
     k_thrace = {
+        arpitan = "Thessalonique" # Historical? Copied from Frankish
         avar = "Solun"
         bavarian = "Thessaloniki" # Historical? Copied from German
         bohemian = "Solun"
@@ -8097,29 +8678,43 @@ e_byzantium = {
         bosnian = "Solun" # Historical? Copied from Croatian
         bulgarian = "Solun"
         carantanian = "Solun"
+        castillan = "Salónica"
+        catalan = "Tessalònica"
         crimean_gothic = "Thessalonikes" # Historical? Copied from Greek
         croatian = "Solun"
+        finnish = "Thessaloniki"
         franconian = "Thessaloniki" # Historical? Copied from German
         german = "Thessaloniki"
         hungarian = "Szaloniki"
+        icelandic = "Þessalóníka"
         khazar = "Solun" # Historical? Copied from Avar
+        komi = "Thessaloniki" # Historical? Copied from Finnish
+        lappish = "Thessaloniki" # Historical? Copied from Finnish
+        lettigallish = "Salonikai" # Historical? Copied from Lithuanian
+        lithuanian = "Salonikai"
+        livonian = "Thessaloniki" # Historical? Copied from Finnish
         low_frankish = "Thessaloniki" # Historical? Copied from German
         low_german = "Thessaloniki" # Historical? Copied from German
         low_saxon = "Thessaloniki" # Historical? Copied from German
-        slovieni = "Solun"
+        norse = "Þessalóníka" # Historical? Copied from Icelandic
+        norwegian = "Thessaloniki"
         oghuz = "Selânik"
         pecheneg = "Selânik"
         polish = "Tesalonika"
         pommeranian = "Solun"
+        portuguese = "Salónica"
+        prussian = "Salonikai" # Historical? Copied from Lithuanian
         roman = "Thessalonica"
         romanian = "Sãluna" # ã is A-breve
         russian = "Solun"
         serbian = "Solun"
+        slovieni = "Solun"
         swabian = "Thessaloniki" # Historical? Copied from German
         szekely = "Szaloniki"
         thuringian = "Thessaloniki" # Historical? Copied from German
         turkish = "Selânik"
         turkmen = "Selânik"
+        ugricbaltic = "Thessaloniki" # Historical? Copied from Finnish
 
         d_aegean_islands = {
             oghuz = "Ege Adalari" # Historical? Copied from Turkish
