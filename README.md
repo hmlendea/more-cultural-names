@@ -5,7 +5,7 @@
 This is a sub-mod for CK2's Historical Immersion Project that add new culture-specific names and localisations.
 This mod expects a standard HIP installation, with all the default modules installed, especially SWMH.
 
-It currently brings around **28,055** new cultural landed title names!
+It currently brings around **28,071** new cultural landed title names!
 It was last updated for HIP version Golden1 from 30/05/2019, CK2 version 3.2
 
 # Useful links
@@ -78,6 +78,9 @@ Non-english:
 
 Mods:
 - [Schattenzeitalter](http://www.moddb.com/mods/schattenzeitalter)
+
+Databases:
+ - [GeoNames](http://www.geonames.org/) A huge database containing exonyms for all the places, and in all the languages
 
 Other:
 - Wikipedia pages of cities and places, in various languages
