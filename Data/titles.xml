@@ -129,7 +129,6 @@
       <Latin>Buda</Latin>
       <Serbian>Budim</Serbian>
       <SerboCroatian>Budim</SerboCroatian>
-      <Sloak>Budín</Slovak>
       <Slovak>Budín</Slovak>
       <Slovene>Budim</Slovene>
       <Sorbian>Büdin</Sorbian>
@@ -186,7 +185,7 @@
       <Slovene>Dobrudža</Slovene>
       <Swedish>Dobrudzja</Swedish>
       <Tatar_Crimean>Dobruca</Tatar_Crimean>
-      <Turkish_Old>Dobruja</Turkish>
+      <Turkish_Old>Dobruja</Turkish_Old>
       <Turkish>Dobruca</Turkish>
       <Turkmen>Dobruja</Turkmen>
     </Names>
@@ -238,7 +237,7 @@
       <Asturian>Edesa</Asturian>
       <Bosnian>Edesa</Bosnian>
       <Castilian>Edesa</Castilian>
-      <Catalan>Edessa</Bosnian>
+      <Catalan>Edessa</Catalan>
       <Dimli>Rıha</Dimli>
       <Estonian>Edesija</Estonian>
       <Euskara>Edesa</Euskara>
@@ -316,9 +315,61 @@
       <Gothic>Frisia</Gothic>
       <Latin>Frisia</Latin> <!-- Or Frisiorum -->
       <Lombard>Frieslant</Lombard>
+      <Polish>Fryzja</Polish>
       <Portuguese>Frísia</Portuguese>
       <Romanian>Frizia</Romanian>
       <Spanish>Frisia</Spanish>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>gelderland</Id>
+    <GeoNamesId>2755634</GeoNamesId>
+    <GameIds>
+      <CK2HIP>d_gelre</CK2HIP>
+    </GameIds>
+    <FallbackLocations>
+      <LocationId>guelders</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Catalan>Güeldes</Catalan>
+      <Czech>Geldry</Czech>
+      <Dutch_Middle>Gelre</Dutch_Middle>
+      <Emilian_Romagnol>Ghèldria</Emilian_Romagnol>
+      <English>Guelders</English>
+      <Esperanto>Gelderlando</Esperanto>
+      <French>Gueldre</French>
+      <Frisian_North>Gelderlun</Frisian_North>
+      <Frisian_Saterland>Gelderlound</Frisian_Saterland>
+      <Frisian_West>Gelderlân</Frisian_West>
+      <Galician>Güeldres</Galician>
+      <German_Low>Gelderlaand</German_Low>
+      <German>Gelderland</German>
+      <Italian>Gheldria</Italian>
+      <Latin>Geldria</Latin>
+      <Latvian>Gelderlande</Latvian>
+      <Lithuanian>Gelderlandas</Lithuanian>
+      <Portuguese>Guéldria</Portuguese>
+      <Spanish>Güeldres</Spanish>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>guelders</Id>
+    <GeoNamesId>2921528</GeoNamesId>
+    <GameIds>
+      <CK2HIP>b_geldern</CK2HIP>
+      <CK2HIP>c_gelre</CK2HIP>
+    </GameIds>
+    <Names>
+      <Catalan>Gueldre</Catalan>
+      <Dutch>Gelre</Dutch>
+      <English>Guelders</English>
+      <French>Gueldre</French>
+      <German>Geldern</German>
+      <Italian>Gheldria</Italian>
+      <Latin>Geldria</Latin>
+      <Limburgish>Geldere</Limburgish>
+      <Polish>Geldria</Polish>
+      <Spanish>Güeldres</Spanish>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -367,7 +418,7 @@
       <Faroese>Heilaga Rómverska Ríkið</Faroese>
       <Finnish>Pyhä Roomalainen Keisarikunta</Finnish>
       <Flemish_West>Illig Rôoms Ryk</Flemish_West>
-      <French_Old>Hailisch Reemisch Raisch</frk>
+      <French_Old>Hailisch Reemisch Raisch</French_Old>
       <French>Saint-Empire Romain</French>
       <Frisian_Northern>Hilag Röömsk Rik</Frisian_Northern>
       <Frisian_Saterland>Hillige Roomske Riek</Frisian_Saterland>
@@ -500,7 +551,7 @@
   </LocationEntity>
   <LocationEntity>
     <Id>karvuna</Id>
-    <GeoNamesId>730551</Id>
+    <GeoNamesId>730551</GeoNamesId>
     <GameIds>
       <CK2HIP>c_karvuna</CK2HIP>
     </GameIds>
@@ -1201,11 +1252,12 @@
     <Id>utrecht</Id>
     <GameIds>
       <CK2HIP>b_utrecht</CK2HIP>
+      <CK2HIP>d_utrecht</CK2HIP>
     </GameIds>
     <Names>
       <Lithuanian>Utrechtas</Lithuanian>
       <Portuguese>Utreque</Portuguese>
-      <Latin>Castrum Traiectum</Latin>
+      <Latin>Ultraiectum</Latin>
       <Vepsian>Utreht</Vepsian>
     </Names>
   </LocationEntity>
@@ -1243,15 +1295,6 @@
     </GameIds>
     <Names>
       <Latin>Antiquis Aqua</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>gelre</Id>
-    <GameIds>
-      <CK2HIP>d_gelre</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Geldria</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -1316,27 +1359,6 @@
     </GameIds>
     <Names>
       <Latin>Elburgum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>gelre</Id>
-    <GameIds>
-      <CK2HIP>c_gelre</CK2HIP>
-    </GameIds>
-    <Names>
-      <French_Old>Gueldre</French_Old>
-      <Italian>Gheldria</Italian>
-      <Latin>Geldorum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>geldern</Id>
-    <GameIds>
-      <CK2HIP>b_geldern</CK2HIP>
-    </GameIds>
-    <Names>
-      <Italian>Gheldria</Italian>
-      <Latin>Geldorum</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -1515,20 +1537,6 @@
     </GameIds>
     <Names>
       <Latin>Almeloia</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>frisia</Id>
-    <GameIds>
-      <CK2HIP>d_frisia</CK2HIP>
-    </GameIds>
-    <Names>
-      <English_Old>Fresland</English_Old>
-      <Gothic>Frisia</Gothic>
-      <Latin>Frisiorum</Latin> <!-- Or Frisia -->
-      <Lombard>Frieslant</Lombard>
-      <Polish>Fryzja</Polish>
-      <Romanian>Frizia</Romanian>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -1746,18 +1754,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>utrecht</Id>
-    <GameIds>
-      <CK2HIP>d_utrecht</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Utrechtas</Lithuanian>
-      <Portuguese>Utreque</Portuguese>
-      <Latin>Ultraiectensis</Latin>
-      <Vepsian>Utreht</Vepsian>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>lower_lorraine</Id>
     <GameIds>
       <CK2HIP>k_lower_lorraine</CK2HIP>
@@ -1772,44 +1768,26 @@
       <CK2HIP>d_brabant</CK2HIP>
     </GameIds>
     <Names>
-      <Latin>Belgica Secunda</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>brabant</Id>
-    <GameIds>
-      <CK2HIP>c_brabant</CK2HIP>
-    </GameIds>
-    <Names>
-      <Czech>Lovan</Czech>
-      <Castilian>Lovaina</Castilian>
-      <Catalan>Lovaina</Catalan>
-      <Irish>Lováin</Irish>
-      <Italian>Lovanio</Italian>
-      <Latgalian>Levena</Latgalian>
-      <Lithuanian>Levenas</Lithuanian>
-      <Occitan>Lovaina</Occitan>
-      <Portuguese>Lovaina</Portuguese>
-      <Latin>Luvanium</Latin>
-      <Romanian>Louvain</Romanian>
+      <Latin>Brabantia</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>leuven</Id>
     <GameIds>
       <CK2HIP>b_leuven</CK2HIP>
+      <CK2HIP>c_brabant</CK2HIP>
     </GameIds>
     <Names>
-      <Czech>Lovan</Czech>
       <Castilian>Lovaina</Castilian>
       <Catalan>Lovaina</Catalan>
+      <Czech>Lovan</Czech>
       <Irish>Lováin</Irish>
       <Italian>Lovanio</Italian>
       <Latgalian>Levena</Latgalian>
+      <Latin>Luvanium</Latin>
       <Lithuanian>Levenas</Lithuanian>
       <Occitan>Lovaina</Occitan>
       <Portuguese>Lovaina</Portuguese>
-      <Latin>Luvanium</Latin>
       <Romanian>Louvain</Romanian>
     </Names>
   </LocationEntity>
@@ -1864,58 +1842,19 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>brussel</Id>
+    <Id>brussels</Id>
     <GameIds>
+      <CK2HIP>b_brussel</CK2HIP>
       <CK2HIP>c_brussel</CK2HIP>
     </GameIds>
     <Names>
-      <Euskara>Brusela</Euskara>
-      <Czech>Brusel</Czech>
       <Bosnian>Bruselj</Bosnian>
       <Bulgarian>Brjuksel</Bulgarian>
-      <Slovene>Bruselj</Slovene>
       <Castilian>Bruselas</Castilian>
       <Catalan>Brusselles</Catalan>
       <Croatian>Bruselj</Croatian>
-      <Finnish>Bryssel</Finnish>
-      <Galician>Bruxelas</Galician>
-      <Hungarian>Brüsszel</Hungarian>
-      <Irish>An Bhruiséil</Irish>
-      <Leonese>Bruseles</Leonese>
-      <Latgalian>Brisele</Latgalian>
-      <Lithuanian>Briuselis</Lithuanian>
-      <Polish>Bruksela</Polish>
-      <Portuguese>Bruxelas</Portuguese>
-      <Latin>Proxola</Latin>
-      <Scottish_Medieval>Bruiseal</Scottish_Medieval>
-      <Serbian>Bruselj</Serbian>
-      <Swedish>Bryssel</Swedish>
-      <Turkish>Brüksel</Turkish>
-      <Estonian>Brüssel</Estonian>
-      <Welsh>Brwsel</Welsh>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>coudeberg</Id>
-    <GameIds>
-      <CK2HIP>b_coudeberg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Frigus Montem</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>brussel</Id>
-    <GameIds>
-      <CK2HIP>b_brussel</CK2HIP>
-    </GameIds>
-    <Names>
-      <Bosnian>Bruselj</Bosnian>
-      <Bulgarian>Brjuksel</Bulgarian>
-      <Castilian>Bruselas</Castilian>
-      <Catalan>Bruselles</Catalan>
-      <Croatian>Bruselj</Croatian>
       <Czech>Brusel</Czech>
+      <Estonian>Brüssel</Estonian>
       <Euskara>Brusela</Euskara>
       <Finnish>Bryssel</Finnish>
       <Frisian_Old>Brussel</Frisian_Old>
@@ -1924,7 +1863,7 @@
       <Icelandic>Brussel</Icelandic>
       <Irish>An Bhruiséil</Irish>
       <Latgalian>Brisele</Latgalian>
-      <Latin>Sancte Gaugericus</Latin>
+      <Latin>Bruxellae</Latin>
       <Leonese>Bruseles</Leonese>
       <Lithuanian>Briuselis</Lithuanian>
       <Norwegian>Brussel</Norwegian>
@@ -1937,6 +1876,15 @@
       <Swedish>Bryssel</Swedish>
       <Turkish>Brüksel</Turkish>
       <Welsh>Brwsel</Welsh>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>coudeberg</Id>
+    <GameIds>
+      <CK2HIP>b_coudeberg</CK2HIP>
+    </GameIds>
+    <Names>
+      <Latin>Frigus Montem</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -1991,7 +1939,7 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>breda</Id>
+    <Id>antwerp</Id>
     <GameIds>
       <CK2HIP>c_breda</CK2HIP>
     </GameIds>
@@ -2098,16 +2046,8 @@
   <LocationEntity>
     <Id>loon</Id>
     <GameIds>
-      <CK2HIP>c_loon</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Lens</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>loon</Id>
-    <GameIds>
       <CK2HIP>b_loon</CK2HIP>
+      <CK2HIP>c_loon</CK2HIP>
     </GameIds>
     <Names>
       <Latin>Lens</Latin>
@@ -2174,24 +2114,14 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>hainaut</Id>
+    <Id>mons</Id>
     <GameIds>
+      <CK2HIP>b_mons</CK2HIP>
       <CK2HIP>c_hainaut</CK2HIP>
     </GameIds>
     <Names>
       <Frisian_Old>Bergen</Frisian_Old>
       <Latgalian>Monsa</Latgalian>
-      <Lithuanian>Monsas</Lithuanian>
-      <Latin>Bergae</Latin> <!-- Or Castrilocus -->
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>mons</Id>
-    <GameIds>
-      <CK2HIP>b_mons</CK2HIP>
-    </GameIds>
-    <Names>
-      <Frisian_Old>Bergen</Frisian_Old>
       <Lithuanian>Monsas</Lithuanian>
       <Latin>Bergae</Latin> <!-- Or Castrilocus -->
     </Names>
@@ -2254,19 +2184,8 @@
   <LocationEntity>
     <Id>valenciennes</Id>
     <GameIds>
-      <CK2HIP>c_valenciennes</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Valansjenas</Lithuanian>
-      <Occitan>Valencianas</Occitan>
-      <Latin>Valencenae</Latin> <!-- Or Valentiana -->
-      <Vepsian>Valansjen</Vepsian>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>valenciennes</Id>
-    <GameIds>
       <CK2HIP>b_valenciennes</CK2HIP>
+      <CK2HIP>c_valenciennes</CK2HIP>
     </GameIds>
     <Names>
       <Lithuanian>Valansjenas</Lithuanian>
@@ -2323,17 +2242,8 @@
   <LocationEntity>
     <Id>cambrai</Id>
     <GameIds>
-      <CK2HIP>c_cambrai</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Kambre</Lithuanian>
-      <Latin>Cameracus</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>cambrai</Id>
-    <GameIds>
       <CK2HIP>b_cambrai</CK2HIP>
+      <CK2HIP>c_cambrai</CK2HIP>
     </GameIds>
     <Names>
       <Lithuanian>Kambre</Lithuanian>
@@ -2417,37 +2327,15 @@
   <LocationEntity>
     <Id>limburg</Id>
     <GameIds>
+      <CK2HIP>b_limburg</CK2HIP>
+      <CK2HIP>c_limburg</CK2HIP>
       <CK2HIP>d_limburg</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Limburgo</Castilian>
       <Italian>Limburgo</Italian>
       <Polish>Limbourg</Polish>
-      <Latin>Civitas Tungrorum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>limburg</Id>
-    <GameIds>
-      <CK2HIP>c_limburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Limburgo</Castilian>
-      <Italian>Limburgo</Italian>
-      <Polish>Limbourg</Polish>
-      <Latin>Atuatuca</Latin> <!-- Or Toxandria -->
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>limburg</Id>
-    <GameIds>
-      <CK2HIP>b_limburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Limburgo</Castilian>
-      <Italian>Limburgo</Italian>
-      <Polish>Limbourg</Polish>
-      <Latin>Atuatuca</Latin> <!-- Or Toxandria -->
+      <Latin>Limburgum</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2552,60 +2440,28 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>bouillon</Id>
-    <GameIds>
-      <CK2HIP>d_bouillon</CK2HIP>
-    </GameIds>
-    <Names>
-      <Aragonese>Bolhon</Aragonese>
-      <Catalan>Bolhon</Catalan>
-      <Occitan>Bolhon</Occitan>
-      <Latin>Bullionium</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>liege</Id>
-    <GameIds>
-      <CK2HIP>c_liege</CK2HIP>
-    </GameIds>
-    <Names>
-      <angloNorse>Leodic</angloNorse>
-      <Aragonese>Lidje</Aragonese>
-      <Euskara>Lieja</Euskara>
-      <Czech>Lutych</Czech>
-      <Breton_Middle>Liège</Breton_Middle>
-      <Castilian>Lieja</Castilian>
-      <Catalan>Lieja</Catalan>
-      <Italian>Liegi</Italian>
-      <Leonese>Liex</Leonese>
-      <Lithuanian>Lježas</Lithuanian>
-      <Lombard>Liegi</Lombard>
-      <Occitan>Lièja</Occitan>
-      <Latin>Leodicum</Latin>
-      <Estonian>Liège</Estonian>
-      <Vepsian>Ljež</Vepsian>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>liege</Id>
     <GameIds>
       <CK2HIP>b_liege</CK2HIP>
+      <CK2HIP>c_liege</CK2HIP>
+      <CK2HIP>d_liege</CK2HIP>
     </GameIds>
     <Names>
       <angloNorse>Leodic</angloNorse>
       <Aragonese>Lidje</Aragonese>
-      <Euskara>Lieja</Euskara>
-      <Czech>Lutych</Czech>
       <Breton_Middle>Liège</Breton_Middle>
       <Castilian>Lieja</Castilian>
       <Catalan>Lieja</Catalan>
+      <Czech>Lutych</Czech>
+      <Estonian>Liège</Estonian>
+      <Euskara>Lieja</Euskara>
+      <Finnish>Liege</Finnish>
       <Italian>Liegi</Italian>
+      <Latin>Leodicum</Latin>
       <Leonese>Liex</Leonese>
       <Lithuanian>Lježas</Lithuanian>
       <Lombard>Liegi</Lombard>
       <Occitan>Lièja</Occitan>
-      <Latin>Leodicum</Latin>
-      <Estonian>Liège</Estonian>
       <Vepsian>Ljež</Vepsian>
     </Names>
   </LocationEntity>
@@ -2613,6 +2469,7 @@
     <Id>bouillon</Id>
     <GameIds>
       <CK2HIP>b_bouillon</CK2HIP>
+      <CK2HIP>d_bouillon</CK2HIP>
     </GameIds>
     <Names>
       <Aragonese>Bolhon</Aragonese>
@@ -2681,18 +2538,8 @@
   <LocationEntity>
     <Id>namur</Id>
     <GameIds>
-      <CK2HIP>c_namur</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latgalian>Namira</Latgalian>
-      <Lithuanian>Namiuras</Lithuanian>
-      <Latin>Namugo</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>namur</Id>
-    <GameIds>
       <CK2HIP>b_namur</CK2HIP>
+      <CK2HIP>c_namur</CK2HIP>
     </GameIds>
     <Names>
       <Latgalian>Namira</Latgalian>
@@ -2748,27 +2595,9 @@
   <LocationEntity>
     <Id>julich</Id>
     <GameIds>
-      <CK2HIP>d_julich</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Julichas</Lithuanian>
-      <Latin>Juliacum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>julich</Id>
-    <GameIds>
-      <CK2HIP>c_julich</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Julichas</Lithuanian>
-      <Latin>Juliacum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>julich</Id>
-    <GameIds>
       <CK2HIP>b_julich</CK2HIP>
+      <CK2HIP>c_julich</CK2HIP>
+      <CK2HIP>d_julich</CK2HIP>
     </GameIds>
     <Names>
       <Lithuanian>Julichas</Lithuanian>
@@ -2825,18 +2654,8 @@
   <LocationEntity>
     <Id>kleve</Id>
     <GameIds>
-      <CK2HIP>c_kleve</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Cléveris</Castilian>
-      <Portuguese>Cleves</Portuguese>
-      <Latin>Clivis</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>kleve</Id>
-    <GameIds>
       <CK2HIP>b_kleve</CK2HIP>
+      <CK2HIP>c_kleve</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Cléveris</Castilian>
@@ -2915,17 +2734,8 @@
   <LocationEntity>
     <Id>berg</Id>
     <GameIds>
-      <CK2HIP>c_berg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Civitas</Latin>
-      <Swedish>Bergs</Swedish>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>berg</Id>
-    <GameIds>
       <CK2HIP>b_berg</CK2HIP>
+      <CK2HIP>c_berg</CK2HIP>
     </GameIds>
     <Names>
       <Latin>Civitas</Latin>
@@ -2988,25 +2798,27 @@
   <LocationEntity>
     <Id>aachen</Id>
     <GameIds>
+      <CK2HIP>b_aachen</CK2HIP>
       <CK2HIP>c_aachen</CK2HIP>
     </GameIds>
     <Names>
       <afghan>Aken</afghan>
-      <Euskara>Akisgran</Euskara>
-      <Czech>Cáchy</Czech>
       <Castilian>Aquisgrán</Castilian>
       <Catalan>Aquisgrà</Catalan>
+      <Czech>Cáchy</Czech>
+      <Euskara>Akisgran</Euskara>
       <Frisian_Old>Aken</Frisian_Old>
       <Galician>Aquisgrán</Galician>
-      <Italian>Aquisgrana</Italian>
-      <Lithuanian>Achenas</Lithuanian>
-      <Lombard>Aquisgrana</Lombard>
       <German_Middle_Low>Aken</German_Middle_Low>
       <German_Old_Low>Aken</German_Old_Low>
+      <Italian>Aquisgrana</Italian>
+      <Latin>Aquisgranum</Latin>
+      <Latin>Aquisranum</Latin>
+      <Lithuanian>Achenas</Lithuanian>
+      <Lombard>Aquisgrana</Lombard>
       <Occitan>Aquisgran</Occitan>
       <Polish>Akwizgran</Polish>
       <Portuguese>Aquisgrano</Portuguese>
-      <Latin>Aquisranum</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -3016,30 +2828,6 @@
     </GameIds>
     <Names>
       <Latin>Palatinatus</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>aachen</Id>
-    <GameIds>
-      <CK2HIP>b_aachen</CK2HIP>
-    </GameIds>
-    <Names>
-      <afghan>Aken</afghan>
-      <Euskara>Akisgran</Euskara>
-      <Czech>Cáchy</Czech>
-      <Castilian>Aquisgrán</Castilian>
-      <Catalan>Aquisgrà</Catalan>
-      <Frisian_Old>Aken</Frisian_Old>
-      <Galician>Aquisgrán</Galician>
-      <Italian>Aquisgrana</Italian>
-      <Lithuanian>Achenas</Lithuanian>
-      <Lombard>Aquisgrana</Lombard>
-      <German_Middle_Low>Aken</German_Middle_Low>
-      <German_Old_Low>Aken</German_Old_Low>
-      <Occitan>Aquisgran</Occitan>
-      <Polish>Akwizgran</Polish>
-      <Portuguese>Aquisgrano</Portuguese>
-      <Latin>Aquisgranum</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -3093,69 +2881,20 @@
   <LocationEntity>
     <Id>koln</Id>
     <GameIds>
+      <CK2HIP>b_koln</CK2HIP>
+      <CK2HIP>c_koln</CK2HIP>
       <CK2HIP>d_koln</CK2HIP>
     </GameIds>
     <Names>
       <afghan>Keulen</afghan>
       <Aragonese>Colonia</Aragonese>
-      <Euskara>Kolonia</Euskara>
       <Castilian>Colonia</Castilian>
       <Catalan>Colònia</Catalan>
+      <Euskara>Kolonia</Euskara>
       <Frisian_Old>Keulen</Frisian_Old>
       <Galician>Colonia</Galician>
       <Italian>Colonia</Italian>
-      <Lithuanian>Kelnas</Lithuanian>
-      <Lombard>Colonia</Lombard>
-      <Occitan>Colonha</Occitan>
-      <Polish>Kolonia</Polish>
-      <Portuguese>Colônia</Portuguese>
       <Latin>Agrippinensis</Latin> <!-- Or Colonia Agrippina -->
-      <Romanian>Colonia</Romanian>
-      <Sardinian>Colonia</Sardinian>
-      <Slovak>Kolín nad Rýnom</Slovak>
-      <Welsh>Cwlen</Welsh>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>koln</Id>
-    <GameIds>
-      <CK2HIP>c_koln</CK2HIP>
-    </GameIds>
-    <Names>
-      <afghan>Keulen</afghan>
-      <Aragonese>Colonia</Aragonese>
-      <Euskara>Kolonia</Euskara>
-      <Castilian>Colonia</Castilian>
-      <Catalan>Colònia</Catalan>
-      <Frisian_Old>Keulen</Frisian_Old>
-      <Galician>Colonia</Galician>
-      <Italian>Colonia</Italian>
-      <Lithuanian>Kelnas</Lithuanian>
-      <Lombard>Colonia</Lombard>
-      <Occitan>Colonha</Occitan>
-      <Polish>Kolonia</Polish>
-      <Portuguese>Colônia</Portuguese>
-      <Latin>Agrippinensis</Latin>
-      <Romanian>Colonia</Romanian>
-      <Sardinian>Colonia</Sardinian>
-      <Slovak>Kolín nad Rýnom</Slovak>
-      <Welsh>Cwlen</Welsh>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>koln</Id>
-    <GameIds>
-      <CK2HIP>b_koln</CK2HIP>
-    </GameIds>
-    <Names>
-      <afghan>Keulen</afghan>
-      <Aragonese>Colonia</Aragonese>
-      <Euskara>Kolonia</Euskara>
-      <Castilian>Colonia</Castilian>
-      <Catalan>Colònia</Catalan>
-      <Frisian_Old>Keulen</Frisian_Old>
-      <Galician>Colonia</Galician>
-      <Italian>Colonia</Italian>
       <Lithuanian>Kelnas</Lithuanian>
       <Lombard>Colonia</Lombard>
       <Occitan>Colonha</Occitan>
@@ -3223,31 +2962,9 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>liege</Id>
-    <GameIds>
-      <CK2HIP>d_liege</CK2HIP>
-    </GameIds>
-    <Names>
-      <angloNorse>Leodic</angloNorse>
-      <Aragonese>Lidje</Aragonese>
-      <Euskara>Lieja</Euskara>
-      <Czech>Lutych</Czech>
-      <Breton_Middle>Liège</Breton_Middle>
-      <Castilian>Lieja</Castilian>
-      <Catalan>Lieja</Catalan>
-      <Finnish>Liege</Finnish>
-      <Italian>Liegi</Italian>
-      <Leonese>Liex</Leonese>
-      <Lithuanian>Lježas</Lithuanian>
-      <Lombard>Liegi</Lombard>
-      <Occitan>Lièja</Occitan>
-      <Latin>Leodicum</Latin>
-      <Vepsian>Ljež</Vepsian>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>upper_lorraine</Id>
     <GameIds>
+      <CK2HIP>d_upper_lorraine</CK2HIP>
       <CK2HIP>k_upper_lorraine</CK2HIP>
     </GameIds>
     <Names>
@@ -3255,17 +2972,9 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>upper_lorraine</Id>
-    <GameIds>
-      <CK2HIP>d_upper_lorraine</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Lotharensis Superior</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>blamont</Id>
     <GameIds>
+      <CK2HIP>b_blamont</CK2HIP>
       <CK2HIP>c_blamont</CK2HIP>
     </GameIds>
     <Names>
@@ -3312,35 +3021,15 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>blamont</Id>
-    <GameIds>
-      <CK2HIP>b_blamont</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Pulchra Montem</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>metz</Id>
-    <GameIds>
-      <CK2HIP>c_metz</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Mecas</Lithuanian>
-      <Occitan>Mètz</Occitan>
-      <Latin>Mediomatricum</Latin>
-      <Slovak>Méty</Slovak>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>metz</Id>
     <GameIds>
       <CK2HIP>b_metz</CK2HIP>
+      <CK2HIP>c_metz</CK2HIP>
     </GameIds>
     <Names>
+      <Latin>Mediomatricum</Latin>
       <Lithuanian>Mecas</Lithuanian>
       <Occitan>Mètz</Occitan>
-      <Latin>Mediomatricum</Latin>
       <Slovak>Méty</Slovak>
     </Names>
   </LocationEntity>
@@ -3383,13 +3072,14 @@
   <LocationEntity>
     <Id>saarbrucken</Id>
     <GameIds>
+      <CK2HIP>b_saarbrucken</CK2HIP>
       <CK2HIP>c_saarbrucken</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Sarrebruck</Castilian>
       <Irish>Sárbrúch</Irish>
-      <Lithuanian>Sarbriukenas</Lithuanian>
       <Latin>Saaraepontum</Latin>
+      <Lithuanian>Sarbriukenas</Lithuanian>
       <Vepsian>Saarbrükken</Vepsian>
     </Names>
   </LocationEntity>
@@ -3401,19 +3091,6 @@
     <Names>
       <Portuguese>Homburgo</Portuguese>
       <Latin>Homburgum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>saarbrucken</Id>
-    <GameIds>
-      <CK2HIP>b_saarbrucken</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Sarrebruck</Castilian>
-      <Irish>Sárbrúch</Irish>
-      <Lithuanian>Sarbriukenas</Lithuanian>
-      <Latin>Saaraepontum</Latin>
-      <Vepsian>Saarbrükken</Vepsian>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -3465,6 +3142,7 @@
   <LocationEntity>
     <Id>vaudemont</Id>
     <GameIds>
+      <CK2HIP>b_vaudemont</CK2HIP>
       <CK2HIP>c_vaudemont</CK2HIP>
     </GameIds>
     <Names>
@@ -3511,15 +3189,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>vaudemont</Id>
-    <GameIds>
-      <CK2HIP>b_vaudemont</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Valdemontium</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>st_die</Id>
     <GameIds>
       <CK2HIP>b_st_die</CK2HIP>
@@ -3542,6 +3211,7 @@
   <LocationEntity>
     <Id>dagsburg</Id>
     <GameIds>
+      <CK2HIP>b_dagsburg</CK2HIP>
       <CK2HIP>c_dagsburg</CK2HIP>
     </GameIds>
     <Names>
@@ -3559,19 +3229,6 @@
     </GameIds>
     <Names>
       <Latin>Salverna</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>dagsburg</Id>
-    <GameIds>
-      <CK2HIP>b_dagsburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <MiddleDutch>Dabo</MiddleDutch>
-      <French_Old>Dabo</French_Old>
-      <Italian>Dabo</Italian>
-      <Polish>Dabo</Polish>
-      <Latin>Dabonensis</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -3622,101 +3279,33 @@
   <LocationEntity>
     <Id>luxembourg</Id>
     <GameIds>
+      <CK2HIP>b_luxembourg</CK2HIP>
+      <CK2HIP>c_luxembourg</CK2HIP>
       <CK2HIP>d_luxembourg</CK2HIP>
     </GameIds>
     <Names>
       <Aragonese>Luxemburgo</Aragonese>
       <Arpitan>Luxembôrg</Arpitan>
-      <Euskara>Luxenburgo</Euskara>
       <Breton_Middle>Luksembourg</Breton_Middle>
-      <Slovene>Luksemburg</Slovene>
       <Castilian>Luxemburgo</Castilian>
       <Catalan>Luxemburg</Catalan>
+      <Euskara>Luxenburgo</Euskara>
       <Finnish>Luxemburg</Finnish>
       <Frisian_Old>Lúksemboarch</Frisian_Old>
       <Galician>Luxemburgo</Galician>
       <Icelandic>Lúxemborg</Icelandic>
       <Irish>Lucsamburg</Irish>
       <Italian>Lussemburgo</Italian>
+      <Latin>Luxemburgum</Latin>
       <Lithuanian>Liuksemburgas</Lithuanian>
       <Lombard>Lüssemburgh</Lombard>
       <Occitan>Luxemborg</Occitan>
       <Polish>Luksemburg</Polish>
       <Portuguese>Luxemburgo</Portuguese>
-      <Latin>Augusta Romanduorum</Latin>
       <Romanian>Luxemburg</Romanian>
       <Scottish_Medieval>Lucsamburg</Scottish_Medieval>
       <Slovak>Luxemburg</Slovak>
-      <Swedish>Luxemburg</Swedish>
-      <Turkish>Lüksemburg</Turkish>
-      <Vepsian>Lüksemburg</Vepsian>
-      <Welsh>Lwcsembwrg</Welsh>
-      <Wolof>Luksambuur</Wolof>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>luxembourg</Id>
-    <GameIds>
-      <CK2HIP>c_luxembourg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Aragonese>Luxemburgo</Aragonese>
-      <Arpitan>Luxembôrg</Arpitan>
-      <Euskara>Luxenburgo</Euskara>
-      <Breton_Middle>Luksembourg</Breton_Middle>
       <Slovene>Luksemburg</Slovene>
-      <Castilian>Luxemburgo</Castilian>
-      <Catalan>Luxemburg</Catalan>
-      <Finnish>Luxemburg</Finnish>
-      <Frisian_Old>Lúksemboarch</Frisian_Old>
-      <Galician>Luxemburgo</Galician>
-      <Icelandic>Lúxemborg</Icelandic>
-      <Irish>Lucsamburg</Irish>
-      <Italian>Lussemburgo</Italian>
-      <Lithuanian>Liuksemburgas</Lithuanian>
-      <Lombard>Lüssemburgh</Lombard>
-      <Occitan>Luxemborg</Occitan>
-      <Polish>Luksemburg</Polish>
-      <Portuguese>Luxemburgo</Portuguese>
-      <Latin>Luscilburgensis</Latin>
-      <Romanian>Luxemburg</Romanian>
-      <Scottish_Medieval>Lucsamburg</Scottish_Medieval>
-      <Slovak>Luxemburg</Slovak>
-      <Swedish>Luxemburg</Swedish>
-      <Turkish>Lüksemburg</Turkish>
-      <Vepsian>Lüksemburg</Vepsian>
-      <Welsh>Lwcsembwrg</Welsh>
-      <Wolof>Luksambuur</Wolof>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>luxembourg</Id>
-    <GameIds>
-      <CK2HIP>b_luxembourg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Aragonese>Luxemburgo</Aragonese>
-      <Arpitan>Luxembôrg</Arpitan>
-      <Euskara>Luxenburgo</Euskara>
-      <Breton_Middle>Luksembourg</Breton_Middle>
-      <Slovene>Luksemburg</Slovene>
-      <Castilian>Luxemburgo</Castilian>
-      <Catalan>Luxemburg</Catalan>
-      <Finnish>Luxemburg</Finnish>
-      <Frisian_Old>Lúksemboarch</Frisian_Old>
-      <Galician>Luxemburgo</Galician>
-      <Icelandic>Lúxemborg</Icelandic>
-      <Irish>Lucsamburg</Irish>
-      <Italian>Lussemburgo</Italian>
-      <Lithuanian>Liuksemburgas</Lithuanian>
-      <Lombard>Lüssemburgh</Lombard>
-      <Occitan>Luxemborg</Occitan>
-      <Polish>Luksemburg</Polish>
-      <Portuguese>Luxemburgo</Portuguese>
-      <Latin>Lusciburgensis</Latin>
-      <Romanian>Luxemburg</Romanian>
-      <Scottish_Medieval>Lucsamburg</Scottish_Medieval>
-      <Slovak>Luxemburg</Slovak>
       <Swedish>Luxemburg</Swedish>
       <Turkish>Lüksemburg</Turkish>
       <Vepsian>Lüksemburg</Vepsian>
@@ -3774,19 +3363,8 @@
   <LocationEntity>
     <Id>arlon</Id>
     <GameIds>
-      <CK2HIP>c_arlon</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Arlonas</Lithuanian>
-      <Portuguese>Arlanc</Portuguese>
-      <Latin>Arolaunum</Latin>
-      <Romanian>Arel</Romanian>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>arlon</Id>
-    <GameIds>
       <CK2HIP>b_arlon</CK2HIP>
+      <CK2HIP>c_arlon</CK2HIP>
     </GameIds>
     <Names>
       <Lithuanian>Arlonas</Lithuanian>
@@ -3834,16 +3412,8 @@
   <LocationEntity>
     <Id>vianden</Id>
     <GameIds>
-      <CK2HIP>c_vianden</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Viana</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>vianden</Id>
-    <GameIds>
       <CK2HIP>b_vianden</CK2HIP>
+      <CK2HIP>c_vianden</CK2HIP>
     </GameIds>
     <Names>
       <Latin>Viana</Latin>
@@ -3889,20 +3459,8 @@
   <LocationEntity>
     <Id>laroche</Id>
     <GameIds>
-      <CK2HIP>c_laroche</CK2HIP>
-    </GameIds>
-    <Names>
-      <Breton_Middle>Ar Roch</Breton_Middle>
-      <Catalan>La Ròcha</Catalan>
-      <Occitan>Ar Roch</Occitan>
-      <Portuguese>Roche</Portuguese>
-      <Latin>Rupella</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>laroche</Id>
-    <GameIds>
       <CK2HIP>b_laroche</CK2HIP>
+      <CK2HIP>c_laroche</CK2HIP>
     </GameIds>
     <Names>
       <Breton_Middle>Ar Roch</Breton_Middle>
@@ -3962,11 +3520,12 @@
   <LocationEntity>
     <Id>barleduc</Id>
     <GameIds>
+      <CK2HIP>b_barleduc</CK2HIP>
       <CK2HIP>d_barleduc</CK2HIP>
     </GameIds>
     <Names>
       <Lithuanian>Baras</Lithuanian>
-      <Latin>Barrum Ducis</Latin>
+      <Latin>Barrum</Latin> <!-- Or Barrum Ducis -->
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -3977,16 +3536,6 @@
     <Names>
       <Lithuanian>Baras</Lithuanian>
       <Latin>Barrum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>barleduc</Id>
-    <GameIds>
-      <CK2HIP>b_barleduc</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Baras</Lithuanian>
-      <Latin>Barrum</Latin> <!-- Or Barrum Ducis -->
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -4065,6 +3614,7 @@
   <LocationEntity>
     <Id>verdun</Id>
     <GameIds>
+      <CK2HIP>b_verdun</CK2HIP>
       <CK2HIP>c_verdun</CK2HIP>
     </GameIds>
     <Names>
@@ -4081,18 +3631,6 @@
     </GameIds>
     <Names>
       <Latin>Brium</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>verdun</Id>
-    <GameIds>
-      <CK2HIP>b_verdun</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Verdún</Castilian>
-      <Frisian_Old>Ferdun</Frisian_Old>
-      <Lithuanian>Verdenas</Lithuanian>
-      <Latin>Verodunum</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -4144,16 +3682,8 @@
   <LocationEntity>
     <Id>chiny</Id>
     <GameIds>
-      <CK2HIP>c_chiny</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Chiniacum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>chiny</Id>
-    <GameIds>
       <CK2HIP>b_chiny</CK2HIP>
+      <CK2HIP>c_chiny</CK2HIP>
     </GameIds>
     <Names>
       <Latin>Chiniacum</Latin>
@@ -4217,58 +3747,19 @@
   <LocationEntity>
     <Id>trier</Id>
     <GameIds>
+      <CK2HIP>b_trier</CK2HIP>
+      <CK2HIP>c_trier</CK2HIP>
       <CK2HIP>d_trier</CK2HIP>
     </GameIds>
     <Names>
-      <Euskara>Treveris</Euskara>
-      <Czech>Trevír</Czech>
       <Castilian>Tréveris</Castilian>
       <Catalan>Trèveris</Catalan>
+      <Czech>Trevír</Czech>
+      <Euskara>Treveris</Euskara>
       <Galician>Tréveris</Galician>
       <Greek_Medieval>Augusta Treveroron</Greek_Medieval>
       <Italian>Treviri</Italian>
-      <Lithuanian>Tryras</Lithuanian>
-      <Lombard>Trevir</Lombard>
-      <Occitan>Trevèri</Occitan>
-      <Polish>Trewir</Polish>
-      <Polish>Trewir</Polish>
-      <Portuguese>Tréveris</Portuguese>
       <Latin>Augusta Treverorum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>trier</Id>
-    <GameIds>
-      <CK2HIP>c_trier</CK2HIP>
-    </GameIds>
-    <Names>
-      <Euskara>Treveris</Euskara>
-      <Czech>Trevír</Czech>
-      <Castilian>Tréveris</Castilian>
-      <Catalan>Trèveris</Catalan>
-      <Galician>Tréveris</Galician>
-      <Italian>Treviri</Italian>
-      <Italian>Treviri</Italian>
-      <Lithuanian>Tryras</Lithuanian>
-      <Lombard>Trevir</Lombard>
-      <Occitan>Trevèri</Occitan>
-      <Polish>Trewir</Polish>
-      <Polish>Trewir</Polish>
-      <Portuguese>Tréveris</Portuguese>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>trier</Id>
-    <GameIds>
-      <CK2HIP>b_trier</CK2HIP>
-    </GameIds>
-    <Names>
-      <Euskara>Treveris</Euskara>
-      <Czech>Trevír</Czech>
-      <Castilian>Tréveris</Castilian>
-      <Catalan>Trèveris</Catalan>
-      <Galician>Tréveris</Galician>
-      <Italian>Treviri</Italian>
       <Lithuanian>Tryras</Lithuanian>
       <Lombard>Trevir</Lombard>
       <Occitan>Trevèri</Occitan>
@@ -4385,31 +3876,17 @@
   <LocationEntity>
     <Id>luneburg</Id>
     <GameIds>
+      <CK2HIP>b_luneburg</CK2HIP>
       <CK2HIP>c_luneburg</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Luneburgo</Castilian>
       <French_Old>Lunebourg</French_Old>
-      <Italian>Luneburgo</Italian>
       <German_Middle_Low>Lümborg</German_Middle_Low>
       <German_Old_Low>Lümborg</German_Old_Low>
-      <Portuguese>Luneburgo</Portuguese>
-      <Latin>Leuphana</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>luneburg</Id>
-    <GameIds>
-      <CK2HIP>b_luneburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Luneburgo</Castilian>
-      <French_Old>Lunebourg</French_Old>
       <Italian>Luneburgo</Italian>
-      <German_Middle_Low>Lümborg</German_Middle_Low>
-      <German_Old_Low>Lümborg</German_Old_Low>
-      <Portuguese>Luneburgo</Portuguese>
       <Latin>Leuphana</Latin>
+      <Portuguese>Luneburgo</Portuguese>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -4489,18 +3966,19 @@
   <LocationEntity>
     <Id>braunschweig</Id>
     <GameIds>
+      <CK2HIP>b_braunschweig</CK2HIP>
       <CK2HIP>c_braunschweig</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Brunswick</Castilian>
       <French_Old>Brunswick</French_Old>
       <Frisian_Old>Brunswyk</Frisian_Old>
-      <Icelandic>Brúnsvík</Icelandic>
-      <Lithuanian>Braunšveigas</Lithuanian>
       <German_Middle_Low>Bronswiek</German_Middle_Low>
       <German_Old_Low>Bronswiek</German_Old_Low>
+      <Icelandic>Brúnsvík</Icelandic>
+      <Latin>Brunsvicum</Latin>
+      <Lithuanian>Braunšveigas</Lithuanian>
       <Polish>Brunszwik</Polish>
-      <Latin>Brunonis Vicus</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -4511,23 +3989,6 @@
     <Names>
       <Portuguese>Volfembutel</Portuguese>
       <Latin>Vadum Lupi</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>braunschweig</Id>
-    <GameIds>
-      <CK2HIP>b_braunschweig</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Brunswick</Castilian>
-      <French_Old>Brunswick</French_Old>
-      <Frisian_Old>Brunswyk</Frisian_Old>
-      <Icelandic>Brúnsvík</Icelandic>
-      <Lithuanian>Braunšveigas</Lithuanian>
-      <German_Middle_Low>Bronswiek</German_Middle_Low>
-      <German_Old_Low>Bronswiek</German_Old_Low>
-      <Polish>Brunszwik</Polish>
-      <Latin>Brunsvicum</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -4581,18 +4042,19 @@
   <LocationEntity>
     <Id>gottingen</Id>
     <GameIds>
+      <CK2HIP>b_gottingen</CK2HIP>
       <CK2HIP>c_gottingen</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Gotinga</Castilian>
       <Galician>Gotinga</Galician>
-      <Italian>Gottinga</Italian>
-      <Lithuanian>Getingenas</Lithuanian>
       <German_Middle_Low>Chöttingen</German_Middle_Low>
       <German_Old_Low>Chöttingen</German_Old_Low>
+      <Italian>Gottinga</Italian>
+      <Latin>Gottinga</Latin>
+      <Lithuanian>Getingenas</Lithuanian>
       <Polish>Getynga</Polish>
       <Portuguese>Gotinga</Portuguese>
-      <Latin>Gottinga</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -4613,23 +4075,6 @@
       <German_Middle_Low>Ganderssen</German_Middle_Low>
       <German_Old_Low>Ganderssen</German_Old_Low>
       <Latin>Gandesium</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>gottingen</Id>
-    <GameIds>
-      <CK2HIP>b_gottingen</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Gotinga</Castilian>
-      <Galician>Gotinga</Galician>
-      <Italian>Gottinga</Italian>
-      <Lithuanian>Getingenas</Lithuanian>
-      <German_Middle_Low>Chöttingen</German_Middle_Low>
-      <German_Old_Low>Chöttingen</German_Old_Low>
-      <Polish>Getynga</Polish>
-      <Portuguese>Gotinga</Portuguese>
-      <Latin>Gottinga</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -4677,6 +4122,7 @@
   <LocationEntity>
     <Id>blankenburg</Id>
     <GameIds>
+      <CK2HIP>b_blankenburg</CK2HIP>
       <CK2HIP>c_blankenburg</CK2HIP>
     </GameIds>
     <Names>
@@ -4704,15 +4150,6 @@
       <German_Old_Low>Queddelnborg</German_Old_Low>
       <Portuguese>Quedlimburgo</Portuguese>
       <Latin>Cotelini Aura</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>blankenburg</Id>
-    <GameIds>
-      <CK2HIP>b_blankenburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Blancoberga</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -4760,16 +4197,8 @@
   <LocationEntity>
     <Id>everstein</Id>
     <GameIds>
-      <CK2HIP>c_everstein</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Eberstenium</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>everstein</Id>
-    <GameIds>
       <CK2HIP>b_everstein</CK2HIP>
+      <CK2HIP>c_everstein</CK2HIP>
     </GameIds>
     <Names>
       <Latin>Eberstenium</Latin>
@@ -4834,36 +4263,19 @@
   <LocationEntity>
     <Id>bremen</Id>
     <GameIds>
-      <CK2HIP>c_bremen</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Brema</Castilian>
-      <French_Old>Brême</French_Old>
-      <Hungarian>Bréma</Hungarian>
-      <Italian>Brema</Italian>
-      <Lithuanian>Bremenas</Lithuanian>
-      <Occitan>Brèma</Occitan>
-      <Polish>Brema</Polish>
-      <Latin>Bremensis</Latin>
-      <Romanian>Brema</Romanian>
-      <Sardinian>Brema</Sardinian>
-      <Slovak>Brémy</Slovak>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>bremen</Id>
-    <GameIds>
       <CK2HIP>b_bremen</CK2HIP>
+      <CK2HIP>c_bremen</CK2HIP>
+      <CK2HIP>d_bremen</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Brema</Castilian>
       <French_Old>Brême</French_Old>
       <Hungarian>Bréma</Hungarian>
       <Italian>Brema</Italian>
+      <Latin>Bremensis</Latin>
       <Lithuanian>Bremenas</Lithuanian>
       <Occitan>Brèma</Occitan>
       <Polish>Brema</Polish>
-      <Latin>Bremensis</Latin>
       <Romanian>Brema</Romanian>
       <Sardinian>Brema</Sardinian>
       <Slovak>Brémy</Slovak>
@@ -4922,18 +4334,8 @@
   <LocationEntity>
     <Id>stade</Id>
     <GameIds>
-      <CK2HIP>c_stade</CK2HIP>
-    </GameIds>
-    <Names>
-      <German_Middle_Low>Stood</German_Middle_Low>
-      <German_Old_Low>Stood</German_Old_Low>
-      <Latin>Statium</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>stade</Id>
-    <GameIds>
       <CK2HIP>b_stade</CK2HIP>
+      <CK2HIP>c_stade</CK2HIP>
     </GameIds>
     <Names>
       <German_Middle_Low>Stood</German_Middle_Low>
@@ -5051,16 +4453,8 @@
   <LocationEntity>
     <Id>lippe</Id>
     <GameIds>
-      <CK2HIP>c_lippe</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Lippia</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>lippe</Id>
-    <GameIds>
       <CK2HIP>b_lippe</CK2HIP>
+      <CK2HIP>c_lippe</CK2HIP>
     </GameIds>
     <Names>
       <Latin>Lippia</Latin>
@@ -5185,38 +4579,20 @@
   <LocationEntity>
     <Id>oldenburg</Id>
     <GameIds>
+      <CK2HIP>b_oldenburg</CK2HIP>
       <CK2HIP>c_oldenburg</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Oldenburgo</Castilian>
       <French_Old>Oldenbourg</French_Old>
       <Frisian_Old>Aldenboarch</Frisian_Old>
-      <Icelandic>Aldinborg</Icelandic>
-      <Lithuanian>Oldenburgas</Lithuanian>
-      <Lombard>Oldemburgh</Lombard>
       <German_Middle_Low>Ollnborg</German_Middle_Low>
       <German_Old_Low>Ollnborg</German_Old_Low>
-      <Portuguese>Oldemburgo</Portuguese>
-      <Latin>Branesia</Latin>
-      <Scottish_Medieval>Ollnborg</Scottish_Medieval>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>oldenburg</Id>
-    <GameIds>
-      <CK2HIP>b_oldenburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Oldenburgo</Castilian>
-      <French_Old>Oldenbourg</French_Old>
-      <Frisian_Old>Aldenboarch</Frisian_Old>
       <Icelandic>Aldinborg</Icelandic>
+      <Latin>Branesia</Latin>
       <Lithuanian>Oldenburgas</Lithuanian>
       <Lombard>Oldemburgh</Lombard>
-      <German_Middle_Low>Ollnborg</German_Middle_Low>
-      <German_Old_Low>Ollnborg</German_Old_Low>
       <Portuguese>Oldemburgo</Portuguese>
-      <Latin>Branesia</Latin>
       <Scottish_Medieval>Ollnborg</Scottish_Medieval>
     </Names>
   </LocationEntity>
@@ -5283,19 +4659,8 @@
   <LocationEntity>
     <Id>arnsberg</Id>
     <GameIds>
-      <CK2HIP>c_arnsberg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Arnsbergas</Lithuanian>
-      <German_Middle_Low>Arensperg</German_Middle_Low>
-      <German_Old_Low>Arensperg</German_Old_Low>
-      <Latin>Arnsburgum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>arnsberg</Id>
-    <GameIds>
       <CK2HIP>b_arnsberg</CK2HIP>
+      <CK2HIP>c_arnsberg</CK2HIP>
     </GameIds>
     <Names>
       <Lithuanian>Arnsbergas</Lithuanian>
@@ -5415,20 +4780,8 @@
   <LocationEntity>
     <Id>munster</Id>
     <GameIds>
-      <CK2HIP>c_munster</CK2HIP>
-    </GameIds>
-    <Names>
-      <Frisian_Old>Munster</Frisian_Old>
-      <Lithuanian>Miunsteris</Lithuanian>
-      <German_Middle_Low>Mönster</German_Middle_Low>
-      <German_Old_Low>Mönster</German_Old_Low>
-      <Latin>Monasterium</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>munster</Id>
-    <GameIds>
       <CK2HIP>b_munster</CK2HIP>
+      <CK2HIP>c_munster</CK2HIP>
     </GameIds>
     <Names>
       <Frisian_Old>Munster</Frisian_Old>
@@ -5501,17 +4854,8 @@
   <LocationEntity>
     <Id>tecklenburg</Id>
     <GameIds>
-      <CK2HIP>c_tecklenburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <French_Old>Tecklembourg</French_Old>
-      <Latin>Tecklenburgum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>tecklenburg</Id>
-    <GameIds>
       <CK2HIP>b_tecklenburg</CK2HIP>
+      <CK2HIP>c_tecklenburg</CK2HIP>
     </GameIds>
     <Names>
       <French_Old>Tecklembourg</French_Old>
@@ -5562,16 +4906,8 @@
   <LocationEntity>
     <Id>bentheim</Id>
     <GameIds>
-      <CK2HIP>c_bentheim</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Benthemium</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>bentheim</Id>
-    <GameIds>
       <CK2HIP>b_bentheim</CK2HIP>
+      <CK2HIP>c_bentheim</CK2HIP>
     </GameIds>
     <Names>
       <Latin>Benthemium</Latin>
@@ -5628,6 +4964,7 @@
   <LocationEntity>
     <Id>osnabruck</Id>
     <GameIds>
+      <CK2HIP>b_osnabruck</CK2HIP>
       <CK2HIP>c_osnabruck</CK2HIP>
     </GameIds>
     <Names>
@@ -5646,18 +4983,6 @@
       <French_Old>Ravensbourg</French_Old>
       <Lithuanian>Ravensburgas</Lithuanian>
       <Latin>Ravensburgum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>osnabruck</Id>
-    <GameIds>
-      <CK2HIP>b_osnabruck</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Osnabriukas</Lithuanian>
-      <German_Middle_Low>Ossenbrügge</German_Middle_Low>
-      <German_Old_Low>Ossenbrügge</German_Old_Low>
-      <Latin>Asenbruggensis</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -5722,23 +5047,10 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>holstein</Id>
-    <GameIds>
-      <CK2HIP>c_holstein</CK2HIP>
-    </GameIds>
-    <Names>
-      <French_Old>Rendsbourg</French_Old>
-      <Frisian_Old>Rendsborag</Frisian_Old>
-      <Lithuanian>Helšteinas</Lithuanian>
-      <German_Middle_Low>Rendsborg</German_Middle_Low>
-      <German_Old_Low>Rendsborg</German_Old_Low>
-      <Latin>Holsatia</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>rendsburg</Id>
     <GameIds>
       <CK2HIP>b_rendsburg</CK2HIP>
+      <CK2HIP>c_holstein</CK2HIP>
     </GameIds>
     <Names>
       <French_Old>Rendsbourg</French_Old>
@@ -5772,22 +5084,26 @@
   <LocationEntity>
     <Id>hamburg</Id>
     <GameIds>
+      <CK2HIP>b_hamburg</CK2HIP>
       <CK2HIP>c_hamburg</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Hamburgo</Castilian>
+      <Czech>Hamburk</Czech>
       <Danish>Hamborg</Danish>
+      <Euskara>Hanburgo</Euskara>
       <Finnish>Hampuri</Finnish>
       <French_Old>Hambourg</French_Old>
       <Frisian_Old>Hamburch</Frisian_Old>
-      <Icelandic>Hamborg</Icelandic>
-      <Italian>Amburgo</Italian>
-      <Lithuanian>Hamburgas</Lithuanian>
       <German_Middle_Low>Hamborg</German_Middle_Low>
       <German_Old_Low>Hamborg</German_Old_Low>
-      <Occitan>Amborg</Occitan>
-      <Portuguese>Hamburgo</Portuguese>
+      <Icelandic>Hamborg</Icelandic>
+      <Italian>Amburgo</Italian>
       <Latin>Hamaburgensis</Latin>
+      <Lithuanian>Hamburgas</Lithuanian>
+      <Occitan>Amborg</Occitan>
+      <old_saxon>Hammaburg</old_saxon>
+      <Portuguese>Hamburgo</Portuguese>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -5800,30 +5116,6 @@
       <German_Middle_Low>Pinnbarg</German_Middle_Low>
       <German_Old_Low>Pinnbarg</German_Old_Low>
       <Latin>Pinneburgum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>hamburg</Id>
-    <GameIds>
-      <CK2HIP>b_hamburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Euskara>Hanburgo</Euskara>
-      <Czech>Hamburk</Czech>
-      <Castilian>Hamburgo</Castilian>
-      <Danish>Hamborg</Danish>
-      <Finnish>Hampuri</Finnish>
-      <French_Old>Hambourg</French_Old>
-      <Frisian_Old>Hamburch</Frisian_Old>
-      <Icelandic>Hamborg</Icelandic>
-      <Italian>Amburgo</Italian>
-      <Lithuanian>Hamburgas</Lithuanian>
-      <German_Middle_Low>Hamborg</German_Middle_Low>
-      <German_Old_Low>Hamborg</German_Old_Low>
-      <Occitan>Amborg</Occitan>
-      <old_saxon>Hammaburg</old_saxon>
-      <Portuguese>Hamburgo</Portuguese>
-      <Latin>Hamaburgensis</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -5878,6 +5170,7 @@
   <LocationEntity>
     <Id>wittenberg</Id>
     <GameIds>
+      <CK2HIP>b_wittenberg</CK2HIP>
       <CK2HIP>c_wittenberg</CK2HIP>
     </GameIds>
     <Names>
@@ -5891,15 +5184,6 @@
     </GameIds>
     <Names>
       <Latin>Kemburgum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>wittenberg</Id>
-    <GameIds>
-      <CK2HIP>b_wittenberg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Wittenburgum</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -5932,6 +5216,7 @@
   <LocationEntity>
     <Id>anhalt</Id>
     <GameIds>
+      <CK2HIP>b_anhalt</CK2HIP>
       <CK2HIP>c_anhalt</CK2HIP>
     </GameIds>
     <Names>
@@ -5976,15 +5261,6 @@
       <German_Middle_Low>Ascherslebbe</German_Middle_Low>
       <German_Old_Low>Ascherslebbe</German_Old_Low>
       <Latin>Ascania</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>anhalt</Id>
-    <GameIds>
-      <CK2HIP>b_anhalt</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Anhaltinum</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -6036,16 +5312,8 @@
   <LocationEntity>
     <Id>mansfeld</Id>
     <GameIds>
-      <CK2HIP>c_mansfeld</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Mansfelda</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>mansfeld</Id>
-    <GameIds>
       <CK2HIP>b_mansfeld</CK2HIP>
+      <CK2HIP>c_mansfeld</CK2HIP>
     </GameIds>
     <Names>
       <Latin>Mansfelda</Latin>
@@ -6107,31 +5375,10 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>lauenburg</Id>
-    <GameIds>
-      <CK2HIP>d_lauenburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latgalian>Lemborka</Latgalian>
-      <Lithuanian>Lemborkas</Lithuanian>
-      <Latin>Leoburgum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>ratzeburg</Id>
-    <GameIds>
-      <CK2HIP>c_ratzeburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Ratzeburgo</Castilian>
-      <French_Old>Ratzebourg</French_Old>
-      <Latin>Raceburgensis</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>ratzeburg</Id>
     <GameIds>
       <CK2HIP>b_ratzeburg</CK2HIP>
+      <CK2HIP>c_ratzeburg</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Ratzeburgo</Castilian>
@@ -6143,6 +5390,7 @@
     <Id>lauenburg</Id>
     <GameIds>
       <CK2HIP>b_lauenburg</CK2HIP>
+      <CK2HIP>d_lauenburg</CK2HIP>
     </GameIds>
     <Names>
       <Latgalian>Lemborka</Latgalian>
@@ -6171,18 +5419,8 @@
   <LocationEntity>
     <Id>dannenberg</Id>
     <GameIds>
-      <CK2HIP>c_dannenberg</CK2HIP>
-    </GameIds>
-    <Names>
-      <German_Middle_Low>Dannenbarg</German_Middle_Low>
-      <German_Old_Low>Dannenbarg</German_Old_Low>
-      <Latin>Dannenbergense</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>dannenberg</Id>
-    <GameIds>
       <CK2HIP>b_dannenberg</CK2HIP>
+      <CK2HIP>c_dannenberg</CK2HIP>
     </GameIds>
     <Names>
       <German_Middle_Low>Dannenbarg</German_Middle_Low>
@@ -6220,6 +5458,7 @@
   <LocationEntity>
     <Id>schwerin</Id>
     <GameIds>
+      <CK2HIP>b_schwerin</CK2HIP>
       <CK2HIP>c_schwerin</CK2HIP>
     </GameIds>
     <Names>
@@ -6248,18 +5487,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>schwerin</Id>
-    <GameIds>
-      <CK2HIP>b_schwerin</CK2HIP>
-    </GameIds>
-    <Names>
-      <Lithuanian>Šverinas</Lithuanian>
-      <German_Middle_Low>Swerin</German_Middle_Low>
-      <German_Old_Low>Swerin</German_Old_Low>
-      <Latin>Zuarinensis</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>wittenburg</Id>
     <GameIds>
       <CK2HIP>b_wittenburg</CK2HIP>
@@ -6284,21 +5511,9 @@
   <LocationEntity>
     <Id>meissen</Id>
     <GameIds>
-      <CK2HIP>d_meissen</CK2HIP>
-    </GameIds>
-    <Names>
-      <Czech>Míšen</Czech>
-      <Italian>Misnia</Italian>
-      <Latgalian>Meisene</Latgalian>
-      <Lithuanian>Meisenas</Lithuanian>
-      <Polish>Misnia</Polish>
-      <Latin>Misenae</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>meissen</Id>
-    <GameIds>
+      <CK2HIP>b_meissen</CK2HIP>
       <CK2HIP>c_meissen</CK2HIP>
+      <CK2HIP>d_meissen</CK2HIP>
     </GameIds>
     <Names>
       <Czech>Míšen</Czech>
@@ -6327,20 +5542,6 @@
       <Latgalian>Freiberga</Latgalian>
       <Portuguese>Freiberga</Portuguese>
       <Latin>Freibergum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>meissen</Id>
-    <GameIds>
-      <CK2HIP>b_meissen</CK2HIP>
-    </GameIds>
-    <Names>
-      <Czech>Míšen</Czech>
-      <Italian>Misnia</Italian>
-      <Latgalian>Meisene</Latgalian>
-      <Lithuanian>Meisenas</Lithuanian>
-      <Polish>Misnia</Polish>
-      <Latin>Misenae</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -6401,9 +5602,11 @@
   <LocationEntity>
     <Id>plauen</Id>
     <GameIds>
+      <CK2HIP>b_plauen</CK2HIP>
       <CK2HIP>c_plauen</CK2HIP>
     </GameIds>
     <Names>
+      <Czech>Plavno</Czech>
       <Lithuanian>Plauenas</Lithuanian>
       <Latin>Plavia</Latin>
     </Names>
@@ -6415,17 +5618,6 @@
     </GameIds>
     <Names>
       <Latin>Weyda</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>plauen</Id>
-    <GameIds>
-      <CK2HIP>b_plauen</CK2HIP>
-    </GameIds>
-    <Names>
-      <Czech>Plavno</Czech>
-      <Lithuanian>Plauenas</Lithuanian>
-      <Latin>Plavia</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -6479,6 +5671,7 @@
   <LocationEntity>
     <Id>landsberg</Id>
     <GameIds>
+      <CK2HIP>b_landsberg</CK2HIP>
       <CK2HIP>c_landsberg</CK2HIP>
     </GameIds>
     <Names>
@@ -6523,15 +5716,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>landsberg</Id>
-    <GameIds>
-      <CK2HIP>b_landsberg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Lantsberga</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>torgau</Id>
     <GameIds>
       <CK2HIP>b_torgau</CK2HIP>
@@ -6563,17 +5747,8 @@
   <LocationEntity>
     <Id>groitzsch</Id>
     <GameIds>
-      <CK2HIP>c_groitzsch</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latgalian>Groica</Latgalian>
-      <Latin>Groisca</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>groitzsch</Id>
-    <GameIds>
       <CK2HIP>b_groitzsch</CK2HIP>
+      <CK2HIP>c_groitzsch</CK2HIP>
     </GameIds>
     <Names>
       <Latgalian>Groica</Latgalian>
@@ -6651,24 +5826,6 @@
     </GameIds>
     <Names>
       <Latin>Selingostadium</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>bremen</Id>
-    <GameIds>
-      <CK2HIP>d_bremen</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Brema</Castilian>
-      <French_Old>Brême</French_Old>
-      <Hungarian>Bréma</Hungarian>
-      <Italian>Brema</Italian>
-      <Lithuanian>Bremenas</Lithuanian>
-      <Occitan>Brèma</Occitan>
-      <Polish>Brema</Polish>
-      <Latin>Bremensis</Latin>
-      <Sardinian>Brema</Sardinian>
-      <Slovak>Brémy</Slovak>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -6766,23 +5923,13 @@
   <LocationEntity>
     <Id>nassau</Id>
     <GameIds>
+      <CK2HIP>b_nassau</CK2HIP>
       <CK2HIP>c_nassau</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Nasáu</Castilian>
       <Lithuanian>Nasau</Lithuanian>
       <Latin>Nassova</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>nassau</Id>
-    <GameIds>
-      <CK2HIP>b_nassau</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Nasáu</Castilian>
-      <Lithuanian>Nasau</Lithuanian>
-      <Latin>Villa Nassova</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -6827,19 +5974,11 @@
   <LocationEntity>
     <Id>pfalz</Id>
     <GameIds>
+      <CK2HIP>c_pfalz</CK2HIP>
       <CK2HIP>d_pfalz</CK2HIP>
     </GameIds>
     <Names>
-      <Latin>Belgica Prima</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>pfalz</Id>
-    <GameIds>
-      <CK2HIP>c_pfalz</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Vormatia</Latin>
+      <Latin>Palatinatus</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -6869,16 +6008,8 @@
   <LocationEntity>
     <Id>leiningen</Id>
     <GameIds>
-      <CK2HIP>c_leiningen</CK2HIP>
-    </GameIds>
-    <Names>
-      <Latin>Lacoritum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>leiningen</Id>
-    <GameIds>
       <CK2HIP>b_leiningen</CK2HIP>
+      <CK2HIP>c_leiningen</CK2HIP>
     </GameIds>
     <Names>
       <Latin>Lacoritum</Latin>
@@ -6925,21 +6056,12 @@
   <LocationEntity>
     <Id>zweibrucken</Id>
     <GameIds>
+      <CK2HIP>b_zweibrucken</CK2HIP>
       <CK2HIP>c_zweibrucken</CK2HIP>
     </GameIds>
     <Names>
       <Castilian>Dos Puentes</Castilian>
       <Latin>Bipontium</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>zweibrucken</Id>
-    <GameIds>
-      <CK2HIP>b_zweibrucken</CK2HIP>
-    </GameIds>
-    <Names>
-      <Castilian>Dos Puentes</Castilian>
-      <Latin>Bipontium</Latin> <!-- Or Vicus Saravus -->
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -6968,6 +6090,7 @@
   <LocationEntity>
     <Id>wurzburg</Id>
     <GameIds>
+      <CK2HIP>b_wurzburg</CK2HIP>
       <CK2HIP>c_wurzburg</CK2HIP>
     </GameIds>
     <Names>
@@ -6976,27 +6099,10 @@
       <French_Old>Wurtzbourg</French_Old>
       <Frisian_Old>Würzbörj</Frisian_Old>
       <Greek_Medieval>Herbopolis</Greek_Medieval>
+      <Latin>Herbopolis</Latin>
       <Lithuanian>Viurcburgas</Lithuanian>
       <old_frankish>Virteburh</old_frankish>
       <Portuguese>Wurtzburgo</Portuguese>
-      <Latin>Herbopolis</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>wurzburg</Id>
-    <GameIds>
-      <CK2HIP>b_wurzburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Bavarian>Wiazburg</Bavarian>
-      <Castilian>Wurzburgo</Castilian>
-      <French_Old>Wurtzbourg</French_Old>
-      <Frisian_Old>Würzbörj</Frisian_Old>
-      <Greek_Medieval>Herbopolis</Greek_Medieval>
-      <Lithuanian>Viurcburgas</Lithuanian>
-      <old_frankish>Virteburh</old_frankish>
-      <Portuguese>Wurtzburgo</Portuguese>
-      <Latin>Herbopolis</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -7091,16 +6197,17 @@
   <LocationEntity>
     <Id>bamberg</Id>
     <GameIds>
+      <CK2HIP>b_bamberg</CK2HIP>
       <CK2HIP>c_bamberg</CK2HIP>
     </GameIds>
     <Names>
       <Czech>Bamberk</Czech>
-      <Italian>Bamberga</Italian>
-      <Lithuanian>Bambergas</Lithuanian>
       <German_Middle_Low>Bambarg</German_Middle_Low>
       <German_Old_Low>Bambarg</German_Old_Low>
-      <Nahuatl>Bamberga</Nahuatl>
+      <Italian>Bamberga</Italian>
       <Latin>Bamberga</Latin>
+      <Lithuanian>Bambergas</Lithuanian>
+      <Nahuatl>Bamberga</Nahuatl>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -7119,21 +6226,6 @@
     </GameIds>
     <Names>
       <Lithuanian>Forchheimas</Lithuanian>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>bamberg</Id>
-    <GameIds>
-      <CK2HIP>b_bamberg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Czech>Bamberk</Czech>
-      <Italian>Bamberga</Italian>
-      <Lithuanian>Bambergas</Lithuanian>
-      <German_Middle_Low>Bambarg</German_Middle_Low>
-      <German_Old_Low>Bambarg</German_Old_Low>
-      <Nahuatl>Bamberga</Nahuatl>
-      <Latin>Bamberga</Latin>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -7268,19 +6360,8 @@
   <LocationEntity>
     <Id>weimar</Id>
     <GameIds>
-      <CK2HIP>c_weimar</CK2HIP>
-    </GameIds>
-    <Names>
-      <Czech>Výmar</Czech>
-      <Lithuanian>Veimaras</Lithuanian>
-      <Latin>Vimaria</Latin>
-      <Vepsian>Veimar</Vepsian>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>weimar</Id>
-    <GameIds>
       <CK2HIP>b_weimar</CK2HIP>
+      <CK2HIP>c_weimar</CK2HIP>
     </GameIds>
     <Names>
       <Czech>Výmar</Czech>
@@ -7486,55 +6567,27 @@
   <LocationEntity>
     <Id>nurnberg</Id>
     <GameIds>
+      <CK2HIP>b_nurnberg</CK2HIP>
       <CK2HIP>c_nurnberg</CK2HIP>
     </GameIds>
     <Names>
-      <Euskara>Nuremberg</Euskara>
       <Bavarian>Niamberg</Bavarian>
       <Castilian>Nuremberg</Castilian>
       <Catalan>Nuremberg</Catalan>
-      <MiddleDutch>Neurenberg</MiddleDutch>
-      <French_Old>Nuremberg</French_Old>
-      <Frisian_Old>Neurenberch</Frisian_Old>
-      <Galician>Núremberg</Galician>
-      <Italian>Norimberga</Italian>
-      <Lithuanian>Niurnbergas</Lithuanian>
-      <Lombard>Norimbèrga</Lombard>
-      <German_Middle_Low>Nürnbarg</German_Middle_Low>
-      <German_Old_Low>Nürnbarg</German_Old_Low>
-      <Occitan>Nurembèrg</Occitan>
-      <Polish>Norymberga</Polish>
-      <Portuguese>Nuremberga</Portuguese>
-      <Latin>Norimberga</Latin>
-      <Sardinian>Norimberga</Sardinian>
-      <Scottish_Medieval>Nuremberg</Scottish_Medieval>
-      <Slovak>Norimberg</Slovak>
-      <Turkish>Nuremberg</Turkish>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>nurnberg</Id>
-    <GameIds>
-      <CK2HIP>b_nurnberg</CK2HIP>
-    </GameIds>
-    <Names>
       <Euskara>Nuremberg</Euskara>
-      <Bavarian>Niamberg</Bavarian>
-      <Castilian>Nuremberg</Castilian>
-      <Catalan>Nuremberg</Catalan>
-      <MiddleDutch>Neurenberg</MiddleDutch>
       <French_Old>Nuremberg</French_Old>
       <Frisian_Old>Neurenberch</Frisian_Old>
       <Galician>Núremberg</Galician>
-      <Italian>Norimberga</Italian>
-      <Lithuanian>Niurnbergas</Lithuanian>
-      <Lombard>Norimbèrga</Lombard>
       <German_Middle_Low>Nürnbarg</German_Middle_Low>
       <German_Old_Low>Nürnbarg</German_Old_Low>
+      <Italian>Norimberga</Italian>
+      <Latin>Norimberga</Latin>
+      <Lithuanian>Niurnbergas</Lithuanian>
+      <Lombard>Norimbèrga</Lombard>
+      <MiddleDutch>Neurenberg</MiddleDutch>
       <Occitan>Nurembèrg</Occitan>
       <Polish>Norymberga</Polish>
       <Portuguese>Nuremberga</Portuguese>
-      <Latin>Norimberga</Latin>
       <Sardinian>Norimberga</Sardinian>
       <Scottish_Medieval>Nuremberg</Scottish_Medieval>
       <Slovak>Norimberg</Slovak>
@@ -7608,6 +6661,7 @@
   <LocationEntity>
     <Id>abensberg</Id>
     <GameIds>
+      <CK2HIP>b_abensberg</CK2HIP>
       <CK2HIP>c_abensberg</CK2HIP>
     </GameIds>
     <Names>
@@ -7658,32 +6712,10 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>abensberg</Id>
-    <GameIds>
-      <CK2HIP>b_abensberg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Bavarian>Omschberg</Bavarian>
-      <Latin>Aventinum</Latin>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>passau</Id>
-    <GameIds>
-      <CK2HIP>c_passau</CK2HIP>
-    </GameIds>
-    <Names>
-      <Bavarian>Båssa</Bavarian>
-      <Czech>Pasov</Czech>
-      <Italian>Passavia</Italian>
-      <Lithuanian>Pasau</Lithuanian>
-      <Polish>Pasawa</Polish>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>passau</Id>
     <GameIds>
       <CK2HIP>b_passau</CK2HIP>
+      <CK2HIP>c_passau</CK2HIP>
     </GameIds>
     <Names>
       <Bavarian>Båssa</Bavarian>
@@ -7736,12 +6768,12 @@
       <CK2HIP>d_oberbayern</CK2HIP>
     </GameIds>
     <Names>
-      <Greek_Medieval>Bavarium Superior</Greek_Medieval> <!-- Or Rhaitia Prima -->
-      <Latin>Bavarium Superior</Latin> <!-- Or Euregius Prima -->
+      <Greek_Medieval>Bavaria Superior</Greek_Medieval> <!-- Or Rhaitia Prima -->
+      <Latin>Bavaria Superior</Latin> <!-- Or Euregius Prima -->
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>oberbayern</Id>
+    <Id>scheyern</Id>
     <GameIds>
       <CK2HIP>c_oberbayern</CK2HIP>
     </GameIds>
@@ -7840,14 +6872,8 @@
   <LocationEntity>
     <Id>kraiburg</Id>
     <GameIds>
-      <CK2HIP>c_kraiburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Bavarian>Kroaburg</Bavarian>
-   <LocationEntity>
-    <Id>kraiburg</Id>
-    <GameIds>
       <CK2HIP>b_kraiburg</CK2HIP>
+      <CK2HIP>c_kraiburg</CK2HIP>
     </GameIds>
     <Names>
       <Bavarian>Kroaburg</Bavarian>
@@ -7901,33 +6927,15 @@
   <LocationEntity>
     <Id>salzburg</Id>
     <GameIds>
-      <CK2HIP>c_salzburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Aragonese>Salzburgo</Aragonese>
-      <Euskara>Salzburgo</Euskara>
-      <Bavarian>Såizburg</Bavarian>
-      <Castilian>Salzburgo</Castilian>
-      <French_Old>Salzbourg</French_Old>
-      <Galician>Salzburgo</Galician>
-      <Italian>Salisburgo</Italian>
-      <Lithuanian>Zalcburgas</Lithuanian>
-      <Lombard>Salisburgh</Lombard>
-      <Occitan>Salzborg</Occitan>
-      <Portuguese>Salzburgo</Portuguese>
-      <Slovak>Salzbursko</Slovak>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>salzburg</Id>
-    <GameIds>
       <CK2HIP>b_salzburg</CK2HIP>
+      <CK2HIP>c_salzburg</CK2HIP>
+      <CK2HIP>d_salzburg</CK2HIP>
     </GameIds>
     <Names>
       <Aragonese>Salzburgo</Aragonese>
-      <Euskara>Salzburgo</Euskara>
       <Bavarian>Såizburg</Bavarian>
       <Castilian>Salzburgo</Castilian>
+      <Euskara>Salzburgo</Euskara>
       <French_Old>Salzbourg</French_Old>
       <Galician>Salzburgo</Galician>
       <Italian>Salisburgo</Italian>
@@ -7950,16 +6958,8 @@
   <LocationEntity>
     <Id>sulzbach</Id>
     <GameIds>
-      <CK2HIP>c_sulzbach</CK2HIP>
-    </GameIds>
-    <Names>
-      <Bavarian>Suizboch</Bavarian>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>sulzbach</Id>
-    <GameIds>
       <CK2HIP>b_sulzbach</CK2HIP>
+      <CK2HIP>c_sulzbach</CK2HIP>
     </GameIds>
     <Names>
       <Bavarian>Suizboch</Bavarian>
@@ -8626,26 +7626,6 @@
     </GameIds>
     <Names>
       <Bavarian>Motre</Bavarian>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>salzburg</Id>
-    <GameIds>
-      <CK2HIP>d_salzburg</CK2HIP>
-    </GameIds>
-    <Names>
-      <Aragonese>Salzburgo</Aragonese>
-      <Euskara>Salzburgo</Euskara>
-      <Bavarian>Såizburg</Bavarian>
-      <Castilian>Salzburgo</Castilian>
-      <French_Old>Salzbourg</French_Old>
-      <Galician>Salzburgo</Galician>
-      <Italian>Salisburgo</Italian>
-      <Lithuanian>Zalcburgas</Lithuanian>
-      <Lombard>Salisburgh</Lombard>
-      <Occitan>Salzborg</Occitan>
-      <Portuguese>Salzburgo</Portuguese>
-      <Slovak>Salzbursko</Slovak>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -9571,7 +8551,7 @@
       <Slovene>Devin</Slovene>
       <Croatian>Devin</Croatian>
       <MiddleDutch>Thübein</MiddleDutch>
-      <French_Old>Thübein</frk>
+      <French_Old>Thübein</French_Old>
       <German>Thübein</German>
       <Greek_Medieval>Duinón</Greek_Medieval>
       <Hungarian>Trieszt</Hungarian>
@@ -9586,7 +8566,7 @@
       <Serbian>Devin</Serbian>
       <Slovak>Devin</Slovak>
       <Alemannic>Thübein</Alemannic>
-      <Thuringian>Thübein</thuringian>
+      <Thuringian>Thübein</Thuringian>
       <Venetian>Duin</Venetian>
     </Names>
   </LocationEntity>
@@ -12024,7 +11004,7 @@
       <MiddleDutch>Duitsland</MiddleDutch>
       <english>Duchelond</english>
       <Finnish>Saksa</Finnish>
-      <French_Old>Diutschlant</frk>
+      <French_Old>Diutschlant</French_Old>
       <French_Old>Allemagne</French_Old>
       <Frisian_Old>Dútslân</Frisian_Old>
       <Georgian>Germania</Georgian>
@@ -12055,7 +11035,7 @@
       <Serbian>Nemacka</Serbian>
       <Alemannic>Diutschlant</Alemannic>
       <Swedish>Tyskland</Swedish>
-      <Thuringian>Diutschlant</thuringian>
+      <Thuringian>Diutschlant</Thuringian>
       <Turkish>Almanya</Turkish>
       <Estonian>Saksamaa</Estonian>
     </Names>
@@ -20960,7 +19940,7 @@
       <Bulgarian>Velikopolša</Bulgarian>
       <Slovene>Velikopoljska</Slovene>
       <Croatian>Velikopoljska</Croatian>
-      <French_Old>Großpolen</frk>
+      <French_Old>Großpolen</French_Old>
       <German>Großpolen</German>
       <Lombard>Polonia Maior</Lombard>
       <Frankish_Low>Großpolen</Frankish_Low>
@@ -20976,7 +19956,7 @@
       <Serbian>Velikopoljska</Serbian>
       <suebi>Polonia Maior</suebi>
       <Alemannic>Großpolen</Alemannic>
-      <Thuringian>Großpolen</thuringian>
+      <Thuringian>Großpolen</Thuringian>
       <visigothic>Polonia Maior</visigothic>
     </Names>
   </LocationEntity>
@@ -31654,12 +30634,6 @@
       <Turkish>Musul</Turkish>
     </Names>
   </LocationEntity>
-  <LocationEntity>
-    <Id>busaso</Id>
-    <GameIds>
-      <CK2HIP>c_busaso</CK2HIP>
-    </GameIds>
-    <Names>
   <LocationEntity>
     <Id>garoowe</Id>
     <GameIds>
@@ -47902,48 +46876,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>nasikya</Id>
-    <GameIds>
-      <CK2HIP>c_nasikya</CK2HIP>
-    </GameIds>
-    <Names>
-  <LocationEntity>
-    <Id>seunapura</Id>
-    <GameIds>
-      <CK2HIP>b_seunapura</CK2HIP>
-    </GameIds>
-    <Names>
-  <LocationEntity>
-    <Id>saptashrungi</Id>
-    <GameIds>
-      <CK2HIP>b_saptashrungi</CK2HIP>
-    </GameIds>
-    <Names>
-  <LocationEntity>
-    <Id>igatpuri</Id>
-    <GameIds>
-      <CK2HIP>b_igatpuri</CK2HIP>
-    </GameIds>
-    <Names>
-  <LocationEntity>
-    <Id>bhambhagiri</Id>
-    <GameIds>
-      <CK2HIP>b_bhambhagiri</CK2HIP>
-    </GameIds>
-    <Names>
-  <LocationEntity>
-    <Id>malegaon</Id>
-    <GameIds>
-      <CK2HIP>b_malegaon</CK2HIP>
-    </GameIds>
-    <Names>
-  <LocationEntity>
-    <Id>sultanpur</Id>
-    <GameIds>
-      <CK2HIP>b_sultanpur</CK2HIP>
-    </GameIds>
-    <Names>
-  <LocationEntity>
     <Id>armenia</Id>
     <GameIds>
       <CK2HIP>k_armenia</CK2HIP>
@@ -48179,7 +47111,7 @@
     </GameIds>
     <Names>
       <Bavarian>Lewinburg</Bavarian>
-      <French_Old>Lewinburg</frk>
+      <French_Old>Lewinburg</French_Old>
       <German>Lewinburg</German>
       <Gothic>Lewinburg</Gothic>
       <Lombard>Lewinburg</Lombard>
@@ -48189,7 +47121,7 @@
       <Latin>Leoburgum</Latin>
       <English_Old>Lewinburg</English_Old>
       <Alemannic>Lewinburg</Alemannic>
-      <Thuringian>Lewinburg</thuringian>
+      <Thuringian>Lewinburg</Thuringian>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -48199,7 +47131,7 @@
     </GameIds>
     <Names>
       <Bavarian>Swet</Bavarian>
-      <French_Old>Swet</frk>
+      <French_Old>Swet</French_Old>
       <German>Swet</German>
       <Gothic>Swet</Gothic>
       <Lombard>Swet</Lombard>
@@ -48209,7 +47141,7 @@
       <Latin>Swete</Latin>
       <English_Old>Swet</English_Old>
       <Alemannic>Swet</Alemannic>
-      <Thuringian>Swet</thuringian>
+      <Thuringian>Swet</Thuringian>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -48219,7 +47151,7 @@
     </GameIds>
     <Names>
       <Bavarian>Swet</Bavarian>
-      <French_Old>Swet</frk>
+      <French_Old>Swet</French_Old>
       <German>Swet</German>
       <Gothic>Swet</Gothic>
       <Lombard>Swet</Lombard>
@@ -48229,7 +47161,7 @@
       <Latin>Swete</Latin>
       <English_Old>Swet</English_Old>
       <Alemannic>Swet</Alemannic>
-      <Thuringian>Swet</thuringian>
+      <Thuringian>Swet</Thuringian>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -48239,7 +47171,7 @@
     </GameIds>
     <Names>
       <Bavarian>Thuchol</Bavarian>
-      <French_Old>Thuchol</frk>
+      <French_Old>Thuchol</French_Old>
       <German>Thuchol</German>
       <Gothic>Thuchol</Gothic>
       <Lombard>Thuchol</Lombard>
@@ -48248,7 +47180,7 @@
       <German_Old_Low>Thuchol</German_Old_Low>
       <English_Old>Thuchol</English_Old>
       <Alemannic>Thuchol</Alemannic>
-      <Thuringian>Thuchol</thuringian>
+      <Thuringian>Thuchol</Thuringian>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -48987,7 +47919,7 @@
       <Bavarian>Grosspolen</Bavarian>
       <Czech>Velkopolsko</Czech>
       <MiddleDutch>Grosspolen</MiddleDutch>
-      <French_Old>Grosspolen</frk>
+      <French_Old>Grosspolen</French_Old>
       <German>Großpolen</German>
       <Lombard>Polonia Maior</Lombard>
       <Frankish_Low>Grosspolen</Frankish_Low>
@@ -49003,7 +47935,7 @@
       <English_Old>Polonia Maior</English_Old>
       <suebi>Polonia Maior</suebi>
       <Alemannic>Grosspolen</Alemannic>
-      <Thuringian>Grosspolen</thuringian>
+      <Thuringian>Grosspolen</Thuringian>
       <visigothic>Polonia Maior</visigothic>
     </Names>
   </LocationEntity>
@@ -49028,7 +47960,7 @@
       <Bulgarian>Velikomoravija</Bulgarian>
       <Croatian>Velika Moravska</Croatian>
       <MiddleDutch>Moravië</MiddleDutch>
-      <French_Old>Mähren</frk>
+      <French_Old>Mähren</French_Old>
       <French_Old>Grande Moravie</French_Old>
       <German>Großmähren</German>
       <Gothic>Morawien</Gothic>
@@ -49046,7 +47978,7 @@
       <Russian>Velikaya Moraviya</Russian>
       <severian>Moravija</severian>
       <Alemannic>Mähre</Alemannic>
-      <Thuringian>Mähren</thuringian>
+      <Thuringian>Mähren</Thuringian>
       <Turkish>Moravya</Turkish>
       <Estonian>Morava</Estonian>
       <Welsh>Morafia</Welsh>
