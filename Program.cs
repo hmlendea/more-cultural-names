@@ -28,9 +28,11 @@ namespace DynamicNamesModGenerator
             IServiceProvider serviceProvider = new ServiceCollection()
                 .AddSingleton(dataStoreSettings)
                 .AddSingleton<IRepository<LocationEntity>>(s => new XmlRepository<LocationEntity>(dataStoreSettings.TitleStorePath))
+                .AddSingleton<ICK2ModBuilder, CK2ModBuilder>()
                 .BuildServiceProvider();
             
             ICK2ModBuilder ck2Builder = serviceProvider.GetService<ICK2ModBuilder>();
+            ck2Builder.Build();
         }
         
         static IConfiguration LoadConfiguration()

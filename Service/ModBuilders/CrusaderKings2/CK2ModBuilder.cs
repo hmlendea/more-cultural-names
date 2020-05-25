@@ -1,6 +1,11 @@
+using System;
+using System.Collections.Generic;
+
 using NuciDAL.Repositories;
 
 using DynamicNamesModGenerator.DataAccess.DataObjects;
+using DynamicNamesModGenerator.Service.Mapping;
+using DynamicNamesModGenerator.Service.Models;
 
 namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
 {
@@ -11,6 +16,10 @@ namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
         public CK2ModBuilder(IRepository<LocationEntity> locationRepository)
         {
             this.locationRepository = locationRepository;
+        }
+
+        public void Build()
+        {
         }
     }
 }
