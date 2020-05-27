@@ -5,13 +5,11 @@ using NuciDAL.DataObjects;
 
 namespace DynamicNamesModGenerator.DataAccess.DataObjects
 {
-    public class LocationEntity : EntityBase
+    [XmlType("Language")]
+    public class LanguageEntity : EntityBase
     {
-        public string GeoNamesId { get; set; }
-
-        [XmlArrayItem("LocationId")]
-        public List<string> FallbackLocations { get; set; }
-
+        public LanguageCodeEntity Code { get; set; }
+        
         public List<GameIdEntity> GameIds { get; set; }
 
         public List<LocationNameEntity> Names { get; set; }

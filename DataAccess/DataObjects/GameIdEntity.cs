@@ -3,14 +3,14 @@ using System.Xml.Serialization;
 namespace DynamicNamesModGenerator.DataAccess.DataObjects
 {
     [XmlType("GameId")]
-    public class LocationGameIdEntity
+    public class GameIdEntity
     {
-        public LocationGameIdEntity()
+        public GameIdEntity()
         {
 
         }
 
-        public LocationGameIdEntity(string game, string value)
+        public GameIdEntity(string game, string value)
         {
             Game = game;
             Value = value;

@@ -25,7 +25,7 @@ namespace DynamicNamesModGenerator.Service.Mapping
             LocationEntity dataObject = new LocationEntity();
             dataObject.Id = serviceModel.Id;
             dataObject.GeoNamesId = serviceModel.GeoNamesId;
-            dataObject.GameIds = serviceModel.Names.Select(x => new LocationGameIdEntity(x.Key, x.Value)).ToList();
+            dataObject.GameIds = serviceModel.GameIds.Select(x => new GameIdEntity(x.Key, x.Value)).ToList();
             dataObject.FallbackLocations = serviceModel.FallbackLocations.ToList();
             dataObject.Names = serviceModel.Names.Select(x => new LocationNameEntity(x.Key, x.Value)).ToList();
 
