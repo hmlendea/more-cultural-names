@@ -10,16 +10,16 @@ namespace DynamicNamesModGenerator.DataAccess.DataObjects
 
         }
 
-        public GameIdEntity(string game, string value)
+        public GameIdEntity(string game, string gameLocationId)
         {
             Game = game;
-            Value = value;
+            Id = gameLocationId;
         }
         
         [XmlAttribute("game")]
         public string Game { get; set; }
 
         [XmlText]
-        public string Value { get; set; }
+        public string Id { get; set; }
     }
 }

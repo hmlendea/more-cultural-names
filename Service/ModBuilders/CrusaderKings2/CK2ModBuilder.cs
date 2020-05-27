@@ -10,22 +10,41 @@ using DynamicNamesModGenerator.Service.Models;
 
 namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
 {
-    public sealed class CK2ModBuilder : ICK2ModBuilder
+    public sealed class CK2ModBuilder : ModBuilder
     {
-        readonly IRepository<LanguageEntity> languageRepository;
-        readonly IRepository<LocationEntity> locationRepository;
+        public override string Game => "CK2HIP";
 
         public CK2ModBuilder(
             IRepository<LanguageEntity> languageRepository,
             IRepository<LocationEntity> locationRepository
-        )
+        ) : base(languageRepository, locationRepository)
         {
-            this.languageRepository = languageRepository;
-            this.locationRepository = locationRepository;
         }
 
-        public void Build()
+        public override void Build()
         {
+            IEnumerable<Location> locations = locationRepository.GetAll().ToServiceModels();
+            IEnumerable<Language> languages = languageRepository.GetAll().ToServiceModels();
+
+            foreach (Location location in locations.Where(x => x.GameIds.Any(y => y.Game == Game)))
+            {
+                foreach (GameId locationGameId in location.GameIds.Where(x => x.Game == Game))
+                {
+                    Console.WriteLine($"{locationGameId.Id} = {{");
+
+                    foreach (LocationName name in location.Names)
+                    {
+                        Language language = languages.First(x => x.Id == name.LanguageId);
+
+                        foreach (GameId languageGameId in language.GameIds.Where(x => x.Game == Game))
+                        {
+                            Console.WriteLine($"    {languageGameId.Id} = \"{name.Value}\"");
+                        }
+                    }
+
+                    Console.WriteLine($"}}");
+                }
+            }
         }
     }
 }

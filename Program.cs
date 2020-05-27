@@ -7,6 +7,7 @@ using NuciDAL.Repositories;
 
 using DynamicNamesModGenerator.Configuration;
 using DynamicNamesModGenerator.DataAccess.DataObjects;
+using DynamicNamesModGenerator.Service.ModBuilders;
 using DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2;
 
 namespace DynamicNamesModGenerator
@@ -29,10 +30,10 @@ namespace DynamicNamesModGenerator
                 .AddSingleton(dataStoreSettings)
                 .AddSingleton<IRepository<LanguageEntity>>(s => new XmlRepository<LanguageEntity>(dataStoreSettings.LanguageStorePath))
                 .AddSingleton<IRepository<LocationEntity>>(s => new XmlRepository<LocationEntity>(dataStoreSettings.TitleStorePath))
-                .AddSingleton<ICK2ModBuilder, CK2ModBuilder>()
+                .AddSingleton<IModBuilder, CK2ModBuilder>()
                 .BuildServiceProvider();
             
-            ICK2ModBuilder ck2Builder = serviceProvider.GetService<ICK2ModBuilder>();
+            IModBuilder ck2Builder = serviceProvider.GetService<IModBuilder>();
             ck2Builder.Build();
         }
         

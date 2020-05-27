@@ -13,9 +13,9 @@ namespace DynamicNamesModGenerator.Service.Mapping
             Location serviceModel = new Location();
             serviceModel.Id = dataObject.Id;
             serviceModel.GeoNamesId = dataObject.GeoNamesId;
-            serviceModel.GameIds = dataObject.GameIds.Select(x => new KeyValuePair<string, string>(x.Game, x.Value)).ToList();
+            serviceModel.GameIds = dataObject.GameIds.ToServiceModels();
             serviceModel.FallbackLocations = dataObject.FallbackLocations;
-            serviceModel.Names = dataObject.Names.ToDictionary(x => x.Language, x => x.Value);
+            serviceModel.Names = dataObject.Names.ToServiceModels();
 
             return serviceModel;
         }
@@ -25,9 +25,9 @@ namespace DynamicNamesModGenerator.Service.Mapping
             LocationEntity dataObject = new LocationEntity();
             dataObject.Id = serviceModel.Id;
             dataObject.GeoNamesId = serviceModel.GeoNamesId;
-            dataObject.GameIds = serviceModel.GameIds.Select(x => new GameIdEntity(x.Key, x.Value)).ToList();
+            dataObject.GameIds = serviceModel.GameIds.ToDataObjects().ToList();
             dataObject.FallbackLocations = serviceModel.FallbackLocations.ToList();
-            dataObject.Names = serviceModel.Names.Select(x => new LocationNameEntity(x.Key, x.Value)).ToList();
+            dataObject.Names = serviceModel.Names.ToDataObjects().ToList();
 
             return dataObject;
         }
@@ -39,7 +39,7 @@ namespace DynamicNamesModGenerator.Service.Mapping
             return serviceModels;
         }
 
-        internal static IEnumerable<LocationEntity> ToEntities(this IEnumerable<Location> serviceModels)
+        internal static IEnumerable<LocationEntity> ToDataObjects(this IEnumerable<Location> serviceModels)
         {
             IEnumerable<LocationEntity> dataObjects = serviceModels.Select(serviceModel => serviceModel.ToDataObject());
 

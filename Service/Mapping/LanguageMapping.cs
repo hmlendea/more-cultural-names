@@ -13,7 +13,7 @@ namespace DynamicNamesModGenerator.Service.Mapping
             Language serviceModel = new Language();
             serviceModel.Id = dataObject.Id;
             serviceModel.Code = dataObject.Code?.ToServiceModel();
-            serviceModel.GameIds = dataObject.GameIds.Select(x => new KeyValuePair<string, string>(x.Game, x.Value)).ToList();
+            serviceModel.GameIds = dataObject.GameIds.ToServiceModels();
 
             return serviceModel;
         }
@@ -23,7 +23,7 @@ namespace DynamicNamesModGenerator.Service.Mapping
             LanguageEntity dataObject = new LanguageEntity();
             dataObject.Id = serviceModel.Id;
             dataObject.Code = serviceModel.Code?.ToDataObject();
-            dataObject.GameIds = serviceModel.GameIds.Select(x => new GameIdEntity(x.Key, x.Value)).ToList();
+            dataObject.GameIds = serviceModel.GameIds.ToDataObjects().ToList();
 
             return dataObject;
         }
@@ -35,7 +35,7 @@ namespace DynamicNamesModGenerator.Service.Mapping
             return serviceModels;
         }
 
-        internal static IEnumerable<LanguageEntity> ToEntities(this IEnumerable<Language> serviceModels)
+        internal static IEnumerable<LanguageEntity> ToDataObjects(this IEnumerable<Language> serviceModels)
         {
             IEnumerable<LanguageEntity> dataObjects = serviceModels.Select(serviceModel => serviceModel.ToDataObject());
 

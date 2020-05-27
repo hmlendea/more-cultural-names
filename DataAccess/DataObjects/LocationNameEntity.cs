@@ -12,12 +12,12 @@ namespace DynamicNamesModGenerator.DataAccess.DataObjects
 
         public LocationNameEntity(string language, string value)
         {
-            Language = language;
+            LanguageId = language;
             Value = value;
         }
         
         [XmlAttribute("language")]
-        public string Language { get; set; }
+        public string LanguageId { get; set; }
 
         [XmlText]
         public string Value { get; set; }

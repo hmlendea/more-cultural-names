@@ -35,7 +35,7 @@ namespace DynamicNamesModGenerator.Service.Mapping
             return serviceModels;
         }
 
-        internal static IEnumerable<LanguageCodeEntity> ToEntities(this IEnumerable<LanguageCode> serviceModels)
+        internal static IEnumerable<LanguageCodeEntity> ToDataObjects(this IEnumerable<LanguageCode> serviceModels)
         {
             IEnumerable<LanguageCodeEntity> dataObjects = serviceModels.Select(serviceModel => serviceModel.ToDataObject());
 

@@ -8,6 +8,6 @@ namespace DynamicNamesModGenerator.Service.Models
 
         public LanguageCode Code { get; set; }
 
-        public IList<KeyValuePair<string, string>> GameIds { get; set; }
+        public IEnumerable<GameId> GameIds { get; set; }
     }
 }
