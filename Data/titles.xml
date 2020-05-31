@@ -4,8 +4,8 @@
     <Id>aalst</Id>
     <GeoNamesId>2803448</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_aalst</GameId>
-      <GameId game="CK2HIP">c_aalst</GameId>
+      <GameId game="CK2HIP" parent="c_aalst">b_aalst</GameId>
+      <GameId game="CK2HIP" parent="d_hainaut">c_aalst</GameId>
     </GameIds>
     <Names>
       <Name language="Brabantian">Oilsjt</Name>
@@ -19,7 +19,7 @@
     <Id>alba_iulia</Id>
     <GeoNamesId>686578</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_gyulafehervar</GameId>
+      <GameId game="CK2HIP" parent="c_feher">b_gyulafehervar</GameId>
       <GameId game="ImperatorRome">4291</GameId>
     </GameIds>
     <Names>
@@ -52,7 +52,7 @@
     <Id>alnwick</Id>
     <GeoNamesId>2657438</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_alnwick</GameId>
+      <GameId game="CK2HIP" parent="c_northumberland">b_alnwick</GameId>
     </GameIds>
     <Names>
       <Name language="English_Old">Alnwic</Name>
@@ -94,7 +94,7 @@
     <Id>ardeal</Id>
     <GeoNamesId>664661</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">d_transylvania</GameId>
+      <GameId game="CK2HIP" parent="k_hungary">d_transylvania</GameId>
     </GameIds>
     <FallbackLocations>
       <LocationId>transylvania</LocationId>
@@ -135,8 +135,8 @@
   <LocationEntity>
     <Id>besancon</Id>
     <GameIds>
-      <GameId game="CK2HIP">b_besancon</GameId>
-      <GameId game="CK2HIP">c_besancon</GameId>
+      <GameId game="CK2HIP" parent="c_besancon">b_besancon</GameId>
+      <GameId game="CK2HIP" parent="d_upper_burgundy">c_besancon</GameId>
     </GameIds>
     <Names>
       <Name language="Asturian">Besanzón</Name>
@@ -165,7 +165,7 @@
     <Id>buda</Id>
     <GeoNamesId>3054667</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_buda</GameId>
+      <GameId game="CK2HIP" parent="c_esztergom">b_buda</GameId>
     </GameIds>
     <Names>
       <Name language="Afrikaans">Boeda</Name>
@@ -190,8 +190,8 @@
     <Id>capua</Id>
     <GeoNamesId>3180601</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_capua</GameId>
-      <GameId game="CK2HIP">d_capua</GameId>
+      <GameId game="CK2HIP" parent="c_capua">b_capua</GameId>
+      <GameId game="CK2HIP" parent="k_sicily">d_capua</GameId>
       <GameId game="ImperatorRome">6</GameId>
     </GameIds>
     <Names>
@@ -215,7 +215,7 @@
     <Id>csurgo</Id>
     <GeoNamesId>3053863</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_csurgo</GameId>
+      <GameId game="CK2HIP" parent="c_bereg">b_csurgo</GameId>
     </GameIds>
     <Names>
       <Name language="Bulgarian">Curgov</Name>
@@ -230,7 +230,7 @@
     <Id>dobrogea</Id>
     <GeoNamesId>679193</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">d_karvuna</GameId>
+      <GameId game="CK2HIP" parent="k_bulgaria">d_karvuna</GameId>
     </GameIds>
     <Names>
       <Name language="Aragonese">Dobrucha</Name>
@@ -270,7 +270,7 @@
     <Id>dolyna</Id>
     <GeoNamesId>709755</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_dolyna</GameId>
+      <GameId game="CK2HIP" parent="c_galich">b_dolyna</GameId>
     </GameIds>
     <Names>
       <Name language="Polish">Dolina</Name>
@@ -282,7 +282,7 @@
     <Id>dordrecht</Id>
     <GeoNamesId>2756669</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_dordrecht</GameId>
+      <GameId game="CK2HIP" parent="c_holland">b_dordrecht</GameId>
     </GameIds>
     <Names>
       <Name language="English">Dort</Name>
@@ -302,9 +302,9 @@
     <Id>edessa</Id>
     <GeoNamesId>298333</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_edessa</GameId>
-      <GameId game="CK2HIP">c_edessa</GameId>
-      <GameId game="CK2HIP">d_edessa</GameId>
+      <GameId game="CK2HIP" parent="c_edessa">b_edessa</GameId>
+      <GameId game="CK2HIP" parent="d_edessa">c_edessa</GameId>
+      <GameId game="CK2HIP" parent="k_antioch">d_edessa</GameId>
     </GameIds>
     <Names>
       <Name language="Albanian">Shanllëurfa</Name>
@@ -338,9 +338,9 @@
     <Id>esztergom</Id>
     <GeoNamesId>3053163</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_esztergom</GameId>
-      <GameId game="CK2HIP">c_esztergom</GameId>
-      <GameId game="CK2HIP">d_esztergom</GameId>
+      <GameId game="CK2HIP" parent="c_esztergom">b_esztergom</GameId>
+      <GameId game="CK2HIP" parent="d_esztergom">c_esztergom</GameId>
+      <GameId game="CK2HIP" parent="k_hungary">d_esztergom</GameId>
     </GameIds>
     <Names>
       <Name language="Azerbaijani">Esterqom</Name>
@@ -373,8 +373,8 @@
     <Id>fondi</Id>
     <GeoNamesId>3176843</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_fondi</GameId>
-      <GameId game="CK2HIP">c_fondi</GameId>
+      <GameId game="CK2HIP" parent="c_fondi">b_fondi</GameId>
+      <GameId game="CK2HIP" parent="d_gaeta">c_fondi</GameId>
       <GameId game="ImperatorRome">5</GameId>
     </GameIds>
     <Names>
@@ -390,9 +390,9 @@
     <Id>frisia</Id>
     <GeoNamesId>2755812</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">c_frisia</GameId>
-      <GameId game="CK2HIP">d_frisia</GameId>
-      <GameId game="CK2HIP">k_frisia</GameId>
+      <GameId game="CK2HIP" parent="d_frisia">c_frisia</GameId>
+      <GameId game="CK2HIP" parent="k_frisia">d_frisia</GameId>
+      <GameId game="CK2HIP" parent="e_hre">k_frisia</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Frisia</Name>
@@ -404,6 +404,7 @@
       <Name language="French">Frise</Name>
       <Name language="Frisian_Old">Fresland</Name>
       <Name language="Frisian_West">Fryslân</Name>
+      <Name language="German_Low_Dutch">Frieslaand</Name>
       <Name language="German_Middle_High">Friesland</Name>
       <Name language="German_Middle_Low">Friesland</Name> <!-- 'Dutch' Low Saxon. Or "Freeslaand" ('German' Low Saxon) -->
       <Name language="German_Old_Low">Frēsland</Name>
@@ -421,7 +422,7 @@
     <Id>gelderland</Id>
     <GeoNamesId>2755634</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">d_gelre</GameId>
+      <GameId game="CK2HIP" parent="k_frisia">d_gelre</GameId>
     </GameIds>
     <FallbackLocations>
       <LocationId>guelders</LocationId>
@@ -452,8 +453,8 @@
     <Id>guelders</Id>
     <GeoNamesId>2921528</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_geldern</GameId>
-      <GameId game="CK2HIP">c_gelre</GameId>
+      <GameId game="CK2HIP" parent="c_gelre">b_geldern</GameId>
+      <GameId game="CK2HIP" parent="d_gelre">c_gelre</GameId>
     </GameIds>
     <Names>
       <Name language="Catalan">Gueldre</Name>
@@ -471,7 +472,7 @@
   <LocationEntity>
     <Id>hansa</Id>
     <GameIds>
-      <GameId game="CK2HIP">k_hansa</GameId>
+      <GameId game="CK2HIP" parent="e_hre">k_hansa</GameId>
     </GameIds>
     <Names>
       <Name language="Dalmatian">Hãnsa</Name>
@@ -580,7 +581,7 @@
     <Id>haarlem</Id>
     <GeoNamesId>2755003</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_haarlem</GameId>
+      <GameId game="CK2HIP" parent="c_holland">b_haarlem</GameId>
     </GameIds>
     <Names>
       <Name language="Esperanto">Haarlemo</Name>
@@ -595,7 +596,7 @@
     <Id>heidelberg</Id>
     <GeoNamesId>2907911</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_heidelberg</GameId>
+      <GameId game="CK2HIP" parent="c_pfalz">b_heidelberg</GameId>
     </GameIds>
     <Names>
       <Name language="Albanian">Hajdelberg</Name>
@@ -615,10 +616,70 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>holland</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="k_frisia">d_holland</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Asturian">Holanda</Name>
+      <Name language="Azerbaijani">Hollandiya</Name>
+      <Name language="Basque">Holanda</Name>
+      <Name language="Castilian">Holanda</Name>
+      <Name language="Catalan">Holanda</Name>
+      <Name language="Chinese_Middle">Hélán</Name>
+      <Name language="Chinese_Min_South">Hô-lân</Name>
+      <Name language="Croatian">Holandija</Name>
+      <Name language="Czech">Holandsko</Name>
+      <Name language="Esperanto">Holando</Name>
+      <Name language="Finnish">Hollanti</Name>
+      <Name language="Firulian">Olande</Name>
+      <Name language="French">Hollande</Name>
+      <Name language="Frisian_Saterland">Hollound</Name>
+      <Name language="Frisian_West">Hollân</Name>
+      <Name language="Galician">Holanda</Name>
+      <Name language="Guarani">Olánda</Name>
+      <Name language="Hausa">Holan</Name>
+      <Name language="Hungarian">Hollandia</Name>
+      <Name language="Ido">Holando</Name>
+      <Name language="Indonesian">Holandia</Name>
+      <Name language="Interlingua">Hollanda</Name>
+      <Name language="Irish">An Ísiltír</Name>
+      <Name language="Italian">Olanda</Name>
+      <Name language="Italian">Paesi Bassi</Name>
+      <Name language="Latin">Hollandia</Name>
+      <Name language="Latvian">Holande</Name>
+      <Name language="Leonese">Países Baxos</Name>
+      <Name language="Lithuanian">Olandija</Name>
+      <Name language="Livvi">Hollandii</Name>
+      <Name language="Manx">Yn Ollan</Name>
+      <Name language="Norwegian">Nederland</Name>
+      <Name language="Occitan">Olanda</Name>
+      <Name language="Polish">Holandia</Name>
+      <Name language="Polish">Holandia</Name>
+      <Name language="Portuguese">Holanda</Name>
+      <Name language="Romanian">Olanda</Name>
+      <Name language="Romansh">Ollanda</Name>
+      <Name language="Sardinian">Olanda</Name>
+      <Name language="Scottish_Gaelic">An Òlaind</Name>
+      <Name language="Serbian">Holandija</Name>
+      <Name language="SerboCroatian">Holandija</Name>
+      <Name language="Slovak">Holandsko</Name>
+      <Name language="Slovene">Nizozemska</Name>
+      <Name language="Somali">Netherlands</Name>
+      <Name language="Spanish">Holanda</Name>
+      <Name language="Swedish">Nederländerna</Name>
+      <Name language="Tagalog">Olanda</Name>
+      <Name language="Vietnamese">Hà Lan</Name>
+      <Name language="Waray">Holanda</Name>
+      <Name language="Welsh">Holand</Name>
+      <Name language="Zulu">IHolandi</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>jaffa</Id>
     <GameIds>
-      <GameId game="CK2HIP">b_jaffa</GameId>
-      <GameId game="CK2HIP">c_jaffa</GameId>
+      <GameId game="CK2HIP" parent="c_jaffa">b_jaffa</GameId>
+      <GameId game="CK2HIP" parent="d_ascalon">c_jaffa</GameId>
     </GameIds>
     <Names>
       <Name language="Albanian">Jafa</Name>
@@ -659,8 +720,8 @@
     <Id>karvuna</Id>
     <GeoNamesId>730551</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_karvuna</GameId>
-      <GameId game="CK2HIP">c_karvuna</GameId>
+      <GameId game="CK2HIP" parent="c_karvuna">b_karvuna</GameId>
+      <GameId game="CK2HIP" parent="d_karvuna">c_karvuna</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Kavarna</Name>
@@ -678,8 +739,8 @@
     <Id>knin</Id>
     <GeoNamesId>3197986</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_knin</GameId>
-      <GameId game="CK2HIP">c_knin</GameId>
+      <GameId game="CK2HIP" parent="c_knin">b_knin</GameId>
+      <GameId game="CK2HIP" parent="d_dalmatia">c_knin</GameId>
     </GameIds>
     <Names>
       <Name language="Albanian">Knini</Name>
@@ -710,9 +771,9 @@
     <Id>mainz</Id>
     <GeoNamesId>2874225</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_mainz</GameId>
-      <GameId game="CK2HIP">c_mainz</GameId>
-      <GameId game="CK2HIP">d_mainz</GameId>
+      <GameId game="CK2HIP" parent="c_mainz">b_mainz</GameId>
+      <GameId game="CK2HIP" parent="d_mainz">c_mainz</GameId>
+      <GameId game="CK2HIP" parent="k_franconia">d_mainz</GameId>
     </GameIds>
     <Names>
       <Name language="Albanian">Majnci</Name>
@@ -751,8 +812,8 @@
     <Id>napoli</Id>
     <GeoNamesId>3172394</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_napoli</GameId>
-      <GameId game="CK2HIP">d_napoli</GameId>
+      <GameId game="CK2HIP" parent="c_napoli">b_napoli</GameId>
+      <GameId game="CK2HIP" parent="k_sicily">d_napoli</GameId>
       <GameId game="ImperatorRome">7</GameId>
     </GameIds>
     <Names>
@@ -828,7 +889,7 @@
     <Id>oradea</Id>
     <GeoNamesId>671768</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_varad</GameId>
+      <GameId game="CK2HIP" parent="c_bihar">b_varad</GameId>
     </GameIds>
     <Names>
       <Name language="Bulgarian">Veliki Varadin</Name>
@@ -882,8 +943,8 @@
     <Id>oxford</Id>
     <GeoNamesId>2640729</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_oxford</GameId>
-      <GameId game="CK2HIP">c_oxford</GameId>
+      <GameId game="CK2HIP" parent="c_oxford">b_oxford</GameId>
+      <GameId game="CK2HIP" parent="d_bedford">c_oxford</GameId>
     </GameIds>
     <Names>
       <Name language="Albanian">Oksford</Name>
@@ -923,7 +984,7 @@
     <Id>pitesti</Id>
     <GeoNamesId>670609</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_pitesti</GameId>
+      <GameId game="CK2HIP" parent="c_tirgoviste">b_pitesti</GameId>
     </GameIds>
     <Names>
       <Name language="Bulgarian">Pitešt</Name>
@@ -999,7 +1060,7 @@
   <LocationEntity>
     <Id>saint_arnoul</Id>
     <GameIds>
-      <GameId game="CK2HIP">b_saint_arnoul</GameId>
+      <GameId game="CK2HIP" parent="c_metz">b_saint_arnoul</GameId>
     </GameIds>
     <Names>
       <Name language="English">Saint Arnold</Name>
@@ -1012,7 +1073,7 @@
     <Id>saint_avold</Id>
     <GeoNamesId>2981492</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_saint_avold</GameId>
+      <GameId game="CK2HIP" parent="c_metz">b_saint_avold</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Sänt Avuur</Name>
@@ -1025,8 +1086,8 @@
     <Id>salerno</Id>
     <GeoNamesId>3168673</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_salerno</GameId>
-      <GameId game="CK2HIP">d_salerno</GameId>
+      <GameId game="CK2HIP" parent="c_salerno">b_salerno</GameId>
+      <GameId game="CK2HIP" parent="k_sicily">d_salerno</GameId>
       <GameId game="ImperatorRome">10</GameId>
     </GameIds>
     <Names>
@@ -1080,8 +1141,8 @@
     <Id>targoviste</Id> <!-- Târgoviște, Dâmbovița, Romania -->
     <GeoNamesId>665024</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_targoviste</GameId>
-      <GameId game="CK2HIP">c_tirgoviste</GameId>
+      <GameId game="CK2HIP" parent="c_tirgoviste">b_targoviste</GameId>
+      <GameId game="CK2HIP" parent="d_wallachia">c_tirgoviste</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Trgovišće</Name>
@@ -1109,9 +1170,9 @@
     <Id>teck</Id>
     <GeoNamesId>2823729</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_teck</GameId>
-      <GameId game="CK2HIP">c_teck</GameId>
-      <GameId game="CK2HIP">d_teck</GameId>
+      <GameId game="CK2HIP" parent="c_teck">b_teck</GameId>
+      <GameId game="CK2HIP" parent="d_teck">c_teck</GameId>
+      <GameId game="CK2HIP" parent="k_schwaben">d_teck</GameId>
     </GameIds>
     <Names>
       <Name language="Czech">Teckové</Name>
@@ -1123,7 +1184,7 @@
     <Id>tivoli</Id>
     <GeoNamesId>3165624</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_tivoli</GameId>
+      <GameId game="CK2HIP" parent="c_roma">b_tivoli</GameId>
       <GameId game="ImperatorRome">2</GameId>
     </GameIds>
     <Names>
@@ -1206,7 +1267,7 @@
     <Id>turda</Id>
     <GeoNamesId>664460</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_torda</GameId>
+      <GameId game="CK2HIP" parent="c_szekelyfold">b_torda</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Potasija</Name>
@@ -1237,7 +1298,7 @@
     <Id>visegrad</Id>
     <GeoNamesId>3042824</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_visegrad</GameId>
+      <GameId game="CK2HIP" parent="c_esztergom">b_visegrad</GameId>
     </GameIds>
     <Names>
       <Name language="Basque">Vixegrad</Name>
@@ -1282,7 +1343,7 @@
     <Id>wales</Id>
     <GeoNamesId>2634895</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">k_wales</GameId>
+      <GameId game="CK2HIP" parent="e_britannia">k_wales</GameId>
     </GameIds>
     <Names>
       <Name language="Afrikaans">Wallis</Name>
@@ -1384,8 +1445,8 @@
     <Id>wroclaw</Id>
     <GeoNamesId>3081368</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP">b_wroclaw</GameId>
-      <GameId game="CK2HIP">c_wroclaw</GameId>
+      <GameId game="CK2HIP" parent="c_wroclaw">b_wroclaw</GameId>
+      <GameId game="CK2HIP" parent="d_silesia">c_wroclaw</GameId>
     </GameIds>
     <Names>
       <Name language="Albanian">Vrocuav</Name>
@@ -1433,7 +1494,7 @@
   <LocationEntity>
     <Id>zlotow</Id>
     <GameIds>
-      <GameId game="CK2HIP">b_zlotow</GameId>
+      <GameId game="CK2HIP" parent="c_poznanskie">b_zlotow</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Zlotuv</Name>
@@ -1457,49 +1518,6 @@
 
 
   <!-- BELOW TITLES NEED REVIEW, GeoNamesId, SORTING -->
-
-  <LocationEntity>
-    <Id>holland</Id>
-    <GameIds>
-      <GameId game="CK2HIP">d_holland</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Aragonese">Países Baixos</Name>
-      <Name language="Breton_Middle">Izelvroioù</Name>
-      <Name language="Bulgarian">Niderlandija</Name>
-      <Name language="Castilian">Holanda</Name>
-      <Name language="Catalan">Països Baixos</Name>
-      <Name language="Chinese_Middle">Hélán</Name>
-      <Name language="Croatian">Nizozemska</Name>
-      <Name language="Czech">Nizozemsko</Name>
-      <Name language="English_Old_Norse">Niðerland</Name>
-      <Name language="Estonian">Madalmaad</Name>
-      <Name language="French_Old">Hollande</Name>
-      <Name language="Frisian_Old">Hollân</Name>
-      <Name language="Galician">Países Baixos</Name>
-      <Name language="German_Middle_Low">Nedderlannen</Name>
-      <Name language="German_Old_Low">Nedderlannen</Name>
-      <Name language="Hausa">Holan</Name>
-      <Name language="Hungarian">Hollandia</Name>
-      <Name language="Irish">An Ísiltír</Name>
-      <Name language="Italian">Paesi Bassi</Name>
-      <Name language="Latgalian">Niderlande</Name>
-      <Name language="Latin">Hollandia</Name>
-      <Name language="Leonese">Países Baxos</Name>
-      <Name language="Lithuanian">Olandija</Name>
-      <Name language="Norwegian">Nederland</Name>
-      <Name language="Occitan">Païses Basses</Name>
-      <Name language="Polish">Holandia</Name>
-      <Name language="Romanian">Olanda</Name>
-      <Name language="Serbian">Holandija</Name>
-      <Name language="Sicilian">Paisi Vasci</Name>
-      <Name language="Slovak">Holandsko</Name>
-      <Name language="Slovene">Nizozemska</Name>
-      <Name language="Somali">Netherlands</Name>
-      <Name language="Swedish">Nederländerna</Name>
-      <Name language="Welsh">Yr Iseldiroedd</Name>
-    </Names>
-  </LocationEntity>
   <LocationEntity>
     <Id>amsterdam</Id>
     <GameIds>
