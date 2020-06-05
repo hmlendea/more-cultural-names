@@ -14,8 +14,6 @@ namespace DynamicNamesModGenerator
 {
     public class Program
     {
-        static DataStoreSettings dataStoreSettings;
-
         /// <summary>
         /// The entry point of the program, where the program control starts and ends.
         /// </summary>
@@ -23,11 +21,16 @@ namespace DynamicNamesModGenerator
         public static void Main(string[] args)
         {
             IConfiguration config = LoadConfiguration();
-            dataStoreSettings = new DataStoreSettings();
+
+            DataStoreSettings dataStoreSettings = new DataStoreSettings();
+            OutputSettings outputSettings = new OutputSettings();
+
             config.Bind(nameof(DataStoreSettings), dataStoreSettings);
+            config.Bind(nameof(OutputSettings), outputSettings);
 
             IServiceProvider serviceProvider = new ServiceCollection()
                 .AddSingleton(dataStoreSettings)
+                .AddSingleton(outputSettings)
                 .AddSingleton<IRepository<LanguageEntity>>(s => new XmlRepository<LanguageEntity>(dataStoreSettings.LanguageStorePath))
                 .AddSingleton<IRepository<LocationEntity>>(s => new XmlRepository<LocationEntity>(dataStoreSettings.TitleStorePath))
                 .AddSingleton<IModBuilder, ImperatorRomeModBuilder>()

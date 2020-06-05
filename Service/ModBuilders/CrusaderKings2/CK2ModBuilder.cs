@@ -4,6 +4,7 @@ using System.Linq;
 
 using NuciDAL.Repositories;
 
+using DynamicNamesModGenerator.Configuration;
 using DynamicNamesModGenerator.DataAccess.DataObjects;
 using DynamicNamesModGenerator.Service.Mapping;
 using DynamicNamesModGenerator.Service.Models;
@@ -16,8 +17,9 @@ namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
 
         public CK2ModBuilder(
             IRepository<LanguageEntity> languageRepository,
-            IRepository<LocationEntity> locationRepository
-        ) : base(languageRepository, locationRepository)
+            IRepository<LocationEntity> locationRepository,
+            OutputSettings outputSettings)
+            : base(languageRepository, locationRepository, outputSettings)
         {
         }
 
