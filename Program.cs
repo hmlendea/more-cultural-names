@@ -30,7 +30,7 @@ namespace DynamicNamesModGenerator
                 .AddSingleton(dataStoreSettings)
                 .AddSingleton<IRepository<LanguageEntity>>(s => new XmlRepository<LanguageEntity>(dataStoreSettings.LanguageStorePath))
                 .AddSingleton<IRepository<LocationEntity>>(s => new XmlRepository<LocationEntity>(dataStoreSettings.TitleStorePath))
-                .AddSingleton<IModBuilder, CK2ModBuilder>()
+                .AddSingleton<IModBuilder, ImperatorRomeModBuilder>()
                 .BuildServiceProvider();
             
             IModBuilder ck2Builder = serviceProvider.GetService<IModBuilder>();
