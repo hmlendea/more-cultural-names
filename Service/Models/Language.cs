@@ -9,5 +9,7 @@ namespace DynamicNamesModGenerator.Service.Models
         public LanguageCode Code { get; set; }
 
         public IEnumerable<GameId> GameIds { get; set; }
+
+        public IEnumerable<string> FallbackLanguages { get; set; }
     }
 }

@@ -11,7 +11,8 @@ namespace DynamicNamesModGenerator.DataAccess.DataObjects
         public LanguageCodeEntity Code { get; set; }
         
         public List<GameIdEntity> GameIds { get; set; }
-
-        public List<LocationNameEntity> Names { get; set; }
+        
+        [XmlArrayItem(ElementName="LanguageId")]
+        public List<string> FallbackLanguages { get; set; }
     }
 }

@@ -31,12 +31,46 @@ namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
         {
             string mainDirectoryPath = Path.Combine(OutputDirectoryPath, outputSettings.ImperatorRomeModId);
             string localisationDirectoryPath = Path.Combine(mainDirectoryPath, "localization");
+            string commonDirectoryPath = Path.Combine(mainDirectoryPath, "common");
+            string provinceNamesDirectoryPath = Path.Combine(commonDirectoryPath, "province_names");
 
             Directory.CreateDirectory(mainDirectoryPath);
             Directory.CreateDirectory(localisationDirectoryPath);
+            Directory.CreateDirectory(provinceNamesDirectoryPath);
 
+            Directory.CreateDirectory(commonDirectoryPath);
+
+            CreateDataFiles(provinceNamesDirectoryPath);
             CreateLocalisationFiles(localisationDirectoryPath);
             CreateDescriptorFiles();
+        }
+
+        void CreateDataFiles(string provinceNamesDirectoryPath)
+        {
+            List<Localisation> localisations = GetLocalisations();
+
+            foreach (string culture in localisations.Select(x => x.LanguageId).Distinct())
+            {
+                string path = Path.Combine(provinceNamesDirectoryPath, $"{culture.ToLower()}.txt");
+                string content = $"{culture} = {{" + Environment.NewLine;
+
+                foreach (Localisation localisation in localisations.Where(x => x.LanguageId == culture))
+                {
+                    content +=
+                        $"    {localisation.LocationId} = PROV{localisation.LocationId}_{culture}" +
+                        $" # {localisation.Name}" + Environment.NewLine;
+                }
+
+                content += "}";
+
+                File.WriteAllText(path, content);
+            }
+        }
+
+        void CreateDataFile(string provinceNamesDirectoryPath, string culture)
+        {
+
+
         }
 
         void CreateLocalisationFiles(string localisationDirectoryPath)
@@ -50,7 +84,7 @@ namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
         void CreateLocalisationFile(string localisationDirectoryPath, string language)
         {
             string fileContent = GenerateLocalisationFileContent(language);
-            string fileName = $"{outputSettings.ImperatorRomeModName}_provincenames_l_{language}.yml";
+            string fileName = $"{outputSettings.ImperatorRomeModId}_provincenames_l_{language}.yml";
             string filePath = Path.Combine(localisationDirectoryPath, fileName);
 
             File.WriteAllText(filePath, fileContent, Encoding.UTF8);
@@ -72,9 +106,9 @@ namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
             List<Localisation> localisations = GetLocalisations();
             string content = $"l_{language}:{Environment.NewLine}";
 
-            foreach(Localisation localisation in localisations.OrderBy(x => int.Parse(x.LocationId)))
+            foreach(Localisation localisation in localisations)
             {
-                content += $"  PROV{localisation.LocationId}_{localisation.LanguageId}:0 \"{localisation.Name}\"{Environment.NewLine}";
+                content += $" PROV{localisation.LocationId}_{localisation.LanguageId}:0 \"{localisation.Name}\"{Environment.NewLine}";
             }
 
             return content;
@@ -100,26 +134,12 @@ namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
 
             foreach (Location location in locations.Where(x => x.GameIds.Any(y => y.Game == Game)))
             {
-                foreach (GameId locationGameId in location.GameIds.Where(x => x.Game == Game))
-                {
-                    foreach (LocationName name in location.Names)
-                    {
-                        Language language = languages.First(x => x.Id == name.LanguageId);
+                List<Localisation> locationLocalisations = GetLocationLocalisations(location.Id);
 
-                        foreach (GameId languageGameId in language.GameIds.Where(x => x.Game == Game))
-                        {
-                            Localisation localisation = new Localisation();
-                            localisation.LocationId = locationGameId.Id;
-                            localisation.LanguageId = languageGameId.Id;
-                            localisation.Name = name.Value;
-
-                            localisations.Add(localisation);
-                        }
-                    }
-                }
+                localisations.AddRange(locationLocalisations);
             }
 
-            return localisations;
+            return localisations.OrderBy(x => int.Parse(x.LocationId)).ToList();
         }
     }
 }

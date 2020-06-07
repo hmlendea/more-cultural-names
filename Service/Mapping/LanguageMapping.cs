@@ -14,6 +14,7 @@ namespace DynamicNamesModGenerator.Service.Mapping
             serviceModel.Id = dataObject.Id;
             serviceModel.Code = dataObject.Code?.ToServiceModel();
             serviceModel.GameIds = dataObject.GameIds.ToServiceModels();
+            serviceModel.FallbackLanguages = dataObject.FallbackLanguages.ToList();
 
             return serviceModel;
         }
@@ -24,6 +25,7 @@ namespace DynamicNamesModGenerator.Service.Mapping
             dataObject.Id = serviceModel.Id;
             dataObject.Code = serviceModel.Code?.ToDataObject();
             dataObject.GameIds = serviceModel.GameIds.ToDataObjects().ToList();
+            dataObject.FallbackLanguages = serviceModel.FallbackLanguages.ToList();
 
             return dataObject;
         }
