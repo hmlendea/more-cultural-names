@@ -11,9 +11,9 @@ using DynamicNamesModGenerator.DataAccess.DataObjects;
 using DynamicNamesModGenerator.Service.Mapping;
 using DynamicNamesModGenerator.Service.Models;
 
-namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
+namespace DynamicNamesModGenerator.Service.ModBuilders.ImperatorRome
 {
-    public sealed class ImperatorRomeModBuilder : ModBuilder
+    public sealed class ImperatorRomeModBuilder : ModBuilder, IImperatorRomeModBuilder
     {
         const string GameVersion = "1.4.*";
 
@@ -67,12 +67,6 @@ namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
             }
         }
 
-        void CreateDataFile(string provinceNamesDirectoryPath, string culture)
-        {
-
-
-        }
-
         void CreateLocalisationFiles(string localisationDirectoryPath)
         {
             CreateLocalisationFile(localisationDirectoryPath, "english");
@@ -123,23 +117,6 @@ namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
                 $"}}" + Environment.NewLine +
                 $"name=\"{outputSettings.ImperatorRomeModName}\"" + Environment.NewLine +
                 $"path=\"mod/{outputSettings.ImperatorRomeModId}\"";
-        }
-
-        List<Localisation> GetLocalisations()
-        {
-            IEnumerable<Location> locations = locationRepository.GetAll().ToServiceModels();
-            IEnumerable<Language> languages = languageRepository.GetAll().ToServiceModels();
-
-            List<Localisation> localisations = new List<Localisation>();
-
-            foreach (Location location in locations.Where(x => x.GameIds.Any(y => y.Game == Game)))
-            {
-                List<Localisation> locationLocalisations = GetLocationLocalisations(location.Id);
-
-                localisations.AddRange(locationLocalisations);
-            }
-
-            return localisations.OrderBy(x => int.Parse(x.LocationId)).ToList();
         }
     }
 }

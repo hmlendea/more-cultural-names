@@ -38,6 +38,25 @@ namespace DynamicNamesModGenerator.Service.ModBuilders
 
         }
 
+        protected List<Localisation> GetLocalisations()
+        {
+            IEnumerable<Location> locations = locationRepository.GetAll().ToServiceModels();
+            IEnumerable<Language> languages = languageRepository.GetAll().ToServiceModels();
+
+            List<Localisation> localisations = new List<Localisation>();
+
+            foreach (Location location in locations.Where(x => x.GameIds.Any(y => y.Game == Game)))
+            {
+                List<Localisation> locationLocalisations = GetLocationLocalisations(location.Id);
+                localisations.AddRange(locationLocalisations);
+            }
+
+            return localisations
+                .OrderBy(x => x.LocationId.PadLeft(64, ' '))
+                .ThenBy(x => x.LanguageId)
+                .ToList();
+        }
+
         protected virtual List<Localisation> GetLocationLocalisations(string locationId)
         {
             List<Localisation> localisations = new List<Localisation>();

@@ -9,6 +9,7 @@ using DynamicNamesModGenerator.Configuration;
 using DynamicNamesModGenerator.DataAccess.DataObjects;
 using DynamicNamesModGenerator.Service.ModBuilders;
 using DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2;
+using DynamicNamesModGenerator.Service.ModBuilders.ImperatorRome;
 
 namespace DynamicNamesModGenerator
 {
@@ -33,11 +34,15 @@ namespace DynamicNamesModGenerator
                 .AddSingleton(outputSettings)
                 .AddSingleton<IRepository<LanguageEntity>>(s => new XmlRepository<LanguageEntity>(dataStoreSettings.LanguageStorePath))
                 .AddSingleton<IRepository<LocationEntity>>(s => new XmlRepository<LocationEntity>(dataStoreSettings.TitleStorePath))
-                .AddSingleton<IModBuilder, ImperatorRomeModBuilder>()
+                .AddSingleton<ICK2ModBuilder, CK2ModBuilder>()
+                .AddSingleton<IImperatorRomeModBuilder, ImperatorRomeModBuilder>()
                 .BuildServiceProvider();
             
-            IModBuilder ck2Builder = serviceProvider.GetService<IModBuilder>();
+            IModBuilder ck2Builder = serviceProvider.GetService<ICK2ModBuilder>();
+            IModBuilder imperatorRomeBuilder = serviceProvider.GetService<IImperatorRomeModBuilder>();
+            
             ck2Builder.Build();
+            imperatorRomeBuilder.Build();
         }
         
         static IConfiguration LoadConfiguration()

@@ -11,7 +11,7 @@ using DynamicNamesModGenerator.Service.Models;
 
 namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
 {
-    public sealed class CK2ModBuilder : ModBuilder
+    public sealed class CK2ModBuilder : ModBuilder, ICK2ModBuilder
     {
         public override string Game => "CK2HIP";
 
@@ -25,27 +25,23 @@ namespace DynamicNamesModGenerator.Service.ModBuilders.CrusaderKings2
 
         public override void Build()
         {
-            IEnumerable<Location> locations = locationRepository.GetAll().ToServiceModels();
-            IEnumerable<Language> languages = languageRepository.GetAll().ToServiceModels();
+            List<Localisation> localisations = GetLocalisations();
 
-            foreach (Location location in locations.Where(x => x.GameIds.Any(y => y.Game == Game)))
+            Dictionary<string, List<Localisation>> localisationsByLocation = localisations
+                .GroupBy(x => x.LocationId)
+                .OrderBy(x => x.Key)
+                .ToDictionary(x => x.Key, x => x.ToList());
+
+            foreach (string locationId in localisationsByLocation.Keys)
             {
-                foreach (GameId locationGameId in location.GameIds.Where(x => x.Game == Game))
+                Console.WriteLine($"{locationId} = {{");
+
+                foreach (Localisation localisation in localisationsByLocation[locationId])
                 {
-                    Console.WriteLine($"{locationGameId.Id} = {{");
-
-                    foreach (LocationName name in location.Names)
-                    {
-                        Language language = languages.First(x => x.Id == name.LanguageId);
-
-                        foreach (GameId languageGameId in language.GameIds.Where(x => x.Game == Game))
-                        {
-                            Console.WriteLine($"    {languageGameId.Id} = \"{name.Value}\"");
-                        }
-                    }
-
-                    Console.WriteLine($"}}");
+                    Console.WriteLine($"    {localisation.LanguageId} = \"{localisation.Name}\"");
                 }
+
+                Console.WriteLine($"}}");
             }
         }
     }
