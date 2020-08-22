@@ -525,6 +525,43 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>carnuntum</Id>
+    <GeoNamesId>8224652</GeoNamesId>
+    <GameIds>
+      <GameId game="ImperatorRome">3918</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Frisian_West">Karnuntum</Name>
+      <Name language="SerboCroatian">Karnuntum</Name>
+      <Name language="Latin">Carnuntum</Name>
+      <Name language="Italian">Carnunto</Name>
+      <Name language="Portuguese">Carnunto</Name>
+      <Name language="Latvian">Karnunta</Name>
+      <Name language="Greek_Ancient">Karnos</Name> <!-- Or Carnous, Karnus, Karnoiis -->
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>carsoli</Id>
+    <GeoNamesId>3180400</GeoNamesId>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_marsi">b_carsoli</GameId>
+      <GameId game="ImperatorRome">19</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Catalan">Carsoli</Name>
+      <Name language="Interlingua">Carsoli</Name>
+      <Name language="Italian">Carsoli</Name>
+      <Name language="Latin">Carsolum</Name>
+      <Name language="Latin_Classical">Carsioli</Name> <!-- Or Carseoli -->
+      <Name language="Neapolitan">Carsoli</Name>
+      <Name language="Piemontese">Carsoli</Name>
+      <Name language="Portuguese">Carsoli</Name>
+      <Name language="Romanian">Carsoli</Name>
+      <Name language="Sicilian">Carsoli</Name>
+      <Name language="Spanish">Carsoli</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>cerveteri</Id>
     <GeoNamesId>3178999</GeoNamesId>
     <GameIds>
@@ -618,6 +655,24 @@
       <Name language="Romanian">Ciurgău</Name> <!-- Not sure. Ciurgău is in Romania, and its hungarian exonym is similar/same to this location's name -->
       <Name language="Serbian">Čurgov</Name>
       <Name language="SerboCroatian">Čurgo</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>dagsburg</Id>
+    <GeoNamesId>3021933</GeoNamesId>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_dagsburg">b_dagsburg</GameId>
+      <GameId game="CK2HIP" parent="d_upper_lorraine">c_dagsburg</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Alemannic">Dockschbuerj</Name>
+      <Name language="Dutch">Dagsburg</Name>
+      <Name language="Franconian_Lorraine">Dockschbuerj</Name> <!-- Also Dàgschburri -->
+      <Name language="French">Dabo</Name>
+      <Name language="French_Old">Dagsbourg</Name> <!-- Or Dachsbourg -->
+      <Name language="German_Middle_Low">Dagesburg</Name>
+      <Name language="Italian">Dabo</Name>
+      <Name language="Latin">Dagisburgum</Name> <!-- Dabonensis ? -->
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -4108,8 +4163,8 @@
   <LocationEntity>
     <Id>upper_lorraine</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">d_upper_lorraine</GameId>
-      <GameId game="CK2HIP" parent="">k_upper_lorraine</GameId>
+      <GameId game="CK2HIP" parent="k_upper_lorraine">d_upper_lorraine</GameId>
+      <GameId game="CK2HIP" parent="e_hre">k_upper_lorraine</GameId>
     </GameIds>
     <Names>
       <Name language="English">Upper Lorraine</Name>
@@ -4119,8 +4174,8 @@
   <LocationEntity>
     <Id>blamont</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_blamont</GameId>
-      <GameId game="CK2HIP" parent="">c_blamont</GameId>
+      <GameId game="CK2HIP" parent="c_blamont">b_blamont</GameId>
+      <GameId game="CK2HIP" parent="d_upper_lorraine">c_blamont</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Pulchra Montem</Name>
@@ -4129,7 +4184,7 @@
   <LocationEntity>
     <Id>nancy</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_nancy</GameId>
+      <GameId game="CK2HIP" parent="c_blamont">b_nancy</GameId>
     </GameIds>
     <Names>
       <Name language="Latgalian">Nansi</Name>
@@ -4141,7 +4196,7 @@
   <LocationEntity>
     <Id>bonmoutier</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_bonmoutier</GameId>
+      <GameId game="CK2HIP" parent="c_blamont">b_bonmoutier</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Badonis Monasterium</Name>
@@ -4150,7 +4205,7 @@
   <LocationEntity>
     <Id>sarrebourg</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_sarrebourg</GameId>
+      <GameId game="CK2HIP" parent="c_blamont">b_sarrebourg</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Sarae Castrum</Name>
@@ -4159,7 +4214,7 @@
   <LocationEntity>
     <Id>luneville</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_luneville</GameId>
+      <GameId game="CK2HIP" parent="c_blamont">b_luneville</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Lunarensis</Name>
@@ -4168,8 +4223,8 @@
   <LocationEntity>
     <Id>metz</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_metz</GameId>
-      <GameId game="CK2HIP" parent="">c_metz</GameId>
+      <GameId game="CK2HIP" parent="c_metz">b_metz</GameId>
+      <GameId game="CK2HIP" parent="d_upper_lorraine">c_metz</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Mediomatricum</Name>
@@ -4181,7 +4236,7 @@
   <LocationEntity>
     <Id>rixingen</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_rixingen</GameId>
+      <GameId game="CK2HIP" parent="c_metz">b_rixingen</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Rixinga</Name>
@@ -4190,7 +4245,7 @@
   <LocationEntity>
     <Id>fenetrange</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_fenetrange</GameId>
+      <GameId game="CK2HIP" parent="c_metz">b_fenetrange</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Finstinga</Name>
@@ -4199,7 +4254,7 @@
   <LocationEntity>
     <Id>puttlingen</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_puttlingen</GameId>
+      <GameId game="CK2HIP" parent="c_metz">b_puttlingen</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Puttlina</Name>
@@ -4208,7 +4263,7 @@
   <LocationEntity>
     <Id>marsal</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_marsal</GameId>
+      <GameId game="CK2HIP" parent="c_metz">b_marsal</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Budatium</Name>
@@ -4217,8 +4272,8 @@
   <LocationEntity>
     <Id>saarbrucken</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_saarbrucken</GameId>
-      <GameId game="CK2HIP" parent="">c_saarbrucken</GameId>
+      <GameId game="CK2HIP" parent="c_saarbrucken">b_saarbrucken</GameId>
+      <GameId game="CK2HIP" parent="d_upper_lorraine">c_saarbrucken</GameId>
     </GameIds>
     <Names>
       <Name language="Castilian">Sarrebruck</Name>
@@ -4231,7 +4286,7 @@
   <LocationEntity>
     <Id>homburg_saar</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_homburg_saar</GameId>
+      <GameId game="CK2HIP" parent="c_saarbrucken">b_homburg_saar</GameId>
     </GameIds>
     <Names>
       <Name language="Portuguese">Homburgo</Name>
@@ -4241,7 +4296,7 @@
   <LocationEntity>
     <Id>tholey</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_tholey</GameId>
+      <GameId game="CK2HIP" parent="c_saarbrucken">b_tholey</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Theologium</Name>
@@ -4250,7 +4305,7 @@
   <LocationEntity>
     <Id>forbach</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_forbach</GameId>
+      <GameId game="CK2HIP" parent="c_saarbrucken">b_forbach</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Forbacum</Name>
@@ -4259,7 +4314,7 @@
   <LocationEntity>
     <Id>merzig</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_merzig</GameId>
+      <GameId game="CK2HIP" parent="c_saarbrucken">b_merzig</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Marcerum</Name>
@@ -4268,7 +4323,7 @@
   <LocationEntity>
     <Id>bouzonville</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_bouzonville</GameId>
+      <GameId game="CK2HIP" parent="c_saarbrucken">b_bouzonville</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Bocconis Villa</Name>
@@ -4277,7 +4332,7 @@
   <LocationEntity>
     <Id>wallerfangen</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_wallerfangen</GameId>
+      <GameId game="CK2HIP" parent="c_saarbrucken">b_wallerfangen</GameId>
     </GameIds>
     <Names>
       <Name language="French_Old">Vaudrevange</Name>
@@ -4287,8 +4342,8 @@
   <LocationEntity>
     <Id>vaudemont</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_vaudemont</GameId>
-      <GameId game="CK2HIP" parent="">c_vaudemont</GameId>
+      <GameId game="CK2HIP" parent="c_vaudemont">b_vaudemont</GameId>
+      <GameId game="CK2HIP" parent="d_upper_lorraine">c_vaudemont</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Valdemontium</Name>
@@ -4297,7 +4352,7 @@
   <LocationEntity>
     <Id>chatenois</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_chatenois</GameId>
+      <GameId game="CK2HIP" parent="c_vaudemont">b_chatenois</GameId>
     </GameIds>
     <Names>
       <Name language="French_Old">Châtenois</Name>
@@ -4308,7 +4363,7 @@
   <LocationEntity>
     <Id>remiremont</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_remiremont</GameId>
+      <GameId game="CK2HIP" parent="c_vaudemont">b_remiremont</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Rometicus Mons</Name>
@@ -4317,7 +4372,7 @@
   <LocationEntity>
     <Id>epinal</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_epinal</GameId>
+      <GameId game="CK2HIP" parent="c_vaudemont">b_epinal</GameId>
     </GameIds>
     <Names>
       <Name language="Lithuanian">Epinalis</Name>
@@ -4327,7 +4382,7 @@
   <LocationEntity>
     <Id>chatelet</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_chatelet</GameId>
+      <GameId game="CK2HIP" parent="c_vaudemont">b_chatelet</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Castellulum</Name>
@@ -4336,7 +4391,7 @@
   <LocationEntity>
     <Id>st_die</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_st_die</GameId>
+      <GameId game="CK2HIP" parent="c_vaudemont">b_st_die</GameId>
     </GameIds>
     <Names>
       <Name language="Occitan">Diá</Name>
@@ -4347,24 +4402,10 @@
   <LocationEntity>
     <Id>mirecourt</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="">b_mirecourt</GameId>
+      <GameId game="CK2HIP" parent="c_vaudemont">b_mirecourt</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Miracuria</Name>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>dagsburg</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="">b_dagsburg</GameId>
-      <GameId game="CK2HIP" parent="">c_dagsburg</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Dutch_Middle">Dabo</Name>
-      <Name language="French_Old">Dabo</Name>
-      <Name language="Italian">Dabo</Name>
-      <Name language="Polish">Dabo</Name>
-      <Name language="Latin">Dabonensis</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
