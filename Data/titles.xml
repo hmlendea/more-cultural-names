@@ -485,6 +485,7 @@
       <Name language="Croatian">Budim</Name>
       <Name language="Czech">Budín</Name>
       <Name language="Dutch">Boeda</Name>
+      <Name language="German_Middle_High">Ofen</Name>
       <Name language="German">Ofen</Name>
       <Name language="Greek_Medieval">Akouinkon</Name>
       <Name language="Italian">Ezzelburgo</Name>
@@ -807,15 +808,19 @@
       <Name language="Azerbaijani">Esterqom</Name>
       <Name language="Bulgarian">Stražon</Name>
       <Name language="Croatian">Ostrogon</Name>
+      <Name language="Czech_Medieval">Ostrihom</Name>
       <Name language="Czech_Medieval">Střehom</Name>
       <Name language="Czech">Ostřihom</Name>
       <Name language="French_Old">Strigonie</Name>
       <Name language="French">Strigonie</Name>
+      <Name language="German_Middle_High">Gran</Name>
       <Name language="German">Gran</Name>
+      <Name language="Greek_Medieval">Solva</Name>
       <Name language="Hungarian_Old">Iztergam</Name>
       <Name language="Hungarian">Esztergom</Name>
       <Name language="Italian">Strigonio</Name>
       <Name language="Latin_Late">Solva</Name>
+      <Name language="Latin_Medieval">Solva</Name>
       <Name language="Latin">Strigonium</Name>
       <Name language="Latvian">Estergoma</Name>
       <Name language="Lombard">Strigoni</Name>
@@ -824,6 +829,7 @@
       <Name language="Russian">Estergom</Name>
       <Name language="Serbian">Eštergon</Name>
       <Name language="SerboCroatian">Ostrogon</Name>
+      <Name language="Slovak_Medieval">Ostrihom</Name>
       <Name language="Slovak">Ostrihom</Name>
       <Name language="Spanish">Estrigonia</Name>
       <Name language="Swedish">Gran</Name>
@@ -865,10 +871,10 @@
       <Name language="French">Frise</Name>
       <Name language="Frisian_Old">Fresland</Name>
       <Name language="Frisian_West">Fryslân</Name>
-      <Name language="German_Low_Dutch">Frieslaand</Name>
-      <Name language="German_Middle_High">Friesland</Name>
-      <Name language="German_Low_Dutch">Friesland</Name>
+      <Name language="German_Low_Dutch">Frieslaand</Name> <!-- Or Friesland -->
       <Name language="German_Low">Freeslaand</Name>
+      <Name language="German_Middle_High">Friesland</Name>
+      <Name language="German_Middle_Low">Freesland</Name> <!-- Or Frieslaand -->
       <Name language="German_Old_Low">Frēsland</Name>
       <Name language="German">Friesland</Name>
       <Name language="Gothic">Frisia</Name>
@@ -896,12 +902,14 @@
       <Name language="Emilian_Romagnol">Ghèldria</Name>
       <Name language="English">Guelders</Name>
       <Name language="Esperanto">Gelderlando</Name>
+      <Name language="French_Old">Gueldre</Name>
       <Name language="French">Gueldre</Name>
       <Name language="Frisian_North">Gelderlun</Name>
       <Name language="Frisian_Saterland">Gelderlound</Name>
       <Name language="Frisian_West">Gelderlân</Name>
       <Name language="Galician">Güeldres</Name>
       <Name language="German_Low">Gelderlaand</Name>
+      <Name language="German_Middle_High">Geldern</Name>
       <Name language="German">Gelderland</Name>
       <Name language="Italian">Gheldria</Name>
       <Name language="Latin">Geldria</Name>
@@ -961,8 +969,10 @@
     </GameIds>
     <Names>
       <Name language="Catalan">Gueldre</Name>
+      <Name language="Dutch_Middle">Gelderen</Name>
       <Name language="Dutch">Gelre</Name>
       <Name language="English">Guelders</Name>
+      <Name language="French_Old">Gueldre</Name>
       <Name language="French">Gueldre</Name>
       <Name language="German">Geldern</Name>
       <Name language="Italian">Gheldria</Name>
@@ -986,7 +996,7 @@
       <Name language="Catalan">La Haia</Name>
       <Name language="Croatian">Hag</Name>
       <Name language="Danish">Haag</Name>
-      <Name language="Dutch_Middle">Die Haghe</Name>
+      <Name language="Dutch_Middle">Den Haag</Name> <!-- Or Die Haghe -->
       <Name language="Dutch">Den Haag</Name>
       <Name language="Emilian_Romagnol">L'Aja</Name>
       <Name language="English">The Hague</Name>
@@ -995,6 +1005,7 @@
       <Name language="Extremaduran">L'Aya</Name>
       <Name language="Faroese">Haag</Name>
       <Name language="Finnish">Haag</Name>
+      <Name language="French_Old">La Haye</Name>
       <Name language="French">La Haye</Name>
       <Name language="Frisian_West">De Haach</Name>
       <Name language="Galician">A Haia</Name>
@@ -1013,7 +1024,6 @@
       <Name language="Limburgish">D'n Haag</Name>
       <Name language="Lombard">L'Aja</Name>
       <Name language="Norwegian">Haag</Name>
-      <Name language="Occitan">L'Aia</Name>
       <Name language="Occitan">L'Aia</Name>
       <Name language="Polish">Haga</Name>
       <Name language="Portuguese">Haia</Name>
@@ -1181,6 +1191,17 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>netherlands</Id>
+    <Names>
+      <Name language="Italian">Paesi Bassi</Name>
+      <Name language="Leonese">Países Baxos</Name>
+      <Name language="Norwegian">Nederland</Name>
+      <Name language="Romanian">Țările de Jos</Name>
+      <Name language="Slovene">Nizozemska</Name>
+      <Name language="Swedish">Nederländerna</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>holland</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_frisia">d_holland</GameId>
@@ -1198,6 +1219,7 @@
       <Name language="Esperanto">Holando</Name>
       <Name language="Finnish">Hollanti</Name>
       <Name language="Firulian">Olande</Name>
+      <Name language="French_Old">Hollande</Name>
       <Name language="French">Hollande</Name>
       <Name language="Frisian_Saterland">Hollound</Name>
       <Name language="Frisian_West">Hollân</Name>
@@ -1210,16 +1232,12 @@
       <Name language="Interlingua">Hollanda</Name>
       <Name language="Irish">An Ísiltír</Name>
       <Name language="Italian">Olanda</Name>
-      <Name language="Italian">Paesi Bassi</Name>
       <Name language="Latin">Hollandia</Name>
       <Name language="Latvian">Holande</Name>
-      <Name language="Leonese">Países Baxos</Name>
       <Name language="Lithuanian">Olandija</Name>
       <Name language="Livvi">Hollandii</Name>
       <Name language="Manx">Yn Ollan</Name>
-      <Name language="Norwegian">Nederland</Name>
       <Name language="Occitan">Olanda</Name>
-      <Name language="Polish">Holandia</Name>
       <Name language="Polish">Holandia</Name>
       <Name language="Portuguese">Holanda</Name>
       <Name language="Romanian">Olanda</Name>
@@ -1229,10 +1247,7 @@
       <Name language="Serbian">Holandija</Name>
       <Name language="SerboCroatian">Holandija</Name>
       <Name language="Slovak">Holandsko</Name>
-      <Name language="Slovene">Nizozemska</Name>
-      <Name language="Somali">Netherlands</Name>
       <Name language="Spanish">Holanda</Name>
-      <Name language="Swedish">Nederländerna</Name>
       <Name language="Tagalog">Olanda</Name>
       <Name language="Vietnamese">Hà Lan</Name>
       <Name language="Waray">Holanda</Name>
@@ -1525,11 +1540,13 @@
     </GameIds>
     <Names>
       <Name language="Bosnian">Oblucica</Name>
+      <Name language="Bulgarian_Old">Oblucica</Name>
       <Name language="Bulgarian">Obluchitsa</Name>
       <Name language="Croatian">Oblucica</Name>
       <Name language="Greek_Ancient">Nobiodounos</Name>
       <Name language="Latin">Noviodunum</Name>
       <Name language="Phoenician">Ophiusa</Name>
+      <Name language="Polish_Old">Obluczyca</Name>
       <Name language="Polish">Obluczyca</Name>
       <Name language="Romanian">Oblucița</Name>
       <Name language="Serbian">Oblucica</Name>
@@ -1935,20 +1952,21 @@
       <Name language="Catalan">Targòvixte</Name>
       <Name language="Croatian">Trgovišće</Name>
       <Name language="Czech">Trhoviště</Name>
+      <Name language="Dutch_Middle">Targovisjte</Name>
+      <Name language="French_Old">Targovichté</Name>
       <Name language="German">Tergowisch</Name>
       <Name language="Hungarian_Medieval">Tirgovics</Name>
       <Name language="Hungarian_Old">Tergovistýe</Name>
       <Name language="Hungarian">Tirgovics</Name>
       <Name language="Latin">Berzovia</Name>
       <Name language="Lithuanian">Tirgovištė</Name>
-      <Name language="Dutch_Middle">Targovisjte</Name>
-      <Name language="French_Old">Targovichté</Name>
       <Name language="Polish">Targowica</Name>
       <Name language="Romanian_Old">Tîrgoviște</Name>
       <Name language="Romanian">Târgoviște</Name>
       <Name language="Serbian">Trgovišće</Name>
       <Name language="Slovak">Trhovište</Name>
       <Name language="Slovene">Trgovišće</Name>
+      <Name language="Szekely_Medieval">Tergovistye</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2440,12 +2458,14 @@
       <GameId game="CK2HIP" parent="c_holland">b_leiden</GameId>
     </GameIds>
     <Names>
+      <Name language="French_Old">Leyde</Name>
+      <Name language="Frisian_West">Leien</Name>
       <Name language="Italian">Leida</Name>
+      <Name language="Latin">Lugdunum Batavorum</Name>
       <Name language="Lithuanian">Leidenas</Name>
       <Name language="Occitan">Lèida</Name>
       <Name language="Polish">Lejda</Name>
       <Name language="Portuguese">Leida</Name>
-      <Name language="Latin">Lugdunum Batavorum</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2473,9 +2493,11 @@
       <GameId game="CK2HIP" parent="c_zeeland">b_middelburg</GameId>
     </GameIds>
     <Names>
+      <Name language="French_Old">Middelbourg</Name>
+      <Name language="Frisian_West">Middelburch</Name>
+      <Name language="Latin">Medioburgum</Name>
       <Name language="Lithuanian">Midelburgas</Name>
       <Name language="Portuguese">Midelburgo</Name>
-      <Name language="Latin">Medioburgum</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2494,6 +2516,8 @@
     </GameIds>
     <Names>
       <Name language="Castilian">Flesinga</Name>
+      <Name language="French_Old">Flessingue</Name>
+      <Name language="Frisian_West">Flissingen</Name>
       <Name language="Galician">Flesinga</Name>
       <Name language="Italian">Flessinga</Name>
       <Name language="Latin">Flessinga</Name>
@@ -2537,9 +2561,10 @@
       <GameId game="CK2HIP" parent="k_frisia">d_utrecht</GameId>
     </GameIds>
     <Names>
+      <Name language="Frisian_West">Utert</Name>
+      <Name language="Latin">Ultraiectum</Name>
       <Name language="Lithuanian">Utrechtas</Name>
       <Name language="Portuguese">Utreque</Name>
-      <Name language="Latin">Ultraiectum</Name>
       <Name language="Vepsian">Utreht</Name>
     </Names>
   </LocationEntity>
@@ -2558,6 +2583,7 @@
       <GameId game="CK2HIP" parent="c_sticht">b_dorestad</GameId>
     </GameIds>
     <Names>
+      <Name language="Frisian_West">Dorestêd</Name>
       <Name language="Latin">Dorestadum</Name>
     </Names>
   </LocationEntity>
@@ -2594,9 +2620,12 @@
       <GameId game="CK2HIP" parent="c_hamaland">b_arnhem</GameId>
     </GameIds>
     <Names>
+      <Name language="Frisian_West">Arnhim</Name>
+      <Name language="German_Middle_High">Arnheim</Name>
+      <Name language="German_Middle_Low">Arnem</Name>
+      <Name language="Latin">Arnhemium</Name>
       <Name language="Lithuanian">Arnhemas</Name>
       <Name language="Portuguese">Arnhemia</Name>
-      <Name language="Latin">Arnhemium</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2605,11 +2634,16 @@
       <GameId game="CK2HIP" parent="c_hamaland">b_nijmegen</GameId>
     </GameIds>
     <Names>
+      <Name language="Basque">Nimega</Name>
       <Name language="Castilian">Nimega</Name>
       <Name language="Catalan">Nimega</Name>
-      <Name language="Basque">Nimega</Name>
+      <Name language="French_Old">Nimègue</Name>
+      <Name language="Frisian_West">Nymwegen</Name>
       <Name language="Galician">Nimega</Name>
+      <Name language="German_Middle_High">Nimwegen</Name>
+      <Name language="Greek_Medieval">Noiomagos</Name>
       <Name language="Italian">Nimega</Name>
+      <Name language="Latin_Medieval">Noviomagus Batavodurum</Name>
       <Name language="Lithuanian">Neimegenas</Name>
       <Name language="Portuguese">Nimegue</Name>
     </Names>
@@ -2657,10 +2691,11 @@
       <GameId game="CK2HIP" parent="c_gelre">b_roermond</GameId>
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Rurmondas</Name>
+      <Name language="French_Old">Ruremonde</Name>
       <Name language="German_Middle_Low">Reurmond</Name>
       <Name language="German_Old_Low">Reurmond</Name>
       <Name language="Latin">Munda Rurae</Name>
+      <Name language="Lithuanian">Rurmondas</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2669,6 +2704,7 @@
       <GameId game="CK2HIP" parent="c_gelre">b_wassenberg</GameId>
     </GameIds>
     <Names>
+      <Name language="French_Old">Wassemberg</Name>
       <Name language="Latin">Wassemberga</Name>
     </Names>
   </LocationEntity>
@@ -2707,6 +2743,8 @@
       <GameId game="CK2HIP" parent="d_gelre">c_zutphen</GameId>
     </GameIds>
     <Names>
+      <Name language="Frisian_West">Sutfen</Name>
+      <Name language="German_Middle_Low">Zutfent</Name>
       <Name language="Latin">Zutphania</Name>
     </Names>
   </LocationEntity>
@@ -2752,6 +2790,7 @@
       <GameId game="CK2HIP" parent="d_gelre">c_oversticht</GameId>
     </GameIds>
     <Names>
+      <Name language="German_Middle_Low">Oaversticht</Name>
       <Name language="Latin">Transisalania</Name>
     </Names>
   </LocationEntity>
@@ -2761,9 +2800,11 @@
       <GameId game="CK2HIP" parent="c_oversticht">b_deventer</GameId>
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Deventeris</Name>
+      <Name language="Frisian_West">Dimter</Name>
+      <Name language="German_Middle_Low">Daeventer</Name>
       <Name language="German_Old_Low">Dèventer</Name>
       <Name language="Latin">Devonturum</Name>
+      <Name language="Lithuanian">Deventeris</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2773,14 +2814,17 @@
     </GameIds>
     <Names>
       <Name language="Castilian">Groninga</Name>
+      <Name language="French_Old">Groningue</Name>
+      <Name language="Frisian_West">Grins</Name>
       <Name language="Galician">Groninga</Name>
+      <Name language="German_Middle_Low">Grunnen</Name>
+      <Name language="German_Old_Low">Grunneng</Name>
       <Name language="Italian">Groninga</Name>
+      <Name language="Latin">Groniensis</Name>
       <Name language="Lithuanian">Groningenas</Name>
       <Name language="Lombard">Groninga</Name>
-      <Name language="German_Old_Low">Grunneng</Name>
       <Name language="Occitan">Groninga</Name>
       <Name language="Portuguese">Groninga</Name>
-      <Name language="Latin">Groniensis</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2789,6 +2833,7 @@
       <GameId game="CK2HIP" parent="c_oversticht">b_coevorden</GameId>
     </GameIds>
     <Names>
+      <Name language="German_Middle_Low">Coevern</Name>
       <Name language="Latin">Covordia</Name>
     </Names>
   </LocationEntity>
@@ -2798,8 +2843,9 @@
       <GameId game="CK2HIP" parent="c_oversticht">b_zwolle</GameId>
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Zvole</Name>
+      <Name language="Frisian_West">Swol</Name>
       <Name language="Latin">Zwolla</Name>
+      <Name language="Lithuanian">Zvole</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2826,6 +2872,11 @@
       <GameId game="CK2HIP" parent="d_frisia">c_ostfriesland</GameId>
     </GameIds>
     <Names>
+      <Name language="Dutch_Middle">Oost Friesland</Name>
+      <Name language="French_Old">Frise Orientale</Name>
+      <Name language="Frisian_West">Aastfräislound</Name>
+      <Name language="German_Middle_High">Ostfriesland</Name>
+      <Name language="German_Middle_Low">Oostfreesland</Name>
       <Name language="German_Old_Low">Oostfreesland</Name>
       <Name language="Latin">Frisia Oriens</Name>
     </Names>
@@ -2836,6 +2887,7 @@
       <GameId game="CK2HIP" parent="c_ostfriesland">b_norden</GameId>
     </GameIds>
     <Names>
+      <Name language="German_Middle_Low">Nörden</Name>
       <Name language="German_Old_Low">Nörden</Name>
       <Name language="Latin">Nordendi</Name>
     </Names>
@@ -2846,9 +2898,11 @@
       <GameId game="CK2HIP" parent="c_ostfriesland">b_aurich</GameId>
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Aurichas</Name>
+      <Name language="Frisian_West">Aurk</Name>
+      <Name language="German_Middle_Low">Auerk</Name>
       <Name language="German_Old_Low">Auerk</Name>
       <Name language="Latin">Auriacum</Name>
+      <Name language="Lithuanian">Aurichas</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2857,6 +2911,7 @@
       <GameId game="CK2HIP" parent="c_ostfriesland">b_emden</GameId>
     </GameIds>
     <Names>
+      <Name language="Frisian_West">Oamde</Name>
       <Name language="Latin">Emda</Name>
     </Names>
   </LocationEntity>
@@ -2884,6 +2939,7 @@
       <GameId game="CK2HIP" parent="c_ostfriesland">b_leer</GameId>
     </GameIds>
     <Names>
+      <Name language="Frisian_West">Lier</Name>
       <Name language="Latin">Lieri</Name>
     </Names>
   </LocationEntity>
@@ -2893,6 +2949,10 @@
       <GameId game="CK2HIP" parent="d_frisia">c_westfriesland</GameId>
     </GameIds>
     <Names>
+      <Name language="Dutch_Middle">West Friesland</Name>
+      <Name language="French_Old">Frise Occidentale</Name>
+      <Name language="Frisian_West">West Fryslân</Name>
+      <Name language="German_Middle_High">Westfriesland</Name>
       <Name language="Latin">Frisia Occidens</Name>
     </Names>
   </LocationEntity>
@@ -2902,8 +2962,10 @@
       <GameId game="CK2HIP" parent="c_westfriesland">b_alkmaar</GameId>
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Alkmaras</Name>
+      <Name language="Frisian_West">Alkmar</Name>
+      <Name language="German_Middle_High">Alkmar</Name>
       <Name language="Latin">Alcmarium</Name>
+      <Name language="Lithuanian">Alkmaras</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -2949,6 +3011,7 @@
       <GameId game="CK2HIP" parent="c_westfriesland">b_hoorn</GameId>
     </GameIds>
     <Names>
+      <Name language="Frisian_West">Hoarn</Name>
       <Name language="Latin">Hoornae</Name>
     </Names>
   </LocationEntity>
@@ -2958,6 +3021,7 @@
       <GameId game="CK2HIP" parent="c_westfriesland">b_enkhuizen</GameId>
     </GameIds>
     <Names>
+      <Name language="Frisian_West">Inkhuzen</Name>
       <Name language="Latin">Enchusia</Name>
     </Names>
   </LocationEntity>
@@ -2967,6 +3031,7 @@
       <GameId game="CK2HIP" parent="c_frisia">b_franeker</GameId>
     </GameIds>
     <Names>
+      <Name language="Frisian_West">Frjentsje</Name>
       <Name language="Latin">Franechera</Name>
     </Names>
   </LocationEntity>
@@ -2976,6 +3041,9 @@
       <GameId game="CK2HIP" parent="c_frisia">b_stavoren</GameId>
     </GameIds>
     <Names>
+      <Name language="Dutch_Middle">Staveren</Name>
+      <Name language="Frisian_West">Starum</Name>
+      <Name language="German_Middle_High">Staveren</Name>
       <Name language="Latin">Starum</Name>
     </Names>
   </LocationEntity>
@@ -2995,6 +3063,7 @@
     </GameIds>
     <Names>
       <Name language="Aragonese">Harns</Name>
+      <Name language="Frisian_West">Harns</Name>
       <Name language="Latin">Harlinga</Name>
     </Names>
   </LocationEntity>
@@ -3014,6 +3083,7 @@
     </GameIds>
     <Names>
       <Name language="Aragonese">Boalsert</Name>
+      <Name language="Frisian_West">Boalsert</Name>
       <Name language="German">Boalsert</Name>
       <Name language="Latin">Bolsverda</Name>
     </Names>
@@ -3026,10 +3096,12 @@
     <Names>
       <Name language="Aragonese">Ljouwert</Name>
       <Name language="Catalan">Ljouwert</Name>
-      <Name language="Lithuanian">Leuvardenas</Name>
+      <Name language="French_Old">Leuvarde</Name>
+      <Name language="Frisian_West">Ljouwert</Name>
       <Name language="German_Middle_Low">Liwwadden</Name>
       <Name language="German_Old_Low">Liwwadden</Name>
       <Name language="Latin">Leovardia</Name>
+      <Name language="Lithuanian">Leuvardenas</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -3038,6 +3110,9 @@
       <GameId game="CK2HIP" parent="e_hre">k_lower_lorraine</GameId>
     </GameIds>
     <Names>
+      <Name language="Dutch_Middle">Neder Lotharingen</Name>
+      <Name language="French_Old">Basse Lotharingie</Name>
+      <Name language="German_Middle_High">Niederlothringen</Name>
       <Name language="Latin">Lothariensis Inferior</Name> <!-- Or Belgica -->
     </Names>
   </LocationEntity>
@@ -3047,6 +3122,9 @@
       <GameId game="CK2HIP" parent="k_lower_lorraine">d_brabant</GameId>
     </GameIds>
     <Names>
+      <Name language="Dutch_Middle">Leuven</Name>
+      <Name language="French_Old">Louvain</Name>
+      <Name language="German_Middle_High">Löwen</Name>
       <Name language="Latin">Brabantia</Name>
     </Names>
   </LocationEntity>
@@ -3060,6 +3138,9 @@
       <Name language="Castilian">Lovaina</Name>
       <Name language="Catalan">Lovaina</Name>
       <Name language="Czech">Lovan</Name>
+      <Name language="Dutch_Middle">Leuven</Name>
+      <Name language="French_Old">Louvain</Name>
+      <Name language="German_Middle_High">Löwen</Name>
       <Name language="Irish">Lováin</Name>
       <Name language="Italian">Lovanio</Name>
       <Name language="Latgalian">Levena</Name>
@@ -3097,8 +3178,9 @@
       <GameId game="CK2HIP" parent="c_brabant">b_gembloux</GameId>
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Žamblu</Name>
+      <Name language="Dutch_Middle">Gembloers</Name>
       <Name language="Latin">Geminiacum</Name>
+      <Name language="Lithuanian">Žamblu</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -4138,18 +4220,22 @@
       <GameId game="CK2HIP" parent="k_lower_lorraine">d_koln</GameId>
     </GameIds>
     <Names>
-      <Name language="Pashto">Keulen</Name>
       <Name language="Aragonese">Colonia</Name>
+      <Name language="Basque">Kolonia</Name>
       <Name language="Castilian">Colonia</Name>
       <Name language="Catalan">Colònia</Name>
-      <Name language="Basque">Kolonia</Name>
+      <Name language="Dutch_Middle">Keulen</Name>
+      <Name language="French_Old">Cologne</Name>
       <Name language="Frisian_Old">Keulen</Name>
       <Name language="Galician">Colonia</Name>
+      <Name language="Greek_Medieval">Colonia Agrippina</Name>
       <Name language="Italian">Colonia</Name>
+      <Name language="Latin_Medieval">Colonia Agrippina</Name>
       <Name language="Latin">Colonia Agrippina</Name>
       <Name language="Lithuanian">Kelnas</Name>
       <Name language="Lombard">Colonia</Name>
       <Name language="Occitan">Colonha</Name>
+      <Name language="Pashto">Keulen</Name>
       <Name language="Polish">Kolonia</Name>
       <Name language="Portuguese">Colônia</Name>
       <Name language="Romanian">Colonia</Name>
@@ -6693,10 +6779,20 @@
       <GameId game="CK2HIP" parent="d_lauenburg">c_schwerin</GameId>
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Šverinas</Name>
+      <Name language="Bosnian">Zuarin</Name>
+      <Name language="Bulgarian_Old">Zuarin</Name>
+      <Name language="Croatian">Zuarin</Name>
+      <Name language="Czech_Medieval">Zverzín</Name>
       <Name language="German_Middle_Low">Swerin</Name>
       <Name language="German_Old_Low">Swerin</Name>
       <Name language="Latin">Zuarinensis</Name>
+      <Name language="Lithuanian">Šverinas</Name>
+      <Name language="Polish_Old">Zwierzyn</Name>
+      <Name language="Russian">Zuarin</Name>
+      <Name language="Serbian_Medieval">Zuarin</Name>
+      <Name language="Slovak_Medieval">Zvierzín</Name>
+      <Name language="Slovene_Medieval">Zuarin</Name>
+      <Name language="Sorbian">Zuarin</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12005,8 +12101,12 @@
       <Name language="Croatian">Hios</Name>
       <Name language="Italian">Chio</Name>
       <Name language="Norwegian">Khíos</Name>
+      <Name language="Oghuz">Sakiz</Name>
+      <Name language="Pecheneg">Sakiz</Name>
       <Name language="Portuguese">Quios</Name>
       <Name language="Serbian">Hios</Name>
+      <Name language="Turkish_Old">Sakiz</Name>
+      <Name language="Turkmen_Medieval">Sakiz</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12027,9 +12127,13 @@
       <Name language="Italian">Mitilene</Name>
       <Name language="Lithuanian">Mitilene</Name>
       <Name language="Norwegian">Mytilíni</Name>
+      <Name language="Oghuz">Midilli</Name>
+      <Name language="Pecheneg">Midilli</Name>
       <Name language="Polish">Mitylena</Name>
       <Name language="Portuguese">Mitilene</Name>
       <Name language="Slovak">Mytilini</Name>
+      <Name language="Turkish_Old">Midilli</Name>
+      <Name language="Turkmen_Medieval">Midilli</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12807,11 +12911,16 @@
     <Names>
       <Name language="Bosnian">Velika Vlaška</Name>
       <Name language="Bulgarian">Velika Vlahija</Name>
-      <Name language="Slovene">Velika Vlaška</Name>
       <Name language="Croatian">Velika Vlaška</Name>
+      <Name language="Oghuz">Tirhala</Name>
+      <Name language="Pecheneg">Tirhala</Name>
       <Name language="Polish">Wielka Woloszczyzna</Name> <!-- Historical? Translated -->
       <Name language="Romanian">Rumânia Mare</Name> <!-- Historical? Translated -->
+      <Name language="Serbian_Medieval">Megalovlahija</Name>
       <Name language="Serbian">Velika Vlaška</Name>
+      <Name language="Slovene">Velika Vlaška</Name>
+      <Name language="Turkish_Old">Tirhala</Name>
+      <Name language="Turkmen_Medieval">Tirhala</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12822,9 +12931,13 @@
     <Names>
       <Name language="Bosnian">Kalampaka</Name>
       <Name language="Bulgarian">Kalampaka</Name>
-      <Name language="Slovene">Kalampaka</Name>
       <Name language="Croatian">Kalampaka</Name>
+      <Name language="Oghuz">Kalabaka</Name>
+      <Name language="Pecheneg">Kalabaka</Name>
       <Name language="Serbian">Kalampaka</Name>
+      <Name language="Slovene">Kalampaka</Name>
+      <Name language="Turkish_Old">Kalabaka</Name>
+      <Name language="Turkmen_Medieval">Kalabaka</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12835,10 +12948,14 @@
     <Names>
       <Name language="Bosnian">Trikolj</Name>
       <Name language="Bulgarian">Trikol</Name>
-      <Name language="Slovene">Trikolj</Name>
       <Name language="Croatian">Trikolj</Name>
+      <Name language="Oghuz">Tirhala</Name>
+      <Name language="Pecheneg">Tirhala</Name>
       <Name language="Romanian">Tricolj</Name> <!-- Aromanian; k instead of c ? -->
       <Name language="Serbian">Trikolj</Name>
+      <Name language="Slovene">Trikolj</Name>
+      <Name language="Turkish_Old">Tirhala</Name>
+      <Name language="Turkmen_Medieval">Tirhala</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -21996,6 +22113,9 @@
       <Name language="Finnish">Valakia</Name>
       <Name language="French_Old">Valaquie</Name>
       <Name language="German">Walachei</Name>
+      <Name language="Greek_Medieval">Blachía</Name>
+      <Name language="Hungarian_Medieval">Havaselve</Name>
+      <Name language="Hungarian_Old">Havaselv</Name>
       <Name language="Hungarian">Havasalföld</Name>
       <Name language="Italian">Valacchia</Name>
       <Name language="Latin">Valachia</Name>
@@ -22006,6 +22126,7 @@
       <Name language="Russian">Valaxija</Name>
       <Name language="Serbian">Vlaška</Name>
       <Name language="Swedish">Valakiet</Name>
+      <Name language="Szekely_Medieval">Havaselve</Name>
       <Name language="Turkish">Eflak</Name>
     </Names>
   </LocationEntity>
@@ -22015,27 +22136,30 @@
       <GameId game="CK2HIP" parent="k_wallachia">d_wallachia</GameId>
     </GameIds>
     <Names>
-      <Name language="Czech">Velká Valašska</Name>
       <Name language="Bosnian">Velika Vlaška</Name>
       <Name language="Bulgarian">Velika Vlahija</Name>
-      <Name language="Slovene">Velika Vlaška</Name>
       <Name language="Catalan">Gran Valàquia</Name>
       <Name language="Croatian">Velika Vlaška</Name>
+      <Name language="Czech">Velká Valašska</Name>
       <Name language="Danish">Muntenien</Name>
       <Name language="Dutch_Middle">Groot-Walachije</Name>
       <Name language="Finnish">Iso-Valakia</Name>
       <Name language="French_Old">Grande Valaquie</Name>
       <Name language="German">Große Walachei</Name>
+      <Name language="Hungarian_Medieval">Havaselve</Name>
+      <Name language="Hungarian_Old">Havaselve</Name>
       <Name language="Hungarian">Nagy-Havasalföld</Name>
       <Name language="Italian">Grande Valacchia</Name>
+      <Name language="Latin">Wallachia Major</Name>
       <Name language="Lithuanian">Velika Vlaška</Name> <!-- Not sure, base on d_oltenia -->
       <Name language="Norwegian">Stor-Valakia</Name>
       <Name language="Polish">Veliki Woloszczyzna</Name> <!-- Not sure, based on d_oltenia. Last l is cut. Or Multany -->
       <Name language="Portuguese">Muntênia</Name>
-      <Name language="Latin">Wallachia Major</Name>
       <Name language="Romanian">Muntenia</Name>
       <Name language="Serbian">Velika Vlaška</Name>
+      <Name language="Slovene">Velika Vlaška</Name>
       <Name language="Swedish">Stor Valakiet</Name> <!-- Not sure, based on norwegian and d_oltenia -->
+      <Name language="Szekely_Medieval">Havaselve</Name>
       <Name language="Turkish">Muntenya</Name>
     </Names>
   </LocationEntity>
@@ -22343,10 +22467,13 @@
       <Name language="Bulgarian">Živograd</Name>
       <Name language="Croatian">Živograd</Name>
       <Name language="German">Tergoschwyl</Name> <!-- Or Turgukukuli -->
+      <Name language="Hungarian_Medieval">Zsilvásárhely</Name>
+      <Name language="Hungarian_Old">Silvasarhel</Name>
       <Name language="Latin">Forum Rabonum</Name> <!-- forum=târg and Rabon is Jiu -->
       <Name language="Lithuanian">Tirgu Žiu</Name>
       <Name language="Romanian">Târgu Jiu</Name>
       <Name language="Serbian">Živograd</Name>
+      <Name language="Szekely_Medieval">Zsilvásárhely</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22550,13 +22677,25 @@
       <GameId game="CK2HIP" parent="d_moldau">c_torki</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Sedschopff</Name>
+      <Name language="Bavarian">Sedschopff</Name>
       <Name language="Bosnian">Sucava</Name>
       <Name language="Bulgarian">Sucava</Name>
       <Name language="Croatian">Sucava</Name>
+      <Name language="Franconian_Lorraine">Sedschopff</Name>
+      <Name language="German_Middle_High">Sedschopff</Name>
+      <Name language="German_Middle_Low">Sedschopff</Name>
+      <Name language="German_Old_Low">Sedschopff</Name>
+      <Name language="Hungarian_Medieval">Szõcsvásár</Name>
+      <Name language="Hungarian_Old">Sucvasar</Name>
       <Name language="Lithuanian">Sucava</Name>
+      <Name language="Polish_Old">Suczawa</Name>
       <Name language="Russian">Sucava</Name>
       <Name language="Serbian">Sucava</Name>
       <Name language="Slovene">Sucava</Name>
+      <Name language="Sorbian">Suczawa</Name>
+      <Name language="Szekely_Medieval">Szõcsvásár</Name>
+      <Name language="Thuringian">Sedschopff</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22567,9 +22706,12 @@
     <Names>
       <Name language="Bosnian">Harlau</Name>
       <Name language="Bulgarian">Harlau</Name>
-      <Name language="Slovene">Harlau</Name>
       <Name language="Croatian">Harlau</Name>
+      <Name language="Hungarian_Medieval">Harló</Name>
+      <Name language="Hungarian_Old">Harlo</Name>
       <Name language="Serbian">Harlau</Name>
+      <Name language="Slovene">Harlau</Name>
+      <Name language="Szekely_Medieval">Harló</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22580,9 +22722,22 @@
     <Names>
       <Name language="Bosnian">Dorohoj</Name>
       <Name language="Bulgarian">Dorohoj</Name>
-      <Name language="Slovene">Dorohoj</Name>
       <Name language="Croatian">Dorohoj</Name>
+      <Name language="Hungarian_Medieval">Dorohoj</Name>
       <Name language="Serbian">Dorohoj</Name>
+      <Name language="Slovene">Dorohoj</Name>
+      <Name language="Szekely_Medieval">Dorohoj</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bogdana</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_torki">b_bogdana</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Hungarian_Medieval">Bogdána</Name>
+      <Name language="Romanian">Bogdana</Name>
+      <Name language="Szekely_Medieval">Bogdána</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22597,12 +22752,15 @@
       <Name language="Croatian">Besarabija</Name>
       <Name language="Greek_Medieval">Dolor Prima</Name>
       <Name language="Greek_Medieval">Galatsi</Name>
+      <Name language="Hungarian_Medieval">Bazarábföld</Name>
+      <Name language="Hungarian_Old">Bazarabfeld</Name>
       <Name language="Latin">Dolor Prima</Name>
       <Name language="Latin">Galatsi</Name>
       <Name language="Romanian_Old">Țeara de Jos</Name>
       <Name language="Romanian">Basarabia</Name>
       <Name language="Serbian">Besarabija</Name>
       <Name language="Slovene">Besarabija</Name>
+      <Name language="Szekely_Medieval">Bazarábföld</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22612,13 +22770,36 @@
       <GameId game="CK2HIP" parent="d_basarabia">c_birlad</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Bariach</Name>
+      <Name language="Bavarian">Bariach</Name>
       <Name language="Bosnian">Barlad</Name>
       <Name language="Bulgarian">Barlad</Name>
-      <Name language="Slovene">Barlad</Name>
       <Name language="Croatian">Barlad</Name>
-      <Name language="Lithuanian">Birladas</Name>
+      <Name language="Dutch_Middle">Bariach</Name>
+      <Name language="Franconian_Lorraine">Bariach</Name>
+      <Name language="Frankish_Low">Bariach</Name>
+      <Name language="German_Middle_High">Bariach</Name>
+      <Name language="German_Middle_Low">Bariach</Name>
+      <Name language="German_Old_Low">Bariach</Name>
+      <Name language="Hungarian_Medieval">Barlád</Name>
+      <Name language="Hungarian_Old">Barlad</Name>
       <Name language="Latin">Berlad</Name>
+      <Name language="Lithuanian">Birladas</Name>
       <Name language="Serbian">Barlad</Name>
+      <Name language="Slovene">Barlad</Name>
+      <Name language="Szekely_Medieval">Barlád</Name>
+      <Name language="Thuringian">Bariach</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>ceatea_craciuna</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_birlad">b_ceatea_craciuna</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Hungarian_Medieval">Karácson</Name>
+      <Name language="Hungarian_Old">Karacun</Name>
+      <Name language="Szekely_Medieval">Karácson</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22692,11 +22873,14 @@
     <Names>
       <Name language="Bosnian">Vasluj</Name>
       <Name language="Bulgarian">Vasluj</Name>
-      <Name language="Slovene">Vasluj</Name>
       <Name language="Croatian">Vasluj</Name>
+      <Name language="Hungarian_Medieval">Vászló</Name>
+      <Name language="Hungarian_Old">Vazlu</Name>
       <Name language="Hungarian">Vaszló</Name>
       <Name language="Lithuanian">Vaslujus</Name>
       <Name language="Serbian">Vasluj</Name>
+      <Name language="Slovene">Vasluj</Name>
+      <Name language="Szekely_Medieval">Vászló</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22757,17 +22941,40 @@
       <GameId game="CK2HIP" parent="e_carpathia">k_hungary</GameId>
     </GameIds>
     <Names>
-      <Name language="Avar_Old">Avaria</Name>
+      <Name language="Alemannic">Ungarn</Name>
+      <Name language="Bavarian">Ungarn</Name>
       <Name language="Bosnian">Panonija</Name>
+      <Name language="Bosnian">Ugarska</Name>
+      <Name language="Bulgarian_Old">Ungariya</Name>
       <Name language="Bulgarian">Panonija</Name>
-      <Name language="Slovene">Panonija</Name>
       <Name language="Croatian">Panonija</Name>
+      <Name language="Croatian">Ugarska</Name>
+      <Name language="Czech_Medieval">Uhry</Name>
+      <Name language="Dutch_Middle">Hongarije</Name>
+      <Name language="English_Old">Ungerland</Name>
+      <Name language="Franconian_Lorraine">Ungarn</Name>
+      <Name language="Frankish_Low">Hongarije</Name>
       <Name language="French_Old">Hongrie</Name>
+      <Name language="German_Middle_High">Ungarn</Name>
+      <Name language="German_Middle_Low">Ungarn</Name>
+      <Name language="German_Old_Low">Hongaarnlaand</Name>
+      <Name language="Greek_Medieval">Oungarías</Name>
+      <Name language="Hungarian_Old">Moger Uruzag</Name>
+      <Name language="Latin">Hungaria</Name>
       <Name language="Lithuanian">Vengrija</Name>
       <Name language="Lombard">Üngheria</Name>
+      <Name language="Mongol_Proto">Ungar Uls</Name>
+      <Name language="Polish_Old">Wegry</Name>
       <Name language="Prussian_Old">Ungrai</Name>
-      <Name language="Latin">Hungaria</Name>
+      <Name language="Romanian_Old">Ungaria</Name>
+      <Name language="Serbian_Medieval">Ugarska</Name>
       <Name language="Serbian">Panonija</Name>
+      <Name language="Slovak_Medieval">Uhry</Name>
+      <Name language="Slovene_Medieval">Ógrska</Name>
+      <Name language="Slovene">Panonija</Name>
+      <Name language="Thuringian">Ungarn</Name>
+      <Name language="Turkish_Old">Macaristan</Name>
+      <Name language="Yiddish">Ungern</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22777,12 +22984,13 @@
     </GameIds>
     <Names>
       <Name language="Bulgarian">Bjala</Name>
-      <Name language="Slovene">Bela</Name>
       <Name language="Croatian">Bila</Name>
       <Name language="German">Stuhlweiß</Name>
+      <Name language="Hungarian_Old">Feier</Name>
       <Name language="Latin">Albensis</Name>
       <Name language="Romanian">Alba</Name> <!-- Historical? Translated. Alba de Jos has a similar translation in hungarian -->
       <Name language="Serbian">Bela</Name>
+      <Name language="Slovene">Bela</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22806,9 +23014,10 @@
     <Names>
       <Name language="Bosnian">Dunavgrad</Name>
       <Name language="Bulgarian">Dunavgrad</Name>
-      <Name language="Slovene">Donavgrad</Name>
       <Name language="Croatian">Dunavgrad</Name>
+      <Name language="Hungarian_Old">Feldvaru</Name>
       <Name language="Serbian">Dunavgrad</Name>
+      <Name language="Slovene">Donavgrad</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22819,11 +23028,12 @@
     <Names>
       <Name language="Bosnian">Džuntaran</Name>
       <Name language="Bulgarian">Džuntaran</Name>
-      <Name language="Slovene">Džuntaran</Name>
       <Name language="Croatian">Džuntaran</Name>
       <Name language="German">Adam</Name>
       <Name language="Greek_Medieval">Vetus Salina</Name>
+      <Name language="Hungarian_Old">Odon</Name>
       <Name language="Serbian">Džuntaran</Name>
+      <Name language="Slovene">Džuntaran</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -22833,15 +23043,19 @@
     </GameIds>
     <Names>
       <Name language="Bulgarian">Stolni Bjeligrad</Name>
-      <Name language="Slovene">Stolni Beligrad</Name>
       <Name language="Croatian">Stolni Biograd</Name>
+      <Name language="Czech_Medieval">Stolicný Belehrad</Name>
+      <Name language="German_Middle_High">Stuhlweißenburg</Name>
+      <Name language="Hungarian_Old">Fehervaru</Name>
       <Name language="Italian">Albareale</Name>
       <Name language="Latgalian">Sekešfehervãra</Name>
+      <Name language="Latin">Alba Regia</Name>
       <Name language="Lithuanian">Sekešfehervaras</Name>
       <Name language="Polish">Bialogród Stoleczny</Name>
-      <Name language="Latin">Alba Regia</Name>
       <Name language="Romanian">Alba Regală</Name>
       <Name language="Serbian">Stolni Belgrad</Name>
+      <Name language="Slovak_Medieval">Stolicný Belehrad</Name>
+      <Name language="Slovene">Stolni Beligrad</Name>
       <Name language="Turkish">Ístolni Belgrad</Name>
       <Name language="Vepsian">Sekešfehervar</Name>
     </Names>
@@ -22883,10 +23097,11 @@
     </GameIds>
     <Names>
       <Name language="Bulgarian">Kaloca</Name>
-      <Name language="Slovene">Koloca</Name>
       <Name language="Croatian">Kaloca</Name>
       <Name language="German">Kollotschau</Name>
+      <Name language="Hungarian_Old">Kaloca</Name>
       <Name language="Serbian">Kaloca</Name>
+      <Name language="Slovene">Koloca</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
