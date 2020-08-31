@@ -785,7 +785,7 @@
       <Name language="Greek">Édessa</Name>
       <Name language="Hungarian">Edessza</Name>
       <Name language="Indonesian">Sanli Urfa</Name>
-      <Name language="Kurdish">Riha‎</Name>
+      <Name language="Kurdish">Riha</Name>
       <Name language="Latin">Edessa</Name>
       <Name language="Latvian">Šanliurfa</Name>
       <Name language="Oghuz">Urfa</Name>
@@ -1206,7 +1206,7 @@
   <LocationEntity>
     <Id>holland</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="k_frisia" order="4">d_holland</GameId>
+      <GameId game="CK2HIP" parent="k_frisia" order="1">d_holland</GameId>
     </GameIds>
     <Names>
       <Name language="Asturian">Holanda</Name>
@@ -1630,7 +1630,7 @@
     <Id>ostia</Id>
     <GeoNamesId>8378691</GeoNamesId>
     <GameIds>
-      <GameId game="CK2HIP" parent="c_roma" order="8">b_ostia_gregoriopolis</GameId>
+      <GameId game="CK2HIP" parent="c_roma" order="">b_ostia_gregoriopolis</GameId>
       <GameId game="ImperatorRome">15</GameId>
     </GameIds>
     <Names>
@@ -8406,7 +8406,7 @@
     <Id>salzburg</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_salzburg" order="1">b_salzburg</GameId>
-      <GameId game="CK2HIP" parent="d_salzburg" order="4">c_salzburg</GameId>
+      <GameId game="CK2HIP" parent="d_oberbayern" order="4">c_salzburg</GameId>
       <GameId game="CK2HIP" parent="k_bavaria" order="6">d_salzburg</GameId>
       <GameId game="ImperatorRome">3644</GameId>
     </GameIds>
@@ -12012,7 +12012,7 @@
   <LocationEntity>
     <Id>great_moravia</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="11816">k_moravia</GameId>
+      <GameId game="CK2HIP" order="11815">k_moravia</GameId>
     </GameIds>
     <Names>
       <Name language="Bulgarian">Velikomoravija</Name>
@@ -33995,7 +33995,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_genoa" order="1">b_genoa</GameId>
       <GameId game="CK2HIP" parent="d_genoa" order="1">c_genoa</GameId>
-      <GameId game="CK2HIP" parent="k_genoa" order="8">d_genoa</GameId>
+      <GameId game="CK2HIP" parent="k_italy" order="8">d_genoa</GameId>
       <GameId game="CK2HIP" parent="e_italy" order="4">k_genoa</GameId>
     </GameIds>
     <Names>
@@ -34040,7 +34040,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_pisa" order="1">b_pisa</GameId>
       <GameId game="CK2HIP" parent="d_pisa" order="1">c_pisa</GameId>
-      <GameId game="CK2HIP" parent="k_pisa" order="16">d_pisa</GameId>
+      <GameId game="CK2HIP" parent="k_italy" order="16">d_pisa</GameId>
       <GameId game="CK2HIP" parent="e_italy" order="5">k_pisa</GameId>
     </GameIds>
     <Names>
@@ -35452,8 +35452,8 @@
     <Id>amalfi</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_amalfi" order="1">b_amalfi</GameId>
-      <GameId game="CK2HIP" parent="d_amalfi" order="2">c_amalfi</GameId>
-      <GameId game="CK2HIP" parent="k_amalfi" order="1">d_amalfi</GameId>
+      <GameId game="CK2HIP" parent="d_napoli" order="2">c_amalfi</GameId>
+      <GameId game="CK2HIP" parent="k_sicily" order="1">d_amalfi</GameId>
       <GameId game="CK2HIP" parent="e_italy" order="6">k_amalfi</GameId>
     </GameIds>
     <Names>
@@ -35967,7 +35967,6 @@
     <Id>palermo</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_palermo" order="1">b_palermo</GameId>
-      <GameId game="CK2HIP" parent="d_sicily" order="1">c_palermo</GameId>
       <GameId game="ImperatorRome">96</GameId>
     </GameIds>
     <Names>
@@ -35995,6 +35994,7 @@
     <Id>collesano</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_palermo" order="2">b_collesano</GameId>
+      <GameId game="CK2HIP" parent="d_sicily" order="1">c_palermo</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Qal'at as-Sirat</Name>
@@ -36020,7 +36020,7 @@
   <LocationEntity>
     <Id>trapani</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="c_trapani" order="5">b_trapani</GameId>
+      <GameId game="CK2HIP" parent="c_palermo" order="5">b_trapani</GameId>
       <GameId game="CK2HIP" parent="d_sicily" order="6">c_trapani</GameId>
       <GameId game="ImperatorRome">650</GameId>
     </GameIds>
@@ -36076,8 +36076,7 @@
   <LocationEntity>
     <Id>syracuse</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="c_siracusa" order="6">b_syracusa</GameId>
-      <GameId game="CK2HIP" parent="d_sicily" order="3">c_siracusa</GameId>
+      <GameId game="CK2HIP" parent="c_modica" order="6">b_syracusa</GameId>
       <GameId game="ImperatorRome">84</GameId>
     </GameIds>
     <Names>
@@ -36123,7 +36122,7 @@
   <LocationEntity>
     <Id>messina</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="c_messina" order="2">b_messina</GameId>
+      <GameId game="CK2HIP" parent="c_siracusa" order="2">b_messina</GameId>
       <GameId game="CK2HIP" parent="d_sicily" order="2">c_messina</GameId>
       <GameId game="ImperatorRome">80</GameId>
     </GameIds>
@@ -36171,6 +36170,7 @@
     <Id>paterno</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_siracusa" order="4">b_paterno</GameId>
+      <GameId game="CK2HIP" parent="d_sicily" order="3">c_siracusa</GameId>
     </GameIds>
     <Names>
       <Name language="Sicilian">Patirnò</Name>
@@ -37379,7 +37379,7 @@
     <Id>lyon</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_lyon" order="3">b_lyon</GameId>
-      <GameId game="CK2HIP" parent="d_lyon" order="3">c_lyon</GameId>
+      <GameId game="CK2HIP" parent="d_dauphine" order="3">c_lyon</GameId>
       <GameId game="CK2HIP" parent="k_burgundy" order="6">d_lyon</GameId>
     </GameIds>
     <Names>
@@ -38074,7 +38074,7 @@
   <LocationEntity>
     <Id>france</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="6417">e_france</GameId>
+      <GameId game="CK2HIP" order="6416">e_france</GameId>
       <GameId game="CK2HIP" parent="e_france" order="3">k_france</GameId>
     </GameIds>
     <Names>
@@ -38514,7 +38514,7 @@
   <LocationEntity>
     <Id>burgundy</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="k_burgundy" order="3">d_burgundy</GameId>
+      <GameId game="CK2HIP" parent="k_france" order="3">d_burgundy</GameId>
       <GameId game="CK2HIP" parent="e_france" order="1">k_burgundy</GameId>
     </GameIds>
     <Names>
@@ -41603,7 +41603,7 @@
   <LocationEntity>
     <Id>spain</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="7410">e_spain</GameId>
+      <GameId game="CK2HIP" order="7409">e_spain</GameId>
     </GameIds>
     <Names>
       <Name language="Armenian">Ispania</Name>
@@ -41956,7 +41956,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_leon" order="1">b_leon</GameId>
       <GameId game="CK2HIP" parent="d_leon" order="1">c_leon</GameId>
-      <GameId game="CK2HIP" parent="k_leon" order="1">d_leon</GameId>
+      <GameId game="CK2HIP" parent="k_asturias" order="1">d_leon</GameId>
       <GameId game="CK2HIP" parent="e_spain" order="3">k_leon</GameId>
     </GameIds>
     <Names>
@@ -42685,7 +42685,7 @@
   <LocationEntity>
     <Id>cadiz</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="c_cadiz" order="4">b_cadiz</GameId>
+      <GameId game="CK2HIP" parent="c_algeciras" order="4">b_cadiz</GameId>
       <GameId game="ImperatorRome">1344</GameId>
     </GameIds>
     <Names>
@@ -42797,7 +42797,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_granada" order="1">b_granada</GameId>
       <GameId game="CK2HIP" parent="d_granada" order="2">c_granada</GameId>
-      <GameId game="CK2HIP" parent="k_granada" order="6">d_granada</GameId>
+      <GameId game="CK2HIP" parent="k_andalusia" order="6">d_granada</GameId>
       <GameId game="CK2HIP" parent="e_spain" order="10">k_granada</GameId>
     </GameIds>
     <Names>
@@ -43442,7 +43442,7 @@
   <LocationEntity>
     <Id>africa</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="8018">e_africa</GameId>
+      <GameId game="CK2HIP" order="8017">e_africa</GameId>
     </GameIds>
     <Names>
       <Name language="Basque">Afrika</Name>
@@ -43849,7 +43849,7 @@
     <Id>tiaret</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_atlas_mnt" order="1">b_tiaret</GameId>
-      <GameId game="CK2HIP" order="11847">k_tiaret</GameId>
+      <GameId game="CK2HIP" order="11846">k_tiaret</GameId>
     </GameIds>
     <Names>
       <Name language="Lithuanian">Tiaretas</Name>
@@ -44181,7 +44181,7 @@
     <Id>persia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_persia" order="1">k_persia</GameId>
-      <GameId game="CK2HIP" order="8593">e_persia</GameId>
+      <GameId game="CK2HIP" order="8592">e_persia</GameId>
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Persike</Name>
@@ -45224,7 +45224,7 @@
     <Id>temes</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_csanad" order="3">c_temes</GameId>
-      <GameId game="CK2HIP" order="11784">d_temes</GameId>
+      <GameId game="CK2HIP" order="11783">d_temes</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Temes</Name>
@@ -45256,7 +45256,7 @@
   <LocationEntity>
     <Id>wielkopolska</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="11785">d_wielkopolska</GameId>
+      <GameId game="CK2HIP" order="11784">d_wielkopolska</GameId>
     </GameIds>
     <Names>
       <Name language="Bavarian">Grosspolen</Name>
@@ -45281,7 +45281,7 @@
   <LocationEntity>
     <Id>vistulans</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="11811">d_vistulans</GameId>
+      <GameId game="CK2HIP" order="11810">d_vistulans</GameId>
     </GameIds>
     <Names>
       <Name language="Romanian">Vistula</Name>
@@ -45290,7 +45290,7 @@
   <LocationEntity>
     <Id>germiyan</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="11824">d_germiyan</GameId>
+      <GameId game="CK2HIP" order="11823">d_germiyan</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Phrygia</Name>
@@ -45299,7 +45299,7 @@
   <LocationEntity>
     <Id>karasi</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="11831">d_karasi</GameId>
+      <GameId game="CK2HIP" order="11830">d_karasi</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Hellespontus</Name>
@@ -45308,7 +45308,7 @@
   <LocationEntity>
     <Id>ahi</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="11838">d_ahi</GameId>
+      <GameId game="CK2HIP" order="11837">d_ahi</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Galatia</Name>
