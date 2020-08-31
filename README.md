@@ -1,10 +1,8 @@
-[![Build Status](https://travis-ci.com/hmlendea/ck2-hip-mcn.svg?branch=master)](https://travis-ci.com/hmlendea/ck2-hip-mcn)
-
 # About
 
 This is a mod for various strategy games, that adds new province names based on their culture/faction.
 
-It currently has **18,914** names!
+It currently has **18,903** names!
 
 Supported games:
  - `Crusader Kings 2` version 3.3.3 with the (**required**) `Historical Immersion Project` mod version Frosty3
