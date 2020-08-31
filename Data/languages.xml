@@ -243,9 +243,6 @@
   <Language>
     <Id>Bosnian</Id>
     <Code iso-639-1="bs" iso-639-3="bos" />
-    <GameIds>
-      <GameId game="CK2HIP">bosnian</GameId>
-    </GameIds>
     <FallbackLanguages>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>Croatian</LanguageId>
@@ -253,7 +250,42 @@
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Bosnian_Before1974</Id>
+    <FallbackLanguages>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Bosnian_Medieval</Id>
+    <GameIds>
+      <GameId game="CK2HIP">bosnian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -416,9 +448,6 @@
   <Language>
     <Id>Croatian</Id>
     <Code iso-639-1="hr" iso-639-3="hrv" />
-    <GameIds>
-      <GameId game="CK2HIP">croatian</GameId>
-    </GameIds>
     <FallbackLanguages>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -426,15 +455,13 @@
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Croatian_Before1974</Id>
-    <Code iso-639-1="hr" iso-639-3="hrv" />
-    <GameIds>
-      <GameId game="CK2HIP">croatian</GameId>
-    </GameIds>
     <FallbackLanguages>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
@@ -443,7 +470,27 @@
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Croatian_Medieval</Id>
+    <GameIds>
+      <GameId game="CK2HIP">croatian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -958,11 +1005,22 @@
     <Code iso-639-1="it" iso-639-3="ita" />
     <FallbackLanguages>
       <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Italian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Italian_Before1922</Id>
     <FallbackLanguages>
+      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Italian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Italian_Medieval</Id>
+    <FallbackLanguages>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Italian_Central</LanguageId>
       <LanguageId>Italian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -974,6 +1032,7 @@
     <FallbackLanguages>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Italian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1687,6 +1746,8 @@
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1700,6 +1761,8 @@
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1708,6 +1771,8 @@
       <GameId game="CK2HIP">serbian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
@@ -1730,6 +1795,8 @@
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1744,6 +1811,8 @@
       <LanguageId>Serbian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2030,6 +2099,9 @@
     <GameIds>
       <GameId game="CK2HIP">tuscan</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Italian_Medieval</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Ukrainian</Id>
