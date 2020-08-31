@@ -2,34 +2,39 @@
 
 # About
 
-This is a sub-mod for CK2's Historical Immersion Project that add new culture-specific names and localisations.
-This mod expects a standard HIP installation, with all the default modules installed, especially SWMH.
+This is a mod for various strategy games, that adds new province names based on their culture/faction.
 
-It currently brings around **32,081** new cultural landed title names!
-It was last updated for HIP version Frosty2 from 06/03/2020, CK2 version 3.3.2
+It currently has **18,914** names!
+
+Supported games:
+ - `Crusader Kings 2` version 3.3.3 with the (**required**) `Historical Immersion Project` mod version Frosty3
+ - `Imperator: Rome` version 1.4.*
 
 # Useful links
 
 - [GitHub page](https://github.com/hmlendea/ck2-hip-mcn)
-- [Steam Workshop page](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
-- [ParadoxPlaza Thread](https://forum.paradoxplaza.com/forum/index.php?threads/submod-more-cultural-names-v19-151-31-05.1184632/)
+- [Steam Workshop page for CK2](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
+- [ParadoxPlaza Thread for CK2](https://forum.paradoxplaza.com/forum/index.php?threads/submod-more-cultural-names-v19-151-31-05.1184632/)
 
 # Installation
 
 Just subscribe to the [Steam Workshop page](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675) of this mod.
 
-If you don't own this game on Steam, or you want to try the in-development version, you can download the latest release from the [GitHub page](https://github.com/hmlendea/ck2-hip-mcn/releases) and extract the contents into your "mod" directory alongside your current HIP installation.
+If you don't own the game on Steam, or you want to try the development version, you can download the latest release from the [GitHub page](https://github.com/hmlendea/ck2-hip-mcn/releases) and extract the contents into your "mod" directory alongside your current HIP installation.
 
-**Note:** This mod is OS-agnostic, which means it will work on all operating systems supported by CK2 and HIP (Windows, Linux and Mac)
-
-**REQUIREMENTS:**
-- This mod requires up-to-date HIP with at least the SWMH module installed.
-- Backwards-compatibility with older HIP versions is intended but not guaranteed.
-- Also, this mod officially supports HIP with only the default modules installed, but it should work with any setup as long as SWMH is there.
+**Note:** The mods are OS-agnostic, which means that they will work on all of the operating systems supported by the game
 
 **UPDATING THE MOD:**
-- This mod gets updated more frequently on GIT than on the Steam Workshop.
-- When manually updating, please remove all the previous files of this mod.
+- If you own the game on Steam, it is recommended to subscribe to the Steam Workshop pages in order to benefit from automatic updates
+- However, this mod gets updated more frequently on GIT than on the Steam Workshop pages
+
+## Requirements
+
+### Crusader Kings 2
+
+- This mod requires up-to-date **HIP** with at least the **SWMH** module installed.
+- Backwards-compatibility with older HIP versions is intended but not guaranteed.
+- Also, this mod officially supports HIP with only the default modules installed, but it should work with any setup as long as SWMH is there.
 
 # Contributions
 
@@ -37,9 +42,10 @@ You are welcome to bring any suggestion, feedback or modification to this projec
 
 There are a few ways you can do so:
 
-1. You can create git pull requests for this repository (This requires git knowledge)
-2. You can raise a new "[issue](https://github.com/hmlendea/ck2-hip-mcn/issues)" for this project
-4. You can reply on the [Steam discussion thread](http://steamcommunity.com/workshop/filedetails/discussion/1175098675/1479856439031332646/)
+- You can create git pull requests for this repository (This requires git knowledge)
+- You can raise a new "[issue](https://github.com/hmlendea/ck2-hip-mcn/issues)" for this project
+- You can reply on the Steam discussion thread:
+  - [Crusader Kings 2](http://steamcommunity.com/workshop/filedetails/discussion/1175098675/1479856439031332646/)
 
 It would also be very helpful if you could provide a link to a source that can atest the authenticity of the names you submitted, when possible.
 
@@ -47,20 +53,17 @@ The guidelines and roadmap can be found in the github project description.
 
 # Development focus
 
-Currently, the development focuses on the following areas:
+Currently, the development focuses on the following:
 
-- Landed title names for your native language (you can start with neighbouring countries)
-- Minor titles and jobs localisations
+- Add missing `Crusader Kings 3` titles
+- Link `Crusader Kings 3` titles to the existing ones
+- Adding all the original CK2-HIP localisations
+- Link `Imperator: Rome` titles to the existing titles
 
 # Development guidelines
 
-- Encode files with the `WINDOWS-1252` character set
 - Make sure the names you add are historically accurate for the medieval era
-- Do not override names already provided by HIP, unless there is a good reason to do so
-- Check with the original HIP files and take note of the already existing names (especially for similar cultures) and the name displayed ingame (which might be very different from the internal name in the files, e.g. `d_galich` is Halych ingame)
-- Make sure there are no other dependencies than the default HIP modules. Do not add names for optional modules or other submods.
-
-Additional guidelines and rules can be found in header comments inside specific files.
+- Make sure you include all the original special characters of the name
 
 # Bibliography - Sources
 
@@ -78,6 +81,7 @@ Non-english:
 
 Mods:
 - [Schattenzeitalter](http://www.moddb.com/mods/schattenzeitalter)
+- [Historical Immersion Project](https://ck2.paradoxwikis.com/Historical_Immersion_Project)
 
 Databases:
  - [GeoNames](http://www.geonames.org/) A huge database containing exonyms for all the places, and in all the languages
