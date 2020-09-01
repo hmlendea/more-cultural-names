@@ -2,6 +2,6 @@
 
 MAJOR=$(date +"%y")
 MINOR=$(date +"%j")
-BUILD=$(date +"%H")
+BUILD=0
 
 echo ${MAJOR}.${MINOR}.${BUILD}

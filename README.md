@@ -2,7 +2,7 @@
 
 This is a mod for various strategy games, that adds new province names based on their culture/faction.
 
-It currently has **18,903** names!
+It currently has **24,040** names!
 
 Supported games:
  - `Crusader Kings 2` version 3.3.3 with the (**required**) `Historical Immersion Project` mod version Frosty3
