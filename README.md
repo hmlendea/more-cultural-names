@@ -2,10 +2,11 @@
 
 This is a mod for various strategy games, that adds new province names based on their culture/faction.
 
-It currently has **24,040** names!
+It currently has **24,986** names!
 
 Supported games:
  - `Crusader Kings 2` version 3.3.3 with the (**required**) `Historical Immersion Project` mod version Frosty3
+ - `Crusader Kings 3` version 1.0.*
  - `Imperator: Rome` version 1.4.*
 
 # Useful links
@@ -53,10 +54,9 @@ The guidelines and roadmap can be found in the github project description.
 
 Currently, the development focuses on the following:
 
-- Add missing `Crusader Kings 3` titles
-- Link `Crusader Kings 3` titles to the existing ones
-- Adding all the original CK2-HIP localisations
-- Link `Imperator: Rome` titles to the existing titles
+ 1. Support more `Crusader Kings 3` titles
+ 2. Adding all the original CK2-HIP localisations
+ 3. Support more `Imperator: Rome` titles
 
 # Development guidelines
 

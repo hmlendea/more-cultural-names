@@ -21,4 +21,5 @@ function build {
 }
 
 build "CK2HIP"
+build "CK3"
 build "ImperatorRome"
