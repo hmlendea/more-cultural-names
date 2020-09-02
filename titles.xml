@@ -229,6 +229,7 @@
       <GameId game="CK2HIP" parent="d_osterreich" order="1">c_osterreich</GameId>
       <GameId game="CK2HIP" parent="k_bavaria" order="4">d_osterreich</GameId>
       <GameId game="CK2HIP" parent="e_hre" order="1">k_austria</GameId>
+      <GameId game="CK3" parent="" order="">k_austria</GameId>
     </GameIds>
     <Names>
       <Name language="Afrikaans">Oostenryk</Name>
@@ -1092,6 +1093,7 @@
     <Id>hansa</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_hre" order="3">k_hansa</GameId>
+      <GameId game="CK3" parent="" order="">k_hansa</GameId>
     </GameIds>
     <Names>
       <Name language="Dalmatian">Hãnsa</Name>
@@ -1109,6 +1111,7 @@
     <Id>holy_roman_empire</Id>
     <GameIds>
       <GameId game="CK2HIP" order="113">e_hre</GameId>
+      <GameId game="CK3" order="">e_hre</GameId>
     </GameIds>
     <Names>
       <Name language="Afrikaans">Heilige Romeinse Ryk</Name>
@@ -1394,6 +1397,7 @@
     <Id>knights_templar</Id>
     <GameIds>
       <GameId game="CK2HIP" order="1">d_knights_templar</GameId>
+      <GameId game="CK3" order="">d_knights_templar</GameId>
     </GameIds>
     <Names>
       <Name language="Afrikaans">Tempelridders</Name>
@@ -1672,6 +1676,7 @@
     <Id>order_of_saint_anthony</Id>
     <GameIds>
       <GameId game="CK2HIP" order="14">d_saint_anthony</GameId>
+      <GameId game="CK3" order="">d_saint_anthony</GameId>
     </GameIds>
     <Names>
       <Name language="Catalan">Ordre de Sant Antoni</Name>
@@ -2090,6 +2095,7 @@
     <GameIds>
       <GameId game="CK2">d_teutonic_order</GameId>
       <GameId game="CK2HIP" order="2">d_teutonic_order</GameId>
+      <GameId game="CK3" order="">d_teutonic_order</GameId>
     </GameIds>
     <Names>
       <Name language="Afrikaans">Duitse Orde</Name>
@@ -11249,8 +11255,23 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>switzerland</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="" order="">d_swiss</GameId>
+      <GameId game="CK3" parent="" order="">d_swiss</GameId>
+      <GameId game="CK3" parent="" order="">k_switzerland</GameId>
+    </GameIds>
+    <Names>
+      <Name language="French_Old">Schwytz</Name>
+      <Name language="Italian">Svitto</Name>
+      <Name language="Latin_Medieval">Suittes</Name>
+      <Name language="Latin">Suitius</Name>
+      <Name language="Lombard">Svit</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>schwyz</Id>
-    <GameIds>schwyz
+    <GameIds>
       <GameId game="CK2HIP" parent="c_schwyz" order="2">b_schwyz</GameId>
       <GameId game="CK2HIP" parent="d_ratien" order="2">c_schwyz</GameId>
     </GameIds>
@@ -19068,6 +19089,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_belgrade" order="4">b_belgrade</GameId>
       <GameId game="CK2HIP" parent="d_macva" order="2">c_belgrade</GameId>
+      <GameId game="CK3" parent="" order="">d_belgrade</GameId>
       <GameId game="ImperatorRome">4195</GameId> <!-- Singidunum -->
     </GameIds>
     <Names>
@@ -23831,6 +23853,7 @@
       <GameId game="CK2HIP" parent="c_sandomierskie" order="1">b_sandomierz</GameId>
       <GameId game="CK2HIP" parent="d_sandomierz" order="1">c_sandomierskie</GameId>
       <GameId game="CK2HIP" parent="k_poland" order="5">d_sandomierz</GameId>
+      <GameId game="CK3" parent="" order="">d_sandomiersk</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Sandomir</Name>
@@ -33534,6 +33557,7 @@
     <Id>britannia</Id>
     <GameIds>
       <GameId game="CK2HIP" order="4942">e_britannia</GameId>
+      <GameId game="CK3" parent="" order="">e_britannia</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic">Britania</Name>
@@ -33563,6 +33587,7 @@
     <Id>england</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_britannia" order="1">k_england</GameId>
+      <GameId game="CK3" parent="e_britannia" order="1">k_england</GameId>
     </GameIds>
     <Names>
       <Name language="Armenian">Anglia</Name>
@@ -34334,20 +34359,55 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>middle_anglia</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="k_england" order="6">d_bedford</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Breton_Middle">Cynwidion</Name>
+      <Name language="Cornish_Middle">Cynwidion</Name>
+      <Name language="Cumbric">Calchwynedd</Name>
+      <Name language="Danish_Middle">Miðængle</Name>
+      <Name language="English_Middle">Bedford</Name>
+      <Name language="English_Old_Norse">Middelengle</Name>
+      <Name language="English_Old">Middelengle</Name>
+      <Name language="Icelandic_Old">Miðængle</Name>
+      <Name language="Irish_Middle_Norse">Miðængle</Name>
+      <Name language="Irish_Middle">Cynwidion</Name>
+      <Name language="Norse">Miðængle</Name>
+      <Name language="Norwegian_Old">Miðængle</Name>
+      <Name language="Scottish_Medieval">Cynwidion</Name>
+      <Name language="Swedish_Old">Miðængle</Name>
+      <Name language="Welsh_Middle">Calchwynedd</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>bedford</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bedford" order="1">b_bedford</GameId>
       <GameId game="CK2HIP" parent="d_bedford" order="2">c_bedford</GameId>
-      <GameId game="CK2HIP" parent="k_england" order="6">d_bedford</GameId>
+      <GameId game="CK3" parent="c_bedford" order="1">b_bedford</GameId>
+      <GameId game="CK3" parent="d_bedford" order="3">c_bedford</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Beadanford</Name>
+      <Name language="English_Middle">Bedford</Name>
+      <Name language="English_Old_Norse">Beadanforda</Name>
+      <Name language="English_Old">Beadanforda</Name> <!-- Or Bedanford -->
+      <Name language="German_Old_Low">Bedanford</Name>
+      <Name language="Icelandic_Old">Beadanford</Name>
+      <Name language="Irish_Middle_Norse">Beadanford</Name>
       <Name language="Latin">Verulamium</Name>
+      <Name language="Norse">Beadanford</Name>
+      <Name language="Norwegian_Old">Beadanford</Name>
+      <Name language="Swedish_Old">Beadanford</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>luton</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bedford" order="4">b_luton</GameId>
+      <GameId game="CK3" parent="c_bedford" order="3">b_luton</GameId>
     </GameIds>
     <Names>
       <Name language="Lithuanian">Lutonas</Name>
@@ -34396,22 +34456,54 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>buckinghamshire</Id>
+    <GameIds>
+      <GameId game="CK3" parent="d_bedford" order="5">c_buckinghamshire</GameId>
+    </GameIds>
+    <FallbackLocations>
+      <LocationId>buckingham</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="English_Middle">Buckinghamshire</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>buckingham</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bucks" order="1">b_buckingham</GameId>
+      <GameId game="CK2HIP" parent="d_bedford" order="4">c_bucks</GameId>
+      <GameId game="CK3" parent="c_buckinghamshire" order="1">b_buckingham</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Buccingaham</Name>
+      <Name language="English_Old_Norse">Buccingaham</Name>
+      <Name language="English_Old">Buccingaham</Name> <!-- Or Buccingahamm -->
+      <Name language="German_Old_Low">Buccingahamm</Name>
+      <Name language="Icelandic_Old">Buccingaham</Name>
+      <Name language="Irish_Middle_Norse">Buccingaham</Name>
       <Name language="Latin">Buckinghamia</Name>
+      <Name language="Norse">Buccingaham</Name>
+      <Name language="Norwegian_Old">Buccingaham</Name>
+      <Name language="Swedish_Old">Buccingaham</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>aylesbury</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bucks" order="2">b_aylesbury</GameId>
+      <GameId game="CK3" parent="c_buckinghamshire" order="2">b_aylesbury</GameId>
     </GameIds>
     <Names>
       <Name language="Lithuanian">Eilsberis</Name>
       <Name language="Latin">Aelesburia</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>newport</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_buckinghamshire" order="3">b_newport</GameId>
+    </GameIds>
+    <Names>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -34428,44 +34520,82 @@
     <GameIds>
       <GameId game="CK2HIP" parent="d_essex" order="2">c_essex</GameId>
       <GameId game="CK2HIP" parent="k_england" order="7">d_essex</GameId>
+      <GameId game="CK3" parent="d_bedford" order="2">c_essex</GameId>
+      <GameId game="CK3" parent="k_england" order="1">d_bedford</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Caer Colun</Name>
+      <Name language="Cornish_Middle">Caer Colun</Name>
+      <Name language="Cumbric">Caer Colun</Name>
+      <Name language="Danish_Middle">Austseaxe</Name>
+      <Name language="English_Old_Norse">Eastseaxe</Name>
+      <Name language="English_Old">Eastseaxe</Name>
+      <Name language="German_Old_Low">Eastseaxe</Name>
+      <Name language="Greek_Medieval">Camulodunon</Name>
+      <Name language="Icelandic_Old">Austseaxe</Name>
+      <Name language="Irish_Middle_Norse">Austseaxe</Name>
+      <Name language="Irish_Middle">Caer Colun</Name>
       <Name language="Latin">Camulodunum</Name>
+      <Name language="Norse">Austseaxe</Name>
+      <Name language="Norwegian_Old">Austseaxe</Name>
+      <Name language="Scottish_Medieval">Caer Colun</Name>
+      <Name language="Swedish_Old">Austseaxe</Name>
+      <Name language="Welsh_Middle">Caer Colun</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>london</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_middlesex" order="2">b_london</GameId>
+      <GameId game="CK3" parent="c_middlesex" order="1">b_london</GameId>
     </GameIds>
     <Names>
       <Name language="Aragonese">Londres</Name>
       <Name language="Arpitan">Londro</Name>
       <Name language="Basque">Londres</Name>
-      <Name language="Czech">Londýn</Name>
+      <Name language="Breton_Middle">Llundein</Name> <!-- Or Lundein -->
       <Name language="Castilian">Londres</Name>
       <Name language="Catalan">Londres</Name>
+      <Name language="Cornish_Middle">Llundein</Name> <!-- Or Lundein -->
+      <Name language="Cumbric">Llundain</Name> <!-- Or Llundein -->
+      <Name language="Czech">Londýn</Name>
+      <Name language="Danish_Middle">Lundúnir</Name>
       <Name language="Dutch_Middle">Londen</Name>
+      <Name language="English_Old_Norse">Lundunwic</Name>
+      <Name language="English_Old">Lundunwic</Name> <!-- Or Lunden -->
       <Name language="Finnish">Lontoo</Name>
       <Name language="Frisian_Old">Londen</Name>
       <Name language="Galician">Londres</Name>
+      <Name language="German_Old_Low">Lunden</Name>
+      <Name language="Greek_Medieval">Londinion</Name>
+      <Name language="Icelandic_Old">Lundene</Name>
+      <Name language="Irish_Middle_Norse">Lundúnir</Name>
+      <Name language="Irish_Middle">Lundein</Name>
       <Name language="Italian">Londra</Name>
-      <Name language="Leonese">Londres</Name>
       <Name language="Latgalian">Londona</Name>
+      <Name language="Latin_Medieval">Londinium</Name>
+      <Name language="Leonese">Londres</Name>
       <Name language="Ligurian">Londra</Name>
       <Name language="Lithuanian">Londonas</Name>
       <Name language="Lombard">Lundra</Name>
       <Name language="Nahuatl">Londres</Name>
       <Name language="Neapolitan">Londra</Name>
+      <Name language="Norman">Londres</Name>
+      <Name language="Norse">Lundúnir</Name>
+      <Name language="Norwegian_Old">Lundúnir</Name>
       <Name language="Occitan">Londres</Name>
+      <Name language="Pictish">Llundein</Name>
       <Name language="Polish">Londyn</Name>
       <Name language="Portuguese">Londres</Name>
       <Name language="Romanian">Londra</Name>
       <Name language="Sardinian">Londra</Name>
+      <Name language="Scottish_Medieval">Lunnon</Name> <!-- Or Lundein -->
       <Name language="Sicilian">Londra</Name>
       <Name language="Slovak">Londýn</Name>
+      <Name language="Swedish_Old">Lundúnir</Name>
       <Name language="Turkish">Londra</Name>
       <Name language="Venetian">Londra</Name>
+      <Name language="Welsh_Middle">Llundain</Name> <!-- Or Llundein -->
       <Name language="Wolof">Londar</Name>
     </Names>
   </LocationEntity>
@@ -34483,9 +34613,40 @@
     <Id>colchester</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_essex" order="1">b_colchester</GameId>
+      <GameId game="CK3" parent="c_essex" order="1">b_colchester</GameId>
+      <GameId game="ImperatorRome">2028</GameId> <!-- Camulodunum -->
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Caer Colun</Name>
+      <Name language="Cornish_Middle">Caer Colun</Name>
+      <Name language="Cumbric">Caer Colun</Name>
+      <Name language="Danish_Middle">Colneceastre</Name>
+      <Name language="English_Old_Norse">Colneceaster</Name>
+      <Name language="English_Old">Colneceaster</Name> <!-- Or Colenceaster -->
+      <Name language="German_Old_Low">Colenceaster</Name>
+      <Name language="Greek_Medieval">Camulodunon</Name>
+      <Name language="Icelandic_Old">Colneceastre</Name>
+      <Name language="Irish_Middle_Norse">Colneceastre</Name>
+      <Name language="Irish_Middle">Caer Colun</Name>
+      <Name language="Latin_Medieval">Camulodunum</Name>
       <Name language="Lithuanian">Kolcesteris</Name>
+      <Name language="Norse">Colneceastre</Name>
+      <Name language="Norwegian_Old">Colneceastre</Name>
+      <Name language="Scottish_Medieval">Caer Colun</Name>
+      <Name language="Swedish_Old">Colneceastre</Name>
+      <Name language="Welsh_Middle">Caer Colun</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>hertfordshire</Id>
+    <GameIds>
+      <GameId game="CK3" parent="d_bedford" order="4">c_hertfordshire</GameId>
+    </GameIds>
+    <FallbackLocations>
+      <LocationId>hertford</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="English_Middle">Hertfordshire</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -34493,9 +34654,21 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_hertford" order="1">b_hertford</GameId>
       <GameId game="CK2HIP" parent="d_essex" order="3">c_hertford</GameId>
+      <GameId game="CK3" parent="hertfordshire" order="3">b_hertford</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Heortford</Name>
+      <Name language="English_Old_Norse">Heortforda</Name>
+      <Name language="English_Old">Heortforda</Name> <!-- Or Herutford -->
+      <Name language="German_Old_Low">Herutford</Name>
+      <Name language="Greek_Medieval">Ourolanion</Name>
+      <Name language="Icelandic_Old">Heortford</Name>
+      <Name language="Irish_Middle_Norse">Heortford</Name>
+      <Name language="Latin_Medieval">Verulamium</Name>
       <Name language="Latin">Duroliponte</Name>
+      <Name language="Norse">Heortford</Name>
+      <Name language="Norwegian_Old">Heortford</Name>
+      <Name language="Swedish_Old">Heortford</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -34842,33 +35015,88 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>bernicia</Id>
+    <FallbackLocations>
+      <LocationId>northumberland</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="Breton_Middle">Brynaich</Name> <!-- Or Bryneich -->
+      <Name language="Cornish_Middle">Brynaich</Name> <!-- Or Bryneich -->
+      <Name language="Cumbric">Brynaich</Name> <!-- Or Bryneich -->
+      <Name language="English_Old">Beornice</Name>
+      <Name language="Irish_Middle">Brynaich</Name>
+      <Name language="Latin">Bernicia</Name>
+      <Name language="Pictish">Bryneich</Name>
+      <Name language="Scottish_Medieval">Brynaich</Name>
+      <Name language="Welsh_Middle">Brynaich</Name> <!-- Or Bryneich -->
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>northumberland</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_northumberland" order="1">c_northumberland</GameId>
       <GameId game="CK2HIP" parent="k_england" order="12">d_northumberland</GameId>
+      <GameId game="CK3" parent="d_northumberland" order="1">c_northumberland</GameId>
+      <GameId game="CK3" parent="k_england" order="2">d_northumberland</GameId>
     </GameIds>
+    <FallbackLocations>
+      <LocationId>bernicia</LocationId>
+    </FallbackLocations>
     <Names>
+      <Name language="Danish_Middle">Norðhymbraland</Name>
+      <Name language="English_Old_Norse">Northymbraland</Name>
+      <Name language="English_Old">Northymbraland</Name>
+      <Name language="Icelandic_Old">Norðhymbraland</Name>
+      <Name language="Irish_Middle_Norse">Norðhymbraland</Name>
       <Name language="Latin_Medieval">Northanhymbrorum</Name>
       <Name language="Latin">Northumbria</Name>
-      <Name language="Norman">Nordumbrie</Name> <!-- Or Or Brigantia or Nordumbria -->
+      <Name language="Norman">Norroy</Name>
+      <Name language="Norse">Norðhymbraland</Name>
+      <Name language="Norwegian_Old">Norðhymbraland</Name>
+      <Name language="Occitan_Old">Norroy</Name>
       <Name language="Romanian">Nordumbria</Name> <!-- Historical? Just the assumed variant -->
+      <Name language="Swedish_Old">Norðhymbraland</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>rothbury</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_northumberland" order="2">b_rothbury</GameId>
+    </GameIds>
+    <Names>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>bamburgh</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_northumberland" order="1">b_bamburgh</GameId>
+      <GameId game="CK3" parent="c_northumberland" order="1">b_bamburgh</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Din Gaurie</Name>
+      <Name language="Cornish_Middle">Din Gaurie</Name>
+      <Name language="Cumbric">Din Gaurie</Name>
+      <Name language="Danish_Middle">Bebbanburgh</Name> <!-- Or Bamborg -->
+      <Name language="English_Old_Norse">Bebbanburh</Name>
+      <Name language="English_Old">Bebbanburh</Name>
+      <Name language="German_Old_Low">Bebbanburg</Name>
+      <Name language="Icelandic_Old">Bebbanborg</Name>
+      <Name language="Irish_Middle_Norse">Bebbanborg</Name>
       <Name language="Irish">Dún Guaire</Name>
-      <Name language="Portuguese">Bamburgo</Name>
       <Name language="Latin">Din Guardi</Name>
+      <Name language="Norse">Bebbanborg</Name> <!-- Or Bamborg -->
+      <Name language="Norwegian_Old">Bebbanborg</Name> <!-- Or Bamborg -->
+      <Name language="Pictish">Din Gaurie</Name>
+      <Name language="Portuguese">Bamburgo</Name>
+      <Name language="Swedish_Old">Bebbanborg</Name> <!-- Or Bamborg -->
+      <Name language="Welsh_Middle">Din Gaurie</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>hexham</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_northumberland" order="2">b_hexham</GameId>
+      <GameId game="CK3" parent="c_northumberland" order="4">b_hexham</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Hagastaldunum</Name>
@@ -34878,9 +35106,23 @@
     <Id>lindisfarne</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_northumberland" order="3">b_lindisfarne</GameId>
+      <GameId game="CK3" parent="c_northumberland" order="3">b_lindisfarne</GameId> <!-- PROV1610: Lindisfarne -->
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Medcaut</Name>
+      <Name language="Cornish_Middle">Medcaut</Name>
+      <Name language="Cumbric">Medcaut</Name>
+      <Name language="Danish_Middle">Lindisfarena</Name>
+      <Name language="English_Old_Norse">Lindisfarena</Name>
+      <Name language="English_Old">Lindisfarena</Name>
+      <Name language="Icelandic_Old">Lindisfarena</Name>
+      <Name language="Irish_Middle_Norse">Lindisfarena</Name>
       <Name language="Latin">Medicata Insula</Name>
+      <Name language="Norse">Lindisfarena</Name>
+      <Name language="Norwegian_Old">Lindisfarena</Name>
+      <Name language="Pictish">Medcaut</Name>
+      <Name language="Swedish_Old">Lindisfarena</Name>
+      <Name language="Welsh_Middle">Medcaut</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -34903,8 +35145,17 @@
       <GameId game="CK2HIP" parent="d_northumberland" order="2">c_durham</GameId>
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Daramas</Name>
+      <Name language="Danish_Middle">Dunholm</Name>
+      <Name language="English_Old_Norse">Dunholm</Name>
+      <Name language="English_Old">Dunholm</Name>
+      <Name language="Icelandic_Old">Dunholm</Name>
+      <Name language="Irish_Middle_Norse">Dunholm</Name>
       <Name language="Latin">Vinovia</Name>
+      <Name language="Lithuanian">Daramas</Name>
+      <Name language="Norman">Duresme</Name>
+      <Name language="Norse">Dunholm</Name>
+      <Name language="Norwegian_Old">Dunholm</Name>
+      <Name language="Swedish_Old">Dunholm</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -35036,10 +35287,19 @@
     <Id>gorey</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_jersey" order="2">b_gorey</GameId>
+      <GameId game="CK3" parent="c_middlesex" order="4">b_gore</GameId>
     </GameIds>
     <Names>
       <Name language="Irish">Guaire</Name>
       <Name language="Latin">Sarnia</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>brentford</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_middlesex" order="5">b_brentford</GameId>
+    </GameIds>
+    <Names>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -35408,7 +35668,25 @@
       <GameId game="CK2HIP" parent="e_britannia" order="8">k_ireland</GameId>
     </GameIds>
     <Names>
+      <Name language="Arpitan">Bretaigne</Name>
+      <Name language="Breton_Middle">Brythain</Name>
+      <Name language="Cornish_Middle">Brythain</Name>
+      <Name language="Cumbric">Prydein</Name>
+      <Name language="Danish_Middle">Bretland</Name>
+      <Name language="English_Old_Norse">Bretland</Name>
+      <Name language="English_Old">Bryttania</Name>
+      <Name language="French_Old">Bretaigne</Name>
+      <Name language="Greek_Medieval">Albion</Name>
+      <Name language="Irish_Middle_Norse">Cruithn</Name>
+      <Name language="Irish_Middle">Cruithn</Name>
       <Name language="Latin">Hibernia</Name>
+      <Name language="Norman">Bretaigne</Name>
+      <Name language="Norse">Bretland</Name>
+      <Name language="Norwegian_Old">Bretland</Name>
+      <Name language="Pictish">Pictavia</Name>
+      <Name language="Scottish_Medieval">Cruithn</Name>
+      <Name language="Swedish_Old">Bretland</Name>
+      <Name language="Welsh_Middle">Prydein</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -37725,6 +38003,7 @@
       <GameId game="CK2HIP" parent="d_napoli" order="2">c_amalfi</GameId>
       <GameId game="CK2HIP" parent="k_sicily" order="1">d_amalfi</GameId>
       <GameId game="CK2HIP" parent="e_italy" order="6">k_amalfi</GameId>
+      <GameId game="CK3" parent="" order="">d_amalfi</GameId>
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Amalphe</Name>
@@ -38988,6 +39267,14 @@
       <Name language="Latin">Brenodunum</Name>
       <Name language="Romanian">Berna</Name>
       <Name language="Scottish_Medieval">Berne</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>rheinfelden</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="d_zahringen" order="1">c_rheinfelden</GameId> <!-- Rheinfelden -->
+    </GameIds>
+    <Names>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -44329,6 +44616,7 @@
       <GameId game="CK2HIP" parent="c_zaragoza" order="3">b_zaragoza</GameId>
       <GameId game="CK2HIP" parent="d_zaragoza" order="1">c_zaragoza</GameId>
       <GameId game="CK2HIP" parent="k_aragon" order="2">d_zaragoza</GameId>
+      <GameId game="CK3" parent="" order="">d_zaragoza</GameId>
     </GameIds>
     <Names>
       <Name language="Italian">Saragozza</Name>
@@ -46820,6 +47108,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_armenia" order="4">d_armenia</GameId>
       <GameId game="CK2HIP" parent="e_null" order="2">k_armenia</GameId>
+      <GameId game="CK3" parent="" order="">e_armenia</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Arminiya</Name>
@@ -54005,6 +54294,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="d_socotra" order="1">c_socotra</GameId>
       <GameId game="CK2HIP" parent="k_yemen" order="4">d_socotra</GameId>
+      <GameId game="CK3" parent="" order="">d_socotra</GameId>
     </GameIds>
     <Names>
       <Name language="Somali">Soqotra</Name>
@@ -56617,6 +56907,25 @@
     <Id>southwark</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_surrey" order="1">b_southwark</GameId>
+      <GameId game="CK3" parent="c_middlesex" order="2">b_southwark</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Danish_Middle">Suthriganaweorc</Name>
+      <Name language="English_Old_Norse">Suthriganaweorc</Name>
+      <Name language="English_Old">Suthweorc</Name> <!-- Or Suthriganaweorc -->
+      <Name language="German_Old_Low">Suthweorc</Name>
+      <Name language="Icelandic_Old">Suthriganaweorc</Name>
+      <Name language="Irish_Middle_Norse">Suthriganaweorc</Name>
+      <Name language="Norman">Sudweca</Name>
+      <Name language="Norse">Suthriganaweorc</Name>
+      <Name language="Norwegian_Old">Suthriganaweorc</Name>
+      <Name language="Swedish_Old">Suthriganaweorc</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>woxbrigge</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_middlesex" order="3">b_woxbrigge</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -56819,6 +57128,7 @@
     <Id>ampthill</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bedford" order="2">b_ampthill</GameId>
+      <GameId game="CK3" parent="c_bedford" order="2">b_ampthill</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -56840,14 +57150,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>bucks</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="d_bedford" order="4">c_bucks</GameId>
-    </GameIds>
-    <Names>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>bradwell</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bucks" order="3">b_bradwell</GameId>
@@ -56859,6 +57161,7 @@
     <Id>wycombe</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bucks" order="4">b_wycombe</GameId>
+      <GameId game="CK3" parent="c_buckinghamshire" order="4">b_wycombe</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -56899,8 +57202,26 @@
     <Id>middlesex</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_essex" order="1">c_middlesex</GameId>
+      <GameId game="CK3" parent="d_bedford" order="1">c_middlesex</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Caer Lundein</Name>
+      <Name language="Cornish_Middle">Caer Lundein</Name>
+      <Name language="Cumbric">Caer Llundain</Name>
+      <Name language="Danish_Middle">Miðseaxe</Name>
+      <Name language="English_Old_Norse">Middelseaxe</Name>
+      <Name language="English_Old">Middelseaxe</Name>
+      <Name language="German_Old_Low">Middelseaxe</Name>
+      <Name language="Greek_Medieval">Londinion</Name>
+      <Name language="Icelandic_Old">Miðseaxe</Name>
+      <Name language="Irish_Middle_Norse">Miðseaxe</Name>
+      <Name language="Irish_Middle">Caer Lundein</Name>
+      <Name language="Latin_Medieval">Londinium</Name>
+      <Name language="Norse">Miðseaxe</Name>
+      <Name language="Norwegian_Old">Miðseaxe</Name>
+      <Name language="Scottish_Medieval">Caer Lundein</Name>
+      <Name language="Swedish_Old">Miðseaxe</Name>
+      <Name language="Welsh_Middle">Caer Llundain</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -56947,6 +57268,31 @@
     <Id>maldon</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_essex" order="3">b_maldon</GameId>
+      <GameId game="CK3" parent="c_essex" order="2">b_maldon</GameId>
+    </GameIds>
+    <Names>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>dunmow</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_essex" order="4">b_dunmow</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Danish_Middle">Dunemowe</Name>
+      <Name language="English_Old_Norse">Dunemowe</Name>
+      <Name language="English_Old">Dunemowe</Name>
+      <Name language="Icelandic_Old">Dunemowe</Name>
+      <Name language="Irish_Middle_Norse">Dunemowe</Name>
+      <Name language="Norse">Dunemowe</Name>
+      <Name language="Norwegian_Old">Dunemowe</Name>
+      <Name language="Swedish_Old">Dunemowe</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>chelmsford</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_essex" order="3">b_chelmsford</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -56963,6 +57309,7 @@
     <Id>berkhamsted</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_hertford" order="2">b_berkhamsted</GameId>
+      <GameId game="CK3" parent="c_hertfordshire" order="1">b_berkhamsted</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -56979,6 +57326,7 @@
     <Id>st_albans</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_hertford" order="4">b_st_albans</GameId>
+      <GameId game="CK3" parent="c_hertfordshire" order="2">b_saint_albans</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71078,6 +71426,7 @@
     <Id>knights_hospitaler</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="6">d_knights_hospitaler</GameId>
+      <GameId game="CK3" parent="" order="">d_knights_hospitaler</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71086,6 +71435,7 @@
     <Id>hashshashin</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="7">d_hashshashin</GameId>
+      <GameId game="CK3" parent="" order="">d_hashshashin</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71094,6 +71444,7 @@
     <Id>bektashi</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="8">d_bektashi</GameId>
+      <GameId game="CK3" parent="" order="">d_bektashi</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71102,6 +71453,7 @@
     <Id>haruriyyah</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="9">d_haruriyyah</GameId>
+      <GameId game="CK3" parent="" order="">d_haruriyyah</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71110,6 +71462,7 @@
     <Id>jomsvikings</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="10">d_jomsvikings</GameId>
+      <GameId game="CK3" parent="" order="">d_jomsvikings</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71118,6 +71471,7 @@
     <Id>immortals</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="11">d_immortals</GameId>
+      <GameId game="CK3" parent="" order="">d_immortals</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71126,6 +71480,7 @@
     <Id>zealots</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="12">d_zealots</GameId>
+      <GameId game="CK3" parent="" order="">d_zealots</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71134,6 +71489,7 @@
     <Id>holy_sepulchre</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="13">d_holy_sepulchre</GameId>
+      <GameId game="CK3" parent="" order="">d_holy_sepulchre</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71142,6 +71498,7 @@
     <Id>saint_addai</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="15">d_saint_addai</GameId>
+      <GameId game="CK3" parent="" order="">d_saint_addai</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71150,6 +71507,7 @@
     <Id>sky_lords</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="16">d_sky_lords</GameId>
+      <GameId game="CK3" parent="" order="">d_sky_lords</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71158,6 +71516,7 @@
     <Id>spirit_guardians</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="17">d_spirit_guardians</GameId>
+      <GameId game="CK3" parent="" order="">d_spirit_guardians</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71166,6 +71525,7 @@
     <Id>warriors_perun</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="18">d_warriors_perun</GameId>
+      <GameId game="CK3" parent="" order="">d_warriors_perun</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71174,6 +71534,7 @@
     <Id>chosen_perkunas</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="19">d_chosen_perkunas</GameId>
+      <GameId game="CK3" parent="" order="">d_chosen_perkunas</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71182,6 +71543,7 @@
     <Id>sons_kaleva</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="20">d_sons_kaleva</GameId>
+      <GameId game="CK3" parent="" order="">d_sons_kaleva</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71190,6 +71552,7 @@
     <Id>huitzilopochtli</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="21">d_huitzilopochtli</GameId>
+      <GameId game="CK3" parent="" order="">d_huitzilopochtli</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71198,6 +71561,7 @@
     <Id>knights_santiago</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="22">d_knights_santiago</GameId>
+      <GameId game="CK3" parent="" order="">d_knights_santiago</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71206,6 +71570,7 @@
     <Id>knights_calatrava</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="23">d_knights_calatrava</GameId>
+      <GameId game="CK3" parent="" order="">d_knights_calatrava</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71214,6 +71579,7 @@
     <Id>followers_arjuna</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="24">d_followers_arjuna</GameId>
+      <GameId game="CK3" parent="" order="">d_followers_arjuna</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71222,6 +71588,7 @@
     <Id>ashokas_chosen</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="25">d_ashokas_chosen</GameId>
+      <GameId game="CK3" parent="" order="">d_ashokas_chosen</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71238,6 +71605,7 @@
     <Id>bulls_rishabha</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="27">d_bulls_rishabha</GameId>
+      <GameId game="CK3" parent="" order="">d_bulls_rishabha</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -71246,6 +71614,7 @@
     <Id>zun_warriors</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="28">d_zun_warriors</GameId>
+      <GameId game="CK3" parent="" order="">d_zun_warriors</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -78012,8 +78381,9 @@
   <LocationEntity>
     <Id>pronsk</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="d_ryazan" order="2">c_pronsk</GameId>
       <GameId game="CK2HIP" parent="c_pronsk" order="3">b_pronsk</GameId>
+      <GameId game="CK2HIP" parent="d_ryazan" order="2">c_pronsk</GameId>
+      <GameId game="CK3" parent="" order="">d_pronsk</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -81085,6 +81455,15 @@
     <Id>eretnid</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="">d_eretnid</GameId>
+    </GameIds>
+    <Names>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>latin_empire</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="" order="">e_latin_empire</GameId>
+      <GameId game="CK3" parent="" order="">e_latin_empire</GameId>
     </GameIds>
     <Names>
     </Names>
