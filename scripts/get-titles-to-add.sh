@@ -10,6 +10,8 @@ for TITLE in $(cat ck2.txt | grep "\{" | awk -F= '{print $1}' | sed 's/ //g'); d
         echo "    <GameIds>" >> titles-to-add.xml
         echo "      <GameId game=\"CK2HIP\" parent=\"\" order=\"\">${TITLE}</GameId>" >> titles-to-add.xml
         echo "    </GameIds>" >> titles-to-add.xml
+        echo "    <Names>" >> titles-to-add.xml
+        echo "    </Names>" >> titles-to-add.xml
         echo "  </LocationEntity>" >> titles-to-add.xml
     fi
 done
