@@ -444,8 +444,8 @@
     <GeoNamesId>683902</GeoNamesId>
     <GameIds>
       <GameId game="CK2HIP" parent="c_ialomita" order="1">b_braila</GameId>
-      <GameId game="CK3" parent="c_braila" order="1">b_braila</GameId> <!-- PROV4990: Brăila -->
-      <GameId game="CK3" parent="d_muntenia" order="5">c_braila</GameId> <!-- PROV4990: Brăila -->
+      <GameId game="CK3" parent="c_braila" order="1" province="5003">b_braila</GameId> <!-- Brăila -->
+      <GameId game="CK3" parent="d_muntenia" order="5">c_braila</GameId> <!-- Brăila -->
     </GameIds>
     <Names>
       <Name language="Bulgarian">Brajlovo</Name>
@@ -972,7 +972,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_turnu" order="4">b_giurgiu</GameId>
       <GameId game="CK3" parent="d_muntenia" order="1">c_giurgiu</GameId> <!-- Giurgiu -->
-      <GameId game="CK3" parent="c_giurgiu" order="1">b_giurgiu</GameId> <!-- PROV4990: Giurgiu -->
+      <GameId game="CK3" parent="c_giurgiu" order="1" province="4990">b_giurgiu</GameId> <!-- Giurgiu -->
     </GameIds>
     <Names>
       <Name language="Arberian">Theodorapolis</Name>
@@ -1757,7 +1757,7 @@
     <GeoNamesId>670609</GeoNamesId>
     <GameIds>
       <GameId game="CK2HIP" parent="c_tirgoviste" order="2">b_pitesti</GameId>
-      <GameId game="CK3" parent="c_campulung" order="4">b_pitesti</GameId> <!-- PROV4993: Pitești -->
+      <GameId game="CK3" parent="c_campulung" order="4" province="4993">b_pitesti</GameId> <!-- Pitești -->
     </GameIds>
     <Names>
       <Name language="Bulgarian">Pitešt</Name>
@@ -2010,7 +2010,7 @@
     <Id>slobozia</Id>
     <GeoNamesId>8581467</GeoNamesId>
     <GameIds>
-      <GameId game="CK3" parent="c_buzau" order="2">b_slobozia</GameId> <!-- PROV5001: Slobozia -->
+      <GameId game="CK3" parent="c_buzau" order="2" province="5001">b_slobozia</GameId> <!-- Slobozia -->
       <GameId game="ImperatorRome">4814</GameId>
     </GameIds>
     <Names>
@@ -2028,8 +2028,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_tirgoviste" order="1">b_targoviste</GameId>
       <GameId game="CK2HIP" parent="d_wallachia" order="1">c_tirgoviste</GameId>
-      <GameId game="CK3" parent="c_campulung" order="2">b_targoviste</GameId> <!-- PROV515: Târgoviște -->
-      <GameId game="CK3" parent="c_bucuresti" order="1">b_bucuresti</GameId> <!-- PROV4995: Tîrgoviște -->
+      <GameId game="CK3" parent="c_campulung" order="2" province="515">b_targoviste</GameId> <!-- Târgoviște -->
+      <GameId game="CK3" parent="c_bucuresti" order="1" province="4995">b_bucuresti</GameId> <!-- Tîrgoviște -->
       <GameId game="CK3" parent="d_muntenia" order="2">c_bucuresti</GameId> <!-- Tîrgoviște -->
     </GameIds>
     <Names>
@@ -26084,7 +26084,7 @@
     <Id>curtea_de_arges</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_tirgoviste" order="4">b_curteadearges</GameId>
-      <GameId game="CK3" parent="c_campulung" order="3">b_arges</GameId> <!-- PROV5009: Argeș -->
+      <GameId game="CK3" parent="c_campulung" order="3" province="5008">b_arges</GameId> <!-- Argeș -->
     </GameIds>
     <Names>
       <Name language="Bulgarian">Ardžeš</Name>
@@ -26105,7 +26105,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_tirgoviste" order="5">b_campulung</GameId>
       <GameId game="CK3" parent="d_transylvanian_alps" order="1">c_campulung</GameId> <!-- Câmpulung -->
-      <GameId game="CK3" parent="c_campulung" order="1">b_campulung</GameId> <!-- PROV5009: Câmpulung -->
+      <GameId game="CK3" parent="c_campulung" order="1" province="5009">b_campulung</GameId> <!-- Câmpulung -->
     </GameIds>
     <Names>
       <Name language="Bosnian">Dlagopolje</Name>
@@ -26132,7 +26132,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_turnu" order="5">b_turnu</GameId>
       <GameId game="CK2HIP" parent="d_wallachia" order="2">c_turnu</GameId>
-      <GameId game="CK3" parent="c_giurgiu" order="2">b_turnu</GameId> <!-- PROV514: Turnu -->
+      <GameId game="CK3" parent="c_giurgiu" order="2" province="514">b_turnu</GameId> <!-- Turnu -->
       <GameId game="ImperatorRome">4227</GameId> <!-- Oescus -->
     </GameIds>
     <Names>
@@ -26219,7 +26219,7 @@
     <Id>rosiorii_de_vede</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_turnu" order="3">b_rosiorriidevede</GameId>
-      <GameId game="CK3" parent="c_giurgiu" order="3">b_rusii_de_vede</GameId> <!-- PROV4988: Rusii de Vede -->
+      <GameId game="CK3" parent="c_giurgiu" order="3" province="4988">b_rusii_de_vede</GameId> <!-- Rusii de Vede -->
     </GameIds>
     <Names>
       <Name language="Bosnian">Rusovid</Name> <!-- Historical? Translated -->
@@ -26234,7 +26234,7 @@
   <LocationEntity>
     <Id>comana</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_giurgiu" order="4">b_comana</GameId> <!-- PROV4991: Comana -->
+      <GameId game="CK3" parent="c_giurgiu" order="4" province="4991">b_comana</GameId> <!-- Comana -->
     </GameIds>
     <Names>
       <Name language="Romanian">Comana</Name>
@@ -26243,7 +26243,7 @@
   <LocationEntity>
     <Id>glavacioc</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_giurgiu" order="5">b_glavacioc</GameId> <!-- PROV4992: Glavacioc -->
+      <GameId game="CK3" parent="c_giurgiu" order="5" province="4992">b_glavacioc</GameId> <!-- Glavacioc -->
     </GameIds>
     <Names>
       <Name language="Romanian">Glavacioc</Name>
@@ -26252,7 +26252,7 @@
   <LocationEntity>
     <Id>costesti</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_giurgiu" order="6">b_costesti</GameId> <!-- PROV4994: Costești -->
+      <GameId game="CK3" parent="c_giurgiu" order="6" province="4994">b_costesti</GameId> <!-- Costești -->
     </GameIds>
     <Names>
       <Name language="Romanian">Costești</Name>
@@ -26295,7 +26295,7 @@
   <LocationEntity>
     <Id>ploiesti</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_buzau" order="3">b_ploiesti</GameId> <!-- PROV5002: Ploiesti -->
+      <GameId game="CK3" parent="c_buzau" order="3" province="5002">b_ploiesti</GameId> <!-- Ploiesti -->
     </GameIds>
     <Names>
       <Name language="Romanian">Ploiești</Name>
@@ -26306,7 +26306,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_buzau" order="2">b_buzau</GameId>
       <GameId game="CK2HIP" parent="d_wallachia" order="4">c_buzau</GameId>
-      <GameId game="CK3" parent="c_buzau" order="1">b_buzau</GameId> <!-- PROV5000: Buzău -->
+      <GameId game="CK3" parent="c_buzau" order="1" province="5000">b_buzau</GameId> <!-- Buzău -->
       <GameId game="CK3" parent="d_muntenia" order="4">c_buzau</GameId> <!-- Buzău -->
     </GameIds>
     <Names>
@@ -26385,7 +26385,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_severin" order="1">b_severin</GameId>
       <GameId game="CK2HIP" parent="d_oltenia" order="1">c_severin</GameId>
-      <GameId game="CK3" parent="c_severin" order="1">b_severin</GameId> <!-- PROV516: Severin -->
+      <GameId game="CK3" parent="c_severin" order="1" province="516">b_severin</GameId> <!-- Severin -->
       <GameId game="CK3" parent="d_oltenia" order="2">c_severin</GameId> <!-- Severin -->
     </GameIds>
     <Names>
@@ -26456,7 +26456,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_targujiu" order="4">b_targujiu</GameId>
       <GameId game="CK2HIP" parent="d_oltenia" order="2">c_targujiu</GameId>
-      <GameId game="CK3" parent="c_targu_jiu" order="1">b_targu_jiu</GameId> <!-- PROV4978: Târgu Jiu -->
+      <GameId game="CK3" parent="c_targu_jiu" order="1" province="4978">b_targu_jiu</GameId> <!-- Târgu Jiu -->
       <GameId game="CK3" parent="d_oltenia" order="1">c_targu_jiu</GameId> <!-- Târgu Jiu -->
     </GameIds>
     <Names>
@@ -26476,7 +26476,7 @@
     <Id>baia_de_arma</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_targujiu" order="1">b_baiadaarma</GameId>
-      <GameId game="CK3" parent="c_targu_jiu" order="1">b_baia_de_arama</GameId> <!-- PROV4979: Târgu Jiu -->
+      <GameId game="CK3" parent="c_targu_jiu" order="1" province="4979">b_baia_de_arama</GameId> <!-- Târgu Jiu -->
     </GameIds>
     <Names>
       <Name language="Bosnian">Mjedobanja</Name> <!-- Historical? Translated -->
@@ -26504,7 +26504,7 @@
   <LocationEntity>
     <Id>ramnicu_sarat</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_braila" order="2">b_ramnicu_sarat</GameId> <!-- PROV5004: Râmnicu Sărat -->
+      <GameId game="CK3" parent="c_braila" order="2" province="5004">b_ramnicu_sarat</GameId> <!-- Râmnicu Sărat -->
     </GameIds>
     <Names>
       <Name language="Romanian">Râmnicu Sărat</Name>
@@ -34497,7 +34497,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_bedford" order="1">b_bedford</GameId>
       <GameId game="CK2HIP" parent="d_bedford" order="2">c_bedford</GameId>
-      <GameId game="CK3" parent="c_bedford" order="1">b_bedford</GameId>
+      <GameId game="CK3" parent="c_bedford" order="1" province="1538">b_bedford</GameId> <!-- Bedford -->
       <GameId game="CK3" parent="d_bedford" order="3">c_bedford</GameId>
     </GameIds>
     <Names>
@@ -34518,9 +34518,11 @@
     <Id>luton</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bedford" order="4">b_luton</GameId>
-      <GameId game="CK3" parent="c_bedford" order="3">b_luton</GameId>
+      <GameId game="CK3" parent="c_bedford" order="3" province="1540">b_luton</GameId> <!-- Luton -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Luton</Name>
+      <Name language="English">Luton</Name>
       <Name language="Lithuanian">Lutonas</Name>
     </Names>
   </LocationEntity>
@@ -34583,12 +34585,14 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_bucks" order="1">b_buckingham</GameId>
       <GameId game="CK2HIP" parent="d_bedford" order="4">c_bucks</GameId>
-      <GameId game="CK3" parent="c_buckinghamshire" order="1">b_buckingham</GameId>
+      <GameId game="CK3" parent="c_buckinghamshire" order="1" province="1551">b_buckingham</GameId> <!-- Buckingham -->
     </GameIds>
     <Names>
       <Name language="Danish_Middle">Buccingaham</Name>
+      <Name language="English_Middle">Buckingham</Name>
       <Name language="English_Old_Norse">Buccingaham</Name>
       <Name language="English_Old">Buccingaham</Name> <!-- Or Buccingahamm -->
+      <Name language="English">Buckingham</Name>
       <Name language="German_Old_Low">Buccingahamm</Name>
       <Name language="Icelandic_Old">Buccingaham</Name>
       <Name language="Irish_Middle_Norse">Buccingaham</Name>
@@ -34602,9 +34606,11 @@
     <Id>aylesbury</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bucks" order="2">b_aylesbury</GameId>
-      <GameId game="CK3" parent="c_buckinghamshire" order="2">b_aylesbury</GameId>
+      <GameId game="CK3" parent="c_buckinghamshire" order="2" province="1552">b_aylesbury</GameId> <!-- Aylesbury -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Aylesbury</Name>
+      <Name language="English">Aylesbury</Name>
       <Name language="Lithuanian">Eilsberis</Name>
       <Name language="Latin">Aelesburia</Name>
     </Names>
@@ -34612,9 +34618,10 @@
   <LocationEntity>
     <Id>newport</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_buckinghamshire" order="3">b_newport</GameId>
+      <GameId game="CK3" parent="c_buckinghamshire" order="3" province="1553">b_newport</GameId> <!-- Newport -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Newport</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -34658,7 +34665,7 @@
     <Id>london</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_middlesex" order="2">b_london</GameId>
-      <GameId game="CK3" parent="c_middlesex" order="1">b_london</GameId>
+      <GameId game="CK3" parent="c_middlesex" order="1" province="1527">b_london</GameId> <!-- London -->
     </GameIds>
     <Names>
       <Name language="Aragonese">Londres</Name>
@@ -34672,6 +34679,7 @@
       <Name language="Czech">Londýn</Name>
       <Name language="Danish_Middle">Lundúnir</Name>
       <Name language="Dutch_Middle">Londen</Name>
+      <Name language="English_Middle">London</Name>
       <Name language="English_Old_Norse">Lundunwic</Name>
       <Name language="English_Old">Lundunwic</Name> <!-- Or Lunden -->
       <Name language="Finnish">Lontoo</Name>
@@ -34724,7 +34732,7 @@
     <Id>colchester</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_essex" order="1">b_colchester</GameId>
-      <GameId game="CK3" parent="c_essex" order="1">b_colchester</GameId>
+      <GameId game="CK3" parent="c_essex" order="1" province="1514">b_colchester</GameId> <!-- Colchester -->
       <GameId game="ImperatorRome">2028</GameId> <!-- Camulodunum -->
     </GameIds>
     <Names>
@@ -34732,6 +34740,7 @@
       <Name language="Cornish_Middle">Caer Colun</Name>
       <Name language="Cumbric">Caer Colun</Name>
       <Name language="Danish_Middle">Colneceastre</Name>
+      <Name language="English_Middle">Colchester</Name>
       <Name language="English_Old_Norse">Colneceaster</Name>
       <Name language="English_Old">Colneceaster</Name> <!-- Or Colenceaster -->
       <Name language="German_Old_Low">Colenceaster</Name>
@@ -34924,7 +34933,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_derby" order="2">b_derby</GameId>
       <GameId game="CK2HIP" parent="d_fivebouroughs" order="3">c_derby</GameId>
-      <GameId game="CK3" parent="c_derby" order="1">b_derby</GameId> <!-- PROV1621: Derby -->
+      <GameId game="CK3" parent="c_derby" order="1" province="1621">b_derby</GameId> <!-- Derby -->
       <GameId game="CK3" parent="d_lancaster" order="4">c_derby</GameId> <!-- Derby -->
       <GameId game="ImperatorRome">2076</GameId> <!-- Derventio -->
     </GameIds>
@@ -34945,7 +34954,7 @@
   <LocationEntity>
     <Id>derby_west</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_lancashire" order="3">b_west_derby</GameId> <!-- PROV1641: West Derby -->
+      <GameId game="CK3" parent="c_lancashire" order="3" province="1641">b_west_derby</GameId> <!-- West Derby -->
     </GameIds>
     <Names>
       <Name language="English_Middle">West Derby</Name>
@@ -34955,7 +34964,7 @@
     <Id>castleton</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_derby" order="1">b_castleton</GameId>
-      <GameId game="CK3" parent="c_derby" order="3">b_castleton</GameId> <!-- PROV1623: Castleton -->
+      <GameId game="CK3" parent="c_derby" order="3" province="1623">b_castleton</GameId> <!-- Castleton -->
     </GameIds>
     <Names>
       <Name language="Danish_Middle">Péacland</Name>
@@ -34975,7 +34984,7 @@
     <Id>chesterfield</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_derby" order="3">b_chesterfield</GameId>
-      <GameId game="CK3" parent="c_derby" order="2">b_chesterfield</GameId> <!-- PROV1622: Chesterfield -->
+      <GameId game="CK3" parent="c_derby" order="2" province="1622">b_chesterfield</GameId> <!-- Chesterfield -->
     </GameIds>
     <Names>
       <Name language="English_Middle">Chesterfield</Name>
@@ -35134,7 +35143,7 @@
     <Id>lancaster</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_lancaster" order="1">b_lancaster</GameId>
-      <GameId game="CK3" parent="c_lancashire" order="1">b_lancaster</GameId> <!-- PROV1639: Lancaster -->
+      <GameId game="CK3" parent="c_lancashire" order="1" province="1639">b_lancaster</GameId> <!-- Lancaster -->
       <GameId game="ImperatorRome">2070</GameId> <!-- Mamucium -->
     </GameIds>
     <FallbackLocations>
@@ -35165,7 +35174,7 @@
     <Id>salford</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_lancaster" order="4">b_salford</GameId>
-      <GameId game="CK3" parent="c_lancashire" order="2">b_salford</GameId> <!-- PROV1640: Salford -->
+      <GameId game="CK3" parent="c_lancashire" order="2" province="1640">b_salford</GameId> <!-- Salford -->
     </GameIds>
     <Names>
       <Name language="English_Middle">Salford</Name>
@@ -35200,7 +35209,7 @@
     <Id>chester</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_chester" order="1">b_chester</GameId>
-      <GameId game="CK3" parent="c_cheshire" order="1">b_chester</GameId> <!-- PROV1643: Chester -->
+      <GameId game="CK3" parent="c_cheshire" order="1" province="1643">b_chester</GameId> <!-- Chester -->
       <GameId game="ImperatorRome">2047</GameId> <!-- Deva -->
     </GameIds>
     <Names>
@@ -35228,7 +35237,7 @@
   <LocationEntity>
     <Id>northwich</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_cheshire" order="2">b_northwich</GameId> <!-- PROV1644: Northwich -->
+      <GameId game="CK3" parent="c_cheshire" order="2" province="1644">b_northwich</GameId> <!-- Northwich -->
     </GameIds>
     <Names>
       <Name language="English_Middle">Northwich</Name>
@@ -35238,7 +35247,7 @@
     <Id>macclesfield</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_chester" order="3">b_macclesfield</GameId>
-      <GameId game="CK3" parent="c_cheshire" order="3">b_macclesfield</GameId> <!-- PROV1645: Macclesfield -->
+      <GameId game="CK3" parent="c_cheshire" order="3" province="1645">b_macclesfield</GameId> <!-- Macclesfield -->
     </GameIds>
     <Names>
       <Name language="Danish_Middle">Maclesfeld</Name>
@@ -35282,7 +35291,7 @@
     <Id>kendal</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_westmorland" order="2">b_kendal</GameId>
-      <GameId game="CK3" parent="c_westmorland" order="1">b_kendal</GameId> <!-- PROV1637: Kendal -->
+      <GameId game="CK3" parent="c_westmorland" order="1" province="1637">b_kendal</GameId> <!-- Kendal -->
     </GameIds>
     <Names>
       <Name language="Danish_Middle">Kirkjubýr</Name>
@@ -35300,7 +35309,7 @@
   <LocationEntity>
     <Id>appleby</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_westmorland" order="2">b_appleby</GameId> <!-- PROV1638: Appleby -->
+      <GameId game="CK3" parent="c_westmorland" order="2" province="1638">b_appleby</GameId> <!-- Appleby -->
     </GameIds>
     <Names>
       <Name language="English_Middle">Appleby</Name>
@@ -35380,7 +35389,7 @@
     <Id>bamburgh</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_northumberland" order="1">b_bamburgh</GameId>
-      <GameId game="CK3" parent="c_northumberland" order="1">b_bamburgh</GameId>
+      <GameId game="CK3" parent="c_northumberland" order="1" province="1609">b_bamburgh</GameId> <!-- Bamburgh -->
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Din Gaurie</Name>
@@ -35406,9 +35415,10 @@
     <Id>hexham</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_northumberland" order="2">b_hexham</GameId>
-      <GameId game="CK3" parent="c_northumberland" order="4">b_hexham</GameId>
+      <GameId game="CK3" parent="c_northumberland" order="4" province="1611">b_hexham</GameId> <!-- Hexham -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Hexham</Name>
       <Name language="Latin">Hagastaldunum</Name>
     </Names>
   </LocationEntity>
@@ -35416,7 +35426,7 @@
     <Id>lindisfarne</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_northumberland" order="3">b_lindisfarne</GameId>
-      <GameId game="CK3" parent="c_northumberland" order="3">b_lindisfarne</GameId> <!-- PROV1610: Lindisfarne -->
+      <GameId game="CK3" parent="c_northumberland" order="3" province="1610">b_lindisfarne</GameId> <!-- Lindisfarne -->
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Medcaut</Name>
@@ -35453,7 +35463,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_durham" order="1">b_durham</GameId>
       <GameId game="CK2HIP" parent="d_northumberland" order="2">c_durham</GameId>
-      <GameId game="CK3" parent="c_durham" order="1">b_durham</GameId> <!-- PROV1606: Durham -->
+      <GameId game="CK3" parent="c_durham" order="1" province="1606">b_durham</GameId> <!-- Durham -->
       <GameId game="CK3" parent="d_northumberland" order="2">c_durham</GameId>
       <GameId game="ImperatorRome">2085</GameId> <!-- Vinovia -->
     </GameIds>
@@ -35477,7 +35487,7 @@
     <Id>hartlepool</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_durham" order="2">b_hartlepool</GameId>
-      <GameId game="CK3" parent="c_durham" order="2">b_hartlepool</GameId> <!-- PROV1607: Hartlepool -->
+      <GameId game="CK3" parent="c_durham" order="2" province="1607">b_hartlepool</GameId> <!-- Hartlepool -->
     </GameIds>
     <Names>
       <Name language="Danish_Middle">Herterpol</Name>
@@ -35505,7 +35515,7 @@
     <Id>darlington</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_durham" order="7">b_darlington</GameId>
-      <GameId game="CK3" parent="c_durham" order="3">b_darlington</GameId> <!-- PROV1608: Darlington -->
+      <GameId game="CK3" parent="c_durham" order="3" province="1608">b_darlington</GameId> <!-- Darlington -->
     </GameIds>
     <Names>
       <Name language="Danish_Middle">Dearthingtun</Name>
@@ -35555,7 +35565,7 @@
     <Id>carlisle</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_cumberland" order="1">b_carlisle</GameId>
-      <GameId game="CK3" parent="c_cumberland" order="1">b_carlisle</GameId> <!-- PROV1635: Carlisle -->
+      <GameId game="CK3" parent="c_cumberland" order="1" province="1635">b_carlisle</GameId> <!-- Carlisle -->
       <GameId game="ImperatorRome">2083</GameId> <!-- Luguvalium -->
     </GameIds>
     <Names>
@@ -35576,7 +35586,7 @@
   <LocationEntity>
     <Id>whiteheaven</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_cumberland" order="2">b_whitehaven</GameId> <!-- PROV1636: Carlisle -->
+      <GameId game="CK3" parent="c_cumberland" order="2" province="1636">b_whitehaven</GameId> <!-- Carlisle -->
     </GameIds>
     <Names>
     </Names>
@@ -35648,9 +35658,10 @@
     <Id>gorey</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_jersey" order="2">b_gorey</GameId>
-      <GameId game="CK3" parent="c_middlesex" order="4">b_gore</GameId>
+      <GameId game="CK3" parent="c_middlesex" order="4" province="1529">b_gore</GameId> <!-- Gore -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Gore</Name>
       <Name language="Irish">Guaire</Name>
       <Name language="Latin">Sarnia</Name>
     </Names>
@@ -35658,9 +35669,10 @@
   <LocationEntity>
     <Id>brentford</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_middlesex" order="5">b_brentford</GameId>
+      <GameId game="CK3" parent="c_middlesex" order="5" province="1530">b_brentford</GameId> <!-- Brentford -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Brentford</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -48236,7 +48248,7 @@
   <LocationEntity>
     <Id>targsor</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_bucuresti" order="2">b_targsor</GameId> <!-- PROV4996: Târgșor -->
+      <GameId game="CK3" parent="c_bucuresti" order="2" province="4996">b_targsor</GameId> <!-- Târgșor -->
     </GameIds>
     <Names>
       <Name language="Romanian">Târgșor</Name>
@@ -52815,7 +52827,7 @@
   <LocationEntity>
     <Id>polovragi</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_polovragi" order="1">b_polovragi</GameId> <!-- PROV5005: Polovragi -->
+      <GameId game="CK3" parent="c_polovragi" order="1" province="5005">b_polovragi</GameId> <!-- Polovragi -->
       <GameId game="CK3" parent="d_transylvanian_alps" order="2">c_polovragi</GameId> <!-- Polovragi -->
     </GameIds>
     <Names>
@@ -52825,7 +52837,7 @@
   <LocationEntity>
     <Id>govora</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_polovragi" order="2">b_govora</GameId> <!-- PROV5006: Govora -->
+      <GameId game="CK3" parent="c_polovragi" order="2" province="5006">b_govora</GameId> <!-- Govora -->
     </GameIds>
     <Names>
       <Name language="Romanian">Govora</Name>
@@ -52844,7 +52856,7 @@
   <LocationEntity>
     <Id>zoresti</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_tabla_butii" order="2">b_zoresti</GameId> <!-- PROV4980: Zorești -->
+      <GameId game="CK3" parent="c_tabla_butii" order="2" province="4980">b_zoresti</GameId> <!-- Zorești -->
     </GameIds>
     <Names>
       <Name language="Romanian">Zorești</Name>
@@ -52853,7 +52865,7 @@
   <LocationEntity>
     <Id>dumbraveni</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_tabla_butii" order="3">b_dumbraveni</GameId> <!-- PROV4977: Dumbrăveni -->
+      <GameId game="CK3" parent="c_tabla_butii" order="3" province="4977">b_dumbraveni</GameId> <!-- Dumbrăveni -->
     </GameIds>
     <Names>
       <Name language="Romanian">Dumbrăveni</Name>
@@ -52862,7 +52874,7 @@
   <LocationEntity>
     <Id>filiasi</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_polovragi" order="3">b_filiasi</GameId> <!-- PROV5007: Filiași -->
+      <GameId game="CK3" parent="c_polovragi" order="3" province="5007">b_filiasi</GameId> <!-- Filiași -->
     </GameIds>
     <Names>
       <Name language="Romanian">Filiași</Name>
@@ -57334,10 +57346,11 @@
     <Id>southwark</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_surrey" order="1">b_southwark</GameId>
-      <GameId game="CK3" parent="c_middlesex" order="2">b_southwark</GameId>
+      <GameId game="CK3" parent="c_middlesex" order="2" province="1526">b_southwark</GameId> <!-- Southwark -->
     </GameIds>
     <Names>
       <Name language="Danish_Middle">Suthriganaweorc</Name>
+      <Name language="English_Middle">Southwark</Name>
       <Name language="English_Old_Norse">Suthriganaweorc</Name>
       <Name language="English_Old">Suthweorc</Name> <!-- Or Suthriganaweorc -->
       <Name language="German_Old_Low">Suthweorc</Name>
@@ -57352,9 +57365,10 @@
   <LocationEntity>
     <Id>woxbrigge</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_middlesex" order="3">b_woxbrigge</GameId>
+      <GameId game="CK3" parent="c_middlesex" order="3" province="1528">b_woxbrigge</GameId> <!-- Woxbrigge -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Woxbrigge</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -57555,9 +57569,10 @@
     <Id>ampthill</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bedford" order="2">b_ampthill</GameId>
-      <GameId game="CK3" parent="c_bedford" order="2">b_ampthill</GameId>
+      <GameId game="CK3" parent="c_bedford" order="2" province="1539">b_ampthill</GameId> <!-- Ampthill -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Ampthill</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -57588,9 +57603,10 @@
     <Id>wycombe</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bucks" order="4">b_wycombe</GameId>
-      <GameId game="CK3" parent="c_buckinghamshire" order="4">b_wycombe</GameId>
+      <GameId game="CK3" parent="c_buckinghamshire" order="4" province="1554">b_wycombe</GameId> <!-- Wycombe -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Wycombe</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -57695,18 +57711,20 @@
     <Id>maldon</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_essex" order="3">b_maldon</GameId>
-      <GameId game="CK3" parent="c_essex" order="2">b_maldon</GameId>
+      <GameId game="CK3" parent="c_essex" order="2" province="1515">b_maldon</GameId> <!-- Maldon -->
     </GameIds>
+      <Name language="English_Middle">Maldon</Name>
     <Names>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>dunmow</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_essex" order="4">b_dunmow</GameId>
+      <GameId game="CK3" parent="c_essex" order="4" province="1517">b_dunmow</GameId> <!-- Dunmow -->
     </GameIds>
     <Names>
       <Name language="Danish_Middle">Dunemowe</Name>
+      <Name language="English_Middle">Dunmow</Name>
       <Name language="English_Old_Norse">Dunemowe</Name>
       <Name language="English_Old">Dunemowe</Name>
       <Name language="Icelandic_Old">Dunemowe</Name>
@@ -57719,9 +57737,10 @@
   <LocationEntity>
     <Id>chelmsford</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_essex" order="3">b_chelmsford</GameId>
+      <GameId game="CK3" parent="c_essex" order="3" province="1516">b_chelmsford</GameId> <!-- Chelmsford -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Chelmsford</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -57736,9 +57755,10 @@
     <Id>berkhamsted</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_hertford" order="2">b_berkhamsted</GameId>
-      <GameId game="CK3" parent="c_hertfordshire" order="1">b_berkhamsted</GameId>
+      <GameId game="CK3" parent="c_hertfordshire" order="1" province="1531">b_berkhamsted</GameId> <!-- Berkhamsted -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Berkhamsted</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -57753,9 +57773,11 @@
     <Id>st_albans</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_hertford" order="4">b_st_albans</GameId>
-      <GameId game="CK3" parent="c_hertfordshire" order="2">b_saint_albans</GameId>
+      <GameId game="CK3" parent="c_hertfordshire" order="2" province="1532">b_saint_albans</GameId> <!-- Saint Albans -->
     </GameIds>
     <Names>
+      <Name language="English_Middle">Saint Albans</Name>
+      <Name language="English">Saint Albans</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -58066,7 +58088,7 @@
     <Id>furness</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_lancaster" order="2">b_furness</GameId>
-      <GameId game="CK3" parent="c_cumberland" order="3">b_furness</GameId> <!-- PROV1642: Furness -->
+      <GameId game="CK3" parent="c_cumberland" order="3" province="1642">b_furness</GameId> <!-- Furness -->
     </GameIds>
     <Names>
       <Name language="Danish_Middle">Fuþþernessa</Name>
@@ -61350,7 +61372,7 @@
   <LocationEntity>
     <Id>calarasi</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_calarasi" order="1">b_calarasi</GameId> <!-- PROV4997: Călărași -->
+      <GameId game="CK3" parent="c_calarasi" order="1" province="4997">b_calarasi</GameId> <!-- Călărași -->
       <GameId game="CK3" parent="d_muntenia" order="3">c_calarasi</GameId> <!-- Călărași -->
     </GameIds>
     <Names>
@@ -61360,7 +61382,7 @@
   <LocationEntity>
     <Id>radovanu</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_calarasi" order="2">b_radovanu</GameId> <!-- PROV4998: Radovanu -->
+      <GameId game="CK3" parent="c_calarasi" order="2" province="4998">b_radovanu</GameId> <!-- Radovanu -->
     </GameIds>
     <Names>
       <Name language="Romanian">Radovanu</Name>
@@ -61369,7 +61391,7 @@
   <LocationEntity>
     <Id>fetesti</Id>
     <GameIds>
-      <GameId game="CK3" parent="c_calarasi" order="3">b_fetesti</GameId> <!-- PROV4998: Fetești -->
+      <GameId game="CK3" parent="c_calarasi" order="3" province="4999">b_fetesti</GameId> <!-- Fetești -->
     </GameIds>
     <Names>
       <Name language="Romanian">Fetești</Name>
