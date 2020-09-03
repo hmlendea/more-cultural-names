@@ -18,3 +18,4 @@ function build {
 build
 
 cp -rf extras/ck2hip/* out/CK2HIP/
+cp -rf extras/ck3/* out/CK3/
