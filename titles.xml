@@ -31843,6 +31843,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_bosnia" order="1">d_bosnia</GameId>
       <GameId game="CK2HIP" parent="e_carpathia" order="4">k_bosnia</GameId>
+      <GameId game="CK3">k_bosnia</GameId>
     </GameIds>
     <Names>
       <Name language="Bulgarian">Bósna</Name>
@@ -36455,26 +36456,119 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>deira</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="k_england" order="10">d_york</GameId>
+      <GameId game="CK3">d_york</GameId>
+    </GameIds>
+    <FallbackLocations>
+      <LocationId>york</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="Breton_Middle">Deifr</Name>
+      <Name language="Cornish_Middle">Deifr</Name>
+      <Name language="Cumbric">Deifr</Name>
+      <Name language="English_Old">Dere</Name> <!-- Or Deira -->
+      <Name language="Irish_Middle">Deifr</Name>
+      <Name language="Pictish">Deifr</Name>
+      <Name language="Scottish_Medieval">Deifr</Name>
+      <Name language="Welsh_Middle">Deifr</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>north_riding</Id>
+    <GameIds>
+      <GameId game="CK3">c_north_riding</GameId>
+    </GameIds>
+    <FallbackLocations>
+      <LocationId>york</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="English">North Riding</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>east_riding</Id>
+    <GameIds>
+      <GameId game="CK3">c_east_riding</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">East Riding</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>west_riding</Id>
+    <GameIds>
+      <GameId game="CK3">c_west_riding</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Breton_Middle">Elmet</Name>
+      <Name language="Cornish_Middle">Elmet</Name>
+      <Name language="Cumbric">Elmet</Name>
+      <Name language="English">West Riding</Name>
+      <Name language="Pictish">Elmet</Name>
+      <Name language="Welsh_Middle">Elmet</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>york</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_york" order="1">b_york</GameId>
       <GameId game="CK2HIP" parent="d_york" order="1">c_york</GameId>
-      <GameId game="CK2HIP" parent="k_england" order="10">d_york</GameId>
+      <GameId game="CK3">b_york</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Efrog</Name> <!-- Or Ebrauc -->
+      <Name language="Cornish_Middle">Efrog</Name> <!-- Or Ebrauc -->
+      <Name language="Cumbric">Efrog</Name>
+      <Name language="Danish_Middle">Jórvík</Name>
+      <Name language="English_Middle">York</Name>
+      <Name language="English_Old_Norse">Eoforic</Name>
+      <Name language="English_Old">Eoforwic</Name>
+      <Name language="Greek_Medieval">Eborakon</Name>
+      <Name language="Icelandic_Old">Jorvík</Name>
+      <Name language="Norman">Éverwyck</Name>
+      <Name language="Irish_Middle_Norse">Jorvík</Name>
+      <Name language="Irish_Middle">Ebrauc</Name>
       <Name language="Latgalian">Jorka</Name>
       <Name language="Latin">Eboracum</Name>
       <Name language="Lithuanian">Jorkas</Name>
+      <Name language="Norman">Éverwyck</Name>
+      <Name language="Norse">Jórvík</Name>
+      <Name language="Norwegian_Old">Jórvík</Name>
+      <Name language="Pictish">Efrog</Name>
+      <Name language="Scottish_Medieval">Ebrauc</Name>
+      <Name language="Swedish_Old">Jórvík</Name>
+      <Name language="Welsh_Middle">Efrog</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>pockington</Id>
+    <GameIds>
+      <GameId game="CK3">b_pockington</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English_Middle">Pockington</Name>
+      <Name language="English_Old">Poclintun</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>doncaster</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_york" order="3">b_doncaster</GameId>
+      <GameId game="CK3">b_doncaster</GameId>
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Donkasteris</Name>
+      <Name language="Danish_Middle">Donceaster</Name>
+      <Name language="English_Old_Norse">Donceaster</Name>
+      <Name language="English_Old">Donceaster</Name>
+      <Name language="Icelandic_Old">Donceaster</Name>
+      <Name language="Irish_Middle_Norse">Donceaster</Name>
       <Name language="Latin">Denocestria</Name>
+      <Name language="Lithuanian">Donkasteris</Name>
+      <Name language="Norse">Donceaster</Name>
+      <Name language="Norwegian_Old">Donceaster</Name>
+      <Name language="Swedish_Old">Donceaster</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -36492,9 +36586,38 @@
     <Id>whitby</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_york_moors" order="5">b_whitby</GameId>
+      <GameId game="CK3">b_whitby</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Hwitebi</Name>
+      <Name language="English_Middle">Whitby</Name>
+      <Name language="English_Old_Norse">Hwitebi</Name>
+      <Name language="English_Old">Streoneshalh</Name>
+      <Name language="Icelandic_Old">Hwitebi</Name>
+      <Name language="Irish_Middle_Norse">Hwitebi</Name>
       <Name language="Lithuanian">Vitbis</Name>
+      <Name language="Norman">Prestebi</Name>
+      <Name language="Norse">Hwitebi</Name>
+      <Name language="Norwegian_Old">Hwitebi</Name>
+      <Name language="Swedish_Old">Hwitebi</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>yarlestre</Id>
+    <GameIds>
+      <GameId game="CK3">b_yarlestre</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English_Middle">Yarlestre</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>richmond</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_richmond" order="2">b_richmond</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English_Middle">Richmond</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -59574,8 +59697,18 @@
     <Id>scarborough</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_york_moors" order="1">b_scarborough</GameId>
+      <GameId game="CK3">b_scarborough</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Skardaburgh</Name>
+      <Name language="English_Middle">Scarborough</Name>
+      <Name language="English_Old_Norse">Skarthaburh</Name>
+      <Name language="English_Old">Sceardesburh</Name>
+      <Name language="Icelandic_Old">Skarðaborg</Name>
+      <Name language="Irish_Middle_Norse">Skarðaborg</Name>
+      <Name language="Norse">Skarðaborg</Name>
+      <Name language="Norwegian_Old">Skarðaborg</Name>
+      <Name language="Swedish_Old">Skarðaborg</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -59622,8 +59755,99 @@
     <Id>cottingham</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_york_wolds" order="1">b_cottingham</GameId>
+      <GameId game="CK3">b_cottingham</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Cotingeham</Name>
+      <Name language="English_Old_Norse">Cotingeham</Name>
+      <Name language="English_Old">Cotingesham</Name>
+      <Name language="Icelandic_Old">Cotingeham</Name>
+      <Name language="Irish_Middle_Norse">Cotingeham</Name>
+      <Name language="Norman">Cotingeham</Name>
+      <Name language="Norse">Cotingeham</Name>
+      <Name language="Norwegian_Old">Cotingeham</Name>
+      <Name language="Swedish_Old">Cotingeham</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>leeds</Id>
+    <GameIds>
+      <GameId game="CK3">b_leeds</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Breton_Middle">Ladenses</Name>
+      <Name language="Cornish_Middle">Ladenses</Name>
+      <Name language="Cumbric">Ladenses</Name>
+      <Name language="Danish_Middle">Loidis</Name>
+      <Name language="English_Middle">Leeds</Name>
+      <Name language="English_Old_Norse">Loidis</Name>
+      <Name language="English_Old">Leodis</Name> <!-- Or Loidis -->
+      <Name language="Icelandic_Old">Loidis</Name>
+      <Name language="Irish_Middle_Norse">Loidis</Name>
+      <Name language="Norwegian_Old">Loidis</Name>
+      <Name language="Pictish">Ladenses</Name>
+      <Name language="Swedish_Old">Loidis</Name>
+      <Name language="Welsh_Middle">Ladenses</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>halifax</Id>
+    <GameIds>
+      <GameId game="CK3">b_halifax</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Danish_Middle">Halyfax</Name>
+      <Name language="English_Middle">Halifax</Name>
+      <Name language="English_Old_Norse">Halyfax</Name>
+      <Name language="English_Old">Halyfax</Name>
+      <Name language="Icelandic_Old">Halyfax</Name>
+      <Name language="Irish_Middle_Norse">Halyfax</Name>
+      <Name language="Norman">Halyfax</Name>
+      <Name language="Norwegian_Old">Halyfax</Name>
+      <Name language="Swedish_Old">Halyfax</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>sheffield</Id>
+    <GameIds>
+      <GameId game="CK3">b_sheffield</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English_Middle">Sheffield</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bolton</Id>
+    <GameIds>
+      <GameId game="CK3">b_bolton</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Danish_Middle">Botheltun</Name>
+      <Name language="English_Middle">Bolton</Name>
+      <Name language="English_Old_Norse">Botheltun</Name>
+      <Name language="English_Old">Bothltun</Name>
+      <Name language="Icelandic_Old">Botheltun</Name>
+      <Name language="Irish_Middle_Norse">Botheltun</Name>
+      <Name language="Norman">Botheltun</Name>
+      <Name language="Norwegian_Old">Botheltun</Name>
+      <Name language="Swedish_Old">Botheltun</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>ripon</Id>
+    <GameIds>
+      <GameId game="CK3">b_ripon</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Danish_Middle">Inhrypum</Name>
+      <Name language="English_Middle">Ripon</Name>
+      <Name language="English_Old_Norse">Inhrypum</Name>
+      <Name language="English_Old">Inhrypum</Name>
+      <Name language="Icelandic_Old">Inhrypum</Name>
+      <Name language="Irish_Middle_Norse">Inhrypum</Name>
+      <Name language="Norman">Inhrypum</Name>
+      <Name language="Norwegian_Old">Inhrypum</Name>
+      <Name language="Swedish_Old">Inhrypum</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -59638,8 +59862,19 @@
     <Id>bridlington</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_york_wolds" order="3">b_bridlington</GameId>
+      <GameId game="CK3">b_bridlington</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Bretlintun</Name>
+      <Name language="English_Middle">Birdlington</Name>
+      <Name language="English_Old_Norse">Berhtelingtun</Name>
+      <Name language="English_Old">Berhtelingtun</Name>
+      <Name language="Icelandic_Old">Bretlintun</Name>
+      <Name language="Irish_Middle_Norse">Bretlintun</Name>
+      <Name language="Norman">Bretlinton</Name>
+      <Name language="Norse">Bretlintun</Name>
+      <Name language="Norwegian_Old">Bretlintun</Name>
+      <Name language="Swedish_Old">Bretlintun</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
