@@ -11284,6 +11284,8 @@
   <LocationEntity>
     <Id>switzerland</Id>
     <GameIds>
+      <GameId game="CK2HIP" parent="c_schwyz" order="2">b_schwyz</GameId>
+      <GameId game="CK2HIP" parent="d_ratien" order="2">c_schwyz</GameId>
       <GameId game="CK2HIP" parent="" order="">d_swiss</GameId>
       <GameId game="CK3" parent="" order="">d_swiss</GameId>
       <GameId game="CK3" parent="" order="">k_switzerland</GameId>
@@ -11294,20 +11296,7 @@
       <Name language="Latin_Medieval">Suittes</Name>
       <Name language="Latin">Suitius</Name>
       <Name language="Lombard">Svit</Name>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>schwyz</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="c_schwyz" order="2">b_schwyz</GameId>
-      <GameId game="CK2HIP" parent="d_ratien" order="2">c_schwyz</GameId>
-    </GameIds>
-    <Names>
-      <Name language="French_Old">Schwytz</Name>
-      <Name language="Italian">Svitto</Name>
-      <Name language="Latin_Medieval">Suittes</Name>
-      <Name language="Latin">Suitius</Name>
-      <Name language="Lombard">Svit</Name>
+      <Name language="Romanian">Elveția</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -27462,6 +27451,7 @@
       <Name language="German_Middle_Low">Ungarn</Name>
       <Name language="German_Old_Low">Hongaarnlaand</Name>
       <Name language="Greek_Medieval">Oungarías</Name>
+      <Name language="Hungarian_Medieval">Magyarország</Name>
       <Name language="Hungarian_Old">Moger Uruzag</Name>
       <Name language="Hungarian">Magyarország</Name>
       <Name language="Latin">Hungaria</Name>
@@ -27786,18 +27776,84 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>gemer</Id>
+    <Id>gemer_county</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_gyor" order="1">c_gemer</GameId>
+      <GameId game="CK3" parent="d_nyitra" order="2">c_gemer</GameId>
+    </GameIds>
+    <FallbackLocations>
+      <LocationId>gemer</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="Czech_Medieval">Ráb</Name>
+      <Name language="German_Middle_High">Raab</Name>
+      <Name language="Greek_Medieval">Arrabona</Name>
+      <Name language="Croatian_Medieval">Jura</Name>
+      <Name language="Hungarian_Old">Geur</Name>
+      <Name language="Slovene_Medieval">Vjura</Name>
+      <Name language="Latin_Medieval">Arrabona</Name>
+      <Name language="Slovak_Medieval">Ráb</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>gemer</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_saris" order="3">b_gomor</GameId>
+      <GameId game="CK3" parent="c_gemer" order="1" province="524">b_gomor</GameId>
     </GameIds>
     <Names>
+      <Name language="Bosnian">Gemer</Name>
       <Name language="Bulgarian">Džeor</Name>
+      <Name language="Bulgarian">Gemer</Name>
+      <Name language="Croatian">Gemer</Name>
+      <Name language="Czech_Medieval">Gemer</Name>
+      <Name language="German_Middle_High">Gömör</Name>
+      <Name language="Hungarian_Medieval">Gömör</Name>
+      <Name language="Hungarian_Old">Gomor</Name>
+      <Name language="Hungarian">Gemer</Name>
+      <Name language="Latin">Gömörinum</Name>
       <Name language="Lithuanian">Deras</Name>
       <Name language="Polish">Jawaryn</Name>
       <Name language="Russian">Dyor</Name>
       <Name language="Serbian">Djur</Name>
+      <Name language="Serbian">Gemer</Name>
+      <Name language="Slovak_Medieval">Gemer</Name>
+      <Name language="Slovene">Gemer</Name>
       <Name language="Turkish">Yanikkale</Name>
       <Name language="Vepsian">Djor</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>murany</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_gemer" order="2" province="3858">b_murany</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Muráň</Name>
+      <Name language="Hungarian_Medieval">Murany</Name>
+      <Name language="Slovak_Medieval">Muráň</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>rimaszombat</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_gemer" order="3" province="3859">b_rimaszombat</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Slovak_Medieval">Rimavská Sobota</Name>
+      <Name language="Hungarian_Medieval">Rimaszombat</Name>
+      <Name language="Czech_Medieval">Rimavská Sobota</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>szendro</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_gemer" order="4" province="3979">b_szendro</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Slovak_Medieval">Sendrov</Name>
+      <Name language="Hungarian_Medieval">Szendrő</Name>
+      <Name language="Czech_Medieval">Sendrov</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -28215,6 +28271,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_trencin" order="4">b_trencsen</GameId>
       <GameId game="CK2HIP" parent="d_nyitra" order="2">c_trencin</GameId>
+      <GameId game="CK3" parent="c_trenscen" order="1" province="3811">b_trenscen</GameId>
+      <GameId game="CK3" parent="d_nyitra" order="4">c_trenscen</GameId>
       <GameId game="ImperatorRome">4866</GameId> <!-- Laugaricio -->
     </GameIds>
     <Names>
@@ -28226,6 +28284,7 @@
       <Name language="German_Middle_High">Trentschin</Name>
       <Name language="Gothic_Crimean">Treinchen</Name>
       <Name language="Greek_Medieval">Leukaristos</Name>
+      <Name language="Hungarian_Medieval">Trencsen</Name>
       <Name language="Hungarian_Old">Trencen</Name>
       <Name language="Latin">Laugaricio</Name>
       <Name language="Lombard">Treinchen</Name>
@@ -28288,6 +28347,7 @@
     <Id>zsolna</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_trencin" order="5">b_zsolna</GameId>
+      <GameId game="CK3" parent="c_trenscen" order="3" province="3813">b_zsolna</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Žilina</Name>
@@ -28312,6 +28372,7 @@
     <Id>puho</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_trencin" order="6">b_puho</GameId>
+      <GameId game="CK3" parent="c_trenscen" order="2" province="3811">b_puho</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Puhov</Name>
@@ -28331,14 +28392,15 @@
     <Id>turoc</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_trencin" order="7">b_turoc</GameId>
+      <GameId game="CK3" parent="c_trenscen" order="4" province="3814">b_turoc</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Turc</Name>
       <Name language="Bulgarian">Turc</Name>
       <Name language="Croatian">Turc</Name>
-      <Name language="Czech_Medieval">Turc</Name>
+      <Name language="Czech_Medieval">Turiec</Name> <!-- Or Turc -->
       <Name language="Serbian">Turc</Name>
-      <Name language="Slovak_Medieval">Turc</Name>
+      <Name language="Slovak_Medieval">Turiec</Name> <!-- Or Turc -->
       <Name language="Slovene">Turc</Name>
     </Names>
   </LocationEntity>
@@ -28475,15 +28537,18 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_orava" order="3">b_arva</GameId>
       <GameId game="CK2HIP" parent="d_nyitra" order="4">c_orava</GameId>
+      <GameId game="CK3" parent="c_orava" order="1" province="525">b_arva</GameId>
+      <GameId game="CK3" parent="d_nyitra" order="3">c_orava</GameId>
     </GameIds>
+    <FallbackLocations>
+      <LocationId>arva</LocationId>
+    </FallbackLocations>
     <Names>
       <Name language="Bosnian">Orljava</Name>
       <Name language="Bulgarian">Orlava</Name>
       <Name language="Croatian">Orljava</Name>
       <Name language="Czech_Medieval">Orava</Name>
-      <Name language="German_Middle_High">Arwa</Name>
-      <Name language="Hungarian_Old">Arva</Name>
-      <Name language="Irish">Ármhach</Name>
+      <Name language="Hungarian_Medieval">Orava</Name>
       <Name language="Polish_Old">Orawa</Name>
       <Name language="Serbian">Orljava</Name>
       <Name language="Slovak_Medieval">Orava</Name>
@@ -28491,9 +28556,25 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>arva</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_orava" order="3">b_arva</GameId>
+      <GameId game="CK2HIP" parent="d_nyitra" order="4">c_orava</GameId>
+      <GameId game="CK3" parent="c_orava" order="1" province="525">b_arva</GameId>
+      <GameId game="CK3" parent="d_nyitra" order="3">c_orava</GameId>
+    </GameIds>
+    <Names>
+      <Name language="German_Middle_High">Arwa</Name>
+      <Name language="Hungarian_Medieval">Arva</Name>
+      <Name language="Hungarian_Old">Arva</Name>
+      <Name language="Irish">Ármhach</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>turdossin</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_orava" order="1">b_turdossin</GameId>
+      <GameId game="CK3" parent="c_orava" order="2" province="3810">b_twardosczino</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Tvrdošin</Name>
@@ -28501,6 +28582,8 @@
       <Name language="Croatian">Tvrdošin</Name>
       <Name language="Czech_Medieval">Tvrdošín</Name>
       <Name language="German_Middle_High">Turdoschin</Name>
+      <Name language="Hungarian_Medieval">Turdossin</Name>
+      <Name language="Hungarian_Old">Turdossin</Name>
       <Name language="Latgalian">Tvrdošina</Name>
       <Name language="Polish_Old">Twardoszyn</Name>
       <Name language="Serbian">Tvrdošin</Name>
@@ -28797,13 +28880,17 @@
       <GameId game="CK2HIP" parent="c_hont" order="5">b_balassagyarmat</GameId>
     </GameIds>
     <Names>
-      <Name language="Czech">Darmoty</Name>
       <Name language="Bosnian">Djarmoti</Name>
       <Name language="Bulgarian">Džarmoti</Name>
-      <Name language="Slovene">Džarmoti</Name>
       <Name language="Croatian">Djarmoti</Name>
-      <Name language="Slovak">Darmoty</Name>
+      <Name language="Czech_Medieval">Balážske Darmoty</Name>
+      <Name language="Czech">Darmoty</Name>
+      <Name language="German_Middle_High">Jahrmarkt</Name>
+      <Name language="Hungarian_Old">Balassa Garamat</Name>
       <Name language="Serbian">Djarmoti</Name>
+      <Name language="Slovak_Medieval">Balážske Darmoty</Name>
+      <Name language="Slovak">Darmoty</Name>
+      <Name language="Slovene">Džarmoti</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -29292,20 +29379,6 @@
       <Name language="Croatian">Voden</Name>
       <Name language="Slovak">Vodná</Name>
       <Name language="Serbian">Voden</Name>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>gomor</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="c_saris" order="3">b_gomor</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Bosnian">Gemer</Name>
-      <Name language="Bulgarian">Gemer</Name>
-      <Name language="Slovene">Gemer</Name>
-      <Name language="Croatian">Gemer</Name>
-      <Name language="Latin">Gömörinum</Name>
-      <Name language="Serbian">Gemer</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -51356,7 +51429,6 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_tzamandos" order="4">b_armaxa</GameId>
       <GameId game="ImperatorRome">1899</GameId> <!-- Armaxa -->
-
     </GameIds>
     <Names>
       <Name language="Armenian_Middle">Garmrag</Name>
