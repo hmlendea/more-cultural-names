@@ -12875,6 +12875,7 @@
     <Id>byzantium</Id>
     <GameIds>
       <GameId game="CK2HIP" order="1434">e_byzantium</GameId>
+      <GameId game="CK3" order="">e_byzantium</GameId>
     </GameIds>
     <Names>
       <Name language="Arberian">Perandoria Romake</Name>
@@ -17512,16 +17513,19 @@
     <Id>bulgaria</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_byzantium" order="10">k_bulgaria</GameId>
+      <GameId game="CK3" parent="e_byzantium" order="20">k_bulgaria</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Bulgarien</Name>
       <Name language="Armenian">Bulgaria</Name>
-      <Name language="Yiddish">Bulgarye</Name>
+      <Name language="Bulgarian_Old">Balgariya</Name>
       <Name language="Bulgarian">Balgarija</Name>
       <Name language="Catalan">Bolgària</Name>
       <Name language="Croatian">Bugarska</Name>
       <Name language="Czech">Bulharsko</Name>
       <Name language="Danish">Bulgarien</Name>
+      <Name language="Dutch_Middle">Bulgarije</Name>
+      <Name language="Estonian">Bulgaaria</Name>
       <Name language="French_Old">Bulgarie</Name>
       <Name language="Frisian_Old">Bulgarije</Name>
       <Name language="Georgian">Bulgareti</Name>
@@ -17530,58 +17534,99 @@
       <Name language="Hungarian">Bulgária</Name>
       <Name language="Irish">Bulgáir</Name>
       <Name language="Kurdish">Bulgaristan</Name>
+      <Name language="Ladino">Bulgariya</Name>
       <Name language="Latgalian">Bulgarija</Name>
       <Name language="Latin">Moesia Inferior</Name>
       <Name language="Lithuanian">Bulgarija</Name>
-      <Name language="Dutch_Middle">Bulgarije</Name>
       <Name language="Mongol_Proto">Bolgar</Name>
       <Name language="Norse">Bulgaraland</Name>
       <Name language="Occitan">Bolgària</Name>
       <Name language="Pictish">Bulgàiria</Name>
       <Name language="Polish">Bulgaria</Name>
-      <Name language="Sorbian">Bùlgarskô</Name>
       <Name language="Portuguese">Bulgária</Name>
       <Name language="Prussian_Old">Bulgarija</Name>
       <Name language="Romanian">Bulgaria</Name>
       <Name language="Russian">Bolgarija</Name>
       <Name language="Scottish_Medieval">Bulgàiria</Name>
-      <Name language="Ladino">Bulgariya</Name>
       <Name language="Serbian">Bugarska</Name>
       <Name language="Slovene">Bolgarija</Name>
+      <Name language="Sorbian">Bùlgarskô</Name>
       <Name language="Swedish">Bulgarien</Name>
       <Name language="Turkish">Bulgaristan</Name>
-      <Name language="Estonian">Bulgaaria</Name>
       <Name language="Welsh">Bwlgaria</Name>
+      <Name language="Yiddish">Bulgarye</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>turnovo</Id>
+    <Id>tarnovo_duchy</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_bulgaria" order="1">d_turnovo</GameId>
+      <GameId game="CK3" parent="k_bulgaria" order="2">d_turnovo</GameId>
     </GameIds>
+    <FallbackLocations>
+      <LocationId>tarnovo_county</LocationId>
+    </FallbackLocations>
     <Names>
       <Name language="Bosnian">Trnovo</Name>
-      <Name language="Slovene">Trnovo</Name>
+      <Name language="Bulgarian">Tarnovo</Name>
       <Name language="Croatian">Trnovo</Name>
       <Name language="German">Tarnowo</Name>
+      <Name language="Gothic_Crimean">Paristrion</Name>
+      <Name language="Greek_Medieval">Paristrion</Name>
+      <Name language="Latin_Medieval">Paristrion</Name>
       <Name language="Polish">Tyrnowo</Name>
       <Name language="Romanian">Tărnovo</Name>
       <Name language="Serbian">Trnovo</Name>
+      <Name language="Slovene">Trnovo</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>tyrnovo</Id>
+    <Id>tarnovo_county</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_turnovo" order="1">c_tyrnovo</GameId>
+      <GameId game="CK3" parent="d_turnovo" order="1">c_turnovo</GameId>
     </GameIds>
+    <FallbackLocations>
+      <LocationId>tarnovo_duchy</LocationId>
+    </FallbackLocations>
     <Names>
       <Name language="Bosnian">Trnovo</Name>
-      <Name language="Slovene">Trnovo</Name>
+      <Name language="Bulgarian">Tarnovo</Name>
       <Name language="Croatian">Trnovo</Name>
       <Name language="German">Tarnowo</Name>
+      <Name language="Gothic_Crimean">Moesia Secunda</Name>
+      <Name language="Greek_Medieval">Moisía</Name>
+      <Name language="Latin_Medieval">Moesia Secunda</Name>
       <Name language="Polish">Tyrnowo</Name>
       <Name language="Romanian">Tărnovo</Name>
       <Name language="Serbian">Trnovo</Name>
+      <Name language="Slovene">Trnovo</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>tarnovgrad</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_tyrnovo" order="6">b_tarnovo</GameId>
+      <GameId game="CK3" parent="c_turnovo" order="1" province="499">b_turnovo</GameId>
+      <GameId game="ImperatorRome">4259</GameId> <!-- Zikideva -->
+    </GameIds>
+    <Names>
+      <Name language="Bosnian">Trnovgrad</Name>
+      <Name language="Bulgarian">Tarnovgrad</Name>
+      <Name language="Croatian">Trnovgrad</Name>
+      <Name language="German">Tarnowo</Name>
+      <Name language="Gothic_Crimean">Zikídeva</Name>
+      <Name language="Greek_Medieval">Zikídeva</Name>
+      <Name language="Latin_Medieval">Zikideva</Name>
+      <Name language="Oghuz">Tirnova</Name>
+      <Name language="Pecheneg">Tirnova</Name>
+      <Name language="Polish">Tyrnowo</Name>
+      <Name language="Romanian">Tărnovo</Name>
+      <Name language="Serbian">Trnovgrad</Name>
+      <Name language="Slovene">Trnovgrad</Name>
+      <Name language="Thracian">Zikideva</Name>
+      <Name language="Turkish_Old">Tirnova</Name>
+      <Name language="Turkmen_Medieval">Tirnova</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -17651,41 +17696,46 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>tarnovo</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="c_tyrnovo" order="6">b_tarnovo</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Bosnian">Trnovgrad</Name>
-      <Name language="Slovene">Trnovgrad</Name>
-      <Name language="Croatian">Trnovgrad</Name>
-      <Name language="German">Tarnowo</Name>
-      <Name language="Polish">Tyrnowo</Name>
-      <Name language="Romanian">Tărnovo</Name>
-      <Name language="Serbian">Trnovgrad</Name>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>serdica</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_serdica" order="4">b_serdica</GameId>
       <GameId game="CK2HIP" parent="d_turnovo" order="2">c_serdica</GameId>
+      <GameId game="CK3" parent="c_sredets" order="1" province="500">b_sredets</GameId>
+      <GameId game="CK3" parent="d_turnovo" order="2">c_sredets</GameId>
+      <GameId game="ImperatorRome">477</GameId> <!-- Serdica -->
     </GameIds>
     <Names>
       <Name language="Aragonese">Sofiya</Name>
       <Name language="Bulgarian">Sredec</Name>
       <Name language="Croatian">Serdica</Name>
+      <Name language="Gothic_Crimean">Triaditsa</Name>
+      <Name language="Greek_Ancient">Serdike</Name>
+      <Name language="Greek_Medieval">Triaditsa</Name>
       <Name language="Hungarian">Szófia</Name>
       <Name language="Irish">Sóifia</Name>
       <Name language="Latgalian">Sofija</Name>
+      <Name language="Latin_Ancient">Serdica</Name>
+      <Name language="Latin_Medieval">Serdica</Name>
       <Name language="Lithuanian">Sofija</Name>
       <Name language="Nahuatl">Sofiya</Name>
+      <Name language="Oghuz">Sofya</Name>
+      <Name language="Pecheneg">Sofya</Name>
       <Name language="Polish">Sofia</Name>
       <Name language="Romanian">Sredeț</Name>
       <Name language="Russian">Sofia</Name>
       <Name language="Serbian">Serdica</Name>
+      <Name language="Turkish_Old">Sofya</Name>
+      <Name language="Turkmen_Medieval">Sofya</Name>
       <Name language="Vepsian">Sofii</Name>
       <Name language="Wolof">Sofiya</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>meldi</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_sredets" order="2" province="3671">b_meldi</GameId>
+    </GameIds>
+    <Names>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -17762,14 +17812,39 @@
     <Id>cherven_bulgaria</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_dorostotum" order="2">b_cherven_bulgaria</GameId>
+      <GameId game="CK3" parent="c_turnovo" order="2" province="3682">b_cherven</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Crven</Name>
       <Name language="Bulgarian">Cerven</Name>
-      <Name language="Slovene">Crven</Name>
       <Name language="Croatian">Crven</Name>
+      <Name language="Gothic_Crimean">Kókkinos</Name>
+      <Name language="Greek_Medieval">Kókkinos</Name>
+      <Name language="Oghuz">Cernovi</Name>
+      <Name language="Pecheneg">Cernovi</Name>
       <Name language="Romanian">Cerven</Name>
       <Name language="Serbian">Crven</Name>
+      <Name language="Slovene">Crven</Name>
+      <Name language="Turkish_Old">Cernovi</Name>
+      <Name language="Turkmen_Medieval">Cernovi</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>elena</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_turnovo" order="3" province="3683">b_elena</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bulgarian">Elena</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>gabrovo</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_turnovo" order="4" province="3684">b_gabrovo</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bulgarian">Gabrovo</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -18351,6 +18426,9 @@
       <GameId game="CK2HIP" parent="c_vidin" order="4">b_vidin</GameId>
       <GameId game="CK2HIP" parent="d_vidin" order="1">c_vidin</GameId>
       <GameId game="CK2HIP" parent="k_bulgaria" order="4">d_vidin</GameId>
+      <GameId game="CK3" parent="c_vidin" order="1" province="506">b_vidin</GameId>
+      <GameId game="CK3" parent="d_vidin" order="1">c_vidin</GameId>
+      <GameId game="CK3" parent="k_bulgaria" order="1">d_vidin</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Budin</Name>
@@ -18370,9 +18448,37 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>kladovo</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_vidin" order="2" province="3667">b_kladovo</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bulgarian_Old">Kladovo</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>zajecar</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_vidin" order="3" province="3668">b_zajecar</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bulgarian_Old">Zajecar</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>petrus</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_vidin" order="4" province="3669">b_petrus</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bulgarian_Old">Petrus</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>belogradchik</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_vidin" order="1">b_belogradchik</GameId>
+      <GameId game="CK3" parent="c_vidin" order="5" province="3670">b_petrus</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Belogradcik</Name>
@@ -18404,6 +18510,7 @@
     <Id>kucevo</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_branicevo" order="1">b_kucevo</GameId>
+      <GameId game="CK3" parent="c_branicevo" order="2" province="3665">b_kucevo</GameId>
     </GameIds>
     <Names>
       <Name language="Hungarian_Medieval">Kucsó</Name>
@@ -18414,6 +18521,15 @@
       <Name language="Szekely_Medieval">Kucsó</Name>
       <Name language="Turkish_Old">Kuçeva</Name>
       <Name language="Turkmen_Medieval">Kuçeva</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>ravno</Id>
+    <GameIds>
+      <GameId game="CK3" parent="c_branicevo" order="3" province="3666">b_ravno</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bulgarian">Ravno</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -18442,14 +18558,20 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_branicevo" order="5">b_branicevo</GameId>
       <GameId game="CK2HIP" parent="d_vidin" order="2">c_branicevo</GameId>
+      <GameId game="CK3" parent="c_branicevo" order="1" province="3664">b_branicevo</GameId>
+      <GameId game="CK3" parent="d_vidin" order="2">c_branicevo</GameId>
+      <GameId game="ImperatorRome">4200</GameId> <!-- Viminacium Moesia -->
     </GameIds>
     <Names>
+      <Name language="Bulgarian">Branicevo</Name>
       <Name language="Gothic_Crimean">Viminacion</Name>
       <Name language="Greek_Medieval">Viminakion</Name>
       <Name language="Hungarian_Medieval">Barancs</Name>
+      <Name language="Latin_Ancient">Viminacium</Name>
       <Name language="Latin_Medieval">Viminacium</Name>
       <Name language="Polish">Braniczewo</Name>
       <Name language="Romanian">Braniceva</Name>
+      <Name language="Serbian">Braničevo</Name>
       <Name language="Szekely_Medieval">Barancs</Name>
     </Names>
   </LocationEntity>
@@ -18704,9 +18826,13 @@
     <Id>pernik</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_velbazhd" order="2">b_pernik</GameId>
+      <GameId game="CK3" parent="c_sredets" order="3" province="3672">b_pernik</GameId>
     </GameIds>
     <Names>
       <Name language="Dacian">Adeva</Name>
+      <Name language="Gothic_Crimean">Adeva</Name>
+      <Name language="Greek_Medieval">Adeva</Name>
+      <Name language="Latin_Medieval">Adeva</Name>
       <Name language="Lithuanian">Pernikas</Name>
       <Name language="Romanian">Adeva</Name> <!-- Historical?. This is a dacian name, and is also the same in latin. Romanian is a daco-latin language, so it should be the same, right? -->
     </Names>
@@ -28372,7 +28498,7 @@
     <Id>puho</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_trencin" order="6">b_puho</GameId>
-      <GameId game="CK3" parent="c_trenscen" order="2" province="3811">b_puho</GameId>
+      <GameId game="CK3" parent="c_trenscen" order="2" province="3812">b_puho</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Puhov</Name>
@@ -28535,9 +28661,7 @@
   <LocationEntity>
     <Id>orava</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="c_orava" order="3">b_arva</GameId>
       <GameId game="CK2HIP" parent="d_nyitra" order="4">c_orava</GameId>
-      <GameId game="CK3" parent="c_orava" order="1" province="525">b_arva</GameId>
       <GameId game="CK3" parent="d_nyitra" order="3">c_orava</GameId>
     </GameIds>
     <FallbackLocations>
@@ -28559,9 +28683,7 @@
     <Id>arva</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_orava" order="3">b_arva</GameId>
-      <GameId game="CK2HIP" parent="d_nyitra" order="4">c_orava</GameId>
       <GameId game="CK3" parent="c_orava" order="1" province="525">b_arva</GameId>
-      <GameId game="CK3" parent="d_nyitra" order="3">c_orava</GameId>
     </GameIds>
     <Names>
       <Name language="German_Middle_High">Arwa</Name>
@@ -52607,8 +52729,16 @@
     <Id>ihtiman</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_kopsis" order="1">b_ihtiman</GameId>
+      <GameId game="CK3" parent="c_sredets" order="4" province="3673">b_ihtiman</GameId>
     </GameIds>
     <Names>
+      <Name language="Gothic_Crimean">Stipon</Name>
+      <Name language="Greek_Medieval">Stipon</Name>
+      <Name language="Oghuz">Ihtiman</Name>
+      <Name language="Pecheneg">Ihtiman</Name>
+      <Name language="Latin_Medieval">Stipon</Name>
+      <Name language="Turkish_Old">Ihtiman</Name>
+      <Name language="Turkmen_Medieval">Ihtiman</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -52655,6 +52785,7 @@
     <Id>rila</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_strumica" order="4">b_rila</GameId>
+      <GameId game="CK3" parent="c_sredets" order="5" province="3674">b_rila</GameId>
     </GameIds>
     <Names>
     </Names>
