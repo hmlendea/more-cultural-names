@@ -170,6 +170,7 @@
     <FallbackLanguages>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -588,8 +589,20 @@
     <Code iso-639-1="cs" iso-639-3="ces" />
     <FallbackLanguages>
       <LanguageId>Slovak</LanguageId>
+      <LanguageId>Czech_Before1953</LanguageId>
+      <LanguageId>Slovak_Before1953</LanguageId>
       <LanguageId>Czech_Medieval</LanguageId>
       <LanguageId>Slovak_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Czech_Before1953</Id>
+    <FallbackLanguages>
+      <LanguageId>Slovak_Before1953</LanguageId>
+      <LanguageId>Czech_Medieval</LanguageId>
+      <LanguageId>Slovak_Medieval</LanguageId>
+      <LanguageId>Czech</LanguageId>
+      <LanguageId>Slovak</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -600,6 +613,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Slovak_Medieval</LanguageId>
+      <LanguageId>Czech_Before1953</LanguageId>
+      <LanguageId>Slovak_Before1953</LanguageId>
       <LanguageId>Czech</LanguageId>
       <LanguageId>Slovak</LanguageId>
     </FallbackLanguages>
@@ -1866,6 +1881,7 @@
     <Code iso-639-1="pl" iso-639-3="pol" />
     <FallbackLanguages>
       <LanguageId>Polish_Before1974</LanguageId>
+      <LanguageId>Polish_Before1953</LanguageId>
       <LanguageId>Polish_Middle</LanguageId>
       <LanguageId>Polish_Old</LanguageId>
     </FallbackLanguages>
@@ -1873,15 +1889,26 @@
   <Language>
     <Id>Polish_Before1974</Id>
     <FallbackLanguages>
-      <LanguageId>Polish</LanguageId>
+      <LanguageId>Polish_Before1953</LanguageId>
       <LanguageId>Polish_Middle</LanguageId>
       <LanguageId>Polish_Old</LanguageId>
+      <LanguageId>Polish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Polish_Before1953</Id>
+    <FallbackLanguages>
+      <LanguageId>Polish_Middle</LanguageId>
+      <LanguageId>Polish_Old</LanguageId>
+      <LanguageId>Polish_Before1974</LanguageId>
+      <LanguageId>Polish</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Polish_Middle</Id> <!-- c. 16th century – c. 18th century -->
     <FallbackLanguages>
       <LanguageId>Polish_Old</LanguageId>
+      <LanguageId>Polish_Before1953</LanguageId>
       <LanguageId>Polish_Before1974</LanguageId>
       <LanguageId>Polish</LanguageId>
     </FallbackLanguages>
@@ -1941,6 +1968,7 @@
     <Code iso-639-1="ro" iso-639-3="rum" />
     <FallbackLanguages>
       <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Aromanian</LanguageId>
     </FallbackLanguages>
@@ -1948,6 +1976,16 @@
   <Language>
     <Id>Romanian_Before1974</Id>
     <FallbackLanguages>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_Before1964</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Before1974</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Aromanian</LanguageId>
@@ -1960,6 +1998,7 @@
       <GameId game="CK3">vlach</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Romanian_Before1964</LanguageId>
       <LanguageId>Romanian_Before1974</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
@@ -1972,13 +2011,28 @@
   <Language>
     <Id>Russian</Id>
     <Code iso-639-1="ru" iso-639-3="rus" />
+    <FallbackLanguages>
+      <LanguageId>Ukrainian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Russian_Medieval</Id>
     <GameIds>
       <GameId game="CK2HIP">russian</GameId>
       <GameId game="CK3">russian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+      <LanguageId>Russian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Ruthenian</Id>
   </Language>
   <Language>
     <Id>Salernian</Id>
@@ -2139,8 +2193,20 @@
     <Code iso-639-1="sk" iso-639-3="slk" />
     <FallbackLanguages>
       <LanguageId>Czech</LanguageId>
+      <LanguageId>Slovak_Before1953</LanguageId>
+      <LanguageId>Czech_Before1953</LanguageId>
       <LanguageId>Slovak_Medieval</LanguageId>
       <LanguageId>Czech_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Slovak_Before1953</Id>
+    <FallbackLanguages>
+      <LanguageId>Czech_Before1953</LanguageId>
+      <LanguageId>Slovak_Medieval</LanguageId>
+      <LanguageId>Czech_Medieval</LanguageId>
+      <LanguageId>Slovak</LanguageId>
+      <LanguageId>Czech</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2151,6 +2217,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Czech_Medieval</LanguageId>
+      <LanguageId>Slovak_Before1953</LanguageId>
+      <LanguageId>Czech_Before1953</LanguageId>
       <LanguageId>Slovak</LanguageId>
       <LanguageId>Czech</LanguageId>
     </FallbackLanguages>
@@ -2463,6 +2531,18 @@
     <Id>Ukrainian</Id>
     <Code iso-639-1="uk" iso-639-3="ukr" />
     <FallbackLanguages>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+      <LanguageId>Russian</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Ukrainian_Before2017</Id>
+    <FallbackLanguages>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian</LanguageId>
     </FallbackLanguages>
   </Language>
