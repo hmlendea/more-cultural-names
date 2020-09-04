@@ -28946,7 +28946,7 @@
       <Name language="Bosnian">Trnin</Name>
       <Name language="Bulgarian">Trnin</Name>
       <Name language="Croatian">Trnin</Name>
-      <Name language="Czech_Medieval">Trencín</Name>
+      <Name language="Czech_Medieval">Trenčín</Name>
       <Name language="English_Old">Treinchen</Name>
       <Name language="German_Middle_High">Trentschin</Name>
       <Name language="Gothic_Crimean">Treinchen</Name>
@@ -28957,8 +28957,19 @@
       <Name language="Lombard">Treinchen</Name>
       <Name language="Polish">Trenczyn</Name>
       <Name language="Serbian">Trnin</Name>
-      <Name language="Slovak_Medieval">Trencín</Name>
+      <Name language="Slovak_Medieval">Trenčín</Name>
       <Name language="Slovene">Trnin</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>selmecbanya</Id>
+    <GameIds>
+      <GameId game="CK3">b_selmecbanya</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Štiavnica</Name>
+      <Name language="Hungarian_Medieval">Selmecbánya</Name>
+      <Name language="Slovak_Medieval">Štiavnica</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -29076,6 +29087,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_bars" order="2">b_bars</GameId>
       <GameId game="CK2HIP" parent="d_nyitra" order="1">c_bars</GameId>
+      <GameId game="CK3">b_bars</GameId>
+      <GameId game="CK3">c_bars</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Tjekov</Name>
@@ -29090,9 +29103,23 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>komorcbanya</Id>
+    <GameIds>
+      <GameId game="CK3">b_komorcbanya</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Kremnica</Name>
+      <Name language="German_Middle_High">Kremnitz</Name>
+      <Name language="Hungarian_Medieval">Körmöcbánya</Name>
+      <Name language="Slovak_Medieval">Kremnica</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>zolyom</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bars" order="1">b_zolyom</GameId>
+      <GameId game="CK3">b_zolyom</GameId>
+      <GameId game="CK3">c_zolyom</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Zvoljen</Name>
@@ -29100,12 +29127,24 @@
       <Name language="Croatian">Zvoljen</Name>
       <Name language="Czech_Medieval">Zvolen</Name>
       <Name language="German_Middle_High">Altsohl</Name>
+      <Name language="Hungarian_Medieval">Zólyom</Name>
       <Name language="Hungarian_Old">Zolom</Name>
       <Name language="Latin">Veterosolium</Name>
       <Name language="Polish">Zwolen</Name>
       <Name language="Serbian">Zvoljen</Name>
       <Name language="Slovak_Medieval">Zvolen</Name>
       <Name language="Slovene">Zvoljen</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>breznobanya</Id>
+    <GameIds>
+      <GameId game="CK3">b_breznobanya</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Brezno</Name>
+      <Name language="Hungarian_Medieval">Breznóbánya</Name>
+      <Name language="Slovak_Medieval">Brezno</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -29289,6 +29328,47 @@
       <Name language="Serbian">Cadca</Name>
       <Name language="Slovak_Medieval">Cadca</Name>
       <Name language="Slovene">Cadca</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>lipto</Id>
+    <GameIds>
+      <GameId game="CK3">c_lipto</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bosnian">Liptov</Name>
+      <Name language="Bulgarian">Liptov</Name>
+      <Name language="Croatian">Liptov</Name>
+      <Name language="Czech_Medieval">Liptov</Name>
+      <Name language="German">Liptau</Name>
+      <Name language="Hungarian_Old">Lipto</Name>
+      <Name language="Latin">Liptovium</Name>
+      <Name language="Lithuanian">Liptovas</Name>
+      <Name language="Polish">Liptow</Name> <!-- Historical? Based on liptoszentmiklos -->
+      <Name language="Romanian">Liptov</Name> <!-- Historical? Based on liptoszentmiklos -->
+      <Name language="Serbian">Liptov</Name>
+      <Name language="Slovak_Medieval">Liptov</Name>
+      <Name language="Slovene">Liptov</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>liptoujvar</Id>
+    <GameIds>
+      <GameId game="CK3">b_liptoujvar</GameId>
+    </GameIds>
+    <Names>
+      <Name language="German">Neuhäusel in der Liptau</Name>
+      <Name language="Hungarian">Liptóújvár</Name>
+      <Name language="Slovak_Medieval">Liptovský Hrádok</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>nemetlipsce</Id>
+    <GameIds>
+      <GameId game="CK3">b_nemetlipsce</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Hungarian_Medieval">Nemetlipsce</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -29477,9 +29557,30 @@
     <Id>hont</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_nyitra" order="6">c_hont</GameId>
+      <GameId game="CK3">c_hont</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Honthum</Name>
+      <Name language="Hungarian_Medieval">Hont</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>hontvar</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_hont" order="4">b_hontvar</GameId>
+      <GameId game="CK3">b_hont</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bosnian">Hont</Name>
+      <Name language="Bulgarian">Hont</Name>
+      <Name language="Croatian">Hont</Name>
+      <Name language="Czech">Hont</Name>
+      <Name language="Hungarian_Medieval">Hontvár</Name>
+      <Name language="Hungarian_Old">Hontvaru</Name>
+      <Name language="Latin">Honthum</Name>
+      <Name language="Serbian">Hont</Name>
+      <Name language="Slovak">Hont</Name>
+      <Name language="Slovene">Hont</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -29497,13 +29598,19 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>nogradhungary</Id>
+    <Id>nograd</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_hont" order="2">b_nogradhungary</GameId>
+      <GameId game="CK3">b_nograd</GameId>
     </GameIds>
     <Names>
       <Name language="Croatian">Novigrad</Name>
+      <Name language="Czech_Medieval">Novohrad</Name>
+      <Name language="German_Middle_High">Neuburg</Name>
+      <Name language="Hungarian_Medieval">Nógrád</Name>
+      <Name language="Hungarian_Old">Novigrad</Name>
       <Name language="Russian">Novgorod-Ugorsky</Name>
+      <Name language="Slovak_Medieval">Novohrad</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -29522,38 +29629,44 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>hontvar</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="c_hont" order="4">b_hontvar</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Czech">Hont</Name>
-      <Name language="Bosnian">Hont</Name>
-      <Name language="Bulgarian">Hont</Name>
-      <Name language="Slovene">Hont</Name>
-      <Name language="Croatian">Hont</Name>
-      <Name language="Slovak">Hont</Name>
-      <Name language="Latin">Honthum</Name>
-      <Name language="Serbian">Hont</Name>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>balassagyarmat</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_hont" order="5">b_balassagyarmat</GameId>
+      <GameId game="CK3">b_balassagyarmat</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Djarmoti</Name>
       <Name language="Bulgarian">Džarmoti</Name>
       <Name language="Croatian">Djarmoti</Name>
-      <Name language="Czech_Medieval">Balážske Darmoty</Name>
+      <Name language="Czech_Medieval">Balážske Darmoty</Name> <!-- Or Balážske -->
       <Name language="Czech">Darmoty</Name>
       <Name language="German_Middle_High">Jahrmarkt</Name>
+      <Name language="Hungarian_Medieval">Balassagyarmat</Name>
       <Name language="Hungarian_Old">Balassa Garamat</Name>
       <Name language="Serbian">Djarmoti</Name>
-      <Name language="Slovak_Medieval">Balážske Darmoty</Name>
+      <Name language="Slovak_Medieval">Balážske Darmoty</Name> <!-- Or Balážske -->
       <Name language="Slovak">Darmoty</Name>
       <Name language="Slovene">Džarmoti</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>koporna</Id>
+    <GameIds>
+      <GameId game="CK3">b_koporna</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Hungarian_Medieval">Koporna</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>losonc</Id>
+    <GameIds>
+      <GameId game="CK3">b_losonc</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Lučenec</Name>
+      <Name language="Hungarian_Medieval">Losonc</Name>
+      <Name language="Slovak_Medieval">Lučenec</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
