@@ -19,4 +19,4 @@ build
 
 cp -rf extras/ck2hip/* out/CK2HIP/
 cp -rf extras/ck3/* out/CK3/
-cp -rf extras/ir/* out/ir/
+cp -rf extras/ir/* out/ImperatorRome/
