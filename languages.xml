@@ -1160,40 +1160,56 @@
     </GameIds>
   </Language>
   <Language>
-    <Id>Hejazi_Old</Id> <!-- c. 1th century AD – c. 7th century AD -->
+    <Id>Hejazi_Old</Id> <!-- c. 1st century AD – c. 7th century AD -->
   </Language>
   <Language>
-    <Id>Hungarian</Id>
+    <Id>Hungarian</Id> <!-- c. 18th century AD – present -->
     <Code iso-639-1="hu" iso-639-3="hun" />
     <FallbackLanguages>
       <LanguageId>Szekely</LanguageId>
-      <LanguageId>Hungarian_Medieval</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Hungarian_Medieval</Id>
+    <Id>Hungarian_Middle</Id> <!-- c. 16th century AD – c. 18th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
+      <LanguageId>Hungarian</LanguageId>
+      <LanguageId>Szekely</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hungarian_Old</Id> <!-- c. 10th century AD – c. 15th century AD -->
     <Code iso-639-3="ohu" />
     <GameIds>
       <GameId game="CK2HIP">hungarian</GameId>
       <GameId game="CK3">hungarian</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Szekely_Medieval</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Hungarian</LanguageId>
-      <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Szekely</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Hungarian_Old</Id>
+    <Id>Hungarian_Old_Early</Id>
     <GameIds>
       <GameId game="CK2HIP">old_hungarian</GameId>
       <GameId game="CK3">mogyer</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Hungarian_Medieval</LanguageId>
-      <LanguageId>Szekely_Medieval</LanguageId>
+      <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Hungarian</LanguageId>
+      <LanguageId>Szekely</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2446,19 +2462,21 @@
     <Id>Szekely</Id>
     <FallbackLanguages>
       <LanguageId>Hungarian</LanguageId>
-      <LanguageId>Szekely_Medieval</LanguageId>
-      <LanguageId>Hungarian_Medieval</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
       <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Szekely_Medieval</Id>
+    <Id>Szekely_Old</Id>
     <GameIds>
       <GameId game="CK2HIP">szekely</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Hungarian_Medieval</LanguageId>
       <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Szekely</LanguageId>
       <LanguageId>Hungarian</LanguageId>
     </FallbackLanguages>
