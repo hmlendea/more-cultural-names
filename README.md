@@ -26,13 +26,15 @@ Just subscribe to the mod page for the game for which you wish to install this m
 
 ## Manual installation
 
-You can download the latest release from the [url=https://github.com/hmlendea/more-cultural-names/releases]releases page[/url] on GitHub, and extract the contents into the appropriate mod directory for your game.
+You can download the latest release from the [releases page](https://github.com/hmlendea/more-cultural-names/releases), and extract the contents into the appropriate mod directory for your game.
 
 # Compatibility
 
-The mods are OS-agnostic, which means that they will work on all of the operating systems supported by the game.
+The mods are **OS-agnostic**, which means that they will work on all of the operating systems supported by the game.
 
-The mod is also actively tested (and developed) on Linux, where it will work with the native versions of the games, or through Steam Play if needed.
+It is also actively tested (and developed) on **Linux**, where it is guaranteed to work with either the native version of the game or through Steam Play.
+
+It is also **save-game compatible**, and can be added and removed at will without breaking anything.
 
 ## Crusader Kings 2
 
