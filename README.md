@@ -2,14 +2,15 @@
 
 This is a mod for various strategy games, that adds new province names based on their culture/faction.
 
-The names are meant to provide an immersive and accurate experience for the game's time period
+The names are meant to provide an immersive and accurate experience for the game's setting and time period.
 
 Supported games:
- - `Crusader Kings 2` with the (**required**) `Historical Immersion Project`
+ - `Crusader Kings 2` with `Historical Immersion Project`
+ - `Crusader Kings 2` with `Elder Kings`
  - `Crusader Kings 3`
  - `Imperator: Rome`
 
-The common database currently has over **26 thousand** names for over **300** languages and time periods.
+The common database currently has over [b]26 thousand[/b] names for over [b]300[/b] languages, settings and time periods.
 
 # Installation
 
@@ -18,7 +19,8 @@ The common database currently has over **26 thousand** names for over **300** la
 ## Steam Workshop
 
 Just subscribe to the mod page for the game for which you wish to install this mod:
- - [Crusader Kings 2](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
+ - [Crusader Kings 2 (HIP)](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
+ - [Crusader Kings 2 (EK)](https://steamcommunity.com/sharedfiles/filedetails/?id=1745899430)
  - [Crusader Kings 3](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)
  - [Imperator: Rome](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)
 
