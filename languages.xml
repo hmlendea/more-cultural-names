@@ -169,8 +169,12 @@
     <Code iso-639-2="rup" iso-639-3="rup" />
     <FallbackLanguages>
       <LanguageId>Romanian</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian_Before1974</LanguageId>
       <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_BeforeWW2</LanguageId>
+      <LanguageId>Romanian_BeforeWW1</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1156,40 +1160,56 @@
     </GameIds>
   </Language>
   <Language>
-    <Id>Hejazi_Old</Id> <!-- c. 1th century AD – c. 7th century AD -->
+    <Id>Hejazi_Old</Id> <!-- c. 1st century AD – c. 7th century AD -->
   </Language>
   <Language>
-    <Id>Hungarian</Id>
+    <Id>Hungarian</Id> <!-- c. 18th century AD – present -->
     <Code iso-639-1="hu" iso-639-3="hun" />
     <FallbackLanguages>
       <LanguageId>Szekely</LanguageId>
-      <LanguageId>Hungarian_Medieval</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Hungarian_Medieval</Id>
+    <Id>Hungarian_Middle</Id> <!-- c. 16th century AD – c. 18th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
+      <LanguageId>Hungarian</LanguageId>
+      <LanguageId>Szekely</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hungarian_Old</Id> <!-- c. 10th century AD – c. 15th century AD -->
     <Code iso-639-3="ohu" />
     <GameIds>
       <GameId game="CK2HIP">hungarian</GameId>
       <GameId game="CK3">hungarian</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Szekely_Medieval</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Hungarian</LanguageId>
-      <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Szekely</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Hungarian_Old</Id>
+    <Id>Hungarian_Old_Early</Id>
     <GameIds>
       <GameId game="CK2HIP">old_hungarian</GameId>
       <GameId game="CK3">mogyer</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Hungarian_Medieval</LanguageId>
-      <LanguageId>Szekely_Medieval</LanguageId>
+      <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Hungarian</LanguageId>
+      <LanguageId>Szekely</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1967,8 +1987,25 @@
     <Id>Romanian</Id>
     <Code iso-639-1="ro" iso-639-3="rum" />
     <FallbackLanguages>
+      <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian_Before1974</LanguageId>
       <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_BeforeWW2</LanguageId>
+      <LanguageId>Romanian_BeforeWW1</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_Before1993</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_BeforeWW2</LanguageId>
+      <LanguageId>Romanian_BeforeWW1</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Aromanian</LanguageId>
     </FallbackLanguages>
@@ -1977,6 +2014,10 @@
     <Id>Romanian_Before1974</Id>
     <FallbackLanguages>
       <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_BeforeWW2</LanguageId>
+      <LanguageId>Romanian_BeforeWW1</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Aromanian</LanguageId>
@@ -1985,9 +2026,52 @@
   <Language>
     <Id>Romanian_Before1964</Id>
     <FallbackLanguages>
-      <LanguageId>Romanian_Before1974</LanguageId>
-      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Romanian_BeforeWW2</LanguageId>
+      <LanguageId>Romanian_BeforeWW1</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_BeforeWW2</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_BeforeWW1</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_BeforeWW1</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_BeforeWW2</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_Before19Century</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_BeforeWW1</LanguageId>
+      <LanguageId>Romanian_BeforeWW2</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1998,8 +2082,12 @@
       <GameId game="CK3">vlach</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_BeforeWW1</LanguageId>
+      <LanguageId>Romanian_BeforeWW2</LanguageId>
       <LanguageId>Romanian_Before1964</LanguageId>
       <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
     </FallbackLanguages>
@@ -2374,19 +2462,21 @@
     <Id>Szekely</Id>
     <FallbackLanguages>
       <LanguageId>Hungarian</LanguageId>
-      <LanguageId>Szekely_Medieval</LanguageId>
-      <LanguageId>Hungarian_Medieval</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
       <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Szekely_Medieval</Id>
+    <Id>Szekely_Old</Id>
     <GameIds>
       <GameId game="CK2HIP">szekely</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Hungarian_Medieval</LanguageId>
       <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Szekely</LanguageId>
       <LanguageId>Hungarian</LanguageId>
     </FallbackLanguages>

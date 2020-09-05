@@ -2,14 +2,15 @@
 
 This is a mod for various strategy games, that adds new province names based on their culture/faction.
 
-The names are meant to provide an immersive and accurate experience for the game's time period
+The names are meant to provide an immersive and accurate experience for the game's setting and time period.
 
 Supported games:
- - `Crusader Kings 2` with the (**required**) `Historical Immersion Project`
+ - `Crusader Kings 2` with `Historical Immersion Project`
+ - `Crusader Kings 2` with `Elder Kings`
  - `Crusader Kings 3`
  - `Imperator: Rome`
 
-The common database currently has over **26 thousand** names for over **300** languages and time periods.
+The common database currently has over [b]27 thousand[/b] names for over [b]300[/b] languages, settings and time periods.
 
 # Installation
 
@@ -18,19 +19,22 @@ The common database currently has over **26 thousand** names for over **300** la
 ## Steam Workshop
 
 Just subscribe to the mod page for the game for which you wish to install this mod:
- - [Crusader Kings 2](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
+ - [Crusader Kings 2 (HIP)](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
+ - [Crusader Kings 2 (EK)](https://steamcommunity.com/sharedfiles/filedetails/?id=1745899430)
  - [Crusader Kings 3](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)
  - [Imperator: Rome](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)
 
 ## Manual installation
 
-You can download the latest release from the [url=https://github.com/hmlendea/more-cultural-names/releases]releases page[/url] on GitHub, and extract the contents into the appropriate mod directory for your game.
+You can download the latest release from the [releases page](https://github.com/hmlendea/more-cultural-names/releases), and extract the contents into the appropriate mod directory for your game.
 
 # Compatibility
 
-The mods are OS-agnostic, which means that they will work on all of the operating systems supported by the game.
+The mods are **OS-agnostic**, which means that they will work on all of the operating systems supported by the game.
 
-The mod is also actively tested (and developed) on Linux, where it will work with the native versions of the games, or through Steam Play if needed.
+It is also actively tested (and developed) on **Linux**, where it is guaranteed to work with either the native version of the game or through Steam Play.
+
+It is also **save-game compatible**, and can be added and removed at will without breaking anything.
 
 ## Crusader Kings 2
 
