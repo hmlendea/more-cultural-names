@@ -385,6 +385,17 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>baita</Id>
+    <GameIds>
+      <GameId game="CK3">b_laposbanya</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Hungarian">Láposbánya</Name>
+      <Name language="Romanian_Old">Lapuș</Name> <!-- 1334 -->
+      <Name language="Romanian">Băița</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>bergula</Id>
     <GeoNamesId>741855</GeoNamesId>
     <GameIds>
@@ -774,6 +785,17 @@
       <Name language="German_Middle_Low">Dagesburg</Name>
       <Name language="Italian">Dabo</Name>
       <Name language="Latin">Dagisburgum</Name> <!-- Dabonensis ? -->
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>diosig</Id>
+    <GeoNamesId>679340</GeoNamesId>
+    <GameIds>
+      <GameId game="CK3">b_gyozeg</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Hungarian">Diószeg</Name> <!-- Or Bihardiószeg, Érdiószeg -->
+      <Name language="Romanian">Diosig</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -1741,6 +1763,7 @@
     <GeoNamesId>671768</GeoNamesId>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bihar" order="3">b_varad</GameId>
+      <GameId game="CK3">b_nagyvarad</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Wardein</Name>
@@ -1760,18 +1783,19 @@
       <Name language="Hungarian_Old">Várad</Name>
       <Name language="Hungarian">Nagyvárad</Name>
       <Name language="Italian">Gran Varadino</Name>
-      <Name language="Latin">Varadinum</Name>
+      <Name language="Latin_Medieval">Varadinum</Name>
       <Name language="Latvian_Medieval">Varadija</Name>
       <Name language="Latvian">Oradja</Name>
       <Name language="Lithuanian">Oradia</Name>
       <Name language="Lojban">Oradeas</Name>
       <Name language="Oghuz">Varat</Name>
       <Name language="Pecheneg">Varat</Name>
-      <Name language="Romanian_Old">Oradia</Name>
+      <Name language="Romanian_Old">Varadia</Name>
       <Name language="Romanian">Oradea</Name>
       <Name language="Serbian">Veliki Varadin</Name>
       <Name language="SerboCroatian">Veliki Varadin</Name>
-      <Name language="Slovak">Varadín</Name>
+      <Name language="Slovak_Medieval">Varadín</Name>
+      <Name language="Slovak">Veľký Varadín</Name>
       <Name language="Spanish">Varadino</Name>
       <Name language="Tatar">Oradä</Name>
       <Name language="Thuringian">Wardein</Name>
@@ -27672,6 +27696,21 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>bistrita</Id>
+    <GameIds>
+      <GameId game="CK3">b_beszterce</GameId>
+      <GameId game="CK3">c_beszterce</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Bystřice</Name> <!-- Or Bystrica -->
+      <Name language="German_Middle_High">Nösen</Name>
+      <Name language="German">Bistritz</Name>
+      <Name language="Hungarian">Beszterce</Name>
+      <Name language="Romanian">Bistrița</Name>
+      <Name language="Saxon_Transylvania">Bästerts</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>roman</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bacau" order="3">b_roman</GameId>
@@ -31745,15 +31784,20 @@
     <Id>bihor</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_hungary" order="10">d_pest</GameId>
+      <GameId game="CK3">c_bihar</GameId>
+      <GameId game="CK3">d_bihar</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Biharija</Name>
       <Name language="Bulgarian">Biharija</Name>
-      <Name language="Slovene">Biharija</Name>
       <Name language="Croatian">Biharija</Name>
+      <Name language="Hungarian">Bihar</Name>
+      <Name language="Hungarian">Biharija</Name>
       <Name language="Latin">Porolissensis</Name> <!-- Or Biharia maybe? -->
-      <Name language="Romanian">Biharia</Name>
+      <Name language="Romanian_Old">Biharia</Name>
+      <Name language="Romanian">Bihor</Name>
       <Name language="Serbian">Biharija</Name>
+      <Name language="Slovene">Biharija</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -32147,7 +32191,7 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>vajdahunyad</Id>
+    <Id>hunedoara</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_feher" order="3">b_vajdahunyad</GameId>
     </GameIds>
@@ -32169,6 +32213,39 @@
       <Name language="Serbian">Vojvodovo</Name>
       <Name language="Slovene">Vojvodovo</Name>
       <Name language="Thuringian">Hunedoara</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>hunedoara</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_feher" order="3">b_vajdahunyad</GameId>
+      <GameId game="CK3">b_vajdahunyad</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bosnian">Vojvodovo</Name>
+      <Name language="Bulgarian">Vojvodovo</Name>
+      <Name language="Croatian">Vojvodovo</Name>
+      <Name language="German">Eisenmarkt</Name>
+      <Name language="Hungarian_Medieval">Hunyadvár</Name>
+      <Name language="Hungarian_Old">Hungnod</Name> <!-- Or Huniad -->
+      <Name language="Hungarian">Vajdahunyad</Name>
+      <Name language="Latin">Hunnopolis</Name>
+      <Name language="Romanian_Old">Huniazi</Name>
+      <Name language="Romanian">Hunedoara</Name>
+      <Name language="Serbian">Vojvodovo</Name>
+      <Name language="Slovene">Vojvodovo</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>hateg</Id>
+    <GameIds>
+      <GameId game="CK3">b_harszoc</GameId>
+    </GameIds>
+    <Names>
+      <Name language="German">Hatzeg</Name> <!-- Or Hötzing -->
+      <Name language="Hungarian_Old">Harszoc</Name>
+      <Name language="Hungarian">Hátszeg</Name>
+      <Name language="Romanian">Hațeg</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -32337,9 +32414,10 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>des</Id>
+    <Id>dej</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_marmaros" order="2">b_des</GameId>
+      <GameId game="CK3">b_des</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Desch</Name>
@@ -32353,11 +32431,48 @@
       <Name language="German_Middle_High">Desch</Name>
       <Name language="German_Middle_Low">Desch</Name>
       <Name language="German_Old_Low">Desch</Name>
+      <Name language="German">Desch</Name> <!-- Or Burglos -->
+      <Name language="Hungarian">Dés</Name>
       <Name language="Lithuanian">Dežas</Name>
       <Name language="Romanian_Old">Dej</Name>
+      <Name language="Romanian">Dej</Name>
       <Name language="Serbian">Božigrad</Name> <!-- Historical? Translated -->
       <Name language="Slovene">Božigrad</Name> <!-- Historical? Translated -->
       <Name language="Thuringian">Desch</Name>
+      <Name language="Yiddish">Desh</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>deva</Id>
+    <GameIds>
+      <GameId game="CK3">b_deva</GameId>
+    </GameIds>
+    <Names>
+      <Name language="German">Diemrich</Name> <!-- Or Schlossberg, Denburg -->
+      <Name language="Hungarian">Déva</Name>
+      <Name language="Latin">Sargetia</Name>
+      <Name language="Romanian">Deva</Name>
+      <Name language="Turkish">Deve</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>radna</Id>
+    <GameIds>
+      <GameId game="CK3">b_radna</GameId>
+    </GameIds>
+    <Names>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>sic</Id>
+    <GameIds>
+      <GameId game="CK3">b_szek</GameId>
+    </GameIds>
+    <Names>
+      <Name language="German">Secken</Name>
+      <Name language="Romanian">Sic</Name>
+      <Name language="Hungarian_Medieval">Székakna</Name> <!-- Not sure if it is that old -->
+      <Name language="Hungarian">Szék</Name> <!-- Older: Székakna -->
     </Names>
   </LocationEntity>
   <LocationEntity>
