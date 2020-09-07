@@ -11829,6 +11829,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_bohemia" order="1">d_bohemia</GameId>
       <GameId game="CK2HIP" parent="e_hre" order="12">k_bohemia</GameId>
+      <GameId game="CK3">d_bohemia</GameId>
+      <GameId game="CK3">k_bohemia</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Böhmen</Name>
@@ -11873,6 +11875,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_praha" order="2">b_praha</GameId>
       <GameId game="CK2HIP" parent="d_bohemia" order="1">c_praha</GameId>
+      <GameId game="CK3">b_praha</GameId>
+      <GameId game="CK3">c_praha</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Prag</Name>
@@ -11887,7 +11891,9 @@
       <Name language="Dutch_Middle">Prag</Name>
       <Name language="Franconian_Lorraine">Prag</Name>
       <Name language="Frankish_Low">Prag</Name>
+      <Name language="Frankish">Prag</Name>
       <Name language="French_Old">Prague</Name>
+      <Name language="French">Prague</Name>
       <Name language="Galician">Praga</Name>
       <Name language="German_Middle_High">Prag</Name>
       <Name language="German_Middle_Low">Prag</Name>
@@ -11912,6 +11918,34 @@
       <Name language="Turkish">Prag</Name>
       <Name language="Welsh">Prâg</Name>
       <Name language="Yiddish">Prag</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>vysehrad</Id>
+    <GameIds>
+      <GameId game="CK3">b_vysehrad</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Vyšehrad</Name>
+      <Name language="German">Wyschehrad</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>beroun</Id>
+    <GameIds>
+      <GameId game="CK3">b_beroun</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Beroun</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>melnik_czechia</Id>
+    <GameIds>
+      <GameId game="CK3">b_melnik</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Mělník</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -11959,6 +11993,7 @@
     <Id>slany</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_praha" order="6">b_slany</GameId>
+      <GameId game="CK3">b_slany</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Slani</Name>
@@ -11996,22 +12031,30 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>domazlice</Id>
+    <Id>south_bohemia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_bohemia" order="2">c_domazlice</GameId>
     </GameIds>
     <Names>
-      <Name language="Bosnian">Duljebi</Name>
-      <Name language="Bulgarian">Dulebi</Name>
-      <Name language="Slovene">Duljebi</Name>
-      <Name language="Croatian">Duljebi</Name>
-      <Name language="Serbian">Duljebi</Name>
+      <Name language="Alemannic">Sudböhmen</Name>
+      <Name language="Bavarian_Medieval">Sudböhmen</Name>
+      <Name language="Czech_Medieval">Jižní Czechy</Name>
+      <Name language="Dutch_Middle">Sudböhmen</Name>
+      <Name language="Frankish_Low">Sudböhmen</Name>
+      <Name language="Frankish">Sudböhmen</Name>
+      <Name language="German_Middle_High">Sudböhmen</Name>
+      <Name language="German_Middle_Low">Sudböhmen</Name>
+      <Name language="German_Old_Low">Sudböhmen</Name>
+      <Name language="Slovak_Medieval">Jižní Czechy</Name>
+      <Name language="Thuringian">Sudböhmen</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>doudleby</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_domazlice" order="1">b_doudleby</GameId>
+      <GameId game="CK3">b_doudleby</GameId>
+      <GameId game="CK3">c_doudleby</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Teindles</Name>
@@ -12033,11 +12076,40 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>prachen</Id>
+    <GameIds>
+      <GameId game="CK3">b_prachen</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Prácheň</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>domazlice</Id>
+    <GameIds>
+      <GameId game="CK3">b_domazlice</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Domažlice</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>netolice</Id>
+    <GameIds>
+      <GameId game="CK3">b_netolice</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Netolice</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>pisek</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_domazlice" order="2">b_pisek</GameId>
+      <GameId game="CK3">b_pisek</GameId>
     </GameIds>
     <Names>
+      <Name language="Czech_Medieval">Písek</Name>
       <Name language="Lithuanian">Pysekas</Name>
     </Names>
   </LocationEntity>
@@ -12070,18 +12142,19 @@
     <Id>rosenberg</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_domazlice" order="5">b_rosenberg</GameId>
+      <GameId game="CK3">b_rozmberk</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Ružova Gora</Name>
       <Name language="Bulgarian">Rozova Gora</Name>
       <Name language="Croatian">Ružova Gora</Name>
-      <Name language="Czech_Medieval">Rozmberk</Name>
+      <Name language="Czech_Medieval">Rožmberk</Name>
       <Name language="Czech">Ružová Hora</Name>
       <Name language="Latgalian">Ružomberoka</Name>
       <Name language="Lithuanian">Ružomberokas</Name>
       <Name language="Polish_Old">Rozemberk</Name>
       <Name language="Serbian">Ružova Gora</Name>
-      <Name language="Slovak_Medieval">Rozmberk</Name>
+      <Name language="Slovak_Medieval">Rožmberk</Name>
       <Name language="Slovak">Ružová Hora</Name>
       <Name language="Slovene">Rožova Gora</Name>
     </Names>
@@ -12238,6 +12311,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_praha" order="5">b_boleslav</GameId>
       <GameId game="CK2HIP" parent="d_bohemia" order="4">c_boleslav</GameId>
+      <GameId game="CK3">b_boleslav</GameId>
+      <GameId game="CK3">c_boleslav</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Bunzlau</Name>
@@ -12254,6 +12329,15 @@
       <Name language="Slovak_Medieval">Boleslaw</Name>
       <Name language="Thuringian">Bunzlau</Name>
       <Name language="Yiddish">Bumsla</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bezdez</Id>
+    <GameIds>
+      <GameId game="CK3">b_bezdez</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Bezděz</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12388,6 +12472,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_litomerice" order="1">b_litomerice</GameId>
       <GameId game="CK2HIP" parent="d_bohemia" order="5">c_litomerice</GameId>
+      <GameId game="CK3">b_litomerice</GameId>
+      <GameId game="CK3">c_litomerice</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Leitmeritz</Name>
@@ -12395,9 +12481,10 @@
       <Name language="Bosnian">Litomjeržice</Name>
       <Name language="Bulgarian">Litomeržice</Name>
       <Name language="Croatian">Litomjeržice</Name>
-      <Name language="Czech_Medieval">Litomierzicze</Name>
+      <Name language="Czech">Litoměřice</Name>
       <Name language="Frankish_Low">Leitmeritz</Name>
       <Name language="Frankish">Leitmeritz</Name>
+      <Name language="German">Leitmeritz</Name>
       <Name language="German_Middle_High">Leitmeritz</Name>
       <Name language="German_Middle_Low">Leitmeritz</Name>
       <Name language="German_Old_Low">Leitmeritz</Name>
@@ -12405,7 +12492,7 @@
       <Name language="Lithuanian">Litomeržices</Name>
       <Name language="Polish_Old">Litomierzyce</Name>
       <Name language="Serbian">Litomjeržice</Name>
-      <Name language="Slovak_Medieval">Litomierzicze</Name>
+      <Name language="Slovak">Litoměřice</Name>
       <Name language="Slovene">Litomjeržice</Name>
       <Name language="Thuringian">Leitmeritz</Name>
     </Names>
@@ -12414,6 +12501,7 @@
     <Id>bilina</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_litomerice" order="2">b_bilina</GameId>
+      <GameId game="CK3">b_bilina</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Pilsen</Name>
@@ -12427,6 +12515,24 @@
       <Name language="Romanian">Bilnița</Name>
       <Name language="Slovak_Medieval">Bielina</Name>
       <Name language="Thuringian">Pilsen</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>decin</Id>
+    <GameIds>
+      <GameId game="CK3">b_decin</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Děčín</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>zitava</Id>
+    <GameIds>
+      <GameId game="CK3">b_zitava</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Žitava</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12478,13 +12584,25 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_zatec" order="1">b_zatec</GameId>
       <GameId game="CK2HIP" parent="d_bohemia" order="6">c_zatec</GameId>
+      <GameId game="CK3">b_zatec</GameId>
+      <GameId game="CK3">c_zatec</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Saaz</Name>
+      <Name language="Bavarian_Medieval">Saaz</Name>
       <Name language="Bosnian">Žatec</Name>
       <Name language="Bulgarian">Žatec</Name>
-      <Name language="Slovene">Žatec</Name>
       <Name language="Croatian">Žatec</Name>
+      <Name language="Czech_Medieval">Žatec</Name>
+      <Name language="Frankish_Low">Saaz</Name>
+      <Name language="Frankish">Saaz</Name>
+      <Name language="German_Middle_High">Saaz</Name>
+      <Name language="German_Middle_Low">Saaz</Name>
+      <Name language="German_Old_Low">Saaz</Name>
       <Name language="Serbian">Žatec</Name>
+      <Name language="Slovak_Medieval">Žatec</Name>
+      <Name language="Slovene">Žatec</Name>
+      <Name language="Thuringian">Saaz</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12493,11 +12611,19 @@
       <GameId game="CK2HIP" parent="c_zatec" order="2">b_louny</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Laun</Name>
+      <Name language="Bavarian_Medieval">Laun</Name>
       <Name language="Bosnian">Luni</Name>
       <Name language="Bulgarian">Luni</Name>
-      <Name language="Slovene">Luni</Name>
       <Name language="Croatian">Luni</Name>
+      <Name language="Frankish_Low">Laun</Name>
+      <Name language="Frankish">Laun</Name>
+      <Name language="German_Middle_High">Laun</Name>
+      <Name language="German_Middle_Low">Laun</Name>
+      <Name language="German_Old_Low">Laun</Name>
       <Name language="Serbian">Luni</Name>
+      <Name language="Slovene">Luni</Name>
+      <Name language="Thuringian">Laun</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12530,13 +12656,32 @@
     <Id>kadan</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_zatec" order="7">b_kadan</GameId>
+      <GameId game="CK3">b_kadan</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Kaaden</Name>
+      <Name language="Bavarian_Medieval">Kaaden</Name>
       <Name language="Bosnian">Kadanj</Name>
       <Name language="Bulgarian">Kadanj</Name>
-      <Name language="Slovene">Kadanj</Name>
       <Name language="Croatian">Kadanj</Name>
+      <Name language="Czech_Medieval">Kadaň</Name>
+      <Name language="Frankish_Low">Kaaden</Name>
+      <Name language="Frankish">Kaaden</Name>
+      <Name language="German_Middle_High">Kaaden</Name>
+      <Name language="German_Middle_Low">Kaaden</Name>
+      <Name language="German_Old_Low">Kaaden</Name>
       <Name language="Serbian">Kadanj</Name>
+      <Name language="Slovene">Kadanj</Name>
+      <Name language="Thuringian">Kaaden</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>sedlec</Id>
+    <GameIds>
+      <GameId game="CK3">b_sedlec</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Sedlec</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12544,22 +12689,36 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_plzen" order="1">b_plzen</GameId>
       <GameId game="CK2HIP" parent="d_bohemia" order="7">c_plzen</GameId>
+      <GameId game="CK3">b_plzen</GameId>
+      <GameId game="CK3">c_plzen</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Pilsen</Name>
       <Name language="Basque">Pilsen</Name>
+      <Name language="Bavarian_Medieval">Pilsen</Name>
       <Name language="Bosnian">Plzenj</Name>
       <Name language="Bulgarian">Plzenj</Name>
       <Name language="Castilian">Pilsen</Name>
       <Name language="Croatian">Plzenj</Name>
+      <Name language="Czech_Medieval">Plzeň</Name>
       <Name language="Dutch_Middle">Pilsen</Name>
+      <Name language="Frankish_Low">Pilsen</Name>
+      <Name language="Frankish">Pilsen</Name>
       <Name language="French_Old">Pilsen</Name>
       <Name language="Frisian_Old">Pilsen</Name>
+      <Name language="German_Middle_High">Pilsen</Name>
+      <Name language="German_Middle_Low">Pilsen</Name>
+      <Name language="German_Old_Low">Pilsen</Name>
       <Name language="Italian">Pilsen</Name>
       <Name language="Latgalian">Plzena</Name>
       <Name language="Latin">Pilsna</Name>
       <Name language="Lithuanian">Pilzenas</Name>
+      <Name language="Polish_Old">Pilzno</Name>
       <Name language="Serbian">Plzenj</Name>
       <Name language="Slovene">Plzenj</Name>
+      <Name language="Sorbian">Pilzen</Name>
+      <Name language="Thuringian">Pilsen</Name>
+      <Name language="Yiddish">Pilzen</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -12576,16 +12735,27 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>stribo</Id>
+    <Id>stribro</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_plzen" order="3">b_stribo</GameId>
+      <GameId game="CK3">b_stribro</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Mies</Name>
+      <Name language="Bavarian_Medieval">Mies</Name>
       <Name language="Bosnian">Stribro</Name>
       <Name language="Bulgarian">Stribro</Name>
-      <Name language="Slovene">Stribro</Name>
       <Name language="Croatian">Stribro</Name>
+      <Name language="Czech_Medieval">Stříbro</Name>
+      <Name language="Frankish_Low">Mies</Name>
+      <Name language="Frankish">Mies</Name>
+      <Name language="German_Middle_High">Mies</Name>
+      <Name language="German_Middle_Low">Mies</Name>
+      <Name language="German_Old_Low">Mies</Name>
       <Name language="Serbian">Stribro</Name>
+      <Name language="Slovak_Medieval">Stříbro</Name>
+      <Name language="Slovene">Stribro</Name>
+      <Name language="Thuringian">Mies</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -13126,18 +13296,40 @@
     <Id>moravsky_krumlov</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_znojmo" order="7">b_moravsky_krumlov</GameId>
+      <GameId game="CK3">b_krumlov</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Mährisch Kromau</Name>
       <Name language="Bavarian">Mährisch Kromau</Name>
+      <Name language="Czech_Medieval">Krumlov</Name>
+      <Name language="Czech">Český Krumlov</Name>
       <Name language="Frankish_Low">Mährisch Kromau</Name>
       <Name language="Frankish">Mährisch Kromau</Name>
       <Name language="German_Middle_High">Mährisch Kromau</Name>
       <Name language="German_Middle_Low">Mährisch Kromau</Name>
       <Name language="German_Old_Low">Mährisch Kromau</Name>
+      <Name language="German">Krummau</Name>
       <Name language="Latin">Crumlovia</Name>
       <Name language="Lithuanian">Krumlovas</Name>
       <Name language="Thuringian">Mährisch Kromau</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>chynov</Id>
+    <GameIds>
+      <GameId game="CK3">b_chynov</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Chýnov</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bechyne</Id>
+    <GameIds>
+      <GameId game="CK3">b_bechyne</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Bechyně</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -53178,16 +53370,37 @@
     <Id>loket</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_zatec" order="4">b_loket</GameId>
+      <GameId game="CK3">b_loket</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Elbogen</Name>
+      <Name language="Bavarian_Medieval">Elbogen</Name>
+      <Name language="Czech_Medieval">Loket</Name>
+      <Name language="Frankish_Low">Elbogen</Name>
+      <Name language="Frankish">Elbogen</Name>
+      <Name language="German_Middle_High">Elbogen</Name>
+      <Name language="German_Middle_Low">Elbogen</Name>
+      <Name language="German_Old_Low">Elbogen</Name>
+      <Name language="Thuringian">Elbogen</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>primda</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_plzen" order="4">b_primda</GameId>
+      <GameId game="CK3">b_primda</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Pfraumberg</Name>
+      <Name language="Bavarian_Medieval">Pfraumberg</Name>
+      <Name language="Czech_Medieval">Přimda</Name>
+      <Name language="Frankish_Low">Pfraumberg</Name>
+      <Name language="Frankish">Pfraumberg</Name>
+      <Name language="German_Middle_High">Pfraumberg</Name>
+      <Name language="German_Middle_Low">Pfraumberg</Name>
+      <Name language="German_Old_Low">Pfraumberg</Name>
+      <Name language="Slovak_Medieval">Přimda</Name>
+      <Name language="Thuringian">Pfraumberg</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -81510,6 +81723,7 @@
     <Id>milevsko</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_domazlice" order="4">b_milevsko</GameId>
+      <GameId game="CK3">b_milevsko</GameId>
     </GameIds>
     <Names>
     </Names>
