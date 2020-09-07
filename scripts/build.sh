@@ -15,6 +15,8 @@ function build {
     "${MOD_BUILDER_BIN_FILE_PATH}" -l "languages.xml" -t "titles.xml" -o "out/"
 }
 
+[ -d "out/" ] && rm -rf "out/"
+
 build
 
 cp -rf extras/ck2hip/* out/CK2HIP/
