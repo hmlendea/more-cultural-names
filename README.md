@@ -1,6 +1,6 @@
 # About
 
-This is a mod for various strategy games, that adds new province names based on their culture/faction.
+This is a mod for various strategy games, that adds new place names based on their culture/faction.
 
 The names are meant to provide an immersive and accurate experience for the game's setting and time period.
 
@@ -10,7 +10,7 @@ Supported games:
  - `Crusader Kings 3`
  - `Imperator: Rome`
 
-The common database currently has over [b]27 thousand[/b] names for over [b]300[/b] languages, settings and time periods.
+The common database currently has over [b]28 thousand[/b] names for over [b]350[/b] languages, settings and time periods.
 
 # Installation
 
