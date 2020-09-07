@@ -1,6 +1,6 @@
 #!/bin/bash
 
-grep "GameId game=\"CK2HIP\" parent=\"\"" titles.xml | while read -r LINE ; do
+grep "GameId game=\"CK2HIP\".*order=\"\"" titles.xml | while read -r LINE ; do
   TITLE_ID=$(echo ${LINE} | awk -F\> '{print $2}' | awk -F\< '{print $1}')
   ORDER=$(grep "^${TITLE_ID}=" orders.txt | awk -F= '{print $2}')
 

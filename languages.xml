@@ -1044,7 +1044,10 @@
   </Language>
   <Language>
     <Id>Gothic</Id>
-    <Code iso-639-3="got" />
+    <Code iso-639-2="got" iso-639-3="got" />
+    <GameIds>
+      <GameId game="CK2HIP">gothic</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Gothic_Crimean</Id>
@@ -1347,6 +1350,13 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Khanty</Id>
+    <Code iso-639-3="kca" />
+    <GameIds>
+      <GameId game="CK2HIP">khanty</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Khitan</Id>
     <Code iso-639-3="zkt" />
     <GameIds>
@@ -1356,6 +1366,13 @@
   <Language>
     <Id>Kinyarwanda</Id>
     <Code iso-639-1="rw" iso-639-2="kin" iso-639-3="kin" />
+  </Language>
+  <Language>
+    <Id>Komi</Id>
+    <Code iso-639-3="kpv" />
+    <GameIds>
+      <GameId game="CK2HIP">komi</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Kongo</Id>
@@ -1611,6 +1628,23 @@
     <Code iso-639-1="mi" iso-639-2="mri" iso-639-3="mri" />
   </Language>
   <Language>
+    <Id>Mari</Id>
+    <Code iso-639-2="chm" iso-639-3="chm" />
+    <GameIds>
+      <GameId game="CK2HIP">mari</GameId>
+    </GameIds>
+  </Language>
+  <Language>
+    <Id>Massylian</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">massylian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Numidian</LanguageId>
+      <LanguageId>Socossian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Mirandese</Id>
     <Code iso-639-3="mwl" />
   </Language>
@@ -1762,6 +1796,16 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Nubian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Numidian</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">numidian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Massylian</LanguageId>
+      <LanguageId>Socossian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2169,6 +2213,16 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Sanhaja</Id>
+    <Code iso-639-3="sjs" />
+    <FallbackLanguages>
+      <LanguageId>Zenaga</LanguageId>
+    </FallbackLanguages>
+    <GameIds>
+      <GameId game="CK2HIP">sanhaja</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Sardinian</Id>
     <Code iso-639-1="sc" iso-639-3="srd" />
     <GameIds>
@@ -2343,6 +2397,16 @@
   <Language>
     <Id>Silesian</Id>
     <Code iso-639-3="szl" />
+  </Language>
+  <Language>
+    <Id>Socossian</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">socossian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Numidian</LanguageId>
+      <LanguageId>Massylian</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Sogdian</Id> <!-- c. 100 BC – c. 1000 AD, then developed into Yaghnobi -->
@@ -2618,6 +2682,47 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Udi_Early</Id> <!-- c. 2000 BC – c. 300 AD -->
+    <FallbackLanguages>
+      <LanguageId>Udi_Old</LanguageId>
+      <LanguageId>Udi_Middle</LanguageId>
+      <LanguageId>Udi_Modern_Early</LanguageId>
+      <LanguageId>Udi</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Udi_Old</Id> <!-- c. 300 AD – c. 900 AD -->
+    <FallbackLanguages>
+      <LanguageId>Udi_Early</LanguageId>
+      <LanguageId>Udi_Middle</LanguageId>
+      <LanguageId>Udi_Modern_Early</LanguageId>
+      <LanguageId>Udi</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Udi_Middle</Id> <!-- c. 900 AD – c. 1800 AD -->
+    <FallbackLanguages>
+      <LanguageId>Udi_Old</LanguageId>
+      <LanguageId>Udi_Early</LanguageId>
+      <LanguageId>Udi_Modern_Early</LanguageId>
+      <LanguageId>Udi</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Udi_Modern_Early</Id> <!-- c. 1800 AD – c. 1920 AD -->
+    <FallbackLanguages>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Udi</Id> <!-- c. 1920 AD – present -->
+    <FallbackLanguages>
+      <LanguageId>Udi_Modern_Early</LanguageId>
+      <LanguageId>Udi_Middle</LanguageId>
+      <LanguageId>Udi_Old</LanguageId>
+      <LanguageId>Udi_Early</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Ukrainian</Id>
     <Code iso-639-1="uk" iso-639-3="ukr" />
     <FallbackLanguages>
@@ -2788,6 +2893,9 @@
   <Language>
     <Id>Zenaga</Id>
     <Code iso-639-2="zen" iso-639-3="zen" />
+    <FallbackLanguages>
+      <LanguageId>Sanhaja</LanguageId>
+    </FallbackLanguages>
     <GameIds>
       <GameId game="CK2HIP">berber</GameId>
       <GameId game="CK3">berber</GameId>
