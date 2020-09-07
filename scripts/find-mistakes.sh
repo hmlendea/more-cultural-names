@@ -7,6 +7,13 @@ grep -n "parent=\"[a-zA-Z][^_]" titles.xml
 # Find duplicated Imperator: Rome game IDs
 grep "GameId game=\"ImperatorRome\"" titles.xml | sed 's/[ \t]*<!--.*-->[ \t]*//g' | sort | uniq -c | sed 's/^[ \t]*//g' | grep "^[2-9]"
 
+# Find duplicated titles
+grep "<GameId game=" titles.xml | \
+    sed 's/ \(parent\|order\)=\"[^\"]*\"//g' | \
+    sed 's/[\"<>]/ /g' | \
+    awk '{print $3 " " $4}' | \
+    sort | uniq -c | grep "^ *[2-9]"
+
 # Find CK2 parents missing an entry
 for PARENT_ID in $(grep "game=\"CK2HIP\"" titles.xml | \
                     grep -e "parent=\"[^\"]\+\"" | \
