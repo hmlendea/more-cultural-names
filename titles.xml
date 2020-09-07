@@ -11936,6 +11936,51 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>prerov</Id>
+    <GameIds>
+      <GameId game="CK3">b_prerov</GameId>
+      <GameId game="CK3">c_prerov</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Přerov</Name>
+      <Name language="German">Prerau</Name>
+      <Name language="Polish">Przerów</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>spytihnev</Id>
+    <GameIds>
+      <GameId game="CK3">b_spytihnev</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Spytihněv</Name>
+      <Name language="German">Spitinau</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>hodonin</Id>
+    <GameIds>
+      <GameId game="CK3">b_hodonin</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Hodonín</Name>
+      <Name language="German">Göding</Name>
+      <Name language="Latvian">Hodonīna</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>veseli</Id>
+    <GameIds>
+      <GameId game="CK3">b_veseli</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Veselí</Name>
+      <Name language="Czech">Veselí nad Lužnicí</Name>
+      <Name language="German_Middle_High">Wesseli</Name>
+      <Name language="German">Wesseli an der Lainsitz</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>beroun</Id>
     <GameIds>
       <GameId game="CK3">b_beroun</GameId>
@@ -13300,6 +13345,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_znojmo" order="1">b_znojmo</GameId>
       <GameId game="CK2HIP" parent="d_moravia" order="3">c_znojmo</GameId>
+      <GameId game="CK3">b_znojmo</GameId>
+      <GameId game="CK3">c_znojmo</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Znaym</Name>
@@ -13385,12 +13432,14 @@
     <Id>bitov</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_znojmo" order="4">b_bitov</GameId>
+      <GameId game="CK3">b_bitov</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Bittau</Name>
       <Name language="Bavarian">Bittau</Name>
       <Name language="Castilian">Bytów</Name>
-      <Name language="Czech_Medieval">Bietow</Name>
+      <Name language="Czech_Medieval">Bítow</Name>
+      <Name language="Czech">Bítov</Name>
       <Name language="Dutch_Middle">Bytów</Name>
       <Name language="Frankish_Low">Bittau</Name>
       <Name language="Frankish">Bittau</Name>
@@ -13400,7 +13449,8 @@
       <Name language="Latgalian">Bitova</Name>
       <Name language="Polish">Bytów</Name>
       <Name language="Romanian">Bytów</Name>
-      <Name language="Slovak_Medieval">Bietow</Name>
+      <Name language="Slovak_Medieval">Bítow</Name>
+      <Name language="Slovak">Bítov</Name>
       <Name language="Thuringian">Bittau</Name>
     </Names>
   </LocationEntity>
@@ -13430,6 +13480,7 @@
     <Id>breclav</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_znojmo" order="6">b_breclav</GameId>
+      <GameId game="CK3">b_breclav</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Lundenburg</Name>
@@ -13437,6 +13488,7 @@
       <Name language="Bosnian">Braslav</Name>
       <Name language="Bulgarian">Braslav</Name>
       <Name language="Croatian">Braslav</Name>
+      <Name language="Czech_Medieval">Břeclav</Name>
       <Name language="Frankish_Low">Lundenburg</Name>
       <Name language="Frankish">Lundenburg</Name>
       <Name language="German_Middle_High">Lundenburg</Name>
@@ -13491,27 +13543,51 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>brno</Id>
+    <Id>brno_county</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="c_brno" order="3">b_brno</GameId>
       <GameId game="CK2HIP" parent="d_moravia" order="4">c_brno</GameId>
+      <GameId game="CK3">c_brno</GameId>
     </GameIds>
+    <FallbackLocations>
+      <LocationId>brno</LocationId>
+    </FallbackLocations>
     <Names>
       <Name language="Alemannic">Brünn</Name>
       <Name language="Bavarian">Brünn</Name>
       <Name language="Frankish_Low">Brünn</Name>
       <Name language="Frankish">Brünn</Name>
+      <Name language="Czech_Medieval">Brno</Name>
+      <Name language="Czech">Brno</Name>
       <Name language="German_Middle_High">Brünn</Name>
       <Name language="German_Middle_Low">Brünn</Name>
       <Name language="German_Old_Low">Brünn</Name>
-      <Name language="Hungarian_Old">Börénvásár</Name>
       <Name language="Hungarian_Old">Börön</Name>
       <Name language="Latin">Bruna</Name>
       <Name language="Polish_Old">Berno</Name>
-      <Name language="Szekely_Old">Börénvásár</Name>
       <Name language="Szekely_Old">Börön</Name>
       <Name language="Thuringian">Brünn</Name>
       <Name language="Yiddish">Brin</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>brno</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_brno" order="3">b_brno</GameId>
+      <GameId game="CK3">b_brno</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Hungarian_Old">Börénvásár</Name>
+      <Name language="Szekely_Old">Börénvásár</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>ivancice</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_brno" order="1">b_ivancice</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Czech_Medieval">Ivančice</Name>
+      <Name language="German">Eibenschütz</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -13585,6 +13661,7 @@
     <Id>zdar</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_brno" order="5">b_zdar</GameId>
+      <GameId game="CK3">b_zdar</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Saar</Name>
@@ -13592,7 +13669,7 @@
       <Name language="Bosnian">Ždjar</Name>
       <Name language="Bulgarian">Ždjar</Name>
       <Name language="Croatian">Ždjar</Name>
-      <Name language="Czech_Medieval">Zdár</Name>
+      <Name language="Czech_Medieval">Žďár</Name>
       <Name language="Frankish_Low">Saar</Name>
       <Name language="Frankish">Saar</Name>
       <Name language="German_Middle_High">Saar</Name>
@@ -13612,6 +13689,7 @@
     <Id>mikulov</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_brno" order="6">b_mikulov</GameId>
+      <GameId game="CK3">b_mikulov</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Nikolsburg</Name>
@@ -13621,6 +13699,7 @@
       <Name language="Castilian">Míkulov</Name>
       <Name language="Croatian">Nikolov</Name>
       <Name language="Czech_Medieval">Mikulow</Name>
+      <Name language="Czech">Mikulov</Name>
       <Name language="Frankish_Low">Nikolsburg</Name>
       <Name language="Frankish">Nikolsburg</Name>
       <Name language="German_Middle_High">Nikolsburg</Name>
@@ -13631,6 +13710,7 @@
       <Name language="Romanian">Miclăuș</Name> <!-- Translated -->
       <Name language="Serbian">Nikolov</Name>
       <Name language="Slovak_Medieval">Mikulow</Name>
+      <Name language="Slovak">Mikulov</Name>
       <Name language="Slovene">Nikolov</Name>
       <Name language="Szekely_Old">Miklósvár</Name>
       <Name language="Thuringian">Nikolsburg</Name>
