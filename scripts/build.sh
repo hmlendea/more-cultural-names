@@ -32,7 +32,7 @@ fi
 
 [ -d "out/" ] && rm -rf "out/"
 
-${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "titles.xml" -o "out/"ld
+${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "titles.xml" -o "out/"
 
 cp -rf extras/ck2hip/* out/CK2HIP/
 cp -rf extras/ck3/* out/CK3/
