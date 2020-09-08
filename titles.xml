@@ -39885,6 +39885,7 @@
       <Name language="English_Old_Norse">Deoraby</Name>
       <Name language="English_Old">Norþworþig</Name> <!-- Or Northworthig -->
       <Name language="English">Derby</Name>
+      <Name language="Gothic">Djúrabý</Name>
       <Name language="Icelandic_Old">Djúrabý</Name>
       <Name language="Irish_Middle_Norse">Djúrabý</Name>
       <Name language="Latgalian">Dãrbi</Name>
@@ -39915,6 +39916,7 @@
       <Name language="English_Middle">Castleton</Name>
       <Name language="English_Old_Norse">Péacland</Name>
       <Name language="English_Old">Peacland</Name>
+      <Name language="Gothic">Péacland</Name>
       <Name language="Icelandic_Old">Péacland</Name>
       <Name language="Irish_Middle_Norse">Péacland</Name>
       <Name language="Latin">Lutudarum</Name>
@@ -48416,23 +48418,27 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>narbonne</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="d_septimania" order="1">c_narbonne</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Latgalian">Narbonna</Name>
-      <Name language="Lithuanian">Narbonas</Name>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>narbonne_temple</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_narbonne" order="2">b_narbonne_temple</GameId>
+      <GameId game="CK2HIP" parent="d_septimania" order="1">c_narbonne</GameId>
+      <GameId game="ImperatorRome">2256</GameId> <!-- Narbo -->
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Arbúna</Name>
+      <Name language="Arabic_Bedouin">Arbúna</Name>
+      <Name language="Arabic_Egypt">Arbúna</Name>
+      <Name language="Arabic_Levant">Arbúna</Name>
+      <Name language="Arabic_Maghreb">Arbúna</Name>
+      <Name language="Arabic_Yemen">Arbúna</Name>
+      <Name language="Greek_Ancient">Narbon</Name>
+      <Name language="Greek_Medieval">Narbonesios</Name>
+      <Name language="Hejazi_Arabic">Arbúna</Name>
       <Name language="Latgalian">Narbonna</Name>
+      <Name language="Latin_Ancient">Narbo Martius</Name>
+      <Name language="Latin_Medieval">Narbo Martius</Name>
       <Name language="Lithuanian">Narbonas</Name>
+      <Name language="Sicilian_Arabic">Arbúna</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -48485,9 +48491,14 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_nimes" order="1">b_nimes</GameId>
       <GameId game="CK2HIP" parent="d_septimania" order="3">c_nimes</GameId>
+      <GameId game="ImperatorRome">2314</GameId> <!-- Nemausus -->
     </GameIds>
     <Names>
+      <Name language="Greek_Ancient">Nemausos</Name>
+      <Name language="Greek_Medieval">Nemausos</Name>
       <Name language="Latgalian">Nima</Name>
+      <Name language="Latin_Ancient">Nemausus</Name>
+      <Name language="Latin_Medieval">Nemausus</Name>
       <Name language="Lithuanian">Nimas</Name>
     </Names>
   </LocationEntity>
@@ -48517,15 +48528,26 @@
   <LocationEntity>
     <Id>carcassonne</Id>
     <GameIds>
+      <GameId game="CK2HIP" parent="c_carcassonne" order="2">b_carcassonne_villebasse</GameId>
       <GameId game="CK2HIP" parent="d_septimania" order="4">c_carcassonne</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Qarqashúna</Name>
+      <Name language="Arabic_Bedouin">Qarqashúna</Name>
+      <Name language="Arabic_Egypt">Qarqashúna</Name>
+      <Name language="Arabic_Levant">Qarqashúna</Name>
+      <Name language="Arabic_Maghreb">Qarqashúna</Name>
+      <Name language="Arabic_Yemen">Qarqashúna</Name>
       <Name language="Aragonese">Carcasona</Name>
       <Name language="Basque">Carcasona</Name>
       <Name language="Castilian">Carcasona</Name>
       <Name language="Galician">Carcasona</Name>
+      <Name language="Greek_Medieval">Carcasum</Name>
+      <Name language="Hejazi_Arabic">Qarqashúna</Name>
       <Name language="Latgalian">Karkasona</Name>
+      <Name language="Latin_Medieval">Carcasum</Name>
       <Name language="Lithuanian">Karkasonas</Name>
+      <Name language="Sicilian_Arabic">Qarqashúna</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -48533,12 +48555,15 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_beziers" order="1">b_beziers</GameId>
       <GameId game="CK2HIP" parent="d_septimania" order="5">c_beziers</GameId>
+      <GameId game="ImperatorRome">2259</GameId> <!-- Baeterrae -->
     </GameIds>
     <Names>
       <Name language="Aragonese">Besers</Name>
       <Name language="Basque">Besiers</Name>
       <Name language="Breton_Middle">Besièrs</Name>
       <Name language="Catalan">Besiers</Name>
+      <Name language="Greek_Medieval">Baitarra</Name>
+      <Name language="Latin_Medieval">Baeterrae</Name>
       <Name language="Lithuanian">Bezje</Name>
       <Name language="Occitan">Besièrs</Name>
     </Names>
@@ -48569,6 +48594,7 @@
     </GameIds>
     <Names>
       <Name language="Aragonese">Aush</Name>
+      <Name language="Basque">Auski</Name>
       <Name language="Catalan">Aush</Name>
       <Name language="Occitan">Aush</Name>
       <Name language="Latin">Augusta Auscorum</Name>
@@ -48590,9 +48616,11 @@
     <Id>bayonne</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_labourd" order="2">b_bayonne</GameId>
+      <GameId game="ImperatorRome">2240</GameId> <!-- Lapurdum -->
     </GameIds>
     <Names>
       <Name language="Aragonese">Bayona</Name>
+      <Name language="Basque">Baiona</Name>
       <Name language="Breton_Middle">Baiona</Name>
       <Name language="Bulgarian">Bajon</Name>
       <Name language="Castilian">Bayona</Name>
@@ -48600,7 +48628,9 @@
       <Name language="Croatian">Bajona</Name>
       <Name language="Dutch_Middle">Baiona</Name>
       <Name language="Galician">Baiona</Name>
+      <Name language="Greek_Medieval">Lapurdum</Name>
       <Name language="Irish">Baiona</Name>
+      <Name language="Latin_Medieval">Lapurdum</Name>
       <Name language="Occitan">Baiona</Name>
       <Name language="Polish">Bajonna</Name>
       <Name language="Portuguese">Baiona</Name>
@@ -48697,20 +48727,25 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_bordeaux" order="2">b_bordeaux</GameId>
       <GameId game="CK2HIP" parent="d_aquitaine" order="1">c_bordeaux</GameId>
+      <GameId game="ImperatorRome">2236</GameId> <!-- Burdigala -->
     </GameIds>
     <Names>
       <Name language="Aragonese">Bordeus</Name>
       <Name language="Arpitan">Bordôx</Name>
+      <Name language="Basque">Bordele</Name>
       <Name language="Breton_Middle">Bourdel</Name>
       <Name language="Castilian">Burdeos</Name>
       <Name language="Catalan">Bordeus</Name>
+      <Name language="English_Old">Burdigala</Name>
       <Name language="Galician">Bordeos</Name>
-      <Name language="Leonese">Burdeos</Name>
+      <Name language="Greek_Medieval">Bourdigala</Name>
       <Name language="Latgalian">Bordo</Name>
+      <Name language="Latin_Medieval">Burdigala</Name>
+      <Name language="Leonese">Burdeos</Name>
       <Name language="Lithuanian">Bordo</Name>
       <Name language="Lombard">Burdigala</Name>
+      <Name language="Occitan_Old">Bordéu</Name>
       <Name language="Portuguese">Bordéus</Name>
-      <Name language="English_Old">Burdigala</Name>
       <Name language="Venetian">Bordò</Name>
       <Name language="Vepsian">Bordo</Name>
     </Names>
@@ -49265,7 +49300,9 @@
     <Names>
       <Name language="Aragonese">Piteus</Name>
       <Name language="Arpitan">Pouètiérs</Name>
+      <Name language="Greek_Medieval">Limounon</Name>
       <Name language="Latgalian">Puatje</Name>
+      <Name language="Latin_Medieval">Lemonum</Name>
       <Name language="Latin">Pictavium</Name> <!-- Or Lemonum -->
       <Name language="Lithuanian">Puatje</Name>
       <Name language="Lombard">Pictavis</Name>
@@ -49424,6 +49461,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_angouleme" order="2">b_angouleme</GameId>
       <GameId game="CK2HIP" parent="d_poitou" order="6">c_angouleme</GameId>
+      <GameId game="ImperatorRome">2290</GameId> <!-- Iculisma -->
     </GameIds>
     <Names>
       <Name language="Aragonese">Engolesme</Name>
@@ -49431,10 +49469,12 @@
       <Name language="Castilian">Angulema</Name>
       <Name language="Catalan">Angulema</Name>
       <Name language="Galician">Angulema</Name>
+      <Name language="Greek_Medieval">Iculisma</Name>
+      <Name language="Latin_Medieval">Iculisma</Name>
+      <Name language="Latin">Lemovicus</Name> <!-- Or Iculisma -->
       <Name language="Lithuanian">Angulemas</Name>
       <Name language="Lombard">Angulisma</Name>
       <Name language="Occitan">Engoleime</Name>
-      <Name language="Latin">Lemovicus</Name> <!-- Or Iculisma -->
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -50372,7 +50412,21 @@
       <GameId game="CK2HIP" parent="c_calatayud" order="2">b_alhamadearagon</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">al-Hamma al-Araghún</Name>
+      <Name language="Arabic_Bedouin">al-Hamma al-Araghún</Name>
+      <Name language="Arabic_Egypt">al-Hamma al-Araghún</Name>
+      <Name language="Arabic_Levant">al-Hamma al-Araghún</Name>
+      <Name language="Arabic_Maghreb">al-Hamma al-Araghún</Name>
+      <Name language="Arabic_Yemen">al-Hamma al-Araghún</Name>
+      <Name language="Aragonese">Alfama d'Aragón</Name>
+      <Name language="Basque">Alhama Aragoi</Name>
+      <Name language="Catalan_Medieval">Alhama d'Aragó</Name>
+      <Name language="French_Old">Alhamme d'Aragon</Name>
+      <Name language="Hejazi_Arabic">al-Hamma al-Araghún</Name>
       <Name language="Latin">Augusta Bilbilitanorum</Name>
+      <Name language="Leonese">Alhama d'Aragón</Name>
+      <Name language="Portuguese">Alfama de Aragão</Name>
+      <Name language="Sicilian_Arabic">al-Hamma al-Araghún</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -50672,8 +50726,19 @@
       <GameId game="CK2HIP" parent="d_beja" order="5">c_setubal</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Shetubre</Name>
+      <Name language="Arabic_Bedouin">Shetubre</Name>
+      <Name language="Arabic_Egypt">Shetubre</Name>
+      <Name language="Arabic_Levant">Shetubre</Name>
+      <Name language="Arabic_Maghreb">Shetubre</Name>
+      <Name language="Arabic_Yemen">Shetubre</Name>
+      <Name language="Basque">Setubal</Name>
+      <Name language="Greek_Medieval">Kaitobrie</Name>
+      <Name language="Hejazi_Arabic">Shetubre</Name>
       <Name language="Latgalian">Setubala</Name>
+      <Name language="Latin_Medieval">Caetobriga</Name>
       <Name language="Lithuanian">Setubalis</Name>
+      <Name language="Sicilian_Arabic">Shetubre</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -53305,24 +53370,65 @@
   <LocationEntity>
     <Id>taurica</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="d_crimea" order="2">c_crimea</GameId>
-      <GameId game="CK2HIP" parent="k_taurica" order="1">d_crimea</GameId>
       <GameId game="CK2HIP" parent="e_null" order="5">k_taurica</GameId>
     </GameIds>
     <Names>
+      <Name language="Alan">Skythia</Name>
+      <Name language="Arberian">Skythia</Name>
+      <Name language="Armenian_Middle">Skythia</Name>
+      <Name language="Bosnian_Medieval">Dikoye Pole</Name>
+      <Name language="Bulgarian_Old">Dikoye Pole</Name>
+      <Name language="Croatian_Medieval">Dikoye Pole</Name>
+      <Name language="Czech_Medieval">Divoká Pole</Name>
+      <Name language="Georgian">Skythia</Name>
+      <Name language="Gothic_Crimean">Oium</Name>
+      <Name language="Greek_Medieval">Skythia</Name>
+      <Name language="Lithuanian_Medieval">Dykra</Name>
+      <Name language="Polish_Old">Dzikie Pola</Name>
+      <Name language="Russian_Medieval">Dikoye Polye</Name>
+      <Name language="Serbian_Medieval">Dikoye Pole</Name>
+      <Name language="Slovak_Medieval">Divoké Polia</Name>
+      <Name language="Slovene_Medieval">Divoká Pole</Name>
+      <Name language="Sorbian">Dzikie Pola</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>crimea</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="d_crimea" order="2">c_crimea</GameId>
+      <GameId game="CK2HIP" parent="k_taurica" order="1">d_crimea</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Alan">Taurike</Name>
+      <Name language="Arberian">Taurike</Name>
+      <Name language="Armenian_Middle">Taurike</Name>
+      <Name language="Bosnian_Medieval">Krym</Name>
+      <Name language="Bulgarian_Old">Krym</Name>
       <Name language="Castilian">Crimea</Name>
       <Name language="Catalan">Crimea</Name>
+      <Name language="Croatian_Medieval">Krym</Name>
+      <Name language="Czech_Medieval">Krym</Name>
       <Name language="Danish">Krim</Name>
       <Name language="Dutch_Middle">Krim</Name>
       <Name language="Finnish">Krim</Name>
       <Name language="French_Old">Crimée</Name>
+      <Name language="Georgian">Taurike</Name>
       <Name language="German">Krim</Name>
+      <Name language="Gothic_Crimean">Taurike</Name>
+      <Name language="Greek_Medieval">Taurike</Name>
       <Name language="Hungarian">Krim</Name>
       <Name language="Irish">an Chrimé</Name>
       <Name language="Italian">Crimea</Name>
       <Name language="Latin">Taurica</Name>
+      <Name language="Lithuanian_Medieval">Krymas</Name>
+      <Name language="Polish_Old">Krym</Name>
       <Name language="Portuguese">Criméia</Name>
       <Name language="Romanian">Crimeea</Name>
+      <Name language="Russian_Medieval">Krym</Name>
+      <Name language="Serbian_Medieval">Krym</Name>
+      <Name language="Slovak_Medieval">Krym</Name>
+      <Name language="Slovene_Medieval">Krym</Name>
+      <Name language="Sorbian">Krym</Name>
       <Name language="Swedish">Krim</Name>
       <Name language="Turkish">Kirim</Name>
     </Names>
@@ -53333,7 +53439,57 @@
       <GameId game="CK2HIP" parent="c_lukomorie" order="2">b_melitopol</GameId>
     </GameIds>
     <Names>
+      <Name language="Alan">Melita</Name>
+      <Name language="Alemannic">Melita</Name>
+      <Name language="Aragonese">Melita</Name>
+      <Name language="Arberian">Melita</Name>
+      <Name language="Armenian_Middle">Melita</Name>
+      <Name language="Arpitan">Melita</Name>
+      <Name language="Basque">Melita</Name>
+      <Name language="Bavarian_Medieval">Melita</Name>
+      <Name language="Bosnian_Medieval">Melita</Name>
+      <Name language="Bulgarian_Old">Melita</Name>
+      <Name language="Castilian">Melita</Name>
+      <Name language="Catalan_Medieval">Melita</Name>
+      <Name language="Croatian_Medieval">Melita</Name>
+      <Name language="Czech_Medieval">Melita</Name>
+      <Name language="Dalmatian_Medieval">Melita</Name>
+      <Name language="Danish_Middle">Melita</Name>
+      <Name language="English_Middle">Melita</Name>
+      <Name language="Frankish_Low">Melita</Name>
+      <Name language="Frankish">Melita</Name>
+      <Name language="French_Old">Melita</Name>
+      <Name language="Georgian">Melita</Name>
+      <Name language="German_Middle_High">Melita</Name>
+      <Name language="German_Middle_Low">Melita</Name>
+      <Name language="German_Old_Low">Melita</Name>
+      <Name language="Gothic_Crimean">Melita</Name>
+      <Name language="Gothic">Melita</Name>
+      <Name language="Greek_Medieval">Melita</Name>
+      <Name language="Hungarian_Old">Melita</Name>
+      <Name language="Italian_Central">Melita</Name>
+      <Name language="Italian_Medieval">Melita</Name>
+      <Name language="Langobardic">Melita</Name>
       <Name language="Latin">Melita</Name>
+      <Name language="Leonese">Melita</Name>
+      <Name language="Ligurian">Melita</Name>
+      <Name language="Neapolitan">Melita</Name>
+      <Name language="Norman">Melita</Name>
+      <Name language="Norwegian_Old">Melita</Name>
+      <Name language="Occitan_Old">Melita</Name>
+      <Name language="Polish_Old">Melita</Name>
+      <Name language="Russian_Medieval">Melitopol</Name>
+      <Name language="Sardinian">Melita</Name>
+      <Name language="Serbian_Medieval">Melita</Name>
+      <Name language="Sicilian">Melita</Name>
+      <Name language="Slovak_Medieval">Melita</Name>
+      <Name language="Slovene_Medieval">Melita</Name>
+      <Name language="Sorbian">Melita</Name>
+      <Name language="Swedish_Old">Melita</Name>
+      <Name language="Thuringian">Melita</Name>
+      <Name language="Tuscan_Medieval">Melita</Name>
+      <Name language="Umbrian_Medieval">Melita</Name>
+      <Name language="Venetian_Medieval">Melita</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -64830,6 +64986,18 @@
       <GameId game="CK2HIP" parent="c_leicester" order="5">b_castle_donington</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Dunintun</Name>
+      <Name language="English_Middle">Donington</Name>
+      <Name language="English_Old_Norse">Dunintun</Name>
+      <Name language="English_Old">Dunintun</Name>
+      <Name language="English">Donington</Name>
+      <Name language="Gothic">Dunintun</Name>
+      <Name language="Icelandic_Old">Dunintun</Name>
+      <Name language="Irish_Middle_Norse">Dunintun</Name>
+      <Name language="Norman">Dunitone</Name>
+      <Name language="Norse">Dunintun</Name>
+      <Name language="Norwegian_Old">Dunintun</Name>
+      <Name language="Swedish_Old">Dunintun</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -64856,6 +65024,10 @@
       <GameId game="CK2HIP" parent="c_rutland" order="1">b_oakham</GameId>
     </GameIds>
     <Names>
+      <Name language="English_Middle">Oakham</Name>
+      <Name language="English_Old_Norse">Acham</Name>
+      <Name language="English_Old">Acham</Name>
+      <Name language="English">Oakham</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -69148,24 +69320,22 @@
     <Id>uzes</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_nimes" order="2">b_uzes</GameId>
+      <GameId game="ImperatorRome">2317</GameId> <!-- Ucetia -->
     </GameIds>
     <Names>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>carcassonne_villebasse</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="c_carcassonne" order="2">b_carcassonne_villebasse</GameId>
-    </GameIds>
-    <Names>
+      <Name language="Greek_Medieval">Ucetia</Name>
+      <Name language="Latin_Medieval">Ucetia</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>agde</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_beziers" order="4">b_agde</GameId>
+      <GameId game="ImperatorRome">2260</GameId> <!-- Agatha -->
     </GameIds>
     <Names>
+      <Name language="Greek_Medieval">Agathe Tyche</Name>
+      <Name language="Latin_Medieval">Agatha</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -70754,6 +70924,14 @@
       <GameId game="CK2HIP" parent="c_mertola" order="6">b_portel</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Mahmed</Name>
+      <Name language="Arabic_Bedouin">Mahmed</Name>
+      <Name language="Arabic_Egypt">Mahmed</Name>
+      <Name language="Arabic_Levant">Mahmed</Name>
+      <Name language="Arabic_Maghreb">Mahmed</Name>
+      <Name language="Arabic_Yemen">Mahmed</Name>
+      <Name language="Hejazi_Arabic">Mahmed</Name>
+      <Name language="Sicilian_Arabic">Mahmed</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -70762,6 +70940,17 @@
       <GameId game="CK2HIP" parent="c_mertola" order="2">b_barrancos</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Nuddar</Name>
+      <Name language="Arabic_Bedouin">Nuddar</Name>
+      <Name language="Arabic_Egypt">Nuddar</Name>
+      <Name language="Arabic_Levant">Nuddar</Name>
+      <Name language="Arabic_Maghreb">Nuddar</Name>
+      <Name language="Arabic_Yemen">Nuddar</Name>
+      <Name language="Basque">Barrankos</Name>
+      <Name language="Catalan_Medieval">Barrancs</Name>
+      <Name language="French_Old">Barrancs</Name>
+      <Name language="Hejazi_Arabic">Nuddar</Name>
+      <Name language="Sicilian_Arabic">Nuddar</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -70770,6 +70959,15 @@
       <GameId game="CK2HIP" parent="c_setubal" order="2">b_benavente_setubal</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Benavent</Name>
+      <Name language="Arabic_Bedouin">Benavent</Name>
+      <Name language="Arabic_Egypt">Benavent</Name>
+      <Name language="Arabic_Levant">Benavent</Name>
+      <Name language="Arabic_Maghreb">Benavent</Name>
+      <Name language="Arabic_Yemen">Benavent</Name>
+      <Name language="Basque">Benabente</Name>
+      <Name language="Hejazi_Arabic">Benavent</Name>
+      <Name language="Sicilian_Arabic">Benavent</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -70778,6 +70976,18 @@
       <GameId game="CK2HIP" parent="c_setubal" order="3">b_salvaterra_de_magos</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Magus</Name>
+      <Name language="Arabic_Bedouin">Magus</Name>
+      <Name language="Arabic_Egypt">Magus</Name>
+      <Name language="Arabic_Levant">Magus</Name>
+      <Name language="Arabic_Maghreb">Magus</Name>
+      <Name language="Arabic_Yemen">Magus</Name>
+      <Name language="Basque">Salbatierra Magos</Name>
+      <Name language="Castilian">Salvatierra de Magos</Name>
+      <Name language="French_Old">Sauveterre-en-Magos</Name>
+      <Name language="Hejazi_Arabic">Magus</Name>
+      <Name language="Leonese">Salvatierra de Magos</Name>
+      <Name language="Sicilian_Arabic">Magus</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -70786,6 +70996,15 @@
       <GameId game="CK2HIP" parent="c_setubal" order="4">b_coruche</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Qurish</Name>
+      <Name language="Arabic_Bedouin">Qurish</Name>
+      <Name language="Arabic_Egypt">Qurish</Name>
+      <Name language="Arabic_Levant">Qurish</Name>
+      <Name language="Arabic_Maghreb">Qurish</Name>
+      <Name language="Arabic_Yemen">Qurish</Name>
+      <Name language="Basque">Korutxe</Name>
+      <Name language="Hejazi_Arabic">Qurish</Name>
+      <Name language="Sicilian_Arabic">Qurish</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -70794,6 +71013,15 @@
       <GameId game="CK2HIP" parent="c_setubal" order="5">b_almada</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Hisn al-Ma'din</Name>
+      <Name language="Arabic_Bedouin">Hisn al-Ma'din</Name>
+      <Name language="Arabic_Egypt">Hisn al-Ma'din</Name>
+      <Name language="Arabic_Levant">Hisn al-Ma'din</Name>
+      <Name language="Arabic_Maghreb">Hisn al-Ma'din</Name>
+      <Name language="Arabic_Yemen">Hisn al-Ma'din</Name>
+      <Name language="French_Old">Almade</Name>
+      <Name language="Hejazi_Arabic">Hisn al-Ma'din</Name>
+      <Name language="Sicilian_Arabic">Hisn al-Ma'din</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -70802,6 +71030,15 @@
       <GameId game="CK2HIP" parent="c_setubal" order="6">b_palmela</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Balmallah</Name>
+      <Name language="Arabic_Bedouin">Balmallah</Name>
+      <Name language="Arabic_Egypt">Balmallah</Name>
+      <Name language="Arabic_Levant">Balmallah</Name>
+      <Name language="Arabic_Maghreb">Balmallah</Name>
+      <Name language="Arabic_Yemen">Balmallah</Name>
+      <Name language="French_Old">Palmèle</Name>
+      <Name language="Hejazi_Arabic">Balmallah</Name>
+      <Name language="Sicilian_Arabic">Balmallah</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -70810,6 +71047,15 @@
       <GameId game="CK2HIP" parent="c_setubal" order="7">b_sesimbra</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Shishumriyah</Name>
+      <Name language="Arabic_Bedouin">Shishumriyah</Name>
+      <Name language="Arabic_Egypt">Shishumriyah</Name>
+      <Name language="Arabic_Levant">Shishumriyah</Name>
+      <Name language="Arabic_Maghreb">Shishumriyah</Name>
+      <Name language="Arabic_Yemen">Shishumriyah</Name>
+      <Name language="French_Old">Sésimbre</Name>
+      <Name language="Hejazi_Arabic">Shishumriyah</Name>
+      <Name language="Sicilian_Arabic">Shishumriyah</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -72554,6 +72800,19 @@
       <GameId game="CK2HIP" parent="c_denia" order="2">b_elche</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Alsh</Name>
+      <Name language="Arabic_Bedouin">Alsh</Name>
+      <Name language="Arabic_Egypt">Alsh</Name>
+      <Name language="Arabic_Levant">Alsh</Name>
+      <Name language="Arabic_Maghreb">Alsh</Name>
+      <Name language="Arabic_Yemen">Alsh</Name>
+      <Name language="Aragonese">Elch</Name>
+      <Name language="Basque">Elx</Name>
+      <Name language="Catalan_Medieval">Elx</Name>
+      <Name language="Greek_Medieval">Helike</Name>
+      <Name language="Hejazi_Arabic">Alsh</Name>
+      <Name language="Latin_Medieval">Ilici</Name>
+      <Name language="Sicilian_Arabic">Alsh</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -72562,6 +72821,18 @@
       <GameId game="CK2HIP" parent="c_denia" order="3">b_alicante</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">al-Laqant</Name>
+      <Name language="Arabic_Bedouin">al-Laqant</Name>
+      <Name language="Arabic_Egypt">al-Laqant</Name>
+      <Name language="Arabic_Levant">al-Laqant</Name>
+      <Name language="Arabic_Maghreb">al-Laqant</Name>
+      <Name language="Arabic_Yemen">al-Laqant</Name>
+      <Name language="Aragonese">Alicant</Name>
+      <Name language="Basque">Alakant</Name>
+      <Name language="Catalan_Medieval">Alacant</Name>
+      <Name language="Hejazi_Arabic">al-Laqant</Name>
+      <Name language="Latin_Medieval">Lucentum</Name>
+      <Name language="Sicilian_Arabic">al-Laqant</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -72570,6 +72841,16 @@
       <GameId game="CK2HIP" parent="c_denia" order="4">b_castalla</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Qashtalah</Name>
+      <Name language="Arabic_Bedouin">Qashtalah</Name>
+      <Name language="Arabic_Egypt">Qashtalah</Name>
+      <Name language="Arabic_Levant">Qashtalah</Name>
+      <Name language="Arabic_Maghreb">Qashtalah</Name>
+      <Name language="Arabic_Yemen">Qashtalah</Name>
+      <Name language="Basque">Gaztala</Name>
+      <Name language="French_Old">Castalle</Name>
+      <Name language="Hejazi_Arabic">Qashtalah</Name>
+      <Name language="Sicilian_Arabic">Qashtalah</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -72578,6 +72859,17 @@
       <GameId game="CK2HIP" parent="c_denia" order="5">b_benissa</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Ben Isa</Name>
+      <Name language="Arabic_Bedouin">Ben Isa</Name>
+      <Name language="Arabic_Egypt">Ben Isa</Name>
+      <Name language="Arabic_Levant">Ben Isa</Name>
+      <Name language="Arabic_Maghreb">Ben Isa</Name>
+      <Name language="Arabic_Yemen">Ben Isa</Name>
+      <Name language="Aragonese">Benissa</Name>
+      <Name language="Catalan_Medieval">Benissa</Name>
+      <Name language="French_Old">Bénisse</Name>
+      <Name language="Hejazi_Arabic">Ben Isa</Name>
+      <Name language="Sicilian_Arabic">Ben Isa</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -75918,6 +76210,10 @@
       <GameId game="CK2HIP" parent="c_dzopk" order="1">b_citharizion</GameId>
     </GameIds>
     <Names>
+      <Name language="Kurdish">Keteriz</Name>
+      <Name language="Oghuz">Keteriz</Name>
+      <Name language="Turkish_Old">Keteriz</Name>
+      <Name language="Turkmen_Medieval">Keteriz</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -75926,6 +76222,12 @@
       <GameId game="CK2HIP" parent="c_dzopk" order="3">b_romanopolis</GameId>
     </GameIds>
     <Names>
+      <Name language="Armenian_Middle">Chapaghjur</Name>
+      <Name language="Greek_Medieval">Romanoupolis</Name>
+      <Name language="Kurdish">Cewlîg</Name>
+      <Name language="Oghuz">Bingöl</Name>
+      <Name language="Turkish_Old">Bingöl</Name>
+      <Name language="Turkmen_Medieval">Bingöl</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -75934,6 +76236,18 @@
       <GameId game="CK2HIP" parent="c_dzopk" order="3">b_arshamasat</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Šimšat</Name>
+      <Name language="Arabic_Bedouin">Šimšat</Name>
+      <Name language="Arabic_Egypt">Šimšat</Name>
+      <Name language="Arabic_Levant">Šimšat</Name>
+      <Name language="Arabic_Maghreb">Šimšat</Name>
+      <Name language="Arabic_Yemen">Šimšat</Name>
+      <Name language="Greek_Medieval">Arsamosaton</Name>
+      <Name language="Hejazi_Arabic">Šimšat</Name>
+      <Name language="Oghuz">Haraba</Name>
+      <Name language="Sicilian_Arabic">Šimšat</Name>
+      <Name language="Turkish_Old">Haraba</Name>
+      <Name language="Turkmen_Medieval">Haraba</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -75942,6 +76256,19 @@
       <GameId game="CK2HIP" parent="c_dzopk" order="4">b_arkni</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Arqanin</Name>
+      <Name language="Arabic_Bedouin">Arqanin</Name>
+      <Name language="Arabic_Egypt">Arqanin</Name>
+      <Name language="Arabic_Levant">Arqanin</Name>
+      <Name language="Arabic_Maghreb">Arqanin</Name>
+      <Name language="Arabic_Yemen">Arqanin</Name>
+      <Name language="Greek_Medieval">Erkne</Name>
+      <Name language="Hejazi_Arabic">Arqanin</Name>
+      <Name language="Kurdish">Erxenî</Name>
+      <Name language="Oghuz">Osmaniye</Name>
+      <Name language="Sicilian_Arabic">Arqanin</Name>
+      <Name language="Turkish_Old">Osmaniye</Name>
+      <Name language="Turkmen_Medieval">Osmaniye</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -76932,6 +77259,16 @@
       <GameId game="CK2HIP" parent="c_gutzkow" order="1">b_gutzkow</GameId>
     </GameIds>
     <Names>
+      <Name language="Bosnian_Medieval">Chocków</Name>
+      <Name language="Bulgarian_Old">Chocków</Name>
+      <Name language="Croatian_Medieval">Chocków</Name>
+      <Name language="Czech_Medieval">Chockov</Name>
+      <Name language="Polish_Old">Chocków</Name>
+      <Name language="Russian_Medieval">Chocków</Name>
+      <Name language="Serbian_Medieval">Chocków</Name>
+      <Name language="Slovak_Medieval">Chockov</Name>
+      <Name language="Slovene_Medieval">Chocków</Name>
+      <Name language="Sorbian">Gotzekowe</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -76989,6 +77326,16 @@
       <GameId game="CK2HIP" parent="c_belgard" order="1">b_belgard</GameId>
     </GameIds>
     <Names>
+      <Name language="Bosnian_Medieval">Biologard</Name>
+      <Name language="Bulgarian_Old">Biologard</Name>
+      <Name language="Croatian_Medieval">Biologard</Name>
+      <Name language="Czech_Medieval">Belehrad</Name>
+      <Name language="Polish_Old">Bialogard</Name>
+      <Name language="Russian_Medieval">Biologard</Name>
+      <Name language="Serbian_Medieval">Biologard</Name>
+      <Name language="Slovak_Medieval">Bielehrad</Name>
+      <Name language="Slovene_Medieval">Biologard</Name>
+      <Name language="Sorbian">Biologard</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -77182,6 +77529,24 @@
       <GameId game="CK2HIP" parent="d_rugen" order="1">c_rugen</GameId>
     </GameIds>
     <Names>
+      <Name language="Bosnian_Medieval">Rugia</Name>
+      <Name language="Bulgarian_Old">Rugia</Name>
+      <Name language="Croatian_Medieval">Rugia</Name>
+      <Name language="Czech_Medieval">Rujána</Name>
+      <Name language="Danish_Middle">Rygen</Name>
+      <Name language="English_Old_Norse">Rygen</Name>
+      <Name language="Gothic">Rygen</Name>
+      <Name language="Icelandic_Old">Rygen</Name>
+      <Name language="Irish_Middle_Norse">Rygen</Name>
+      <Name language="Norse">Rygen</Name>
+      <Name language="Norwegian_Old">Rygen</Name>
+      <Name language="Polish_Old">Rugia</Name>
+      <Name language="Russian_Medieval">Rugye</Name>
+      <Name language="Serbian_Medieval">Rugia</Name>
+      <Name language="Slovak_Medieval">Rujána</Name>
+      <Name language="Slovene_Medieval">Rugia</Name>
+      <Name language="Sorbian">Rana</Name>
+      <Name language="Swedish_Old">Rygen</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -77190,6 +77555,24 @@
       <GameId game="CK2HIP" parent="c_rugen" order="1">b_rugard</GameId>
     </GameIds>
     <Names>
+      <Name language="Bosnian_Medieval">Rugard</Name>
+      <Name language="Bulgarian_Old">Rugard</Name>
+      <Name language="Croatian_Medieval">Rugard</Name>
+      <Name language="Czech_Medieval">Rugard</Name>
+      <Name language="Danish_Middle">Rujanenburgh</Name>
+      <Name language="English_Old_Norse">Rujanenborg</Name>
+      <Name language="Gothic">Rujanenborg</Name>
+      <Name language="Icelandic_Old">Rujanenborg</Name>
+      <Name language="Irish_Middle_Norse">Rujanenborg</Name>
+      <Name language="Norse">Rujanenborg</Name>
+      <Name language="Norwegian_Old">Rujanenborg</Name>
+      <Name language="Polish_Old">Rugard</Name>
+      <Name language="Russian_Medieval">Rugard</Name>
+      <Name language="Serbian_Medieval">Rugard</Name>
+      <Name language="Slovak_Medieval">Rugard</Name>
+      <Name language="Slovene_Medieval">Rugard</Name>
+      <Name language="Sorbian">Rugard</Name>
+      <Name language="Swedish_Old">Rujanenborg</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -77198,6 +77581,24 @@
       <GameId game="CK2HIP" parent="c_rugen" order="2">b_charenza</GameId>
     </GameIds>
     <Names>
+      <Name language="Bosnian_Medieval">Korenitza</Name>
+      <Name language="Bulgarian_Old">Korenitza</Name>
+      <Name language="Croatian_Medieval">Korenitza</Name>
+      <Name language="Czech_Medieval">Korenice</Name>
+      <Name language="Danish_Middle">Charenz</Name>
+      <Name language="English_Old_Norse">Charenz</Name>
+      <Name language="Gothic">Charenz</Name>
+      <Name language="Icelandic_Old">Charenz</Name>
+      <Name language="Irish_Middle_Norse">Charenz</Name>
+      <Name language="Norse">Charenz</Name>
+      <Name language="Norwegian_Old">Charenz</Name>
+      <Name language="Polish_Old">Korenitza</Name>
+      <Name language="Russian_Medieval">Korenitza</Name>
+      <Name language="Serbian_Medieval">Korenitza</Name>
+      <Name language="Slovak_Medieval">Korenice</Name>
+      <Name language="Slovene_Medieval">Korenitza</Name>
+      <Name language="Sorbian">Korenitza</Name>
+      <Name language="Swedish_Old">Charenz</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -78064,6 +78465,20 @@
       <GameId game="CK2HIP" parent="c_lukomorie" order="3">b_kakhovka</GameId>
     </GameIds>
     <Names>
+      <Name language="Bosnian_Medieval">Aslangrad</Name>
+      <Name language="Bulgarian_Old">Aslangrad</Name>
+      <Name language="Croatian_Medieval">Aslangrad</Name>
+      <Name language="Czech_Medieval">Aslangrad</Name>
+      <Name language="Oghuz">Kirman</Name>
+      <Name language="Pecheneg">Kirman</Name>
+      <Name language="Polish_Old">Aslangrad</Name>
+      <Name language="Russian_Medieval">Aslangorod</Name>
+      <Name language="Serbian_Medieval">Aslangrad</Name>
+      <Name language="Slovak_Medieval">Aslangrad</Name>
+      <Name language="Slovene_Medieval">Aslangrad</Name>
+      <Name language="Sorbian">Aslangrad</Name>
+      <Name language="Turkish_Old">Kirman</Name>
+      <Name language="Turkmen_Medieval">Kirman</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -78072,6 +78487,16 @@
       <GameId game="CK2HIP" parent="c_crimea" order="3">b_qarasuvbazar</GameId>
     </GameIds>
     <Names>
+      <Name language="Bosnian_Medieval">Karasubazar</Name>
+      <Name language="Bulgarian_Old">Karasubazar</Name>
+      <Name language="Croatian_Medieval">Karasubazar</Name>
+      <Name language="Czech_Medieval">Karasubazar</Name>
+      <Name language="Polish_Old">Karasubazar</Name>
+      <Name language="Russian_Medieval">Karasubazar</Name>
+      <Name language="Serbian_Medieval">Karasubazar</Name>
+      <Name language="Slovak_Medieval">Karasubazar</Name>
+      <Name language="Slovene_Medieval">Karasubazar</Name>
+      <Name language="Sorbian">Karasubazar</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
