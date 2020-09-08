@@ -39460,15 +39460,18 @@
     <Id>mercia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_england" order="5">d_hereford</GameId>
+      <GameId game="CK3">d_hereford</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Dobunnia</Name>
       <Name language="Cornish_Middle">Dobunnia</Name>
       <Name language="Danish_Middle">Mierce</Name>
+      <Name language="English_Middle">Hereford</Name>
       <Name language="English_Middle">Mercia</Name>
       <Name language="English_Old_Norse">Mierce</Name>
       <Name language="English_Old">Mierce</Name>
       <Name language="English">Mercia</Name>
+      <Name language="Gothic">Mierce</Name>
       <Name language="Icelandic_Old">Mierce</Name>
       <Name language="Irish_Middle_Norse">Mierce</Name>
       <Name language="Irish_Middle">Dobunnia</Name>
@@ -39532,22 +39535,51 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>warwickshire</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="d_hereford" order="5">c_warwick</GameId>
+      <GameId game="CK3">c_warwickshire</GameId>
+    </GameIds>
+    <FallbackLocations>
+      <LocationId>warwick</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="English_Middle">Warwickshire</Name>
+      <Name language="English">Warwickshire</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>warwick</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_warwick" order="1">b_warwick</GameId>
-      <GameId game="CK2HIP" parent="d_hereford" order="5">c_warwick</GameId>
+      <GameId game="CK3">b_warwick</GameId>
+      <GameId game="ImperatorRome">2048</GameId> <!-- Alauna -->
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Vorikas</Name>
+      <Name language="Danish_Middle">Wæring</Name>
+      <Name language="English_Middle">Warwick</Name>
+      <Name language="English_Old_Norse">Wæring</Name>
+      <Name language="English_Old">Wæring</Name>
+      <Name language="English_Old">Wæringwic</Name>
+      <Name language="English">Warwick</Name>
+      <Name language="Gothic">Wæring</Name>
+      <Name language="Icelandic_Old">Wæring</Name>
+      <Name language="Irish_Middle_Norse">Wæring</Name>
       <Name language="Latin">Alauna</Name>
+      <Name language="Lithuanian">Vorikas</Name>
+      <Name language="Norse">Wæring</Name>
+      <Name language="Norwegian_Old">Wæring</Name>
+      <Name language="Swedish_Old">Wæring</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>coventry</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_warwick" order="2">b_coventry</GameId>
+      <GameId game="CK3">b_coventry</GameId>
     </GameIds>
     <Names>
+      <Name language="English_Middle">Coventry</Name>
       <Name language="English_Old_Norse">Cofestre</Name>
       <Name language="English_Old">Cofestre</Name>
       <Name language="English">Coventry</Name>
@@ -39559,11 +39591,23 @@
     <Id>birmingham</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_warwick" order="3">b_birmingham</GameId>
+      <GameId game="CK3">b_birmingham</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Beormingaham</Name>
+      <Name language="English_Middle">Birmingham</Name>
+      <Name language="English_Old_Norse">Beormingasham</Name>
+      <Name language="English_Old">Beormingasham</Name>
+      <Name language="English">Birmingham</Name>
+      <Name language="Gothic">Beormingaham</Name>
+      <Name language="Icelandic_Old">Beormingaham</Name>
+      <Name language="Irish_Middle_Norse">Beormingaham</Name>
       <Name language="Latgalian">Birmingema</Name>
-      <Name language="Lithuanian">Birmingamas</Name>
       <Name language="Latin">Birminghamia</Name>
+      <Name language="Lithuanian">Birmingamas</Name>
+      <Name language="Norse">Beormingaham</Name>
+      <Name language="Norwegian_Old">Beormingaham</Name>
+      <Name language="Swedish_Old">Beormingaham</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -40333,15 +40377,49 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>leicestershire</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="d_fivebouroughs" order="2">c_leicester</GameId>
+      <GameId game="CK3">c_leicestershire</GameId>
+    </GameIds>
+    <FallbackLocations>
+      <LocationId>leicester</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="English_Middle">Leicestershire</Name>
+      <Name language="English">Leicestershire</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>leicester</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_leicester" order="1">b_leicester</GameId>
-      <GameId game="CK2HIP" parent="d_fivebouroughs" order="2">c_leicester</GameId>
+      <GameId game="CK3">b_leicester</GameId>
+      <GameId game="ImperatorRome">2054</GameId> <!-- Ratae -->
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Caer Lerion</Name>
+      <Name language="Cornish_Middle">Caer Lerion</Name>
+      <Name language="Cumbric">Caer Lerion</Name>
+      <Name language="Danish_Middle">Ligeraceaster</Name>
+      <Name language="English_Middle">Leichester</Name>
+      <Name language="English_Old_Norse">Ligeraceaster</Name>
+      <Name language="English_Old">Ligeraceaster</Name>
+      <Name language="English">Leichester</Name>
+      <Name language="Gothic">Ligeraceaster</Name>
+      <Name language="Greek_Medieval">Rate</Name>
+      <Name language="Icelandic_Old">Ligeraceaster</Name>
+      <Name language="Irish_Middle_Norse">Ligeraceaster</Name>
+      <Name language="Irish_Middle">Caer Lerion</Name>
       <Name language="Latgalian">Lestera</Name>
+      <Name language="Latin_Medieval">Ratae</Name>
       <Name language="Lithuanian">Lesteris</Name>
-      <Name language="Latin">Coritani</Name> <!-- Or Ratae -->
+      <Name language="Norman">Ledecestre</Name>
+      <Name language="Norse">Ligeraceaster</Name>
+      <Name language="Norwegian_Old">Ligeraceaster</Name>
+      <Name language="Scottish_Medieval">Caer Lerion</Name>
+      <Name language="Swedish_Old">Ligeraceaster</Name>
+      <Name language="Welsh_Middle">Caer Lerion</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -40415,9 +40493,21 @@
     <Id>rutland</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_fivebouroughs" order="4">c_rutland</GameId>
+      <GameId game="CK3">b_rutland</GameId>
     </GameIds>
     <Names>
-      <Name language="Latin">Ratae</Name>
+      <Name language="Danish_Middle">Roteland</Name>
+      <Name language="English_Middle">Rutland</Name>
+      <Name language="English_Old_Norse">Roteland</Name>
+      <Name language="English_Old">Roteland</Name>
+      <Name language="English">Rutland</Name>
+      <Name language="Gothic">Roteland</Name>
+      <Name language="Icelandic_Old">Roteland</Name>
+      <Name language="Irish_Middle_Norse">Roteland</Name>
+      <Name language="Norman">Roteland</Name>
+      <Name language="Norse">Roteland</Name>
+      <Name language="Norwegian_Old">Roteland</Name>
+      <Name language="Swedish_Old">Roteland</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -65967,8 +66057,30 @@
     <Id>melton_mowbray</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_leicester" order="4">b_melton_mowbray</GameId>
+      <GameId game="CK23">b_melton</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Meltun</Name>
+      <Name language="English_Middle">Melton</Name>
+      <Name language="English_Old_Norse">Meltun</Name>
+      <Name language="English_Old">Meltun</Name>
+      <Name language="English">Melton</Name>
+      <Name language="Gothic">Meltun</Name>
+      <Name language="Icelandic_Old">Meltun</Name>
+      <Name language="Irish_Middle_Norse">Meltun</Name>
+      <Name language="Norse">Meltun</Name>
+      <Name language="Norwegian_Old">Meltun</Name>
+      <Name language="Swedish_Old">Meltun</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bosworth</Id>
+    <GameIds>
+      <GameId game="CK23">b_bosworth</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English_Middle">Bosworth</Name>
+      <Name language="English">Bosworth</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
