@@ -673,6 +673,12 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Daylami</Id>
+    <GameIds>
+      <GameId game="CK2HIP">daylamite</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Dimli</Id>
     <Code iso-639-3="diq" />
   </Language>
@@ -725,6 +731,9 @@
   <Language>
     <Id>English</Id>
     <Code iso-639-1="en" iso-639-3="eng" />
+    <FallbackLanguages>
+      <LanguageId>English_Middle</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>English_Middle</Id> <!-- c. 12th century - late 15th century -->
@@ -733,6 +742,10 @@
       <GameId game="CK2HIP">english</GameId>
       <GameId game="CK3">english</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>English</LanguageId>
+      <LanguageId>English_Old</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>English_Old</Id> <!-- c. 5th century - late 11th century -->
@@ -741,12 +754,22 @@
       <GameId game="CK2HIP">saxon</GameId>
       <GameId game="CK3">anglo_saxon</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>English_Old_Norse</LanguageId>
+      <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>English_Old_Norse</Id>
     <GameIds>
       <GameId game="CK2HIP">anglonorse</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>English_Old</LanguageId>
+      <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Esperanto</Id>
@@ -1061,8 +1084,10 @@
     <FallbackLanguages>
       <LanguageId>Greek_Medieval</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
-      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1073,8 +1098,10 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Greek_Ancient</LanguageId>
-      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1085,20 +1112,38 @@
       <GameId game="ImperatorRome">hellenic</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Greek_Ancient_Egypt</Id>
+    <Id>Greek_Aeolic</Id>
     <GameIds>
-      <GameId game="ImperatorRome">EGY</GameId>
+      <GameId game="ImperatorRome">IOA</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Greek_Ancient_Antignoid</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">PRY</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
@@ -1110,7 +1155,23 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Greek_Ancient_Egypt</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">EGY</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
@@ -2217,6 +2278,7 @@
     <Code iso-639-3="sjs" />
     <FallbackLanguages>
       <LanguageId>Zenaga</LanguageId>
+      <LanguageId>Zenati</LanguageId>
     </FallbackLanguages>
     <GameIds>
       <GameId game="CK2HIP">sanhaja</GameId>
@@ -2894,11 +2956,22 @@
     <Id>Zenaga</Id>
     <Code iso-639-2="zen" iso-639-3="zen" />
     <FallbackLanguages>
+      <LanguageId>Zenati</LanguageId>
       <LanguageId>Sanhaja</LanguageId>
     </FallbackLanguages>
     <GameIds>
       <GameId game="CK2HIP">berber</GameId>
       <GameId game="CK3">berber</GameId>
+    </GameIds>
+  </Language>
+  <Language>
+    <Id>Zenati</Id>
+    <FallbackLanguages>
+      <LanguageId>Zenaga</LanguageId>
+      <LanguageId>Sanhaja</LanguageId>
+    </FallbackLanguages>
+    <GameIds>
+      <GameId game="CK2HIP">zanata</GameId>
     </GameIds>
   </Language>
   <Language>
