@@ -725,6 +725,9 @@
   <Language>
     <Id>English</Id>
     <Code iso-639-1="en" iso-639-3="eng" />
+    <FallbackLanguages>
+      <LanguageId>English_Middle</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>English_Middle</Id> <!-- c. 12th century - late 15th century -->
@@ -733,6 +736,11 @@
       <GameId game="CK2HIP">english</GameId>
       <GameId game="CK3">english</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>English</LanguageId>
+      <LanguageId>English_Old</LanguageId>
+      <LanguageId>English_Old_Norse</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>English_Old</Id> <!-- c. 5th century - late 11th century -->
@@ -741,12 +749,22 @@
       <GameId game="CK2HIP">saxon</GameId>
       <GameId game="CK3">anglo_saxon</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>English_Old_Norse</LanguageId>
+      <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>English_Old_Norse</Id>
     <GameIds>
       <GameId game="CK2HIP">anglonorse</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>English_Old</LanguageId>
+      <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Esperanto</Id>
