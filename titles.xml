@@ -39554,6 +39554,7 @@
     <Id>herefordshire</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_hereford" order="3">c_hereford</GameId>
+      <GameId game="CK3">c_hereford</GameId>
     </GameIds>
     <FallbackLocations>
       <LocationId>hereford</LocationId>
@@ -39570,7 +39571,8 @@
   <LocationEntity>
     <Id>hereford</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="d_hereford" order="3">c_hereford</GameId>
+      <GameId game="CK2HIP" parent="c_hereford" order="2">b_hereford</GameId>
+      <GameId game="CK3">b_hereford</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Henffordd</Name>
@@ -41954,7 +41956,7 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>carmarthen</Id>
+    <Id>llandovery</Id>
     <GameIds>
       <GameId game="CK3">b_llandovery</GameId>
     </GameIds>
@@ -42223,7 +42225,6 @@
   <LocationEntity>
     <Id>monmouthshire</Id>
     <GameIds>
-      <GameId game="CK3">c_monmouthshire</GameId>
     </GameIds>
     <FallbackLocations>
       <LocationId>monmouth</LocationId>
@@ -42407,6 +42408,7 @@
   <LocationEntity>
     <Id>carrick</Id>
     <GameIds>
+      <GameId game="CK2HIP" parent="d_galloway" order="2">c_carrick</GameId>
       <GameId game="CK3">b_carrick</GameId>
     </GameIds>
     <Names>
@@ -42416,6 +42418,7 @@
       <Name language="English">Carrick</Name>
       <Name language="Irish_Middle_Norse">Carraig</Name>
       <Name language="Irish_Middle">Carraig</Name>
+      <Name language="Latin">Ayrus</Name>
       <Name language="Scottish_Medieval">Carraig</Name>
       <Name language="Welsh_Middle">Carraig</Name>
     </Names>
@@ -43132,15 +43135,6 @@
     </GameIds>
     <Names>
       <Name language="Latin">Novantia</Name>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>carrick</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="d_galloway" order="2">c_carrick</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Latin">Ayrus</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -67823,7 +67817,7 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>dolforwyn</Id>
+    <Id>llandrindod</Id>
     <GameIds>
       <GameId game="CK3">b_llandrindod</GameId>
     </GameIds>
@@ -67860,8 +67854,12 @@
     <Id>gwent</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_morgannwg" order="1">c_gwent</GameId>
+      <GameId game="CK3">c_monmouthshire</GameId>
     </GameIds>
     <Names>
+      <Name language="Welsh_Middle">Gwent</Name>
+      <Name language="Welsh_Old">Guent</Name>
+      <Name language="Welsh">Gwent</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
