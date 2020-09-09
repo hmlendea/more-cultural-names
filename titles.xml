@@ -6692,13 +6692,15 @@
     <Id>munster_ireland</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_ireland" order="5">d_munster</GameId>
+      <GameId game="CK3">d_munster</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Deas-Mhumhain</Name>
       <Name language="Cornish_Middle">Deas-Mhumhain</Name>
       <Name language="Cumbric">Deas-Mhumhain</Name>
-      <Name language="Irish_Middle">Deas-Mhumhain</Name>
+      <Name language="English">Munster</Name>
       <Name language="Irish_Middle_Norse">Deas-Mhumhain</Name>
+      <Name language="Irish_Middle">Deas-Mhumhain</Name>
       <Name language="Scottish_Medieval">Deas-Mhumhain</Name>
       <Name language="Welsh_Middle">Deas-Mhumhain</Name>
     </Names>
@@ -41775,6 +41777,7 @@
     <Id>ireland</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_britannia" order="8">k_ireland</GameId>
+      <GameId game="CK3">k_ireland</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Iwerddon</Name>
@@ -41788,7 +41791,8 @@
       <Name language="Gothic">Íraland</Name>
       <Name language="Icelandic_Old">Íraland</Name>
       <Name language="Irish_Middle_Norse">Nerin</Name>
-      <Name language="Irish_Middle">Éire</Name>
+      <Name language="Irish_Old">Éiru</Name>
+      <Name language="Irish">Éire</Name>
       <Name language="Latin">Hibernia</Name>
       <Name language="Norse">Íraland</Name>
       <Name language="Norwegian_Old">Íraland</Name>
@@ -41801,20 +41805,78 @@
   <LocationEntity>
     <Id>ulster</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="d_ulster" order="1">c_ulster</GameId>
       <GameId game="CK2HIP" parent="k_ireland" order="1">d_ulster</GameId>
+      <GameId game="CK3">c_ulster</GameId>
+      <GameId game="CK3">d_ulster</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Wledd</Name>
+      <Name language="Cornish_Middle">Wledd</Name>
+      <Name language="Cumbric">Wledd</Name>
+      <Name language="Danish_Middle">Ullagh</Name>
+      <Name language="English_Old_Norse">Ulley</Name>
+      <Name language="English_Old">Ullagh</Name>
+      <Name language="English">Ulster</Name>
+      <Name language="Gothic">Ullagh</Name>
+      <Name language="Icelandic_Old">Ullagh</Name>
+      <Name language="Irish_Middle_Norse">Ullagh</Name>
+      <Name language="Irish_Old">Ulaid</Name>
+      <Name language="Irish">Ulaidh</Name>
+      <Name language="Norse">Ullagh</Name>
+      <Name language="Norwegian_Old">Ullagh</Name>
+      <Name language="Scottish_Medieval">Uladh</Name>
+      <Name language="Swedish_Old">Ullagh</Name>
+      <Name language="Welsh_Middle">Wledd</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>antrim</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="d_ulster" order="1">c_ulster</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Breton_Middle">Aontroim</Name>
+      <Name language="Cornish_Middle">Aontroim</Name>
+      <Name language="Cumbric">Aontroim</Name>
+      <Name language="Irish_Middle_Norse">Aontroim</Name>
+      <Name language="Irish_Middle">Aontroim</Name>
       <Name language="Lithuanian">Antrimas</Name>
+      <Name language="Norse">Aontroim</Name>
+      <Name language="Scottish_Medieval">Aontroim</Name>
+      <Name language="Welsh_Middle">Aontroim</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>carrick</Id>
+    <GameIds>
+      <GameId game="CK3">b_carrick</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Breton_Middle">Carraig</Name>
+      <Name language="Cornish_Middle">Carraig</Name>
+      <Name language="Cumbric">Carraig</Name>
+      <Name language="English">Carrick</Name>
+      <Name language="Irish_Middle_Norse">Carraig</Name>
+      <Name language="Irish_Middle">Carraig</Name>
+      <Name language="Scottish_Medieval">Carraig</Name>
+      <Name language="Welsh_Middle">Carraig</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>carrickfergus</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_ulster" order="2">b_carrickfergus</GameId>
+      <GameId game="CK3">b_carrickfergus</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Carraig Fhearghais</Name>
+      <Name language="Cornish_Middle">Carraig Fhearghais</Name>
+      <Name language="Cumbric">Carraig Fhearghais</Name>
+      <Name language="Irish_Middle_Norse">Carraig Fhearghais</Name>
+      <Name language="Irish_Middle">Carraig Fhearghais</Name>
       <Name language="Lithuanian">Karikfergusas</Name>
+      <Name language="Scottish_Medieval">Carraig Fhearghais</Name>
+      <Name language="Welsh_Middle">Carraig Fhearghais</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -41870,13 +41932,15 @@
     <Id>derry</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_tyrone" order="4">b_derry</GameId>
+      <GameId game="CK3">b_derry</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Doire</Name>
       <Name language="Cornish_Middle">Doire</Name>
       <Name language="Cumbric">Doire</Name>
       <Name language="Irish_Middle_Norse">Doirrey</Name>
-      <Name language="Irish_Middle">Daire</Name>
+      <Name language="Irish_Old">Daire</Name>
+      <Name language="Irish">Doire</Name>
       <Name language="Latin">Derae</Name>
       <Name language="Scottish_Medieval">Doire</Name>
       <Name language="Welsh_Middle">Doire</Name>
@@ -41886,18 +41950,24 @@
     <Id>dundalk</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_oriel" order="1">b_dundalk</GameId>
+      <GameId game="CK3">b_dundalk</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Dún Dealgan</Name>
       <Name language="Cornish_Middle">Dún Dealgan</Name>
       <Name language="Cumbric">Dún Dealgan</Name>
+      <Name language="Danish_Middle">Kerlingfjord</Name>
       <Name language="English_Middle">Dundalk</Name>
       <Name language="English_Old_Norse">Doon Jialgan</Name>
       <Name language="English_Old">Dundalgan</Name>
+      <Name language="English">Dundalk</Name>
       <Name language="Irish_Middle_Norse">Dún Dealgan</Name>
       <Name language="Irish_Middle">Dún Dealgan</Name>
       <Name language="Lithuanian">Dandolkas</Name>
+      <Name language="Norse">Kerlingfjorðr</Name>
+      <Name language="Norwegian_Old">Kerlingfjord</Name>
       <Name language="Scottish_Medieval">Dún Dealgan</Name>
+      <Name language="Swedish_Old">Kerlingfjord</Name>
       <Name language="Welsh_Middle">Dún Dealgan</Name>
     </Names>
   </LocationEntity>
@@ -41905,9 +41975,26 @@
     <Id>armagh</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_oriel" order="3">b_armagh</GameId>
+      <GameId game="CK3">b_armagh</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Ard Mhacha</Name>
+      <Name language="Cornish_Middle">Ard Mhacha</Name>
+      <Name language="Cumbric">Ard Mhacha</Name>
+      <Name language="Danish_Middle">Ardmagh</Name>
+      <Name language="English_Old_Norse">Ard Maghey</Name>
+      <Name language="English_Old">Ardmagh</Name>
+      <Name language="English">Armagh</Name>
+      <Name language="Gothic">Ardmagh</Name>
+      <Name language="Icelandic_Old">Ardmagh</Name>
+      <Name language="Irish_Middle_Norse">Ardmagh</Name>
+      <Name language="Irish_Middle">Ard Mhacha</Name>
       <Name language="Lithuanian">Arma</Name>
+      <Name language="Norse">Ardmagh</Name>
+      <Name language="Norwegian_Old">Ardmagh</Name>
+      <Name language="Scottish_Medieval">Ard Mhacha</Name>
+      <Name language="Swedish_Old">Ardmagh</Name>
+      <Name language="Welsh_Middle">Ard Mhacha</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -41924,19 +42011,61 @@
     <Id>galway</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_connacht" order="2">b_galway</GameId>
+      <GameId game="CK3">b_galway</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Gailimh</Name>
+      <Name language="Cornish_Middle">Gailimh</Name>
+      <Name language="Cumbric">Gailimh</Name>
+      <Name language="Danish_Middle">Galwæg</Name>
+      <Name language="English_Old_Norse">Galliv</Name>
+      <Name language="English_Old">Galwæg</Name>
+      <Name language="English">Galway</Name>
+      <Name language="Gothic">Galwæg</Name>
+      <Name language="Icelandic_Old">Galwæg</Name>
+      <Name language="Irish_Middle_Norse">Galliu</Name>
+      <Name language="Irish_Middle">Gailimh</Name> <!-- Or Dún Bhun na Gaillimhe -->
       <Name language="Latgalian">Golveja</Name>
       <Name language="Lithuanian">Golvejus</Name>
+      <Name language="Norse">Galwæg</Name>
+      <Name language="Norwegian_Old">Galwæg</Name>
+      <Name language="Scottish_Medieval">Gailimh</Name>
+      <Name language="Swedish_Old">Galwæg</Name>
+      <Name language="Welsh_Middle">Gailimh</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>castlebar</Id>
+    <GameIds>
+      <GameId game="CK3">b_castlebar</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Castlebar</Name>
+      <Name language="Irish_Middle">Caisleán an Bharraigh</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>sligo</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_moylurg" order="2">b_sligo</GameId>
+      <GameId game="CK3">b_sligo</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Sligeach</Name>
+      <Name language="Cornish_Middle">Sligeach</Name>
+      <Name language="Cumbric">Sligeach</Name>
+      <Name language="Danish_Middle">Slich</Name>
+      <Name language="English_Old_Norse">Slich</Name>
+      <Name language="Gothic">Slich</Name>
+      <Name language="Icelandic_Old">Slich</Name>
+      <Name language="Irish_Middle_Norse">Shliggagh</Name>
+      <Name language="Irish_Middle">Sligeach</Name>
       <Name language="Lithuanian">Slaigo</Name>
+      <Name language="Norse">Slich</Name>
+      <Name language="Norwegian_Old">Slich</Name>
+      <Name language="Scottish_Medieval">Sligeach</Name>
+      <Name language="Swedish_Old">Slich</Name>
+      <Name language="Welsh_Middle">Sligeach</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -41976,6 +42105,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_cavan" order="1">b_cavan</GameId>
       <GameId game="CK2HIP" parent="d_connacht" order="5">c_cavan</GameId>
+      <GameId game="CK3">b_cavan</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">An Cabhán</Name>
@@ -41989,9 +42119,23 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>athlone_county</Id>
+    <GameIds>
+      <GameId game="CK3">c_athlone</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Breton_Middle">Mide</Name>
+      <Name language="Cornish_Middle">Mide</Name>
+      <Name language="Irish_Middle">Mide</Name>
+      <Name language="Scottish_Medieval">Mide</Name>
+      <Name language="Welsh_Middle">Mide</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>athlone</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_tethbae" order="7">b_athlone</GameId>
+      <GameId game="CK3">b_athlone</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Baile Átha Luain</Name>
@@ -42005,27 +42149,137 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>birr</Id>
+    <GameIds>
+      <GameId game="CK3">b_birr</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Breton_Middle">Caisleán Bhiorra</Name>
+      <Name language="Cornish_Middle">Caisleán Bhiorra</Name>
+      <Name language="Cumbric">Caisleán Bhiorra</Name>
+      <Name language="Irish_Middle">Caisleán Bhiorra</Name>
+      <Name language="Scottish_Medieval">Caisleán Bhiorra</Name>
+      <Name language="Welsh_Middle">Caisleán Bhiorra</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>uisneach</Id>
+    <GameIds>
+      <GameId game="CK3">b_uisneach</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Breton_Middle">Ráth Conarta</Name>
+      <Name language="Cornish_Middle">Ráth Conarta</Name>
+      <Name language="Cumbric">Ráth Conarta</Name>
+      <Name language="Irish_Middle">Ráth Conarta</Name>
+      <Name language="Scottish_Medieval">Ráth Conarta</Name>
+      <Name language="Welsh_Middle">Ráth Conarta</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>longford</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_tethbae" order="2">b_longford</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">An Longphort</Name>
+      <Name language="Cornish_Middle">An Longphort</Name>
+      <Name language="Cumbric">An Longphort</Name>
+      <Name language="Danish_Middle">Galwæg</Name>
+      <Name language="English_Old_Norse">Longphort</Name>
+      <Name language="English_Old">Longphort</Name>
+      <Name language="English">Longford</Name>
+      <Name language="Gothic">Galwæg</Name>
+      <Name language="Icelandic_Old">Galwæg</Name>
+      <Name language="Irish_Middle_Norse">Lhongphort</Name>
+      <Name language="Irish_Middle">An Longphort</Name>
       <Name language="Lithuanian">Longfordas</Name>
+      <Name language="Norse">Longphort</Name>
+      <Name language="Norwegian_Old">Galwæg</Name>
+      <Name language="Scottish_Medieval">An Longphort</Name>
+      <Name language="Swedish_Old">Galwæg</Name>
+      <Name language="Welsh_Middle">An Longphort</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>dublin_county</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="d_meath" order="4">c_dublin</GameId>
+      <GameId game="CK3">c_dublin</GameId>
+    </GameIds>
+    <FallbackLocations>
+      <LocationId>dublin</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="Danish_Middle">Diflinarskiri</Name>
+      <Name language="Gothic">Diflinarskiri</Name>
+      <Name language="Icelandic_Old">Diflinarskiri</Name>
+      <Name language="Irish_Middle_Norse">Diflinarskiri</Name>
+      <Name language="Irish_Middle">Duibhlinn</Name>
+      <Name language="Norse">Diflinarskiri</Name>
+      <Name language="Norwegian_Old">Diflinarskiri</Name>
+      <Name language="Scottish_Medieval">Duibhlinn</Name>
+      <Name language="Swedish_Old">Diflinarskiri</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>dublin_castle</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_dublin" order="1">b_dublin_castle</GameId>
+    </GameIds>
+    <FallbackLocations>
+      <LocationId>dublin</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="Breton_Middle">Caisleán Dulyn</Name>
+      <Name language="Cornish_Middle">Caisleán Dulyn</Name>
+      <Name language="Cumbric">Caisleán Dulyn</Name>
+      <Name language="Danish_Middle">Dyflinburgh</Name>
+      <Name language="English_Middle">Dublinburgh</Name> <!-- Guessed --> 
+      <Name language="English_Old_Norse">Dyflinburh</Name>
+      <Name language="English_Old">Difelinburh</Name>
+      <Name language="English">Dublin Castle</Name>
+      <Name language="Gothic">Dyflinborg</Name>
+      <Name language="Icelandic_Old">Dyflinborg</Name>
+      <Name language="Irish_Middle_Norse">Dyflinborg</Name>
+      <Name language="Irish_Middle">Caisleán Dunbhlinn</Name>
+      <Name language="Norse">Dyflinborg</Name>
+      <Name language="Norwegian_Old">Dyflinborg</Name>
+      <Name language="Scottish_Medieval">Caisleán Dunbhlinn</Name>
+      <Name language="Swedish_Old">Dyflinborg</Name>
+      <Name language="Welsh_Middle">Caisleán Dulyn</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>dublin</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_dublin" order="1">b_dublin</GameId>
-      <GameId game="CK2HIP" parent="d_meath" order="4">c_dublin</GameId>
+      <GameId game="CK3">b_dublin</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Dulyn</Name>
+      <Name language="Cornish_Middle">Dulyn</Name>
+      <Name language="Cumbric">Dulyn</Name>
+      <Name language="Danish_Middle">Divlyn</Name>
+      <Name language="English_Old_Norse">Dyflin</Name>
+      <Name language="English_Old">Difelin</Name>
+      <Name language="English">Dublin</Name>
+      <Name language="Gothic">Divlyn</Name>
+      <Name language="Icelandic_Old">Divlyn</Name>
+      <Name language="Irish_Middle_Norse">Divlyn</Name>
+      <Name language="Irish_Middle">Baile Átha Cliath</Name>
       <Name language="Italian">Dublino</Name>
-      <Name language="Leonese">Ciudá</Name>
       <Name language="Latgalian">Dublina</Name>
-      <Name language="Lithuanian">Dublinas</Name>
       <Name language="Latin">Eblana</Name>
+      <Name language="Leonese">Ciudá</Name>
+      <Name language="Lithuanian">Dublinas</Name>
+      <Name language="Norse">Divlyn</Name>
+      <Name language="Norse">Dyflinn</Name>
+      <Name language="Norwegian_Old">Divlyn</Name>
       <Name language="Sardinian">Dublinu</Name>
+      <Name language="Scottish_Medieval">Baile Átha Cliath</Name>
+      <Name language="Swedish_Old">Divlyn</Name>
+      <Name language="Welsh_Middle">Dulyn</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -42042,6 +42296,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_kildare" order="6">b_kildare</GameId>
       <GameId game="CK2HIP" parent="d_leinster" order="2">c_kildare</GameId>
+      <GameId game="CK3">b_kildare</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Cill Dara</Name>
@@ -42093,10 +42348,13 @@
       <Name language="English_Middle">Kilkenny</Name>
       <Name language="English_Old_Norse">Kilkanice</Name>
       <Name language="English_Old">Kilkanice</Name>
+      <Name language="English">Kilkenny</Name>
       <Name language="Gothic">Kilkanice</Name>
       <Name language="Icelandic_Old">Kilkanice</Name>
       <Name language="Irish_Middle_Norse">Cheeill Chennee</Name>
       <Name language="Irish_Middle">Cill Chainnigh</Name>
+      <Name language="Irish_Old">Ceall Cainnigh</Name>
+      <Name language="Irish">Cill Chainnigh</Name>
       <Name language="Latin">Canicopolis</Name>
       <Name language="Lithuanian">Kilkenis</Name>
       <Name language="Norse">Kilkanice</Name>
@@ -42107,19 +42365,32 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>athy</Id>
+    <GameIds>
+      <GameId game="CK3">b_athy</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Athy</Name>
+      <Name language="Irish_Middle">Baile Átha Í</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>tralee</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_desmond" order="1">b_tralee</GameId>
+      <GameId game="CK3">b_tralee</GameId>
     </GameIds>
     <Names>
-      <Name language="Breton_Middle">Tra Lí</Name>
-      <Name language="Cornish_Middle">Tra Lí</Name>
-      <Name language="Cumbric">Tra Lí</Name>
-      <Name language="Irish_Middle_Norse">Tra Lí</Name>
-      <Name language="Irish_Middle">Tra Lí</Name>
+      <Name language="Breton_Middle">Traigh Lí</Name>
+      <Name language="Cornish_Middle">Traigh Lí</Name>
+      <Name language="Cumbric">Traigh Lí</Name>
+      <Name language="English">Tralee</Name>
+      <Name language="Irish_Middle_Norse">Traigh Lí</Name>
+      <Name language="Irish_Middle">Traigh Lí</Name>
+      <Name language="Irish">Tra Lí</Name>
       <Name language="Lithuanian">Trali</Name>
-      <Name language="Scottish_Medieval">Tra Lí</Name>
-      <Name language="Welsh_Middle">Tra Lí</Name>
+      <Name language="Scottish_Medieval">Traigh Lí</Name>
+      <Name language="Welsh_Middle">Traigh Lí</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -42128,9 +42399,25 @@
       <GameId game="CK2HIP" parent="c_limerick" order="1">b_limerick_castle</GameId>
       <GameId game="CK2HIP" parent="c_limerick" order="1">b_limerick</GameId>
       <GameId game="CK2HIP" parent="d_munster" order="2">c_limerick</GameId>
+      <GameId game="CK3">b_limerick</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Luimnigh</Name>
+      <Name language="Cornish_Middle">Luimnigh</Name>
+      <Name language="Cumbric">Luimnigh</Name>
+      <Name language="Danish_Middle">Hlymrekr</Name> <!-- Or Lymrek -->
+      <Name language="English_Old_Norse">Limmeragh</Name>
+      <Name language="English">Limerick</Name>
+      <Name language="Gothic">Hlymrekr</Name>
+      <Name language="Icelandic_Old">Hlymrekr</Name>
+      <Name language="Irish_Middle_Norse">Hlymrekr</Name>
+      <Name language="Irish_Middle">Luimnigh</Name> <!-- Or Luimneach -->
       <Name language="Latgalian">Limerika</Name>
+      <Name language="Norse">Hlymrekr</Name> <!-- Or Hlymrek -->
+      <Name language="Norwegian_Old">Hlymrekr</Name> <!-- Or Hlymrek -->
+      <Name language="Scottish_Medieval">Luimnigh</Name>
+      <Name language="Swedish_Old">Hlymrekr</Name> <!-- Or Lymrek -->
+      <Name language="Welsh_Middle">Luimnigh</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -42138,38 +42425,135 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_cork" order="1">b_cork</GameId>
       <GameId game="CK2HIP" parent="d_munster" order="3">c_cork</GameId>
+      <GameId game="CK3">b_cork</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Corc</Name>
+      <Name language="Cornish_Middle">Corc</Name>
+      <Name language="Cumbric">Corc</Name>
+      <Name language="Danish_Middle">Chorkee</Name>
+      <Name language="English_Old_Norse">Chorkee</Name>
+      <Name language="English">Cork</Name>
+      <Name language="Gothic">Chorkee</Name>
+      <Name language="Icelandic_Old">Chorkee</Name>
+      <Name language="Irish_Middle">Corcaigh</Name>
       <Name language="Latgalian">Korka</Name>
-      <Name language="Lithuanian">Korkas</Name>
       <Name language="Latin">Corcagia</Name>
+      <Name language="Lithuanian">Korkas</Name>
+      <Name language="Norse">Chorkee</Name>
+      <Name language="Norwegian_Old">Chorkee</Name>
+      <Name language="Scottish_Medieval">Corcaigh</Name>
+      <Name language="Swedish_Old">Chorkee</Name>
+      <Name language="Welsh_Middle">Corc</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>kinsale</Id>
+    <GameIds>
+      <GameId game="CK3">b_kinsale</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Kinsale</Name>
+      <Name language="Irish">Cionn tSáile</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>baltimore</Id>
+    <GameIds>
+      <GameId game="CK3">b_baltimore</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Baltimore</Name>
+      <Name language="Irish">Dún na Séad</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>ormond</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="d_munster" order="4">c_ormond</GameId>
     </GameIds>
     <Names>
-      <Name language="Lithuanian">Voterfordas</Name>
+      <Name language="English">Ormond</Name>
+      <Name language="Irish">Urmumhain</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>waterford_county</Id>
+    <GameIds>
+    </GameIds>
+    <Names>
+      <Name language="Breton_Middle">An Déise</Name>
+      <Name language="Cornish_Middle">An Déise</Name>
+      <Name language="Cumbric">An Déise</Name>
+      <Name language="English">Waterford</Name> <!-- Or Waterfordshire? -->
+      <Name language="Irish_Middle">An Déise</Name>
+      <Name language="Scottish_Medieval">An Déise</Name>
+      <Name language="Welsh_Middle">An Déise</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>waterford</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_ormond" order="1">b_waterford</GameId>
+      <GameId game="CK2HIP" parent="d_munster" order="4">c_ormond</GameId>
+      <GameId game="CK3">b_waterford</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Port Láirge</Name>
+      <Name language="Cornish_Middle">Port Láirge</Name>
+      <Name language="Cumbric">Port Láirge</Name>
+      <Name language="Danish_Middle">Veðrafjorðr</Name>
+      <Name language="English_Old_Norse">Veðrafjorðr</Name>
+      <Name language="English_Old">Wæterford</Name>
+      <Name language="English">Waterford</Name>
+      <Name language="Gothic">Veðrafjorðr</Name>
+      <Name language="Icelandic_Old">Veðrafjorðr</Name>
+      <Name language="Irish_Middle_Norse">Veðrafjorðr</Name>
+      <Name language="Irish_Middle">Port Láirge</Name>
       <Name language="Lithuanian">Voterfordas</Name>
+      <Name language="Norse">Veðrafjorðr</Name>
+      <Name language="Norwegian_Old">Veðrafjorðr</Name>
+      <Name language="Scottish_Medieval">Port Láirge</Name>
+      <Name language="Swedish_Old">Veðrafjorðr</Name>
+      <Name language="Welsh_Middle">Port Láirge</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>ennis</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_thomond" order="1">b_ennis</GameId>
+      <GameId game="CK3">b_ennis</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Inis</Name>
+      <Name language="Cornish_Middle">Inis</Name>
+      <Name language="Cumbric">Inis</Name>
+      <Name language="English">Ennis</Name>
+      <Name language="Irish_Middle_Norse">Innys</Name>
+      <Name language="Irish_Middle">Inis</Name>
       <Name language="Lithuanian">Enisas</Name>
+      <Name language="Scottish_Medieval">Inis</Name>
+      <Name language="Welsh_Middle">Inis</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>nenagh</Id>
+    <GameIds>
+      <GameId game="CK3">b_nenagh</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Neagh</Name>
+      <Name language="Irish_Middle">Aonach Urmhumhan</Name> <!-- Or An tAonach -->
+      <Name language="Irish">Aonach Urmhumhan</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>roscrea</Id>
+    <GameIds>
+      <GameId game="CK3">b_roscrea</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Roscrea</Name>
+      <Name language="Irish">Ros Cré</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -66825,15 +67209,29 @@
     <Id>downpatrick</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_ulster" order="4">b_downpatrick</GameId>
+      <GameId game="CK3">b_downpatrick</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Dún Pádraig</Name>
       <Name language="Cornish_Middle">Dún Pádraig</Name>
       <Name language="Cumbric">Dún Pádraig</Name>
-      <Name language="Irish_Middle">Dún Pádraig</Name>
+      <Name language="Danish_Middle">Strangfjord</Name>
       <Name language="Irish_Middle_Norse">Dún Pádraig</Name>
+      <Name language="Irish_Middle">Dún Pádraig</Name>
+      <Name language="Norse">Strangfjorðr</Name>
+      <Name language="Norwegian_Old">Strangfjord</Name>
       <Name language="Scottish_Medieval">Dún Pádraig</Name>
+      <Name language="Swedish_Old">Strangfjord</Name>
       <Name language="Welsh_Middle">Dún Pádraig</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>slemish</Id>
+    <GameIds>
+      <GameId game="CK3">b_slemish</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Irish_Middle">Sliabh Mis</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -66956,6 +67354,7 @@
     <Id>raphoe</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_tyrconnell" order="2">b_raphoe</GameId>
+      <GameId game="CK3">b_raphoe</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Ráth Bhoth</Name>
@@ -66971,13 +67370,15 @@
     <Id>donegal</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_tyrconnell" order="3">b_donegal</GameId>
+      <GameId game="CK3">b_donegal</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Dún na nGall</Name>
       <Name language="Cornish_Middle">Dún na nGall</Name>
       <Name language="Cumbric">Dún na nGall</Name>
-      <Name language="Irish_Middle">Dún na nGall</Name>
       <Name language="Irish_Middle_Norse">Dún na nGall</Name>
+      <Name language="Irish_Middle">Dún na nGall</Name>
+      <Name language="Irish">Dhún na nGall</Name>
       <Name language="Scottish_Medieval">Dún na nGall</Name>
       <Name language="Welsh_Middle">Dún na nGall</Name>
     </Names>
@@ -67001,15 +67402,17 @@
     <Id>fahan</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_tyrconnell" order="5">b_fahan</GameId>
+      <GameId game="CK3">b_fahan</GameId>
     </GameIds>
     <Names>
-      <Name language="Breton_Middle">Fathain</Name>
-      <Name language="Cornish_Middle">Fathain</Name>
-      <Name language="Cumbric">Fathain</Name>
-      <Name language="Irish_Middle">Fathain</Name>
-      <Name language="Irish_Middle_Norse">Fathain</Name>
-      <Name language="Scottish_Medieval">Fathain</Name>
-      <Name language="Welsh_Middle">Fathain</Name>
+      <Name language="Breton_Middle">Fathain Mura</Name>
+      <Name language="Cornish_Middle">Fathain Mura</Name>
+      <Name language="Cumbric">Fathain Mura</Name>
+      <Name language="Irish_Middle_Norse">Fathain Mura</Name>
+      <Name language="Irish_Middle">Fathain Mura</Name>
+      <Name language="Irish">Fathain Mura</Name>
+      <Name language="Scottish_Medieval">Fathain Mura</Name>
+      <Name language="Welsh_Middle">Fathain Mura</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -67046,13 +67449,14 @@
     <Id>oriel</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_ulster" order="4">c_oriel</GameId>
+      <GameId game="CK3">c_oriel</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Airgíalla</Name>
       <Name language="Cornish_Middle">Airgíalla</Name>
       <Name language="Cumbric">Airgíalla</Name>
-      <Name language="Irish_Middle">Airgíalla</Name>
       <Name language="Irish_Middle_Norse">Airgíalla</Name>
+      <Name language="Irish_Middle">Airgíalla</Name>
       <Name language="Scottish_Medieval">Oirialla</Name>
       <Name language="Welsh_Middle">Airgíalla</Name>
     </Names>
@@ -67061,6 +67465,7 @@
     <Id>ardee</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_oriel" order="2">b_ardee</GameId>
+      <GameId game="CK3">b_ardee</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Baile Átha Fhirdhia</Name>
@@ -67073,6 +67478,15 @@
       <Name language="Irish_Middle">Baile Átha Fhirdhia</Name>
       <Name language="Scottish_Medieval">Baile Átha Fhirdhia</Name>
       <Name language="Welsh_Middle">Baile Átha Fhirdhia</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>ailech</Id>
+    <GameIds>
+      <GameId game="CK3">c_ailech</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Irish_Middle">Ailech</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -67194,6 +67608,7 @@
     <Id>athenry</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_hy_many" order="7">b_athenry</GameId>
+      <GameId game="CK3">b_athenry</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Baile Átha an Rí</Name>
@@ -67221,7 +67636,7 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>breifne</Id>
+    <Id>leitrim</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_breifne" order="2">b_leitrim</GameId>
       <GameId game="CK2HIP" parent="d_connacht" order="4">c_breifne</GameId>
@@ -67237,9 +67652,19 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>breifne</Id>
+    <GameIds>
+      <GameId game="CK3">c_breifne</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Irish">Bréifne</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>dromahair</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_breifne" order="1">b_dromahair</GameId>
+      <GameId game="CK3">b_dromahair</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Droim Dhá Thiar</Name>
@@ -67249,6 +67674,15 @@
       <Name language="Irish_Middle_Norse">Droim Dhá Thiar</Name>
       <Name language="Scottish_Medieval">Droim Dhá Thiar</Name>
       <Name language="Welsh_Middle">Droim Dhá Thiar</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>belcoo</Id>
+    <GameIds>
+      <GameId game="CK3">b_belcoo</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Irish">Béal Cú</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -67300,8 +67734,18 @@
     <Id>meath</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_ireland" order="3">d_meath</GameId>
+      <GameId game="CK3">d_meath</GameId>
     </GameIds>
     <Names>
+      <Name language="Danish_Middle">Miðr</Name>
+      <Name language="English_Old_Norse">Mee</Name>
+      <Name language="Gothic">Miðr</Name>
+      <Name language="Icelandic_Old">Miðr</Name>
+      <Name language="Irish_Middle_Norse">Miðr</Name>
+      <Name language="Irish_Old">Mide</Name>
+      <Name language="Norse">Miðr</Name>
+      <Name language="Norwegian_Old">Miðr</Name>
+      <Name language="Swedish_Old">Miðr</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -67419,6 +67863,15 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>drogheda</Id>
+    <GameIds>
+      <GameId game="CK3">b_drogheda</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Irish_Middle">Droichead Átha</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>morgallion</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_brega" order="5">b_morgallion</GameId>
@@ -67525,14 +67978,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>dublin_castle</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="c_dublin" order="1">b_dublin_castle</GameId>
-    </GameIds>
-    <Names>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>clondalkin</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_dublin" order="4">b_clondalkin</GameId>
@@ -67580,46 +68025,95 @@
   <LocationEntity>
     <Id>leinster</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="d_leinster" order="1">c_leinster</GameId>
       <GameId game="CK2HIP" parent="k_ireland" order="4">d_leinster</GameId>
+      <GameId game="CK3">c_leinster</GameId>
+      <GameId game="CK3">d_leinster</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Laigin</Name>
+      <Name language="Cornish_Middle">Laigin</Name>
+      <Name language="Cumbric">Laigin</Name>
+      <Name language="Danish_Middle">Laistaðr</Name>
+      <Name language="English_Old_Norse">Laistaðr</Name>
+      <Name language="English">Leinster</Name>
+      <Name language="Gothic">Laistaðr</Name>
+      <Name language="Icelandic_Old">Laistaðr</Name>
+      <Name language="Irish_Middle_Norse">Lion</Name>
+      <Name language="Irish_Middle">Laigin</Name>
+      <Name language="Irish">Laighin</Name>
+      <Name language="Norse">Laistaðr</Name>
+      <Name language="Norwegian_Old">Laistaðr</Name>
+      <Name language="Scottish_Medieval">Laigin</Name>
+      <Name language="Swedish_Old">Laistaðr</Name>
+      <Name language="Welsh_Middle">Laigin</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>wexford</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_leinster" order="1">b_wexford</GameId>
+      <GameId game="CK2HIP" parent="d_leinster" order="1">c_leinster</GameId>
+      <GameId game="CK3">b_wexford</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Loch Garman</Name>
+      <Name language="Cornish_Middle">Loch Garman</Name>
+      <Name language="Cumbric">Loch Garman</Name>
+      <Name language="Danish_Middle">Veisafjorð</Name>
+      <Name language="English_Old_Norse">Waesfjord</Name>
+      <Name language="English_Old">Waesfjord</Name>
+      <Name language="English">Wexford</Name>
+      <Name language="Gothic">Veisafjorð</Name>
+      <Name language="Icelandic_Old">Veisafjorð</Name>
+      <Name language="Irish_Middle_Norse">Veisafjorð</Name>
+      <Name language="Irish_Middle">Loch Garman</Name>
+      <Name language="Norse">Veisafjorð</Name>
+      <Name language="Norwegian_Old">Veisafjorð</Name>
+      <Name language="Scottish_Medieval">Loch Garman</Name>
+      <Name language="Swedish_Old">Veisafjorð</Name>
+      <Name language="Welsh_Middle">Loch Garman</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>ferns</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_leinster" order="2">b_ferns</GameId>
+      <GameId game="CK3">b_ferns</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Fearna</Name>
       <Name language="Cornish_Middle">Fearna</Name>
       <Name language="Cumbric">Fearna</Name>
-      <Name language="Irish_Middle">Fearna</Name>
-      <Name language="Irish_Middle_Norse">Fearna</Name>
+      <Name language="English">Ferns</Name>
+      <Name language="Irish_Middle_Norse">Fearna Mór Maedhóg</Name>
+      <Name language="Irish_Middle">Fearna Mór Maedhóg</Name>
       <Name language="Scottish_Medieval">Fearna</Name>
       <Name language="Welsh_Middle">Fearna</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>carlow</Id>
+    <GameIds>
+      <GameId game="CK3">b_carlow</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Carlow</Name>
+      <Name language="Irish_Middle">Ceatharlach</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>enniscorthy</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_leinster" order="3">b_enniscorthy</GameId>
+      <GameId game="CK3">b_enniscorthy</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Inis Córthaidh</Name>
       <Name language="Cornish_Middle">Inis Córthaidh</Name>
       <Name language="Cumbric">Inis Córthaidh</Name>
-      <Name language="Irish_Middle">Inis Córthaidh</Name>
+      <Name language="English">Enniscorthy</Name>
       <Name language="Irish_Middle_Norse">Inis Córthaidh</Name>
+      <Name language="Irish_Middle">Inis Córthaidh</Name>
       <Name language="Scottish_Medieval">Inis Córthaidh</Name>
       <Name language="Welsh_Middle">Inis Córthaidh</Name>
     </Names>
@@ -67682,6 +68176,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="d_leinster" order="3">c_wicklow</GameId>
       <GameId game="CK2HIP" parent="c_wicklow" order="1">b_wicklow</GameId>
+      <GameId game="CK3">b_wicklow</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Cill Mhantáin</Name>
@@ -67691,6 +68186,7 @@
       <Name language="English_Middle">Wicklow</Name>
       <Name language="English_Old_Norse">Wykynlo</Name>
       <Name language="English_Old">Wygingelow</Name>
+      <Name language="English">Wicklow</Name>
       <Name language="Gothic">Wykynlo</Name>
       <Name language="Icelandic_Old">Wykynlo</Name>
       <Name language="Irish_Middle_Norse">Wykynlo</Name>
@@ -67776,13 +68272,16 @@
     <Id>ossory</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_leinster" order="4">c_ossory</GameId>
+      <GameId game="CK3">c_ossory</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Osraige</Name>
       <Name language="Cornish_Middle">Osraige</Name>
       <Name language="Cumbric">Osraige</Name>
+      <Name language="English">Ossory</Name>
       <Name language="Irish_Middle">Osraige</Name>
       <Name language="Irish_Middle_Norse">Osraige</Name>
+      <Name language="Irish_Old">Osraighe</Name>
       <Name language="Scottish_Medieval">Osraige</Name>
       <Name language="Welsh_Middle">Osraige</Name>
     </Names>
@@ -67791,11 +68290,13 @@
     <Id>gowran</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_ossory" order="1">b_gowran</GameId>
+      <GameId game="CK3">b_gowran</GameId>
     </GameIds>
     <Names>
       <Name language="Breton_Middle">Gabhrán</Name>
       <Name language="Cornish_Middle">Gabhrán</Name>
       <Name language="Cumbric">Gabhrán</Name>
+      <Name language="English">Gowran</Name>
       <Name language="Irish_Middle">Gabhrán</Name>
       <Name language="Irish_Middle_Norse">Gabhrán</Name>
       <Name language="Scottish_Medieval">Gabhrán</Name>
@@ -67865,9 +68366,34 @@
   <LocationEntity>
     <Id>desmond</Id>
     <GameIds>
+      <GameId game="CK3">c_desmond</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Desmond</Name>
+      <Name language="Irish">Deasmhumhain</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>kerry</Id>
+    <GameIds>
       <GameId game="CK2HIP" parent="d_munster" order="1">c_desmond</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Ciarraighe</Name>
+      <Name language="Cornish_Middle">Ciarraighe</Name>
+      <Name language="Cumbric">Ciarraighe</Name>
+      <Name language="Danish_Middle">Cheree</Name>
+      <Name language="English_Old_Norse">Cheree</Name>
+      <Name language="English">Kerry</Name>
+      <Name language="Gothic">Cheree</Name>
+      <Name language="Icelandic_Old">Cheree</Name>
+      <Name language="Irish_Middle_Norse">Ciarraighe</Name>
+      <Name language="Irish_Middle">Ciarraighe</Name>
+      <Name language="Norse">Cheree</Name>
+      <Name language="Norwegian_Old">Cheree</Name>
+      <Name language="Scottish_Medieval">Chiarraí</Name>
+      <Name language="Swedish_Old">Cheree</Name>
+      <Name language="Welsh_Middle">Ciarraighe</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -67963,6 +68489,14 @@
       <GameId game="CK2HIP" parent="c_ormond" order="2">b_clonmel</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Cluain Meala</Name>
+      <Name language="Cornish_Middle">Cluain Meala</Name>
+      <Name language="Cumbric">Cluain Meala</Name>
+      <Name language="English">Clonmel</Name>
+      <Name language="Irish_Middle_Norse">Cluain Meala</Name>
+      <Name language="Irish_Middle">Cluain Meala</Name>
+      <Name language="Scottish_Medieval">Cluain Meala</Name>
+      <Name language="Welsh_Middle">Cluain Meala</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -67976,17 +68510,37 @@
   <LocationEntity>
     <Id>thomond</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="d_munster" order="5">c_thomond</GameId>
+      <GameId game="CK3">c_thomond</GameId>
     </GameIds>
     <Names>
+      <Name language="English">Thomond</Name>
+      <Name language="Irish_Old">Tuadhmhumhain</Name>
+      <Name language="Irish">Tuamhain</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>clarecastle</Id>
+    <Id>clare</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_thomond" order="2">b_clarecastle</GameId>
+      <GameId game="CK2HIP" parent="d_munster" order="5">c_thomond</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">An Clár</Name>
+      <Name language="Cornish_Middle">An Clár</Name>
+      <Name language="Cumbric">An Clár</Name>
+      <Name language="Danish_Middle">Klareburgh</Name>
+      <Name language="English_Old_Norse">Klareborg</Name>
+      <Name language="English_Old">Clares Castel</Name>
+      <Name language="English">Clare</Name>
+      <Name language="Gothic">Klareborg</Name>
+      <Name language="Icelandic_Old">Klareborg</Name>
+      <Name language="Irish_Middle_Norse">Yn Claair</Name>
+      <Name language="Irish_Middle">An Clár</Name>
+      <Name language="Norse">Klareborg</Name>
+      <Name language="Norwegian_Old">Klareborg</Name>
+      <Name language="Scottish_Medieval">An Clár</Name>
+      <Name language="Swedish_Old">Klareborg</Name>
+      <Name language="Welsh_Middle">An Cláir</Name> <!-- Or An Clár -->
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -68041,8 +68595,17 @@
     <Id>emly</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_tipperary" order="3">b_emly</GameId>
+      <GameId game="CK3">b_emly</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Imleach Iubhair</Name>
+      <Name language="Cornish_Middle">Imleach Iubhair</Name>
+      <Name language="Cumbric">Imleach Iubhair</Name>
+      <Name language="English">Emly</Name>
+      <Name language="Irish_Middle_Norse">Imleach Iubhair</Name>
+      <Name language="Irish_Middle">Imleach Iubhair</Name>
+      <Name language="Scottish_Medieval">Imleach Iubhair</Name>
+      <Name language="Welsh_Middle">Imleach Iubhair</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -68164,6 +68727,22 @@
       <GameId game="CK2HIP" parent="k_ireland" order="2">d_connacht</GameId>
     </GameIds>
     <Names>
+      <Name language="Breton_Middle">Connachta</Name>
+      <Name language="Cornish_Middle">Connachta</Name>
+      <Name language="Cumbric">Connachta</Name>
+      <Name language="Danish_Middle">Kunnakster</Name>
+      <Name language="English_Old_Norse">Chonnaghtey</Name>
+      <Name language="English_Old">Kunnakster</Name>
+      <Name language="English">Connacht</Name>
+      <Name language="Gothic">Kunnakster</Name>
+      <Name language="Icelandic_Old">Kunnakster</Name>
+      <Name language="Irish_Middle_Norse">Kunnakster</Name>
+      <Name language="Irish_Middle">Connachta</Name>
+      <Name language="Norse">Kunnakster</Name>
+      <Name language="Norwegian_Old">Kunnakster</Name>
+      <Name language="Scottish_Medieval">Connachta</Name>
+      <Name language="Swedish_Old">Kunnakster</Name>
+      <Name language="Welsh_Middle">Connachta</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
