@@ -8,6 +8,9 @@ grep -n "parent=\"[a-zA-Z][^_]" titles.xml
 grep "GameId game=\"ImperatorRome\"" titles.xml | sed 's/[ \t]*<!--.*-->[ \t]*//g' | sort | uniq -c | sed 's/^[ \t]*//g' | grep "^[2-9]"
 
 # Find duplicated titles
+grep "^ *<Id>" titles.xml | sort | uniq -c | grep "^ *[2-9]"
+
+# Find duplicated game IDs
 grep "<GameId game=" titles.xml | \
     sed 's/ \(parent\|order\)=\"[^\"]*\"//g' | \
     sed 's/[\"<>]/ /g' | \
