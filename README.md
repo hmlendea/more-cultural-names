@@ -71,6 +71,7 @@ The following is a list of sources that attest the authenticity of the names pro
 English:
 - [Bulgar titles and names](http://www.chitatel.net/forum/topic/375-bulgar-titles-and-names/)
 - [Historical Romanian ranks and titles](https://en.wikipedia.org/wiki/Historical_Romanian_ranks_and_titles)
+- [Medieval Names Archive - English Place Names](https://www.s-gabriel.org/names/engplacenames.shtml)
 - [Word and Power in Mediaeval Bulgaria](https://books.google.co.uk/books?id=O-j66lYzINEC)
 
 Non-english:
