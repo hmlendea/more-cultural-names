@@ -10,7 +10,7 @@ Supported games:
  - `Crusader Kings 3`
  - `Imperator: Rome`
 
-The common database currently has over **35 thousand** names for over **370** languages, settings and time periods.
+The common database currently has over **40 thousand** names for over **370** languages, settings and time periods.
 
 # Installation
 
