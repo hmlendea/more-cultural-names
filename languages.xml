@@ -27,14 +27,47 @@
   <Language>
     <Id>Alemannic</Id>
     <Code iso-639-3="gsw" />
+    <FallbackLanguages>
+      <LanguageId>Alemannic_Medieval</LanguageId>
+      <LanguageId>German</LanguageId>
+      <LanguageId>German_Before1942</LanguageId>
+      <LanguageId>German_Before1938</LanguageId>
+      <LanguageId>German_New_High_Early</LanguageId>
+      <LanguageId>German_Middle_High</LanguageId>
+      <LanguageId>German_Old_High</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Alemannic_Medieval</Id>
     <GameIds>
       <GameId game="CK2HIP">swabian</GameId>
       <GameId game="CK3">swabian</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>German</LanguageId>
+      <LanguageId>German_Before1942</LanguageId>
+      <LanguageId>German_Before1938</LanguageId>
+      <LanguageId>German_New_High_Early</LanguageId>
+      <LanguageId>German_Middle_High</LanguageId>
+      <LanguageId>German_Old_High</LanguageId>
+      <LanguageId>Alemannic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic</Id>
     <Code iso-639-1="ar" iso-639-3="ara" />
+    <FallbackLanguages>
+      <LanguageId>Hejazi_Arabic</LanguageId>
+      <LanguageId>Arabic_Yemen</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Levant</LanguageId>
+      <LanguageId>Arabic_Levant_North</LanguageId>
+      <LanguageId>Arabic_Levant_South</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Bedouin</LanguageId>
+      <LanguageId>Arabic_Andalusia</LanguageId>
+      <LanguageId>Sicilian_Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Andalusia</Id>
@@ -44,7 +77,16 @@
       <GameId game="CK3">andalusian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Bedouin</LanguageId>
+      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Hejazi_Arabic</LanguageId>
+      <LanguageId>Arabic_Yemen</LanguageId>
+      <LanguageId>Arabic_Levant</LanguageId>
+      <LanguageId>Arabic_Levant_North</LanguageId>
+      <LanguageId>Arabic_Levant_South</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -54,18 +96,16 @@
       <GameId game="CK2">bedouin</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Arabic_Maghreb</LanguageId>
       <LanguageId>Arabic</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Arabic_Egypt</Id>
-    <Code iso-639-3="arz" />
-    <GameIds>
-      <GameId game="CK2HIP">egyptian_arabic</GameId>
-      <GameId game="CK3">egyptian</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Arabic</LanguageId>
+      <LanguageId>Hejazi_Arabic</LanguageId>
+      <LanguageId>Arabic_Yemen</LanguageId>
+      <LanguageId>Arabic_Andalusia</LanguageId>
+      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Levant</LanguageId>
+      <LanguageId>Arabic_Levant_North</LanguageId>
+      <LanguageId>Arabic_Levant_South</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -75,27 +115,48 @@
       <GameId game="CK3">levantine</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Arabic</LanguageId>
       <LanguageId>Arabic_Levant_North</LanguageId>
       <LanguageId>Arabic_Levant_South</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+      <LanguageId>Hejazi_Arabic</LanguageId>
+      <LanguageId>Arabic_Yemen</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Bedouin</LanguageId>
+      <LanguageId>Arabic_Andalusia</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Levant_North</Id>
     <Code iso-639-3="apc" />
     <FallbackLanguages>
-      <LanguageId>Arabic</LanguageId>
       <LanguageId>Arabic_Levant</LanguageId>
       <LanguageId>Arabic_Levant_South</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+      <LanguageId>Hejazi_Arabic</LanguageId>
+      <LanguageId>Arabic_Yemen</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Bedouin</LanguageId>
+      <LanguageId>Arabic_Andalusia</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Levant_South</Id>
     <Code iso-639-3="ajp" />
     <FallbackLanguages>
-      <LanguageId>Arabic</LanguageId>
       <LanguageId>Arabic_Levant</LanguageId>
       <LanguageId>Arabic_Levant_North</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+      <LanguageId>Hejazi_Arabic</LanguageId>
+      <LanguageId>Arabic_Yemen</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Bedouin</LanguageId>
+      <LanguageId>Arabic_Andalusia</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -105,7 +166,16 @@
       <GameId game="CK3">maghrebi</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Arabic_Bedouin</LanguageId>
+      <LanguageId>Arabic_Andalusia</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Levant</LanguageId>
+      <LanguageId>Arabic_Levant_North</LanguageId>
+      <LanguageId>Arabic_Levant_South</LanguageId>
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Hejazi_Arabic</LanguageId>
+      <LanguageId>Arabic_Yemen</LanguageId>
+      <LanguageId>Sicilian_Arabic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -116,6 +186,15 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Hejazi_Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Levant</LanguageId>
+      <LanguageId>Arabic_Levant_North</LanguageId>
+      <LanguageId>Arabic_Levant_South</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Bedouin</LanguageId>
+      <LanguageId>Arabic_Andalusia</LanguageId>
+      <LanguageId>Sicilian_Arabic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -187,6 +266,7 @@
       <GameId game="CK2HIP">arpitan</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>French_Old</LanguageId>
       <LanguageId>French</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -245,6 +325,7 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Gagauz</LanguageId>
+      <LanguageId>Khazar</LanguageId>
       <LanguageId>Turkmen</LanguageId>
       <LanguageId>Turkish</LanguageId>
     </FallbackLanguages>
@@ -287,8 +368,15 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Belarusian</Id>
+    <Id>Belarussian</Id>
     <Code iso-639-1="be" iso-639-2="bel" iso-639-3="bel" />
+    <FallbackLanguages>
+      <LanguageId>Russian</LanguageId>
+      <LanguageId>Ukrainian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Bikol_Central</Id>
@@ -368,6 +456,7 @@
       <LanguageId>Irish_Middle</LanguageId>
       <LanguageId>Cumbric</LanguageId>
       <LanguageId>Scottish_Gaelic</LanguageId>
+      <LanguageId>Manx</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Irish_Old</LanguageId>
@@ -443,19 +532,12 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Celtic_Gallic</Id>
-    <GameIds>
-      <GameId game="ImperatorRome">gallic</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Celtic_Noric</LanguageId>
-      <LanguageId>Celtic_Illyrian</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
     <Id>Celtic_Illyrian</Id>
     <FallbackLanguages>
-      <LanguageId>Celtic_Gallic</LanguageId>
+      <LanguageId>Gaulish</LanguageId>
+      <LanguageId>Gaulish_Transalpine</LanguageId>
+      <LanguageId>Gaulish_Cisalpine</LanguageId>
+      <LanguageId>Gaulish_Lepontic</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -466,7 +548,10 @@
       <GameId game="ImperatorRome">noric</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Celtic_Gallic</LanguageId>
+      <LanguageId>Gaulish</LanguageId>
+      <LanguageId>Gaulish_Transalpine</LanguageId>
+      <LanguageId>Gaulish_Cisalpine</LanguageId>
+      <LanguageId>Gaulish_Lepontic</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -530,6 +615,7 @@
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Irish_Middle</LanguageId>
       <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Manx</LanguageId>
       <LanguageId>Scottish_Gaelic</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
@@ -551,6 +637,12 @@
     <GameIds>
       <GameId game="CK2HIP">corsican</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Sardinian</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Italian_Medieval</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Croatian</Id>
@@ -622,6 +714,7 @@
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Cornish_Middle</LanguageId>
       <LanguageId>Breton_Middle</LanguageId>
+      <LanguageId>Manx</LanguageId>
       <LanguageId>Pictish</LanguageId>
       <LanguageId>Irish_Old</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
@@ -674,6 +767,7 @@
     <FallbackLanguages>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Dalmatian_Medieval</LanguageId>
       <LanguageId>Italian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -685,6 +779,7 @@
     <FallbackLanguages>
       <LanguageId>Italian_Medieval</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Dalmatian</LanguageId>
       <LanguageId>Italian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -733,6 +828,10 @@
     <FallbackLanguages>
       <LanguageId>Dutch_Middle</LanguageId>
       <LanguageId>Dutch_Old</LanguageId>
+      <LanguageId>German_Low_Dutch</LanguageId>
+      <LanguageId>German_Low</LanguageId>
+      <LanguageId>German_Middle_Low</LanguageId>
+      <LanguageId>German_Old_Low</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -743,7 +842,11 @@
       <GameId game="CK3">dutch</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>German_Low_Dutch</LanguageId>
+      <LanguageId>German_Low</LanguageId>
+      <LanguageId>German_Middle_Low</LanguageId>
       <LanguageId>Dutch_Old</LanguageId>
+      <LanguageId>German_Old_Low</LanguageId>
       <LanguageId>Dutch</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -753,6 +856,26 @@
     <FallbackLanguages>
       <LanguageId>Dutch_Middle</LanguageId>
       <LanguageId>Dutch</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Egyptian_Arabic</Id>
+    <Code iso-639-3="arz" />
+    <GameIds>
+      <GameId game="CK2HIP">egyptian_arabic</GameId>
+      <GameId game="CK3">egyptian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Arabic</LanguageId>
+      <LanguageId>Hejazi_Arabic</LanguageId>
+      <LanguageId>Arabic_Yemen</LanguageId>
+      <LanguageId>Arabic_Levant</LanguageId>
+      <LanguageId>Arabic_Levant_North</LanguageId>
+      <LanguageId>Arabic_Levant_South</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Bedouin</LanguageId>
+      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Arabic_Andalusia</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -902,6 +1025,7 @@
     <Code iso-639-1="fr" iso-639-3="fra" />
     <FallbackLanguages>
       <LanguageId>French_Old</LanguageId>
+      <LanguageId>French_Outremer</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -909,9 +1033,20 @@
     <Code iso-639-3="fro" />
     <GameIds>
       <GameId game="CK2HIP">frankish</GameId>
+      <GameId game="CK3">french</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>French_Outremer</LanguageId>
       <LanguageId>French</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>French_Outremer</Id> <!-- Crusader States French -->
+    <GameIds>
+      <GameId game="CK3">outremer</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>French_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -920,6 +1055,7 @@
     <FallbackLanguages>
       <LanguageId>French</LanguageId>
       <LanguageId>French_Old</LanguageId>
+      <LanguageId>French_Outremer</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1001,6 +1137,7 @@
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
+      <LanguageId>Khazar</LanguageId>
       <LanguageId>Turkmen</LanguageId>
       <LanguageId>Turkish</LanguageId>
     </FallbackLanguages>
@@ -1012,6 +1149,59 @@
       <GameId game="CK2HIP">galician</GameId>
       <GameId game="CK3">galician</GameId>
     </GameIds>
+  </Language>
+  <Language>
+    <Id>Gaulish</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">gallic</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Gaulish_Transalpine</LanguageId>
+      <LanguageId>Gaulish_Cisalpine</LanguageId>
+      <LanguageId>Gaulish_Lepontic</LanguageId>
+      <LanguageId>Celtic_Noric</LanguageId>
+      <LanguageId>Celtic_Illyrian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Gaulish_Transalpine</Id>
+    <Code iso-639-3="xtg" />
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Gaulish</LanguageId>
+      <LanguageId>Gaulish_Cisalpine</LanguageId>
+      <LanguageId>Gaulish_Lepontic</LanguageId>
+      <LanguageId>Celtic_Noric</LanguageId>
+      <LanguageId>Celtic_Illyrian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Gaulish_Cisalpine</Id>
+    <Code iso-639-3="xcg" />
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Gaulish</LanguageId>
+      <LanguageId>Gaulish_Transalpine</LanguageId>
+      <LanguageId>Gaulish_Lepontic</LanguageId>
+      <LanguageId>Celtic_Noric</LanguageId>
+      <LanguageId>Celtic_Illyrian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Gaulish_Lepontic</Id>
+    <Code iso-639-3="xlp" />
+    <GameIds>
+      <GameId game="ImperatorRome">lepontic</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Gaulish</LanguageId>
+      <LanguageId>Gaulish_Transalpine</LanguageId>
+      <LanguageId>Gaulish_Cisalpine</LanguageId>
+      <LanguageId>Celtic_Noric</LanguageId>
+      <LanguageId>Celtic_Illyrian</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Genoese</Id>
@@ -1176,7 +1366,7 @@
     <Code iso-639-3="grc" />
     <GameIds>
       <GameId game="ImperatorRome">hellenic</GameId>
-    </GameIds>
+    </GameIds>  
     <FallbackLanguages>
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient_Antignoid</LanguageId>
@@ -1189,6 +1379,7 @@
   <Language>
     <Id>Greek_Aeolic</Id>
     <GameIds>
+      <GameId game="ImperatorRome">aeolian</GameId>
       <GameId game="ImperatorRome">IOA</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -1288,6 +1479,18 @@
     <GameIds>
       <GameId game="CK2HIP">hijazi</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Arabic</LanguageId>
+      <LanguageId>Arabic_Yemen</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Levant</LanguageId>
+      <LanguageId>Arabic_Levant_North</LanguageId>
+      <LanguageId>Arabic_Levant_South</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Bedouin</LanguageId>
+      <LanguageId>Arabic_Andalusia</LanguageId>
+      <LanguageId>Sicilian_Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hejazi_Old</Id> <!-- c. 1st century AD – c. 7th century AD -->
@@ -1401,6 +1604,7 @@
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Cumbric</LanguageId>
       <LanguageId>Scottish_Gaelic</LanguageId>
+      <LanguageId>Manx</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
@@ -1422,6 +1626,7 @@
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Cumbric</LanguageId>
       <LanguageId>Scottish_Gaelic</LanguageId>
+      <LanguageId>Manx</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
@@ -1501,6 +1706,12 @@
   <Language>
     <Id>Kabyle</Id>
     <Code iso-639-3="kab" />
+    <FallbackLanguages>
+      <LanguageId>Sanhaja</LanguageId>
+      <LanguageId>Zenati</LanguageId>
+      <LanguageId>Zenaga</LanguageId>
+      <LanguageId>Tuareg</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Karakalpak</Id>
@@ -1524,6 +1735,15 @@
     <GameIds>
       <GameId game="CK2HIP">khazar</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Bashkir</LanguageId>
+      <LanguageId>Oghuz</LanguageId>
+      <LanguageId>Pecheneg</LanguageId>
+      <LanguageId>Gagauz</LanguageId>
+      <LanguageId>Khazar</LanguageId>
+      <LanguageId>Turkmen</LanguageId>
+      <LanguageId>Turkish</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Khanty</Id>
@@ -1598,6 +1818,9 @@
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1606,6 +1829,9 @@
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1618,6 +1844,9 @@
     <FallbackLanguages>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
@@ -1626,6 +1855,9 @@
     <Id>Latin_Late</Id> <!-- 3rd century – 6th century -->
     <FallbackLanguages>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -1633,11 +1865,26 @@
   </Language>
   <Language>
     <Id>Latin_Classical</Id> <!-- 75 BC – 3rd century AD -->
+    <FallbackLanguages>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Old</Id>
     <GameIds>
       <GameId game="ImperatorRome">latin</GameId>
       <GameId game="ImperatorRome">roman</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
@@ -1751,6 +1998,11 @@
     <GameIds>
       <GameId game="CK2HIP">langobardisch</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Italian_Medieval</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Lingala</Id>
@@ -1765,6 +2017,15 @@
     <GameIds>
       <GameId game="ImperatorRome">lucanian</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Luxembourgish</Id>
@@ -1800,6 +2061,24 @@
   <Language>
     <Id>Manx</Id>
     <Code iso-639-1="gv" iso-639-3="glv" />
+    <FallbackLanguages>
+      <LanguageId>Scottish_Gaelic</LanguageId>
+      <LanguageId>Irish_Middle</LanguageId>
+      <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Welsh_Middle</LanguageId>
+      <LanguageId>Cornish_Middle</LanguageId>
+      <LanguageId>Breton_Middle</LanguageId>
+      <LanguageId>Manx</LanguageId>
+      <LanguageId>Pictish</LanguageId>
+      <LanguageId>Irish_Old</LanguageId>
+      <LanguageId>Welsh_Old</LanguageId>
+      <LanguageId>Cornish_Old</LanguageId>
+      <LanguageId>Breton_Old</LanguageId>
+      <LanguageId>Irish</LanguageId>
+      <LanguageId>Welsh</LanguageId>
+      <LanguageId>Cornish</LanguageId>
+      <LanguageId>Breton</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Maori</Id>
@@ -1990,6 +2269,7 @@
     <Id>Occitan</Id> <!-- c. 1500 – present -->
     <Code iso-639-1="oc" iso-639-3="oci" />
     <FallbackLanguages>
+      <LanguageId>French</LanguageId>
       <LanguageId>Occitan_Old</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -2001,6 +2281,7 @@
       <GameId game="CK3">occitan</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>French_Old</LanguageId>
       <LanguageId>Occitan</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -2013,6 +2294,7 @@
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Gagauz</LanguageId>
+      <LanguageId>Khazar</LanguageId>
       <LanguageId>Turkmen</LanguageId>
       <LanguageId>Turkish</LanguageId>
     </FallbackLanguages>
@@ -2028,6 +2310,15 @@
       <GameId game="ImperatorRome">osco_umbrian</GameId>
       <GameId game="ImperatorRome">samnite</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Papiamento</Id>
@@ -2052,6 +2343,7 @@
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Gagauz</LanguageId>
+      <LanguageId>Khazar</LanguageId>
       <LanguageId>Turkmen</LanguageId>
       <LanguageId>Turkish</LanguageId>
     </FallbackLanguages>
@@ -2109,6 +2401,7 @@
       <LanguageId>Breton_Old</LanguageId>
       <LanguageId>Scottish_Gaelic</LanguageId>
       <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Manx</LanguageId>
       <LanguageId>Irish_Middle</LanguageId>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Cornish_Middle</LanguageId>
@@ -2338,6 +2631,7 @@
     <Id>Russian</Id>
     <Code iso-639-1="ru" iso-639-3="rus" />
     <FallbackLanguages>
+      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
@@ -2354,6 +2648,7 @@
       <LanguageId>Ruthenian</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -2410,8 +2705,10 @@
     <Id>Sanhaja</Id>
     <Code iso-639-3="sjs" />
     <FallbackLanguages>
-      <LanguageId>Zenaga</LanguageId>
+      <LanguageId>Kabyle</LanguageId>
       <LanguageId>Zenati</LanguageId>
+      <LanguageId>Zenaga</LanguageId>
+      <LanguageId>Tuareg</LanguageId>
     </FallbackLanguages>
     <GameIds>
       <GameId game="CK2HIP">sanhaja</GameId>
@@ -2424,6 +2721,12 @@
       <GameId game="CK2HIP">sardinian</GameId>
       <GameId game="CK3">sardinian</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Corsican</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Italian_Medieval</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Saxon_Transylvanian</Id>
@@ -2453,6 +2756,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Manx</LanguageId>
       <LanguageId>Irish_Middle</LanguageId>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Cornish_Middle</LanguageId>
@@ -2613,6 +2917,18 @@
     <GameIds>
       <GameId game="CK2HIP">sicilian_arabic</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Bedouin</LanguageId>
+      <LanguageId>Arabic_Andalusia</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Levant</LanguageId>
+      <LanguageId>Arabic_Levant_North</LanguageId>
+      <LanguageId>Arabic_Levant_South</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+      <LanguageId>Hejazi_Arabic</LanguageId>
+      <LanguageId>Arabic_Yemen</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Silesian</Id>
@@ -2803,9 +3119,30 @@
   </Language>
   <Language>
     <Id>Thuringian</Id>
+    <FallbackLanguages>
+      <LanguageId>Thuringian_Medieval</LanguageId>
+      <LanguageId>German</LanguageId>
+      <LanguageId>German_Before1942</LanguageId>
+      <LanguageId>German_Before1938</LanguageId>
+      <LanguageId>German_New_High_Early</LanguageId>
+      <LanguageId>German_Middle_High</LanguageId>
+      <LanguageId>German_Old_High</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Thuringian_Medieval</Id>
     <GameIds>
       <GameId game="CK2HIP">thuringian</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>German</LanguageId>
+      <LanguageId>German_Before1942</LanguageId>
+      <LanguageId>German_Before1938</LanguageId>
+      <LanguageId>German_New_High_Early</LanguageId>
+      <LanguageId>German_Middle_High</LanguageId>
+      <LanguageId>German_Old_High</LanguageId>
+      <LanguageId>Thuringian</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tok_Pisin</Id>
@@ -2817,6 +3154,12 @@
     <GameIds>
       <GameId game="CK2HIP">tuareg</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Zenati</LanguageId>
+      <LanguageId>Sanhaja</LanguageId>
+      <LanguageId>Kabyle</LanguageId>
+      <LanguageId>Zenaga</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Turkish</Id>
@@ -2879,6 +3222,7 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Gagauz</LanguageId>
+      <LanguageId>Khazar</LanguageId>
       <LanguageId>Turkish</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -2948,6 +3292,7 @@
     <FallbackLanguages>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
     </FallbackLanguages>
@@ -2959,6 +3304,7 @@
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3077,6 +3423,7 @@
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Cumbric</LanguageId>
       <LanguageId>Scottish_Gaelic</LanguageId>
+      <LanguageId>Manx</LanguageId>
       <LanguageId>Irish_Old</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
@@ -3126,7 +3473,9 @@
     <Id>Zenaga</Id>
     <Code iso-639-2="zen" iso-639-3="zen" />
     <FallbackLanguages>
+      <LanguageId>Tuareg</LanguageId>
       <LanguageId>Zenati</LanguageId>
+      <LanguageId>Kabyle</LanguageId>
       <LanguageId>Sanhaja</LanguageId>
     </FallbackLanguages>
     <GameIds>
@@ -3137,8 +3486,10 @@
   <Language>
     <Id>Zenati</Id>
     <FallbackLanguages>
-      <LanguageId>Zenaga</LanguageId>
       <LanguageId>Sanhaja</LanguageId>
+      <LanguageId>Kabyle</LanguageId>
+      <LanguageId>Kabyle</LanguageId>
+      <LanguageId>Zenaga</LanguageId>
     </FallbackLanguages>
     <GameIds>
       <GameId game="CK2HIP">zanata</GameId>
