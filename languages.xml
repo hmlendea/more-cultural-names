@@ -1290,9 +1290,19 @@
   <Language>
     <Id>German_Low</Id>
     <Code iso-639-3="nds" />
+    <FallbackLanguages>
+      <LanguageId>German_Low_Dutch</LanguageId>
+      <LanguageId>German_Middle_Low</LanguageId>
+      <LanguageId>German_Old_Low</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>German_Low_Dutch</Id>
+    <FallbackLanguages>
+      <LanguageId>German_Low</LanguageId>
+      <LanguageId>German_Middle_Low</LanguageId>
+      <LanguageId>German_Old_Low</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>German_Middle_Low</Id> <!-- c. 13th century – c. 16th century -->
@@ -1300,6 +1310,11 @@
     <GameIds>
       <GameId game="CK2HIP">low_german</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>German_Low</LanguageId>
+      <LanguageId>German_Low_Dutch</LanguageId>
+      <LanguageId>German_Old_Low</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>German_Old_Low</Id>
@@ -1308,6 +1323,11 @@
       <GameId game="CK2HIP">low_saxon</GameId>
       <GameId game="CK3">old_saxon</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>German_Middle_Low</LanguageId>
+      <LanguageId>German_Low</LanguageId>
+      <LanguageId>German_Low_Dutch</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>German_Palatine</Id>
@@ -2190,6 +2210,12 @@
       <GameId game="CK2HIP">norse</GameId>
       <GameId game="CK3">norse</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Norwegian_Old</LanguageId>
+      <LanguageId>Danish_Middle</LanguageId>
+      <LanguageId>Swedish_Old</LanguageId>
+      <LanguageId>Icelandic_Old</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Norwegian</Id>
