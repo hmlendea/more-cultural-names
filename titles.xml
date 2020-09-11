@@ -2925,6 +2925,7 @@
     <Id>zlotow</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_poznanskie" order="7">b_zlotow</GameId>
+      <GameId game="CK3">b_zlotow</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Flatow</Name>
@@ -2946,6 +2947,7 @@
       <Name language="Latin_Medieval">Vulatovum</Name>
       <Name language="Latin">Zlotovia</Name>
       <Name language="Latvian">Zlotova</Name>
+      <Name language="Polish">Złotów</Name>
       <Name language="Polish">Złotów</Name>
       <Name language="Serbian">Zlotuv</Name>
       <Name language="Slovene">Zlotuv</Name>
@@ -25155,6 +25157,7 @@
     <Id>znin</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_gnieznienskie" order="3">b_znin</GameId>
+      <GameId game="CK3">b_znin</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Schinen</Name>
@@ -25170,6 +25173,7 @@
       <Name language="German_Old_Low">Schinen</Name>
       <Name language="Latgalian">Žnina</Name>
       <Name language="Lithuanian">Žninas</Name>
+      <Name language="Polish_Old">Żnin</Name>
       <Name language="Serbian">Žnjin</Name>
       <Name language="Slovene">Žnjin</Name>
       <Name language="Thuringian">Schinen</Name>
@@ -25462,9 +25466,9 @@
     <Id>mazovia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_poland" order="3">d_mazovia</GameId>
+      <GameId game="CK3">d_mazovia</GameId>
     </GameIds>
     <Names>
-      <Name language="Alemannic">Masovia</Name>
       <Name language="Alemannic">Masowien</Name>
       <Name language="Bavarian_Medieval">Masowien</Name>
       <Name language="Czech_Medieval">Mazovsko</Name>
@@ -25492,6 +25496,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_plock" order="1">b_plock</GameId>
       <GameId game="CK2HIP" parent="d_mazovia" order="1">c_plock</GameId>
+      <GameId game="CK3">b_plock</GameId>
+      <GameId game="CK3">c_plocka</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Plotzk</Name>
@@ -25504,7 +25510,23 @@
       <Name language="German_Old_Low">Plotzk</Name>
       <Name language="Latgalian">Plocka</Name>
       <Name language="Lithuanian">Plockas</Name>
+      <Name language="Polish">Płock</Name>
       <Name language="Thuringian">Plotzk</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>zawkrze</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_plock" order="5">b_szrensk</GameId>
+      <GameId game="CK3">b_zawkrze</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bosnian">Šrenjsk</Name>
+      <Name language="Bulgarian">Šrensk</Name>
+      <Name language="Croatian">Šrenjsk</Name>
+      <Name language="Polish">Szreńsk</Name>
+      <Name language="Serbian">Šrenjsk</Name>
+      <Name language="Slovene">Šrenjsk</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -25525,6 +25547,7 @@
     <Id>ciechanow</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_plock" order="3">b_ciechanow</GameId>
+      <GameId game="CK3">b_ciechanow</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Zechenau</Name>
@@ -25540,6 +25563,7 @@
       <Name language="German_Old_Low">Zechenau</Name>
       <Name language="Latgalian">Cehanova</Name>
       <Name language="Lithuanian">Cechanuvas</Name>
+      <Name language="Polish">Ciechanów</Name>
       <Name language="Serbian">Cehanov</Name>
       <Name language="Slovene">Cehanov</Name>
       <Name language="Thuringian">Zechenau</Name>
@@ -25549,6 +25573,7 @@
     <Id>wyszogrod_mazovia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_plock" order="4">b_wyszogrod_mazovia</GameId>
+      <GameId game="CK3">b_wyszgorod</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Hohenburg</Name>
@@ -25563,22 +25588,10 @@
       <Name language="German_Middle_Low">Hohenburg</Name>
       <Name language="German_Old_Low">Hohenburg</Name>
       <Name language="Latgalian">Višogroda</Name>
+      <Name language="Polish">Wyszogród</Name>
       <Name language="Serbian">Višegrad</Name>
       <Name language="Slovene">Višegrad</Name>
       <Name language="Thuringian">Hohenburg</Name>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>szrensk</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="c_plock" order="5">b_szrensk</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Bosnian">Šrenjsk</Name>
-      <Name language="Bulgarian">Šrensk</Name>
-      <Name language="Slovene">Šrenjsk</Name>
-      <Name language="Croatian">Šrenjsk</Name>
-      <Name language="Serbian">Šrenjsk</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -25757,14 +25770,17 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_czersk" order="1">b_czersk</GameId>
       <GameId game="CK2HIP" parent="d_mazovia" order="3">c_czersk</GameId>
+      <GameId game="CK3">b_czersk</GameId>
+      <GameId game="CK3">c_czerska</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Cirnsk</Name>
       <Name language="Bulgarian">Cirnsk</Name>
-      <Name language="Slovene">Cirnsk</Name>
       <Name language="Croatian">Cirnsk</Name>
       <Name language="Latgalian">Cirnska</Name>
+      <Name language="Polish">Czersk</Name>
       <Name language="Serbian">Cirnsk</Name>
+      <Name language="Slovene">Cirnsk</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -25785,51 +25801,55 @@
     <Id>warszawa</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_czersk" order="3">b_warszawa</GameId>
+      <GameId game="CK3">b_warszawa</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Varsovie</Name>
       <Name language="Basque">Barsobia</Name>
-      <Name language="Czech">Varšava</Name>
       <Name language="Breton_Middle">Varsovia</Name>
       <Name language="Bulgarian">Varševa</Name>
-      <Name language="Slovene">Varševa</Name>
       <Name language="Castilian">Varsovia</Name>
       <Name language="Catalan">Varsòvia</Name>
       <Name language="Croatian">Varševa</Name>
+      <Name language="Czech">Varšava</Name>
       <Name language="Dutch_Middle">Warschau</Name>
+      <Name language="Estonian">Varssavi</Name>
       <Name language="Finnish">Varsova</Name>
       <Name language="French_Old">Varsovie</Name>
       <Name language="Galician">Varsovia</Name>
+      <Name language="German_Middle_Low">Warschau</Name>
+      <Name language="German_Old_Low">Warschau</Name>
       <Name language="German">Warschau</Name>
       <Name language="Hungarian">Varsó</Name>
       <Name language="Icelandic">Varsjá</Name>
       <Name language="Irish">Vársá</Name>
       <Name language="Italian">Varsavia</Name>
-      <Name language="Lithuanian">Varšuva</Name>
-      <Name language="German_Middle_Low">Warschau</Name>
-      <Name language="German_Old_Low">Warschau</Name>
-      <Name language="Neapolitan">Varsavia</Name>
-      <Name language="Portuguese">Varsóvia</Name>
       <Name language="Latin">Varsovia</Name>
+      <Name language="Lithuanian">Varšuva</Name>
+      <Name language="Neapolitan">Varsavia</Name>
+      <Name language="Polish">Warszawa</Name>
+      <Name language="Portuguese">Varsóvia</Name>
       <Name language="Romanian">Varșovia</Name>
       <Name language="Sicilian">Varsavia</Name>
       <Name language="Slovak">Varšava</Name>
+      <Name language="Slovene">Varševa</Name>
       <Name language="Turkish">Varsova</Name>
-      <Name language="Estonian">Varssavi</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>liw</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_czersk" order="4">b_liw</GameId>
+      <GameId game="CK3">b_liw</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Liv</Name>
       <Name language="Bulgarian">Liv</Name>
-      <Name language="Slovene">Liv</Name>
       <Name language="Croatian">Liv</Name>
       <Name language="Lithuanian">Livo</Name>
+      <Name language="Polish">Liw</Name>
       <Name language="Serbian">Liv</Name>
+      <Name language="Slovene">Liv</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -25849,13 +25869,24 @@
     <Id>brodno</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_czersk" order="6">b_brodno</GameId>
+      <GameId game="CK3">b_brodno</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Brodno</Name>
       <Name language="Bulgarian">Brodno</Name>
-      <Name language="Slovene">Brodno</Name>
       <Name language="Croatian">Brodno</Name>
+      <Name language="Polish">Bródno</Name>
       <Name language="Serbian">Brodno</Name>
+      <Name language="Slovene">Brodno</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>garwolin</Id>
+    <GameIds>
+      <GameId game="CK3">b_garwolin</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Polish">Garwolin</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -64944,6 +64975,7 @@
     <Id>naklo</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_poznanskie" order="4">b_naklo</GameId>
+      <GameId game="CK3">b_naklo</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Nakel</Name>
@@ -64954,6 +64986,7 @@
       <Name language="German_Middle_High">Nakel</Name>
       <Name language="German_Middle_Low">Nakel</Name>
       <Name language="German_Old_Low">Nakel</Name>
+      <Name language="Polish_Old">Nakło</Name>
       <Name language="Thuringian">Nakel</Name>
     </Names>
   </LocationEntity>
@@ -88017,8 +88050,12 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_pomerania" order="6">d_lubusz</GameId>
       <GameId game="CK2HIP" parent="c_lubusz" order="2">b_lubusz</GameId>
+      <GameId game="CK3">b_lebus</GameId>
+      <GameId game="CK3">c_lubusz</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Lebus</Name>
+      <Name language="Bavarian_Medieval">Lebus</Name>
       <Name language="Bosnian_Medieval">Lubusz</Name>
       <Name language="Bulgarian_Old">Lubusz</Name>
       <Name language="Croatian_Medieval">Lubusz</Name>
@@ -88028,6 +88065,7 @@
       <Name language="Norse">Lebus</Name>
       <Name language="Norwegian_Old">Lebus</Name>
       <Name language="Polish_Old">Lubusz</Name>
+      <Name language="Polish">Lubusz</Name>
       <Name language="Russian_Medieval">Lubusz</Name>
       <Name language="Serbian_Medieval">Lubusz</Name>
       <Name language="Slovak_Medieval">Lubuš</Name>
@@ -88060,19 +88098,45 @@
     <Id>frankfurt_oder</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_lubusz" order="2">b_frankfurt_oder</GameId>
+      <GameId game="CK3">b_oderfrankfurt</GameId>
     </GameIds>
     <Names>
+      <Name language="Alemannic">Oderfrankfurt</Name>
+      <Name language="Bavarian_Medieval">Oderfrankfurt</Name>
       <Name language="Bosnian_Medieval">Zliwitz</Name>
       <Name language="Bulgarian_Old">Zliwitz</Name>
       <Name language="Croatian_Medieval">Zliwitz</Name>
       <Name language="Czech_Medieval">Zlivec</Name>
       <Name language="German_Middle_High">Frankfurt an der Oder</Name>
       <Name language="Polish_Old">Zliviecz</Name>
+      <Name language="Polish">Zliwitz</Name>
       <Name language="Russian_Medieval">Zliwitz</Name>
       <Name language="Serbian_Medieval">Zliwitz</Name>
       <Name language="Slovak_Medieval">Zlivec</Name>
       <Name language="Slovene_Medieval">Zliwitz</Name>
       <Name language="Sorbian">Zliwitz</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>sulecin</Id>
+    <GameIds>
+      <GameId game="CK3">b_sulecin</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Alemannic">Zielenzig</Name>
+      <Name language="Bavarian_Medieval">Zielenzig</Name>
+      <Name language="Polish_Old">Sulęcin</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>rzepin</Id>
+    <GameIds>
+      <GameId game="CK3">b_rzepin</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Alemannic">Reppen</Name>
+      <Name language="Bavarian_Medieval">Reppen</Name>
+      <Name language="Polish_Old">Rzepin</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
