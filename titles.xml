@@ -18055,6 +18055,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_candia" order="1">d_krete</GameId>
       <GameId game="CK2HIP" parent="e_byzantium" order="4">k_candia</GameId>
+      <GameId game="CK3">d_krete</GameId>
+      <GameId game="CK3">k_krete</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Iqrítish</Name>
@@ -18063,35 +18065,32 @@
       <Name language="Arabic_Levant">Iqrítish</Name>
       <Name language="Arabic_Maghreb">Iqrítish</Name>
       <Name language="Arabic_Yemen">Iqrítish</Name>
-      <Name language="Arpitan">Candie</Name>
       <Name language="Avar_Old">Krit</Name>
       <Name language="Bulgar">Krit</Name>
       <Name language="Bulgarian">Krit</Name>
-      <Name language="Dalmatian">Candia</Name>
-      <Name language="French_Old">Candie</Name>
+      <Name language="Dalmatian">Creta</Name>
+      <Name language="English">Crete</Name>
       <Name language="German">Kreta</Name>
       <Name language="Hejazi_Arabic">Iqrítish</Name>
-      <Name language="Italian_Central">Candia</Name>
-      <Name language="Italian_Medieval">Candia</Name>
-      <Name language="Langobardic">Candia</Name>
+      <Name language="Italian_Central">Creta</Name>
+      <Name language="Italian_Medieval">Creta</Name>
       <Name language="Latin">Creta</Name>
-      <Name language="Ligurian">Candia</Name>
-      <Name language="Neapolitan">Candia</Name>
-      <Name language="Norman">Candie</Name>
+      <Name language="Ligurian">Creta</Name>
+      <Name language="Neapolitan">Creta</Name>
       <Name language="Norse">Krít</Name>
       <Name language="Oghuz">Girit</Name>
       <Name language="Pecheneg">Girit</Name>
       <Name language="Polish">Kreta</Name>
       <Name language="Romanian">Creta</Name>
-      <Name language="Sardinian">Candia</Name>
+      <Name language="Sardinian">Creta</Name>
       <Name language="Sicilian_Arabic">Iqrítish</Name>
-      <Name language="Sicilian">Candia</Name>
+      <Name language="Sicilian">Creta</Name>
       <Name language="Turkish_Old">Girit</Name>
       <Name language="Turkish">Girit</Name>
       <Name language="Turkmen_Medieval">Girit</Name>
-      <Name language="Tuscan">Candia</Name>
-      <Name language="Umbrian_Medieval">Candia</Name>
-      <Name language="Venetian">Candia</Name>
+      <Name language="Tuscan">Creta</Name>
+      <Name language="Umbrian_Medieval">Creta</Name>
+      <Name language="Venetian">Creta</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -18124,9 +18123,11 @@
     <Id>paleohora</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_kaneia" order="6">b_paleohora</GameId>
+      <GameId game="CK3">b_paleohora</GameId>
     </GameIds>
     <Names>
       <Name language="Dalmatian_Medieval">Palaeohora</Name>
+      <Name language="Greek_Medieval">Palaiochora</Name>
       <Name language="Italian_Central">Palaeohora</Name>
       <Name language="Italian_Medieval">Palaeohora</Name>
       <Name language="Langobardic">Palaeohora</Name>
@@ -60122,31 +60123,55 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>kaneia</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="d_krete" order="1">c_kaneia</GameId>
-    </GameIds>
-    <Names>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>kandia</Id>
+    <Id>khandia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_kaneia" order="1">b_kandia</GameId>
+      <GameId game="CK2HIP" parent="d_krete" order="1">c_kaneia</GameId>
+      <GameId game="CK3">b_chania</GameId>
+      <GameId game="CK3">c_chania</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Al-Hanim</Name>
+      <Name language="Arabic_Bedouin">Al-Hanim</Name>
+      <Name language="Arabic_Egypt">Al-Hanim</Name>
+      <Name language="Arabic_Levant">Al-Hanim</Name>
+      <Name language="Arabic_Maghreb">Al-Hanim</Name>
+      <Name language="Arabic_Yemen">Al-Hanim</Name>
+      <Name language="Dalmatian_Medieval">Canea</Name>
+      <Name language="Greek_Medieval">Khanià</Name>
+      <Name language="Hejazi_Arabic">Al-Hanim</Name>
+      <Name language="Italian_Central">Canea</Name>
+      <Name language="Italian_Medieval">Canea</Name>
+      <Name language="Langobardic">Canea</Name>
+      <Name language="Ligurian">Canea</Name>
+      <Name language="Neapolitan">Canea</Name>
+      <Name language="Oghuz">Hanya</Name>
+      <Name language="Pecheneg">Hanya</Name>
+      <Name language="Sardinian">Canea</Name>
+      <Name language="Sicilian_Arabic">Al-Hanim</Name>
+      <Name language="Sicilian">Canea</Name>
+      <Name language="Turkish_Old">Hanya</Name>
+      <Name language="Turkmen_Medieval">Hanya</Name>
+      <Name language="Tuscan_Medieval">Canea</Name>
+      <Name language="Umbrian_Medieval">Canea</Name>
+      <Name language="Venetian_Medieval">Canea</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>rethymno</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_kaneia" order="2">b_rethymno</GameId>
+      <GameId game="CK3">b_rethymno</GameId>
+      <GameId game="ImperatorRome">351</GameId> <!-- Rhithymna -->
     </GameIds>
     <Names>
       <Name language="Dalmatian_Medieval">Rettimo</Name>
+      <Name language="Greek_Ancient">Eleutherna</Name>
+      <Name language="Greek_Medieval">Rhíthimna</Name>
       <Name language="Italian_Central">Rettimo</Name>
       <Name language="Italian_Medieval">Rettimo</Name>
       <Name language="Langobardic">Rettimo</Name>
+      <Name language="Latin_Old">Eleutherna</Name>
       <Name language="Ligurian">Rettimo</Name>
       <Name language="Neapolitan">Rettimo</Name>
       <Name language="Oghuz">Resmo</Name>
@@ -60182,25 +60207,70 @@
   <LocationEntity>
     <Id>chandax</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="d_krete" order="2">c_chandax</GameId>
-    </GameIds>
-    <Names>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>iraklio</Id>
-    <GameIds>
       <GameId game="CK2HIP" parent="c_chandax" order="1">b_iraklio</GameId>
+      <GameId game="CK2HIP" parent="d_krete" order="2">c_chandax</GameId>
+      <GameId game="CK3">b_iraklio</GameId>
+      <GameId game="CK3">c_chandax</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Khandaq</Name>
+      <Name language="Arabic_Bedouin">Khandaq</Name>
+      <Name language="Arabic_Egypt">Khandaq</Name>
+      <Name language="Arabic_Levant">Khandaq</Name>
+      <Name language="Arabic_Maghreb">Khandaq</Name>
+      <Name language="Arabic_Yemen">Khandaq</Name>
+      <Name language="Arpitan">Candie</Name>
+      <Name language="Dalmatian_Medieval">Candia</Name>
+      <Name language="Dalmatian">Candia</Name>
+      <Name language="French_Old">Candie</Name>
+      <Name language="Hejazi_Arabic">Khandaq</Name>
+      <Name language="Italian_Central">Candia</Name>
+      <Name language="Italian_Medieval">Candia</Name>
+      <Name language="Langobardic">Candia</Name>
+      <Name language="Ligurian">Candia</Name>
+      <Name language="Neapolitan">Candia</Name>
+      <Name language="Norman">Candie</Name>
+      <Name language="Oghuz">Kandiye</Name>
+      <Name language="Pecheneg">Kandiye</Name>
+      <Name language="Sardinian">Candia</Name>
+      <Name language="Sicilian_Arabic">Khandaq</Name>
+      <Name language="Sicilian">Candia</Name>
+      <Name language="Turkish_Old">Kandiye</Name>
+      <Name language="Turkmen_Medieval">Kandiye</Name>
+      <Name language="Tuscan_Medieval">Candia</Name>
+      <Name language="Tuscan">Candia</Name>
+      <Name language="Umbrian_Medieval">Candia</Name>
+      <Name language="Venetian_Medieval">Candia</Name>
+      <Name language="Venetian">Candia</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>ierapetra</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_chandax" order="2">b_ierapetra</GameId>
+      <GameId game="CK3">b_ierapetra</GameId>
+      <GameId game="ImperatorRome">355</GameId> <!-- Ierapetra -->
     </GameIds>
     <Names>
+      <Name language="Dalmatian_Medieval">Gerapetra</Name>
+      <Name language="Greek_Ancient">Hierapytna</Name>
+      <Name language="Greek_Medieval">Hierà Pýtna</Name>
+      <Name language="Italian_Central">Gerapetra</Name>
+      <Name language="Italian_Medieval">Gerapetra</Name>
+      <Name language="Langobardic">Gerapetra</Name>
+      <Name language="Latin">Ierapetra</Name>
+      <Name language="Ligurian">Gerapetra</Name>
+      <Name language="Neapolitan">Gerapetra</Name>
+      <Name language="Oghuz">Yerapetre</Name>
+      <Name language="Pecheneg">Yerapetre</Name>
+      <Name language="Romanian">Ierapetra</Name>
+      <Name language="Sardinian">Gerapetra</Name>
+      <Name language="Sicilian">Gerapetra</Name>
+      <Name language="Turkish_Old">Yerapetre</Name>
+      <Name language="Turkmen_Medieval">Yerapetre</Name>
+      <Name language="Tuscan_Medieval">Gerapetra</Name>
+      <Name language="Umbrian_Medieval">Gerapetra</Name>
+      <Name language="Venetian_Medieval">Gerapetra</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -60223,8 +60293,23 @@
     <Id>agiosnikolaos</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_chandax" order="6">b_agiosnikolaos</GameId>
+      <GameId game="CK3">b_agiosnikolaos</GameId>
     </GameIds>
     <Names>
+      <Name language="Dalmatian_Medieval">San Nicolo</Name>
+      <Name language="Greek_Medieval">Hagiós Nikolaos</Name>
+      <Name language="Italian_Central">San Nicolo</Name>
+      <Name language="Italian_Medieval">San Nicolo</Name>
+      <Name language="Langobardic">San Nicolo</Name>
+      <Name language="Ligurian">San Nicolo</Name>
+      <Name language="Neapolitan">San Nicolo</Name>
+      <Name language="Romanian_Old">Sfîntu Nicolae</Name> <!-- Translated / Or Sfîntul Nicolae-->
+      <Name language="Romanian">Sfântul Nicolae</Name> <!-- Translated -->
+      <Name language="Sardinian">San Nicolo</Name>
+      <Name language="Sicilian">San Nicolo</Name>
+      <Name language="Tuscan_Medieval">San Nicolo</Name>
+      <Name language="Umbrian_Medieval">San Nicolo</Name>
+      <Name language="Venetian_Medieval">San Nicolo</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
