@@ -17,6 +17,15 @@ grep "<GameId game=" titles.xml | \
     awk '{print $3 " " $4}' | \
     sort | uniq -c | grep "^ *[2-9]"
 
+# Find non-existing fallback locations
+for FALLBACK_LOCATION_ID in $(grep "<LocationId>" titles.xml | \
+                                sed 's/.*<LocationId>\([^<>]*\)<\/LocationId>.*/\1/g' | \
+                                sort | uniq); do
+    if [ -z "$(grep "<Id>"${FALLBACK_LOCATION_ID} titles.xml)" ]; then
+        echo "Fallback location \"${FALLBACK_LOCATION_ID}\" does not exit"
+    fi
+done
+
 # Find CK2 parents missing an entry
 for PARENT_ID in $(grep "game=\"CK2HIP\"" titles.xml | \
                     grep -e "parent=\"[^\"]\+\"" | \
