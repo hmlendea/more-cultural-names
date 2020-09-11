@@ -13940,8 +13940,11 @@
       <GameId game="CK2HIP" parent="d_thessalonika" order="2">c_thessalonike</GameId>
       <GameId game="CK2HIP" parent="k_thrace" order="4">d_thessalonika</GameId>
       <GameId game="CK2HIP" parent="e_byzantium" order="1">k_thrace</GameId>
+      <GameId game="CK3">b_thessaloniki</GameId>
+      <GameId game="CK3">c_thessalonika</GameId>
+      <GameId game="CK3">d_thessalonika</GameId>
       <GameId game="CK3">k_thessalonika</GameId>
-      <GameId game="ImperatorRome">373</GameId>
+      <GameId game="ImperatorRome">373</GameId> <!-- Thessalonica -->
     </GameIds>
     <Names>
       <Name language="Avar_Old">Solun</Name>
@@ -13964,7 +13967,8 @@
       <Name language="Italian_Medieval">Tessalonica</Name>
       <Name language="Langobardic">Tessalonica</Name>
       <Name language="Latgalian">Saloniki</Name>
-      <Name language="Latin_Latin">Thessalonica</Name>
+      <Name language="Latin_Late">Thessalonica</Name>
+      <Name language="Latin_Old">Thessalonica</Name>
       <Name language="Latin">Thessalonica</Name>
       <Name language="Ligurian">Tessalonica</Name>
       <Name language="Lithuanian">Salonikai</Name>
@@ -15201,11 +15205,13 @@
     <Id>chalkidike</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_thessalonika" order="1">c_chalkidike</GameId>
+      <GameId game="CK3">c_chalkidike</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Halkidik</Name>
       <Name language="Bulgarian">Halkidik</Name>
       <Name language="Croatian">Halkidik</Name>
+      <Name language="Greek_Medieval">Chalkidike</Name>
       <Name language="Oghuz">Halkidikya</Name>
       <Name language="Pecheneg">Halkidikya</Name>
       <Name language="Serbian">Halkidik</Name>
@@ -15215,9 +15221,20 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>polygyros</Id>
+    <GameIds>
+      <GameId game="CK3">b_polygyros</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Greek_Medieval">Polygyros</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>kassandria</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_chalkidike" order="1">b_kassandria</GameId>
+      <GameId game="CK3">b_kassandreia</GameId>
+      <GameId game="ImperatorRome">376</GameId> <!-- Poteidaia -->
     </GameIds>
     <Names>
       <Name language="Bosnian">Kasandrija</Name>
@@ -15225,7 +15242,10 @@
       <Name language="Croatian">Kasandrija</Name>
       <Name language="Dutch_Middle">Kassandria</Name>
       <Name language="German">Kassandria</Name>
+      <Name language="Greek_Ancient">Kassandreia</Name>
+      <Name language="Greek_Medieval">Kassandreia</Name>
       <Name language="Italian">Kassandra</Name>
+      <Name language="Latin_Old">Cassandreia</Name>
       <Name language="Oghuz">Kesendire</Name>
       <Name language="Pecheneg">Kesendire</Name>
       <Name language="Serbian">Kasandrija</Name>
@@ -15256,11 +15276,13 @@
     <Id>ierissos</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_chalkidike" order="3">b_ierissos</GameId>
+      <GameId game="CK3">b_ierrisos</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Jeriso</Name>
       <Name language="Bulgarian">Jeriso</Name>
       <Name language="Croatian">Jeriso</Name>
+      <Name language="Greek_Medieval">Hierissos</Name>
       <Name language="Oghuz">Erse</Name>
       <Name language="Pecheneg">Erse</Name>
       <Name language="Serbian">Jeriso</Name>
@@ -15307,6 +15329,7 @@
     <Id>thesedessa</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_thessalonike" order="4">b_thesedessa</GameId>
+      <GameId game="CK3">b_voden</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Vodena</Name>
@@ -15315,6 +15338,7 @@
       <Name language="Croatian">Vodena</Name>
       <Name language="Dutch_Middle">Edessa</Name>
       <Name language="German">Edessa</Name>
+      <Name language="Greek_Medieval">Vodená</Name>
       <Name language="Oghuz">Vodina</Name>
       <Name language="Pecheneg">Vodina</Name>
       <Name language="Romanian_Old">Vudena</Name>
@@ -15323,6 +15347,15 @@
       <Name language="Slovene">Vodena</Name>
       <Name language="Turkish_Old">Vodina</Name>
       <Name language="Turkmen_Medieval">Vodina</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>kalyvia</Id>
+    <GameIds>
+      <GameId game="CK3">b_kalyvia</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Greek_Medieval">Kalyvia</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -15346,24 +15379,46 @@
     <Id>gynaikokastron</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_thessalonike" order="6">b_gynaikokastron</GameId>
+      <GameId game="CK3">b_gynaikokastron</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Žensko</Name>
       <Name language="Bulgarian">Žensko</Name>
-      <Name language="Slovene">Žensko</Name>
       <Name language="Croatian">Žensko</Name>
+      <Name language="Greek_Medieval">Gynaikokastron</Name>
       <Name language="Serbian">Žensko</Name>
+      <Name language="Slovene">Žensko</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>langades</Id>
+    <GameIds>
+      <GameId game="CK3">b_langades</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Greek_Medieval">Langades</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>mavrouda</Id>
+    <GameIds>
+      <GameId game="CK3">b_mavrouda</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Greek_Medieval">Mavrouda</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>sthlanitza</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_thessalonike" order="7">b_sthlanitza</GameId>
+      <GameId game="CK3">b_sthlanitza</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Janica</Name>
       <Name language="Bulgarian">Janica</Name>
       <Name language="Croatian">Janica</Name>
+      <Name language="Greek_Medieval">Sthlanitza</Name>
       <Name language="Oghuz">Yenice-i Vardar</Name>
       <Name language="Pecheneg">Yenice-i Vardar</Name>
       <Name language="Serbian">Janica</Name>
@@ -15377,11 +15432,14 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_veria" order="2">b_veria</GameId>
       <GameId game="CK2HIP" parent="d_thessalonika" order="3">c_veria</GameId>
+      <GameId game="CK3">b_veria</GameId>
+      <GameId game="CK3">c_veria</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Ber</Name>
       <Name language="Bulgarian_Old">Ber</Name>
       <Name language="Croatian">Ber</Name>
+      <Name language="Greek_Medieval">Berroia</Name>
       <Name language="Oghuz">Karaferye</Name>
       <Name language="Pecheneg">Karaferye</Name>
       <Name language="Slovene">Ber</Name>
@@ -15390,9 +15448,19 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>maglen</Id>
+    <GameIds>
+      <GameId game="CK3">b_maglen</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Greek_Medieval">Maglen</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>servia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_veria" order="1">b_servia</GameId>
+      <GameId game="CK3">b_servia</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Sèrvie</Name>
@@ -15408,6 +15476,7 @@
       <Name language="German_Middle_Low">Servien</Name>
       <Name language="German_Old_Low">Servien</Name>
       <Name language="German">Servien</Name>
+      <Name language="Greek_Medieval">Servia</Name>
       <Name language="Hausa">Serviya</Name>
       <Name language="Hungarian">Szervia</Name>
       <Name language="Irish">An tSeirvia</Name>
@@ -15439,11 +15508,32 @@
     <Names>
       <Name language="Bosnian">Neopatrija</Name>
       <Name language="Bulgarian">Neopatrija</Name>
-      <Name language="Slovene">Neopatrija</Name>
+      <Name language="Catalan_Medieval">La Pátria</Name>
+      <Name language="Catalan_Medieval">Neopatria</Name>
       <Name language="Croatian">Neopatrija</Name>
+      <Name language="Dalmatian_Medieval">La Pátria</Name>
+      <Name language="French_Old">La Patre</Name>
+      <Name language="French_Old">Neopatrie</Name>
+      <Name language="Greek_Medieval">Neai Patrai</Name>
+      <Name language="Italian_Central">La Pátria</Name>
+      <Name language="Italian_Medieval">La Pátria</Name>
+      <Name language="Langobardic">La Pátria</Name>
+      <Name language="Ligurian">La Pátria</Name>
+      <Name language="Neapolitan">La Pátria</Name>
+      <Name language="Norman">La Patre</Name>
+      <Name language="Norman">Neopatrie</Name>
+      <Name language="Oghuz">Patracik</Name>
+      <Name language="Pecheneg">Patracik</Name>
       <Name language="Polish">Neopatria</Name>
-      <Name language="Latin">Hypata</Name>
+      <Name language="Sardinian">La Pátria</Name>
       <Name language="Serbian">Neopatrija</Name>
+      <Name language="Sicilian">La Pátria</Name>
+      <Name language="Slovene">Neopatrija</Name>
+      <Name language="Turkish_Old">Patracik</Name>
+      <Name language="Turkmen_Medieval">Patracik</Name>
+      <Name language="Tuscan_Medieval">La Pátria</Name>
+      <Name language="Umbrian_Medieval">La Pátria</Name>
+      <Name language="Venetian_Medieval">La Pátria</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -15451,38 +15541,64 @@
     <GameIds>
       <GameId game="CK2HIP" parent="d_neopatras" order="1">c_thessalia</GameId>
       <GameId game="CK2HIP" parent="" order="11813">d_thessalia</GameId>
+      <GameId game="CK3">c_thessalia</GameId>
+      <GameId game="CK3">d_thessaly</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Tesalija</Name>
       <Name language="Bulgarian">Tesalija</Name>
-      <Name language="Slovene">Tesalija</Name>
       <Name language="Castilian">Tesalia</Name>
+      <Name language="Catalan_Medieval">Tessália</Name>
       <Name language="Croatian">Tesalija</Name>
+      <Name language="Dalmatian_Medieval">Tessaglia</Name>
       <Name language="Dutch_Middle">Thessalië</Name>
+      <Name language="English">Thessaly</Name>
       <Name language="Finnish">Thessalia</Name>
+      <Name language="French_Old">Thessalie</Name>
       <Name language="German">Thessalien</Name>
+      <Name language="Greek_Medieval">Thessalía</Name>
       <Name language="Hungarian">Thesszália</Name>
       <Name language="Icelandic">Þessalía</Name>
+      <Name language="Italian_Central">Tessaglia</Name>
+      <Name language="Italian_Medieval">Tessaglia</Name>
+      <Name language="Langobardic">Tessaglia</Name>
+      <Name language="Ligurian">Tessaglia</Name>
       <Name language="Lithuanian">Tesalija</Name>
+      <Name language="Neapolitan">Tessaglia</Name>
+      <Name language="Norman">Thessalie</Name>
       <Name language="Norwegian">Thessalia</Name>
+      <Name language="Oghuz">Tesalya</Name>
+      <Name language="Pecheneg">Tesalya</Name>
       <Name language="Polish">Tesalia</Name>
       <Name language="Portuguese">Tessália</Name>
-      <Name language="Latin">Hypata</Name>
       <Name language="Romanian">Tesalia</Name>
+      <Name language="Sardinian">Tessaglia</Name>
       <Name language="Serbian">Tesalija</Name>
+      <Name language="Sicilian">Tessaglia</Name>
       <Name language="Slovak">Tesália</Name>
+      <Name language="Slovene">Tesalija</Name>
       <Name language="Swedish">Thessalien</Name>
+      <Name language="Turkish_Old">Tesalya</Name>
+      <Name language="Turkmen_Medieval">Tesalya</Name>
+      <Name language="Tuscan_Medieval">Tessaglia</Name>
+      <Name language="Umbrian_Medieval">Tessaglia</Name>
+      <Name language="Venetian_Medieval">Tessaglia</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>larissa</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_thessalia" order="1">b_larissa</GameId>
+      <GameId game="CK3">b_larissa</GameId>
+      <GameId game="ImperatorRome">389</GameId> <!-- Larissa -->
     </GameIds>
     <Names>
       <Name language="Bosnian">Larisa</Name>
       <Name language="Bulgarian">Larisa</Name>
       <Name language="Croatian">Larisa</Name>
+      <Name language="Greek_Ancient">Larisa</Name>
+      <Name language="Greek_Medieval">Larissa</Name>
+      <Name language="Latin_Old">Larissa</Name>
       <Name language="Oghuz">Yenisehir i-Fenari</Name>
       <Name language="Pecheneg">Yenisehir i-Fenari</Name>
       <Name language="Serbian">Larisa</Name>
@@ -15495,11 +15611,13 @@
     <Id>elasson</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_thessalia" order="2">b_elasson</GameId>
+      <GameId game="CK3">b_elasson</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Elasona</Name>
       <Name language="Bulgarian">Elasona</Name>
       <Name language="Croatian">Elasona</Name>
+      <Name language="Greek_Medieval">Elasson</Name>
       <Name language="Oghuz">Alasonya</Name>
       <Name language="Pecheneg">Alasonya</Name>
       <Name language="Serbian">Elasona</Name>
@@ -15512,9 +15630,11 @@
     <Id>platamon</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_thessalia" order="3">b_platamon</GameId>
+      <GameId game="CK3">b_platamon</GameId>
     </GameIds>
     <Names>
       <Name language="French_Old">Platamonas</Name>
+      <Name language="Greek_Medieval">Platamon</Name>
       <Name language="Oghuz">Platamona</Name>
       <Name language="Pecheneg">Platamona</Name>
       <Name language="Turkish_Old">Platamona</Name>
@@ -15539,6 +15659,9 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_demetrias" order="1">b_demetrias</GameId>
       <GameId game="CK2HIP" parent="d_neopatras" order="2">c_demetrias</GameId>
+      <GameId game="CK3">b_demetrias</GameId>
+      <GameId game="CK3">c_demetrias</GameId>
+      <GameId game="ImperatorRome">391</GameId> <!-- Demetrias -->
     </GameIds>
     <Names>
       <Name language="Bosnian">Dimitrijas</Name>
@@ -15546,9 +15669,12 @@
       <Name language="Croatian">Dimitrijas</Name>
       <Name language="Dalmatian_Medieval">Dimitrias</Name>
       <Name language="French_Old">Mitre</Name>
+      <Name language="Greek_Ancient">Pagasai</Name>
+      <Name language="Greek_Medieval">Demetrias</Name>
       <Name language="Italian_Central">Dimitrias</Name>
       <Name language="Italian_Medieval">Dimitrias</Name>
       <Name language="Langobardic">Dimitrias</Name>
+      <Name language="Latin_Old">Pagasae</Name>
       <Name language="Ligurian">Dimitrias</Name>
       <Name language="Neapolitan">Dimitrias</Name>
       <Name language="Norman">Mitre</Name>
@@ -15569,6 +15695,7 @@
     <Id>halmyros</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_demetrias" order="2">b_halmyros</GameId>
+      <GameId game="CK3">b_halmyros</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Almiros</Name>
@@ -15576,6 +15703,7 @@
       <Name language="Croatian">Almiros</Name>
       <Name language="Dalmatian_Medieval">Almiró</Name>
       <Name language="French_Old">L'Amiro</Name>
+      <Name language="Greek_Medieval">Halmyros</Name>
       <Name language="Italian_Central">Almiró</Name>
       <Name language="Italian_Medieval">Almiró</Name>
       <Name language="Langobardic">Almiró</Name>
@@ -15625,15 +15753,22 @@
     <Id>upper_wallachia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_neopatras" order="3">c_upper_wallachia</GameId>
+      <GameId game="CK3">c_thessaliotis</GameId>
     </GameIds>
     <Names>
+      <Name language="Aragonese">Gran Vlaquia</Name> <!-- Guessed, Translated -->
+      <Name language="Aragonese">Vlaquia la Gran</Name>
       <Name language="Bosnian">Velika Vlaška</Name>
       <Name language="Bulgarian">Velika Vlahija</Name>
       <Name language="Croatian">Velika Vlaška</Name>
+      <Name language="English">Great Wallachia</Name>
+      <Name language="German">Große Walachei</Name> <!-- Or Großwlachien -->
+      <Name language="Greek_Medieval">Megále Vlachia</Name>
+      <Name language="Italian">Grande Valacchia</Name>
       <Name language="Oghuz">Tirhala</Name>
       <Name language="Pecheneg">Tirhala</Name>
-      <Name language="Polish">Wielka Woloszczyzna</Name> <!-- Historical? Translated -->
-      <Name language="Romanian">Rumânia Mare</Name> <!-- Historical? Translated -->
+      <Name language="Polish">Wielka Wołoszczyzna</Name>
+      <Name language="Romanian">Vlahia Mare</Name> <!-- Sometimes: Tesalia Vlahă -->
       <Name language="Serbian_Medieval">Megalovlahija</Name>
       <Name language="Serbian">Velika Vlaška</Name>
       <Name language="Slovene">Velika Vlaška</Name>
@@ -15662,14 +15797,16 @@
     <Id>trikala</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_upper_wallachia" order="2">b_trikala</GameId>
+      <GameId game="CK3">b_trikala</GameId>
     </GameIds>
     <Names>
+      <Name language="Aromanian">Tricolj</Name> <!-- k instead of c ? -->
       <Name language="Bosnian">Trikolj</Name>
       <Name language="Bulgarian">Trikol</Name>
       <Name language="Croatian">Trikolj</Name>
+      <Name language="Greek_Medieval">Trikala</Name>
       <Name language="Oghuz">Tirhala</Name>
       <Name language="Pecheneg">Tirhala</Name>
-      <Name language="Romanian">Tricolj</Name> <!-- Aromanian; k instead of c ? -->
       <Name language="Serbian">Trikolj</Name>
       <Name language="Slovene">Trikolj</Name>
       <Name language="Turkish_Old">Tirhala</Name>
@@ -15680,12 +15817,14 @@
     <Id>grevena</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_upper_wallachia" order="3">b_grevena</GameId>
+      <GameId game="CK3">b_grevena</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Greben</Name>
       <Name language="Bulgarian_Old">Grebena</Name>
       <Name language="Bulgarian">Greben</Name>
       <Name language="Croatian">Greben</Name>
+      <Name language="Greek_Medieval">Grevená</Name>
       <Name language="Oghuz">Gerebena</Name>
       <Name language="Pecheneg">Gerebena</Name>
       <Name language="Romanian_Old">Grebini</Name>
@@ -15693,6 +15832,15 @@
       <Name language="Slovene">Greben</Name>
       <Name language="Turkish_Old">Gerebena</Name>
       <Name language="Turkmen_Medieval">Gerebena</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>stagoi</Id>
+    <GameIds>
+      <GameId game="CK3">b_stagoi</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Greek_Medieval">Stagoi</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -15712,6 +15860,7 @@
     <Id>zetounion</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_neopatras" order="1">b_zetounion</GameId>
+      <GameId game="CK3">b_zetouni</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Zituni</Name>
@@ -15719,6 +15868,7 @@
       <Name language="Croatian">Zituni</Name>
       <Name language="Dalmatian_Medieval">Citó</Name>
       <Name language="French_Old">Girton</Name>
+      <Name language="Greek_Medieval">Zetounion</Name>
       <Name language="Italian_Central">Citó</Name>
       <Name language="Italian_Medieval">Citó</Name>
       <Name language="Langobardic">Citó</Name>
@@ -15742,12 +15892,17 @@
     <Id>pharsalos</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_neopatras" order="2">b_pharsalos</GameId>
+      <GameId game="CK3">b_pharsalos</GameId>
+      <GameId game="ImperatorRome">394</GameId> <!-- Pharsalos -->
     </GameIds>
     <Names>
       <Name language="Bosnian">Farsal</Name>
       <Name language="Bulgarian">Farsal</Name>
       <Name language="Croatian">Farsal</Name>
       <Name language="French_Old">Ferselle</Name>
+      <Name language="Greek_Ancient">Pharsalos</Name>
+      <Name language="Greek_Medieval">Pharsalos</Name>
+      <Name language="Latin_Old">Pharsalus</Name>
       <Name language="Norman">Ferselle</Name>
       <Name language="Oghuz">Catalca</Name>
       <Name language="Pecheneg">Catalca</Name>
@@ -15761,6 +15916,7 @@
     <Id>domokos</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_neopatras" order="4">b_domokos</GameId>
+      <GameId game="CK3">b_domokos</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Domok</Name>
@@ -15768,6 +15924,7 @@
       <Name language="Croatian">Domok</Name>
       <Name language="Dalmatian_Medieval">Domaco</Name>
       <Name language="French_Old">Donchie</Name>
+      <Name language="Greek_Medieval">Domokos</Name>
       <Name language="Italian_Central">Domaco</Name>
       <Name language="Italian_Medieval">Domaco</Name>
       <Name language="Langobardic">Domaco</Name>
@@ -15788,7 +15945,16 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>siderokastronthessaly</Id>
+    <Id>gardikia</Id>
+    <GameIds>
+      <GameId game="CK3">b_gardikia</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Greek_Medieval">Gardikia</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>siderokastron_thessaly</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_neopatras" order="4">b_siderokastronthessaly</GameId>
     </GameIds>
@@ -18329,6 +18495,8 @@
     <Id>rhodos</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_rhodos" order="1">b_rhodos</GameId>
+      <GameId game="CK3">b_rhodos</GameId>
+      <GameId game="CK3">c_rhodos</GameId>
       <GameId game="ImperatorRome">266</GameId> <!-- Rhodos -->
     </GameIds>
     <Names>
@@ -18346,6 +18514,7 @@
       <Name language="German_Old_Low">Rhodos</Name>
       <Name language="German">Rhodos</Name>
       <Name language="Greek_Ancient">Rhodos</Name>
+      <Name language="Greek_Medieval">Rhodos</Name>
       <Name language="Hungarian">Rodosz</Name>
       <Name language="Italian_Central">Rodi</Name>
       <Name language="Italian_Medieval">Rodi</Name>
@@ -18374,8 +18543,10 @@
     <Id>lindos</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_rhodos" order="3">b_lindos</GameId>
+      <GameId game="CK3">b_lindos</GameId>
     </GameIds>
     <Names>
+      <Name language="Greek_Medieval">Lindos</Name>
       <Name language="Italian">Lindo</Name>
       <Name language="Oghuz">Lindoz</Name>
       <Name language="Turkish_Old">Lindoz</Name>
@@ -59747,8 +59918,10 @@
     <Id>velestino</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_demetrias" order="3">b_velestino</GameId>
+      <GameId game="CK3">b_velestino</GameId>
     </GameIds>
     <Names>
+      <Name language="Greek_Medieval">Velestinon</Name>
       <Name language="Oghuz">Velestin</Name>
       <Name language="Pecheneg">Velestin</Name>
       <Name language="Turkish_Old">Velestin</Name>
@@ -61245,8 +61418,12 @@
     <Id>kos</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_rhodos" order="2">b_kos</GameId>
+      <GameId game="CK3">b_kos</GameId>
+      <GameId game="ImperatorRome">1970</GameId> <!-- Kos -->
     </GameIds>
     <Names>
+      <Name language="Greek_Medieval">Kos</Name>
+      <Name language="Latin_Old">Cos</Name>
       <Name language="Oghuz">Istanköy</Name>
       <Name language="Turkish_Old">Istanköy</Name>
       <Name language="Turkmen_Medieval">Istanköy</Name>
@@ -61256,10 +61433,12 @@
     <Id>karpathos</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_rhodos" order="4">b_karpathos</GameId>
+      <GameId game="CK3">b_karpathos</GameId>
       <GameId game="ImperatorRome">280</GameId> <!-- Karpathos -->
     </GameIds>
     <Names>
       <Name language="Greek_Ancient">Karpathos</Name>
+      <Name language="Greek_Medieval">Karpathos</Name>
       <Name language="Latin_Old">Carpathus</Name>
       <Name language="Oghuz">Kerpe</Name>
       <Name language="Turkish_Old">Kerpe</Name>
@@ -98820,8 +98999,10 @@
     <Id>rendina</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_chalkidike" order="4">b_rendina</GameId>
+      <GameId game="CK3">b_rendina</GameId>
     </GameIds>
     <Names>
+      <Name language="Greek_Medieval">Rendina</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
