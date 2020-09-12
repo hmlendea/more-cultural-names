@@ -564,6 +564,7 @@
       <LanguageId>Gaulish_Transalpine</LanguageId>
       <LanguageId>Gaulish_Cisalpine</LanguageId>
       <LanguageId>Gaulish_Lepontic</LanguageId>
+      <LanguageId>Gaulish_Biturgian</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -575,6 +576,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Gaulish</LanguageId>
+      <LanguageId>Gaulish_Biturgian</LanguageId>
       <LanguageId>Gaulish_Transalpine</LanguageId>
       <LanguageId>Gaulish_Cisalpine</LanguageId>
       <LanguageId>Gaulish_Lepontic</LanguageId>
@@ -1189,6 +1191,21 @@
       <GameId game="ImperatorRome">gallic</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Gaulish_Biturgian</LanguageId>
+      <LanguageId>Gaulish_Transalpine</LanguageId>
+      <LanguageId>Gaulish_Cisalpine</LanguageId>
+      <LanguageId>Gaulish_Lepontic</LanguageId>
+      <LanguageId>Celtic_Noric</LanguageId>
+      <LanguageId>Celtic_Illyrian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Gaulish_Biturgian</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">biturigan</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Gaulish</LanguageId>
       <LanguageId>Gaulish_Transalpine</LanguageId>
       <LanguageId>Gaulish_Cisalpine</LanguageId>
       <LanguageId>Gaulish_Lepontic</LanguageId>
@@ -1204,6 +1221,7 @@
     <FallbackLanguages>
       <LanguageId>Gaulish</LanguageId>
       <LanguageId>Gaulish_Cisalpine</LanguageId>
+      <LanguageId>Gaulish_Biturgian</LanguageId>
       <LanguageId>Gaulish_Lepontic</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
@@ -1217,6 +1235,7 @@
     <FallbackLanguages>
       <LanguageId>Gaulish</LanguageId>
       <LanguageId>Gaulish_Transalpine</LanguageId>
+      <LanguageId>Gaulish_Biturgian</LanguageId>
       <LanguageId>Gaulish_Lepontic</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
@@ -1230,6 +1249,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Gaulish</LanguageId>
+      <LanguageId>Gaulish_Biturgian</LanguageId>
       <LanguageId>Gaulish_Transalpine</LanguageId>
       <LanguageId>Gaulish_Cisalpine</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
@@ -1391,12 +1411,40 @@
     <Id>Greek</Id>
     <Code iso-639-1="el" iso-639-3="gre" />
     <FallbackLanguages>
+      <LanguageId>Greek_Demotic</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient_Antignoid</LanguageId>
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Greek_Demotic</Id>
+    <FallbackLanguages>
+      <LanguageId>Greek</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Greek_Katharevousa</Id>
+    <FallbackLanguages>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
+      <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1411,6 +1459,8 @@
       <LanguageId>Greek_Ancient_Antignoid</LanguageId>
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1426,6 +1476,8 @@
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1441,6 +1493,8 @@
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1455,6 +1509,8 @@
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1469,6 +1525,8 @@
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1483,6 +1541,8 @@
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -2382,6 +2442,15 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Occitan_Gascon</Id>
+    <Code iso-639-3="gsc" />
+    <FallbackLanguages>
+      <LanguageId>Occitan</LanguageId>
+      <LanguageId>French</LanguageId>
+      <LanguageId>Occitan_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Occitan_Old</Id> <!-- Old Occitan (to 1500), Old Provençal (to 1500) -->
     <Code iso-639-3="pro" />
     <GameIds>
@@ -2391,6 +2460,7 @@
     <FallbackLanguages>
       <LanguageId>French_Old</LanguageId>
       <LanguageId>Occitan</LanguageId>
+      <LanguageId>Occitan_Gascon</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
