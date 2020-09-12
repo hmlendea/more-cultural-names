@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfLanguage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Language>
+    <Id>Afar</Id>
+    <Code iso-639-1="aa" iso-639-2="aar" iso-639-3="aar" />
+    <GameIds>
+      <GameId game="CK2HIP">afar</GameId>
+      <GameId game="CK3">afar</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Afrikaans</Id>
     <Code iso-639-1="af" iso-639-3="afr" />
   </Language>
@@ -441,6 +449,18 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Beja</Id>
+    <GameIds>
+      <GameId game="CK2HIP">beja</GameId>
+      <GameId game="CK3">beja</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Nubian_Old</LanguageId>
+      <LanguageId>Blemmyan</LanguageId>
+      <LanguageId>Meroitic</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Belarussian</Id>
     <Code iso-639-1="be" iso-639-2="bel" iso-639-3="bel" />
     <FallbackLanguages>
@@ -470,6 +490,17 @@
   <Language>
     <Id>Bikol_Central</Id>
     <Code iso-639-3="bcl" />
+  </Language>
+  <Language>
+    <Id>Blemmyan</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">blemmyan</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Meroitic</LanguageId>
+      <LanguageId>Beja</LanguageId>
+      <LanguageId>Nubian_Old</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Bosnian</Id>
@@ -940,13 +971,18 @@
       <GameId game="CK3">dutch</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Flemish_West</LanguageId>
+      <LanguageId>Frisian_Middle</LanguageId>
+      <LanguageId>Frisian_Old</LanguageId>
       <LanguageId>German_Low_Dutch</LanguageId>
       <LanguageId>German_Low</LanguageId>
       <LanguageId>German_Middle_Low</LanguageId>
       <LanguageId>Dutch_Old</LanguageId>
       <LanguageId>German_Old_Low</LanguageId>
       <LanguageId>Dutch</LanguageId>
+      <LanguageId>Frisian_North</LanguageId>
+      <LanguageId>Frisian_East</LanguageId>
+      <LanguageId>Frisian_Saterland</LanguageId>
+      <LanguageId>Flemish_West</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2423,6 +2459,18 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Meroitic</Id> <!-- c. 1800 BC – c. 400 AD -->
+    <Code iso-639-3="xmr" />
+    <GameIds>
+      <GameId game="ImperatorRome">meroitic</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Blemmyan</LanguageId>
+      <LanguageId>Nubian_Old</LanguageId>
+      <LanguageId>Beja</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Minaean</Id> <!-- c. 1200 BC – c. 100 AD -->
     <Code iso-639-3="inm" />
     <GameIds>
@@ -2598,17 +2646,20 @@
     <Code iso-639-2="nub" />
     <FallbackLanguages>
       <LanguageId>Nubian_Old</LanguageId>
+      <LanguageId>Beja</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Nubian_Old</Id> <!-- c. 85h century – 15th century -->
+    <Id>Nubian_Old</Id> <!-- c. 8th century – 15th century -->
     <Code iso-639-2="nub" />
     <GameIds>
       <GameId game="CK2HIP">nubian</GameId>
       <GameId game="CK3">nubian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Meroitic</LanguageId>
       <LanguageId>Nubian</LanguageId>
+      <LanguageId>Beja</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
