@@ -9465,6 +9465,7 @@
     <Id>bolzano</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_tirol" order="7">b_bolzano</GameId>
+      <GameId game="CK3">b_bolzano</GameId>
     </GameIds>
     <Names>
       <Name language="Basque">Bozen</Name>
@@ -9474,6 +9475,7 @@
       <Name language="Frisian_Old">Bozen</Name>
       <Name language="Galician">Bolzán</Name>
       <Name language="German">Bozen</Name>
+      <Name language="Italian">Bolzano</Name>
       <Name language="Lithuanian">Bocenas</Name>
       <Name language="Lombard">Bulsan</Name>
       <Name language="Occitan">Bozen</Name>
@@ -9489,6 +9491,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_trent" order="1">b_trento</GameId>
       <GameId game="CK2HIP" parent="d_tyrol" order="2">c_trent</GameId>
+      <GameId game="CK3">b_trento</GameId>
+      <GameId game="CK3">c_trent</GameId>
     </GameIds>
     <Names>
       <Name language="Basque">Trento</Name>
@@ -9515,6 +9519,15 @@
       <Name language="Slovak">Trident</Name>
       <Name language="Swedish">Trento</Name>
       <Name language="Turkish">Trento</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>camonica</Id>
+    <GameIds>
+      <GameId game="CK3">b_val_camonica</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Val Camonica</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -11949,9 +11962,11 @@
     <Id>bellinzona</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_chur" order="4">b_bellinzona</GameId>
+      <GameId game="CK3">b_bellinzona</GameId>
     </GameIds>
     <Names>
       <Name language="French_Old">Bellinzone</Name>
+      <Name language="Itlia">Bellinzona</Name>
       <Name language="Lithuanian">Belincona</Name>
       <Name language="Lombard">Belinzona</Name>
       <Name language="Latin">Bilitio</Name>
@@ -46042,6 +46057,9 @@
       <GameId game="CK2HIP" parent="d_genoa" order="1">c_genoa</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="8">d_genoa</GameId>
       <GameId game="CK2HIP" parent="e_italy" order="4">k_genoa</GameId>
+      <GameId game="CK3">b_genoa</GameId>
+      <GameId game="CK3">c_genoa</GameId>
+      <GameId game="CK3">d_genoa</GameId>
       <GameId game="CK3">k_genoa</GameId>
       <GameId game="ImperatorRome">3549</GameId> <!-- Genua -->
     </GameIds>
@@ -46087,12 +46105,26 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>emilia</Id>
+    <GameIds>
+      <GameId game="CK3">d_emilia</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Greek_Medieval">Aemilia</Name>
+      <Name language="Italian">Emilia</Name>
+      <Name language="Latin_Medieval">Aemilia</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>pisa</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_pisa" order="1">b_pisa</GameId>
       <GameId game="CK2HIP" parent="d_pisa" order="1">c_pisa</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="16">d_pisa</GameId>
       <GameId game="CK2HIP" parent="e_italy" order="5">k_pisa</GameId>
+      <GameId game="CK3">b_pisa</GameId>
+      <GameId game="CK3">c_pisa</GameId>
+      <GameId game="CK3">d_pisa</GameId>
       <GameId game="CK3">k_pisa</GameId>
       <GameId game="ImperatorRome">136</GameId> <!-- Pisae -->
     </GameIds>
@@ -46101,12 +46133,23 @@
       <Name language="French_Old">Pise</Name>
       <Name language="Greek_Ancient">Pisa</Name>
       <Name language="Greek_Medieval">Pisai</Name>
+      <Name language="Italian">Pisa</Name>
       <Name language="Latgalian">Piza</Name>
       <Name language="Latin_Old">Pisae</Name>
       <Name language="Latin">Pisae</Name>
       <Name language="Lithuanian">Pišas</Name>
       <Name language="Polish">Piza</Name>
+      <Name language="Romanian">Pisa</Name>
       <Name language="Swedish">Bisa</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>livorno</Id>
+    <GameIds>
+      <GameId game="CK3">b_livorno</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Livorno</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -46143,6 +46186,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_lombardia" order="1">b_milano</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="1">d_lombardia</GameId>
+      <GameId game="CK3">b_milano</GameId>
       <GameId game="ImperatorRome">3571</GameId> <!-- Mediolanium -->
     </GameIds>
     <Names>
@@ -46151,6 +46195,7 @@
       <Name language="Etruscan">Methlan</Name>
       <Name language="German">Mailand</Name>
       <Name language="Greek_Medieval">Mediolanion</Name>
+      <Name language="Italian">Milano</Name>
       <Name language="Latgalian">Milãna</Name>
       <Name language="Latin_Old">Mediolanum</Name>
       <Name language="Latin_Medieval">Mediolanium</Name>
@@ -46164,9 +46209,11 @@
     <Id>monza</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_lombardia" order="2">b_monza</GameId>
+      <GameId game="CK3">b_monza</GameId>
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Modika</Name>
+      <Name language="Italian">Monza</Name>
       <Name language="Latin_Medieval">Modica</Name>
       <Name language="Lombard">Munscia</Name>
     </Names>
@@ -46185,11 +46232,14 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_brescia" order="1">b_brescia</GameId>
       <GameId game="CK2HIP" parent="d_lombardia" order="2">c_brescia</GameId>
+      <GameId game="CK3">b_brescia</GameId>
+      <GameId game="CK3">c_brescia</GameId>
       <GameId game="ImperatorRome">3581</GameId> <!-- Brixia -->
     </GameIds>
     <Names>
       <Name language="Etruscan">Vrixia</Name>
       <Name language="Greek_Medieval">Brixia</Name>
+      <Name language="Italian">Brescia</Name>
       <Name language="Latin_Old">Brixia</Name>
       <Name language="Latin_Medieval">Brixia</Name>
       <Name language="Venetian">Bresia</Name>
@@ -46209,6 +46259,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_bergamo" order="1">b_bergamo</GameId>
       <GameId game="CK2HIP" parent="d_lombardia" order="3">c_bergamo</GameId>
+      <GameId game="CK3">b_bergamo</GameId>
       <GameId game="ImperatorRome">3579</GameId> <!-- Bergomum -->
     </GameIds>
     <Names>
@@ -46216,6 +46267,7 @@
       <Name language="Etruscan">Percumsna</Name>
       <Name language="French_Old">Bergame</Name>
       <Name language="Greek_Medieval">Bergomon</Name>
+      <Name language="Italian">Bergamo</Name>
       <Name language="Latin_Old">Bergomum</Name>
       <Name language="Latin_Medieval">Bergomum</Name>
       <Name language="Lombard">Bèrghem</Name>
@@ -46246,12 +46298,15 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_pavia" order="1">b_pavia</GameId>
       <GameId game="CK2HIP" parent="d_lombardia" order="4">c_pavia</GameId>
+      <GameId game="CK3">b_pavia</GameId>
+      <GameId game="CK3">c_pavia</GameId>
       <GameId game="ImperatorRome">3572</GameId> <!-- Ticinum -->
     </GameIds>
     <Names>
       <Name language="Etruscan">Pauia</Name>
       <Name language="French_Old">Pavie</Name>
       <Name language="Greek_Medieval">Tikinon</Name>
+      <Name language="Italian">Pavia</Name>
       <Name language="Latin_Old">Ticinum</Name>
       <Name language="Latin_Medieval">Ticinum</Name>
       <Name language="Polish">Pawia</Name>
@@ -46261,8 +46316,10 @@
     <Id>vigevano</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_pavia" order="3">b_vigevano</GameId>
+      <GameId game="CK3">b_vigevano</GameId>
     </GameIds>
     <Names>
+      <Name language="Italian">Vigevano</Name>
       <Name language="Latin">Vigebanum</Name>
     </Names>
   </LocationEntity>
@@ -46271,6 +46328,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_cremona" order="1">b_cremona</GameId>
       <GameId game="CK2HIP" parent="d_lombardia" order="5">c_cremona</GameId>
+      <GameId game="CK3">b_cremona</GameId>
+      <GameId game="CK3">c_cremona</GameId>
       <GameId game="ImperatorRome">3582</GameId> <!-- Cremona -->
     </GameIds>
     <Names>
@@ -46278,7 +46337,27 @@
       <Name language="French_Old">Crémone</Name>
       <Name language="Greek_Ancient">Kremone</Name>
       <Name language="Greek_Medieval">Kremone</Name>
+      <Name language="Italian">Cremona</Name>
       <Name language="Latin_Old">Cremona</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>roncaglia</Id>
+    <GameIds>
+      <GameId game="CK3">b_roncaglia</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Roncaglia</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>crema</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_cremona" order="2">b_crema</GameId>
+      <GameId game="CK3">b_crema</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Crema</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -46295,11 +46374,14 @@
     <Id>como</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_valassina" order="1">b_como</GameId>
+      <GameId game="CK3">b_como</GameId>
+      <GameId game="CK3">c_como</GameId>
       <GameId game="ImperatorRome">3570</GameId> <!-- Comum -->
     </GameIds>
     <Names>
       <Name language="French_Old">Côme</Name>
       <Name language="Greek_Medieval">Komon</Name>
+      <Name language="Italian">Como</Name>
       <Name language="Latin_Medieval">Comum</Name>
     </Names>
   </LocationEntity>
@@ -46480,12 +46562,30 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>carrara_carraraesi</Id>
+    <Id>padova</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="c_padova" order="2">b_carrara_carraraesi</GameId>
+      <GameId game="CK2HIP" parent="c_padova" order="1">b_padova</GameId>
+      <GameId game="CK2HIP" parent="d_verona" order="4">c_padova</GameId>
+      <GameId game="CK3">b_padua</GameId>
+      <GameId game="CK3">c_padua</GameId>
+      <GameId game="ImperatorRome">3594</GameId> <!-- Patavium -->
     </GameIds>
     <Names>
-      <Name language="French_Old">Carrare</Name>
+      <Name language="Castilian">Padua</Name>
+      <Name language="Catalan">Pàdua</Name>
+      <Name language="Dutch_Middle">Padua</Name>
+      <Name language="English">Padua</Name>
+      <Name language="Etruscan">Pathua</Name>
+      <Name language="French_Old">Padoue</Name>
+      <Name language="German">Padua</Name>
+      <Name language="Greek_Medieval">Pataouion</Name>
+      <Name language="Italian">Padova</Name>
+      <Name language="Latin_Old">Patavium</Name>
+      <Name language="Latin_Medieval">Patavium</Name>
+      <Name language="Polish">Padwa</Name>
+      <Name language="Portuguese">Pádua</Name>
+      <Name language="Swedish">Padua</Name>
+      <Name language="Venetian">Padoa</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -46503,10 +46603,22 @@
       <GameId game="CK2HIP" parent="c_parma" order="1">b_parma</GameId>
       <GameId game="CK2HIP" parent="d_parma" order="1">c_parma</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="3">d_parma</GameId>
+      <GameId game="CK3">b_parma</GameId>
+      <GameId game="CK3">c_parma</GameId>
     </GameIds>
     <Names>
       <Name language="French_Old">Parme</Name>
+      <Name language="Italian">Parma</Name>
       <Name language="Norwegian">Purga</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>florentiola</Id>
+    <GameIds>
+      <GameId game="CK3">b_florentiola</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Florentiola</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -46524,12 +46636,14 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_piacenza" order="1">b_piacenza</GameId>
       <GameId game="CK2HIP" parent="d_parma" order="2">c_piacenza</GameId>
+      <GameId game="CK3">b_piacenza</GameId>
       <GameId game="ImperatorRome">3575</GameId> <!-- Placentia -->
     </GameIds>
     <Names>
       <Name language="Castilian">Plasencia</Name>
       <Name language="French_Old">Plaisance</Name>
       <Name language="Greek_Medieval">Plakentia</Name>
+      <Name language="Italian">Piacenza</Name>
       <Name language="Latin_Medieval">Placentia</Name>
       <Name language="Portuguese">Placência</Name>
     </Names>
@@ -46570,16 +46684,20 @@
     <Id>torino</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_susa" order="1">b_torino</GameId>
+      <GameId game="CK3">b_turin</GameId>
+      <GameId game="CK3">c_turin</GameId>
       <GameId game="ImperatorRome">3551</GameId> <!-- Taurasia  # Augusta Taurinorum -->
     </GameIds>
     <Names>
       <Name language="Catalan">Torí</Name>
       <Name language="Dutch_Middle">Turijn</Name>
+      <Name language="English">Turin</Name>
       <Name language="Frisian_Old">Turyn</Name>
       <Name language="Greek_Medieval">Augousta Taurinon</Name>
+      <Name language="Italian">Torino</Name>
       <Name language="Latgalian">Turina</Name>
-      <Name language="Latin_Old">Taurasia</Name>
       <Name language="Latin_Medieval">Augusta Taurinorum</Name>
+      <Name language="Latin_Old">Taurasia</Name>
       <Name language="Ligurian">Torin</Name>
       <Name language="Lithuanian">Turinas</Name>
       <Name language="Lombard">Türì</Name>
@@ -46594,14 +46712,27 @@
     <Id>novara</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_pombia" order="1">b_novara</GameId>
+      <GameId game="CK3">b_novara</GameId>
+      <GameId game="CK3">c_novara</GameId>
       <GameId game="ImperatorRome">3566</GameId> <!-- Novaria -->
     </GameIds>
     <Names>
-      <Name language="French_Old">Novare</Name>
+      <Name language="French">Novare</Name> <!-- Or Novarre -->
       <Name language="Greek_Medieval">Novaria</Name>
+      <Name language="Italian">Novara</Name>
       <Name language="Latin_Medieval">Novaria</Name>
-      <Name language="Lombard">Nuara</Name>
+      <Name language="Lombard_West">Nuàra</Name>
+      <Name language="Piemontese">Noara</Name> <!-- Or Nuara -->
       <Name language="Sicilian">Nuvara</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>biella</Id>
+    <GameIds>
+      <GameId game="CK3">b_biella</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Biella</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -46632,11 +46763,13 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_vercelli" order="3">b_vercelli</GameId>
       <GameId game="CK2HIP" parent="d_ivrea" order="4">c_vercelli</GameId>
+      <GameId game="CK3">b_vercelli</GameId>
       <GameId game="ImperatorRome">3562</GameId> <!-- Vercellae -->
     </GameIds>
     <Names>
       <Name language="French_Old">Verceil</Name>
       <Name language="Greek_Medieval">Ouerkellai</Name>
+      <Name language="Itali">Vercelli</Name>
       <Name language="Latin_Medieval">Vercellae</Name>
     </Names>
   </LocationEntity>
@@ -46646,23 +46779,49 @@
       <GameId game="CK2HIP" parent="c_saluzzo" order="1">b_saluzzo</GameId>
       <GameId game="CK2HIP" parent="d_saluzzo" order="1">c_saluzzo</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="5">d_saluzzo</GameId>
+      <GameId game="CK3">b_saluzzo</GameId>
     </GameIds>
     <Names>
       <Name language="French_Old">Saluces</Name>
+      <Name language="Italian">Saluzzo</Name>
       <Name language="Latin">Salutiae</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>cuneo</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_saluzzo" order="2">b_cuneo</GameId>
+      <GameId game="CK3">b_cuneo</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Cuneo</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>monferrato</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_italy" order="6">d_monferrato</GameId>
+      <GameId game="CK3">c_monferrato</GameId>
     </GameIds>
     <Names>
-      <Name language="French_Old">Montferrat</Name>
+      <Name language="English">Montferrat</Name>
+      <Name language="French">Montferrat</Name>
       <Name language="Icelandic">Montferrat</Name>
+      <Name language="Italian">Monferrato</Name>
+      <Name language="Latin">Mons Ferratus</Name> <!-- Or Mons Pharatus -->
       <Name language="Occitan">Montferrato</Name>
-      <Name language="Latin">Mons Ferratus</Name>
+      <Name language="Piemontese">Monfrà</Name>
+      <Name language="Spanis">Monferrato</Name>
       <Name language="Venetian">Monferà</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>alba_di_monferrato</Id>
+    <GameIds>
+      <GameId game="CK3">b_alba_di_monferrato</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Alba di Monferrato</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -46751,8 +46910,10 @@
     <Id>voghera</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_gavi" order="4">b_voghera</GameId>
+      <GameId game="CK3">b_voghera</GameId>
     </GameIds>
     <Names>
+      <Name language="Italian">Voghera</Name>
       <Name language="Latin">Iria</Name>
     </Names>
   </LocationEntity>
@@ -46780,11 +46941,13 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_finale" order="1">b_savona</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="9">d_savona</GameId>
+      <GameId game="CK3">b_savona</GameId>
       <GameId game="ImperatorRome">3547</GameId> <!-- Savo -->
     </GameIds>
     <Names>
       <Name language="French_Old">Savone</Name>
       <Name language="Greek_Medieval">Savo</Name>
+      <Name language="Italian">Savona</Name>
       <Name language="Latin_Medieval">Savo</Name>
     </Names>
   </LocationEntity>
@@ -46811,10 +46974,12 @@
     <Id>monaco</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_ventimiglia" order="2">b_monaco</GameId>
+      <GameId game="CK3">b_monaco</GameId>
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Monoïkos</Name>
       <Name language="Icelandic">Mónakó</Name>
+      <Name language="Italian">Monaco</Name>
       <Name language="Latin_Medieval">Portus Monoeci</Name>
     </Names>
   </LocationEntity>
@@ -46824,14 +46989,27 @@
       <GameId game="CK2HIP" parent="c_modena" order="1">b_modena</GameId>
       <GameId game="CK2HIP" parent="d_modena" order="1">c_modena</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="10">d_modena</GameId>
+      <GameId game="CK3">b_modena</GameId>
+      <GameId game="CK3">c_modena</GameId>
       <GameId game="ImperatorRome">149</GameId> <!-- Mutina -->
     </GameIds>
     <Names>
       <Name language="Etruscan">Muthna</Name>
       <Name language="French_Old">Modène</Name>
       <Name language="Greek_Medieval">Moutine</Name>
+      <Name language="Italian">Modena</Name>
       <Name language="Latin_Old">Mutina</Name>
       <Name language="Latin_Medieval">Mutina</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>canossa</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_modena" order="2">b_canossa</GameId>
+      <GameId game="CK3">b_canossa</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Canossa</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -46849,12 +47027,15 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_mantua" order="1">b_mantua</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="11">d_mantua</GameId>
+      <GameId game="CK3">b_mantua</GameId>
+      <GameId game="CK3">c_mantua</GameId>
       <GameId game="ImperatorRome">3586</GameId> <!-- Mantua -->
     </GameIds>
     <Names>
       <Name language="Basque">Mantuako</Name>
       <Name language="Breton_Middle">Mantova</Name>
       <Name language="Czech">Mantova</Name>
+      <Name language="English">Mantua</Name>
       <Name language="Estonian">Mantova</Name>
       <Name language="Etruscan">Manthaua</Name>
       <Name language="Finnish">Mantova</Name>
@@ -46870,11 +47051,30 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>guastalla</Id>
+    <GameIds>
+      <GameId game="CK3">b_guastalla</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Guastalla</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>brescello</Id>
+    <GameIds>
+      <GameId game="CK3">b_brescello</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Brescello</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>leno</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_sabionetta" order="3">b_leno</GameId>
     </GameIds>
     <Names>
+      <Name language="Italian">Leno</Name>
       <Name language="Lombard">Lenn</Name>
     </Names>
   </LocationEntity>
@@ -46884,12 +47084,15 @@
       <GameId game="CK2HIP" parent="c_lucca" order="1">b_lucca</GameId>
       <GameId game="CK2HIP" parent="d_lucca" order="1">c_lucca</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="12">d_lucca</GameId>
+      <GameId game="CK3">b_lucca</GameId>
+      <GameId game="CK3">c_lucca</GameId>
       <GameId game="ImperatorRome">138</GameId> <!-- Luca -->
     </GameIds>
     <Names>
       <Name language="Etruscan">Luc</Name>
       <Name language="French_Old">Lucques</Name>
       <Name language="Greek_Medieval">Louka</Name>
+      <Name language="Italian">Lucca</Name>
       <Name language="Latin_Old">Luca</Name>
       <Name language="Latin_Medieval">Luca</Name>
       <Name language="Polish">Lukka</Name>
@@ -46905,39 +47108,37 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>toscana</Id>
+    <Id>prato</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="k_italy" order="13">d_toscana</GameId>
+      <GameId game="CK2HIP" parent="c_prato" order="1">b_prato</GameId>
+      <GameId game="CK2HIP" parent="d_lucca" order="2">c_prato</GameId>
+      <GameId game="CK3">b_prato</GameId>
     </GameIds>
     <Names>
-      <Name language="Aragonese">Florencia</Name>
-      <Name language="Basque">Florentzia</Name>
-      <Name language="Czech">Florencie</Name>
-      <Name language="Bulgarian">Florencija</Name>
-      <Name language="Slovene">Firence</Name>
-      <Name language="Castilian">Florencia</Name>
-      <Name language="Catalan">Florència</Name>
-      <Name language="Cornish">Florens</Name>
-      <Name language="Croatian">Firenca</Name>
-      <Name language="Frisian_Old">Florâns</Name>
-      <Name language="Galician">Florencia</Name>
-      <Name language="German">Florenz</Name>
-      <Name language="Icelandic">Flórens</Name>
-      <Name language="Irish">Flórans</Name>
-      <Name language="Ligurian">Firense</Name>
-      <Name language="Lithuanian">Florencija</Name>
-      <Name language="Lombard">Firenz</Name>
-      <Name language="Neapolitan">Sciorenza</Name>
-      <Name language="Occitan">Florença</Name>
-      <Name language="Polish">Firence</Name>
-      <Name language="Portuguese">Florença</Name>
-      <Name language="Romanian">Florența</Name>
-      <Name language="Sicilian">Firenzi</Name>
-      <Name language="Slovak">Florencia</Name>
-      <Name language="Swedish">Florens</Name>
-      <Name language="Turkish">Floransa</Name>
-      <Name language="Venetian">Firense</Name>
-      <Name language="Welsh">Fflorens</Name>
+      <Name language="Italian">Prato</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>empoli</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_prato" order="2">b_empoli</GameId>
+      <GameId game="CK3">b_empoli</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Empoli</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>toscana</Id>
+    <GameIds>
+      <GameId game="CK3">d_toscana</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Tuscany</Name>
+      <Name language="Greek_Medieval">Tuscia</Name>
+      <Name language="Italian">Toscana</Name>
+      <Name language="Latin_Medieval">Tuscia</Name>
+      <Name language="Romanian">Toscana</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -46945,14 +47146,17 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_firenze" order="1">b_firenze</GameId>
       <GameId game="CK2HIP" parent="d_toscana" order="1">c_firenze</GameId>
+      <GameId game="CK2HIP" parent="k_italy" order="13">d_toscana</GameId>
+      <GameId game="CK3">b_firenze</GameId>
+      <GameId game="CK3">c_firenze</GameId>
       <GameId game="ImperatorRome">134</GameId> <!-- Florentia -->
     </GameIds>
     <Names>
       <Name language="Aragonese">Florencia</Name>
-      <Name language="Basque">Florencia</Name>
+      <Name language="Basque">Florentzia</Name>
       <Name language="Bulgarian">Florencija</Name>
       <Name language="Castilian">Florencia</Name>
-      <Name language="Catalan">Florencia</Name>
+      <Name language="Catalan">Florència</Name>
       <Name language="Cornish">Florens</Name>
       <Name language="Croatian">Firenca</Name>
       <Name language="Czech">Florencie</Name>
@@ -46964,17 +47168,18 @@
       <Name language="Galician">Florencia</Name>
       <Name language="German">Florenz</Name>
       <Name language="Greek_Medieval">Phlorentia</Name>
+      <Name language="Icelandic">Flórens</Name>
       <Name language="Irish">Flórans</Name>
-      <Name language="Latin_Old">Florentia</Name>
       <Name language="Latin_Medieval">Florentia</Name>
+      <Name language="Latin_Old">Florentia</Name>
       <Name language="Ligurian">Firense</Name>
       <Name language="Lithuanian">Florencija</Name>
-      <Name language="Lombard">Florens</Name>
+      <Name language="Lombard">Firenz</Name> <!-- Or Florens -->
       <Name language="Neapolitan">Sciorenza</Name>
       <Name language="Norse">Florens</Name>
       <Name language="Occitan">Florença</Name>
       <Name language="Polish">Firence</Name>
-      <Name language="Portuguese">Florencia</Name>
+      <Name language="Portuguese">Florença</Name>
       <Name language="Romanian">Florența</Name>
       <Name language="Sicilian">Firenzi</Name>
       <Name language="Slovak">Florencia</Name>
@@ -46983,6 +47188,15 @@
       <Name language="Turkish">Floransa</Name>
       <Name language="Venetian">Firense</Name>
       <Name language="Welsh">Fflorens</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>impruneta</Id>
+    <GameIds>
+      <GameId game="CK3">b_impruneta</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Impruneta</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -46998,6 +47212,7 @@
     <Id>cortona</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_arezzo" order="4">b_cortona</GameId>
+      <GameId game="CK3">b_cortona</GameId>
       <GameId game="ImperatorRome">124</GameId> <!-- Cortona -->
     </GameIds>
     <Names>
@@ -47005,6 +47220,7 @@
       <Name language="French_Old">Cortone</Name>
       <Name language="Greek_Ancient">Kortona</Name>
       <Name language="Greek_Medieval">Kortona</Name>
+      <Name language="Italian">Cortona</Name>
       <Name language="Latin_Old">Cortona</Name>
     </Names>
   </LocationEntity>
@@ -47033,12 +47249,15 @@
       <GameId game="CK2HIP" parent="c_siena" order="1">b_siena</GameId>
       <GameId game="CK2HIP" parent="d_siena" order="1">c_siena</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="14">d_siena</GameId>
+      <GameId game="CK3">b_siena</GameId>
+      <GameId game="CK3">c_siena</GameId>
       <GameId game="ImperatorRome">130</GameId> <!-- Sena Iulia -->
     </GameIds>
     <Names>
       <Name language="Etruscan">Saina</Name>
       <Name language="French_Old">Sienne</Name>
       <Name language="Greek_Ancient">Saina</Name>
+      <Name language="Italian">Siena</Name>
       <Name language="Latin_Old">Saena</Name>
       <Name language="Latin_Medieval">Saena</Name>
     </Names>
@@ -47047,8 +47266,10 @@
     <Id>montalcino</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_siena" order="4">b_montalcino</GameId>
+      <GameId game="CK3">b_montalcino</GameId>
     </GameIds>
     <Names>
+      <Name language="Italian">Montalcino</Name>
       <Name language="Latin">Mons Ilcinus</Name>
       <Name language="Sicilian">Muntalcinu</Name>
     </Names>
@@ -71488,11 +71709,46 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>piedmonte</Id>
+    <GameIds>
+      <GameId game="CK3">d_piedmonte</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Aragonese">Piemont</Name>
+      <Name language="Arpitan">Piemont</Name>
+      <Name language="English">Piedmont</Name>
+      <Name language="French">Piémont</Name>
+      <Name language="German">Piemont</Name>
+      <Name language="Hungarian">Piemont</Name>
+      <Name language="Italian">Piemonte</Name>
+      <Name language="Latin">Pedemontium</Name>
+      <Name language="Latvian">Pjemonta</Name>
+      <Name language="Occitan">Piemont</Name>
+      <Name language="Piemontese">Piemont</Name>
+      <Name language="Romanian">Piemont</Name>
+      <Name language="Spanish">Piamonte</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>monferrand</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_tripoli" order="2">c_monferrand</GameId>
     </GameIds>
     <Names>
+      <Name language="Arabic_Andalusia">Hisn al-Akrád</Name>
+      <Name language="Arabic_Bedouin">Hisn al-Akrád</Name>
+      <Name language="Arabic_Egypt">Hisn al-Akrád</Name>
+      <Name language="Greek_Medieval">Raphaniai</Name>
+      <Name language="Hejazi_Arabic">Hisn al-Akrád</Name>
+      <Name language="Arabic_Levant">Hisn al-Akrád</Name>
+      <Name language="Arabic_Maghreb">Hisn al-Akrád</Name>
+      <Name language="Masmuda">Hisn al-Akrád</Name>
+      <Name language="Sanhaja">Hisn al-Akrád</Name>
+      <Name language="Sicilian_Arabic">Hisn al-Akrád</Name>
+      <Name language="Tuareg_Tagelmust">Hisn al-Akrád</Name>
+      <Name language="Tuareg">Hisn al-Akrád</Name>
+      <Name language="Arabic_Yemen">Hisn al-Akrád</Name>
+      <Name language="Zenati">Hisn al-Akrád</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -77328,18 +77584,38 @@
     <Id>lombardia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_lombardia" order="1">c_lombardia</GameId>
+      <GameId game="CK3">c_lombardia</GameId>
+      <GameId game="CK3">d_lombardia</GameId>
     </GameIds>
     <Names>
+      <Name language="Aragonese">Lombardía</Name>
+      <Name language="Catalan">Llombardia</Name>
+      <Name language="Corsican">Lumbardia</Name>
+      <Name language="Croatian">Lombardija</Name>
+      <Name language="English">Lombardy</Name>
+      <Name language="French">Lombardie</Name>
+      <Name language="Galician">Lombardía</Name>
+      <Name language="German">Lombardei</Name>
+      <Name language="Italian">Lombardia</Name>
+      <Name language="Larin">Langobardia</Name>
+      <Name language="Latvian">Lombardija</Name>
+      <Name language="Lombard_West">Lombardéa</Name>
+      <Name language="Lombard">Lumbardia</Name>
+      <Name language="Romanian">Lombardia</Name>
+      <Name language="Turkish">Lombardiya</Name>
+      <Name language="Venetian">Łonbardia</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>lodi</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_lombardia" order="3">b_lodi</GameId>
+      <GameId game="CK3">b_lodi</GameId>
       <GameId game="ImperatorRome">3580</GameId> <!-- Laus Pompeia -->
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Laus Pompeia</Name>
+      <Name language="Italian">Lodi</Name>
       <Name language="Latin_Medieval">Laus Pompeia</Name>
     </Names>
   </LocationEntity>
@@ -77376,9 +77652,11 @@
     <Id>varese</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_seprio" order="1">b_varese</GameId>
+      <GameId game="CK3">b_varese</GameId>
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Baretion</Name>
+      <Name language="Italian">Varese</Name>
       <Name language="Latin_Medieval">Baretium</Name>
     </Names>
   </LocationEntity>
@@ -77425,9 +77703,11 @@
     <Id>chieri</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_susa" order="3">b_chieri</GameId>
+      <GameId game="CK3">b_chieri</GameId>
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Carreum Potentia</Name>
+      <Name language="Italian">Chieri</Name>
       <Name language="Latin_Medieval">Carreum Potentia</Name>
     </Names>
   </LocationEntity>
@@ -77436,10 +77716,12 @@
     <GameIds>
       <GameId game="CK2HIP" parent="d_ivrea" order="2">c_pombia</GameId>
       <GameId game="CK2HIP" parent="c_pombia" order="2">b_pombia</GameId>
+      <GameId game="CK3">b_pombia</GameId>
       <GameId game="ImperatorRome">3567</GameId> <!-- Plumbia -->
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Plumbia</Name>
+      <Name language="Italian">Pombia</Name>
       <Name language="Latin_Medieval">Plumbia</Name>
     </Names>
   </LocationEntity>
@@ -77469,10 +77751,12 @@
     <GameIds>
       <GameId game="CK2HIP" parent="d_monferrato" order="1">c_asti</GameId>
       <GameId game="CK2HIP" parent="c_asti" order="3">b_asti</GameId>
+      <GameId game="CK3">b_asti</GameId>
       <GameId game="ImperatorRome">3559</GameId> <!-- Hasta -->
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Asta</Name>
+      <Name language="Italian">Asti</Name>
       <Name language="Latin_Medieval">Hasta</Name>
     </Names>
   </LocationEntity>
@@ -77482,15 +77766,18 @@
       <GameId game="CK2HIP" parent="d_monferrato" order="2">c_bosco</GameId>
     </GameIds>
     <Names>
+      <Name language="Italian">Bosco</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>acqui</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_bosco" order="2">b_acqui</GameId>
+      <GameId game="CK3">b_acqui</GameId>
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Akouai Statiella</Name>
+      <Name language="Italian">Acqui</Name>
       <Name language="Latin_Medieval">Aquae Statiellae</Name>
     </Names>
   </LocationEntity>
@@ -77499,21 +77786,35 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_luni" order="7">b_luna_ligure</GameId>
       <GameId game="CK2HIP" parent="d_massa" order="1">c_luni</GameId>
+      <GameId game="CK3">b_luni</GameId>
       <GameId game="ImperatorRome">137</GameId> <!-- Luna -->
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Louna</Name>
+      <Name language="Italian">Luni</Name>
       <Name language="Latin_Medieval">Luna</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>chiavari</Id>
+    <GameIds>
+      <GameId game="CK3">b_chiavari</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Chiavari</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>tortona</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_gavi" order="2">b_tortona</GameId>
+      <GameId game="CK3">b_tortona</GameId>
+      <GameId game="CK3">c_tortona</GameId>
       <GameId game="ImperatorRome">3554</GameId> <!-- Dertona -->
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Derthon</Name>
+      <Name language="Italian">Tortona</Name>
       <Name language="Latin_Medieval">Dertona</Name>
     </Names>
   </LocationEntity>
@@ -77552,15 +77853,26 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>reggionellemila</Id>
+    <Id>reggio_emilia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_reggionellemilia" order="1">b_reggionellemila</GameId>
       <GameId game="CK2HIP" parent="d_modena" order="2">c_reggionellemilia</GameId>
+      <GameId game="CK3">b_reggio_emilia</GameId>
       <GameId game="ImperatorRome">151</GameId> <!-- Regium Lepidum -->
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Région Lepidon</Name>
+      <Name language="Italian">Reggio nell'Emilia</Name>
       <Name language="Latin_Medieval">Regium Lepidum</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>cento</Id>
+    <GameIds>
+      <GameId game="CK3">b_cento</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Cento</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -77575,12 +77887,14 @@
     <Id>pistoia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_frignano" order="1">b_pistoia</GameId>
+      <GameId game="CK3">b_pistoia</GameId>
       <GameId game="ImperatorRome">139</GameId> <!-- Pistoriae -->
     </GameIds>
     <Names>
       <Name language="Etruscan">Pistorim</Name>
       <Name language="Greek_Ancient">Pistoria</Name>
       <Name language="Greek_Medieval">Pistoria</Name>
+      <Name language="Italian">Pistoia</Name>
       <Name language="Latin_Old">Pistorium</Name>
       <Name language="Latin_Medieval">Pistoria</Name>
     </Names>
@@ -77605,11 +77919,13 @@
     <Id>volterra</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_biserno" order="1">b_volterra</GameId>
+      <GameId game="CK3">b_volterra</GameId>
       <GameId game="ImperatorRome">129</GameId> <!-- Volaterrae -->
     </GameIds>
     <Names>
       <Name language="Etruscan">Velathera</Name>
       <Name language="Greek_Medieval">Ouolaterrai</Name>
+      <Name language="Italian">Volterra</Name>
       <Name language="Latin_Old">Volaterrae</Name>
       <Name language="Latin_Medieval">Volaterrae</Name>
     </Names>
@@ -77629,16 +77945,29 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>vallombrosa</Id>
+    <GameIds>
+      <GameId game="CK2HIP" parent="c_firenze" order="8">b_vallombrosa</GameId>
+      <GameId game="CK3">b_vallombrosa</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Italian">Vallombrosa</Name>
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>arezzo</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="d_toscana" order="2">c_arezzo</GameId>
       <GameId game="CK2HIP" parent="c_arezzo" order="5">b_arezzo</GameId>
+      <GameId game="CK3">b_arezzo</GameId>
+      <GameId game="CK3">c_arezzo</GameId>
       <GameId game="ImperatorRome">131</GameId> <!-- Arretium -->
     </GameIds>
     <Names>
       <Name language="Etruscan">Arritim</Name>
       <Name language="Greek_Ancient">Arretion</Name>
       <Name language="Greek_Medieval">Arretion</Name>
+      <Name language="Italian">Arezzo</Name>
       <Name language="Latin_Old">Arretium</Name>
       <Name language="Latin_Medieval">Arretium</Name>
     </Names>
@@ -77655,12 +77984,14 @@
     <Id>chiusi</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_scialenga" order="2">b_chiusi</GameId>
+      <GameId game="CK3">b_chiusi</GameId>
       <GameId game="ImperatorRome">116</GameId> <!-- Clusium -->
     </GameIds>
     <Names>
       <Name language="Etruscan">Cleusi</Name>
       <Name language="Greek_Ancient">Klousion</Name>
       <Name language="Greek_Medieval">Klysion</Name>
+      <Name language="Italian">Chiusi</Name>
       <Name language="Latin_Old">Clusium</Name>
       <Name language="Latin_Medieval">Clusium</Name>
     </Names>
@@ -77668,9 +77999,12 @@
   <LocationEntity>
     <Id>grosseto</Id>
     <GameIds>
+      <GameId game="CK2HIP" parent="c_piombino" order="3">b_grosseto</GameId>
       <GameId game="CK2HIP" parent="d_sovana" order="1">c_piombino</GameId>
+      <GameId game="CK3">b_grosseto</GameId>
     </GameIds>
     <Names>
+      <Name language="Italian">Grosseto</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -77691,10 +78025,15 @@
     <GameIds>
       <GameId game="CK2HIP" parent="d_sovana" order="2">c_orbetello</GameId>
       <GameId game="CK2HIP" parent="c_orbetello" order="1">b_orbetello</GameId>
+      <GameId game="CK3">b_orbetello</GameId>
+      <GameId game="CK3">c_orbetello</GameId>
     </GameIds>
     <Names>
+      <Name language="Etruscan">Cosa</Name>
       <Name language="Greek_Medieval">Cosa</Name>
+      <Name language="Italian">Orbetello</Name>
       <Name language="Latin_Medieval">Cosa</Name>
+      <Name language="Latin">Orbitellum</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -77702,9 +78041,12 @@
     <GameIds>
       <GameId game="CK2HIP" parent="c_orbetello" order="3">b_sovana</GameId>
       <GameId game="CK2HIP" parent="k_italy" order="15">d_sovana</GameId>
+      <GameId game="CK3">b_soana</GameId>
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Souana</Name>
+      <Name language="Italian_Medieval">Soana</Name>
+      <Name language="Italian">Sovana</Name>
       <Name language="Latin_Medieval">Suana</Name>
     </Names>
   </LocationEntity>
@@ -108065,6 +108407,7 @@
     <Id>gallarate</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_seprio" order="3">b_gallerate</GameId>
+      <GameId game="CK3">b_gallarate</GameId>
     </GameIds>
     <Names>
       <Name language="Italian">Gallarate</Name>
@@ -108103,12 +108446,14 @@
     <Id>piombino</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="c_pisa" order="5">b_piombino</GameId>
+      <GameId game="CK3">b_piombino</GameId>
       <GameId game="ImperatorRome">126</GameId> <!-- Populonia -->
     </GameIds>
     <Names>
       <Name language="Etruscan">Pupluna</Name>
       <Name language="Greek_Ancient">Poplonion</Name>
       <Name language="Greek_Medieval">Poplonion</Name>
+      <Name language="Italian">Piombino</Name>
       <Name language="Latin_Old">Populonium</Name>
       <Name language="Latin_Medieval">Populunium</Name>
     </Names>
