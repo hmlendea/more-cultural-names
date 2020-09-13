@@ -773,9 +773,10 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Sardinian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -906,9 +907,10 @@
     <Code iso-639-3="dlm" />
     <FallbackLanguages>
       <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Dalmatian_Medieval</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -917,10 +919,11 @@
       <GameId game="CK2HIP">dalmatian</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Dalmatian</LanguageId>
       <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1373,9 +1376,14 @@
     <Id>Genoese</Id>
     <FallbackLanguages>
       <LanguageId>Ligurian</LanguageId>
+      <LanguageId>Lombard_West</LanguageId>
+      <LanguageId>Lombard</LanguageId>
+      <LanguageId>Lombard_East</LanguageId>
       <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Lombard_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1962,29 +1970,16 @@
     <Id>Italian</Id>
     <Code iso-639-1="it" iso-639-3="ita" />
     <FallbackLanguages>
-      <LanguageId>Italian_Before1922</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
       <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Italian_Before1922</Id>
     <FallbackLanguages>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Tuscan</LanguageId>
-      <LanguageId>Italian</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Italian_Medieval</Id>
-    <GameIds>
-      <GameId game="CK2HIP">italian</GameId>
-      <GameId game="CK3">italian</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Tuscan</LanguageId>
-      <LanguageId>Italian_Before1922</LanguageId>
-      <LanguageId>Italian_Central</LanguageId>
       <LanguageId>Italian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1995,8 +1990,9 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2287,9 +2283,14 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Lombard_West</LanguageId>
+      <LanguageId>Lombard</LanguageId>
+      <LanguageId>Lombard_East</LanguageId>
       <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Lombard_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2340,12 +2341,34 @@
   <Language>
     <Id>Lombard</Id>
     <Code iso-639-3="lmo" />
-    <GameIds>
-      <GameId game="CK2HIP">lombard</GameId>
-      <GameId game="CK3">lombard</GameId>
-    </GameIds>
     <FallbackLanguages>
       <LanguageId>Lombard_West</LanguageId>
+      <LanguageId>Lombard_East</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Dalmatian</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Lombard_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Dalmatian_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Lombard_Medieval</Id>
+    <GameIds>
+      <GameId game="CK2HIP">italian</GameId>
+      <GameId game="CK3">cisalpine</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Dalmatian_Medieval</LanguageId>
+      <LanguageId>Lombard</LanguageId>
+      <LanguageId>Lombard_West</LanguageId>
+      <LanguageId>Lombard_East</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Dalmatian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2354,6 +2377,30 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Lombard</LanguageId>
+      <LanguageId>Lombard_East</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Dalmatian</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Lombard_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Dalmatian_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Lombard_East</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Lombard</LanguageId>
+      <LanguageId>Lombard_West</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Dalmatian</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Lombard_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Dalmatian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2361,11 +2408,15 @@
     <Code iso-639-3="lng" />
     <GameIds>
       <GameId game="CK2HIP">langobardisch</GameId>
+      <GameId game="CK3">lombard</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Neapolitan</LanguageId>
       <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Neapolitan_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2588,12 +2639,28 @@
     <Id>Neapolitan</Id>
     <Code iso-639-3="nap" />
     <GameIds>
-      <GameId game="CK2HIP">neapolitan</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Neapolitan_Medieval</LanguageId>
+      <LanguageId>Langobardic</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Neapolitan_Medieval</Id>
+    <GameIds>
+      <GameId game="CK2HIP">neapolitan</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Langobardic</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Neapolitan</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Italian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3304,9 +3371,10 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Corsican</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3912,16 +3980,15 @@
     <FallbackLanguages>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tuscan_Medieval</Id>
     <GameIds>
       <GameId game="CK2HIP">tuscan</GameId>
+      <GameId game="CK3">italian</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Italian_Medieval</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian</LanguageId>
     </FallbackLanguages>
@@ -4028,19 +4095,31 @@
     <Id>Venetian</Id>
     <Code iso-639-3="vec" />
     <FallbackLanguages>
+      <LanguageId>Lombard_East</LanguageId>
+      <LanguageId>Lombard</LanguageId>
+      <LanguageId>Lombard_West</LanguageId>
       <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Venetian_Medieval</LanguageId>
+      <LanguageId>Lombard_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Venetian_Medievval</Id>
+    <Id>Venetian_Medieval</Id>
     <GameIds>
       <GameId game="CK2HIP">venetian</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Italian_Medieval</LanguageId>
+      <LanguageId>Lombard_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Venetian</LanguageId>
+      <LanguageId>Lombard_East</LanguageId>
+      <LanguageId>Lombard</LanguageId>
+      <LanguageId>Lombard_West</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian</LanguageId>
     </FallbackLanguages>
   </Language>
