@@ -4,18 +4,15 @@ grep -n "parent=\"\([^\"]*\)\"[^>]*>\1<" titles.xml
 grep -n "parent=\"[a-zA-Z][^_]" titles.xml
 grep -n "parent=\"[a-zA-Z][^_]" titles.xml
 
-# Find duplicated Imperator: Rome game IDs
-grep "GameId game=\"ImperatorRome\"" titles.xml | sed 's/[ \t]*<!--.*-->[ \t]*//g' | sort | uniq -c | sed 's/^[ \t]*//g' | grep "^[2-9]"
-
-# Find duplicated titles
-grep "^ *<Id>" titles.xml | sort | uniq -c | grep "^ *[2-9]"
+# Find duplicated IDs
+grep "^ *<Id>" *.xml | sort | uniq -c | grep "^ *[2-9]"
 
 # Find duplicated game IDs
-grep "<GameId game=" titles.xml | \
+grep "<GameId game=" *.xml | \
     sed 's/ \(parent\|order\)=\"[^\"]*\"//g' | \
-    sed 's/[\"<>]/ /g' | \
-    awk '{print $3 " " $4}' | \
-    sort | uniq -c | grep "^ *[2-9]"
+    sed 's/[ \t]*<!--.*-->.*//g' | \
+    sort | uniq -c | \
+    grep "^ *[2-9]"
 
 # Find non-existing fallback locations
 for FALLBACK_LOCATION_ID in $(grep "<LocationId>" titles.xml | \
@@ -26,7 +23,7 @@ for FALLBACK_LOCATION_ID in $(grep "<LocationId>" titles.xml | \
     fi
 done
 
-# Find CK2 parents missing an entry
+# Find non-existing location parents (CK2HIP)
 for PARENT_ID in $(grep "game=\"CK2HIP\"" titles.xml | \
                     grep -e "parent=\"[^\"]\+\"" | \
                     sed 's/.*parent=\"\([^\"]*\)".*/\1/g' | \
