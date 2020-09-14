@@ -474,7 +474,7 @@
   <Language>
     <Id>Berber</Id>
     <GameIds>
-      <GameId game="CK2HIP">berber</GameId>
+      <GameId game="CK2HIP">berber</GameId> <!-- Iznagen -->
       <GameId game="CK3">berber</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -1096,7 +1096,7 @@
   <Language>
     <Id>English_Old_Norse</Id>
     <GameIds>
-      <GameId game="CK2HIP">anglonorse</GameId>
+      <GameId game="CK2HIP">anglonorse</GameId> <!-- Englisc -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>English_Old</LanguageId>
@@ -1114,7 +1114,7 @@
     <Id>Estonian</Id>
     <Code iso-639-1="et" iso-639-3="est" />
     <GameIds>
-      <GameId game="CK2HIP">ugricbaltic</GameId>
+      <GameId game="CK2HIP">ugricbaltic</GameId> <!-- Eestlased -->
       <GameId game="CK3">estonian</GameId>
     </GameIds>
   </Language>
@@ -1914,7 +1914,7 @@
     <Id>Irish_Middle</Id> <!-- c. 900 – c. 1200 -->
     <Code iso-639-3="mga" />
     <GameIds>
-      <GameId game="CK2HIP">irish</GameId>
+      <GameId game="CK2HIP">irish</GameId> <!-- Goidel -->
       <GameId game="CK3">irish</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -1937,7 +1937,7 @@
   <Language>
     <Id>Irish_Middle_Norse</Id>
     <GameIds>
-      <GameId game="CK2HIP">norsegaelic</GameId>
+      <GameId game="CK2HIP">norsegaelic</GameId> <!-- Gall Goidel -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Irish_Old</LanguageId>
@@ -2356,7 +2356,7 @@
   <Language>
     <Id>Lombard_Medieval</Id>
     <GameIds>
-      <GameId game="CK2HIP">italian</GameId>
+      <GameId game="CK2HIP">italian</GameId> <!-- Lombardo -->
       <GameId game="CK3">cisalpine</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -2407,7 +2407,7 @@
     <Id>Langobardic</Id>
     <Code iso-639-3="lng" />
     <GameIds>
-      <GameId game="CK2HIP">langobardisch</GameId>
+      <GameId game="CK2HIP">langobardisch</GameId> <!-- Langobardo -->
       <GameId game="CK3">lombard</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -2766,17 +2766,11 @@
     <Id>Occitan</Id> <!-- c. 1500 – present -->
     <Code iso-639-1="oc" iso-639-3="oci" />
     <FallbackLanguages>
+      <LanguageId>Occitan_Gascon</LanguageId>
       <LanguageId>French</LanguageId>
       <LanguageId>Occitan_Old</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Occitan_Gascon</Id>
-    <Code iso-639-3="gsc" />
-    <FallbackLanguages>
-      <LanguageId>Occitan</LanguageId>
-      <LanguageId>French</LanguageId>
-      <LanguageId>Occitan_Old</LanguageId>
+      <LanguageId>Occitan_Gascon_Old</LanguageId>
+      <LanguageId>French_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2787,9 +2781,35 @@
       <GameId game="CK3">occitan</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Occitan_Gascon_Old</LanguageId>
       <LanguageId>French_Old</LanguageId>
       <LanguageId>Occitan</LanguageId>
       <LanguageId>Occitan_Gascon</LanguageId>
+      <LanguageId>French</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Occitan_Gascon</Id>
+    <Code iso-639-3="gsc" />
+    <FallbackLanguages>
+      <LanguageId>Occitan</LanguageId>
+      <LanguageId>French</LanguageId>
+      <LanguageId>Occitan_Gascon_Old</LanguageId>
+      <LanguageId>Occitan_Old</LanguageId>
+      <LanguageId>French_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Occitan_Gascon_Old</Id>
+    <GameIds>
+      <GameId game="CK2HIP">gascon</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Occitan_Old</LanguageId>
+      <LanguageId>French_Old</LanguageId>
+      <LanguageId>Occitan</LanguageId>
+      <LanguageId>Occitan_Gascon</LanguageId>
+      <LanguageId>French</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3408,7 +3428,7 @@
     <Id>Scottish_Gaelic</Id>
     <Code iso-639-1="gd" iso-639-3="gla" />
     <GameIds>
-      <GameId game="CK2HIP">scottish</GameId>
+      <GameId game="CK2HIP">scottish</GameId> <!-- Albannaich -->
       <GameId game="CK3">gaelic</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -3688,7 +3708,7 @@
     <Id>Sorbian</Id>
     <Code iso-639-2="wen" />
     <GameIds>
-      <GameId game="CK2HIP">pommeranian</GameId>
+      <GameId game="CK2HIP">pommeranian</GameId> <!-- Vendi -->
       <GameId game="CK3">pommeranian</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -3882,7 +3902,7 @@
     <Id>Tuareg</Id>
     <Code iso-639-2="tmh" iso-639-3="tmh" />
     <GameIds>
-      <GameId game="CK2HIP">tuareg</GameId>
+      <GameId game="CK2HIP">tuareg</GameId> <!-- Kel Tamashek -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Tuareg_Tagelmust</LanguageId>
