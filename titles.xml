@@ -19060,6 +19060,7 @@
       <GameId game="CK2HIP" parent="c_trapezous" order="1">b_trapezous</GameId>
       <GameId game="CK2HIP" parent="d_trebizond" order="2">c_trapezous</GameId>
       <GameId game="CK2HIP" parent="e_byzantium" order="8">k_trebizond</GameId>
+      <GameId game="CK3">k_trebizond</GameId>
       <GameId game="ImperatorRome">1734</GameId> <!-- Trapezous -->
     </GameIds>
     <Names>
@@ -36372,14 +36373,16 @@
   <LocationEntity>
     <Id>dalmatia</Id>
     <GameIds>
+      <GameId game="CK2">d_dalmatia</GameId>
       <GameId game="CK2HIP" parent="k_croatia" order="1">d_dalmatia</GameId>
     </GameIds>
     <Names>
+      <Name language="Dalmatian_Medieval">Dalmatia</Name>
       <Name language="Dalmatian">Dalmatia</Name>
       <Name language="German">Dalmatien</Name>
       <Name language="Greek_Medieval">Dalmatias</Name>
-      <Name language="Hungarian_Old">Dalmácia</Name>
       <Name language="Hungarian_Old_Early">Dalmacia</Name>
+      <Name language="Hungarian_Old">Dalmácia</Name>
       <Name language="Hungarian_Old">Dalmácia</Name>
       <Name language="Italian_Central">Dalmazia</Name>
       <Name language="Italian">Dalmazia</Name>
@@ -36928,6 +36931,7 @@
   <LocationEntity>
     <Id>makarska</Id>
     <GameIds>
+      <GameId game="CK3">b_makarska</GameId>
       <GameId game="CK2HIP" parent="c_omis" order="4">b_makarska</GameId>
     </GameIds>
     <Names>
@@ -36948,6 +36952,7 @@
       <Name language="Langobardic">Macarsca</Name>
       <Name language="Latin_Medieval">Muccurum</Name>
       <Name language="Ligurian">Macarsca</Name>
+      <Name language="Lombard_Medieval">Macarsca</Name>
       <Name language="Neapolitan_Medieval">Macarsca</Name>
       <Name language="Sardinian">Macarsca</Name>
       <Name language="Sicilian">Macarsca</Name>
@@ -36998,13 +37003,14 @@
   <LocationEntity>
     <Id>cres</Id>
     <GameIds>
+      <GameId game="CK2">b_cres</GameId>
       <GameId game="CK2HIP" parent="c_veglia" order="4">b_cres</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Kersch</Name>
       <Name language="Bavarian_Medieval">Kersch</Name>
       <Name language="Castilian">Cherso</Name>
-      <Name language="Dalmatian_Medieval">Cherso</Name>
+      <Name language="Dalmatian_Medieval">Cherso</Name> <!-- Or Crepsa -->
       <Name language="Dutch_Middle">Kersch</Name>
       <Name language="Estonian">Cresi</Name>
       <Name language="Frankish_Low">Kersch</Name>
@@ -37053,6 +37059,7 @@
   <LocationEntity>
     <Id>korcula</Id>
     <GameIds>
+      <GameId game="CK2">b_korcula</GameId>
       <GameId game="CK2HIP" parent="c_korcula" order="3">b_korcula</GameId>
       <GameId game="CK2HIP" parent="d_dalmatian_islands" order="2">c_korcula</GameId>
     </GameIds>
@@ -37076,6 +37083,7 @@
       <Name language="Latin_Medieval">Korkyra Melaina</Name>
       <Name language="Latin">Corcyra Nigra</Name>
       <Name language="Ligurian">Curzola</Name>
+      <Name language="Lombard_Medieval">Curzola</Name>
       <Name language="Neapolitan_Medieval">Curzola</Name>
       <Name language="Romanian">Corfu Negru</Name> <!-- Historical? Translated -->
       <Name language="Sardinian">Curzola</Name>
@@ -47326,9 +47334,10 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>papal_states</Id>
+    <Id>papal_state</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_italy" order="9">k_papacy</GameId>
+      <GameId game="CK3">k_papal_state</GameId>
     </GameIds>
     <Names>
       <Name language="Armenian_Middle">Exarchías Rhabennas</Name>
@@ -60404,6 +60413,7 @@
     <Id>volga_bulgaria</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_null" order="12">k_volga_bulgaria</GameId>
+      <GameId game="CK3">k_volga_bulgaria</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian_Medieval">Bulgar</Name>
@@ -68912,6 +68922,8 @@
   <LocationEntity>
     <Id>imotski</Id>
     <GameIds>
+      <GameId game="CK2">b_imotski</GameId>
+      <GameId game="CK2">c_imotski</GameId>
       <GameId game="CK2HIP" parent="c_omis" order="1">b_imotski</GameId>
     </GameIds>
     <Names>
@@ -109739,6 +109751,7 @@
     <Id>rum</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="11834">k_rum</GameId>
+      <GameId game="CK3">k_rum</GameId>
     </GameIds>
     <Names>
     </Names>
