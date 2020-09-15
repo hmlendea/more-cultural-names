@@ -390,8 +390,14 @@
     <Code iso-639-1="ay" iso-639-2="aym" iso-639-3="aym" />
   </Language>
   <Language>
-    <Id>Azerbaijani</Id>
-    <Code iso-639-1="az" iso-639-3="aze" />
+    <Id>Azeri</Id>
+    <Code iso-639-1="az" iso-639-2="aze" iso-639-3="aze" />
+  </Language>
+  <Language>
+    <Id>Azeri_Old</Id>
+    <GameIds>
+      <GameId game="CK2HIP">adhari</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Balochi</Id>
@@ -2164,6 +2170,16 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Khwarezmi</Id> <!-- c. 550 BC – c. 1200 AD -->
+    <GameIds>
+      <GameId game="CK2HIP">khwarezmi</GameId>
+      <GameId game="CK3">khwarezmian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Sogdian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Kinyarwanda</Id>
     <Code iso-639-1="rw" iso-639-2="kin" iso-639-3="kin" />
   </Language>
@@ -2536,6 +2552,20 @@
   <Language>
     <Id>Maltese</Id>
     <Code iso-639-1="mt" iso-639-3="mlt" />
+  </Language>
+  <Language>
+    <Id>Manding</Id>
+    <Code iso-639-2="man" />
+    <GameIds>
+      <GameId game="CK2">manden</GameId>
+      <GameId game="CK2HIP">manden</GameId>
+      <GameId game="CK3">mande</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Soninke</LanguageId>
+      <LanguageId>Soninke_Bozo</LanguageId>
+      <LanguageId>Soninke_Bobo</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Manx</Id>
@@ -3749,6 +3779,9 @@
       <GameId game="CK2HIP">sogdian</GameId>
       <GameId game="CK3">sogdian</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Khwarezmi</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Somali</Id>
@@ -3770,6 +3803,7 @@
     <FallbackLanguages>
       <LanguageId>Soninke_Bozo</LanguageId>
       <LanguageId>Soninke_Bobo</LanguageId>
+      <LanguageId>Manding</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3781,6 +3815,7 @@
     <FallbackLanguages>
       <LanguageId>Soninke_Bozo</LanguageId>
       <LanguageId>Soninke</LanguageId>
+      <LanguageId>Manding</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3792,6 +3827,7 @@
     <FallbackLanguages>
       <LanguageId>Soninke_Bobo</LanguageId>
       <LanguageId>Soninke</LanguageId>
+      <LanguageId>Manding</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
