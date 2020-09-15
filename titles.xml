@@ -1003,13 +1003,14 @@
       <GameId game="CK2HIP" parent="d_frisia" order="3">c_frisia</GameId>
       <GameId game="CK2HIP" parent="k_frisia" order="3">d_frisia</GameId>
       <GameId game="CK2HIP" parent="e_hre" order="4">k_frisia</GameId>
+      <GameId game="CK3">k_frisia</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Frisia</Name>
       <Name language="Dutch_Middle">Friesland</Name>
       <Name language="Dutch">Friesland</Name>
       <Name language="English_Old">Freslond</Name>
-      <Name language="English">Friesland</Name>
+      <Name language="English">Frisia</Name>
       <Name language="French_Old">Frise</Name>
       <Name language="French">Frise</Name>
       <Name language="Frisian_Old">Fresland</Name>
@@ -5794,36 +5795,39 @@
     <Id>saxony</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_hre" order="7">k_saxony</GameId>
+      <GameId game="CK3">k_saxony</GameId>
     </GameIds>
     <Names>
-      <Name language="Czech">Sasko</Name>
+      <Name language="Alemannic">Sahsen</Name>
       <Name language="Bosnian">Saksonija</Name>
       <Name language="Bulgarian">Saksonija</Name>
-      <Name language="Slovene">Saška</Name>
       <Name language="Castilian">Sajonia</Name>
       <Name language="Catalan">Saxònia</Name>
       <Name language="Croatian">Saska</Name>
+      <Name language="Czech">Sasko</Name>
       <Name language="Dutch_Middle">Saksen</Name>
+      <Name language="English_Old">Seaxe</Name> <!-- Guessed -->
+      <Name language="English">Saxony</Name>
       <Name language="Finnish">Saksi</Name>
       <Name language="French_Old">Saxe</Name>
       <Name language="Frisian_Old">Saksen</Name>
+      <Name language="German_Middle_Low">Sassen</Name>
+      <Name language="German_Old_Low">Sassen</Name>
       <Name language="Gothic">Sahsen</Name>
       <Name language="Hungarian">Szászország</Name>
       <Name language="Irish">an Allshacsain</Name> <!-- Or an tSacsain -->
       <Name language="Italian">Sassonia</Name>
+      <Name language="Latin">Saxonia</Name>
       <Name language="Lithuanian">Saksonija</Name>
       <Name language="Livonian">Saksamo</Name>
       <Name language="Lombard">Sasonia</Name>
-      <Name language="German_Middle_Low">Sassen</Name>
-      <Name language="German_Old_Low">Sassen</Name>
       <Name language="Norse">Saxland</Name>
       <Name language="Polish">Saksonia</Name>
       <Name language="Portuguese">Saxónia</Name> <!-- Or Saxe -->
-      <Name language="Latin">Saxonia</Name>
       <Name language="Romanian">Saxonia</Name> <!-- Or Sasonia -->
       <Name language="Serbian">Saksonija</Name>
       <Name language="Slovak">Sasko</Name>
-      <Name language="Alemannic">Sahsen</Name>
+      <Name language="Slovene">Saška</Name>
       <Name language="Turkish">Saksonya</Name>
     </Names>
   </LocationEntity>
@@ -8580,6 +8584,7 @@
     <Id>bavaria</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_hre" order="9">k_bavaria</GameId>
+      <GameId game="CK3">k_bavaria</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Beiara</Name>
@@ -13928,6 +13933,7 @@
     <Id>germany</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_hre" order="13">k_germany</GameId>
+      <GameId game="CK3">k_east_francia</GameId>
       <GameId game="CK3">k_germany</GameId>
       <GameId game="CK3">e_germany</GameId>
       <GameId game="ImperatorRome">4097</GameId> <!-- Germania -->
@@ -13992,25 +13998,31 @@
       <GameId game="CK2HIP" parent="e_hre" order="14">k_lotharingia</GameId>
     </GameIds>
     <Names>
+      <Name language="Dutch">Lotharingen</Name>
       <Name language="French_Old">Lotharingie</Name>
+      <Name language="German">Lotharingen</Name>
+      <Name language="Latin">Lotharingia</Name>
       <Name language="Polish">Lotaryngia</Name>
-      <Name language="Latin">Germania Superior</Name>
+      <Name language="Spanish">Lotaringia</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>byzantium</Id>
+    <Id>roman_empire</Id>
     <GameIds>
       <GameId game="CK2HIP" order="1434">e_byzantium</GameId>
+      <GameId game="CK2HIP" order="1433">e_roman_empire</GameId>
       <GameId game="CK3">e_byzantium</GameId>
+      <GameId game="CK3">e_roman_empire</GameId>
     </GameIds>
     <Names>
       <Name language="Arberian">Perandoria Romake</Name>
-      <Name language="Armenian_Middle">Hrromeakan Kaysrutyun</Name>
+      <Name language="Armenian_Middle">Hrromeakan Kaysrut'yun</Name>
       <Name language="Bosnian_Medieval">Rimsku Imperiju</Name>
       <Name language="Bosnian">Rimsko Carstvo</Name>
       <Name language="Bulgarian_Old">Rimska Imperiya</Name>
       <Name language="Bulgarian">Rimska Imperija</Name>
-      <Name language="Czech_Medieval">Rzímská Rzíse</Name>
+      <Name language="Croatian_Medieval">Rimsko Carstvo</Name>
+      <Name language="Czech_Medieval">Rzímská Rzíše</Name>
       <Name language="Danish_Middle">Rómverska keisaradæmið</Name>
       <Name language="English_Old_Norse">Rómverska keisaradæmið</Name>
       <Name language="Georgian">Romis Imperia</Name>
@@ -14018,11 +14030,12 @@
       <Name language="Hungarian_Old">Római Birodalom</Name>
       <Name language="Icelandic_Old">Rómverska keisaradæmið</Name>
       <Name language="Irish_Middle_Norse">Rómverska keisaradæmið</Name>
-      <Name language="Latin_Medieval">Imperium Romaniae</Name>
+      <Name language="Latin_Medieval">Imperium Romanum</Name>
       <Name language="Norse">Rómverska keisaradæmið</Name>
       <Name language="Norwegian_Old">Rómverska keisaradæmið</Name>
       <Name language="Polish_Old">Cesarstwo Rzymski</Name>
       <Name language="Romanian_Old">Imperiul Roman</Name>
+      <Name language="Romanian">Imperiul Roman</Name>
       <Name language="Russian">Rimskaya Imperiya</Name>
       <Name language="Serbian_Medieval">Rimsko Carstvo</Name>
       <Name language="Serbian">Rimsko Carstvo</Name>
@@ -16376,9 +16389,10 @@
   <LocationEntity>
     <Id>epirus</Id>
     <GameIds>
-      <GameId game="CK2HIP" parent="e_byzantium" order="2">k_epirus</GameId>
       <GameId game="CK2HIP" parent="d_epirus" order="1">c_epeiros</GameId>
       <GameId game="CK2HIP" parent="k_epirus" order="2">d_epirus</GameId>
+      <GameId game="CK2HIP" parent="e_byzantium" order="2">k_epirus</GameId>
+      <GameId game="CK3">k_epirus</GameId>
     </GameIds>
     <Names>
       <Name language="Arberian">Epiri</Name>
@@ -18549,6 +18563,7 @@
       <GameId game="CK2HIP" parent="k_nikaea" order="5">d_opsikon</GameId>
       <GameId game="CK2HIP" parent="e_byzantium" order="5">k_nikaea</GameId>
       <GameId game="CK2HIP" parent="" order="11855">e_nicaea</GameId>
+      <GameId game="CK3">k_nikaea</GameId>
       <GameId game="ImperatorRome">244</GameId> <!-- Nicaea -->
     </GameIds>
     <Names>
@@ -22356,6 +22371,7 @@
     <Id>scandinavia</Id>
     <GameIds>
       <GameId game="CK2HIP" order="2226">e_scandinavia</GameId>
+      <GameId game="CK3">e_scandinavia</GameId>
     </GameIds>
     <Names>
       <Name language="Latin">Scandinavia</Name>
@@ -22365,6 +22381,7 @@
     <Id>denmark</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_scandinavia" order="1">k_denmark</GameId>
+      <GameId game="CK3">k_denmark</GameId>
     </GameIds>
     <Names>
       <Name language="English_Old_Norse">Danmörk</Name>
@@ -22466,6 +22483,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="" order="11781">d_sweden</GameId>
       <GameId game="CK2HIP" parent="e_scandinavia" order="3">k_sweden</GameId>
+      <GameId game="CK3">k_sweden</GameId>
     </GameIds>
     <Names>
       <Name language="Ladino">Suesia</Name>
@@ -22726,6 +22744,7 @@
     <Id>norway</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_scandinavia" order="4">k_norway</GameId>
+      <GameId game="CK3">k_norway</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic">Alnnarwij</Name>
@@ -22833,6 +22852,7 @@
     <Id>russia</Id>
     <GameIds>
       <GameId game="CK2HIP" order="2676">e_russia</GameId>
+      <GameId game="CK3">e_russia</GameId>
     </GameIds>
     <Names>
       <Name language="German">Ruß</Name>
@@ -22844,6 +22864,7 @@
       <GameId game="CK2HIP" parent="c_vladimir" order="6">b_vladimir</GameId>
       <GameId game="CK2HIP" parent="d_vladimir" order="2">c_vladimir</GameId>
       <GameId game="CK2HIP" parent="e_russia" order="1">k_vladimir</GameId>
+      <GameId game="CK3">k_opolye</GameId>
     </GameIds>
     <Names>
       <Name language="German">Wladimir</Name>
@@ -23718,6 +23739,7 @@
   <LocationEntity>
     <Id>ruthenia</Id>
     <GameIds>
+      <GameId game="CK3">k_ruthenia</GameId>
     </GameIds>
     <Names>
       <Name language="English">Ruthenia</Name>
@@ -24304,6 +24326,7 @@
       <GameId game="CK2HIP" parent="d_novgorod" order="1">c_novgorod</GameId>
       <GameId game="CK2HIP" parent="k_novgorod" order="1">d_novgorod</GameId>
       <GameId game="CK2HIP" parent="e_russia" order="4">k_novgorod</GameId>
+      <GameId game="CK3">k_novgorod</GameId>
     </GameIds>
     <Names>
       <Name language="Castilian">Nóvgorod</Name>
@@ -28266,6 +28289,8 @@
       <GameId game="CK2HIP" parent="d_lithuanians" order="1">c_aukshayts</GameId>
       <GameId game="CK2HIP" parent="k_lithuania" order="1">d_lithuanians</GameId>
       <GameId game="CK2HIP" parent="e_poland" order="2">k_lithuania</GameId>
+      <GameId game="CK3">d_lithuanians</GameId>
+      <GameId game="CK3">k_lithuania</GameId>
     </GameIds>
     <Names>
       <Name language="Pashto">Lituanie</Name>
@@ -28849,6 +28874,7 @@
     <Id>galich_volyn</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_poland" order="3">k_galicia</GameId>
+      <GameId game="CK3">k_galicia-volhynia</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian">Galic-Volin</Name>
@@ -36656,6 +36682,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_croatia" order="4">d_croatia</GameId>
       <GameId game="CK2HIP" parent="e_carpathia" order="5">k_croatia</GameId>
+      <GameId game="CK3">k_croatia</GameId>
     </GameIds>
     <Names>
       <Name language="Bulgarian">Harvátska</Name>
@@ -37751,8 +37778,10 @@
   <LocationEntity>
     <Id>arabia</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="3914">e_arabia</GameId>
       <GameId game="CK2HIP" parent="e_arabia" order="1">k_arabia</GameId>
+      <GameId game="CK2HIP" order="3914">e_arabia</GameId>
+      <GameId game="CK3">k_arabia</GameId>
+      <GameId game="CK3">e_arabia</GameId>
     </GameIds>
     <Names>
        <Name language="Greek_Medieval">Arabía</Name>
@@ -38010,6 +38039,7 @@
     <Id>yemen</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_arabia" order="3">k_yemen</GameId>
+      <GameId game="CK3">k_yemen</GameId>
     </GameIds>
     <Names>
       <Name language="Norwegian">Jaman</Name>
@@ -38066,6 +38096,7 @@
     <Id>egypt</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_arabia" order="4">k_egypt</GameId>
+      <GameId game="CK3">k_egypt</GameId>
     </GameIds>
     <Names>
       <Name language="Amharic">Gibs</Name>
@@ -38680,6 +38711,7 @@
     <Id>syria</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_arabia" order="5">k_syria</GameId>
+      <GameId game="CK3">k_syria</GameId>
     </GameIds>
     <Names>
       <Name language="Armenian">Siria</Name>
@@ -38967,6 +38999,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_jerusalem" order="1">d_jerusalem</GameId>
       <GameId game="CK2HIP" parent="e_arabia" order="6">k_jerusalem</GameId>
+      <GameId game="CK3">k_jerusalem</GameId>
     </GameIds>
     <Names>
       <Name language="Amharic">Yerusalem</Name>
@@ -46690,6 +46723,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="d_ravenna" order="2">c_bologna</GameId>
       <GameId game="CK2HIP" parent="e_italy" order="7">k_romagna</GameId>
+      <GameId game="CK3">k_romagna</GameId>
     </GameIds>
     <Names>
       <Name language="Castilian">Romaña</Name>
@@ -48216,6 +48250,7 @@
     <Id>corsica_and_sardinia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_italy" order="10">k_sardinia</GameId>
+      <GameId game="CK3">k_sardinia</GameId>
     </GameIds>
     <Names>
       <Name language="German">Korsika und Sardinien</Name>
@@ -48403,6 +48438,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_sicily" order="13">d_sicily</GameId>
       <GameId game="CK2HIP" parent="e_italy" order="11">k_sicily</GameId>
+      <GameId game="CK3">k_sicily</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Siqilliya</Name>
@@ -49384,6 +49420,7 @@
       <GameId game="CK2HIP" parent="d_venice" order="1">c_venezia</GameId>
       <GameId game="CK2HIP" parent="k_venice" order="1">d_venice</GameId>
       <GameId game="CK2HIP" parent="e_italy" order="12">k_venice</GameId>
+      <GameId game="CK3">k_venice</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Venetia</Name>
@@ -50604,6 +50641,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_brittany" order="1">d_brittany</GameId>
       <GameId game="CK2HIP" parent="e_france" order="2">k_brittany</GameId>
+      <GameId game="CK3">d_brittany</GameId>
+      <GameId game="CK3">k_brittany</GameId>
     </GameIds>
     <Names>
       <Name language="French_Old">Bretagne</Name>
@@ -51152,8 +51191,10 @@
   <LocationEntity>
     <Id>france</Id>
     <GameIds>
-      <GameId game="CK2HIP" order="6416">e_france</GameId>
       <GameId game="CK2HIP" parent="e_france" order="3">k_france</GameId>
+      <GameId game="CK2HIP" order="6416">e_france</GameId>
+      <GameId game="CK3">k_france</GameId>
+      <GameId game="CK3">e_france</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Ifranja</Name>
@@ -51630,6 +51671,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_france" order="3">d_burgundy</GameId>
       <GameId game="CK2HIP" parent="e_france" order="1">k_burgundy</GameId>
+      <GameId game="CK3">k_burgundy</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Burgundia</Name>
@@ -53665,6 +53707,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_aquitaine" order="6">d_aquitaine</GameId>
       <GameId game="CK2HIP" parent="e_france" order="4">k_aquitaine</GameId>
+      <GameId game="CK3">k_aquitaine</GameId>
     </GameIds>
     <Names>
       <Name language="Basque">Akitania</Name>
@@ -54853,6 +54896,7 @@
     <Id>spain</Id>
     <GameIds>
       <GameId game="CK2HIP" order="7409">e_spain</GameId>
+      <GameId game="CK3">e_spain</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Isbaniyya</Name>
@@ -54911,6 +54955,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_castille" order="1">d_castilla</GameId>
       <GameId game="CK2HIP" parent="e_spain" order="1">k_castille</GameId>
+      <GameId game="CK3">d_castilla</GameId>
+      <GameId game="CK3">k_castille</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Castellae</Name>
@@ -55258,6 +55304,9 @@
       <GameId game="CK2HIP" parent="d_navarra" order="1">c_navarra</GameId>
       <GameId game="CK2HIP" parent="k_navarra" order="1">d_navarra</GameId>
       <GameId game="CK2HIP" parent="e_spain" order="2">k_navarra</GameId>
+      <GameId game="CK3">c_navarra</GameId>
+      <GameId game="CK3">d_navarra</GameId>
+      <GameId game="CK3">k_navarra</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Nabarra</Name>
@@ -55517,6 +55566,10 @@
       <GameId game="CK2HIP" parent="d_leon" order="1">c_leon</GameId>
       <GameId game="CK2HIP" parent="k_asturias" order="1">d_leon</GameId>
       <GameId game="CK2HIP" parent="e_spain" order="3">k_leon</GameId>
+      <GameId game="CK3">b_leon</GameId>
+      <GameId game="CK3">c_leon</GameId>
+      <GameId game="CK3">d_leon</GameId>
+      <GameId game="CK3">k_leon</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Liyún</Name>
@@ -55549,6 +55602,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_aragon" order="1">d_aragon</GameId>
       <GameId game="CK2HIP" parent="e_spain" order="4">k_aragon</GameId>
+      <GameId game="CK3">d_aragon</GameId>
+      <GameId game="CK3">k_aragon</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Araghún</Name>
@@ -56007,6 +56062,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_portugal" order="1">d_porto</GameId>
       <GameId game="CK2HIP" parent="e_spain" order="5">k_portugal</GameId>
+      <GameId game="CK3">d_porto</GameId>
+      <GameId game="CK3">k_portugal</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Burtuqál</Name>
@@ -56149,6 +56206,7 @@
     <Id>andalusia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_spain" order="6">k_andalusia</GameId>
+      <GameId game="CK3">k_andalusia</GameId>
     </GameIds>
     <Names>
       <Name language="Basque">Andaluzia</Name>
@@ -57251,6 +57309,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_spanish_galicia" order="1">d_galicia</GameId>
       <GameId game="CK2HIP" parent="e_spain" order="7">k_spanish_galicia</GameId>
+      <GameId game="CK3">d_galicia</GameId>
+      <GameId game="CK3">k_spanish_galicia</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Jillíqiyya</Name>
@@ -57727,6 +57787,10 @@
       <GameId game="CK2HIP" parent="d_valencia" order="3">c_valencia</GameId>
       <GameId game="CK2HIP" parent="k_valencia" order="1">d_valencia</GameId>
       <GameId game="CK2HIP" parent="e_spain" order="9">k_valencia</GameId>
+      <GameId game="CK3">b_valencia</GameId>
+      <GameId game="CK3">c_valencia</GameId>
+      <GameId game="CK3">d_valencia</GameId>
+      <GameId game="CK3">k_valencia</GameId>
       <GameId game="ImperatorRome">1030</GameId> <!-- Valentia -->
     </GameIds>
     <Names>
@@ -57795,6 +57859,7 @@
     <Id>asturias</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_spain" order="11">k_asturias</GameId>
+      <GameId game="CK3">k_asturias</GameId>
     </GameIds>
     <Names>
       <Name language="Leonese">Asturies</Name>
@@ -58054,6 +58119,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_africa" order="1">d_tunis</GameId>
       <GameId game="CK2HIP" parent="e_africa" order="1">k_africa</GameId>
+      <GameId game="CK3">k_africa</GameId>
       <GameId game="CK2HIP" order="8017">e_africa</GameId>
     </GameIds>
     <Names>
@@ -58980,6 +59046,8 @@
       <GameId game="CK2HIP" parent="k_mali" order="1">d_mali</GameId>
       <GameId game="CK2HIP" parent="e_mali" order="2">k_mali</GameId>
       <GameId game="CK2HIP" parent="" order="8407">e_mali</GameId>
+      <GameId game="CK3">k_mali</GameId>
+      <GameId game="CK3">e_mali</GameId>
     </GameIds>
     <Names>
       <Name language="Prussian_Old">Malis</Name>
@@ -58990,6 +59058,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="e_persia" order="1">k_persia</GameId>
       <GameId game="CK2HIP" order="8592">e_persia</GameId>
+      <GameId game="CK3">k_persia</GameId>
+      <GameId game="CK3">e_persia</GameId>
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Persike</Name>
@@ -59075,6 +59145,7 @@
     <Id>mesopotamia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_persia" order="6">k_mesopotamia</GameId>
+      <GameId game="CK3">k_mesopotamia</GameId>
     </GameIds>
     <Names>
       <Name language="Greek_Medieval">Mesopotamía</Name>
@@ -59257,6 +59328,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_armenia" order="4">d_armenia</GameId>
       <GameId game="CK2HIP" parent="e_null" order="2">k_armenia</GameId>
+      <GameId game="CK3">k_armenia</GameId>
       <GameId game="CK3">e_armenia</GameId>
     </GameIds>
     <Names>
@@ -59712,6 +59784,8 @@
     <Id>estonia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_terra" order="6">d_esthonia</GameId>
+      <GameId game="CK3">d_esthonia</GameId>
+      <GameId game="CK3">k_esthonia</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Esthland</Name>
@@ -60034,6 +60108,7 @@
     <Id>zaporizhia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_taurica" order="3">d_zaporizhia</GameId>
+      <GameId game="CK3">k_pontic_steppe</GameId>
     </GameIds>
     <Names>
       <Name language="Lithuanian_Medieval">Zaporoze</Name>
@@ -60912,9 +60987,15 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>volga_bulgaria</Id>
+    <Id>bolghar</Id>
     <GameIds>
+      <GameId game="CK2HIP" parent="c_bulgar" order="5">b_bulgar</GameId>
+      <GameId game="CK2HIP" parent="d_bulgar" order="2">c_bulgar</GameId>
+      <GameId game="CK2HIP" parent="k_volga_bulgaria" order="1">d_bulgar</GameId>
       <GameId game="CK2HIP" parent="e_null" order="12">k_volga_bulgaria</GameId>
+      <GameId game="CK3">b_bolghar</GameId>
+      <GameId game="CK3">c_bolghar</GameId>
+      <GameId game="CK3">d_volga_bulgaria</GameId>
       <GameId game="CK3">k_volga_bulgaria</GameId>
     </GameIds>
     <Names>
@@ -60925,29 +61006,10 @@
       <Name language="Hungarian_Old_Early">Dentumoger</Name>
       <Name language="Hungarian_Old">Dentü-Mogyer</Name>
       <Name language="Polish_Old">Bulgar</Name>
-      <Name language="Romanian">Bulgaria de pe Volga</Name>
-      <Name language="Russian">Povolzhye</Name>
-      <Name language="Serbian_Medieval">Bulgar</Name>
-      <Name language="Slovak_Medieval">Bulgar</Name>
-      <Name language="Slovene_Medieval">Bulgar</Name>
-      <Name language="Sorbian">Bulgar</Name>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>bolgar</Id>
-    <GameIds>
-      <GameId game="CK2HIP" parent="c_bulgar" order="5">b_bulgar</GameId>
-      <GameId game="CK2HIP" parent="d_bulgar" order="2">c_bulgar</GameId>
-      <GameId game="CK2HIP" parent="k_volga_bulgaria" order="1">d_bulgar</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Bosnian_Medieval">Bulgar</Name>
-      <Name language="Bulgarian_Old">Bulgar</Name>
-      <Name language="Croatian_Medieval">Bulgar</Name>
-      <Name language="Czech_Medieval">Bulgar</Name>
-      <Name language="Polish_Old">Bulgar</Name>
       <Name language="Romanian">Bulgar</Name>
+      <Name language="Romanian">Bulgaria de pe Volga</Name>
       <Name language="Russian">Bulgar</Name>
+      <Name language="Russian">Povolzhye</Name>
       <Name language="Serbian_Medieval">Bulgar</Name>
       <Name language="Slovak_Medieval">Bulgar</Name>
       <Name language="Slovene_Medieval">Bulgar</Name>
@@ -61097,6 +61159,7 @@
     <Id>georgia</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_null" order="16">k_georgia</GameId>
+      <GameId game="CK3">k_georgia</GameId>
     </GameIds>
     <Names>
       <Name language="Prussian_Old">Georgija</Name>
@@ -61798,36 +61861,6 @@
       <Name language="Czech_Medieval">Boskovice</Name>
       <Name language="German_Middle_High">Boskowitz</Name>
       <Name language="Slovak_Medieval">Boskovice</Name>
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>roman_empire</Id>
-    <GameIds>
-      <GameId game="CK2HIP" order="1433">e_roman_empire</GameId>
-    </GameIds>
-    <Names>
-      <Name language="English_Old_Norse">Rómverska keisaradæmið</Name>
-      <Name language="Arberian">Perandoria Romake</Name>
-      <Name language="Armenian_Middle">Hrromeakan Kaysrut'yun</Name>
-      <Name language="Czech_Medieval">Rzímská Rzíše</Name>
-      <Name language="Bosnian_Medieval">Rimsku Imperiju</Name>
-      <Name language="Bulgarian_Old">Rimska Imperiya</Name>
-      <Name language="Slovene_Medieval">Rimsko Cesárstvo</Name>
-      <Name language="Croatian_Medieval">Rimsko Carstvo</Name>
-      <Name language="Danish_Middle">Rómverska keisaradæmið</Name>
-      <Name language="Georgian">Romis Imperia</Name>
-      <Name language="Hungarian_Old">Római Birodalom</Name>
-      <Name language="Icelandic_Old">Rómverska keisaradæmið</Name>
-      <Name language="Norse">Rómverska keisaradæmið</Name>
-      <Name language="Irish_Middle_Norse">Rómverska keisaradæmið</Name>
-      <Name language="Norwegian_Old">Rómverska keisaradæmið</Name>
-      <Name language="Polish_Old">Cesarstwo Rzymski</Name>
-      <Name language="Latin_Medieval">Imperium Romanum</Name>
-      <Name language="Romanian">Imperiul Roman</Name>
-      <Name language="Russian">Rimskaya Imperiya</Name>
-      <Name language="Serbian_Medieval">Rimsko Carstvo</Name>
-      <Name language="Swedish_Old">Rómverska keisaradæmið</Name>
-      <Name language="Szekely_Old">Római Birodalom</Name>
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -64521,6 +64554,7 @@
       <GameId game="CK2HIP" parent="c_ikonion" order="1">b_ikonion</GameId>
       <GameId game="CK2HIP" parent="d_anatolia" order="4">c_ikonion</GameId>
       <GameId game="CK2HIP" parent="e_byzantium" order="6">k_anatolia</GameId>
+      <GameId game="CK3">k_anatolia</GameId>
       <GameId game="ImperatorRome">1934</GameId> <!-- Iconium -->
     </GameIds>
     <Names>
@@ -73123,6 +73157,7 @@
     <Id>adal</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_abyssinia" order="1">k_adal</GameId>
+      <GameId game="CK3">k_adal</GameId>
     </GameIds>
     <Names>
       <Name language="Somali">Cadal</Name>
@@ -73179,6 +73214,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="e_abyssinia" order="2">k_abyssinia</GameId>
       <GameId game="CK2HIP" parent="" order="4673">e_abyssinia</GameId>
+      <GameId game="CK3">k_abyssinia</GameId>
+      <GameId game="CK3">e_abyssinia</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -73245,6 +73282,7 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_nubia" order="2">d_nubia</GameId>
       <GameId game="CK2HIP" parent="e_abyssinia" order="3">k_nubia</GameId>
+      <GameId game="CK3">k_nubia</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Núba</Name>
@@ -89966,6 +90004,8 @@
     <Id>daylam</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_persia" order="2">k_daylam</GameId>
+      <GameId game="CK3">d_daylam</GameId>
+      <GameId game="CK3">k_daylam</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -90081,6 +90121,7 @@
     <Id>khorasan</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_persia" order="3">k_khorasan</GameId>
+      <GameId game="CK3">k_khorasan</GameId>
     </GameIds>
     <Names>
       <Name language="Persian_Middle">Khwarasan</Name>
@@ -90811,6 +90852,7 @@
     <Id>rajastan</Id>
     <GameIds>
       <GameId game="CK2HIP" order="9298">e_rajastan</GameId>
+      <GameId game="CK3">e_rajastan</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -90835,6 +90877,7 @@
     <Id>punjab</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_rajastan" order="2">k_punjab</GameId>
+      <GameId game="CK3">k_punjab</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -90854,6 +90897,9 @@
       <GameId game="CK2HIP" parent="c_delhi" order="1">b_indraprastha</GameId>
       <GameId game="CK2HIP" parent="d_kuru" order="1">c_delhi</GameId>
       <GameId game="CK2HIP" parent="e_rajastan" order="3">k_delhi</GameId>
+      <GameId game="CK3">b_indraprastha</GameId>
+      <GameId game="CK3">c_delhi</GameId>
+      <GameId game="CK3">k_delhi</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Dihlí</Name>
@@ -90880,6 +90926,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_gujarat" order="1">d_gurjara_mandala</GameId>
       <GameId game="CK2HIP" parent="e_rajastan" order="4">k_gujarat</GameId>
+      <GameId game="CK3">d_gurjara_mandala</GameId>
+      <GameId game="CK3">k_gujarat</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">al-Jurz</Name>
@@ -90904,6 +90952,7 @@
     <Id>malwa</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_rajastan" order="6">k_malwa</GameId>
+      <GameId game="CK3">k_malwa</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">al-Máribah</Name>
@@ -90937,6 +90986,7 @@
     <Id>kosala</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_rajastan" order="7">k_kosala</GameId>
+      <GameId game="CK3">k_kosala</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -93014,6 +93064,8 @@
     <GameIds>
       <GameId game="CK2HIP" parent="k_pomerania" order="7">d_pommerania</GameId>
       <GameId game="CK2HIP" parent="e_null" order="3">k_pomerania</GameId>
+      <GameId game="CK3">d_pommerania</GameId>
+      <GameId game="CK3">k_pomerania</GameId>
     </GameIds>
     <Names>
       <Name language="Alemannic">Pomeran</Name>
@@ -98422,6 +98474,7 @@
       <GameId game="CK2HIP" parent="d_finland" order="1">c_finland</GameId>
       <GameId game="CK2HIP" parent="k_finland" order="1">d_finland</GameId>
       <GameId game="CK2HIP" parent="e_null" order="13">k_finland</GameId>
+      <GameId game="CK3">k_finland</GameId>
     </GameIds>
     <Names>
       <Name language="Danish_Middle">Østærland</Name>
@@ -99355,6 +99408,7 @@
     <Id>greater_perm</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_null" order="14">k_perm</GameId>
+      <GameId game="CK3">k_perm</GameId>
     </GameIds>
     <FallbackLocations>
       <LocationId>perm</LocationId>
@@ -99379,6 +99433,9 @@
     <Id>perm</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="k_perm" order="1">d_perm</GameId>
+      <GameId game="CK3">b_perm</GameId>
+      <GameId game="CK3">c_perm</GameId>
+      <GameId game="CK3">d_perm</GameId>
     </GameIds>
     <Names>
       <Name language="Bosnian_Medieval">Perm</Name>
@@ -100532,6 +100589,7 @@
     <Id>guge</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_null" order="17">k_guge</GameId>
+      <GameId game="CK3">k_guge</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -100985,6 +101043,9 @@
       <GameId game="CK2HIP" parent="d_kashmir" order="1">c_kasmira</GameId>
       <GameId game="CK2HIP" parent="k_kashmir" order="1">d_kashmir</GameId>
       <GameId game="CK2HIP" parent="e_null" order="18">k_kashmir</GameId>
+      <GameId game="CK3">c_kasmira</GameId>
+      <GameId game="CK3">d_kasmira</GameId>
+      <GameId game="CK3">k_kashmir</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Kashmír</Name>
@@ -101089,6 +101150,7 @@
     <Id>magyar</Id>
     <GameIds>
       <GameId game="CK2HIP" order="11827">k_magyar</GameId>
+      <GameId game="CK3">k_magyar</GameId>
     </GameIds>
     <Names>
       <Name language="Hungarian_Old">Hét Magyar</Name>
@@ -101131,6 +101193,7 @@
     <Id>tibet</Id>
     <GameIds>
       <GameId game="CK2HIP" order="11852">e_tibet</GameId>
+      <GameId game="CK3">e_tibet</GameId>
     </GameIds>
     <Names>
       <Name language="Arabic_Andalusia">Tubbat</Name>
@@ -111323,6 +111386,7 @@
     <Id>deccan</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="9945">e_deccan</GameId>
+      <GameId game="CK3">e_deccan</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -111635,6 +111699,7 @@
     <Id>ottoman</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="11833">k_ottoman</GameId>
+      <GameId game="CK3">k_ottoman</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -111660,6 +111725,7 @@
     <Id>trinacria</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="11840">k_trinacria</GameId>
+      <GameId game="CK3">k_trinacria</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -111692,6 +111758,7 @@
     <Id>israel</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="11847">k_israel</GameId>
+      <GameId game="CK3">k_israel</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -111709,6 +111776,7 @@
     <Id>kimek</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="11849">k_kimek</GameId>
+      <GameId game="CK3">k_kimek</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -111717,6 +111785,7 @@
     <Id>india</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="" order="11853">e_india</GameId>
+      <GameId game="CK3">e_india</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -112314,6 +112383,7 @@
     <Id>maghreb</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_africa" order="2">k_maghreb</GameId>
+      <GameId game="CK3">k_maghreb</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -112322,6 +112392,7 @@
     <Id>maharastra</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_deccan" order="1">k_maharastra</GameId>
+      <GameId game="CK3">k_maharastra</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -112330,6 +112401,7 @@
     <Id>sahara</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_null" order="20">k_sahara</GameId>
+      <GameId game="CK3">k_sahara</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -112373,6 +112445,7 @@
     <Id>karnata</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_deccan" order="2">k_karnata</GameId>
+      <GameId game="CK3">k_karnata</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -112381,6 +112454,7 @@
     <Id>sindh</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_rajastan" order="1">k_sindh</GameId>
+      <GameId game="CK3">k_sindh</GameId>
     </GameIds>
     <Names>
     </Names>
@@ -112389,6 +112463,7 @@
     <Id>tamilakam</Id>
     <GameIds>
       <GameId game="CK2HIP" parent="e_deccan" order="3">k_tamilakam</GameId>
+      <GameId game="CK3">k_tamilakam</GameId>
     </GameIds>
     <Names>
     </Names>
