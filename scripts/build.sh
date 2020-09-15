@@ -1,5 +1,17 @@
 #!/bin/bash
 
+STARTDIR="$(pwd)"
+OUTDIR="$STARTDIR/out"
+BUILD_VERSION=${1}
+
+if [ -z "${VERSION}" ]; then
+    BUILD_VERSION=0
+fi
+
+VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
+
+echo "Mod version: ${VERSION}"
+
 echo "Validating the files..."
 if [ -n "$(sh scripts/find-mistakes.sh)" ]; then
     echo "Input files validation failed!"
@@ -32,8 +44,23 @@ fi
 
 [ -d "out/" ] && rm -rf "out/"
 
-${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "titles.xml" -o "out/"
+${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "titles.xml" -v ${VERSION} -o "out/"
 
 cp -rf extras/ck2hip/* out/CK2HIP/
 cp -rf extras/ck3/* out/CK3/
 cp -rf extras/ir/* out/ImperatorRome/
+
+function package-game {
+    GAME=${1}
+    INDIR="out/${GAME}/"
+    ZIPNAME=${GAME}_${VERSION}
+
+    echo "Building the '${INDIR}' package..."
+
+    zip -q -r "${ZIPNAME}.zip" "${INDIR}"
+    mv "${ZIPNAME}.zip" "${OUTDIR}/"
+}
+
+package-game "CK2HIP"
+package-game "CK3"
+package-game "ImperatorRome"
