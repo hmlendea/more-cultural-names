@@ -23,6 +23,15 @@ for FALLBACK_LOCATION_ID in $(grep "<LocationId>" titles.xml | \
     fi
 done
 
+# Find non-existing name languages
+for LANGUAGE_ID in $(grep "<Name " titles.xml | \
+                    sed 's/.*language=\"\([^\"]*\).*/\1/g' | \
+                    sort | uniq); do
+    if [ -z "$(grep "^ *<Id>${LANGUAGE_ID}</Id>" languages.xml)" ]; then
+        echo "The \"${LANGUAGE_ID}\" language does not exit"
+    fi
+done
+
 # Find non-existing location parents (CK2HIP)
 for PARENT_ID in $(grep "game=\"CK2HIP\"" titles.xml | \
                     grep -e "parent=\"[^\"]\+\"" | \
