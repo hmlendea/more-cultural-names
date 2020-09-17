@@ -5,7 +5,9 @@ grep -n "parent=\"[a-zA-Z][^_]" titles.xml
 grep -n "parent=\"[a-zA-Z][^_]" titles.xml
 
 # Find duplicated IDs
-grep "^ *<Id>" *.xml | sort | uniq -c | grep "^ *[2-9]"
+grep "^ *<Id>" *.xml | \
+    sort | uniq -c | \
+    grep "^ *[2-9]"
 
 # Find duplicated game IDs
 grep "<GameId game=" *.xml | \
