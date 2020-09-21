@@ -30,9 +30,9 @@ You can download the latest release from the [releases page](https://github.com/
 
 # Compatibility
 
-The mods are **OS-agnostic**, which means that they will work on all of the operating systems supported by the game.
+The mod is **OS-agnostic**, which means that it will work on all of the operating systems supported by the game.
 
-It is also actively tested (and developed) on **Linux**, where it is guaranteed to work with either the native version of the game or through Steam Play.
+It is actively tested (and developed) on **Linux**, where it is guaranteed to work with either the native version of the game or through Steam Play.
 
 It is also **save-game compatible**, and can be added and removed at will without breaking anything.
 
