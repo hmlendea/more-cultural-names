@@ -57,6 +57,7 @@ replace-cultural-name "prussian" "Prussian_Old"
 
 if [ "${GAME}" == "CK2" ]; then
     replace-cultural-name "italian" "Tuscan_Medieval"
+    replace-cultural-name "old_frankish" "Frankish"
 fi
 
 if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
@@ -107,7 +108,7 @@ fi
 
 if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "outremer" "French_Outremer"
-    replace-cultural-name "suebi" "Alemannic_Medieval"
+    replace-cultural-name "visigothic" "Gothic_Visigoth"
 fi
 
 if [ "${GAME}" == "CK3" ]; then
