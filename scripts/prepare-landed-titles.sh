@@ -69,6 +69,7 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "carantanian" "Slovene_Medieval"
     replace-cultural-name "castillan" "Castillan_Medieval"
     replace-cultural-name "catalan" "Catalan_Medieval"
+    replace-cultural-name "crimean_gothic" "Gothic_Crimean"
     replace-cultural-name "croatian" "Croatian_Medieval"
     replace-cultural-name "dalmatian" "Dalmatian_Medieval"
     replace-cultural-name "danish" "Danish_Middle"
