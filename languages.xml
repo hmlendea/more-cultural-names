@@ -58,6 +58,7 @@
       <LanguageId>Bavarian_Medieval</LanguageId>
       <LanguageId>Thuringian_Medieval</LanguageId>
       <LanguageId>German_Old_High</LanguageId>
+      <LanguageId>Suebi</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -82,6 +83,7 @@
       <LanguageId>German</LanguageId>
       <LanguageId>Bavarian</LanguageId>
       <LanguageId>Thuringian</LanguageId>
+      <LanguageId>Suebi</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1087,6 +1089,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Danish_Middle</LanguageId>
+      <LanguageId>Danish_Old</LanguageId>
       <LanguageId>Norse</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1098,7 +1101,18 @@
       <GameId game="CK3">danish</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Danish_Old</LanguageId>
       <LanguageId>Norse</LanguageId>
+      <LanguageId>Danish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Danish_Old</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Norse</LanguageId>
+      <LanguageId>Danish_Middle</LanguageId>
       <LanguageId>Danish</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1202,6 +1216,15 @@
     <Id>Emilian</Id>
     <Code iso-639-3="egl" />
     <FallbackLanguages>
+      <LanguageId>Emilian_Piacentino</LanguageId>
+      <LanguageId>Emilian_Romagnol</LanguageId>
+      <LanguageId>Romagnol</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Emilian_Piacentino</Id>
+    <FallbackLanguages>
+      <LanguageId>Emilian</LanguageId>
       <LanguageId>Emilian_Romagnol</LanguageId>
       <LanguageId>Romagnol</LanguageId>
     </FallbackLanguages>
@@ -1210,6 +1233,8 @@
     <Id>Emilian_Romagnol</Id>
     <Code iso-639-3="eml" />
     <FallbackLanguages>
+      <LanguageId>Emilian</LanguageId>
+      <LanguageId>Emilian_Piacentino</LanguageId>
       <LanguageId>Romagnol</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1357,6 +1382,7 @@
     <Id>Frankish</Id>
     <Code iso-639-3="frk" />
     <GameIds>
+      <GameId game="CK2">old_frankish</GameId>
       <GameId game="CK2HIP">franconian</GameId>
       <GameId game="CK3">franconian</GameId>
     </GameIds>
@@ -1879,6 +1905,24 @@
     <GameIds>
       <GameId game="CK2">crimean_gothic</GameId>
       <GameId game="CK2HIP">crimean_gothic</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
+      <LanguageId>Greek</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Gothic_Visigoth</Id>
+    <GameIds>
+      <GameId game="CK2HIP">visigothic</GameId>
+      <GameId game="CK3">visigothic</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -2804,7 +2848,6 @@
   <Language>
     <Id>Lombard_Medieval</Id>
     <GameIds>
-      <GameId game="CK2">italian</GameId>
       <GameId game="CK2HIP">italian</GameId> <!-- Lombardo -->
       <GameId game="CK3">cisalpine</GameId>
     </GameIds>
@@ -3174,6 +3217,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Norwegian_Old</LanguageId>
+      <LanguageId>Danish_Old</LanguageId>
       <LanguageId>Danish_Middle</LanguageId>
       <LanguageId>Swedish_Old</LanguageId>
       <LanguageId>Icelandic_Old</LanguageId>
@@ -3590,6 +3634,7 @@
     <FallbackLanguages>
       <LanguageId>Emilian_Romagnol</LanguageId>
       <LanguageId>Emilian</LanguageId>
+      <LanguageId>Emilian_Piacentino</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4392,6 +4437,27 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Suebi_Medieval</Id>
+    <GameIds>
+      <GameId game="CK2">suebi</GameId>
+      <GameId game="CK3">suebi</GameId>
+    <FallbackLanguages>
+      <LanguageId>Alemannic_Medieval</LanguageId>
+      <LanguageId>German_Middle_High</LanguageId>
+      <LanguageId>German_Old_High</LanguageId>
+      <LanguageId>German_New_High_Early</LanguageId>
+      <LanguageId>German_Before19Century</LanguageId>
+      <LanguageId>German_Before1938</LanguageId>
+      <LanguageId>German_Before1940</LanguageId>
+      <LanguageId>German_Before1941</LanguageId>
+      <LanguageId>German_Before1942</LanguageId>
+      <LanguageId>German_Before1945</LanguageId>
+      <LanguageId>Alemannic</LanguageId>
+      <LanguageId>German</LanguageId>
+    </FallbackLanguages>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Sundanese</Id>
     <Code iso-639-1="su" iso-639-2="sun" iso-639-3="sun" />
   </Language>
@@ -4517,6 +4583,7 @@
     <Code iso-639-3="txh" />
     <GameIds>
       <GameId game="ImperatorRome">thracian</GameId>
+      <GameId game="ImperatorRome">TRE</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Dacian</LanguageId>
@@ -4564,6 +4631,27 @@
       <LanguageId>Bavarian</LanguageId>
       <LanguageId>Alemannic</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Tibetan</Id>
+    <Code iso-639-1="bo" iso-639-2="bod" iso-639-3="bod" />
+    <GameIds>
+    </GameIds>
+  </Language>
+  <Language>
+    <Id>Tibetan_Classical</Id> <!-- c. 11th century AD – c. 19th century AD -->
+    <Code iso-639-3="xct" />
+    <GameIds>
+    </GameIds>
+  </Language>
+  <Language>
+    <Id>Tibetan_Old</Id> <!-- c. 7th century AD – c. 11th century AD -->
+    <Code iso-639-3="otb" />
+    <GameIds>
+      <GameId game="CK2">bodpa</GameId>
+      <GameId game="CK2HIP">bodpa</GameId>
+      <GameId game="CK3">bodpa</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Tok_Pisin</Id>
@@ -4691,6 +4779,7 @@
   <Language>
     <Id>Tuscan_Medieval</Id>
     <GameIds>
+      <GameId game="CK2">italian</GameId>
       <GameId game="CK2HIP">tuscan</GameId>
       <GameId game="CK3">italian</GameId>
     </GameIds>
@@ -4905,20 +4994,20 @@
       <GameId game="CK3">welsh</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Cornish_Middle</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Irish_Middle</LanguageId>
-      <LanguageId>Cornish_Middle</LanguageId>
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Cumbric</LanguageId>
       <LanguageId>Scottish_Gaelic</LanguageId>
       <LanguageId>Manx</LanguageId>
-      <LanguageId>Irish_Old</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
+      <LanguageId>Irish_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
       <LanguageId>Pictish</LanguageId>
       <LanguageId>Welsh</LanguageId>
-      <LanguageId>Irish</LanguageId>
       <LanguageId>Cornish</LanguageId>
+      <LanguageId>Irish</LanguageId>
       <LanguageId>Breton</LanguageId>
     </FallbackLanguages>
   </Language>
