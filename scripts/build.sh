@@ -46,6 +46,7 @@ fi
 
 ${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "titles.xml" -v ${VERSION} -o "out/"
 
+cp -rf extras/ck2/* out/CK2/
 cp -rf extras/ck2hip/* out/CK2HIP/
 cp -rf extras/ck3/* out/CK3/
 cp -rf extras/ir/* out/ImperatorRome/
