@@ -1,7 +1,7 @@
 #!/bin/bash
 
 STARTDIR="$(pwd)"
-OUTDIR="$STARTDIR/out"
+OUTDIR="${STARTDIR}/out"
 BUILD_VERSION=${1}
 
 if [ -z "${VERSION}" ]; then
@@ -46,6 +46,7 @@ fi
 
 ${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "titles.xml" -v ${VERSION} -o "out/"
 
+cp -rf extras/ck2/* out/CK2/
 cp -rf extras/ck2hip/* out/CK2HIP/
 cp -rf extras/ck3/* out/CK3/
 cp -rf extras/ir/* out/ImperatorRome/
@@ -57,10 +58,12 @@ function package-game {
 
     echo "Building the '${INDIR}' package..."
 
-    zip -q -r "${ZIPNAME}.zip" "${INDIR}"
+    cd ${STARTDIR}/${INDIR}
+    zip -q -r "${ZIPNAME}.zip" ./*
     mv "${ZIPNAME}.zip" "${OUTDIR}/"
 }
 
+package-game "CK2"
 package-game "CK2HIP"
 package-game "CK3"
 package-game "ImperatorRome"
