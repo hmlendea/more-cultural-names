@@ -1,7 +1,7 @@
 #!/bin/bash
 
 STARTDIR="$(pwd)"
-OUTDIR="$STARTDIR/out"
+OUTDIR="${STARTDIR}/out"
 BUILD_VERSION=${1}
 
 if [ -z "${VERSION}" ]; then
@@ -58,10 +58,12 @@ function package-game {
 
     echo "Building the '${INDIR}' package..."
 
-    zip -q -r "${ZIPNAME}.zip" "${INDIR}"
+    cd ${STARTDIR}/${INDIR}
+    zip -q -r "${ZIPNAME}.zip" ./*
     mv "${ZIPNAME}.zip" "${OUTDIR}/"
 }
 
+package-game "CK2"
 package-game "CK2HIP"
 package-game "CK3"
 package-game "ImperatorRome"
