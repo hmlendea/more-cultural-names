@@ -109,13 +109,16 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
 fi
 
 if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ]; then
+    replace-cultural-name "ilmenian" "Russian_Medieval_Ilmenian"
+    replace-cultural-name "meshchera" "Meshchera"
     replace-cultural-name "outremer" "French_Outremer"
+    replace-cultural-name "severian" "Russian_Medieval_Severian"
     replace-cultural-name "visigothic" "Gothic_Visigoth"
+    replace-cultural-name "volhynian" "Russian_Medieval_Volhynian"
 fi
 
 if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "merya" "Merya"
-    replace-cultural-name "meshchera" "Meshchera"
     replace-cultural-name "muroma" "Muroma"
     replace-cultural-name "sami" "Sami"
 fi
