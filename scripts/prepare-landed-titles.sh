@@ -114,6 +114,9 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ]; then
 fi
 
 if [ "${GAME}" == "CK3" ]; then
+    replace-cultural-name "merya" "Merya"
+    replace-cultural-name "meshchera" "Meshchera"
+    replace-cultural-name "muroma" "Muroma"
     replace-cultural-name "sami" "Sami"
 fi
 
