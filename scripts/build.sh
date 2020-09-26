@@ -49,6 +49,7 @@ ${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "titles.xml" -v ${VERSION} -o
 cp -rf extras/ck2/* out/CK2/
 cp -rf extras/ck2hip/* out/CK2HIP/
 cp -rf extras/ck3/* out/CK3/
+cp -rf extras/hoi4/* out/HOI4/
 cp -rf extras/ir/* out/ImperatorRome/
 
 function package-game {
@@ -66,4 +67,5 @@ function package-game {
 package-game "CK2"
 package-game "CK2HIP"
 package-game "CK3"
+package-game "HOI4"
 package-game "ImperatorRome"
