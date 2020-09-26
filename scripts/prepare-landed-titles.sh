@@ -55,6 +55,7 @@ replace-cultural-name "pecheneg" "Pecheneg"
 replace-cultural-name "persian" "Persian"
 replace-cultural-name "pictish" "Pictish"
 replace-cultural-name "prussian" "Prussian_Old"
+replace-cultural-name "zhangzhung" "Zhang-Zhung"
 
 if [ "${GAME}" == "CK2" ]; then
     replace-cultural-name "italian" "Tuscan_Medieval"
