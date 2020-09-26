@@ -5,9 +5,11 @@ This is a mod for various strategy games, that adds new place names based on the
 The names are meant to provide an immersive and accurate experience for the game's setting and time period.
 
 Supported games:
+ - `Crusader Kings 2`
  - `Crusader Kings 2` with `Historical Immersion Project`
  - `Crusader Kings 2` with `Elder Kings`
  - `Crusader Kings 3`
+ - `Hearts of Iron IV`
  - `Imperator: Rome`
 
 The common database currently has over **55 thousand** names for over **450** languages, settings and time periods.
