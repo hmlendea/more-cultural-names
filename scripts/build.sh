@@ -13,7 +13,7 @@ VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 echo "Mod version: ${VERSION}"
 
 echo "Validating the files..."
-if [ -n "$(sh scripts/find-mistakes.sh)" ]; then
+if [ -n "$(sh scripts/validate-data.sh)" ]; then
     echo "Input files validation failed!"
     exit 1
 fi
