@@ -1,21 +1,29 @@
 #!/bin/bash
 
 OUTPUT_FILE="titles-to-add.txt"
-GAME="ImperatorRome"
-GAME2="CK3"
+GAME="CK2"
 
 echo "" > ${OUTPUT_FILE}
 
-for TITLE_ID in $(grep "<GameId ga" ir.txt | \
-                    sed 's/^ *<GameId game=\"ImperatorRome\">[0-9]*<\/GameId> *//g' | \
-                    sed 's/^<!-- //g' | \
-                    sed 's/ -->.*$//g' | \
-                    sed 's/ /_/g' | \
+for TITLE_ID in $(grep "^\s*[ekdcb]_" ck2mdn.txt | \
+                    sed 's/\s*=\s*/ = /g' | \
+                    sed 's/^\s*//g' | \
+                    awk '{print $1}' | \
                     sort | uniq); do
-    TITLE_ID=$(echo ${TITLE_ID} | sed 's/_/ /g')
-    
-    if [ ! -z "$(grep "<Name language=\"Lat[^>]*>${TITLE_ID}<" titles.xml)" ]; then
-        echo "    > ${TITLE_ID} is not defined"
-        #sed -i 's/^      <GameId game=\"'"${GAME2}"'\">'"${TITLE_ID}"'</      <GameId game=\"CK2\">'"${TITLE_ID}"'<\/GameId>\n      <GameId game=\"'"${GAME2}"'\">'"${TITLE_ID}"'</g' titles.xml
+
+    LOCATION_ID=${TITLE_ID:2}
+
+    if [ -z "$(grep "<Id>${LOCATION_ID}</Id>" titles.xml)" ] && \
+       [ -z "$(grep "<GameId game=\"${GAME}\"[^>]*>${TITLE_ID}<" titles.xml)" ]; then
+        echo "    > ${LOCATION_ID} is not defined"
+
+        echo "  <LocationEntity>" >> ${OUTPUT_FILE}
+        echo "    <Id>${LOCATION_ID}</Id>" >> ${OUTPUT_FILE}
+        echo "    <GameIds>" >> ${OUTPUT_FILE}
+        echo "      <GameId game=\"${GAME}\">${TITLE_ID}</GameId>" >> ${OUTPUT_FILE}
+        echo "    </GameIds>" >> ${OUTPUT_FILE}
+        echo "    <Names>" >> ${OUTPUT_FILE}
+        echo "    </Names>" >> ${OUTPUT_FILE}
+        echo "  </LocationEntity>" >> ${OUTPUT_FILE}
     fi
 done
