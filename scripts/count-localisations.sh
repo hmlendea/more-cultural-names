@@ -1,11 +1,14 @@
 #!/bin/bash
 
-NAMES_COUNT=$(grep "Name language" titles.xml | wc -l)
-LANGUAGES_COUNT=$(grep "/Language>" languages.xml | wc -l)
+PLACES_FILE="places.xml"
+LANGUAGES_FILE="languages.xml"
+
+NAMES_COUNT=$(grep "Name language" "${PLACES_FILE}" | wc -l)
+LANGUAGES_COUNT=$(grep "/Language>" "${LANGUAGES_FILE}" | wc -l)
 
 function get_game_titles_count() {
     GAME=${1}
-    TITLES_COUNT=$(grep "<GameId game=\"${GAME}\"" titles.xml | wc -l)
+    TITLES_COUNT=$(grep "<GameId game=\"${GAME}\"" "${PLACES_FILE}" | wc -l)
     echo ${TITLES_COUNT}
 }
 

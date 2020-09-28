@@ -1,9 +1,10 @@
 #!/bin/bash
 
-GAME="CK3"
 LANDED_TITLES_FILE="ck2mdn.txt"
+PLACES_FILE="places.xml"
+GAME="CK3"
 
-for TITLE_ID in $(grep "${GAME}" titles.xml | \
+for TITLE_ID in $(grep "${GAME}" "${PLACES_FILE}" | \
                     sed 's/ *<GameId game=\"'"${GAME}"'\">\([^<]*\)<\/GameId.*/\1/g' | \
                     sort | uniq); do
     if [ ! -z "$(grep "${TITLE_ID} = {" ${LANDED_TITLES_FILE})" ]; then

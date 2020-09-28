@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HOI4_STATES_DIR=~/".games/Steam/common/Hearts of Iron IV/history/states"
-TITLES_FILE="$(pwd)/titles.xml"
+PLACES_FILE="$(pwd)/places.xml"
 PARENTS_FILE="$(pwd)/hoi4_parents.txt"
 
 echo "" > "${PARENTS_FILE}"
@@ -29,11 +29,11 @@ for FILE in *.txt ; do
     done
 done
 
-for PROVINCE_ID in $(grep "game=\"HOI4\" type=\"City\"" "${TITLES_FILE}" | \
+for PROVINCE_ID in $(grep "game=\"HOI4\" type=\"City\"" "${PLACES_FILE}" | \
                     sed 's/^ *<GameId [^>]*>\([0-9]*\)<.*/\1/g' | \
                     sort | uniq); do
     STATE_ID=$(grep "^${PROVINCE_ID}=" "${PARENTS_FILE}" | awk -F = '{print $2}')
     
     echo "Province #${PROVINCE_ID}'s parent set to state #${STATE_ID}"
-    sed -i 's/\(^ *<GameId game=\"HOI4\" type=\"City\"\)\( parent=\"[^\"]*\"\)*>'"${PROVINCE_ID}"'</\1 parent=\"'"${STATE_ID}"'\">'"${PROVINCE_ID}"'</g' "${TITLES_FILE}"
+    sed -i 's/\(^ *<GameId game=\"HOI4\" type=\"City\"\)\( parent=\"[^\"]*\"\)*>'"${PROVINCE_ID}"'</\1 parent=\"'"${STATE_ID}"'\">'"${PROVINCE_ID}"'</g' "${PLACES_FILE}"
 done
