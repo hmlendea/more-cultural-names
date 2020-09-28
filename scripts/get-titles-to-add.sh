@@ -1,21 +1,30 @@
 #!/bin/bash
 
-echo "" > titles-to-add.xml
+PLACES_FILE="places.xml"
+OUTPUT_FILE="titles-to-add.txt"
+GAME="CK2"
 
-for TITLE_ID in $(grep "^\s*[ekdcb]_" ../ck2-landed-titles-manager/swmh.txt | \
+echo "" > ${OUTPUT_FILE}
+
+for TITLE_ID in $(grep "^\s*[ekdcb]_" ck2mdn.txt | \
                     sed 's/\s*=\s*/ = /g' | \
                     sed 's/^\s*//g' | \
                     awk '{print $1}' | \
                     sort | uniq); do
-    if [ -z "$(grep "<GameId game=\"CK2HIP\"[^>]*>${TITLE_ID}" titles.xml)" ]; then
-        echo "${TITLE_ID} is not defined"
-        echo "  <LocationEntity>" >> titles-to-add.xml
-        echo "    <Id>${TITLE_ID:2}</Id>" >> titles-to-add.xml
-        echo "    <GameIds>" >> titles-to-add.xml
-        echo "      <GameId game=\"CK2HIP\" parent=\"\" order=\"\">${TITLE_ID}</GameId>" >> titles-to-add.xml
-        echo "    </GameIds>" >> titles-to-add.xml
-        echo "    <Names>" >> titles-to-add.xml
-        echo "    </Names>" >> titles-to-add.xml
-        echo "  </LocationEntity>" >> titles-to-add.xml
+
+    LOCATION_ID=${TITLE_ID:2}
+
+    if [ -z "$(grep "<Id>${LOCATION_ID}</Id>" "${PLACES_FILE}")" ] && \
+       [ -z "$(grep "<GameId game=\"${GAME}\"[^>]*>${TITLE_ID}<" "${PLACES_FILE}")" ]; then
+        echo "    > ${LOCATION_ID} is not defined"
+
+        echo "  <LocationEntity>" >> ${OUTPUT_FILE}
+        echo "    <Id>${LOCATION_ID}</Id>" >> ${OUTPUT_FILE}
+        echo "    <GameIds>" >> ${OUTPUT_FILE}
+        echo "      <GameId game=\"${GAME}\">${TITLE_ID}</GameId>" >> ${OUTPUT_FILE}
+        echo "    </GameIds>" >> ${OUTPUT_FILE}
+        echo "    <Names>" >> ${OUTPUT_FILE}
+        echo "    </Names>" >> ${OUTPUT_FILE}
+        echo "  </LocationEntity>" >> ${OUTPUT_FILE}
     fi
 done

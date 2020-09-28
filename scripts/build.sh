@@ -4,6 +4,9 @@ STARTDIR="$(pwd)"
 OUTDIR="${STARTDIR}/out"
 BUILD_VERSION=${1}
 
+PLACES_FILE="places.xml"
+LANGUAGES_FILE="languages.xml"
+
 if [ -z "${VERSION}" ]; then
     BUILD_VERSION=0
 fi
@@ -13,7 +16,7 @@ VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 echo "Mod version: ${VERSION}"
 
 echo "Validating the files..."
-if [ -n "$(sh scripts/find-mistakes.sh)" ]; then
+if [ -n "$(sh scripts/validate-data.sh)" ]; then
     echo "Input files validation failed!"
     exit 1
 fi
@@ -44,7 +47,7 @@ fi
 
 [ -d "out/" ] && rm -rf "out/"
 
-${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "titles.xml" -v ${VERSION} -o "out/"
+${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "${PLACES_FILE}" -v ${VERSION} -o "out/"
 
 cp -rf extras/ck2/* out/CK2/
 cp -rf extras/ck2hip/* out/CK2HIP/
