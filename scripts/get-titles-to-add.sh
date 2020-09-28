@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PLACES_FILE="places.xml"
+LOCATIONS_FILE="locations.xml"
 OUTPUT_FILE="titles-to-add.txt"
 GAME="CK2"
 
@@ -14,8 +14,8 @@ for TITLE_ID in $(grep "^\s*[ekdcb]_" ck2mdn.txt | \
 
     LOCATION_ID=${TITLE_ID:2}
 
-    if [ -z "$(grep "<Id>${LOCATION_ID}</Id>" "${PLACES_FILE}")" ] && \
-       [ -z "$(grep "<GameId game=\"${GAME}\"[^>]*>${TITLE_ID}<" "${PLACES_FILE}")" ]; then
+    if [ -z "$(grep "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}")" ] && \
+       [ -z "$(grep "<GameId game=\"${GAME}\"[^>]*>${TITLE_ID}<" "${LOCATIONS_FILE}")" ]; then
         echo "    > ${LOCATION_ID} is not defined"
 
         echo "  <LocationEntity>" >> ${OUTPUT_FILE}

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PLACES_FILE="places.xml"
+LOCATIONS_FILE="locations.xml"
 LEVEL=${1}
 
 if [ ${LEVEL} == 1 ]; then
-grep "<Id>" "${PLACES_FILE}" | \
+grep "<Id>" "${LOCATIONS_FILE}" | \
     sed 's/^ *<Id>\([^<]*\).*/\1/g' | \
     sed 's/[_-]//g' | \
 
@@ -17,7 +17,7 @@ grep "<Id>" "${PLACES_FILE}" | \
 fi
 
 if [ ${LEVEL} == 2 ]; then
-grep "<Id>" "${PLACES_FILE}" | \
+grep "<Id>" "${LOCATIONS_FILE}" | \
     sed 's/^ *<Id>\([^<]*\).*/\1/g' | \
     sed 's/\([a-dfi-z]\)\(\1\)*/\1/g' | \
 
@@ -32,7 +32,7 @@ grep "<Id>" "${PLACES_FILE}" | \
 fi
 
 if [ ${LEVEL} == 3 ]; then
-grep "<Id>" "${PLACES_FILE}" | \
+grep "<Id>" "${LOCATIONS_FILE}" | \
     sed 's/^ *<Id>\([^<]*\).*/\1/g' | \
     sed 's/\([a-dfi-z]\)\(\1\)*/\1/g' | \
 
@@ -58,7 +58,7 @@ grep "<Id>" "${PLACES_FILE}" | \
 fi
 
 if [ ${LEVEL} == 4 ]; then
-grep "<Id>" "${PLACES_FILE}" | \
+grep "<Id>" "${LOCATIONS_FILE}" | \
     sed 's/^ *<Id>\([^<]*\).*/\1/g' | \
     sed 's/[yYjJ]/i/g' | \
     sed 's/[zZ]/s/g' | \

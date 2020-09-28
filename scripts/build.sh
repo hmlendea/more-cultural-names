@@ -4,8 +4,8 @@ STARTDIR="$(pwd)"
 OUTDIR="${STARTDIR}/out"
 BUILD_VERSION=${1}
 
-PLACES_FILE="places.xml"
 LANGUAGES_FILE="languages.xml"
+LOCATIONS_FILE="locations.xml"
 
 if [ -z "${VERSION}" ]; then
     BUILD_VERSION=0
@@ -47,7 +47,7 @@ fi
 
 [ -d "out/" ] && rm -rf "out/"
 
-${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "${PLACES_FILE}" -v ${VERSION} -o "out/"
+${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "${LOCATIONS_FILE}" -v ${VERSION} -o "out/"
 
 cp -rf extras/ck2/* out/CK2/
 cp -rf extras/ck2hip/* out/CK2HIP/
