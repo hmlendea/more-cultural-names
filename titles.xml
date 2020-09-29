@@ -53,7 +53,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>queen-mother</Id>
+    <Id>queenMother</Id>
     <GameIds>
       <GameId game="CK2">title_queen_mother</GameId>
       <GameId game="CK2HIP">title_queen_mother</GameId>
@@ -66,7 +66,20 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>empress-mother</Id>
+    <Id>queenMother_imperial</Id>
+    <GameIds>
+      <GameId game="CK2">imperial_title_queen_mother</GameId>
+      <GameId game="CK2HIP">imperial_title_queen_mother</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>queenMother</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Romanian">Regina Mamă</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>empressMother</Id>
     <GameIds>
       <GameId game="CK2">emperor_title_queen_mother</GameId>
       <GameId game="CK2HIP">emperor_title_queen_mother</GameId>
@@ -85,6 +98,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">komornik</Name>
+      <Name language="Romanian_Old">dregător</Name> <!-- Not sure if it fits in all the cases -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -97,6 +111,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Komornik</Name>
+      <Name language="Romanian_Old">Dregător</Name> <!-- Not sure if it fits in all the cases -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -109,6 +124,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">komornica</Name>
+      <Name language="Romanian_Old">dregătoare</Name> <!-- Not sure if it fits in all the cases -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -121,6 +137,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Komornica</Name>
+      <Name language="Romanian_Old">Dregătoare</Name> <!-- Not sure if it fits in all the cases -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -260,7 +277,7 @@
       <Name language="French_Old">Sénéchal</Name>
       <Name language="Latin_Old">Praefectus Militaris</Name>
       <Name language="Polish">Skarbnik</Name>
-      <Name language="Romanian_Old">Vistiernic</Name>
+      <Name language="Romanian_Old">Vistier</Name> <!-- Or Vistiernic -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -858,7 +875,7 @@
       <Name language="English">Designated Regent</Name>
       <Name language="Latin">Regent Constituit</Name>
       <Name language="Polish_Old">Wyznaczony Regent</Name>
-      <Name language="Romanian_Old">Portar</Name>
+      <Name language="Romanian_Old">Portar</Name> <!-- Ușar in Moldova -->
     </Names>
   </TitleEntity>
   <TitleEntity>
