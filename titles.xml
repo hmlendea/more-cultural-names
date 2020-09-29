@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTitleEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TitleEntity>
+    <Id>house</Id>
+    <GameIds>
+      <GameId game="CK2">HOUSE</GameId>
+      <GameId game="CK2HIP">HOUSE</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Latin">Gens</Name>
+      <Name language="Romanian_Old">Casa</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>advisor</Id>
     <GameIds>
       <GameId game="CK2">job_advisor</GameId>
@@ -22,6 +33,7 @@
       <Name language="Bulgarian_Old">Logotet</Name> <!-- Pagan form: Kavhan -->
       <Name language="English">Chancellor</Name>
       <Name language="French_Old">Chancelier</Name>
+      <Name language="Latin_Old">Praetor</Name>
       <Name language="Romanian_Old">Logofăt</Name>
       <Name language="Romanian">Cancelar</Name>
       <Name language="Slovene_Medieval">Kancler</Name>
@@ -63,6 +75,7 @@
       <Name language="Bulgarian_Old">Chargobilya</Name>
       <Name language="English">Marshal</Name>
       <Name language="French_Old">Connétable</Name>
+      <Name language="Latin_Old">Tribunus Militum</Name>
       <Name language="Romanian_Old">Spătar</Name>
       <Name language="Romanian">Mareșal</Name>
     </Names>
@@ -103,6 +116,7 @@
       <Name language="Bulgarian_Old">Protovestiariî</Name>
       <Name language="English">Treasurer</Name>
       <Name language="French_Old">Sénéchal</Name>
+      <Name language="Latin_Old">Praefectus Militaris</Name>
       <Name language="Romanian_Old">Vistiernic</Name>
     </Names>
   </TitleEntity>
@@ -140,6 +154,8 @@
       <Name language="Croatian_Medieval">Uhoda</Name>
       <Name language="English">Spymaster</Name>
       <Name language="French_Old">Maître Espion</Name>
+      <Name language="Latin">Frumentarius</Name>
+      <Name language="Romanian_Old">Vornic</Name> <!-- Not entirely sure but its attributes fit well enough -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -176,6 +192,7 @@
       <Name language="Croatian_Medieval">Kapelan</Name>
       <Name language="Bulgarian_Old">Patriarkh</Name> <!-- Pagan: Kolobr -->
       <Name language="English">Court Bishop</Name>
+      <Name language="Latin_Old">Pontifex Maximus</Name>
       <Name language="Romanian_Old">Mitropolit</Name>
       <Name language="Serbian_Medieval">Mitropolit</Name>
       <Name language="Slovene_Medieval">Kaplan</Name>
@@ -213,17 +230,51 @@
     </GameIds>
     <Names>
       <Name language="French_Old">Pape</Name>
+      <Name language="Latin">Papa</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>ecumenical_patriarch</Id>
+    <Id>pope_coptic</Id>
+    <GameIds>
+      <GameId game="CK2">COPTIC_POPE</GameId>
+      <GameId game="CK2HIP">COPTIC_POPE</GameId>
+    </GameIds>
+    <Names>
+      <Name language="French_Old">Pape</Name>
+      <Name language="Latin">Papa Alexandriae</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>patriarch_ecumenical</Id>
     <GameIds>
       <GameId game="CK2">ECUMENICAL_PATRIARCH</GameId>
       <GameId game="CK2HIP">ECUMENICAL_PATRIARCH</GameId>
     </GameIds>
     <Names>
-      <Name language="Occitan_Old">Patriarcat Ecumènic</Name>
       <Name language="French_Old">Patriarche Œcuménique</Name>
+      <Name language="Latin">Patriarchae Oecumenico</Name>
+      <Name language="Occitan_Old">Patriarcat Ecumènic</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>patriarch_in_the_east</Id>
+    <GameIds>
+      <GameId game="CK2">PATRIARCH_IN_THE_EAST</GameId>
+      <GameId game="CK2HIP">PATRIARCH_IN_THE_EAST</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Latin">Patriarcha Orientalis</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>healer</Id>
+    <GameIds>
+      <GameId game="CK2">job_court_physician</GameId>
+      <GameId game="CK2HIP">job_court_physician</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Court Physician</Name>
+      <Name language="Latin_Old">Vulnerarius</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -235,6 +286,7 @@
     <Names>
       <Name language="Croatian_Medieval">Zapovidnik</Name>
       <Name language="English">Commander</Name>
+      <Name language="Latin">Induperator</Name>
       <Name language="Romanian_Old">Pârcălab</Name>
       <Name language="Romanian">Comandant</Name>
       <Name language="Serbian_Medieval">Zapovednik</Name>
@@ -280,6 +332,7 @@
       <Name language="Bulgar">Minik</Name>
       <Name language="English">Master of the Horse</Name>
       <Name language="French_Old">Grand Écuyer</Name>
+      <Name language="Latin">Magister Equitum</Name>
       <Name language="Romanian_Old">Comis</Name>
     </Names>
   </TitleEntity>
@@ -326,6 +379,7 @@
     <Names>
       <Name language="English">Regent</Name>
       <Name language="French_Old">Régent</Name>
+      <Name language="Latin">Interrex</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -336,6 +390,7 @@
     </GameIds>
     <Names>
       <Name language="English">Designated Regent</Name>
+      <Name language="Latin">Regent Constituit</Name>
       <Name language="Romanian_Old">Portar</Name>
     </Names>
   </TitleEntity>
@@ -359,6 +414,7 @@
       <Name language="Croatian_Medieval">Princ</Name>
       <Name language="English">Prince</Name>
       <Name language="French_Old">Prince</Name>
+      <Name language="Latin">Princeps</Name>
       <Name language="Romanian">Prinț</Name>
     </Names>
   </TitleEntity>
@@ -386,6 +442,7 @@
       <Name language="Croatian_Medieval">Princeza</Name>
       <Name language="English">Princess</Name>
       <Name language="French_Old">Princesse</Name>
+      <Name language="Latin">Principissa</Name>
       <Name language="Occitan_Old">Princessa</Name>
       <Name language="Romanian">Prințesă</Name>
     </Names>
@@ -411,6 +468,7 @@
     <Names>
       <Name language="English">Queen Mother</Name>
       <Name language="French_Old">Reine Mère</Name>
+      <Name language="Latin">Regina Mater</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -432,6 +490,7 @@
     <Names>
       <Name language="Arpitan">Èvèque</Name>
       <Name language="English">Abbot</Name>
+      <Name language="Latin">Episcopus</Name>
       <Name language="Romanian">Stareț</Name>
     </Names>
   </TitleEntity>
@@ -486,6 +545,7 @@
       <Name language="Bulgarian_Old">Zhupan</Name>
       <Name language="English">Lord</Name>
       <Name language="French_Old">Baron</Name>
+      <Name language="Latin_Medieval">Baro</Name>
       <Name language="Norman">Chatelain</Name>
       <Name language="Romanian_Old">Boier</Name>
       <Name language="Romanian">Baron</Name>
@@ -527,6 +587,7 @@
       <Name language="Croatian_Medieval">Barunesa</Name>
       <Name language="English">Baroness</Name>
       <Name language="French_Old">Baronne</Name>
+      <Name language="Latin_Medieval">Baronissa</Name>
       <Name language="Norman">Chatelaine</Name>
       <Name language="Occitan_Old">Baronessa</Name>
       <Name language="Romanian_Old">Boieră</Name>
@@ -568,6 +629,7 @@
     <Names>
       <Name language="English">Cheif</Name>
       <Name language="French_Old">Chef</Name>
+      <Name language="Latin">Caput</Name>
       <Name language="Occitan_Old">Cap</Name>
       <Name language="Romanian">Cneaz</Name>
     </Names>
@@ -645,6 +707,7 @@
       <Name language="Bulgar">Komit</Name>
       <Name language="English">Count</Name>
       <Name language="French_Old">Comte</Name>
+      <Name language="Latin_Medieval">Comes</Name>
       <Name language="Norman">Counte</Name>
       <Name language="Romanian_Old">Ban</Name>
       <Name language="Romanian">Conte</Name>
@@ -672,6 +735,7 @@
       <TitleId>count</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Latin">Praefectus</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -686,6 +750,7 @@
       <Name language="Bulgarian_Old">Kmetitsa</Name>
       <Name language="English">Countess</Name>
       <Name language="French_Old">Comtesse</Name>
+      <Name language="Latin_Medieval">Comitissa</Name>
       <Name language="Norman">Countesse</Name>
       <Name language="Occitan_Old">Comtessa</Name>
       <Name language="Romanian_Old">Bană</Name>
@@ -781,6 +846,7 @@
       <Name language="Bulgarian_Old">Bolyarin</Name>
       <Name language="English">Duke</Name>
       <Name language="French_Old">Duc</Name>
+      <Name language="Latin">Dux</Name>
       <Name language="Norman">Duc</Name>
       <Name language="Romanian_Old">Mare Ban</Name>
       <Name language="Romanian">Duce</Name>
@@ -810,6 +876,7 @@
       <TitleId>duke</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Latin">Produx</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -835,6 +902,7 @@
       <TitleId>duke</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Latin">Gubernator</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -898,6 +966,7 @@
       <Name language="Bulgarian_Old">Bolyarina</Name> <!-- Not sure if it has 'a' at the end -->
       <Name language="English">Duchess</Name>
       <Name language="French_Old">Duchesse</Name>
+      <Name language="Latin">Ducissa</Name>
       <Name language="Norman">Ducesse</Name>
       <Name language="Occitan_Old">Duquessa</Name>
       <Name language="Romanian_Old">Mare Bană</Name>
@@ -964,6 +1033,7 @@
       <Name language="Arpitan">Prince Sendeco</Name>
       <Name language="Bulgar">Oglu-Tarkan</Name>
       <Name language="English">Prince Mayor</Name>
+      <Name language="Latin">Serenissimus Dux</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -974,14 +1044,14 @@
     </GameIds>
     <Names>
       <Name language="Arpitan">Re</Name>
-      <Name language="Croatian_Medieval">Kralj</Name>
       <Name language="Bulgar">Kanasubigi</Name>
       <Name language="Bulgarian_Old">Tsar</Name>
+      <Name language="Croatian_Medieval">Kralj</Name>
       <Name language="English">King</Name>
       <Name language="French_Old">Roi</Name>
+      <Name language="Latin">Rex</Name>
       <Name language="Norman">Roi</Name>
       <Name language="Occitan_Old">Rei</Name>
-      <Name language="Latin">Rex</Name>
       <Name language="Romanian_Old">Domnitor</Name>
       <Name language="Romanian">Rege</Name>
     </Names>
@@ -1008,6 +1078,7 @@
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Latin">Prorex</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1047,7 +1118,21 @@
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Latin">Vicarius</Name>
       <Name language="Romanian">Rege</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_imperial_consort</Id>
+    <GameIds>
+      <GameId game="CK2">imperial_king_title_ruler_consort</GameId>
+      <GameId game="CK2HIP">imperial_king_title_ruler_consort</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_imperial</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1081,11 +1166,12 @@
     </GameIds>
     <Names>
       <Name language="Arpitan">Rena</Name>
-      <Name language="Croatian_Medieval">Kraljica</Name>
       <Name language="Bulgar">Khanum</Name>
       <Name language="Bulgarian_Old">Tsaritsa</Name>
+      <Name language="Croatian_Medieval">Kraljica</Name>
       <Name language="English">Queen</Name>
       <Name language="French_Old">Reine</Name>
+      <Name language="Latin">Regina</Name>
       <Name language="Norman">Roigne</Name>
       <Name language="Occitan_Old">Reina</Name>
       <Name language="Romanian_Old">Domnitoare</Name>
@@ -1152,7 +1238,21 @@
       <TitleId>queen</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Latin">Vicaria</Name>
       <Name language="Romanian">Regină</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>queen_imperial_consort</Id>
+    <GameIds>
+      <GameId game="CK2">imperial_king_title_ruler_consort_female</GameId>
+      <GameId game="CK2HIP">imperial_king_title_ruler_consort_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>queen_imperial</TitleId>
+      <TitleId>queen</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1177,6 +1277,7 @@
     <Names>
       <Name language="Bulgar">Oglu-Tarkan</Name>
       <Name language="English">Grand Prince</Name>
+      <Name language="Latin">Magnus Princeps</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1277,10 +1378,11 @@
     </GameIds>
     <Names>
       <Name language="Arpitan">Emperèssa</Name>
-      <Name language="Croatian_Medieval">Carica</Name>
       <Name language="Bulgar">Khatun</Name>
+      <Name language="Croatian_Medieval">Carica</Name>
       <Name language="English">Empress</Name>
       <Name language="French_Old">Impératrice</Name>
+      <Name language="Latin">Imperatrix</Name>
       <Name language="Norman">Empereis</Name>
       <Name language="Occitan_Old">Emperairitz</Name>
       <Name language="Romanian">Împărăteasă</Name>
@@ -1358,6 +1460,7 @@
     </GameIds>
     <Names>
       <Name language="English">Village</Name>
+      <Name language="Latin">Vicus</Name>
       <Name language="Romanian_Old">Sat</Name>
     </Names>
   </TitleEntity>
@@ -1386,6 +1489,7 @@
       <Name language="Croatian_Medieval">Grad</Name>
       <Name language="English">City</Name>
       <Name language="French_Old">Provoste</Name>
+      <Name language="Latin">Urbs</Name>
       <Name language="Norman">Bailie</Name>
       <Name language="Romanian_Old">Oraș</Name>
     </Names>
@@ -1403,6 +1507,7 @@
       <Name language="Arpitan">Comena de</Name>
       <Name language="English">City of</Name>
       <Name language="French_Old">Provoste de</Name>
+      <Name language="Latin">Urbs</Name>
       <Name language="Norman">Bailliage de</Name>
       <Name language="Romanian_Old">Orașul</Name>
     </Names>
@@ -1471,6 +1576,7 @@
       <Name language="Croatian_Medieval">Barunovina</Name>
       <Name language="English">Castle</Name>
       <Name language="French_Old">Baronnie</Name>
+      <Name language="Latin">Castrum</Name>
       <Name language="Norman">Chatellenie</Name>
       <Name language="Occitan_Old">Baronia</Name>
       <Name language="Romanian_Old">Cetate</Name>
@@ -1489,8 +1595,9 @@
       <Name language="Bulgarian_Old">Zhupaniya</Name>
       <Name language="English">Castle</Name>
       <Name language="French_Old">Baronnie de</Name>
-      <Name language="Occitan_Old">Baronia de</Name>
+      <Name language="Latin">Baronia de</Name>
       <Name language="Norman">Chatellenie de</Name>
+      <Name language="Occitan_Old">Baronia de</Name>
       <Name language="Romanian_Old">Cetatea</Name>
     </Names>
   </TitleEntity>
@@ -1580,6 +1687,7 @@
     <Names>
       <Name language="Arpitan">Quenton</Name>
       <Name language="English">Grand City</Name>
+      <Name language="Latin">Civitas</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1639,6 +1747,7 @@
       <Name language="Croatian_Medieval">Županija</Name>
       <Name language="English">County</Name>
       <Name language="French_Old">Comté</Name>
+      <Name language="Latin">Comitatus</Name>
       <Name language="Norman">Counté</Name>
       <Name language="Occitan_Old">Comtat</Name>
       <Name language="Romanian_Old">Țeară</Name>
@@ -1675,6 +1784,7 @@
       <TitleId>county</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Latin">Praefecturare</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1760,6 +1870,7 @@
     <Names>
       <Name language="Arpitan">Rèpublica</Name>
       <Name language="English">Republic</Name>
+      <Name language="Latin">Res Publica</Name>
       <Name language="Romanian">Republică</Name>
     </Names>
   </TitleEntity>
@@ -1815,6 +1926,7 @@
       <Name language="Croatian_Medieval">Banovina</Name>
       <Name language="English">Duchy</Name>
       <Name language="French_Old">Duché</Name>
+      <Name language="Latin">Ducatus</Name>
       <Name language="Norman">Duchié</Name>
       <Name language="Occitan_Old">Ducat</Name>
       <Name language="Romanian_Old">Banat</Name>
@@ -1881,6 +1993,7 @@
       <TitleId>duchy</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Latin">Provinciae</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1937,6 +2050,7 @@
     </FallbackTitles>
     <Names>
       <Name language="English">Most Serene Republic</Name>
+      <Name language="Latin">Serenissima Res Publica</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2105,6 +2219,33 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>principality</Id>
+    <GameIds>
+      <GameId game="CK2">city_empire</GameId>
+      <GameId game="CK2HIP">city_empire</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>empire</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Latin">Principalitas</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>principality_of</Id>
+    <GameIds>
+      <GameId game="CK2">city_empire_of</GameId>
+      <GameId game="CK2HIP">city_empire_of</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>principality</TitleId>
+      <TitleId>empire_of</TitleId>
+      <TitleId>empire</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>empire</Id>
     <GameIds>
       <GameId game="CK2">empire</GameId>
@@ -2225,6 +2366,17 @@
     </GameIds>
     <Names>
       <Name language="French_Old">Patricien</Name>
+      <Name language="Latin">Pater Familias</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>family_palace_baroness</Id>
+    <GameIds>
+      <GameId game="CK2">family_palace_baron_female</GameId>
+      <GameId game="CK2HIP">family_palace_baron_female</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Latin">Mater Familias</Name>
     </Names>
   </TitleEntity>
 </ArrayOfTitleEntity>
