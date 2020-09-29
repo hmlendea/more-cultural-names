@@ -34,6 +34,7 @@
       <Name language="English_Old">Ætheling</Name>
       <Name language="English">Prince</Name>
       <Name language="French_Old">Prince</Name>
+      <Name language="Hungarian">Királyfi</Name>
       <Name language="Latin">Princeps</Name>
       <Name language="Polish">Ksiaze</Name>
       <Name language="Romanian">Prinț</Name>
@@ -51,6 +52,7 @@
       <Name language="Croatian_Medieval">Princeza</Name>
       <Name language="English">Princess</Name>
       <Name language="French_Old">Princesse</Name>
+      <Name language="Hungarian">Királylány</Name>
       <Name language="Latin">Principissa</Name>
       <Name language="Occitan_Old">Princessa</Name>
       <Name language="Polish">Ksiezna</Name> <!-- Or Ksiezniczka -->
@@ -170,6 +172,28 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>councilMember_king</Id>
+    <GameIds>
+      <GameId game="CK2">title_councilmember_king</GameId>
+      <GameId game="CK2HIP">title_councilmember_king</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Hungarian">Udvari Tanácsos</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>councilMember_emperor</Id>
+    <GameIds>
+      <GameId game="CK2">title_councilmember_emperor</GameId>
+      <GameId game="CK2HIP">title_councilmember_emperor</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>councilMember_king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>advisor</Id>
     <GameIds>
       <GameId game="CK2">title_advisor</GameId>
@@ -215,6 +239,7 @@
       <Name language="Bulgarian_Old">Logotet</Name> <!-- Pagan form: Kavhan -->
       <Name language="English">Chancellor</Name>
       <Name language="French_Old">Chancelier</Name>
+      <Name language="Hungarian">Ajtónállómester</Name>
       <Name language="Latin_Old">Praetor</Name>
       <Name language="Polish">Kanclerz</Name>
       <Name language="Romanian_Old">Logofăt</Name>
@@ -260,6 +285,7 @@
       <Name language="Bulgarian_Old">Chargobilya</Name>
       <Name language="English">Marshal</Name>
       <Name language="French_Old">Connétable</Name>
+      <Name language="Hungarian">Tábornok</Name>
       <Name language="Latin_Old">Tribunus Militum</Name>
       <Name language="Polish">Palatyn</Name>
       <Name language="Romanian_Old">Spătar</Name>
@@ -304,6 +330,7 @@
       <Name language="Bulgarian_Old">Protovestiariî</Name>
       <Name language="English">Treasurer</Name>
       <Name language="French_Old">Sénéchal</Name>
+      <Name language="Hungarian">Tárnokmester</Name>
       <Name language="Latin_Old">Praefectus Militaris</Name>
       <Name language="Polish">Skarbnik</Name>
       <Name language="Romanian_Old">Vistiernic</Name> <!-- Or Vistier -->
@@ -344,6 +371,7 @@
       <Name language="Croatian_Medieval">Uhoda</Name>
       <Name language="English">Spymaster</Name>
       <Name language="French_Old">Maître Espion</Name>
+      <Name language="Hungarian">Kémmester</Name>
       <Name language="Latin">Frumentarius</Name>
       <Name language="Polish">Podkanclerzy</Name>
       <Name language="Romanian_Old">Vornic</Name> <!-- Not entirely sure but its attributes fit well enough -->
@@ -383,8 +411,9 @@
     </GameIds>
     <Names>
       <Name language="English">Court Jester</Name>
+      <Name language="Hungarian">Udvari Bolond</Name>
       <Name language="Polish_Old">Komorny Błazen</Name>
-      <Name language="Romanian_Old">Nebun</Name> <!-- Really not sure -->
+      <Name language="Romanian_Old">Bolund Dregător</Name> <!-- Really not sure -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -395,6 +424,7 @@
     </GameIds>
     <Names>
       <Name language="English">Court Dwarf</Name>
+      <Name language="Hungarian">Udvari Törpe</Name>
       <Name language="Polish_Old">Komorny Karzeł</Name>
     </Names>
   </TitleEntity>
@@ -407,6 +437,7 @@
     <Names>
       <Name language="Croatian_Medieval">Eunuh</Name>
       <Name language="English">Court Eunuch</Name>
+      <Name language="Hungarian">Udvari Eunuch</Name>
       <Name language="Romanian_Old">Eunuc Dregător</Name>
       <Name language="Serbian_Medieval">Evnuh</Name>
       <Name language="Slovene_Medieval">Evnuh</Name>
@@ -423,6 +454,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Bulgarian_Old">Kolobr</Name>
+      <Name language="Hungarian">Udvari Káplán</Name>
       <Name language="Latin_Old">Pontifex Maximus</Name>
       <Name language="Polish_Old">Zerca Królewski</Name> <!-- Educated guess how it could be named. 'Zerca' part is 100% hist accurate -->
       <Name language="Soninke">Hogon</Name>
@@ -560,6 +592,7 @@
     <Names>
       <Name language="Bulgarian_Old">Papa</Name>
       <Name language="French_Old">Pape</Name>
+      <Name language="Hungarian">Pápa</Name>
       <Name language="Latin">Papa</Name>
       <Name language="Polish">Papiez</Name>
     </Names>
@@ -585,6 +618,7 @@
     </GameIds>
     <Names>
       <Name language="French_Old">Patriarche</Name>
+      <Name language="Hungarian">Pátriárka</Name>
       <Name language="Latin">Patriarchae</Name>
       <Name language="Occitan_Old">Patriarcat</Name>
       <Name language="Romanian">Patriarh</Name>
@@ -598,6 +632,7 @@
     </GameIds>
     <Names>
       <Name language="French_Old">Patriarche Œcuménique</Name>
+      <Name language="Hungarian">Ökumenikus Pátriárka</Name>
       <Name language="Latin">Patriarchae Oecumenico</Name>
       <Name language="Occitan_Old">Patriarcat Ecumènic</Name>
     </Names>
@@ -723,6 +758,7 @@
     <Names>
       <Name language="Croatian_Medieval">Zapovidnik</Name>
       <Name language="English">Commander</Name>
+      <Name language="Hungarian">Hadvezér</Name>
       <Name language="Latin">Induperator</Name>
       <Name language="Polish_Old">Hetman</Name>
       <Name language="Romanian_Old">Pârcălab</Name>
@@ -788,6 +824,7 @@
       <Name language="Croatian_Medieval">Peharnik</Name>
       <Name language="English">Cupbearer</Name>
       <Name language="French_Old">Échanson</Name>
+      <Name language="Hungarian">Pohárnokmester</Name>
       <Name language="Polish_Old">Cześnik</Name>
       <Name language="Romanian_Old">Paharnic</Name>
       <Name language="Slovene_Medieval">Skodelica</Name>
@@ -836,6 +873,7 @@
     <Names>
       <Name language="English">Master of the Hunt</Name>
       <Name language="French_Old">Grand Veneur</Name>
+      <Name language="Hungarian">Vadászmester</Name>
       <Name language="Polish_Old">Łowczy</Name>
     </Names>
   </TitleEntity>
@@ -850,6 +888,7 @@
       <Name language="Bulgar">Minik</Name>
       <Name language="English">Master of the Horse</Name>
       <Name language="French_Old">Grand Écuyer</Name>
+      <Name language="Hungarian">Fõlovászmester</Name>
       <Name language="Latin">Magister Equitum</Name>
       <Name language="Polish_Old">Koniuszy</Name>
       <Name language="Romanian_Old">Comis</Name>
@@ -889,6 +928,7 @@
     </GameIds>
     <Names>
       <Name language="English">Keeper of Swans</Name>
+      <Name language="Hungarian">Asztalnokmester</Name>
       <Name language="Polish_Old">Łabędżi Strażnik</Name>
     </Names>
   </TitleEntity>
@@ -901,6 +941,7 @@
     <Names>
       <Name language="English">High Almoner</Name>
       <Name language="French_Old">Grand Aumonier</Name>
+      <Name language="Hungarian">Alamizsnaosztó</Name>
       <Name language="Polish_Old">Jałmuznik Wielki</Name>
     </Names>
   </TitleEntity>
@@ -913,6 +954,7 @@
     <Names>
       <Name language="Croatian_Medieval">Senešal</Name>
       <Name language="French_Old">Grand Chambellan</Name>
+      <Name language="Hungarian">Nádor</Name>
       <Name language="Polish_Old">Komorzy</Name>
       <Name language="Romanian_Old">Stolnic</Name>
     </Names>
@@ -1133,6 +1175,7 @@
       <Name language="English_Old">Þegn</Name> <!-- Or Thegn -->
       <Name language="English">Lord</Name>
       <Name language="French_Old">Baron</Name>
+      <Name language="Hungarian">Alispán</Name>
       <Name language="Latin_Medieval">Baro</Name>
       <Name language="Norman">Chatelain</Name>
       <Name language="Polish_Old">Czestnik</Name>
@@ -1190,6 +1233,7 @@
       <TitleId>baron_feudal</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Hungarian">Alispánné</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1230,6 +1274,7 @@
       <TitleId>baron_feudal</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Hungarian">Törzsfõ</Name>
       <Name language="Polish_Old">Kmiec</Name>
     </Names>
   </TitleEntity>
@@ -1264,6 +1309,7 @@
       <Name language="English_Old">Tiþingman</Name> <!-- Or Tithingman -->
       <Name language="English">Mayor</Name>
       <Name language="French_Old">Provost</Name>
+      <Name language="Hungarian">Bíró</Name>
       <Name language="Polish_Old">Grododzierzca</Name>
       <Name language="Romanian_Old">Jude</Name>
       <Name language="Romanian">Primar</Name>
@@ -1350,6 +1396,7 @@
       <TitleId>baron_theocratic</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Hungarian">Püspök</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1532,6 +1579,7 @@
       <Name language="English_Old">Ealdorman</Name>
       <Name language="English">Count</Name>
       <Name language="French_Old">Comte</Name>
+      <Name language="Hungarian">Ispán</Name>
       <Name language="Latin_Medieval">Comes</Name>
       <Name language="Norman">Counte</Name>
       <Name language="Polish_Old">Kasztelan</Name>
@@ -1592,6 +1640,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Bulgarian_Old">Kmetsha</Name>
+      <Name language="Hungarian">Ispánné</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1655,7 +1704,7 @@
       <GameId game="CK2HIP">tribal_count</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>count_feudal</TitleId>
+      <TitleId>baron_tribal</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Bulgarian_Old">Vožd</Name>
@@ -1671,8 +1720,8 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>count_tribal</TitleId>
-      <TitleId>count_feudal_female</TitleId>
-      <TitleId>count_feudal</TitleId>
+      <TitleId>baron_tribal_female</TitleId>
+      <TitleId>baron_tribal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -1691,6 +1740,7 @@
       <Name language="English_Old">Burhealdor</Name>
       <Name language="English">Lord Mayor</Name>
       <Name language="French_Old">Baillif</Name>
+      <Name language="Hungarian">Polgármester</Name>
       <Name language="Polish_Old">Wlodarz</Name>
     </Names>
   </TitleEntity>
@@ -1736,6 +1786,28 @@
     <Names>
       <Name language="English">Bishopess</Name>
       <Name language="Romanian">Episcopă</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_theocratic_christian</Id>
+    <GameIds>
+      <GameId game="CK2">temple_count_christian</GameId>
+      <GameId game="CK2HIP">temple_count_christian</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Hungarian">Érsek</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_theocratic_christian_female</Id>
+    <GameIds>
+      <GameId game="CK2">temple_count_female_christian</GameId>
+      <GameId game="CK2HIP">temple_count_female_christian</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>count_theocratic_christian</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1831,6 +1903,7 @@
       <Name language="English_Old">Eorl</Name>
       <Name language="English">Duke</Name>
       <Name language="French_Old">Duc</Name>
+      <Name language="Hungarian">Herceg</Name>
       <Name language="Latin">Dux</Name>
       <Name language="Norman">Duc</Name>
       <Name language="Polish_Old">Wojewodą</Name>
@@ -1856,6 +1929,7 @@
       <Name language="English_Old">Hlæfdige</Name>
       <Name language="English">Duchess</Name>
       <Name language="French_Old">Duchesse</Name>
+      <Name language="Hungarian">Hercegnõ</Name>
       <Name language="Latin">Ducissa</Name>
       <Name language="Norman">Ducesse</Name>
       <Name language="Occitan_Old">Duquessa</Name>
@@ -1888,6 +1962,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Bulgarian_Old">Barinya</Name>
+      <Name language="Hungarian">Hercegné</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1932,6 +2007,7 @@
       <Name language="Bulgar">Boil</Name>
       <Name language="English_Old">Heaga Heafodling</Name>
       <Name language="English">High Cheif</Name>
+      <Name language="Hungarian">Fejedelem</Name>
       <Name language="Polish_Old">Wódz</Name>
       <Name language="Romanian">Mare Cneaz</Name>
       <Name language="Soninke">Farbas</Name>
@@ -1994,6 +2070,7 @@
       <Name language="Bulgar">Oglu-Tarkan</Name>
       <Name language="Dalmatian_Medieval">Rettaur</Name>
       <Name language="English">Grand Mayor</Name>
+      <Name language="Hungarian">Fejedelem</Name>
       <Name language="Polish_Old">Wójt</Name>
     </Names>
   </TitleEntity>
@@ -2035,6 +2112,28 @@
     <Names>
       <Name language="English">Archbishopess</Name>
       <Name language="Romanian">Arhiepiscopă</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>duke_theocratic_christian</Id>
+    <GameIds>
+      <GameId game="CK2">temple_duke_christian</GameId>
+      <GameId game="CK2HIP">temple_duke_christian</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Hungarian">Prímás Érsek</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>duke_theocratic_christian_female</Id>
+    <GameIds>
+      <GameId game="CK2">temple_duke_female_christian</GameId>
+      <GameId game="CK2HIP">temple_duke_female_christian</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>duke_theocratic_christian</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2159,6 +2258,7 @@
       <Name language="English_Old">Cyning</Name>
       <Name language="English">King</Name>
       <Name language="French_Old">Roi</Name>
+      <Name language="Hungarian">Király</Name>
       <Name language="Latin">Rex</Name>
       <Name language="Norman">Roi</Name>
       <Name language="Occitan_Old">Rei</Name>
@@ -2187,6 +2287,7 @@
       <Name language="English_Old">Cwén</Name>
       <Name language="English">Queen</Name>
       <Name language="French_Old">Reine</Name>
+      <Name language="Hungarian">Királynõ</Name>
       <Name language="Latin">Regina</Name>
       <Name language="Norman">Roigne</Name>
       <Name language="Occitan_Old">Reina</Name>
@@ -2215,11 +2316,12 @@
       <GameId game="CK2HIP">king_title_ruler_consort_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>king_female</TitleId>
       <TitleId>king_consort</TitleId>
+      <TitleId>king_female</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Hungarian">Királyné</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2329,6 +2431,7 @@
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Hungarian">Nagyfejedelem</Name>
       <Name language="Romanian_Old">Voievod</Name>
       <Name language="Soninke">Tunka</Name>
     </Names>
@@ -2394,6 +2497,7 @@
       <Name language="Arpitan">Prince Sendeco</Name>
       <Name language="Bulgar">Oglu-Tarkan</Name>
       <Name language="English">Prince Mayor</Name>
+      <Name language="Hungarian">Nagyfejedelem</Name>
       <Name language="Latin">Serenissimus Dux</Name>
       <Name language="Polish_Old">Namiestnik</Name>
     </Names>
@@ -2441,6 +2545,30 @@
     </FallbackTitles>
     <Names>
       <Name language="English">Queen-Bishopess</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_theocratic_christian</Id>
+    <GameIds>
+      <GameId game="CK2">temple_king_christian</GameId>
+      <GameId game="CK2HIP">temple_king_christian</GameId>
+    </GameIds>
+    <FallbackTitles>
+    </FallbackTitles>
+    <Names>
+      <Name language="Hungarian">Nagyérsek</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_theocratic_christian_female</Id>
+    <GameIds>
+      <GameId game="CK2">temple_king_female_christian</GameId>
+      <GameId game="CK2HIP">temple_king_female_christian</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_theocratic_christian</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2601,6 +2729,7 @@
       <Name language="English_Old">Héahcásere</Name>
       <Name language="English">Emperor</Name>
       <Name language="French_Old">Empereur</Name>
+      <Name language="Hungarian">Császár</Name>
       <Name language="Latin">Imperator</Name>
       <Name language="Norman">Emperur</Name>
       <Name language="Occitan_Old">Emperaire</Name>
@@ -2629,6 +2758,7 @@
       <Name language="English_Old">þéodcwén</Name>
       <Name language="English">Empress</Name>
       <Name language="French_Old">Impératrice</Name>
+      <Name language="Hungarian">Császárnõ</Name>
       <Name language="Latin">Imperatrix</Name>
       <Name language="Norman">Empereis</Name>
       <Name language="Occitan_Old">Emperairitz</Name>
@@ -2658,8 +2788,8 @@
       <GameId game="CK2HIP">emperor_title_ruler_consort_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>emperor_female</TitleId>
       <TitleId>emperor_consort</TitleId>
+      <TitleId>emperor_female</TitleId>
       <TitleId>emperor</TitleId>
       <TitleId>king_consort_female</TitleId>
       <TitleId>king_consort</TitleId>
@@ -2667,6 +2797,7 @@
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Hungarian">Császárné</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2948,6 +3079,32 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>emperor_theocratic_christian</Id>
+    <GameIds>
+      <GameId game="CK2">temple_emperor_christian</GameId>
+      <GameId game="CK2HIP">temple_emperor_christian</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_theocratic_christian</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_theocratic_christian_female</Id>
+    <GameIds>
+      <GameId game="CK2">temple_emperor_female_christian</GameId>
+      <GameId game="CK2HIP">temple_emperor_female_christian</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor_theocratic_christian</TitleId>
+      <TitleId>king_theocratic_christian_female</TitleId>
+      <TitleId>king_theocratic_christian</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>emperor_theocratic_slavicPagan</Id>
     <GameIds>
       <GameId game="CK2">temple_emperor_slavic_pagan</GameId>
@@ -3056,6 +3213,7 @@
       <Name language="Croatian_Medieval">Barunovina</Name>
       <Name language="English">Castle</Name>
       <Name language="French_Old">Baronnie</Name>
+      <Name language="Hungarian">Várbirtok</Name>
       <Name language="Latin">Castrum</Name>
       <Name language="Norman">Chatellenie</Name>
       <Name language="Occitan_Old">Baronia</Name>
@@ -3076,6 +3234,7 @@
       <Name language="Bulgarian_Old">Zhupaniya</Name>
       <Name language="English">Castle</Name>
       <Name language="French_Old">Baronnie de</Name>
+      <Name language="Hungarian">Várbirtok of</Name>
       <Name language="Latin">Baronia de</Name>
       <Name language="Norman">Chatellenie de</Name>
       <Name language="Occitan_Old">Baronia de</Name>
@@ -3103,6 +3262,7 @@
       <GameId game="CK2HIP">tribal_barony</GameId>
     </GameIds>
     <Names>
+      <Name language="Hungarian">Törzs</Name>
       <Name language="Polish_Old">Opole</Name>
     </Names>
   </TitleEntity>
@@ -3116,6 +3276,7 @@
       <TitleId>barony_tribal</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Hungarian">Törzs of</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -3131,6 +3292,7 @@
       <Name language="English_Old">Tiþing</Name> <!-- Or Tithing -->
       <Name language="English">City</Name>
       <Name language="French_Old">Provoste</Name>
+      <Name language="Hungarian">Város</Name>
       <Name language="Latin">Urbs</Name>
       <Name language="Norman">Bailie</Name>
       <Name language="Polish_Old">Gród</Name>
@@ -3152,6 +3314,7 @@
       <Name language="English_Old">Tiþing of</Name> <!-- Or Tithing of -->
       <Name language="English">City of</Name>
       <Name language="French_Old">Provoste de</Name>
+      <Name language="Hungarian">Város of</Name>
       <Name language="Latin">Urbs</Name>
       <Name language="Norman">Bailliage de</Name>
       <Name language="Romanian_Old">Orașul</Name>
@@ -3222,6 +3385,7 @@
     </GameIds>
     <Names>
       <Name language="English">Temple</Name>
+      <Name language="Hungarian">Templombirtok</Name>
       <Name language="Romanian">Templu</Name>
     </Names>
   </TitleEntity>
@@ -3236,6 +3400,7 @@
     </FallbackTitles>
     <Names>
       <Name language="English">Temple of</Name>
+      <Name language="Hungarian">Templombirtok of</Name>
       <Name language="Romanian">Templul</Name>
     </Names>
   </TitleEntity>
@@ -3354,6 +3519,7 @@
       <Name language="English_Old">Scír</Name>
       <Name language="English">County</Name>
       <Name language="French_Old">Comté</Name>
+      <Name language="Hungarian">Vármegye</Name>
       <Name language="Latin">Comitatus</Name>
       <Name language="Norman">Counté</Name>
       <Name language="Occitan_Old">Comtat</Name>
@@ -3378,6 +3544,7 @@
       <Name language="English_Old">Scír of</Name>
       <Name language="English">County of</Name>
       <Name language="French_Old">Comté de</Name>
+      <Name language="Hungarian">Vármegye of</Name>
       <Name language="Norman">Counté de</Name>
       <Name language="Occitan_Old">Comtat de</Name>
       <Name language="Romanian_Old">Țeara de</Name>
@@ -3390,6 +3557,9 @@
       <GameId game="CK2">tribal_county</GameId>
       <GameId game="CK2HIP">tribal_county</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>barony_tribal</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="English">Chiefdom</Name>
       <Name language="Polish_Old">Żupa</Name>
@@ -3404,6 +3574,8 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>county_tribal</TitleId>
+      <TitleId>barony_tribal_of</TitleId>
+      <TitleId>barony_tribal</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="English">Chiefdom of</Name>
@@ -3418,6 +3590,7 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>county_tribal</TitleId>
+      <TitleId>barony_tribal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -3432,6 +3605,8 @@
       <TitleId>county_tribal_imperial</TitleId>
       <TitleId>county_tribal_of</TitleId>
       <TitleId>county_tribal</TitleId>
+      <TitleId>barony_tribal_of</TitleId>
+      <TitleId>barony_tribal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -3449,6 +3624,7 @@
       <Name language="Arpitan">Quenton</Name>
       <Name language="English_Old">Burh</Name>
       <Name language="English">Grand City</Name>
+      <Name language="Hungarian">Városmegye</Name>
       <Name language="Latin">Civitas</Name>
     </Names>
   </TitleEntity>
@@ -3467,6 +3643,7 @@
       <Name language="Arpitan">Quenton de</Name>
       <Name language="English">Grand City of</Name>
       <Name language="French_Old">Bailliage de</Name>
+      <Name language="Hungarian">Városmegye of</Name>
       <Name language="Soninke">Farinate of</Name>
     </Names>
   </TitleEntity>
@@ -3510,6 +3687,8 @@
     </FallbackTitles>
     <Names>
       <Name language="English">Prince-Bishopric</Name>
+      <Name language="French_Old">Prince-Évesquie</Name>
+      <Name language="Hungarian">Templommegye</Name>
       <Name language="Romanian">Episcopie</Name>
     </Names>
   </TitleEntity>
@@ -3527,6 +3706,7 @@
     <Names>
       <Name language="English">Prince-Bishopric of</Name>
       <Name language="French_Old">Prince-Évesquie de</Name>
+      <Name language="Hungarian">Templommegye de</Name>
       <Name language="Romanian">Episcopia</Name>
     </Names>
   </TitleEntity>
@@ -3645,6 +3825,7 @@
       <Name language="English_Old">Eorldom</Name>
       <Name language="English">Duchy</Name>
       <Name language="French_Old">Duché</Name>
+      <Name language="Hungarian">Hercegség</Name>
       <Name language="Latin">Ducatus</Name>
       <Name language="Norman">Duchié</Name>
       <Name language="Occitan_Old">Ducat</Name>
@@ -3670,6 +3851,7 @@
       <Name language="English_Old">Eorldom of</Name>
       <Name language="English">Duchy of</Name>
       <Name language="French_Old">Duché de</Name>
+      <Name language="Hungarian">Hercegség of</Name>
       <Name language="Norman">Duchié de</Name>
       <Name language="Occitan_Old">Ducat de</Name>
       <Name language="Romanian_Old">Banatul de</Name>
@@ -3717,6 +3899,7 @@
     </FallbackTitles>
     <Names>
       <Name language="English">High Chiefdom</Name>
+      <Name language="Hungarian">Fejedelemség</Name>
       <Name language="Polish_Old">Szczep</Name>
       <Name language="Romanian_Old">Mare Cnezat</Name>
     </Names>
@@ -3734,6 +3917,7 @@
     </FallbackTitles>
     <Names>
       <Name language="English">High Chiefdom of</Name>
+      <Name language="Hungarian">Fejedelemség of</Name>
       <Name language="Romanian_Old">Marele Cnezat de</Name>
     </Names>
   </TitleEntity>
@@ -3777,6 +3961,7 @@
       <Name language="Arpitan">Rèpublica</Name>
       <Name language="Dalmatian_Medieval">Repubblica</Name>
       <Name language="English">Republic</Name>
+      <Name language="Hungarian">Fejedelemség</Name>
       <Name language="Latin">Res Publica</Name>
       <Name language="Polish_Old">Miasto</Name>
       <Name language="Romanian">Republică</Name>
@@ -3795,6 +3980,7 @@
       <Name language="Arpitan">Rèpublica de</Name>
       <Name language="Dalmatian_Medieval">Repubblica di</Name>
       <Name language="English">Republic of</Name>
+      <Name language="Hungarian">Fejedelemség of</Name>
       <Name language="Romanian">Republica</Name>
     </Names>
   </TitleEntity>
@@ -3806,6 +3992,7 @@
     </GameIds>
     <Names>
       <Name language="English">Prince-Archbishopric</Name>
+      <Name language="Hungarian">Érsekség</Name>
       <Name language="Romanian">Arhiepiscopie</Name>
     </Names>
   </TitleEntity>
@@ -3821,6 +4008,7 @@
     <Names>
       <Name language="English">Prince-Archbishopric of</Name>
       <Name language="French_Old">Prince-Archevesquie de</Name>
+      <Name language="Hungarian">Érsekség of</Name>
       <Name language="Romanian">Arhiepiscopia</Name>
     </Names>
   </TitleEntity>
@@ -3986,6 +4174,7 @@
       <Name language="English_Old">Cyningríce</Name>
       <Name language="English">Kingdom</Name>
       <Name language="French_Old">Royaume</Name>
+      <Name language="Hungarian">Királyság</Name>
       <Name language="Latin">Regnum</Name>
       <Name language="Norman">Roialme</Name>
       <Name language="Occitan_Old">Reialme</Name>
@@ -4009,6 +4198,7 @@
       <Name language="English_Old">Cyningríce of</Name>
       <Name language="English">Kingdom of</Name>
       <Name language="French_Old">Royaume de</Name>
+      <Name language="Hungarian">Királyság of</Name>
       <Name language="Norman">Roialme de</Name>
       <Name language="Occitan_Old">Reialme de</Name>
       <Name language="Polish">Królestwo</Name>
@@ -4045,6 +4235,37 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>kingdom_tribal</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_kingdom</GameId>
+      <GameId game="CK2HIP">tribal_kingdom</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>kingdom</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Polish_Old">Wspólnota Plemienna</Name> <!-- Educated creativity -->
+      <Name language="Hungarian">Nagyfejedelemség</Name>
+      <Name language="Romanian_Old">Voievodat</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>kingdom_tribal_of</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_kingdom_of</GameId>
+      <GameId game="CK2HIP">tribal_kingdom_of</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>kingdom_tribal</TitleId>
+      <TitleId>kingdom_of</TitleId>
+      <TitleId>kingdom</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Hungarian">Nagyfejedelemség of</Name>
+      <Name language="Romanian_Old">Voievodatul</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>kingdom_republic</Id>
     <GameIds>
       <GameId game="CK2">city_kingdom</GameId>
@@ -4056,6 +4277,7 @@
     </FallbackTitles>
     <Names>
       <Name language="English">Most Serene Republic</Name>
+      <Name language="Hungarian">Nagyfejedelemség</Name>
       <Name language="Latin">Serenissima Res Publica</Name>
       <Name language="Polish_Old">Metropolia</Name>
     </Names>
@@ -4073,6 +4295,7 @@
     </FallbackTitles>
     <Names>
       <Name language="English">Most Serene Republic of</Name>
+      <Name language="Hungarian">Nagyfejedelemség of</Name>
       <Name language="French_Old">République Sérénissime de</Name>
     </Names>
   </TitleEntity>
@@ -4083,6 +4306,7 @@
       <GameId game="CK2HIP">temple_kingdom</GameId>
     </GameIds>
     <Names>
+      <Name language="Hungarian">Nagyérsekség</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -4095,6 +4319,7 @@
       <TitleId>kingdom_theocratic</TitleId>
     </FallbackTitles>
     <Names>
+      <Name language="Hungarian">Nagyérsekség of</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -4170,35 +4395,6 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>kingdom_tribal</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_kingdom</GameId>
-      <GameId game="CK2HIP">tribal_kingdom</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>kingdom</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Polish_Old">Wspólnota Plemienna</Name> <!-- Educated creativity -->
-      <Name language="Romanian_Old">Voievodat</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>kingdom_tribal_of</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_kingdom_of</GameId>
-      <GameId game="CK2HIP">tribal_kingdom_of</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>kingdom_tribal</TitleId>
-      <TitleId>kingdom_of</TitleId>
-      <TitleId>kingdom</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Romanian_Old">Voievodatul</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
     <Id>kingdom_imperial</Id>
     <GameIds>
       <GameId game="CK2">imperial_kingdom</GameId>
@@ -4267,6 +4463,7 @@
       <Name language="Croatian_Medieval">Carevina</Name>
       <Name language="English_Old">Héafodríce</Name>
       <Name language="English">Empire</Name>
+      <Name language="Hungarian">Birodalom</Name>
       <Name language="Latin">Imperium</Name>
       <Name language="Norman">Empere</Name>
       <Name language="Romanian">Imperiu</Name>
@@ -4287,6 +4484,7 @@
       <Name language="English">Empire of</Name>
       <Name language="English_Old">Héafodríce of</Name>
       <Name language="French_Old">Empire de</Name>
+      <Name language="Hungarian">Birodalom of</Name>
       <Name language="Norman">Empere de</Name>
       <Name language="Occitan">Empèri de</Name>
       <Name language="Polish">Cesarstwo</Name>
