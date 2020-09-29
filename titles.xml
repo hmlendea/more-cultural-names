@@ -120,29 +120,15 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>courtier_male</Id>
+    <Id>courtier</Id>
     <GameIds>
       <GameId game="CK2HIP">COURTIER_MALE</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>courtier_male_capital</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">komornik</Name>
       <Name language="Romanian_Old">dregător</Name> <!-- Not sure if it fits in all the cases -->
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>courtier_male_capital</Id>
-    <GameIds>
-      <GameId game="CK2HIP">COURTIER_MALE_CAP</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>courtier_male</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Polish_Old">Komornik</Name>
-      <Name language="Romanian_Old">Dregător</Name> <!-- Not sure if it fits in all the cases -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -151,7 +137,7 @@
       <GameId game="CK2HIP">COURTIER_FEMALE</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>courtier_female_capital</TitleId>
+      <TitleId>courtier</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">komornica</Name>
@@ -159,12 +145,24 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>courtier_female_capital</Id>
+    <Id>courtier_capital</Id>
+    <GameIds>
+      <GameId game="CK2HIP">COURTIER_MALE_CAP</GameId>
+    </GameIds>
+    <FallbackTitles>
+    </FallbackTitles>
+    <Names>
+      <Name language="Polish_Old">Komornik</Name>
+      <Name language="Romanian_Old">Dregător</Name> <!-- Not sure if it fits in all the cases -->
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>courtier_capital_female</Id>
     <GameIds>
       <GameId game="CK2HIP">COURTIER_FEMALE_CAP</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>courtier_female</TitleId>
+      <TitleId>courtier_capital</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Komornica</Name>
@@ -1065,7 +1063,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>baron_feudal_female_consort</Id>
+    <Id>baron_feudal_consort_female</Id>
     <GameIds>
       <GameId game="CK2">baron_title_ruler_consort_female</GameId>
       <GameId game="CK2HIP">baron_title_ruler_consort_female</GameId>
@@ -1415,7 +1413,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>high-chief</Id>
+    <Id>highChief</Id>
     <GameIds>
       <GameId game="CK2">high_chief</GameId>
       <GameId game="CK2HIP">high_chief</GameId>
@@ -1425,13 +1423,91 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>high-chieftess</Id>
+    <Id>highChief_female</Id>
     <GameIds>
       <GameId game="CK2">high_chief_female</GameId>
       <GameId game="CK2HIP">high_chief_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>high-chief</TitleId>
+      <TitleId>highChief</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>grandDuke</Id>
+    <GameIds>
+      <GameId game="CK2">grand_duke</GameId>
+      <GameId game="CK2HIP">grand_duke</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Grand Duke</Name>
+      <Name language="Polish_Old">Wojewodą</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>grandDuke_female</Id>
+    <GameIds>
+      <GameId game="CK2">grand_duke_female</GameId>
+      <GameId game="CK2HIP">grand_duke_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>grandDuke</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="English">Grand Duchess</Name>
+      <Name language="Polish_Old">Wojewodżiną</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>grandDuke_consort</Id>
+    <GameIds>
+      <GameId game="CK2">grand_duke_title_ruler_consort</GameId>
+      <GameId game="CK2HIP">grand_duke_title_ruler_consort</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>grandDuke</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>grandDuke_consort_female</Id>
+    <GameIds>
+      <GameId game="CK2">grand_duke_title_ruler_consort_female</GameId>
+      <GameId game="CK2HIP">grand_duke_title_ruler_consort_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>grandDuke_consort</TitleId>
+      <TitleId>grandDuke_female</TitleId>
+      <TitleId>grandDuke</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>grandDuke_tribal</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_grand_duke</GameId>
+      <GameId game="CK2HIP">tribal_grand_duke</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>grandDuke</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Polish_Old">Wielki Wódz</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>grandDuke_tribal_female</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_grand_duke_female</GameId>
+      <GameId game="CK2HIP">tribal_grand_duke_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>grandDuke_tribal</TitleId>
+      <TitleId>grandDuke_female</TitleId>
+      <TitleId>grandDuke</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -1495,7 +1571,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>count_female_consort</Id>
+    <Id>count_consort_female</Id>
     <GameIds>
       <GameId game="CK2">count_title_ruler_consort_female</GameId>
       <GameId game="CK2HIP">count_title_ruler_consort_female</GameId>
@@ -1573,6 +1649,20 @@
     <Names>
       <Name language="English_Old">Heafodling</Name>
       <Name language="Polish_Old">Żupan</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_tribal_female</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_count_female</GameId>
+      <GameId game="CK2HIP">tribal_count_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>count_tribal</TitleId>
+      <TitleId>count_female</TitleId>
+      <TitleId>count</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1700,25 +1790,15 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>countess_tribal</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_count_female</GameId>
-      <GameId game="CK2HIP">tribal_count_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>count_female</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>countess_imperial</Id>
+    <Id>count_imperial_female</Id>
     <GameIds>
       <GameId game="CK2">imperial_count_female</GameId>
       <GameId game="CK2HIP">imperial_count_female</GameId>
     </GameIds>
     <FallbackTitles>
+      <TitleId>count_imperial</TitleId>
       <TitleId>count_female</TitleId>
+      <TitleId>count</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -1873,7 +1953,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duke_tribal_female_consort</Id>
+    <Id>duke_tribal_consort_female</Id>
     <GameIds>
       <GameId game="CK2">tribal_duke_title_ruler_consort_female</GameId>
       <GameId game="CK2HIP">tribal_duke_title_ruler_consort_female</GameId>
@@ -2004,6 +2084,20 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>duke_imperial_female</Id>
+    <GameIds>
+      <GameId game="CK2">imperial_duke_female</GameId>
+      <GameId game="CK2HIP">imperial_duke_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>duke_imperial</TitleId>
+      <TitleId>duke_female</TitleId>
+      <TitleId>duke</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>duke_imperial_viceRoyalty</Id>
     <GameIds>
       <GameId game="CK2">imperial_vice_royalty_duke</GameId>
@@ -2018,103 +2112,17 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duchess_imperial</Id>
-    <GameIds>
-      <GameId game="CK2">imperial_duke_female</GameId>
-      <GameId game="CK2HIP">imperial_duke_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>duke_female</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>duchess_imperial_viceRoyalty</Id>
+    <Id>duke_imperial_viceRoyalty_female</Id>
     <GameIds>
       <GameId game="CK2">imperial_vice_royalty_duke_female</GameId>
       <GameId game="CK2HIP">imperial_vice_royalty_duke_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duchess_imperial</TitleId>
+      <TitleId>duke_imperial_viceRoyalty</TitleId>
+      <TitleId>duke_imperial_female</TitleId>
+      <TitleId>duke_imperial</TitleId>
       <TitleId>duke_female</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>grand-duke</Id>
-    <GameIds>
-      <GameId game="CK2">grand_duke</GameId>
-      <GameId game="CK2HIP">grand_duke</GameId>
-    </GameIds>
-    <Names>
-      <Name language="English">Grand Duke</Name>
-      <Name language="Polish_Old">Wojewodą</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>grand-duke_consort</Id>
-    <GameIds>
-      <GameId game="CK2">grand_duke_title_ruler_consort</GameId>
-      <GameId game="CK2HIP">grand_duke_title_ruler_consort</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>grand-duke</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>grand-duke_tribal</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_grand_duke</GameId>
-      <GameId game="CK2HIP">tribal_grand_duke</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>grand-duke</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Polish_Old">Wielki Wódz</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>grand-duchess</Id>
-    <GameIds>
-      <GameId game="CK2">grand_duke_female</GameId>
-      <GameId game="CK2HIP">grand_duke_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>grand-duke</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="English">Grand Duchess</Name>
-      <Name language="Polish_Old">Wojewodżiną</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>grand-duchess_consort</Id>
-    <GameIds>
-      <GameId game="CK2">grand_duke_title_ruler_consort_female</GameId>
-      <GameId game="CK2HIP">grand_duke_title_ruler_consort_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>grand-duchess</TitleId>
-      <TitleId>grand-duke_consort</TitleId>
-      <TitleId>grand-duke</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>grand-duchess_tribal</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_grand_duke_female</GameId>
-      <GameId game="CK2HIP">tribal_grand_duke_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>grand-duke_tribal</TitleId>
-      <TitleId>grand-duchess</TitleId>
+      <TitleId>duke</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -2183,7 +2191,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>king_female_consort</Id>
+    <Id>king_consort_female</Id>
     <GameIds>
       <GameId game="CK2">king_title_ruler_consort_female</GameId>
       <GameId game="CK2HIP">king_title_ruler_consort_female</GameId>
@@ -2228,17 +2236,100 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>king_nomadic</Id>
+    <GameIds>
+      <GameId game="CK2">nomadic_king</GameId>
+      <GameId game="CK2HIP">nomadic_king</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_nomadic_female</Id>
+    <GameIds>
+      <GameId game="CK2">nomadic_king_female</GameId>
+      <GameId game="CK2HIP">nomadic_king_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_nomadic_consort</Id>
+    <GameIds>
+      <GameId game="CK2">nomadic_king_title_ruler_consort</GameId>
+      <GameId game="CK2HIP">nomadic_king_title_ruler_consort</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_tribal_consort</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_consort</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_nomadic_consort_female</Id>
+    <GameIds>
+      <GameId game="CK2">nomadic_king_title_ruler_consort_female</GameId>
+      <GameId game="CK2HIP">nomadic_king_title_ruler_consort_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_nomadic_consort</TitleId>
+      <TitleId>king_tribal_consort_female</TitleId>
+      <TitleId>king_tribal_consort</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_consort_female</TitleId>
+      <TitleId>king_consort</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>king_tribal</Id>
     <GameIds>
       <GameId game="CK2">tribal_king</GameId>
       <GameId game="CK2HIP">tribal_king</GameId>
     </GameIds>
     <FallbackTitles>
+      <TitleId>king_nomadic</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Romanian_Old">Voievod</Name>
       <Name language="Soninke">Tunka</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_tribal_female</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_king_female</GameId>
+      <GameId game="CK2HIP">tribal_king_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_nomadic_female</TitleId>
+      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Romanian">Voievoadă</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2249,6 +2340,23 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>king_tribal</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_tribal_consort_female</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_king_title_ruler_consort_female</GameId>
+      <GameId game="CK2HIP">tribal_king_title_ruler_consort_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_tribal_consort</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_consort_female</TitleId>
+      <TitleId>king_consort</TitleId>
+      <TitleId>king_female</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
@@ -2378,6 +2486,22 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>king_imperial_female</Id>
+    <GameIds>
+      <GameId game="CK2">imperial_king_female</GameId>
+      <GameId game="CK2HIP">imperial_king_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_imperial</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Latin">Vicaria</Name>
+      <Name language="Romanian">Regină</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>king_imperial_consort</Id>
     <GameIds>
       <GameId game="CK2">imperial_king_title_ruler_consort</GameId>
@@ -2385,6 +2509,23 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>king_imperial</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_imperial_consort_female</Id>
+    <GameIds>
+      <GameId game="CK2">imperial_king_title_ruler_consort_female</GameId>
+      <GameId game="CK2HIP">imperial_king_title_ruler_consort_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_imperial_consort</TitleId>
+      <TitleId>king_imperial_female</TitleId>
+      <TitleId>king_consort_female</TitleId>
+      <TitleId>king_consort</TitleId>
+      <TitleId>king_female</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
@@ -2404,73 +2545,14 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>queen_tribal</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_king_female</GameId>
-      <GameId game="CK2HIP">tribal_king_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>king_female</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Romanian">Voievoadă</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>queen_tribal_consort</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_king_title_ruler_consort_female</GameId>
-      <GameId game="CK2HIP">tribal_king_title_ruler_consort_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>queen_tribal</TitleId>
-      <TitleId>king_female_consort</TitleId>
-      <TitleId>king_female</TitleId>
-      <TitleId>king_consort</TitleId>
-      <TitleId>king</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>queen_imperial</Id>
-    <GameIds>
-      <GameId game="CK2">imperial_king_female</GameId>
-      <GameId game="CK2HIP">imperial_king_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>king_female</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Latin">Vicaria</Name>
-      <Name language="Romanian">Regină</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>queen_imperial_consort</Id>
-    <GameIds>
-      <GameId game="CK2">imperial_king_title_ruler_consort_female</GameId>
-      <GameId game="CK2HIP">imperial_king_title_ruler_consort_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>queen_imperial</TitleId>
-      <TitleId>king_female_consort</TitleId>
-      <TitleId>king_female</TitleId>
-      <TitleId>king_consort</TitleId>
-      <TitleId>king</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>queen_imperial_viceRoyalty</Id>
+    <Id>king_imperial_viceRoyalty_female</Id>
     <GameIds>
       <GameId game="CK2">imperial_vice_royalty_king_female</GameId>
       <GameId game="CK2HIP">imperial_vice_royalty_king_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>queen_imperial</TitleId>
       <TitleId>king_imperial_viceRoyalty</TitleId>
+      <TitleId>king_imperial_female</TitleId>
       <TitleId>king_imperial</TitleId>
       <TitleId>king_female</TitleId>
       <TitleId>king</TitleId>
@@ -2485,6 +2567,9 @@
       <GameId game="CK2HIP">emperor</GameId>
       <GameId game="CK3">emperor_feudal_male</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="Arpitan">Emperor</Name>
       <Name language="Croatian_Medieval">Car</Name>
@@ -2509,6 +2594,8 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>emperor</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Emperèssa</Name>
@@ -2533,6 +2620,8 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>emperor</TitleId>
+      <TitleId>king_consort</TitleId>
+      <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -2545,7 +2634,12 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>emperor_female</TitleId>
+      <TitleId>emperor_consort</TitleId>
       <TitleId>emperor</TitleId>
+      <TitleId>king_consort_female</TitleId>
+      <TitleId>king_consort</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -2559,6 +2653,8 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>emperor</TitleId>
+      <TitleId>king_viceRoyalty</TitleId>
+      <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -2571,9 +2667,11 @@
       <GameId game="CK3">emperor_viceroyalty_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>emperor_viceRoyalty_female</TitleId>
+      <TitleId>emperor_viceRoyalty</TitleId>
       <TitleId>emperor_female</TitleId>
       <TitleId>emperor</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -2585,10 +2683,93 @@
       <GameId game="CK2HIP">nomadic_emperor</GameId>
     </GameIds>
     <FallbackTitles>
+      <TitleId>emperor_tribal</TitleId>
       <TitleId>emperor</TitleId>
+      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Romanian_Old">Han</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_nomadic_female</Id>
+    <GameIds>
+      <GameId game="CK2">nomadic_emperor_female</GameId>
+      <GameId game="CK2HIP">nomadic_emperor_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor_tribal_female</TitleId>
+      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_female</TitleId>
+      <TitleId>emperor</TitleId>
+      <TitleId>king_nomadic_female</TitleId>
+      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Romanian_Old">Hană</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_nomadic_consort</Id>
+    <GameIds>
+      <GameId game="CK2">nomadic_emperor_title_ruler_consort</GameId>
+      <GameId game="CK2HIP">nomadic_emperor_title_ruler_consort</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_tribal_consort</TitleId>
+      <TitleId>emperor_tribal</TitleId>
+      <TitleId>emperor_consort</TitleId>
+      <TitleId>emperor</TitleId>
+      <TitleId>king_nomadic_consort</TitleId>
+      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_tribal_consort</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_consort</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_nomadic_consort_female</Id>
+    <GameIds>
+      <GameId game="CK2">nomadic_emperor_title_ruler_consort_female</GameId>
+      <GameId game="CK2HIP">nomadic_emperor_title_ruler_consort_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor_nomadic_consort</TitleId>
+      <TitleId>emperor_nomadic_female</TitleId>
+      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_tribal_consort_female</TitleId>
+      <TitleId>emperor_tribal_consort</TitleId>
+      <TitleId>emperor_tribal_female</TitleId>
+      <TitleId>emperor_tribal</TitleId>
+      <TitleId>emperor_consort_female</TitleId>
+      <TitleId>emperor_consort</TitleId>
+      <TitleId>emperor_female</TitleId>
+      <TitleId>emperor</TitleId>
+      <TitleId>king_nomadic_consort_female</TitleId>
+      <TitleId>king_nomadic_consort</TitleId>
+      <TitleId>king_nomadic_female</TitleId>
+      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_tribal_consort_female</TitleId>
+      <TitleId>king_tribal_consort</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_consort_female</TitleId>
+      <TitleId>king_consort</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2598,7 +2779,32 @@
       <GameId game="CK2HIP">tribal_emperor</GameId>
     </GameIds>
     <FallbackTitles>
+      <TitleId>emperor_nomadic</TitleId>
       <TitleId>emperor</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_nomadic</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_tribal_female</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_emperor_female</GameId>
+      <GameId game="CK2HIP">tribal_emperor_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor_nomadic_female</TitleId>
+      <TitleId>emperor_tribal</TitleId>
+      <TitleId>emperor_female</TitleId>
+      <TitleId>emperor</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_nomadic_female</TitleId>
+      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -2611,7 +2817,49 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>emperor_tribal</TitleId>
+      <TitleId>emperor_nomadic_consort</TitleId>
+      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_consort</TitleId>
       <TitleId>emperor</TitleId>
+      <TitleId>king_tribal_consort</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_nomadic_consort</TitleId>
+      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_consort</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_tribal_consort_female</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_emperor_title_ruler_consort_female</GameId>
+      <GameId game="CK2HIP">tribal_emperor_title_ruler_consort_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor_tribal_female</TitleId>
+      <TitleId>emperor_tribal_consort</TitleId>
+      <TitleId>emperor_nomadic_consort_female</TitleId>
+      <TitleId>emperor_nomadic_consort</TitleId>
+      <TitleId>emperor_nomadic_female</TitleId>
+      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_consort_female</TitleId>
+      <TitleId>emperor_consort</TitleId>
+      <TitleId>emperor_female</TitleId>
+      <TitleId>emperor</TitleId>
+      <TitleId>king_tribal_consort_female</TitleId>
+      <TitleId>king_tribal_consort</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_nomadic_consort_female</TitleId>
+      <TitleId>king_nomadic_consort</TitleId>
+      <TitleId>king_nomadic_female</TitleId>
+      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_consort_female</TitleId>
+      <TitleId>king_consort</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -2636,6 +2884,9 @@
       <GameId game="CK2HIP">city_emperor_female</GameId>
       <GameId game="CK3">emperor_republic_female</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor_republic</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="English">Grand Princess</Name>
     </Names>
@@ -2701,7 +2952,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>emperor_theocratic_female_slavicPaganReformed</Id>
+    <Id>emperor_theocratic_slavicPaganReformed_female</Id>
     <GameIds>
       <GameId game="CK2">temple_emperor_female_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_emperor_female_slavic_pagan_reformed</GameId>
@@ -2727,50 +2978,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>empress_nomadic</Id>
-    <GameIds>
-      <GameId game="CK2">nomadic_emperor_female</GameId>
-      <GameId game="CK2HIP">nomadic_emperor_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>emperor_female</TitleId>
-      <TitleId>emperor</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Romanian_Old">Hană</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>empress_tribal</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_emperor_female</GameId>
-      <GameId game="CK2HIP">tribal_emperor_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>emperor_female</TitleId>
-      <TitleId>emperor</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>empress_tribal_consort</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_emperor_title_ruler_consort_female</GameId>
-      <GameId game="CK2HIP">tribal_emperor_title_ruler_consort_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>empress_tribal</TitleId>
-      <TitleId>emperor_tribal_consort</TitleId>
-      <TitleId>emperor_tribal</TitleId>
-      <TitleId>emperor_female</TitleId>
-      <TitleId>emperor</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>empress_imperial</Id>
+    <Id>emperor_imperial_female</Id>
     <GameIds>
       <GameId game="CK2">imperial_emperor_female</GameId>
       <GameId game="CK2HIP">imperial_emperor_female</GameId>
@@ -4276,7 +4484,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>family_palace_baroness</Id>
+    <Id>family_palace_baron_female</Id>
     <GameIds>
       <GameId game="CK2">family_palace_baron_female</GameId>
       <GameId game="CK2HIP">family_palace_baron_female</GameId>
