@@ -930,36 +930,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>mayor</Id>
-    <GameIds>
-      <GameId game="CK2">city_baron</GameId>
-      <GameId game="CK2HIP">city_baron</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Arpitan">Mère</Name>
-      <Name language="Croatian_Medieval">Nacelnik</Name>
-      <Name language="Bulgar">Bori-Tarkan</Name>
-      <Name language="English">Mayor</Name>
-      <Name language="French_Old">Provost</Name>
-      <Name language="Polish_Old">Grododzierzca</Name>
-      <Name language="Romanian_Old">Jude</Name>
-      <Name language="Romanian">Primar</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>mayor_imperial</Id>
-    <GameIds>
-      <GameId game="CK2">imperial_city_baron</GameId>
-      <GameId game="CK2HIP">imperial_city_baron</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>mayor</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>baron</Id>
+    <Id>baron_feudal</Id>
     <GameIds>
       <GameId game="CK2">baron</GameId>
       <GameId game="CK2HIP">baron</GameId>
@@ -980,13 +951,79 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>baron_consort</Id>
+    <Id>baron_feudal_consort</Id>
     <GameIds>
       <GameId game="CK2">baron_title_ruler_consort</GameId>
       <GameId game="CK2HIP">baron_title_ruler_consort</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>baron</TitleId>
+      <TitleId>baron_feudal</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_feudal_female</Id>
+    <GameIds>
+      <GameId game="CK2">baron_female</GameId>
+      <GameId game="CK2HIP">baron_female</GameId>
+      <GameId game="CK3">baron_feudal_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_feudal</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Arpitan">Baronèssa</Name>
+      <Name language="Bulgar">Kali</Name>
+      <Name language="Croatian_Medieval">Barunesa</Name>
+      <Name language="English">Baroness</Name>
+      <Name language="French_Old">Baronne</Name>
+      <Name language="Latin_Medieval">Baronissa</Name>
+      <Name language="Norman">Chatelaine</Name>
+      <Name language="Occitan_Old">Baronessa</Name>
+      <Name language="Polish_Old">Czestnina</Name>
+      <Name language="Romanian_Old">Boieră</Name>
+      <Name language="Romanian">Baroană</Name>
+      <Name language="Soninke">Kafuna</Name> <!-- Or Tigua -->
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_feudal_female_consort</Id>
+    <GameIds>
+      <GameId game="CK2">baron_title_ruler_consort_female</GameId>
+      <GameId game="CK2HIP">baron_title_ruler_consort_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_feudal_female</TitleId>
+      <TitleId>baron_feudal</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_feudal_viceRoyalty</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_baron</GameId>
+      <GameId game="CK2HIP">vice_royalty_baron</GameId>
+      <GameId game="CK3">baron_viceroyalty_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_feudal</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_feudal_viceRoyalty_female</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_baron_female</GameId>
+      <GameId game="CK2HIP">vice_royalty_baron_female</GameId>
+      <GameId game="CK3">baron_viceroyalty_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_feudal_female</TitleId>
+      <TitleId>baron_feudal_viceRoyalty</TitleId>
+      <TitleId>baron_feudal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -998,10 +1035,83 @@
       <GameId game="CK2HIP">tribal_baron</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>baron</TitleId>
+      <TitleId>baron_feudal</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Kmiec</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_tribal_female</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_baron_female</GameId>
+      <GameId game="CK2HIP">tribal_baron_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_tribal</TitleId>
+      <TitleId>baron_feudal_female</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="English">Cheiftess</Name>
+      <Name language="Polish_Old">Kmiecina</Name>
+      <Name language="Romanian">Cnează</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_republic</Id>
+    <GameIds>
+      <GameId game="CK2">city_baron</GameId>
+      <GameId game="CK2HIP">city_baron</GameId>
+      <GameId game="CK3">baron_republic_male</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Arpitan">Mère</Name>
+      <Name language="Croatian_Medieval">Nacelnik</Name>
+      <Name language="Bulgar">Bori-Tarkan</Name>
+      <Name language="English">Mayor</Name>
+      <Name language="French_Old">Provost</Name>
+      <Name language="Polish_Old">Grododzierzca</Name>
+      <Name language="Romanian_Old">Jude</Name>
+      <Name language="Romanian">Primar</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_republic_female</Id>
+    <GameIds>
+      <GameId game="CK2">city_baron_female</GameId>
+      <GameId game="CK2HIP">city_baron_female</GameId>
+      <GameId game="CK3">baron_republic_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_republic</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_republic_imperial</Id>
+    <GameIds>
+      <GameId game="CK2">imperial_city_baron</GameId>
+      <GameId game="CK2HIP">imperial_city_baron</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_republic</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_republic_imperial_female</Id>
+    <GameIds>
+      <GameId game="CK2">imperial_city_baron_female</GameId>
+      <GameId game="CK2HIP">imperial_city_baron_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_republic_imperial</TitleId>
+      <TitleId>baron_republic_female</TitleId>
+      <TitleId>baron_republic</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1088,74 +1198,22 @@
       <GameId game="CK2HIP">imperial_baron</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>baron</TitleId>
+      <TitleId>baron_feudal</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Kasztelan</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>baroness</Id>
-    <GameIds>
-      <GameId game="CK2">baron_female</GameId>
-      <GameId game="CK2HIP">baron_female</GameId>
-      <GameId game="CK3">baron_feudal_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>baron</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Arpitan">Baronèssa</Name>
-      <Name language="Bulgar">Kali</Name>
-      <Name language="Croatian_Medieval">Barunesa</Name>
-      <Name language="English">Baroness</Name>
-      <Name language="French_Old">Baronne</Name>
-      <Name language="Latin_Medieval">Baronissa</Name>
-      <Name language="Norman">Chatelaine</Name>
-      <Name language="Occitan_Old">Baronessa</Name>
-      <Name language="Polish_Old">Czestnina</Name>
-      <Name language="Romanian_Old">Boieră</Name>
-      <Name language="Romanian">Baroană</Name>
-      <Name language="Soninke">Kafuna</Name> <!-- Or Tigua -->
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>baroness_consort</Id>
-    <GameIds>
-      <GameId game="CK2">baron_title_ruler_consort_female</GameId>
-      <GameId game="CK2HIP">baron_title_ruler_consort_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>baroness</TitleId>
-      <TitleId>baron</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>baroness_tribal</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_baron_female</GameId>
-      <GameId game="CK2HIP">tribal_baron_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>baroness</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="English">Cheiftess</Name>
-      <Name language="Polish_Old">Kmiecina</Name>
-      <Name language="Romanian">Cnează</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>baroness_imperial</Id>
+    <Id>baron_imperial_female</Id>
     <GameIds>
       <GameId game="CK2">imperial_baron_female</GameId>
       <GameId game="CK2HIP">imperial_baron_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>baroness</TitleId>
-      <TitleId>baron</TitleId>
+      <TitleId>baron_imperial</TitleId>
+      <TitleId>baron_feudal_female</TitleId>
+      <TitleId>baron_feudal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -1197,33 +1255,6 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>lord-mayor</Id>
-    <GameIds>
-      <GameId game="CK2">city_count</GameId>
-      <GameId game="CK2HIP">city_count</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Arpitan">Sendeco</Name>
-      <Name language="Bulgar">Bori-Tarkan</Name>
-      <Name language="English">Lord Mayor</Name>
-      <Name language="French_Old">Baillif</Name>
-      <Name language="Polish_Old">Wlodarz</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>lady-mayoress</Id>
-    <GameIds>
-      <GameId game="CK2">city_count_female</GameId>
-      <GameId game="CK2HIP">city_count_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>lord-mayor</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="English">Lady Mayoress</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
     <Id>count</Id>
     <GameIds>
       <GameId game="CK2">count</GameId>
@@ -1246,6 +1277,28 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>count_female</Id>
+    <GameIds>
+      <GameId game="CK2">count_female</GameId>
+      <GameId game="CK2HIP">count_female</GameId>
+      <GameId game="CK3">count_feudal_female</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Arpitan">Comtèssa</Name>
+      <Name language="Bulgar">Kali</Name>
+      <Name language="Bulgarian_Old">Kmetitsa</Name>
+      <Name language="English">Countess</Name>
+      <Name language="French_Old">Comtesse</Name>
+      <Name language="Latin_Medieval">Comitissa</Name>
+      <Name language="Norman">Countesse</Name>
+      <Name language="Occitan_Old">Comtessa</Name>
+      <Name language="Polish_Old">Kasztelana</Name>
+      <Name language="Romanian_Old">Bană</Name>
+      <Name language="Romanian">Contesă</Name>
+      <Name language="Soninke">Farina</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>count_consort</Id>
     <GameIds>
       <GameId game="CK2">count_title_ruler_consort</GameId>
@@ -1255,6 +1308,19 @@
       <TitleId>count</TitleId>
     </FallbackTitles>
     <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_female_consort</Id>
+    <GameIds>
+      <GameId game="CK2">count_title_ruler_consort_female</GameId>
+      <GameId game="CK2HIP">count_title_ruler_consort_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>count_female</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Bulgarian_Old">Kmetsha</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1270,6 +1336,48 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>count_independent_female</Id>
+    <GameIds>
+      <GameId game="CK3" type="independent">count_feudal_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>count_independent</TitleId>
+      <TitleId>count_female</TitleId>
+      <TitleId>count</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Soninke">Jamanatiga</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_viceRoyalty</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_count</GameId>
+      <GameId game="CK2HIP">vice_royalty_count</GameId>
+      <GameId game="CK3">count_viceroyalty_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>count</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_viceRoyalty_female</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_count_female</GameId>
+      <GameId game="CK2HIP">vice_royalty_count_female</GameId>
+      <GameId game="CK3">count_viceroyalty_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>count_viceRoyalty</TitleId>
+      <TitleId>count_female</TitleId>
+      <TitleId>count</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>count_tribal</Id>
     <GameIds>
       <GameId game="CK2">tribal_count</GameId>
@@ -1280,6 +1388,35 @@
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Żupan</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_republic</Id>
+    <GameIds>
+      <GameId game="CK2">city_count</GameId>
+      <GameId game="CK2HIP">city_count</GameId>
+      <GameId game="CK3">count_republic_male</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Arpitan">Sendeco</Name>
+      <Name language="Bulgar">Bori-Tarkan</Name>
+      <Name language="English">Lord Mayor</Name>
+      <Name language="French_Old">Baillif</Name>
+      <Name language="Polish_Old">Wlodarz</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_republic_female</Id>
+    <GameIds>
+      <GameId game="CK2">city_count_female</GameId>
+      <GameId game="CK2HIP">city_count_female</GameId>
+      <GameId game="CK3">count_republic_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>count_republic</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="English">Lady Mayoress</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1377,62 +1514,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>countess</Id>
-    <GameIds>
-      <GameId game="CK2">count_female</GameId>
-      <GameId game="CK2HIP">count_female</GameId>
-      <GameId game="CK3">count_feudal_female</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Arpitan">Comtèssa</Name>
-      <Name language="Bulgar">Kali</Name>
-      <Name language="Bulgarian_Old">Kmetitsa</Name>
-      <Name language="English">Countess</Name>
-      <Name language="French_Old">Comtesse</Name>
-      <Name language="Latin_Medieval">Comitissa</Name>
-      <Name language="Norman">Countesse</Name>
-      <Name language="Occitan_Old">Comtessa</Name>
-      <Name language="Polish_Old">Kasztelana</Name>
-      <Name language="Romanian_Old">Bană</Name>
-      <Name language="Romanian">Contesă</Name>
-      <Name language="Soninke">Farina</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>countess_consort</Id>
-    <GameIds>
-      <GameId game="CK2">count_title_ruler_consort_female</GameId>
-      <GameId game="CK2HIP">count_title_ruler_consort_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>countess</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Bulgarian_Old">Kmetsha</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>countess_independent</Id>
-    <GameIds>
-      <GameId game="CK3" type="independent">count_feudal_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>countess</TitleId>
-      <TitleId>count_independent</TitleId>
-      <TitleId>count</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Soninke">Jamanatiga</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
     <Id>countess_tribal</Id>
     <GameIds>
       <GameId game="CK2">tribal_count_female</GameId>
       <GameId game="CK2HIP">tribal_count_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>countess</TitleId>
+      <TitleId>count_female</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -1444,22 +1532,9 @@
       <GameId game="CK2HIP">imperial_count_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>countess</TitleId>
+      <TitleId>count_female</TitleId>
     </FallbackTitles>
     <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>grand-mayor</Id>
-    <GameIds>
-      <GameId game="CK2">city_duke</GameId>
-      <GameId game="CK2HIP">city_duke</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Arpitan">Grand Sendeco</Name>
-      <Name language="Bulgar">Oglu-Tarkan</Name>
-      <Name language="English">Grand Mayor</Name>
-      <Name language="Polish_Old">Wójt</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1498,16 +1573,32 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duke_vice-royal</Id>
+    <Id>duke_viceRoyalty</Id>
     <GameIds>
       <GameId game="CK2">vice_royalty_duke</GameId>
       <GameId game="CK2HIP">vice_royalty_duke</GameId>
+      <GameId game="CK3">duke_viceroyalty_male</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>duke</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Latin">Produx</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>duke_viceRoyalty_female</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_duke_female</GameId>
+      <GameId game="CK2HIP">vice_royalty_duke_female</GameId>
+      <GameId game="CK3">duke_viceroyalty_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>duke_viceRoyalty</TitleId>
+      <TitleId>duchess</TitleId>
+      <TitleId>duke</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1569,6 +1660,34 @@
       <TitleId>duchess</TitleId>
     </FallbackTitles>
     <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>duke_republic</Id>
+    <GameIds>
+      <GameId game="CK2">city_duke</GameId>
+      <GameId game="CK2HIP">city_duke</GameId>
+      <GameId game="CK3">duke_republic_male</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Arpitan">Grand Sendeco</Name>
+      <Name language="Bulgar">Oglu-Tarkan</Name>
+      <Name language="English">Grand Mayor</Name>
+      <Name language="Polish_Old">Wójt</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>duke_republic_female</Id>
+    <GameIds>
+      <GameId game="CK2">city_duke_female</GameId>
+      <GameId game="CK2HIP">city_duke_female</GameId>
+      <GameId game="CK3">duke_republic_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>duke_republic</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="English">Grand Mayoress</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1674,16 +1793,6 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>grand-mayoress</Id>
-    <GameIds>
-      <GameId game="CK2">city_duke_female</GameId>
-      <GameId game="CK2HIP">city_duke_female</GameId>
-    </GameIds>
-    <Names>
-      <Name language="English">Grand Mayoress</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
     <Id>duchess</Id>
     <GameIds>
       <GameId game="CK2">duke_female</GameId>
@@ -1716,18 +1825,6 @@
     </FallbackTitles>
     <Names>
       <Name language="Bulgarian_Old">Barinya</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>duchess_vice-royal</Id>
-    <GameIds>
-      <GameId game="CK2">vice_royalty_duke_female</GameId>
-      <GameId game="CK2HIP">vice_royalty_duke_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>duchess</TitleId>
-    </FallbackTitles>
-    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1872,12 +1969,28 @@
     <GameIds>
       <GameId game="CK2">vice_royalty_king</GameId>
       <GameId game="CK2HIP">vice_royalty_king</GameId>
+      <GameId game="CK3">king_viceroyalty_male</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Latin">Prorex</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_viceRoyalty_female</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_king_female</GameId>
+      <GameId game="CK2HIP">vice_royalty_king_female</GameId>
+      <GameId game="CK3">king_viceroyalty_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_viceRoyalty</TitleId>
+      <TitleId>queen</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1908,10 +2021,11 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>king_city</Id>
+    <Id>king_republic</Id>
     <GameIds>
       <GameId game="CK2">city_king</GameId>
       <GameId game="CK2HIP">city_king</GameId>
+      <GameId game="CK3">king_republic_male</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Prince Sendeco</Name>
@@ -1922,13 +2036,14 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>king_city_female</Id>
+    <Id>king_republic_female</Id>
     <GameIds>
       <GameId game="CK2">city_king_female</GameId>
       <GameId game="CK2HIP">city_king_female</GameId>
+      <GameId game="CK3">king_republic_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>king_city</TitleId>
+      <TitleId>king_republic</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -2093,18 +2208,6 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>queen_viceRoyalty</Id>
-    <GameIds>
-      <GameId game="CK2">vice_royalty_king_female</GameId>
-      <GameId game="CK2HIP">vice_royalty_king_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>queen</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
     <Id>queen_tribal</Id>
     <GameIds>
       <GameId game="CK2">tribal_king_female</GameId>
@@ -2171,18 +2274,6 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>grand-prince</Id>
-    <GameIds>
-      <GameId game="CK2">city_emperor</GameId>
-      <GameId game="CK2HIP">city_emperor</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Bulgar">Oglu-Tarkan</Name>
-      <Name language="English">Grand Prince</Name>
-      <Name language="Latin">Magnus Princeps</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
     <Id>emperor</Id>
     <GameIds>
       <GameId game="CK2">emperor</GameId>
@@ -2210,6 +2301,34 @@
       <GameId game="CK2HIP">emperor_title_ruler_consort</GameId>
     </GameIds>
     <FallbackTitles>
+      <TitleId>emperor</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_viceRoyalty</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_emperor</GameId>
+      <GameId game="CK2HIP">vice_royalty_emperor</GameId>
+      <GameId game="CK3">emperor_viceroyalty_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_viceRoyalty_female</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_emperor_female</GameId>
+      <GameId game="CK2HIP">vice_royalty_emperor_female</GameId>
+      <GameId game="CK3">emperor_viceroyalty_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor_viceRoyalty_female</TitleId>
+      <TitleId>empress</TitleId>
       <TitleId>emperor</TitleId>
     </FallbackTitles>
     <Names>
@@ -2251,6 +2370,30 @@
       <TitleId>emperor</TitleId>
     </FallbackTitles>
     <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_republic</Id>
+    <GameIds>
+      <GameId game="CK2">city_emperor</GameId>
+      <GameId game="CK2HIP">city_emperor</GameId>
+      <GameId game="CK3">emperor_republic_male</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Bulgar">Oglu-Tarkan</Name>
+      <Name language="English">Grand Prince</Name>
+      <Name language="Latin">Magnus Princeps</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_republic_female</Id>
+    <GameIds>
+      <GameId game="CK2">city_emperor_female</GameId>
+      <GameId game="CK2HIP">city_emperor_female</GameId>
+      <GameId game="CK3">emperor_republic_female</GameId>
+    </GameIds>
+    <Names>
+      <Name language="English">Grand Princess</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2337,16 +2480,6 @@
       <TitleId>emperor</TitleId>
     </FallbackTitles>
     <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>grand-princess</Id>
-    <GameIds>
-      <GameId game="CK2">city_emperor_female</GameId>
-      <GameId game="CK2HIP">city_emperor_female</GameId>
-    </GameIds>
-    <Names>
-      <Name language="English">Grand Princess</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2492,6 +2625,19 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>barony_viceRoyalty</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_barony</GameId>
+      <GameId game="CK2HIP">vice_royalty_barony</GameId>
+      <GameId game="CK3">barony_viceroyalty</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>barony</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>barony_tribal</Id>
     <GameIds>
       <GameId game="CK2">tribal_barony</GameId>
@@ -2514,7 +2660,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_city</Id>
+    <Id>barony_republic</Id>
     <GameIds>
       <GameId game="CK2">city_barony</GameId>
       <GameId game="CK2HIP">city_barony</GameId>
@@ -2531,13 +2677,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_city_of</Id>
+    <Id>barony_republic_of</Id>
     <GameIds>
       <GameId game="CK2">city_barony_of</GameId>
       <GameId game="CK2HIP">city_barony_of</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>barony_city</TitleId>
+      <TitleId>barony_republic</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Comena de</Name>
@@ -2549,7 +2695,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_city_tribal</Id>
+    <Id>barony_republic_tribal</Id>
     <GameIds>
       <GameId game="CK2">tribal_city_barony</GameId>
       <GameId game="CK2HIP">tribal_city_barony</GameId>
@@ -2562,13 +2708,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_city_tribal_of</Id>
+    <Id>barony_republic_tribal_of</Id>
     <GameIds>
       <GameId game="CK2">tribal_city_barony_of</GameId>
       <GameId game="CK2HIP">tribal_city_barony_of</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>barony_city_tribal</TitleId>
+      <TitleId>barony_republic_tribal</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="English">Village of</Name>
@@ -2576,28 +2722,28 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_city_imperial</Id>
+    <Id>barony_republic_imperial</Id>
     <GameIds>
       <GameId game="CK2">imperial_city_barony</GameId>
       <GameId game="CK2HIP">imperial_city_barony</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>barony_city</TitleId>
+      <TitleId>barony_republic</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Gród</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_city_imperial_of</Id>
+    <Id>barony_republic_imperial_of</Id>
     <GameIds>
       <GameId game="CK2">imperial_city_barony_of</GameId>
       <GameId game="CK2HIP">imperial_city_barony_of</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>barony_city_imperial</TitleId>
-      <TitleId>barony_city_of</TitleId>
-      <TitleId>barony_city</TitleId>
+      <TitleId>barony_republic_imperial</TitleId>
+      <TitleId>barony_republic_of</TitleId>
+      <TitleId>barony_republic</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -2823,7 +2969,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>county_city</Id>
+    <Id>county_republic</Id>
     <GameIds>
       <GameId game="CK2">city_county</GameId>
       <GameId game="CK2HIP">city_county</GameId>
@@ -2836,13 +2982,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>county_city_of</Id>
+    <Id>county_republic_of</Id>
     <GameIds>
       <GameId game="CK2">city_county_of</GameId>
       <GameId game="CK2HIP">city_county_of</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>county_city</TitleId>
+      <TitleId>county_republic</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Quenton de</Name>
@@ -2852,7 +2998,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>county_city_tribal</Id>
+    <Id>county_republic_tribal</Id>
     <GameIds>
       <GameId game="CK2">tribal_city_county</GameId>
       <GameId game="CK2HIP">tribal_city_county</GameId>
@@ -2862,13 +3008,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>county_city_tribal_of</Id>
+    <Id>county_republic_tribal_of</Id>
     <GameIds>
       <GameId game="CK2">tribal_city_county_of</GameId>
       <GameId game="CK2HIP">tribal_city_county_of</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>county_city_tribal</TitleId>
+      <TitleId>county_republic_tribal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -3056,6 +3202,7 @@
     <GameIds>
       <GameId game="CK2">vice_royalty_duchy</GameId>
       <GameId game="CK2HIP">vice_royalty_duchy</GameId>
+      <GameId game="CK3">duchy_viceroyalty</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>duchy</TitleId>
@@ -3139,7 +3286,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duchy_city</Id>
+    <Id>duchy_republic</Id>
     <GameIds>
       <GameId game="CK2">city_duchy</GameId>
       <GameId game="CK2HIP">city_duchy</GameId>
@@ -3153,13 +3300,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duchy_city_of</Id>
+    <Id>duchy_republic_of</Id>
     <GameIds>
       <GameId game="CK2">city_duchy_of</GameId>
       <GameId game="CK2HIP">city_duchy_of</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duchy_city</TitleId>
+      <TitleId>duchy_republic</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Rèpublica de</Name>
@@ -3387,6 +3534,7 @@
     <GameIds>
       <GameId game="CK2">vice_royalty_kingdom</GameId>
       <GameId game="CK2HIP">vice_royalty_kingdom</GameId>
+      <GameId game="CK3">kingdom_viceroyalty</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>kingdom</TitleId>
@@ -3409,13 +3557,14 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>kingdom_city</Id>
+    <Id>kingdom_republic</Id>
     <GameIds>
       <GameId game="CK2">city_kingdom</GameId>
       <GameId game="CK2HIP">city_kingdom</GameId>
+      <GameId game="CK3">kingdom_republic</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duchy_city</TitleId>
+      <TitleId>duchy_republic</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="English">Most Serene Republic</Name>
@@ -3424,15 +3573,15 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>kingdom_city_of</Id>
+    <Id>kingdom_republic_of</Id>
     <GameIds>
       <GameId game="CK2">city_kingdom_of</GameId>
       <GameId game="CK2HIP">city_kingdom_of</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>kingdom_city</TitleId>
-      <TitleId>duchy_city_of</TitleId>
-      <TitleId>duchy_city</TitleId>
+      <TitleId>kingdom_republic</TitleId>
+      <TitleId>duchy_republic_of</TitleId>
+      <TitleId>duchy_republic</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="English">Most Serene Republic of</Name>
@@ -3619,33 +3768,6 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>principality</Id>
-    <GameIds>
-      <GameId game="CK2">city_empire</GameId>
-      <GameId game="CK2HIP">city_empire</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>empire</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Latin">Principalitas</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>principality_of</Id>
-    <GameIds>
-      <GameId game="CK2">city_empire_of</GameId>
-      <GameId game="CK2HIP">city_empire_of</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>principality</TitleId>
-      <TitleId>empire_of</TitleId>
-      <TitleId>empire</TitleId>
-    </FallbackTitles>
-    <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
     <Id>empire</Id>
     <GameIds>
       <GameId game="CK2">empire</GameId>
@@ -3679,6 +3801,61 @@
       <Name language="Occitan">Empèri de</Name>
       <Name language="Polish">Cesarstwo</Name>
       <Name language="Romanian">Imperiul</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>empire_viceRoyalty</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_empire</GameId>
+      <GameId game="CK2HIP">vice_royalty_empire</GameId>
+      <GameId game="CK3">empire_viceroyalty</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>empire</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>empire_viceRoyalty_of</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_empire_of</GameId>
+      <GameId game="CK2HIP">vice_royalty_empire_of</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>empire_viceRoyalty</TitleId>
+      <TitleId>empire_of</TitleId>
+      <TitleId>empire</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>empire_republic</Id>
+    <GameIds>
+      <GameId game="CK2">city_empire</GameId>
+      <GameId game="CK2HIP">city_empire</GameId>
+      <GameId game="CK3">empire_republic</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>empire</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Latin">Principalitas</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>empire_republic_of</Id>
+    <GameIds>
+      <GameId game="CK2">city_empire_of</GameId>
+      <GameId game="CK2HIP">city_empire_of</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>empire_republic</TitleId>
+      <TitleId>empire_of</TitleId>
+      <TitleId>empire</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
