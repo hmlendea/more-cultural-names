@@ -20,6 +20,7 @@
     <Names>
       <Name language="English">Concubine</Name>
       <Name language="Polish">Konkubina</Name>
+      <Name language="Romanian">Concubină</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -277,7 +278,7 @@
       <Name language="French_Old">Sénéchal</Name>
       <Name language="Latin_Old">Praefectus Militaris</Name>
       <Name language="Polish">Skarbnik</Name>
-      <Name language="Romanian_Old">Vistier</Name> <!-- Or Vistiernic -->
+      <Name language="Romanian_Old">Vistiernic</Name> <!-- Or Vistier -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -398,8 +399,6 @@
       <Name language="English">Court Bishop</Name>
       <Name language="Latin_Old">Pontifex Maximus</Name>
       <Name language="Polish_Old">Zerca Królewski</Name> <!-- Educated guess how it could be named. 'Zerca' part is 100% hist accurate -->
-      <Name language="Romanian_Old">Mitropolit</Name>
-      <Name language="Serbian_Medieval">Mitropolit</Name>
       <Name language="Slovene_Medieval">Kaplan</Name>
       <Name language="Soninke">Hogon</Name>
     </Names>
@@ -411,11 +410,32 @@
       <GameId game="CK2HIP">job_spiritual_christian</GameId>
     </GameIds>
     <FallbackTitles>
+      <TitleId>court_bishop_orthodox</TitleId>
       <TitleId>court_bishop</TitleId>
+      <TitleId>baron_theocratic_christian</TitleId>
+      <TitleId>baron_theocratic_orthodox</TitleId>
       <TitleId>baron_theocratic</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish">Metropolita</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>court_bishop_orthodox</Id>
+    <GameIds>
+      <GameId game="CK2">job_spiritual_orthodox</GameId>
+      <GameId game="CK2HIP">job_spiritual_orthodox</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>court_bishop_christian</TitleId>
+      <TitleId>court_bishop</TitleId>
+      <TitleId>baron_theocratic_orthodox</TitleId>
+      <TitleId>baron_theocratic_christian</TitleId>
+      <TitleId>baron_theocratic</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Romanian_Old">Mitropolit</Name>
+      <Name language="Serbian_Medieval">Mitropolit</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -426,10 +446,50 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>court_bishop</TitleId>
+      <TitleId>baron_theocratic_tribal</TitleId>
       <TitleId>baron_theocratic</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish">Zerca Wielki</Name> <!-- Educated guess -->
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>court_bishop_tribal_christian</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_job_spiritual_christian</GameId>
+      <GameId game="CK2HIP">tribal_job_spiritual_christian</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>court_bishop_tribal_orthodox</TitleId>
+      <TitleId>court_bishop_christian</TitleId>
+      <TitleId>court_bishop_orthodox</TitleId>
+      <TitleId>court_bishop</TitleId>
+      <TitleId>baron_theocratic_tribal</TitleId>
+      <TitleId>baron_theocratic_christian</TitleId>
+      <TitleId>baron_theocratic_orthodox</TitleId>
+      <TitleId>baron_theocratic</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Polish">Zerca Wielki</Name> <!-- Educated guess -->
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>court_bishop_tribal_orthodox</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_job_spiritual_orthodox</GameId>
+      <GameId game="CK2HIP">tribal_job_spiritual_orthodox</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>court_bishop_tribal_christian</TitleId>
+      <TitleId>court_bishop_orthodox</TitleId>
+      <TitleId>court_bishop_christian</TitleId>
+      <TitleId>court_bishop</TitleId>
+      <TitleId>baron_theocratic_tribal</TitleId>
+      <TitleId>baron_theocratic_orthodox</TitleId>
+      <TitleId>baron_theocratic_christian</TitleId>
+      <TitleId>baron_theocratic</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -452,8 +512,8 @@
       <GameId game="CK2HIP">imperial_job_spiritual_christian</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>court_bishop_christian</TitleId>
       <TitleId>court_bishop_imperial</TitleId>
+      <TitleId>court_bishop_christian</TitleId>
       <TitleId>court_bishop</TitleId>
       <TitleId>baron_theocratic</TitleId>
     </FallbackTitles>
@@ -1145,11 +1205,72 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>baron_theocratic_christian</Id>
+    <GameIds>
+      <GameId game="CK2">temple_baron_christian</GameId>
+      <GameId game="CK2HIP">temple_baron_christian</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_theocratic_orthodox</TitleId>
+      <TitleId>baron_theocratic</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_theocratic_christian_female</Id>
+    <GameIds>
+      <GameId game="CK2">temple_baron_christian_female</GameId>
+      <GameId game="CK2HIP">temple_baron_christian_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_theocratic_christian</TitleId>
+      <TitleId>baron_theocratic_orthodox_female</TitleId>
+      <TitleId>baron_theocratic_orthodox</TitleId>
+      <TitleId>baron_theocratic_female</TitleId>
+      <TitleId>baron_theocratic</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_theocratic_orthodox</Id>
+    <GameIds>
+      <GameId game="CK2">temple_baron_orthodox</GameId>
+      <GameId game="CK2HIP">temple_baron_orthodox</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_theocratic_christian</TitleId>
+      <TitleId>baron_theocratic</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_theocratic_orthodox_female</Id>
+    <GameIds>
+      <GameId game="CK2">temple_baron_orthodox_female</GameId>
+      <GameId game="CK2HIP">temple_baron_orthodox_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_theocratic_orthodox</TitleId>
+      <TitleId>baron_theocratic_christian_female</TitleId>
+      <TitleId>baron_theocratic_christian</TitleId>
+      <TitleId>baron_theocratic_female</TitleId>
+      <TitleId>baron_theocratic</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>baron_theocratic_slavicPagan</Id>
     <GameIds>
       <GameId game="CK2">temple_baron_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_baron_slavic_pagan</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_theocratic</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Wolchw</Name> <!-- baltic 'Wajdelota' or 'Krywejcic', but that would be polish trascription. Probably something like 'Vaidelošu'. i can't find anything specific for 'krywejcic' but this word could be a result of russian language influance on maybe prussia? -->
     </Names>
@@ -1160,6 +1281,11 @@
       <GameId game="CK2">temple_baron_female_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_baron_female_slavic_pagan</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_theocratic_slavicPagan</TitleId>
+      <TitleId>baron_theocratic_female</TitleId>
+      <TitleId>baron_theocratic</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Wiedzma</Name> <!-- could be 'Ragana' for early baltic faith and 'Vaidelotem' later -->
     </Names>
@@ -1172,6 +1298,7 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>baron_theocratic_slavicPagan</TitleId>
+      <TitleId>baron_theocratic</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -1186,9 +1313,45 @@
       <TitleId>baron_theocratic_slavicPaganReformed</TitleId>
       <TitleId>baron_theocratic_slavicPagan_female</TitleId>
       <TitleId>baron_theocratic_slavicPagan</TitleId>
+      <TitleId>baron_theocratic_female</TitleId>
+      <TitleId>baron_theocratic</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Wolchwyni</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_theocratic_tribal</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_temple_baron</GameId>
+      <GameId game="CK2HIP">tribal_temple_baron</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_theocratic</TitleId>
+      <TitleId>baron_theocratic_tribal</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Arpitan">Èvèque</Name>
+      <Name language="English">Abbot</Name>
+      <Name language="Latin">Episcopus</Name>
+      <Name language="Romanian">Stareț</Name>
+      <Name language="Soninke">Hogon</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_theocratic_tribal_female</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_temple_baron_female</GameId>
+      <GameId game="CK2HIP">tribal_temple_baron_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_theocratic_tribal</TitleId>
+      <TitleId>baron_theocratic_female</TitleId>
+      <TitleId>baron_theocratic</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="English">Abbess</Name>
+      <Name language="Romanian">Stareță</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
