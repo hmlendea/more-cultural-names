@@ -196,6 +196,7 @@
       <Name language="Romanian_Old">Mitropolit</Name>
       <Name language="Serbian_Medieval">Mitropolit</Name>
       <Name language="Slovene_Medieval">Kaplan</Name>
+      <Name language="Soninke">Hogon</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -416,6 +417,7 @@
       <Name language="French_Old">Prince</Name>
       <Name language="Latin">Princeps</Name>
       <Name language="Romanian">Prinț</Name>
+      <Name language="Soninke">Maghan</Name> <!-- Or Farbas -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -445,6 +447,7 @@
       <Name language="Latin">Principissa</Name>
       <Name language="Occitan_Old">Princessa</Name>
       <Name language="Romanian">Prințesă</Name>
+      <Name language="Soninke">Manga</Name> <!-- Or Farba -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -486,12 +489,14 @@
     <GameIds>
       <GameId game="CK2">temple_baron</GameId>
       <GameId game="CK2HIP">temple_baron</GameId>
+      <GameId game="CK3">baron_theocracy_male</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Èvèque</Name>
       <Name language="English">Abbot</Name>
       <Name language="Latin">Episcopus</Name>
       <Name language="Romanian">Stareț</Name>
+      <Name language="Soninke">Hogon</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -499,7 +504,11 @@
     <GameIds>
       <GameId game="CK2">temple_baron_female</GameId>
       <GameId game="CK2HIP">temple_baron_female</GameId>
+      <GameId game="CK3">baron_theocracy_female</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>abbot</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="English">Abbess</Name>
       <Name language="Romanian">Stareță</Name>
@@ -538,6 +547,7 @@
     <GameIds>
       <GameId game="CK2">baron</GameId>
       <GameId game="CK2HIP">baron</GameId>
+      <GameId game="CK3">baron_feudal_male</GameId>
     </GameIds>
     <Names>
       <Name language="Croatian_Medieval">Barun</Name>
@@ -549,6 +559,7 @@
       <Name language="Norman">Chatelain</Name>
       <Name language="Romanian_Old">Boier</Name>
       <Name language="Romanian">Baron</Name>
+      <Name language="Soninke">Kafi</Name> <!-- Or Tigui -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -580,7 +591,11 @@
     <GameIds>
       <GameId game="CK2">baron_female</GameId>
       <GameId game="CK2HIP">baron_female</GameId>
+      <GameId game="CK3">baron_feudal_female</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>baron</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="Arpitan">Baronèssa</Name>
       <Name language="Bulgar">Kali</Name>
@@ -592,6 +607,7 @@
       <Name language="Occitan_Old">Baronessa</Name>
       <Name language="Romanian_Old">Boieră</Name>
       <Name language="Romanian">Baroană</Name>
+      <Name language="Soninke">Kafuna</Name> <!-- Or Tigua -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -602,6 +618,7 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>baroness</TitleId>
+      <TitleId>baron</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -614,6 +631,7 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>baroness</TitleId>
+      <TitleId>baron</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -642,6 +660,9 @@
       <GameId game="CK2HIP">tribal_baron_female</GameId>
       <GameId game="CK2HIP">tribal_count_female</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>chief</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="English">Cheiftess</Name>
       <Name language="Romanian">Cnează</Name>
@@ -652,12 +673,14 @@
     <GameIds>
       <GameId game="CK2">temple_count</GameId>
       <GameId game="CK2HIP">temple_count</GameId>
+      <GameId game="CK3">count_theocracy_male</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Èvèque</Name>
       <Name language="English">Bishop</Name>
       <Name language="French_Old">Prince-Évesque</Name>
       <Name language="Romanian">Episcop</Name>
+      <Name language="Soninke">High Hogon</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -665,7 +688,11 @@
     <GameIds>
       <GameId game="CK2">temple_count_female</GameId>
       <GameId game="CK2HIP">temple_count_female</GameId>
+      <GameId game="CK3">count_theocracy_female</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>bishop</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="English">Bishopess</Name>
       <Name language="Romanian">Episcopă</Name>
@@ -690,6 +717,9 @@
       <GameId game="CK2">city_count_female</GameId>
       <GameId game="CK2HIP">city_count_female</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>lord-mayor</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="English">Lady Mayoress</Name>
     </Names>
@@ -699,6 +729,7 @@
     <GameIds>
       <GameId game="CK2">count</GameId>
       <GameId game="CK2HIP">count</GameId>
+      <GameId game="CK3">count_feudal_male</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Comto</Name>
@@ -711,6 +742,7 @@
       <Name language="Norman">Counte</Name>
       <Name language="Romanian_Old">Ban</Name>
       <Name language="Romanian">Conte</Name>
+      <Name language="Soninke">Farin</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -723,6 +755,18 @@
       <TitleId>count</TitleId>
     </FallbackTitles>
     <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_independent</Id>
+    <GameIds>
+      <GameId game="CK3" type="independent">count_feudal_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>count</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Soninke">Jamanatigi</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -743,6 +787,7 @@
     <GameIds>
       <GameId game="CK2">count_female</GameId>
       <GameId game="CK2HIP">count_female</GameId>
+      <GameId game="CK3">count_feudal_female</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Comtèssa</Name>
@@ -755,6 +800,7 @@
       <Name language="Occitan_Old">Comtessa</Name>
       <Name language="Romanian_Old">Bană</Name>
       <Name language="Romanian">Contesă</Name>
+      <Name language="Soninke">Farina</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -768,6 +814,20 @@
     </FallbackTitles>
     <Names>
       <Name language="Bulgarian_Old">Kmetsha</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>countess_independent</Id>
+    <GameIds>
+      <GameId game="CK3" type="independent">count_feudal_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>countess</TitleId>
+      <TitleId>count_independent</TitleId>
+      <TitleId>count</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Soninke">Jamanatiga</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -795,6 +855,7 @@
       <Name language="Bulgar">Boil</Name>
       <Name language="English">High Cheif</Name>
       <Name language="Romanian">Mare Cneaz</Name>
+      <Name language="Soninke">Farbas</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -839,6 +900,7 @@
     <GameIds>
       <GameId game="CK2">duke</GameId>
       <GameId game="CK2HIP">duke</GameId>
+      <GameId game="CK3">duke_feudal_male</GameId>
     </GameIds>
     <Names>
       <Name language="Croatian_Medieval">Ban</Name>
@@ -852,6 +914,7 @@
       <Name language="Romanian">Duce</Name>
       <Name language="Serbian_Medieval">Knez</Name>
       <Name language="Slovene_Medieval">Knez</Name>
+      <Name language="Soninke">Maghan</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -918,6 +981,7 @@
       <Name language="Bulgar">Kali</Name>
       <Name language="English">High Cheiftess</Name>
       <Name language="Romanian">Mare Cnează</Name>
+      <Name language="Soninke">Farba</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -959,6 +1023,7 @@
     <GameIds>
       <GameId game="CK2">duke_female</GameId>
       <GameId game="CK2HIP">duke_female</GameId>
+      <GameId game="CK3">duke_feudal_female</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Duchèssa</Name>
@@ -971,6 +1036,7 @@
       <Name language="Occitan_Old">Duquessa</Name>
       <Name language="Romanian_Old">Mare Bană</Name>
       <Name language="Romanian">Ducesă</Name>
+      <Name language="Soninke">Manga</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1037,10 +1103,26 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>king-bishop</Id>
+    <GameIds>
+      <GameId game="CK2">temple_king</GameId>
+      <GameId game="CK2HIP">temple_king</GameId>
+      <GameId game="CK3">king_theocracy_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="English">King-Bishop</Name>
+      <Name language="Soninke">Grand Hogon</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>king</Id>
     <GameIds>
       <GameId game="CK2">king</GameId>
       <GameId game="CK2HIP">king</GameId>
+      <GameId game="CK3">king_feudal_male</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Re</Name>
@@ -1054,6 +1136,7 @@
       <Name language="Occitan_Old">Rei</Name>
       <Name language="Romanian_Old">Domnitor</Name>
       <Name language="Romanian">Rege</Name>
+      <Name language="Soninke">Ghana</Name> <!-- Or Faama -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1093,6 +1176,7 @@
     <Names>
       <Name language="Bulgar">Voievod</Name>
       <Name language="Romanian_Old">Voievod</Name>
+      <Name language="Soninke">Tunka</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1159,11 +1243,30 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>queen-bishopess</Id>
+    <GameIds>
+      <GameId game="CK2">temple_king_female</GameId>
+      <GameId game="CK2HIP">temple_king_female</GameId>
+      <GameId game="CK3">king_theocracy_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king-bishop</TitleId>
+      <TitleId>queen</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="English">Queen-Bishopess</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>queen</Id>
     <GameIds>
       <GameId game="CK2">king_female</GameId>
       <GameId game="CK2HIP">king_female</GameId>
+      <GameId game="CK3">king_feudal_female</GameId>
     </GameIds>
+    <FallbackTitles>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
     <Names>
       <Name language="Arpitan">Rena</Name>
       <Name language="Bulgar">Khanum</Name>
@@ -1176,6 +1279,7 @@
       <Name language="Occitan_Old">Reina</Name>
       <Name language="Romanian_Old">Domnitoare</Name>
       <Name language="Romanian">Regină</Name>
+      <Name language="Soninke">Ghanina</Name> <!-- Or Malika -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1285,6 +1389,7 @@
     <GameIds>
       <GameId game="CK2">emperor</GameId>
       <GameId game="CK2HIP">emperor</GameId>
+      <GameId game="CK3">emperor_feudal_male</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Emperor</Name>
@@ -1296,6 +1401,7 @@
       <Name language="Occitan_Old">Emperaire</Name>
       <Name language="Latin">Imperator</Name>
       <Name language="Romanian">Împărat</Name>
+      <Name language="Soninke">Mansa</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1375,6 +1481,7 @@
     <GameIds>
       <GameId game="CK2">emperor_female</GameId>
       <GameId game="CK2HIP">emperor_female</GameId>
+      <GameId game="CK3">emperor_feudal_female</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Emperèssa</Name>
@@ -1386,6 +1493,7 @@
       <Name language="Norman">Empereis</Name>
       <Name language="Occitan_Old">Emperairitz</Name>
       <Name language="Romanian">Împărăteasă</Name>
+      <Name language="Soninke">Mansina</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1599,6 +1707,7 @@
       <Name language="Norman">Chatellenie de</Name>
       <Name language="Occitan_Old">Baronia de</Name>
       <Name language="Romanian_Old">Cetatea</Name>
+      <Name language="Soninke">Kafu of</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1703,6 +1812,7 @@
       <Name language="Arpitan">Quenton de</Name>
       <Name language="English">Grand City of</Name>
       <Name language="French_Old">Bailliage de</Name>
+      <Name language="Soninke">Farinate of</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1741,6 +1851,7 @@
     <GameIds>
       <GameId game="CK2">county</GameId>
       <GameId game="CK2HIP">county</GameId>
+      <GameId game="CK3">county_feudal</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Comtat</Name>
@@ -1752,6 +1863,7 @@
       <Name language="Occitan_Old">Comtat</Name>
       <Name language="Romanian_Old">Țeară</Name>
       <Name language="Romanian">Județ</Name>
+      <Name language="Soninke">Jamana</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1920,6 +2032,7 @@
     <GameIds>
       <GameId game="CK2">duchy</GameId>
       <GameId game="CK2HIP">duchy</GameId>
+      <GameId game="CK3">duchy_feudal</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Duchie</Name>
@@ -1955,6 +2068,7 @@
       <Name language="Romanian">Ducatul de</Name>
       <Name language="Serbian_Medieval">Kneževina</Name>
       <Name language="Slovene_Medieval">Kneževina</Name>
+      <Name language="Soninke">Maghanate of</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2105,6 +2219,7 @@
       <Name language="Occitan_Old">Reialme de</Name>
       <Name language="Romanian_Old">Voievodatul de</Name>
       <Name language="Romanian">Regatul</Name>
+      <Name language="Soninke">Ghanate of</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2250,6 +2365,7 @@
     <GameIds>
       <GameId game="CK2">empire</GameId>
       <GameId game="CK2HIP">empire</GameId>
+      <GameId game="CK3">empire_feudal</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Empiro</Name>
@@ -2258,6 +2374,7 @@
       <Name language="Latin">Imperium</Name>
       <Name language="Norman">Empere</Name>
       <Name language="Romanian">Imperiu</Name>
+      <Name language="Soninke">Kurufaba</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
