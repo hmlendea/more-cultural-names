@@ -21,6 +21,7 @@ The common database currently has over **55 thousand** names for over **450** la
 ## Steam Workshop
 
 Just subscribe to the mod page for the game for which you wish to install this mod:
+ - [Crusader Kings 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)
  - [Crusader Kings 2 (HIP)](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
  - [Crusader Kings 2 (EK)](https://steamcommunity.com/sharedfiles/filedetails/?id=1745899430)
  - [Crusader Kings 3](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)
