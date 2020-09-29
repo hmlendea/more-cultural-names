@@ -25,7 +25,7 @@ for FALLBACK_LOCATION_ID in $(grep "<LocationId>" "${LOCATIONS_FILE}" | \
                                 sed 's/.*<LocationId>\([^<>]*\)<\/LocationId>.*/\1/g' | \
                                 sort | uniq); do
     if [ -z "$(grep "<Id>${FALLBACK_LOCATION_ID}</Id>" "${LOCATIONS_FILE}")" ]; then
-        echo "Fallback location \"${FALLBACK_LOCATION_ID}\" does not exit"
+        echo "Fallback location \"${FALLBACK_LOCATION_ID}\" does not exist"
     fi
 done
 
@@ -34,7 +34,7 @@ for FALLBACK_TITLE_ID in $(grep "<TitleId>" "${TITLES_FILE}" | \
                                 sed 's/.*<TitleId>\([^<>]*\)<\/TitleId>.*/\1/g' | \
                                 sort | uniq); do
     if [ -z "$(grep "<Id>${FALLBACK_TITLE_ID}</Id>" "${TITLES_FILE}")" ]; then
-        echo "Fallback title \"${FALLBACK_TITLE_ID}\" does not exit"
+        echo "Fallback title \"${FALLBACK_TITLE_ID}\" does not exist"
     fi
 done
 

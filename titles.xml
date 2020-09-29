@@ -1561,6 +1561,28 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>duke_female</Id>
+    <GameIds>
+      <GameId game="CK2">duke_female</GameId>
+      <GameId game="CK2HIP">duke_female</GameId>
+      <GameId game="CK3">duke_feudal_female</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Arpitan">Duchèssa</Name>
+      <Name language="Bulgar">Kali</Name>
+      <Name language="Bulgarian_Old">Bolyarina</Name> <!-- Not sure if it has 'a' at the end -->
+      <Name language="English">Duchess</Name>
+      <Name language="French_Old">Duchesse</Name>
+      <Name language="Latin">Ducissa</Name>
+      <Name language="Norman">Ducesse</Name>
+      <Name language="Occitan_Old">Duquessa</Name>
+      <Name language="Polish_Old">Wojewodżiną</Name>
+      <Name language="Romanian_Old">Mare Bană</Name>
+      <Name language="Romanian">Ducesă</Name>
+      <Name language="Soninke">Manga</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>duke_consort</Id>
     <GameIds>
       <GameId game="CK2">duke_title_ruler_consort</GameId>
@@ -1570,6 +1592,19 @@
       <TitleId>duke</TitleId>
     </FallbackTitles>
     <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>duke_consort_female</Id>
+    <GameIds>
+      <GameId game="CK2">duke_title_ruler_consort_female</GameId>
+      <GameId game="CK2HIP">duke_title_ruler_consort_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>duke_female</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Bulgarian_Old">Barinya</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1595,7 +1630,7 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>duke_viceRoyalty</TitleId>
-      <TitleId>duchess</TitleId>
+      <TitleId>duke_female</TitleId>
       <TitleId>duke</TitleId>
     </FallbackTitles>
     <Names>
@@ -1639,7 +1674,7 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>duke_tribal</TitleId>
-      <TitleId>duchess</TitleId>
+      <TitleId>duke_female</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Bulgar">Kali</Name>
@@ -1657,7 +1692,8 @@
     <FallbackTitles>
       <TitleId>duke_tribal_female</TitleId>
       <TitleId>duke_tribal</TitleId>
-      <TitleId>duchess</TitleId>
+      <TitleId>duke_female</TitleId>
+      <TitleId>duke</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -1793,48 +1829,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duchess</Id>
-    <GameIds>
-      <GameId game="CK2">duke_female</GameId>
-      <GameId game="CK2HIP">duke_female</GameId>
-      <GameId game="CK3">duke_feudal_female</GameId>
-    </GameIds>
-    <Names>
-      <Name language="Arpitan">Duchèssa</Name>
-      <Name language="Bulgar">Kali</Name>
-      <Name language="Bulgarian_Old">Bolyarina</Name> <!-- Not sure if it has 'a' at the end -->
-      <Name language="English">Duchess</Name>
-      <Name language="French_Old">Duchesse</Name>
-      <Name language="Latin">Ducissa</Name>
-      <Name language="Norman">Ducesse</Name>
-      <Name language="Occitan_Old">Duquessa</Name>
-      <Name language="Polish_Old">Wojewodżiną</Name>
-      <Name language="Romanian_Old">Mare Bană</Name>
-      <Name language="Romanian">Ducesă</Name>
-      <Name language="Soninke">Manga</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>duchess_consort</Id>
-    <GameIds>
-      <GameId game="CK2">duke_title_ruler_consort_female</GameId>
-      <GameId game="CK2HIP">duke_title_ruler_consort_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>duchess</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Bulgarian_Old">Barinya</Name>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
     <Id>duchess_imperial</Id>
     <GameIds>
       <GameId game="CK2">imperial_duke_female</GameId>
       <GameId game="CK2HIP">imperial_duke_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duchess</TitleId>
+      <TitleId>duke_female</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -1847,7 +1848,7 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>duchess_imperial</TitleId>
-      <TitleId>duchess</TitleId>
+      <TitleId>duke_female</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
