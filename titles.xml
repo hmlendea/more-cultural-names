@@ -28,9 +28,11 @@
     <GameIds>
       <GameId game="CK2">title_prince</GameId>
       <GameId game="CK2HIP">title_prince</GameId>
+      <GameId game="CK3">title_prince_male</GameId>
     </GameIds>
     <Names>
       <Name language="Croatian_Medieval">Princ</Name>
+      <Name language="Breton_Middle">Priñs</Name>
       <Name language="English_Old">Ætheling</Name>
       <Name language="English">Prince</Name>
       <Name language="French_Old">Prince</Name>
@@ -41,6 +43,7 @@
       <Name language="Sardinian">Principe</Name>
       <Name language="Soninke">Maghan</Name> <!-- Or Farbas -->
       <Name language="Tuscan_Medieval">Principe</Name>
+      <Name language="Welsh_Middle">Etifedd</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -48,10 +51,12 @@
     <GameIds>
       <GameId game="CK2">title_prince_female</GameId>
       <GameId game="CK2HIP">title_prince_female</GameId>
+      <GameId game="CK3">title_prince_female</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Princèssa</Name>
-      <Name language="Croatian_Medieval">Princeza</Name>
+      <Name language="Breton_Middle">Priñs</Name>
+      <Name language="Croatian_Medieval">Priñsez</Name>
       <Name language="English">Princess</Name>
       <Name language="French_Old">Princesse</Name>
       <Name language="Hungarian">Királylány</Name>
@@ -62,6 +67,7 @@
       <Name language="Sardinian">Principessa</Name>
       <Name language="Soninke">Manga</Name> <!-- Or Farba -->
       <Name language="Tuscan_Medieval">Principessa</Name>
+      <Name language="Welsh_Middle">Etifeddes</Name> <!-- Not sure -->
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -82,6 +88,32 @@
     <GameIds>
       <GameId game="CK2">title_prince_baron_female</GameId>
       <GameId game="CK2HIP">title_prince_baron_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>prince_female</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>prince_imperial</Id>
+    <GameIds>
+      <GameId game="CK2">imperial_title_prince</GameId>
+      <GameId game="CK2HIP">imperial_title_prince</GameId>
+      <GameId game="CK3" type="empire">title_prince_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>prince</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>prince_imperial_female</Id>
+    <GameIds>
+      <GameId game="CK2">imperial_title_prince_female</GameId>
+      <GameId game="CK2HIP">imperial_title_prince_female</GameId>
+      <GameId game="CK3" type="empire">title_prince_female</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>prince_female</TitleId>
@@ -1199,6 +1231,7 @@
       <Name language="Sardinian">Donnu</Name>
       <Name language="Soninke">Kafi</Name> <!-- Or Tigui -->
       <Name language="Tuscan_Medieval">Barone</Name>
+      <Name language="Welsh_Middle">Tiarna</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1228,6 +1261,7 @@
       <Name language="Sardinian">Donna</Name>
       <Name language="Soninke">Kafuna</Name> <!-- Or Tigua -->
       <Name language="Tuscan_Medieval">Baronessa</Name>
+      <Name language="Welsh_Middle">Bantiarna</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1613,6 +1647,7 @@
       <Name language="Sardinian">Curatore</Name>
       <Name language="Soninke">Farin</Name>
       <Name language="Tuscan_Medieval">Conte</Name>
+      <Name language="Welsh_Middle">Tywysauc</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1643,6 +1678,7 @@
       <Name language="Sardinian">Curatessa</Name>
       <Name language="Soninke">Farina</Name>
       <Name language="Tuscan_Medieval">Contessa</Name>
+      <Name language="Welsh_Middle">Tywysauces</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1953,6 +1989,7 @@
       <Name language="Slovene_Medieval">Knez</Name>
       <Name language="Soninke">Maghan</Name>
       <Name language="Tuscan_Medieval">Duca</Name>
+      <Name language="Welsh_Middle">Tywysog</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1981,6 +2018,7 @@
       <Name language="Sardinian">Iudicissa</Name>
       <Name language="Soninke">Manga</Name>
       <Name language="Tuscan_Medieval">Duchessa</Name>
+      <Name language="Welsh_Middle">Tywysoges</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2314,6 +2352,7 @@
       <Name language="Sardinian">Re</Name>
       <Name language="Soninke">Ghana</Name> <!-- Or Faama -->
       <Name language="Tuscan_Medieval">Re</Name>
+      <Name language="Welsh_Middle">Brenin</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2346,6 +2385,7 @@
       <Name language="Sardinian">Reina</Name>
       <Name language="Soninke">Ghanina</Name> <!-- Or Malika -->
       <Name language="Tuscan_Medieval">Regina</Name>
+      <Name language="Welsh_Middle">Breninhes</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2774,7 +2814,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Emperor</Name>
-      <Name language="Breton_Middle">Impalaer</Name>
+      <Name language="Breton_Middle">Impalazr</Name>
       <Name language="Bulgar">Khagan</Name>
       <Name language="Croatian_Medieval">Car</Name>
       <Name language="Dalmatian_Medieval">Imperatáur</Name>
@@ -2790,6 +2830,7 @@
       <Name language="Sardinian">Imperatore</Name>
       <Name language="Soninke">Mansa</Name>
       <Name language="Tuscan_Medieval">Imperatore</Name>
+      <Name language="Welsh_Middle">Amheraudyr</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2806,6 +2847,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Emperèssa</Name>
+      <Name language="Breton_Middle">Impalazrez</Name>
       <Name language="Bulgar">Khatun</Name>
       <Name language="Croatian_Medieval">Carica</Name>
       <Name language="Dalmatian_Medieval">Imperatric</Name>
@@ -2821,6 +2863,7 @@
       <Name language="Sardinian">Imperatrice</Name>
       <Name language="Soninke">Mansina</Name>
       <Name language="Tuscan_Medieval">Imperatrice</Name>
+      <Name language="Welsh_Middle">Amheradres</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -3277,6 +3320,7 @@
       <Name language="Polish_Old">Opole</Name>
       <Name language="Romanian_Old">Cetate</Name>
       <Name language="Soninke">Kafu</Name>
+      <Name language="Welsh_Middle">Cwmwd</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -3299,6 +3343,7 @@
       <Name language="Occitan_Old">Baronia de</Name>
       <Name language="Romanian_Old">Cetatea</Name>
       <Name language="Soninke">Kafu of</Name>
+      <Name language="Welsh_Middle">Cwmwd o</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -3595,6 +3640,7 @@
       <Name language="Sardinian">Curatoria</Name>
       <Name language="Soninke">Jamana</Name>
       <Name language="Tuscan_Medieval">Contea</Name>
+      <Name language="Welsh_Middle">Cantref</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -3608,6 +3654,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Comtat de</Name>
+      <Name language="Breton_Middle">Kontelezh</Name>
       <Name language="Bulgarian_Old">Komitat na</Name>
       <Name language="English_Old">Scír of</Name>
       <Name language="English">County of</Name>
@@ -3620,6 +3667,7 @@
       <Name language="Sardinian">Curatoria de</Name>
       <Name language="Soninke">Jamana of</Name>
       <Name language="Tuscan_Medieval">Contea di</Name>
+      <Name language="Welsh_Middle">Cantref o</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -3912,6 +3960,7 @@
       <Name language="Slovene_Medieval">Kneževina</Name>
       <Name language="Soninke">Maghanate</Name>
       <Name language="Tuscan_Medieval">Ducato</Name>
+      <Name language="Welsh_Middle">Tywysogaeth</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -3925,6 +3974,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Duchie de</Name>
+      <Name language="Breton_Middle">Dugelezh</Name>
       <Name language="Bulgarian_Old">Bolyarstvo na</Name>
       <Name language="English_Old">Eorldom of</Name>
       <Name language="English">Duchy of</Name>
@@ -3939,6 +3989,7 @@
       <Name language="Slovene_Medieval">Kneževina</Name>
       <Name language="Soninke">Maghanate of</Name>
       <Name language="Tuscan_Medieval">Ducato di</Name>
+      <Name language="Welsh_Middle">Tywysogaeth o</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -4268,6 +4319,7 @@
       <Name language="Sardinian">Rennu</Name>
       <Name language="Soninke">Ghanate</Name>
       <Name language="Tuscan_Medieval">Regno</Name>
+      <Name language="Welsh_Middle">Teyrnas</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -4281,6 +4333,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Royomo de</Name>
+      <Name language="Breton_Middle">Rouantelezh</Name>
       <Name language="Bulgarian_Old">Tsarstvo na</Name>
       <Name language="Dalmatian_Medieval">Raigno di</Name>
       <Name language="English_Old">Cyningríce of</Name>
@@ -4295,6 +4348,7 @@
       <Name language="Sardinian">Rennu de</Name>
       <Name language="Soninke">Ghanate of</Name>
       <Name language="Tuscan_Medieval">Regno di</Name>
+      <Name language="Welsh_Middle">Teyrnas o</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -4552,6 +4606,7 @@
     </GameIds>
     <Names>
       <Name language="Arpitan">Empiro</Name>
+      <Name language="Breton_Middle">Impalazriezh</Name>
       <Name language="Croatian_Medieval">Carevina</Name>
       <Name language="English_Old">Héafodríce</Name>
       <Name language="English">Empire</Name>
@@ -4562,6 +4617,7 @@
       <Name language="Romanian">Imperiu</Name>
       <Name language="Soninke">Kurufaba</Name>
       <Name language="Tuscan_Medieval">Impero</Name>
+      <Name language="Welsh_Middle">Amherodraeth</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -4575,6 +4631,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Empiro de</Name>
+      <Name language="Breton_Middle">Impalazriezh</Name>
       <Name language="English">Empire of</Name>
       <Name language="English_Old">Héafodríce of</Name>
       <Name language="French_Old">Empire de</Name>
@@ -4585,6 +4642,7 @@
       <Name language="Romanian">Imperiul</Name>
       <Name language="Soninke">Kurufaba of</Name>
       <Name language="Tuscan_Medieval">Impero di</Name>
+      <Name language="Welsh_Middle">Amherodraeth o</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
