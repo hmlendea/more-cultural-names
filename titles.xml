@@ -135,6 +135,7 @@
     <GameIds>
       <GameId game="CK2">title_queen_mother</GameId>
       <GameId game="CK2HIP">title_queen_mother</GameId>
+      <GameId game="CK3">queen_mother</GameId>
     </GameIds>
     <Names>
       <Name language="English">Queen Mother</Name>
@@ -690,6 +691,7 @@
     <GameIds>
       <GameId game="CK2">ECUMENICAL_PATRIARCH</GameId>
       <GameId game="CK2HIP">ECUMENICAL_PATRIARCH</GameId>
+      <GameId game="CK3">ecumenical_patriarch</GameId>
     </GameIds>
     <Names>
       <Name language="French_Old">Patriarche Œcuménique</Name>
@@ -697,6 +699,14 @@
       <Name language="Latin">Patriarchae Oecumenico</Name>
       <Name language="Occitan_Old">Patriarcat Ecumènic</Name>
       <Name language="Tuscan_Medieval">Patriarca Ecumenico</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>patriarch_ecumenical_female</Id>
+    <GameIds>
+      <GameId game="CK3">ecumenical_matriarch</GameId>
+    </GameIds>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1227,6 +1237,7 @@
     <GameIds>
       <GameId game="CK2">baron</GameId>
       <GameId game="CK2HIP">baron</GameId>
+      <GameId game="CK3">baron_feudal_male</GameId>
       <GameId game="CK3">baron_male</GameId>
     </GameIds>
     <Names>
@@ -1261,6 +1272,7 @@
     <GameIds>
       <GameId game="CK2">baron_female</GameId>
       <GameId game="CK2HIP">baron_female</GameId>
+      <GameId game="CK3">baron_feudal_female</GameId>
       <GameId game="CK3">baron_female</GameId>
     </GameIds>
     <FallbackTitles>
@@ -1351,6 +1363,7 @@
     <GameIds>
       <GameId game="CK2">tribal_baron</GameId>
       <GameId game="CK2HIP">tribal_baron</GameId>
+      <GameId game="CK3">baron_tribal_male</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>baron_feudal</TitleId>
@@ -1366,6 +1379,7 @@
     <GameIds>
       <GameId game="CK2">tribal_baron_female</GameId>
       <GameId game="CK2HIP">tribal_baron_female</GameId>
+      <GameId game="CK3">baron_tribal_female</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>baron_tribal</TitleId>
@@ -1375,6 +1389,33 @@
       <Name language="English">Cheiftess</Name>
       <Name language="Polish_Old">Kmiecina</Name>
       <Name language="Romanian">Cnează</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_clan</Id>
+    <GameIds>
+      <GameId game="CK3">baron_clan_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_tribal</TitleId>
+      <TitleId>baron_feudal</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>baron_clan_female</Id>
+    <GameIds>
+      <GameId game="CK3">baron_clan_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>baron_clan</TitleId>
+      <TitleId>baron_tribal_female</TitleId>
+      <TitleId>baron_tribal</TitleId>
+      <TitleId>baron_feudal_female</TitleId>
+      <TitleId>baron_feudal</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1567,7 +1608,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>baron_theocratic_slavicPagan</Id>
+    <Id>baron_theocratic_paganSlavic</Id>
     <GameIds>
       <GameId game="CK2">temple_baron_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_baron_slavic_pagan</GameId>
@@ -1581,13 +1622,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>baron_theocratic_slavicPagan_female</Id>
+    <Id>baron_theocratic_paganSlavic_female</Id>
     <GameIds>
       <GameId game="CK2">temple_baron_female_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_baron_female_slavic_pagan</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>baron_theocratic_slavicPagan</TitleId>
+      <TitleId>baron_theocratic_paganSlavic</TitleId>
       <TitleId>baron_theocratic_pagan_female</TitleId>
       <TitleId>baron_theocratic_pagan</TitleId>
       <TitleId>baron_theocratic_female</TitleId>
@@ -1598,13 +1639,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>baron_theocratic_slavicPaganReformed</Id>
+    <Id>baron_theocratic_paganSlavicReformed</Id>
     <GameIds>
       <GameId game="CK2">temple_baron_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_baron_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>baron_theocratic_slavicPagan</TitleId>
+      <TitleId>baron_theocratic_paganSlavic</TitleId>
       <TitleId>baron_theocratic_pagan</TitleId>
       <TitleId>baron_theocratic</TitleId>
     </FallbackTitles>
@@ -1612,15 +1653,15 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>baron_theocratic_slavicPaganReformed_female</Id>
+    <Id>baron_theocratic_paganSlavicReformed_female</Id>
     <GameIds>
       <GameId game="CK2">temple_baron_female_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_baron_female_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>baron_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>baron_theocratic_slavicPagan_female</TitleId>
-      <TitleId>baron_theocratic_slavicPagan</TitleId>
+      <TitleId>baron_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>baron_theocratic_paganSlavic_female</TitleId>
+      <TitleId>baron_theocratic_paganSlavic</TitleId>
       <TitleId>baron_theocratic_pagan_female</TitleId>
       <TitleId>baron_theocratic_pagan</TitleId>
       <TitleId>baron_theocratic_female</TitleId>
@@ -1696,6 +1737,7 @@
     <GameIds>
       <GameId game="CK2">count</GameId>
       <GameId game="CK2HIP">count</GameId>
+      <GameId game="CK3">count_feudal_male</GameId>
       <GameId game="CK3">count_male</GameId>
     </GameIds>
     <Names>
@@ -1731,6 +1773,7 @@
     <GameIds>
       <GameId game="CK2">count_female</GameId>
       <GameId game="CK2HIP">count_female</GameId>
+      <GameId game="CK3">count_feudal_female</GameId>
       <GameId game="CK3">count_female</GameId>
     </GameIds>
     <FallbackTitles>
@@ -1850,6 +1893,7 @@
     <GameIds>
       <GameId game="CK2">tribal_count</GameId>
       <GameId game="CK2HIP">tribal_count</GameId>
+      <GameId game="CK3">count_tribal_male</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>baron_tribal</TitleId>
@@ -1867,6 +1911,7 @@
     <GameIds>
       <GameId game="CK2">tribal_count_female</GameId>
       <GameId game="CK2HIP">tribal_count_female</GameId>
+      <GameId game="CK3">count_tribal_female</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>count_tribal</TitleId>
@@ -1875,6 +1920,32 @@
     </FallbackTitles>
     <Names>
       <Name language="Cornish_Middle">Loides</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_clan</Id>
+    <GameIds>
+      <GameId game="CK3">count_clan_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>count_tribal</TitleId>
+      <TitleId>baron_tribal</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>count_clan_female</Id>
+    <GameIds>
+      <GameId game="CK3">count_clan_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>count_tribal_female</TitleId>
+      <TitleId>count_tribal</TitleId>
+      <TitleId>baron_tribal_female</TitleId>
+      <TitleId>baron_tribal</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2021,7 +2092,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>count_theocratic_slavicPagan</Id>
+    <Id>count_theocratic_paganSlavic</Id>
     <GameIds>
       <GameId game="CK2">temple_count_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_count_slavic_pagan</GameId>
@@ -2029,7 +2100,7 @@
     <FallbackTitles>
       <TitleId>count_theocratic_pagan</TitleId>
       <TitleId>count_theocratic</TitleId>
-      <TitleId>baron_theocratic_slavicPagan</TitleId>
+      <TitleId>baron_theocratic_paganSlavic</TitleId>
       <TitleId>baron_theocratic_pagan</TitleId>
       <TitleId>baron_theocratic</TitleId>
     </FallbackTitles>
@@ -2038,19 +2109,19 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>count_theocratic_slavicPagan_female</Id>
+    <Id>count_theocratic_paganSlavic_female</Id>
     <GameIds>
       <GameId game="CK2">temple_count_female_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_count_female_slavic_pagan</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>count_theocratic_slavicPagan</TitleId>
+      <TitleId>count_theocratic_paganSlavic</TitleId>
       <TitleId>count_theocratic_pagan_female</TitleId>
       <TitleId>count_theocratic_pagan</TitleId>
       <TitleId>count_theocratic_female</TitleId>
       <TitleId>count_theocratic</TitleId>
-      <TitleId>baron_theocratic_slavicPagan_female</TitleId>
-      <TitleId>baron_theocratic_slavicPagan</TitleId>
+      <TitleId>baron_theocratic_paganSlavic_female</TitleId>
+      <TitleId>baron_theocratic_paganSlavic</TitleId>
       <TitleId>baron_theocratic_pagan_female</TitleId>
       <TitleId>baron_theocratic_pagan</TitleId>
       <TitleId>baron_theocratic_female</TitleId>
@@ -2061,17 +2132,17 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>count_theocratic_slavicPaganReformed</Id>
+    <Id>count_theocratic_paganSlavicReformed</Id>
     <GameIds>
       <GameId game="CK2">temple_count_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_count_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>count_theocratic_slavicPagan</TitleId>
+      <TitleId>count_theocratic_paganSlavic</TitleId>
       <TitleId>count_theocratic_pagan</TitleId>
       <TitleId>count_theocratic</TitleId>
-      <TitleId>baron_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>baron_theocratic_slavicPagan</TitleId>
+      <TitleId>baron_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>baron_theocratic_paganSlavic</TitleId>
       <TitleId>baron_theocratic_pagan</TitleId>
       <TitleId>baron_theocratic</TitleId>
     </FallbackTitles>
@@ -2079,23 +2150,23 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>count_theocratic_slavicPaganReformed_female</Id>
+    <Id>count_theocratic_paganSlavicReformed_female</Id>
     <GameIds>
       <GameId game="CK2">temple_count_female_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_count_female_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>count_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>count_theocratic_slavicPagan_female</TitleId>
-      <TitleId>count_theocratic_slavicPagan</TitleId>
+      <TitleId>count_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>count_theocratic_paganSlavic_female</TitleId>
+      <TitleId>count_theocratic_paganSlavic</TitleId>
       <TitleId>count_theocratic_pagan_female</TitleId>
       <TitleId>count_theocratic_pagan</TitleId>
       <TitleId>count_theocratic_female</TitleId>
       <TitleId>count_theocratic</TitleId>
-      <TitleId>baron_theocratic_slavicPaganReformed_female</TitleId>
-      <TitleId>baron_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>baron_theocratic_slavicPagan_female</TitleId>
-      <TitleId>baron_theocratic_slavicPagan</TitleId>
+      <TitleId>baron_theocratic_paganSlavicReformed_female</TitleId>
+      <TitleId>baron_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>baron_theocratic_paganSlavic_female</TitleId>
+      <TitleId>baron_theocratic_paganSlavic</TitleId>
       <TitleId>baron_theocratic_pagan_female</TitleId>
       <TitleId>baron_theocratic_pagan</TitleId>
       <TitleId>baron_theocratic_female</TitleId>
@@ -2138,6 +2209,7 @@
     <GameIds>
       <GameId game="CK2">duke</GameId>
       <GameId game="CK2HIP">duke</GameId>
+      <GameId game="CK3">duke_feudal_male</GameId>
       <GameId game="CK3">duke_male</GameId>
     </GameIds>
     <Names>
@@ -2175,6 +2247,7 @@
       <GameId game="CK2">duke_female</GameId>
       <GameId game="CK2HIP">duke_female</GameId>
       <GameId game="CK3">duke_feudal_female</GameId>
+      <GameId game="CK3">duke_female</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Duchèssa</Name>
@@ -2205,7 +2278,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duke_consort</Id>
+    <Id>duke_consort_male</Id>
     <GameIds>
       <GameId game="CK2">duke_title_ruler_consort</GameId>
       <GameId game="CK2HIP">duke_title_ruler_consort</GameId>
@@ -2265,9 +2338,9 @@
     <GameIds>
       <GameId game="CK2">tribal_duke</GameId>
       <GameId game="CK2HIP">tribal_duke</GameId>
+      <GameId game="CK3">duke_tribal_male</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duke</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Bulgar">Boil</Name>
@@ -2281,6 +2354,23 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>duke_tribal_female</Id>
+    <GameIds>
+      <GameId game="CK2">tribal_duke_female</GameId>
+      <GameId game="CK2HIP">tribal_duke_female</GameId>
+      <GameId game="CK3">duke_tribal_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>duke_tribal</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Bulgar">Kali</Name>
+      <Name language="English">High Cheiftess</Name>
+      <Name language="Romanian">Mare Cnează</Name>
+      <Name language="Soninke">Farba</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>duke_tribal_consort</Id>
     <GameIds>
       <GameId game="CK2">tribal_duke_title_ruler_consort</GameId>
@@ -2288,26 +2378,10 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>duke_tribal</TitleId>
+      <TitleId>duke_consort_male</TitleId>
       <TitleId>duke</TitleId>
     </FallbackTitles>
     <Names>
-    </Names>
-  </TitleEntity>
-  <TitleEntity>
-    <Id>duke_tribal_female</Id>
-    <GameIds>
-      <GameId game="CK2">tribal_duke_female</GameId>
-      <GameId game="CK2HIP">tribal_duke_female</GameId>
-    </GameIds>
-    <FallbackTitles>
-      <TitleId>duke_tribal</TitleId>
-      <TitleId>duke_female</TitleId>
-    </FallbackTitles>
-    <Names>
-      <Name language="Bulgar">Kali</Name>
-      <Name language="English">High Cheiftess</Name>
-      <Name language="Romanian">Mare Cnează</Name>
-      <Name language="Soninke">Farba</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -2319,8 +2393,33 @@
     <FallbackTitles>
       <TitleId>duke_tribal_female</TitleId>
       <TitleId>duke_tribal</TitleId>
+      <TitleId>duke_consort_female</TitleId>
+      <TitleId>duke_consort_male</TitleId>
       <TitleId>duke_female</TitleId>
       <TitleId>duke</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>duke_clan</Id>
+    <GameIds>
+      <GameId game="CK3">duke_clan_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>duke_tribal</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>duke_clan_female</Id>
+    <GameIds>
+      <GameId game="CK3">duke_clan_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>duke_tribal_female</TitleId>
+      <TitleId>duke_tribal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -2366,6 +2465,7 @@
     <GameIds>
       <GameId game="CK2">temple_duke</GameId>
       <GameId game="CK2HIP">temple_duke</GameId>
+      <GameId game="CK3">duke_theocracy_male</GameId>
     </GameIds>
     <Names>
       <Name language="English">Archbishop</Name>
@@ -2378,6 +2478,7 @@
     <GameIds>
       <GameId game="CK2">temple_duke_female</GameId>
       <GameId game="CK2HIP">temple_duke_female</GameId>
+      <GameId game="CK3">duke_theocracy_female</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>duke_theocratic</TitleId>
@@ -2443,7 +2544,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duke_theocratic_slavicPagan</Id>
+    <Id>duke_theocratic_paganSlavic</Id>
     <GameIds>
       <GameId game="CK2">temple_duke_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_duke_slavic_pagan</GameId>
@@ -2457,13 +2558,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duke_theocratic_slavicPagan_female</Id>
+    <Id>duke_theocratic_paganSlavic_female</Id>
     <GameIds>
       <GameId game="CK2">temple_duke_female_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_duke_female_slavic_pagan</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duke_theocratic_slavicPagan</TitleId>
+      <TitleId>duke_theocratic_paganSlavic</TitleId>
       <TitleId>duke_theocratic_pagan_female</TitleId>
       <TitleId>duke_theocratic_pagan</TitleId>
       <TitleId>duke_theocratic_female</TitleId>
@@ -2474,13 +2575,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duke_theocratic_slavicPaganReformed</Id>
+    <Id>duke_theocratic_paganSlavicReformed</Id>
     <GameIds>
       <GameId game="CK2">temple_duke_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_duke_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duke_theocratic_slavicPagan</TitleId>
+      <TitleId>duke_theocratic_paganSlavic</TitleId>
       <TitleId>duke_theocratic_pagan</TitleId>
       <TitleId>duke_theocratic</TitleId>
     </FallbackTitles>
@@ -2488,15 +2589,15 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duke_theocratic_slavicPaganReformed_female</Id>
+    <Id>duke_theocratic_paganSlavicReformed_female</Id>
     <GameIds>
       <GameId game="CK2">temple_duke_female_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_duke_female_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duke_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>duke_theocratic_slavicPagan_female</TitleId>
-      <TitleId>duke_theocratic_slavicPagan</TitleId>
+      <TitleId>duke_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>duke_theocratic_paganSlavic_female</TitleId>
+      <TitleId>duke_theocratic_paganSlavic</TitleId>
       <TitleId>duke_theocratic_pagan_female</TitleId>
       <TitleId>duke_theocratic_pagan</TitleId>
       <TitleId>duke_theocratic_female</TitleId>
@@ -2567,6 +2668,7 @@
     <GameIds>
       <GameId game="CK2">king</GameId>
       <GameId game="CK2HIP">king</GameId>
+      <GameId game="CK3">king_feudal_male</GameId>
       <GameId game="CK3">king_male</GameId>
     </GameIds>
     <Names>
@@ -2604,6 +2706,7 @@
     <GameIds>
       <GameId game="CK2">king_female</GameId>
       <GameId game="CK2HIP">king_female</GameId>
+      <GameId game="CK3">king_feudal_female</GameId>
       <GameId game="CK3">king_female</GameId>
     </GameIds>
     <FallbackTitles>
@@ -2703,10 +2806,11 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>king_nomadic</Id>
+    <Id>king_nomadic_male</Id>
     <GameIds>
       <GameId game="CK2">nomadic_king</GameId>
       <GameId game="CK2HIP">nomadic_king</GameId>
+      <GameId game="CK3">king_nomadic_male</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>king_tribal</TitleId>
@@ -2720,9 +2824,10 @@
     <GameIds>
       <GameId game="CK2">nomadic_king_female</GameId>
       <GameId game="CK2HIP">nomadic_king_female</GameId>
+      <GameId game="CK3">king_nomadic_female</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_tribal_female</TitleId>
       <TitleId>king_tribal</TitleId>
       <TitleId>king_female</TitleId>
@@ -2772,9 +2877,10 @@
     <GameIds>
       <GameId game="CK2">tribal_king</GameId>
       <GameId game="CK2HIP">tribal_king</GameId>
+      <GameId game="CK3">king_tribal_male</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
@@ -2789,11 +2895,12 @@
     <GameIds>
       <GameId game="CK2">tribal_king_female</GameId>
       <GameId game="CK2HIP">tribal_king_female</GameId>
+      <GameId game="CK3">king_tribal_female</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>king_tribal</TitleId>
       <TitleId>king_nomadic_female</TitleId>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_female</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
@@ -2825,6 +2932,36 @@
       <TitleId>king_tribal_female</TitleId>
       <TitleId>king_consort_female</TitleId>
       <TitleId>king_consort</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_clan_male</Id>
+    <GameIds>
+      <GameId game="CK3">king_clan_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>king_clan_female</Id>
+    <GameIds>
+      <GameId game="CK3">king_clan_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>king_clan_male</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_nomadic_female</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_female</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
@@ -2951,7 +3088,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>king_theocratic_slavicPagan</Id>
+    <Id>king_theocratic_paganSlavic</Id>
     <GameIds>
       <GameId game="CK2">temple_king_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_king_slavic_pagan</GameId>
@@ -2965,13 +3102,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>king_theocratic_slavicPagan_female</Id>
+    <Id>king_theocratic_paganSlavic_female</Id>
     <GameIds>
       <GameId game="CK2">temple_king_female_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_king_female_slavic_pagan</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>king_theocratic_slavicPagan</TitleId>
+      <TitleId>king_theocratic_paganSlavic</TitleId>
       <TitleId>king_theocratic_pagan_female</TitleId>
       <TitleId>king_theocratic_pagan</TitleId>
       <TitleId>king_theocratic_female</TitleId>
@@ -2982,13 +3119,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>king_theocratic_slavicPaganReformed</Id>
+    <Id>king_theocratic_paganSlavicReformed</Id>
     <GameIds>
       <GameId game="CK2">temple_king_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_king_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>king_theocratic_slavicPagan</TitleId>
+      <TitleId>king_theocratic_paganSlavic</TitleId>
       <TitleId>king_theocratic_pagan</TitleId>
       <TitleId>king_theocratic</TitleId>
     </FallbackTitles>
@@ -2996,15 +3133,15 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>king_theocratic_slavicPaganReformed_female</Id>
+    <Id>king_theocratic_paganSlavicReformed_female</Id>
     <GameIds>
       <GameId game="CK2">temple_king_female_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_king_female_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>king_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>king_theocratic_slavicPagan_female</TitleId>
-      <TitleId>king_theocratic_slavicPagan</TitleId>
+      <TitleId>king_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>king_theocratic_paganSlavic_female</TitleId>
+      <TitleId>king_theocratic_paganSlavic</TitleId>
       <TitleId>king_theocratic_pagan_female</TitleId>
       <TitleId>king_theocratic_pagan</TitleId>
       <TitleId>king_theocratic_female</TitleId>
@@ -3107,6 +3244,7 @@
     <GameIds>
       <GameId game="CK2">emperor</GameId>
       <GameId game="CK2HIP">emperor</GameId>
+      <GameId game="CK3">emperor_feudal_male</GameId>
       <GameId game="CK3">emperor_male</GameId>
     </GameIds>
     <FallbackTitles>
@@ -3145,6 +3283,7 @@
       <GameId game="CK2">emperor_female</GameId>
       <GameId game="CK2HIP">emperor_female</GameId>
       <GameId game="CK3">emperor_feudal_female</GameId>
+      <GameId game="CK3">emperor_female</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>emperor</TitleId>
@@ -3245,15 +3384,16 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>emperor_nomadic</Id>
+    <Id>emperor_nomadic_male</Id>
     <GameIds>
       <GameId game="CK2">nomadic_emperor</GameId>
       <GameId game="CK2HIP">nomadic_emperor</GameId>
+      <GameId game="CK3">emperor_nomadic_male</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>emperor_tribal</TitleId>
       <TitleId>emperor</TitleId>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_tribal</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
@@ -3266,16 +3406,20 @@
     <GameIds>
       <GameId game="CK2">nomadic_emperor_female</GameId>
       <GameId game="CK2HIP">nomadic_emperor_female</GameId>
+      <GameId game="CK3">emperor_nomadic_female</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>emperor_tribal_female</TitleId>
-      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_clan_female</TitleId>
+      <TitleId>emperor_nomadic_male</TitleId>
       <TitleId>emperor_female</TitleId>
       <TitleId>emperor</TitleId>
       <TitleId>king_nomadic_female</TitleId>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_tribal_female</TitleId>
       <TitleId>king_tribal</TitleId>
+      <TitleId>king_clan_female</TitleId>
+      <TitleId>king_clan_male</TitleId>
       <TitleId>king_female</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
@@ -3290,13 +3434,13 @@
       <GameId game="CK2HIP">nomadic_emperor_title_ruler_consort</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_nomadic_male</TitleId>
       <TitleId>emperor_tribal_consort</TitleId>
       <TitleId>emperor_tribal</TitleId>
       <TitleId>emperor_consort</TitleId>
       <TitleId>emperor</TitleId>
       <TitleId>king_nomadic_consort</TitleId>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_tribal_consort</TitleId>
       <TitleId>king_tribal</TitleId>
       <TitleId>king_consort</TitleId>
@@ -3314,7 +3458,7 @@
     <FallbackTitles>
       <TitleId>emperor_nomadic_consort</TitleId>
       <TitleId>emperor_nomadic_female</TitleId>
-      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_nomadic_male</TitleId>
       <TitleId>emperor_tribal_consort_female</TitleId>
       <TitleId>emperor_tribal_consort</TitleId>
       <TitleId>emperor_tribal_female</TitleId>
@@ -3326,7 +3470,7 @@
       <TitleId>king_nomadic_consort_female</TitleId>
       <TitleId>king_nomadic_consort</TitleId>
       <TitleId>king_nomadic_female</TitleId>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_tribal_consort_female</TitleId>
       <TitleId>king_tribal_consort</TitleId>
       <TitleId>king_tribal_female</TitleId>
@@ -3345,12 +3489,15 @@
     <GameIds>
       <GameId game="CK2">tribal_emperor</GameId>
       <GameId game="CK2HIP">tribal_emperor</GameId>
+      <GameId game="CK3">emperor_tribal_male</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_clan_male</TitleId>
+      <TitleId>emperor_nomadic_male</TitleId>
       <TitleId>emperor</TitleId>
       <TitleId>king_tribal</TitleId>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_clan_male</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
     <Names>
@@ -3361,16 +3508,22 @@
     <GameIds>
       <GameId game="CK2">tribal_emperor_female</GameId>
       <GameId game="CK2HIP">tribal_emperor_female</GameId>
+      <GameId game="CK3">emperor_fetribal_male</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>emperor_nomadic_female</TitleId>
       <TitleId>emperor_tribal</TitleId>
+      <TitleId>emperor_clan_female</TitleId>
+      <TitleId>emperor_clan_male</TitleId>
+      <TitleId>emperor_nomadic_female</TitleId>
+      <TitleId>emperor_nomadic_male</TitleId>
       <TitleId>emperor_female</TitleId>
       <TitleId>emperor</TitleId>
       <TitleId>king_tribal_female</TitleId>
       <TitleId>king_tribal</TitleId>
+      <TitleId>king_clan_female</TitleId>
+      <TitleId>king_clan_male</TitleId>
       <TitleId>king_nomadic_female</TitleId>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_female</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
@@ -3386,13 +3539,13 @@
     <FallbackTitles>
       <TitleId>emperor_tribal</TitleId>
       <TitleId>emperor_nomadic_consort</TitleId>
-      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_nomadic_male</TitleId>
       <TitleId>emperor_consort</TitleId>
       <TitleId>emperor</TitleId>
       <TitleId>king_tribal_consort</TitleId>
       <TitleId>king_tribal</TitleId>
       <TitleId>king_nomadic_consort</TitleId>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_consort</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
@@ -3411,7 +3564,7 @@
       <TitleId>emperor_nomadic_consort_female</TitleId>
       <TitleId>emperor_nomadic_consort</TitleId>
       <TitleId>emperor_nomadic_female</TitleId>
-      <TitleId>emperor_nomadic</TitleId>
+      <TitleId>emperor_nomadic_male</TitleId>
       <TitleId>emperor_consort_female</TitleId>
       <TitleId>emperor_consort</TitleId>
       <TitleId>emperor_female</TitleId>
@@ -3423,9 +3576,51 @@
       <TitleId>king_nomadic_consort_female</TitleId>
       <TitleId>king_nomadic_consort</TitleId>
       <TitleId>king_nomadic_female</TitleId>
-      <TitleId>king_nomadic</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_consort_female</TitleId>
       <TitleId>king_consort</TitleId>
+      <TitleId>king_female</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_clan_male</Id>
+    <GameIds>
+      <GameId game="CK3">emperor_clan_male</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor_tribal</TitleId>
+      <TitleId>emperor_nomadic_male</TitleId>
+      <TitleId>emperor</TitleId>
+      <TitleId>king_clan_male</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
+      <TitleId>king</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>emperor_clan_female</Id>
+    <GameIds>
+      <GameId game="CK3">emperor_clan_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>emperor_clan_male</TitleId>
+      <TitleId>emperor_tribal_female</TitleId>
+      <TitleId>emperor_tribal</TitleId>
+      <TitleId>emperor_nomadic_female</TitleId>
+      <TitleId>emperor_nomadic_male</TitleId>
+      <TitleId>emperor_female</TitleId>
+      <TitleId>emperor</TitleId>
+      <TitleId>king_clan_female</TitleId>
+      <TitleId>king_clan_male</TitleId>
+      <TitleId>king_tribal_female</TitleId>
+      <TitleId>king_tribal</TitleId>
+      <TitleId>king_nomadic_female</TitleId>
+      <TitleId>king_nomadic_male</TitleId>
       <TitleId>king_female</TitleId>
       <TitleId>king</TitleId>
     </FallbackTitles>
@@ -3472,6 +3667,7 @@
     <GameIds>
       <GameId game="CK2">temple_emperor</GameId>
       <GameId game="CK2HIP">temple_emperor</GameId>
+      <GameId game="CK3">emperor_theocracy_male</GameId>
     </GameIds>
     <FallbackTitles>
     </FallbackTitles>
@@ -3483,6 +3679,7 @@
     <GameIds>
       <GameId game="CK2">temple_emperor_female</GameId>
       <GameId game="CK2HIP">temple_emperor_female</GameId>
+      <GameId game="CK3">emperor_theocracy_female</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>emperor_theocratic</TitleId>
@@ -3517,7 +3714,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>emperor_theocratic_slavicPagan</Id>
+    <Id>emperor_theocratic_paganSlavic</Id>
     <GameIds>
       <GameId game="CK2">temple_emperor_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_emperor_slavic_pagan</GameId>
@@ -3529,40 +3726,40 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>emperor_theocratic_slavicPagan_female</Id>
+    <Id>emperor_theocratic_paganSlavic_female</Id>
     <GameIds>
       <GameId game="CK2">temple_emperor_female_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_emperor_female_slavic_pagan</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>emperor_theocratic_slavicPagan</TitleId>
+      <TitleId>emperor_theocratic_paganSlavic</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Arcyzyrzczyni</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>emperor_theocratic_slavicPaganReformed</Id>
+    <Id>emperor_theocratic_paganSlavicReformed</Id>
     <GameIds>
       <GameId game="CK2">temple_emperor_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_emperor_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>emperor_theocratic_slavicPagan</TitleId>
+      <TitleId>emperor_theocratic_paganSlavic</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>emperor_theocratic_slavicPaganReformed_female</Id>
+    <Id>emperor_theocratic_paganSlavicReformed_female</Id>
     <GameIds>
       <GameId game="CK2">temple_emperor_female_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_emperor_female_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>emperor_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>emperor_theocratic_slavicPagan_female</TitleId>
-      <TitleId>emperor_theocratic_slavicPagan</TitleId>
+      <TitleId>emperor_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>emperor_theocratic_paganSlavic_female</TitleId>
+      <TitleId>emperor_theocratic_paganSlavic</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -3616,10 +3813,11 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony</Id>
+    <Id>barony_feudal</Id>
     <GameIds>
       <GameId game="CK2">barony</GameId>
       <GameId game="CK2HIP">barony</GameId>
+      <GameId game="CK3">barony_feudal</GameId>
       <GameId game="CK3">barony</GameId>
     </GameIds>
     <Names>
@@ -3643,13 +3841,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_of</Id>
+    <Id>barony_feudal_of</Id>
     <GameIds>
       <GameId game="CK2">barony_of</GameId>
       <GameId game="CK2HIP">barony_of</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>barony</TitleId>
+      <TitleId>barony_feudal</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Breton_Middle">Autrouniez of</Name>
@@ -3669,14 +3867,14 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_viceRoyalty</Id>
+    <Id>barony_feudal_viceRoyalty</Id>
     <GameIds>
       <GameId game="CK2">vice_royalty_barony</GameId>
       <GameId game="CK2HIP">vice_royalty_barony</GameId>
       <GameId game="CK3">barony_viceroyalty</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>barony</TitleId>
+      <TitleId>barony_feudal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -3686,6 +3884,7 @@
     <GameIds>
       <GameId game="CK2">tribal_barony</GameId>
       <GameId game="CK2HIP">tribal_barony</GameId>
+      <GameId game="CK3">barony_tribal</GameId>
     </GameIds>
     <Names>
       <Name language="Hungarian_Old_Early">Tirse</Name>
@@ -3705,6 +3904,18 @@
     <Names>
       <Name language="Hungarian_Old_Early">Tirse of</Name>
       <Name language="Hungarian_Old">Törzs of</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>barony_clan</Id>
+    <GameIds>
+      <GameId game="CK3">barony_clan</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>barony_tribal</TitleId>
+      <TitleId>barony_feudal</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -3912,7 +4123,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_theocratic_slavicPagan</Id>
+    <Id>barony_theocratic_paganSlavic</Id>
     <GameIds>
       <GameId game="CK2">temple_barony_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_barony_slavic_pagan</GameId>
@@ -3927,13 +4138,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_theocratic_slavicPagan_of</Id>
+    <Id>barony_theocratic_paganSlavic_of</Id>
     <GameIds>
       <GameId game="CK2">temple_barony_of_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_barony_of_slavic_pagan</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>barony_theocratic_slavicPagan</TitleId>
+      <TitleId>barony_theocratic_paganSlavic</TitleId>
       <TitleId>barony_theocratic_pagan_of</TitleId>
       <TitleId>barony_theocratic_pagan</TitleId>
       <TitleId>barony_theocratic_of</TitleId>
@@ -3943,13 +4154,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_theocratic_slavicPaganReformed</Id>
+    <Id>barony_theocratic_paganSlavicReformed</Id>
     <GameIds>
       <GameId game="CK2">temple_barony_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_barony_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>barony_theocratic_slavicPagan</TitleId>
+      <TitleId>barony_theocratic_paganSlavic</TitleId>
       <TitleId>barony_theocratic_pagan</TitleId>
       <TitleId>barony_theocratic</TitleId>
     </FallbackTitles>
@@ -3958,15 +4169,15 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>barony_theocratic_slavicPaganReformed_of</Id>
+    <Id>barony_theocratic_paganSlavicReformed_of</Id>
     <GameIds>
       <GameId game="CK2">temple_barony_of_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_barony_of_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>barony_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>barony_theocratic_slavicPagan_of</TitleId>
-      <TitleId>barony_theocratic_slavicPagan</TitleId>
+      <TitleId>barony_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>barony_theocratic_paganSlavic_of</TitleId>
+      <TitleId>barony_theocratic_paganSlavic</TitleId>
       <TitleId>barony_theocratic_pagan_of</TitleId>
       <TitleId>barony_theocratic_pagan</TitleId>
       <TitleId>barony_theocratic_of</TitleId>
@@ -3982,7 +4193,7 @@
       <GameId game="CK2HIP">imperial_barony</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>barony</TitleId>
+      <TitleId>barony_feudal</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Kasztelania</Name>
@@ -3996,17 +4207,18 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>barony_imperial</TitleId>
-      <TitleId>barony_of</TitleId>
-      <TitleId>barony</TitleId>
+      <TitleId>barony_feudal_of</TitleId>
+      <TitleId>barony_feudal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>county</Id>
+    <Id>county_feudal</Id>
     <GameIds>
       <GameId game="CK2">county</GameId>
       <GameId game="CK2HIP">county</GameId>
+      <GameId game="CK3">county_feudal</GameId>
       <GameId game="CK3">county</GameId>
     </GameIds>
     <Names>
@@ -4036,13 +4248,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>county_of</Id>
+    <Id>county_feudal_of</Id>
     <GameIds>
       <GameId game="CK2">county_of</GameId>
       <GameId game="CK2HIP">county_of</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>county</TitleId>
+      <TitleId>county_feudal</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Arpitan">Comtat de</Name>
@@ -4067,10 +4279,24 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>county_feudal_viceRoyalty</Id>
+    <GameIds>
+      <GameId game="CK2">vice_royalty_county</GameId>
+      <GameId game="CK2HIP">vice_royalty_county</GameId>
+      <GameId game="CK3">county_viceroyalty</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>county_feudal</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>county_tribal</Id>
     <GameIds>
       <GameId game="CK2">tribal_county</GameId>
       <GameId game="CK2HIP">tribal_county</GameId>
+      <GameId game="CK3">county_tribal</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>barony_tribal</TitleId>
@@ -4122,6 +4348,21 @@
       <TitleId>county_tribal</TitleId>
       <TitleId>barony_tribal_of</TitleId>
       <TitleId>barony_tribal</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>county_clan</Id>
+    <GameIds>
+      <GameId game="CK3">county_clan</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>county_tribal</TitleId>
+      <TitleId>county_feudal</TitleId>
+      <TitleId>barony_clan</TitleId>
+      <TitleId>barony_tribal</TitleId>
+      <TitleId>barony_feudal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -4316,7 +4557,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>county_theocratic_slavicPagan</Id>
+    <Id>county_theocratic_paganSlavic</Id>
     <GameIds>
       <GameId game="CK2">temple_county_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_county_slavic_pagan</GameId>
@@ -4330,13 +4571,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>county_theocratic_slavicPagan_of</Id>
+    <Id>county_theocratic_paganSlavic_of</Id>
     <GameIds>
       <GameId game="CK2">temple_county_of_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_county_of_slavic_pagan</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>county_theocratic_slavicPagan</TitleId>
+      <TitleId>county_theocratic_paganSlavic</TitleId>
       <TitleId>county_theocratic_pagan_of</TitleId>
       <TitleId>county_theocratic_pagan</TitleId>
       <TitleId>county_theocratic_of</TitleId>
@@ -4346,13 +4587,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>county_theocratic_slavicPaganReformed</Id>
+    <Id>county_theocratic_paganSlavicReformed</Id>
     <GameIds>
       <GameId game="CK2">temple_county_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_county_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>county_theocratic_slavicPagan</TitleId>
+      <TitleId>county_theocratic_paganSlavic</TitleId>
       <TitleId>county_theocratic_pagan</TitleId>
       <TitleId>county_theocratic</TitleId>
     </FallbackTitles>
@@ -4360,15 +4601,15 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>county_theocratic_slavicPaganReformed_of</Id>
+    <Id>county_theocratic_paganSlavicReformed_of</Id>
     <GameIds>
       <GameId game="CK2">temple_county_of_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_county_of_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>county_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>county_theocratic_slavicPagan_of</TitleId>
-      <TitleId>county_theocratic_slavicPagan</TitleId>
+      <TitleId>county_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>county_theocratic_paganSlavic_of</TitleId>
+      <TitleId>county_theocratic_paganSlavic</TitleId>
       <TitleId>county_theocratic_pagan_of</TitleId>
       <TitleId>county_theocratic_pagan</TitleId>
       <TitleId>county_theocratic_of</TitleId>
@@ -4384,7 +4625,7 @@
       <GameId game="CK2HIP">imperial_county</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>county</TitleId>
+      <TitleId>county_feudal</TitleId>
     </FallbackTitles>
     <Names>
       <Name language="Latin">Praefecturare</Name>
@@ -4399,8 +4640,8 @@
     </GameIds>
     <FallbackTitles>
       <TitleId>county_imperial</TitleId>
-      <TitleId>county_of</TitleId>
-      <TitleId>county</TitleId>
+      <TitleId>county_feudal_of</TitleId>
+      <TitleId>county_feudal</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -4411,6 +4652,7 @@
       <GameId game="CK2">duchy</GameId>
       <GameId game="CK2HIP">duchy</GameId>
       <GameId game="CK3">duchy_feudal</GameId>
+      <GameId game="CK3">duchy</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Duchie</Name>
@@ -4503,6 +4745,7 @@
     <GameIds>
       <GameId game="CK2">tribal_duchy</GameId>
       <GameId game="CK2HIP">tribal_duchy</GameId>
+      <GameId game="CK3">duchy_tribal</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>duchy</TitleId>
@@ -4558,6 +4801,18 @@
       <TitleId>duchy_tribal_of</TitleId>
       <TitleId>duchy_tribal</TitleId>
       <TitleId>duchy_of</TitleId>
+      <TitleId>duchy</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>duchy_clan</Id>
+    <GameIds>
+      <GameId game="CK3">duchy_clan</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>duchy_tribal</TitleId>
       <TitleId>duchy</TitleId>
     </FallbackTitles>
     <Names>
@@ -4689,7 +4944,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duchy_theocratic_slavicPagan</Id>
+    <Id>duchy_theocratic_paganSlavic</Id>
     <GameIds>
       <GameId game="CK2">temple_duchy_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_duchy_slavic_pagan</GameId>
@@ -4703,13 +4958,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duchy_theocratic_slavicPagan_of</Id>
+    <Id>duchy_theocratic_paganSlavic_of</Id>
     <GameIds>
       <GameId game="CK2">temple_duchy_of_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_duchy_of_slavic_pagan</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duchy_theocratic_slavicPagan</TitleId>
+      <TitleId>duchy_theocratic_paganSlavic</TitleId>
       <TitleId>duchy_theocratic_pagan_of</TitleId>
       <TitleId>duchy_theocratic_pagan</TitleId>
       <TitleId>duchy_theocratic_of</TitleId>
@@ -4719,13 +4974,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duchy_theocratic_slavicPaganReformed</Id>
+    <Id>duchy_theocratic_paganSlavicReformed</Id>
     <GameIds>
       <GameId game="CK2">temple_duchy_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_duchy_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duchy_theocratic_slavicPagan</TitleId>
+      <TitleId>duchy_theocratic_paganSlavic</TitleId>
       <TitleId>duchy_theocratic_pagan</TitleId>
       <TitleId>duchy_theocratic</TitleId>
     </FallbackTitles>
@@ -4733,15 +4988,15 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>duchy_theocratic_slavicPaganReformed_of</Id>
+    <Id>duchy_theocratic_paganSlavicReformed_of</Id>
     <GameIds>
       <GameId game="CK2">temple_duchy_of_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_duchy_of_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>duchy_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>duchy_theocratic_slavicPagan_of</TitleId>
-      <TitleId>duchy_theocratic_slavicPagan</TitleId>
+      <TitleId>duchy_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>duchy_theocratic_paganSlavic_of</TitleId>
+      <TitleId>duchy_theocratic_paganSlavic</TitleId>
       <TitleId>duchy_theocratic_pagan_of</TitleId>
       <TitleId>duchy_theocratic_pagan</TitleId>
       <TitleId>duchy_theocratic_of</TitleId>
@@ -4834,6 +5089,7 @@
     <GameIds>
       <GameId game="CK2">kingdom</GameId>
       <GameId game="CK2HIP">kingdom</GameId>
+      <GameId game="CK3">kingdom_feudal</GameId>
       <GameId game="CK3">kingdom</GameId>
     </GameIds>
     <Names>
@@ -4927,6 +5183,7 @@
     <GameIds>
       <GameId game="CK2">tribal_kingdom</GameId>
       <GameId game="CK2HIP">tribal_kingdom</GameId>
+      <GameId game="CK3">kingdom_tribal</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>kingdom</TitleId>
@@ -4953,6 +5210,18 @@
       <Name language="Hungarian_Old_Early">Nahfedelemseg of</Name>
       <Name language="Hungarian_Old">Nagyfejedelemség of</Name>
       <Name language="Romanian_Old">Voievodatul</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>kingdom_clan</Id>
+    <GameIds>
+      <GameId game="CK3">kingdom_clan</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>kingdom_tribal</TitleId>
+      <TitleId>kingdom</TitleId>
+    </FallbackTitles>
+    <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -5075,7 +5344,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>kingdom_theocratic_slavicPagan</Id>
+    <Id>kingdom_theocratic_paganSlavic</Id>
     <GameIds>
       <GameId game="CK2">temple_kingdom_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_kingdom_slavic_pagan</GameId>
@@ -5089,13 +5358,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>kingdom_theocratic_slavicPagan_of</Id>
+    <Id>kingdom_theocratic_paganSlavic_of</Id>
     <GameIds>
       <GameId game="CK2">temple_kingdom_of_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_kingdom_of_slavic_pagan</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>kingdom_theocratic_slavicPagan</TitleId>
+      <TitleId>kingdom_theocratic_paganSlavic</TitleId>
       <TitleId>kingdom_theocratic_pagan_of</TitleId>
       <TitleId>kingdom_theocratic_pagan</TitleId>
       <TitleId>kingdom_theocratic_of</TitleId>
@@ -5105,13 +5374,13 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>kingdom_theocratic_slavicPaganReformed</Id>
+    <Id>kingdom_theocratic_paganSlavicReformed</Id>
     <GameIds>
       <GameId game="CK2">temple_kingdom_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_kingdom_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>kingdom_theocratic_slavicPagan</TitleId>
+      <TitleId>kingdom_theocratic_paganSlavic</TitleId>
       <TitleId>kingdom_theocratic_pagan</TitleId>
       <TitleId>kingdom_theocratic</TitleId>
     </FallbackTitles>
@@ -5119,15 +5388,15 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>kingdom_theocratic_slavicPaganReformed_of</Id>
+    <Id>kingdom_theocratic_paganSlavicReformed_of</Id>
     <GameIds>
       <GameId game="CK2">temple_kingdom_of_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_kingdom_of_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>kingdom_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>kingdom_theocratic_slavicPagan_of</TitleId>
-      <TitleId>kingdom_theocratic_slavicPagan</TitleId>
+      <TitleId>kingdom_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>kingdom_theocratic_paganSlavic_of</TitleId>
+      <TitleId>kingdom_theocratic_paganSlavic</TitleId>
       <TitleId>kingdom_theocratic_pagan_of</TitleId>
       <TitleId>kingdom_theocratic_pagan</TitleId>
       <TitleId>kingdom_theocratic_of</TitleId>
@@ -5199,6 +5468,7 @@
       <GameId game="CK2">empire</GameId>
       <GameId game="CK2HIP">empire</GameId>
       <GameId game="CK3">empire_feudal</GameId>
+      <GameId game="CK3">empire</GameId>
     </GameIds>
     <Names>
       <Name language="Arpitan">Empiro</Name>
@@ -5351,7 +5621,7 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>empire_theocratic_slavicPagan</Id>
+    <Id>empire_theocratic_paganSlavic</Id>
     <GameIds>
       <GameId game="CK2">temple_empire_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_empire_slavic_pagan</GameId>
@@ -5363,39 +5633,39 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>empire_theocratic_slavicPagan_of</Id>
+    <Id>empire_theocratic_paganSlavic_of</Id>
     <GameIds>
       <GameId game="CK2">temple_empire_of_slavic_pagan</GameId>
       <GameId game="CK2HIP">temple_empire_of_slavic_pagan</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>empire_theocratic_slavicPagan</TitleId>
+      <TitleId>empire_theocratic_paganSlavic</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>empire_theocratic_slavicPaganReformed</Id>
+    <Id>empire_theocratic_paganSlavicReformed</Id>
     <GameIds>
       <GameId game="CK2">temple_empire_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_empire_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>empire_theocratic_slavicPagan</TitleId>
+      <TitleId>empire_theocratic_paganSlavic</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
   </TitleEntity>
   <TitleEntity>
-    <Id>empire_theocratic_slavicPaganReformed_of</Id>
+    <Id>empire_theocratic_paganSlavicReformed_of</Id>
     <GameIds>
       <GameId game="CK2">temple_empire_of_slavic_pagan_reformed</GameId>
       <GameId game="CK2HIP">temple_empire_of_slavic_pagan_reformed</GameId>
     </GameIds>
     <FallbackTitles>
-      <TitleId>empire_theocratic_slavicPaganReformed</TitleId>
-      <TitleId>empire_theocratic_slavicPagan_of</TitleId>
-      <TitleId>empire_theocratic_slavicPagan</TitleId>
+      <TitleId>empire_theocratic_paganSlavicReformed</TitleId>
+      <TitleId>empire_theocratic_paganSlavic_of</TitleId>
+      <TitleId>empire_theocratic_paganSlavic</TitleId>
     </FallbackTitles>
     <Names>
     </Names>
@@ -5405,6 +5675,7 @@
     <GameIds>
       <GameId game="CK2">nomadic_empire</GameId>
       <GameId game="CK2HIP">nomadic_empire</GameId>
+      <GameId game="CK3">empire_nomadic</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>empire</TitleId>
@@ -5433,6 +5704,7 @@
     <GameIds>
       <GameId game="CK2">tribal_empire</GameId>
       <GameId game="CK2HIP">tribal_empire</GameId>
+      <GameId game="CK3">empire_tribal</GameId>
     </GameIds>
     <FallbackTitles>
       <TitleId>empire</TitleId>
@@ -5449,6 +5721,18 @@
     <FallbackTitles>
       <TitleId>empire_tribal</TitleId>
       <TitleId>empire_of</TitleId>
+      <TitleId>empire</TitleId>
+    </FallbackTitles>
+    <Names>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>empire_clan</Id>
+    <GameIds>
+      <GameId game="CK3">empire_clan</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>empire_tribal</TitleId>
       <TitleId>empire</TitleId>
     </FallbackTitles>
     <Names>
