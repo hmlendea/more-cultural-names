@@ -12,7 +12,7 @@ Supported games:
  - `Hearts of Iron IV`
  - `Imperator: Rome`
 
-The common database currently has over **55 thousand** names for over **450** languages, settings and time periods.
+The common database currently has over **60 thousand** names for over **450** languages, settings and time periods.
 
 # Installation
 
