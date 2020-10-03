@@ -144,6 +144,8 @@
       <Name language="Latin_Medieval">Regina Mater</Name>
       <Name language="Norman">Roigne Mère</Name> <!-- Not sure how the second word should be, copied from french -->
       <Name language="Polish_Old">Królowa-Matka</Name>
+      <Name language="Romanian_Old">Doamnă Mamă</Name>
+      <Name language="Romanian">Regină Mamă</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -156,7 +158,7 @@
       <TitleId>queenMother</TitleId>
     </FallbackTitles>
     <Names>
-      <Name language="Romanian">Regina Mamă</Name>
+      <Name language="Romanian">Regină Mamă</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -167,6 +169,7 @@
     </GameIds>
     <Names>
       <Name language="French_Old">Empererriz Veuve</Name>
+      <Name language="Romanian">Împărăteasă Mamă</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -178,7 +181,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">komornik</Name>
-      <Name language="Romanian_Old">boier</Name> <!-- Not sure if it fits in all the cases -->
+      <Name language="Romanian_Old">curtean</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -191,7 +194,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">komornica</Name>
-      <Name language="Romanian_Old">boieră</Name> <!-- Not sure if it fits in all the cases -->
+      <Name language="Romanian_Old">curteană</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -203,7 +206,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Komornik</Name>
-      <Name language="Romanian_Old">Boier</Name> <!-- Not sure if it fits in all the cases -->
+      <Name language="Romanian_Old">Curtean</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -216,7 +219,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Polish_Old">Komornica</Name>
-      <Name language="Romanian_Old">Boieră</Name> <!-- Not sure if it fits in all the cases -->
+      <Name language="Romanian_Old">Curteană</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -300,6 +303,19 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>chancellor_female</Id>
+    <GameIds>
+      <GameId game="CK2">job_chancellor_female</GameId>
+      <GameId game="CK2HIP">job_chancellor_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>chancellor</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Romanian_Old">Logofăteasă</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>chancellor_tribal</Id>
     <GameIds>
       <GameId game="CK2">tribal_job_chancellor</GameId>
@@ -349,6 +365,16 @@
     </Names>
   </TitleEntity>
   <TitleEntity>
+    <Id>marshal_female</Id>
+    <GameIds>
+      <GameId game="CK2">job_marshal_female</GameId>
+      <GameId game="CK2HIP">job_marshal_female</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Romanian_Old">Spătară</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
     <Id>marshal_tribal</Id>
     <GameIds>
       <GameId game="CK2">tribal_job_marshal</GameId>
@@ -389,11 +415,24 @@
       <Name language="Hungarian_Old">Tárnokmester</Name>
       <Name language="Latin_Old">Praefectus Militaris</Name>
       <Name language="Polish_Old">Skarbnik</Name>
-      <Name language="Romanian_Old">Vistiernic</Name> <!-- Or Vistier -->
+      <Name language="Romanian_Old">Vistiernic</Name>
       <Name language="Scottish_Gaelic">Great Steward</Name>
       <Name language="Sardinian">Canarilingu</Name>
       <Name language="Tuscan_Medieval">Tesoriere</Name>
       <Name language="Welsh_Middle">Distain</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>treasurer_female</Id>
+    <GameIds>
+      <GameId game="CK2">job_treasurer_female</GameId>
+      <GameId game="CK2HIP">job_treasurer_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>treasurer</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Romanian_Old">Vistiernică</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -434,7 +473,17 @@
       <Name language="Hungarian_Old">Kémmester</Name>
       <Name language="Latin_Medieval">Frumentarius</Name>
       <Name language="Polish_Old">Podkanclerzy</Name>
-      <Name language="Romanian_Old">Vornic</Name> <!-- Not entirely sure but its attributes fit well enough -->
+      <Name language="Romanian_Old">Vornic</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>spymaster_female</Id>
+    <GameIds>
+      <GameId game="CK2">job_spymaster_female</GameId>
+      <GameId game="CK2HIP">job_spymaster_female</GameId>
+    </GameIds>
+    <Names>
+      <Name language="Romanian_Old">Vornică</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -835,10 +884,24 @@
       <Name language="Hungarian_Old">Hadvezér</Name>
       <Name language="Latin_Medieval">Induperator</Name>
       <Name language="Polish_Old">Hetman</Name>
-      <Name language="Romanian_Old">Pârcălab</Name>
+      <Name language="Romanian_Old">Căpetenie</Name>
       <Name language="Romanian">Comandant</Name>
       <Name language="Serbian_Medieval">Zapovednik</Name>
       <Name language="Slovene_Medieval">Poveljnik</Name>
+    </Names>
+  </TitleEntity>
+  <TitleEntity>
+    <Id>commander_female</Id>
+    <GameIds>
+      <GameId game="CK2">title_commander_female</GameId>
+      <GameId game="CK2HIP">title_commander_female</GameId>
+    </GameIds>
+    <FallbackTitles>
+      <TitleId>commander</TitleId>
+    </FallbackTitles>
+    <Names>
+      <Name language="Romanian_Old">Căpetenie</Name>
+      <Name language="Romanian">Comandantă</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1118,6 +1181,7 @@
     </GameIds>
     <Names>
       <Name language="Bulgar">Kanartikin</Name>
+      <Name language="Romanian">Moștenitor Ales</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -1440,7 +1504,7 @@
       <Name language="Hungarian_Old_Early">Bira</Name>
       <Name language="Hungarian_Old">Bíró</Name>
       <Name language="Polish_Old">Grododzierzca</Name>
-      <Name language="Romanian_Old">Jude</Name>
+      <Name language="Romanian_Old">Șoltuz</Name>
       <Name language="Romanian">Primar</Name>
       <Name language="Sardinian">Maiore</Name>
       <Name language="Scottish_Gaelic">Báille</Name>
@@ -1460,6 +1524,7 @@
     </FallbackTitles>
     <Names>
       <Name language="Cornish_Middle">Maires</Name>
+      <Name language="Romanian_Old">Șoltuză</Name>
       <Name language="Scottish_Gaelic">Báille</Name> <!-- I think it's ok but not sure -->
       <Name language="Welsh_Middle">Maeres</Name>
     </Names>
@@ -1762,7 +1827,7 @@
       <Name language="Latin_Medieval">Comes</Name>
       <Name language="Norman">Counte</Name>
       <Name language="Polish_Old">Kasztelan</Name>
-      <Name language="Romanian_Old">Ban</Name>
+      <Name language="Romanian_Old">Pîcălab</Name>
       <Name language="Romanian">Conte</Name>
       <Name language="Sardinian">Curatore</Name>
       <Name language="Scottish_Gaelic">Mormaer</Name>
@@ -1799,7 +1864,7 @@
       <Name language="Norman">Countesse</Name>
       <Name language="Occitan_Old">Comtessa</Name>
       <Name language="Polish_Old">Kasztelana</Name>
-      <Name language="Romanian_Old">Bană</Name>
+      <Name language="Romanian_Old">Pîrcălabă</Name>
       <Name language="Romanian">Contesă</Name>
       <Name language="Sardinian">Curatessa</Name>
       <Name language="Scottish_Gaelic">Banmormaer</Name>
@@ -1970,6 +2035,7 @@
       <Name language="Hungarian_Old_Early">Folbira</Name>
       <Name language="Hungarian_Old">Polgármester</Name>
       <Name language="Polish_Old">Wlodarz</Name>
+      <Name language="Romanian_Old">Jude</Name>
       <Name language="Sardinian">Potestate</Name>
       <Name language="Scottish_Gaelic">Provost</Name>
       <Name language="Tuscan_Medieval">Podestà</Name>
@@ -1990,6 +2056,7 @@
       <Name language="Cornish_Middle">Uchelfaires</Name>
       <Name language="Cumbric">Ukelfaires</Name>
       <Name language="English">Lady Mayoress</Name>
+      <Name language="Romanian_Old">Judeasă</Name>
       <Name language="Welsh_Middle">Uchelfaeres</Name>
     </Names>
   </TitleEntity>
@@ -2233,7 +2300,7 @@
       <Name language="Latin_Medieval">Dux</Name>
       <Name language="Norman">Duc</Name>
       <Name language="Polish_Old">Wojewodą</Name>
-      <Name language="Romanian_Old">Mare Ban</Name>
+      <Name language="Romanian_Old">Ban</Name>
       <Name language="Romanian">Duce</Name>
       <Name language="Sardinian">Iudice</Name>
       <Name language="Scottish_Gaelic">Rí</Name>
@@ -2271,7 +2338,7 @@
       <Name language="Norman">Ducesse</Name>
       <Name language="Occitan_Old">Duquessa</Name>
       <Name language="Polish_Old">Wojewodżiną</Name>
-      <Name language="Romanian_Old">Mare Bană</Name>
+      <Name language="Romanian_Old">Băneasă</Name>
       <Name language="Romanian">Ducesă</Name>
       <Name language="Sardinian">Iudicissa</Name>
       <Name language="Scottish_Gaelic">Rígan</Name>
@@ -2695,7 +2762,7 @@
       <Name language="Norman">Roi</Name>
       <Name language="Occitan_Old">Rei</Name>
       <Name language="Polish_Old">Król</Name>
-      <Name language="Romanian_Old">Domnitor</Name>
+      <Name language="Romanian_Old">Domn</Name>
       <Name language="Romanian">Rege</Name>
       <Name language="Sardinian">Re</Name>
       <Name language="Scottish_Gaelic">Ardrí</Name>
@@ -2737,7 +2804,7 @@
       <Name language="Occitan_Old">Reina</Name>
       <Name language="Scottish_Gaelic">Rìghinn</Name>
       <Name language="Pictish">Rigen</Name>
-      <Name language="Romanian_Old">Domnitoare</Name>
+      <Name language="Romanian_Old">Doamnă</Name>
       <Name language="Romanian">Regină</Name>
       <Name language="Sardinian">Reina</Name>
       <Name language="Scottish_Gaelic">Ardrígan</Name>
@@ -3839,6 +3906,7 @@
       <Name language="Occitan_Old">Baronia</Name>
       <Name language="Polish_Old">Opole</Name>
       <Name language="Romanian_Old">Cetate</Name>
+      <Name language="Romanian">Castel</Name>
       <Name language="Soninke">Kafu</Name>
       <Name language="Welsh_Middle">Cwmwd</Name>
     </Names>
@@ -4241,7 +4309,7 @@
       <Name language="Norman">Counté</Name>
       <Name language="Occitan_Old">Comtat</Name>
       <Name language="Polish_Old">Kasztelania</Name>
-      <Name language="Romanian">Județ</Name>
+      <Name language="Romanian">Ținut</Name>
       <Name language="Sardinian">Curatoria</Name>
       <Name language="Scottish_Gaelic">Mormaeracht</Name>
       <Name language="Soninke">Jamana</Name>
@@ -4271,8 +4339,7 @@
       <Name language="Irish_Middle">Cóicid of</Name>
       <Name language="Norman">Counté de</Name>
       <Name language="Occitan_Old">Comtat de</Name>
-      <Name language="Romanian_Old">Țeara de</Name>
-      <Name language="Romanian">Județul</Name>
+      <Name language="Romanian_Old">Ținutul</Name>
       <Name language="Sardinian">Curatoria de</Name>
       <Name language="Scottish_Gaelic">Mormaeracht of</Name>
       <Name language="Soninke">Jamana of</Name>
@@ -4387,6 +4454,7 @@
       <Name language="Hungarian_Old_Early">Varasmeda</Name>
       <Name language="Hungarian_Old">Városmegye</Name>
       <Name language="Latin_Medieval">Civitas</Name>
+      <Name language="Romanian">Județ</Name>
       <Name language="Sardinian">Potestaria</Name>
       <Name language="Scottish_Gaelic">Siorrachd</Name>
       <Name language="Soninke">Farinate</Name>
@@ -4757,7 +4825,7 @@
       <Name language="Hungarian_Old_Early">Fedelemseg</Name>
       <Name language="Hungarian_Old">Fejedelemség</Name>
       <Name language="Polish_Old">Szczep</Name>
-      <Name language="Romanian_Old">Mare Cnezat</Name>
+      <Name language="Romanian">Mare Cnezat</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -4775,7 +4843,7 @@
       <Name language="English">High Chiefdom of</Name>
       <Name language="Hungarian_Old_Early">Fedelemseg of</Name>
       <Name language="Hungarian_Old">Fejedelemség of</Name>
-      <Name language="Romanian_Old">Marele Cnezat de</Name>
+      <Name language="Romanian">Marele Cnezat de</Name>
     </Names>
   </TitleEntity>
   <TitleEntity>
@@ -5144,7 +5212,7 @@
       <Name language="Norman">Roialme de</Name>
       <Name language="Occitan_Old">Reialme de</Name>
       <Name language="Polish_Old">Królestwo</Name>
-      <Name language="Romanian_Old">Voievodatul de</Name>
+      <Name language="Romanian_Old">Țeara</Name>
       <Name language="Romanian">Regatul</Name>
       <Name language="Sardinian">Rennu de</Name>
       <Name language="Scottish_Gaelic">Ardrígdacht of</Name>
@@ -5796,6 +5864,7 @@
     </GameIds>
     <Names>
       <Name language="Polish_Old">Margrabia</Name>
+      <Name language="Romanian">Margrav</Name>
       <Name language="Tuscan_Medieval">Margravio</Name>
     </Names>
   </TitleEntity>
@@ -5806,6 +5875,7 @@
     </GameIds>
     <Names>
       <Name language="Polish_Old">Margrabina</Name>
+      <Name language="Romanian">Margravină</Name>
       <Name language="Tuscan_Medieval">Margravia</Name>
     </Names>
   </TitleEntity>
@@ -5816,6 +5886,7 @@
     </GameIds>
     <Names>
       <Name language="Polish_Old">Margrabstwo</Name>
+      <Name language="Romanian">Margravatul de</Name>
       <Name language="Tuscan_Medieval">Margraviato di</Name>
     </Names>
   </TitleEntity>
@@ -6000,6 +6071,7 @@
       <GameId game="CK2HIP">PALATINE</GameId>
     </GameIds>
     <Names>
+      <Name language="Romanian">Principe Palatin</Name>
       <Name language="Tuscan_Medieval">Conte Palatina</Name>
     </Names>
   </TitleEntity>
@@ -6009,6 +6081,7 @@
       <GameId game="CK2HIP">PALATINEA</GameId>
     </GameIds>
     <Names>
+      <Name language="Romanian">Principesă Palatină</Name>
       <Name language="Tuscan_Medieval">Contessa Palatina</Name>
     </Names>
   </TitleEntity>
@@ -6018,6 +6091,7 @@
       <GameId game="CK2HIP">PALATINE_OF</GameId>
     </GameIds>
     <Names>
+      <Name language="Romanian">Palatinatul de</Name>
       <Name language="Tuscan_Medieval">Palatinato del Reno</Name>
     </Names>
   </TitleEntity>
