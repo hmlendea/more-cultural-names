@@ -6,6 +6,7 @@ BUILD_VERSION=${1}
 
 LANGUAGES_FILE="languages.xml"
 LOCATIONS_FILE="locations.xml"
+TITLES_FILE="titles.xml"
 
 if [ -z "${VERSION}" ]; then
     BUILD_VERSION=0
@@ -47,7 +48,12 @@ fi
 
 [ -d "out/" ] && rm -rf "out/"
 
-${MOD_BUILDER_BIN_FILE_PATH} -l "languages.xml" -t "${LOCATIONS_FILE}" -v ${VERSION} -o "out/"
+${MOD_BUILDER_BIN_FILE_PATH} \
+    --lang "${LANGUAGES_FILE}" \
+    --loc "${LOCATIONS_FILE}" \
+    --titles "${TITLES_FILE}" \
+    --ver ${VERSION} \
+    --out "out/"
 
 cp -rf extras/ck2/* out/CK2/
 cp -rf extras/ck2hip/* out/CK2HIP/
