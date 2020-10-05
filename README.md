@@ -1,35 +1,31 @@
+[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/master/assets/patreon.png)](https://www.patreon.com/hmlendea)
+
 # About
 
 This is a mod for various strategy games, that adds new place names based on their culture/faction.
 
 The names are meant to provide an immersive and accurate experience for the game's setting and time period.
 
-Supported games:
- - `Crusader Kings 2`
- - `Crusader Kings 2` with `Historical Immersion Project`
- - `Crusader Kings 2` with `Elder Kings`
- - `Crusader Kings 3`
- - `Hearts of Iron IV`
- - `Imperator: Rome`
-
 The common database currently has over **60 thousand** names for over **450** languages, settings and time periods.
+
+# Supported games
+
+| Game | Steam Workshop link |
+|---|---|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (HIP)](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (EK)](https://steamcommunity.com/sharedfiles/filedetails/?id=1745899430)|
+|![CK3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)|
+|![HOI4](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|Hearts of Iron 4|
+|![IR](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|[Imperator: Rome](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)|
 
 # Installation
 
 *Note: This mod gets updated more frequently on GitHub than on the Steam Workshop pages*
 
-## Steam Workshop
-
-Just subscribe to the mod page for the game for which you wish to install this mod:
- - [Crusader Kings 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)
- - [Crusader Kings 2 (HIP)](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)
- - [Crusader Kings 2 (EK)](https://steamcommunity.com/sharedfiles/filedetails/?id=1745899430)
- - [Crusader Kings 3](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)
- - [Imperator: Rome](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)
-
-## Manual installation
-
-You can download the latest release from the [releases page](https://github.com/hmlendea/more-cultural-names/releases), and extract the contents into the appropriate mod directory for your game.
+You can install this mod by either:
+ - Subscribing to the mod page of the game for which you wish to install this mod
+ - Download the [latest release](https://github.com/hmlendea/more-cultural-names/releases), and extract the contents into your game's mod directory
 
 # Compatibility
 
@@ -38,10 +34,6 @@ The mod is **OS-agnostic**, which means that it will work on all of the operatin
 It is actively tested (and developed) on **Linux**, where it is guaranteed to work with either the native version of the game or through Steam Play.
 
 It is also **save-game compatible**, and can be added and removed at will without breaking anything.
-
-## Crusader Kings 2
-
-This mod **is not** compatible with vanilla CK2. It requires the `Historical Immersion Project` mod with at least the `SWMH` module activated
 
 # Contributions
 
@@ -52,13 +44,17 @@ Here are a few ways in which you can do so:
  - Raising a new [issue](https://github.com/hmlendea/more-cultural-names/issues) for this project
  - Creating a git pull request for this repository (This requires git knowledge)
 
+Alternatively, please consider supporting this project on [Patreon](https://www.patreon.com/hmlendea).
+
 # Development focus
 
 Currently, the development focuses on the following:
 
- 1. Support more `Crusader Kings 3` titles
- 2. Adding all the original CK2-HIP localisations
- 3. Support more `Imperator: Rome` titles
+ 1. Add more localisations to existing locations
+ 2. Support more `Crusader Kings 3` locations
+ 3. Finish and publish the `Hearts of Iron 4` edition
+ 3. Support more `Hearts of Iron 4` locations
+ 3. Support more `Imperator: Rome` locations
 
 # Development guidelines
 
@@ -91,3 +87,5 @@ Databases:
 
 Other:
 - Wikipedia pages of cities and places, in various languages
+
+[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/master/assets/patreon.png)](https://www.patreon.com/hmlendea)
