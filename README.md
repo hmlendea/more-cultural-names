@@ -21,44 +21,15 @@ The common database currently has over **60 thousand** names for over **450** la
 ## Steam Workshop
 
 Just subscribe to the mod page for the game for which you wish to install this mod:
-<table>
-    <tr>
-        <td vlign="center">
-            <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg">
-        </td>
-        <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163">Crusader Kings 2</a></td>
-    </tr>
-    <tr>
-        <td vlign="center">
-            <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg">
-        </td>
-        <td><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675">Crusader Kings 2 (with Historical Immersion Project)</a></td>
-    </tr>
-    <tr>
-        <td vlign="center">
-            <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg">
-        </td>
-        <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1745899430">Crusader Kings 2 (with Elder Kings)</a></td>
-    </tr>
-    <tr>
-        <td vlign="center">
-            <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg">
-        </td>
-        <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250">Crusader Kings 3</a></td>
-    </tr>
-    <tr>
-        <td vlign="center">
-            <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg">
-        </td>
-        <td>Hearts of Iron 4</td>
-    </tr>
-    <tr>
-        <td vlign="center">
-            <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg">
-        </td>
-        <td><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532">Crusader Kings 3</a></td>
-    </tr>
-</table>
+
+|   |   |
+|---|---|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (HIP)](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (EK)](https://steamcommunity.com/sharedfiles/filedetails/?id=1745899430)|
+|![CK3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)|
+|![HOI4](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|Hearts of Iron 4|
+|![IR](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|[Imperator: Rome](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)|
 
 ## Manual installation
 
