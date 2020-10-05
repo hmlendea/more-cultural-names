@@ -23,13 +23,9 @@ The common database currently has over **60 thousand** names for over **450** la
 
 *Note: This mod gets updated more frequently on GitHub than on the Steam Workshop pages*
 
-## Steam Workshop
-
-Just subscribe to the mod page for the game for which you wish to install this mod:
-
-## Manual installation
-
-You can download the latest release from the [releases page](https://github.com/hmlendea/more-cultural-names/releases), and extract the contents into the appropriate mod directory for your game.
+You can install this mod by either:
+ - Subscribing to the mod page of the game for which you wish to install this mod
+ - Download the [latest release](https://github.com/hmlendea/more-cultural-names/releases), and extract the contents into your game's mod directory
 
 # Compatibility
 
@@ -38,10 +34,6 @@ The mod is **OS-agnostic**, which means that it will work on all of the operatin
 It is actively tested (and developed) on **Linux**, where it is guaranteed to work with either the native version of the game or through Steam Play.
 
 It is also **save-game compatible**, and can be added and removed at will without breaking anything.
-
-## Crusader Kings 2
-
-This mod **is not** compatible with vanilla CK2. It requires the `Historical Immersion Project` mod with at least the `SWMH` module activated
 
 # Contributions
 
@@ -58,9 +50,11 @@ Alternatively, please consider supporting this project on [Patreon](https://www.
 
 Currently, the development focuses on the following:
 
- 1. Support more `Crusader Kings 3` titles
- 2. Adding all the original CK2-HIP localisations
- 3. Support more `Imperator: Rome` titles
+ 1. Add more localisations to existing locations
+ 2. Support more `Crusader Kings 3` locations
+ 3. Finish and publish the `Hearts of Iron 4` edition
+ 3. Support more `Hearts of Iron 4` locations
+ 3. Support more `Imperator: Rome` locations
 
 # Development guidelines
 
