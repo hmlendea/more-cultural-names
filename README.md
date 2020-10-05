@@ -1,3 +1,5 @@
+[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/c25d394978a8f43e585b07e7559ff22225475974/assets/patreon.png)](https://www.patreon.com/hmlendea)
+
 # About
 
 This is a mod for various strategy games, that adds new place names based on their culture/faction.
@@ -50,6 +52,8 @@ Here are a few ways in which you can do so:
  - Raising a new [issue](https://github.com/hmlendea/more-cultural-names/issues) for this project
  - Creating a git pull request for this repository (This requires git knowledge)
 
+Alternatively, please consider supporting this project on [Patreon](https://www.patreon.com/hmlendea).
+
 # Development focus
 
 Currently, the development focuses on the following:
@@ -89,3 +93,5 @@ Databases:
 
 Other:
 - Wikipedia pages of cities and places, in various languages
+
+[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/c25d394978a8f43e585b07e7559ff22225475974/assets/patreon.png)](https://www.patreon.com/hmlendea)
