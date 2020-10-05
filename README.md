@@ -1,4 +1,4 @@
-[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/c25d394978a8f43e585b07e7559ff22225475974/assets/patreon.png)](https://www.patreon.com/hmlendea)
+[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/master/assets/patreon.png)](https://www.patreon.com/hmlendea)
 
 # About
 
@@ -94,4 +94,4 @@ Databases:
 Other:
 - Wikipedia pages of cities and places, in various languages
 
-[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/c25d394978a8f43e585b07e7559ff22225475974/assets/patreon.png)](https://www.patreon.com/hmlendea)
+[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/master/assets/patreon.png)](https://www.patreon.com/hmlendea)
