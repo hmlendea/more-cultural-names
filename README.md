@@ -6,7 +6,7 @@ This is a mod for various strategy games, that adds new place names based on the
 
 The names are meant to provide an immersive and accurate experience for the game's setting and time period.
 
-The common database currently has over **60 thousand** names for over **450** languages, settings and time periods.
+The common database currently has over **65 thousand** names for over **450** languages, settings and time periods.
 
 # Supported games
 
