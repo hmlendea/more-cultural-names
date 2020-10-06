@@ -176,6 +176,7 @@ if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "scottish" "Scots_Early"
     replace-cultural-name "slovien" "Slovak_Medieval"
     replace-cultural-name "vlach" "Romanian_Old"
+    replace-cultural-name "yughur" "Uyghur_Yellow"
 fi
 
 sed -i '/^\s*[\{\}]*\s*$/d' "${FILE}"
