@@ -147,13 +147,16 @@ if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "tajik" "Tajiki"
     replace-cultural-name "vepsian" "Vepsian_Medieval"
     replace-cultural-name "yemeni" "Arabic_Yemen"
+    replace-cultural-name "zaghawa" "Zaghawa"
 fi
 
 if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "andalusian" "Arabic_Andalusia"
     replace-cultural-name "anglo_saxon" "English_Old"
     replace-cultural-name "asturleonese" "Leonese"
+    replace-cultural-name "baranis" "Berber_Baranis"
     replace-cultural-name "bedouin" "Arabic_Bedouin"
+    replace-cultural-name "butr" "Berber_Butr"
     replace-cultural-name "castilian" "Castillan_Medieval"
     replace-cultural-name "cisalpine" "Lombard_Medieval"
     replace-cultural-name "cumbrian" "Cumbric"
