@@ -14,8 +14,11 @@ if [ "${GAME}" == "CK3" ]; then
     sed -i '/[=\">]cn_/d' "${FILE}"
 fi
 
-sed -i 's/\r//g' "${FILE}"
+# Remove brackets
+sed -i 's/=\s*{/=/g' "${FILE}"
 sed -i '/^\s*[\{\}]*\s*$/d' "${FILE}"
+
+sed -i 's/\r//g' "${FILE}"
 sed -i 's/^\s*\([ekdcb]_[^\t =]*\)\s*=\s*/\1 =/g' "${FILE}"
 perl -i -p0e 's/( *([ekdcb]_[^\t =]*) *= *\n)+ *([ekdcb]_[^\t =]*) *= */\3 =/g' "${FILE}"
 sed -i 's/^ \+/      /g' "${FILE}"
@@ -192,3 +195,6 @@ if [ "${GAME}" == "CK3" ]; then
     # Blacklisted for now
     sed -i '/^ *\(frankish\) *=.*$/d' "${FILE}"
 fi
+
+sed -i 's/> \+/>/g' "${FILE}"
+sed -i 's/ \+<\//<\//g' "${FILE}"
