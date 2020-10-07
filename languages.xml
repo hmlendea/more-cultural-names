@@ -578,10 +578,11 @@
       <LanguageId>Russian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
+      <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Medieval_Severian</LanguageId>
-      <LanguageId>Russian_Medieval_Volhynian</LanguageId>
-      <LanguageId>Russian_Medieval_Ilmenian</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -2435,6 +2436,24 @@
     <Code iso-639-1="io" iso-639-2="ido" iso-639-3="ido" />
   </Language>
   <Language>
+    <Id>Ilmenian</Id>
+    <GameIds>
+      <GameId game="CK2">ilmenian</GameId>
+      <GameId game="CK3">ilmenian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+      <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
+      <LanguageId>Ukrainian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Indonesian</Id>
     <Code iso-639-1="id" iso-639-3="ind" />
     <GameIds>
@@ -4128,75 +4147,21 @@
       <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
+      <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Medieval_Severian</LanguageId>
-      <LanguageId>Russian_Medieval_Volhynian</LanguageId>
-      <LanguageId>Russian_Medieval_Ilmenian</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Russian_Medieval</Id>
-    <GameIds>
-      <GameId game="CK2">russian</GameId>
-      <GameId game="CK2HIP">russian</GameId>
-      <GameId game="CK3">russian</GameId>
-    </GameIds>
+    <Id>Russian_Medieval</Id> <!-- TODO: THIS IS OBSOLETE/DEPRECATED!!! Use Russian or Slavic_East_Old and replace existing names that use this ID -->
     <FallbackLanguages>
-      <LanguageId>Russian_Medieval_Severian</LanguageId>
-      <LanguageId>Russian_Medieval_Volhynian</LanguageId>
-      <LanguageId>Russian_Medieval_Ilmenian</LanguageId>
-      <LanguageId>Ruthenian</LanguageId>
-      <LanguageId>Ukrainian_Before2017</LanguageId>
-      <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
-      <LanguageId>Ukrainian</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Russian_Medieval_Ilmenian</Id>
-    <GameIds>
-      <GameId game="CK2">severian</GameId>
-      <GameId game="CK3">severian</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Medieval_Severian</LanguageId>
-      <LanguageId>Russian_Medieval_Volhynian</LanguageId>
-      <LanguageId>Ruthenian</LanguageId>
-      <LanguageId>Ukrainian_Before2017</LanguageId>
-      <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
-      <LanguageId>Ukrainian</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Russian_Medieval_Severian</Id>
-    <GameIds>
-      <GameId game="CK2">ilmenian</GameId>
-      <GameId game="CK3">ilmenian</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Medieval_Volhynian</LanguageId>
-      <LanguageId>Russian_Medieval_Ilmenian</LanguageId>
-      <LanguageId>Ruthenian</LanguageId>
-      <LanguageId>Ukrainian_Before2017</LanguageId>
-      <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
-      <LanguageId>Ukrainian</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Russian_Medieval_Volhynian</Id>
-    <GameIds>
-      <GameId game="CK2">volhynian</GameId>
-      <GameId game="CK3">volhynian</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Medieval_Severian</LanguageId>
-      <LanguageId>Russian_Medieval_Ilmenian</LanguageId>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
@@ -4206,6 +4171,10 @@
   </Language>
   <Language>
     <Id>Ruthenian</Id>
+    <FallbackLanguages>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Sabaean</Id>
@@ -4552,6 +4521,40 @@
       <GameId game="CK3">serer</GameId>
     </GameIds>
     <FallbackLanguages>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Severian</Id>
+    <GameIds>
+      <GameId game="CK2">severian</GameId>
+      <GameId game="CK3">severian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+      <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
+      <LanguageId>Ukrainian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Slavic_East_Old</Id>
+    <Code iso-639-3="orv" />
+    <GameIds>
+      <GameId game="CK2">russian</GameId>
+      <GameId game="CK2HIP">russian</GameId>
+      <GameId game="CK3">russian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+      <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
+      <LanguageId>Ukrainian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5258,11 +5261,12 @@
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
       <LanguageId>Belarussian</LanguageId>
-      <LanguageId>Ruthenian</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Medieval_Volhynian</LanguageId>
-      <LanguageId>Russian_Medieval_Severian</LanguageId>
-      <LanguageId>Russian_Medieval_Ilmenian</LanguageId>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5271,11 +5275,12 @@
       <GameId game="HOI4">UKR</GameId> <!-- Ukraine -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Ruthenian</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Medieval_Volhynian</LanguageId>
-      <LanguageId>Russian_Medieval_Severian</LanguageId>
-      <LanguageId>Russian_Medieval_Ilmenian</LanguageId>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian</LanguageId>
       <LanguageId>Belarussian</LanguageId>
@@ -5418,6 +5423,24 @@
   <Language>
     <Id>Volapuk</Id>
     <Code iso-639-3="vro" />
+  </Language>
+  <Language>
+    <Id>Volhynian</Id>
+    <GameIds>
+      <GameId game="CK2">volhynian</GameId>
+      <GameId game="CK3">volhynian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+      <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
+      <LanguageId>Ukrainian</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Voro</Id>

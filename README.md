@@ -51,6 +51,7 @@ Alternatively, please consider supporting this project on [Patreon](https://www.
 Currently, the development focuses on the following:
 
  1. Add more localisations to existing locations
+ 1. Update the slavic names with correct transliterations and special characters
  2. Support more `Crusader Kings 3` locations
  3. Finish and publish the `Hearts of Iron 4` edition
  3. Support more `Hearts of Iron 4` locations
