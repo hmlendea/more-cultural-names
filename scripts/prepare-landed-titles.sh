@@ -115,16 +115,16 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
 fi
 
 if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ]; then
-    replace-cultural-name "ilmenian" "Russian_Medieval_Ilmenian"
+    replace-cultural-name "ilmenian" "Ilmenian"
     replace-cultural-name "italian" "Tuscan_Medieval"
     replace-cultural-name "meshchera" "Meshchera"
     replace-cultural-name "old_saxon" "German_Old_Low"
     replace-cultural-name "outremer" "French_Outremer"
-    replace-cultural-name "severian" "Russian_Medieval_Severian"
+    replace-cultural-name "severian" "Severian"
     replace-cultural-name "suebi" "Suebi_Medieval"
     replace-cultural-name "tocharian" "Tocharian"
     replace-cultural-name "visigothic" "Gothic_Visigoth"
-    replace-cultural-name "volhynian" "Russian_Medieval_Volhynian"
+    replace-cultural-name "volhynian" "Volhynian"
 fi
 
 if [ "${GAME}" == "CK2HIP" ]; then
@@ -173,6 +173,7 @@ if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "muroma" "Muroma"
     replace-cultural-name "polabian" "Polabian"
     replace-cultural-name "sami" "Sami"
+    replace-cultural-name "saxon" "German_Middle_Low"
     replace-cultural-name "scottish" "Scots_Early"
     replace-cultural-name "slovien" "Slovak_Medieval"
     replace-cultural-name "vlach" "Romanian_Old"
