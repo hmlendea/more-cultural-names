@@ -58,10 +58,11 @@ Currently, the development focuses on the following:
 
 # Development guidelines
 
- - Make sure the names you add are historically accurate for the medieval era
- - Make sure you include all the original special characters of the name
+ - Make sure the names you add are historically accurate
+ - Include all the original special characters of the name
+ - Use the appropriate language for the names *(e.g. Welsh vs Welsh_Middle)*
  - For the names of which you are not sure, please include a comment
- - For alternative names in the same language, please put them in a commend alongside the main "active" one
+ - For alternative names in the same language and time period, consider documenting them in a comment alongside the main "active" one
 
 # Sources / Bibliography
 
