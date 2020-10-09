@@ -8,11 +8,20 @@ if [ ! -f "${FILE}" ]; then
     exit
 fi
 
+FILE_CHARSET=$(file -i "${FILE}" | sed 's/.*charset=\([a-zA-Z0-9-]*\).*/\1/g')
+
+if [ "${FILE_CHARSET}" != "utf-8" ]; then
+    iconv -f WINDOWS-1252 -t UTF-8 "${FILE}" > "${FILE}.utf8.temp"
+    mv "${FILE}.utf8.temp" "${FILE}"
+fi
+
 sed -i 's/\t/    /g' "${FILE}"
 
 if [ "${GAME}" == "CK3" ]; then
     sed -i '/[=\">]cn_/d' "${FILE}"
 fi
+
+sed -i '/cultural_names\s*=/d' "${FILE}"
 
 # Remove brackets
 sed -i 's/=\s*{/=/g' "${FILE}"
@@ -118,7 +127,7 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "romanian" "Romanian_Old"
     replace-cultural-name "saxon" "English_Old"
     replace-cultural-name "scottish" "Scottish_Gaelic"
-    replace-cultural-name "sephardi" "sephardi"
+    replace-cultural-name "sephardi" "Ladino"
     replace-cultural-name "slovieni" "Slovak_Medieval"
     replace-cultural-name "ugricbaltic" "Estonian"
 fi
@@ -198,3 +207,8 @@ fi
 
 sed -i 's/> \+/>/g' "${FILE}"
 sed -i 's/ \+<\//<\//g' "${FILE}"
+
+# Combine arabic names
+sed -i 's/Arabic_Andalusia/Arabic/g' "${FILE}"
+sed -i '/.*_Arabic.*/d' "${FILE}"
+sed -i '/.*Arabic_.*/d' "${FILE}"
