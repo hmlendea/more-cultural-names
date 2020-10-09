@@ -4,9 +4,14 @@
 
 This is a mod for various strategy games, that adds new place names based on their culture/faction.
 
+The common database currently has over **65 thousand** names for over **450** languages, settings and time periods.
+
 The names are meant to provide an immersive and accurate experience for the game's setting and time period.
 
-The common database currently has over **65 thousand** names for over **450** languages, settings and time periods.
+However, if explicit names are not set for a specific language for a given time period, names from other time periods or related languages will be used instead, as long as it makes sense. Examples:
+ - If a Middle Welsh name is not set, the Old Welsh one will be used if it exists, or the modern Welsh otherwise
+ - If an Occitan name does not exist, the French one will be used
+ - Croatian, Serbian and Bosnian will also use each other as backups, and so will Czech and Slovak, etc...
 
 # Supported games
 
@@ -51,6 +56,7 @@ Alternatively, please consider supporting this project on [Patreon](https://www.
 Currently, the development focuses on the following:
 
  1. Add more localisations to existing locations
+ 1. Update the slavic names with correct transliterations and special characters
  2. Support more `Crusader Kings 3` locations
  3. Finish and publish the `Hearts of Iron 4` edition
  3. Support more `Hearts of Iron 4` locations
@@ -58,34 +64,48 @@ Currently, the development focuses on the following:
 
 # Development guidelines
 
- - Make sure the names you add are historically accurate for the medieval era
- - Make sure you include all the original special characters of the name
+ - Make sure the names you add are historically accurate
+ - Include all the original special characters of the name
+ - Use the appropriate language for the names *(e.g. Welsh vs Welsh_Middle)*
  - For the names of which you are not sure, please include a comment
- - For alternative names in the same language, please put them in a commend alongside the main "active" one
+ - For alternative names in the same language and time period, consider documenting them in a comment alongside the main "active" one
 
-# Sources / Bibliography
+# Sources
 
-The following is a list of sources that attest the authenticity of the names provided by this mod:
+The following is a list of sources that were used in the making of this mod:
 
-English:
-- [Bulgar titles and names](http://www.chitatel.net/forum/topic/375-bulgar-titles-and-names/)
-- [Historical Romanian ranks and titles](https://en.wikipedia.org/wiki/Historical_Romanian_ranks_and_titles)
-- [Medieval Names Archive - English Place Names](https://www.s-gabriel.org/names/engplacenames.shtml)
-- [Word and Power in Mediaeval Bulgaria](https://books.google.co.uk/books?id=O-j66lYzINEC)
-
-Non-english:
-- RO [Dregătorie](https://ro.wikipedia.org/wiki/Dreg%C4%83torie)
-- RO [Institutii feudale in Tarile Romane sec XIV - XVI](http://www.ebacalaureat.ro/c/institutii-feudale-in-tarile-romane-sec-xiv---xvi/1158)
-- RO [Institutii Medievale Romanesti](https://www.scribd.com/doc/103239549/Institutii-Medievale-Romanesti)
+## Toponyms
 
 Mods:
-- [Historical Immersion Project](https://ck2.paradoxwikis.com/Historical_Immersion_Project)
-- [Schattenzeitalter](http://www.moddb.com/mods/schattenzeitalter)
+ - [Historical Immersion Project](https://ck2.paradoxwikis.com/Historical_Immersion_Project)
+ - [Schattenzeitalter](http://www.moddb.com/mods/schattenzeitalter)
+ - More Dynamic Cultural Names
 
 Databases:
  - [GeoNames](http://www.geonames.org/) - A vast database containing exonyms in various languages
 
 Other:
-- Wikipedia pages of cities and places, in various languages
+ - Wikipedia pages of cities and places, in various languages
+ - Wiktionary pages of specific names, to find older variants and accurate transliterations
+ - The cultural names from the unmodded versions of the supported games
+
+## Titles
+
+ - ![EN:](https://github.com/markjames/famfamfam-flag-icons/blob/master/icons/png/gb.png?raw=true) [Bulgar titles and names](http://www.chitatel.net/forum/topic/375-bulgar-titles-and-names/)
+ - ![EN:](https://github.com/markjames/famfamfam-flag-icons/blob/master/icons/png/gb.png?raw=true) [Historical Romanian ranks and titles](https://en.wikipedia.org/wiki/Historical_Romanian_ranks_and_titles)
+ - ![EN:](https://github.com/markjames/famfamfam-flag-icons/blob/master/icons/png/gb.png?raw=true) [Word and Power in Mediaeval Bulgaria](https://books.google.co.uk/books?id=O-j66lYzINEC)
+ - ![RO:](https://github.com/markjames/famfamfam-flag-icons/blob/master/icons/png/ro.png?raw=true) [Dregătorie](https://ro.wikipedia.org/wiki/Dreg%C4%83torie)
+ - ![RO:](https://github.com/markjames/famfamfam-flag-icons/blob/master/icons/png/ro.png?raw=true) [Institutii feudale in Tarile Romane sec XIV - XVI](http://www.ebacalaureat.ro/c/institutii-feudale-in-tarile-romane-sec-xiv---xvi/1158)
+ - ![RO:](https://github.com/markjames/famfamfam-flag-icons/blob/master/icons/png/ro.png?raw=true) [Institutii Medievale Romanesti](https://www.scribd.com/doc/103239549/Institutii-Medievale-Romanesti)
+
+Mods:
+ - [Historical Immersion Project](https://ck2.paradoxwikis.com/Historical_Immersion_Project)
+ - [Community Title Project](https://github.com/Gr770/CK3-Community-Title-Project)
+
+Other:
+ - [Orbis Latinus](http://www.columbia.edu/acis/ets/Graesse/orblatv.html)
+ - [RBMS Latin place names](http://rbms.info/lpn/a/)
+ - Wikipedia
+ - Wiktionary to find older and/or feminine variants
 
 [![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/master/assets/patreon.png)](https://www.patreon.com/hmlendea)

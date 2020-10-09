@@ -8,11 +8,29 @@ if [ ! -f "${FILE}" ]; then
     exit
 fi
 
+FILE_CHARSET=$(file -i "${FILE}" | sed 's/.*charset=\([a-zA-Z0-9-]*\).*/\1/g')
+
+if [ "${FILE_CHARSET}" != "utf-8" ]; then
+    iconv -f WINDOWS-1252 -t UTF-8 "${FILE}" > "${FILE}.utf8.temp"
+    mv "${FILE}.utf8.temp" "${FILE}"
+fi
+
 sed -i 's/\t/    /g' "${FILE}"
 
 if [ "${GAME}" == "CK3" ]; then
     sed -i '/[=\">]cn_/d' "${FILE}"
 fi
+
+sed -i '/cultural_names\s*=/d' "${FILE}"
+
+# Remove brackets
+sed -i 's/=\s*{/=/g' "${FILE}"
+sed -i '/^\s*[\{\}]*\s*$/d' "${FILE}"
+
+sed -i 's/\r//g' "${FILE}"
+sed -i 's/^\s*\([ekdcb]_[^\t =]*\)\s*=\s*/\1 =/g' "${FILE}"
+perl -i -p0e 's/( *([ekdcb]_[^\t =]*) *= *\n)+ *([ekdcb]_[^\t =]*) *= */\3 =/g' "${FILE}"
+sed -i 's/^ \+/      /g' "${FILE}"
 
 function replace-cultural-name {
     CULTURE_ID="$1"
@@ -94,7 +112,7 @@ fi
 
 if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "andalusian_arabic" "Arabic_Andalusia"
-    replace-cultural-name "arberian" "arberian"
+    replace-cultural-name "arberian" "Arberian"
     replace-cultural-name "bedouin_arabic" "Arabic_Bedouin"
     replace-cultural-name "bohemian" "Czech_Medieval"
     replace-cultural-name "carantanian" "Slovene_Medieval"
@@ -109,25 +127,28 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "romanian" "Romanian_Old"
     replace-cultural-name "saxon" "English_Old"
     replace-cultural-name "scottish" "Scottish_Gaelic"
-    replace-cultural-name "sephardi" "sephardi"
+    replace-cultural-name "sephardi" "Ladino"
     replace-cultural-name "slovieni" "Slovak_Medieval"
     replace-cultural-name "ugricbaltic" "Estonian"
 fi
 
 if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ]; then
-    replace-cultural-name "ilmenian" "Russian_Medieval_Ilmenian"
+    replace-cultural-name "ilmenian" "Ilmenian"
     replace-cultural-name "italian" "Tuscan_Medieval"
     replace-cultural-name "meshchera" "Meshchera"
     replace-cultural-name "old_saxon" "German_Old_Low"
-    replace-cultural-name "outremer" "French_Outremer"
-    replace-cultural-name "severian" "Russian_Medieval_Severian"
+    replace-cultural-name "severian" "Severian"
     replace-cultural-name "suebi" "Suebi_Medieval"
     replace-cultural-name "tocharian" "Tocharian"
     replace-cultural-name "visigothic" "Gothic_Visigoth"
-    replace-cultural-name "volhynian" "Russian_Medieval_Volhynian"
+    replace-cultural-name "volhynian" "Volhynian"
+
+    # Blacklisted
+    sed -i '/^ *\(ilmenian\|outremer\|severian\|volhynian\) *=.*$/d' "${FILE}"
 fi
 
 if [ "${GAME}" == "CK2HIP" ]; then
+    replace-cultural-name "langobardisch" "Langobardic"
     replace-cultural-name "low_saxon" "German_Old_Low"
     replace-cultural-name "tajik" "Tajiki"
     replace-cultural-name "vepsian" "Vepsian_Medieval"
@@ -167,17 +188,27 @@ if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "gaelic" "Scottish_Gaelic"
     replace-cultural-name "latgalian" "Latgalian"
     replace-cultural-name "levantine" "Arabic_Levant"
+    replace-cultural-name "lombard" "Langobardic"
     replace-cultural-name "maghrebi" "Arabic_Maghreb"
     replace-cultural-name "merya" "Merya"
     replace-cultural-name "mogyer" "Hungarian_Old_Early"
     replace-cultural-name "muroma" "Muroma"
     replace-cultural-name "polabian" "Polabian"
     replace-cultural-name "sami" "Sami"
+    replace-cultural-name "saxon" "German_Middle_Low"
     replace-cultural-name "scottish" "Scots_Early"
     replace-cultural-name "slovien" "Slovak_Medieval"
     replace-cultural-name "vlach" "Romanian_Old"
     replace-cultural-name "yughur" "Uyghur_Yellow"
+
+    # Blacklisted for now
+    sed -i '/^ *\(frankish\) *=.*$/d' "${FILE}"
 fi
 
-sed -i '/^\s*[\{\}]*\s*$/d' "${FILE}"
-sed -i 's/^[\t ]*\([ekdcb]_\)/\1/g' "${FILE}"
+sed -i 's/> \+/>/g' "${FILE}"
+sed -i 's/ \+<\//<\//g' "${FILE}"
+
+# Combine arabic names
+sed -i 's/Arabic_Andalusia/Arabic/g' "${FILE}"
+sed -i '/.*_Arabic.*/d' "${FILE}"
+sed -i '/.*Arabic_.*/d' "${FILE}"
