@@ -1,4 +1,4 @@
-[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/master/assets/patreon.png)](https://www.patreon.com/hmlendea)
+[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_patreon_small.png)](https://www.patreon.com/hmlendea) [![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal_small.png)](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal.png)
 
 # About
 
@@ -108,4 +108,4 @@ Other:
  - Wikipedia
  - Wiktionary to find older and/or feminine variants
 
-[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/master/assets/patreon.png)](https://www.patreon.com/hmlendea)
+[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_patreon.png)](https://www.patreon.com/hmlendea) [![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal.png)](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal.png)
