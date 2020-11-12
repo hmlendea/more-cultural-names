@@ -1,4 +1,4 @@
-[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/master/assets/patreon.png)](https://www.patreon.com/hmlendea)
+[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_patreon_small.png)](https://www.patreon.com/hmlendea)[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal_small.png)](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal.png)[![Donate with LiberaPay](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_liberapay_small.png)](https://liberapay.com/HMlendea/donate)
 
 # About
 
@@ -108,4 +108,4 @@ Other:
  - Wikipedia
  - Wiktionary to find older and/or feminine variants
 
-[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/more-cultural-names/master/assets/patreon.png)](https://www.patreon.com/hmlendea)
+[![Support on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_patreon.png)](https://www.patreon.com/hmlendea)[![Donate with PayPal](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal.png)](https://www.paypal.com/donate?hosted_button_id=6YVRGJHDGWGKQ)[![Donate with LiberaPay](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_liberapay.png)](https://liberapay.com/HMlendea/donate)
