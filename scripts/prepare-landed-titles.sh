@@ -149,8 +149,11 @@ fi
 
 if [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "langobardisch" "Langobardic"
+    replace-cultural-name "low_german" "German_Middle_Low"
     replace-cultural-name "low_saxon" "German_Old_Low"
+    replace-cultural-name "norsegaelic" "Irish_Middle_Norse"
     replace-cultural-name "tajik" "Tajiki"
+    replace-cultural-name "thuringian" "Thuringian_Medieval"
     replace-cultural-name "vepsian" "Vepsian_Medieval"
     replace-cultural-name "yemeni" "Arabic_Yemen"
 fi
