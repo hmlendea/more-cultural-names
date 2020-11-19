@@ -4,6 +4,8 @@
 
 This is a mod for various strategy games, that adds new place names based on their culture/faction.
 
+It first started in 2016 for Crusader Kings 2 (with HIP), and grew ever since both in size and in game coverage.
+
 The common database currently has over **65 thousand** names for over **450** languages, settings and time periods.
 
 The names are meant to provide an immersive and accurate experience for the game's setting and time period.
