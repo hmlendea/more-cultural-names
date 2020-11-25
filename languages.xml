@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfLanguage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Language>
+    <Id>Achense</Id>
+    <Code iso-639-2="ace" iso-639-3="ace" />
+    <GameIds>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Afar</Id>
     <Code iso-639-1="aa" iso-639-2="aar" iso-639-3="aar" />
     <GameIds>
@@ -24,15 +30,71 @@
     <Id>Albanian</Id>
     <Code iso-639-1="sq" iso-639-3="sqi" />
     <FallbackLanguages>
+      <LanguageId>Albanian_Before1990</LanguageId>
       <LanguageId>Albanian_Before1974</LanguageId>
+      <LanguageId>Albanian_Before1945</LanguageId>
+      <LanguageId>Albanian_Before1928</LanguageId>
+      <LanguageId>Albanian_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Albanian_Before1990</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Albanian_Before1974</LanguageId>
+      <LanguageId>Albanian_Before1945</LanguageId>
+      <LanguageId>Albanian_Before1928</LanguageId>
+      <LanguageId>Albanian_Medieval</LanguageId>
+      <LanguageId>Albanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Albanian_Before1974</Id>
     <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Albanian_Before1945</LanguageId>
+      <LanguageId>Albanian_Before1928</LanguageId>
+      <LanguageId>Albanian_Medieval</LanguageId>
+      <LanguageId>Albanian_Before1990</LanguageId>
+      <LanguageId>Albanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Albanian_Before1945</Id>
+    <GameIds>
       <GameId game="HOI4">ALB</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Albanian_Before1928</LanguageId>
+      <LanguageId>Albanian_Medieval</LanguageId>
+      <LanguageId>Albanian_Before1974</LanguageId>
+      <LanguageId>Albanian_Before1990</LanguageId>
+      <LanguageId>Albanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Albanian_Before1928</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Albanian_Medieval</LanguageId>
+      <LanguageId>Albanian_Before1945</LanguageId>
+      <LanguageId>Albanian_Before1974</LanguageId>
+      <LanguageId>Albanian_Before1990</LanguageId>
+      <LanguageId>Albanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Albanian_Medieval</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Albanian_Before1928</LanguageId>
+      <LanguageId>Albanian_Before1945</LanguageId>
+      <LanguageId>Albanian_Before1974</LanguageId>
+      <LanguageId>Albanian_Before1990</LanguageId>
       <LanguageId>Albanian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -688,33 +750,176 @@
       <LanguageId>Croatian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Slovene</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
-      <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Bosnian_Before1974</Id>
+    <Id>Bosnian_Before1990</Id>
     <GameIds>
-      <GameId game="HOI4">BOS</GameId> <!-- Bosnia -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Bosnian_Before1974</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Bosnian_Before1945</Id>
+    <GameIds>
+      <GameId game="HOI4">BOS</GameId> <!-- Bosnia -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Bosnian_Before1928</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -726,12 +931,29 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Slovene</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
@@ -741,6 +963,12 @@
   </Language>
   <Language>
     <Id>Brabantian</Id>
+  </Language>
+  <Language>
+    <Id>Brahui</Id>
+    <Code iso-639-3="brh" />
+    <GameIds>
+    </GameIds>
   </Language>
   <Language>
     <Id>Breton</Id>
@@ -780,6 +1008,12 @@
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Breton</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Buginese</Id>
+    <Code iso-639-2="bug" iso-639-3="bug" />
+    <GameIds>
+    </GameIds>
   </Language>
   <Language>
     <Id>Bulgar</Id>
@@ -1070,33 +1304,176 @@
       <LanguageId>Serbian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Slovene</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Croatian_Before1974</Id>
+    <Id>Croatian_Before1990</Id>
     <GameIds>
-      <GameId game="HOI4">CRO</GameId> <!-- Croatia -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Croatian_Before1974</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Croatian_Before1945</Id>
+    <GameIds>
+      <GameId game="HOI4">CRO</GameId> <!-- Croatia -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Croatian_Before1928</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1107,13 +1484,30 @@
       <GameId game="CK3">croatian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -3411,6 +3805,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Minangkabau</Id>
+    <Code iso-639-2="min" iso-639-3="min" />
+  </Language>
+  <Language>
     <Id>Mirandese</Id>
     <Code iso-639-3="mwl" />
   </Language>
@@ -3982,8 +4380,19 @@
       <GameId game="CK2HIP">portuguese</GameId>
       <GameId game="CK3">portuguese</GameId>
       <GameId game="HOI4">POR</GameId> <!-- Portugal -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Portuguese_Brazilian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Portuguese_Brazilian</Id>
+    <GameIds>
       <GameId game="HOI4">BRA</GameId> <!-- Brazil -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Portuguese</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Prussian_Old</Id>
@@ -4632,34 +5041,176 @@
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Slovene</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Serbian_Before1990</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Serbian_Before1974</Id>
     <GameIds>
-      <GameId game="HOI4">SER</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
-      <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
-      <LanguageId>Serbian</LanguageId>
-      <LanguageId>SerboCroatian</LanguageId>
-      <LanguageId>Croatian</LanguageId>
-      <LanguageId>Bosnian</LanguageId>
-      <LanguageId>Slovene</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Serbian_Before1945</Id>
+    <GameIds>
+      <GameId game="HOI4">SER</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Serbian_Before1928</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4670,13 +5221,30 @@
       <GameId game="CK3">serbian</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
@@ -4692,36 +5260,213 @@
       <LanguageId>Serbian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Slovene</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
-      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
-      <LanguageId>Slovene</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>SerboCroatian_Before1974</Id>
-    <Code iso-639-3="hbs" />
+    <Id>SerboCroatian_Before1990</Id>
     <GameIds>
-      <GameId game="HOI4">YUG</GameId>
-      <GameId game="HOI4">MNT</GameId> <!-- Montenegro -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>SerboCroatian_Before1974</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>SerboCroatian_Before1945</Id>
+    <GameIds>
+      <GameId game="HOI4">YUG</GameId>
+      <GameId game="HOI4">MNT</GameId> <!-- Montenegro -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>SerboCroatian_Before1928</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>SerboCroatian_Medieval</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4810,21 +5555,182 @@
     <Id>Slovene</Id>
     <Code iso-639-1="sl" iso-639-3="slv" />
     <GameIds>
-      <GameId game="HOI4">SLV</GameId> <!-- Slovenia -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Slovene_Before1990</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Slovene_Before1974</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Slovene_Before1945</Id>
+    <GameIds>
+      <GameId game="HOI4">SLV</GameId> <!-- Slovenia -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Slovene_Before1928</Id>
+    <GameIds>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4834,13 +5740,26 @@
       <GameId game="CK2HIP">carantanian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>Slovene</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
