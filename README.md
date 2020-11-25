@@ -4,16 +4,9 @@
 
 This is a mod for various strategy games, that adds new place names based on their culture/faction.
 
-It first started in 2016 for Crusader Kings 2 (with HIP), and grew ever since both in size and in game coverage.
-
 The common database currently has over **65 thousand** names for over **500** languages, settings and time periods.
 
 The names are meant to provide an immersive and accurate experience for the game's setting and time period.
-
-However, if explicit names are not set for a specific language for a given time period, names from other time periods or related languages will be used instead, as long as it makes sense. Examples:
- - If a Middle Welsh name is not set, the Old Welsh one will be used if it exists, or the modern Welsh otherwise
- - If an Occitan name does not exist, the French one will be used
- - Croatian, Serbian and Bosnian will also use each other as backups, and so will Czech and Slovak, etc...
 
 # Supported games
 
@@ -28,11 +21,17 @@ However, if explicit names are not set for a specific language for a given time 
 
 # Installation
 
-*Note: This mod gets updated more frequently on GitHub than on the Steam Workshop pages*
-
 You can install this mod by either:
  - Subscribing to the mod page of the game for which you wish to install this mod
  - Download the [latest release](https://github.com/hmlendea/more-cultural-names/releases), and extract the contents into your game's mod directory
+
+# Roadmap
+
+The current development focus and roadmap can be found [here](https://github.com/hmlendea/more-cultural-names/wiki/Roadmap).
+
+The mod grows continuously, and any new names added to it are automatically ported to all of the other supported games that can use it.
+
+***Note**: This mod might get updated more frequently on GitHub than on the Steam Workshop*
 
 # Compatibility
 
@@ -51,26 +50,8 @@ Here are a few ways in which you can do so:
  - Raising a new [issue](https://github.com/hmlendea/more-cultural-names/issues) for this project
  - Creating a git pull request for this repository (This requires git knowledge)
 
-Alternatively, please consider supporting this project on [Patreon](https://www.patreon.com/hmlendea).
-
-# Development focus
-
-Currently, the development focuses on the following:
-
- 1. Add more localisations to existing locations
- 1. Update the slavic names with correct transliterations and special characters
- 2. Support more `Crusader Kings 3` locations
- 3. Finish and publish the `Hearts of Iron 4` edition
- 3. Support more `Hearts of Iron 4` locations
- 3. Support more `Imperator: Rome` locations
-
-# Development guidelines
-
- - Make sure the names you add are historically accurate
- - Include all the original special characters of the name
- - Use the appropriate language for the names *(e.g. Welsh vs Welsh_Middle)*
- - For the names of which you are not sure, please include a comment
- - For alternative names in the same language and time period, consider documenting them in a comment alongside the main "active" one
+If you wish to contribute directly to the project, you can find the documentation and 
+[guidelines](https://github.com/hmlendea/more-cultural-names/wiki/Guidelines) on the project's [wiki](https://github.com/hmlendea/more-cultural-names/wiki).
 
 # Sources
 
