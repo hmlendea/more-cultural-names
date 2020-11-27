@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FILE="$1"
-GAME="$2"
+GAME=$(echo "$2" | tr '[:lower:]' '[:upper:]')
 
 if [ ! -f "${FILE}" ]; then
     echo "The specified file does not exist!"
@@ -148,14 +148,45 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ]; then
 fi
 
 if [ "${GAME}" == "CK2HIP" ]; then
+    replace-cultural-name "adhari" "Azeri_Old"
+    replace-cultural-name "anglonorse" "English_Old_Norse"
+    replace-cultural-name "arpitan" "Arpitan"
+    replace-cultural-name "cumbric" "Cumbric"
+    replace-cultural-name "gothic" "Gothic"
+    replace-cultural-name "hijazi" "Hejazi_Arabic"
+    replace-cultural-name "icelandic" "Icelandic_Old"
+    replace-cultural-name "italian" "Lombard_Medieval"
+    replace-cultural-name "kasogi" "Circassian"
+    replace-cultural-name "khorasani" "Khorasani_Turkic"
+    replace-cultural-name "khwarezmi" "Khwarezmi"
     replace-cultural-name "langobardisch" "Langobardic"
+    replace-cultural-name "laziale" "Italian_Central"
+    replace-cultural-name "leonese" "Leonese"
+    replace-cultural-name "ligurian" "Ligurian"
+    replace-cultural-name "livonian" "Livonian"
+    replace-cultural-name "low_frankish" "Frankish_Low"
     replace-cultural-name "low_german" "German_Middle_Low"
     replace-cultural-name "low_saxon" "German_Old_Low"
+    replace-cultural-name "masmuda" "Masmuda"
+    replace-cultural-name "neapolitan" "Neapolitan_Medieval"
     replace-cultural-name "norsegaelic" "Irish_Middle_Norse"
+    replace-cultural-name "oghuz" "Oghuz"
+    replace-cultural-name "pahlavi" "Persian_Middle"
+    replace-cultural-name "qufs" "Kufichi"
+    replace-cultural-name "sanhaja" "Sanhaja"
+    replace-cultural-name "sicilian_arabic" "Sicilian_Arabic"
+    replace-cultural-name "szekely" "Szekely_Old"
+    replace-cultural-name "tagelmust" "Tuareg_Tagelmust"
     replace-cultural-name "tajik" "Tajiki"
     replace-cultural-name "thuringian" "Thuringian_Medieval"
+    replace-cultural-name "tuareg" "Tuareg"
+    replace-cultural-name "turkmen" "Turkmen_Medieval"
+    replace-cultural-name "tuscan" "Tuscan_Medieval"
+    replace-cultural-name "umbrian" "Umbrian_Medieval"
+    replace-cultural-name "venetian" "Venetian_Medieval"
     replace-cultural-name "vepsian" "Vepsian_Medieval"
     replace-cultural-name "yemeni" "Arabic_Yemen"
+    replace-cultural-name "zanata" "Zenati"
 fi
 
 if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ]; then
@@ -166,6 +197,8 @@ if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "daylamite" "Daylami"
     replace-cultural-name "franconian" "Frankish"
     replace-cultural-name "galician" "Galician"
+    replace-cultural-name "karelian" "Karelian"
+    replace-cultural-name "mari" "Mari"
     replace-cultural-name "sicilian" "Sicilian"
     replace-cultural-name "swabian" "Alemannic_Medieval"
     replace-cultural-name "tajik" "Tajiki"
@@ -189,6 +222,7 @@ if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "estonian" "Estonian"
     replace-cultural-name "french" "French_Old"
     replace-cultural-name "gaelic" "Scottish_Gaelic"
+    replace-cultural-name "khwarezmian" "Khwarezmi"
     replace-cultural-name "latgalian" "Latgalian"
     replace-cultural-name "levantine" "Arabic_Levant"
     replace-cultural-name "lombard" "Langobardic"
