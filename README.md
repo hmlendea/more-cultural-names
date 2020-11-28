@@ -4,8 +4,6 @@
 
 This is a mod for various strategy games, that adds new place names based on their culture/faction.
 
-The common database currently has over **65 thousand** names for over **500** languages, settings and time periods.
-
 The names are meant to provide an immersive and accurate experience for the game's setting and time period.
 
 # Supported games
