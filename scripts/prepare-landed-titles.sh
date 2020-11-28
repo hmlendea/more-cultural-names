@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FILE="$1"
-GAME="$2"
+GAME=$(echo "$2" | tr '[:lower:]' '[:upper:]')
 
 if [ ! -f "${FILE}" ]; then
     echo "The specified file does not exist!"
@@ -22,15 +22,16 @@ if [ "${GAME}" == "CK3" ]; then
 fi
 
 sed -i '/cultural_names\s*=/d' "${FILE}"
-
 # Remove brackets
 sed -i 's/=\s*{/=/g' "${FILE}"
 sed -i '/^\s*[\{\}]*\s*$/d' "${FILE}"
 
-sed -i 's/\r//g' "${FILE}"
-sed -i 's/^\s*\([ekdcb]_[^\t =]*\)\s*=\s*/\1 =/g' "${FILE}"
-perl -i -p0e 's/( *([ekdcb]_[^\t =]*) *= *\n)+ *([ekdcb]_[^\t =]*) *= */\3 =/g' "${FILE}"
-sed -i 's/^ \+/      /g' "${FILE}"
+function remove-empty-titles {
+    sed -i 's/\r//g' "${FILE}"
+    sed -i 's/^\s*\([ekdcb]_[^\t =]*\)\s*=\s*/\1 =/g' "${FILE}"
+    perl -i -p0e 's/\n( *([ekdcb]_[^\t =]*) *= *\n)+ *([ekdcb]_[^\t =]*) *= */\n\3 =/g' "${FILE}"
+    sed -i 's/^ \+/      /g' "${FILE}"
+}
 
 function replace-cultural-name {
     CULTURE_ID="$1"
@@ -40,6 +41,17 @@ function replace-cultural-name {
 
     sed -i 's/^ *'"${CULTURE_ID}"' *= *\"\([^\"]*\)\"/      <Name language=\"'"${LANGUAGE_ID}"'\">\1<\/Name>/g' "${FILE}"
 }
+
+function merge-languages {
+    LANGUAGE_FINAL=$1
+    LANGUAGE1=$2
+    LANGUAGE2=$3
+
+    perl -i -p0e 's/      <Name language=\"'"$LANGUAGE1"'\">([^<]*).*\n *<Name language=\"'"${LANGUAGE2}"'\">\1<.*/      <Name language=\"'"${LANGUAGE_FINAL}"'\">\1<\/Name>/g' "${FILE}"
+    perl -i -p0e 's/      <Name language=\"'"$LANGUAGE2"'\">([^<]*).*\n *<Name language=\"'"${LANGUAGE1}"'\">\1<.*/      <Name language=\"'"${LANGUAGE_FINAL}"'\">\1<\/Name>/g' "${FILE}"
+}
+
+remove-empty-titles
 
 replace-cultural-name "afghan" "Pashto"
 replace-cultural-name "alan" "Alan"
@@ -148,14 +160,45 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ]; then
 fi
 
 if [ "${GAME}" == "CK2HIP" ]; then
+    replace-cultural-name "adhari" "Azeri_Old"
+    replace-cultural-name "anglonorse" "English_Old_Norse"
+    replace-cultural-name "arpitan" "Arpitan"
+    replace-cultural-name "cumbric" "Cumbric"
+    replace-cultural-name "gothic" "Gothic"
+    replace-cultural-name "hijazi" "Hejazi_Arabic"
+    replace-cultural-name "icelandic" "Icelandic_Old"
+    replace-cultural-name "italian" "Lombard_Medieval"
+    replace-cultural-name "kasogi" "Circassian"
+    replace-cultural-name "khorasani" "Khorasani_Turkic"
+    replace-cultural-name "khwarezmi" "Khwarezmi"
     replace-cultural-name "langobardisch" "Langobardic"
+    replace-cultural-name "laziale" "Italian_Central"
+    replace-cultural-name "leonese" "Leonese"
+    replace-cultural-name "ligurian" "Ligurian"
+    replace-cultural-name "livonian" "Livonian"
+    replace-cultural-name "low_frankish" "Frankish_Low"
     replace-cultural-name "low_german" "German_Middle_Low"
     replace-cultural-name "low_saxon" "German_Old_Low"
+    replace-cultural-name "masmuda" "Masmuda"
+    replace-cultural-name "neapolitan" "Neapolitan_Medieval"
     replace-cultural-name "norsegaelic" "Irish_Middle_Norse"
+    replace-cultural-name "oghuz" "Oghuz"
+    replace-cultural-name "pahlavi" "Persian_Middle"
+    replace-cultural-name "qufs" "Kufichi"
+    replace-cultural-name "sanhaja" "Sanhaja"
+    replace-cultural-name "sicilian_arabic" "Sicilian_Arabic"
+    replace-cultural-name "szekely" "Szekely_Old"
+    replace-cultural-name "tagelmust" "Tuareg_Tagelmust"
     replace-cultural-name "tajik" "Tajiki"
     replace-cultural-name "thuringian" "Thuringian_Medieval"
+    replace-cultural-name "tuareg" "Tuareg"
+    replace-cultural-name "turkmen" "Turkmen_Medieval"
+    replace-cultural-name "tuscan" "Tuscan_Medieval"
+    replace-cultural-name "umbrian" "Umbrian_Medieval"
+    replace-cultural-name "venetian" "Venetian_Medieval"
     replace-cultural-name "vepsian" "Vepsian_Medieval"
     replace-cultural-name "yemeni" "Arabic_Yemen"
+    replace-cultural-name "zanata" "Zenati"
 fi
 
 if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ]; then
@@ -166,6 +209,8 @@ if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "daylamite" "Daylami"
     replace-cultural-name "franconian" "Frankish"
     replace-cultural-name "galician" "Galician"
+    replace-cultural-name "karelian" "Karelian"
+    replace-cultural-name "mari" "Mari"
     replace-cultural-name "sicilian" "Sicilian"
     replace-cultural-name "swabian" "Alemannic_Medieval"
     replace-cultural-name "tajik" "Tajiki"
@@ -189,6 +234,7 @@ if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "estonian" "Estonian"
     replace-cultural-name "french" "French_Old"
     replace-cultural-name "gaelic" "Scottish_Gaelic"
+    replace-cultural-name "khwarezmian" "Khwarezmi"
     replace-cultural-name "latgalian" "Latgalian"
     replace-cultural-name "levantine" "Arabic_Levant"
     replace-cultural-name "lombard" "Langobardic"
@@ -201,6 +247,7 @@ if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "saxon" "German_Middle_Low"
     replace-cultural-name "scottish" "Scots_Early"
     replace-cultural-name "slovien" "Slovak_Medieval"
+    replace-cultural-name "tsangpa" "Tibetan_Old"
     replace-cultural-name "vlach" "Romanian_Old"
     replace-cultural-name "yughur" "Uyghur_Yellow"
 
@@ -215,3 +262,79 @@ sed -i 's/ \+<\//<\//g' "${FILE}"
 sed -i 's/Arabic_Andalusia/Arabic/g' "${FILE}"
 sed -i '/.*_Arabic.*/d' "${FILE}"
 sed -i '/.*Arabic_.*/d' "${FILE}"
+
+merge-languages "Berber" "Berber" "Sanhaja"
+merge-languages "Berber" "Berber" "Zenaga"
+merge-languages "Berber" "Berber" "Zenati"
+merge-languages "Berber" "Tuareg" "Tuareg_Tagelmust"
+merge-languages "Berber" "Tuareg" "Zenati"
+merge-languages "Berber" "Berber" "Masmuda"
+merge-languages "Berber" "Sanhaja" "Masmuda"
+merge-languages "Berber" "Berber" "Berber"
+
+merge-languages "French_Old" "French_Old" "Norman"
+merge-languages "French_Old" "French_Old" "Arpitan"
+
+merge-languages "Greek_Medieval" "Greek_Medieval" "Gothic_Crimean"
+
+merge-languages "Avar_Old" "Avar_Old" "Bashkir"
+merge-languages "Avar_Old" "Avar_Old" "Bulgar"
+merge-languages "Cuman" "Cuman" "Avar_Old"
+merge-languages "Pecheneg" "Pecheneg" "Oghuz"
+merge-languages "Turkish_Old" "Turkish_Old" "Turkmen_Medieval"
+merge-languages "Turkish_Old" "Turkish_Old" "Pecheneg"
+merge-languages "Turkish_Old" "Turkish_Old" "Oghuz"
+
+merge-languages "Hungarian_Old" "Hungarian_Old" "Szekely_Old"
+
+merge-languages "English_Old" "English_Old" "English_Old_Norse"
+merge-languages "English_Middle" "English_Middle" "English_Old"
+merge-languages "English_Middle" "English_Middle" "English_Old_Norse"
+
+merge-languages "Italian_Central" "Italian_Central" "Langobardic"
+merge-languages "Italian_Central" "Italian_Central" "Ligurian"
+merge-languages "Italian_Central" "Italian_Central" "Lombard_Medieval"
+merge-languages "Italian_Central" "Italian_Central" "Neapolitan_Medieval"
+merge-languages "Sicilian" "Sicilian" "Sardinian"
+merge-languages "Tuscan_Medieval" "Tuscan_Medieval" "Sicilian"
+merge-languages "Tuscan_Medieval" "Tuscan_Medieval" "Umbrian_Medieval"
+merge-languages "Tuscan_Medieval" "Tuscan_Medieval" "Venetian_Medieval"
+merge-languages "Italian" "Italian_Central" "Dalmatian_Medieval"
+merge-languages "Italian" "Italian" "Tuscan_Medieval"
+
+merge-languages "Alemannic_Medieval" "Alemannic_Medieval" "Thuringian_Medieval"
+merge-languages "Bavarian_Medieval" "Bavarian_Medieval" "Frankish"
+merge-languages "Bavarian_Medieval" "Bavarian_Medieval" "Alemannic_Medieval"
+merge-languages "Bavarian_Medieval" "Bavarian_Medieval" "Thuringian_Medieval"
+merge-languages "German_Old_Low" "German_Old_Low" "Alemannic_Medieval"
+merge-languages "German_Middle_Low" "German_Middle_Low" "German_Old_Low"
+merge-languages "German_Middle_Low" "German_Middle_Low" "Dutch_Middle"
+merge-languages "German_Middle_Low" "German_Middle_Low" "Frankish_Low"
+merge-languages "German_Middle_High" "German_Middle_High" "Bavarian_Medieval"
+merge-languages "German_Middle_High" "German_Middle_High" "German_Middle_Low"
+merge-languages "German_Middle_High" "German_Middle_High" "German_Old_Low"
+merge-languages "German_Middle_High" "German_Middle_High" "Frankish"
+merge-languages "German_Middle_High" "German_Middle_High" "Alemannic_Medieval"
+
+merge-languages "Irish_Middle" "Irish_Middle" "Irish_Middle_Norse"
+merge-languages "Irish_Middle" "Irish_Middle" "Irish_Middle_Norse"
+merge-languages "Irish_Middle" "Irish_Middle" "Scottish_Gaelic"
+merge-languages "Irish_Middle" "Irish_Middle" "Welsh_Middle"
+merge-languages "Breton_Middle" "Breton_Middle" "Cornish_Middle"
+merge-languages "Breton_Middle" "Breton_Middle" "Cumbric"
+merge-languages "Welsh_Middle" "Welsh_Middle" "Breton_Middle"
+merge-languages "Scottish_Gaelic" "Scottish_Gaelic" "Welsh_Middle"
+
+merge-languages "SerboCroatian_Medieval" "Croatian_Medieval" "Bosnian_Medieval"
+merge-languages "SerboCroatian_Medieval" "Croatian_Medieval" "Slovene_Medieval"
+merge-languages "SerboCroatian_Medieval" "SerboCroatian_Medieval" "Slovene_Medieval"
+merge-languages "SerboCroatian_Medieval" "SerboCroatian_Medieval" "Bosnian_Medieval"
+
+echo "Removing unknown languages..."
+cat "${FILE}" | grep " = \"" | sort | awk '{print    $1}' | uniq
+sed -i '/ = \"/d' "${FILE}"
+
+remove-empty-titles
+
+# Remove duplicated languages
+perl -i -p0e 's/      <Name language=\"([^\"]*)\">([^<]*).*\n *<Name language=\"\1\">\2<.*/      <Name language=\"\1\">\2<\/Name>/g' "${FILE}"
