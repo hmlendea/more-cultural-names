@@ -247,6 +247,7 @@ if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "saxon" "German_Middle_Low"
     replace-cultural-name "scottish" "Scots_Early"
     replace-cultural-name "slovien" "Slovak_Medieval"
+    replace-cultural-name "tsangpa" "Tibetan_Old"
     replace-cultural-name "vlach" "Romanian_Old"
     replace-cultural-name "yughur" "Uyghur_Yellow"
 
@@ -334,3 +335,6 @@ cat "${FILE}" | grep " = \"" | sort | awk '{print    $1}' | uniq
 sed -i '/ = \"/d' "${FILE}"
 
 remove-empty-titles
+
+# Remove duplicated languages
+perl -i -p0e 's/      <Name language=\"([^\"]*)\">([^<]*).*\n *<Name language=\"\1\">\2<.*/      <Name language=\"\1\">\2<\/Name>/g' "${FILE}"
