@@ -4,6 +4,8 @@ LANGUAGES_FILE="languages.xml"
 LOCATIONS_FILE="locations.xml"
 TITLES_FILE="titles.xml"
 
+IMPERATORROME_VANILLA_LOCALISATION_FILE="/home/horatiu/.games/Steam/common/ImperatorRome/game/localization/english/provincenames_l_english.yml"
+
 # Find duplicated IDs
 grep "^ *<Id>" *.xml | \
     sort | uniq -c | \
@@ -49,3 +51,17 @@ done
 
 # Find multiple name definitions for the same language
 pcregrep -M "language=\"([^\"]*)\".*\n.*language=\"\1\"" *.xml
+
+# Validate ImperatorRome province IDs
+if [ -f "${IMPERATORROME_VANILLA_LOCALISATION_FILE}" ]; then
+    for PROV in $(cat "${LOCATIONS_FILE}" | grep "<GameId game=\"ImperatorRome\"" | sed 's/^.*>\([0-9]*\)<\/GameId.*!-- *\(.*\) *-->.*/\1_\2/g' | sed 's/ /@/g' | sort); do
+        PROV_ID=$(echo "${PROV}" | awk -F_ '{print $1}')
+        PROV_NAME=$(echo "${PROV}" | awk -F_ '{print $2}' | sed 's/@/ /g' | sed 's/^ *//g' | sed 's/ *$//g')
+
+        FOUND_LINE=$(cat "${IMPERATORROME_VANILLA_LOCALISATION_FILE}" | grep "PROV${PROV_ID}:" | grep "${PROV_NAME}")
+
+        if [ -z "${FOUND_LINE}" ]; then
+            echo "${PROV_ID} (${PROV_NAME}) is different from vanilla!"
+        fi
+    done
+fi
