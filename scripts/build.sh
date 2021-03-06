@@ -68,7 +68,7 @@ function package-game {
 
     echo "Building the '${INDIR}' package..."
 
-    cd ${STARTDIR}/${INDIR}
+    cd "${STARTDIR}/${INDIR}"
     zip -q -r "${ZIPNAME}.zip" ./*
     mv "${ZIPNAME}.zip" "${OUTDIR}/"
 }
