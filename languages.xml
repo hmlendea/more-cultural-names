@@ -456,6 +456,7 @@
       <LanguageId>Romanian_Before1940</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -1680,6 +1681,7 @@
       <LanguageId>Dutch_Old</LanguageId>
       <LanguageId>German_Low_Dutch</LanguageId>
       <LanguageId>German_Low</LanguageId>
+      <LanguageId>German_Low_Before1917</LanguageId>
       <LanguageId>German_Middle_Low</LanguageId>
       <LanguageId>German_Old_Low</LanguageId>
     </FallbackLanguages>
@@ -1695,6 +1697,7 @@
     <FallbackLanguages>
       <LanguageId>Frisian_Middle</LanguageId>
       <LanguageId>Frisian_Old</LanguageId>
+      <LanguageId>German_Low_Before1917</LanguageId>
       <LanguageId>German_Low_Dutch</LanguageId>
       <LanguageId>German_Low</LanguageId>
       <LanguageId>German_Middle_Low</LanguageId>
@@ -1797,6 +1800,7 @@
     <FallbackLanguages>
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Middle</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1804,13 +1808,27 @@
     <Id>English_Before1974</Id>
     <FallbackLanguages>
       <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>English_Before1926</Id>
     <FallbackLanguages>
+      <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>English_Before1917</Id>
+    <FallbackLanguages>
+      <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1822,6 +1840,7 @@
       <GameId game="CK3">english</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English</LanguageId>
@@ -1851,6 +1870,7 @@
       <LanguageId>German_Old_Low</LanguageId>
       <LanguageId>Frisian_Old</LanguageId>
       <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English</LanguageId>
@@ -2467,6 +2487,7 @@
     <Code iso-639-3="nds" />
     <FallbackLanguages>
       <LanguageId>German_Low_Dutch</LanguageId>
+      <LanguageId>German_Low_Before1917</LanguageId>
       <LanguageId>German_Middle_Low</LanguageId>
       <LanguageId>German_Middle_High</LanguageId>
       <LanguageId>German_Old_Low</LanguageId>
@@ -2477,8 +2498,19 @@
      <!-- nds-nl -->
     <FallbackLanguages>
       <LanguageId>German_Low</LanguageId>
+      <LanguageId>German_Low_Before1917</LanguageId>
       <LanguageId>German_Middle_Low</LanguageId>
       <LanguageId>German_Old_Low</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>German_Low_Before1917</Id>
+    <FallbackLanguages>
+      <LanguageId>German_Middle_Low</LanguageId>
+      <LanguageId>German_Middle_High</LanguageId>
+      <LanguageId>German_Old_Low</LanguageId>
+      <LanguageId>German_Low</LanguageId>
+      <LanguageId>German_Low_Dutch</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2491,6 +2523,7 @@
     <FallbackLanguages>
       <LanguageId>Dutch_Middle</LanguageId>
       <LanguageId>German_Middle_High</LanguageId>
+      <LanguageId>German_Low_Before1917</LanguageId>
       <LanguageId>German_Low</LanguageId>
       <LanguageId>German_Low_Dutch</LanguageId>
       <LanguageId>German_Old_Low</LanguageId>
@@ -2510,6 +2543,7 @@
       <LanguageId>English_Old</LanguageId>
       <LanguageId>German_Middle_Low</LanguageId>
       <LanguageId>German_Middle_High</LanguageId>
+      <LanguageId>German_Low_Before1917</LanguageId>
       <LanguageId>German_Low</LanguageId>
       <LanguageId>German_Low_Dutch</LanguageId>
     </FallbackLanguages>
@@ -2874,6 +2908,8 @@
     <Code iso-639-1="hu" iso-639-3="hun" />
     <FallbackLanguages>
       <LanguageId>Szekely</LanguageId>
+      <LanguageId>Hungarian_Before1974</LanguageId>
+      <LanguageId>Hungarian_Before1917</LanguageId>
       <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Hungarian_Old</LanguageId>
       <LanguageId>Szekely_Old</LanguageId>
@@ -2881,15 +2917,28 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Hungarian_Before1974</Id> <!-- c. 18th century AD – 1974 AD -->
+    <Id>Hungarian_Before1974</Id> <!-- 1917 AD – 1974 AD -->
     <GameIds>
       <GameId game="HOI4">HUN</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Hungarian_Before1917</LanguageId>
+      <LanguageId>Hungarian_Middle</LanguageId>
+      <LanguageId>Hungarian_Old</LanguageId>
+      <LanguageId>Szekely_Old</LanguageId>
+      <LanguageId>Hungarian_Old_Early</LanguageId>
+      <LanguageId>Hungarian</LanguageId>
+      <LanguageId>Szekely</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hungarian_Before1917</Id> <!-- c. 18th century AD – 1917 AD -->
     <FallbackLanguages>
       <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Hungarian_Old</LanguageId>
       <LanguageId>Szekely_Old</LanguageId>
       <LanguageId>Hungarian_Old_Early</LanguageId>
+      <LanguageId>Hungarian_Before1974</LanguageId>
       <LanguageId>Hungarian</LanguageId>
       <LanguageId>Szekely</LanguageId>
     </FallbackLanguages>
@@ -2900,6 +2949,7 @@
       <LanguageId>Hungarian_Old</LanguageId>
       <LanguageId>Szekely_Old</LanguageId>
       <LanguageId>Hungarian_Old_Early</LanguageId>
+      <LanguageId>Hungarian_Before1917</LanguageId>
       <LanguageId>Hungarian_Before1974</LanguageId>
       <LanguageId>Hungarian</LanguageId>
       <LanguageId>Szekely</LanguageId>
@@ -2917,6 +2967,7 @@
       <LanguageId>Szekely_Old</LanguageId>
       <LanguageId>Hungarian_Old_Early</LanguageId>
       <LanguageId>Hungarian_Middle</LanguageId>
+      <LanguageId>Hungarian_Before1917</LanguageId>
       <LanguageId>Hungarian_Before1974</LanguageId>
       <LanguageId>Hungarian</LanguageId>
       <LanguageId>Szekely</LanguageId>
@@ -2932,6 +2983,7 @@
       <LanguageId>Hungarian_Old</LanguageId>
       <LanguageId>Szekely_Old</LanguageId>
       <LanguageId>Hungarian_Middle</LanguageId>
+      <LanguageId>Hungarian_Before1917</LanguageId>
       <LanguageId>Hungarian_Before1974</LanguageId>
       <LanguageId>Hungarian</LanguageId>
       <LanguageId>Szekely</LanguageId>
@@ -4379,6 +4431,7 @@
     <FallbackLanguages>
       <LanguageId>Polish_Before1974</LanguageId>
       <LanguageId>Polish_Before1953</LanguageId>
+      <LanguageId>Polish_Before1917</LanguageId>
       <LanguageId>Polish_Middle</LanguageId>
       <LanguageId>Polish_Old</LanguageId>
       <LanguageId>Polabian</LanguageId>
@@ -4388,6 +4441,7 @@
     <Id>Polish_Before1974</Id>
     <FallbackLanguages>
       <LanguageId>Polish_Before1953</LanguageId>
+      <LanguageId>Polish_Before1917</LanguageId>
       <LanguageId>Polish_Middle</LanguageId>
       <LanguageId>Polish_Old</LanguageId>
       <LanguageId>Polabian</LanguageId>
@@ -4397,9 +4451,21 @@
   <Language>
     <Id>Polish_Before1953</Id>
     <FallbackLanguages>
+      <LanguageId>Polish_Before1917</LanguageId>
       <LanguageId>Polish_Middle</LanguageId>
       <LanguageId>Polish_Old</LanguageId>
       <LanguageId>Polabian</LanguageId>
+      <LanguageId>Polish_Before1974</LanguageId>
+      <LanguageId>Polish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Polish_Before1917</Id>
+    <FallbackLanguages>
+      <LanguageId>Polish_Middle</LanguageId>
+      <LanguageId>Polish_Old</LanguageId>
+      <LanguageId>Polabian</LanguageId>
+      <LanguageId>Polish_Before1953</LanguageId>
       <LanguageId>Polish_Before1974</LanguageId>
       <LanguageId>Polish</LanguageId>
     </FallbackLanguages>
@@ -4409,6 +4475,7 @@
     <FallbackLanguages>
       <LanguageId>Polish_Old</LanguageId>
       <LanguageId>Polabian</LanguageId>
+      <LanguageId>Polish_Before1917</LanguageId>
       <LanguageId>Polish_Before1953</LanguageId>
       <LanguageId>Polish_Before1974</LanguageId>
       <LanguageId>Polish</LanguageId>
@@ -4424,6 +4491,8 @@
     <FallbackLanguages>
       <LanguageId>Polabian</LanguageId>
       <LanguageId>Polish_Middle</LanguageId>
+      <LanguageId>Polish_Before1917</LanguageId>
+      <LanguageId>Polish_Before1953</LanguageId>
       <LanguageId>Polish_Before1974</LanguageId>
       <LanguageId>Polish</LanguageId>
     </FallbackLanguages>
@@ -4448,14 +4517,24 @@
     <Id>Portuguese</Id>
     <Code iso-639-1="pt" iso-639-3="por" />
     <GameIds>
-      <GameId game="CK2">portuguese</GameId>
-      <GameId game="CK2HIP">portuguese</GameId>
-      <GameId game="CK3">portuguese</GameId>
       <GameId game="HOI4">POR</GameId> <!-- Portugal -->
       <GameId game="HOI4">ANG</GameId> <!-- Angola -->
       <GameId game="HOI4">MZB</GameId> <!-- Mozambique -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Portuguese_Brazilian</LanguageId>
+      <LanguageId>Portuguese_Before1917</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Portuguese_Before1917</Id>
+    <GameIds>
+      <GameId game="CK2">portuguese</GameId>
+      <GameId game="CK2HIP">portuguese</GameId>
+      <GameId game="CK3">portuguese</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Portuguese</LanguageId>
       <LanguageId>Portuguese_Brazilian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4466,6 +4545,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Portuguese</LanguageId>
+      <LanguageId>Portuguese_Before1917</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4550,6 +4630,7 @@
       <LanguageId>Romanian_Before1940</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -4568,6 +4649,7 @@
       <LanguageId>Romanian_Before1940</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -4586,6 +4668,7 @@
       <LanguageId>Romanian_Before1940</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -4604,6 +4687,7 @@
       <LanguageId>Romanian_Before1940</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -4622,6 +4706,7 @@
       <LanguageId>Romanian_Before1940</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -4644,6 +4729,7 @@
       <LanguageId>Romanian_Before1940</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -4662,6 +4748,7 @@
     <FallbackLanguages>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -4680,6 +4767,7 @@
     <Id>Romanian_Before1930</Id>
     <FallbackLanguages>
       <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -4698,11 +4786,32 @@
   <Language>
     <Id>Romanian_Before1918</Id>
     <FallbackLanguages>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before1930</LanguageId>
+      <LanguageId>Romanian_Before1940</LanguageId>
+      <LanguageId>Romanian_Before1945</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1991</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_Before1917</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1913</LanguageId>
+      <LanguageId>Romanian_Before20Century</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before1918</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1940</LanguageId>
       <LanguageId>Romanian_Before1945</LanguageId>
@@ -4721,6 +4830,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1940</LanguageId>
@@ -4740,6 +4850,7 @@
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1940</LanguageId>
@@ -4759,6 +4870,7 @@
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1940</LanguageId>
@@ -4778,6 +4890,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1940</LanguageId>
@@ -4802,6 +4915,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1940</LanguageId>
@@ -4995,6 +5109,8 @@
     <FallbackLanguages>
       <LanguageId>Sami_North</LanguageId>
       <LanguageId>Sami_South</LanguageId>
+      <LanguageId>Sami_Skolt</LanguageId>
+      <LanguageId>Sami_Kildin</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5003,6 +5119,8 @@
     <FallbackLanguages>
       <LanguageId>Sami</LanguageId>
       <LanguageId>Sami_South</LanguageId>
+      <LanguageId>Sami_Skolt</LanguageId>
+      <LanguageId>Sami_Kildin</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5011,6 +5129,28 @@
     <FallbackLanguages>
       <LanguageId>Sami</LanguageId>
       <LanguageId>Sami_North</LanguageId>
+      <LanguageId>Sami_Skolt</LanguageId>
+      <LanguageId>Sami_Kildin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Sami_Skolt</Id> <!-- Sami_East -->
+    <Code iso-639-2="sms" iso-639-3="sms" />
+    <FallbackLanguages>
+      <LanguageId>Sami_Kildin</LanguageId>
+      <LanguageId>Sami</LanguageId>
+      <LanguageId>Sami_North</LanguageId>
+      <LanguageId>Sami_South</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Sami_Kildin</Id> <!-- Sami_Kola -->
+    <Code iso-639-2="sms" iso-639-3="sms" />
+    <FallbackLanguages>
+      <LanguageId>Sami_Skolt</LanguageId>
+      <LanguageId>Sami</LanguageId>
+      <LanguageId>Sami_North</LanguageId>
+      <LanguageId>Sami_South</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5103,6 +5243,7 @@
     <FallbackLanguages>
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
       <LanguageId>Scots_Early</LanguageId>
       <LanguageId>English_Middle</LanguageId>
     </FallbackLanguages>
@@ -5114,6 +5255,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>Scots</LanguageId>
@@ -6145,6 +6287,7 @@
     <FallbackLanguages>
       <LanguageId>Hungarian</LanguageId>
       <LanguageId>Hungarian_Before1974</LanguageId>
+      <LanguageId>Hungarian_Before1917</LanguageId>
       <LanguageId>Hungarian_Middle</LanguageId>
       <LanguageId>Szekely_Old</LanguageId>
       <LanguageId>Hungarian_Old</LanguageId>
@@ -6160,6 +6303,7 @@
       <LanguageId>Hungarian_Old</LanguageId>
       <LanguageId>Hungarian_Old_Early</LanguageId>
       <LanguageId>Hungarian_Middle</LanguageId>
+      <LanguageId>Hungarian_Before1917</LanguageId>
       <LanguageId>Hungarian_Before1974</LanguageId>
       <LanguageId>Szekely</LanguageId>
       <LanguageId>Hungarian</LanguageId>
