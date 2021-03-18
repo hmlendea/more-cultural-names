@@ -37,8 +37,6 @@ if [ -d ${MOD_BUILDER_NAME} ]; then
     fi
 fi
 
-NEEDS_DOWNLOADING=false
-
 if [ ${NEEDS_DOWNLOADING} == true ]; then
     [ -d ${MOD_BUILDER_NAME} ] && rm -rf ${MOD_BUILDER_NAME}
 
