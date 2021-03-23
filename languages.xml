@@ -398,9 +398,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Spanish</LanguageId>
-      <LanguageId>Castillan</LanguageId>
-      <LanguageId>Castillan_Medieval</LanguageId>
-      <LanguageId>Spanish_Medieval</LanguageId>
+      <LanguageId>Castilian</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -482,9 +481,8 @@
     <FallbackLanguages>
       <LanguageId>Leonese</LanguageId>
       <LanguageId>Spanish</LanguageId>
-      <LanguageId>Castillan</LanguageId>
-      <LanguageId>Castillan_Medieval</LanguageId>
-      <LanguageId>Spanish_Medieval</LanguageId>
+      <LanguageId>Castilian</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1102,23 +1100,21 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Castillan</Id>
+    <Id>Castilian</Id>
     <FallbackLanguages>
-      <LanguageId>Castillan_Medieval</LanguageId>
-      <LanguageId>Spanish_Medieval</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
       <LanguageId>Spanish</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Castillan_Medieval</Id>
+    <Id>Castilian_Old</Id> <!-- c. 10th century AD - beginning 15th century AD -->
     <GameIds>
       <GameId game="CK2">castillan</GameId>
       <GameId game="CK2HIP">castillan</GameId>
       <GameId game="CK3">castilian</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Spanish_Medieval</LanguageId>
-      <LanguageId>Castillan</LanguageId>
+      <LanguageId>Castilian</LanguageId>
       <LanguageId>Spanish</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -2587,14 +2583,6 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Gothic_Visigoth</Id>
-    <GameIds>
-      <GameId game="CK2">visigothic</GameId>
-      <GameId game="CK2HIP">visigothic</GameId>
-      <GameId game="CK3">visigothic</GameId>
-    </GameIds>
-  </Language>
-  <Language>
     <Id>Greek</Id>
     <Code iso-639-1="el" iso-639-3="gre" />
     <GameIds>
@@ -2994,6 +2982,14 @@
     <Code iso-639-3="xib" />
     <GameIds>
       <GameId game="ImperatorRome">iberia</GameId>
+    </GameIds>
+  </Language>
+  <Language>
+    <Id>Iberian_Romance</Id>
+    <GameIds>
+      <GameId game="CK2">visigothic</GameId>
+      <GameId game="CK2HIP">visigothic</GameId>
+      <GameId game="CK3">visigothic</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -3531,9 +3527,8 @@
     <FallbackLanguages>
       <LanguageId>Asturian</LanguageId>
       <LanguageId>Spanish</LanguageId>
-      <LanguageId>Castillan_Medieval</LanguageId>
-      <LanguageId>Spanish_Medieval</LanguageId>
-      <LanguageId>Castillan</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
+      <LanguageId>Castilian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4522,18 +4517,28 @@
       <GameId game="HOI4">MZB</GameId> <!-- Mozambique -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Portuguese_Brazilian</LanguageId>
       <LanguageId>Portuguese_Before1917</LanguageId>
+      <LanguageId>Portuguese_Brazilian</LanguageId>
+      <LanguageId>Portuguese_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Portuguese_Before1917</Id>
+    <FallbackLanguages>
+      <LanguageId>Portuguese</LanguageId>
+      <LanguageId>Portuguese_Old</LanguageId>
+      <LanguageId>Portuguese_Brazilian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Portuguese_Old</Id>
     <GameIds>
       <GameId game="CK2">portuguese</GameId>
       <GameId game="CK2HIP">portuguese</GameId>
       <GameId game="CK3">portuguese</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Portuguese_Before1917</LanguageId>
       <LanguageId>Portuguese</LanguageId>
       <LanguageId>Portuguese_Brazilian</LanguageId>
     </FallbackLanguages>
@@ -4546,6 +4551,7 @@
     <FallbackLanguages>
       <LanguageId>Portuguese</LanguageId>
       <LanguageId>Portuguese_Before1917</LanguageId>
+      <LanguageId>Portuguese_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -6180,17 +6186,8 @@
       <GameId game="HOI4">PUE</GameId> <!-- Puerto Rico -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Castillan</LanguageId>
-      <LanguageId>Spanish_Medieval</LanguageId>
-      <LanguageId>Castillan_Medieval</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Spanish_Medieval</Id>
-    <FallbackLanguages>
-      <LanguageId>Castillan_Medieval</LanguageId>
-      <LanguageId>Castillan</LanguageId>
-      <LanguageId>Spanish</LanguageId>
+      <LanguageId>Castilian</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
