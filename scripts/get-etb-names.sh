@@ -123,7 +123,7 @@ for TITLE_ID in $(grep "<GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
         print-name "Bulgarian_Old" "${BULGARIAN_NAME}"
         print-name "Castilian_Old" "${CASTILIAN_NAME}"
         print-name "Catalan_Medieval" "${CATALAN_NAME}"
-        print-name "Cornish_Medieval" "${CORNISH_NAME}"
+        print-name "Cornish_Middle" "${CORNISH_NAME}"
         print-name "Croatian_Medieval" "${CROATIAN_NAME}"
         print-name "Cumbric" "${CUMBRIC_NAME}"
         print-name "Czech_Medieval" "${CZECH_NAME}"
