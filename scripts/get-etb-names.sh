@@ -10,16 +10,20 @@ function get-name() {
     LANGUAGE2="${4}"
     LANGUAGE3="${5}"
     LANGUAGE4="${6}"
+    LANGUAGE5="${7}"
+    LANGUAGE6="${8}"
 
-    NAME=$(cat "${ETB_FILE}" | grep ",${TITLE_ID}," | awk -F, '{print $'${COLUMN_INDEX}'}' | sed 's/^ *//g' | sed 's/ *$//g')
+    NAME=$(cat "${ETB_FILE}" | \
+            grep ",${TITLE_ID}," | \
+            awk -F, '{print $'${COLUMN_INDEX}'}' | \
+            awk -F"(" '{print $1}' | \
+            sed 's/^ *//g' | sed 's/ *$//g' | \
+            sed 's/~//g')
 
-    if [ -n "${NAME// }" ]; then
-        if [ $(grep "<Name language=\"${LANGUAGE1}\"" "${LOCATIONS_FILE}" | grep --ignore-case -c "${NAME}") -eq 0 ] && \
-           [ $(grep "<Name language=\"${LANGUAGE2}\"" "${LOCATIONS_FILE}" | grep --ignore-case -c "${NAME}") -eq 0 ] && \
-           [ $(grep "<Name language=\"${LANGUAGE3}\"" "${LOCATIONS_FILE}" | grep --ignore-case -c "${NAME}") -eq 0 ] && \
-           [ $(grep "<Name language=\"${LANGUAGE4}\"" "${LOCATIONS_FILE}" | grep --ignore-case -c "${NAME}") -eq 0 ]; then
-            echo "${NAME}"
-        fi
+    if [ -n "${NAME// }" ] && \
+       [ $(grep "<Name language=\"\(${LANGUAGE1}\|${LANGUAGE2}\|${LANGUAGE3}\|${LANGUAGE4}\|${LANGUAGE5}\|${LANGUAGE6}\)\"" "${LOCATIONS_FILE}" | \
+           grep --ignore-case -c "${NAME}") -eq 0 ]; then
+        echo "${NAME}"
     fi
 }
 
@@ -32,9 +36,9 @@ function print-name() {
     fi
 }
 
-for TITLE_ID in $(grep "<GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
-                    sed 's/[^>]*>\([^<]*\)<.*/\1/g' | \
-                    sort | uniq); do
+for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
+                    grep "^[ekdcb]_" | grep "^b_" | \
+                    shuf); do
 
     BASQUE_NAME=$(get-name ${TITLE_ID} 19 "Basque")
     BRETON_NAME=$(get-name ${TITLE_ID} 11 "Breton_Middle")
@@ -50,12 +54,13 @@ for TITLE_ID in $(grep "<GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
     ENGLISH_OLD_NAME=$(get-name ${TITLE_ID} 6 "English_Old")
     ESTONIAN_NAME=$(get-name ${TITLE_ID} 34 "Estonian")
     FINNISH_NAME=$(get-name ${TITLE_ID} 32 "Finnish" )
-    GALICIAN_NAME=$(get-name ${TITLE_ID} 24 "Galician")
+    GALICIAN_NAME=$(get-name ${TITLE_ID} 24 "Galician" "Portuguese_Old" "Portuguese")
     GREEK_NAME=$(get-name ${TITLE_ID} 63 "Greek_Medieval")
     HUNGARIAN_OLD_NAME=$(get-name ${TITLE_ID} 88 "Hungarian_Old_Early" )
-    HUNGARIAN_NAME=$(get-name ${TITLE_ID} 89 "Hungarian" "Hungarian_Old" )
+    HUNGARIAN_NAME=$(get-name ${TITLE_ID} 89 "Hungarian" "Hungarian_Middle" "Hungarian_Old" )
     IBERIAN_ROMANCE_NAME=$(get-name ${TITLE_ID} 23 "Iberian_Romance")
     IRISH_NAME=$(get-name ${TITLE_ID} 3 "Irish_Middle" "Irish")
+    ILMENIAN_NAME=$(get-name ${TITLE_ID} 95 "Ilmenian")
     LATIN_NAME=$(get-name ${TITLE_ID} 71 "Latin_Classical" "Latin_Medieval" "Latin" "Latin_Old")
     NORMAN_NAME=$(get-name ${TITLE_ID} 16 "Norman")
     NORSE_NAME=$(get-name ${TITLE_ID} 28 "Norse")
@@ -69,11 +74,14 @@ for TITLE_ID in $(grep "<GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
     ROMANIAN_NAME=$(get-name ${TITLE_ID} 80 "Romanian_Old" "Romanian")
     SAMI_NAME=$(get-name ${TITLE_ID} 33 "Sami" )
     SARDINIAN_NAME=$(get-name ${TITLE_ID} 73 "Sardinian" )
-    SCOTTISH_NAME=$(get-name ${TITLE_ID} 4 "Scottish_Gaelic")
+    SERBIAN_NAME=$(get-name ${TITLE_ID} 79 "Serbian" "Serbian_Medieval" "Croatian" "Croatian_Medieval" "SerboCroatian" "SerboCroatian_Medieval")
+    SEVERIAN_NAME=$(get-name ${TITLE_ID} 96 "Severian")
+    SCOTTISH_NAME=$(get-name ${TITLE_ID} 4 "Scottish_Gaelic" "Irish_Middle")
     SICILIAN_NAME=$(get-name ${TITLE_ID} 74 "Sicilian")
     SLOVAK_NAME=$(get-name ${TITLE_ID} 87 "Slovak_Medieval" "Slovak" )
     SWEDISH_NAME=$(get-name ${TITLE_ID} 29 "Swedish_Old")
     TOCHARIAN_NAME=$(get-name ${TITLE_ID} 191 "Tocharian")
+    VOLHYNIAN_NAME=$(get-name ${TITLE_ID} 97 "Volhynian")
     WELSH_NAME=$(get-name ${TITLE_ID} 10 "Welsh_Middle" "Welsh")
 
     if [ -n "${BASQUE_NAME}" ] || \
@@ -86,8 +94,8 @@ for TITLE_ID in $(grep "<GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
        [ -n "${CUMBRIC_NAME}" ] || \
        [ -n "${CZECH_NAME}" ] || \
        [ -n "${DANISH_NAME}" ] || \
-       [ -n "${ENGLISH_MIDDLE}" ] || \
-       [ -n "${ENGLISH_OLD}" ] || \
+       [ -n "${ENGLISH_MIDDLE_NAME}" ] || \
+       [ -n "${ENGLISH_OLD_NAME}" ] || \
        [ -n "${ESTONIAN_NAME}" ] || \
        [ -n "${FINNISH_NAME}" ] || \
        [ -n "${GALICIAN_NAME}" ] || \
@@ -96,6 +104,7 @@ for TITLE_ID in $(grep "<GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
        [ -n "${HUNGARIAN_NAME}" ] || \
        [ -n "${IBERIAN_ROMANCE_NAME}" ] || \
        [ -n "${IRISH_NAME}" ] || \
+       [ -n "${ILMENIAN_NAME}" ] || \
        [ -n "${LATIN_NAME}" ] || \
        [ -n "${NORMAN_NAME}" ] || \
        [ -n "${NORSE_NAME}" ] || \
@@ -109,11 +118,14 @@ for TITLE_ID in $(grep "<GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
        [ -n "${ROMANIAN_NAME}" ] || \
        [ -n "${SAMI_NAME}" ] || \
        [ -n "${SARDINIAN_NAME}" ] || \
+       [ -n "${SERBIAN_NAME}" ] || \
+       [ -n "${SEVERIAN_NAME}" ] || \
        [ -n "${SCOTTISH_NAME}" ] || \
        [ -n "${SICILIAN_NAME}" ] || \
        [ -n "${SLOVAK_NAME}" ] || \
        [ -n "${SWEDISH_NAME}" ] || \
        [ -n "${TOCHARIAN_NAME}" ] || \
+       [ -n "${VOLHYNIAN_NAME}" ] || \
        [ -n "${WELSH_NAME}" ]; then
         echo ${TITLE_ID}
 
@@ -138,6 +150,7 @@ for TITLE_ID in $(grep "<GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
         print-name "Hungarian" "${HUNGARIAN_NAME}"
         print-name "Iberian_Romance" "${IBERIAN_ROMANCE_NAME}"
         print-name "Irish_Middle" "${IRISH_NAME}"
+        print-name "Ilmenian" "${ILMENIAN_NAME}"
         print-name "Latin_Classical" "${LATIN_NAME}"
         print-name "Norman" "${NORMAN_NAME}"
         print-name "Norse" "${NORSE_NAME}"
@@ -151,11 +164,14 @@ for TITLE_ID in $(grep "<GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
         print-name "Romanian_Old" "${ROMANIAN_NAME}"
         print-name "Sami" "${SAMI_NAME}"
         print-name "Sardinian" "${SARDINIAN_NAME}"
+        print-name "Serbian_Medieval" "${SERBIAN_NAME}"
+        print-name "Severian" "${SEVERIAN_NAME}"
         print-name "Scottish_Gaelic" "${SCOTTISH_NAME}"
         print-name "Sicilian" "${SICILIAN_NAME}"
         print-name "Slovak_Medieval" "${SLOVAK_NAME}"
         print-name "Swedish_Old" "${SWEDISH_NAME}"
         print-name "Tocharian" "${TOCHARIAN_NAME}"
+        print-name "Volhynian" "${VOLHYNIAN_NAME}"
         print-name "Welsh_Middle" "${WELSH_NAME}"
         echo "    </Names>"
     fi
