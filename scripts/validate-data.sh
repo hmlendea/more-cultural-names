@@ -4,6 +4,7 @@ LANGUAGES_FILE="languages.xml"
 LOCATIONS_FILE="locations.xml"
 TITLES_FILE="titles.xml"
 
+CK3_VANILLA_LOCALISATION_FILE="/home/horatiu/.games/Steam/common/Crusader Kings III/game/localization/english/titles_l_english.yml"
 IMPERATORROME_VANILLA_LOCALISATION_FILE="/home/horatiu/.games/Steam/common/ImperatorRome/game/localization/english/provincenames_l_english.yml"
 
 # Find duplicated IDs
@@ -51,6 +52,20 @@ done
 
 # Find multiple name definitions for the same language
 pcregrep -M "language=\"([^\"]*)\".*\n.*language=\"\1\"" *.xml
+
+# Validate Crusader Kings 3 province IDs
+if [ -f "${CK3_VANILLA_LOCALISATION_FILE}" ]; then
+    for PROV in $(cat "${LOCATIONS_FILE}" | grep "<GameId game=\"CK3\"" | sed 's/^.*>\([^<]*\)<\/GameId.*!-- *\(.*\) *-->.*/\1|\2/g' | sed 's/ /@/g' | sort); do
+        PROV_ID=$(echo "${PROV}" | awk -F\| '{print $1}')
+        PROV_NAME=$(echo "${PROV}" | awk -F\| '{print $2}' | sed 's/@/ /g' | sed 's/^ *//g' | sed 's/ *$//g')
+
+        FOUND_LINE=$(cat "${CK3_VANILLA_LOCALISATION_FILE}" | grep "${PROV_ID}:" | grep "${PROV_NAME}")
+
+        if [ -z "${FOUND_LINE}" ]; then
+            echo "${PROV_ID} (${PROV_NAME}) is different from vanilla!"
+        fi
+    done
+fi
 
 # Validate ImperatorRome province IDs
 if [ -f "${IMPERATORROME_VANILLA_LOCALISATION_FILE}" ]; then

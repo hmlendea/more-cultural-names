@@ -398,9 +398,9 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Spanish</LanguageId>
-      <LanguageId>Castillan</LanguageId>
-      <LanguageId>Castillan_Medieval</LanguageId>
-      <LanguageId>Spanish_Medieval</LanguageId>
+      <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Before1877</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -482,9 +482,9 @@
     <FallbackLanguages>
       <LanguageId>Leonese</LanguageId>
       <LanguageId>Spanish</LanguageId>
-      <LanguageId>Castillan</LanguageId>
-      <LanguageId>Castillan_Medieval</LanguageId>
-      <LanguageId>Spanish_Medieval</LanguageId>
+      <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Before1877</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1102,23 +1102,23 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Castillan</Id>
+    <Id>Castilian</Id>
     <FallbackLanguages>
-      <LanguageId>Castillan_Medieval</LanguageId>
-      <LanguageId>Spanish_Medieval</LanguageId>
+      <LanguageId>Spanish_Before1877</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
       <LanguageId>Spanish</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Castillan_Medieval</Id>
+    <Id>Castilian_Old</Id> <!-- c. 10th century AD - beginning 15th century AD -->
     <GameIds>
       <GameId game="CK2">castillan</GameId>
       <GameId game="CK2HIP">castillan</GameId>
       <GameId game="CK3">castilian</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Spanish_Medieval</LanguageId>
-      <LanguageId>Castillan</LanguageId>
+      <LanguageId>Spanish_Before1877</LanguageId>
+      <LanguageId>Castilian</LanguageId>
       <LanguageId>Spanish</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1129,7 +1129,17 @@
       <GameId game="HOI4">CAT</GameId> <!-- Catalonia -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Catalan_Valencian</LanguageId>
+      <LanguageId>Catalan_Before1877</LanguageId>
       <LanguageId>Catalan_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Catalan_Before1877</Id>
+    <FallbackLanguages>
+      <LanguageId>Catalan_Medieval</LanguageId>
+      <LanguageId>Catalan</LanguageId>
+      <LanguageId>Catalan_Valencian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1140,7 +1150,17 @@
       <GameId game="CK3">catalan</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Catalan_Before1877</LanguageId>
       <LanguageId>Catalan</LanguageId>
+      <LanguageId>Catalan_Valencian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Catalan_Valencian</Id>
+    <FallbackLanguages>
+      <LanguageId>Catalan</LanguageId>
+      <LanguageId>Catalan_Before1877</LanguageId>
+      <LanguageId>Catalan_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1283,6 +1303,7 @@
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
@@ -1593,6 +1614,7 @@
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Dalmatian_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
@@ -1608,6 +1630,7 @@
     <FallbackLanguages>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Dalmatian</LanguageId>
       <LanguageId>Italian</LanguageId>
@@ -1801,6 +1824,7 @@
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
       <LanguageId>English_Middle</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1809,6 +1833,7 @@
     <FallbackLanguages>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
       <LanguageId>English_Middle</LanguageId>
       <LanguageId>English</LanguageId>
     </FallbackLanguages>
@@ -1817,6 +1842,7 @@
     <Id>English_Before1926</Id>
     <FallbackLanguages>
       <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
       <LanguageId>English_Middle</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English</LanguageId>
@@ -1825,7 +1851,18 @@
   <Language>
     <Id>English_Before1917</Id>
     <FallbackLanguages>
+      <LanguageId>English_Before19Century</LanguageId>
       <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>English_Before19Century</Id>
+    <FallbackLanguages>
+      <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English</LanguageId>
@@ -1837,9 +1874,10 @@
     <GameIds>
       <GameId game="CK2">english</GameId>
       <GameId game="CK2HIP">english</GameId>
-      <GameId game="CK3">english</GameId>
+      <GameId game="CK3">english</GameId> <!-- English -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>English_Before19Century</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
@@ -1852,7 +1890,7 @@
     <GameIds>
       <GameId game="CK2">saxon</GameId>
       <GameId game="CK2HIP">saxon</GameId>
-      <GameId game="CK3">anglo_saxon</GameId>
+      <GameId game="CK3">anglo_saxon</GameId> <!-- Anglo-Saxon -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>English_Old_Norse</LanguageId>
@@ -1867,13 +1905,9 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>English_Old</LanguageId>
+      <LanguageId>Norse</LanguageId>
       <LanguageId>German_Old_Low</LanguageId>
       <LanguageId>Frisian_Old</LanguageId>
-      <LanguageId>English_Middle</LanguageId>
-      <LanguageId>English_Before1917</LanguageId>
-      <LanguageId>English_Before1926</LanguageId>
-      <LanguageId>English_Before1974</LanguageId>
-      <LanguageId>English</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2153,6 +2187,12 @@
       <GameId game="CK3">galician</GameId>
       <GameId game="HOI4">GLC</GameId> <!-- Galicia -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Portuguese</LanguageId>
+      <LanguageId>Portuguese_Brazilian</LanguageId>
+      <LanguageId>Portuguese_Before1917</LanguageId>
+      <LanguageId>Portuguese_Old</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Gallo</Id>
@@ -2233,6 +2273,7 @@
       <LanguageId>Lombard_East</LanguageId>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
       <LanguageId>Lombard_Medieval</LanguageId>
@@ -2244,6 +2285,7 @@
     <FallbackLanguages>
       <LanguageId>Lombard_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Genoese</LanguageId>
       <LanguageId>Ligurian</LanguageId>
@@ -2585,14 +2627,6 @@
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Gothic_Visigoth</Id>
-    <GameIds>
-      <GameId game="CK2">visigothic</GameId>
-      <GameId game="CK2HIP">visigothic</GameId>
-      <GameId game="CK3">visigothic</GameId>
-    </GameIds>
   </Language>
   <Language>
     <Id>Greek</Id>
@@ -2997,6 +3031,14 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Iberian_Romance</Id>
+    <GameIds>
+      <GameId game="CK2">visigothic</GameId>
+      <GameId game="CK2HIP">visigothic</GameId>
+      <GameId game="CK3">visigothic</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Icelandic</Id>
     <Code iso-639-1="is" iso-639-3="isl" />
     <GameIds>
@@ -3118,9 +3160,21 @@
     <FallbackLanguages>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Italian_Before1944</Id>
+    <FallbackLanguages>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Genoese_Medieval</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Genoese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3128,8 +3182,9 @@
     <FallbackLanguages>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
-      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3143,6 +3198,7 @@
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
@@ -3531,9 +3587,9 @@
     <FallbackLanguages>
       <LanguageId>Asturian</LanguageId>
       <LanguageId>Spanish</LanguageId>
-      <LanguageId>Castillan_Medieval</LanguageId>
-      <LanguageId>Spanish_Medieval</LanguageId>
-      <LanguageId>Castillan</LanguageId>
+      <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Before1877</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3549,6 +3605,7 @@
       <LanguageId>Lombard_East</LanguageId>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
       <LanguageId>Lombard_Medieval</LanguageId>
@@ -3613,6 +3670,7 @@
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Lombard_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
@@ -3628,6 +3686,7 @@
     <FallbackLanguages>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Lombard</LanguageId>
       <LanguageId>Lombard_West</LanguageId>
@@ -3645,6 +3704,7 @@
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Lombard_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
@@ -3659,6 +3719,7 @@
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Lombard_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
@@ -3678,7 +3739,9 @@
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Sicilian_Medieval</LanguageId>
       <LanguageId>Neapolitan_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
@@ -4003,7 +4066,9 @@
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Sicilian_Medieval</LanguageId>
       <LanguageId>Neapolitan_Medieval</LanguageId>
       <LanguageId>Langobardic</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
@@ -4018,8 +4083,10 @@
     <FallbackLanguages>
       <LanguageId>Langobardic</LanguageId>
       <LanguageId>Sicilian</LanguageId>
+      <LanguageId>Sicilian_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Neapolitan</LanguageId>
       <LanguageId>Tarantino</LanguageId>
@@ -4522,20 +4589,33 @@
       <GameId game="HOI4">MZB</GameId> <!-- Mozambique -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Portuguese_Brazilian</LanguageId>
+      <LanguageId>Galician</LanguageId>
       <LanguageId>Portuguese_Before1917</LanguageId>
+      <LanguageId>Portuguese_Brazilian</LanguageId>
+      <LanguageId>Portuguese_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Portuguese_Before1917</Id>
+    <FallbackLanguages>
+      <LanguageId>Portuguese_Old</LanguageId>
+      <LanguageId>Portuguese</LanguageId>
+      <LanguageId>Portuguese_Brazilian</LanguageId>
+      <LanguageId>Galician</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Portuguese_Old</Id>
     <GameIds>
       <GameId game="CK2">portuguese</GameId>
       <GameId game="CK2HIP">portuguese</GameId>
       <GameId game="CK3">portuguese</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Portuguese_Before1917</LanguageId>
       <LanguageId>Portuguese</LanguageId>
       <LanguageId>Portuguese_Brazilian</LanguageId>
+      <LanguageId>Galician</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4545,7 +4625,9 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Portuguese</LanguageId>
+      <LanguageId>Galician</LanguageId>
       <LanguageId>Portuguese_Before1917</LanguageId>
+      <LanguageId>Portuguese_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5226,6 +5308,7 @@
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
@@ -5244,6 +5327,7 @@
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
       <LanguageId>Scots_Early</LanguageId>
       <LanguageId>English_Middle</LanguageId>
     </FallbackLanguages>
@@ -5255,6 +5339,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
@@ -5999,10 +6084,6 @@
   <Language>
     <Id>Sicilian</Id>
     <Code iso-639-3="scn" />
-    <GameIds>
-      <GameId game="CK2HIP">sicilian</GameId>
-      <GameId game="CK3">sicilian</GameId>
-    </GameIds>
     <FallbackLanguages>
       <LanguageId>Neapolitan</LanguageId>
       <LanguageId>Tarantino</LanguageId>
@@ -6010,10 +6091,33 @@
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Sicilian_Medieval</LanguageId>
       <LanguageId>Neapolitan_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Sicilian_Medieval</Id>
+    <GameIds>
+      <GameId game="CK2HIP">sicilian</GameId>
+      <GameId game="CK3">sicilian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Neapolitan_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Genoese_Medieval</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Sicilian</LanguageId>
+      <LanguageId>Neapolitan</LanguageId>
+      <LanguageId>Tarantino</LanguageId>
+      <LanguageId>Langobardic</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Genoese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -6180,17 +6284,17 @@
       <GameId game="HOI4">PUE</GameId> <!-- Puerto Rico -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Castillan</LanguageId>
-      <LanguageId>Spanish_Medieval</LanguageId>
-      <LanguageId>Castillan_Medieval</LanguageId>
+      <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Before1877</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Spanish_Medieval</Id>
+    <Id>Spanish_Before1877</Id>
     <FallbackLanguages>
-      <LanguageId>Castillan_Medieval</LanguageId>
-      <LanguageId>Castillan</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
       <LanguageId>Spanish</LanguageId>
+      <LanguageId>Castilian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -6340,6 +6444,7 @@
       <LanguageId>Italian</LanguageId>
       <LanguageId>Genoese</LanguageId>
       <LanguageId>Neapolitan_Medieval</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Langobardic</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
@@ -6583,6 +6688,7 @@
     <FallbackLanguages>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
@@ -6597,6 +6703,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Genoese_Medieval</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Italian</LanguageId>
@@ -6686,6 +6793,7 @@
     <FallbackLanguages>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Genoese</LanguageId>
@@ -6759,6 +6867,7 @@
       <LanguageId>Genoese</LanguageId>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Venetian_Medieval</LanguageId>
       <LanguageId>Lombard_Medieval</LanguageId>
@@ -6775,6 +6884,7 @@
       <LanguageId>Lombard_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Venetian</LanguageId>
       <LanguageId>Lombard_East</LanguageId>
