@@ -39,16 +39,16 @@ function replace-cultural-name {
 
     echo "Replacing ${CULTURE_ID} with ${LANGUAGE_ID}"
 
-    sed -i 's/^ *'"${CULTURE_ID}"' *= *\"\([^\"]*\)\"/      <Name language=\"'"${LANGUAGE_ID}"'\">\1<\/Name>/g' "${FILE}"
+    sed -i 's/^ *'"${CULTURE_ID}"' *= *\"\([^\"]*\)\"/      <Name language=\"'"${LANGUAGE_ID}"'\" value=\"\1\" \/>/g' "${FILE}"
 }
 
 function merge-languages {
-    LANGUAGE_FINAL=$1
-    LANGUAGE1=$2
-    LANGUAGE2=$3
+    LANGUAGE_FINAL=${1}
+    LANGUAGE1=${2}
+    LANGUAGE2=${3}
 
-    perl -i -p0e 's/      <Name language=\"'"$LANGUAGE1"'\">([^<]*).*\n *<Name language=\"'"${LANGUAGE2}"'\">\1<.*/      <Name language=\"'"${LANGUAGE_FINAL}"'\">\1<\/Name>/g' "${FILE}"
-    perl -i -p0e 's/      <Name language=\"'"$LANGUAGE2"'\">([^<]*).*\n *<Name language=\"'"${LANGUAGE1}"'\">\1<.*/      <Name language=\"'"${LANGUAGE_FINAL}"'\">\1<\/Name>/g' "${FILE}"
+    perl -i -p0e 's/      <Name language=\"'"${LANGUAGE1}"'\" value=\"([^<]*)\" \/>\n *<Name language=\"'"${LANGUAGE2}"'\" value=\"\1\" \/>/      <Name language=\"'"${LANGUAGE_FINAL}"'\" value=\"\1\" \/>/g' "${FILE}"
+    perl -i -p0e 's/      <Name language=\"'"${LANGUAGE2}"'\" value=\"([^<]*)\" \/>\n *<Name language=\"'"${LANGUAGE1}"'\" value=\"\1\" \/>/      <Name language=\"'"${LANGUAGE_FINAL}"'\" value=\"\1\" \/>/g' "${FILE}"
 }
 
 remove-empty-titles
