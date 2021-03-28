@@ -338,4 +338,10 @@ sed -i '/ = \"/d' "${FILE}"
 remove-empty-titles
 
 # Remove duplicated languages
-perl -i -p0e 's/      <Name language=\"([^\"]*)\">([^<]*).*\n *<Name language=\"\1\">\2<.*/      <Name language=\"\1\">\2<\/Name>/g' "${FILE}"
+perl -i -p0e 's/      <Name language=\"([^\"]*)\" value=\"([^\"]*)\".*\n *<Name language=\"\1\" value=\"\2\".*/      <Name language=\"\1\" value=\"\2\" \/>/g' "${FILE}"
+
+perl -i -p0e 's/ =\n      <Name / =\n    <Names>\n      <Name /g' "${FILE}"
+perl -i -p0e 's/\/>\n([ekdcb])/\/>\n    <\/Names>\n\1/g' "${FILE}"
+
+sed -i 's/^ *<Names>/    <Names>/g' "${FILE}"
+sed -i 's/^ *<\/Names>/    <\/Names>/g' "${FILE}"
