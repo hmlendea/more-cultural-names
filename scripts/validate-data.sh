@@ -4,8 +4,14 @@ LANGUAGES_FILE="languages.xml"
 LOCATIONS_FILE="locations.xml"
 TITLES_FILE="titles.xml"
 
-CK3_VANILLA_LOCALISATION_FILE="/home/horatiu/.games/Steam/common/Crusader Kings III/game/localization/english/titles_l_english.yml"
-IMPERATORROME_VANILLA_LOCALISATION_FILE="/home/horatiu/.games/Steam/common/ImperatorRome/game/localization/english/provincenames_l_english.yml"
+if [ -d "${HOME}/.games/Steam/common" ]; then
+    STEAM_GAMES_PATH="${HOME}/.games/Steam/common"
+elif [ -d "${HOME}/.local/share/Steam/steamapps/common" ]; then
+    STEAM_GAMES_PATH="${HOME}/.local/share/Steam/steamapps/common"
+fi
+
+CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/Crusader Kings III/game/localization/english/titles_l_english.yml"
+IMPERATORROME_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/ImperatorRome/game/localization/english/provincenames_l_english.yml"
 
 # Find duplicated IDs
 grep "^ *<Id>" *.xml | \
