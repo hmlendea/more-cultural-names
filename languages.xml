@@ -30,6 +30,8 @@
     <FallbackLanguages>
       <LanguageId>Aramaic_Old</LanguageId>
       <LanguageId>Syriac_Classical</LanguageId>
+      <LanguageId>Aramaic_Middle</LanguageId>
+      <LanguageId>Aramaic_Middle_Babylonian_Jewish</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -421,6 +423,28 @@
     <FallbackLanguages>
       <LanguageId>Syriac_Classical</LanguageId>
       <LanguageId>Akkadian</LanguageId>
+      <LanguageId>Aramaic_Middle</LanguageId>
+      <LanguageId>Aramaic_Middle_Babylonian_Jewish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Aramaic_Middle</Id> <!-- c. 3rd century AD – ??? -->
+    <Code iso-639-3="oar" />
+    <FallbackLanguages>
+      <LanguageId>Aramaic_Middle_Babylonian_Jewish</LanguageId>
+      <LanguageId>Aramaic_Old</LanguageId>
+      <LanguageId>Syriac_Classical</LanguageId>
+      <LanguageId>Akkadian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Aramaic_Middle_Babylonian_Jewish</Id> <!-- c. 4th century AD – 11th century AD -->
+    <Code iso-639-3="oar" />
+    <FallbackLanguages>
+      <LanguageId>Aramaic_Middle</LanguageId>
+      <LanguageId>Aramaic_Old</LanguageId>
+      <LanguageId>Syriac_Classical</LanguageId>
+      <LanguageId>Akkadian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -481,6 +505,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
     </FallbackLanguages>
@@ -1663,6 +1689,7 @@
     <Id>Dacian</Id>
     <Code iso-639-3="xdc" />
     <GameIds>
+      <GameId game="ImperatorRome">dacia_group</GameId>
       <GameId game="ImperatorRome">dacian</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -1790,12 +1817,27 @@
   <Language>
     <Id>Egyptian_Old</Id>
   </Language>
+    <FallbackLanguages>
+      <LanguageId>Egyptian_Middle</LanguageId>
+      <LanguageId>Egyptian_Late</LanguageId>
+    </FallbackLanguages>
+  <Language>
+    <Id>Egyptian_Middle</Id>
+  </Language>
+    <FallbackLanguages>
+      <LanguageId>Egyptian_Old</LanguageId>
+      <LanguageId>Egyptian_Late</LanguageId>
+    </FallbackLanguages>
   <Language>
     <Id>Egyptian_Late</Id> <!-- c. 1350 BC - -->
     <Code iso-639-2="cop" iso-639-3="cop" />
     <GameIds>
       <GameId game="ImperatorRome">egyptian</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Egyptian_Middle</LanguageId>
+      <LanguageId>Egyptian_Old</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Egyptian_Coptic</Id> <!-- c. 3rd century BC - -->
@@ -1808,6 +1850,9 @@
   <Language>
     <Id>Elamite</Id>
     <Code iso-639-2="elx" iso-639-3="elx" />
+    <GameIds>
+      <GameId game="ImperatorRome">elamite</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Emilian</Id>
@@ -2970,6 +3015,30 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Hittite</Id> <!-- Hittite_New / New Hittite -->
+    <Code iso-639-2="hit" iso-639-3="nei" />
+    <FallbackLanguages>
+      <LanguageId>Hittite_Middle</LanguageId>
+      <LanguageId>Hittite_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hittite_Middle</Id>
+    <Code iso-639-3="htx" />
+    <FallbackLanguages>
+      <LanguageId>Hittite_Old</LanguageId>
+      <LanguageId>Hittite</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hittite_Old</Id>
+    <Code iso-639-3="oht" />
+    <FallbackLanguages>
+      <LanguageId>Hittite_Middle</LanguageId>
+      <LanguageId>Hittite</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Hungarian</Id> <!-- 1974 AD – present -->
     <Code iso-639-1="hu" iso-639-3="hun" />
     <FallbackLanguages>
@@ -3870,6 +3939,9 @@
     <Code iso-639-1="lg" iso-639-2="lug" iso-639-3="lug" />
   </Language>
   <Language>
+    <Id>Luwian</Id>
+  </Language>
+  <Language>
     <Id>Luxembourgish</Id>
     <Code iso-639-1="lb" iso-639-3="ltz" />
     <GameIds>
@@ -4470,6 +4542,18 @@
     <Code iso-639-2="pap" iso-639-3="pap" />
   </Language>
   <Language>
+    <Id>Parthian</Id> <!-- 248 BC - 224 AD --> <!-- Persian_Middle_Parthian -->
+    <Code iso-639-3="xpr" />
+    <GameIds>
+      <GameId game="ImperatorRome">parthian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Persian_Old</LanguageId>
+      <LanguageId>Persian_Middle</LanguageId>
+      <LanguageId>Persian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Pashto</Id>
     <Code iso-639-1="ps" iso-639-3="pus" />
     <GameIds>
@@ -4515,6 +4599,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Persian_Middle</LanguageId>
+      <LanguageId>Parthian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4524,7 +4609,9 @@
       <GameId game="CK2HIP">pahlavi</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Parthian</LanguageId>
       <LanguageId>Persian</LanguageId>
+      <LanguageId>Persian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4533,6 +4620,10 @@
     <GameIds>
       <GameId game="ImperatorRome">persia</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Parthian</LanguageId>
+      <LanguageId>Persian_Middle</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Phoenician</Id>
@@ -4814,6 +4905,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Aromanian</LanguageId>
@@ -4834,6 +4927,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian</LanguageId>
@@ -4854,6 +4949,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1993</LanguageId>
@@ -4874,6 +4971,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1991</LanguageId>
@@ -4894,6 +4993,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1974</LanguageId>
@@ -4918,6 +5019,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1964</LanguageId>
@@ -4938,6 +5041,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1945</LanguageId>
@@ -4958,6 +5063,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1940</LanguageId>
@@ -4978,6 +5085,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
@@ -4998,6 +5107,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
@@ -5018,6 +5129,8 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1917</LanguageId>
@@ -5038,6 +5151,8 @@
     <FallbackLanguages>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
@@ -5058,6 +5173,8 @@
     <Id>Romanian_Before20Century</Id>
     <FallbackLanguages>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
@@ -5078,8 +5195,56 @@
   <Language>
     <Id>Romanian_Before19Century</Id>
     <FallbackLanguages>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before20Century</LanguageId>
+      <LanguageId>Romanian_Before1913</LanguageId>
+      <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
+      <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1930</LanguageId>
+      <LanguageId>Romanian_Before1940</LanguageId>
+      <LanguageId>Romanian_Before1945</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1991</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_Before1713</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before20Century</LanguageId>
+      <LanguageId>Romanian_Before1913</LanguageId>
+      <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
+      <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1930</LanguageId>
+      <LanguageId>Romanian_Before1940</LanguageId>
+      <LanguageId>Romanian_Before1945</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1991</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_Before1599</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Before1487</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
@@ -5100,6 +5265,8 @@
     <Id>Romanian_Before1487</Id>
     <FallbackLanguages>
       <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
@@ -5126,6 +5293,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Romanian_Before1487</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
@@ -6580,6 +6749,8 @@
       <LanguageId>Aramaic_Old</LanguageId>
       <LanguageId>Akkadian</LanguageId>
       <LanguageId>Syriac</LanguageId>
+      <LanguageId>Aramaic_Middle</LanguageId>
+      <LanguageId>Aramaic_Middle_Babylonian_Jewish</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
