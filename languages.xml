@@ -7238,10 +7238,18 @@
     <GameIds>
       <GameId game="HOI4">TIB</GameId> <!-- Tibet -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tibetan_Classical</LanguageId>
+      <LanguageId>Tibetan_Old</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tibetan_Classical</Id> <!-- c. 11th century AD – c. 19th century AD -->
     <Code iso-639-3="xct" />
+    <FallbackLanguages>
+      <LanguageId>Tibetan</LanguageId>
+      <LanguageId>Tibetan_Classical</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tibetan_Old</Id> <!-- c. 7th century AD – c. 11th century AD -->
@@ -7252,12 +7260,17 @@
       <GameId game="CK3">bodpa</GameId>
       <GameId game="CK3">tsangpa</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tibetan_Classical</LanguageId>
+      <LanguageId>Tibetan</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tocharian</Id>
     <Code iso-639-3="xto" />
     <GameIds>
       <GameId game="CK2">tocharian</GameId>
+      <GameId game="CK2HIP">tokharian</GameId>
       <GameId game="CK3">tocharian</GameId>
     </GameIds>
   </Language>
@@ -7446,6 +7459,9 @@
   </Language>
   <Language>
     <Id>Udi_Middle</Id> <!-- c. 900 AD – c. 1800 AD -->
+    <GameIds>
+      <GameId game="CK2HIP">udi</GameId>
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>Udi_Old</LanguageId>
       <LanguageId>Udi_Early</LanguageId>
