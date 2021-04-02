@@ -124,9 +124,9 @@ if [ "${GAME}" == "CK2" ]; then
 fi
 
 if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
-    replace-cultural-name "andalusian_arabic" "Arabic_Andalusia"
+    replace-cultural-name "andalusian_arabic" "Arabic"
     replace-cultural-name "arberian" "Arberian"
-    replace-cultural-name "bedouin_arabic" "Arabic_Bedouin"
+    replace-cultural-name "bedouin_arabic" "Arabic"
     replace-cultural-name "bohemian" "Czech_Medieval"
     replace-cultural-name "carantanian" "Slovene_Medieval"
     replace-cultural-name "castillan" "Castilian_Old"
@@ -135,7 +135,7 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "egyptian_arabic" "Egyptian_Arabic"
     replace-cultural-name "frankish" "French_Old"
     replace-cultural-name "lappish" "Sami"
-    replace-cultural-name "levantine_arabic" "Arabic_Levant"
+    replace-cultural-name "levantine_arabic" "Arabic"
     replace-cultural-name "maghreb_arabic" "Arabic_Maghreb"
     replace-cultural-name "romanian" "Romanian_Old"
     replace-cultural-name "saxon" "English_Old"
@@ -165,7 +165,7 @@ if [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "arpitan" "Arpitan"
     replace-cultural-name "cumbric" "Cumbric"
     replace-cultural-name "gothic" "Gothic"
-    replace-cultural-name "hijazi" "Hejazi_Arabic"
+    replace-cultural-name "hijazi" "Arabic"
     replace-cultural-name "icelandic" "Icelandic_Old"
     replace-cultural-name "italian" "Lombard_Medieval"
     replace-cultural-name "kasogi" "Circassian"
@@ -186,7 +186,7 @@ if [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "pahlavi" "Persian_Middle"
     replace-cultural-name "qufs" "Kufichi"
     replace-cultural-name "sanhaja" "Sanhaja"
-    replace-cultural-name "sicilian_arabic" "Sicilian_Arabic"
+    replace-cultural-name "sicilian_arabic" "Arabic"
     replace-cultural-name "szekely" "Szekely_Old"
     replace-cultural-name "tagelmust" "Tuareg_Tagelmust"
     replace-cultural-name "tajik" "Tajiki"
@@ -199,7 +199,7 @@ if [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "umbrian" "Umbrian_Medieval"
     replace-cultural-name "venetian" "Venetian_Medieval"
     replace-cultural-name "vepsian" "Vepsian_Medieval"
-    replace-cultural-name "yemeni" "Arabic_Yemen"
+    replace-cultural-name "yemeni" "Arabic"
     replace-cultural-name "zanata" "Zenati"
 fi
 
@@ -217,16 +217,16 @@ if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "swabian" "Alemannic_Medieval"
     replace-cultural-name "tajik" "Tajiki"
     replace-cultural-name "vepsian" "Vepsian_Medieval"
-    replace-cultural-name "yemeni" "Arabic_Yemen"
+    replace-cultural-name "yemeni" "Arabic"
     replace-cultural-name "zaghawa" "Zaghawa"
 fi
 
 if [ "${GAME}" == "CK3" ]; then
-    replace-cultural-name "andalusian" "Arabic_Andalusia"
+    replace-cultural-name "andalusian" "Arabic"
     replace-cultural-name "anglo_saxon" "English_Old"
     replace-cultural-name "asturleonese" "Leonese"
     replace-cultural-name "baranis" "Berber_Baranis"
-    replace-cultural-name "bedouin" "Arabic_Bedouin"
+    replace-cultural-name "bedouin" "Arabic"
     replace-cultural-name "butr" "Berber_Butr"
     replace-cultural-name "castilian" "Castilian_Old"
     replace-cultural-name "cisalpine" "Lombard_Medieval"
@@ -238,7 +238,7 @@ if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "gaelic" "Scottish_Gaelic"
     replace-cultural-name "khwarezmian" "Khwarezmi"
     replace-cultural-name "latgalian" "Latgalian"
-    replace-cultural-name "levantine" "Arabic_Levant"
+    replace-cultural-name "levantine" "Arabic"
     replace-cultural-name "lombard" "Langobardic"
     replace-cultural-name "maghrebi" "Arabic_Maghreb"
     replace-cultural-name "merya" "Merya"
@@ -261,7 +261,6 @@ sed -i 's/> \+/>/g' "${FILE}"
 sed -i 's/ \+<\//<\//g' "${FILE}"
 
 # Combine arabic names
-sed -i 's/Arabic_Andalusia/Arabic/g' "${FILE}"
 sed -i '/.*_Arabic.*/d' "${FILE}"
 sed -i '/.*Arabic_.*/d' "${FILE}"
 
