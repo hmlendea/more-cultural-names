@@ -105,6 +105,10 @@ grep "<GameId game=" *.xml | \
 # Find empty definitions
 grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
 
+# Validate XML structure
+grep -Pzo "</GameIds>\n *<Name " "${LOCATIONS_FILE}"
+grep -Pzo "<GameId .*\n *<Name" "${LOCATIONS_FILE}"
+
 # Find non-existing fallback locations
 for FALLBACK_LOCATION_ID in $(diff \
                     <( \
