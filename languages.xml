@@ -453,6 +453,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Bashkir</LanguageId>
@@ -517,6 +519,8 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Khazar</LanguageId>
@@ -630,6 +634,7 @@
     <Id>Berber</Id>
     <GameIds>
       <GameId game="CK2HIP">berber</GameId> <!-- Iznagen -->
+      <GameId game="ImperatorRome">berber</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Berber_Baranis</LanguageId>
@@ -1017,6 +1022,8 @@
     <FallbackLanguages>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Avar_Old</LanguageId>
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Gagauz</LanguageId>
@@ -1546,6 +1553,8 @@
       <GameId game="CK3">cuman</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Avar_Old</LanguageId>
       <LanguageId>Bulgar</LanguageId>
@@ -1659,8 +1668,19 @@
     <GameIds>
       <GameId game="ImperatorRome">dacia_group</GameId>
       <GameId game="ImperatorRome">dacian</GameId>
+      <GameId game="ImperatorRome">getian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Thracian</LanguageId>
+      <LanguageId>Dacian_Before342BC</LanguageId>
+      <LanguageId>Thracian_Before342BC</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Dacian_Before342BC</Id>
+    <FallbackLanguages>
+      <LanguageId>Thracian_Before342BC</LanguageId>
+      <LanguageId>Dacian</LanguageId>
       <LanguageId>Thracian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1809,6 +1829,8 @@
     <Code iso-639-2="cop" iso-639-3="cop" />
     <GameIds>
       <GameId game="ImperatorRome">egyptian</GameId>
+      <GameId game="ImperatorRome">upper_egyptian</GameId>
+      <GameId game="ImperatorRome">middle_egyptian</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Egyptian_Middle</LanguageId>
@@ -2220,6 +2242,8 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
@@ -2669,7 +2693,9 @@
       <GameId game="CK2HIP">crimean_gothic</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Before1Century</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Aeolic</LanguageId>
@@ -2692,7 +2718,9 @@
     <FallbackLanguages>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Before1Century</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Aeolic</LanguageId>
@@ -2707,7 +2735,9 @@
     <FallbackLanguages>
       <LanguageId>Greek</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Before1Century</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Aeolic</LanguageId>
@@ -2720,7 +2750,9 @@
   <Language>
     <Id>Greek_Katharevousa</Id>
     <FallbackLanguages>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Before1Century</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Aeolic</LanguageId>
@@ -2733,12 +2765,46 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Greek_Medieval_Late</Id>
+    <FallbackLanguages>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
+      <LanguageId>Greek</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Greek_Medieval</Id>
     <GameIds>
       <GameId game="CK2">greek</GameId>
       <GameId game="CK2HIP">greek</GameId>
       <GameId game="CK3">greek</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Greek_Before9Century</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
+      <LanguageId>Greek</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Greek_Before9Century</Id>
     <FallbackLanguages>
       <LanguageId>Greek_Before1Century</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
@@ -2747,6 +2813,8 @@
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2761,7 +2829,9 @@
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2780,7 +2850,9 @@
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
       <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2798,7 +2870,9 @@
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
       <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2817,7 +2891,9 @@
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
       <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2835,7 +2911,9 @@
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
       <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2853,7 +2931,9 @@
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
       <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2871,7 +2951,9 @@
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
       <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2949,12 +3031,27 @@
     <GameIds>
       <GameId game="HOI4">ISR</GameId> <!-- Israel -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Hebrew_Medieval</LanguageId>
+      <LanguageId>Hebrew_Mishnaic</LanguageId>
+      <LanguageId>Hebrew_Classical</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hebrew_Medieval</Id> <!-- c. 4th century AD – c. 19th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Hebrew_Mishnaic</LanguageId>
+      <LanguageId>Hebrew_Classical</LanguageId>
+      <LanguageId>Hebrew</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hebrew_Mishnaic</Id> <!-- c. 1st century AD – c. 4th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Hebrew_Classical</LanguageId>
+      <LanguageId>Hebrew_Medieval</LanguageId>
+      <LanguageId>Hebrew</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hebrew_Classical</Id> <!-- c. 10th century BC – c. 1st century AD -->
@@ -2962,6 +3059,11 @@
     <GameIds>
       <GameId game="ImperatorRome">hebrew</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Hebrew_Mishnaic</LanguageId>
+      <LanguageId>Hebrew_Medieval</LanguageId>
+      <LanguageId>Hebrew</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hebrew_Tiberias</Id>
@@ -3354,8 +3456,35 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Kannada</Id> <!-- c. 500 AD – present -->
+    <Code iso-639-1="kn" iso-639-2="kan" iso-639-3="kan" />
+    <GameIds>
+      <GameId game="CK3">kannada</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kannada_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Kannada_Old</Id> <!-- ??? – c. 500 AD -->
+    <GameIds>
+      <GameId game="ImperatorRome">kannadan</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kannada</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Kapampangan</Id>
     <Code iso-639-2="pam" iso-639-3="pam" />
+  </Language>
+  <Language>
+    <Id>KarachayBalkar</Id>
+    <Code iso-639-2="krc" iso-639-3="krc" />
+    <FallbackLanguages>
+      <LanguageId>Cuman</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Karakalpak</Id>
@@ -3422,6 +3551,8 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
@@ -3444,6 +3575,8 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
@@ -3559,6 +3692,14 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Kumyc</Id>
+    <Code iso-639-2="kum" iso-639-3="kum" />
+    <FallbackLanguages>
+      <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Kurdish</Id>
     <Code iso-639-1="ku" iso-639-3="kur" />
     <GameIds>
@@ -3605,6 +3746,7 @@
     <FallbackLanguages>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -3618,6 +3760,7 @@
     <Id>Latin_Before1922</Id> <!-- between 14th centuries – 1922 -->
     <FallbackLanguages>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -3636,6 +3779,7 @@
       <GameId game="CK3">roman</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -3643,6 +3787,21 @@
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before9Century</Id> <!-- before 9th century -->
+    <FallbackLanguages>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
@@ -3670,6 +3829,7 @@
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -3684,6 +3844,7 @@
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -3698,6 +3859,7 @@
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -3716,6 +3878,7 @@
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -3849,7 +4012,7 @@
     <Id>Lombard_Medieval</Id>
     <GameIds>
       <GameId game="CK2HIP">italian</GameId> <!-- Lombardo -->
-      <GameId game="CK3">cisalpine</GameId>
+      <GameId game="CK3">cisalpine</GameId> <!-- Cisalpine -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Tuscan_Medieval</LanguageId>
@@ -3935,6 +4098,7 @@
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -4491,6 +4655,8 @@
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Khazar</LanguageId>
@@ -4522,6 +4688,7 @@
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -4568,6 +4735,8 @@
     <FallbackLanguages>
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Gagauz</LanguageId>
@@ -5699,7 +5868,7 @@
     <GameIds>
       <GameId game="CK2">scottish</GameId>
       <GameId game="CK2HIP">scottish</GameId> <!-- Albannaich -->
-      <GameId game="CK3">gaelic</GameId>
+      <GameId game="CK3">gaelic</GameId> <!-- Gaelic -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Irish_Middle</LanguageId>
@@ -6383,6 +6552,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Slavonic_Church_Old</Id>
+    <Code iso-639-1="cu" iso-639-2="chu" iso-639-3="chu" />
+  </Language>
+  <Language>
     <Id>Slovak</Id>
     <Code iso-639-1="sk" iso-639-3="slk" />
     <FallbackLanguages>
@@ -6722,6 +6895,7 @@
       <GameId game="CK2">sogdian</GameId>
       <GameId game="CK2HIP">sogdian</GameId>
       <GameId game="CK3">sogdian</GameId>
+      <GameId game="ImperatorRome">sogdian</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Khwarezmi</LanguageId>
@@ -6998,6 +7172,35 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Tamil</Id> <!-- c. 16th century – present -->
+    <Code iso-639-1="ta" iso-639-2="tam" iso-639-3="tam" />
+    <FallbackLanguages>
+      <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Tamil_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Tamil_Middle</Id> <!-- c. 7th century – c. 16th century -->
+    <GameIds>
+      <GameId game="CK3">tamil</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Tamil</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Tamil_Old</Id> <!-- ??? – c. 7th century -->
+    <Code iso-639-3="oty" />
+    <GameIds>
+      <GameId game="ImperatorRome">tamil</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Tamil</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Tatar</Id>
     <Code iso-639-1="tt" iso-639-3="tat" />
   </Language>
@@ -7030,6 +7233,30 @@
     <Code iso-639-3="crh" />
   </Language>
   <Language>
+    <Id>Telugu</Id>
+    <Code iso-639-1="te" iso-639-2="tel" iso-639-3="tel" />
+    <GameIds>
+      <GameId game="CK3">telugu</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kannada</LanguageId>
+      <LanguageId>Telugu_Old</LanguageId>
+      <LanguageId>Kannada_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Telugu_Old</Id>
+    <GameIds>
+      <GameId game="CK3">telugu</GameId>
+      <GameId game="ImperatorRome">telugu</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kannada_Old</LanguageId>
+      <LanguageId>Telugu</LanguageId>
+      <LanguageId>Kannada</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Tetum</Id>
     <Code iso-639-3="tet" />
   </Language>
@@ -7041,6 +7268,14 @@
       <GameId game="ImperatorRome">TRE</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Dacian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Thracian_Before342BC</Id>
+    <FallbackLanguages>
+      <LanguageId>Dacian_Before342BC</LanguageId>
+      <LanguageId>Thracian</LanguageId>
       <LanguageId>Dacian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -7118,6 +7353,7 @@
       <GameId game="CK2HIP">bodpa</GameId>
       <GameId game="CK3">bodpa</GameId>
       <GameId game="CK3">tsangpa</GameId>
+      <GameId game="ImperatorRome">tsang</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Tibetan_Classical</LanguageId>
@@ -7131,6 +7367,7 @@
       <GameId game="CK2">tocharian</GameId>
       <GameId game="CK2HIP">tokharian</GameId>
       <GameId game="CK3">tocharian</GameId>
+      <GameId game="ImperatorRome">tocharian</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -7277,6 +7514,8 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
@@ -7716,13 +7955,26 @@
     </GameIds>
   </Language>
   <Language>
-    <Id>Zhang-Zhung</Id>
+    <Id>Zhang-Zhung</Id> <!-- c. 7th century – c. 10th century -->
     <Code iso-639-3="xzh" />
     <GameIds>
       <GameId game="CK2">zhangzhung</GameId>
       <GameId game="CK2HIP">zhangzhung</GameId>
       <GameId game="CK3">zhangzhung</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Zhang-Zhung_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Zhang-Zhung_Old</Id> <!-- ??? – c. 7th century -->
+    <Code iso-639-3="xzh" />
+    <GameIds>
+      <GameId game="ImperatorRome">zhangzhung</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Zhang-Zhung</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Zhuang</Id>
