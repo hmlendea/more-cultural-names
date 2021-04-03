@@ -21,6 +21,20 @@
     <Code iso-639-1="af" iso-639-3="afr" />
   </Language>
   <Language>
+    <Id>Akkadian</Id>
+    <Code iso-639-2="akk" iso-639-3="akk" />
+    <GameIds>
+      <GameId game="ImperatorRome">east_levantine</GameId>
+      <GameId game="ImperatorRome">babylonian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Aramaic_Old</LanguageId>
+      <LanguageId>Syriac_Classical</LanguageId>
+      <LanguageId>Aramaic_Middle</LanguageId>
+      <LanguageId>Aramaic_Middle_Babylonian_Jewish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Alan</Id>
     <GameIds>
       <GameId game="CK2">alan</GameId>
@@ -160,178 +174,85 @@
     <Id>Arabic</Id>
     <Code iso-639-1="ar" iso-639-3="ara" />
     <GameIds>
+      <GameId game="HOI4">ADU</GameId> <!-- Andalusia -->
+      <GameId game="HOI4">IRQ</GameId> <!-- Iraq -->
+      <GameId game="HOI4">JOR</GameId> <!-- Jordan -->
       <GameId game="HOI4">KUW</GameId> <!-- Kuwait -->
+      <GameId game="HOI4">LEB</GameId> <!-- Lebanon -->
       <GameId game="HOI4">MRT</GameId> <!-- Mauritania -->
       <GameId game="HOI4">OMA</GameId> <!-- Oman -->
+      <GameId game="HOI4">PAL</GameId> <!-- Palestine -->
       <GameId game="HOI4">QAT</GameId> <!-- Qatar -->
       <GameId game="HOI4">SAU</GameId> <!-- Saudi Arabia -->
       <GameId game="HOI4">SUD</GameId> <!-- Sudan -->
+      <GameId game="HOI4">SYR</GameId> <!-- Syria -->
       <GameId game="HOI4">UAE</GameId> <!-- United Arab Emirates -->
       <GameId game="HOI4">WES</GameId> <!-- Western Sahara -->
+      <GameId game="HOI4">YEM</GameId> <!-- Yeman -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Arabic_Andalusia</Id>
-    <Code iso-639-3="xaa" />
+    <Id>Arabic_Before1650</Id>
     <GameIds>
       <GameId game="CK2">andalusian_arabic</GameId>
-      <GameId game="CK2HIP">andalusian_arabic</GameId>
-      <GameId game="CK3">andalusian</GameId>
-    </GameIds>
-    <GameIds>
-      <GameId game="HOI4">ADU</GameId> <!-- Andalusia -->
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Arabic_Bedouin</Id>
-    <GameIds>
       <GameId game="CK2">bedouin_arabic</GameId>
-      <GameId game="CK2HIP">bedouin_arabic</GameId>
-      <GameId game="CK3">bedouin</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Arabic_Levant</Id>
-    <GameIds>
       <GameId game="CK2">levantine_arabic</GameId>
+      <GameId game="CK2HIP">andalusian_arabic</GameId>
+      <GameId game="CK2HIP">bedouin_arabic</GameId>
+      <GameId game="CK2HIP">hijazi</GameId>
       <GameId game="CK2HIP">levantine_arabic</GameId>
+      <GameId game="CK2HIP">sicilian_arabic</GameId>
+      <GameId game="CK2HIP">yemeni</GameId>
+      <GameId game="CK3">andalusian</GameId>
+      <GameId game="CK3">bedouin</GameId>
       <GameId game="CK3">levantine</GameId>
-      <GameId game="HOI4">JOR</GameId> <!-- Jordan -->
-      <GameId game="HOI4">LEB</GameId> <!-- Lebanon -->
-      <GameId game="HOI4">PAL</GameId> <!-- Palestine -->
-      <GameId game="HOI4">SYR</GameId> <!-- Syria -->
+      <GameId game="CK3">yemeni</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Arabic_Levant_North</Id>
-    <Code iso-639-3="apc" />
-    <FallbackLanguages>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
-      <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
-      <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Arabic_Levant_South</Id>
-    <Code iso-639-3="ajp" />
-    <FallbackLanguages>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
-      <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
-      <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
+      <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Maghreb</Id>
     <GameIds>
-      <GameId game="CK2">maghreb_arabic</GameId>
-      <GameId game="CK2HIP">maghreb_arabic</GameId>
-      <GameId game="CK3">maghrebi</GameId>
       <GameId game="HOI4">ALG</GameId> <!-- Algeria -->
       <GameId game="HOI4">LBA</GameId> <!-- Libya -->
       <GameId game="HOI4">MOR</GameId> <!-- Morocco -->
       <GameId game="HOI4">TUN</GameId> <!-- Tunisia -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
+      <LanguageId>Maltese</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Arabic_Yemen</Id>
+    <Id>Arabic_Maghreb_Before1650</Id>
     <GameIds>
-      <GameId game="CK2HIP">yemeni</GameId>
-      <GameId game="CK3">yemeni</GameId>
-      <GameId game="HOI4">YEM</GameId> <!-- Yeman -->
+      <GameId game="CK2">maghreb_arabic</GameId>
+      <GameId game="CK2HIP">maghreb_arabic</GameId>
+      <GameId game="CK3">maghrebi</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -348,19 +269,14 @@
       <LanguageId>Quatabanian</LanguageId>
       <LanguageId>Hadramautic</LanguageId>
       <LanguageId>Minaean</LanguageId>
-      <!-- Not sure of the below ones -->>
+      <!-- Not sure of the below ones -->
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -374,19 +290,14 @@
       <LanguageId>Minaean</LanguageId>
       <LanguageId>Arabic_Old</LanguageId>
       <LanguageId>Hejazi_Old</LanguageId>
-      <!-- Not sure of the below ones -->>
+      <!-- Not sure of the below ones -->
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -401,6 +312,36 @@
       <LanguageId>Castilian</LanguageId>
       <LanguageId>Spanish_Before1877</LanguageId>
       <LanguageId>Castilian_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Aramaic_Old</Id>
+    <Code iso-639-3="oar" />
+    <FallbackLanguages>
+      <LanguageId>Syriac_Classical</LanguageId>
+      <LanguageId>Akkadian</LanguageId>
+      <LanguageId>Aramaic_Middle</LanguageId>
+      <LanguageId>Aramaic_Middle_Babylonian_Jewish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Aramaic_Middle</Id> <!-- c. 3rd century AD – ??? -->
+    <Code iso-639-3="oar" />
+    <FallbackLanguages>
+      <LanguageId>Aramaic_Middle_Babylonian_Jewish</LanguageId>
+      <LanguageId>Aramaic_Old</LanguageId>
+      <LanguageId>Syriac_Classical</LanguageId>
+      <LanguageId>Akkadian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Aramaic_Middle_Babylonian_Jewish</Id> <!-- c. 4th century AD – 11th century AD -->
+    <Code iso-639-3="oar" />
+    <FallbackLanguages>
+      <LanguageId>Aramaic_Middle</LanguageId>
+      <LanguageId>Aramaic_Old</LanguageId>
+      <LanguageId>Syriac_Classical</LanguageId>
+      <LanguageId>Akkadian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -447,6 +388,7 @@
     <Id>Aromanian</Id>
     <Code iso-639-2="rup" iso-639-3="rup" />
     <FallbackLanguages>
+      <LanguageId>IstroRomanian</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian_Before1991</LanguageId>
@@ -461,6 +403,9 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -508,6 +453,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Bashkir</LanguageId>
@@ -572,6 +519,8 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Khazar</LanguageId>
@@ -671,6 +620,8 @@
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Severian</LanguageId>
@@ -683,6 +634,7 @@
     <Id>Berber</Id>
     <GameIds>
       <GameId game="CK2HIP">berber</GameId> <!-- Iznagen -->
+      <GameId game="ImperatorRome">berber</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Berber_Baranis</LanguageId>
@@ -694,7 +646,14 @@
       <LanguageId>Kabyle</LanguageId>
       <LanguageId>Sanhaja</LanguageId>
       <LanguageId>Masmuda</LanguageId>
+      <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -712,7 +671,14 @@
       <LanguageId>Kabyle</LanguageId>
       <LanguageId>Sanhaja</LanguageId>
       <LanguageId>Masmuda</LanguageId>
+      <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -730,7 +696,14 @@
       <LanguageId>Kabyle</LanguageId>
       <LanguageId>Sanhaja</LanguageId>
       <LanguageId>Masmuda</LanguageId>
+      <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -760,6 +733,7 @@
       <LanguageId>Croatian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Slovene</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>SerboCroatian_Before1990</LanguageId>
@@ -770,6 +744,7 @@
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
@@ -780,6 +755,8 @@
       <LanguageId>SerboCroatian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
@@ -799,6 +776,7 @@
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
@@ -809,11 +787,14 @@
       <LanguageId>SerboCroatian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
@@ -828,6 +809,7 @@
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
@@ -838,6 +820,8 @@
       <LanguageId>SerboCroatian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
@@ -848,6 +832,7 @@
       <LanguageId>SerboCroatian_Before1990</LanguageId>
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
@@ -870,11 +855,14 @@
       <LanguageId>SerboCroatian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
@@ -885,6 +873,7 @@
       <LanguageId>SerboCroatian_Before1990</LanguageId>
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
@@ -899,6 +888,8 @@
       <LanguageId>SerboCroatian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
@@ -909,6 +900,7 @@
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
@@ -919,6 +911,7 @@
       <LanguageId>SerboCroatian_Before1990</LanguageId>
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
@@ -937,7 +930,8 @@
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
-      <LanguageId>Slovene</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>SerboCroatian_Before1928</LanguageId>
@@ -948,6 +942,7 @@
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
@@ -958,6 +953,7 @@
       <LanguageId>SerboCroatian_Before1990</LanguageId>
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
@@ -1026,6 +1022,8 @@
     <FallbackLanguages>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Avar_Old</LanguageId>
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Gagauz</LanguageId>
@@ -1317,6 +1315,7 @@
       <LanguageId>Serbian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Slovene</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>SerboCroatian_Before1990</LanguageId>
       <LanguageId>Serbian_Before1990</LanguageId>
@@ -1327,6 +1326,7 @@
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
@@ -1337,6 +1337,8 @@
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
@@ -1356,6 +1358,7 @@
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
@@ -1366,11 +1369,14 @@
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -1385,6 +1391,7 @@
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
@@ -1395,6 +1402,8 @@
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
@@ -1405,6 +1414,7 @@
       <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -1427,11 +1437,14 @@
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
@@ -1442,6 +1455,7 @@
       <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -1456,6 +1470,8 @@
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
@@ -1466,6 +1482,7 @@
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
@@ -1476,6 +1493,7 @@
       <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -1495,6 +1513,8 @@
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>SerboCroatian_Before1928</LanguageId>
       <LanguageId>Serbian_Before1928</LanguageId>
@@ -1505,6 +1525,7 @@
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
@@ -1515,6 +1536,7 @@
       <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -1531,6 +1553,8 @@
       <GameId game="CK3">cuman</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Avar_Old</LanguageId>
       <LanguageId>Bulgar</LanguageId>
@@ -1642,9 +1666,21 @@
     <Id>Dacian</Id>
     <Code iso-639-3="xdc" />
     <GameIds>
+      <GameId game="ImperatorRome">dacia_group</GameId>
       <GameId game="ImperatorRome">dacian</GameId>
+      <GameId game="ImperatorRome">getian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Thracian</LanguageId>
+      <LanguageId>Dacian_Before342BC</LanguageId>
+      <LanguageId>Thracian_Before342BC</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Dacian_Before342BC</Id>
+    <FallbackLanguages>
+      <LanguageId>Thracian_Before342BC</LanguageId>
+      <LanguageId>Dacian</LanguageId>
       <LanguageId>Thracian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1697,6 +1733,7 @@
     <Code iso-639-3="nld" />
     <GameIds>
       <GameId game="HOI4">HOL</GameId> <!-- Holland -->
+      <GameId game="HOI4">CRC</GameId> <!-- Curacao -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Dutch_Middle</LanguageId>
@@ -1746,34 +1783,59 @@
     <Id>Egyptian_Arabic</Id>
     <Code iso-639-3="arz" />
     <GameIds>
-      <GameId game="CK2">egyptian_arabic</GameId>
-      <GameId game="CK2HIP">egyptian_arabic</GameId>
-      <GameId game="CK3">egyptian</GameId>
       <GameId game="HOI4">EGY</GameId> <!-- Egypt -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Egyptian_Arabic_Before1650</Id>
+    <GameIds>
+      <GameId game="CK2">egyptian_arabic</GameId>
+      <GameId game="CK2HIP">egyptian_arabic</GameId>
+      <GameId game="CK3">egyptian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Egyptian_Old</Id>
   </Language>
+    <FallbackLanguages>
+      <LanguageId>Egyptian_Middle</LanguageId>
+      <LanguageId>Egyptian_Late</LanguageId>
+    </FallbackLanguages>
+  <Language>
+    <Id>Egyptian_Middle</Id>
+  </Language>
+    <FallbackLanguages>
+      <LanguageId>Egyptian_Old</LanguageId>
+      <LanguageId>Egyptian_Late</LanguageId>
+    </FallbackLanguages>
   <Language>
     <Id>Egyptian_Late</Id> <!-- c. 1350 BC - -->
     <Code iso-639-2="cop" iso-639-3="cop" />
     <GameIds>
       <GameId game="ImperatorRome">egyptian</GameId>
+      <GameId game="ImperatorRome">upper_egyptian</GameId>
+      <GameId game="ImperatorRome">middle_egyptian</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Egyptian_Middle</LanguageId>
+      <LanguageId>Egyptian_Old</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Egyptian_Coptic</Id> <!-- c. 3rd century BC - -->
@@ -1781,6 +1843,13 @@
     <GameIds>
       <GameId game="CK2">coptic</GameId>
       <GameId game="CK2HIP">coptic</GameId>
+    </GameIds>
+  </Language>
+  <Language>
+    <Id>Elamite</Id>
+    <Code iso-639-2="elx" iso-639-3="elx" />
+    <GameIds>
+      <GameId game="ImperatorRome">elamite</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -1812,14 +1881,6 @@
   <Language>
     <Id>English</Id>
     <Code iso-639-1="en" iso-639-3="eng" />
-    <GameIds>
-      <GameId game="HOI4">ENG</GameId>
-      <GameId game="HOI4">AST</GameId> <!-- Australia -->
-      <GameId game="HOI4">CAN</GameId> <!-- Canada -->
-      <GameId game="HOI4">NZL</GameId> <!-- New Zealand -->
-      <GameId game="HOI4">USA</GameId> <!-- United States of America -->
-      <GameId game="HOI4">CSA</GameId> <!-- Confederate States of America -->
-    </GameIds>
     <FallbackLanguages>
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
@@ -1830,11 +1891,27 @@
   </Language>
   <Language>
     <Id>English_Before1974</Id>
+    <GameIds>
+      <GameId game="HOI4">ENG</GameId>
+      <GameId game="HOI4">AST</GameId> <!-- Australia -->
+      <GameId game="HOI4">BAH</GameId> <!-- Bahamas -->
+      <GameId game="HOI4">BLZ</GameId> <!-- Belize -->
+      <GameId game="HOI4">BOT</GameId> <!-- Botswana -->
+      <GameId game="HOI4">CAN</GameId> <!-- Canada -->
+      <GameId game="HOI4">CSA</GameId> <!-- Confederate States of America -->
+      <GameId game="HOI4">GYA</GameId> <!-- Guyana -->
+      <GameId game="HOI4">NMB</GameId> <!-- Namibia -->
+      <GameId game="HOI4">NZL</GameId> <!-- New Zealand -->
+      <GameId game="HOI4">PNG</GameId> <!-- Papua New Guinea -->
+      <GameId game="HOI4">SAF</GameId> <!-- South Africa -->
+      <GameId game="HOI4">SIE</GameId> <!-- Sierra Leone -->
+      <GameId game="HOI4">USA</GameId> <!-- United States of America -->
+      <GameId game="HOI4">ZIM</GameId> <!-- Zimbabwe -->
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before19Century</LanguageId>
-      <LanguageId>English_Middle</LanguageId>
       <LanguageId>English</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1843,7 +1920,6 @@
     <FallbackLanguages>
       <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before19Century</LanguageId>
-      <LanguageId>English_Middle</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English</LanguageId>
     </FallbackLanguages>
@@ -1852,7 +1928,6 @@
     <Id>English_Before1917</Id>
     <FallbackLanguages>
       <LanguageId>English_Before19Century</LanguageId>
-      <LanguageId>English_Middle</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
       <LanguageId>English</LanguageId>
@@ -1861,7 +1936,6 @@
   <Language>
     <Id>English_Before19Century</Id>
     <FallbackLanguages>
-      <LanguageId>English_Middle</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
@@ -2039,6 +2113,7 @@
       <GameId game="HOI4">GDL</GameId> <!-- Guadeloupe -->
       <GameId game="HOI4">IVO</GameId> <!-- Ivory Coast -->
       <GameId game="HOI4">SEN</GameId> <!-- Senegal -->
+      <GameId game="HOI4">TOG</GameId> <!-- Togo -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Norman</LanguageId>
@@ -2167,6 +2242,8 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
@@ -2616,7 +2693,11 @@
       <GameId game="CK2HIP">crimean_gothic</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient_Antignoid</LanguageId>
@@ -2638,7 +2719,11 @@
     <FallbackLanguages>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient_Antignoid</LanguageId>
@@ -2652,7 +2737,11 @@
     <FallbackLanguages>
       <LanguageId>Greek</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient_Antignoid</LanguageId>
@@ -2664,13 +2753,35 @@
   <Language>
     <Id>Greek_Katharevousa</Id>
     <FallbackLanguages>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient_Antignoid</LanguageId>
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
+      <LanguageId>Greek</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Greek_Medieval_Late</Id>
+    <FallbackLanguages>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
+      <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
     </FallbackLanguages>
@@ -2683,12 +2794,70 @@
       <GameId game="CK3">greek</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Greek_Before9Century</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient_Antignoid</LanguageId>
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
+      <LanguageId>Greek</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Greek_Before9Century</Id>
+    <FallbackLanguages>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
+      <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
+      <LanguageId>Greek</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Greek_Before1Century</Id>
+    <FallbackLanguages>
+      <LanguageId>Greek_Before202BC</LanguageId>
+      <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
+      <LanguageId>Greek_Katharevousa</LanguageId>
+      <LanguageId>Greek_Demotic</LanguageId>
+      <LanguageId>Greek</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Greek_Before202BC</Id>
+    <FallbackLanguages>
+      <LanguageId>Greek_Ancient</LanguageId>
+      <LanguageId>Greek_Aeolic</LanguageId>
+      <LanguageId>Greek_Ancient_Antignoid</LanguageId>
+      <LanguageId>Greek_Ancient_Seleukia</LanguageId>
+      <LanguageId>Greek_Ancient_Egypt</LanguageId>
+      <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
+      <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2706,7 +2875,11 @@
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2723,7 +2896,11 @@
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2741,7 +2918,11 @@
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2758,7 +2939,11 @@
       <LanguageId>Greek_Ancient_Seleukia</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2775,7 +2960,11 @@
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient_Egypt</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2792,7 +2981,11 @@
       <LanguageId>Greek_Aeolic</LanguageId>
       <LanguageId>Greek_Ancient</LanguageId>
       <LanguageId>Greek_Ancient_Old</LanguageId>
+      <LanguageId>Greek_Before202BC</LanguageId>
+      <LanguageId>Greek_Before1Century</LanguageId>
+      <LanguageId>Greek_Before9Century</LanguageId>
       <LanguageId>Greek_Medieval</LanguageId>
+      <LanguageId>Greek_Medieval_Late</LanguageId>
       <LanguageId>Greek_Katharevousa</LanguageId>
       <LanguageId>Greek_Demotic</LanguageId>
       <LanguageId>Greek</LanguageId>
@@ -2831,19 +3024,14 @@
       <LanguageId>Sabaean</LanguageId>
       <LanguageId>Arabic_Old</LanguageId>
       <LanguageId>Hejazi_Old</LanguageId>
-      <!-- Not sure of the below ones -->>
+      <!-- Not sure of the below ones -->
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2875,12 +3063,27 @@
     <GameIds>
       <GameId game="HOI4">ISR</GameId> <!-- Israel -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Hebrew_Medieval</LanguageId>
+      <LanguageId>Hebrew_Mishnaic</LanguageId>
+      <LanguageId>Hebrew_Classical</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hebrew_Medieval</Id> <!-- c. 4th century AD – c. 19th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Hebrew_Mishnaic</LanguageId>
+      <LanguageId>Hebrew_Classical</LanguageId>
+      <LanguageId>Hebrew</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hebrew_Mishnaic</Id> <!-- c. 1st century AD – c. 4th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Hebrew_Classical</LanguageId>
+      <LanguageId>Hebrew_Medieval</LanguageId>
+      <LanguageId>Hebrew</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hebrew_Classical</Id> <!-- c. 10th century BC – c. 1st century AD -->
@@ -2888,29 +3091,14 @@
     <GameIds>
       <GameId game="ImperatorRome">hebrew</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Hebrew_Mishnaic</LanguageId>
+      <LanguageId>Hebrew_Medieval</LanguageId>
+      <LanguageId>Hebrew</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hebrew_Tiberias</Id>
-  </Language>
-  <Language>
-    <Id>Hejazi_Arabic</Id>
-    <Code iso-639-3="acw" />
-    <GameIds>
-      <GameId game="CK2HIP">hijazi</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
-      <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
-    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hejazi_Old</Id> <!-- c. 1st century AD – c. 7th century AD -->
@@ -2922,19 +3110,38 @@
       <LanguageId>Hadramautic</LanguageId>
       <LanguageId>Sabaean_Middle</LanguageId>
       <LanguageId>Sabaean</LanguageId>
-      <!-- Not sure of the below ones -->>
-      <LanguageId>Hejazi_Arabic</LanguageId>
+      <!-- Not sure of the below ones -->
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hittite</Id> <!-- Hittite_New / New Hittite -->
+    <Code iso-639-2="hit" iso-639-3="nei" />
+    <FallbackLanguages>
+      <LanguageId>Hittite_Middle</LanguageId>
+      <LanguageId>Hittite_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hittite_Middle</Id>
+    <Code iso-639-3="htx" />
+    <FallbackLanguages>
+      <LanguageId>Hittite_Old</LanguageId>
+      <LanguageId>Hittite</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hittite_Old</Id>
+    <Code iso-639-3="oht" />
+    <FallbackLanguages>
+      <LanguageId>Hittite_Middle</LanguageId>
+      <LanguageId>Hittite</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3024,6 +3231,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Hurrian</Id>
+    <Code iso-639-3="xhu" />
+  </Language>
+  <Language>
     <Id>Iberian</Id>
     <Code iso-639-3="xib" />
     <GameIds>
@@ -3075,6 +3286,8 @@
       <LanguageId>Severian</LanguageId>
       <LanguageId>Volhynian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
@@ -3149,6 +3362,31 @@
       <LanguageId>Irish_Middle</LanguageId>
       <LanguageId>Irish_Middle_Norse</LanguageId>
       <LanguageId>Irish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>IstroRomanian</Id>
+    <Code iso-639-3="ruo" />
+    <FallbackLanguages>
+      <LanguageId>Aromanian</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian_Before1991</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1945</LanguageId>
+      <LanguageId>Romanian_Before1940</LanguageId>
+      <LanguageId>Romanian_Before1930</LanguageId>
+      <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
+      <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1913</LanguageId>
+      <LanguageId>Romanian_Before20Century</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3239,12 +3477,46 @@
       <LanguageId>Zenaga</LanguageId>
       <LanguageId>Tuareg</LanguageId>
       <LanguageId>Tuareg_Tagelmust</LanguageId>
+      <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Kannada</Id> <!-- c. 500 AD – present -->
+    <Code iso-639-1="kn" iso-639-2="kan" iso-639-3="kan" />
+    <GameIds>
+      <GameId game="CK3">kannada</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kannada_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Kannada_Old</Id> <!-- ??? – c. 500 AD -->
+    <GameIds>
+      <GameId game="ImperatorRome">kannadan</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kannada</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Kapampangan</Id>
     <Code iso-639-2="pam" iso-639-3="pam" />
+  </Language>
+  <Language>
+    <Id>KarachayBalkar</Id>
+    <Code iso-639-2="krc" iso-639-3="krc" />
+    <FallbackLanguages>
+      <LanguageId>Cuman</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Karakalpak</Id>
@@ -3311,6 +3583,8 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
@@ -3333,6 +3607,8 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
@@ -3361,6 +3637,23 @@
       <GameId game="CK2HIP">khitan</GameId>
       <GameId game="CK3">khitan</GameId>
     </GameIds>
+  </Language>
+  <Language>
+    <Id>Khmer</Id>
+    <Code iso-639-1="km" iso-639-3="khm" />
+    <GameIds>
+      <GameId game="HOI4">CAM</GameId> <!-- Cambodia -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Khmer_Northern</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Khmer_Northern</Id>
+    <Code iso-639-3="kxm" />
+    <FallbackLanguages>
+      <LanguageId>Khmer</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Khorasani_Turkic</Id>
@@ -3431,6 +3724,14 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Kumyc</Id>
+    <Code iso-639-2="kum" iso-639-3="kum" />
+    <FallbackLanguages>
+      <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Kurdish</Id>
     <Code iso-639-1="ku" iso-639-3="kur" />
     <GameIds>
@@ -3477,8 +3778,13 @@
     <FallbackLanguages>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
@@ -3488,8 +3794,12 @@
     <Id>Latin_Before1922</Id> <!-- between 14th centuries – 1922 -->
     <FallbackLanguages>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
@@ -3504,8 +3814,13 @@
       <GameId game="CK3">roman</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
@@ -3514,9 +3829,13 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Latin_Late</Id> <!-- 3rd century – 6th century -->
+    <Id>Latin_Before9Century</Id> <!-- before 9th century -->
     <FallbackLanguages>
+      <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
@@ -3526,12 +3845,102 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Latin_Classical</Id> <!-- 75 BC – 3rd century AD -->
+    <Id>Latin_Late</Id> <!-- 3rd century – 6th century -->
     <FallbackLanguages>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before1Century</Id> <!-- before 1st century -->
+    <FallbackLanguages>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Classical</Id> <!-- 75 BC – 3rd century AD -->
+    <FallbackLanguages>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before27BC</Id>
+    <FallbackLanguages>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before48BC</Id>
+    <FallbackLanguages>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before202BC</Id> <!-- before 202 BC -->
+    <FallbackLanguages>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -3546,8 +3955,13 @@
     <FallbackLanguages>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -3681,7 +4095,7 @@
     <Id>Lombard_Medieval</Id>
     <GameIds>
       <GameId game="CK2HIP">italian</GameId> <!-- Lombardo -->
-      <GameId game="CK3">cisalpine</GameId>
+      <GameId game="CK3">cisalpine</GameId> <!-- Cisalpine -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Tuscan_Medieval</LanguageId>
@@ -3763,8 +4177,13 @@
     <FallbackLanguages>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -3773,6 +4192,9 @@
   <Language>
     <Id>Luganda</Id>
     <Code iso-639-1="lg" iso-639-2="lug" iso-639-3="lug" />
+  </Language>
+  <Language>
+    <Id>Luwian</Id>
   </Language>
   <Language>
     <Id>Luxembourgish</Id>
@@ -3822,6 +4244,12 @@
     <GameIds>
       <GameId game="HOI4">MLT</GameId> <!-- Malta -->
     </GameIds>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
   </Language>
   <Language>
     <Id>Manding</Id>
@@ -3875,7 +4303,14 @@
       <LanguageId>Zenaga</LanguageId>
       <LanguageId>Tuareg</LanguageId>
       <LanguageId>Tuareg_Tagelmust</LanguageId>
+      <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3917,26 +4352,6 @@
     </GameIds>
   </Language>
   <Language>
-    <Id>Mesopotamian_Arabic</Id>
-    <Code iso-639-3="acm" />
-    <GameIds>
-      <GameId game="HOI4">IRQ</GameId> <!-- Iraq -->
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
-      <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
     <Id>Minaean</Id> <!-- c. 1200 BC – c. 100 AD -->
     <Code iso-639-3="inm" />
     <GameIds>
@@ -3951,19 +4366,14 @@
       <LanguageId>Sabaean</LanguageId>
       <LanguageId>Arabic_Old</LanguageId>
       <LanguageId>Hejazi_Old</LanguageId>
-      <!-- Not sure of the below ones -->>
+      <!-- Not sure of the below ones -->
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4330,6 +4740,8 @@
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Khazar</LanguageId>
@@ -4357,8 +4769,13 @@
     <FallbackLanguages>
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin</LanguageId>
@@ -4371,6 +4788,18 @@
   <Language>
     <Id>Papiamento</Id>
     <Code iso-639-2="pap" iso-639-3="pap" />
+  </Language>
+  <Language>
+    <Id>Parthian</Id> <!-- 248 BC - 224 AD --> <!-- Persian_Middle_Parthian -->
+    <Code iso-639-3="xpr" />
+    <GameIds>
+      <GameId game="ImperatorRome">parthian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Persian_Old</LanguageId>
+      <LanguageId>Persian_Middle</LanguageId>
+      <LanguageId>Persian</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Pashto</Id>
@@ -4393,6 +4822,8 @@
     <FallbackLanguages>
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Gagauz</LanguageId>
@@ -4418,6 +4849,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Persian_Middle</LanguageId>
+      <LanguageId>Parthian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4427,7 +4859,9 @@
       <GameId game="CK2HIP">pahlavi</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Parthian</LanguageId>
       <LanguageId>Persian</LanguageId>
+      <LanguageId>Persian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4436,6 +4870,10 @@
     <GameIds>
       <GameId game="ImperatorRome">persia</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Parthian</LanguageId>
+      <LanguageId>Persian_Middle</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Phoenician</Id>
@@ -4664,19 +5102,14 @@
       <LanguageId>Sabaean</LanguageId>
       <LanguageId>Arabic_Old</LanguageId>
       <LanguageId>Hejazi_Old</LanguageId>
-      <!-- Not sure of the below ones -->>
+      <!-- Not sure of the below ones -->
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4717,8 +5150,12 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4736,9 +5173,13 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4755,10 +5196,14 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4774,11 +5219,15 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1991</LanguageId>
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4793,12 +5242,16 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1974</LanguageId>
       <LanguageId>Romanian_Before1991</LanguageId>
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4816,6 +5269,9 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1964</LanguageId>
       <LanguageId>Romanian_Before1974</LanguageId>
@@ -4823,6 +5279,7 @@
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4835,6 +5292,9 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1945</LanguageId>
       <LanguageId>Romanian_Before1964</LanguageId>
@@ -4843,6 +5303,7 @@
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4854,6 +5315,9 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1940</LanguageId>
       <LanguageId>Romanian_Before1945</LanguageId>
@@ -4863,6 +5327,7 @@
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4873,6 +5338,9 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
       <LanguageId>Romanian_Before1940</LanguageId>
@@ -4883,6 +5351,7 @@
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4892,6 +5361,9 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
       <LanguageId>Romanian_Before1930</LanguageId>
@@ -4903,6 +5375,7 @@
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4911,6 +5384,9 @@
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1917</LanguageId>
       <LanguageId>Romanian_Before1918</LanguageId>
@@ -4923,6 +5399,7 @@
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4930,6 +5407,9 @@
     <FallbackLanguages>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
       <LanguageId>Romanian_Before1917</LanguageId>
@@ -4943,12 +5423,16 @@
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Romanian_Before20Century</Id>
     <FallbackLanguages>
       <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
       <LanguageId>Romanian_Before1916</LanguageId>
@@ -4963,11 +5447,15 @@
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Romanian_Before19Century</Id>
     <FallbackLanguages>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
@@ -4983,6 +5471,79 @@
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_Before1713</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before20Century</LanguageId>
+      <LanguageId>Romanian_Before1913</LanguageId>
+      <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
+      <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1930</LanguageId>
+      <LanguageId>Romanian_Before1940</LanguageId>
+      <LanguageId>Romanian_Before1945</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1991</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_Before1599</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Before1487</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before20Century</LanguageId>
+      <LanguageId>Romanian_Before1913</LanguageId>
+      <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
+      <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1930</LanguageId>
+      <LanguageId>Romanian_Before1940</LanguageId>
+      <LanguageId>Romanian_Before1945</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1991</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_Before1487</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before20Century</LanguageId>
+      <LanguageId>Romanian_Before1913</LanguageId>
+      <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
+      <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1930</LanguageId>
+      <LanguageId>Romanian_Before1940</LanguageId>
+      <LanguageId>Romanian_Before1945</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1991</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4993,6 +5554,9 @@
       <GameId game="CK3">vlach</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Romanian_Before1487</LanguageId>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
@@ -5008,6 +5572,7 @@
       <LanguageId>Romanian_Before1993</LanguageId>
       <LanguageId>Romanian</LanguageId>
       <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5027,6 +5592,8 @@
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Severian</LanguageId>
@@ -5042,6 +5609,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Russian</LanguageId>
       <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
@@ -5054,8 +5623,41 @@
   <Language>
     <Id>Russian_Before1924</Id>
     <FallbackLanguages>
+      <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Russian_Before1991</LanguageId>
+      <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
+      <LanguageId>Ukrainian</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Russian_Before1856</Id>
+    <FallbackLanguages>
+      <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1991</LanguageId>
+      <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
+      <LanguageId>Ukrainian</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Russian_Before1812</Id>
+    <FallbackLanguages>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian</LanguageId>
       <LanguageId>Belarussian</LanguageId>
@@ -5072,6 +5674,8 @@
       <LanguageId>Volhynian</LanguageId>
       <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
@@ -5099,19 +5703,14 @@
       <LanguageId>Minaean</LanguageId>
       <LanguageId>Arabic_Old</LanguageId>
       <LanguageId>Hejazi_Old</LanguageId>
-      <!-- Not sure of the below ones -->>
+      <!-- Not sure of the below ones -->
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5125,19 +5724,14 @@
       <LanguageId>Hadramautic</LanguageId>
       <LanguageId>Arabic_Old</LanguageId>
       <LanguageId>Hejazi_Old</LanguageId>
-      <!-- Not sure of the below ones -->>
+      <!-- Not sure of the below ones -->
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5154,20 +5748,18 @@
       <LanguageId>Sabaean</LanguageId>
       <LanguageId>Arabic_Old</LanguageId>
       <LanguageId>Hejazi_Old</LanguageId>
-      <!-- Not sure of the below ones -->>
+      <!-- Not sure of the below ones -->
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
       <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Sicilian_Arabic</LanguageId>
+      <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Sabarian</Id>
   </Language>
   <Language>
     <Id>Sabino</Id>
@@ -5285,7 +5877,14 @@
       <LanguageId>Zenaga</LanguageId>
       <LanguageId>Tuareg</LanguageId>
       <LanguageId>Tuareg_Tagelmust</LanguageId>
+      <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5356,7 +5955,7 @@
     <GameIds>
       <GameId game="CK2">scottish</GameId>
       <GameId game="CK2HIP">scottish</GameId> <!-- Albannaich -->
-      <GameId game="CK3">gaelic</GameId>
+      <GameId game="CK3">gaelic</GameId> <!-- Gaelic -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Irish_Middle</LanguageId>
@@ -5375,6 +5974,7 @@
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Slovene</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>SerboCroatian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
@@ -5385,6 +5985,7 @@
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
@@ -5395,6 +5996,8 @@
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
@@ -5414,6 +6017,7 @@
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
@@ -5424,11 +6028,14 @@
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
@@ -5443,6 +6050,7 @@
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
@@ -5453,6 +6061,8 @@
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
@@ -5463,6 +6073,7 @@
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
@@ -5485,11 +6096,14 @@
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
@@ -5500,6 +6114,7 @@
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
@@ -5514,6 +6129,8 @@
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
@@ -5524,6 +6141,7 @@
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
@@ -5534,6 +6152,7 @@
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
@@ -5553,6 +6172,8 @@
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>SerboCroatian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
@@ -5563,6 +6184,7 @@
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
@@ -5573,6 +6195,7 @@
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Serbian</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
@@ -5598,6 +6221,7 @@
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
@@ -5608,11 +6232,52 @@
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>SerboCroatian_Before1992</Id>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5627,6 +6292,7 @@
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
@@ -5637,11 +6303,14 @@
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -5656,6 +6325,7 @@
       <LanguageId>Serbian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
@@ -5666,6 +6336,8 @@
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
@@ -5676,6 +6348,7 @@
       <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -5684,12 +6357,13 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>SerboCroatian_Before1945</Id>
+    <Id>SerboCroatian_Before1946</Id>
     <GameIds>
       <GameId game="HOI4">YUG</GameId>
       <GameId game="HOI4">MNT</GameId> <!-- Montenegro -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
@@ -5699,11 +6373,14 @@
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
@@ -5714,6 +6391,45 @@
       <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>SerboCroatian_Before1945</Id>
+    <FallbackLanguages>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -5728,6 +6444,8 @@
       <LanguageId>Serbian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
@@ -5738,6 +6456,7 @@
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
@@ -5748,6 +6467,7 @@
       <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -5756,8 +6476,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>SerboCroatian_Medieval</Id>
+    <Id>SerboCroatian_Before15Century</Id>
     <FallbackLanguages>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
@@ -5772,6 +6494,7 @@
       <LanguageId>Serbian_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
@@ -5782,6 +6505,83 @@
       <LanguageId>Serbian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>SerboCroatian_Before1326</Id>
+    <FallbackLanguages>
+      <LanguageId>SerboCroatian_Medieval</LanguageId>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
+      <LanguageId>SerboCroatian</LanguageId>
+      <LanguageId>Croatian</LanguageId>
+      <LanguageId>Serbian</LanguageId>
+      <LanguageId>Bosnian</LanguageId>
+      <LanguageId>Slovene</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>SerboCroatian_Medieval</Id>
+    <FallbackLanguages>
+      <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>Croatian_Medieval</LanguageId>
+      <LanguageId>Bosnian_Medieval</LanguageId>
+      <LanguageId>Slovene_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1928</LanguageId>
+      <LanguageId>Croatian_Before1928</LanguageId>
+      <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>Bosnian_Before1928</LanguageId>
+      <LanguageId>Slovene_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before1945</LanguageId>
+      <LanguageId>Croatian_Before1945</LanguageId>
+      <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>Bosnian_Before1945</LanguageId>
+      <LanguageId>Slovene_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
+      <LanguageId>SerboCroatian_Before1974</LanguageId>
+      <LanguageId>Croatian_Before1974</LanguageId>
+      <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>Bosnian_Before1974</LanguageId>
+      <LanguageId>Slovene_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1990</LanguageId>
+      <LanguageId>Croatian_Before1990</LanguageId>
+      <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>Bosnian_Before1990</LanguageId>
+      <LanguageId>Slovene_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Serbian</LanguageId>
@@ -5807,6 +6607,8 @@
       <LanguageId>Volhynian</LanguageId>
       <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
@@ -5826,6 +6628,8 @@
     <FallbackLanguages>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
@@ -5833,6 +6637,10 @@
       <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Slavonic_Church_Old</Id>
+    <Code iso-639-1="cu" iso-639-2="chu" iso-639-3="chu" />
   </Language>
   <Language>
     <Id>Slovak</Id>
@@ -5881,6 +6689,7 @@
       <LanguageId>Croatian</LanguageId>
       <LanguageId>Bosnian</LanguageId>
       <LanguageId>Serbian</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Slovene_Before1990</LanguageId>
       <LanguageId>SerboCroatian_Before1990</LanguageId>
       <LanguageId>Croatian_Before1990</LanguageId>
@@ -5891,6 +6700,7 @@
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
@@ -5901,6 +6711,8 @@
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
@@ -5920,6 +6732,7 @@
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
@@ -5930,11 +6743,14 @@
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Slovene</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
@@ -5949,6 +6765,7 @@
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
       <LanguageId>Serbian_Before1974</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Slovene_Before1945</LanguageId>
       <LanguageId>SerboCroatian_Before1945</LanguageId>
       <LanguageId>Croatian_Before1945</LanguageId>
@@ -5959,6 +6776,8 @@
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
@@ -5969,6 +6788,7 @@
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Slovene</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
@@ -5991,11 +6811,14 @@
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
@@ -6006,6 +6829,7 @@
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Slovene</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
@@ -6020,6 +6844,8 @@
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
       <LanguageId>Serbian_Before1928</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Croatian_Medieval</LanguageId>
@@ -6030,6 +6856,7 @@
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>Slovene_Before1974</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
@@ -6040,6 +6867,7 @@
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Slovene</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
@@ -6058,6 +6886,8 @@
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Bosnian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
+      <LanguageId>SerboCroatian_Before1326</LanguageId>
+      <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>SerboCroatian_Before1928</LanguageId>
       <LanguageId>Croatian_Before1928</LanguageId>
       <LanguageId>Bosnian_Before1928</LanguageId>
@@ -6066,6 +6896,7 @@
       <LanguageId>Croatian_Before1945</LanguageId>
       <LanguageId>Bosnian_Before1945</LanguageId>
       <LanguageId>Serbian_Before1945</LanguageId>
+      <LanguageId>SerboCroatian_Before1946</LanguageId>
       <LanguageId>SerboCroatian_Before1974</LanguageId>
       <LanguageId>Croatian_Before1974</LanguageId>
       <LanguageId>Bosnian_Before1974</LanguageId>
@@ -6074,6 +6905,7 @@
       <LanguageId>Croatian_Before1990</LanguageId>
       <LanguageId>Bosnian_Before1990</LanguageId>
       <LanguageId>Serbian_Before1990</LanguageId>
+      <LanguageId>SerboCroatian_Before1992</LanguageId>
       <LanguageId>Slovene</LanguageId>
       <LanguageId>SerboCroatian</LanguageId>
       <LanguageId>Croatian</LanguageId>
@@ -6121,25 +6953,6 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Sicilian_Arabic</Id>
-    <GameIds>
-      <GameId game="CK2HIP">sicilian_arabic</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Arabic_Maghreb</LanguageId>
-      <LanguageId>Arabic_Bedouin</LanguageId>
-      <LanguageId>Arabic_Andalusia</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Levant</LanguageId>
-      <LanguageId>Arabic_Levant_North</LanguageId>
-      <LanguageId>Arabic_Levant_South</LanguageId>
-      <LanguageId>Mesopotamian_Arabic</LanguageId>
-      <LanguageId>Arabic</LanguageId>
-      <LanguageId>Hejazi_Arabic</LanguageId>
-      <LanguageId>Arabic_Yemen</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
     <Id>Silesian</Id>
     <Code iso-639-3="szl" />
     <FallbackLanguages>
@@ -6169,6 +6982,7 @@
       <GameId game="CK2">sogdian</GameId>
       <GameId game="CK2HIP">sogdian</GameId>
       <GameId game="CK3">sogdian</GameId>
+      <GameId game="ImperatorRome">sogdian</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Khwarezmi</LanguageId>
@@ -6271,7 +7085,6 @@
       <GameId game="HOI4">EQG</GameId> <!-- Equatorial Guinea -->
       <GameId game="HOI4">GUA</GameId> <!-- Guatemala -->
       <GameId game="HOI4">HON</GameId> <!-- Honduras -->
-      <GameId game="HOI4">MEX</GameId> <!-- Mexico -->
       <GameId game="HOI4">NIC</GameId> <!-- Nicaragua -->
       <GameId game="HOI4">PAN</GameId> <!-- Panama -->
       <GameId game="HOI4">PHI</GameId> <!-- Philippines -->
@@ -6285,6 +7098,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Mexico</LanguageId>
       <LanguageId>Spanish_Before1877</LanguageId>
       <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
@@ -6295,6 +7109,19 @@
       <LanguageId>Castilian_Old</LanguageId>
       <LanguageId>Spanish</LanguageId>
       <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Mexico</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Spanish_Mexico</Id>
+    <GameIds>
+      <GameId game="HOI4">MEX</GameId> <!-- Mexico -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Spanish</LanguageId>
+      <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Before1877</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -6318,6 +7145,10 @@
       <LanguageId>German</LanguageId>
     </FallbackLanguages>
     </GameIds>
+  </Language>
+  <Language>
+    <Id>Sumerian</Id>
+    <Code iso-639-2="sux" iso-639-3="sux" />
   </Language>
   <Language>
     <Id>Sundanese</Id>
@@ -6381,9 +7212,14 @@
       <GameId game="CK2">assyrian</GameId>
       <GameId game="CK2HIP">assyrian</GameId>
       <GameId game="CK3">assyrian</GameId>
+      <GameId game="ImperatorRome">assyrian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Aramaic_Old</LanguageId>
+      <LanguageId>Akkadian</LanguageId>
       <LanguageId>Syriac</LanguageId>
+      <LanguageId>Aramaic_Middle</LanguageId>
+      <LanguageId>Aramaic_Middle_Babylonian_Jewish</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -6423,6 +7259,35 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Tamil</Id> <!-- c. 16th century – present -->
+    <Code iso-639-1="ta" iso-639-2="tam" iso-639-3="tam" />
+    <FallbackLanguages>
+      <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Tamil_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Tamil_Middle</Id> <!-- c. 7th century – c. 16th century -->
+    <GameIds>
+      <GameId game="CK3">tamil</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Tamil</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Tamil_Old</Id> <!-- ??? – c. 7th century -->
+    <Code iso-639-3="oty" />
+    <GameIds>
+      <GameId game="ImperatorRome">tamil</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Tamil</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Tatar</Id>
     <Code iso-639-1="tt" iso-639-3="tat" />
   </Language>
@@ -6455,6 +7320,27 @@
     <Code iso-639-3="crh" />
   </Language>
   <Language>
+    <Id>Telugu</Id>
+    <Code iso-639-1="te" iso-639-2="tel" iso-639-3="tel" />
+    <FallbackLanguages>
+      <LanguageId>Kannada</LanguageId>
+      <LanguageId>Telugu_Old</LanguageId>
+      <LanguageId>Kannada_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Telugu_Old</Id>
+    <GameIds>
+      <GameId game="CK3">telugu</GameId>
+      <GameId game="ImperatorRome">telugu</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kannada_Old</LanguageId>
+      <LanguageId>Telugu</LanguageId>
+      <LanguageId>Kannada</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Tetum</Id>
     <Code iso-639-3="tet" />
   </Language>
@@ -6466,6 +7352,14 @@
       <GameId game="ImperatorRome">TRE</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Dacian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Thracian_Before342BC</Id>
+    <FallbackLanguages>
+      <LanguageId>Dacian_Before342BC</LanguageId>
+      <LanguageId>Thracian</LanguageId>
       <LanguageId>Dacian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -6522,10 +7416,18 @@
     <GameIds>
       <GameId game="HOI4">TIB</GameId> <!-- Tibet -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tibetan_Classical</LanguageId>
+      <LanguageId>Tibetan_Old</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tibetan_Classical</Id> <!-- c. 11th century AD – c. 19th century AD -->
     <Code iso-639-3="xct" />
+    <FallbackLanguages>
+      <LanguageId>Tibetan</LanguageId>
+      <LanguageId>Tibetan_Classical</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tibetan_Old</Id> <!-- c. 7th century AD – c. 11th century AD -->
@@ -6535,14 +7437,21 @@
       <GameId game="CK2HIP">bodpa</GameId>
       <GameId game="CK3">bodpa</GameId>
       <GameId game="CK3">tsangpa</GameId>
+      <GameId game="ImperatorRome">tsang</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tibetan_Classical</LanguageId>
+      <LanguageId>Tibetan</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tocharian</Id>
     <Code iso-639-3="xto" />
     <GameIds>
       <GameId game="CK2">tocharian</GameId>
+      <GameId game="CK2HIP">tokharian</GameId>
       <GameId game="CK3">tocharian</GameId>
+      <GameId game="ImperatorRome">tocharian</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -6573,7 +7482,14 @@
       <LanguageId>Kabyle</LanguageId>
       <LanguageId>Masmuda</LanguageId>
       <LanguageId>Zenaga</LanguageId>
+      <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -6591,7 +7507,14 @@
       <LanguageId>Kabyle</LanguageId>
       <LanguageId>Masmuda</LanguageId>
       <LanguageId>Zenaga</LanguageId>
+      <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -6675,6 +7598,8 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Pecheneg</LanguageId>
       <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
@@ -6730,6 +7655,9 @@
   </Language>
   <Language>
     <Id>Udi_Middle</Id> <!-- c. 900 AD – c. 1800 AD -->
+    <GameIds>
+      <GameId game="CK2HIP">udi</GameId>
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>Udi_Old</LanguageId>
       <LanguageId>Udi_Early</LanguageId>
@@ -6758,6 +7686,8 @@
       <LanguageId>Belarussian</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Volhynian</LanguageId>
@@ -6774,6 +7704,8 @@
     <FallbackLanguages>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Volhynian</LanguageId>
@@ -6944,6 +7876,8 @@
       <LanguageId>Severian</LanguageId>
       <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
@@ -7040,6 +7974,12 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -7063,7 +8003,14 @@
       <LanguageId>Kabyle</LanguageId>
       <LanguageId>Sanhaja</LanguageId>
       <LanguageId>Masmuda</LanguageId>
+      <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -7078,20 +8025,40 @@
       <LanguageId>Tuareg</LanguageId>
       <LanguageId>Tuareg_Tagelmust</LanguageId>
       <LanguageId>Zenaga</LanguageId>
+      <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
+      <LanguageId>Egyptian_Arabic</LanguageId>
+      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Maltese</LanguageId>
+      <LanguageId>Arabic_Before1650</LanguageId>
+      <LanguageId>Egyptian_Arabic_Before1650</LanguageId>
+      <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
     </FallbackLanguages>
     <GameIds>
       <GameId game="CK2HIP">zanata</GameId>
     </GameIds>
   </Language>
   <Language>
-    <Id>Zhang-Zhung</Id>
+    <Id>Zhang-Zhung</Id> <!-- c. 7th century – c. 10th century -->
     <Code iso-639-3="xzh" />
     <GameIds>
       <GameId game="CK2">zhangzhung</GameId>
       <GameId game="CK2HIP">zhangzhung</GameId>
       <GameId game="CK3">zhangzhung</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Zhang-Zhung_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Zhang-Zhung_Old</Id> <!-- ??? – c. 7th century -->
+    <Code iso-639-3="xzh" />
+    <GameIds>
+      <GameId game="ImperatorRome">zhangzhung</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Zhang-Zhung</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Zhuang</Id>

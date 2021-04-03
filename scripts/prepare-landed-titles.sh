@@ -39,16 +39,16 @@ function replace-cultural-name {
 
     echo "Replacing ${CULTURE_ID} with ${LANGUAGE_ID}"
 
-    sed -i 's/^ *'"${CULTURE_ID}"' *= *\"\([^\"]*\)\"/      <Name language=\"'"${LANGUAGE_ID}"'\">\1<\/Name>/g' "${FILE}"
+    sed -i 's/^ *'"${CULTURE_ID}"' *= *\"\([^\"]*\)\"/      <Name language=\"'"${LANGUAGE_ID}"'\" value=\"\1\" \/>/g' "${FILE}"
 }
 
 function merge-languages {
-    LANGUAGE_FINAL=$1
-    LANGUAGE1=$2
-    LANGUAGE2=$3
+    LANGUAGE_FINAL=${1}
+    LANGUAGE1=${2}
+    LANGUAGE2=${3}
 
-    perl -i -p0e 's/      <Name language=\"'"$LANGUAGE1"'\">([^<]*).*\n *<Name language=\"'"${LANGUAGE2}"'\">\1<.*/      <Name language=\"'"${LANGUAGE_FINAL}"'\">\1<\/Name>/g' "${FILE}"
-    perl -i -p0e 's/      <Name language=\"'"$LANGUAGE2"'\">([^<]*).*\n *<Name language=\"'"${LANGUAGE1}"'\">\1<.*/      <Name language=\"'"${LANGUAGE_FINAL}"'\">\1<\/Name>/g' "${FILE}"
+    perl -i -p0e 's/      <Name language=\"'"${LANGUAGE1}"'\" value=\"([^<]*)\" \/>\n *<Name language=\"'"${LANGUAGE2}"'\" value=\"\1\" \/>/      <Name language=\"'"${LANGUAGE_FINAL}"'\" value=\"\1\" \/>/g' "${FILE}"
+    perl -i -p0e 's/      <Name language=\"'"${LANGUAGE2}"'\" value=\"([^<]*)\" \/>\n *<Name language=\"'"${LANGUAGE1}"'\" value=\"\1\" \/>/      <Name language=\"'"${LANGUAGE_FINAL}"'\" value=\"\1\" \/>/g' "${FILE}"
 }
 
 remove-empty-titles
@@ -124,9 +124,9 @@ if [ "${GAME}" == "CK2" ]; then
 fi
 
 if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
-    replace-cultural-name "andalusian_arabic" "Arabic_Andalusia"
+    replace-cultural-name "andalusian_arabic" "Arabic"
     replace-cultural-name "arberian" "Arberian"
-    replace-cultural-name "bedouin_arabic" "Arabic_Bedouin"
+    replace-cultural-name "bedouin_arabic" "Arabic"
     replace-cultural-name "bohemian" "Czech_Medieval"
     replace-cultural-name "carantanian" "Slovene_Medieval"
     replace-cultural-name "castillan" "Castilian_Old"
@@ -135,7 +135,7 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "egyptian_arabic" "Egyptian_Arabic"
     replace-cultural-name "frankish" "French_Old"
     replace-cultural-name "lappish" "Sami"
-    replace-cultural-name "levantine_arabic" "Arabic_Levant"
+    replace-cultural-name "levantine_arabic" "Arabic"
     replace-cultural-name "maghreb_arabic" "Arabic_Maghreb"
     replace-cultural-name "romanian" "Romanian_Old"
     replace-cultural-name "saxon" "English_Old"
@@ -165,7 +165,7 @@ if [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "arpitan" "Arpitan"
     replace-cultural-name "cumbric" "Cumbric"
     replace-cultural-name "gothic" "Gothic"
-    replace-cultural-name "hijazi" "Hejazi_Arabic"
+    replace-cultural-name "hijazi" "Arabic"
     replace-cultural-name "icelandic" "Icelandic_Old"
     replace-cultural-name "italian" "Lombard_Medieval"
     replace-cultural-name "kasogi" "Circassian"
@@ -186,18 +186,20 @@ if [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "pahlavi" "Persian_Middle"
     replace-cultural-name "qufs" "Kufichi"
     replace-cultural-name "sanhaja" "Sanhaja"
-    replace-cultural-name "sicilian_arabic" "Sicilian_Arabic"
+    replace-cultural-name "sicilian_arabic" "Arabic"
     replace-cultural-name "szekely" "Szekely_Old"
     replace-cultural-name "tagelmust" "Tuareg_Tagelmust"
     replace-cultural-name "tajik" "Tajiki"
     replace-cultural-name "thuringian" "Thuringian_Medieval"
+    replace-cultural-name "tokharian" "Tocharian"
     replace-cultural-name "tuareg" "Tuareg"
     replace-cultural-name "turkmen" "Turkmen_Medieval"
     replace-cultural-name "tuscan" "Tuscan_Medieval"
+    replace-cultural-name "udi" "Udi_Middle"
     replace-cultural-name "umbrian" "Umbrian_Medieval"
     replace-cultural-name "venetian" "Venetian_Medieval"
     replace-cultural-name "vepsian" "Vepsian_Medieval"
-    replace-cultural-name "yemeni" "Arabic_Yemen"
+    replace-cultural-name "yemeni" "Arabic"
     replace-cultural-name "zanata" "Zenati"
 fi
 
@@ -215,16 +217,16 @@ if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "swabian" "Alemannic_Medieval"
     replace-cultural-name "tajik" "Tajiki"
     replace-cultural-name "vepsian" "Vepsian_Medieval"
-    replace-cultural-name "yemeni" "Arabic_Yemen"
+    replace-cultural-name "yemeni" "Arabic"
     replace-cultural-name "zaghawa" "Zaghawa"
 fi
 
 if [ "${GAME}" == "CK3" ]; then
-    replace-cultural-name "andalusian" "Arabic_Andalusia"
+    replace-cultural-name "andalusian" "Arabic"
     replace-cultural-name "anglo_saxon" "English_Old"
     replace-cultural-name "asturleonese" "Leonese"
     replace-cultural-name "baranis" "Berber_Baranis"
-    replace-cultural-name "bedouin" "Arabic_Bedouin"
+    replace-cultural-name "bedouin" "Arabic"
     replace-cultural-name "butr" "Berber_Butr"
     replace-cultural-name "castilian" "Castilian_Old"
     replace-cultural-name "cisalpine" "Lombard_Medieval"
@@ -234,9 +236,10 @@ if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "estonian" "Estonian"
     replace-cultural-name "french" "French_Old"
     replace-cultural-name "gaelic" "Scottish_Gaelic"
+    replace-cultural-name "kannada" "Kannada"
     replace-cultural-name "khwarezmian" "Khwarezmi"
     replace-cultural-name "latgalian" "Latgalian"
-    replace-cultural-name "levantine" "Arabic_Levant"
+    replace-cultural-name "levantine" "Arabic"
     replace-cultural-name "lombard" "Langobardic"
     replace-cultural-name "maghrebi" "Arabic_Maghreb"
     replace-cultural-name "merya" "Merya"
@@ -259,7 +262,6 @@ sed -i 's/> \+/>/g' "${FILE}"
 sed -i 's/ \+<\//<\//g' "${FILE}"
 
 # Combine arabic names
-sed -i 's/Arabic_Andalusia/Arabic/g' "${FILE}"
 sed -i '/.*_Arabic.*/d' "${FILE}"
 sed -i '/.*Arabic_.*/d' "${FILE}"
 
@@ -338,4 +340,10 @@ sed -i '/ = \"/d' "${FILE}"
 remove-empty-titles
 
 # Remove duplicated languages
-perl -i -p0e 's/      <Name language=\"([^\"]*)\">([^<]*).*\n *<Name language=\"\1\">\2<.*/      <Name language=\"\1\">\2<\/Name>/g' "${FILE}"
+perl -i -p0e 's/      <Name language=\"([^\"]*)\" value=\"([^\"]*)\".*\n *<Name language=\"\1\" value=\"\2\".*/      <Name language=\"\1\" value=\"\2\" \/>/g' "${FILE}"
+
+perl -i -p0e 's/ =\n      <Name / =\n    <Names>\n      <Name /g' "${FILE}"
+perl -i -p0e 's/\/>\n([ekdcb])/\/>\n    <\/Names>\n\1/g' "${FILE}"
+
+sed -i 's/^ *<Names>/    <Names>/g' "${FILE}"
+sed -i 's/^ *<\/Names>/    <\/Names>/g' "${FILE}"
