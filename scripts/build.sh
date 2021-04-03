@@ -81,6 +81,7 @@ package-game "CK3"
 package-game "HOI4"
 package-game "ImperatorRome"
 
-./count-localisations.sh
+cd "${STARTDIR}"
+sh "${STARTDIR}/scripts/count-localisations.sh"
 
 echo "Mod version: ${VERSION}"
