@@ -106,8 +106,9 @@ grep "<GameId game=" *.xml | \
 grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
 
 # Validate XML structure
-grep -Pzo "</GameIds>\n *<Name " "${LOCATIONS_FILE}"
-grep -Pzo "<GameId .*\n *<Name" "${LOCATIONS_FILE}"
+grep -Pzo "</GameIds>\n *<Name " *.xml
+grep -Pzo "<GameId .*\n *<Name" *.xml
+grep -n "<<\|>>" *.xml
 
 # Find non-existing fallback locations
 for FALLBACK_LOCATION_ID in $(diff \
