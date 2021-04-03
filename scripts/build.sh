@@ -28,6 +28,7 @@ MOD_BUILDER_ZIP_URL="https://github.com/hmlendea/${MOD_BUILDER_NAME}/releases/do
 MOD_BUILDER_BIN_FILE_PATH="${MOD_BUILDER_NAME}/MoreCulturalNamesModBuilder"
 NEEDS_DOWNLOADING=true
 
+echo "Checking for builder updates..."
 if [ -d ${MOD_BUILDER_NAME} ]; then
     if [ -f ${MOD_BUILDER_NAME}/version.txt ]; then
         CURRENT_VERSION=$(cat ${MOD_BUILDER_NAME}/version.txt)
@@ -48,6 +49,7 @@ fi
 
 [ -d "out/" ] && rm -rf "out/"
 
+echo "Building..."
 ${MOD_BUILDER_BIN_FILE_PATH} \
     --lang "${LANGUAGES_FILE}" \
     --loc "${LOCATIONS_FILE}" \
@@ -78,3 +80,7 @@ package-game "CK2HIP"
 package-game "CK3"
 package-game "HOI4"
 package-game "ImperatorRome"
+
+./count-localisations.sh
+
+echo "Mod version: ${VERSION}"

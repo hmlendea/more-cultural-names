@@ -236,6 +236,7 @@ if [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "estonian" "Estonian"
     replace-cultural-name "french" "French_Old"
     replace-cultural-name "gaelic" "Scottish_Gaelic"
+    replace-cultural-name "kannada" "Kannada"
     replace-cultural-name "khwarezmian" "Khwarezmi"
     replace-cultural-name "latgalian" "Latgalian"
     replace-cultural-name "levantine" "Arabic"

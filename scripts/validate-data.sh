@@ -64,7 +64,7 @@ function checkForSurplusCkTitles() {
                         <( \
                             grep "GameId game=\"${GAME}\"" "${LOCATIONS_FILE}" | \
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
-                            sort \
+                            sort | uniq \
                         ) <( \
                             cat "${LANDED_TITLES_FILE}" | \
                             if [ -n "$(file ${LANDED_TITLES_FILE} | grep Non-ISO)" ]
