@@ -310,6 +310,8 @@
     <FallbackLanguages>
       <LanguageId>Spanish</LanguageId>
       <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Mexico</LanguageId>
+      <LanguageId>Spanish_Before1888</LanguageId>
       <LanguageId>Spanish_Before1877</LanguageId>
       <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
@@ -404,6 +406,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -418,6 +421,11 @@
     <FallbackLanguages>
       <LanguageId>French_Old</LanguageId>
       <LanguageId>French_Middle</LanguageId>
+      <LanguageId>Norman</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
       <LanguageId>French</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -428,6 +436,8 @@
       <LanguageId>Leonese</LanguageId>
       <LanguageId>Spanish</LanguageId>
       <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Mexico</LanguageId>
+      <LanguageId>Spanish_Before1888</LanguageId>
       <LanguageId>Spanish_Before1877</LanguageId>
       <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
@@ -620,8 +630,10 @@
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Severian</LanguageId>
@@ -629,6 +641,10 @@
       <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Bengali</Id>
+    <Code iso-639-1="bn" iso-639-2="ben" iso-639-3="ben" />
   </Language>
   <Language>
     <Id>Berber</Id>
@@ -1102,9 +1118,11 @@
   <Language>
     <Id>Castilian</Id>
     <FallbackLanguages>
+      <LanguageId>Spanish_Before1888</LanguageId>
       <LanguageId>Spanish_Before1877</LanguageId>
       <LanguageId>Castilian_Old</LanguageId>
       <LanguageId>Spanish</LanguageId>
+      <LanguageId>Spanish_Mexico</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1115,9 +1133,11 @@
       <GameId game="CK3">castilian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Spanish_Before1888</LanguageId>
       <LanguageId>Spanish_Before1877</LanguageId>
       <LanguageId>Castilian</LanguageId>
       <LanguageId>Spanish</LanguageId>
+      <LanguageId>Spanish_Mexico</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1204,6 +1224,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Chinese_Mandarin</LanguageId>
+      <LanguageId>Chinese_Mandarin_Taiwan</LanguageId>
       <LanguageId>Chinese_Middle</LanguageId>
       <LanguageId>Chinese_Classical</LanguageId>
       <LanguageId>Chinese_Old</LanguageId>
@@ -1222,6 +1243,7 @@
       <LanguageId>Chinese_Old</LanguageId>
       <LanguageId>Chinese</LanguageId>
       <LanguageId>Chinese_Mandarin</LanguageId>
+      <LanguageId>Chinese_Mandarin_Taiwan</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1231,6 +1253,16 @@
   <Language>
     <Id>Chinese_Mandarin</Id>
     <Code iso-639-3="cmn" />
+    <FallbackLanguages>
+      <LanguageId>Chinese_Mandarin_Taiwan</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Chinese_Mandarin_Taiwan</Id>
+    <Code iso-639-3="cmn" />
+    <FallbackLanguages>
+      <LanguageId>Chinese_Mandarin</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Chinese_Old</Id> <!-- c. 1766 BC – c. 221 BC  -->
@@ -1632,6 +1664,28 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Dacian</Id>
+    <Code iso-639-3="xdc" />
+    <GameIds>
+      <GameId game="ImperatorRome">dacia_group</GameId>
+      <GameId game="ImperatorRome">dacian</GameId>
+      <GameId game="ImperatorRome">getian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Thracian</LanguageId>
+      <LanguageId>Dacian_Before342BC</LanguageId>
+      <LanguageId>Thracian_Before342BC</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Dacian_Before342BC</Id>
+    <FallbackLanguages>
+      <LanguageId>Thracian_Before342BC</LanguageId>
+      <LanguageId>Dacian</LanguageId>
+      <LanguageId>Thracian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Dalmatian</Id>
     <Code iso-639-3="dlm" />
     <FallbackLanguages>
@@ -1660,28 +1714,6 @@
       <LanguageId>Italian</LanguageId>
       <LanguageId>Tuscan</LanguageId>
       <LanguageId>Genoese</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Dacian</Id>
-    <Code iso-639-3="xdc" />
-    <GameIds>
-      <GameId game="ImperatorRome">dacia_group</GameId>
-      <GameId game="ImperatorRome">dacian</GameId>
-      <GameId game="ImperatorRome">getian</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Thracian</LanguageId>
-      <LanguageId>Dacian_Before342BC</LanguageId>
-      <LanguageId>Thracian_Before342BC</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Dacian_Before342BC</Id>
-    <FallbackLanguages>
-      <LanguageId>Thracian_Before342BC</LanguageId>
-      <LanguageId>Dacian</LanguageId>
-      <LanguageId>Thracian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1715,6 +1747,15 @@
       <LanguageId>Norse</LanguageId>
       <LanguageId>Danish_Middle</LanguageId>
       <LanguageId>Danish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Dari</Id> <!-- Persian_Afghan -->
+    <Code iso-639-3="prs" />
+    <FallbackLanguages>
+      <LanguageId>Persian</LanguageId>
+      <LanguageId>Persian_Middle</LanguageId>
+      <LanguageId>Parthian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1778,6 +1819,13 @@
       <LanguageId>Flemish_West</LanguageId>
       <LanguageId>Dutch</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Dzongkha</Id> <!-- Bhutanese -->
+    <Code iso-639-1="dz" iso-639-2="dzo" iso-639-3="dzo" />
+    <GameIds>
+      <GameId game="HOI4">BHU</GameId> <!-- Bhutan -->
+    </GameIds>
   </Language>
   <Language>
     <Id>Egyptian_Arabic</Id>
@@ -1879,18 +1927,88 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>English</Id>
+    <Id>English</Id> <!-- 2000 AD – present -->
     <Code iso-639-1="en" iso-639-3="eng" />
     <FallbackLanguages>
+      <LanguageId>English_Before2000</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
       <LanguageId>English_Before19Century</LanguageId>
-      <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>English_Before1974</Id>
+    <Id>English_Before2000</Id> <!-- 1985 AD – 2000 AD -->
+    <FallbackLanguages>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>English_Before1985</Id> <!-- 1974 AD – 1985 AD -->
+    <FallbackLanguages>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>English_Before1974</Id> <!-- 1972 AD – 1974 AD -->
+    <FallbackLanguages>
+      <LanguageId>English_Before1972</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>English_Before1972</Id> <!-- 1949 AD – 1972 AD -->
+    <FallbackLanguages>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>English_Before1949</Id> <!-- 1926 AD – 1949 AD -->
     <GameIds>
       <GameId game="HOI4">ENG</GameId>
       <GameId game="HOI4">AST</GameId> <!-- Australia -->
@@ -1909,41 +2027,117 @@
       <GameId game="HOI4">ZIM</GameId> <!-- Zimbabwe -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
       <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
       <LanguageId>English</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>English_Before1926</Id>
+    <Id>English_Before1926</Id> <!-- 1917 AD – 1926 AD -->
     <FallbackLanguages>
       <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
       <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
       <LanguageId>English</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>English_Before1917</Id>
+    <Id>English_Before1917</Id> <!-- c. 1900 AD – 1917 AD -->
     <FallbackLanguages>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
       <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
       <LanguageId>English</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>English_Before19Century</Id>
+    <Id>English_Before20Century</Id> <!-- 1888 AD – c. 1899 AD -->
     <FallbackLanguages>
+      <LanguageId>English_Before1888</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
       <LanguageId>English</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>English_Middle</Id> <!-- c. 12th century - late 15th century -->
+    <Id>English_Before1888</Id> <!-- c. 1800 AD – 1888 AD -->
+    <FallbackLanguages>
+      <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>English_Before19Century</Id> <!-- 1705 AD – c. 1799 AD -->
+    <FallbackLanguages>
+      <LanguageId>English_Before1888</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>English_Before1705</Id> <!-- c. late 15th century AD – 1705 AD -->
+    <FallbackLanguages>
+      <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
+      <LanguageId>English</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>English_Middle</Id> <!-- c. 12th century – c. late 15th century -->
     <Code iso-639-2="enm" iso-639-3="enm" iso-639-6="meng" />
     <GameIds>
       <GameId game="CK2">english</GameId>
@@ -1951,15 +2145,22 @@
       <GameId game="CK3">english</GameId> <!-- English -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>English_Before1705</LanguageId>
       <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
       <LanguageId>English</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>English_Old</Id> <!-- c. 5th century - late 11th century -->
+    <Id>English_Old</Id> <!-- c. 5th century – late 11th century -->
     <Code iso-639-3="ang" />
     <GameIds>
       <GameId game="CK2">saxon</GameId>
@@ -2023,6 +2224,15 @@
   <Language>
     <Id>Fijian_Hindi</Id>
     <Code iso-639-3="hif" />
+  </Language>
+  <Language>
+    <Id>Filipino</Id>
+    <GameIds>
+      <GameId game="HOI4">PHI</GameId> <!-- Philippines -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tagalog</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Finnish</Id>
@@ -2104,11 +2314,23 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>French</Id>
+    <Id>French</Id> <!-- 1972 AD – present -->
     <Code iso-639-1="fr" iso-639-3="fra" />
+    <FallbackLanguages>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Middle</LanguageId>
+      <LanguageId>Norman</LanguageId>
+      <LanguageId>French_Old</LanguageId>
+      <LanguageId>French_Outremer</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>French_Before1972</Id> <!-- 1804 AD – 1972 AD -->
     <GameIds>
       <GameId game="HOI4">FRA</GameId> <!-- France -->
-      <GameId game="HOI4">BRD</GameId> <!-- Burundi -->
       <GameId game="HOI4">CMR</GameId> <!-- Cameroon -->
       <GameId game="HOI4">GDL</GameId> <!-- Guadeloupe -->
       <GameId game="HOI4">IVO</GameId> <!-- Ivory Coast -->
@@ -2116,9 +2338,53 @@
       <GameId game="HOI4">TOG</GameId> <!-- Togo -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Middle</LanguageId>
       <LanguageId>Norman</LanguageId>
       <LanguageId>French_Old</LanguageId>
       <LanguageId>French_Outremer</LanguageId>
+      <LanguageId>French</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>French_Before1804</Id> <!-- 1793 AD – 1804 AD -->
+    <FallbackLanguages>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Middle</LanguageId>
+      <LanguageId>Norman</LanguageId>
+      <LanguageId>French_Old</LanguageId>
+      <LanguageId>French_Outremer</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>French_Before1793</Id> <!-- 1705 AD – 1793 AD -->
+    <FallbackLanguages>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Middle</LanguageId>
+      <LanguageId>Norman</LanguageId>
+      <LanguageId>French_Old</LanguageId>
+      <LanguageId>French_Outremer</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>French_Before1705</Id> <!-- c. 17th century AD – 1705 AD -->
+    <FallbackLanguages>
+      <LanguageId>French_Middle</LanguageId>
+      <LanguageId>Norman</LanguageId>
+      <LanguageId>French_Old</LanguageId>
+      <LanguageId>French_Outremer</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2128,6 +2394,10 @@
       <LanguageId>Norman</LanguageId>
       <LanguageId>French_Old</LanguageId>
       <LanguageId>French_Outremer</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
       <LanguageId>French</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -2143,6 +2413,10 @@
       <LanguageId>Norman</LanguageId>
       <LanguageId>French_Outremer</LanguageId>
       <LanguageId>French_Middle</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
       <LanguageId>French</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -2156,6 +2430,10 @@
       <LanguageId>French_Old</LanguageId>
       <LanguageId>Norman</LanguageId>
       <LanguageId>French_Middle</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
       <LanguageId>French</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3004,6 +3282,10 @@
     <Code iso-639-3="gcr" />
     <FallbackLanguages>
       <LanguageId>French</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
       <LanguageId>French_Middle</LanguageId>
       <LanguageId>French_Old</LanguageId>
       <LanguageId>French_Outremer</LanguageId>
@@ -3119,6 +3401,10 @@
       <LanguageId>Arabic_Maghreb</LanguageId>
       <LanguageId>Maltese</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hindi</Id>
+    <Code iso-639-1="hi" iso-639-2="hin" iso-639-3="hin" />
   </Language>
   <Language>
     <Id>Hittite</Id> <!-- Hittite_New / New Hittite -->
@@ -3286,8 +3572,10 @@
       <LanguageId>Severian</LanguageId>
       <LanguageId>Volhynian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
@@ -3297,11 +3585,30 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Indonesian</Id>
+    <Id>Indonesian</Id> <!-- 1972 AD – present -->
     <Code iso-639-1="id" iso-639-3="ind" />
+    <FallbackLanguages>
+      <LanguageId>Malay</LanguageId>
+      <LanguageId>Indonesian_Before1972</LanguageId>
+      <LanguageId>Malay_Before1972</LanguageId>
+      <LanguageId>Malay_Before1942</LanguageId>
+      <LanguageId>Malay_Classical</LanguageId>
+      <LanguageId>Malay_Before1619</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Indonesian_Before1972</Id> <!-- c. after 18th century AD – 1972 AD -->
     <GameIds>
       <GameId game="HOI4">INS</GameId> <!-- Indonesia -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Malay_Before1972</LanguageId>
+      <LanguageId>Malay_Before1942</LanguageId>
+      <LanguageId>Malay_Classical</LanguageId>
+      <LanguageId>Malay_Before1619</LanguageId>
+      <LanguageId>Indonesian</LanguageId>
+      <LanguageId>Malay</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Interlingua</Id>
@@ -3365,6 +3672,9 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Iroquois_Saint_Lawrence</Id> <!-- c. 14th century AD – 1580 AD -->
+  </Language>
+  <Language>
     <Id>IstroRomanian</Id>
     <Code iso-639-3="ruo" />
     <FallbackLanguages>
@@ -3384,6 +3694,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -3455,6 +3766,10 @@
     <GameIds>
       <GameId game="HOI4">JAP</GameId> <!-- Japan -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Okinawan</LanguageId>
+      <LanguageId>Kunigami</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Javanese</Id>
@@ -3714,6 +4029,10 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>KoyraChiini</Id> <!-- Songhay_West -->
+    <Code iso-639-3="khq" />
+  </Language>
+  <Language>
     <Id>Kufichi</Id>
     <GameIds>
       <GameId game="CK2HIP">qufs</GameId>
@@ -3729,6 +4048,14 @@
     <FallbackLanguages>
       <LanguageId>Cuman</LanguageId>
       <LanguageId>KarachayBalkar</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Kunigami</Id> <!-- Okinawan_North -->
+    <Code iso-639-3="xug" />
+    <FallbackLanguages>
+      <LanguageId>Okinawan</LanguageId>
+      <LanguageId>Japanese</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -3764,6 +4091,13 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Lao</Id>
+    <Code iso-639-1="la" iso-639-2="lao" iso-639-3="lao" />
+    <GameIds>
+      <GameId game="HOI4">LAO</GameId> <!-- Laos -->
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Latgalian</Id>
     <Code iso-639-3="ltg" />
     <GameIds>
@@ -3773,9 +4107,12 @@
     </GameIds>
   </Language>
   <Language>
-    <Id>Latin</Id> <!-- between c. 1922 – present -->
+    <Id>Latin</Id> <!-- 1942 AD – present -->
     <Code iso-639-1="la" iso-639-3="lat" />
     <FallbackLanguages>
+      <LanguageId>Latin_Before1972</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before9Century</LanguageId>
@@ -3791,7 +4128,67 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Latin_Before1922</Id> <!-- between 14th centuries – 1922 -->
+    <Id>Latin_Before1972</Id> <!-- 1949 AD – 1972 AD -->
+    <FallbackLanguages>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before1949</Id> <!-- 1942 AD – 1949 AD -->
+    <FallbackLanguages>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before1942</Id> <!-- 1922 AD – 1942 AD -->
+    <FallbackLanguages>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before1922</Id> <!-- c. 14th century AD – 1922 AD -->
     <FallbackLanguages>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before9Century</LanguageId>
@@ -3803,6 +4200,9 @@
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3825,6 +4225,9 @@
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3841,6 +4244,9 @@
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3858,6 +4264,9 @@
       <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3875,6 +4284,9 @@
       <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3892,6 +4304,9 @@
       <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3909,6 +4324,9 @@
       <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3926,6 +4344,9 @@
       <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3943,6 +4364,9 @@
       <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3964,6 +4388,9 @@
       <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4002,6 +4429,8 @@
       <LanguageId>Asturian</LanguageId>
       <LanguageId>Spanish</LanguageId>
       <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Mexico</LanguageId>
+      <LanguageId>Spanish_Before1888</LanguageId>
       <LanguageId>Spanish_Before1877</LanguageId>
       <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
@@ -4186,6 +4615,9 @@
       <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4234,9 +4666,59 @@
   <Language>
     <Id>Malay</Id>
     <Code iso-639-1="ms" iso-639-3="msa" />
+    <FallbackLanguages>
+      <LanguageId>Malay_Before1972</LanguageId>
+      <LanguageId>Indonesian_Before1972</LanguageId>
+      <LanguageId>Malay_Before1942</LanguageId>
+      <LanguageId>Malay_Classical</LanguageId>
+      <LanguageId>Malay_Before1619</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malay_Before1972</Id>
+    <FallbackLanguages>
+      <LanguageId>Indonesian_Before1972</LanguageId>
+      <LanguageId>Malay_Before1942</LanguageId>
+      <LanguageId>Malay_Classical</LanguageId>
+      <LanguageId>Malay_Before1619</LanguageId>
+      <LanguageId>Malay</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malay_Before1942</Id>
     <GameIds>
       <GameId game="HOI4">MAL</GameId> <!-- Malaysia -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Malay_Classical</LanguageId>
+      <LanguageId>Malay_Before1619</LanguageId>
+      <LanguageId>Malay_Before1972</LanguageId>
+      <LanguageId>Indonesian_Before1972</LanguageId>
+      <LanguageId>Malay</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malay_Classical</Id> <!-- c. 14th century AD – c. 18th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Malay_Before1619</LanguageId>
+      <LanguageId>Malay_Before1942</LanguageId>
+      <LanguageId>Malay_Before1972</LanguageId>
+      <LanguageId>Indonesian_Before1972</LanguageId>
+      <LanguageId>Malay</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malay_Before1619</Id>
+    <FallbackLanguages>
+      <LanguageId>Malay_Classical</LanguageId>
+      <LanguageId>Malay_Before1942</LanguageId>
+      <LanguageId>Malay_Before1972</LanguageId>
+      <LanguageId>Indonesian_Before1972</LanguageId>
+      <LanguageId>Malay</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malay_Old</Id> <!-- c. 7th century AD – c. 14th century AD -->
   </Language>
   <Language>
     <Id>Maltese</Id>
@@ -4324,6 +4806,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Mayan_Yucatec</Id>
+    <Code iso-639-3="yna" />
+  </Language>
+  <Language>
     <Id>Meroitic</Id> <!-- c. 1800 BC – c. 400 AD -->
     <Code iso-639-3="xmr" />
     <GameIds>
@@ -4387,6 +4873,10 @@
   <Language>
     <Id>Mirandese</Id>
     <Code iso-639-3="mwl" />
+  </Language>
+  <Language>
+    <Id>Mohawk</Id>
+    <Code iso-639-2="moh" iso-639-3="moh" />
   </Language>
   <Language>
     <Id>Moksha</Id>
@@ -4506,6 +4996,13 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Nepali</Id>
+    <Code iso-639-1="ne" iso-639-2="nep" iso-639-3="nep" />
+    <GameIds>
+      <GameId game="HOI4">NEP</GameId> <!-- Nepal -->
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Norman</Id>
     <Code iso-639-3="nrf" />
     <GameIds>
@@ -4517,6 +5014,10 @@
       <LanguageId>French_Old</LanguageId>
       <LanguageId>French_Outremer</LanguageId>
       <LanguageId>French_Middle</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
       <LanguageId>French</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4529,11 +5030,12 @@
       <GameId game="CK3">norse</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Icelandic_Old</LanguageId>
       <LanguageId>Norwegian_Old</LanguageId>
       <LanguageId>Danish_Old</LanguageId>
       <LanguageId>Danish_Middle</LanguageId>
       <LanguageId>Swedish_Old</LanguageId>
-      <LanguageId>Icelandic_Old</LanguageId>
+      <LanguageId>Icelandic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4632,6 +5134,10 @@
       <LanguageId>Occitan_Old</LanguageId>
       <LanguageId>Occitan_Gascon_Old</LanguageId>
       <LanguageId>French</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
       <LanguageId>French_Middle</LanguageId>
       <LanguageId>French_Old</LanguageId>
     </FallbackLanguages>
@@ -4653,6 +5159,10 @@
       <LanguageId>Occitan_Auvergnat</LanguageId>
       <LanguageId>French_Old</LanguageId>
       <LanguageId>French_Middle</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
       <LanguageId>French</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4667,6 +5177,10 @@
       <LanguageId>Occitan_Gascon_Old</LanguageId>
       <LanguageId>Occitan_Old</LanguageId>
       <LanguageId>French</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
       <LanguageId>French_Middle</LanguageId>
       <LanguageId>French_Old</LanguageId>
     </FallbackLanguages>
@@ -4682,6 +5196,10 @@
       <LanguageId>Occitan_Gascon_Old</LanguageId>
       <LanguageId>Occitan_Old</LanguageId>
       <LanguageId>French</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
       <LanguageId>French_Middle</LanguageId>
       <LanguageId>French_Old</LanguageId>
     </FallbackLanguages>
@@ -4700,6 +5218,10 @@
       <LanguageId>Occitan_Auvergnat</LanguageId>
       <LanguageId>French_Old</LanguageId>
       <LanguageId>French_Middle</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
       <LanguageId>French</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4713,6 +5235,10 @@
       <LanguageId>Occitan_Old</LanguageId>
       <LanguageId>Occitan_Gascon_Old</LanguageId>
       <LanguageId>French</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
       <LanguageId>French_Middle</LanguageId>
       <LanguageId>French_Old</LanguageId>
     </FallbackLanguages>
@@ -4727,6 +5253,10 @@
       <LanguageId>Occitan_Old</LanguageId>
       <LanguageId>Occitan_Gascon_Old</LanguageId>
       <LanguageId>French</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
       <LanguageId>French_Middle</LanguageId>
       <LanguageId>French_Old</LanguageId>
     </FallbackLanguages>
@@ -4756,6 +5286,18 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Ojibwe</Id>
+    <Code iso-639-1="oj" iso-639-2="oji" iso-639-3="oji" />
+  </Language>
+  <Language>
+    <Id>Okinawan</Id>
+    <Code iso-639-3="ryu" />
+    <FallbackLanguages>
+      <LanguageId>Kunigami</LanguageId>
+      <LanguageId>Japanese</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Oromo</Id>
     <Code iso-639-1="om" iso-639-2="orm" iso-639-3="orm" />
   </Language>
@@ -4778,6 +5320,9 @@
       <LanguageId>Latin_Before9Century</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
       <LanguageId>Latin</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4799,6 +5344,7 @@
       <LanguageId>Persian_Old</LanguageId>
       <LanguageId>Persian_Middle</LanguageId>
       <LanguageId>Persian</LanguageId>
+      <LanguageId>Dari</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4861,6 +5407,7 @@
     <FallbackLanguages>
       <LanguageId>Parthian</LanguageId>
       <LanguageId>Persian</LanguageId>
+      <LanguageId>Dari</LanguageId>
       <LanguageId>Persian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -5151,6 +5698,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5174,6 +5722,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5197,6 +5746,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5220,6 +5770,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5243,6 +5794,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5270,6 +5822,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5293,6 +5846,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5316,6 +5870,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5339,6 +5894,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5362,6 +5918,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5385,6 +5942,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5408,6 +5966,7 @@
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5431,6 +5990,7 @@
     <FallbackLanguages>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5454,6 +6014,7 @@
     <Id>Romanian_Before19Century</Id>
     <FallbackLanguages>
       <LanguageId>Romanian_Before1713</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
@@ -5477,9 +6038,35 @@
   <Language>
     <Id>Romanian_Before1713</Id>
     <FallbackLanguages>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before19Century</LanguageId>
+      <LanguageId>Romanian_Before20Century</LanguageId>
+      <LanguageId>Romanian_Before1913</LanguageId>
+      <LanguageId>Romanian_Before1916</LanguageId>
+      <LanguageId>Romanian_Before1917</LanguageId>
+      <LanguageId>Romanian_Before1918</LanguageId>
+      <LanguageId>Romanian_Before1930</LanguageId>
+      <LanguageId>Romanian_Before1940</LanguageId>
+      <LanguageId>Romanian_Before1945</LanguageId>
+      <LanguageId>Romanian_Before1964</LanguageId>
+      <LanguageId>Romanian_Before1974</LanguageId>
+      <LanguageId>Romanian_Before1991</LanguageId>
+      <LanguageId>Romanian_Before1993</LanguageId>
+      <LanguageId>Romanian</LanguageId>
+      <LanguageId>Aromanian</LanguageId>
+      <LanguageId>IstroRomanian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Romanian_Before17Century</Id>
+    <FallbackLanguages>
+      <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before1487</LanguageId>
+      <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before1713</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
       <LanguageId>Romanian_Before1913</LanguageId>
@@ -5503,6 +6090,7 @@
     <FallbackLanguages>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Old</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -5527,6 +6115,7 @@
     <FallbackLanguages>
       <LanguageId>Romanian_Old</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -5556,6 +6145,7 @@
     <FallbackLanguages>
       <LanguageId>Romanian_Before1487</LanguageId>
       <LanguageId>Romanian_Before1599</LanguageId>
+      <LanguageId>Romanian_Before17Century</LanguageId>
       <LanguageId>Romanian_Before1713</LanguageId>
       <LanguageId>Romanian_Before19Century</LanguageId>
       <LanguageId>Romanian_Before20Century</LanguageId>
@@ -5592,8 +6182,10 @@
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Severian</LanguageId>
@@ -5609,8 +6201,10 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Russian</LanguageId>
       <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
@@ -5623,8 +6217,10 @@
   <Language>
     <Id>Russian_Before1924</Id>
     <FallbackLanguages>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
@@ -5636,9 +6232,11 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Russian_Before1856</Id>
+    <Id>Russian_Before1917</Id>
     <FallbackLanguages>
+      <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
@@ -5651,12 +6249,49 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Russian_Before1856</Id>
+    <FallbackLanguages>
+      <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
+      <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1991</LanguageId>
+      <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
+      <LanguageId>Ukrainian</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Russian_Before1812</Id>
     <FallbackLanguages>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
+      <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1991</LanguageId>
+      <LanguageId>Russian</LanguageId>
+      <LanguageId>Belarussian</LanguageId>
+      <LanguageId>Ukrainian</LanguageId>
+      <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Ukrainian_Before2017</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Russian_Before1795</Id>
+    <FallbackLanguages>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian</LanguageId>
@@ -5674,8 +6309,10 @@
       <LanguageId>Volhynian</LanguageId>
       <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
@@ -5837,6 +6474,15 @@
   <Language>
     <Id>Samogitian</Id>
     <Code iso-639-3="sgs" /> <!-- bat-smg -->
+    <FallbackLanguages>
+      <LanguageId>Samogitian_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Samogitian_Medieval</Id>
+    <FallbackLanguages>
+      <LanguageId>Samogitian</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Samoyed</Id>
@@ -5923,10 +6569,17 @@
       <GameId game="HOI4">SCO</GameId> <!-- Scotland -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>English_Before2000</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
       <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
       <LanguageId>Scots_Early</LanguageId>
       <LanguageId>English_Middle</LanguageId>
     </FallbackLanguages>
@@ -5938,10 +6591,17 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>English_Middle</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
       <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
       <LanguageId>English_Before1917</LanguageId>
       <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
       <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
       <LanguageId>Scots</LanguageId>
       <LanguageId>English</LanguageId>
       <LanguageId>English_Old</LanguageId>
@@ -6607,8 +7267,10 @@
       <LanguageId>Volhynian</LanguageId>
       <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
@@ -6628,8 +7290,10 @@
     <FallbackLanguages>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
@@ -6966,6 +7630,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Sinhala</Id>
+    <Code iso-639-1="si" iso-639-2="sin" iso-639-3="sin" />
+  </Language>
+  <Language>
     <Id>Socossian</Id>
     <GameIds>
       <GameId game="ImperatorRome">socossian</GameId>
@@ -7087,7 +7755,6 @@
       <GameId game="HOI4">HON</GameId> <!-- Honduras -->
       <GameId game="HOI4">NIC</GameId> <!-- Nicaragua -->
       <GameId game="HOI4">PAN</GameId> <!-- Panama -->
-      <GameId game="HOI4">PHI</GameId> <!-- Philippines -->
       <GameId game="HOI4">PRU</GameId> <!-- Peru -->
       <GameId game="HOI4">URG</GameId> <!-- Uruguay -->
       <GameId game="HOI4">VEN</GameId> <!-- Venezula -->
@@ -7099,14 +7766,26 @@
     <FallbackLanguages>
       <LanguageId>Castilian</LanguageId>
       <LanguageId>Spanish_Mexico</LanguageId>
+      <LanguageId>Spanish_Before1888</LanguageId>
       <LanguageId>Spanish_Before1877</LanguageId>
       <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Spanish_Before1888</Id>
+    <FallbackLanguages>
+      <LanguageId>Spanish_Before1877</LanguageId>
+      <LanguageId>Castilian_Old</LanguageId>
+      <LanguageId>Spanish</LanguageId>
+      <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Mexico</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Spanish_Before1877</Id>
     <FallbackLanguages>
-      <LanguageId>Castilian_Old</LanguageId>
+      <LanguageId>Spanish_Before1888</LanguageId>
+      <LanguageId>Spanish</LanguageId>
       <LanguageId>Spanish</LanguageId>
       <LanguageId>Castilian</LanguageId>
       <LanguageId>Spanish_Mexico</LanguageId>
@@ -7120,6 +7799,7 @@
     <FallbackLanguages>
       <LanguageId>Spanish</LanguageId>
       <LanguageId>Castilian</LanguageId>
+      <LanguageId>Spanish_Before1888</LanguageId>
       <LanguageId>Spanish_Before1877</LanguageId>
       <LanguageId>Castilian_Old</LanguageId>
     </FallbackLanguages>
@@ -7164,12 +7844,23 @@
   <Language>
     <Id>Swahili</Id>
     <Code iso-639-1="sw" iso-639-3="swa" />
+    <FallbackLanguages>
+      <LanguageId>Swahili_Before1962</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Swahili_Before1962</Id>
+    <Code iso-639-1="sw" iso-639-3="swa" />
     <GameIds>
+      <GameId game="HOI4">BRD</GameId> <!-- Burundi -->
       <GameId game="HOI4">GAB</GameId> <!-- Gabon -->
       <GameId game="HOI4">RCG</GameId> <!-- Republic of Congo -->
       <GameId game="HOI4">TZN</GameId> <!-- Tanzania -->
       <GameId game="HOI4">UGA</GameId> <!-- Uganda -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Swahili</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Swazi</Id>
@@ -7294,6 +7985,9 @@
   <Language>
     <Id>Tagalog</Id>
     <Code iso-639-1="tl" iso-639-3="tgl" />
+    <FallbackLanguages>
+      <LanguageId>Filipino</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tahitian</Id>
@@ -7343,6 +8037,13 @@
   <Language>
     <Id>Tetum</Id>
     <Code iso-639-3="tet" />
+  </Language>
+  <Language>
+    <Id>Thai</Id>
+    <GameIds>
+      <GameId game="HOI4">SIA</GameId> <!-- Siam -->
+    </GameIds>
+    <Code iso-639-1="th" iso-639-2="tha" iso-639-3="tha" />
   </Language>
   <Language>
     <Id>Thracian</Id>
@@ -7686,8 +8387,10 @@
       <LanguageId>Belarussian</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Volhynian</LanguageId>
@@ -7704,8 +8407,10 @@
     <FallbackLanguages>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Volhynian</LanguageId>
@@ -7876,8 +8581,10 @@
       <LanguageId>Severian</LanguageId>
       <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Ruthenian</LanguageId>
+      <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
+      <LanguageId>Russian_Before1917</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
