@@ -84,6 +84,6 @@ package-game "HOI4"
 package-game "ImperatorRome"
 
 cd "${STARTDIR}"
-sh "${STARTDIR}/scripts/count-localisations.sh"
+bash "${STARTDIR}/scripts/count-localisations.sh"
 
 echo "Mod version: ${VERSION}"
