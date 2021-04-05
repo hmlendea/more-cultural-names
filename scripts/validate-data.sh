@@ -157,7 +157,7 @@ for LANGUAGE_ID in $(diff \
 done
 
 # Find multiple name definitions for the same language
-grep -Pzo "language=\"([^\"]*)\".*\n.*language=\"\1\"" *.xml
+grep -Pzo "language=\"([^\"]*)\".*\n.*language=\"\1\".*" *.xml
 
 # Make sure all CK titles are defined and exist in the game
 checkForMismatchingCkTitles "CK2" "${CK2_VANILLA_LANDED_TITLES_FILE}"
