@@ -17,8 +17,10 @@ VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 echo "Mod version: ${VERSION}"
 
 echo "Validating the files..."
-if [ -n "$(sh scripts/validate-data.sh)" ]; then
+VALIDATE_DATA="$(bash scripts/validate-data.sh | tr '\0' '\n')"
+if [ -n "${VALIDATE_DATA}" ]; then
     echo "Input files validation failed!"
+    echo "${VALIDATE_DATA}"
     exit 1
 fi
 
@@ -82,6 +84,6 @@ package-game "HOI4"
 package-game "ImperatorRome"
 
 cd "${STARTDIR}"
-sh "${STARTDIR}/scripts/count-localisations.sh"
+bash "${STARTDIR}/scripts/count-localisations.sh"
 
 echo "Mod version: ${VERSION}"

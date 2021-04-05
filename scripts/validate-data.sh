@@ -87,8 +87,10 @@ function checkForMismatchingCkTitles() {
     GAME="${1}"
     LANDED_TITLES_FILE="${2}"
 
-    checkForMissingCkTitles "${GAME}" "${LANDED_TITLES_FILE}"
-    checkForSurplusCkTitles "${GAME}" "${LANDED_TITLES_FILE}"
+    if [ -f "${LANDED_TITLES_FILE}" ]; then
+        checkForMissingCkTitles "${GAME}" "${LANDED_TITLES_FILE}"
+        checkForSurplusCkTitles "${GAME}" "${LANDED_TITLES_FILE}"
+    fi
 }
 
 # Find duplicated IDs
@@ -155,7 +157,7 @@ for LANGUAGE_ID in $(diff \
 done
 
 # Find multiple name definitions for the same language
-pcregrep -M "language=\"([^\"]*)\".*\n.*language=\"\1\"" *.xml
+grep -Pzo "language=\"([^\"]*)\".*\n.*language=\"\1\".*" *.xml
 
 # Make sure all CK titles are defined and exist in the game
 checkForMismatchingCkTitles "CK2" "${CK2_VANILLA_LANDED_TITLES_FILE}"
@@ -163,45 +165,49 @@ checkForMismatchingCkTitles "CK2HIP" "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingCkTitles "CK3" "${CK3_VANILLA_LANDED_TITLES_FILE}"
 
 # Validate default localisations for CK3
-for GAMEID_DEFINITION in $(diff \
-                    <( \
-                        grep "GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
-                        sed 's/^ *//g' |
-                        sort
-                    ) <( \
-                        awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
-                            <(getGameIds "CK3") \
-                            <( \
-                                cat "${CK3_VANILLA_LOCALISATION_FILE}" | \
-                                grep "^ *[ekdcb]_" | grep -v "_adj:" | \
-                                sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
-                                sed -e 's/= */=/g' -e 's/ *$//g'
-                            ) | \
-                        awk -F"=" '{print "<GameId game=\"CK3\">"$1"</GameId> <!-- "$2" -->"}' | \
-                        sort | uniq \
-                    ) | \
-                    grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
-    echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
-done
+if [ -f "${CK3_VANILLA_LOCALISATION_FILE}" ]; then
+    for GAMEID_DEFINITION in $(diff \
+                        <( \
+                            grep "GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
+                            sed 's/^ *//g' |
+                            sort
+                        ) <( \
+                            awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
+                                <(getGameIds "CK3") \
+                                <( \
+                                    cat "${CK3_VANILLA_LOCALISATION_FILE}" | \
+                                    grep "^ *[ekdcb]_" | grep -v "_adj:" | \
+                                    sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
+                                    sed -e 's/= */=/g' -e 's/ *$//g'
+                                ) | \
+                            awk -F"=" '{print "<GameId game=\"CK3\">"$1"</GameId> <!-- "$2" -->"}' | \
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
+    done
+fi
 
 # Validate default localisations for ImperatorRome
-for GAMEID_DEFINITION in $(diff \
-                    <( \
-                        grep "GameId game=\"ImperatorRome\"" "${LOCATIONS_FILE}" | \
-                        sed 's/^ *//g' |
-                        sort
-                    ) <( \
-                        awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
-                            <(getGameIds "ImperatorRome") \
-                            <( \
-                                cat "${IMPERATORROME_VANILLA_LOCALISATION_FILE}" | \
-                                grep "^ *PROV" | grep -v "_[A-Za-z_-]*:" | \
-                                sed 's/^ *PROV\([0-9]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
-                                sed -e 's/= */=/g' -e 's/ *$//g'
-                            ) | \
-                        awk -F"=" '{print "<GameId game=\"ImperatorRome\">"$1"</GameId> <!-- "$2" -->"}' | \
-                        sort | uniq \
-                    ) | \
-                    grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
-    echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
-done
+if [ -f "${IMPERATORROME_VANILLA_LOCALISATION_FILE}" ]; then
+    for GAMEID_DEFINITION in $(diff \
+                        <( \
+                            grep "GameId game=\"ImperatorRome\"" "${LOCATIONS_FILE}" | \
+                            sed 's/^ *//g' |
+                            sort
+                        ) <( \
+                            awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
+                                <(getGameIds "ImperatorRome") \
+                                <( \
+                                    cat "${IMPERATORROME_VANILLA_LOCALISATION_FILE}" | \
+                                    grep "^ *PROV" | grep -v "_[A-Za-z_-]*:" | \
+                                    sed 's/^ *PROV\([0-9]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
+                                    sed -e 's/= */=/g' -e 's/ *$//g'
+                                ) | \
+                            awk -F"=" '{print "<GameId game=\"ImperatorRome\">"$1"</GameId> <!-- "$2" -->"}' | \
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
+    done
+fi
