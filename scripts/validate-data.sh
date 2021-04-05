@@ -87,8 +87,10 @@ function checkForMismatchingCkTitles() {
     GAME="${1}"
     LANDED_TITLES_FILE="${2}"
 
-    checkForMissingCkTitles "${GAME}" "${LANDED_TITLES_FILE}"
-    checkForSurplusCkTitles "${GAME}" "${LANDED_TITLES_FILE}"
+    if [ -f "${LANDED_TITLES_FILE}" ]; then
+        checkForMissingCkTitles "${GAME}" "${LANDED_TITLES_FILE}"
+        checkForSurplusCkTitles "${GAME}" "${LANDED_TITLES_FILE}"
+    fi
 }
 
 # Find duplicated IDs
@@ -155,7 +157,7 @@ for LANGUAGE_ID in $(diff \
 done
 
 # Find multiple name definitions for the same language
-pcregrep -M "language=\"([^\"]*)\".*\n.*language=\"\1\"" *.xml
+grep -Pzo "language=\"([^\"]*)\".*\n.*language=\"\1\"" *.xml
 
 # Make sure all CK titles are defined and exist in the game
 checkForMismatchingCkTitles "CK2" "${CK2_VANILLA_LANDED_TITLES_FILE}"
