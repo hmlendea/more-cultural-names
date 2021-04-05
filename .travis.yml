@@ -1,3 +1,7 @@
 language: shell
+
+install:
+ - bash scripts/validate-data.sh
+
 script:
-  - bash scripts/validate-data.sh
+ - bash scripts/build.sh
