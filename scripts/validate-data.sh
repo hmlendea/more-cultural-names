@@ -35,7 +35,7 @@ function checkForMissingCkTitles() {
                         <(getGameIds "${GAME}") \
                         <( \
                             cat "${LANDED_TITLES_FILE}" | \
-                            if [ -n "$(file ${LANDED_TITLES_FILE} | grep Non-ISO)" ]
+                            if [ -n "$(file ${LANDED_TITLES_FILE} | grep 'Non-ISO\|ISO-8859')" ]
                             then
                                 iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
                             else
@@ -67,7 +67,7 @@ function checkForSurplusCkTitles() {
                             sort | uniq \
                         ) <( \
                             cat "${LANDED_TITLES_FILE}" | \
-                            if [ -n "$(file ${LANDED_TITLES_FILE} | grep Non-ISO)" ]
+                            if [ -n "$(file ${LANDED_TITLES_FILE} | grep 'Non-ISO\|ISO-8859')" ]
                             then
                                 iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
                             else

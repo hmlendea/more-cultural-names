@@ -16,14 +16,6 @@ VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 
 echo "Mod version: ${VERSION}"
 
-echo "Validating the files..."
-VALIDATE_DATA="$(bash scripts/validate-data.sh | tr '\0' '\n')"
-if [ -n "${VALIDATE_DATA}" ]; then
-    echo "Input files validation failed!"
-    echo "${VALIDATE_DATA}"
-    exit 1
-fi
-
 MOD_BUILDER_NAME="more-cultural-names-builder"
 MOD_BUILDER_VERSION=$(curl --silent "https://github.com/hmlendea/${MOD_BUILDER_NAME}/releases/latest" | sed 's/.*\/tag\/v\([^\"]*\)">redir.*/\1/g')
 MOD_BUILDER_ZIP_URL="https://github.com/hmlendea/${MOD_BUILDER_NAME}/releases/download/v${MOD_BUILDER_VERSION}/${MOD_BUILDER_NAME}_${MOD_BUILDER_VERSION}_linux-x64.zip"
@@ -47,6 +39,14 @@ if [ ${NEEDS_DOWNLOADING} == true ]; then
     mkdir ${MOD_BUILDER_NAME}
     unzip ${MOD_BUILDER_NAME}_${MOD_BUILDER_VERSION}_linux-x64.zip -d ${MOD_BUILDER_NAME}
     echo ${MOD_BUILDER_VERSION} > ${MOD_BUILDER_NAME}/version.txt
+fi
+
+echo "Validating the files..."
+VALIDATE_DATA="$(bash scripts/validate-data.sh | tr '\0' '\n')"
+if [ -n "${VALIDATE_DATA}" ]; then
+    echo "Input files validation failed!"
+    echo "${VALIDATE_DATA}"
+    exit 1
 fi
 
 [ -d "out/" ] && rm -rf "out/"
