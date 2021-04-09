@@ -44,7 +44,7 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
     BRETON_NAME=$(get-name ${TITLE_ID} 11 "Breton_Middle")
     BULGARIAN_NAME=$(get-name ${TITLE_ID} 82 "Bulgarian_Old")
     CASTILIAN_NAME=$(get-name ${TITLE_ID} 20 "Castilian_Old" "Castilian" "Spanish")
-    CATALAN_NAME=$(get-name ${TITLE_ID} 21 "Catalan_Medieval" "Catalan")
+    CATALAN_NAME=$(get-name ${TITLE_ID} 21 "Catalan_Old" "Catalan")
     CORNISH_NAME=$(get-name ${TITLE_ID} 12 "Cornish_Middle")
     CROATIAN_NAME=$(get-name ${TITLE_ID} 77 "Croatian_Medieval")
     CUMBRIC_NAME=$(get-name ${TITLE_ID} 13 "Cumbric")
@@ -134,7 +134,7 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
         print-name "Breton_Middle" "${BRETON_NAME}"
         print-name "Bulgarian_Old" "${BULGARIAN_NAME}"
         print-name "Castilian_Old" "${CASTILIAN_NAME}"
-        print-name "Catalan_Medieval" "${CATALAN_NAME}"
+        print-name "Catalan_Old" "${CATALAN_NAME}"
         print-name "Cornish_Middle" "${CORNISH_NAME}"
         print-name "Croatian_Medieval" "${CROATIAN_NAME}"
         print-name "Cumbric" "${CUMBRIC_NAME}"
