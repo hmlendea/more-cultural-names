@@ -112,6 +112,9 @@ grep -Pzo "</Names.*\n *</*GameId" *.xml
 grep -Pzo "</GameIds>\n *<Name " *.xml
 grep -Pzo "<GameId .*\n *<Name" *.xml
 grep -n "<<\|>>" *.xml
+grep "[^=]\"[a-zA-Z]*=" *.xml
+
+grep -Pzo "<LocationEntity.*\n *<[^I].*" "${LOCATIONS_FILE}"
 
 # Find non-existing fallback locations
 for FALLBACK_LOCATION_ID in $(diff \
