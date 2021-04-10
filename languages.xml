@@ -3631,6 +3631,18 @@
     <Code iso-639-3="sli" />
   </Language>
   <Language>
+    <Id>Germanic_Proto</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">germanic</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Norse_Proto</LanguageId>
+      <LanguageId>Norse</LanguageId>
+      <LanguageId>Icelandic_Old</LanguageId>
+      <LanguageId>Icelandic</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Gothic</Id>
     <Code iso-639-2="got" iso-639-3="got" />
     <GameIds>
@@ -4287,6 +4299,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Icelandic_Old</LanguageId>
+      <LanguageId>Norwegian_Old</LanguageId>
       <LanguageId>Norse</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4296,6 +4309,7 @@
       <GameId game="CK2HIP">icelandic</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Norwegian_Old</LanguageId>
       <LanguageId>Icelandic</LanguageId>
       <LanguageId>Norse</LanguageId>
     </FallbackLanguages>
@@ -6210,7 +6224,7 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Norse</Id>
+    <Id>Norse</Id> <!-- c. 8th century AD – c. 14th-15th century AD -->
     <Code iso-639-3="non" />
     <GameIds>
       <GameId game="CK2">norse</GameId>
@@ -6229,6 +6243,15 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Norse_Proto</Id> <!-- c. 2nd century AD – c. 8th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Germanic_Proto</LanguageId>
+      <LanguageId>Norse</LanguageId>
+      <LanguageId>Icelandic_Old</LanguageId>
+      <LanguageId>Icelandic</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Norwegian</Id>
     <Code iso-639-1="no" iso-639-3="nor" />
     <GameIds>
@@ -6238,6 +6261,7 @@
       <LanguageId>Norwegian_Nynorsk</LanguageId>
       <LanguageId>Norwegian_Middle</LanguageId>
       <LanguageId>Norwegian_Old</LanguageId>
+      <LanguageId>Icelandic_Old</LanguageId>
       <LanguageId>Norse</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -6248,6 +6272,7 @@
       <LanguageId>Norwegian</LanguageId>
       <LanguageId>Norwegian_Middle</LanguageId>
       <LanguageId>Norwegian_Old</LanguageId>
+      <LanguageId>Icelandic_Old</LanguageId>
       <LanguageId>Norse</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -6255,6 +6280,7 @@
     <Id>Norwegian_Middle</Id> <!-- 14th century – 16th century -->
     <FallbackLanguages>
       <LanguageId>Norwegian_Old</LanguageId>
+      <LanguageId>Icelandic_Old</LanguageId>
       <LanguageId>Norse</LanguageId>
       <LanguageId>Norwegian</LanguageId>
       <LanguageId>Norwegian_Nynorsk</LanguageId>
@@ -6268,6 +6294,7 @@
       <GameId game="CK3">norwegian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Icelandic_Old</LanguageId>
       <LanguageId>Norse</LanguageId>
       <LanguageId>Norwegian_Middle</LanguageId>
       <LanguageId>Norwegian</LanguageId>
