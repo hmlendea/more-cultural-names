@@ -104,6 +104,9 @@ grep "<GameId game=" *.xml | \
     sort | uniq -c | \
     grep "^ *[2-9]"
 
+# Find duplicated names
+grep -Pzo " *<Name language=\"([^\"]*)\" value=\"([^\"]*)\" />((\n *<Name l.*)*)\n *<Name language=\"\1\" value=\"\2\" />" *.xml
+
 # Find empty definitions
 grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
 
