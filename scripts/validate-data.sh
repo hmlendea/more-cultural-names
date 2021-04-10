@@ -112,7 +112,7 @@ grep -Pzo "</Names.*\n *</*GameId" *.xml
 grep -Pzo "</GameIds>\n *<Name " *.xml
 grep -Pzo "<GameId .*\n *<Name" *.xml
 grep -n "<<\|>>" *.xml
-grep "[^=]\"[a-zA-Z]*=" *.xml
+grep -n "[^=]\"[a-zA-Z]*=" *.xml
 
 grep -Pzo "<LocationEntity.*\n *<[^I].*" "${LOCATIONS_FILE}"
 
