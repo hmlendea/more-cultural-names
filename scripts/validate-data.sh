@@ -114,7 +114,8 @@ grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
 # Validate XML structure
 grep -Pzo "</Names.*\n *</*GameId" *.xml
 grep -Pzo "</GameIds>\n *<Name " *.xml
-grep -Pzo "<GameId .*\n *<Name" *.xml
+grep -Pzo "\n *<GameId .*\n *<Name.*\n" *.xml
+grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
