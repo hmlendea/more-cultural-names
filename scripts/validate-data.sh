@@ -17,6 +17,7 @@ CK3_VANILLA_LANDED_TITLES_FILE="more-cultural-names-builder/Data/ck3_landed_titl
 CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/Crusader Kings III/game/localization/english/titles_l_english.yml"
 IMPERATORROME_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/ImperatorRome/game/localization/english/provincenames_l_english.yml"
 
+LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 
 function getGameIds() {
@@ -114,10 +115,24 @@ grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
 grep -Pzo "</Names.*\n *</*GameId" *.xml
 grep -Pzo "</GameIds>\n *<Name " *.xml
 grep -Pzo "<GameId .*\n *<Name" *.xml
+grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
 
 grep -Pzo "<LocationEntity.*\n *<[^I].*" "${LOCATIONS_FILE}"
+
+# Find non-existing fallback languages
+for FALLBACK_LANGUAGE_ID in $(diff \
+                    <( \
+                        grep "<LanguageId>" "${LANGUAGES_FILE}" | \
+                        sed 's/.*<LanguageId>\([^<>]*\)<\/LanguageId>.*/\1/g' | \
+                        sort | uniq \
+                    ) <( \
+                        echo ${LANGUAGE_IDS} | \
+                        sed 's/ /\n/g') | \
+                    grep "^<" | sed 's/^< //g' | sed 's/ /@/g'); do
+    echo "The \"${FALLBACK_LANGUAGE_ID}\" fallback language does not exit"
+done
 
 # Find non-existing fallback locations
 for FALLBACK_LOCATION_ID in $(diff \
