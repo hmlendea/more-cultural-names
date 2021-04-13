@@ -106,21 +106,23 @@ grep "<GameId game=" *.xml | \
     grep "^ *[2-9]"
 
 # Find duplicated names
-grep -Pzo " *<Name language=\"([^\"]*)\" value=\"([^\"]*)\" />((\n *<Name l.*)*)\n *<Name language=\"\1\" value=\"\2\" />" *.xml
+grep -Pzo "\n *<Name language=\"([^\"]*)\" value=\"([^\"]*)\" />((\n *<Name l.*)*)\n *<Name language=\"\1\" value=\"\2\" />.*\n" *.xml
 
 # Find empty definitions
 grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
 
 # Validate XML structure
-grep -Pzo "</Names.*\n *</*GameId" *.xml
-grep -Pzo "</GameIds>\n *<Name " *.xml
+grep -Pzo "\n *</Names.*\n *</*GameId.*\n" *.xml
+grep -Pzo "\n *</GameIds>\n *<Name .*\n" *.xml
 grep -Pzo "\n *<GameId .*\n *<Name.*\n" *.xml
 grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
 
-grep -Pzo "<LocationEntity.*\n *<[^I].*" "${LOCATIONS_FILE}"
+grep -n "\(iso-639-[0-9]\)=\"[a-z]*\" \1" "${LANGUAGES_FILE}"
+
+grep -Pzo "\n *<LocationEntity.*\n *<[^I].*\n" "${LOCATIONS_FILE}"
 
 # Find non-existing fallback languages
 for FALLBACK_LANGUAGE_ID in $(diff \
@@ -179,7 +181,7 @@ for LANGUAGE_ID in $(diff \
 done
 
 # Find multiple name definitions for the same language
-grep -Pzo "language=\"([^\"]*)\".*\n.*language=\"\1\".*" *.xml
+grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
 # Make sure all CK titles are defined and exist in the game
 checkForMismatchingCkTitles "CK2" "${CK2_VANILLA_LANDED_TITLES_FILE}"
