@@ -2565,12 +2565,13 @@
     <Code iso-639-1="eo" iso-639-3="epo" />
   </Language>
   <Language>
-    <Id>Estonian</Id> <!-- 1918 AD – present -->
+    <Id>Estonian</Id>
     <Code iso-639-1="et" iso-639-3="est" />
     <FallbackLanguages>
       <LanguageId>Estonian_South</LanguageId>
       <LanguageId>Estonian_Before1918</LanguageId>
       <LanguageId>Estonian_Before1219</LanguageId>
+      <LanguageId>Estonian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2579,27 +2580,39 @@
       <LanguageId>Estonian</LanguageId>
       <LanguageId>Estonian_Before1918</LanguageId>
       <LanguageId>Estonian_Before1219</LanguageId>
+      <LanguageId>Estonian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Estonian_Before1918</Id> <!-- 1219 AD – 1918 AD -->
+    <Id>Estonian_Before1918</Id>
     <GameIds>
       <GameId game="HOI4">EST</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Estonian</LanguageId>
       <LanguageId>Estonian_South</LanguageId>
+      <LanguageId>Estonian_Medieval</LanguageId>
       <LanguageId>Estonian_Before1219</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Estonian_Before1219</Id> <!-- ??? – 1219 AD -->
+    <Id>Estonian_Medieval</Id>
     <GameIds>
       <GameId game="CK2">ugricbaltic</GameId>
       <GameId game="CK2HIP">ugricbaltic</GameId> <!-- Eestlased -->
       <GameId game="CK3">estonian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Estonian_Before1219</LanguageId>
+      <LanguageId>Estonian_Before1918</LanguageId>
+      <LanguageId>Estonian</LanguageId>
+      <LanguageId>Estonian_South</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Estonian_Before1219</Id>
+    <FallbackLanguages>
+      <LanguageId>Estonian_Medieval</LanguageId>
       <LanguageId>Estonian_Before1918</LanguageId>
       <LanguageId>Estonian</LanguageId>
       <LanguageId>Estonian_South</LanguageId>
