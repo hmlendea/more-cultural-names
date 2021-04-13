@@ -68,7 +68,7 @@ cp -rf extras/ir/* out/ImperatorRome/
 function package-game {
     GAME=${1}
     INDIR="out/${GAME}/"
-    ZIPNAME=${GAME}_${VERSION}
+    ZIPNAME="mcn_${GAME}_${VERSION}"
 
     echo "Building the '${INDIR}' package..."
 

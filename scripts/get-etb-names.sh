@@ -44,9 +44,9 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
     BRETON_NAME=$(get-name ${TITLE_ID} 11 "Breton_Middle")
     BULGARIAN_NAME=$(get-name ${TITLE_ID} 82 "Bulgarian_Old")
     CASTILIAN_NAME=$(get-name ${TITLE_ID} 20 "Castilian_Old" "Castilian" "Spanish")
-    CATALAN_NAME=$(get-name ${TITLE_ID} 21 "Catalan_Medieval" "Catalan")
+    CATALAN_NAME=$(get-name ${TITLE_ID} 21 "Catalan_Old" "Catalan")
     CORNISH_NAME=$(get-name ${TITLE_ID} 12 "Cornish_Middle")
-    CROATIAN_NAME=$(get-name ${TITLE_ID} 77 "Croatian_Medieval")
+    CROATIAN_NAME=$(get-name ${TITLE_ID} 77 "SerboCroatian" "Serbian" "Serbian_Medieval" "Croatian" "Croatian_Medieval" "SerboCroatian_Medieval")
     CUMBRIC_NAME=$(get-name ${TITLE_ID} 13 "Cumbric")
     CZECH_NAME=$(get-name ${TITLE_ID} 84 "Czech_Medieval" "Czech")
     DANISH_NAME=$(get-name ${TITLE_ID} 31 "Danish_Middle")
@@ -61,7 +61,9 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
     IBERIAN_ROMANCE_NAME=$(get-name ${TITLE_ID} 23 "Iberian_Romance")
     IRISH_NAME=$(get-name ${TITLE_ID} 3 "Irish_Middle" "Irish")
     ILMENIAN_NAME=$(get-name ${TITLE_ID} 95 "Ilmenian")
+    LATGALIAN_NAME=$(get-name ${TITLE_ID} 90 "Latgalian" )
     LATIN_NAME=$(get-name ${TITLE_ID} 71 "Latin_Classical" "Latin_Medieval" "Latin" "Latin_Old")
+    LITHUANIAN_NAME=$(get-name ${TITLE_ID} 91 "Lithuanian" "Lithuanian_Medieval")
     NORMAN_NAME=$(get-name ${TITLE_ID} 16 "Norman")
     NORSE_NAME=$(get-name ${TITLE_ID} 28 "Norse")
     NORWEGIAN_NAME=$(get-name ${TITLE_ID} 30"Norwegian_Old" )
@@ -74,7 +76,7 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
     ROMANIAN_NAME=$(get-name ${TITLE_ID} 80 "Romanian_Old" "Romanian")
     SAMI_NAME=$(get-name ${TITLE_ID} 33 "Sami" )
     SARDINIAN_NAME=$(get-name ${TITLE_ID} 73 "Sardinian" )
-    SERBIAN_NAME=$(get-name ${TITLE_ID} 79 "Serbian" "Serbian_Medieval" "Croatian" "Croatian_Medieval" "SerboCroatian" "SerboCroatian_Medieval")
+    SERBIAN_NAME=$(get-name ${TITLE_ID} 79 "SerboCroatian" "Serbian" "Serbian_Medieval" "Croatian" "Croatian_Medieval" "SerboCroatian_Medieval")
     SEVERIAN_NAME=$(get-name ${TITLE_ID} 96 "Severian")
     SCOTTISH_NAME=$(get-name ${TITLE_ID} 4 "Scottish_Gaelic" "Irish_Middle")
     SICILIAN_NAME=$(get-name ${TITLE_ID} 74 "Sicilian")
@@ -105,7 +107,9 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
        [ -n "${IBERIAN_ROMANCE_NAME}" ] || \
        [ -n "${IRISH_NAME}" ] || \
        [ -n "${ILMENIAN_NAME}" ] || \
+       [ -n "${LATGALIAN_NAME}" ] || \
        [ -n "${LATIN_NAME}" ] || \
+       [ -n "${LITHUANIAN_NAME}" ] || \
        [ -n "${NORMAN_NAME}" ] || \
        [ -n "${NORSE_NAME}" ] || \
        [ -n "${NORWEGIAN_NAME}" ] || \
@@ -134,9 +138,8 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
         print-name "Breton_Middle" "${BRETON_NAME}"
         print-name "Bulgarian_Old" "${BULGARIAN_NAME}"
         print-name "Castilian_Old" "${CASTILIAN_NAME}"
-        print-name "Catalan_Medieval" "${CATALAN_NAME}"
+        print-name "Catalan_Old" "${CATALAN_NAME}"
         print-name "Cornish_Middle" "${CORNISH_NAME}"
-        print-name "Croatian_Medieval" "${CROATIAN_NAME}"
         print-name "Cumbric" "${CUMBRIC_NAME}"
         print-name "Czech_Medieval" "${CZECH_NAME}"
         print-name "Danish_Middle" "${DANISH_NAME}"
@@ -151,7 +154,9 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
         print-name "Iberian_Romance" "${IBERIAN_ROMANCE_NAME}"
         print-name "Irish_Middle" "${IRISH_NAME}"
         print-name "Ilmenian" "${ILMENIAN_NAME}"
+        print-name "Latgalian" "${LATGALIAN_NAME}"
         print-name "Latin_Classical" "${LATIN_NAME}"
+        print-name "Lithuanian" "${LITHUANIAN_NAME}"
         print-name "Norman" "${NORMAN_NAME}"
         print-name "Norse" "${NORSE_NAME}"
         print-name "Norwegian_Old" "${NORWEGIAN_NAME}"
@@ -164,7 +169,14 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
         print-name "Romanian_Old" "${ROMANIAN_NAME}"
         print-name "Sami" "${SAMI_NAME}"
         print-name "Sardinian" "${SARDINIAN_NAME}"
-        print-name "Serbian_Medieval" "${SERBIAN_NAME}"
+
+        if [ "${CROATIAN_NAME}" == "${SERBIAN_NAME}" ]; then
+            print-name "SerboCroatian" "${CROATIAN_NAME}"
+        else
+            print-name "SerboCroatian" "${CROATIAN_NAME}"
+            print-name "SerboCroatian" "${SERBIAN_NAME}"
+        fi
+        
         print-name "Severian" "${SEVERIAN_NAME}"
         print-name "Scottish_Gaelic" "${SCOTTISH_NAME}"
         print-name "Sicilian" "${SICILIAN_NAME}"
