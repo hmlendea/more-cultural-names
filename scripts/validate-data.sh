@@ -130,6 +130,7 @@ grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
+grep -n "==\"" *.xml
 
 grep -n "\(iso-639-[0-9]\)=\"[a-z]*\" \1" "${LANGUAGES_FILE}"
 grep -Pzo "\n *<Code.*\n *<Language>.*\n" "${LANGUAGES_FILE}"
