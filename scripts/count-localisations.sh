@@ -4,6 +4,7 @@ LANGUAGES_FILE="languages.xml"
 LOCATIONS_FILE="locations.xml"
 
 NAMES_COUNT=$(grep "Name language" "${LOCATIONS_FILE}" | wc -l)
+LOCATIONS_COUNT=$(grep "<Id>" "${LOCATIONS_FILE}" | wc -l)
 LANGUAGES_COUNT=$(grep "/Language>" "${LANGUAGES_FILE}" | wc -l)
 
 function get_game_titles_count() {
@@ -25,4 +26,5 @@ print_game_titles_count HOI4
 print_game_titles_count ImperatorRome
 echo ""
 echo "Names: ${NAMES_COUNT}"
+echo "Locations: ${LOCATIONS_COUNT}"
 echo "Languages: ${LANGUAGES_COUNT}"

@@ -518,6 +518,7 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
+      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Avar</LanguageId>
@@ -624,6 +625,7 @@
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
+      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Turkish_Ottoman</LanguageId>
@@ -1048,6 +1050,7 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
+      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Avar</LanguageId>
@@ -1277,7 +1280,7 @@
   </Language>
   <Language>
     <Id>Chinese_Classical</Id> <!-- c. 5th century BC – c. 2nd century AD -->
-    <Code iso-639-3="ltc" />
+    <Code iso-639-3="lzh" />
   </Language>
   <Language>
     <Id>Chinese_Mandarin</Id>
@@ -1288,14 +1291,13 @@
   </Language>
   <Language>
     <Id>Chinese_Mandarin_Taiwan</Id>
-    <Code iso-639-3="cmn" />
     <FallbackLanguages>
       <LanguageId>Chinese_Mandarin</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Chinese_Old</Id> <!-- c. 1766 BC – c. 221 BC  -->
-    <Code iso-639-3="ltc" />
+    <Code iso-639-3="och" />
   </Language>
   <Language>
     <Id>Chinese_Hakka</Id>
@@ -1454,6 +1456,7 @@
       <LanguageId>Oghuz</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
+      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Avar</LanguageId>
@@ -1757,7 +1760,6 @@
   </Language>
   <Language>
     <Id>Egyptian_Late</Id> <!-- c. 1350 BC - -->
-    <Code iso-639-2="cop" iso-639-3="cop" />
     <GameIds>
       <GameId game="ImperatorRome">egyptian</GameId>
       <GameId game="ImperatorRome">upper_egyptian</GameId>
@@ -2565,12 +2567,13 @@
     <Code iso-639-1="eo" iso-639-3="epo" />
   </Language>
   <Language>
-    <Id>Estonian</Id> <!-- 1918 AD – present -->
+    <Id>Estonian</Id>
     <Code iso-639-1="et" iso-639-3="est" />
     <FallbackLanguages>
       <LanguageId>Estonian_South</LanguageId>
       <LanguageId>Estonian_Before1918</LanguageId>
       <LanguageId>Estonian_Before1219</LanguageId>
+      <LanguageId>Estonian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -2579,27 +2582,39 @@
       <LanguageId>Estonian</LanguageId>
       <LanguageId>Estonian_Before1918</LanguageId>
       <LanguageId>Estonian_Before1219</LanguageId>
+      <LanguageId>Estonian_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Estonian_Before1918</Id> <!-- 1219 AD – 1918 AD -->
+    <Id>Estonian_Before1918</Id>
     <GameIds>
       <GameId game="HOI4">EST</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Estonian</LanguageId>
       <LanguageId>Estonian_South</LanguageId>
+      <LanguageId>Estonian_Medieval</LanguageId>
       <LanguageId>Estonian_Before1219</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Estonian_Before1219</Id> <!-- ??? – 1219 AD -->
+    <Id>Estonian_Medieval</Id>
     <GameIds>
       <GameId game="CK2">ugricbaltic</GameId>
       <GameId game="CK2HIP">ugricbaltic</GameId> <!-- Eestlased -->
       <GameId game="CK3">estonian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Estonian_Before1219</LanguageId>
+      <LanguageId>Estonian_Before1918</LanguageId>
+      <LanguageId>Estonian</LanguageId>
+      <LanguageId>Estonian_South</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Estonian_Before1219</Id>
+    <FallbackLanguages>
+      <LanguageId>Estonian_Medieval</LanguageId>
       <LanguageId>Estonian_Before1918</LanguageId>
       <LanguageId>Estonian</LanguageId>
       <LanguageId>Estonian_South</LanguageId>
@@ -2622,7 +2637,7 @@
   </Language>
   <Language>
     <Id>Fijian</Id>
-    <Code iso-639-1="fi" iso-639-2="fij" iso-639-3="fij" />
+    <Code iso-639-1="fj" iso-639-2="fij" iso-639-3="fij" />
     <GameIds>
       <GameId game="HOI4">FIJ</GameId> <!-- Fiji -->
     </GameIds>
@@ -2731,7 +2746,6 @@
   </Language>
   <Language>
     <Id>Frankish_Low</Id>
-    <Code iso-639-3="frk" />
     <GameIds>
       <GameId game="CK2HIP">low_frankish</GameId>
     </GameIds>
@@ -2992,6 +3006,7 @@
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
+      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Turkish_Ottoman</LanguageId>
@@ -4438,7 +4453,17 @@
   </Language>
   <Language>
     <Id>Inuttitut</Id>
+    <FallbackLanguages>
+      <LanguageId>Inupiaq</LanguageId>
+    </FallbackLanguages>
     <Code />
+  </Language>
+  <Language>
+    <Id>Inupiaq</Id>
+    <Code iso-639-1="ik" iso-639-2="ipk" iso-639-3="ipk" />
+    <FallbackLanguages>
+      <LanguageId>Inuttitut</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Irish</Id>
@@ -4759,11 +4784,6 @@
   <Language>
     <Id>Khazar</Id>
     <Code iso-639-3="zkz" />
-    <GameIds>
-      <GameId game="CK2">khazar</GameId>
-      <GameId game="CK2HIP">khazar</GameId>
-      <GameId game="CK3">khazar</GameId>
-    </GameIds>
     <FallbackLanguages>
       <LanguageId>Khazar_Kabar</LanguageId>
       <LanguageId>Bashkir</LanguageId>
@@ -4773,6 +4793,7 @@
       <LanguageId>KarachayBalkar</LanguageId>
       <LanguageId>Kumyc</LanguageId>
       <LanguageId>Gagauz</LanguageId>
+      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Turkish_Ottoman</LanguageId>
@@ -4784,7 +4805,6 @@
   </Language>
   <Language>
     <Id>Khazar_Kabar</Id>
-    <Code iso-639-3="zkz" />
     <GameIds>
       <GameId game="CK2HIP">khavar</GameId>
     </GameIds>
@@ -4798,12 +4818,40 @@
       <LanguageId>Kumyc</LanguageId>
       <LanguageId>Bulgar</LanguageId>
       <LanguageId>Gagauz</LanguageId>
+      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Turkish_Ottoman</LanguageId>
       <LanguageId>Turkmen</LanguageId>
       <LanguageId>Turkish_Before1923</LanguageId>
       <LanguageId>Turkish_Before2005</LanguageId>
+      <LanguageId>Turkish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Khazar_Medieval</Id>
+    <GameIds>
+      <GameId game="CK2">khazar</GameId>
+      <GameId game="CK2HIP">khazar</GameId>
+      <GameId game="CK3">khazar</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Khazar_Medieval</LanguageId>
+      <LanguageId>Turkmen_Medieval</LanguageId>
+      <LanguageId>Turkish_Old</LanguageId>
+      <LanguageId>Turkish_Ottoman</LanguageId>
+      <LanguageId>Turkish_Before1923</LanguageId>
+      <LanguageId>Khazar</LanguageId>
+      <LanguageId>Khazar_Kabar</LanguageId>
+      <LanguageId>Bashkir</LanguageId>
+      <LanguageId>Oghuz</LanguageId>
+      <LanguageId>Pecheneg</LanguageId>
+      <LanguageId>Cuman</LanguageId>
+      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Kumyc</LanguageId>
+      <LanguageId>Gagauz</LanguageId>
+      <LanguageId>Turkish_Before2005</LanguageId>
+      <LanguageId>Turkmen</LanguageId>
       <LanguageId>Turkish</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4971,11 +5019,22 @@
     <Id>Kyrgyz</Id>
     <Code iso-639-1="ky" iso-639-3="kir" />
     <GameIds>
+      <GameId game="HOI4">KYR</GameId> <!-- Kyrgyzstan -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kyrgyz_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Kyrgyz_Medieval</Id>
+    <GameIds>
       <GameId game="CK2">kirghiz</GameId>
       <GameId game="CK2HIP">kirghiz</GameId>
       <GameId game="CK3">kirghiz</GameId>
-      <GameId game="HOI4">KYR</GameId> <!-- Kyrgyzstan -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kyrgyz</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Ladin</Id>
@@ -4992,7 +5051,7 @@
   </Language>
   <Language>
     <Id>Lao</Id>
-    <Code iso-639-1="la" iso-639-2="lao" iso-639-3="lao" />
+    <Code iso-639-1="lo" iso-639-2="lao" iso-639-3="lao" />
     <GameIds>
       <GameId game="HOI4">LAO</GameId> <!-- Laos -->
     </GameIds>
@@ -5678,9 +5737,18 @@
   <Language>
     <Id>Livonian</Id>
     <Code iso-639-3="liv" />
+    <FallbackLanguages>
+      <LanguageId>Livonian_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Livonian_Medieval</Id>
     <GameIds>
       <GameId game="CK2HIP">livonian</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Livonian</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Livvi</Id>
@@ -6427,7 +6495,7 @@
   </Language>
   <Language>
     <Id>Nubian_Old</Id> <!-- c. 8th century – 15th century -->
-    <Code iso-639-2="nub" />
+    <Code iso-639-2="onw" />
     <GameIds>
       <GameId game="CK2">nubian</GameId>
       <GameId game="CK2HIP">nubian</GameId>
@@ -6501,7 +6569,6 @@
   </Language>
   <Language>
     <Id>Occitan_Auvergnat</Id>
-    <Code iso-639-3="gsc" />
     <FallbackLanguages>
       <LanguageId>Occitan</LanguageId>
       <LanguageId>Occitan_Limousin</LanguageId>
@@ -6619,6 +6686,7 @@
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
+      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Turkish_Ottoman</LanguageId>
@@ -6677,6 +6745,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Pali</Id>
+    <Code iso-639-1="pi" iso-639-2="pli" iso-639-3="pli" />
+  </Language>
+  <Language>
     <Id>Pangasinan</Id>
     <Code iso-639-2="pag" iso-639-3="pag" />
   </Language>
@@ -6725,6 +6797,7 @@
       <LanguageId>Gagauz</LanguageId>
       <LanguageId>Khazar</LanguageId>
       <LanguageId>Khazar_Kabar</LanguageId>
+      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Turkish_Ottoman</LanguageId>
@@ -6928,7 +7001,6 @@
   </Language>
   <Language>
     <Id>Pomeranian</Id>
-    <Code iso-639-2="wen" />
     <GameIds>
       <GameId game="CK2">pommeranian</GameId>
       <GameId game="CK2HIP">pommeranian</GameId> <!-- Vendi -->
@@ -8607,11 +8679,6 @@
   <Language>
     <Id>Sami</Id>
     <Code iso-639-3="smi" />
-    <GameIds>
-      <GameId game="CK2">lappish</GameId>
-      <GameId game="CK2HIP">lappish</GameId>
-      <GameId game="CK3">sami</GameId>
-    </GameIds>
     <FallbackLanguages>
       <LanguageId>Sami_North</LanguageId>
       <LanguageId>Sami_South</LanguageId>
@@ -8619,6 +8686,7 @@
       <LanguageId>Sami_Skolt</LanguageId>
       <LanguageId>Sami_Inari</LanguageId>
       <LanguageId>Sami_Kildin</LanguageId>
+      <LanguageId>Sami_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8631,6 +8699,7 @@
       <LanguageId>Sami_Skolt</LanguageId>
       <LanguageId>Sami_Inari</LanguageId>
       <LanguageId>Sami_Kildin</LanguageId>
+      <LanguageId>Sami_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8643,6 +8712,7 @@
       <LanguageId>Sami_Skolt</LanguageId>
       <LanguageId>Sami_Inari</LanguageId>
       <LanguageId>Sami_Kildin</LanguageId>
+      <LanguageId>Sami_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8655,6 +8725,7 @@
       <LanguageId>Sami_Skolt</LanguageId>
       <LanguageId>Sami_Inari</LanguageId>
       <LanguageId>Sami_Kildin</LanguageId>
+      <LanguageId>Sami_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8667,11 +8738,12 @@
       <LanguageId>Sami_North</LanguageId>
       <LanguageId>Sami_South</LanguageId>
       <LanguageId>Sami_Ume</LanguageId>
+      <LanguageId>Sami_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Sami_Inari</Id> <!-- Sami_East_Inari -->
-    <Code iso-639-2="sms" iso-639-3="sms" />
+    <Code iso-639-2="smn" iso-639-3="smn" />
     <FallbackLanguages>
       <LanguageId>Sami_Skolt</LanguageId>
       <LanguageId>Sami_Kildin</LanguageId>
@@ -8679,11 +8751,12 @@
       <LanguageId>Sami_North</LanguageId>
       <LanguageId>Sami_South</LanguageId>
       <LanguageId>Sami_Ume</LanguageId>
+      <LanguageId>Sami_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Sami_Kildin</Id> <!-- Sami_Kola --> <!-- Sami_East_Kildin -->
-    <Code iso-639-2="sms" iso-639-3="sms" />
+    <Code iso-639-3="sjd" />
     <FallbackLanguages>
       <LanguageId>Sami_Skolt</LanguageId>
       <LanguageId>Sami_Inari</LanguageId>
@@ -8691,6 +8764,24 @@
       <LanguageId>Sami_North</LanguageId>
       <LanguageId>Sami_South</LanguageId>
       <LanguageId>Sami_Ume</LanguageId>
+      <LanguageId>Sami_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Sami_Medieval</Id>
+    <GameIds>
+      <GameId game="CK2">lappish</GameId>
+      <GameId game="CK2HIP">lappish</GameId>
+      <GameId game="CK3">sami</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Sami</LanguageId>
+      <LanguageId>Sami_North</LanguageId>
+      <LanguageId>Sami_South</LanguageId>
+      <LanguageId>Sami_Ume</LanguageId>
+      <LanguageId>Sami_Skolt</LanguageId>
+      <LanguageId>Sami_Inari</LanguageId>
+      <LanguageId>Sami_Kildin</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -9749,7 +9840,6 @@
   </Language>
   <Language>
     <Id>Sorbian</Id>
-    <Code iso-639-2="wen" />
     <FallbackLanguages>
       <LanguageId>Sorbian_Lower</LanguageId>
       <LanguageId>Sorbian_Upper</LanguageId>
@@ -9912,7 +10002,6 @@
   </Language>
   <Language>
     <Id>Swahili_Before1962</Id>
-    <Code iso-639-1="sw" iso-639-3="swa" />
     <GameIds>
       <GameId game="HOI4">BRD</GameId> <!-- Burundi -->
       <GameId game="HOI4">GAB</GameId> <!-- Gabon -->
@@ -10436,12 +10525,12 @@
   </Language>
   <Language>
     <Id>Turkmen_Medieval</Id>
-    <Code iso-639-1="tk" iso-639-3="tuk" />
     <GameIds>
       <GameId game="CK2HIP">turkmen</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Turkish_Old</LanguageId>
+      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen</LanguageId>
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Oghuz</LanguageId>
@@ -10784,7 +10873,7 @@
   </Language>
   <Language>
     <Id>Volapuk</Id>
-    <Code iso-639-3="vro" />
+    <Code iso-639-1="vo" iso-639-2="vol" iso-639-3="vol" />
   </Language>
   <Language>
     <Id>Volhynian</Id>
@@ -10906,6 +10995,10 @@
     <Code iso-639-1="xh" iso-639-2="xho" iso-639-3="xho" />
   </Language>
   <Language>
+    <Id>Yakut</Id>
+    <Code iso-639-2="sah" iso-639-3="sah" />
+  </Language>
+  <Language>
     <Id>Yiddish</Id>
     <Code iso-639-3="yid" />
     <GameIds>
@@ -11010,7 +11103,6 @@
   </Language>
   <Language>
     <Id>Zhang-Zhung_Old</Id> <!-- ??? – c. 7th century -->
-    <Code iso-639-3="xzh" />
     <GameIds>
       <GameId game="ImperatorRome">zhangzhung</GameId>
     </GameIds>

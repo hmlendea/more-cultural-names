@@ -111,6 +111,17 @@ grep -Pzo "\n *<Name language=\"([^\"]*)\" value=\"([^\"]*)\" />((\n *<Name l.*)
 # Find empty definitions
 grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
 
+# Find duplicated language codes
+for I in {1..3}; do
+    grep "iso-639-" "${LANGUAGES_FILE}" | \
+        sed -e 's/^ *<Code \(.*\) \/>.*/\1/g' \
+            -e 's/ /\n/g' \
+            -e 's/\"//g' | \
+        grep "iso-639-${I}" | \
+        awk -F"=" '{print $2}' | \
+        sort | uniq -c | grep "^ *[2-9]"
+done
+
 # Validate XML structure
 grep -Pzo "\n *</Names.*\n *</*GameId.*\n" *.xml
 grep -Pzo "\n *</GameIds>\n *<Name .*\n" *.xml
@@ -119,8 +130,10 @@ grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
+grep -n "==\"" *.xml
 
 grep -n "\(iso-639-[0-9]\)=\"[a-z]*\" \1" "${LANGUAGES_FILE}"
+grep -Pzo "\n *<Code.*\n *<Language>.*\n" "${LANGUAGES_FILE}"
 
 grep -Pzo "\n *<LocationEntity.*\n *<[^I].*\n" "${LOCATIONS_FILE}"
 
