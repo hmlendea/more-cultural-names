@@ -2,6 +2,9 @@
 
 STARTDIR="$(pwd)"
 OUTDIR="${STARTDIR}/out"
+EXTRAS_DIR="${STARTDIR}/extras"
+VANILLA_FILES_DIR="${STARTDIR}/vanilla"
+
 BUILD_VERSION=${1}
 
 LANGUAGES_FILE="languages.xml"
@@ -14,18 +17,16 @@ fi
 
 VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 
-echo "Mod version: ${VERSION}"
-
 MOD_BUILDER_NAME="more-cultural-names-builder"
 MOD_BUILDER_VERSION=$(curl --silent "https://github.com/hmlendea/${MOD_BUILDER_NAME}/releases/latest" | sed 's/.*\/tag\/v\([^\"]*\)">redir.*/\1/g')
 MOD_BUILDER_ZIP_URL="https://github.com/hmlendea/${MOD_BUILDER_NAME}/releases/download/v${MOD_BUILDER_VERSION}/${MOD_BUILDER_NAME}_${MOD_BUILDER_VERSION}_linux-x64.zip"
-MOD_BUILDER_BIN_FILE_PATH="${MOD_BUILDER_NAME}/MoreCulturalNamesModBuilder"
+MOD_BUILDER_BIN_FILE_PATH="${STARTDIR}/${MOD_BUILDER_NAME}/MoreCulturalNamesModBuilder"
 NEEDS_DOWNLOADING=true
 
 echo "Checking for builder updates..."
-if [ -d ${MOD_BUILDER_NAME} ]; then
-    if [ -f ${MOD_BUILDER_NAME}/version.txt ]; then
-        CURRENT_VERSION=$(cat ${MOD_BUILDER_NAME}/version.txt)
+if [ -d "${STARTDIR}/${MOD_BUILDER_NAME}" ]; then
+    if [ -f "${STARTDIR}/${MOD_BUILDER_NAME}/version.txt" ]; then
+        CURRENT_VERSION=$(cat "${STARTDIR}/${MOD_BUILDER_NAME}/version.txt")
         if [ "${CURRENT_VERSION}" == "${MOD_BUILDER_VERSION}" ]; then
             NEEDS_DOWNLOADING=false
         fi
@@ -33,12 +34,12 @@ if [ -d ${MOD_BUILDER_NAME} ]; then
 fi
 
 if [ ${NEEDS_DOWNLOADING} == true ]; then
-    [ -d ${MOD_BUILDER_NAME} ] && rm -rf ${MOD_BUILDER_NAME}
+    [ -d "${STARTDIR}/${MOD_BUILDER_NAME}" ] && rm -rf "${STARTDIR}/${MOD_BUILDER_NAME}"
 
-    wget -c ${MOD_BUILDER_ZIP_URL}
-    mkdir ${MOD_BUILDER_NAME}
-    unzip ${MOD_BUILDER_NAME}_${MOD_BUILDER_VERSION}_linux-x64.zip -d ${MOD_BUILDER_NAME}
-    echo ${MOD_BUILDER_VERSION} > ${MOD_BUILDER_NAME}/version.txt
+    wget -c "${MOD_BUILDER_ZIP_URL}"
+    mkdir "${STARTDIR}/${MOD_BUILDER_NAME}"
+    unzip "${STARTDIR}/${MOD_BUILDER_NAME}_${MOD_BUILDER_VERSION}_linux-x64.zip" -d "${STARTDIR}/${MOD_BUILDER_NAME}"
+    echo "${MOD_BUILDER_VERSION}" > "${STARTDIR}/${MOD_BUILDER_NAME}/version.txt"
 fi
 
 echo "Validating the files..."
@@ -49,41 +50,65 @@ if [ -n "${VALIDATE_DATA}" ]; then
     exit 1
 fi
 
-[ -d "out/" ] && rm -rf "out/"
+function build-edition {
+    ID="${1}"
+    NAME="${2}"
+    GAME="${3}"
+    GAME_VERSION="${4}"
+    EXTRA_ARGS=${@:5}
 
-echo "Building..."
-${MOD_BUILDER_BIN_FILE_PATH} \
-    --lang "${LANGUAGES_FILE}" \
-    --loc "${LOCATIONS_FILE}" \
-    --titles "${TITLES_FILE}" \
-    --ver ${VERSION} \
-    --out "out/"
+    PACKAGE_NAME="mcn_${GAME}_${VERSION}"
+    ORIGINAL_WORKING_DIRECTORY=$(pwd)
 
-cp -rf extras/ck2/* out/CK2/
-cp -rf extras/ck2hip/* out/CK2HIP/
-cp -rf extras/ck3/* out/CK3/
-cp -rf extras/hoi4/* out/HOI4/
-cp -rf extras/ir/* out/ImperatorRome/
+    [ -d "${OUTDIR}/${GAME}" ] && rm -rf "${OUTDIR}/${GAME}"
+    [ -f "${OUTDIR}/${PACKAGE_NAME}.zip" ] && rm "${OUTDIR}/${PACKAGE_NAME}.zip"
 
-function package-game {
-    GAME=${1}
-    INDIR="out/${GAME}/"
-    ZIPNAME="mcn_${GAME}_${VERSION}"
+    cd "${STARTDIR}"
+    "${MOD_BUILDER_BIN_FILE_PATH}" \
+        --lang "${LANGUAGES_FILE}" \
+        --loc "${LOCATIONS_FILE}" \
+        --titles "${TITLES_FILE}" \
+        --game "${GAME}" --game-version "${GAME_VERSION}" \
+        --id "${ID}" --name "${NAME}" --ver "${VERSION}" \
+        --out "${OUTDIR}" ${EXTRA_ARGS}
 
-    echo "Building the '${INDIR}' package..."
+    echo "   > Copying extras..."
+    cp -rf "${EXTRAS_DIR}/${GAME}"/* "${OUTDIR}/${GAME}/"
 
-    cd "${STARTDIR}/${INDIR}"
-    zip -q -r "${ZIPNAME}.zip" ./*
-    mv "${ZIPNAME}.zip" "${OUTDIR}/"
+    echo "   > Building the package..."
+    cd "${OUTDIR}/${GAME}"
+    zip -q -r "${PACKAGE_NAME}.zip" ./*
+    mv "${PACKAGE_NAME}.zip" "${OUTDIR}/${PACKAGE_NAME}.zip"
+
+    cd "${ORIGINAL_WORKING_DIRECTORY}"
 }
 
-package-game "CK2"
-package-game "CK2HIP"
-package-game "CK3"
-package-game "HOI4"
-package-game "ImperatorRome"
+build-edition \
+    "more-cultural-names" "More Cultural Names" \
+    "CK2" "3.3.3" \
+    --landed-titles "vanilla//ck2_landed_titles.txt" --landed-titles-name "landed_titles.txt"
+
+build-edition \
+    "hip-more-cultural-names" "HIP-More Cultural Names" \
+    "CK2HIP" "Frosty3" \
+    --landed-titles "vanilla/ck2hip_landed_titles.txt" --landed-titles-name "swmh_landed_titles.txt" \
+    --dep HIP\ -\ Historical\ Immersion\ Project
+
+build-edition \
+    "more-cultural-names" "More Cultural Names" \
+    "CK3" "1.3.*" \
+    --landed-titles "vanilla/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
+
+build-edition \
+    "more-cultural-names" "More Cultural Names" \
+    "HOI4" "1.9.*"
+
+build-edition \
+    "more-cultural-names" "More Cultural Names" \
+    "ImperatorRome" "2.0.*"
 
 cd "${STARTDIR}"
 bash "${STARTDIR}/scripts/count-localisations.sh"
 
+echo ""
 echo "Mod version: ${VERSION}"
