@@ -132,6 +132,7 @@ grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
 
 grep -n "\(iso-639-[0-9]\)=\"[a-z]*\" \1" "${LANGUAGES_FILE}"
+grep -Pzo "\n *<Code.*\n *<Language>.*\n" "${LANGUAGES_FILE}"
 
 grep -Pzo "\n *<LocationEntity.*\n *<[^I].*\n" "${LOCATIONS_FILE}"
 
