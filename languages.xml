@@ -1432,6 +1432,7 @@
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>Slavonic_Church_Old</LanguageId>
+      <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>SerboCroatian_Before18Century</LanguageId>
@@ -1672,7 +1673,6 @@
   </Language>
   <Language>
     <Id>Divehi</Id> <!-- Dhivehi --> <!-- Maldivian -->
-    <Code iso-639-3="nld" />
     <GameIds>
       <GameId game="HOI4">MLD</GameId> <!-- Maldives -->
     </GameIds>
@@ -4696,12 +4696,36 @@
       <LanguageId>Japanese_Kagoshima</LanguageId>
       <LanguageId>Okinawan</LanguageId>
       <LanguageId>Kunigami</LanguageId>
+      <LanguageId>Japanese_Modern_Early</LanguageId>
+      <LanguageId>Japanese_Middle_Late</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Japanese_Kagoshima</Id>
     <FallbackLanguages>
       <LanguageId>Japanese</LanguageId>
+      <LanguageId>Okinawan</LanguageId>
+      <LanguageId>Kunigami</LanguageId>
+      <LanguageId>Japanese_Modern_Early</LanguageId>
+      <LanguageId>Japanese_Middle_Late</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Japanese_Modern_Early</Id> <!-- c. 17th century AD – c. 19th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Japanese_Middle_Late</LanguageId>
+      <LanguageId>Japanese</LanguageId>
+      <LanguageId>Japanese_Kagoshima</LanguageId>
+      <LanguageId>Okinawan</LanguageId>
+      <LanguageId>Kunigami</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Japanese_Middle_Late</Id> <!-- c. 12th century AD – c. 16th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Japanese_Modern_Early</LanguageId>
+      <LanguageId>Japanese</LanguageId>
+      <LanguageId>Japanese_Kagoshima</LanguageId>
       <LanguageId>Okinawan</LanguageId>
       <LanguageId>Kunigami</LanguageId>
     </FallbackLanguages>
@@ -9079,6 +9103,7 @@
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>Slavonic_Church_Old</LanguageId>
+      <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>SerboCroatian_Before18Century</LanguageId>
@@ -9405,6 +9430,7 @@
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
       <LanguageId>Slavonic_Church_Old</LanguageId>
+      <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>SerboCroatian_Before18Century</LanguageId>
@@ -9545,8 +9571,17 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Slavonic_Church_Old</Id>
+    <Id>Slavonic_Church</Id>
     <Code iso-639-1="cu" iso-639-2="chu" iso-639-3="chu" />
+    <FallbackLanguages>
+      <LanguageId>Slavonic_Church_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Slavonic_Church_Old</Id>
+    <FallbackLanguages>
+      <LanguageId>Slavonic_Church</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Slovak</Id>
@@ -9732,6 +9767,7 @@
       <LanguageId>Croatian_Medieval</LanguageId>
       <LanguageId>Serbian_Medieval</LanguageId>
       <LanguageId>Slavonic_Church_Old</LanguageId>
+      <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>SerboCroatian_Before18Century</LanguageId>
@@ -10229,10 +10265,6 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Tatar</Id>
-    <Code iso-639-1="tt" iso-639-3="tat" />
-  </Language>
-  <Language>
     <Id>Tagalog</Id>
     <Code iso-639-1="tl" iso-639-3="tgl" />
     <FallbackLanguages>
@@ -10265,8 +10297,28 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Tatar</Id>
+    <Code iso-639-1="tt" iso-639-3="tat" />
+    <FallbackLanguages>
+      <LanguageId>Tatar_Crimean</LanguageId>
+      <LanguageId>Tatar_Siberian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Tatar_Crimean</Id>
     <Code iso-639-3="crh" />
+    <FallbackLanguages>
+      <LanguageId>Tatar</LanguageId>
+      <LanguageId>Tatar_Siberian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Tatar_Siberian</Id>
+    <Code iso-639-3="sty" />
+    <FallbackLanguages>
+      <LanguageId>Tatar</LanguageId>
+      <LanguageId>Tatar_Crimean</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Telugu</Id>
