@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfLanguage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Language>
+    <Id>Abkhaz</Id> <!-- Abkhazian -->
+    <Code iso-639-1="ab" iso-639-2="abk" iso-639-3="abk" />
+    <FallbackLanguages>
+      <LanguageId>Adyghe</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Acehnese</Id> <!-- Achense, Achinese -->
     <Code iso-639-2="ace" iso-639-3="ace" />
   </Language>
   <Language>
     <Id>Adyghe</Id>
     <Code iso-639-2="ady" iso-639-3="ady" />
+    <FallbackLanguages>
+      <LanguageId>Abkhaz</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Afar</Id>
@@ -192,6 +202,9 @@
       <GameId game="CK3">ethiopian</GameId>
       <GameId game="HOI4">ETH</GameId> <!-- Ethiopia -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tigrinya</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic</Id> <!-- 1650 AD – present -->
@@ -1253,6 +1266,8 @@
     <GameIds>
       <GameId game="HOI4">CHI</GameId> <!-- China -->
       <GameId game="HOI4">PRC</GameId> <!-- People's Republic of China -->
+      <GameId game="HOI4">SHX</GameId> <!-- Shanxi -->
+      <GameId game="HOI4">YUN</GameId> <!-- Yunnan -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Chinese_Mandarin</LanguageId>
@@ -1654,6 +1669,16 @@
   <Language>
     <Id>Dimli</Id>
     <Code iso-639-3="diq" />
+  </Language>
+  <Language>
+    <Id>Divehi</Id> <!-- Dhivehi --> <!-- Maldivian -->
+    <Code iso-639-3="nld" />
+    <GameIds>
+      <GameId game="HOI4">MLD</GameId> <!-- Maldives -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Sinhala</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Dutch</Id>
@@ -2095,20 +2120,25 @@
   <Language>
     <Id>English_Before1949</Id> <!-- 1938 AD – 1949 AD -->
     <GameIds>
-      <GameId game="HOI4">ENG</GameId>
       <GameId game="HOI4">AST</GameId> <!-- Australia -->
       <GameId game="HOI4">BAH</GameId> <!-- Bahamas -->
       <GameId game="HOI4">BLZ</GameId> <!-- Belize -->
       <GameId game="HOI4">BOT</GameId> <!-- Botswana -->
       <GameId game="HOI4">CAN</GameId> <!-- Canada -->
       <GameId game="HOI4">CSA</GameId> <!-- Confederate States of America -->
+      <GameId game="HOI4">ENG</GameId>
+      <GameId game="HOI4">GAM</GameId> <!-- Gambia -->
+      <GameId game="HOI4">GHA</GameId> <!-- Ghana -->
       <GameId game="HOI4">GYA</GameId> <!-- Guyana -->
+      <GameId game="HOI4">LIB</GameId> <!-- Liberia -->
       <GameId game="HOI4">NMB</GameId> <!-- Namibia -->
       <GameId game="HOI4">NZL</GameId> <!-- New Zealand -->
       <GameId game="HOI4">PNG</GameId> <!-- Papua New Guinea -->
       <GameId game="HOI4">SAF</GameId> <!-- South Africa -->
       <GameId game="HOI4">SIE</GameId> <!-- Sierra Leone -->
+      <GameId game="HOI4">TRI</GameId> <!-- Trinidad and Tobago -->
       <GameId game="HOI4">USA</GameId> <!-- United States of America -->
+      <GameId game="HOI4">USB</GameId> <!-- USB#neutral US bloc during civil war in MTG -->
       <GameId game="HOI4">ZIM</GameId> <!-- Zimbabwe -->
     </GameIds>
     <FallbackLanguages>
@@ -2685,6 +2715,13 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Fon</Id>
+    <Code iso-639-2="fon" iso-639-3="fon" />
+    <GameIds>
+      <GameId game="HOI4">DAH</GameId> <!-- Dahomey --> <!-- "This is Benin" before colonisation. Benin's present national language is French -->
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Friulian</Id>
     <Code iso-639-3="fur" />
     <FallbackLanguages>
@@ -2820,10 +2857,13 @@
   <Language>
     <Id>French_Before1954</Id>
     <GameIds>
-      <GameId game="HOI4">FRA</GameId> <!-- France -->
       <GameId game="HOI4">CMR</GameId> <!-- Cameroon -->
+      <GameId game="HOI4">DJI</GameId> <!-- Djibouti -->
+      <GameId game="HOI4">FRA</GameId> <!-- France -->
       <GameId game="HOI4">GDL</GameId> <!-- Guadeloupe -->
+      <GameId game="HOI4">GNA</GameId> <!-- Guinea -->
       <GameId game="HOI4">IVO</GameId> <!-- Ivory Coast -->
+      <GameId game="HOI4">MLI</GameId> <!-- Mali -->
       <GameId game="HOI4">SEN</GameId> <!-- Senegal -->
       <GameId game="HOI4">TOG</GameId> <!-- Togo -->
     </GameIds>
@@ -4026,6 +4066,9 @@
   <Language>
     <Id>Guianese_French</Id> <!-- Guianan -->
     <Code iso-639-3="gcr" />
+    <GameIds>
+      <GameId game="HOI4">CAY</GameId> <!-- Cayenne -->
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>French</LanguageId>
       <LanguageId>French_Before1976</LanguageId>
@@ -7018,9 +7061,10 @@
     <Id>Portuguese</Id>
     <Code iso-639-1="pt" iso-639-3="por" />
     <GameIds>
-      <GameId game="HOI4">POR</GameId> <!-- Portugal -->
       <GameId game="HOI4">ANG</GameId> <!-- Angola -->
+      <GameId game="HOI4">GNB</GameId> <!-- Guinea-Bissau -->
       <GameId game="HOI4">MZB</GameId> <!-- Mozambique -->
+      <GameId game="HOI4">POR</GameId> <!-- Portugal -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Portuguese_Before1917</LanguageId>
@@ -9765,6 +9809,12 @@
   <Language>
     <Id>Sinhala</Id>
     <Code iso-639-1="si" iso-639-2="sin" iso-639-3="sin" />
+    <GameIds>
+      <GameId game="HOI4">SRL</GameId> <!-- Sri Lanka -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Divehi</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Socossian</Id>
@@ -10005,6 +10055,7 @@
     <GameIds>
       <GameId game="HOI4">BRD</GameId> <!-- Burundi -->
       <GameId game="HOI4">GAB</GameId> <!-- Gabon -->
+      <GameId game="HOI4">KEN</GameId> <!-- Kenya -->
       <GameId game="HOI4">RCG</GameId> <!-- Republic of Congo -->
       <GameId game="HOI4">TZN</GameId> <!-- Tanzania -->
       <GameId game="HOI4">UGA</GameId> <!-- Uganda -->
@@ -10368,6 +10419,16 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Tigrinya</Id>
+    <Code iso-639-1="ti" iso-639-2="tir" iso-639-3="tir" />
+    <GameIds>
+      <GameId game="HOI4">ERI</GameId> <!-- Eritrea -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Amharic</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Tiwa_North</Id>
     <FallbackLanguages>
       <LanguageId>Tiwa_South</LanguageId>
@@ -10580,6 +10641,9 @@
   <Language>
     <Id>Tuvan</Id>
     <Code iso-639-2="tyv" iso-639-3="tyv" />
+    <GameIds>
+      <GameId game="HOI4">TAN</GameId> <!-- Tannu Tuva -->
+    </GameIds>
   </Language>
   <Language>
     <Id>Udi_Early</Id> <!-- c. 2000 BC – c. 300 AD -->
@@ -10735,10 +10799,16 @@
   <Language>
     <Id>Urdu</Id>
     <Code iso-639-1="ur" iso-639-2="urd" iso-639-3="urd" />
+    <GameIds>
+      <GameId game="HOI4">PAK</GameId> <!-- Pakistan -->
+    </GameIds>
   </Language>
   <Language>
     <Id>Uyghur</Id>
     <Code iso-639-1="ug" iso-639-3="uig" />
+    <GameIds>
+      <GameId game="HOI4">SIK</GameId> <!-- Sinkiang -->
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>Uyghur</LanguageId>
       <LanguageId>Uyghur_Yellow</LanguageId>
@@ -11113,6 +11183,9 @@
   <Language>
     <Id>Zhuang</Id>
     <Code iso-639-1="za" iso-639-2="zha" iso-639-3="zha" />
+    <GameIds>
+      <GameId game="HOI4">GXC</GameId> <!-- Guangxi --> <!-- Maybe should be put in Cantonese? -->
+    </GameIds>
   </Language>
   <Language>
     <Id>Zulu</Id>
