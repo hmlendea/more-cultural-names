@@ -101,7 +101,7 @@ build-edition \
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
-    "HOI4" "1.9.*"
+    "HOI4" "1.10.*"
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
