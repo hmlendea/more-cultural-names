@@ -23,23 +23,25 @@ MOD_BUILDER_ZIP_URL="https://github.com/hmlendea/${MOD_BUILDER_NAME}/releases/do
 MOD_BUILDER_BIN_FILE_PATH="${STARTDIR}/${MOD_BUILDER_NAME}/MoreCulturalNamesModBuilder"
 NEEDS_DOWNLOADING=true
 
-echo "Checking for builder updates..."
-if [ -d "${STARTDIR}/${MOD_BUILDER_NAME}" ]; then
-    if [ -f "${STARTDIR}/${MOD_BUILDER_NAME}/version.txt" ]; then
-        CURRENT_VERSION=$(cat "${STARTDIR}/${MOD_BUILDER_NAME}/version.txt")
-        if [ "${CURRENT_VERSION}" == "${MOD_BUILDER_VERSION}" ]; then
-            NEEDS_DOWNLOADING=false
+if [[ $* != *--skip-updates* ]]; then
+    echo "Checking for builder updates..."
+    if [ -d "${STARTDIR}/${MOD_BUILDER_NAME}" ]; then
+        if [ -f "${STARTDIR}/${MOD_BUILDER_NAME}/version.txt" ]; then
+            CURRENT_VERSION=$(cat "${STARTDIR}/${MOD_BUILDER_NAME}/version.txt")
+            if [ "${CURRENT_VERSION}" == "${MOD_BUILDER_VERSION}" ]; then
+                NEEDS_DOWNLOADING=false
+            fi
         fi
     fi
-fi
 
-if [ ${NEEDS_DOWNLOADING} == true ]; then
-    [ -d "${STARTDIR}/${MOD_BUILDER_NAME}" ] && rm -rf "${STARTDIR}/${MOD_BUILDER_NAME}"
+    if [ ${NEEDS_DOWNLOADING} == true ]; then
+        [ -d "${STARTDIR}/${MOD_BUILDER_NAME}" ] && rm -rf "${STARTDIR}/${MOD_BUILDER_NAME}"
 
-    wget -c "${MOD_BUILDER_ZIP_URL}"
-    mkdir "${STARTDIR}/${MOD_BUILDER_NAME}"
-    unzip "${STARTDIR}/${MOD_BUILDER_NAME}_${MOD_BUILDER_VERSION}_linux-x64.zip" -d "${STARTDIR}/${MOD_BUILDER_NAME}"
-    echo "${MOD_BUILDER_VERSION}" > "${STARTDIR}/${MOD_BUILDER_NAME}/version.txt"
+        wget -c "${MOD_BUILDER_ZIP_URL}"
+        mkdir "${STARTDIR}/${MOD_BUILDER_NAME}"
+        unzip "${STARTDIR}/${MOD_BUILDER_NAME}_${MOD_BUILDER_VERSION}_linux-x64.zip" -d "${STARTDIR}/${MOD_BUILDER_NAME}"
+        echo "${MOD_BUILDER_VERSION}" > "${STARTDIR}/${MOD_BUILDER_NAME}/version.txt"
+    fi
 fi
 
 echo "Validating the files..."
