@@ -131,6 +131,7 @@ grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
 grep -n "==\"" *.xml
+grep --color -n "/>\s*[a-z]" *.xml
 
 grep -n "\(iso-639-[0-9]\)=\"[a-z]*\" \1" "${LANGUAGES_FILE}"
 grep -Pzo "\n *<Code.*\n *<Language>.*\n" "${LANGUAGES_FILE}"
@@ -200,6 +201,15 @@ grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 checkForMismatchingCkTitles "CK2" "${CK2_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingCkTitles "CK2HIP" "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingCkTitles "CK3" "${CK3_VANILLA_LANDED_TITLES_FILE}"
+
+# Find HOI4 states
+for HOI4_STATE in $(grep "HOI4\" type=\"City" "${LOCATIONS_FILE}" | \
+                        sed 's/.*parent=\"\([^\"]*\).*/\1/g' | \
+                        sort -g | uniq); do
+    if [ -z "$(grep "HOI4\" type=\"State\">${HOI4_STATE}<" "${LOCATIONS_FILE}")" ]; then
+        echo "The \"${HOI4_STATE}\" HOI4 state is missing while there are cities that have it as a parent"
+    fi
+done
 
 # Validate default localisations for CK3
 if [ -f "${CK3_VANILLA_LOCALISATION_FILE}" ]; then
