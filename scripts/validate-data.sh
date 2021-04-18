@@ -123,10 +123,13 @@ for I in {1..3}; do
 done
 
 # Validate XML structure
-grep -Pzo "\n *</Names.*\n *</*GameId.*\n" *.xml
+grep -Pzo "\n *<[a-zA-Z]*Entity>\n *<Id>.*\n *</[a-zA-Z]*Entity>.*\n" *.xml
+grep -Pzo "\n *</Names.*\n *</*(Names|GameId).*\n" *.xml
+grep -Pzo "\n *<Names>\n *<[^N].*\n" *.xml
 grep -Pzo "\n *</GameIds>\n *<Name .*\n" *.xml
 grep -Pzo "\n *<GameId .*\n *<Name.*\n" *.xml
 grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
+grep -Pzo "\n *<GameIds>\n *<[^G].*\n" *.xml
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
