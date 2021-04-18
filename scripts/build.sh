@@ -91,7 +91,7 @@ build-edition \
     --landed-titles "vanilla//ck2_landed_titles.txt" --landed-titles-name "landed_titles.txt"
 
 build-edition \
-    "hip-more-cultural-names" "HIP-More Cultural Names" \
+    "hip-more-cultural-names" "HIP - More Cultural Names" \
     "CK2HIP" "Frosty3" \
     --landed-titles "vanilla/ck2hip_landed_titles.txt" --landed-titles-name "swmh_landed_titles.txt" \
     --dep HIP\ -\ Historical\ Immersion\ Project
