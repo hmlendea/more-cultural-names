@@ -19,16 +19,27 @@ function normalise-name() {
         awk -F"," '{print $1}' | \
         sed 's/ *$//g' | \
         sed 's/ \(suyu\|[Mm]unicipality\)$//g' | \
-        sed 's/^\([Gg]mina\|[Gg]eme+t*n\) //g' | \
+        sed 's/^\([Gg]e*m[ei]n*t*[aen]\) //g' | \
         sed 's/ [KkCc]om*un*[ea]*$//g' | \
         sed 's/^[KkCc]om*un*[ea] d[eio] //g' | \
         sed 's/^Lungsod ng //g'
+}
+
+function capitalise() {
+    printf '%s' "$1" | head -c 1 | tr [:lower:] [:upper:]
+    printf '%s' "$1" | tail -c '+2'
 }
 
 function get-raw-name-for-language() {
     LANGUAGE_CODE="${1}"
     RAW_NAME=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.labels.'"\""${LANGUAGE_CODE}"\""'.value')
     NORMALISED_NAME=$(normalise-name "${RAW_NAME}")
+
+    if [ "${NORMALISED_NAME}" != "null" ]; then
+        if [ "${LANGUAGE_CODE}" == "jbo" ] ; then
+            NORMALISED_NAME=$(capitalise "${NORMALISED_NAME}")
+        fi
+    fi
 
     echo "${NORMALISED_NAME}"
 }
@@ -73,14 +84,15 @@ function get-name-for-language-2variants() {
 function get-names() {
     get-name-for-language "Acehnese" "ace"
     get-name-for-language "Afrikaans" "af"
-    get-name-for-language "Akan" "ak"
     get-name-for-language "Akan_Twi" "tw"
+    get-name-for-language "Akan" "ak"
     get-name-for-language "Albanian" "sq"
     get-name-for-language "Alemannic" "gsw"
     get-name-for-language "Aragonese" "an"
     get-name-for-language "Aromanian" "rup"
     get-name-for-language "Arpitan" "frp"
     get-name-for-language "Asturian" "ast"
+    get-name-for-language "Atayal" "tay"
     get-name-for-language "Atikamekw" "atj"
     get-name-for-language "Aymara" "ay"
     get-name-for-language "Azeri" "az"
@@ -115,6 +127,8 @@ function get-names() {
     get-name-for-language "Ewe" "ee"
     get-name-for-language "Extremaduran" "ext"
     get-name-for-language "Faroese" "fo"
+    get-name-for-language "Fijian" "fj"
+    get-name-for-language "Fijian_Hindi" "hif"
     get-name-for-language "Finnish" "fi"
     get-name-for-language "Flemish_West" "vls"
     get-name-for-language "French" "fr"
@@ -135,6 +149,7 @@ function get-names() {
     get-name-for-language "Guianese_French" "gcr"
     get-name-for-language "Haitian" "ht"
     get-name-for-language "Hausa" "ha"
+    get-name-for-language "Hawaiian" "haw"
     get-name-for-language "Hungarian" "hu"
     get-name-for-language "Icelandic" "is"
     get-name-for-language "Ido" "io"
@@ -196,6 +211,7 @@ function get-names() {
     get-name-for-language "Picard" "pcd"
     get-name-for-language "Piemontese" "pms"
     get-name-for-language "Pitkern" "pih"
+    get-name-for-language "Plautdietsch" "pdt"
     get-name-for-language "Polish" "pl"
     get-name-for-language-2variants "Portuguese_Brazilian" "pt-br" "Portuguese" "pt"
     get-name-for-language "Quechua" "qu"
@@ -207,12 +223,14 @@ function get-names() {
     get-name-for-language "Sami_Inari" "smn"
     get-name-for-language "Sami_North" "se"
     get-name-for-language "Sami_Skolt" "sms"
+    get-name-for-language "Sami_South" "sma"
     get-name-for-language "Samoan" "sm"
     get-name-for-language "Samogitian" "sgs"
     get-name-for-language "Sango" "sg"
     get-name-for-language "Sardinian" "sc"
     get-name-for-language "Scots" "sco"
     get-name-for-language "Scottish_Gaelic" "gd"
+    get-name-for-language "Seediq" "trv"
     get-name-for-language-2variants "Bosnian" "bs" "SerboCroatian" "sh"
     get-name-for-language-2variants "Croatian" "hr" "SerboCroatian" "sh"
     get-name-for-language-2variants "Serbian" "sr-el" "SerboCroatian" "sh"
