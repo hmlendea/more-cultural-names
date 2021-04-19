@@ -11,7 +11,7 @@ LANGUAGES_FILE="languages.xml"
 LOCATIONS_FILE="locations.xml"
 TITLES_FILE="titles.xml"
 
-if [ -z "${VERSION}" ]; then
+if [ -z "${BUILD_VERSION}" ]; then
     BUILD_VERSION=0
 fi
 
