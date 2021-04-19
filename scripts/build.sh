@@ -11,7 +11,7 @@ LANGUAGES_FILE="languages.xml"
 LOCATIONS_FILE="locations.xml"
 TITLES_FILE="titles.xml"
 
-if [ -z "${VERSION}" ]; then
+if [ -z "${BUILD_VERSION}" ]; then
     BUILD_VERSION=0
 fi
 
@@ -57,7 +57,7 @@ function build-edition {
     NAME="${2}"
     GAME="${3}"
     GAME_VERSION="${4}"
-    EXTRA_ARGS=${@:5}
+    EXTRA_ARGS="${@:5}"
 
     PACKAGE_NAME="mcn_${GAME}_${VERSION}"
     ORIGINAL_WORKING_DIRECTORY=$(pwd)
@@ -91,10 +91,10 @@ build-edition \
     --landed-titles "vanilla//ck2_landed_titles.txt" --landed-titles-name "landed_titles.txt"
 
 build-edition \
-    "hip-more-cultural-names" "HIP-More Cultural Names" \
+    "hip-more-cultural-names" "HIP - More Cultural Names" \
     "CK2HIP" "Frosty3" \
     --landed-titles "vanilla/ck2hip_landed_titles.txt" --landed-titles-name "swmh_landed_titles.txt" \
-    --dep HIP\ -\ Historical\ Immersion\ Project
+    --dep "HIP - Historical Immersion Project"
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \

@@ -677,12 +677,21 @@
   <Language>
     <Id>Basque</Id>
     <Code iso-639-1="eu" iso-639-3="eus" />
+    <FallbackLanguages>
+      <LanguageId>Basque_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Basque_Medieval</Id>
     <GameIds>
       <GameId game="CK2">basque</GameId>
       <GameId game="CK2HIP">basque</GameId>
       <GameId game="CK3">basque</GameId>
       <GameId game="HOI4">NAV</GameId> <!-- Navarra -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Basque</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Bavarian</Id>
@@ -798,15 +807,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Severian</LanguageId>
-      <LanguageId>Volhynian</LanguageId>
-      <LanguageId>Ilmenian</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -841,15 +841,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Severian</LanguageId>
-      <LanguageId>Volhynian</LanguageId>
-      <LanguageId>Ilmenian</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -884,15 +875,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Severian</LanguageId>
-      <LanguageId>Volhynian</LanguageId>
-      <LanguageId>Ilmenian</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -927,15 +909,6 @@
       <LanguageId>Russian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Severian</LanguageId>
-      <LanguageId>Volhynian</LanguageId>
-      <LanguageId>Ilmenian</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1492,6 +1465,9 @@
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
       <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>SerboCroatian_Before18Century</LanguageId>
@@ -3300,8 +3276,6 @@
     <Id>Galician</Id>
     <Code iso-639-1="gl" iso-639-3="glg" />
     <GameIds>
-      <GameId game="CK2HIP">galician</GameId>
-      <GameId game="CK3">galician</GameId>
       <GameId game="HOI4">GLC</GameId> <!-- Galicia -->
     </GameIds>
     <FallbackLanguages>
@@ -3309,7 +3283,22 @@
       <LanguageId>Portuguese_Brazilian</LanguageId>
       <LanguageId>Portuguese_Before1975</LanguageId>
       <LanguageId>Portuguese_Before1917</LanguageId>
+      <LanguageId>Galician_Medieval</LanguageId>
       <LanguageId>Portuguese_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Galician_Medieval</Id>
+    <GameIds>
+      <GameId game="CK2HIP">galician</GameId>
+      <GameId game="CK3">galician</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Portuguese_Old</LanguageId>
+      <LanguageId>Portuguese</LanguageId>
+      <LanguageId>Portuguese_Brazilian</LanguageId>
+      <LanguageId>Portuguese_Before1975</LanguageId>
+      <LanguageId>Portuguese_Before1917</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4750,7 +4739,6 @@
       <LanguageId>Russian_Before1219</LanguageId>
       <LanguageId>Severian</LanguageId>
       <LanguageId>Volhynian</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
@@ -5420,11 +5408,20 @@
   <Language>
     <Id>Kurdish</Id>
     <Code iso-639-1="ku" iso-639-3="kur" />
+    <FallbackLanguages>
+      <LanguageId>Kurdish_Before1928</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Kurdish_Before1928</Id>
     <GameIds>
       <GameId game="CK2">kurdish</GameId>
       <GameId game="CK2HIP">kurdish</GameId>
       <GameId game="CK3">kurdish</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kurdish</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Kyrgyz</Id>
@@ -7517,6 +7514,7 @@
       <LanguageId>Portuguese_Brazilian</LanguageId>
       <LanguageId>Portuguese_Old</LanguageId>
       <LanguageId>Galician</LanguageId>
+      <LanguageId>Galician_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -7533,6 +7531,7 @@
       <LanguageId>Portuguese_Before1917</LanguageId>
       <LanguageId>Portuguese_Old</LanguageId>
       <LanguageId>Galician</LanguageId>
+      <LanguageId>Galician_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -7543,6 +7542,7 @@
       <LanguageId>Portuguese_Brazilian</LanguageId>
       <LanguageId>Portuguese_Old</LanguageId>
       <LanguageId>Galician</LanguageId>
+      <LanguageId>Galician_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -7557,6 +7557,7 @@
       <LanguageId>Portuguese_Before1975</LanguageId>
       <LanguageId>Portuguese</LanguageId>
       <LanguageId>Portuguese_Brazilian</LanguageId>
+      <LanguageId>Galician_Medieval</LanguageId>
       <LanguageId>Galician</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -7571,6 +7572,7 @@
       <LanguageId>Portuguese_Before1917</LanguageId>
       <LanguageId>Portuguese_Old</LanguageId>
       <LanguageId>Galician</LanguageId>
+      <LanguageId>Galician_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8283,15 +8285,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Severian</LanguageId>
-      <LanguageId>Volhynian</LanguageId>
-      <LanguageId>Ilmenian</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8324,12 +8317,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8364,12 +8351,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8404,12 +8385,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8444,12 +8419,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8484,12 +8453,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8527,12 +8490,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8567,12 +8524,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8607,12 +8558,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8647,12 +8592,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8687,12 +8626,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8727,12 +8660,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8767,12 +8694,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8807,12 +8728,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8847,12 +8762,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8887,12 +8796,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8927,12 +8830,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8967,12 +8864,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -9007,12 +8898,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -9047,12 +8932,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -9088,11 +8967,6 @@
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -9128,11 +9002,6 @@
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -9168,11 +9037,6 @@
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -9208,16 +9072,18 @@
       <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1219</Id>
     <FallbackLanguages>
+      <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Russian_Medieval</LanguageId>
+      <LanguageId>Slavonic_Church_Old</LanguageId>
+      <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
@@ -9248,11 +9114,6 @@
       <LanguageId>Russian</LanguageId>
       <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -9262,19 +9123,9 @@
     <Id>Rusyn</Id>
     <Code iso-639-3="rue" />
     <FallbackLanguages>
-      <LanguageId>Ruthenian_Old</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Ruthenian_Old</Id>
-    <FallbackLanguages>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Rusyn</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -9735,6 +9586,9 @@
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
       <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>SerboCroatian_Before18Century</LanguageId>
@@ -10102,6 +9956,9 @@
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
       <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>SerboCroatian_Before18Century</LanguageId>
@@ -10136,14 +9993,13 @@
       <GameId game="CK3">severian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Volhynian</LanguageId>
-      <LanguageId>Ilmenian</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
@@ -10215,9 +10071,11 @@
       <GameId game="CK3">russian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
       <LanguageId>Russian_Medieval</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
@@ -10258,6 +10116,9 @@
     <FallbackLanguages>
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -10265,6 +10126,9 @@
     <FallbackLanguages>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -10461,6 +10325,9 @@
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Slavic_East_Old</LanguageId>
+      <LanguageId>Volhynian</LanguageId>
+      <LanguageId>Severian</LanguageId>
+      <LanguageId>Ilmenian</LanguageId>
       <LanguageId>SerboCroatian_Before1326</LanguageId>
       <LanguageId>SerboCroatian_Before15Century</LanguageId>
       <LanguageId>SerboCroatian_Before18Century</LanguageId>
@@ -11479,15 +11346,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Volhynian</LanguageId>
-      <LanguageId>Severian</LanguageId>
-      <LanguageId>Ilmenian</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -11525,15 +11383,6 @@
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
-      <LanguageId>Russian_Medieval</LanguageId>
-      <LanguageId>Russian_Before1219</LanguageId>
-      <LanguageId>Slavic_East_Old</LanguageId>
-      <LanguageId>Volhynian</LanguageId>
-      <LanguageId>Severian</LanguageId>
-      <LanguageId>Ilmenian</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
-      <LanguageId>Slavonic_Church_Old</LanguageId>
-      <LanguageId>Slavonic_Church</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -11734,7 +11583,6 @@
       <LanguageId>Russian_Before1219</LanguageId>
       <LanguageId>Severian</LanguageId>
       <LanguageId>Ilmenian</LanguageId>
-      <LanguageId>Ruthenian_Old</LanguageId>
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Belarussian_Before1656</LanguageId>
