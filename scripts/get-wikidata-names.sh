@@ -17,12 +17,22 @@ function normalise-name() {
         awk -F"/" '{print $1}' | \
         awk -F"(" '{print $1}' | \
         awk -F"," '{print $1}' | \
-        sed 's/ *$//g' | \
-        sed 's/ \(suyu\|[Mm]unicipality\)$//g' | \
-        sed 's/^\([Gg]e*m[ei]n*t*[aen]\) //g' | \
-        sed 's/ [KkCc]om*un*[ea]*$//g' | \
-        sed 's/^[KkCc]om*un*[ea] d[eio] //g' | \
-        sed 's/^Lungsod ng //g'
+        sed \
+            -e 's/ *$//g' \
+            -e 's/^\(Category\)\://g' \
+            -e 's/ \(suyu\|[Mm]unicipality\)$//g' \
+            -e 's/^\([Gg]e*m[ei]n*t*[aen]\|Faritan'"'"'i\) //g' \
+            -e 's/^[KkCc]om*un*[ea] d[eio] //g' \
+            -e 's/^\(Category\)\: //g' \
+            -e 's/ [KkCc]om*un*[ea]*$//g' \
+            -e 's/^Lungsod ng //g' \
+            \
+            -e 's/^biển /Biển /g' \
+            -e 's/^m\([ae]re*\) /M\1 /g' \
+            -e 's/ d\([eə]ng*izi\)$/ D\1/g' \
+            -e 's/ havet$/ Havet/g' \
+            -e 's/ j\([uū]ra\)$/ J\1/g' \
+            -e 's/ m\([aeoó][rř]j*[ioe]\)$/ M\1/g'
 }
 
 function capitalise() {
@@ -30,26 +40,32 @@ function capitalise() {
     printf '%s' "$1" | tail -c '+2'
 }
 
-function get-raw-name-for-language() {
+function get-name-from-label() {
     LANGUAGE_CODE="${1}"
-    RAW_NAME=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.labels.'"\""${LANGUAGE_CODE}"\""'.value')
-    NORMALISED_NAME=$(normalise-name "${RAW_NAME}")
+    LABEL=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.labels.'"\""${LANGUAGE_CODE}"\""'.value')
+    NAME=$(normalise-name "${LABEL}")
 
-    if [ "${NORMALISED_NAME}" != "null" ]; then
-        if [ "${LANGUAGE_CODE}" == "jbo" ] ; then
-            NORMALISED_NAME=$(capitalise "${NORMALISED_NAME}")
-        fi
-    fi
-
-    echo "${NORMALISED_NAME}"
+    echo "${NAME}"
 }
 
-ENGLISH_NAME=$(get-raw-name-for-language "en")
+function get-name-from-sitelink() {
+    LANGUAGE_CODE="${1}"
+    SITELINK_TITLE=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.sitelinks.'"\""${LANGUAGE_CODE}wiki"\""'.title')
+    NAME=$(normalise-name "${SITELINK_TITLE}")
+
+    echo "${NAME}"
+}
+
+ENGLISH_NAME=$(get-name-from-label "en")
 
 function get-name-for-language() {
     LANGUAGE_ID="${1}"
     LANGUAGE_CODE="${2}"
-    NAME=$(get-raw-name-for-language "${LANGUAGE_CODE}")
+    NAME=$(get-name-from-label "${LANGUAGE_CODE}")
+
+    if [ -z "${NAME}" ] ||  [ "${NAME}" == "null" ]; then
+        NAME=$(get-name-from-sitelink "${LANGUAGE_CODE}")
+    fi
 
     if [ -z "${NAME}" ] ||  [ "${NAME}" == "null" ]; then
         return
@@ -71,8 +87,8 @@ function get-name-for-language-2variants() {
     LANGUAGE2_ID="${3}"
     LANGUAGE2_CODE="${4}"
 
-    LANGUAGE1_NAME=$(get-raw-name-for-language "${LANGUAGE1_CODE}")
-    LANGUAGE2_NAME=$(get-raw-name-for-language "${LANGUAGE2_CODE}")
+    LANGUAGE1_NAME=$(get-name-from-label "${LANGUAGE1_CODE}")
+    LANGUAGE2_NAME=$(get-name-from-label "${LANGUAGE2_CODE}")
 
     if [ -n "${LANGUAGE1_NAME}" ] && [ "${LANGUAGE2_NAME}" != "${LANGUAGE1_NAME}" ]; then
         get-name-for-language "${LANGUAGE1_ID}" "${LANGUAGE1_CODE}"
@@ -158,6 +174,7 @@ function get-names() {
     get-name-for-language "Indonesian" "id"
     get-name-for-language "Interlingua" "ia"
     get-name-for-language "Interlingue" "ie"
+    get-name-for-language "Inupiaq" "ik"
     get-name-for-language "Irish" "ga"
     get-name-for-language "Italian" "it"
     get-name-for-language "Jamaican" "jam"
@@ -165,6 +182,7 @@ function get-names() {
     #get-name-for-language "Kabiye" "kbp"
     get-name-for-language "Kabyle" "kab"
     get-name-for-language "Kapampangan" "pam"
+    get-name-for-language "Kabuverdianu" "kea"
     get-name-for-language "Karakalpak" "kaa"
     get-name-for-language "Kashubian" "csb"
     get-name-for-language "Kazakh" "kk-latn"
@@ -200,6 +218,7 @@ function get-names() {
     get-name-for-language "Mirandese" "mwl"
     get-name-for-language "Nahuatl" "nah"
     get-name-for-language "Nauru" "na"
+    get-name-for-language "Navajo" "nv"
     get-name-for-language "Neapolitan" "nap"
     get-name-for-language "Norman" "nrm"
     get-name-for-language-2variants "Norwegian_Nynorsk" "nn" "Norwegian" "nb"
@@ -252,6 +271,7 @@ function get-names() {
     get-name-for-language "Tahitian" "ty"
     get-name-for-language "Tajiki" "tg-latn"
     get-name-for-language "Tarantino" "roa-tara"
+    get-name-for-language "Tatar" "tt-latn"
     get-name-for-language "Tatar_Crimean" "crh-latn"
     get-name-for-language "Tetum" "tet"
     get-name-for-language "Tok_Pisin" "tpi"
