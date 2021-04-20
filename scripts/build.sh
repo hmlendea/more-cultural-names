@@ -5,7 +5,7 @@ OUTDIR="${STARTDIR}/out"
 EXTRAS_DIR="${STARTDIR}/extras"
 VANILLA_FILES_DIR="${STARTDIR}/vanilla"
 
-BUILD_VERSION=${1}
+BUILD_VERSION="${1}"
 
 LANGUAGES_FILE="languages.xml"
 LOCATIONS_FILE="locations.xml"
@@ -53,11 +53,10 @@ if [ -n "${VALIDATE_DATA}" ]; then
 fi
 
 function build-edition {
-    ID="${1}"
-    NAME="${2}"
-    GAME="${3}"
-    GAME_VERSION="${4}"
-    EXTRA_ARGS="${@:5}"
+    ID="${1}" && shift
+    NAME="${1}" && shift
+    GAME="${1}" && shift
+    GAME_VERSION="${1}" && shift
 
     PACKAGE_NAME="mcn_${GAME}_${VERSION}"
     ORIGINAL_WORKING_DIRECTORY=$(pwd)
@@ -72,7 +71,7 @@ function build-edition {
         --titles "${TITLES_FILE}" \
         --game "${GAME}" --game-version "${GAME_VERSION}" \
         --id "${ID}" --name "${NAME}" --ver "${VERSION}" \
-        --out "${OUTDIR}" ${EXTRA_ARGS}
+        --out "${OUTDIR}" "$@"
 
     echo "   > Copying extras..."
     cp -rf "${EXTRAS_DIR}/${GAME}"/* "${OUTDIR}/${GAME}/"

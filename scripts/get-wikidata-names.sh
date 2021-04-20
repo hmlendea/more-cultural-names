@@ -21,7 +21,7 @@ function normalise-name() {
             -e 's/ *$//g' \
             -e 's/^\(Category\)\://g' \
             -e 's/ \(suyu\|[Mm]unicipality\)$//g' \
-            -e 's/^\([Gg]e*m[ei]n*t*[aen]\|Faritan'"'"'i\) //g' \
+            -e 's/^\([Gg]e*m[ei]+n*t*[aen]\|Faritan'"'"'i\|[Mm]agaalada\) //g' \
             -e 's/^[KkCc]om*un*[ea] d[eio] //g' \
             -e 's/^\(Category\)\: //g' \
             -e 's/ [KkCc]om*un*[ea]*$//g' \
@@ -32,7 +32,9 @@ function normalise-name() {
             -e 's/ d\([eə]ng*izi\)$/ D\1/g' \
             -e 's/ havet$/ Havet/g' \
             -e 's/ j\([uū]ra\)$/ J\1/g' \
-            -e 's/ m\([aeoó][rř]j*[ioe]\)$/ M\1/g'
+            -e 's/ m\([aeoó][rř]j*[ioe]\)$/ M\1/g' \
+            \
+            -e 's/n-a$/na/g'
 }
 
 function capitalise() {
@@ -63,19 +65,22 @@ function get-name-for-language() {
     LANGUAGE_CODE="${2}"
     NAME=$(get-name-from-label "${LANGUAGE_CODE}")
 
-    if [ -z "${NAME}" ] ||  [ "${NAME}" == "null" ]; then
+    if [ -z "${NAME}" ] || [ "${NAME}" == "null" ]; then
         NAME=$(get-name-from-sitelink "${LANGUAGE_CODE}")
     fi
 
-    if [ -z "${NAME}" ] ||  [ "${NAME}" == "null" ]; then
+    if [ -z "${NAME}" ] || [ "${NAME}" == "null" ]; then
         return
     fi
 
     NAME_FOR_COMPARISON=$(echo "${NAME}" | tr '[:upper:]' '[:lower:]')
     ENGLISH_NAME_FOR_COMPARISON=$(echo "${ENGLISH_NAME}" | tr '[:upper:]' '[:lower:]')
 
-    if [ "${LANGUAGE_CODE}" != "en" ] && [ "${NAME_FOR_COMPARISON}" == "${ENGLISH_NAME_FOR_COMPARISON}" ]; then
-        return
+    if [ "${LANGUAGE_CODE}" != "en" ]; then
+        if [ "${NAME_FOR_COMPARISON}" == "${ENGLISH_NAME_FOR_COMPARISON}" ] ||
+           [ "${NAME_FOR_COMPARISON}" == "${ENGLISH_NAME_FOR_COMPARISON}'" ]; then
+            return
+        fi
     fi
 
     echo "      <Name language=\"${LANGUAGE_ID}\" value=\"${NAME}\" />"
