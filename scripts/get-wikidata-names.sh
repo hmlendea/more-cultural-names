@@ -27,6 +27,11 @@ function normalise-name() {
             -e 's/ [KkCc]om*un*[ea]*$//g' \
             -e 's/^Lungsod ng //g' \
             \
+            -e 's/^\(Byen\|Dinas\|Ìlú\|Mbanza ya\|Sita\|Syudad han\) //g' \
+            -e 's/ \(Chê\|Chhī\|Sṳ\)$//g' \
+            \
+            -e 's/^Regi[oó] de //g' \
+            \
             -e 's/^biển /Biển /g' \
             -e 's/^m\([ae]re*\) /M\1 /g' \
             -e 's/ d\([eə]ng*izi\)$/ D\1/g' \
@@ -51,7 +56,7 @@ function get-name-from-label() {
 }
 
 function get-name-from-sitelink() {
-    LANGUAGE_CODE="${1}"
+    LANGUAGE_CODE="$(echo "${1}" | sed 's/-/_/g')"
     SITELINK_TITLE=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.sitelinks.'"\""${LANGUAGE_CODE}wiki"\""'.title')
     NAME=$(normalise-name "${SITELINK_TITLE}")
 
@@ -59,10 +64,10 @@ function get-name-from-sitelink() {
 }
 
 ENGLISH_NAME=$(get-name-from-label "en")
+ENGLISH_NAME_FOR_COMPARISON=$(echo "${ENGLISH_NAME}" | tr '[:upper:]' '[:lower:]')
 
-function get-name-for-language() {
-    LANGUAGE_ID="${1}"
-    LANGUAGE_CODE="${2}"
+function get-raw-name-for-language() {
+    LANGUAGE_CODE="${1}"
     NAME=$(get-name-from-label "${LANGUAGE_CODE}")
 
     if [ -z "${NAME}" ] || [ "${NAME}" == "null" ]; then
@@ -74,7 +79,6 @@ function get-name-for-language() {
     fi
 
     NAME_FOR_COMPARISON=$(echo "${NAME}" | tr '[:upper:]' '[:lower:]')
-    ENGLISH_NAME_FOR_COMPARISON=$(echo "${ENGLISH_NAME}" | tr '[:upper:]' '[:lower:]')
 
     if [ "${LANGUAGE_CODE}" != "en" ]; then
         if [ "${NAME_FOR_COMPARISON}" == "${ENGLISH_NAME_FOR_COMPARISON}" ] ||
@@ -83,7 +87,15 @@ function get-name-for-language() {
         fi
     fi
 
-    echo "      <Name language=\"${LANGUAGE_ID}\" value=\"${NAME}\" />"
+    echo "${NAME}"
+}
+
+function get-name-for-language() {
+    LANGUAGE_ID="${1}"
+    LANGUAGE_CODE="${2}"
+    NAME=$(get-raw-name-for-language "${LANGUAGE_CODE}")
+
+    [ -n "${NAME}" ] && echo "      <Name language=\"${LANGUAGE_ID}\" value=\"${NAME}\" />"
 }
 
 function get-name-for-language-2variants() {
@@ -92,8 +104,8 @@ function get-name-for-language-2variants() {
     LANGUAGE2_ID="${3}"
     LANGUAGE2_CODE="${4}"
 
-    LANGUAGE1_NAME=$(get-name-from-label "${LANGUAGE1_CODE}")
-    LANGUAGE2_NAME=$(get-name-from-label "${LANGUAGE2_CODE}")
+    LANGUAGE1_NAME=$(get-raw-name-for-language "${LANGUAGE1_ID}" "${LANGUAGE1_CODE}")
+    LANGUAGE2_NAME=$(get-raw-name-for-language "${LANGUAGE2_ID}" "${LANGUAGE2_CODE}")
 
     if [ -n "${LANGUAGE1_NAME}" ] && [ "${LANGUAGE2_NAME}" != "${LANGUAGE1_NAME}" ]; then
         get-name-for-language "${LANGUAGE1_ID}" "${LANGUAGE1_CODE}"
@@ -184,7 +196,7 @@ function get-names() {
     get-name-for-language "Italian" "it"
     get-name-for-language "Jamaican" "jam"
     get-name-for-language "Javanese" "jv"
-    #get-name-for-language "Kabiye" "kbp"
+    get-name-for-language "Kabiye" "kbp"
     get-name-for-language "Kabyle" "kab"
     get-name-for-language "Kapampangan" "pam"
     get-name-for-language "Kabuverdianu" "kea"
@@ -276,10 +288,11 @@ function get-names() {
     get-name-for-language "Tahitian" "ty"
     get-name-for-language "Tajiki" "tg-latn"
     get-name-for-language "Tarantino" "roa-tara"
-    get-name-for-language "Tatar" "tt-latn"
     get-name-for-language "Tatar_Crimean" "crh-latn"
+    get-name-for-language "Tatar" "tt-latn"
     get-name-for-language "Tetum" "tet"
     get-name-for-language "Tok_Pisin" "tpi"
+    get-name-for-language "Tongan" "to"
     get-name-for-language "Tsonga" "ts"
     get-name-for-language "Turkish" "tr"
     get-name-for-language "Turkmen" "tk"
@@ -307,12 +320,12 @@ function get-location-entry() {
     [ -z "${NAMES}" ] && return
 
     LOCATION_ID=$(echo "${ENGLISH_NAME}" | \
-        tr '[:upper:]' '[:lower:]' | \
+        iconv -f utf8 -t ascii//TRANSLIT | \
         sed 's/-le-/_le_/g' | \
         sed 's/ /_/g' | sed "s/\'//g" | \
         sed 's/\(north\|west\|south\|east\)ern/\1/g' | \
         sed 's/^\(north\|west\|south\|east\)_\(.*\)$/\2_\1/g' | \
-        iconv -f utf8 -t ascii//TRANSLIT)
+        tr '[:upper:]' '[:lower:]')
 
     echo "  <LocationEntity>"
     echo "    <Id>${LOCATION_ID}</Id>"
