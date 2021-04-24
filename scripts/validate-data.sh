@@ -134,6 +134,7 @@ grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
 grep -n "==\"" *.xml
+grep --color -n "[a-zA-Z0-9]\"[^ <>/?]" *.xml
 grep --color -n "/>\s*[a-z]" *.xml
 
 grep -n "\(iso-639-[0-9]\)=\"[a-z]*\" \1" "${LANGUAGES_FILE}"

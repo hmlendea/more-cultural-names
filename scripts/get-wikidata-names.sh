@@ -22,6 +22,10 @@ function normalise-name() {
             --location 'https://transliterate.com/Home/Transliterate' \
             --request POST \
             --form 'input="'"${RAW_NAME}"'"' | jq '.latin' | sed \
+                -e 's/^"\(.*\)"$/\1/g' \
+                -e 's/^Mp/B/g' \
+                -e 's/mpo/bo/g' \
+                -e 's/rnk/rk/g' \
                 -e 's/snt/sht/g')
     fi
 
