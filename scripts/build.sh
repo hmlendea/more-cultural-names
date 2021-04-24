@@ -12,7 +12,7 @@ LANGUAGES_FILE="languages.xml"
 LOCATIONS_FILE="locations.xml"
 TITLES_FILE="titles.xml"
 
-if [ -z "${BUILD_VERSION}" ]; then
+if [ -z "${BUILD_VERSION}" ] || ! [[ ${BUILD_VERSION} =~ '^[0-9]+$' ]]; then
     BUILD_VERSION=0
 fi
 
