@@ -21,7 +21,8 @@ function normalise-name() {
         LATIN_NAME=$(curl -s \
             --location 'https://transliterate.com/Home/Transliterate' \
             --request POST \
-            --form 'input="'"${RAW_NAME}"'"' | jq '.latin')
+            --form 'input="'"${RAW_NAME}"'"' | jq '.latin' | sed \
+                -e 's/snt/sht/g')
     fi
 
     echo "${LATIN_NAME}" | \
@@ -43,7 +44,21 @@ function normalise-name() {
             -e 's/^\(Byen\|Dinas\|Ìlú\|Mbanza ya\|Sita\|Syudad han\) //g' \
             -e 's/ \(Chê\|Chhī\|Sṳ\)$//g' \
             \
+            -e 's/^Ducado de l'"\'"'//g' \
+            \
+            -e 's/^Reinu de l'"\'"'//g' \
+            \
+            -e 's/^District \(de\|of\) //g' \
+            \
             -e 's/^Regi[oó] de //g' \
+            \
+            -e 's/^[Pp]ro[bv][ëií][nñ]\([cs][eiío]*[ae]*\|z\) \(d*[eio] \)*//g' \
+            -e 's/^\(.*\)ko probintzia$/\1/g' \
+            -e 's/^\(.*\)jas province$/\1ja/g' \
+            -e 's/^\(.*\)jos provincija$/\1ja/g' \
+            -e 's/ [Pp]ro[bv]i[nñ][ct][esz]*\(i[j]*a\)*$//g' \
+            -e 's/^\(Mkoa wa\|Talaith\|\|W[iı]lay\(ah\|etê\)\) //g' \
+            -e 's/[ -]\(eanangoddi\|ili\|[Ss]én[g]*\|vilayəti\)$//g' \
             \
             -e 's/^biển /Biển /g' \
             -e 's/^m\([ae]re*\) /M\1 /g' \
