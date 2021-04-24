@@ -1,7 +1,9 @@
 #!/bin/bash
 
 WIKIDATA_ID="${1}"
+
 WIKIDATA_URL="https://www.wikidata.org/wiki/Special:EntityData/${1}.json"
+GREEK_TRANSLITERATION_URL="https://transliterate.com/Home/Transliterate"
 
 if [ ! -f "/usr/bin/jq" ]; then
     echo "Missing 'jq'! Please make sure it's present on the system in order to use this script!"
@@ -11,7 +13,18 @@ fi
 DATA=$(curl -s "${WIKIDATA_URL}")
 
 function normalise-name() {
-    echo $* | \
+    LANGUAGE_CODE="${1}" && shift
+    RAW_NAME=$(echo "$*" | sed 's/^"\(.*\)"$/\1/g')
+    LATIN_NAME="${RAW_NAME}"
+
+    if [ "${LANGUAGE_CODE}" == "el" ]; then
+        LATIN_NAME=$(curl -s \
+            --location 'https://transliterate.com/Home/Transliterate' \
+            --request POST \
+            --form 'input="'"${RAW_NAME}"'"' | jq '.latin')
+    fi
+
+    echo "${LATIN_NAME}" | \
         sed 's/^"\(.*\)"$/\1/g' | \
         awk -F" - " '{print $1}' | \
         awk -F"/" '{print $1}' | \
@@ -50,7 +63,7 @@ function capitalise() {
 function get-name-from-label() {
     LANGUAGE_CODE="${1}"
     LABEL=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.labels.'"\""${LANGUAGE_CODE}"\""'.value')
-    NAME=$(normalise-name "${LABEL}")
+    NAME=$(normalise-name "${LANGUAGE_CODE}" "${LABEL}")
 
     echo "${NAME}"
 }
@@ -58,7 +71,7 @@ function get-name-from-label() {
 function get-name-from-sitelink() {
     LANGUAGE_CODE="$(echo "${1}" | sed 's/-/_/g')"
     SITELINK_TITLE=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.sitelinks.'"\""${LANGUAGE_CODE}wiki"\""'.title')
-    NAME=$(normalise-name "${SITELINK_TITLE}")
+    NAME=$(normalise-name "${LANGUAGE_CODE}" "${SITELINK_TITLE}")
 
     echo "${NAME}"
 }
@@ -177,6 +190,7 @@ function get-names() {
     get-name-for-language "German_Palatine" "pfl"
     get-name-for-language "German_Pennsylvania" "pdc"
     get-name-for-language "German" "de"
+    get-name-for-language "Greek" "el"
     get-name-for-language "Greenlandic" "kl"
     get-name-for-language "Guarani" "gn"
     get-name-for-language "Guianese_French" "gcr"
