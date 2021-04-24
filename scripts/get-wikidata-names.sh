@@ -12,6 +12,21 @@ fi
 
 DATA=$(curl -s "${WIKIDATA_URL}")
 
+function get-translitterationDotCom-transliteration() {
+    RAW_NAME="${1}"
+    LANGUAGE="${2}"
+    SCHEME="${3}"
+
+    curl -s \
+        --location 'https://www.translitteration.com/ajax/en/transliterate/' \
+        --request POST \
+        --form 'text="'"${RAW_NAME}"'"' \
+        --form 'tlang="'"${LANGUAGE}"'"' \
+        --form 'script="latn"' \
+        --form 'scheme="'"${SCHEME}"'"' |
+            sed 's/^ack::://g'
+}
+
 function normalise-name() {
     LANGUAGE_CODE="${1}" && shift
     RAW_NAME=$(echo "$*" | sed 's/^"\(.*\)"$/\1/g')
@@ -27,6 +42,8 @@ function normalise-name() {
                 -e 's/mpo/bo/g' \
                 -e 's/rnk/rk/g' \
                 -e 's/snt/sht/g')
+    elif [ "${LANGUAGE_CODE}" == "ru" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "rus" "bgn-pcgn")
     fi
 
     echo "${LATIN_NAME}" | \
@@ -104,7 +121,7 @@ function get-name-from-sitelink() {
     SITELINK_TITLE=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.sitelinks.'"\""${LANGUAGE_CODE}wiki"\""'.title')
     NAME=$(normalise-name "${LANGUAGE_CODE}" "${SITELINK_TITLE}")
 
-    echo "${NAME}"
+    echo "${LATIN_NAME}"
 }
 
 ENGLISH_NAME=$(get-name-from-label "en")
@@ -300,6 +317,7 @@ function get-names() {
     get-name-for-language "Romanian" "ro"
     get-name-for-language "Romansh" "rm"
     get-name-for-language "Rundi" "rn"
+    get-name-for-language "Russian" "ru"
     get-name-for-language "Sakizaya" "szy"
     get-name-for-language "Sami_Inari" "smn"
     get-name-for-language "Sami_North" "se"
