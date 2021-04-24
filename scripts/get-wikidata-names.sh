@@ -48,6 +48,18 @@ function normalise-name() {
             -e 's/^\(Byen\|Dinas\|Ìlú\|Mbanza ya\|Sita\|Syudad han\) //g' \
             -e 's/ \(Chê\|Chhī\|Sṳ\)$//g' \
             \
+            -e 's/^Co[ou]nt\(ae\|y\) //g' \
+            -e 's/^Con[dt][aá]d*[eou] \(d[eo] \)*//g' \
+            -e 's/^Comt[aé]t* de //g' \
+            -e 's/^\(Comitatu[ls]\|Graafskap\|Graflando\|Hạt\|Hrabství\|Komēteía\|Kontelezh\|Swydd\|Vilojati\) //g' \
+            -e 's/^\(Wilaya ya\) //g' \
+            -e 's/'\''i \(krahvkond\)$//g' \
+            -e 's/as \(grāfiste\)$/a/g' \
+            -e 's/ko \(konderria\)$//g' \
+            -e 's/n \(kreivikunta\)$//g' \
+            -e 's/o \(grafystė\)$/as/g' \
+            -e 's/ \(Kūn\|megye\)$//g' \
+            \
             -e 's/^Ducado de l'"\'"'//g' \
             \
             -e 's/^Reinu de l'"\'"'//g' \
