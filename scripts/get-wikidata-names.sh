@@ -50,7 +50,7 @@ function transliterate-name() {
             --data-urlencode 'quelltext=cu' \
             --data-urlencode 'zieltext=isor9' \
             --data-urlencode 'startabfrage=1' \
-            --data-urlencode 'text=Омьскъ' \
+            --data-urlencode 'text='"${RAW_NAME}" \
             --data-urlencode 'transliteration=Transliteration' \
             --data-urlencode 'cu_isor9_jer=3' | \
                 grep "ausgabe" | \
@@ -80,6 +80,14 @@ function transliterate-name() {
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "kir" "iso-9")
     elif [ "${LANGUAGE_CODE}" == "mk" ]; then
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "mkd" "bgn-pcgn")
+    elif [ "${LANGUAGE_CODE}" == "mn" ]; then
+        LATIN_NAME=$(curl -s \
+            --location 'https://www.ushuaia.pl/transliterate/transliterate.php' \
+            --request POST \
+            --header 'Cookie: translit=6tpj46oc8cq7ou4vci78f37rbi; lastlang=mongolian_mns_transliterate;' \
+            --header 'Content-Type: application/x-www-form-urlencoded' \
+            --data-urlencode 'text='"${RAW_NAME}" \
+            --data-urlencode 'lang=mongolian_mns_transliterate')
     elif [ "${LANGUAGE_CODE}" == "os" ]; then
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "oss" "iso-9")
     elif [ "${LANGUAGE_CODE}" == "ru" ]; then
@@ -376,6 +384,7 @@ function get-names() {
     get-name-for-language "Maori" "mi"
     get-name-for-language "Minangkabau" "min"
     get-name-for-language "Mirandese" "mwl"
+    get-name-for-language "Mongol" "mn"
     get-name-for-language "Nahuatl" "nah"
     get-name-for-language "Nauru" "na"
     get-name-for-language "Navajo" "nv"
