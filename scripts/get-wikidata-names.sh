@@ -91,7 +91,8 @@ function transliterate-name() {
     elif [ "${LANGUAGE_CODE}" == "os" ]; then
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "oss" "iso-9")
     elif [ "${LANGUAGE_CODE}" == "ru" ]; then
-        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "rus" "bgn-pcgn")
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "rus" "bgn-pcgn" |
+            sed 's/\([a-zA-Z]\)Y/\1y/g')
     elif [ "${LANGUAGE_CODE}" == "sr" ]; then
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "srp" "national")
     elif [ "${LANGUAGE_CODE}" == "udm" ]; then
@@ -120,7 +121,6 @@ function normalise-name() {
             -e 's/^\([Gg]e*m[ei]+n*t*[aen]\|Faritan'"'"'i\|[Mm]agaalada\) //g' \
             -e 's/^[KkCc]om*un*[ea] d[eio] //g' \
             -e 's/^\(Category\)\: //g' \
-            -e 's/ [KkCc]om*un*[ea]*$//g' \
             -e 's/^Lungsod ng //g' \
             \
             -e 's/^\(Byen\|Dinas\|Ìlú\|Mbanza ya\|Sita\|Syudad han\) //g' \
@@ -129,30 +129,28 @@ function normalise-name() {
             -e 's/^Co[ou]nt\(ae\|y\) //g' \
             -e 's/^Con[dt][aá]d*[eou] \(d[eo] \)*//g' \
             -e 's/^Comt[aé]t* de //g' \
+            -e 's/^[KkCc]om*un*[ea]*[n]* //g' \
             -e 's/^\(Comitatu[ls]\|Graafskap\|Graflando\|Hạt\|Hrabství\|Komēteía\|Kontelezh\|Swydd\|Vilojati\) //g' \
-            -e 's/^\(Wilaya ya\) //g' \
-            -e 's/'\''i \(krahvkond\)$//g' \
-            -e 's/as \(grāfiste\)$/a/g' \
-            -e 's/ko \(konderria\)$//g' \
+            -e 's/^\(Khu vực\|Mkoa wa\|Talaith\|\|W[iı]lay\(a\|ah\|etê\)\) \(ya \)*//g' \
+            -e 's/^\(District\|[Rr]e[gh]i[oóu]n*[ea]*\) \(d[ei]\|of \)*//g' \
+            -e 's/ \(Bölgesi\|çayı\|jõgi\|Kūn\|maakunta\|megye\|Nehri\|[Rr]egion\|vald\|vilājs\)$//g' \
+            -e 's/as \(vilājs\)$/a/g' \
+            -e 's/jas \(grāfiste\|province\)$/ja/g' \
+            -e 's/jos \(provincija\)$/ja/g' \
+            -e 's/ko \(konderria\|probintzia\)$//g' \
             -e 's/n \(kreivikunta\)$//g' \
             -e 's/o \(grafystė\)$/as/g' \
-            -e 's/ \(Kūn\|megye\)$//g' \
+            -e 's/ [KkCc]om*un*[ea]*$//g' \
             \
-            -e 's/^Ducado de l'"\'"'//g' \
-            \
-            -e 's/^Reinu de l'"\'"'//g' \
-            \
-            -e 's/^District \(de\|of\) //g' \
-            \
-            -e 's/^Regi[oó] de //g' \
+            -e 's/^\(Abhainn\|Afon\|Ri[ou]\) //g' \
+            -e 's/^\(Ducado\|Reinu\) de l'"\'"'//g' \
+            -e 's/^[Dd][eé]part[aei]m[ei]*nt[o]* //g' \
+            -e 's/'\''i \(krahvkond\|departemang\)$//g' \
             \
             -e 's/^[Pp]ro[bv][ëií][nñ]\([cs][eiío]*[ae]*\|z\) \(d*[eio] \)*//g' \
-            -e 's/^\(.*\)ko probintzia$/\1/g' \
-            -e 's/^\(.*\)jas province$/\1ja/g' \
-            -e 's/^\(.*\)jos provincija$/\1ja/g' \
             -e 's/ [Pp]ro[bv]i[nñ][ct][esz]*\(i[j]*a\)*$//g' \
-            -e 's/^\(Mkoa wa\|Talaith\|\|W[iı]lay\(ah\|etê\)\) //g' \
             -e 's/[ -]\(eanangoddi\|ili\|[Ss]én[g]*\|vilayəti\)$//g' \
+            -e 's/joki$//g' \
             \
             -e 's/^biển /Biển /g' \
             -e 's/^m\([ae]re*\) /M\1 /g' \
