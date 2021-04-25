@@ -126,6 +126,7 @@ done
 grep -Pzo "\n *<[a-zA-Z]*Entity>\n *<Id>.*\n *</[a-zA-Z]*Entity>.*\n" *.xml
 grep -Pzo "\n *</Names.*\n *</*(Names|GameId).*\n" *.xml
 grep -Pzo "\n *<Names>\n *<[^N].*\n" *.xml
+grep -Pzo "\n *<Name .*\n *</L.*\n" *.xml
 grep -Pzo "\n *</GameIds>\n *<Name .*\n" *.xml
 grep -Pzo "\n *<GameId .*\n *<Name.*\n" *.xml
 grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
