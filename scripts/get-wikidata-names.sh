@@ -43,8 +43,21 @@ function transliterate-name() {
     elif [ "${LANGUAGE_CODE}" == "bg" ]; then
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "bul" "streamlined" |
             sed 's/\([a-zA-Z]\)H/\1h/g')
+    elif [ "${LANGUAGE_CODE}" == "cu" ]; then
+        LATIN_NAME=$(curl -s \
+            --location 'https://podolak.net/en/transliteration/old-church-slavonic' \
+            --request POST \
+            --data-urlencode 'quelltext=cu' \
+            --data-urlencode 'zieltext=isor9' \
+            --data-urlencode 'startabfrage=1' \
+            --data-urlencode 'text=Омьскъ' \
+            --data-urlencode 'transliteration=Transliteration' \
+            --data-urlencode 'cu_isor9_jer=3' | \
+                grep "ausgabe" | \
+                sed 's/.*>\(.*\)<\/textarea>.*/\1/g')
     elif [ "${LANGUAGE_CODE}" == "cv" ]; then
-        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "chv" "ala-lc")
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "chv" "ala-lc" |
+            sed 's/i͡/y/g')
     elif [ "${LANGUAGE_CODE}" == "el" ]; then
         LATIN_NAME=$(curl -s \
             --location 'https://transliterate.com/Home/Transliterate' \
@@ -139,6 +152,9 @@ function normalise-name() {
             -e 's/ havet$/ Havet/g' \
             -e 's/ j\([uū]ra\)$/ J\1/g' \
             -e 's/ m\([aeoó][rř]j*[ioe]\)$/ M\1/g' \
+            \
+            -e 's/^la[cg]o* //g' \
+            -e 's/^Llyn //g' \
             \
             -e 's/n-a$/na/g'
 }
@@ -403,6 +419,7 @@ function get-names() {
     get-name-for-language "Shona" "sn"
     get-name-for-language "Sicilian" "scn"
     get-name-for-language "Silesian" "szl"
+    get-name-for-language "Slavonic_Church" "cu"
     get-name-for-language "Slovak" "sk"
     get-name-for-language "Slovene" "sl"
     get-name-for-language "Somali" "so"
