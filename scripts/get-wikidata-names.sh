@@ -65,7 +65,8 @@ function transliterate-name() {
             --form 'input="'"${RAW_NAME}"'"' | jq '.latin' | sed \
                 -e 's/^"\(.*\)"$/\1/g' \
                 -e 's/^Mp/B/g' \
-                -e 's/mpo/bo/g' \
+                -e 's/mp\([ao]\)/b\1/g' \
+                -e 's/ntm/dm/g' \
                 -e 's/rnk/rk/g' \
                 -e 's/snt/sht/g')
     elif [ "${LANGUAGE_CODE}" == "hy" ]; then
@@ -117,29 +118,29 @@ function normalise-name() {
         sed \
             -e 's/ *$//g' \
             -e 's/^\(Category\)\://g' \
-            -e 's/ \(suyu\|[Mm]unicipality\)$//g' \
             -e 's/^\([Gg]e*m[ei]+n*t*[aen]\|Faritan'"'"'i\|[Mm]agaalada\) //g' \
             -e 's/^[KkCc]om*un*[ea] d[eio] //g' \
             -e 's/^\(Category\)\: //g' \
             -e 's/^Lungsod ng //g' \
             \
             -e 's/^\(Byen\|Dinas\|Ìlú\|Mbanza ya\|Sita\|Syudad han\) //g' \
-            -e 's/ \(Chê\|Chhī\|Sṳ\)$//g' \
-            \
             -e 's/^Co[ou]nt\(ae\|y\) //g' \
             -e 's/^Con[dt][aá]d*[eou] \(d[eo] \)*//g' \
             -e 's/^Comt[aé]t* de //g' \
             -e 's/^[KkCc]om*un*[ea]*[n]* //g' \
-            -e 's/^\(Comitatu[ls]\|Graafskap\|Graflando\|Hạt\|Hrabství\|Komēteía\|Kontelezh\|Swydd\|Vilojati\) //g' \
-            -e 's/^\(Khu vực\|Mkoa wa\|Talaith\|\|W[iı]lay\(a\|ah\|etê\)\) \(ya \)*//g' \
+            -e 's/^[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]* \(d*[eio] \)*//g' \
+            -e 's/^\(Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Hrabství\|Komēteía\|Kontelezh\|Swydd\|ti\|Vilojati\) //g' \
+            -e 's/^\(Khu vực\|Jimbo ya\|Lalawigan ng\|Mkoa wa\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\||W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
             -e 's/^\(District\|[Rr]e[gh]i[oóu]n*[ea]*\) \(d[ei]\|of \)*//g' \
-            -e 's/ \(Bölgesi\|çayı\|jõgi\|Kūn\|maakunta\|megye\|Nehri\|[Rr]egion\|vald\|vilājs\)$//g' \
-            -e 's/as \(vilājs\)$/a/g' \
+            -e 's/[ -]\(Bölgesi\|çayı\|Chê\|Chhī\|jõgi\|Kūn\|linn\|maakunta\|megye\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|[Rr]egion\|šaary\|síksá\|Sṳ\|suyu\|tamaneɣt\|tartomány\|vald\|[Vv]il[aā][jy]\(eti\|s\)\)$//g' \
+            -e 's/ [Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*$//g' \
+            -e 's/as \(vilāj[as]\|mintaka\)$/a/g' \
             -e 's/jas \(grāfiste\|province\)$/ja/g' \
             -e 's/jos \(provincija\)$/ja/g' \
             -e 's/ko \(konderria\|probintzia\)$//g' \
             -e 's/n \(kreivikunta\)$//g' \
-            -e 's/o \(grafystė\)$/as/g' \
+            -e 's/o \(emyratas\|grafystė\)$/as/g' \
+            -e 's/os \(vilaja\)$/as/g' \
             -e 's/ [KkCc]om*un*[ea]*$//g' \
             \
             -e 's/^\(Abhainn\|Afon\|Ri[ou]\) //g' \
@@ -147,8 +148,6 @@ function normalise-name() {
             -e 's/^[Dd][eé]part[aei]m[ei]*nt[o]* //g' \
             -e 's/'\''i \(krahvkond\|departemang\)$//g' \
             \
-            -e 's/^[Pp]ro[bv][ëií][nñ]\([cs][eiío]*[ae]*\|z\) \(d*[eio] \)*//g' \
-            -e 's/ [Pp]ro[bv]i[nñ][ct][esz]*\(i[j]*a\)*$//g' \
             -e 's/[ -]\(eanangoddi\|ili\|[Ss]én[g]*\|vilayəti\)$//g' \
             -e 's/joki$//g' \
             \
