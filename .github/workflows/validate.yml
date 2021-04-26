@@ -1,7 +1,7 @@
-name: Build
+name: Validation
 
 on:
-  push:
+  pull_request:
     branches: [ master ]
 
   workflow_dispatch:
@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build the mods
-        run: bash scripts/build.sh
+        run: bash scripts/validate-data.sh
