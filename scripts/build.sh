@@ -22,12 +22,14 @@ if [[ $* != *--skip-updates* ]]; then
     bash "${SCRIPTSDIR}/update-builder.sh"
 fi
 
-echo "Validating the files..."
-VALIDATE_DATA="$(bash scripts/validate-data.sh | tr '\0' '\n')"
-if [ -n "${VALIDATE_DATA}" ]; then
-    echo "Input files validation failed!"
-    echo "${VALIDATE_DATA}"
-    exit 1
+if [[ $* != *--skip-validation* ]]; then
+    echo "Validating the files..."
+    VALIDATE_DATA="$(bash scripts/validate-data.sh | tr '\0' '\n')"
+    if [ -n "${VALIDATE_DATA}" ]; then
+        echo "Input files validation failed!"
+        echo "${VALIDATE_DATA}"
+        exit 1
+    fi
 fi
 
 function build-edition {
