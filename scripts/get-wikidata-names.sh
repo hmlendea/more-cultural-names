@@ -66,6 +66,7 @@ function transliterate-name() {
             --form 'input="'"${RAW_NAME}"'"' | jq '.latin' | sed \
                 -e 's/^"\(.*\)"$/\1/g' \
                 -e 's/^Mp/B/g' \
+                -e 's/^Nk/G/g' \
                 -e 's/mp\([ao]\)/b\1/g' \
                 -e 's/ntm/dm/g' \
                 -e 's/rnk/rk/g' \
