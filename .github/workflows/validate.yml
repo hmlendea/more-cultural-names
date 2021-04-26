@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build the mods
+      - name: Validate the data
         run: |
           VALIDATE_DATA="$(bash scripts/validate-data.sh | tr '\0' '\n')"
           if [ -n "${VALIDATE_DATA}" ]; then
