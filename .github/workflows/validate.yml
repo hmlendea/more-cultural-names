@@ -14,4 +14,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build the mods
-        run: bash scripts/validate-data.sh
+        run: |
+          VALIDATE_DATA="$(bash scripts/validate-data.sh | tr '\0' '\n')"
+          if [ -n "${VALIDATE_DATA}" ]; then
+              echo "Input files validation failed!"
+              echo "${VALIDATE_DATA}"
+              exit 1
+          fi
