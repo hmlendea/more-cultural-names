@@ -39,7 +39,8 @@ function transliterate-name() {
     elif [ "${LANGUAGE_CODE}" == "ba" ]; then
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "bak" "iso-9")
     elif [ "${LANGUAGE_CODE}" == "be" ]; then
-        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "bel" "national")
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "bel" "national" |
+            sed 's/\([a-zA-Z]\)H/\1h/g')
     elif [ "${LANGUAGE_CODE}" == "bg" ]; then
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "bul" "streamlined" |
             sed 's/\([a-zA-Z]\)H/\1h/g')
@@ -132,7 +133,7 @@ function normalise-name() {
             -e 's/^\(Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Hrabství\|Komēteía\|Kontelezh\|Swydd\|ti\|Vilojati\) //g' \
             -e 's/^\(Khu vực\|Jimbo ya\|Lalawigan ng\|Mkoa wa\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\||W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
             -e 's/^\(District\|[Rr]e[gh]i[oóu]n*[ea]*\) \(d[ei]\|of \)*//g' \
-            -e 's/[ -]\(Bölgesi\|çayı\|Chê\|Chhī\|jõgi\|Kūn\|linn\|maakunta\|megye\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|[Rr]egion\|šaary\|síksá\|Sṳ\|suyu\|tamaneɣt\|tartomány\|vald\|[Vv]il[aā][jy]\(eti\|s\)\)$//g' \
+            -e 's/[ -]\(Bölgesi\|çayı\|Chê\|Chhī\|jõgi\|Kūn\|linn\|maakunta\|megye\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|[Rr]egion\|šaary\|síksá\|Sṳ\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\)$//g' \
             -e 's/ [Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*$//g' \
             -e 's/as \(vilāj[as]\|mintaka\)$/a/g' \
             -e 's/jas \(grāfiste\|province\)$/ja/g' \
