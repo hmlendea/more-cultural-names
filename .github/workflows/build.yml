@@ -13,5 +13,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Validate the data
+        run: |
+          VALIDATE_DATA="$(bash scripts/validate-data.sh | tr '\0' '\n')"
+          if [ -n "${VALIDATE_DATA}" ]; then
+              echo "Input files validation failed!"
+              echo "${VALIDATE_DATA}"
+              exit 1
+          fi
+
+      - name: Download the builder
+        run: bash scripts/update-builder.sh
+
       - name: Build the mods
-        run: bash scripts/build.sh
+        run: bash scripts/build.sh --skip-validation --skip-updates
