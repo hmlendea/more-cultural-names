@@ -1,7 +1,9 @@
 #!/bin/bash
 
 WIKIDATA_ID="${1}"
+
 WIKIDATA_URL="https://www.wikidata.org/wiki/Special:EntityData/${1}.json"
+GREEK_TRANSLITERATION_URL="https://transliterate.com/Home/Transliterate"
 
 if [ ! -f "/usr/bin/jq" ]; then
     echo "Missing 'jq'! Please make sure it's present on the system in order to use this script!"
@@ -10,8 +12,108 @@ fi
 
 DATA=$(curl -s "${WIKIDATA_URL}")
 
+function get-translitterationDotCom-transliteration() {
+    RAW_NAME="${1}"
+    LANGUAGE="${2}"
+    SCHEME="${3}"
+
+    curl -s \
+        --location 'https://www.translitteration.com/ajax/en/transliterate/' \
+        --request POST \
+        --form 'text="'"${RAW_NAME}"'"' \
+        --form 'tlang="'"${LANGUAGE}"'"' \
+        --form 'script="latn"' \
+        --form 'scheme="'"${SCHEME}"'"' |
+            sed 's/^ack::://g'
+}
+
+function transliterate-name() {
+    LANGUAGE_CODE="${1}" && shift
+    RAW_NAME=$(echo "$*" | sed 's/^"\(.*\)"$/\1/g')
+    LATIN_NAME="${RAW_NAME}"
+
+    if [ "${LANGUAGE_CODE}" == "ab" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "abk" "iso-9")
+    elif [ "${LANGUAGE_CODE}" == "ady" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "ady" "iso-9")
+    elif [ "${LANGUAGE_CODE}" == "ba" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "bak" "iso-9")
+    elif [ "${LANGUAGE_CODE}" == "be" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "bel" "national" |
+            sed 's/\([a-zA-Z]\)H/\1h/g')
+    elif [ "${LANGUAGE_CODE}" == "bg" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "bul" "streamlined" |
+            sed 's/\([a-zA-Z]\)H/\1h/g')
+    elif [ "${LANGUAGE_CODE}" == "cu" ]; then
+        LATIN_NAME=$(curl -s \
+            --location 'https://podolak.net/en/transliteration/old-church-slavonic' \
+            --request POST \
+            --data-urlencode 'quelltext=cu' \
+            --data-urlencode 'zieltext=isor9' \
+            --data-urlencode 'startabfrage=1' \
+            --data-urlencode 'text='"${RAW_NAME}" \
+            --data-urlencode 'transliteration=Transliteration' \
+            --data-urlencode 'cu_isor9_jer=3' | \
+                grep "ausgabe" | \
+                sed 's/.*>\(.*\)<\/textarea>.*/\1/g')
+    elif [ "${LANGUAGE_CODE}" == "cv" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "chv" "ala-lc" |
+            sed 's/i͡/y/g')
+    elif [ "${LANGUAGE_CODE}" == "el" ]; then
+        LATIN_NAME=$(curl -s \
+            --location 'https://transliterate.com/Home/Transliterate' \
+            --request POST \
+            --form 'input="'"${RAW_NAME}"'"' | jq '.latin' | sed \
+                -e 's/^"\(.*\)"$/\1/g' \
+                -e 's/^Mp/B/g' \
+                -e 's/^Nk/G/g' \
+                -e 's/^Nt/D/g' \
+                -e 's/mp\([ao]\)/b\1/g' \
+                -e 's/nknt/gd/g' \
+                -e 's/ntm/dm/g' \
+                -e 's/rnk/rk/g' \
+                -e 's/snt/sht/g')
+    elif [ "${LANGUAGE_CODE}" == "hy" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "xcl" "iso-9985")
+    elif [ "${LANGUAGE_CODE}" == "hyw" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "hye" "ala-lc")
+    elif [ "${LANGUAGE_CODE}" == "ka" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "kat" "national")
+    elif [ "${LANGUAGE_CODE}" == "kk" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "kaz" "national")
+    elif [ "${LANGUAGE_CODE}" == "ky" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "kir" "iso-9")
+    elif [ "${LANGUAGE_CODE}" == "mk" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "mkd" "bgn-pcgn")
+    elif [ "${LANGUAGE_CODE}" == "mn" ]; then
+        LATIN_NAME=$(curl -s \
+            --location 'https://www.ushuaia.pl/transliterate/transliterate.php' \
+            --request POST \
+            --header 'Cookie: translit=6tpj46oc8cq7ou4vci78f37rbi; lastlang=mongolian_mns_transliterate;' \
+            --header 'Content-Type: application/x-www-form-urlencoded' \
+            --data-urlencode 'text='"${RAW_NAME}" \
+            --data-urlencode 'lang=mongolian_mns_transliterate')
+    elif [ "${LANGUAGE_CODE}" == "os" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "oss" "iso-9")
+    elif [ "${LANGUAGE_CODE}" == "ru" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "rus" "bgn-pcgn" |
+            sed 's/\([a-zA-Z]\)Y/\1y/g')
+    elif [ "${LANGUAGE_CODE}" == "sr" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "srp" "national")
+    elif [ "${LANGUAGE_CODE}" == "udm" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "udm" "bgn-pcgn")
+    elif [ "${LANGUAGE_CODE}" == "uk" ]; then
+        LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "ukr" "bgn-pcgn")
+    fi
+
+    echo "${LATIN_NAME}"
+}
+
 function normalise-name() {
-    echo $* | \
+    LANGUAGE_CODE="${1}" && shift
+    NAME=$(echo "$*" | sed 's/^"\(.*\)"$/\1/g')
+
+    transliterate-name "${LANGUAGE_CODE}" "${NAME}" | \
         sed 's/^"\(.*\)"$/\1/g' | \
         awk -F" - " '{print $1}' | \
         awk -F"/" '{print $1}' | \
@@ -20,17 +122,40 @@ function normalise-name() {
         sed \
             -e 's/ *$//g' \
             -e 's/^\(Category\)\://g' \
-            -e 's/ \(suyu\|[Mm]unicipality\)$//g' \
             -e 's/^\([Gg]e*m[ei]+n*t*[aen]\|Faritan'"'"'i\|[Mm]agaalada\) //g' \
             -e 's/^[KkCc]om*un*[ea] d[eio] //g' \
             -e 's/^\(Category\)\: //g' \
-            -e 's/ [KkCc]om*un*[ea]*$//g' \
             -e 's/^Lungsod ng //g' \
             \
             -e 's/^\(Byen\|Dinas\|Ìlú\|Mbanza ya\|Sita\|Syudad han\) //g' \
-            -e 's/ \(Chê\|Chhī\|Sṳ\)$//g' \
+            -e 's/^Co[ou]nt\(ae\|y\) //g' \
+            -e 's/^Con[dt][aá]d*[eou] \(d[eo] \)*//g' \
+            -e 's/^Comt[aé]t* de //g' \
+            -e 's/^[KkCc]om*un*[ea]*[n]* //g' \
+            -e 's/^[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]* \(d*[eio] \)*//g' \
+            -e 's/^Res*publi[ck]a //g' \
+            -e 's/^\(Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Hrabství\|Ìpínlẹ̀\|Komēteía\|Kontelezh\|Pasiolak\|Swydd\|ti\|Vilojati\) //g' \
+            -e 's/^\(Khu vực\|Jimbo ya\|Lalawigan ng\|Mkoa wa\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\||W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
+            -e 's/^\(Distri[ck]to*\|[Rr]e[gh]i[oóu]n*[ea]*\) \(d[ei]\|of \)*//g' \
+            -e 's/[ -]\(Bölgesi\|çayı\|Chê\|Chhī\|Cumhuriyeti\|gielda\|Hahoodzo\|jõgi\|Kūn\|linn\|maakunta\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|osariik\|[Rr]egion\|šaary\|síksá\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\)$//g' \
+            -e 's/[ -]\(sht’at’i\)$//g' \
+            -e 's/ [Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*$//g' \
+            -e 's/as \(vilāj[as]\|mintaka\)$/a/g' \
+            -e 's/jas \(grāfiste\|province\)$/ja/g' \
+            -e 's/jos \(provincija\)$/ja/g' \
+            -e 's/ko \(konderria\|probintzia\)$//g' \
+            -e 's/n \(kreivikunta\)$//g' \
+            -e 's/o \(emyratas\|grafystė\)$/as/g' \
+            -e 's/os \(vilaja\)$/as/g' \
+            -e 's/ [KkCc]om*un*[ea]*$//g' \
             \
-            -e 's/^Regi[oó] de //g' \
+            -e 's/^\(Abhainn\|Afon\|Ri[ou]\) //g' \
+            -e 's/^\(Ducado\|Reinu\) de l'"\'"'//g' \
+            -e 's/^[Dd][eé]part[aei]m[ei]*nt[o]* //g' \
+            -e 's/'\''i \(krahvkond\|departemang\)$//g' \
+            -e 's/'\''i \(krahvkond\|departemang\)$//g' \
+            \
+            -e 's/[ -]\(eanangoddi\|ili\|[Ss]én[g]*\|vilayəti\)$//g' \
             \
             -e 's/^biển /Biển /g' \
             -e 's/^m\([ae]re*\) /M\1 /g' \
@@ -38,6 +163,9 @@ function normalise-name() {
             -e 's/ havet$/ Havet/g' \
             -e 's/ j\([uū]ra\)$/ J\1/g' \
             -e 's/ m\([aeoó][rř]j*[ioe]\)$/ M\1/g' \
+            \
+            -e 's/^la[cg]o* //g' \
+            -e 's/^Llyn //g' \
             \
             -e 's/n-a$/na/g'
 }
@@ -50,7 +178,7 @@ function capitalise() {
 function get-name-from-label() {
     LANGUAGE_CODE="${1}"
     LABEL=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.labels.'"\""${LANGUAGE_CODE}"\""'.value')
-    NAME=$(normalise-name "${LABEL}")
+    NAME=$(normalise-name "${LANGUAGE_CODE}" "${LABEL}")
 
     echo "${NAME}"
 }
@@ -58,9 +186,9 @@ function get-name-from-label() {
 function get-name-from-sitelink() {
     LANGUAGE_CODE="$(echo "${1}" | sed 's/-/_/g')"
     SITELINK_TITLE=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.sitelinks.'"\""${LANGUAGE_CODE}wiki"\""'.title')
-    NAME=$(normalise-name "${SITELINK_TITLE}")
+    NAME=$(normalise-name "${LANGUAGE_CODE}" "${SITELINK_TITLE}")
 
-    echo "${NAME}"
+    echo "${LATIN_NAME}"
 }
 
 ENGLISH_NAME=$(get-name-from-label "en")
@@ -70,11 +198,11 @@ function get-raw-name-for-language() {
     LANGUAGE_CODE="${1}"
     NAME=$(get-name-from-label "${LANGUAGE_CODE}")
 
-    if [ -z "${NAME}" ] || [ "${NAME}" == "null" ]; then
+    if [ -z "${NAME}" ] || [ "${NAME}" == "null" ] || [ "${NAME}" == "Null" ]; then
         NAME=$(get-name-from-sitelink "${LANGUAGE_CODE}")
     fi
 
-    if [ -z "${NAME}" ] || [ "${NAME}" == "null" ]; then
+    if [ -z "${NAME}" ] || [ "${NAME}" == "null" ] || [ "${NAME}" == "Null" ]; then
         return
     fi
 
@@ -98,6 +226,20 @@ function get-name-for-language() {
     [ -n "${NAME}" ] && echo "      <Name language=\"${LANGUAGE_ID}\" value=\"${NAME}\" />"
 }
 
+function get-name-for-language-2codes() {
+    LANGUAGE_ID="${1}"
+    LANGUAGE1_CODE="${2}"
+    LANGUAGE2_CODE="${4}"
+
+    LANGUAGE1_NAME=$(get-raw-name-for-language "${LANGUAGE_ID}" "${LANGUAGE1_CODE}")
+
+    if [ -n "${LANGUAGE1_NAME}" ]; then
+        get-name-for-language "${LANGUAGE_ID}" "${LANGUAGE1_CODE}"
+    else
+        get-name-for-language "${LANGUAGE_ID}" "${LANGUAGE2_CODE}"
+    fi
+}
+
 function get-name-for-language-2variants() {
     LANGUAGE1_ID="${1}"
     LANGUAGE1_CODE="${2}"
@@ -115,13 +257,17 @@ function get-name-for-language-2variants() {
 }
 
 function get-names() {
+    get-name-for-language "Abkhaz" "ab"
     get-name-for-language "Acehnese" "ace"
+    get-name-for-language "Adyghe" "ady"
     get-name-for-language "Afrikaans" "af"
     get-name-for-language "Akan_Twi" "tw"
     get-name-for-language "Akan" "ak"
     get-name-for-language "Albanian" "sq"
     get-name-for-language "Alemannic" "gsw"
     get-name-for-language "Aragonese" "an"
+    get-name-for-language "Armenian" "hy"
+    get-name-for-language "Armenian_West" "hyw"
     get-name-for-language "Aromanian" "rup"
     get-name-for-language "Arpitan" "frp"
     get-name-for-language "Asturian" "ast"
@@ -132,12 +278,15 @@ function get-names() {
     get-name-for-language "Balinese" "ban"
     get-name-for-language "Bambara" "bm"
     get-name-for-language "Banjarese" "bjn"
+    get-name-for-language "Bashkir" "ba"
     get-name-for-language "Basque" "eu"
     get-name-for-language "Bavarian" "bar"
+    get-name-for-language "Belarussian" "be"
     get-name-for-language "Bikol_Central" "bcl"
     get-name-for-language "Bislama" "bi"
     get-name-for-language "Breton" "br"
     get-name-for-language "Buginese" "bug"
+    get-name-for-language "Bulgarian" "bg"
     get-name-for-language "Catalan" "ca"
     get-name-for-language "Cebuano" "ceb"
     get-name-for-language "Chamorro" "ch"
@@ -146,6 +295,7 @@ function get-names() {
     get-name-for-language "Chinese_Hakka" "hak"
     get-name-for-language "Chinese_Min_Eastern" "cdo"
     get-name-for-language "Chinese_Min_South" "nan"
+    get-name-for-language "Chuvash" "cv"
     get-name-for-language "Cornish" "kw"
     get-name-for-language "Corsican" "co"
     get-name-for-language "Czech" "cs"
@@ -172,11 +322,13 @@ function get-names() {
     get-name-for-language "Fulah" "ff"
     get-name-for-language "Gagauz" "gag"
     get-name-for-language "Galician" "gl"
+    get-name-for-language "Georgian" "ka"
     get-name-for-language "German_Low_Dutch" "nds-nl"
     get-name-for-language "German_Low" "nds"
     get-name-for-language "German_Palatine" "pfl"
     get-name-for-language "German_Pennsylvania" "pdc"
     get-name-for-language "German" "de"
+    get-name-for-language "Greek" "el"
     get-name-for-language "Greenlandic" "kl"
     get-name-for-language "Guarani" "gn"
     get-name-for-language "Guianese_French" "gcr"
@@ -202,7 +354,7 @@ function get-names() {
     get-name-for-language "Kabuverdianu" "kea"
     get-name-for-language "Karakalpak" "kaa"
     get-name-for-language "Kashubian" "csb"
-    get-name-for-language "Kazakh" "kk-latn"
+    get-name-for-language-2codes "Kazakh" "kk-latn" "kk"
     get-name-for-language "Kichwa_Chimboraazo" "qug"
     get-name-for-language "Kikuyu" "ki"
     get-name-for-language "Kinyarwanda" "rw"
@@ -210,6 +362,7 @@ function get-names() {
     get-name-for-language "Konkani_Goa" "gom-latn"
     get-name-for-language "Kotava" "avk"
     get-name-for-language "Kurdish" "ku"
+    get-name-for-language "Kyrgyz" "ky"
     get-name-for-language "Ladin" "lld"
     get-name-for-language "Ladino" "lad"
     get-name-for-language "Latgalian" "ltg"
@@ -225,6 +378,7 @@ function get-names() {
     get-name-for-language "Lombard" "lmo"
     get-name-for-language "Luganda" "lg"
     get-name-for-language "Luxembourgish" "lb"
+    get-name-for-language "Macedonian_Slavic" "mk"
     get-name-for-language "Madurese" "mad"
     get-name-for-language "Malagasy" "mg"
     get-name-for-language "Malay" "ms"
@@ -233,6 +387,7 @@ function get-names() {
     get-name-for-language "Maori" "mi"
     get-name-for-language "Minangkabau" "min"
     get-name-for-language "Mirandese" "mwl"
+    get-name-for-language "Mongol" "mn"
     get-name-for-language "Nahuatl" "nah"
     get-name-for-language "Nauru" "na"
     get-name-for-language "Navajo" "nv"
@@ -242,6 +397,7 @@ function get-names() {
     get-name-for-language "Novial" "nov"
     get-name-for-language "Occitan" "oc"
     get-name-for-language "Oromo" "om"
+    get-name-for-language "Ossetic" "os"
     get-name-for-language "Pangasinan" "pag"
     get-name-for-language "Papiamento" "pap"
     get-name-for-language "Picard" "pcd"
@@ -255,6 +411,7 @@ function get-names() {
     get-name-for-language "Romanian" "ro"
     get-name-for-language "Romansh" "rm"
     get-name-for-language "Rundi" "rn"
+    get-name-for-language "Russian" "ru"
     get-name-for-language "Sakizaya" "szy"
     get-name-for-language "Sami_Inari" "smn"
     get-name-for-language "Sami_North" "se"
@@ -269,10 +426,12 @@ function get-names() {
     get-name-for-language "Seediq" "trv"
     get-name-for-language-2variants "Bosnian" "bs" "SerboCroatian" "sh"
     get-name-for-language-2variants "Croatian" "hr" "SerboCroatian" "sh"
+    get-name-for-language-2variants "Serbian" "sr" "SerboCroatian" "sh"
     get-name-for-language-2variants "Serbian" "sr-el" "SerboCroatian" "sh"
     get-name-for-language "Shona" "sn"
     get-name-for-language "Sicilian" "scn"
     get-name-for-language "Silesian" "szl"
+    get-name-for-language "Slavonic_Church" "cu"
     get-name-for-language "Slovak" "sk"
     get-name-for-language "Slovene" "sl"
     get-name-for-language "Somali" "so"
@@ -296,6 +455,8 @@ function get-names() {
     get-name-for-language "Tsonga" "ts"
     get-name-for-language "Turkish" "tr"
     get-name-for-language "Turkmen" "tk"
+    get-name-for-language "Udmurt" "udm"
+    get-name-for-language "Ukrainian" "uk"
     get-name-for-language "Uzbek" "uz"
     get-name-for-language "Venetian" "vec"
     get-name-for-language "Vepsian" "vep"

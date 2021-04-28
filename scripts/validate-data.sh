@@ -126,14 +126,17 @@ done
 grep -Pzo "\n *<[a-zA-Z]*Entity>\n *<Id>.*\n *</[a-zA-Z]*Entity>.*\n" *.xml
 grep -Pzo "\n *</Names.*\n *</*(Names|GameId).*\n" *.xml
 grep -Pzo "\n *<Names>\n *<[^N].*\n" *.xml
+grep -Pzo "\n *<Name .*\n *</L.*\n" *.xml
 grep -Pzo "\n *</GameIds>\n *<Name .*\n" *.xml
 grep -Pzo "\n *<GameId .*\n *<Name.*\n" *.xml
 grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
 grep -Pzo "\n *<GameIds>\n *<[^G].*\n" *.xml
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
+grep -Pzo "\n *</[A-Za-z]*Entity.*\n *<(Id|Name).*\n" *.xml
 grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
 grep -n "==\"" *.xml
+grep --color -n "[a-zA-Z0-9]\"[^ <>/?]" *.xml
 grep --color -n "/>\s*[a-z]" *.xml
 
 grep -n "\(iso-639-[0-9]\)=\"[a-z]*\" \1" "${LANGUAGES_FILE}"
