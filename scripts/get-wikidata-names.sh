@@ -67,7 +67,9 @@ function transliterate-name() {
                 -e 's/^"\(.*\)"$/\1/g' \
                 -e 's/^Mp/B/g' \
                 -e 's/^Nk/G/g' \
+                -e 's/^Nt/D/g' \
                 -e 's/mp\([ao]\)/b\1/g' \
+                -e 's/nknt/gd/g' \
                 -e 's/ntm/dm/g' \
                 -e 's/rnk/rk/g' \
                 -e 's/snt/sht/g')
@@ -131,10 +133,12 @@ function normalise-name() {
             -e 's/^Comt[aé]t* de //g' \
             -e 's/^[KkCc]om*un*[ea]*[n]* //g' \
             -e 's/^[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]* \(d*[eio] \)*//g' \
-            -e 's/^\(Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Hrabství\|Komēteía\|Kontelezh\|Swydd\|ti\|Vilojati\) //g' \
+            -e 's/^Res*publi[ck]a //g' \
+            -e 's/^\(Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Hrabství\|Ìpínlẹ̀\|Komēteía\|Kontelezh\|Pasiolak\|Swydd\|ti\|Vilojati\) //g' \
             -e 's/^\(Khu vực\|Jimbo ya\|Lalawigan ng\|Mkoa wa\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\||W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
-            -e 's/^\(District\|[Rr]e[gh]i[oóu]n*[ea]*\) \(d[ei]\|of \)*//g' \
-            -e 's/[ -]\(Bölgesi\|çayı\|Chê\|Chhī\|jõgi\|Kūn\|linn\|maakunta\|megye\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|[Rr]egion\|šaary\|síksá\|Sṳ\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\)$//g' \
+            -e 's/^\(Distri[ck]to*\|[Rr]e[gh]i[oóu]n*[ea]*\) \(d[ei]\|of \)*//g' \
+            -e 's/[ -]\(Bölgesi\|çayı\|Chê\|Chhī\|Cumhuriyeti\|gielda\|Hahoodzo\|jõgi\|Kūn\|linn\|maakunta\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|osariik\|[Rr]egion\|šaary\|síksá\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\)$//g' \
+            -e 's/[ -]\(sht’at’i\)$//g' \
             -e 's/ [Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*$//g' \
             -e 's/as \(vilāj[as]\|mintaka\)$/a/g' \
             -e 's/jas \(grāfiste\|province\)$/ja/g' \
@@ -149,9 +153,9 @@ function normalise-name() {
             -e 's/^\(Ducado\|Reinu\) de l'"\'"'//g' \
             -e 's/^[Dd][eé]part[aei]m[ei]*nt[o]* //g' \
             -e 's/'\''i \(krahvkond\|departemang\)$//g' \
+            -e 's/'\''i \(krahvkond\|departemang\)$//g' \
             \
             -e 's/[ -]\(eanangoddi\|ili\|[Ss]én[g]*\|vilayəti\)$//g' \
-            -e 's/joki$//g' \
             \
             -e 's/^biển /Biển /g' \
             -e 's/^m\([ae]re*\) /M\1 /g' \
