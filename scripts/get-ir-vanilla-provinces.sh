@@ -28,7 +28,7 @@ function mapNameToLanguage() {
 }
 
 sed -i 's/^\([0-9]*\)_aaa=\(.*\)/    <\/Names>\n  <\/LocationEntity>\n  <LocationEntity>\n    <Id>\2<\/Id>\n    <GameIds>\n      <GameId game=\"ImperatorRome\">\1<\/GameId> <!-- \2 -->\n    <\/GameIds>\n    <Names>/g' "${OUTPUT_FILE}"
-sed -ie 's/<Id>\([^<]*\)/<Id>\L\1/g' "${OUTPUT_FILE}"
+sed -i 's/<Id>\([^<]*\)/<Id>\L\1/g' "${OUTPUT_FILE}"
 sed -i '/<Id>/s/ /_/g' "${OUTPUT_FILE}"
 sed -i 's/^____/    /g' "${OUTPUT_FILE}"
 
