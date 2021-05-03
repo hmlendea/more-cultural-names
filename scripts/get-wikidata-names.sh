@@ -157,8 +157,16 @@ function normalise-name() {
             \
             -e 's/[ -]\(eanangoddi\|ili\|[Ss]én[g]*\|vilayəti\)$//g' \
             \
+            -e 's/ amšyn$/ Amšyn/g' \
             -e 's/^biển /Biển /g' \
+            -e 's/ d\([əei][nňņ][g]*[eizẓ]*\)$/ D\1/g' \
+            -e 's/ zarez’$/ Zarez’/g' \
+            -e 's/ çov$/ Çov/g' \
+            -e 's/ tinĕsĕ$/ Tinĕsĕ/g' \
+            -e 's/ mora$/ Mora/g' \
+            -e 's/ itsasoa$/ Itsasoa/g' \
             -e 's/^m\([ae]re*\) /M\1 /g' \
+            -e 's/ nord$/ Nord/g' \
             -e 's/ d\([eə]ng*izi\)$/ D\1/g' \
             -e 's/ havet$/ Havet/g' \
             -e 's/ j\([uū]ra\)$/ J\1/g' \
