@@ -237,9 +237,9 @@ function get-name-for-language() {
 function get-name-for-language-2codes() {
     LANGUAGE_ID="${1}"
     LANGUAGE1_CODE="${2}"
-    LANGUAGE2_CODE="${4}"
+    LANGUAGE2_CODE="${3}"
 
-    LANGUAGE1_NAME=$(get-raw-name-for-language "${LANGUAGE_ID}" "${LANGUAGE1_CODE}")
+    LANGUAGE1_NAME=$(get-raw-name-for-language "${LANGUAGE1_CODE}")
 
     if [ -n "${LANGUAGE1_NAME}" ]; then
         get-name-for-language "${LANGUAGE_ID}" "${LANGUAGE1_CODE}"
