@@ -135,11 +135,12 @@ function normalise-name() {
             -e 's/^[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]* \(d*[eio] \)*//g' \
             -e 's/^Res*publi[ck]a //g' \
             -e 's/^\(Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Hrabství\|Ìpínlẹ̀\|Komēteía\|Kontelezh\|Pasiolak\|Swydd\|ti\|Vilojati\) //g' \
-            -e 's/^\(Khu vực\|Jimbo ya\|Lalawigan ng\|Mkoa wa\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\||W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
-            -e 's/^\(Distri[ck]to*\|[Rr]e[gh]i[oóu]n*[ea]*\) \(d[ei]\|of \)*//g' \
-            -e 's/[ -]\(Bölgesi\|çayı\|Chê\|Chhī\|Cumhuriyeti\|gielda\|[Gg]overnorate\|Hahoodzo\|jõgi\|Kūn\|linn\|maakunta\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|osariik\|[Rr]egion\|šaary\|síksá\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\)$//g' \
-            -e 's/[ -]\(sht’at’i\)$//g' \
+            -e 's/^\(Khu vực\|Jimbo ya\|Lalawigan ng\|Marz\|Mkoa wa\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\||W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
+            -e 's/^\(Distri[ck]to*\|[Rr]e[gģh]i[oóu]n*i*[aes]*\) \(d[ei] \|of \)*//g' \
+            -e 's/[ -]\(Bölgesi\|çayı\|Chê\|Chhī\|Cumhuriyeti\|gielda\|[Gg]overnorate\|Hahoodzo\|jõgi\|Kūn\|linn\|maak[ou]n[dt]a*\|[Mm]ahal[iı]\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|osariik\|[Rr]egion\|šaary\|síksá\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\)$//g' \
+            -e 's/[ -]\([Rr]e[gģh]i[oóu]n*[ei]*[as]*\|sht’at’i\|sritis\)$//g' \
             -e 's/ [Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*$//g' \
+            -e 's/skaya oblast[’]*$/sk/g' \
             -e 's/as \(vilāj[as]\|mintaka\)$/a/g' \
             -e 's/jas \(grāfiste\|province\)$/ja/g' \
             -e 's/jos \(provincija\)$/ja/g' \
@@ -147,6 +148,7 @@ function normalise-name() {
             -e 's/n \(kreivikunta\)$//g' \
             -e 's/o \(emyratas\|grafystė\)$/as/g' \
             -e 's/os \(vilaja\)$/as/g' \
+            -e 's/ [Cc]o[ou]nt\(ae\|y\)$//g' \
             -e 's/ [KkCc]om*un*[ea]*$//g' \
             \
             -e 's/^\(Abhainn\|Afon\|Ri[ou]\) //g' \
@@ -157,8 +159,16 @@ function normalise-name() {
             \
             -e 's/[ -]\(eanangoddi\|ili\|[Ss]én[g]*\|vilayəti\)$//g' \
             \
+            -e 's/ amšyn$/ Amšyn/g' \
             -e 's/^biển /Biển /g' \
+            -e 's/ d\([əei][nňņ][g]*[eizẓ]*\)$/ D\1/g' \
+            -e 's/ zarez’$/ Zarez’/g' \
+            -e 's/ çov$/ Çov/g' \
+            -e 's/ tinĕsĕ$/ Tinĕsĕ/g' \
+            -e 's/ mora$/ Mora/g' \
+            -e 's/ itsasoa$/ Itsasoa/g' \
             -e 's/^m\([ae]re*\) /M\1 /g' \
+            -e 's/ nord$/ Nord/g' \
             -e 's/ d\([eə]ng*izi\)$/ D\1/g' \
             -e 's/ havet$/ Havet/g' \
             -e 's/ j\([uū]ra\)$/ J\1/g' \
@@ -183,12 +193,32 @@ function get-name-from-label() {
     echo "${NAME}"
 }
 
+function isNameUsable() {
+    LANGUAGE_CODE="${1}"
+    NAME="${2}"
+
+    if [ -z "${NAME}" ] || [ "${NAME}" == "null" ] || [ "${NAME}" == "Null" ]; then
+        return 1 # false
+    fi
+
+    NAME_FOR_COMPARISON=$(echo "${NAME}" | tr '[:upper:]' '[:lower:]')
+
+    if [ "${LANGUAGE_CODE}" != "en" ]; then
+        if [ "${NAME_FOR_COMPARISON}" == "${ENGLISH_NAME_FOR_COMPARISON}" ] ||
+           [ "${NAME_FOR_COMPARISON}" == "${ENGLISH_NAME_FOR_COMPARISON}'" ]; then
+            return 1 # false
+        fi
+    fi
+
+    return 0 # true
+}
+
 function get-name-from-sitelink() {
     LANGUAGE_CODE="$(echo "${1}" | sed 's/-/_/g')"
     SITELINK_TITLE=$(echo "${DATA}" | jq '.entities.'${WIKIDATA_ID}'.sitelinks.'"\""${LANGUAGE_CODE}wiki"\""'.title')
     NAME=$(normalise-name "${LANGUAGE_CODE}" "${SITELINK_TITLE}")
 
-    echo "${LATIN_NAME}"
+    echo "${NAME}"
 }
 
 ENGLISH_NAME=$(get-name-from-label "en")
@@ -198,21 +228,12 @@ function get-raw-name-for-language() {
     LANGUAGE_CODE="${1}"
     NAME=$(get-name-from-label "${LANGUAGE_CODE}")
 
-    if [ -z "${NAME}" ] || [ "${NAME}" == "null" ] || [ "${NAME}" == "Null" ]; then
+    if ! $(isNameUsable "${LANGUAGE_CODE}" "${NAME}"); then
         NAME=$(get-name-from-sitelink "${LANGUAGE_CODE}")
     fi
 
-    if [ -z "${NAME}" ] || [ "${NAME}" == "null" ] || [ "${NAME}" == "Null" ]; then
+    if ! $(isNameUsable "${LANGUAGE_CODE}" "${NAME}"); then
         return
-    fi
-
-    NAME_FOR_COMPARISON=$(echo "${NAME}" | tr '[:upper:]' '[:lower:]')
-
-    if [ "${LANGUAGE_CODE}" != "en" ]; then
-        if [ "${NAME_FOR_COMPARISON}" == "${ENGLISH_NAME_FOR_COMPARISON}" ] ||
-           [ "${NAME_FOR_COMPARISON}" == "${ENGLISH_NAME_FOR_COMPARISON}'" ]; then
-            return
-        fi
     fi
 
     echo "${NAME}"
@@ -229,9 +250,9 @@ function get-name-for-language() {
 function get-name-for-language-2codes() {
     LANGUAGE_ID="${1}"
     LANGUAGE1_CODE="${2}"
-    LANGUAGE2_CODE="${4}"
+    LANGUAGE2_CODE="${3}"
 
-    LANGUAGE1_NAME=$(get-raw-name-for-language "${LANGUAGE_ID}" "${LANGUAGE1_CODE}")
+    LANGUAGE1_NAME=$(get-raw-name-for-language "${LANGUAGE1_CODE}")
 
     if [ -n "${LANGUAGE1_NAME}" ]; then
         get-name-for-language "${LANGUAGE_ID}" "${LANGUAGE1_CODE}"
