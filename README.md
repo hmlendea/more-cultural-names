@@ -1,4 +1,4 @@
-[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_patreon_small.png)](https://www.patreon.com/hmlendea)[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal_small.png)](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal.png)[![Donate with LiberaPay](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_liberapay_small.png)](https://liberapay.com/HMlendea/donate)
+[![Donate](https://img.shields.io/badge/-%E2%99%A5%20Donate-%23ff69b4)](https://hmlendea.go.ro/fund.html)
 
 # About
 
@@ -50,5 +50,3 @@ Here are a few ways in which you can do so:
 
 If you wish to contribute directly to the project, you can find the documentation and 
 [guidelines](https://github.com/hmlendea/more-cultural-names/wiki/Guidelines) on the project's [wiki](https://github.com/hmlendea/more-cultural-names/wiki).
-
-[![Support on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_patreon.png)](https://www.patreon.com/hmlendea)[![Donate with PayPal](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal.png)](https://www.paypal.com/donate?hosted_button_id=6YVRGJHDGWGKQ)[![Donate with LiberaPay](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_liberapay.png)](https://liberapay.com/HMlendea/donate)
