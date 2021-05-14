@@ -19,9 +19,12 @@ The names are meant to provide an immersive and accurate experience for the game
 
 # Installation
 
-You can install this mod by either:
- - Subscribing to the mod page of the game for which you wish to install this mod
- - Download the [latest release](https://github.com/hmlendea/more-cultural-names/releases), and extract the contents into your game's mod directory
+[![Get it from the Workshop](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/steam-workshop.png)](https://hmlendea.github.io/more-cultural-names/workshop)
+
+## Manual installation
+
+ - Download the [latest release](https://github.com/hmlendea/more-cultural-names/releases)
+ - Extract the contents into your game's mod directory
 
 # Roadmap
 
