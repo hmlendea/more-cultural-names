@@ -1,4 +1,4 @@
-[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_patreon_small.png)](https://www.patreon.com/hmlendea)[![Support this on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal_small.png)](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal.png)[![Donate with LiberaPay](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_liberapay_small.png)](https://liberapay.com/HMlendea/donate)
+[![Donate](https://img.shields.io/badge/-%E2%99%A5%20Donate-%23ff69b4)](https://hmlendea.go.ro/fund.html) [![Latest GitHub release](https://img.shields.io/github/v/release/hmlendea/more-cultural-names)](https://github.com/hmlendea/more-cultural-names/releases/latest)
 
 # About
 
@@ -11,7 +11,7 @@ The names are meant to provide an immersive and accurate experience for the game
 | Game | Steam Workshop link |
 |---|---|
 |![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)|
-|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (HIP)](http://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (HIP)](https://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)|
 |![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (EK)](https://steamcommunity.com/sharedfiles/filedetails/?id=1745899430)|
 |![CK3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)|
 |![HOI4](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|[Hearts of Iron 4](https://steamcommunity.com/sharedfiles/filedetails/?id=2459257386)|
@@ -19,9 +19,12 @@ The names are meant to provide an immersive and accurate experience for the game
 
 # Installation
 
-You can install this mod by either:
- - Subscribing to the mod page of the game for which you wish to install this mod
- - Download the [latest release](https://github.com/hmlendea/more-cultural-names/releases), and extract the contents into your game's mod directory
+[![Get it from the Workshop](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/steam-workshop.png)](https://hmlendea.github.io/more-cultural-names/workshop)
+
+## Manual installation
+
+ - Download the [latest release](https://github.com/hmlendea/more-cultural-names/releases)
+ - Extract the contents into your game's mod directory
 
 # Roadmap
 
@@ -50,5 +53,3 @@ Here are a few ways in which you can do so:
 
 If you wish to contribute directly to the project, you can find the documentation and 
 [guidelines](https://github.com/hmlendea/more-cultural-names/wiki/Guidelines) on the project's [wiki](https://github.com/hmlendea/more-cultural-names/wiki).
-
-[![Support on Patreon](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_patreon.png)](https://www.patreon.com/hmlendea)[![Donate with PayPal](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_paypal.png)](https://www.paypal.com/donate?hosted_button_id=6YVRGJHDGWGKQ)[![Donate with LiberaPay](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_liberapay.png)](https://liberapay.com/HMlendea/donate)
