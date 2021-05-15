@@ -19,7 +19,7 @@ The names are meant to provide an immersive and accurate experience for the game
 
 # Installation
 
-[![Get it from the Workshop](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/steam-workshop.png)](https://hmlendea.github.io/more-cultural-names/workshop)
+[![Get it from the Workshop](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/steam-workshop.png)](https://hmlendea.github.io/more-cultural-names/workshop) [![Get it from Paradox Mods](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/paradox-mods.png)](https://hmlendea.github.io/more-cultural-names/paradox) [![Get it from the Nexus](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/nexus.png)](https://hmlendea.github.io/more-cultural-names/nexus)
 
 ## Manual installation
 
