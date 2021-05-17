@@ -10,9 +10,9 @@ elif [ -d "${HOME}/.local/share/Steam/steamapps/common" ]; then
     STEAM_GAMES_PATH="${HOME}/.local/share/Steam/steamapps/common"
 fi
 
-CK2_VANILLA_LANDED_TITLES_FILE="more-cultural-names-builder/Data/ck2_landed_titles.txt"
-CK2HIP_VANILLA_LANDED_TITLES_FILE="more-cultural-names-builder/Data/ck2hip_landed_titles.txt"
-CK3_VANILLA_LANDED_TITLES_FILE="more-cultural-names-builder/Data/ck3_landed_titles.txt"
+CK2_VANILLA_LANDED_TITLES_FILE="vanilla/ck2_landed_titles.txt"
+CK2HIP_VANILLA_LANDED_TITLES_FILE="vanilla/ck2hip_landed_titles.txt"
+CK3_VANILLA_LANDED_TITLES_FILE="vanilla/ck3_landed_titles.txt"
 
 CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/Crusader Kings III/game/localization/english/titles_l_english.yml"
 IMPERATORROME_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/ImperatorRome/game/localization/english/provincenames_l_english.yml"
