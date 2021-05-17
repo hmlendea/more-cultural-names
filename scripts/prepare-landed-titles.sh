@@ -329,7 +329,6 @@ merge-languages "German_Middle_High" "German_Middle_High" "Frankish"
 merge-languages "German_Middle_High" "German_Middle_High" "Alemannic_Medieval"
 
 merge-languages "Irish" "Irish" "Irish_Norse"
-merge-languages "Irish" "Irish" "Irish_Norse"
 merge-languages "Irish" "Irish" "Scottish_Gaelic"
 merge-languages "Irish" "Irish" "Welsh"
 merge-languages "Breton_Middle" "Breton_Middle" "Cornish_Middle"
