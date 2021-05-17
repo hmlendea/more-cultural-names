@@ -17,7 +17,7 @@ fi
 
 sed -i 's/\t/    /g' "${FILE}"
 
-if [ "${GAME}" == "CK3" ]; then
+if [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ]; then
     sed -i '/[=\">]cn_/d' "${FILE}"
 fi
 
@@ -160,7 +160,7 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "ugricbaltic" "Estonian"
 fi
 
-if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ]; then
+if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ]; then
     replace-cultural-name "italian" "Tuscan_Medieval"
     replace-cultural-name "old_saxon" "German_Old_Low"
 fi
@@ -210,7 +210,7 @@ if [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "zanata" "Zenati"
 fi
 
-if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ]; then
+if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ]; then
     replace-cultural-name "aragonese" "Aragonese"
     replace-cultural-name "bashkir" "Bashkir"
     replace-cultural-name "bavarian" "Bavarian_Medieval"
@@ -227,7 +227,7 @@ if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ]; then
     replace-cultural-name "yemeni" "Arabic"
 fi
 
-if [ "${GAME}" == "CK3" ]; then
+if [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ]; then
     replace-cultural-name "akan" "Akan"
     replace-cultural-name "andalusian" "Arabic"
     replace-cultural-name "anglo_saxon" "English_Old"
@@ -328,7 +328,6 @@ merge-languages "German_Middle_High" "German_Middle_High" "German_Old_Low"
 merge-languages "German_Middle_High" "German_Middle_High" "Frankish"
 merge-languages "German_Middle_High" "German_Middle_High" "Alemannic_Medieval"
 
-merge-languages "Irish" "Irish" "Irish_Norse"
 merge-languages "Irish" "Irish" "Irish_Norse"
 merge-languages "Irish" "Irish" "Scottish_Gaelic"
 merge-languages "Irish" "Irish" "Welsh"

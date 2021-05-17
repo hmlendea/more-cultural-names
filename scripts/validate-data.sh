@@ -13,6 +13,7 @@ fi
 CK2_VANILLA_LANDED_TITLES_FILE="vanilla/ck2_landed_titles.txt"
 CK2HIP_VANILLA_LANDED_TITLES_FILE="vanilla/ck2hip_landed_titles.txt"
 CK3_VANILLA_LANDED_TITLES_FILE="vanilla/ck3_landed_titles.txt"
+CK3IBL_VANILLA_LANDED_TITLES_FILE="vanilla/ck3ibn_landed_titles.txt"
 
 CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/Crusader Kings III/game/localization/english/titles_l_english.yml"
 IMPERATORROME_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/ImperatorRome/game/localization/english/provincenames_l_english.yml"
@@ -207,6 +208,7 @@ grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 checkForMismatchingCkTitles "CK2" "${CK2_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingCkTitles "CK2HIP" "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingCkTitles "CK3" "${CK3_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingCkTitles "CK3IBL" "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
 
 # Find HOI4 states
 for HOI4_STATE in $(grep "HOI4\" type=\"City" "${LOCATIONS_FILE}" | \
