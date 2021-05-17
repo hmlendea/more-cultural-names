@@ -81,7 +81,7 @@ build-edition \
     --landed-titles "vanilla/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
 
 build-edition \
-    "ibl-more-cultural-names" "IBL - More Cultural Names" \
+    "ibl-more-cultural-names" "Ibn Battuta's Legacy 2 - More Cultural Names" \
     "CK3IBL" "1.3.*" \
     --landed-titles "vanilla/ck3ibl_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
