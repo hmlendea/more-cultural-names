@@ -78,6 +78,17 @@ function transliterate-name() {
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "xcl" "iso-9985")
     elif [ "${LANGUAGE_CODE}" == "hyw" ]; then
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "hye" "ala-lc")
+    elif [ "${LANGUAGE_CODE}" == "ja" ]; then
+        LATIN_NAME=$(curl -s \
+            --location 'http://romaji.me/romaji.cgi' \
+            --request POST \
+            --data-raw 'mode=2&text='"${RAW_NAME}" |
+                sed 's/<rb>[^<]*<\/rb>*//g' | \
+                sed 's/<rt>/<rt> /g' | \
+                sed 's/<[a-z\/]*>//g' | \
+                sed 's/^\s *//g' | \
+                sed 's/\s*$//g' | \
+                sed -e 's/^./\U&/g; s/ ./\U&/g')
     elif [ "${LANGUAGE_CODE}" == "ka" ]; then
         LATIN_NAME=$(get-translitterationDotCom-transliteration "${RAW_NAME}" "kat" "national")
     elif [ "${LANGUAGE_CODE}" == "kk" ]; then
@@ -370,6 +381,7 @@ function get-names() {
     get-name-for-language "Irish" "ga"
     get-name-for-language "Italian" "it"
     get-name-for-language "Jamaican" "jam"
+    get-name-for-language "Japanese" "ja"
     get-name-for-language "Javanese" "jv"
     get-name-for-language "Kabiye" "kbp"
     get-name-for-language "Kabyle" "kab"
