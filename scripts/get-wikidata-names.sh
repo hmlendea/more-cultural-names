@@ -10,6 +10,7 @@ if [ ! -f "/usr/bin/jq" ]; then
     exit 1
 fi
 
+echo "Fetching ${WIKIDATA_URL}..."
 DATA=$(curl -s "${WIKIDATA_URL}")
 
 function get-translitterationDotCom-transliteration() {
@@ -221,6 +222,7 @@ function get-name-from-sitelink() {
     echo "${NAME}"
 }
 
+echo "Getting the english name..."
 ENGLISH_NAME=$(get-name-from-label "en")
 ENGLISH_NAME_FOR_COMPARISON=$(echo "${ENGLISH_NAME}" | tr '[:upper:]' '[:lower:]')
 
@@ -497,10 +499,6 @@ function get-names() {
 }
 
 function get-location-entry() {
-    NAMES="$(get-names)"
-
-    [ -z "${NAMES}" ] && return
-
     LOCATION_ID=$(echo "${ENGLISH_NAME}" | \
         iconv -f utf8 -t ascii//TRANSLIT | \
         sed 's/-le-/_le_/g' | \
@@ -520,5 +518,7 @@ function get-location-entry() {
     echo "  </LocationEntity>"
 }
 
+echo "Getting the location entry..."
 echo ""
+
 get-location-entry
