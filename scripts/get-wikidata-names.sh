@@ -145,12 +145,12 @@ function normalise-name() {
             -e 's/^Con[dt][aá]d*[eou] \(d[eo] \)*//g' \
             -e 's/^Comt[aé]t* de //g' \
             -e 's/^[KkCc]om*un*[ea]*[n]* //g' \
-            -e 's/^[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]* \(d*[eio] \)*//g' \
+            -e 's/^[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]* \(d*[eiou] \)*//g' \
             -e 's/^Res*publi[ck]a //g' \
-            -e 's/^\(Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Hrabství\|Ìpínlẹ̀\|Komēteía\|Kontelezh\|Opština\|Oraș\|Pasiolak\|Swydd\|ti\|Vilojati\) //g' \
+            -e 's/^\(Burg\|Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Horad\|Hrabství\|Huyện\|Ìpínlẹ̀\|Komēteía\|Kontelezh\|Opština\|Oraș\|Pasiolak\|Swydd\|ti\|Vilojati\) //g' \
             -e 's/^\(Khu vực\|Jimbo ya\|Lalawigan ng\|Marz\|Mkoa wa\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\||W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
-            -e 's/^\(Distri[ck]to*\|[Rr]e[gģh]i[oóu]n*i*[aes]*\) \(d[ei] \|of \)*//g' \
-            -e 's/[ -]\(Bölgesi\|çayı\|Chê\|Chhī\|Cumhuriyeti\|gielda\|[Gg]overnorate\|Hahoodzo\|jõgi\|község\|Kūn\|linn\|maak[ou]n[dt]a*\|[Mm]ahal[iı]\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|osariik\|[Rr]egion\|šaary\|síksá\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\)$//g' \
+            -e 's/^\([Dd]istr[ei][ck]*t[t]*o*\|[Rr]e[gģh]i[oóu]n*i*[aes]*\) \(d[ei] \|of \)*//g' \
+            -e 's/[ -]\(Bölgesi\|[Cc]astle\|çayı\|Chê\|Chhī\|Cumhuriyeti\|gielda\|[Gg]overnorate\|Hahoodzo\|jõgi\|község\|Kūn\|linn\|maak[ou]n[dt]a*\|[Mm]ahal[iı]\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|osariik\|qalasy\|[Rr]egion\|šaary\|síksá\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\)$//g' \
             -e 's/[ -]\([Rr]e[gģh]i[oóu]n*[ei]*[as]*\|sht’at’i\|sritis\)$//g' \
             -e 's/ [Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*$//g' \
             -e 's/skaya oblast[’]*$/sk/g' \
@@ -162,7 +162,9 @@ function normalise-name() {
             -e 's/o \(emyratas\|grafystė\)$/as/g' \
             -e 's/os \(vilaja\)$/as/g' \
             -e 's/ [Cc]o[ou]nt\(ae\|y\)$//g' \
+            -e 's/ [Dd]istrict$//g' \
             -e 's/ [KkCc]om*un*[ea]*$//g' \
+            -e 's/ \(Ken\|Koān\)$//g' \
             \
             -e 's/^\(Abhainn\|Afon\|Ri[ou]\) //g' \
             -e 's/^\(Ducado\|Reinu\) de l'"\'"'//g' \
