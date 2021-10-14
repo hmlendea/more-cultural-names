@@ -1147,8 +1147,10 @@
       <LanguageId>Cornish_Middle</LanguageId>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Pictish</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Breton</LanguageId>
       <LanguageId>Cornish</LanguageId>
       <LanguageId>Welsh</LanguageId>
@@ -1158,8 +1160,58 @@
     <Id>Breton_Old</Id> <!-- c.800 to c.1100 -->
     <Code iso-639-3="obt" />
     <FallbackLanguages>
+      <LanguageId>Welsh_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Breton_Middle</LanguageId>
+      <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Breton</LanguageId>
+      <LanguageId>Welsh</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Brittonic</Id> <!-- c. 6th century BC to c. c. 577 AD -->
+    <GameIds>
+      <GameId game="ImperatorRome">brigantic</GameId>
+      <GameId game="ImperatorRome">britannic</GameId>
+      <GameId game="ImperatorRome">caledonian</GameId>
+      <GameId game="ImperatorRome">cantian</GameId>
+      <GameId game="ImperatorRome">coritani</GameId>
+      <GameId game="ImperatorRome">cornovian</GameId>
+      <GameId game="ImperatorRome">damnonian</GameId>
+      <GameId game="ImperatorRome">demetian</GameId>
+      <GameId game="ImperatorRome">dobunnian</GameId>
+      <GameId game="ImperatorRome">dumnonian</GameId>
+      <GameId game="ImperatorRome">durotrigan</GameId>
+      <GameId game="ImperatorRome">iceni</GameId>
+      <GameId game="ImperatorRome">ordovitian</GameId>
+      <GameId game="ImperatorRome">taexalian</GameId>
+      <GameId game="ImperatorRome">trinovantian</GameId>
+      <GameId game="ImperatorRome">votadinian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Welsh_Old</LanguageId>
+      <LanguageId>Cornish_Old</LanguageId>
+      <LanguageId>Breton_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Welsh_Middle</LanguageId>
+      <LanguageId>Cornish_Middle</LanguageId>
+      <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Pictish</LanguageId>
+      <LanguageId>Breton_Middle</LanguageId>
+      <LanguageId>Welsh</LanguageId>
+      <LanguageId>Cornish</LanguageId>
+      <LanguageId>Breton</LanguageId>
+      <!-- Other celtic languages as a last resort -->
+      <LanguageId>Celtic_Proto</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
+      <LanguageId>Gaulish</LanguageId>
+      <LanguageId>Gaulish_Transalpine</LanguageId>
+      <LanguageId>Gaulish_Cisalpine</LanguageId>
+      <LanguageId>Gaulish_Lepontic</LanguageId>
+      <LanguageId>Gaulish_Biturgian</LanguageId>
+      <LanguageId>Celtic_Illyrian</LanguageId>
+      <LanguageId>Celtic_Noric</LanguageId>
+      <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1388,24 +1440,8 @@
       <LanguageId>Gaulish_Cisalpine</LanguageId>
       <LanguageId>Gaulish_Lepontic</LanguageId>
       <LanguageId>Gaulish_Biturgian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
-      <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Noric</LanguageId>
-      <LanguageId>Celtic_Iberian</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Celtic_Britannic</Id>
-    <GameIds>
-      <GameId game="ImperatorRome">britannic</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Celtic_Proto</LanguageId>
-      <LanguageId>Gaulish</LanguageId>
-      <LanguageId>Gaulish_Transalpine</LanguageId>
-      <LanguageId>Gaulish_Cisalpine</LanguageId>
-      <LanguageId>Gaulish_Lepontic</LanguageId>
-      <LanguageId>Gaulish_Biturgian</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
@@ -1422,7 +1458,8 @@
       <LanguageId>Gaulish_Biturgian</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1435,7 +1472,8 @@
       <LanguageId>Gaulish_Lepontic</LanguageId>
       <LanguageId>Gaulish_Biturgian</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1453,7 +1491,8 @@
       <LanguageId>Gaulish_Cisalpine</LanguageId>
       <LanguageId>Gaulish_Lepontic</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1580,10 +1619,12 @@
     <FallbackLanguages>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Pictish</LanguageId>
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Cornish</LanguageId>
       <LanguageId>Welsh</LanguageId>
       <LanguageId>Breton</LanguageId>
@@ -1745,12 +1786,14 @@
       <GameId game="CK3IBL">cumbrian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Pictish</LanguageId>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Cornish_Middle</LanguageId>
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Welsh</LanguageId>
       <LanguageId>Cornish</LanguageId>
       <LanguageId>Breton</LanguageId>
@@ -3864,7 +3907,8 @@
       <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3881,7 +3925,8 @@
       <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3896,7 +3941,8 @@
       <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3911,7 +3957,8 @@
       <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3929,7 +3976,8 @@
       <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4598,6 +4646,7 @@
       <GameId game="ImperatorRome">manavian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Irish_Archaic</LanguageId>
       <LanguageId>Irish_Old</LanguageId>
       <LanguageId>Irish_Middle</LanguageId>
@@ -8808,7 +8857,9 @@
       <GameId game="CK3IBL">pictish</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Irish_Old</LanguageId>
       <LanguageId>Manx</LanguageId>
       <LanguageId>Scottish_Gaelic_Medieval</LanguageId>
@@ -13375,6 +13426,7 @@
     <FallbackLanguages>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -13387,12 +13439,14 @@
       <GameId game="CK3IBL">welsh</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Cumbric</LanguageId>
       <LanguageId>Cornish_Middle</LanguageId>
+      <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Pictish</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Welsh</LanguageId>
       <LanguageId>Cornish</LanguageId>
       <LanguageId>Breton</LanguageId>
@@ -13402,6 +13456,7 @@
     <Id>Welsh_Old</Id> <!-- c. 800 – early 12th century -->
     <Code iso-639-3="owl" />
     <FallbackLanguages>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Welsh</LanguageId>
     </FallbackLanguages>
