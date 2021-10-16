@@ -100,14 +100,14 @@ function normalise-name() {
             -e 's/^Comt[aé]t* de //g' \
             -e 's/^[CcKk]om*un*[ea]*[n]* //g' \
             -e 's/^[Ll][ei]ngua //g' \
-            -e 's/^[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]* \(d*[eiou] \)*//g' \
+            -e 's/^\([Pp]ar[r]*o[i]*\(cc\|q\|ss\)\(e\|[hu]ia\)\|[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*\) \(d*[eiou] \)*//g' \
             -e 's/^Res*publi[ck]a //g' \
-            -e 's/^\(Burg\|Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Horad\|Hrabství\|Huyện\|Ìpínlẹ̀\|Kerajaan\|Komēteía\|Kontelezh\|Kwáāen\|Opština\|Oraș\|Pasiolak\|Swydd\|ti\|Vilojati\|Wikang\) //g' \
+            -e 's/^\(Burg\|Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Horad\|Hrabství\|Huyện\|Ìpínlẹ̀\|Kerajaan\|Komēteía\|Kontelezh\|Kwáāen\|Opština\|Oraș\|Pasiolak\|Prikhod\|Swydd\|ti\|Vilojati\|Wikang\) //g' \
             -e 's/^\(Khu vực\|Jimbo ya\|Lalawigan ng\|Marz\|Mkoa wa\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\||W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
             -e 's/^\(Autonome Gemeinschaft\|Com[m]*unitate[a]* Autonom[aăe]\) //g' \
-            -e 's/^\([Dd]istr[ei][ck]*t[t]*o*\|[Rr]e[gģh]i[oóu]n*i*[aes]*\|Xian\) \(d[ei] \|of \)*//g' \
-            -e 's/[ -’]\(aju\|alue\|[Aa]ñcala\|Bölgesi\|[Cc]astle\|çayı\|Chê\|Chhī\|Chibang\|Cumhuriyeti\|gielda\|[Gg]overnorate\|Hahoodzo\|jõgi\|keel\|[Kk]o[aā]n\|község\|[Kk]shetr\|Kūn\|linn\|maak[ou]n[dt]a*\|[Mm]achi\|[Mm]ahal[iı]\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|osariik\|[Pp]akuti\|[Pp]aḷāta\|[Pp]r[a]*d[eē][sś][h]*[a]*\|[Pp]rāntaṁ\|qalasy\|[Rr]egion\|[Šš]aary\|shěng\|Shuu\|síksá\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\|[Xx]i[aà]n\)$//g' \
-            -e 's/[ -]\([Rr]e[gģh]i[oóu]n*[ei]*[as]*\|sht’at’i\|sritis\)$//g' \
+            -e 's/^\([Dd]istr[ei][ck]*t[t]*o*\|Parish\|[Rr]e[gģh]i[oóu]n*i*[aes]*\|Xian\) \(d[ei] \|of \)*//g' \
+            -e 's/[ -’]\(aju\|alue\|[Aa]ñcala\|Bölgesi\|[Cc]astle\|çayı\|Chê\|Chhī\|Chibang\|Cumhuriyeti\|Dhāma\|gielda\|[Gg]overnorate\|Hahoodzo\|jõgi\|keel\|[Kk]o[aā]n\|község\|[Kk]shetr\|Kūn\|Kyouku\|linn\|maak[ou]n[dt]a*\|[Mm]achi\|[Mm]ahal[iı]\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Nehri\|osariik\|pagasts\|[Pp]akuti\|[Pp]aḷāta\|[Pp]r[a]*d[eē][sś][h]*[a]*\|[Pp]rāntaṁ\|qalasy\|[Rr]egion\|[Šš]aary\|shěng\|Shuu\|síksá\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\|[Xx]i[aà]n\)$//g' \
+            -e 's/[ -]\(P[aā][i]*ri\(ṣ\|sh\)\|[Rr]e[gģh]i[oóu]n*[ei]*[as]*\|sht’at’i\|sritis\)$//g' \
             -e 's/ [Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*$//g' \
             -e 's/skaya oblast[’]*$/sk/g' \
             -e 's/as \(vilāj[as]\|mintaka\)$/a/g' \
@@ -121,6 +121,9 @@ function normalise-name() {
             -e 's/ [Dd]istrict$//g' \
             -e 's/ [KkCc]om*un*[ea]*$//g' \
             -e 's/ \(Ken\|Koān\)$//g' \
+            \
+            -e 's/^Hl\. /Heilige /g' \
+            -e 's/ mfiadini$/ Mfiadini/g' \
             \
             -e 's/^\(Abhainn\|Afon\|Ri[ou]\) //g' \
             -e 's/^\(Ducado\|Reinu\) de l'"\'"'//g' \
@@ -148,7 +151,11 @@ function normalise-name() {
             -e 's/^la[cg]o* //g' \
             -e 's/^Llyn //g' \
             \
-            -e 's/n-a$/na/g'
+            -e 's/n-a$/na/g' \
+            \
+            -e 's/^\s*//g' \
+            -e 's/\s*$//g' \
+            -e 's/\s\s*/ /g'
 }
 
 function capitalise() {
