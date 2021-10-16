@@ -5447,6 +5447,15 @@
   <Language>
     <Id>Hindi</Id>
     <Code iso-639-1="hi" iso-639-2="hin" iso-639-3="hin" />
+    <FallbackLanguages>
+      <LanguageId>Hindi_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hindi_Old</Id>
+    <FallbackLanguages>
+      <LanguageId>Hindi</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hittite</Id> <!-- Hittite_New / New Hittite -->
@@ -7857,6 +7866,37 @@
       <LanguageId>Indonesian</LanguageId>
       <LanguageId>Balinese</LanguageId>
       <LanguageId>Banjarese</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malayalam</Id> <!-- c. 15th century AD – present -->
+    <Code iso-639-1="ml" iso-639-2="mal" iso-639-3="mal" />
+    <FallbackLanguages>
+      <LanguageId>Tamil</LanguageId>
+      <LanguageId>Malayalam_Middle</LanguageId>
+      <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Malayalam_Old</LanguageId>
+      <LanguageId>Tamil_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malayalam_Middle</Id> <!-- c. 13th century AD – c. 15th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Malayalam_Old</LanguageId>
+      <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Malayalam</LanguageId>
+      <LanguageId>Tamil</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malayalam_Old</Id> <!-- c. 9th century AD – c. 13th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Malayalam_Middle</LanguageId>
+      <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Malayalam</LanguageId>
+      <LanguageId>Tamil</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -12553,8 +12593,11 @@
     <Id>Tamil</Id> <!-- c. 16th century – present -->
     <Code iso-639-1="ta" iso-639-2="tam" iso-639-3="tam" />
     <FallbackLanguages>
+      <LanguageId>Malayalam</LanguageId>
       <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Malayalam_Middle</LanguageId>
       <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Malayalam_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -12566,8 +12609,11 @@
       <GameId game="CK3IBL">tamil</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Malayalam_Middle</LanguageId>
       <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Malayalam_Old</LanguageId>
       <LanguageId>Tamil</LanguageId>
+      <LanguageId>Malayalam</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -12577,8 +12623,11 @@
       <GameId game="ImperatorRome">tamil</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Malayalam_Old</LanguageId>
       <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Malayalam_Middle</LanguageId>
       <LanguageId>Tamil</LanguageId>
+      <LanguageId>Malayalam</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
