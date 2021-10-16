@@ -33,7 +33,7 @@ sed -i '/<Id>/s/ /_/g' "${OUTPUT_FILE}"
 sed -i 's/^____/    /g' "${OUTPUT_FILE}"
 
 mapNameToLanguage "aeolian" "Greek_Aeolic"
-mapNameToLanguage "aryan" "Sanskrit"
+mapNameToLanguage "aryan" "Sanskrit_Old"
 mapNameToLanguage "carthaginian" "Punic"
 mapNameToLanguage "east_levantine" "Akkadian"
 mapNameToLanguage "EGY" "Greek_Ancient_Egypt"

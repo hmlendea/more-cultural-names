@@ -1005,12 +1005,23 @@
   <Language>
     <Id>Bengali</Id>
     <Code iso-639-1="bn" iso-639-2="ben" iso-639-3="ben" />
+    <FallbackLanguages>
+      <LanguageId>Bengali_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Bengali_Old</Id> <!-- c. 1100 AD to ??? -->
     <GameIds>
       <GameId game="CK2">bengali</GameId>
       <GameId game="CK2HIP">bengali</GameId>
       <GameId game="CK3">bengali</GameId>
       <GameId game="CK3IBL">bengali</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
+      <LanguageId>Bengali</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Berber</Id>
@@ -6066,7 +6077,9 @@
       <GameId game="CK3IBL">kannada</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Telugu</LanguageId>
       <LanguageId>Kannada_Old</LanguageId>
+      <LanguageId>Telugu_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -6075,7 +6088,11 @@
       <GameId game="ImperatorRome">kannadan</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Telugu_Old</LanguageId>
       <LanguageId>Kannada</LanguageId>
+      <LanguageId>Telugu</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -7885,14 +7902,21 @@
       <LanguageId>Tamil_Middle</LanguageId>
       <LanguageId>Malayalam_Old</LanguageId>
       <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
       <LanguageId>Malayalam</LanguageId>
       <LanguageId>Tamil</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Malayalam_Old</Id> <!-- c. 9th century AD – c. 13th century AD -->
+    <GameIds>
+      <GameId game="ImperatorRome">lankan</GameId>
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
       <LanguageId>Malayalam_Middle</LanguageId>
       <LanguageId>Tamil_Middle</LanguageId>
       <LanguageId>Malayalam</LanguageId>
@@ -11126,9 +11150,19 @@
   <Language>
     <Id>Sanskrit</Id>
     <Code iso-639-1="sa" iso-639-2="san" iso-639-3="san" />
+    <FallbackLanguages>
+      <LanguageId>Sanskrit_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Sanskrit_Old</Id>
     <GameIds>
       <GameId game="ImperatorRome">aryan</GameId>
+      <GameId game="ImperatorRome">bangli</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Sanskrit</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Sardinian</Id>
@@ -12612,6 +12646,8 @@
       <LanguageId>Malayalam_Middle</LanguageId>
       <LanguageId>Tamil_Old</LanguageId>
       <LanguageId>Malayalam_Old</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
       <LanguageId>Tamil</LanguageId>
       <LanguageId>Malayalam</LanguageId>
     </FallbackLanguages>
@@ -12624,6 +12660,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Malayalam_Old</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
       <LanguageId>Tamil_Middle</LanguageId>
       <LanguageId>Malayalam_Middle</LanguageId>
       <LanguageId>Tamil</LanguageId>
@@ -12713,6 +12751,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Kannada_Old</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
       <LanguageId>Telugu</LanguageId>
       <LanguageId>Kannada</LanguageId>
     </FallbackLanguages>
