@@ -13,7 +13,7 @@ fi
 CK2_VANILLA_LANDED_TITLES_FILE="vanilla/ck2_landed_titles.txt"
 CK2HIP_VANILLA_LANDED_TITLES_FILE="vanilla/ck2hip_landed_titles.txt"
 CK3_VANILLA_LANDED_TITLES_FILE="vanilla/ck3_landed_titles.txt"
-CK3IBL_VANILLA_LANDED_TITLES_FILE="vanilla/ck3ibn_landed_titles.txt"
+CK3IBL_VANILLA_LANDED_TITLES_FILE="vanilla/ck3ibl_landed_titles.txt"
 
 CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/Crusader Kings III/game/localization/english/titles_l_english.yml"
 IMPERATORROME_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/ImperatorRome/game/localization/english/provincenames_l_english.yml"
