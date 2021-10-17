@@ -1005,12 +1005,23 @@
   <Language>
     <Id>Bengali</Id>
     <Code iso-639-1="bn" iso-639-2="ben" iso-639-3="ben" />
+    <FallbackLanguages>
+      <LanguageId>Bengali_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Bengali_Old</Id> <!-- c. 1100 AD to ??? -->
     <GameIds>
       <GameId game="CK2">bengali</GameId>
       <GameId game="CK2HIP">bengali</GameId>
       <GameId game="CK3">bengali</GameId>
       <GameId game="CK3IBL">bengali</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
+      <LanguageId>Bengali</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Berber</Id>
@@ -1147,8 +1158,10 @@
       <LanguageId>Cornish_Middle</LanguageId>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Pictish</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Breton</LanguageId>
       <LanguageId>Cornish</LanguageId>
       <LanguageId>Welsh</LanguageId>
@@ -1158,8 +1171,58 @@
     <Id>Breton_Old</Id> <!-- c.800 to c.1100 -->
     <Code iso-639-3="obt" />
     <FallbackLanguages>
+      <LanguageId>Welsh_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Breton_Middle</LanguageId>
+      <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Breton</LanguageId>
+      <LanguageId>Welsh</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Brittonic</Id> <!-- c. 6th century BC to c. c. 577 AD -->
+    <GameIds>
+      <GameId game="ImperatorRome">brigantic</GameId>
+      <GameId game="ImperatorRome">britannic</GameId>
+      <GameId game="ImperatorRome">caledonian</GameId>
+      <GameId game="ImperatorRome">cantian</GameId>
+      <GameId game="ImperatorRome">coritani</GameId>
+      <GameId game="ImperatorRome">cornovian</GameId>
+      <GameId game="ImperatorRome">damnonian</GameId>
+      <GameId game="ImperatorRome">demetian</GameId>
+      <GameId game="ImperatorRome">dobunnian</GameId>
+      <GameId game="ImperatorRome">dumnonian</GameId>
+      <GameId game="ImperatorRome">durotrigan</GameId>
+      <GameId game="ImperatorRome">iceni</GameId>
+      <GameId game="ImperatorRome">ordovitian</GameId>
+      <GameId game="ImperatorRome">taexalian</GameId>
+      <GameId game="ImperatorRome">trinovantian</GameId>
+      <GameId game="ImperatorRome">votadinian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Welsh_Old</LanguageId>
+      <LanguageId>Cornish_Old</LanguageId>
+      <LanguageId>Breton_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Welsh_Middle</LanguageId>
+      <LanguageId>Cornish_Middle</LanguageId>
+      <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Pictish</LanguageId>
+      <LanguageId>Breton_Middle</LanguageId>
+      <LanguageId>Welsh</LanguageId>
+      <LanguageId>Cornish</LanguageId>
+      <LanguageId>Breton</LanguageId>
+      <!-- Other celtic languages as a last resort -->
+      <LanguageId>Celtic_Proto</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
+      <LanguageId>Gaulish</LanguageId>
+      <LanguageId>Gaulish_Transalpine</LanguageId>
+      <LanguageId>Gaulish_Cisalpine</LanguageId>
+      <LanguageId>Gaulish_Lepontic</LanguageId>
+      <LanguageId>Gaulish_Biturgian</LanguageId>
+      <LanguageId>Celtic_Illyrian</LanguageId>
+      <LanguageId>Celtic_Noric</LanguageId>
+      <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1388,24 +1451,8 @@
       <LanguageId>Gaulish_Cisalpine</LanguageId>
       <LanguageId>Gaulish_Lepontic</LanguageId>
       <LanguageId>Gaulish_Biturgian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
-      <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Noric</LanguageId>
-      <LanguageId>Celtic_Iberian</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Celtic_Britannic</Id>
-    <GameIds>
-      <GameId game="ImperatorRome">britannic</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Celtic_Proto</LanguageId>
-      <LanguageId>Gaulish</LanguageId>
-      <LanguageId>Gaulish_Transalpine</LanguageId>
-      <LanguageId>Gaulish_Cisalpine</LanguageId>
-      <LanguageId>Gaulish_Lepontic</LanguageId>
-      <LanguageId>Gaulish_Biturgian</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
@@ -1422,7 +1469,8 @@
       <LanguageId>Gaulish_Biturgian</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -1435,7 +1483,8 @@
       <LanguageId>Gaulish_Lepontic</LanguageId>
       <LanguageId>Gaulish_Biturgian</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1453,7 +1502,8 @@
       <LanguageId>Gaulish_Cisalpine</LanguageId>
       <LanguageId>Gaulish_Lepontic</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -1580,10 +1630,12 @@
     <FallbackLanguages>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Pictish</LanguageId>
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Cornish</LanguageId>
       <LanguageId>Welsh</LanguageId>
       <LanguageId>Breton</LanguageId>
@@ -1745,12 +1797,14 @@
       <GameId game="CK3IBL">cumbrian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Pictish</LanguageId>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Cornish_Middle</LanguageId>
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Welsh</LanguageId>
       <LanguageId>Cornish</LanguageId>
       <LanguageId>Breton</LanguageId>
@@ -1814,9 +1868,16 @@
     <Id>Dacian</Id>
     <Code iso-639-3="xdc" />
     <GameIds>
+      <GameId game="ImperatorRome">biephi</GameId>
+      <GameId game="ImperatorRome">buridavensi</GameId>
+      <GameId game="ImperatorRome">caucoensi</GameId>
+      <GameId game="ImperatorRome">costoboci</GameId>
       <GameId game="ImperatorRome">dacia_group</GameId>
       <GameId game="ImperatorRome">dacian</GameId>
       <GameId game="ImperatorRome">getian</GameId>
+      <GameId game="ImperatorRome">harpii</GameId>
+      <GameId game="ImperatorRome">ratacensi</GameId>
+      <GameId game="ImperatorRome">triballoi</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Thracian</LanguageId>
@@ -3857,7 +3918,8 @@
       <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3874,7 +3936,8 @@
       <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3889,7 +3952,8 @@
       <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3904,7 +3968,8 @@
       <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -3922,7 +3987,8 @@
       <LanguageId>Celtic_Proto</LanguageId>
       <LanguageId>Celtic_Noric</LanguageId>
       <LanguageId>Celtic_Illyrian</LanguageId>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -4538,7 +4604,27 @@
   <Language>
     <Id>Germanic_Proto</Id>
     <GameIds>
+      <GameId game="ImperatorRome">anglian</GameId>
+      <GameId game="ImperatorRome">bastarnae</GameId>
+      <GameId game="ImperatorRome">cimbrian</GameId>
+      <GameId game="ImperatorRome">frisian</GameId>
       <GameId game="ImperatorRome">germanic</GameId>
+      <GameId game="ImperatorRome">gothonic</GameId>
+      <GameId game="ImperatorRome">gutones</GameId>
+      <GameId game="ImperatorRome">helveconian</GameId>
+      <GameId game="ImperatorRome">herulian</GameId>
+      <GameId game="ImperatorRome">ingvaeonic</GameId>
+      <GameId game="ImperatorRome">irminonic</GameId>
+      <GameId game="ImperatorRome">istvaeonic</GameId>
+      <GameId game="ImperatorRome">lemovian</GameId>
+      <GameId game="ImperatorRome">raumarician</GameId>
+      <GameId game="ImperatorRome">reudingian</GameId>
+      <GameId game="ImperatorRome">rugian</GameId>
+      <GameId game="ImperatorRome">saxonian</GameId>
+      <GameId game="ImperatorRome">suebian</GameId>
+      <GameId game="ImperatorRome">suiones</GameId>
+      <GameId game="ImperatorRome">teutonian</GameId>
+      <GameId game="ImperatorRome">vandal</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Norse_Proto</LanguageId>
@@ -4561,6 +4647,24 @@
       <LanguageId>Norwegian_Nynorsk</LanguageId>
       <LanguageId>Danish</LanguageId>
       <LanguageId>Swedish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Goidelic_Proto</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">gaelic</GameId>
+      <GameId game="ImperatorRome">hibernian</GameId>
+      <GameId game="ImperatorRome">manavian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Celtic_Proto</LanguageId>
+      <LanguageId>Irish_Archaic</LanguageId>
+      <LanguageId>Irish_Old</LanguageId>
+      <LanguageId>Irish_Middle</LanguageId>
+      <LanguageId>Scottish_Gaelic_Medieval</LanguageId>
+      <LanguageId>Irish</LanguageId>
+      <LanguageId>Manx</LanguageId>
+      <LanguageId>Scottish_Gaelic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4966,7 +5070,27 @@
     <Id>Greek_Ancient</Id>
     <Code iso-639-3="grc" />
     <GameIds>
+      <GameId game="ImperatorRome">achaean</GameId>
+      <GameId game="ImperatorRome">aegean</GameId>
+      <GameId game="ImperatorRome">aetolian</GameId>
+      <GameId game="ImperatorRome">arcadian</GameId>
+      <GameId game="ImperatorRome">argolian</GameId>
+      <GameId game="ImperatorRome">athenian</GameId>
+      <GameId game="ImperatorRome">boeotian</GameId>
+      <GameId game="ImperatorRome">bosporan</GameId>
+      <GameId game="ImperatorRome">cretan</GameId>
+      <GameId game="ImperatorRome">cypriot</GameId>
+      <GameId game="ImperatorRome">epirote</GameId>
+      <GameId game="ImperatorRome">euboean</GameId>
+      <GameId game="ImperatorRome">greco_pontic</GameId>
       <GameId game="ImperatorRome">hellenic</GameId>
+      <GameId game="ImperatorRome">hellenistic</GameId>
+      <GameId game="ImperatorRome">ionian</GameId>
+      <GameId game="ImperatorRome">massalian</GameId>
+      <GameId game="ImperatorRome">peloponnesian</GameId>
+      <GameId game="ImperatorRome">syracusan</GameId>
+      <GameId game="ImperatorRome">thessalian</GameId>
+      <GameId game="ImperatorRome">troan</GameId>
     </GameIds>  
     <FallbackLanguages>
       <LanguageId>Greek_Before3CenturyBC</LanguageId>
@@ -5079,6 +5203,7 @@
   <Language>
     <Id>Greek_Ancient_Egypt</Id>
     <GameIds>
+      <GameId game="ImperatorRome">cyrenaican</GameId>
       <GameId game="ImperatorRome">EGY</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -5268,6 +5393,8 @@
       <LanguageId>Hebrew_Medieval</LanguageId>
       <LanguageId>Hebrew_Mishnaic</LanguageId>
       <LanguageId>Hebrew_Classical</LanguageId>
+      <LanguageId>Phoenician</LanguageId>
+      <LanguageId>Punic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5276,6 +5403,8 @@
       <LanguageId>Hebrew_Mishnaic</LanguageId>
       <LanguageId>Hebrew_Classical</LanguageId>
       <LanguageId>Hebrew</LanguageId>
+      <LanguageId>Phoenician</LanguageId>
+      <LanguageId>Punic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5284,6 +5413,8 @@
       <LanguageId>Hebrew_Classical</LanguageId>
       <LanguageId>Hebrew_Medieval</LanguageId>
       <LanguageId>Hebrew</LanguageId>
+      <LanguageId>Phoenician</LanguageId>
+      <LanguageId>Punic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5296,6 +5427,8 @@
       <LanguageId>Hebrew_Mishnaic</LanguageId>
       <LanguageId>Hebrew_Medieval</LanguageId>
       <LanguageId>Hebrew</LanguageId>
+      <LanguageId>Phoenician</LanguageId>
+      <LanguageId>Punic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5325,6 +5458,15 @@
   <Language>
     <Id>Hindi</Id>
     <Code iso-639-1="hi" iso-639-2="hin" iso-639-3="hin" />
+    <FallbackLanguages>
+      <LanguageId>Hindi_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hindi_Old</Id>
+    <FallbackLanguages>
+      <LanguageId>Hindi</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Hittite</Id> <!-- Hittite_New / New Hittite -->
@@ -5657,7 +5799,9 @@
       <GameId game="HOI4">NIR</GameId> <!-- Northern Ireland -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Scottish_Gaelic</LanguageId>
       <LanguageId>Irish_Middle</LanguageId>
+      <LanguageId>Scottish_Gaelic_Medieval</LanguageId>
       <LanguageId>Irish_Middle_Norse</LanguageId>
       <LanguageId>Irish_Old</LanguageId>
     </FallbackLanguages>
@@ -5674,6 +5818,7 @@
     <FallbackLanguages>
       <LanguageId>Scottish_Gaelic_Medieval</LanguageId>
       <LanguageId>Irish_Old</LanguageId>
+      <LanguageId>Irish_Archaic</LanguageId>
       <LanguageId>Scottish_Gaelic</LanguageId>
       <LanguageId>Manx</LanguageId>
       <LanguageId>Pictish</LanguageId>
@@ -5691,6 +5836,7 @@
       <LanguageId>Scottish_Gaelic</LanguageId>
       <LanguageId>Manx</LanguageId>
       <LanguageId>Irish_Old</LanguageId>
+      <LanguageId>Irish_Archaic</LanguageId>
       <LanguageId>Pictish</LanguageId>
       <LanguageId>Irish</LanguageId>
     </FallbackLanguages>
@@ -5699,6 +5845,18 @@
     <Id>Irish_Old</Id> <!-- c. 900 – c. 1200 -->
     <Code iso-639-2="sga" iso-639-3="sga" />
     <FallbackLanguages>
+      <LanguageId>Irish_Archaic</LanguageId>
+      <LanguageId>Irish_Middle</LanguageId>
+      <LanguageId>Scottish_Gaelic_Medieval</LanguageId>
+      <LanguageId>Irish</LanguageId>
+      <LanguageId>Scottish_Gaelic</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Irish_Archaic</Id> <!-- c. 4th century AD – c. 7-8th century AD -->
+    <Code iso-639-3="pgl" />
+    <FallbackLanguages>
+      <LanguageId>Irish_Old</LanguageId>
       <LanguageId>Irish_Middle</LanguageId>
       <LanguageId>Scottish_Gaelic_Medieval</LanguageId>
       <LanguageId>Irish</LanguageId>
@@ -5919,7 +6077,9 @@
       <GameId game="CK3IBL">kannada</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Telugu</LanguageId>
       <LanguageId>Kannada_Old</LanguageId>
+      <LanguageId>Telugu_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5928,7 +6088,11 @@
       <GameId game="ImperatorRome">kannadan</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Telugu_Old</LanguageId>
       <LanguageId>Kannada</LanguageId>
+      <LanguageId>Telugu</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -6357,6 +6521,7 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6389,6 +6554,7 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6421,6 +6587,7 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6453,6 +6620,7 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6485,6 +6653,7 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6517,6 +6686,7 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6549,6 +6719,8 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
@@ -6580,6 +6752,8 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
@@ -6611,6 +6785,8 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
@@ -6642,6 +6818,8 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
@@ -6673,6 +6851,7 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6701,6 +6880,7 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6733,6 +6913,8 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
@@ -6764,6 +6946,8 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
@@ -6795,36 +6979,7 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
-      <LanguageId>Latin_Classical</LanguageId>
-      <LanguageId>Latin_Before27BC</LanguageId>
-      <LanguageId>Latin_Before48BC</LanguageId>
-      <LanguageId>Latin_Before202BC</LanguageId>
-      <LanguageId>Latin_Before3CenturyBC</LanguageId>
-      <LanguageId>Latin_Old</LanguageId>
-      <LanguageId>Oscan</LanguageId>
-      <LanguageId>Lucanian</LanguageId>
-      <LanguageId>Latin_Before19Century</LanguageId>
-      <LanguageId>Latin_Before1922</LanguageId>
-      <LanguageId>Latin_Before1924</LanguageId>
-      <LanguageId>Latin_Before1934</LanguageId>
-      <LanguageId>Latin_Before1942</LanguageId>
-      <LanguageId>Latin_Before1949</LanguageId>
-      <LanguageId>Latin_Before1972</LanguageId>
-      <LanguageId>Latin_Before1976</LanguageId>
-      <LanguageId>Latin_Before1995</LanguageId>
-      <LanguageId>Latin</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Latin_Before3Century</Id>
-    <FallbackLanguages>
-      <LanguageId>Latin_Before9Century</LanguageId>
-      <LanguageId>Latin_Before13Century</LanguageId>
-      <LanguageId>Latin_Before1219</LanguageId>
-      <LanguageId>Latin_Medieval</LanguageId>
-      <LanguageId>Latin_Before554</LanguageId>
-      <LanguageId>Latin_Before466</LanguageId>
-      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6834,7 +6989,6 @@
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
-      <LanguageId>Latin_Before1780</LanguageId>
       <LanguageId>Latin_Before19Century</LanguageId>
       <LanguageId>Latin_Before1922</LanguageId>
       <LanguageId>Latin_Before1924</LanguageId>
@@ -6857,6 +7011,7 @@
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6889,6 +7044,7 @@
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6921,6 +7077,7 @@
       <LanguageId>Latin_Before13Century</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
@@ -6944,8 +7101,75 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Latin_Before3Century</Id>
+    <FallbackLanguages>
+      <LanguageId>Latin_Before9Century</LanguageId>
+      <LanguageId>Latin_Before13Century</LanguageId>
+      <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before554</LanguageId>
+      <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Before3CenturyBC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1780</LanguageId>
+      <LanguageId>Latin_Before19Century</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1924</LanguageId>
+      <LanguageId>Latin_Before1934</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
+      <LanguageId>Latin_Before1976</LanguageId>
+      <LanguageId>Latin_Before1995</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before106</Id> <!-- before 106 AD -->
+    <FallbackLanguages>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before554</LanguageId>
+      <LanguageId>Latin_Before3Century</LanguageId>
+      <LanguageId>Latin_Before9Century</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Before3CenturyBC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before13Century</LanguageId>
+      <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1780</LanguageId>
+      <LanguageId>Latin_Before19Century</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1924</LanguageId>
+      <LanguageId>Latin_Before1934</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
+      <LanguageId>Latin_Before1976</LanguageId>
+      <LanguageId>Latin_Before1995</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Latin_Before1Century</Id> <!-- before 1st century -->
     <FallbackLanguages>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
@@ -6979,6 +7203,7 @@
     <Id>Latin_Classical</Id> <!-- 75 BC – 3rd century AD -->
     <FallbackLanguages>
       <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
@@ -7012,6 +7237,7 @@
     <FallbackLanguages>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -7045,6 +7271,7 @@
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Before3CenturyBC</LanguageId>
@@ -7078,6 +7305,7 @@
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before3CenturyBC</LanguageId>
       <LanguageId>Latin_Old</LanguageId>
@@ -7111,6 +7339,7 @@
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
@@ -7150,6 +7379,7 @@
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
@@ -7474,6 +7704,7 @@
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
@@ -7652,6 +7883,44 @@
       <LanguageId>Indonesian</LanguageId>
       <LanguageId>Balinese</LanguageId>
       <LanguageId>Banjarese</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malayalam</Id> <!-- c. 15th century AD – present -->
+    <Code iso-639-1="ml" iso-639-2="mal" iso-639-3="mal" />
+    <FallbackLanguages>
+      <LanguageId>Tamil</LanguageId>
+      <LanguageId>Malayalam_Middle</LanguageId>
+      <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Malayalam_Old</LanguageId>
+      <LanguageId>Tamil_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malayalam_Middle</Id> <!-- c. 13th century AD – c. 15th century AD -->
+    <FallbackLanguages>
+      <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Malayalam_Old</LanguageId>
+      <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
+      <LanguageId>Malayalam</LanguageId>
+      <LanguageId>Tamil</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Malayalam_Old</Id> <!-- c. 9th century AD – c. 13th century AD -->
+    <GameIds>
+      <GameId game="ImperatorRome">lankan</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
+      <LanguageId>Malayalam_Middle</LanguageId>
+      <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Malayalam</LanguageId>
+      <LanguageId>Tamil</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -8493,6 +8762,7 @@
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
@@ -8613,7 +8883,7 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Persian_Old</Id> <!-- before c. 3rd centry BC -->
+    <Id>Persian_Old</Id> <!-- before c. 3rd century BC -->
     <Code iso-639-2="peo" iso-639-3="peo" />
     <GameIds>
       <GameId game="ImperatorRome">persia</GameId>
@@ -8629,6 +8899,13 @@
     <GameIds>
       <GameId game="ImperatorRome">phoenician</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Punic</LanguageId>
+      <LanguageId>Hebrew_Classical</LanguageId>
+      <LanguageId>Hebrew_Mishnaic</LanguageId>
+      <LanguageId>Hebrew_Medieval</LanguageId>
+      <LanguageId>Hebrew</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Picard</Id>
@@ -8644,7 +8921,9 @@
       <GameId game="CK3IBL">pictish</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Celtic_Britannic</LanguageId>
+      <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
+      <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Irish_Old</LanguageId>
       <LanguageId>Manx</LanguageId>
       <LanguageId>Scottish_Gaelic_Medieval</LanguageId>
@@ -8931,6 +9210,10 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Phoenician</LanguageId>
+      <LanguageId>Hebrew_Classical</LanguageId>
+      <LanguageId>Hebrew_Mishnaic</LanguageId>
+      <LanguageId>Hebrew_Medieval</LanguageId>
+      <LanguageId>Hebrew</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -10867,9 +11150,19 @@
   <Language>
     <Id>Sanskrit</Id>
     <Code iso-639-1="sa" iso-639-2="san" iso-639-3="san" />
+    <FallbackLanguages>
+      <LanguageId>Sanskrit_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Sanskrit_Old</Id>
     <GameIds>
       <GameId game="ImperatorRome">aryan</GameId>
+      <GameId game="ImperatorRome">bangli</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Sanskrit</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Sardinian</Id>
@@ -12334,8 +12627,11 @@
     <Id>Tamil</Id> <!-- c. 16th century – present -->
     <Code iso-639-1="ta" iso-639-2="tam" iso-639-3="tam" />
     <FallbackLanguages>
+      <LanguageId>Malayalam</LanguageId>
       <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Malayalam_Middle</LanguageId>
       <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Malayalam_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -12347,8 +12643,13 @@
       <GameId game="CK3IBL">tamil</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Malayalam_Middle</LanguageId>
       <LanguageId>Tamil_Old</LanguageId>
+      <LanguageId>Malayalam_Old</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
       <LanguageId>Tamil</LanguageId>
+      <LanguageId>Malayalam</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -12358,8 +12659,13 @@
       <GameId game="ImperatorRome">tamil</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Malayalam_Old</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
       <LanguageId>Tamil_Middle</LanguageId>
+      <LanguageId>Malayalam_Middle</LanguageId>
       <LanguageId>Tamil</LanguageId>
+      <LanguageId>Malayalam</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -12392,6 +12698,13 @@
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Langobardic</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Tartessian</Id>
+    <Code iso-639-3="txr" />
+    <FallbackLanguages>
+      <LanguageId>Turdetanian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -12438,6 +12751,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Kannada_Old</LanguageId>
+      <LanguageId>Sanskrit_Old</LanguageId>
+      <LanguageId>Sanskrit</LanguageId>
       <LanguageId>Telugu</LanguageId>
       <LanguageId>Kannada</LanguageId>
     </FallbackLanguages>
@@ -12461,8 +12776,11 @@
     <Id>Thracian</Id>
     <Code iso-639-3="txh" />
     <GameIds>
-      <GameId game="ImperatorRome">thracian</GameId>
-      <GameId game="ImperatorRome">TRE</GameId>
+      <GameId game="ImperatorRome">bithynian</GameId>
+      <GameId game="ImperatorRome">mariandynian</GameId>
+      <GameId game="ImperatorRome">moesi</GameId>
+      <GameId game="ImperatorRome">odrysi</GameId>
+      <GameId game="ImperatorRome">TRE</GameId> <!-- Thrace -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Dacian</LanguageId>
@@ -12677,6 +12995,15 @@
       <LanguageId>Arabic_Maghreb_Before1650</LanguageId>
       <LanguageId>Arabic_Medieval</LanguageId>
       <LanguageId>Arabic_Before1071</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Turdetanian</Id>
+    <GameIds>
+      <GameId game="ImperatorRome">turdetanian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Tartessian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -13188,6 +13515,7 @@
     <FallbackLanguages>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -13200,12 +13528,14 @@
       <GameId game="CK3IBL">welsh</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Cumbric</LanguageId>
       <LanguageId>Cornish_Middle</LanguageId>
+      <LanguageId>Cumbric</LanguageId>
+      <LanguageId>Pictish</LanguageId>
       <LanguageId>Welsh_Old</LanguageId>
       <LanguageId>Breton_Middle</LanguageId>
       <LanguageId>Cornish_Old</LanguageId>
       <LanguageId>Breton_Old</LanguageId>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Welsh</LanguageId>
       <LanguageId>Cornish</LanguageId>
       <LanguageId>Breton</LanguageId>
@@ -13215,6 +13545,7 @@
     <Id>Welsh_Old</Id> <!-- c. 800 – early 12th century -->
     <Code iso-639-3="owl" />
     <FallbackLanguages>
+      <LanguageId>Brittonic</LanguageId>
       <LanguageId>Welsh_Middle</LanguageId>
       <LanguageId>Welsh</LanguageId>
     </FallbackLanguages>
