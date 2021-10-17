@@ -13,7 +13,8 @@ fi
 CK2_VANILLA_LANDED_TITLES_FILE="vanilla/ck2_landed_titles.txt"
 CK2HIP_VANILLA_LANDED_TITLES_FILE="vanilla/ck2hip_landed_titles.txt"
 CK3_VANILLA_LANDED_TITLES_FILE="vanilla/ck3_landed_titles.txt"
-CK3IBL_VANILLA_LANDED_TITLES_FILE="vanilla/ck3ibn_landed_titles.txt"
+CK3IBL_VANILLA_LANDED_TITLES_FILE="vanilla/ck3ibl_landed_titles.txt"
+CK3MBP_VANILLA_LANDED_TITLES_FILE="vanilla/ck3mbp_landed_titles.txt"
 
 CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/Crusader Kings III/game/localization/english/titles_l_english.yml"
 IMPERATORROME_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/ImperatorRome/game/localization/english/provincenames_l_english.yml"
@@ -50,6 +51,7 @@ function checkForMissingCkTitles() {
                         ) | \
                         grep "^>" | sed 's/^> //g'); do
         LOCATION_ID=${TITLE_ID:2}
+
         if [ -z "$(echo "${LOCATION_IDS}" | grep -Eio "^${LOCATION_ID}$")" ]; then
             echo "    > ${GAME}: ${TITLE_ID} is missing"
         else
@@ -209,6 +211,7 @@ checkForMismatchingCkTitles "CK2" "${CK2_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingCkTitles "CK2HIP" "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingCkTitles "CK3" "${CK3_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingCkTitles "CK3IBL" "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingCkTitles "CK3MBP" "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"
 
 # Find HOI4 states
 for HOI4_STATE in $(grep "HOI4\" type=\"City" "${LOCATIONS_FILE}" | \
