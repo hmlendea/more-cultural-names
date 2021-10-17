@@ -86,6 +86,11 @@ build-edition \
     --landed-titles "vanilla/ck3ibl_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
+    "mbp-more-cultural-names" "More Bookmarks+ - More Cultural Names" \
+    "CK3MBP" "1.4.*" \
+    --landed-titles "vanilla/ck3mbp_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+
+build-edition \
     "more-cultural-names" "More Cultural Names" \
     "HOI4" "1.10.*"
 
