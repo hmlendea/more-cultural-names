@@ -37,7 +37,7 @@ function getCk3Cultures() {
     GAME_ID="${1}" && shift
     CULTURES_DIR="${@}"
 
-    for CULTURE_ID in $(cat "${CULTURES_DIR}/"* | \
+    for CULTURE_ID in $(cat "${CULTURES_DIR}/"*.txt | \
                             grep -P '^\t[a-z]* = {' | \
                             sed 's/^\t*//g' | \
                             awk -F" " '{print $1}' | \
