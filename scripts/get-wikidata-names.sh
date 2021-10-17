@@ -81,7 +81,7 @@ function normalise-name() {
     LANGUAGE_CODE="${1}" && shift
     NAME=$(echo "$*" | sed 's/^"\(.*\)"$/\1/g')
 
-    transliterate-name "${LANGUAGE_CODE}" "${NAME}" | \
+    TRANSLITERATED_NAME=$(transliterate-name "${LANGUAGE_CODE}" "${NAME}" | \
         sed 's/^"\(.*\)"$/\1/g' | \
         awk -F" - " '{print $1}' | \
         awk -F"/" '{print $1}' | \
@@ -95,14 +95,17 @@ function normalise-name() {
             -e 's/^\(Category\)\: //g' \
             -e 's/^Lungsod ng //g' \
             \
+            -e 's/^języki \(.*\)skie$/\1ski/g' \
             -e 's/skaya oblast[’]*$/sk/g' \
             -e 's/as \(vilāj[as]\|mintaka\)$/a/g' \
+            -e 's/iye \(yazyki\)$/iya/g' \
             -e 's/jas \(grāfiste\|province\)$/ja/g' \
             -e 's/jos \(provincija\)$/ja/g' \
             -e 's/ko \(konderria\|probintzia\)$//g' \
             -e 's/n \(kreivikunta\)$//g' \
             -e 's/o \(apskritis\|emyratas\|grafystė\)$/as/g' \
             -e 's/os \(vilaja\)$/as/g' \
+            -e 's/ske \(gŏdki\|rěče\)$/ska/g' \
             -e 's/x žudecs$/a/g' \
             \
             -e 's/^\(Byen\|Dinas\|Ìlú\|Mbanza ya\|Sita\|Syudad han\) //g' \
@@ -114,11 +117,11 @@ function normalise-name() {
             -e 's/^D Regioon //g' \
             -e 's/^\(Jangwa\|[Pp]ar[r]*o[i]*\(cc\|q\|ss\)\(e\|[hu]ia\)\|[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*\) \([dl]*[aeiou]*[ '"'"']\)*//g' \
             -e 's/^Res*publi[ck]a //g' \
-            -e 's/^\(Āltepētl\|Burg\|Cathair\|Comitatu[ls]\|Daerah\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Gurun\|Hạt\|Horad\|[Hh]ra[bf]stv[aí]\|Huyện\|Ìpínlẹ̀\|K'"'"'alak'"'"'i\|Kástro\|Kêr\|Kerajaan\|Komēteía\|Kontelezh\|Kreis\|Kwáāen\|Mchwz\|Mqāṭʿẗ\|Municipiu[lmo]\|Okręg\|Opština\|Oraș\|Pasiolak\|Prikhod\|Qarku\|Rát\|Sa mạc\|Schloss\|Stadt\|Swydd\|ti\|[Tt]yrt\|[VvWw]il[l]*a\(yah\)*\|Vilojati\|Wikang\|Zamok\) //g' \
+            -e 's/^\(Āltepētl\|Burg\|Cathair\|Comitatu[ls]\|Daerah\|Emirlando\|Eparchía\|Glùm Paā-săā\|Graafskap\|Graflando\|Gurun\|Hạt\|Horad\|[Hh]ra[bf]stv[aí]\|Huyện\|Ìpínlẹ̀\|K'"'"'alak'"'"'i\|Kástro\|Kêr\|Kerajaan\|Komēteía\|Kontelezh\|Kreis\|Kwáāen\|Mchwz\|Mqāṭʿẗ\|Municipiu[lmo]\|Okręg\|Opština\|Oraș\|Pasiolak\|Prikhod\|Qarku\|Rát\|Sa mạc\|Schloss\|Stadt\|Swydd\|ti\|[Tt]yrt\|[VvWw]il[l]*a\(yah\)*\|Vilojati\|Wikang\|Zamok\|Zıwanê\) //g' \
             -e 's/^\(Khu vực\|Jimbo ya\|Lalawigan ng\|Marz\|Mkoa wa\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\||W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
-            -e 's/^\(Autonome Gemeinschaft\|Bprà[ -][Tt]âēyt\|Com[m]*unitate[a]* Autonom[aăe]\|Ilang ng\|[Tt]âēyt[ -][Mm]on[ -][Tt]on\|Tá[ -][Ll]aēy[ -][Ss]aāi\)[ -]//g' \
-            -e 's/^\([Cc]ast\([ei]l\|r\)[lu]*[mo]*\|\([CcÇç]\|Tz\)[ei][u]*[dt]*[aáàæ][dt]*[e]*[a]*\|[CcSs]\(ee\|i\)[t]*[aàey]\|[Cc]h[aâ]teau\|[CcKk]o[mn][dt]\(a[dt][o]*\|[eé]\)\|[CcKk][aāo]*[uv]*[nṇ][tṭ][iīy][e]*\|[Dd][eéi]s[iy]*ert[o]*\|[Dd]istr[ei][ck]*t[t]*o*\|Fort\(aleza\|ress\)\|I[ls]l[ae]\|[JjŽž]ud[iz]*e[ctțţ]\(ul\)*\|Kingdom\|Parish\|[Rr]e[gģh]i[oóu]n*i*[aes]*\|Re[s ]*p[uüù]blic[a]*\|State\|Thành\|[Tt]zountéts\|[VvWw]il[l]*[ae]\(ya\)*\|Xian\) \('"'"'e \|d'"'"'\|[dy][aeiu][l]* \|[eë]d \|han \|[t]*o[fu]* \|phố \)*//g' \
-            -e 's/[ -’]\([Aa]imag\|[Aa]irurando\|aju\|alue\|[Aa]ñcala\|apskritis\|Bikéyah\|Bölgesi\|[Cc]astle\|çayı\|Chê\|Chhī\|Chibang\|Cit[t]*[aày]\|[CcKk][aāo]*[v]*u[nṇ][tṭ][iīy]\|Çölü\|Cumhuriyeti\|[Dd]esert\|Dhāma\|Eḍāri\|gielda\|[Gg]overnorate\|gradŭ\|grāfiste\|Hahoodzo\|jõgi\|[Jj]ou\|jùn\|ǩalaḥy\|keel\|Kilisesi\|Kingdom\|[Kk]o[aā]n\|[Kk]onderria\|község\|krahvkond\|[Kk]shetr\|Kūn\|Kyouku\|linn\|maak[ou]n[dt]a*\|[Mm]achi\|[Mm]ahal[iı]\|Maṇḍalam\|Marubhūmi\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Mura\|Nagar\|Nakaram\|Nehri\|osariik\|pagasts\|[Pp]akuti\|[Pp]aḷāta\|Pālaivaṉam\|[Pp]il[i]*s\|[Pp]r[a]*d[eē][sś][h]*[a]*\|[PpP‍p‍]r[aā]*nta[ṁy][a]*\|qalasy\|[Rr]egion\|[SsŠš]aar[iy]*\|Sa[bm]ak[u]*\|[Ss]agrapo\|shěng\|Shi\|Siti\|Shuu\|síksá\|[Ss][ho][aā]-[bm][òô͘]*\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|Udabno\|vald\|[Vv]il[aā][jy]\(eti\|s\)\|[Xx]i[aà]n\|zhōu\|[ZzŽž][h]*ude[ct]s[i]*\)$//g' \
+            -e 's/^\(Autonome Gemeinschaft\|Bprà[ -][Tt]âēyt\|Com[m]*unitate[a]* Autonom[aăe]\|Ilang ng\|Nhóm ngôn ngữ\|[Tt]âēyt[ -][Mm]on[ -][Tt]on\|Tá[ -][Ll]aēy[ -][Ss]aāi\)[ -]//g' \
+            -e 's/^\([Cc]ast\([ei]l\|r\)[lu]*[mo]*\|\([CcÇç]\|Tz\)[ei][u]*[dt]*[aáàæ][dt]*[e]*[a]*\|[CcSs]\(ee\|i\)[t]*[aàey]\|[Cc]h[aâ]teau\|[CcKk]o[mn][dt]\(a[dt][o]*\|[eé]\)\|[CcKk][aāo]*[uv]*[nṇ][tṭ][iīy][e]*\|[Dd][eéi]s[iy]*ert[o]*\|[Dd]istr[ei][ck]*t[t]*o*\|Fort\(aleza\|ress\)\|I[ls]l[ae]\|[JjŽž]ud[iz]*e[ctțţ]\(ul\)*\|Kingdom\|Parish\|Pr[ei]n[cgs][ei]p[aáà][dt]*[eou]*\|[Rr]e[gģh]i[oóu]n*i*[aes]*\|Re[s ]*p[uüù]blic[a]*\|State\|Thành\|[Tt]zountéts\|[VvWw]il[l]*[ae]\(ya\)*\|Xian\) \('"'"'e \|d'"'"'\|[dy][aeiu][l]* \|[eë]d \|han \|[t]*o[fu]* \|phố \)*//g' \
+            -e 's/[ -’]\([Aa]imag\|[Aa]irurando\|aju\|alue\|[Aa]ñcala\|apskritis\|Bikéyah\|Bölgesi\|[Cc]astle\|çayı\|Chê\|Chhī\|Chibang\|Cit[t]*[aày]\|[CcKk][aāo]*[v]*u[nṇ][tṭ][iīy]\|Çölü\|Cumhuriyeti\|[Dd]esert\|Dhāma\|Eḍāri\|gielda\|[Gg]overnorate\|gradŭ\|grāfiste\|grubu\|Hahoodzo\|jõgi\|[Jj]ou\|[Jj][iù]n\|ǩalaḥy\|keel\|Kilisesi\|Kingdom\|[Kk]o[aā]n\|[Kk]onderria\|község\|krahvkond\|[Kk]shetr\|Kūn\|Kyouku\|linn\|maak[ou]n[dt]a*\|[Mm]achi\|[Mm]ahal[iı]\|Maṇḍalam\|Marubhūmi\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]ovy\|[Mm]unicipality\|Mura\|Nagar\|Nakaram\|Nehri\|osariik\|pagasts\|[Pp]akuti\|[Pp]aḷāta\|Pālaivaṉam\|[Pp]il[i]*s\|[Pp]r[a]*d[eē][sś][h]*[a]*\|[PpP‍p‍]r[aā]*nta[ṁy][a]*\|qalasy\|[Rr]egion\|rén\|[SsŠš]aar[iy]*\|Sa[bm]ak[u]*\|[Ss]agrapo\|shěng\|Shi\|Siti\|Shuu\|síksá\|[Ss][ho][aā]-[bm][òô͘]*\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|tillari\|Town\|Udabno\|vald\|[Vv]il[aā][jy]\(eti\|s\)\|[Xx]i[aà]n\|zhōu\|[ZzŽž][h]*ude[ct]s[i]*\)$//g' \
             -e 's/[ -]\(P[aā][i]*ri\(ṣ\|sh\)\|[Rr]e[gģh]i[oóu]n*[ei]*[as]*\|sht’at’i\|sritis\)$//g' \
             -e 's/ [Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*$//g' \
             -e 's/ [Cc]o[ou]nt\(ae\|y\)$//g' \
@@ -163,7 +166,9 @@ function normalise-name() {
             -e 's/[·]//g' \
             -e 's/^\s*//g' \
             -e 's/\s*$//g' \
-            -e 's/\s\s*/ /g'
+            -e 's/\s\s*/ /g')
+
+        echo "${TRANSLITERATED_NAME}"
 }
 
 function capitalise() {
