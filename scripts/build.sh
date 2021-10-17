@@ -66,7 +66,7 @@ function build-edition {
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
-    "CK2" "3.3.3" \
+    "CK2" "3.3.5.1" \
     --landed-titles "vanilla//ck2_landed_titles.txt" --landed-titles-name "landed_titles.txt"
 
 build-edition \
