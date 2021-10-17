@@ -101,13 +101,13 @@ function normalise-name() {
             -e 's/^[CcKk]om*un*[ea]*[n]* //g' \
             -e 's/^[Ll][ei]ngua //g' \
             -e 's/^D Regioon //g' \
-            -e 's/^\([Pp]ar[r]*o[i]*\(cc\|q\|ss\)\(e\|[hu]ia\)\|[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*\) \(d*[eiou] \)*//g' \
+            -e 's/^\(Jangwa\|[Pp]ar[r]*o[i]*\(cc\|q\|ss\)\(e\|[hu]ia\)\|[Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*\) \([dl]*[aeiou] \)*//g' \
             -e 's/^Res*publi[ck]a //g' \
-            -e 's/^\(Āltepētl\|Burg\|Cathair\|Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Hạt\|Horad\|Hrabství\|Huyện\|Ìpínlẹ̀\|K'"'"'alak'"'"'i\|Kástro\|Kêr\|Kerajaan\|Komēteía\|Kontelezh\|Kwáāen\|Opština\|Oraș\|Pasiolak\|Prikhod\|Schloss\|Stadt\|Swydd\|ti\|[Tt]yrt\|Vilojati\|Wikang\|Zamok\) //g' \
+            -e 's/^\(Āltepētl\|Burg\|Cathair\|Comitatu[ls]\|Emirlando\|Eparchía\|Graafskap\|Graflando\|Gurun\|Hạt\|Horad\|Hrabství\|Huyện\|Ìpínlẹ̀\|K'"'"'alak'"'"'i\|Kástro\|Kêr\|Kerajaan\|Komēteía\|Kontelezh\|Kwáāen\|Municipiu[lmo]\|Opština\|Oraș\|Pasiolak\|Prikhod\|Rát\|Sa mạc\|Schloss\|Stadt\|Swydd\|ti\|[Tt]yrt\|Vilojati\|Wikang\|Zamok\) //g' \
             -e 's/^\(Khu vực\|Jimbo ya\|Lalawigan ng\|Marz\|Mkoa wa\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\||W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
-            -e 's/^\(Autonome Gemeinschaft\|Bprà Tâēyt\|Com[m]*unitate[a]* Autonom[aăe]\) //g' \
-            -e 's/^\([Cc]ast[ei]l[l]*[o]*\|\([CcÇç]\|Tz\)[ei][u]*[dt]*[aáàæ][dt]*[e]*[a]*\|[CcSs]\(ee\|i\)[t]*[aàey]\|[Cc]h[aâ]teau\|[Dd]istr[ei][ck]*t[t]*o*\|Fort\(aleza\|ress\)\|Kingdom\|Parish\|[Rr]e[gģh]i[oóu]n*i*[aes]*\|Re[s ]*p[uüù]blic[a]*\|Thành\|[Vv]ille\|Xian\) \('"'"'e \|d[aei] \|[eë]d \|o[f]* \|phố \)*//g' \
-            -e 's/[ -’]\([Aa]irurando\|aju\|alue\|[Aa]ñcala\|Bikéyah\|Bölgesi\|[Cc]astle\|çayı\|Chê\|Chhī\|Chibang\|Cit[t]*[aày]\|Cumhuriyeti\|Dhāma\|gielda\|[Gg]overnorate\|gradŭ\|Hahoodzo\|jõgi\|[Jj]ou\|keel\|Kilisesi\|Kingdom\|[Kk]o[aā]n\|község\|[Kk]shetr\|Kūn\|Kyouku\|linn\|maak[ou]n[dt]a*\|[Mm]achi\|[Mm]ahal[iı]\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Mura\|Nagar\|Nakaram\|Nehri\|osariik\|pagasts\|[Pp]akuti\|[Pp]aḷāta\|[Pp]il[i]*s\|[Pp]r[a]*d[eē][sś][h]*[a]*\|[Pp]rāntaṁ\|qalasy\|[Rr]egion\|[Šš]aary\|shěng\|Shi\|Siti\|Shuu\|síksá\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|vald\|[Vv]il[aā][jy]\(eti\|s\)\|[Xx]i[aà]n\)$//g' \
+            -e 's/^\(Autonome Gemeinschaft\|Bprà[ -][Tt]âēyt\|Com[m]*unitate[a]* Autonom[aăe]\|Ilang ng\|Tá[ -][Ll]aēy[ -][Ss]aāi\)[ -]//g' \
+            -e 's/^\([Cc]ast\([ei]l\|r\)[lu]*[mo]*\|\([CcÇç]\|Tz\)[ei][u]*[dt]*[aáàæ][dt]*[e]*[a]*\|[CcSs]\(ee\|i\)[t]*[aàey]\|[Cc]h[aâ]teau\|[Dd][eéi]s[iy]*ert[o]*\|[Dd]istr[ei][ck]*t[t]*o*\|Fort\(aleza\|ress\)\|Kingdom\|Parish\|[Rr]e[gģh]i[oóu]n*i*[aes]*\|Re[s ]*p[uüù]blic[a]*\|State\|Thành\|[Vv]ille\|Xian\) \('"'"'e \|d[aeiu][l]* \|[eë]d \|o[f]* \|phố \)*//g' \
+            -e 's/[ -’]\([Aa]irurando\|aju\|alue\|[Aa]ñcala\|Bikéyah\|Bölgesi\|[Cc]astle\|çayı\|Chê\|Chhī\|Chibang\|Cit[t]*[aày]\|Çölü\|Cumhuriyeti\|[Dd]esert\|Dhāma\|Eḍāri\|gielda\|[Gg]overnorate\|gradŭ\|Hahoodzo\|jõgi\|[Jj]ou\|ǩalaḥy\|keel\|Kilisesi\|Kingdom\|[Kk]o[aā]n\|község\|[Kk]shetr\|Kūn\|Kyouku\|linn\|maak[ou]n[dt]a*\|[Mm]achi\|[Mm]ahal[iı]\|Maṇḍalam\|Marubhūmi\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]unicipality\|Mura\|Nagar\|Nakaram\|Nehri\|osariik\|pagasts\|[Pp]akuti\|[Pp]aḷāta\|Pālaivaṉam\|[Pp]il[i]*s\|[Pp]r[a]*d[eē][sś][h]*[a]*\|[Pp]rāntaṁ\|qalasy\|[Rr]egion\|[Šš]aary\|Sa[bm]ak[u]*\|shěng\|Shi\|Siti\|Shuu\|síksá\|[Ss][ho][aā]-[bm][òô͘]*\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|Town\|Udabno\|vald\|[Vv]il[aā][jy]\(eti\|s\)\|[Xx]i[aà]n\|zhōu\)$//g' \
             -e 's/[ -]\(P[aā][i]*ri\(ṣ\|sh\)\|[Rr]e[gģh]i[oóu]n*[ei]*[as]*\|sht’at’i\|sritis\)$//g' \
             -e 's/ [Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*$//g' \
             -e 's/skaya oblast[’]*$/sk/g' \
@@ -154,7 +154,7 @@ function normalise-name() {
             \
             -e 's/n-a$/na/g' \
             \
-            -e 's/·//g' \
+            -e 's/[·]//g' \
             -e 's/^\s*//g' \
             -e 's/\s*$//g' \
             -e 's/\s\s*/ /g'
