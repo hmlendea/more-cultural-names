@@ -207,6 +207,7 @@ function get-name-lines() {
     get-name-line "Bengali" "bn"
     get-name-line "Bikol_Central" "bcl"
     get-name-line "Bislama" "bi"
+    get-name-line "Brahui" "brh"
     get-name-line "Breton" "br"
     get-name-line "Buginese" "bug"
     get-name-line "Bulgarian" "bg"
