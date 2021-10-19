@@ -66,10 +66,10 @@ function transliterate-name() {
 }
 
 function normalise-name() {
-    LANGUAGE_CODE="${1}" && shift
-    NAME=$(echo "$*" | sed 's/^"\(.*\)"$/\1/g')
-
-    TRANSLITERATED_NAME=$(transliterate-name "${LANGUAGE_CODE}" "${NAME}" | \
+    local LANGUAGE_CODE="${1}" && shift
+    local NAME=$(echo "$*" | sed 's/^"\(.*\)"$/\1/g')
+    local TRANSLITERATED_NAME=$(transliterate-name "${LANGUAGE_CODE}" "${NAME}")
+    local NORMALISED_NAME=$(echo "${TRANSLITERATED_NAME}" | \
         sed 's/^"\(.*\)"$/\1/g' | \
         awk -F" - " '{print $1}' | \
         awk -F"/" '{print $1}' | \
@@ -120,7 +120,7 @@ function normalise-name() {
             -e 's/^\(Autonome Gemeinschaft\|Bprà[ -][Tt]âēyt\|Com[m]*unitate[a]* Autonom[aăe]\|Ilang ng\|Nhóm ngôn ngữ\|Săā-taā-rá-ná-rát\|[Tt]âēyt[ -][Mm]on[ -][Tt]on\|Tá[ -][Ll]aēy[ -][Ss]aāi\|Thị trấn\)[ -]//g' \
             -e 's/^\([Cc]ast\([ei]l\|r\)[lu]*[mo]*\|\([CcÇç]\|Tz\)[ei][u]*[dt]*[aáàæ][dt]*[e]*[a]*\|[CcSs]\(ee\|i\)[t]*[aàey]\|[Cc]h[aâ]teau\|[CcKk]o[mn][dt]\(a[dt][o]*\|[eé]\)\|[CcKk][aāo]*[uv]*[nṇ][tṭ][iīy][e]*\|Dēmokratía\|[Dd][eéi][sz][iy]*er[tz][ho]*\|[Dd]istr[ei][ck]*t[t]*o*\|Fort\(aleza\|ress\)\|I[ls]l[ae]\|[JjŽž]ud[iz]*e[ctțţ]\(ul\)*\|Kingdom\|Parish\|[Pp]r[eé]fectur[ae]\|Pr[ei]n[cgs][ei]p[aáà][dt]*[eou]*\|[Rr]e[gģh]i[oóu]n*i*[aes]*\|[Rr][eo][giy][an][ou][m]*[e]*\|R[ei][s ]*p[auüù]b[b]*li[ck][ck]*\(a\|en\)*\|State\|Thành\|[Tt]zountéts\|[VvWw]il[l]*[ae]\(ya\)*\|Xian\) \('"'"'e \|d'"'"'\|[dy][aeiîu][l]* \|[eë]d \|han \|[t]*[Oo][fu]* \|phố \)*//g' \
             \
-            -e 's/[ ’-]\(AG\|[Aa]imag\|[Aa]irurando\|aju\|alue\|[Aa]ñcala\|apskritis\|[Bb]ar[ou]n[iy][am]*[u]*\|[Bb]hasa\|Bikéyah\|Bölgesi\|[Cc]alabro\|[Cc]astle\|çayı\|Chê\|Chhī\|Chibang\|Cit[t]*[aày]\|[CcKk][aāo]*[uv]*[nṇ][tṭ]\([iīy]\|lu[gğ]u]\)\|Çölü\|Cumhuriyeti\|[Dd]ǎo\|[Dd]esert\|Dhāma\|Eḍāri\|[Ee]na\|[Ee]rusutaa\|[Gg]aṇarājya\|gielda\|[Gg]o\|[Gg]ōng[ -][Hh]é[ -][Gg]uó\|[Gg]overnorate\|[Gg]rad[ŭ]*\|[gq]r[aā]f[l]*[iı]\(ı\|ste\)\|grubu\|Hahoodzo\|[Ii]ngurando\|[Jj]anarajaya\|jõgi\|[Jj]ou\|[Jj][iù]n\|ǩalaḥy\|[Kk]àu-khu\|ke[e]*l['"'"']*\|[Kk]hiung[ -][Ff]ò[ -][Kk]oet\|[Kk][iy][i]*l\|Kilisesi\|Kingdom\|[Kk]o[aā]n\|[Kk]onderria\|község\|krahvkond\|[Kk]shetr\|Kūn\|Kyouku\|Kyouwa Koku\|[Ll]anguage\|[Ll]ingvo\|linn\|maak[ou]n[dt]a*\|[Mm]achi\|[Mm]ahal[iı]\|Maṇḍalam\|Marubhūmi\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]oḻi\|[Mm]ovy\|[Mm]unicipality\|Mura\|Nagar\|Nakaram\|Nehri\|osariik\|[Oo]ukoku\|pagasts\|[Pp]akuti\|[Pp]aḷāta\|Pālaivaṉam\|[Pp]il[i]*s\|[Pp]r[a]*d[eē][sś][h]*[a]*\|[Pp]rja[a]*st[t]*a[a]*k\|[PpP‍p‍]r[aā]*nta[ṁy][a]*\|qalasy\|[Rr]egion\|rén\|[Rr]e[s]*publi[ck][a]*\(ḥy\)*\|[SsŠš]aar[iy]*\|Sa[bm]ak[u]*\|[Ss]agrapo\|shěng\|Shi\|Siti\|Shuu\|síksá\|[Ss][ho][aā]-[bm][òô͘]*\|so\(g\|cke\)n\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|tele\|tillari\|[Tt]ou\|Town\|Udabno\|vald\|[Vv]il[aā][jy]\(eti\|s\)\|[Ww]áng[ -][Gg]uó\|[Xx]i[aà]n\|yǔ\|zh[ēō]*[nu]\|[ZzŽž][h]*ude[ct]s[i]*\)$//g' \
+            -e 's/[ ’-]\(AG\|[Aa]imag\|[Aa]irurando\|aju\|alue\|[Aa]ñcala\|apskritis\|[Bb]ar[ou]n[iy][am]*[u]*\|[Bb]hasa\|Bikéyah\|Bölgesi\|[Cc]alabro\|[Cc]astle\|çayı\|Chê\|Chhī\|Chibang\|Cit[t]*[aày]\|[CcKk][aāo]*[uv]*[nṇ][tṭ]\([iīy]\|lu[gğ]u]\)\|[cs]h[h]*[ìī]\|Çölü\|Cumhuriyeti\|[Dd]ǎo\|[Dd]esert\|Dhāma\|Eḍāri\|[Ee]na\|[Ee]rusutaa\|[Gg]aṇarājya\|gielda\|[Gg]o\|[Gg]ōng[ -][Hh]é[ -][Gg]uó\|[Gg]overnorate\|[Gg]rad[ŭ]*\|[gq]r[aā]f[l]*[iı]\(ı\|ste\)\|grubu\|Hahoodzo\|[Ii]ngurando\|[Jj]anarajaya\|jõgi\|[Jj]ou\|[Jj][iù]n\|ǩalaḥy\|[Kk]àu-khu\|ke[e]*l['"'"']*\|[Kk]hiung[ -][Ff]ò[ -][Kk]oet\|[Kk][iy][i]*l\|Kilisesi\|Kingdom\|[Kk]o[aā]n\|[Kk]onderria\|község\|krahvkond\|[Kk]shetr\|Kūn\|Kyouku\|Kyouwa Koku\|[Ll]anguage\|[Ll]ingvo\|linn\|maak[ou]n[dt]a*\|[Mm]achi\|[Mm]ahal[iı]\|Maṇḍalam\|Marubhūmi\|[Mm]arz\|megye\|mhuriyeti\|[Mm]in[tţ]a[kq]at*\|[Mm]oḻi\|[Mm]ovy\|[Mm]unicipality\|Mura\|Nagar\|Nakaram\|Nehri\|osariik\|[Oo]ukoku\|pagasts\|[Pp]akuti\|[Pp]aḷāta\|Pālaivaṉam\|[Pp]il[i]*s\|[Pp]r[a]*d[eē][sś][h]*[a]*\|[Pp]rja[a]*st[t]*a[a]*k\|[PpP‍p‍]r[aā]*nta[ṁy][a]*\|qalasy\|[Rr]egion\|rén\|[Rr]e[s]*publi[ck][a]*\(ḥy\)*\|[SsŠš]aar[iy]*\|Sa[bm]ak[u]*\|[Ss]agrapo\|shěng\|Shi\|Siti\|Shuu\|síksá\|[Ss][ho][aā]-[bm][òô͘]*\|so\(g\|cke\)n\|Sṳ\|suohkan\|suyu\|tamaneɣt\|tartomány\|tele\|tillari\|[Tt]ou\|Town\|Udabno\|vald\|[Vv]il[aā][jy]\(eti\|s\)\|[Ww]áng[ -][Gg]uó\|[Xx]i[aà]n\|yǔ\|zh[ēō]*[nu]\|[ZzŽž][h]*ude[ct]s[i]*\)$//g' \
             -e 's/[ -]\(P[aā][i]*ri\(ṣ\|sh\)\|[Rr]e[gģh]i[oóu]n*[ei]*[as]*\|[Rr]esp[uy][’]*bli[’]*[ck]a\(sy\)*\|sht’at’i\|sritis\)$//g' \
             -e 's/ [Pp][’]*r[ao][bpvw][ëií][nñ][t]*[csz]*[eiíjoy]*[aez]*$//g' \
             -e 's/ [Cc]o[ou]nt\(ae\|y\)$//g' \
@@ -167,16 +167,23 @@ function normalise-name() {
             -e 's/\s*$//g' \
             -e 's/\s\s*/ /g')
         
+        NORMALISED_NAME=$(echo "${NORMALISED_NAME}" | \
+            perl -p0e 's/\r*\n/ /g' | \
+            sed \
+                -e 's/\s\s*/ /g' \
+                -e 's/^\s*//g' \
+                -e 's/\s*$//g')
+
         if [ "${LANGUAGE_CODE}" != "ga" ] && [ "${LANGUAGE_CODE}" != "ga" ]; then
-            TRANSLITERATED_NAME=$(echo "${TRANSLITERATED_NAME}" | sed 's/^\([a-z]\)/\U\1/g')
+            NORMALISED_NAME=$(echo "${NORMALISED_NAME}" | sed 's/^\([a-z]\)/\U\1/g')
         fi
 
-        [ "${LANGUAGE_CODE}" == "lt" ] && TRANSLITERATED_NAME=$(echo "${TRANSLITERATED_NAME}" | sed 's/^Šv\./Šventasis/g')
-        [ "${LANGUAGE_CODE}" == "zh" ] && TRANSLITERATED_NAME=$(echo "${TRANSLITERATED_NAME}" | sed 's/-//g')
+        [ "${LANGUAGE_CODE}" == "lt" ] && NORMALISED_NAME=$(echo "${NORMALISED_NAME}" | sed 's/^Šv\./Šventasis/g')
+        [ "${LANGUAGE_CODE}" == "zh" ] && NORMALISED_NAME=$(echo "${NORMALISED_NAME}" | sed 's/-//g')
 
-        TRANSLITERATED_NAME=$(echo "${TRANSLITERATED_NAME}" | sed 's/^L'"'"'/l'"'"'/g')
+        NORMALISED_NAME=$(echo "${NORMALISED_NAME}" | sed 's/^L'"'"'/l'"'"'/g')
 
-        echo "${TRANSLITERATED_NAME}"
+        echo "${NORMALISED_NAME}"
 }
 
 function capitalise() {
