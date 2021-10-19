@@ -136,7 +136,7 @@ grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
 grep -Pzo "\n *<GameIds>\n *<[^G].*\n" *.xml
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -Pzo "\n *</[A-Za-z]*Entity.*\n *<(Id|Name).*\n" *.xml
-grep -n "adjective=\"\([^\"]*\)\">" *.xml
+grep -n "\(adjective\|value\)=\"\([^\"]*\)\"\s*>" *.xml
 grep -n "<<\|>>" *.xml
 grep -n "[^=]\"[a-zA-Z]*=" *.xml
 grep -n "==\"" *.xml
