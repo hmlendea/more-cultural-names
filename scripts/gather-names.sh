@@ -326,7 +326,7 @@ function get-name-lines() {
     get-name-line "Mirandese" "mwl"
     get-name-line "Mongol" "mn"
     get-name-line "Nahuatl" "nah"
-    get-name-line "Narom" "nrm"
+    #get-name-line "Narom" "nrm"
     get-name-line "Nauru" "na"
     get-name-line "Navajo" "nv"
     get-name-line "Neapolitan" "nap"
