@@ -50,6 +50,7 @@ function get-name-from-geonames() {
     NAME=$(echo ${GEONAMES_DATA} | sed 's/%NL%\s*/\n/g' | \
         grep "<alternateName " | \
         grep "lang=\"${LANGUAGE_CODE}\"" | \
+        sed 's/isPreferredName=\"[^\"]*\"\s*//g' | \
         sed 's/\s*<alternateName lang=\"'${LANGUAGE_CODE}'\">\([^<]*\).*/\1/g')
     
     NAME=$(normalise-name "${LANGUAGE_CODE}" "${NAME}")
@@ -184,6 +185,7 @@ function get-name-lines() {
     get-name-line "Afrikaans" "af"
     get-name-line "Akan_Twi" "tw"
     get-name-line "Akan" "ak"
+    get-name-line "Albanian_Tosk" "als"
     get-name-line "Albanian" "sq"
     get-name-line "Alemannic" "gsw"
     get-name-line "Arabic" "ar"
@@ -221,6 +223,7 @@ function get-name-lines() {
     get-name-line "Chinese_Min_Eastern" "cdo"
     get-name-line "Chinese_Min_South" "nan"
     get-name-line "Chuvash" "cv"
+    get-name-line "Colognian" "ksh"
     get-name-line "Cornish" "kw"
     get-name-line "Corsican" "co"
     get-name-line "Czech" "cs"
@@ -232,11 +235,12 @@ function get-name-lines() {
     get-name-line "English" "en"
     get-name-line "Esperanto" "eo"
     get-name-line "Estonian" "et"
+    get-name-line "Etruscan" "ett"
     get-name-line "Ewe" "ee"
     get-name-line "Extremaduran" "ext"
     get-name-line "Faroese" "fo"
-    get-name-line "Fijian" "fj"
     get-name-line "Fijian_Hindi" "hif"
+    get-name-line "Fijian" "fj"
     get-name-line "Finnish" "fi"
     get-name-line "Flemish_West" "vls"
     get-name-line "French" "fr"
@@ -253,6 +257,7 @@ function get-name-lines() {
     get-name-line "German_Palatine" "pfl"
     get-name-line "German_Pennsylvania" "pdc"
     get-name-line "German" "de"
+    get-name-line "Greek_Ancient" "grc"
     get-name-line "Greek" "el"
     get-name-line "Greenlandic" "kl"
     get-name-line "Guarani" "gn"
@@ -292,7 +297,7 @@ function get-name-lines() {
     get-name-line "Konkani_Goa" "gom-latn"
     get-name-line "Korean" "ko"
     get-name-line "Kotava" "avk"
-    get-name-line "Kurdish" "ku"
+    get-name-line-2variants "Kurdish" "ku" "Kurdish" "ckd"
     get-name-line "Kyrgyz" "ky"
     get-name-line "Ladin" "lld"
     get-name-line "Ladino" "lad"
@@ -321,6 +326,7 @@ function get-name-lines() {
     get-name-line "Mirandese" "mwl"
     get-name-line "Mongol" "mn"
     get-name-line "Nahuatl" "nah"
+    #get-name-line "Narom" "nrm"
     get-name-line "Nauru" "na"
     get-name-line "Navajo" "nv"
     get-name-line "Neapolitan" "nap"
@@ -340,6 +346,7 @@ function get-name-lines() {
     get-name-line "Polish" "pl"
     get-name-line-2variants "Portuguese_Brazilian" "pt-br" "Portuguese" "pt"
     get-name-line "Quechua" "qu"
+    get-name-line "Romagnol" "rgn"
     get-name-line "Romani_Vlax" "rmy"
     get-name-line "Romanian" "ro"
     get-name-line "Romansh" "rm"
@@ -362,6 +369,7 @@ function get-name-lines() {
     get-name-line-2variants "Croatian" "hr" "SerboCroatian" "sh"
     get-name-line-2variants "Serbian" "sr" "SerboCroatian" "sh"
     get-name-line-2variants "Serbian" "sr-el" "SerboCroatian" "sh"
+    get-name-line "Shilha" "shi"
     get-name-line "Shona" "sn"
     get-name-line "Sicilian" "scn"
     get-name-line "Silesian" "szl"
@@ -396,6 +404,7 @@ function get-name-lines() {
     get-name-line "Udmurt" "udm"
     get-name-line "Ukrainian" "uk"
     get-name-line "Uzbek" "uz"
+    get-name-line "Venda" "ve"
     get-name-line "Venetian" "vec"
     get-name-line "Vepsian" "vep"
     get-name-line "Vietnamese" "vi"

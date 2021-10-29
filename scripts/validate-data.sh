@@ -97,6 +97,18 @@ function checkForMismatchingCkTitles() {
     fi
 }
 
+### Make sure locations are sorted alphabetically
+
+OLD_LC_COLLATE=${LC_COLLATE}
+export LC_COLLATE=C
+
+WELL_COVERED_SECTION_END_LINE_NR=$(grep -n "@@@@ BELOW TITLES NEED REVIEW" "${LOCATIONS_FILE}" | awk -F":" '{print $1}')
+ACTUAL_LOCATIONS_LIST=$(cat "${LOCATIONS_FILE}" | head -n "${WELL_COVERED_SECTION_END_LINE_NR}" | grep "^\s*<Id>" | sed 's/^\s*<Id>\([^<]*\).*/\1/g' | sed -r '/^\s*$/d' | perl -p0e 's/\r*\n/%NL%/g')
+EXPECTED_LOCATIONS_LIST=$(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g' | sort | sed -r '/^\s*$/d' | perl -p0e 's/\r*\n/%NL%/g')
+
+diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
+export LC_COLLATE=${OLD_LC_COLLATE}
+
 # Find duplicated IDs
 grep "^ *<Id>" *.xml | \
     sort | uniq -c | \
@@ -134,6 +146,8 @@ grep -Pzo "\n *</GameIds>\n *<Name .*\n" *.xml
 grep -Pzo "\n *<GameId .*\n *<Name.*\n" *.xml
 grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
 grep -Pzo "\n *<GameIds>\n *<[^G].*\n" *.xml
+grep -Pzo "\n\s*<(/[^>]*)>.*\n\s*<\1>\n" *.xml # Double tags
+grep -Pzo "\n\s*<([^>]*)>\s*\n\s*</\1>\n" *.xml # Empty tags
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -Pzo "\n *</[A-Za-z]*Entity.*\n *<(Id|Name).*\n" *.xml
 grep -n "\(adjective\|value\)=\"\([^\"]*\)\"\s*>" *.xml
