@@ -1,15 +1,13 @@
 #!/bin/bash
 
-HOI4_STATES_DIR=~/".games/Steam/common/Hearts of Iron IV/history/states"
+HOI4_STATES_DIR="${HOME}/.local/share/Steam/steamapps/common/Hearts of Iron IV/history/states"
 LOCATIONS_FILE="$(pwd)/locations.xml"
 PARENTS_FILE="$(pwd)/hoi4_parents.txt"
 
 echo "" > "${PARENTS_FILE}"
 
-cd "${HOI4_STATES_DIR}"
-
-for FILE in *.txt ; do
-    STATE_ID=$(echo $FILE | sed 's/^\([0-9]*\)-.*/\1/g')
+for FILE in "${HOI4_STATES_DIR}"/*.txt ; do
+    STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)-.*/\1/g')
 
     PROVINCE_LIST=$(cat "${FILE}" | \
         sed 's/[\{\}]//g' | \
