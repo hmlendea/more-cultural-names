@@ -8,15 +8,13 @@ echo "" > "${PARENTS_FILE}"
 
 for FILE in "${HOI4_STATES_DIR}"/*.txt ; do
     STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)-.*/\1/g')
-
+    
     PROVINCE_LIST=$(cat "${FILE}" | \
-        sed 's/[\{\}]//g' | \
-        sed '/^[[:space:]]*$/d' | \
-        awk '/provinces/{getline; print}' | \
         sed 's/\r//g' | \
-        sed 's/^[\t ]*//g' | \
-        sed 's/[\t ]*$//g' | \
-        sed 's/[\t ]\+/ /g')
+        tr '\n' ' ' | \
+        sed 's/\s\s*/ /g' | \
+        sed 's/.*provinces\s*=\s*{\([^}]*\).*/\1/g' | \
+        sed 's/\(^\s*\|\s*$\)//g')
 
     echo "Getting the provinces for state #${STATE_ID}"
 
