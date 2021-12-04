@@ -6,6 +6,17 @@
 #Title order determines which title shows in title history if multiple titles are held. ie: If k_croatia is higher in this file than k_hungary then the Kings of Hungary will show as Kings of Croatia in the title history when they hold both titles. The main effect from this is screwing up regnal numbers
 #Normally I labeled added or changed titles
 
+e_null_empire = {
+	color = { 0 0 0 }
+	color2 = { 0 0 0 }
+	
+	capital = c_roma
+
+	can_create = { always = no }
+	no_automatic_claims = yes
+	definite_form = yes
+	#de_jure_drift_disabled = yes
+}
 
 # EMPIRES
 
@@ -2977,7 +2988,8 @@ e_hre = {
 k_hansa = {
 	color = { 142 142 142 }
 	color2 = { 255 255 255 }
-
+	definite_form = yes
+	ruler_uses_title_name = no
 	capital = c_lubeck # Lübeck
 }
 
@@ -10530,15 +10542,17 @@ e_germany = {
 		color2 = { 220 220 20 }
 		
 		capital = c_regensburg
+		
 		can_create = {
 			trigger_if = {
 			limit = { is_ai = yes }
-		OR = {
-		is_independent_ruler=yes
-		NOT = { exists = title:e_hre }
-			}
+			OR = {
+				is_independent_ruler = yes
+				NOT = { exists = title:e_hre }
 				}
+			}
 		}
+		
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -20517,6 +20531,7 @@ e_byzantium = {
 	k_venice = {
 		color = { 54 167 156 }
 		capital = c_venezia # Venice
+		can_create_on_partition = { always = no }
 		
 		ai_primary_priority = {
 			if = {
@@ -20654,6 +20669,7 @@ e_italy = {
 	k_genoa = {
 		color = { 234 131 110 }
 		capital = c_genoa # Genoa
+		can_create_on_partition = { always = no }
 		
 		d_genoa = {
 			color = { 244 141 120 }
@@ -20697,6 +20713,7 @@ e_italy = {
 	k_pisa = {
 		color = { 196 192 140 }
 		color2 = { 255 255 255 }
+		can_create_on_partition = { always = no }
 		
 		capital = c_pisa # Pisa
 		
@@ -20764,7 +20781,7 @@ e_italy = {
 			}
 		}
 		
-				d_vercelli_republic = { # Comune di Vercelli # vercelli republic
+		d_vercelli_republic = { # Comune di Vercelli # vercelli republic
 			color = { 26 60 102 }
 			color2 = { 255 255 255 }
 			
@@ -22203,7 +22220,8 @@ e_italy = {
 	k_romagna = {
 		color = { 215 141 152 }
 		color2 = { 255 255 255 }
-
+		can_create_on_partition = { always = no }
+		
 		capital = c_ravenna # Ravenna
 		can_create = {
 			trigger_if = {
@@ -61752,7 +61770,7 @@ e_maghreb = {
 					color = { 77 117 240 }
 					color2 = { 255 255 255 }
 				}
-				b_mansa'l-kharaz = {
+				b_mansal-kharaz = {
 					province = 4587
 					
 					color = { 77 117 240 }
