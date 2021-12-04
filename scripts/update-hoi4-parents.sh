@@ -1,13 +1,15 @@
 #!/bin/bash
 
-HOI4_STATES_DIR="${HOME}/.local/share/Steam/steamapps/common/Hearts of Iron IV/history/states"
+HOI4_DIR="${HOME}/.local/share/Steam/steamapps/common/Hearts of Iron IV"
+HOI4_STATES_DIR="${HOI4_DIR}/history/states"
+HOI4_LOCALISATION_DIR="${HOI4_DIR}/localisation/english"
 LOCATIONS_FILE="$(pwd)/locations.xml"
 PARENTS_FILE="$(pwd)/hoi4_parents.txt"
 
 echo "" > "${PARENTS_FILE}"
 
 for FILE in "${HOI4_STATES_DIR}"/*.txt ; do
-    STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)-.*/\1/g')
+    STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
     
     PROVINCE_LIST=$(cat "${FILE}" | \
         sed 's/\r//g' | \
@@ -25,11 +27,15 @@ for FILE in "${HOI4_STATES_DIR}"/*.txt ; do
     done
 done
 
-for PROVINCE_ID in $(grep "game=\"HOI4\" type=\"City\"" "${LOCATIONS_FILE}" | \
+#for CITY_ID in $(cat "${HOI4_LOCALISATION_DIR}/victory_points_l_english.yml" | sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g'); do
+for CITY_ID in $(grep "game=\"HOI4\" type=\"City\"" "${LOCATIONS_FILE}" | \
                     sed 's/^ *<GameId [^>]*>\([0-9]*\)<.*/\1/g' | \
-                    sort | uniq); do
-    STATE_ID=$(grep "^${PROVINCE_ID}=" "${PARENTS_FILE}" | awk -F = '{print $2}')
-    
-    echo "Province #${PROVINCE_ID}'s parent set to state #${STATE_ID}"
-    sed -i 's/\(^ *<GameId game=\"HOI4\" type=\"City\"\)\( parent=\"[^\"]*\"\)*>'"${PROVINCE_ID}"'</\1 parent=\"'"${STATE_ID}"'\">'"${PROVINCE_ID}"'</g' "${LOCATIONS_FILE}"
+                    sort -h | uniq); do
+    STATE_ID=$(grep "^${CITY_ID}=" "${PARENTS_FILE}" | awk -F = '{print $2}')
+    CITY_NAME=$(cat "${HOI4_LOCALISATION_DIR}/victory_points_l_english.yml" | \
+                    grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
+                    sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+
+    echo "Province #${CITY_ID}: State=#${STATE_ID} Name='${CITY_NAME}'"
+    sed -i 's/\(^\s*<GameId game=\"HOI4\" type=\"City\"\)\( parent=\"[^\"]*\"\)*>'"${CITY_ID}"'<.*/\1 parent=\"'"${STATE_ID}"'\">'"${CITY_ID}"'<\/GameId> <!-- '"${CITY_NAME}"' -->/g' "${LOCATIONS_FILE}"
 done
