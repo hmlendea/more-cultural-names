@@ -10,6 +10,9 @@ echo "" > "${PARENTS_FILE}"
 
 for FILE in "${HOI4_STATES_DIR}"/*.txt ; do
     STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
+    STATE_NAME=$(cat "${HOI4_LOCALISATION_DIR}/state_names_l_english.yml" | \
+                    grep "^\s*STATE_${STATE_ID}:" | \
+                    sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
     
     PROVINCE_LIST=$(cat "${FILE}" | \
         sed 's/\r//g' | \
@@ -18,7 +21,9 @@ for FILE in "${HOI4_STATES_DIR}"/*.txt ; do
         sed 's/.*provinces\s*=\s*{\([^}]*\).*/\1/g' | \
         sed 's/\(^\s*\|\s*$\)//g')
 
-    echo "Getting the provinces for state #${STATE_ID}"
+    echo "State #${STATE_ID}: Name='${STATE_NAME}'"
+
+    sed -i 's/\(^\s*<GameId game=\"HOI4\" type=\"State\">'"${STATE_ID}"'<\/GameId>\).*/\1 <!-- '"${STATE_NAME}"' -->/g' "${LOCATIONS_FILE}"
 
     for PROVINCE_ID in ${PROVINCE_LIST}; do
         [[ -z "${PROVINCE_LIST// }" ]] && continue
