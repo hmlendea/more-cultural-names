@@ -33,8 +33,6 @@ The current development focus and roadmap can be found [here](https://github.com
 
 The mod grows continuously, and any new names added to it are automatically ported to all of the other supported games that can use it.
 
-**Note**: This mod might get updated more frequently on GitHub than on the Steam Workshop*
-
 # Compatibility
 
 The mod is **OS-agnostic**, which means that it will work on all of the operating systems supported by the game.
