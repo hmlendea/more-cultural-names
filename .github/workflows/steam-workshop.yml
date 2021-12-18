@@ -1,0 +1,108 @@
+name: Steam Workshop
+
+on:
+  push:
+    tags:
+    - 'v*.*.*'
+
+jobs:
+  release-ck2:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download release assets
+      run: |
+        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK2_${GITHUB_REF:11}.zip" -O "CK2.zip"
+        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK2HIP_${GITHUB_REF:11}.zip" -O "CK2HIP.zip"
+        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3_${GITHUB_REF:11}.zip" -O "CK3.zip"
+        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3IBL_${GITHUB_REF:11}.zip" -O "CK3IBL.zip"
+        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3MBP_${GITHUB_REF:11}.zip" -O "CK3MBP.zip"
+        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_HOI4_${GITHUB_REF:11}.zip" -O "HOI4.zip"
+        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_ImperatorRome_${GITHUB_REF:11}.zip" -O "ImperatorRome.zip"
+        
+    - name: Crusader Kings 2
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 203770
+        itemid: 2243430163
+        path: "CK2.zip"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+        
+    - name: Crusader Kings 2 (HIP)
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 203770
+        itemid: 1175098675
+        path: "CK2HIP.zip"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+
+    - name: Crusader Kings 3
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 1158310
+        itemid: 2217534250
+        path: "CK3.zip"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+
+    - name: Crusader Kings 3 (IBL)
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 1158310
+        itemid: 2490281800
+        path: "CK3IBL.zip"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+
+    - name: Crusader Kings 3 (MB+)
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 1158310
+        itemid: 2630872947
+        path: "CK3MBP.zip"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+
+    - name: Hearts of Iron IV
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 394360
+        itemid: 2459257386
+        path: "HOI4.zip"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+
+    - name: Imperator Rome
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 859580
+        itemid: 2219177532
+        path: "ImperatorRome.zip"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
