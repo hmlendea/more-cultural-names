@@ -1,4 +1,4 @@
-[![Donate](https://img.shields.io/badge/-%E2%99%A5%20Donate-%23ff69b4)](https://hmlendea.go.ro/fund.html) [![Latest GitHub release](https://img.shields.io/github/v/release/hmlendea/more-cultural-names)](https://github.com/hmlendea/more-cultural-names/releases/latest)
+[![Donate](https://img.shields.io/badge/-%E2%99%A5%20Donate-%23ff69b4)](https://hmlendea.go.ro/fund.html) [![Build Status](https://github.com/hmlendea/more-cultural-names/actions/workflows/build.yml/badge.svg)](https://github.com/hmlendea/more-cultural-names/actions/workflows/build.yml) [![Latest GitHub release](https://img.shields.io/github/v/release/hmlendea/more-cultural-names)](https://github.com/hmlendea/more-cultural-names/releases/latest)
 
 # About
 
@@ -32,8 +32,6 @@ The names are meant to provide an immersive and accurate experience for the game
 The current development focus and roadmap can be found [here](https://github.com/hmlendea/more-cultural-names/wiki/Roadmap).
 
 The mod grows continuously, and any new names added to it are automatically ported to all of the other supported games that can use it.
-
-**Note**: This mod might get updated more frequently on GitHub than on the Steam Workshop*
 
 # Compatibility
 
