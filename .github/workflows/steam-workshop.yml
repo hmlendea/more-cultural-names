@@ -13,37 +13,47 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Download the release assets
+    - name: Preparing the release assets
       run: |
         for GAME_ID in "CK2" "CK2HIP" "CK3" "CK3IBL" "CK3MBP" "HOI4" "ImperatorRome"; do
           mkdir "${GAME_ID}"
           wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${GAME_ID}_${GITHUB_REF:11}.zip" -O "${GAME_ID}.zip"
           unzip "${GAME_ID}.zip" -d "${GAME_ID}/"
-        done
-        
-    - name: Crusader Kings 2
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 203770
-        itemid: 2243430163
-        path: "CK2/more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-        
-    - name: Crusader Kings 2 (HIP)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 203770
-        itemid: 1175098675
-        path: "CK2HIP/hip-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+        done 
+#        sed -i 's/^path\s*=.*/archive=\"more-cultural-names.zip\"/g' CK2/more-cultural-names.mod
+#        cp CK2/more-cultural-names.mod CK2/more-cultural-names/descriptor.mod
+#        cd CK2/more-cultural-names && zip -r more-cultural-names.zip . && cd -
+#        mv CK2/more-cultural-names/more-cultural-names.zip CK2/
+#        rm -rf CK2/more-cultural-names/
+#        sed -i 's/^path\s*=.*/archive=\"hip-more-cultural-names.zip\"/g' CK2HIP/hip-more-cultural-names.mod
+#        cp CK2HIP/hip-more-cultural-names.mod CK2HIP/hip-more-cultural-names/descriptor.mod
+#        cd CK2HIP/hip-more-cultural-names && zip -r hip-more-cultural-names.zip . && cd -
+#        mv CK2HIP/hip-more-cultural-names/hip-more-cultural-names.zip CK2HIP/
+#        rm -rf CK2HIP/hip-more-cultural-names/
+#
+#    - name: Crusader Kings 2
+#      uses: Weilbyte/steam-workshop-upload@v1
+#      with:
+#        appid: 203770
+#        itemid: 2243430163
+#        path: "CK2/"
+#        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+#      env:
+#        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+#        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+#        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+#        
+#    - name: Crusader Kings 2 (HIP)
+#      uses: Weilbyte/steam-workshop-upload@v1
+#      with:
+#        appid: 203770
+#        itemid: 1175098675
+#        path: "CK2HIP/"
+#        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+#      env:
+#        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+#        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+#        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
 
     - name: Crusader Kings 3
       uses: Weilbyte/steam-workshop-upload@v1
