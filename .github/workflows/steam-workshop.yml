@@ -15,20 +15,18 @@ jobs:
 
     - name: Download release assets
       run: |
-        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK2_${GITHUB_REF:11}.zip" -O "CK2.zip"
-        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK2HIP_${GITHUB_REF:11}.zip" -O "CK2HIP.zip"
-        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3_${GITHUB_REF:11}.zip" -O "CK3.zip"
-        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3IBL_${GITHUB_REF:11}.zip" -O "CK3IBL.zip"
-        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3MBP_${GITHUB_REF:11}.zip" -O "CK3MBP.zip"
-        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_HOI4_${GITHUB_REF:11}.zip" -O "HOI4.zip"
-        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_ImperatorRome_${GITHUB_REF:11}.zip" -O "ImperatorRome.zip"
+        for GAME_ID in "CK2" "CK2HIP" "CK3" "CK3IBL" "CK3MBP" "HOI4" "ImperatorRome"; do
+          mkdir "${GAME_ID}"
+          wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${GAME_ID}_${GITHUB_REF:11}.zip" -O "${GAME_ID}.zip"
+          unzip "${GAME_ID}.zip" -d "${GAME_ID}/"
+        done
         
     - name: Crusader Kings 2
       uses: Weilbyte/steam-workshop-upload@v1
       with:
         appid: 203770
         itemid: 2243430163
-        path: "CK2.zip"
+        path: "CK2/more-cultural-names/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
@@ -40,7 +38,7 @@ jobs:
       with:
         appid: 203770
         itemid: 1175098675
-        path: "CK2HIP.zip"
+        path: "CK2HIP/hip-more-cultural-names/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
@@ -52,7 +50,7 @@ jobs:
       with:
         appid: 1158310
         itemid: 2217534250
-        path: "CK3.zip"
+        path: "CK3/more-cultural-names/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
@@ -64,7 +62,7 @@ jobs:
       with:
         appid: 1158310
         itemid: 2490281800
-        path: "CK3IBL.zip"
+        path: "CK3IBL/ibl-more-cultural-names/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
@@ -76,7 +74,7 @@ jobs:
       with:
         appid: 1158310
         itemid: 2630872947
-        path: "CK3MBP.zip"
+        path: "CK3MBP/mbp-more-cultural-names/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
@@ -88,7 +86,7 @@ jobs:
       with:
         appid: 394360
         itemid: 2459257386
-        path: "HOI4.zip"
+        path: "HOI4/more-cultural-names/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
@@ -100,7 +98,7 @@ jobs:
       with:
         appid: 859580
         itemid: 2219177532
-        path: "ImperatorRome.zip"
+        path: "ImperatorRome/more-cultural-names/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
