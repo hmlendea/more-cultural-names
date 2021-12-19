@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Download release assets
+    - name: Download the release assets
       run: |
         for GAME_ID in "CK2" "CK2HIP" "CK3" "CK3IBL" "CK3MBP" "HOI4" "ImperatorRome"; do
           mkdir "${GAME_ID}"

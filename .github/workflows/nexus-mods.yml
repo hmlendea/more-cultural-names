@@ -1,0 +1,157 @@
+name: Nexus Mods
+
+on:
+  push:
+    tags:
+    - 'v*.*.*'
+
+jobs:
+  release-ck2:
+    name: Release (CK2)
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download the release asset
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK2_${GITHUB_REF:11}.zip" -O "more-cultural-names.zip"
+        
+    - name: Upload
+      uses: greatness7/nexusmods_file_updater@v2
+      with:
+        username: ${{secrets.NEXUS_USERNAME}}
+        password: ${{secrets.NEXUS_PASSWORD}}
+        game_domain_name: "crusaderkings2"
+        mod_id: "70"
+        file_name: "more-cultural-names"
+        file_version: ${{github.ref_name}}
+        update_version: true
+        new_existing_version: true
+        original_file: "more-cultural-names.*"
+        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        file_path: "more-cultural-names.zip"
+        
+  release-ck2hip:
+    name: Release (CK2HIP)
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download the release asset
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK2HIP_${GITHUB_REF:11}.zip" -O "hip-more-cultural-names.zip"
+        
+    - name: Upload
+      uses: greatness7/nexusmods_file_updater@v2
+      with:
+        username: ${{secrets.NEXUS_USERNAME}}
+        password: ${{secrets.NEXUS_PASSWORD}}
+        game_domain_name: "crusaderkings2"
+        mod_id: "71"
+        file_name: "hip-more-cultural-names"
+        file_version: ${{github.ref_name}}
+        update_version: true
+        new_existing_version: true
+        original_file: "hip-more-cultural-names.*"
+        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        file_path: "hip-more-cultural-names.zip"
+        
+  release-ck3:
+    name: Release (CK3)
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download the release asset
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3_${GITHUB_REF:11}.zip" -O "more-cultural-names.zip"
+        
+    - name: Upload
+      uses: greatness7/nexusmods_file_updater@v2
+      with:
+        username: ${{secrets.NEXUS_USERNAME}}
+        password: ${{secrets.NEXUS_PASSWORD}}
+        game_domain_name: "crusaderkings3"
+        mod_id: "11"
+        file_name: "more-cultural-names"
+        file_version: ${{github.ref_name}}
+        update_version: true
+        new_existing_version: true
+        original_file: "more-cultural-names.*"
+        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        file_path: "more-cultural-names.zip"
+        
+  release-ck3ibl:
+    name: Release (CK3IBL)
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download the release asset
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK2IBL_${GITHUB_REF:11}.zip" -O "ibl-more-cultural-names.zip"
+        
+    - name: Upload
+      uses: greatness7/nexusmods_file_updater@v2
+      with:
+        username: ${{secrets.NEXUS_USERNAME}}
+        password: ${{secrets.NEXUS_PASSWORD}}
+        game_domain_name: "crusaderkings3"
+        mod_id: "12"
+        file_name: "ibl-more-cultural-names"
+        file_version: ${{github.ref_name}}
+        update_version: true
+        new_existing_version: true
+        original_file: "ibl-more-cultural-names.*"
+        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        file_path: "ibl-more-cultural-names.zip"
+        
+  release-ck3mbp:
+    name: Release (CK3MBP)
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download the release asset
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK2MBP_${GITHUB_REF:11}.zip" -O "mbp-more-cultural-names.zip"
+        
+    - name: Upload
+      uses: greatness7/nexusmods_file_updater@v2
+      with:
+        username: ${{secrets.NEXUS_USERNAME}}
+        password: ${{secrets.NEXUS_PASSWORD}}
+        game_domain_name: "crusaderkings3"
+        mod_id: "19"
+        file_name: "mbp-more-cultural-names"
+        file_version: ${{github.ref_name}}
+        update_version: true
+        new_existing_version: true
+        original_file: "mbp-more-cultural-names.*"
+        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        file_path: "mbp-more-cultural-names.zip"
+        
+  release-hoi4:
+    name: Release (HOI4)
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download the release asset
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_HOI4_${GITHUB_REF:11}.zip" -O "more-cultural-names.zip"
+        
+    - name: Upload
+      uses: greatness7/nexusmods_file_updater@v2
+      with:
+        username: ${{secrets.NEXUS_USERNAME}}
+        password: ${{secrets.NEXUS_PASSWORD}}
+        game_domain_name: "heartsofironiv"
+        mod_id: "22"
+        file_name: "more-cultural-names"
+        file_version: ${{github.ref_name}}
+        update_version: true
+        new_existing_version: true
+        original_file: "more-cultural-names.*"
+        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        file_path: "more-cultural-names.zip"
