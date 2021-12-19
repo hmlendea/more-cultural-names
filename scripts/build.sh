@@ -53,6 +53,11 @@ function build-edition {
         --id "${ID}" --name "${NAME}" --ver "${VERSION}" \
         --out "${OUTDIR}" "$@"
 
+    if [ ! -d "${OUTDIR}/${GAME}/" ]; then
+        echo "   > ERROR: Failed to build the ${GAME} edition!"
+        exit 400
+    fi
+
     echo "   > Copying extras..."
     cp -rf "${EXTRAS_DIR}/${GAME}"/* "${OUTDIR}/${GAME}/"
 
