@@ -1,4 +1,4 @@
-[![Donate](https://img.shields.io/badge/-%E2%99%A5%20Donate-%23ff69b4)](https://hmlendea.go.ro/fund.html) [![Latest GitHub release](https://img.shields.io/github/v/release/hmlendea/more-cultural-names)](https://github.com/hmlendea/more-cultural-names/releases/latest)
+[![Donate](https://img.shields.io/badge/-%E2%99%A5%20Donate-%23ff69b4)](https://hmlendea.go.ro/fund.html) [![Build Status](https://github.com/hmlendea/more-cultural-names/actions/workflows/build.yml/badge.svg)](https://github.com/hmlendea/more-cultural-names/actions/workflows/build.yml) [![Latest GitHub release](https://img.shields.io/github/v/release/hmlendea/more-cultural-names)](https://github.com/hmlendea/more-cultural-names/releases/latest)
 
 # About
 
