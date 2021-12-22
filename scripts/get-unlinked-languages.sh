@@ -15,7 +15,7 @@ CK3_CULTURES_DIR="${CK3_DIR}/game/common/culture/cultures"
 CK3_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/1158310"
 CK3IBL_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2416949291/common/culture/cultures"
 CK3MBP_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2216670956/common/culture/cultures"
-CKTFE_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2243307127/common/culture/cultures"
+CK3TFE_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2243307127/common/culture/cultures"
 
 HOI4_DIR="${STEAM_GAMES_DIR}/Hearts of Iron IV"
 HOI4_TAGS_DIR="${HOI4_DIR}/common/country_tags"
@@ -67,7 +67,7 @@ function getHoi4Countries() {
     TAGS_DIR="${@}"
 
     for TAG in $(cat "${TAGS_DIR}/"*.txt | awk -F"=" '{print $1}' | sed 's/\s*//g' | sort | uniq); do
-        COUNTRY_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/"*_english.yml | grep "^\s*${TAG}:0" | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
+        COUNTRY_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/english/"*_english.yml | grep "^\s*${TAG}:0" | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
         if [ -z "$(grep '<GameId game="'${GAME_ID}'">'${TAG}'</GameId>' "${LANGUAGES_FILE}")" ]; then
             printf "      <GameId game=\"${GAME_ID}\">${TAG}</GameId>"
             [ -n "${COUNTRY_NAME}" ] && printf " <!-- ${COUNTRY_NAME} -->"
