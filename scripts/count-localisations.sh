@@ -43,5 +43,5 @@ echo "Locations: ${LOCATIONS_COUNT}"
 echo "Languages: ${LANGUAGES_COUNT}"
 
 echo ""
-echo "Well-covered titles: $((WIKIDATA_LOCATIONS_COUNT*100/LOCATIONS_COUNT))% (${WIKIDATA_LOCATIONS_COUNT} titles)"
-echo "Well-covered content: $((WELL_COVERED_LINES_COUNT*100/NAMES_COUNT))% (${WELL_COVERED_LINES_COUNT} names)"
+echo "Well-covered locations: $((WIKIDATA_LOCATIONS_COUNT*100/LOCATIONS_COUNT))% (${WIKIDATA_LOCATIONS_COUNT} locations)"
+echo "Well-covered names: $((WELL_COVERED_LINES_COUNT*100/NAMES_COUNT))% (${WELL_COVERED_LINES_COUNT} names)"
