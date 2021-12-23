@@ -55,17 +55,16 @@ remove-empty-titles
 
 replace-cultural-name "afghan" "Pashto"
 replace-cultural-name "alan" "Alan"
-replace-cultural-name "armenian" "Armenian_Middle"
 replace-cultural-name "ashkenazi" "Yiddish"
 replace-cultural-name "assyrian" "Syriac_Classical"
 replace-cultural-name "avar" "Avar_Old"
 replace-cultural-name "baloch" "Balochi"
 replace-cultural-name "basque" "Basque"
+replace-cultural-name "beja" "Beja"
 replace-cultural-name "bengali" "Bengali"
 replace-cultural-name "bodpa" "Tibetan_Old"
 replace-cultural-name "bolghar" "Bulgar"
 replace-cultural-name "bosnian" "SerboCroatian"
-replace-cultural-name "breton" "Breton_Middle"
 replace-cultural-name "bulgarian" "Bulgarian"
 replace-cultural-name "catalan" "Catalan"
 replace-cultural-name "coptic" "Egyptian_Coptic"
@@ -79,12 +78,10 @@ replace-cultural-name "finnish" "Finnish"
 replace-cultural-name "frisian" "Frisian_Old"
 replace-cultural-name "georgian" "Georgian_Old"
 replace-cultural-name "german" "German_Middle_High"
-replace-cultural-name "greek" "Greek_Medieval"
 replace-cultural-name "han" "Chinese_Mandarin"
 replace-cultural-name "hungarian" "Hungarian"
 replace-cultural-name "ilmenian" "Ilmenian"
 replace-cultural-name "irish" "Irish"
-replace-cultural-name "kannada" "Kannada"
 replace-cultural-name "karluk" "Karluk"
 replace-cultural-name "khanty" "Khanty"
 replace-cultural-name "khazar" "Khazar"
@@ -106,13 +103,11 @@ replace-cultural-name "nubian" "Nubian_Old"
 replace-cultural-name "occitan" "Occitan_Old"
 replace-cultural-name "outremer" "French_Old"
 replace-cultural-name "pecheneg" "Pecheneg"
-replace-cultural-name "persian" "Persian"
 replace-cultural-name "pictish" "Pictish"
 replace-cultural-name "polish" "Polish"
 replace-cultural-name "pommeranian" "Pomeranian"
 replace-cultural-name "portuguese" "Portuguese"
 replace-cultural-name "prussian" "Prussian_Old"
-replace-cultural-name "roman" "Latin_Medieval"
 replace-cultural-name "russian" "Russian"
 replace-cultural-name "saka" "Khotanese"
 replace-cultural-name "samoyed" "Samoyed"
@@ -123,7 +118,6 @@ replace-cultural-name "sinhala" "Sinhala"
 replace-cultural-name "sogdian" "Sogdian"
 replace-cultural-name "suebi" "Suebi_Medieval"
 replace-cultural-name "swedish" "Swedish"
-replace-cultural-name "tamil" "Tamil_Middle"
 replace-cultural-name "telugu" "Telugu_Old"
 replace-cultural-name "tocharian" "Tocharian"
 replace-cultural-name "turkish" "Turkish"
@@ -138,12 +132,29 @@ if [ "${GAME}" == "CK2" ]; then
     replace-cultural-name "old_frankish" "Frankish"
 fi
 
+if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ] || [ "${GAME}" == "CK3MBP" ]; then
+    replace-cultural-name "armenian" "Armenian_Middle"
+    replace-cultural-name "breton" "Breton_Middle"
+    replace-cultural-name "greek" "Greek_Medieval"
+    replace-cultural-name "kannada" "Kannada"
+    replace-cultural-name "persian" "Persian_Middle"
+    replace-cultural-name "roman" "Latin_Medieval"
+    replace-cultural-name "tamil" "Tamil_Middle"
+fi
+
+if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ] || [ "${GAME}" == "CK3TFE" ]; then
+    replace-cultural-name "somali" "Somali"
+fi
+
+if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3IBL" ] || [ "${GAME}" == "CK3MBP" ] || [ "${GAME}" == "CK3TFE" ]; then
+    replace-cultural-name "carantanian" "Slovene"
+fi
+
 if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "andalusian_arabic" "Arabic"
     replace-cultural-name "arberian" "Arberian"
     replace-cultural-name "bedouin_arabic" "Arabic"
     replace-cultural-name "bohemian" "Czech"
-    replace-cultural-name "carantanian" "Slovene"
     replace-cultural-name "castillan" "Spanish"
     replace-cultural-name "dalmatian" "Dalmatian_Medieval"
     replace-cultural-name "egyptian_arabic" "Egyptian_Arabic"
@@ -160,9 +171,17 @@ if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "ugricbaltic" "Estonian"
 fi
 
+if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ] || [ "${GAME}" == "CK3MBP" ] || [ "${GAME}" == "CK3TFE" ]; then
+    replace-cultural-name "old_saxon" "German_Old_Low"
+fi
+
 if [ "${GAME}" == "CK2" ] || [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ]; then
     replace-cultural-name "italian" "Tuscan_Medieval"
-    replace-cultural-name "old_saxon" "German_Old_Low"
+fi
+
+if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3MBP" ] || [ "${GAME}" == "CK3TFE" ]; then
+    replace-cultural-name "gothic" "Gothic"
+    replace-cultural-name "thuringian" "Thuringian_Medieval"
 fi
 
 if [ "${GAME}" == "CK2HIP" ]; then
@@ -170,7 +189,6 @@ if [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "anglonorse" "English_Old_Norse"
     replace-cultural-name "arpitan" "Arpitan"
     replace-cultural-name "cumbric" "Cumbric"
-    replace-cultural-name "gothic" "Gothic"
     replace-cultural-name "hijazi" "Arabic"
     replace-cultural-name "icelandic" "Icelandic"
     replace-cultural-name "italian" "Lombard_Medieval"
@@ -197,7 +215,6 @@ if [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "szekely" "Hungarian"
     replace-cultural-name "tagelmust" "Tuareg_Tagelmust"
     replace-cultural-name "tajik" "Tajiki"
-    replace-cultural-name "thuringian" "Thuringian_Medieval"
     replace-cultural-name "tokharian" "Tocharian"
     replace-cultural-name "tuareg" "Tuareg"
     replace-cultural-name "turkmen" "Turkmen_Medieval"
@@ -210,63 +227,130 @@ if [ "${GAME}" == "CK2HIP" ]; then
     replace-cultural-name "zanata" "Zenati"
 fi
 
-if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ]; then
+if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ] || [ "${GAME}" == "CK3MBP" ] || [ "${GAME}" == "CK3TFE" ]; then
+    replace-cultural-name "afar" "Afar"
     replace-cultural-name "aragonese" "Aragonese"
     replace-cultural-name "bashkir" "Bashkir"
     replace-cultural-name "bavarian" "Bavarian_Medieval"
-    replace-cultural-name "cornish" "Cornish_Middle"
     replace-cultural-name "daylamite" "Daylami"
     replace-cultural-name "franconian" "Frankish"
     replace-cultural-name "galician" "Galician"
     replace-cultural-name "karelian" "Karelian"
     replace-cultural-name "mari" "Mari"
-    replace-cultural-name "sicilian" "Sicilian_Medieval"
     replace-cultural-name "swabian" "Alemannic_Medieval"
+fi
+
+if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ] || [ "${GAME}" == "CK3MBP" ]; then
+    replace-cultural-name "cornish" "Cornish_Middle"
+fi
+
+if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ]; then
+    replace-cultural-name "sicilian" "Sicilian_Medieval"
     replace-cultural-name "tajik" "Tajiki"
     replace-cultural-name "vepsian" "Vepsian_Medieval"
     replace-cultural-name "yemeni" "Arabic"
 fi
 
-if [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ]; then
-    replace-cultural-name "akan" "Akan"
+if [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ] || [ "${GAME}" == "CK3MBP" ] || [ "${GAME}" == "CK3TFE" ]; then
     replace-cultural-name "andalusian" "Arabic"
     replace-cultural-name "anglo_saxon" "English_Old"
     replace-cultural-name "asturleonese" "Leonese"
-    replace-cultural-name "baranis" "Berber_Baranis"
     replace-cultural-name "bedouin" "Arabic"
-    replace-cultural-name "burmese" "Burmese"
-    replace-cultural-name "butr" "Berber_Butr"
     replace-cultural-name "castilian" "Spanish"
-    replace-cultural-name "chuvash" "Chuvash"
     replace-cultural-name "cisalpine" "Lombard_Medieval"
     replace-cultural-name "cumbrian" "Cumbric"
     replace-cultural-name "czech" "Czech"
     replace-cultural-name "egyptian" "Egyptian_Arabic"
     replace-cultural-name "estonian" "Estonian"
-    replace-cultural-name "ewe" "Ewe"
     replace-cultural-name "french" "French"
     replace-cultural-name "gaelic" "Scottish_Gaelic"
-    replace-cultural-name "gujarati" "Gujarati_Old"
-    replace-cultural-name "igbo" "Igbo"
-    replace-cultural-name "khwarezmian" "Khwarezmi"
     replace-cultural-name "latgalian" "Latgalian"
     replace-cultural-name "levantine" "Arabic"
-    replace-cultural-name "lombard" "Langobardic"
     replace-cultural-name "maghrebi" "Arabic_Maghreb"
     replace-cultural-name "merya" "Merya"
     replace-cultural-name "mogyer" "Hungarian_Old_Early"
     replace-cultural-name "muroma" "Muroma"
     replace-cultural-name "polabian" "Polabian"
-    replace-cultural-name "sami" "Sami"
     replace-cultural-name "saxon" "German_Middle_Low"
     replace-cultural-name "scottish" "Scots_Early"
     replace-cultural-name "slovien" "Slovak"
-    replace-cultural-name "tsangpa" "Tibetan_Old"
     replace-cultural-name "vlach" "Romanian"
+fi
+
+if [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ] || [ "${GAME}" == "CK3MBP" ]; then
+    replace-cultural-name "khwarezmian" "Khwarezmi"
+    replace-cultural-name "lombard" "Langobardic"
+fi
+
+if [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ] || [ "${GAME}" == "CK3TFE" ]; then
+    replace-cultural-name "burmese" "Burmese"
+    replace-cultural-name "tsangpa" "Tibetan_Old"
+fi
+
+if [ "${GAME}" == "CK3" ] || [ "${GAME}" == "CK3IBL" ]; then
+    replace-cultural-name "akan" "Akan"
+    replace-cultural-name "baranis" "Berber_Baranis"
+    replace-cultural-name "butr" "Berber_Butr"
+    replace-cultural-name "chuvash" "Chuvash"
+    replace-cultural-name "ewe" "Ewe"
+    replace-cultural-name "gujarati" "Gujarati_Old"
+    replace-cultural-name "igbo" "Igbo"
+    replace-cultural-name "sami" "Sami"
     replace-cultural-name "yughur" "Uyghur_Yellow"
 
     # Blacklisted for now
     sed -i '/^ *\(frankish\) *=.*$/d' "${FILE}"
+fi
+
+if [ "${GAME}" == "CK3MBP" ]; then
+    replace-cultural-name "sorbian" "Sorbian"
+fi
+
+if [ "${GAME}" == "CK3TFE" ]; then
+    replace-cultural-name "abkhazian" "Abkhaz"
+    replace-cultural-name "african_romance" "Latin_Late"
+    replace-cultural-name "alamannic" "Alemannic_Medieval"
+    replace-cultural-name "angle" "Germanic_Proto"
+    replace-cultural-name "aquitanian" "Occitan_Old"
+    replace-cultural-name "aramean" "Aramaic_Middle"
+    replace-cultural-name "armenian" "Armenian_Classical"
+    replace-cultural-name "asturian" "Asturian_Medieval"
+    replace-cultural-name "bastarnian" "Germanic_Proto"
+    replace-cultural-name "breton" "Breton_Old"
+    replace-cultural-name "briton" "Brittonic"
+    replace-cultural-name "burgundian" "Germanic_Proto"
+    replace-cultural-name "carpian" "Dacian"
+    replace-cultural-name "cornish" "Cornish_Old"
+    replace-cultural-name "dacian" "Dacian"
+    replace-cultural-name "gaul" "Gaulish"
+    replace-cultural-name "gepid" "Germanic_Proto"
+    replace-cultural-name "greek" "Greek_Before10Century"
+    replace-cultural-name "herulian" "Germanic_Proto"
+    replace-cultural-name "jewish" "Hejazi_Old"
+    replace-cultural-name "kannada" "Kannada_Old"
+    replace-cultural-name "kwarezmian" "Khwarezmi"
+    replace-cultural-name "langobardi" "Langobardic"
+    replace-cultural-name "libian" "Arabic"
+    replace-cultural-name "marcomannic" "Suebi_Medieval"
+    replace-cultural-name "noric" "Celtic_Noric"
+    replace-cultural-name "parthian" "Parthian"
+    replace-cultural-name "persian" "Persian_Middle"
+    replace-cultural-name "phrygian" "Greek_Ancient_Antigonid"
+    replace-cultural-name "rhaetian" "Rhaetic"
+    replace-cultural-name "roman" "Latin_Late"
+    replace-cultural-name "romano_briton" "Latin_Late"
+    replace-cultural-name "romano_dacian" "Latin_Late"
+    replace-cultural-name "Romano_Gallic" "Latin_Late"
+    replace-cultural-name "romano_iberian" "Latin_Late"
+    replace-cultural-name "romano_illyrian" "Latin_Late"
+    replace-cultural-name "romano_thracian" "Latin_Late"
+    replace-cultural-name "rugian" "Germanic_Proto"
+    replace-cultural-name "sclavenian" "Slavic_East_Old"
+    replace-cultural-name "suabian" "Alemannic_Medieval"
+    replace-cultural-name "tamil" "Tamil_Old"
+    replace-cultural-name "thracian" "Thracian"
+    replace-cultural-name "vandal" "Germanic_Proto"
+    replace-cultural-name "venedian" "Sorbian"
 fi
 
 sed -i 's/> \+/>/g' "${FILE}"
