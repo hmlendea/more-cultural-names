@@ -63,3 +63,9 @@ printf "    </Names>\n  </LocationEntity>" >> "${OUTPUT_FILE}"
 
 cat "${OUTPUT_FILE}" | uniq > "${OUTPUT_FILE}.tmp"
 mv "${OUTPUT_FILE}.tmp" "${OUTPUT_FILE}"
+
+for LOCATION_ID in $(grep "<Id>" "${OUTPUT_FILE}" | sed 's/\s*<Id>\(.*\)<\/Id>.*/\1/g' | sort | uniq); do
+    if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
+        echo "    > ImperatorRome: ${LOCATION_ID} could potentially be linked"
+    fi
+done
