@@ -272,7 +272,7 @@ function get-name-lines() {
     get-name-line "Haitian" "ht"
     get-name-line "Hausa" "ha"
     get-name-line "Hawaiian" "haw"
-    get-name-line "Hebrew" "he"
+    #get-name-line "Hebrew" "he"
     get-name-line "Hindi" "hi"
     get-name-line "Hungarian" "hu"
     get-name-line "Icelandic" "is"
