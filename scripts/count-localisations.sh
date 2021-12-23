@@ -28,6 +28,7 @@ print_game_titles_count CK2HIP
 print_game_titles_count CK3
 print_game_titles_count CK3IBL
 print_game_titles_count CK3MBP
+print_game_titles_count CK3TFE
 print_game_titles_count HOI4
 print_game_titles_count ImperatorRome
 
