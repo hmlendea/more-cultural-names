@@ -203,3 +203,15 @@ function capitalise() {
     printf '%s' "$1" | head -c 1 | tr [:lower:] [:upper:]
     printf '%s' "$1" | tail -c '+2'
 }
+
+function nameToLocationId() {
+    local NAME="${1}"
+
+    echo "${NAME}" | \
+        iconv -f utf8 -t ascii//TRANSLIT | \
+        sed 's/-le-/_le_/g' | \
+        sed 's/ /_/g' | sed "s/\'//g" | \
+        sed 's/\(north\|west\|south\|east\)ern/\1/g' | \
+        sed 's/^\(north\|west\|south\|east\)_\(.*\)$/\2_\1/g' | \
+        tr '[:upper:]' '[:lower:]'
+}

@@ -423,13 +423,7 @@ function get-name-lines() {
 }
 
 function get-location-entry() {
-    LOCATION_ID=$(echo "${MAIN_DEFAULT_NAME}" | \
-        iconv -f utf8 -t ascii//TRANSLIT | \
-        sed 's/-le-/_le_/g' | \
-        sed 's/ /_/g' | sed "s/\'//g" | \
-        sed 's/\(north\|west\|south\|east\)ern/\1/g' | \
-        sed 's/^\(north\|west\|south\|east\)_\(.*\)$/\2_\1/g' | \
-        tr '[:upper:]' '[:lower:]')
+    LOCATION_ID=$(nameToLocationId "${MAIN_DEFAULT_NAME}")
 
     echo "  <LocationEntity>"
     echo "    <Id>${LOCATION_ID}</Id>"
