@@ -1,5 +1,7 @@
 #!/bin/bash
 
+VANILLA_FILES_DIR="$(pwd)/vanilla"
+
 LANGUAGES_FILE="languages.xml"
 LOCATIONS_FILE="locations.xml"
 TITLES_FILE="titles.xml"
@@ -10,15 +12,15 @@ elif [ -d "${HOME}/.local/share/Steam/steamapps/common" ]; then
     STEAM_GAMES_PATH="${HOME}/.local/share/Steam/steamapps/common"
 fi
 
-CK2_VANILLA_LANDED_TITLES_FILE="vanilla/ck2_landed_titles.txt"
-CK2HIP_VANILLA_LANDED_TITLES_FILE="vanilla/ck2hip_landed_titles.txt"
-CK3_VANILLA_LANDED_TITLES_FILE="vanilla/ck3_landed_titles.txt"
-CK3IBL_VANILLA_LANDED_TITLES_FILE="vanilla/ck3ibl_landed_titles.txt"
-CK3MBP_VANILLA_LANDED_TITLES_FILE="vanilla/ck3mbp_landed_titles.txt"
-CK3TFE_VANILLA_LANDED_TITLES_FILE="vanilla/ck3tfe_landed_titles.txt"
+CK2_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2_landed_titles.txt"
+CK2HIP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt"
+CK3_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3_landed_titles.txt"
+CK3IBL_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt"
+CK3MBP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
+CK3TFE_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt"
+IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
 
 CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/Crusader Kings III/game/localization/english/titles_l_english.yml"
-IMPERATORROME_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/ImperatorRome/game/localization/english/provincenames_l_english.yml"
 
 LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
@@ -33,13 +35,13 @@ function getGameIds() {
 
 function checkForMissingCkTitles() {
     GAME="${1}"
-    LANDED_TITLES_FILE="${2}"
+    VANILLA_FILE="${2}"
 
     for TITLE_ID in $(diff \
                         <(getGameIds "${GAME}") \
                         <( \
-                            cat "${LANDED_TITLES_FILE}" | \
-                            if [ -n "$(file ${LANDED_TITLES_FILE} | grep 'Non-ISO\|ISO-8859')" ]
+                            cat "${VANILLA_FILE}" | \
+                            if [ -n "$(file ${VANILLA_FILE} | grep 'Non-ISO\|ISO-8859')" ]
                             then
                                 iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
                             else
@@ -63,7 +65,7 @@ function checkForMissingCkTitles() {
 
 function checkForSurplusCkTitles() {
     GAME="${1}"
-    LANDED_TITLES_FILE="${2}"
+    VANILLA_FILE="${2}"
 
     for TITLE_ID in $(diff \
                         <( \
@@ -71,8 +73,8 @@ function checkForSurplusCkTitles() {
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
                             sort | uniq \
                         ) <( \
-                            cat "${LANDED_TITLES_FILE}" | \
-                            if [ -n "$(file ${LANDED_TITLES_FILE} | grep 'Non-ISO\|ISO-8859')" ]
+                            cat "${VANILLA_FILE}" | \
+                            if [ -n "$(file ${VANILLA_FILE} | grep 'Non-ISO\|ISO-8859')" ]
                             then
                                 iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
                             else
@@ -90,12 +92,12 @@ function checkForSurplusCkTitles() {
 
 function checkForMismatchingCkTitles() {
     GAME="${1}"
-    LANDED_TITLES_FILE="${2}"
+    VANILLA_FILE="${2}"
 
-    if [ -f "${LANDED_TITLES_FILE}" ]; then
-        checkForMissingCkTitles "${GAME}" "${LANDED_TITLES_FILE}"
-        checkForSurplusCkTitles "${GAME}" "${LANDED_TITLES_FILE}"
-    fi
+    [ ! -d "${VANILLA_FILE}" ] && return
+
+    checkForMissingCkTitles "${GAME}" "${VANILLA_FILE}"
+    checkForSurplusCkTitles "${GAME}" "${VANILLA_FILE}"
 }
 
 ### Make sure locations are sorted alphabetically
@@ -225,12 +227,12 @@ done
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
 # Make sure all CK titles are defined and exist in the game
-checkForMismatchingCkTitles "CK2" "${CK2_VANILLA_LANDED_TITLES_FILE}"
-checkForMismatchingCkTitles "CK2HIP" "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
-checkForMismatchingCkTitles "CK3" "${CK3_VANILLA_LANDED_TITLES_FILE}"
-checkForMismatchingCkTitles "CK3IBL" "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
-checkForMismatchingCkTitles "CK3MBP" "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"
-checkForMismatchingCkTitles "CK3TFE" "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingCkTitles "CK2"             "${CK2_VANILLA_FILE}"
+checkForMismatchingCkTitles "CK2HIP"          "${CK2HIP_VANILLA_FILE}"
+checkForMismatchingCkTitles "CK3"             "${CK3_VANILLA_FILE}"
+checkForMismatchingCkTitles "CK3IBL"          "${CK3IBL_VANILLA_FILE}"
+checkForMismatchingCkTitles "CK3MBP"          "${CK3MBP_VANILLA_FILE}"
+checkForMismatchingCkTitles "CK3TFE"          "${CK3TFE_VANILLA_FILE}"
 
 # Find HOI4 states
 for HOI4_STATE in $(grep "HOI4\" type=\"City" "${LOCATIONS_FILE}" | \
@@ -266,7 +268,7 @@ if [ -f "${CK3_VANILLA_LOCALISATION_FILE}" ]; then
 fi
 
 # Validate default localisations for ImperatorRome
-if [ -f "${IMPERATORROME_VANILLA_LOCALISATION_FILE}" ]; then
+if [ -f "${IR_VANILLA_FILE}" ]; then
     for GAMEID_DEFINITION in $(diff \
                         <( \
                             grep "GameId game=\"ImperatorRome\"" "${LOCATIONS_FILE}" | \
@@ -276,7 +278,7 @@ if [ -f "${IMPERATORROME_VANILLA_LOCALISATION_FILE}" ]; then
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "ImperatorRome") \
                                 <( \
-                                    cat "${IMPERATORROME_VANILLA_LOCALISATION_FILE}" | \
+                                    cat "${IR_VANILLA_FILE}" | \
                                     grep "^ *PROV" | grep -v "_[A-Za-z_-]*:" | \
                                     sed 's/^ *PROV\([0-9]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     sed -e 's/= */=/g' -e 's/ *$//g'
