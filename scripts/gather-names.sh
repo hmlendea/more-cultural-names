@@ -12,7 +12,7 @@ GEONAMES_API_URL="http://api.geonames.org"
 GEONAMES_USERNAME="geonamesfreeaccountt"
 
 WIKIDATA_ENABLED=false
-WIKIDATA_API_URL="https://wikidata.org"
+WIKIDATA_API_URL="https://www.wikidata.org"
 
 while true; do
     if [ "${1}" == "--geonamesid" ] || \
