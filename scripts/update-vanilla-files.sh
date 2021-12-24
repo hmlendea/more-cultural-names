@@ -25,16 +25,34 @@ IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
 function update-vanilla-file() {
     local SOURCE_FILE="${1}"
     local TARGET_FILE="${2}"
+    local SOURCE_URL="${3}"
 
-    [ -f "${SOURCE_FILE}" ] && cp "${SOURCE_FILE}" "${TARGET_FILE}"
+    if [ -f "${SOURCE_FILE}" ]; then
+        cp "${SOURCE_FILE}" "${TARGET_FILE}"
+    elif [ -n "${SOURCE_URL}" ]; then
+        wget -qc --no-check-certificate "${SOURCE_URL}" -O "${TARGET_FILE}" 2>/dev/null
+    fi
 }
 
-ls "${CK2_LOCAL_MODS_DIR}/Historical_Immersion_Project/common/landed_titles/swmh_landed_titles.txt"
-
-update-vanilla-file "${STEAM_GAMES_DIR}/Crusader Kings II/common/landed_titles/landed_titles.txt"                       "${CK2_VANILLA_FILE}"
-update-vanilla-file "${CK2_LOCAL_MODS_DIR}/Historical_Immersion_Project/common/landed_titles/swmh_landed_titles.txt"    "${CK2HIP_VANILLA_FILE}"
-update-vanilla-file "${STEAM_GAMES_DIR}/Crusader Kings III/game/common/landed_titles/00_landed_titles.txt"              "${CK3_VANILLA_FILE}"
-update-vanilla-file "${STEAM_WORKSHOP_CK3_DIR}/2416949291/common/landed_titles/00_landed_titles.txt"                    "${CK3IBL_VANILLA_FILE}"
-update-vanilla-file "${STEAM_WORKSHOP_CK3_DIR}/2216670956/common/landed_titles/00_landed_titles.txt"                    "${CK3MBP_VANILLA_FILE}"
-update-vanilla-file "${STEAM_WORKSHOP_CK3_DIR}/2243307127/common/landed_titles/00_landed_titles.txt"                    "${CK3TFE_VANILLA_FILE}"
-update-vanilla-file "${STEAM_GAMES_DIR}/ImperatorRome/game/localization/english/provincenames_l_english.yml"            "${IR_VANILLA_FILE}"
+update-vanilla-file \
+    "${STEAM_GAMES_DIR}/Crusader Kings II/common/landed_titles/landed_titles.txt" \
+    "${CK2_VANILLA_FILE}"
+update-vanilla-file \
+    "${CK2_LOCAL_MODS_DIR}/Historical_Immersion_Project/common/landed_titles/swmh_landed_titles.txt"\
+    "${CK2HIP_VANILLA_FILE}"
+update-vanilla-file \
+    "${STEAM_GAMES_DIR}/Crusader Kings III/game/common/landed_titles/00_landed_titles.txt" \
+    "${CK3_VANILLA_FILE}"
+update-vanilla-file \
+    "${STEAM_WORKSHOP_CK3_DIR}/2416949291/common/landed_titles/00_landed_titles.txt" \
+    "${CK3IBL_VANILLA_FILE}"
+update-vanilla-file \
+    "${STEAM_WORKSHOP_CK3_DIR}/2216670956/common/landed_titles/00_landed_titles.txt" \
+    "${CK3MBP_VANILLA_FILE}" \
+    "https://raw.githubusercontent.com/Leviathonlx/MoreBookmarks-Plus/main/common/landed_titles/00_landed_titles.txt"
+update-vanilla-file \
+    "${STEAM_WORKSHOP_CK3_DIR}/2243307127/common/landed_titles/00_landed_titles.txt" \
+    "${CK3TFE_VANILLA_FILE}"
+update-vanilla-file \
+    "${STEAM_GAMES_DIR}/ImperatorRome/game/localization/english/provincenames_l_english.yml" \
+    "${IR_VANILLA_FILE}"
