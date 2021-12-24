@@ -75,4 +75,4 @@ function getProvinces() {
     done
 }
 
-getProvinces "ImperatorRome"            "${STEAM_GAMES_DIR}/ImperatorRome/game/localization/english/provincenames_l_english.yml"   "ir_provinces.txt"
+getProvinces "IR" "${STEAM_GAMES_DIR}/ImperatorRome/game/localization/english/provincenames_l_english.yml" "ir_provinces.txt"

@@ -35,7 +35,7 @@ print_game_titles_count CK3IBL
 print_game_titles_count CK3MBP
 print_game_titles_count CK3TFE
 print_game_titles_count HOI4
-print_game_titles_count ImperatorRome
+print_game_titles_count IR
 
 echo ""
 echo "Names: ${NAMES_COUNT}"
