@@ -55,7 +55,7 @@ function checkForMissingCkLocationLinks() {
                         grep "^>" | sed 's/^> //g'); do
         LOCATION_ID=${TITLE_ID:2}
 
-        if [ -z "$(echo "${LOCATION_IDS}" | grep -Eio "^${LOCATION_ID}$")" ]; then
+        if ! grep -Eqio "^${LOCATION_ID}$" "${LOCATION_IDS}"; then
             echo "    > ${GAME}: ${TITLE_ID} is missing"
         else
             echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID}\" exists)"
@@ -100,8 +100,7 @@ function checkForSurplusIrLocationLinks() {
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
                             sort | uniq \
                         ) <( \
-                            cat "${VANILLA_FILE}" | \
-                            grep -i "^\s*PROV[0-9]*:.*" | \
+                            grep -i "^\s*PROV[0-9]*:.*" "${VANILLA_FILE}" | \
                             sed 's/^\s*PROV\([0-9]*\):.*$/\1/g' | \
                             sort | uniq \
                         ) | \
@@ -130,8 +129,16 @@ OLD_LC_COLLATE=${LC_COLLATE}
 export LC_COLLATE=C
 
 WELL_COVERED_SECTION_END_LINE_NR=$(grep -n "@@@@ BELOW TITLES NEED REVIEW" "${LOCATIONS_FILE}" | awk -F":" '{print $1}')
-ACTUAL_LOCATIONS_LIST=$(cat "${LOCATIONS_FILE}" | head -n "${WELL_COVERED_SECTION_END_LINE_NR}" | grep "^\s*<Id>" | sed 's/^\s*<Id>\([^<]*\).*/\1/g' | sed -r '/^\s*$/d' | perl -p0e 's/\r*\n/%NL%/g')
-EXPECTED_LOCATIONS_LIST=$(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g' | sort | sed -r '/^\s*$/d' | perl -p0e 's/\r*\n/%NL%/g')
+ACTUAL_LOCATIONS_LIST=$(head "${LOCATIONS_FILE}" -n "${WELL_COVERED_SECTION_END_LINE_NR}" | \
+                        grep "^\s*<Id>" | \
+                        sed 's/^\s*<Id>\([^<]*\).*/\1/g' | \
+                        sed -r '/^\s*$/d' | \
+                        perl -p0e 's/\r*\n/%NL%/g')
+EXPECTED_LOCATIONS_LIST=$(echo "${ACTUAL_LOCATIONS_LIST}" | \
+                            sed 's/%NL%/\n/g' | \
+                            sort | \
+                            sed -r '/^\s*$/d' | \
+                            perl -p0e 's/\r*\n/%NL%/g')
 
 diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
 export LC_COLLATE=${OLD_LC_COLLATE}
@@ -198,7 +205,7 @@ for FALLBACK_LANGUAGE_ID in $(diff \
                         sed 's/.*<LanguageId>\([^<>]*\)<\/LanguageId>.*/\1/g' | \
                         sort | uniq \
                     ) <( \
-                        echo ${LANGUAGE_IDS} | \
+                        echo "${LANGUAGE_IDS}" | \
                         sed 's/ /\n/g') | \
                     grep "^<" | sed 's/^< //g' | sed 's/ /@/g'); do
     echo "The \"${FALLBACK_LANGUAGE_ID}\" fallback language does not exit"
@@ -211,7 +218,7 @@ for FALLBACK_LOCATION_ID in $(diff \
                         sed 's/.*<LocationId>\([^<>]*\)<\/LocationId>.*/\1/g' | \
                         sort | uniq \
                     ) <( \
-                        echo ${LOCATION_IDS} | \
+                        echo "${LOCATION_IDS}" | \
                         sed 's/ /\n/g') | \
                     grep "^<" | sed 's/^< //g' | sed 's/ /@/g'); do
     echo "The \"${FALLBACK_LOCATION_ID}\" fallback location does not exit"
@@ -263,7 +270,7 @@ checkForMismatchingLocationLinks "ImperatorRome"   "${IR_VANILLA_FILE}"
 for HOI4_STATE in $(grep "HOI4\" type=\"City" "${LOCATIONS_FILE}" | \
                         sed 's/.*parent=\"\([^\"]*\).*/\1/g' | \
                         sort -g | uniq); do
-    if [ -z "$(grep "HOI4\" type=\"State\">${HOI4_STATE}<" "${LOCATIONS_FILE}")" ]; then
+    if ! grep -q "HOI4\" type=\"State\">${HOI4_STATE}<" "${LOCATIONS_FILE}"; then
         echo "The \"${HOI4_STATE}\" HOI4 state is missing while there are cities that have it as a parent"
     fi
 done
@@ -279,8 +286,8 @@ if [ -f "${CK3_VANILLA_LOCALISATION_FILE}" ]; then
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "CK3") \
                                 <( \
-                                    cat "${CK3_VANILLA_LOCALISATION_FILE}" | \
-                                    grep "^ *[ekdcb]_" | grep -v "_adj:" | \
+                                    grep "^ *[ekdcb]_" "${CK3_VANILLA_LOCALISATION_FILE}" | \
+                                    grep -v "_adj:" | \
                                     sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     sed -e 's/= */=/g' -e 's/ *$//g'
                                 ) | \
@@ -303,8 +310,8 @@ if [ -f "${IR_VANILLA_FILE}" ]; then
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "ImperatorRome") \
                                 <( \
-                                    cat "${IR_VANILLA_FILE}" | \
-                                    grep "^ *PROV" | grep -v "_[A-Za-z_-]*:" | \
+                                    grep "^ *PROV" "${IR_VANILLA_FILE}" | \
+                                    grep -v "_[A-Za-z_-]*:" | \
                                     sed 's/^ *PROV\([0-9]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     sed -e 's/= */=/g' -e 's/ *$//g'
                                 ) | \

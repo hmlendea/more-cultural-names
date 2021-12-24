@@ -47,7 +47,7 @@ fi
 function get-name-from-geonames() {
     LANGUAGE_CODE="${1}"
 
-    NAME=$(echo ${GEONAMES_DATA} | sed 's/%NL%\s*/\n/g' | \
+    NAME=$(echo "${GEONAMES_DATA}" | sed 's/%NL%\s*/\n/g' | \
         grep "<alternateName " | \
         grep "lang=\"${LANGUAGE_CODE}\"" | \
         sed 's/isPreferredName=\"[^\"]*\"\s*//g' | \
@@ -67,9 +67,13 @@ function get-name-from-wikidata-label() {
 }
 
 function get-name-from-wikidata-sitelink() {
-    local LANGUAGE_CODE="$(echo "${1}" | sed 's/-/_/g')"
-    local SITELINK_TITLE=$(echo "${WIKIDATA_DATA}" | jq '.entities.'${WIKIDATA_ID}'.sitelinks.'"\""${LANGUAGE_CODE}wiki"\""'.title')
-    local NAME=$(normalise-name "${LANGUAGE_CODE}" "${SITELINK_TITLE}")
+    local LANGUAGE_CODE="${1}"
+    local SITELINK_TITLE=""
+    local NAME=""
+    
+    LANGUAGE_CODE="$(echo "${LANGUAGE_CODE}" | sed 's/-/_/g')"
+    SITELINK_TITLE=$(echo "${WIKIDATA_DATA}" | jq '.entities.'"${WIKIDATA_ID}"'.sitelinks.'"\""${LANGUAGE_CODE}wiki"\""'.title')
+    NAME=$(normalise-name "${LANGUAGE_CODE}" "${SITELINK_TITLE}")
 
     echo "${NAME}"
 }
@@ -80,7 +84,7 @@ function get-name-for-comparison() {
 
 if ${GEONAMES_ENABLED}; then
     echo "Getting the GeoNames default name..."
-    GEONAMES_DEFAULT_NAME=$(echo ${GEONAMES_DATA} | sed 's/%NL%\s*/\n/g' | grep "<name>" | sed 's/\s*<name>\([^<]*\).*/\1/g')
+    GEONAMES_DEFAULT_NAME=$(echo "${GEONAMES_DATA}" | sed 's/%NL%\s*/\n/g' | grep "<name>" | sed 's/\s*<name>\([^<]*\).*/\1/g')
     GEONAMES_DEFAULT_NAME_FOR_COMPARISON="$(echo "${GEONAMES_DEFAULT_NAME}" | tr '[:upper:]' '[:lower:]')"
 fi
 
@@ -122,18 +126,18 @@ function get-name-for-language() {
     
     if ${WIKIDATA_ENABLED}; then
         NAME=$(get-name-from-wikidata-label "${LANGUAGE_CODE}")
-        if (! $(isNameUsable "${LANGUAGE_CODE}" "${NAME}")); then
+        if ! isNameUsable "${LANGUAGE_CODE}" "${NAME}"; then
             NAME=$(get-name-from-wikidata-sitelink "${LANGUAGE_CODE}")
         fi
     fi
 
     if ${GEONAMES_ENABLED}; then
-        if (! $(isNameUsable "${LANGUAGE_CODE}" "${NAME}")); then
+        if ! isNameUsable "${LANGUAGE_CODE}" "${NAME}"; then
             NAME=$(get-name-from-geonames "${LANGUAGE_CODE}")
         fi
     fi
 
-    if (! $(isNameUsable "${LANGUAGE_CODE}" "${NAME}")); then
+    if ! isNameUsable "${LANGUAGE_CODE}" "${NAME}"; then
         NAME=""
     fi
 
@@ -143,7 +147,9 @@ function get-name-for-language() {
 function get-name-line() {
     local LANGUAGE_MCN_ID="${1}"
     local LANGUAGE_CODE="${2}"
-    local NAME=$(get-name-for-language "${LANGUAGE_CODE}")
+    local NAME=""
+    
+    NAME=$(get-name-for-language "${LANGUAGE_CODE}")
 
     [ -n "${NAME}" ] && echo "      <Name language=\"${LANGUAGE_MCN_ID}\" value=\"${NAME}\" />"
 }

@@ -18,7 +18,7 @@ if [ -d "${STARTDIR}/${MOD_BUILDER_NAME}" ]; then
 fi
 
 if [ ${NEEDS_DOWNLOADING} == true ]; then
-    [ -d "${STARTDIR}/${MOD_BUILDER_NAME}" ] && rm -rf "${STARTDIR}/${MOD_BUILDER_NAME}"
+    [ -d "${STARTDIR}/${MOD_BUILDER_NAME}" ] && rm -rf "${STARTDIR:?}/${MOD_BUILDER_NAME:?}"
 
     echo " > Downloading v${MOD_BUILDER_VERSION}..."
     wget -q -c "${MOD_BUILDER_PACKAGE_URL}"

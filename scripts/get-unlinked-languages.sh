@@ -26,23 +26,21 @@ IR_CULTURES_DIR="${IR_DIR}/game/common/cultures"
 IR_LOCALISATIONS_DIR="${IR_DIR}/game/localization"
 
 echo "Crusader Kings 2:"
-for CULTURE_ID in $(cat "${CK2_CULTURES_DIR}/"* | \
-                        grep -P '^\t[a-z]* = {' | \
-                        sed 's/^\t*//g' | \
-                        awk -F" " '{print $1}' | \
-                        sort | uniq); do
-    if [ -z "$(grep '<GameId game="CK2">'${CULTURE_ID}'</GameId>' ${LANGUAGES_FILE})" ]; then
+for CULTURE_ID in $(grep -P '^\t[a-z]* = {' "${CK2_CULTURES_DIR}/"* | \
+                    sed 's/^\t*//g' | \
+                    awk -F" " '{print $1}' | \
+                    sort | uniq); do
+    if ! grep -q '<GameId game="CK2">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
         echo "  ${CULTURE_ID}"
     fi
 done
 
 echo "Crusader Kings 2 HIP:"
-for CULTURE_ID in $(cat "${CK2HIP_CULTURES_DIR}/"* | \
-                        grep -P '^\t[a-z]* = {' | \
-                        sed 's/^\t*//g' | \
-                        awk -F" " '{print $1}' | \
-                        sort | uniq); do
-    if [ -z "$(grep '<GameId game="CK2HIP">'${CULTURE_ID}'</GameId>' ${LANGUAGES_FILE})" ]; then
+for CULTURE_ID in $(grep -P '^\t[a-z]* = {' "${CK2HIP_CULTURES_DIR}/"* | \
+                    sed 's/^\t*//g' | \
+                    awk -F" " '{print $1}' | \
+                    sort | uniq); do
+    if ! grep '<GameId game="CK2HIP">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
         echo "  ${CULTURE_ID}"
     fi
 done
@@ -51,12 +49,11 @@ function getCk3Cultures() {
     GAME_ID="${1}" && shift
     CULTURES_DIR="${@}"
 
-    for CULTURE_ID in $(cat "${CULTURES_DIR}/"*.txt | \
-                            grep -P '^\t[a-z]* = {' | \
-                            sed 's/^\t*//g' | \
-                            awk -F" " '{print $1}' | \
-                            sort | uniq); do
-        if [ -z "$(grep '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' ${LANGUAGES_FILE})" ]; then
+    for CULTURE_ID in $(grep -P '^\t[a-z]* = {' "${CULTURES_DIR}/"*.txt | \
+                        sed 's/^\t*//g' | \
+                        awk -F" " '{print $1}' | \
+                        sort | uniq); do
+        if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
             echo "  ${CULTURE_ID}"
         fi
     done 
@@ -64,11 +61,11 @@ function getCk3Cultures() {
 
 function getHoi4Countries() {
     GAME_ID="${1}" && shift
-    TAGS_DIR="${@}"
+    TAGS_DIR="${*}"
 
     for TAG in $(cat "${TAGS_DIR}/"*.txt | awk -F"=" '{print $1}' | sed 's/\s*//g' | sort | uniq); do
-        COUNTRY_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/english/"*_english.yml | grep "^\s*${TAG}:0" | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
-        if [ -z "$(grep '<GameId game="'${GAME_ID}'">'${TAG}'</GameId>' "${LANGUAGES_FILE}")" ]; then
+        COUNTRY_NAME=$(grep "^\s*${TAG}:0" "${HOI4_LOCALISATIONS_DIR}/english/"*_english.yml | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
+        if ! grep -q '<GameId game="'${GAME_ID}'">'${TAG}'</GameId>' "${LANGUAGES_FILE}"; then
             printf "      <GameId game=\"${GAME_ID}\">${TAG}</GameId>"
             [ -n "${COUNTRY_NAME}" ] && printf " <!-- ${COUNTRY_NAME} -->"
             printf "\n"
@@ -78,11 +75,10 @@ function getHoi4Countries() {
 
 function getIrCultures() {
     GAME_ID="${1}" && shift
-    CULTURES_DIR="${@}"
+    CULTURES_DIR="${*}"
 
     for CULTURE_FILE_NAME in $(ls "${CULTURES_DIR}/"*.txt); do
-        CULTURE_FILE_JSON=$(cat "${CULTURE_FILE_NAME}" | \
-            sed 's/\r*//g' | \
+        CULTURE_FILE_JSON=$(sed 's/\r*//g' "${CULTURE_FILE_NAME}" | \
             sed '1s/^\xEF\xBB\xBF//' | \
             sed 's/#.*$//g' | \
             sed 's/\([a-zA-Z_0-9-]*\)\s*=/\"\1\"=/g' | \
@@ -114,9 +110,8 @@ function getIrCultures() {
                                 grep "^\s*\"" | \
                                 sed 's/^\s*\"\([^\"]*\).*/\1/g'); do
 
-            if [ -z "$(grep '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}")" ]; then
-                printf "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
-                printf "\n"
+            if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
+                echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
             fi
         done
     done 
