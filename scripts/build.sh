@@ -20,6 +20,7 @@ VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 
 if [[ $* != *--skip-updates* ]]; then
     bash "${SCRIPTSDIR}/update-builder.sh"
+    bash "${SCRIPTSDIR}/update-vanilla-files.sh"
 fi
 
 if [[ $* != *--skip-validation* ]]; then
