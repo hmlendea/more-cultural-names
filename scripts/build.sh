@@ -107,7 +107,7 @@ build-edition \
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
-    "ImperatorRome" "2.0.*"
+    "IR" "2.0.*"
 
 cd "${STARTDIR}"
 bash "${STARTDIR}/scripts/count-localisations.sh"

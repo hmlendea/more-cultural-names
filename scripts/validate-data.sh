@@ -118,7 +118,7 @@ function checkForMismatchingLocationLinks() {
     if [[ ${GAME} == CK* ]]; then
         checkForMissingCkLocationLinks "${GAME}" "${VANILLA_FILE}"
         checkForSurplusCkLocationLinks "${GAME}" "${VANILLA_FILE}"
-    elif [[ ${GAME} == ImperatorRome* ]]; then
+    elif [[ ${GAME} == IR* ]]; then
         checkForSurplusIrLocationLinks "${GAME}" "${VANILLA_FILE}"
     fi
 }
@@ -258,13 +258,13 @@ done
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
 # Make sure all CK titles are defined and exist in the game
-checkForMismatchingLocationLinks "CK2"             "${CK2_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK2HIP"          "${CK2HIP_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3"             "${CK3_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3IBL"          "${CK3IBL_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3MBP"          "${CK3MBP_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3TFE"          "${CK3TFE_VANILLA_FILE}"
-checkForMismatchingLocationLinks "ImperatorRome"   "${IR_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 
 # Find HOI4 states
 for HOI4_STATE in $(grep "HOI4\" type=\"City" "${LOCATIONS_FILE}" | \
@@ -303,19 +303,19 @@ fi
 if [ -f "${IR_VANILLA_FILE}" ]; then
     for GAMEID_DEFINITION in $(diff \
                         <( \
-                            grep "GameId game=\"ImperatorRome\"" "${LOCATIONS_FILE}" | \
+                            grep "GameId game=\"IR\"" "${LOCATIONS_FILE}" | \
                             sed 's/^ *//g' |
                             sort
                         ) <( \
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
-                                <(getGameIds "ImperatorRome") \
+                                <(getGameIds "IR") \
                                 <( \
                                     grep "^ *PROV" "${IR_VANILLA_FILE}" | \
                                     grep -v "_[A-Za-z_-]*:" | \
                                     sed 's/^ *PROV\([0-9]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     sed -e 's/= */=/g' -e 's/ *$//g'
                                 ) | \
-                            awk -F"=" '{print "<GameId game=\"ImperatorRome\">"$1"</GameId> <!-- "$2" -->"}' | \
+                            awk -F"=" '{print "<GameId game=\"IR\">"$1"</GameId> <!-- "$2" -->"}' | \
                             sort | uniq \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
