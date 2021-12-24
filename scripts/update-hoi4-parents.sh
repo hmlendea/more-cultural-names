@@ -35,24 +35,22 @@ for FILE in "${HOI4_STATES_DIR}"/*.txt ; do
         sed 's/\s\s*/ /g' | \
         sed 's/.*provinces\s*=\s*{\([^}]*\).*/\1/g' | \
         sed 's/\(^\s*\|\s*$\)//g')
+
+    for PROVINCE_ID in ${PROVINCE_LIST}; do
+        [[ -n "${PROVINCE_LIST// }" ]] && echo "${PROVINCE_ID}=${STATE_ID}" >> "${HOI4_PARENTS_FILE}"
+    done
     
     #echo "State #${STATE_ID}: Name='${STATE_NAME}'"
     if $(cat "${LOCATIONS_FILE}" | grep "<GameId game=\"HOI4\"" | grep "type=\"State\"" | grep -q ">${STATE_ID}<"); then
         sed -i 's/\(^\s*<GameId game=\"HOI4\" type=\"State\">'"${STATE_ID}"'<\/GameId>\).*/\1 <!-- '"${STATE_NAME}"' -->/g' "${LOCATIONS_FILE}"
-
-        for PROVINCE_ID in ${PROVINCE_LIST}; do
-            [[ -z "${PROVINCE_LIST// }" ]] && continue
-
-            echo "${PROVINCE_ID}=${STATE_ID}" >> "${HOI4_PARENTS_FILE}"
-        done
     else
-        LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
+        echo "      <GameId game=\"HOI4\" type=\"State\">${STATE_ID}</GameId> <!-- ${STATE_NAME} -->" >> "${HOI4_STATES_FILE}"
+
+        LOCATION_ID=$(nameToLocationId "${STATE_NAME}")
 
         if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
             echo "    > HOI4: State #${STATE_ID} (${STATE_NAME}) could potentially be linked with location ${LOCATION_ID}"
         fi
-
-        echo "      <GameId game=\"HOI4\" type=\"State\">${STATE_ID}</GameId> <!-- ${STATE_NAME} -->" >> "${HOI4_STATES_FILE}"
     fi
 done
 
