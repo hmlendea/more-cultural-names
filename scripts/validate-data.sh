@@ -86,18 +86,42 @@ function checkForSurplusCkTitles() {
                             sort | uniq \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    < ${GAME}: ${TITLE_ID} is defined but it does not exist"
+        echo "    > ${GAME}: ${TITLE_ID} is defined but it does not exist"
     done
 }
 
-function checkForMismatchingCkTitles() {
+function checkForSurplusIrTitles() {
     GAME="${1}"
     VANILLA_FILE="${2}"
 
-    [ ! -d "${VANILLA_FILE}" ] && return
+    for TITLE_ID in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/[^>]*>\([^<]*\).*/\1/g' | \
+                            sort | uniq \
+                        ) <( \
+                            cat "${VANILLA_FILE}" | \
+                            grep -i "^\s*PROV[0-9]*:.*" | \
+                            sed 's/^\s*PROV\([0-9]*\):.*$/\1/g' | \
+                            sort | uniq \
+                        ) | \
+                        grep "^<" | sed 's/^< //g'); do
+        echo "    > ${GAME}: ${TITLE_ID} is defined but it does not exist"
+    done
+}
 
-    checkForMissingCkTitles "${GAME}" "${VANILLA_FILE}"
-    checkForSurplusCkTitles "${GAME}" "${VANILLA_FILE}"
+function checkForMismatchingTitles() {
+    GAME="${1}"
+    VANILLA_FILE="${2}"
+
+    [ ! -f "${VANILLA_FILE}" ] && return
+
+    if [[ ${GAME} == CK* ]]; then
+        checkForMissingCkTitles "${GAME}" "${VANILLA_FILE}"
+        checkForSurplusCkTitles "${GAME}" "${VANILLA_FILE}"
+    elif [[ ${GAME} == ImperatorRome* ]]; then
+        checkForSurplusIrTitles "${GAME}" "${VANILLA_FILE}"
+    fi
 }
 
 ### Make sure locations are sorted alphabetically
@@ -227,12 +251,13 @@ done
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
 # Make sure all CK titles are defined and exist in the game
-checkForMismatchingCkTitles "CK2"             "${CK2_VANILLA_FILE}"
-checkForMismatchingCkTitles "CK2HIP"          "${CK2HIP_VANILLA_FILE}"
-checkForMismatchingCkTitles "CK3"             "${CK3_VANILLA_FILE}"
-checkForMismatchingCkTitles "CK3IBL"          "${CK3IBL_VANILLA_FILE}"
-checkForMismatchingCkTitles "CK3MBP"          "${CK3MBP_VANILLA_FILE}"
-checkForMismatchingCkTitles "CK3TFE"          "${CK3TFE_VANILLA_FILE}"
+checkForMismatchingTitles "CK2"             "${CK2_VANILLA_FILE}"
+checkForMismatchingTitles "CK2HIP"          "${CK2HIP_VANILLA_FILE}"
+checkForMismatchingTitles "CK3"             "${CK3_VANILLA_FILE}"
+checkForMismatchingTitles "CK3IBL"          "${CK3IBL_VANILLA_FILE}"
+checkForMismatchingTitles "CK3MBP"          "${CK3MBP_VANILLA_FILE}"
+checkForMismatchingTitles "CK3TFE"          "${CK3TFE_VANILLA_FILE}"
+checkForMismatchingTitles "ImperatorRome"   "${IR_VANILLA_FILE}"
 
 # Find HOI4 states
 for HOI4_STATE in $(grep "HOI4\" type=\"City" "${LOCATIONS_FILE}" | \
