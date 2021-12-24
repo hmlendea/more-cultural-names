@@ -45,7 +45,7 @@ function build-edition {
     [ -f "${OUTDIR}/${PACKAGE_NAME}.zip" ] && rm "${OUTDIR}/${PACKAGE_NAME}.zip"
 
     cd "${STARTDIR}"
-    "${STARTDIR}/more-cultural-names-builder/MoreCulturalNamesModBuilder" \
+    "${STARTDIR}/.builder/MoreCulturalNamesModBuilder" \
         --lang "${LANGUAGES_FILE}" \
         --loc "${LOCATIONS_FILE}" \
         --titles "${TITLES_FILE}" \
