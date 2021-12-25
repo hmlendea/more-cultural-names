@@ -32,6 +32,11 @@ function update-vanilla-file() {
     elif [ -n "${SOURCE_URL}" ]; then
         wget -qc --no-check-certificate "${SOURCE_URL}" -O "${TARGET_FILE}" 2>/dev/null
     fi
+
+    if [ -f "${TARGET_FILE}" ]; then
+        chmod 755 "${TARGET_FILE}"
+        chown "${USER}:${USER}" "${TARGET_FILE}"
+    fi
 }
 
 update-vanilla-file \
