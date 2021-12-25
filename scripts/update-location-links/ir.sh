@@ -73,6 +73,13 @@ function getProvinces() {
             echo "    > ${GAME}: ${LOCATION_ID} could potentially be linked"
         fi
     done
+
+    for LOCATION_NAME in $(grep "<!--" "${OUTPUT_FILE}" | sed 's/.*<!-- \(.*\) -->$/\1/g' | sed 's/\s/@/g' | sort | uniq); do
+        LOCATION_NAME=$(echo "${LOCATION_NAME}" | sed 's/@/ /g')
+        if grep -q "value=\"${LOCATION_NAME}\"" "${LOCATIONS_FILE}"; then
+            echo "    > ${GAME}: '${LOCATION_NAME}' could potentially be linked"
+        fi
+    done
 }
 
 getProvinces "IR" "${STEAM_GAMES_DIR}/ImperatorRome/game/localization/english/provincenames_l_english.yml" "ir_provinces.txt"
