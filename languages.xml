@@ -526,7 +526,7 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Armenian</Id> <!-- c. 1700 – present -->
+    <Id>Armenian</Id> <!-- c. 1700 AD – present -->
     <Code iso-639-1="hy" iso-639-3="hye" />
     <GameIds>
       <GameId game="HOI4">ARM</GameId> <!-- Armenia -->
@@ -535,6 +535,7 @@
       <LanguageId>Armenian_West</LanguageId>
       <LanguageId>Armenian_Middle</LanguageId>
       <LanguageId>Armenian_Classical</LanguageId>
+      <LanguageId>Armenian_Proto</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -544,10 +545,11 @@
       <LanguageId>Armenian</LanguageId>
       <LanguageId>Armenian_Middle</LanguageId>
       <LanguageId>Armenian_Classical</LanguageId>
+      <LanguageId>Armenian_Proto</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Armenian_Middle</Id> <!-- c. 1100 – c. 1700 -->
+    <Id>Armenian_Middle</Id> <!-- c. 1100 AD – c. 1700 AD -->
     <Code iso-639-3="axm" />
     <GameIds>
       <GameId game="CK2">armenian</GameId>
@@ -558,18 +560,34 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Armenian_Classical</LanguageId>
+      <LanguageId>Armenian_Proto</LanguageId>
       <LanguageId>Armenian</LanguageId>
+      <LanguageId>Armenian_West</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Armenian_Classical</Id> <!-- 405 – c. 1100 -->
+    <Id>Armenian_Classical</Id> <!-- 405 AD – c. 1100 AD -->
     <Code iso-639-3="xcl" />
     <GameIds>
       <GameId game="CK3TFE">armenian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Armenian_Proto</LanguageId>
       <LanguageId>Armenian_Middle</LanguageId>
       <LanguageId>Armenian</LanguageId>
+      <LanguageId>Armenian_West</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Armenian_Proto</Id> <!-- ??? – 405 AD -->
+    <GameIds>
+      <GameId game="IR">armenian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Armenian_Classical</LanguageId>
+      <LanguageId>Armenian_Middle</LanguageId>
+      <LanguageId>Armenian</LanguageId>
+      <LanguageId>Armenian_West</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -607,6 +625,7 @@
     <Code iso-639-3="frp" />
     <GameIds>
       <GameId game="CK2HIP">arpitan</GameId>
+      <GameId game="CK3IBL">arpitan</GameId>
       <GameId game="CK3MBP">arpitan</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -627,6 +646,16 @@
       <LanguageId>French_Before1991</LanguageId>
       <LanguageId>French</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Assamese</Id>
+    <Code iso-639-1="as" iso-639-2="asm" iso-639-3="asm" />
+    <GameIds>
+      <GameId game="CK2">assamese</GameId>
+      <GameId game="CK2HIP">assamese</GameId>
+      <GameId game="CK3">assamese</GameId>
+      <GameId game="CK3MBP">assamese</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Asturian</Id>
@@ -1736,6 +1765,7 @@
     <Id>Circassian</Id>
     <GameIds>
       <GameId game="CK2HIP">kasogi</GameId>
+      <GameId game="CK2IBL">circassian</GameId>
       <GameId game="CK3MBP">kasogi</GameId>
     </GameIds>
   </Language>
@@ -4958,6 +4988,7 @@
     <Code iso-639-2="got" iso-639-3="got" />
     <GameIds>
       <GameId game="CK2HIP">gothic</GameId>
+      <GameId game="CK3IBL">gothic</GameId>
       <GameId game="CK3MBP">gothic</GameId>
       <GameId game="CK3TFE">gothic</GameId>
       <GameId game="CK3TFE">ostrogothic</GameId>
@@ -6521,6 +6552,9 @@
   <Language>
     <Id>Kashubian</Id>
     <Code iso-639-3="csb" />
+    <GameIds>
+      <GameId game="HOI4">KSH</GameId> <!-- Kashubia -->
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>Pomeranian</LanguageId>
       <LanguageId>Polabian</LanguageId>
@@ -13134,6 +13168,7 @@
   <Language>
     <Id>Swahili_Before1962</Id>
     <GameIds>
+      <GameId game="CK3IBL">swahili</GameId>
       <GameId game="HOI4">BRD</GameId> <!-- Burundi -->
       <GameId game="HOI4">GAB</GameId> <!-- Gabon -->
       <GameId game="HOI4">KEN</GameId> <!-- Kenya -->
@@ -14324,6 +14359,15 @@
   <Language>
     <Id>Waray</Id>
     <Code iso-639-2="war" iso-639-3="war" />
+  </Language>
+  <Language>
+    <Id>Welayta</Id>
+    <Code iso-639-2="wal" iso-639-3="wal" />
+    <GameIds>
+      <GameId game="CK3">welayta</GameId>
+      <GameId game="CK3MBP">welayta</GameId>
+      <GameId game="CK3TFE">welayta</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Welsh</Id>
