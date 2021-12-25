@@ -26,7 +26,9 @@ IR_CULTURES_DIR="${IR_DIR}/game/common/cultures"
 IR_LOCALISATIONS_DIR="${IR_DIR}/game/localization"
 
 echo "Crusader Kings 2:"
+
 for CULTURE_ID in $(grep -P '^\t[a-z]* = {' "${CK2_CULTURES_DIR}/"* | \
+                    awk -F":" '{print $2}' | \
                     sed 's/^\t*//g' | \
                     awk -F" " '{print $1}' | \
                     sort | uniq); do
@@ -37,10 +39,11 @@ done
 
 echo "Crusader Kings 2 HIP:"
 for CULTURE_ID in $(grep -P '^\t[a-z]* = {' "${CK2HIP_CULTURES_DIR}/"* | \
+                    awk -F":" '{print $2}' | \
                     sed 's/^\t*//g' | \
                     awk -F" " '{print $1}' | \
                     sort | uniq); do
-    if ! grep '<GameId game="CK2HIP">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
+    if ! grep -q '<GameId game="CK2HIP">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
         echo "  ${CULTURE_ID}"
     fi
 done
@@ -50,6 +53,7 @@ function getCk3Cultures() {
     CULTURES_DIR="${@}"
 
     for CULTURE_ID in $(grep -P '^\t[a-z]* = {' "${CULTURES_DIR}/"*.txt | \
+                        awk -F":" '{print $2}' | \
                         sed 's/^\t*//g' | \
                         awk -F" " '{print $1}' | \
                         sort | uniq); do
