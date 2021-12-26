@@ -68,7 +68,14 @@ function transliterate-name() {
 
 function normalise-name() {
     local LANGUAGE_CODE="${1}" && shift
-    local NAME=$(echo "$*" | sed 's/^"\(.*\)"$/\1/g')
+    local NAME=$(echo "$*" | \
+                    sed 's/^"\(.*\)"$/\1/g' | \
+                    awk -F" - " '{print $1}' | \
+                    awk -F"/" '{print $1}' | \
+                    awk -F"(" '{print $1}' | \
+                    awk -F"," '{print $1}' | \
+                    sed 's/^\s*//g' | \
+                    sed 's/\s*$//g')
     local TRANSLITERATED_NAME=$(transliterate-name "${LANGUAGE_CODE}" "${NAME}")
     local NORMALISED_NAME=$(echo "${TRANSLITERATED_NAME}" | \
         sed 's/^"\(.*\)"$/\1/g' | \
