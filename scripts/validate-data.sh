@@ -41,8 +41,7 @@ function checkForMissingCkLocationLinks() {
                         <(getGameIds "${GAME}") \
                         <( \
                             cat "${VANILLA_FILE}" | \
-                            if [ -n "$(file ${VANILLA_FILE} | grep 'Non-ISO\|ISO-8859')" ]
-                            then
+                            if file "${VANILLA_FILE}" | grep -q 'Non-ISO\|ISO-8859'; then
                                 iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
                             else
                                 cat
@@ -74,8 +73,7 @@ function checkForSurplusCkLocationLinks() {
                             sort | uniq \
                         ) <( \
                             cat "${VANILLA_FILE}" | \
-                            if [ -n "$(file ${VANILLA_FILE} | grep 'Non-ISO\|ISO-8859')" ]
-                            then
+                            if file "${VANILLA_FILE}" | grep -q 'Non-ISO\|ISO-8859'; then
                                 iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
                             else
                                 cat
