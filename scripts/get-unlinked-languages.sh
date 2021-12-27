@@ -23,7 +23,6 @@ HOI4_LOCALISATIONS_DIR="${HOI4_DIR}/localisation"
 
 IR_DIR="${STEAM_GAMES_DIR}/ImperatorRome"
 IR_CULTURES_DIR="${IR_DIR}/game/common/cultures"
-IR_LOCALISATIONS_DIR="${IR_DIR}/game/localization"
 
 echo "Crusader Kings 2:"
 
@@ -50,7 +49,7 @@ done
 
 function getCk3Cultures() {
     GAME_ID="${1}" && shift
-    CULTURES_DIR="${@}"
+    CULTURES_DIR="${*}"
 
     for CULTURE_ID in $(grep -P '^\t[a-z]* = {' "${CULTURES_DIR}/"*.txt | \
                         awk -F":" '{print $2}' | \
