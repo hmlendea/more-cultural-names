@@ -421,7 +421,7 @@ merge-languages "Welsh" "Welsh" "Breton_Middle"
 merge-languages "Scottish_Gaelic" "Scottish_Gaelic" "Welsh"
 
 echo "Removing unknown languages..."
-cat "${FILE}" | grep " = \"" | sort | awk '{print    $1}' | uniq
+grep " = \"" "${FILE}" | sort | awk '{print    $1}' | uniq
 sed -i '/ = \"/d' "${FILE}"
 
 remove-empty-titles

@@ -51,7 +51,7 @@ function get-name-from-geonames() {
         grep "<alternateName " | \
         grep "lang=\"${LANGUAGE_CODE}\"" | \
         sed 's/isPreferredName=\"[^\"]*\"\s*//g' | \
-        sed 's/\s*<alternateName lang=\"'${LANGUAGE_CODE}'\">\([^<]*\).*/\1/g')
+        sed 's/\s*<alternateName lang=\"'"${LANGUAGE_CODE}"'\">\([^<]*\).*/\1/g')
     
     NAME=$(normalise-name "${LANGUAGE_CODE}" "${NAME}")
 
@@ -60,7 +60,7 @@ function get-name-from-geonames() {
 
 function get-name-from-wikidata-label() {
     LANGUAGE_CODE="${1}"
-    LABEL=$(echo "${WIKIDATA_DATA}" | jq '.entities.'${WIKIDATA_ID}'.labels.'"\""${LANGUAGE_CODE}"\""'.value')
+    LABEL=$(echo "${WIKIDATA_DATA}" | jq '.entities.'"${WIKIDATA_ID}"'.labels.'"\""${LANGUAGE_CODE}"\""'.value')
     NAME=$(normalise-name "${LANGUAGE_CODE}" "${LABEL}")
 
     echo "${NAME}"
