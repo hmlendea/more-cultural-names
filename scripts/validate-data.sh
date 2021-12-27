@@ -182,6 +182,7 @@ grep -Pzo "\n\s*<(/[^>]*)>.*\n\s*<\1>\n" *.xml # Double tags
 grep -Pzo "\n\s*<([^>]*)>\s*\n\s*</\1>\n" *.xml # Empty tags
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
 grep -Pzo "\n.*=\s*\"\s*\".*\n" *.xml # Empty attributes
+grep -n "^\s*<\([^> ]*\).*<\/.*" *.xml | grep -v "^[a-z0-9:.]*\s*<\([^> ]*\).*<\/\1>.*" # Mismatching start/end tag on same line
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -Pzo "\n *</[A-Za-z]*Entity.*\n *<(Id|Name).*\n" *.xml
 grep -n "\(adjective\|value\)=\"\([^\"]*\)\"\s*>" *.xml
