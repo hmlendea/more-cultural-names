@@ -10,14 +10,14 @@ The names are meant to provide an immersive and accurate experience for the game
 
 | Game | Steam Workshop link |
 |---|---|
-|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2](https://fumacrom.com/26167421/mcn-ck2-workshop)|
-|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (HIP)](https://fumacrom.com/26167421/mcn-ck2hip-workshop)|
-|![CK3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3](https://fumacrom.com/26167421/mcn-ck3-workshop)|
-|![CK3IBL](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (IBL)](https://fumacrom.com/26167421/mcn-ck3ibl-workshop)|
-|![CK3MBP](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (MB+)](https://fumacrom.com/26167421/mcn-ck3mbp-workshop)|
-|![CK3TFE](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (TFE)](https://fumacrom.com/26167421/mcn-ck3tfe-workshop)|
-|![HOI4](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|[Hearts of Iron 4](https://fumacrom.com/26167421/mcn-hoi4-workshop)|
-|![IR](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|[Imperator: Rome](https://fumacrom.com/26167421/mcn-ir-workshop)|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (HIP)](https://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)|
+|![CK3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)|
+|![CK3IBL](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (IBL)](https://steamcommunity.com/sharedfiles/filedetails/?id=2490281800)|
+|![CK3MBP](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (MB+)](https://steamcommunity.com/sharedfiles/filedetails/?id=2630872947)|
+|![CK3TFE](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (TFE)](https://steamcommunity.com/sharedfiles/filedetails/?id=2690444295)|
+|![HOI4](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|[Hearts of Iron 4](https://steamcommunity.com/sharedfiles/filedetails/?id=2459257386)|
+|![IR](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|[Imperator: Rome](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)|
 
 # Installation
 
