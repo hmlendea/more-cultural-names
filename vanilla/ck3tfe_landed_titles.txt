@@ -3,6 +3,21 @@
 @always_primary_score = 1000
 
 # special titles
+
+e_rashidun = {
+	capital = c_medina
+	ruler_uses_title_name = yes
+	
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
+
+	color = { 40 160 40 }
+	always_follows_primary_heir = no
+	destroy_if_invalid_heir = no
+	can_be_named_after_dynasty = no
+}
+
 k_papal_state = {
 	color = { 255 249 198 }
 	color2 = { 220 220 0 }
@@ -774,6 +789,18 @@ d_east_cantabria = {
 	color = { 0 50 200 }
 	
 	capital = c_bordeaux
+}
+
+d_caledonia = {
+    color = { 225 219 57 }
+    
+    capital = c_gowrie
+}
+
+d_hibernia = {
+    color = { 114 178 32 }
+    
+    capital = c_dublin
 }
 
 d_south_cantabria = {
