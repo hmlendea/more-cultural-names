@@ -16477,15 +16477,6 @@ e_italy = {
 	color2 = { 255 255 255 }
 	
 	capital = c_lombardia # Rome
-		
-	ai_primary_priority = {
-		if = {
-			limit = {
-				culture = culture:italian
-			}
-			add = @correct_culture_primary_score
-		}
-	}
 	k_hungary = {
 		color = { 130 20 10 }
 		color2 = { 255 255 255 }
@@ -18309,10 +18300,8 @@ e_italy = {
 		ai_primary_priority = {
 			if = {
 				limit = {
-					OR = {
-						culture = culture:italian
-						culture = culture:norman
-					}
+					culture = culture:norman
+					
 				}
 				add = @correct_culture_primary_score
 			}
@@ -18346,15 +18335,6 @@ e_italy = {
 	k_venice = {
 		color = { 54 167 156 }
 		capital = c_venezia # Venice
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = culture:italian
-				}
-				add = @correct_culture_primary_score
-			}
-		}
 		d_venice = {
 			color = { 34 137 126 }
 			
@@ -18381,15 +18361,6 @@ e_italy = {
 					is_ai = yes
 				}
 				faith = { religion_tag = christianity_religion }
-			}
-		}
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = culture:italian
-				}
-				add = @correct_culture_primary_score
 			}
 		}
 		d_currezia = {
