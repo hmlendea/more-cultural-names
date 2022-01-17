@@ -54,7 +54,7 @@ function checkForMissingCkLocationLinks() {
                         grep "^>" | sed 's/^> //g'); do
         LOCATION_ID=${TITLE_ID:2}
 
-        if ! grep -Eqio "^${LOCATION_ID}$" "${LOCATION_IDS}"; then
+        if ! $(echo "${LOCATION_IDS}" | grep -Eioq "^${LOCATION_ID}$"); then
             echo "    > ${GAME}: ${TITLE_ID} is missing"
         else
             echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID}\" exists)"
