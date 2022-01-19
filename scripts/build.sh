@@ -97,6 +97,11 @@ build-edition \
     --landed-titles "${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
+    "sow-more-cultural-names" "Sinews of War - More Cultural Names" \
+    "CK3SoW" "1.4.*" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3sow_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+
+build-edition \
     "tfe-more-cultural-names" "The Fallen Eagle: More Cultural Names" \
     "CK3TFE" "1.4.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
