@@ -15,7 +15,7 @@ jobs:
 
     - name: Preparing the release assets
       run: |
-        for GAME_ID in "CK2" "CK2HIP" "CK3" "CK3IBL" "CK3MBP" "CK3TFE" "HOI4" "IR"; do
+        for GAME_ID in "CK2" "CK2HIP" "CK3" "CK3IBL" "CK3MBP" "CK3SoW" "CK3TFE" "HOI4" "IR"; do
           mkdir "${GAME_ID}"
           wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${GAME_ID}_${GITHUB_REF:11}.zip" -O "${GAME_ID}.zip"
           unzip "${GAME_ID}.zip" -d "${GAME_ID}/"
@@ -85,6 +85,18 @@ jobs:
         appid: 1158310
         itemid: 2630872947
         path: "CK3MBP/mbp-more-cultural-names/"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+
+    - name: Crusader Kings 3 (SoW)
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 1158310
+        itemid: 2724606810
+        path: "CK3SoW/sow-more-cultural-names/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
