@@ -24,11 +24,35 @@ function getCityName() {
     local LOCALISATIONS_DIR="${2}"
     local CITY_NAME=""
 
-    CITY_NAME=$(cat "${LOCALISATIONS_DIR}/victory_points_l_english.yml" | \
+    CITY_NAME=$(find "${LOCALISATIONS_DIR}" -name "*victory_points_l_english.yml" | xargs cat | \
                 grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
                 sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+    
+    if [ -z "${CITY_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
+        CITY_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/victory_points_l_english.yml" | \
+                    grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
+                    sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+    fi
 
     echo "${CITY_NAME}"
+}
+
+function getStateName() {
+    local STATE_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+    local STATE_NAME=""
+
+    STATE_NAME=$(find "${LOCALISATIONS_DIR}" -name "*state_names_l_english.yml" | xargs cat | \
+                        grep "^\s*STATE_${STATE_ID}:" | \
+                        sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+    
+    if [ -z "${CITY_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
+            STATE_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/state_names_l_english.yml" | \
+                            grep "^\s*STATE_${STATE_ID}:" | \
+                            sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+    fi
+
+    echo "${STATE_NAME}"
 }
 
 for GAME_ID in "HOI4" "HOI4TGW"; do
@@ -43,10 +67,8 @@ function getStates() {
     local STATES_DIR="${3}"
 
     for  FILE in "${STATES_DIR}"/*.txt ; do
-        STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
-        STATE_NAME=$(cat "${LOCALISATIONS_DIR}/state_names_l_english.yml" | \
-                        grep "^\s*STATE_${STATE_ID}:" | \
-                        sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+        local STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
+        local STATE_NAME=$(getStateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
         
         PROVINCE_LIST=$(cat "${FILE}" | \
             sed 's/\r//g' | \
@@ -65,7 +87,7 @@ function getStates() {
         else
             echo "      <GameId game=\"${GAME_ID}\" type=\"State\">${STATE_ID}</GameId> <!-- ${STATE_NAME} -->" >> "${OUTPUT_FILES_DIR}/${GAME_ID}_states.txt"
 
-            LOCATION_ID=$(nameToLocationId "${STATE_NAME}")
+            local LOCATION_ID=$(nameToLocationId "${STATE_NAME}")
 
             if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
                 echo "    > ${GAME_ID}: State #${STATE_ID} (${STATE_NAME}) could potentially be linked with location ${LOCATION_ID}"
@@ -78,11 +100,11 @@ function getCities() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR="${2}"
 
-    for CITY_ID in $(grep "^\s*VICTORY_POINTS_" "${LOCALISATIONS_DIR}/victory_points_l_english.yml" | \
+    for CITY_ID in $(find "${LOCALISATIONS_DIR}" -name "*victory_points_l_english.yml" | xargs cat | \
                         sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
                         sort -h | uniq); do
-        STATE_ID=$(grep "^${CITY_ID}=" "${OUTPUT_FILES_DIR}/${GAME_ID}_parents.txt" | awk -F = '{print $2}')
-        CITY_NAME=$(getCityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
+        local STATE_ID=$(grep "^${CITY_ID}=" "${OUTPUT_FILES_DIR}/${GAME_ID}_parents.txt" | awk -F = '{print $2}')
+        local CITY_NAME=$(getCityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
 
         #echo "Province #${CITY_ID}: State=#${STATE_ID} Name='${CITY_NAME}'"
         if $(cat "${LOCATIONS_FILE}" | grep "<GameId game=\"${GAME_ID}\"" | grep "type=\"City\"" | grep -q ">${CITY_ID}<"); then
@@ -90,7 +112,7 @@ function getCities() {
         else
             echo "      <GameId game=\"${GAME_ID}\" type=\"City\" parent=\"${STATE_ID}\">${CITY_ID}</GameId> <!-- ${CITY_NAME} -->" >> "${OUTPUT_FILES_DIR}/${GAME_ID}_cities.txt"
         
-            LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
+            local LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
 
             if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
                 echo "    > ${GAME_ID}: City #${CITY_ID} (${CITY_NAME}) could potentially be linked with location ${LOCATION_ID}"
@@ -102,5 +124,5 @@ function getCities() {
 getStates "HOI4" "${HOI4_LOCALISATIONS_DIR}" "${HOI4_STATES_DIR}"
 getCities "HOI4" "${HOI4_LOCALISATIONS_DIR}"
 
-getStates "HOI4TGW" "${HOI4_LOCALISATIONS_DIR}" "${HOI4_STATES_DIR}"
-getCities "HOI4TGW" "${HOI4_LOCALISATIONS_DIR}"
+getStates "HOI4TGW" "${HOI4TGW_LOCALISATIONS_DIR}" "${HOI4TGW_STATES_DIR}"
+getCities "HOI4TGW" "${HOI4TGW_LOCALISATIONS_DIR}"
