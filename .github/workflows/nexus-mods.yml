@@ -205,3 +205,28 @@ jobs:
         original_file: "more-cultural-names.*"
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "more-cultural-names.zip"
+        
+  release-hoi4tgw:
+    name: Release (HOI4TGW)
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download the release asset
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_HOI4TGW_${GITHUB_REF:11}.zip" -O "tgw-more-cultural-names.zip"
+        
+    - name: Upload
+      uses: greatness7/nexusmods_file_updater@v2
+      with:
+        username: ${{secrets.NEXUS_USERNAME}}
+        password: ${{secrets.NEXUS_PASSWORD}}
+        game_domain_name: "heartsofironiv"
+        mod_id: "32"
+        file_name: "tgw-more-cultural-names"
+        file_version: ${{github.ref_name}}
+        update_version: true
+        new_existing_version: true
+        original_file: "tgw-more-cultural-names.*"
+        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        file_path: "tgw-more-cultural-names.zip"
