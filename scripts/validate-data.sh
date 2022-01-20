@@ -179,6 +179,7 @@ grep -Pzo "\n *</GameIds>\n *<Name .*\n" *.xml
 grep -Pzo "\n *<GameId .*\n *<Name.*\n" *.xml
 grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
 grep -Pzo "\n *<GameIds>\n *<[^G].*\n" *.xml
+grep -Pzo "\n\s*<Language>\n\s*<[^I][^d].*\n" *.xml # Missing Id (right after definition)
 grep -n "^\s*</[^>]*>\s*[a-zA-Z0-9\s]" *.xml # Text after ending tags
 grep -Pzo "\n\s*<(/[^>]*)>.*\n\s*<\1>\n" *.xml # Double tags
 grep -Pzo "\n\s*<([^>]*)>\s*\n\s*</\1>\n" *.xml # Empty tags
@@ -269,13 +270,21 @@ checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 
 # Find HOI4 states
-for HOI4_STATE in $(grep "HOI4\" type=\"City" "${LOCATIONS_FILE}" | \
-                        sed 's/.*parent=\"\([^\"]*\).*/\1/g' | \
-                        sort -g | uniq); do
-    if ! grep -q "HOI4\" type=\"State\">${HOI4_STATE}<" "${LOCATIONS_FILE}"; then
-        echo "The \"${HOI4_STATE}\" HOI4 state is missing while there are cities that have it as a parent"
-    fi
-done
+
+function validateHoi4Parentage() {
+    GAME_ID="${1}"
+
+    for STATE_ID in $(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}" | \
+                            sed 's/.*parent=\"\([^\"]*\).*/\1/g' | \
+                            sort -g | uniq); do
+        if ! grep -q "${GAME_ID}\" type=\"State\">${STATE_ID}<" "${LOCATIONS_FILE}"; then
+            echo "${GAME_ID}: State #${STATE_ID} is missing while there are cities referencing it"
+        fi
+    done
+}
+
+validateHoi4Parentage "HOI4"
+validateHoi4Parentage "HOI4TGW"
 
 # Validate default localisations for CK3
 if [ -f "${CK3_VANILLA_LOCALISATION_FILE}" ]; then
