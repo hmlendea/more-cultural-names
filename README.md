@@ -29,12 +29,6 @@ The names are meant to provide an immersive and accurate experience for the game
  - Download the [latest release](https://github.com/hmlendea/more-cultural-names/releases)
  - Extract the contents into your game's mod directory
 
-# Roadmap
-
-The current development focus and roadmap can be found [here](https://github.com/hmlendea/more-cultural-names/wiki/Roadmap).
-
-The mod grows continuously, and any new names added to it are automatically ported to all of the other supported games that can use it.
-
 # Compatibility
 
 The mod is **OS-agnostic**, which means that it will work on all of the operating systems supported by the game.
