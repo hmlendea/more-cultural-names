@@ -111,6 +111,10 @@ build-edition \
     "HOI4" "1.11.*"
 
 build-edition \
+    "tgw-more-cultural-names" "The Great War: More Cultural Names" \
+    "HOI4TGW" "1.11.*"
+
+build-edition \
     "more-cultural-names" "More Cultural Names" \
     "IR" "2.0.*"
 
