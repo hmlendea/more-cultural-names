@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TRANSLITERATION_API_URI="http://hmlendea-translit.duckdns.org:9584/Transliteration"
+TRANSLITERATION_API_URI="http://localhost:5000/Transliteration"
 
 function get-transliteration() {
     RAW_TEXT="${1}"
@@ -20,6 +20,8 @@ function transliterate-name() {
     LATIN_NAME="${RAW_NAME}"
 
     [ -z "${RAW_NAME}" ] && return
+
+    [ "${LANGUAGE_CODE}" == "be-tarask" ] && LANGUAGE_CODE="be"
 
     if [ "${LANGUAGE_CODE}" == "ab" ] \
     || [ "${LANGUAGE_CODE}" == "ady" ] \
