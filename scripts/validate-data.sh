@@ -179,6 +179,7 @@ grep -Pzo "\n *</GameIds>\n *<Name .*\n" *.xml
 grep -Pzo "\n *<GameId .*\n *<Name.*\n" *.xml
 grep -Pzo "\n *<(/*)GameIds.*\n *<\1GameIds.*\n" *.xml
 grep -Pzo "\n *<GameIds>\n *<[^G].*\n" *.xml
+grep -Pzo "\n\s*<Language>\n\s*<[^I][^d].*\n" *.xml # Missing Id (right after definition)
 grep -n "^\s*</[^>]*>\s*[a-zA-Z0-9\s]" *.xml # Text after ending tags
 grep -Pzo "\n\s*<(/[^>]*)>.*\n\s*<\1>\n" *.xml # Double tags
 grep -Pzo "\n\s*<([^>]*)>\s*\n\s*</\1>\n" *.xml # Empty tags
