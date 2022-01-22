@@ -23,10 +23,13 @@ function getCityName() {
     local CITY_ID="${1}"
     local LOCALISATIONS_DIR="${2}"
     local CITY_NAME=""
+    local CWD="$(pwd)"
 
-    CITY_NAME=$(find "${LOCALISATIONS_DIR}" -name "*victory_points_l_english.yml" | xargs cat | \
+    cd "${LOCALISATIONS_DIR}"
+    CITY_NAME=$(find . -name "*victory_points_l_english.yml" | xargs cat | \
                 grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
                 sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+    cd "${CWD}"
     
     if [ -z "${CITY_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
         CITY_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/victory_points_l_english.yml" | \
@@ -41,10 +44,13 @@ function getStateName() {
     local STATE_ID="${1}"
     local LOCALISATIONS_DIR="${2}"
     local STATE_NAME=""
+    local CWD="$(pwd)"
 
-    STATE_NAME=$(find "${LOCALISATIONS_DIR}" -name "*state_names_l_english.yml" | xargs cat | \
+    cd "${LOCALISATIONS_DIR}"
+    STATE_NAME=$(find . -name "*state_names_l_english.yml" | xargs cat | \
                         grep "^\s*STATE_${STATE_ID}:" | \
                         sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+    cd "${CWD}"
     
     if [ -z "${CITY_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
             STATE_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/state_names_l_english.yml" | \
@@ -99,8 +105,10 @@ function getStates() {
 function getCities() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR="${2}"
+    local CWD="$(pwd)"
 
-    for CITY_ID in $(find "${LOCALISATIONS_DIR}" -name "*victory_points_l_english.yml" | xargs cat | \
+    cd "${LOCALISATIONS_DIR}"
+    for CITY_ID in $(find . -name "*victory_points_l_english.yml" | xargs cat | \
                         sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
                         sort -h | uniq); do
         local STATE_ID=$(grep "^${CITY_ID}=" "${OUTPUT_FILES_DIR}/${GAME_ID}_parents.txt" | awk -F = '{print $2}')
@@ -119,6 +127,7 @@ function getCities() {
             fi
         fi
     done
+    cd "${CWD}"
 }
 
 getStates "HOI4" "${HOI4_LOCALISATIONS_DIR}" "${HOI4_STATES_DIR}"

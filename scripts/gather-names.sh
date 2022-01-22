@@ -53,17 +53,14 @@ function get-name-from-geonames() {
         sed 's/isPreferredName=\"[^\"]*\"\s*//g' | \
         sed 's/\s*<alternateName lang=\"'"${LANGUAGE_CODE}"'\">\([^<]*\).*/\1/g')
     
-    NAME=$(normalise-name "${LANGUAGE_CODE}" "${NAME}")
-
     echo "${NAME}"
 }
 
 function get-name-from-wikidata-label() {
     LANGUAGE_CODE="${1}"
     LABEL=$(echo "${WIKIDATA_DATA}" | jq '.entities.'"${WIKIDATA_ID}"'.labels.'"\""${LANGUAGE_CODE}"\""'.value')
-    NAME=$(normalise-name "${LANGUAGE_CODE}" "${LABEL}")
 
-    echo "${NAME}"
+    echo "${LABEL}"
 }
 
 function get-name-from-wikidata-sitelink() {
@@ -73,9 +70,8 @@ function get-name-from-wikidata-sitelink() {
     
     LANGUAGE_CODE="$(echo "${LANGUAGE_CODE}" | sed 's/-/_/g')"
     SITELINK_TITLE=$(echo "${WIKIDATA_DATA}" | jq '.entities.'"${WIKIDATA_ID}"'.sitelinks.'"\""${LANGUAGE_CODE}wiki"\""'.title')
-    NAME=$(normalise-name "${LANGUAGE_CODE}" "${SITELINK_TITLE}")
 
-    echo "${NAME}"
+    echo "${SITELINK_TITLE}"
 }
 
 function get-name-for-comparison() {
@@ -90,7 +86,8 @@ fi
 
 if ${WIKIDATA_ENABLED}; then
     echo "Getting the WikiData default name..."
-    WIKIDATA_DEFAULT_NAME="$(get-name-from-wikidata-label "en")"
+    WIKIDATA_DEFAULT_NAME_RAW="$(get-name-from-wikidata-label "en")"
+    WIKIDATA_DEFAULT_NAME=$(normalise-name "en" "${WIKIDATA_DEFAULT_NAME_RAW}")
     WIKIDATA_DEFAULT_NAME_FOR_COMPARISON="$(echo "${WIKIDATA_DEFAULT_NAME}" | tr '[:upper:]' '[:lower:]')"
 fi
 
@@ -99,8 +96,11 @@ MAIN_DEFAULT_NAME="${WIKIDATA_DEFAULT_NAME}"
 [ -z "${MAIN_DEFAULT_NAME}" ] && MAIN_DEFAULT_NAME="${GEONAMES_DEFAULT_NAME}"
 
 function isNameUsable() {
-    LANGUAGE_CODE="${1}"
-    NAME="${2}"
+    local LANGUAGE_CODE="${1}"
+    local NAME_RAW="${2}"
+    local NAME=""
+    
+    NAME=$(normalise-name "${LANGUAGE_CODE}" "${NAME_RAW}")
 
     if [ -z "${NAME}" ] || [ "${NAME}" == "null" ] || [ "${NAME}" == "Null" ]; then
         return 1 # false
@@ -120,12 +120,13 @@ function isNameUsable() {
     return 0 # true
 }
 
-function get-name-for-language() {
+function get-raw-name-for-language() {
     local LANGUAGE_CODE="${1}"
     local NAME=""
     
     if ${WIKIDATA_ENABLED}; then
         NAME=$(get-name-from-wikidata-label "${LANGUAGE_CODE}")
+
         if ! isNameUsable "${LANGUAGE_CODE}" "${NAME}"; then
             NAME=$(get-name-from-wikidata-sitelink "${LANGUAGE_CODE}")
         fi
@@ -140,6 +141,16 @@ function get-name-for-language() {
     if ! isNameUsable "${LANGUAGE_CODE}" "${NAME}"; then
         NAME=""
     fi
+    
+    echo "${NAME}"
+}
+
+function get-name-for-language() {
+    local LANGUAGE_CODE="${1}"
+    local NAME=""
+    
+    NAME=$(get-raw-name-for-language "${LANGUAGE_CODE}")
+    NAME=$(normalise-name "${LANGUAGE_CODE}" "${NAME}")
 
     echo "${NAME}"
 }
@@ -164,7 +175,13 @@ function get-name-line-2codes() {
     if [ -n "${LANGUAGE1_NAME}" ]; then
         get-name-line "${LANGUAGE_MCN_ID}" "${LANGUAGE1_CODE}"
     else
-        get-name-line "${LANGUAGE_MCN_ID}" "${LANGUAGE2_CODE}"
+        if [ "${LANGUAGE1_CODE}" == "grc" ]; then
+            LANGUAGE2_NAME_RAW=$(get-raw-name-for-language "${LANGUAGE2_CODE}")
+            LANGUAGE2_NAME=$(normalise-name "${LANGUAGE1_CODE}" "${LANGUAGE2_NAME_RAW}")
+            [ -n "${LANGUAGE2_NAME}" ] && echo "      <Name language=\"${LANGUAGE_MCN_ID}\" value=\"${LANGUAGE2_NAME}\" />"
+        else
+            get-name-line "${LANGUAGE_MCN_ID}" "${LANGUAGE2_CODE}"
+        fi
     fi
 }
 
@@ -188,6 +205,7 @@ function get-name-lines() {
     get-name-line "Abkhaz" "ab" &
     get-name-line "Acehnese" "ace" &
     get-name-line "Adyghe" "ady" &
+    get-name-line "Afar" "aa" &
     get-name-line "Afrikaans" "af" &
     get-name-line "Akan_Twi" "tw" &
     get-name-line "Akan" "ak" &
@@ -211,6 +229,7 @@ function get-name-lines() {
     get-name-line "Bashkir" "ba" &
     get-name-line "Basque" "eu" &
     get-name-line "Bavarian" "bar" &
+    get-name-line-2variants "Belarussian_Before1933" "be-tarask" "Belarussian" "be" &
     get-name-line "Belarussian" "be" &
     get-name-line "Bengali" "bn" &
     get-name-line "Bikol_Central" "bcl" &
@@ -263,7 +282,7 @@ function get-name-lines() {
     get-name-line "German_Palatine" "pfl" &
     get-name-line "German_Pennsylvania" "pdc" &
     get-name-line "German" "de" &
-    get-name-line "Greek_Ancient" "grc" &
+    get-name-line-2codes "Greek_Ancient" "grc" "el" &
     get-name-line "Greek" "el" &
     get-name-line "Greenlandic" "kl" &
     get-name-line "Guarani" "gn" &
