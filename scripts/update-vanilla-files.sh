@@ -17,11 +17,11 @@ CK2_LOCAL_MODS_DIR="${HOME}/.paradoxinteractive/Crusader Kings II/mod"
 CK2_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2_landed_titles.txt"
 CK2HIP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt"
 CK3_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3_landed_titles.txt"
+CK3Apotheosis_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3apotheosis_landed_titles.txt"
 CK3IBL_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt"
 CK3MBP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
 CK3SoW_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3sow_landed_titles.txt"
 CK3TFE_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt"
-CK3THA_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3tha_landed_titles.txt"
 IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
 
 function update-vanilla-file() {
@@ -65,7 +65,7 @@ update-vanilla-file \
     "${CK3TFE_VANILLA_FILE}"
 update-vanilla-file \
     "${STEAM_WORKSHOP_CK3_DIR}/2618149514/common/landed_titles/00_landed_titles.txt" \
-    "${CK3THA_VANILLA_FILE}"
+    "${CK3Apotheosis_VANILLA_FILE}"
 update-vanilla-file \
     "${STEAM_GAMES_DIR}/ImperatorRome/game/localization/english/provincenames_l_english.yml" \
     "${IR_VANILLA_FILE}"
