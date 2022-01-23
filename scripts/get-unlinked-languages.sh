@@ -13,7 +13,7 @@ CK2HIP_CULTURES_DIR="${CK2_MODS_DIR}/Historical_Immersion_Project/common/culture
 CK3_DIR="${STEAM_GAMES_DIR}/Crusader Kings III"
 CK3_CULTURES_DIR="${CK3_DIR}/game/common/culture/cultures"
 CK3_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/1158310"
-CK3Apotheosis_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2618149514/common/culture/cultures"
+CK3ATHA_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2618149514/common/culture/cultures"
 CK3IBL_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2416949291/common/culture/cultures"
 CK3MBP_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2216670956/common/culture/cultures"
 CK3SoW_CULTURES_DIR="${CK3_CULTURES_DIR}"
@@ -133,7 +133,7 @@ function getIrCultures() {
 }
 
 echo "Crusader Kings 3:"            && getCk3Cultures   "CK3"           "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 Apotheosis:" && getCk3Cultures   "CK3Apotheosis" "${CK3Apotheosis_CULTURES_DIR}"
+echo "Crusader Kings 3 ATHA:" && getCk3Cultures   "CK3ATHA" "${CK3ATHA_CULTURES_DIR}"
 echo "Crusader Kings 3 IBL:"        && getCk3Cultures   "CK3IBL"        "${CK3IBL_CULTURES_DIR}"
 echo "Crusader Kings 3 MBP:"        && getCk3Cultures   "CK3MBP"        "${CK3MBP_CULTURES_DIR}"
 echo "Crusader Kings 3 SoW:"        && getCk3Cultures   "CK3SoW"        "${CK3SoW_CULTURES_DIR}"

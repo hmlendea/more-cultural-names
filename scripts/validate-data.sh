@@ -15,7 +15,7 @@ fi
 CK2_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2_landed_titles.txt"
 CK2HIP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt"
 CK3_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3_landed_titles.txt"
-CK3Apotheosis_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3apotheosis_landed_titles.txt"
+CK3ATHA_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt"
 CK3IBL_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt"
 CK3MBP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
 CK3SoW_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3sow_landed_titles.txt"
@@ -268,7 +268,7 @@ checkForMismatchingLocationLinks "CK3IBL"           "${CK3IBL_VANILLA_FILE}"
 checkForMismatchingLocationLinks "CK3MBP"           "${CK3MBP_VANILLA_FILE}"
 checkForMismatchingLocationLinks "CK3SoW"           "${CK3SoW_VANILLA_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"           "${CK3TFE_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3Apotheosis"    "${CK3Apotheosis_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3ATHA"    "${CK3ATHA_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR"               "${IR_VANILLA_FILE}"
 
 # Find HOI4 states
