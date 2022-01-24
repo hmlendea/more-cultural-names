@@ -144,7 +144,7 @@ function normalise-name() {
             -e 's/o \(apskritis\|emyratas\|grafystė\)$/as/g' \
             -e 's/ørkenen$/a/g' \
             -e 's/os \(pusiasalis\|vilaja\)$/as/g' \
-            -e 's/s nom[ae]$//g' \
+            -e 's/s \(nom[ae]\|rajons\)$//g' \
             -e 's/s[’]*k[iy]y p\(i\|ol\)[uv]ostr[io]v$//g' \
             -e 's/skagi$//g' \
             -e 's/skaya oblast[’]*$/sk/g' \
