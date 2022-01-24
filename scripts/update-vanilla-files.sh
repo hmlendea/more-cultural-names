@@ -17,6 +17,7 @@ CK2_LOCAL_MODS_DIR="${HOME}/.paradoxinteractive/Crusader Kings II/mod"
 CK2_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2_landed_titles.txt"
 CK2HIP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt"
 CK3_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3_landed_titles.txt"
+CK3ATHA_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt"
 CK3IBL_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt"
 CK3MBP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
 CK3SoW_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3sow_landed_titles.txt"
@@ -28,8 +29,25 @@ function update-vanilla-file() {
     local TARGET_FILE="${2}"
     local SOURCE_URL="${3}"
 
-    if [ -f "${SOURCE_FILE}" ]; then
-        cp "${SOURCE_FILE}" "${TARGET_FILE}"
+    if compgen -G "${SOURCE_FILE}" > /dev/null; then
+        cat "${SOURCE_FILE}" > "${TARGET_FILE}"
+    elif [ -n "${SOURCE_URL}" ]; then
+        wget -qc --no-check-certificate "${SOURCE_URL}" -O "${TARGET_FILE}" 2>/dev/null
+    fi
+
+    if [ -f "${TARGET_FILE}" ]; then
+        chmod 755 "${TARGET_FILE}"
+        chown "${USER}:${USER}" "${TARGET_FILE}"
+    fi
+}
+
+function update-vanilla-files() {
+    local SOURCE_DIR="${1}"
+    local TARGET_FILE="${2}"
+    local SOURCE_URL="${3}"
+
+    if [ -d "${SOURCE_DIR}" ]; then
+        cat "${SOURCE_DIR}"/*.txt > "${TARGET_FILE}"
     elif [ -n "${SOURCE_URL}" ]; then
         wget -qc --no-check-certificate "${SOURCE_URL}" -O "${TARGET_FILE}" 2>/dev/null
     fi
@@ -49,6 +67,9 @@ update-vanilla-file \
 update-vanilla-file \
     "${STEAM_GAMES_DIR}/Crusader Kings III/game/common/landed_titles/00_landed_titles.txt" \
     "${CK3_VANILLA_FILE}"
+update-vanilla-files \
+    "${STEAM_WORKSHOP_CK3_DIR}/2618149514/common/landed_titles" \
+    "${CK3ATHA_VANILLA_FILE}"
 update-vanilla-file \
     "${STEAM_WORKSHOP_CK3_DIR}/2416949291/common/landed_titles/00_landed_titles.txt" \
     "${CK3IBL_VANILLA_FILE}"
