@@ -83,19 +83,24 @@ function normalise-name() {
     local P_CASTLE="[CcGgKk]a[i]*[sz][lt][ei]*[aál][il]*[eoulmn]*[a]*\|\|[Cc]h[aâ]teau\|Dvorac\|[Kk]alesi\|Zam[ao][gk][y]*"
     local P_CATHEDRAL="[CcKk]at[h]*[eé]dr[ai][kl][aeoó]*[s]*"
     local P_CITY="[CcSs]\(ee\|i\)[tṭ][tṭ]*[aàeiy]\|Nagara\|Oraș\(ul\)*\|Śahara\|Sich’i"
+    local P_COUNCIL="[Cc]o[u]*n[cs][ei]l[l]*\(iul\)\|[Cc]omhairle"
     local P_COUNTRY="[Nn]egeri"
     local P_DISTRICT="[Dd][iy]str[eiy][ckt]*[akt][eouy]*[as]*\|[Iiİi̇]l[cç]esi"
-    local P_FORT="\([Ff]ort\(e\|ul\)*\|[Ff]ort\(aleza\|[e]*ress[e]*\)\|[Ff]ort[r]*e[t]*s[s]*[y]*[ae]*\|[Tv]rdina\)\( \(royale\)\)*"
+    local P_FORT="\([Cc]astr[au][lm]*\|[Ff]ort\(e\|ul\)*\|[Ff]ort\(aleza\|[e]*ress[e]*\)\|[Ff]ort[r]*e[t]*s[s]*[y]*[ae]*\|[Tv]rdina\)\( \(roman\|royale\)\)*"
     local P_GMINA="[Gg][e]*m[e]*in[d]*[ae]"
     local P_ISLAND="[Ǧǧ]zīrẗ\|[Ii]nsula\|[Ii]sl[ae]\|[Ii]sland\|[Nn][eḗ]sos\|Sŏm"
+    local P_LAKE="Gölü\|[Ll]a\(c\|cul\|go\|ke\)\|[Nn][uú][u]*r\|[Oo]zero"
+    local P_MUNICIPIUM="[Mm]uni[t]*[cs]ip[’]*\(alit[’]*\(as\|et’i\|y\)\|i[ou][lm]*\)\|O[bp]\(č\|s[hj]\|š\)[t]*ina"
     local P_NATIONAL_PARK="[Nn]ational [Pp]ark\|Par[cq]u[el] Na[ctț]ional\|[Vv]ườn [Qq]uốc"
+    local P_PENINSULA="[Bb][aá]n[ ]*[dđ][aả]o\|[Dd]uoninsulo\|[Hh]antō\|[Nn]iemimaa\|[Pp][ao][luŭ][ouv]ostr[ao][uŭv]\|[Pp][eé]n[iíì][n]*[t]*[csz][ou][lł][aāe]\|Poàn-tó\|[Ss]emenanjung\|[Yy]arim [Oo]roli\|[Yy]arımadası\|[Žž]arym [Aa]raly"
     local P_PREFECTURE="[Pp]r[aäeé][e]*fe[ckt]t[uúū]r[ae]*"
     local P_PROVINCE="[Pp][’]*r[aāou][bpvw][ëií][nñ][t]*[csz]*[eėiíjoy]*[aeėsz]*"
     local P_REGION="[Rr]e[gģhx][ij]*\([oóu][ou]*n*[ei]*[as]*\|st[aā]n\)"
+    local P_REPUBLIC="Dimokratía\|Köztársaság\|Olómìnira\|R[eéi][s ]*p[’]*[auüùúy][’]*b[b]*l[ií][ckq][ck]*[’]*\([ai]\|as[ıy]\|en\|i\|ue\)*"
     local P_RUIN="[Rr]uin[ae]*"
     local P_STATE="Bang\|[EeÉé]*[SsŜŝŜŝŠšŞş]*[h]*[tṭ][’]*[aeē][dtṭu][’]*[aeiıosu]*[l]*\|[Oo]st[’]*an[ıi]\|[Uu]stoni\|valstija*"
 
-    local COMMON_PATTERNS="${P_ANCIENT}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNTRY}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_ISLAND}\|${P_NATIONAL_PARK}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_RUIN}\|${P_STATE}"
+    local COMMON_PATTERNS="${P_ANCIENT}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_ISLAND}\|${P_LAKE}\|${P_MUNICIPIUM}\|${P_NATIONAL_PARK}\|${P_PENINSULA}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}"
 
     local TRANSLITERATED_NAME=$(transliterate-name "${LANGUAGE_CODE}" "${NAME}")
     local NORMALISED_NAME=$(echo "${TRANSLITERATED_NAME}" | \
@@ -141,10 +146,13 @@ function normalise-name() {
             -e 's/ańĭskŭ językŭ$/a/g' \
             -e 's/ans[’]*ka\(ja\)* mova$/a/g' \
             -e 's/as \(vilāj[as]\|mintaka\|meģe\)$/a/g' \
+            -e 's/bàn$//g' \
+            -e 's/halvøen$//g' \
             -e 's/hantou$//g' \
+            -e 's/hú$//g' \
             -e 's/i[ -]\(félsziget\|[Gg]et\|királyság\|lään\|ringkond\)$//g' \
             -e 's/iin tsöl$//g' \
-            -e 's/in \(autiomaa\|lääni\|linna\|provinssi\)$//g' \
+            -e 's/in \(autiomaa\|lääni\|linna\|niemimaa\|provinssi\)$//g' \
             -e 's/īn Ardhadvīpaya$//g' \
             -e 's/is \([Mm]edie\|[Tt]sikhesimagre\)$/i/g' \
             -e 's/janski jazik$/ja/g' \
@@ -160,9 +168,10 @@ function normalise-name() {
             -e 's/na Rīce$//g' \
             -e 's/nag ævzag$//g' \
             -e 's/nski ezik$//g' \
+            -e 's/nūrs$//g' \
             -e 's/o \(apskritis\|emyratas\|grafystė\|provincija\)$/as/g' \
+            -e 's/o[s]* \(pusiasalis\|vilaja\)$/as/g' \
             -e 's/ørkenen$/a/g' \
-            -e 's/os \(pusiasalis\|vilaja\)$/as/g' \
             -e 's/s \(distrikt\|län\|nom[ae]\|rajons\)$//g' \
             -e 's/s’ka\(ya\)* \(fortetsya\|krepost\)$/a/g' \
             -e 's/s[’]*k[iy]y p\(i\|ol\)[uv]ostr[io]v$//g' \
@@ -171,7 +180,7 @@ function normalise-name() {
             -e 's/skagi$//g' \
             -e 's/skaya oblast[’]*$/sk/g' \
             -e 's/ske \(gŏdki\|rěče\)$/ska/g' \
-            -e 's/ski sayuz$//g' \
+            -e 's/sk[iý] \('"${P_PENINSULA}"'\|sayuz\)$//g' \
             -e 's/skiy kaganat$/iya/g' \
             -e 's/vsk[ai] [Pp]lanin[ai]$/vo/g' \
             -e 's/x žudecs$/a/g' \
@@ -187,15 +196,15 @@ function normalise-name() {
             -e 's/^[Ll][ei]ngua //g' \
             -e 's/^D '"${P_REGION}"' //g' \
             -e 's/^\('"${COMMON_PATTERNS}"'\)\s\s*\(\([dl]*[aeiou]*[l]*\|gia\|of\|ng\|[Tt]a\|[Tt]o[uy]\|w\)[ '"'"']\)*//g' \
-            -e 's/^\(Ar[c]*hip[eè]la\(g[ou][l]*\)*\|Aut[oó]noma\|[Cc]ollegio\|[CcKk]omita[a]*t\(us\)*\|[Dd][eήḗ]mos\|[Dd]i[eoó]c[eè][sz][eij][as]*\|[Dd][ei]part[ai]*ment[ou]*[l]*\|[Dd][ií]mos\|[GgHh]rad\|[Gg]r[aoó][a]*f\(ov\)*\(ija\|lando\|s\(ch\|k\)a\(ft\|p\)\|stvo\)\|Jangwa\|[Kk][eoö]ni[n]*[gk]r[e]*[iy][cej]*[hk]\\|[Kk][o]*r[aáo]l[io]vstv[iío]\|[Mm][ou][u]*nt[aei]*\([gi][ln][e]*\)*\|Municipi\(u[lmo]\)*\|N[iío][ms][ío][s]*\|[Oo]kr[aeęo][zž]*[gj][e]*\|[Pp]ar[r]*o[i]*\(cc\|q\|ss\)\(e\|[hu]ia\)\|[Pp][ao][luŭ][uv]ostr[ao][uŭv]\|[Pp][eé]n[iíì][n]*[csz][ou][lł][aāe]\|Periferi[j]*a\|[Rr]egatul\|[Rr]eialme\|R[iīí][fo]\|Sultanat\) \(\([dl]*[aeiou]*[l]*\|of\|ng\|[Tt]a\|[Tt]o[uy]\|w\)[ '"'"']\)*//g' \
-            -e 's/^\(Āltepētl\|Ardal\|Bahasa\|Bán đảo\|Bldīẗ\|Bogserbåten\|Bundestagswahlkreis\|Bwrdeistref\|Burg\|Cathair\|Comitatu[ls]\|Daerah\|Ḍāḥīẗ\|Dorerit\|Drevna\|Emirlando\|Eparchía\|Fiume\|G[e]*m[ei][e]*n[t]*[ae]*\|Glṓssa\|Glùm Paā-săā\|Grad\|Gurun\|Hrafstvo\|Hạt\|Higashi\|Horad\|[Hh]ra[bf]stv[aí]\|Huyện\|[Ii]dioma\|Ìpínlẹ̀\|Iqlīm\|Is[ṭt][a]*\|Isŭt’ŭ\|[Jj]ęzyk\|Kàēyt Bpòk Kraāwng\|K'"'"'alak'"'"'i\|Kástro\|Kêr\|Kerajaan\|Komēteía\|Kongedømmet\|Kontelezh\|Kraljestvo\|Kreis\|Kwáāen\|Kr[aó]l[j]*e\(stwo\|vina\)\|Landschaft\|Lâu đài\|[Ll][eií][mn][g]*[bu]*a\|Lien\|Lutherstadt\|Mâāe Náām\|Markgrafschaft\|Mdīnẗ\|M[e]*ch[e]*wz\|Memlekt\|Mḥāfẓẗ\|Miedźje\|Mnṭqẗ\|Mon-ton\|Mqāṭʿẗ\|Mu‘tamadīyat\|Ná[-]*kaāwn\|Nhr\|O[bp]\(s[hj]\|š\)tina\|Okres\|Óros\|Paā-săā\|Pasiolak\|Perbandaran\|Pentadbiran\|Półwysep\|Potamós\|Prikhod\|Pulau\|Pustynia\|Qarku\|Raka\|Rát\|Râāt-chá-aā-naā-zhàk\|[Rr]âul\|Sa mạc\|Schloss\|Sir\|Sông\|Stadt\(kreis\)*\|Sungai\|Swydd\|ti\|[Tt]iếng\|Tỉnh\|Titularbistum\|[Tt]yrt\|Ūlāīẗ\|[Vv]ioska\|[VvWw]il[l]*a\(yah\)*\|Vilojati\|Vostraŭ\|Vương quốc\|Wikang\|Zam[eo]k\|Zhang Wàt\|Z[iı]wanê\) \(\([Tt]o[uy]\|w\) \)*//g' \
+            -e 's/^\(Ar[c]*hip[eè]la\(g[ou][l]*\)*\|Aut[oó]noma\|[Cc]ollegio\|[CcKk]omita[a]*t\(us\)*\|[Dd][eήḗ]mos\|[Dd]i[eoó]c[eè][sz][eij][as]*\|[Dd][ei]part[ai]*ment[ou]*[l]*\|[Dd][ií]mos\|[GgHh]rad\|[Gg]r[aoó][a]*f\(ov\)*\(ija\|lando\|s\(ch\|k\)a\(ft\|p\)\|stvo\)\|Jangwa\|[Kk][eoö]ni[n]*[gk]r[e]*[iy][cej]*[hk]\\|[Kk][o]*r[aáo]l[io]vstv[iío]\|[Mm][ou][u]*nt[aei]*\([gi][ln][e]*\)*\|N[iío][ms][ío][s]*\|[Oo]kr[aeęo][zž]*[gj][e]*\|[Pp]ar[r]*o[i]*\(cc\|q\|ss\)\(e\|[hu]ia\)\|Periferi[j]*a\|[Rr]egatul\|[Rr]eialme\|R[iīí][fo]\|Sultanat\) \(\([dl]*[aeiou]*[l]*\|of\|ng\|[Tt]a\|[Tt]o[uy]\|w\)[ '"'"']\)*//g' \
+            -e 's/^\(Āltepētl\|Ardal\|Bahasa\|Bldīẗ\|Bogserbåten\|Bundestagswahlkreis\|Bwrdeistref\|Burg\|Cathair\|Comitatu[ls]\|Daerah\|Ḍāḥīẗ\|Dorerit\|Drevna\|Emirlando\|Eparchía\|Fiume\|G[e]*m[ei][e]*n[t]*[ae]*\|Glṓssa\|Glùm Paā-săā\|Grad\|Gurun\|Hrafstvo\|Hạt\|Higashi\|Horad\|[Hh]ra[bf]stv[aí]\|Huyện\|[Ii]dioma\|Ìpínlẹ̀\|Iqlīm\|Is[ṭt][a]*\|Isŭt’ŭ\|[Jj]ęzyk\|Kàēyt Bpòk Kraāwng\|K'"'"'alak'"'"'i\|Kástro\|Kêr\|Kerajaan\|Komēteía\|Kongedømmet\|Kontelezh\|Kraljestvo\|Kreis\|Kwáāen\|Kr[aó]l[j]*e\(stwo\|vina\)\|Landschaft\|Lâu đài\|[Ll][eií][mn][g]*[bu]*a\|Lien\|Lutherstadt\|Mâāe Náām\|Markgrafschaft\|Mdīnẗ\|M[e]*ch[e]*wz\|Memlekt\|Mḥāfẓẗ\|Miedźje\|Mnṭqẗ\|Mon-ton\|Mqāṭʿẗ\|Mu‘tamadīyat\|Ná[-]*kaāwn\|Nhr\|Okres\|Óros\|Paā-săā\|Pasiolak\|Perbandaran\|Pentadbiran\|Półwysep\|Potamós\|Prikhod\|Pulau\|Pustynia\|Qarku\|Raka\|Rát\|Râāt-chá-aā-naā-zhàk\|[Rr]âul\|Sa mạc\|Schloss\|Sir\|Sông\|Stadt\(kreis\)*\|Sungai\|Swydd\|ti\|[Tt]iếng\|Tỉnh\|Titularbistum\|[Tt]yrt\|Ūlāīẗ\|[Vv]ioska\|[VvWw]il[l]*a\(yah\)*\|Vilojati\|Vostraŭ\|Vương quốc\|Wikang\|Zam[eo]k\|Zhang Wàt\|Z[iı]wanê\) \(\([Tt]o[uy]\|w\) \)*//g' \
             -e 's/^\(Chetsey H'"'"'y\|Kâāp-sà-mùt\|Khu vực\|Jimbo ya\|Lalawigan ng\|Marz\|Mkoa wa\|Penrhyn y\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\|W[iı]lay\(a\|ah\|etê\)\) \(\(de\|ya\) \)*//g' \
             -e 's/^\(Autonome Gemeinschaft\|Bprà[ -][Tt]âēyt\|Com[m]*unitate[a]* Autonom[aăe]\|Ilang ng\|Kreisfreie Stadt\|Nhóm ngôn ngữ\|Săā-taā-rá-ná-rát\|[Tt]âēyt[ -][Mm]on[ -][Tt]on\|Tá[ -][Ll]aēy[ -][Ss]aāi\|Thị trấn\|Unitat perifèrica de\)[ -]//g' \
-            -e 's/^\(Bisbat\|Bishopric\|\([CcÇçSs]\|Tz\)[eiy][uv]*[dt]*[aáàæ][dt]*[e]*[a]*\|[CcKk]o[mn][dt]\(a[dt][o]*\|[eé]\)\|[CcKk][aāo]*[uv]*[nṇ][tṭ][iīy][e]*\|Dakbayan\|Dēmokratía\|[Dd][eé]part[aei]m[ei]*nt[ou]*[l]*\|[Dd][eéi][sz][iy]*er[tz][ho]*\|[JjŽž]ud[iz]*e[ctțţ]\(ul\)*\|Kaharian\|Kingdom\|M[a]*ml[u]*k[a]*ẗ\|Parish\|Pr[ei]n[cgs][ei]p[aáà][dt]*[eou]*\|[Rr][eo][giy][an][eou][m]*[e]*\|R[ei][s ]*p[auüùú]b[b]*l[ií][ck][ck]*\([ai]\|en\|i\)*\|[Ss]hahrest[aā]n\\|Thành\|[Tt][h]*[eé]ma\|[Tt]zountéts\|[VvWw]il[l]*[ae]\(ya\)*\|Xian\) \('"'"'e \|d'"'"'\|[dsty][aeiîu][l]* \|[eë]d \|han \|ng \|[Tt]*[Oo][fuy]* \|phố \)*//g' \
+            -e 's/^\(Bisbat\|Bishopric\|\([CcÇçSs]\|Tz\)[eiy][uv]*[dt]*[aáàæ][dt]*[e]*[a]*\|[CcKk]o[mn][dt]\(a[dt][o]*\|[eé]\)\|[CcKk][aāo]*[uv]*[nṇ][tṭ][iīy][e]*\|Dakbayan\|Dēmokratía\|[Dd][eé]part[aei]m[ei]*nt[ou]*[l]*\|[Dd][eéi][sz][iy]*er[tz][ho]*\|[JjŽž]ud[iz]*e[ctțţ]\(ul\)*\|Kaharian\|Kingdom\|M[a]*ml[u]*k[a]*ẗ\|Parish\|Pr[ei]n[cgs][ei]p[aáà][dt]*[eou]*\|[Rr][eo][giy][an][eou][m]*[e]*\|[Ss]hahrest[aā]n\\|Thành\|[Tt][h]*[eé]ma\|[Tt]zountéts\|[VvWw]il[l]*[ae]\(ya\)*\|Xian\) \('"'"'e \|d'"'"'\|[dsty][aeiîu][l]* \|[eë]d \|han \|ng \|[Tt]*[Oo][fuy]* \|phố \)*//g' \
             \
             -e 's/\(.\)\(bjerget\|shān\|sŏng\)$/\1/g' \
-            -e 's/[ ’-]\([Aa]dası\|AG\|[Aa]imag\|[Aa]irurando\|aju\|alue\|[Aa]ñcala\|[Aa]ntic[aă]\|apskritis\|åsene\|[Bb]ar[ou]n[iy][am]*[u]*\|barrutia\|[Bb]hasa\|[Bb]ibhāga\|Bikéyah\|[Bb]isped[øo]m[m]*e\|[Bb]ölgesi\|Bnakavayr\|[Cc]alabro\|çayı\|Chê\|chéng[-]*bǎo\|Chhī\|Chibang\|Chiu\|[Cc]hū-tī\|[CcKk][aāo]*[uv]*[nṇ][tṭ]\([iīy]\|lu[gğ]u]\)\|[cs]h[h]*[ìī]\|Chihō\|[Cc]hiku\|Chiyŏk\|Çölü\|[CcKk]omita[a]*t\(us\)*\|Cumhuriyeti\|[Dd]a[gğ][iı]\|[Dd]ǎo\|dar[ij]a\|Darussalam\|[Dd]evleti\|[Dd]esert\|Dġyak\|Dhāma\|Dimos\|Dzongkhag\|Eḍāri\|[Ee]ennâmkodde\|[Ee]na\|Enez\|[Ee]rusutaa\|[Ee]yaleti\|[Ff]örsamling\|[Gg]aṇarājya\|[Gg]awa\|gielda\|[Gg]o\|[Gg]ōng[ -][Hh]é[ -][Gg]uó\|[Gg]overnorate\|[Gg]rad[ŭ]*\|grubu\|guovlu\|Hahoodzo\|[Hh]albinsel\|hálvoyggin\|Hantou\|He\|Hyŏn\|[Ii]baia\|[Ii]ngurando\|[Jj]ach'"'"'a\|[Jj]anarajaya\|jõgi\|[Jj][iù]n\|jūnōu\|[Kk]a [KkQq]ila\|kaavpug\|ǩalaḥy\|[Kk]alāpaya\|[Kk]alni\|Kang\|Kàēyt Brì Hăān Pí Sàēyt\|kansallispuisto\|[Kk]àu-khu\|ke[e]*l['"'"']*\|[Kk]hiung[ -][Ff]ò[ -][Kk]oet\|[Kk]örzet\|\|[Kk]ōṭṭai\|khoig\|[Kk]hot\|[Kk]hu\|[Kk][iy][i]*l\|Kilisesi\|Kingdom\|[Kk]o[aā]n\|Koku\|[Kk]onderria\|község\|[Kk]rallığı\|[Kk]repost\|[Kk]shetr\|Kūn\|Kyouku\|Kyouwa Koku\|lääni\|[Ll]anguage\|[Ll]ingvo\|linn\|maak[ou]n[dt]a*\|[Mm]achi\|[Mm]ahal[iı]\|Mākāṇam\|Mānakaram\|Maṇḍalam\|Marubhūmi\|Māvaṭṭam\|[Mm]arz\|[Mm]e[dg][iy]e\|mhuriyeti\|[Mm]oḻi\|[Mm]ovy\|[Mm]unicipality\|Mura\|Nadi\|Nagar\(am\)*\|Nakaram\|Nakhevark[’]*undzuli\|[Nn]aturreservat\|Nehri\|Nisí\|osariik\|[Oo]ukoku\|o’zeni\|pagasts\|[Pp]akuti\|[Pp]aḷāta\|Pālaivaṉam\|[Pp]ats’alyg’y\|[Pp]il[i]*s\|piirkonnaüksus\|poolsaar\|qalas[iıy]\|qəsri\|qraflığı\|[Rr]ajonas\|rén\|[Rr]e[s]*publi[ck][a]*\(ḥy\)*\|[Rr]iver\|[SsŠš]aar[iy]*\|Sa[bm]ak[u]*\|[Ss]agrapo\|[sșş][eə]hristan[iı]\|[Ss][h]*i\|Shikyou Ryou\|Shinrinkouen\|[Ss][ho][aā]-[bm][òô͘]*\|[Ss]hou\|Siti\|Shuu\|síksá\|sivatag\|slott\|so\(g\|cke\)n\|sritis\|Sṳ\|sultan\(at[e]*\|lığı\)\|suohkan\|suyu\|tamaneɣt\|[Tt][’]*erakġzi\|tartomány\|[Tt][eē]\|tele\|[Tt]hi-[Kk]hî\|tillari\|[Tt]oshi\|[Tt][oō][au]*\|Town\|tu’begi\|[Uu]da\(bno\|lerria\)\|vald\\|[Vv]ibhāg\|Viru\|VS\|Vương quốc Hồi giáo\|[Ww]amani\|[Ww]áng[ -][Gg]uó\|Wangguk\|[Xx]i[aàā]n[g]*\|[Yy]arımadası\|yǔ\|zh[ēō]*[nu]\|[ZzŽž][h]*ude[ct]s[i]*\|zōng\)$//g' \
-            -e 's/[ ’-]\([CcKk]o[ou]*nt\(ae\|luğu\|y\)\|[Dd]epart[a]*ment\(as\)*\|Durg[a]*\|[EeIi]*[Ss][h]*t[’]*a[dt][’]*[eiou]\|[Ff]ylk[ei]\|[GgQq]r[aā]f[l]*[iı]\(ı\|ste\)\|\|[Jj][eēi]l[hl]*[aāeo][a]*\|[Jj][oō][u]*\|[Kk]il[l]*[ao]\|[Mm]a[nṇ][dḍ]al\(a[mṁ]\)*\|Muni\(c\|ts\)ip[’]*alit[’]*\(et’i\|y\)\|[Nn]ahan[gk]\|P[aā][i]*ri\(ṣ\|sh\)\|[Mm]in[tţ]a[kq]at*\|[Oo]blas[tť]\|[Pp][ao][luŭ][uv]ostr[ao][uŭv]\|[Pp][eé]n[iíì][n]*[csz][ou][lł][aāe]\|[Pp]ii\(r\|skop\)kond\|[Pp]lanin[ai]\|[Pp]r[a]*d[eē][sś][h]*[a]*\|[Pp]r[aā]*nt[y]*[a]*\([ṁy][a]*\)*\|[Pp]rja[a]*st[t]*a[a]*k\|[Pp]u[u]*[l]*s[s]*a[al][ar]\|[Rr]eialme\|[Rr][e]*[iī]c[eh]\|[Rr]esp[uúy][’]*bli[’]*[ck][ai]\(sy\)*\|[Ss]h[eě]ng\|[Vv]il[aā][jy]\(eti\|s\)\|[ZzŽž]upa\(nija\)*\)$//g' \
+            -e 's/[ ’-]\([Aa]dası\|AG\|[Aa]imag\|[Aa]irurando\|aju\|alue\|[Aa]ñcala\|[Aa]ntic[aă]\|apskritis\|åsene\|[Bb]ar[ou]n[iy][am]*[u]*\|barrutia\|[Bb]hasa\|[Bb]ibhāga\|Bikéyah\|[Bb]isped[øo]m[m]*e\|[Bb]ölgesi\|Bnakavayr\|[Cc]alabro\|çayı\|Chê\|chéng[-]*bǎo\|Chhī\|Chibang\|Chiu\|[Cc]hū-tī\|[CcKk][aāo]*[uv]*[nṇ][tṭ]\([iīy]\|lu[gğ]u]\)\|[cs]h[h]*[ìī]\|Chihō\|[Cc]hiku\|Chiyŏk\|Çölü\|[CcKk]omita[a]*t\(us\)*\|Cumhuriyeti\|[Dd]a[gğ][iı]\|[Dd]ǎo\|dar[ij]a\|Darussalam\|[Dd]evleti\|[Dd]esert\|Dġyak\|Dhāma\|Dimos\|Dzongkhag\|Eḍāri\|[Ee]ennâmkodde\|[Ee]na\|Enez\|[Ee]rusutaa\|[Ee]yaleti\|[Ff]örsamling\|[Gg]aṇarājya\|[Gg]awa\|gielda\|[Gg]o\|[Gg]ōng[ -][Hh]é[ -][Gg]uó\|[Gg]overnorate\|[Gg]rad[ŭ]*\|grubu\|guovlu\|Hahoodzo\|[Hh]albinsel\|hálvoyggin\|Hantou\|He\|Hyŏn\|[Ii]baia\|[Ii]ngurando\|[Jj]ach'"'"'a\|[Jj]anarajaya\|jõgi\|[Jj][iù]n\|jūnōu\|[Kk]a [KkQq]ila\|kaavpug\|ǩalaḥy\|[Kk]alāpaya\|[Kk]alni\|Kang\|Kàēyt Brì Hăān Pí Sàēyt\|kansallispuisto\|[Kk]àu-khu\|ke[e]*l['"'"']*\|[Kk]hiung[ -][Ff]ò[ -][Kk]oet\|[Kk]örzet\|\|[Kk]ōṭṭai\|khoig\|[Kk]hot\|[Kk]hu\|[Kk][iy][i]*l\|Kilisesi\|Kingdom\|[Kk]o[aā]n\|Koku\|[Kk]onderria\|község\|[Kk]rallığı\|[Kk]repost\|[Kk]shetr\|Kūn\|Kyouku\|Kyouwa Koku\|lääni\|[Ll]anguage\|[Ll]ingvo\|linn\|maak[ou]n[dt]a*\|[Mm]achi\|[Mm]ahal[iı]\|Mākāṇam\|Mānakaram\|Maṇḍalam\|Marubhūmi\|Māvaṭṭam\|[Mm]arz\|[Mm]e[dg][iy]e\|mhuriyeti\|[Mm]oḻi\|[Mm]ovy\|Mura\|Nadi\|Nagar\(am\)*\|Nakaram\|Nakhevark[’]*undzuli\|[Nn]aturreservat\|Nehri\|Nisí\|osariik\|[Oo]ukoku\|o’zeni\|pagasts\|[Pp]akuti\|[Pp]aḷāta\|Pālaivaṉam\|[Pp]ats’alyg’y\|[Pp]il[i]*s\|piirkonnaüksus\|poolsaar\|qalas[iıy]\|qəsri\|qraflığı\|[Rr]ajonas\|rén\|[Rr]e[s]*publi[ck][a]*\(ḥy\)*\|[Rr]iver\|[SsŠš]aar[iy]*\|Sa[bm]ak[u]*\|[Ss]agrapo\|[sșş][eə]hristan[iı]\|[Ss][h]*i\|Shikyou Ryou\|Shinrinkouen\|[Ss][ho][aā]-[bm][òô͘]*\|[Ss]hou\|Siti\|Shuu\|síksá\|sivatag\|slott\|so\(g\|cke\)n\|sritis\|Sṳ\|sultan\(at[e]*\|lığı\)\|suohkan\|suyu\|tamaneɣt\|[Tt][’]*erakġzi\|tartomány\|[Tt][eē]\|tele\|[Tt]hi-[Kk]hî\|tillari\|[Tt]oshi\|[Tt][oō][au]*\|Town\|tu’begi\|[Uu]da\(bno\|lerria\)\|vald\\|[Vv]ibhāg\|Viru\|VS\|Vương quốc Hồi giáo\|[Ww]amani\|[Ww]áng[ -][Gg]uó\|Wangguk\|[Xx]i[aàā]n[g]*\|\|yǔ\|zh[ēō]*[nu]\|[ZzŽž][h]*ude[ct]s[i]*\|zōng\)$//g' \
+            -e 's/[ ’-]\([CcKk]o[ou]*nt\(ae\|luğu\|y\)\|[Dd]epart[a]*ment\(as\)*\|Durg[a]*\|[EeIi]*[Ss][h]*t[’]*a[dt][’]*[eiou]\|[Ff]ylk[ei]\|[GgQq]r[aā]f[l]*[iı]\(ı\|ste\)\|\|[Jj][eēi]l[hl]*[aāeo][a]*\|[Jj][oō][u]*\|[Kk]il[l]*[ao]\|[Mm]a[nṇ][dḍ]al\(a[mṁ]\)*\|[Mm]in[tţ]a[kq]at*\|[Nn]ahan[gk]\|P[aā][i]*ri\(ṣ\|sh\)\|[Oo]blas[tť]\|[Pp]ii\(r\|skop\)kond\|[Pp]lanin[ai]\|[Pp]r[a]*d[eē][sś][h]*[a]*\|[Pp]r[aā]*nt[y]*[a]*\([ṁy][a]*\)*\|[Pp]rja[a]*st[t]*a[a]*k\|[Pp]u[u]*[l]*s[s]*a[al][ar]\|[Rr]eialme\|[Rr][e]*[iī]c[eh]\|[Ss]h[eě]ng\|[Vv]il[aā][jy]\(eti\|s\)\|[ZzŽž]upa\(nija\)*\)$//g' \
             -e 's/[ ’-]\('"${COMMON_PATTERNS}"'\)$//g' \
             -e 's/ [KkCc]om*un*[ea]*$//g' \
             -e 's/ \(Ken\|Koān\)$//g' \
