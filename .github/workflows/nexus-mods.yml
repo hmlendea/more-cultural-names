@@ -131,31 +131,6 @@ jobs:
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "mbp-more-cultural-names.zip"
         
-  release-ck3sow:
-    name: Release (CK3SoW)
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-
-    - name: Download the release asset
-      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3SoW_${GITHUB_REF:11}.zip" -O "sow-more-cultural-names.zip"
-        
-    - name: Upload
-      uses: greatness7/nexusmods_file_updater@v2
-      with:
-        username: ${{secrets.NEXUS_USERNAME}}
-        password: ${{secrets.NEXUS_PASSWORD}}
-        game_domain_name: "crusaderkings3"
-        mod_id: "24"
-        file_name: "sow-more-cultural-names"
-        file_version: ${{github.ref_name}}
-        update_version: true
-        new_existing_version: true
-        original_file: "sow-more-cultural-names.*"
-        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
-        file_path: "sow-more-cultural-names.zip"
-        
   release-ck3tfe:
     name: Release (CK3TFE)
     runs-on: ubuntu-latest
