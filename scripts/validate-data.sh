@@ -27,6 +27,8 @@ CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/Crusader Kings III/game/local
 LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 
+GAME_IDS_CK="$(grep "<GameId game=\"CK" "${LOCATIONS_FILE}" | sed 's/^[^>]*>\([^<]*\).*/\1/g' | sort | uniq)"
+
 function getGameIds() {
     GAME="${1}"
 
@@ -55,8 +57,10 @@ function checkForMissingCkLocationLinks() {
                         ) | \
                         grep "^>" | sed 's/^> //g'); do
         LOCATION_ID=${TITLE_ID:2}
+        LOCATION_ID_FOR_SEARCH=$(echo "${LOCATION_ID}" | sed 's/[_-]//g')
 
-        if ! $(echo "${LOCATION_IDS}" | grep -Eioq "^${LOCATION_ID}$"); then
+        if ! $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$") &&
+           ! $(echo "${GAME_IDS_CK}" | sed 's/[_-]//g' | grep -Eioq "^[ekdcb]_${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME}: ${TITLE_ID} is missing"
         else
             echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID}\" exists)"
