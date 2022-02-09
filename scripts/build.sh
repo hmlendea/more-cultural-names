@@ -83,7 +83,7 @@ build-edition \
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
-    "CK3" "1.4.*" \
+    "CK3" "1.5.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
 
 build-edition \
@@ -93,7 +93,7 @@ build-edition \
 
 build-edition \
     "ibl-more-cultural-names" "Ibn Battuta's Legacy 2 - More Cultural Names" \
-    "CK3IBL" "1.4.*" \
+    "CK3IBL" "1.5.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
@@ -103,7 +103,7 @@ build-edition \
 
 build-edition \
     "sow-more-cultural-names" "Sinews of War - More Cultural Names" \
-    "CK3SoW" "1.4.*" \
+    "CK3SoW" "1.5.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3sow_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
