@@ -20,7 +20,6 @@ CK3_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3_landed_titles.txt"
 CK3ATHA_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt"
 CK3IBL_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt"
 CK3MBP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
-CK3SoW_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3sow_landed_titles.txt"
 CK3TFE_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt"
 IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
 
@@ -77,9 +76,6 @@ update-vanilla-file \
     "${STEAM_WORKSHOP_CK3_DIR}/2216670956/common/landed_titles/00_landed_titles.txt" \
     "${CK3MBP_VANILLA_FILE}" \
     "https://raw.githubusercontent.com/Leviathonlx/MoreBookmarks-Plus/main/common/landed_titles/00_landed_titles.txt"
-update-vanilla-file \
-    "${STEAM_WORKSHOP_CK3_DIR}/2566883856/common/landed_titles/00_landed_titles.txt" \
-    "${CK3SoW_VANILLA_FILE}"
 update-vanilla-file \
     "${STEAM_WORKSHOP_CK3_DIR}/2243307127/common/landed_titles/00_landed_titles.txt" \
     "${CK3TFE_VANILLA_FILE}"
