@@ -27,6 +27,13 @@ IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
 CK3_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/1158310"
 
 CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_DIR}/Crusader Kings III/game/localization/english/titles_l_english.yml"
+CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_baronies_l_english.yml"
+CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_counties_l_english.yml"
+CK3ATHA_VANILLA_DUCHIES_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_duchies_l_english.yml"
+CK3ATHA_VANILLA_KINGDOMS_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_kingdoms_l_english.yml"
+CK3ATHA_VANILLA_EMPIRES_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_empires_l_english.yml"
+CK3ATHA_VANILLA_SPECIAL_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_special_l_english.yml"
+CK3IBL_VANILLA_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2416949291/localization/english/replace/ibl_titles_l_english.yml"
 CK3MBP_VANILLA_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2216670956/localization/english/titles_l_english.yml"
 CK3TFE_VANILLA_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2243307127/localization/english/titles_l_english.yml"
 
@@ -327,7 +334,14 @@ function checkDefaultCk3Localisations() {
 }
 
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_DUCHIES_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_KINGDOMS_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_EMPIRES_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_SPECIAL_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
 
 # Validate default localisations for ImperatorRome
