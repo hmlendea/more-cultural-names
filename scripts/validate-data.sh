@@ -7,10 +7,13 @@ LOCATIONS_FILE="locations.xml"
 TITLES_FILE="titles.xml"
 
 if [ -d "${HOME}/.games/Steam/common" ]; then
-    STEAM_GAMES_PATH="${HOME}/.games/Steam/common"
+    STEAM_APPS_DIR="${HOME}/.games/Steam"
 elif [ -d "${HOME}/.local/share/Steam/steamapps/common" ]; then
-    STEAM_GAMES_PATH="${HOME}/.local/share/Steam/steamapps/common"
+    STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
 fi
+
+STEAM_GAMES_DIR="${STEAM_APPS_DIR}/common"
+STEAM_WORKSHOP_DIR="${STEAM_APPS_DIR}/workshop"
 
 CK2_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2_landed_titles.txt"
 CK2HIP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt"
@@ -21,7 +24,11 @@ CK3MBP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
 CK3TFE_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt"
 IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
 
-CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_PATH}/Crusader Kings III/game/localization/english/titles_l_english.yml"
+CK3_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/1158310"
+
+CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_DIR}/Crusader Kings III/game/localization/english/titles_l_english.yml"
+CK3MBP_VANILLA_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2216670956/localization/english/titles_l_english.yml"
+CK3TFE_VANILLA_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2243307127/localization/english/titles_l_english.yml"
 
 LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
@@ -264,19 +271,19 @@ done
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
 # Make sure all CK titles are defined and exist in the game
-checkForMismatchingLocationLinks "CK2"              "${CK2_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK2HIP"           "${CK2HIP_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3"              "${CK3_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3IBL"           "${CK3IBL_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3MBP"           "${CK3MBP_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3TFE"           "${CK3TFE_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3ATHA"    "${CK3ATHA_VANILLA_FILE}"
-checkForMismatchingLocationLinks "IR"               "${IR_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 
 # Find HOI4 states
 
 function validateHoi4Parentage() {
-    GAME_ID="${1}"
+    local GAME_ID="${1}"
 
     for STATE_ID in $(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}" | \
                             sed 's/.*parent=\"\([^\"]*\).*/\1/g' | \
@@ -291,28 +298,37 @@ validateHoi4Parentage "HOI4"
 validateHoi4Parentage "HOI4TGW"
 
 # Validate default localisations for CK3
-if [ -f "${CK3_VANILLA_LOCALISATION_FILE}" ]; then
+function checkDefaultCk3Localisations() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_FILE="${2}"
+
+    [ ! -f "${LOCALISATIONS_FILE}" ] && return
+
     for GAMEID_DEFINITION in $(diff \
                         <( \
-                            grep "GameId game=\"CK3\"" "${LOCATIONS_FILE}" | \
+                            grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
                             sed 's/^ *//g' |
                             sort
                         ) <( \
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
-                                <(getGameIds "CK3") \
+                                <(getGameIds "${GAME_ID}") \
                                 <( \
-                                    grep "^ *[ekdcb]_" "${CK3_VANILLA_LOCALISATION_FILE}" | \
+                                    grep "^ *[ekdcb]_" "${LOCALISATIONS_FILE}" | \
                                     grep -v "_adj:" | \
                                     sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     sed -e 's/= */=/g' -e 's/ *$//g'
                                 ) | \
-                            awk -F"=" '{print "<GameId game=\"CK3\">"$1"</GameId> <!-- "$2" -->"}' | \
+                            awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
                             sort | uniq \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
     done
-fi
+}
+
+checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
 
 # Validate default localisations for ImperatorRome
 if [ -f "${IR_VANILLA_FILE}" ]; then
