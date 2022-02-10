@@ -88,6 +88,7 @@ function normalise-name() {
     local P_DISTRICT="[Dd][iy]str[eiy][ckt]*[akt][eouy]*[as]*\|[Iiİi̇]l[cç]esi\|Quận"
     local P_FORT="\([CcKk][aá]str[aou][lm]*\|[Ff]ort\(e\|ul\)*\|[Ff]ort\(aleza\|[e]*ress[e]*\)\|[Ff]ort[r]*e[t]*s[s]*[y]*[ae]*\|[Tv]rdina\)\( \(roman\|royale\)\)*"
     local P_GMINA="[Gg][e]*m[e]*in[d]*[ae]"
+    local P_HUNDRED="[Hh][äe]r[r]*[ae]d\|[Hh]undred\|[Kk]ihlakunta"
     local P_ISLAND="[Ǧǧ]zīrẗ\|[Ii]nsula\|[Ii]sl[ae]\|[Ii]sland\|[Nn][eḗ]sos\|Sŏm"
     local P_KINGDOM="guó\|[Kk][eoö]ni[n]*[gk]r[e]*[iy][cej]*[hk]\|K[io]ng[e]*d[oø]m\(met\)*\|[Rr]egatul\|[Rr][eo][giy][an][eolu][m]*[e]*"
     local P_LAKE="Gölü\|[Ll]a\(c\|cul\|go\|ke\)\|[Nn][uú][u]*r\|[Oo]zero"
@@ -106,7 +107,7 @@ function normalise-name() {
 
     local P_OF="\([dl]*[aeiou]*[l]*\|gia\|of\|ng\|[Tt]a\|[Tt]o[uy]\|w\)[ '\"'\"']"
 
-    local COMMON_PATTERNS="${P_ANCIENT}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_MONASTERY}\|${P_MUNICIPIUM}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TOWNSHIP}"
+    local COMMON_PATTERNS="${P_ANCIENT}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_HUNDRED}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_MONASTERY}\|${P_MUNICIPIUM}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TOWNSHIP}"
 
     local TRANSLITERATED_NAME=$(transliterate-name "${LANGUAGE_CODE}" "${NAME}")
     local NORMALISED_NAME=$(echo "${TRANSLITERATED_NAME}" | \
@@ -158,7 +159,7 @@ function normalise-name() {
             -e 's/hú$//g' \
             -e 's/i[ -]\(félsziget\|[Gg]et\|királyság\|lään\|ringkond\)$//g' \
             -e 's/iin tsöl$//g' \
-            -e 's/in \(autiomaa\|lääni\|linna\|niemimaa\|provinssi\)$//g' \
+            -e 's/in \('"${P_HUNDRED}"'\|autiomaa\|lääni\|linna\|niemimaa\|provinssi\)$//g' \
             -e 's/īn Ardhadvīpaya$//g' \
             -e 's/is \([Mm]edie\|[Tt]sikhesimagre\)$/i/g' \
             -e 's/janski jazik$/ja/g' \
@@ -178,7 +179,7 @@ function normalise-name() {
             -e 's/o \(apskritis\|emyratas\|grafystė\|provincija\)$/as/g' \
             -e 's/o[s]* \(pusiasalis\|vilaja\)$/as/g' \
             -e 's/ørkenen$/a/g' \
-            -e 's/s \(distrikt\|län\|nom[ae]\|rajons\)$//g' \
+            -e 's/s \('"${P_DISTRICT}\|${P_HUNDRED}"'\|län\|nom[ae]\|rajons\)$//g' \
             -e 's/s’ka\(ya\)* \(fortetsya\|krepost\)$/a/g' \
             -e 's/s[’]*k[iy]y p\(i\|ol\)[uv]ostr[io]v$//g' \
             -e 's/shitii$//g' \
