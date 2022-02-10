@@ -92,7 +92,7 @@ function normalise-name() {
     local P_ISLAND="[Ǧǧ]zīrẗ\|[Ii]nsula\|[Ii]sl[ae]\|[Ii]sland\|[Nn][eḗ]sos\|Sŏm"
     local P_KINGDOM="guó\|[Kk][eoö]ni[n]*[gk]r[e]*[iy][cej]*[hk]\|K[io]ng[e]*d[oø]m\(met\)*\|[Rr]egatul\|[Rr][eo][giy][an][eolu][m]*[e]*"
     local P_LAKE="Gölü\|[Ll]a\(c\|cul\|go\|ke\)\|[Nn][uú][u]*r\|[Oo]zero"
-    local P_MONASTERY="[Mm][ăo]n[aă]st[eèi]r\(e[a]*\|y\)"
+    local P_MONASTERY="[Kk]lo[o]*ster\(is\)*\|[Mm][ăo]n[aăe]st[eèi]r\(e[a]*\|io[a]*\|o\|y\)*\|[Mm]onaĥejo\|[Mm]osteiro\|[Ss]hu[u]*dōin"
     local P_MUNICIPIUM="[Mm]uni[t]*[cs]ip[’]*\(alit[’]*\(as\|et’i\|y\)\|i[ou][lm]*\)\|O[bp]\(č\|s[hj]\|š\)[t]*ina"
     local P_NATIONAL_PARK="[Nn]ational [Pp]ark\|Par[cq]u[el] Na[ctț]ional\|[Vv]ườn [Qq]uốc"
     local P_OASIS="[aā]l-[Ww]āḥāt\|[OoÓóŌō][syẏ]*[aáāeē][sz][h]*[aiīeėē][ans]*[uŭ]*\|Oūh Aēy Sít"
@@ -105,7 +105,7 @@ function normalise-name() {
     local P_STATE="Bang\|[EeÉé]*[SsŜŝŜŝŠšŞş]*[h]*[tṭ][’]*[aeē][dtṭu][’]*[aeiıosu]*[l]*\|[Oo]st[’]*an[ıi]\|[Uu]stoni\|valstija*"
     local P_TOWNSHIP="[CcKk]anton[ae]*\(mendua\)*\|[Tt]ownship"
 
-    local P_OF="\([dl]*[aeiou]*[l]*\|gia\|of\|ng\|[Tt]a\|[Tt]o[uy]\|w\)[ '\"'\"']"
+    local P_OF="\([dl]*[aeiou]*[l]*\|gia\|of\|ng\|[Tt]a\|[Tt]o[uy]\|van\|w\)[ '\"'\"']"
 
     local COMMON_PATTERNS="${P_ANCIENT}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_HUNDRED}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_MONASTERY}\|${P_MUNICIPIUM}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TOWNSHIP}"
 
@@ -153,6 +153,7 @@ function normalise-name() {
             -e 's/ańĭskŭ językŭ$/a/g' \
             -e 's/ans[’]*ka\(ja\)* mova$/a/g' \
             -e 's/as \(vilāj[as]\|mintaka\|meģe\)$/a/g' \
+            -e 's/es \('"${P_MONASTERY}"'\)$/a/g' \
             -e 's/bàn$//g' \
             -e 's/halvøen$//g' \
             -e 's/hantou$//g' \
@@ -167,7 +168,7 @@ function normalise-name() {
             -e 's/jas nome$/ja/g' \
             -e 's/jos \('"${P_OASIS}"'\|provincija\|pusiasalis\)$/ja/g' \
             -e 's/jos nomas$/ja/g' \
-            -e 's/ko \(konderria\|probintzia\)$//g' \
+            -e 's/ko \('"${P_MONASTERY}\|${P_PROVINCE}"'konderria\)$//g' \
             -e 's/maṇḍalam$//g' \
             -e 's/n \(kreivi\|piiri\)*kunta$//g' \
             -e 's/n dili$//g' \
