@@ -88,7 +88,7 @@ build-edition \
 
 build-edition \
     "atha-more-cultural-names" "Apotheosis: More Cultural Names" \
-    "CK3ATHA" "1.4.*" \
+    "CK3ATHA" "1.5.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
@@ -98,7 +98,7 @@ build-edition \
 
 build-edition \
     "mbp-more-cultural-names" "More Bookmarks+ - More Cultural Names" \
-    "CK3MBP" "1.4.*" \
+    "CK3MBP" "1.5.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
