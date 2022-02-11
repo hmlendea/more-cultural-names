@@ -1,7 +1,12 @@
 #!/bin/bash
 LANGUAGES_FILE="languages.xml"
 
-STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
+if [ -d "${HOME}/.games/Steam/common" ]; then
+    STEAM_APPS_DIR="${HOME}/.games/Steam"
+elif [ -d "${HOME}/.local/share/Steam/steamapps/common" ]; then
+    STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
+fi
+
 STEAM_GAMES_DIR="${STEAM_APPS_DIR}/common"
 STEAM_WORKSHOP_DIR="${STEAM_APPS_DIR}/workshop"
 
