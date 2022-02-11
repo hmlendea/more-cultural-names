@@ -140,6 +140,46 @@ function checkForMismatchingLocationLinks() {
     fi
 }
 
+function checkDefaultCk3Localisations() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_FILE="${2}"
+
+    [ ! -f "${LOCALISATIONS_FILE}" ] && return
+
+    for GAMEID_DEFINITION in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/^ *//g' |
+                            sort
+                        ) <( \
+                            awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
+                                <(getGameIds "${GAME_ID}") \
+                                <( \
+                                    grep "^ *[ekdcb]_" "${LOCALISATIONS_FILE}" | \
+                                    grep -v "_adj:" | \
+                                    sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
+                                    sed -e 's/= */=/g' -e 's/ *$//g'
+                                ) | \
+                            awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
+    done
+}
+
+function validateHoi4Parentage() {
+    local GAME_ID="${1}"
+
+    for STATE_ID in $(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}" | \
+                            sed 's/.*parent=\"\([^\"]*\).*/\1/g' | \
+                            sort -g | uniq); do
+        if ! grep -q "${GAME_ID}\" type=\"State\">${STATE_ID}<" "${LOCATIONS_FILE}"; then
+            echo "${GAME_ID}: State #${STATE_ID} is missing while there are cities referencing it"
+        fi
+    done
+}
+
 ### Make sure locations are sorted alphabetically
 
 OLD_LC_COLLATE=${LC_COLLATE}
@@ -287,51 +327,8 @@ checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 
-# Find HOI4 states
-
-function validateHoi4Parentage() {
-    local GAME_ID="${1}"
-
-    for STATE_ID in $(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}" | \
-                            sed 's/.*parent=\"\([^\"]*\).*/\1/g' | \
-                            sort -g | uniq); do
-        if ! grep -q "${GAME_ID}\" type=\"State\">${STATE_ID}<" "${LOCATIONS_FILE}"; then
-            echo "${GAME_ID}: State #${STATE_ID} is missing while there are cities referencing it"
-        fi
-    done
-}
-
 validateHoi4Parentage "HOI4"
 validateHoi4Parentage "HOI4TGW"
-
-# Validate default localisations for CK3
-function checkDefaultCk3Localisations() {
-    local GAME_ID="${1}"
-    local LOCALISATIONS_FILE="${2}"
-
-    [ ! -f "${LOCALISATIONS_FILE}" ] && return
-
-    for GAMEID_DEFINITION in $(diff \
-                        <( \
-                            grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
-                            sed 's/^ *//g' |
-                            sort
-                        ) <( \
-                            awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
-                                <(getGameIds "${GAME_ID}") \
-                                <( \
-                                    grep "^ *[ekdcb]_" "${LOCALISATIONS_FILE}" | \
-                                    grep -v "_adj:" | \
-                                    sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
-                                    sed -e 's/= */=/g' -e 's/ *$//g'
-                                ) | \
-                            awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
-                            sort | uniq \
-                        ) | \
-                        grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
-        echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
-    done
-}
 
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE}"
