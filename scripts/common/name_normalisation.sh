@@ -94,6 +94,7 @@ function normalise-name() {
     local P_KINGDOM="guó\|[Kk][eoö]ni[n]*[gk]r[e]*[iy][cej]*[hk]\|K[io]ng[e]*d[oø]m\(met\)*\|[Kk]irályság\|[Rr]egatul\|[Rr][eo][giy][an][eolu][m]*[e]*\|[Rr]īce"
     local P_LAKE="Gölü\|[Ll]a\(c\|cul\|go\|ke\)\|[Nn][uú][u]*r\|[Oo]zero"
     local P_LANGUAGE="[Ll]anguage\|[Ll][eií][mn][g]*[buv]*[ao]"
+    local P_MOUNTAIN="[GgHh][ao]ra\|[Mm][ouū][u]*nt[aei]*\([gi]*[ln][e]*\)*\|[Pp]arvata[ṁ]*\|San"
     local P_MONASTERY="[Kk]lo[o]*ster\(is\)*\|[Mm][ăo]n[aăe]st[eèi]r\(e[a]*\|io[a]*\|o\|y\)*\|[Mm]onaĥejo\|[Mm]osteiro\|[Ss]hu[u]*dōin"
     local P_MUNICIPIUM="[Mm]uni[t]*[cs]ip[’]*\(alit[’]*\(as\|et’i\|y\)\|i[ou][lm]*\)\|O[bp]\(č\|s[hj]\|š\)[t]*ina"
     local P_NATIONAL_PARK="[Nn]ational [Pp]ark\|Par[cq]u[el] Na[ctț]ional\|[Vv]ườn [Qq]uốc"
@@ -105,11 +106,12 @@ function normalise-name() {
     local P_REPUBLIC="D[eēi]mokr[h]*atía\|Köztársaság\|Olómìnira\|[Rr][eéi][s]*[ ]*p[’]*[auüùúy][’]*b[b]*l[ií][ckq][ck]*[’]*\([ai]\|as[ıy]\|en\|[hḥ]y\|i\|ue\)*"
     local P_RUIN="[Rr]uin[ae]*"
     local P_STATE="Bang\|[EeÉé]*[SsŜŝŜŝŠšŞş]*[h]*[tṭ][’]*[aeē][dtṭu][’]*[aeiıosu]*[l]*\|[Oo]st[’]*an[ıi]\|[Uu]stoni\|valstija*"
+    local P_TEMPLE="[Dd]ēvālaya\(mu\)*\|[Kk]ōvil\|[Mm][a]*ndir[a]*\|Ná Tiān\|[Pp]agoda\|[Tt]emp[e]*l[eou]*[l]*"
     local P_TOWNSHIP="[CcKk]anton[ae]*\(mendua\)*\|[Tt]ownship"
 
     local P_OF="\([dl]*[aeiou]*[l]*\|gia\|of\|ng\|[Tt]a\|[Tt]o[uy]\|van\|w\)[ '\"'\"']"
 
-    local COMMON_PATTERNS="${P_ANCIENT}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_DEPARTMENT}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_HUNDRED}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_P_LANGUAGE}\|${P_MONASTERY}\|${P_MUNICIPIUM}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TOWNSHIP}"
+    local COMMON_PATTERNS="${P_ANCIENT}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_DEPARTMENT}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_HUNDRED}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_P_LANGUAGE}\|${P_MONASTERY}\|${P_MOUNTAIN}\|${P_MUNICIPIUM}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TEMPLE}\|${P_TOWNSHIP}"
 
     local TRANSLITERATED_NAME=$(transliterate-name "${LANGUAGE_CODE}" "${NAME}")
     local NORMALISED_NAME=$(echo "${TRANSLITERATED_NAME}" | \
@@ -123,7 +125,6 @@ function normalise-name() {
             -e 's/^\([KC]ategor[iy][e]*\)\://g' \
             -e 's/^\([Gg]e*m[ei]+n*t*[aen]\|Faritan'"'"'i\|[Mm]agaalada\) //g' \
             -e 's/^[KkCc]om*un*[ea] d[eio] //g' \
-            -e 's/^\(Category\)\: //g' \
             -e 's/^Lungsod ng //g' \
             \
             -e 's/^ẖ/H̱/g' \
@@ -182,7 +183,7 @@ function normalise-name() {
             -e 's/s’ka\(ya\)* \('"${P_FORT}"'\)$/a/g' \
             -e 's/s[’]*k[iy]y p\(i\|ol\)[uv]ostr[io]v$//g' \
             -e 's/shitii$//g' \
-            -e 's/sk[aá] \(říše\|župa.*\)$/sko/g' \
+            -e 's/sk[aá] \(poušť\|říše\|župa.*\)$/sko/g' \
             -e 's/sk[iý] \('"${P_PENINSULA}"'\|sayuz\)$//g' \
             -e 's/skagi$//g' \
             -e 's/skaya oblast[’]*$/sk/g' \
@@ -203,7 +204,7 @@ function normalise-name() {
             -e 's/^[CcKk]om*un*[ea]*[n]* //g' \
             -e 's/^D '"${P_REGION}"' //g' \
             -e 's/^\('"${COMMON_PATTERNS}"'\)\s\s*\('"${P_OF}"'\)*//g' \
-            -e 's/^\(Ar[c]*hip[eè]la\(g[ou][l]*\)*\|Aut[oó]noma\|[Cc]ollegio\|[CcKk]omita[a]*t\(us\)*\|[Dd][eήḗ]mos\|[Dd]i[eoó]c[eè][sz][eij][as]*\|[Dd][ií]mos\|[GgHh]rad\|[Gg]r[aoó][a]*f\(ov\)*\(ija\|lando\|s\(ch\|k\)a\(ft\|p\)\|stvo\)\|Jangwa\[Kk][o]*r[aáo]l[io]vstv[iío]\|[Mm][ou][u]*nt[aei]*\([gi][ln][e]*\)*\|N[iío][ms][ío][s]*\|[Oo]kr[aeęo][zž]*[gj][e]*\|[Pp]ar[r]*o[i]*\(cc\|q\|ss\)\(e\|[hu]ia\)\|Periferi[j]*a\|R[iīí][fo]\|Sultanat\) \('"${P_OF}"'\)*//g' \
+            -e 's/^\(Ar[c]*hip[eè]la\(g[ou][l]*\)*\|Aut[oó]noma\|[Cc]ollegio\|[CcKk]omita[a]*t\(us\)*\|[Dd][eήḗ]mos\|[Dd]i[eoó]c[eè][sz][eij][as]*\|[Dd][ií]mos\|[GgHh]rad\|[Gg]r[aoó][a]*f\(ov\)*\(ija\|lando\|s\(ch\|k\)a\(ft\|p\)\|stvo\)\|Jangwa\[Kk][o]*r[aáo]l[io]vstv[iío]\|N[iío][ms][ío][s]*\|[Oo]kr[aeęo][zž]*[gj][e]*\|[Pp]ar[r]*o[i]*\(cc\|q\|ss\)\(e\|[hu]ia\)\|Periferi[j]*a\|R[iīí][fo]\|Sultanat\) \('"${P_OF}"'\)*//g' \
             -e 's/^\(Āltepētl\|Ardal\|Bahasa\|Bldīẗ\|Bogserbåten\|Bundestagswahlkreis\|Bwrdeistref\|Burg\|Cathair\|Comitatu[ls]\|Daerah\|Ḍāḥīẗ\|Dorerit\|Drevna\|Emirlando\|Eparchía\|Fiume\|G[e]*m[ei][e]*n[t]*[ae]*\|Glṓssa\|Glùm Paā-săā\|Grad\|Gurun\|Hrafstvo\|Hạt\|Higashi\|Horad\|[Hh]ra[bf]stv[aí]\|Huyện\|[Ii]dioma\|Ìpínlẹ̀\|Iqlīm\|Is[ṭt][a]*\|Isŭt’ŭ\|[Jj]ęzyk\|Kàēyt Bpòk Kraāwng\|K'"'"'alak'"'"'i\|Kêr\|Kerajaan\|Komēteía\|Kontelezh\|Kraljestvo\|Kreis\|Kwáāen\|Kr[aó]l[j]*e\(stwo\|vina\)\|Landschaft\|Lâu đài\|Lien\|Lutherstadt\|Mâāe Náām\|Markgrafschaft\|Mdīnẗ\|M[e]*ch[e]*wz\|Memlekt\|Mḥāfẓẗ\|Miedźje\|Mnṭqẗ\|Mon-ton\|Mqāṭʿẗ\|Mu‘tamadīyat\|Ná[-]*kaāwn\|Nhr\|Okres\|Óros\|Paā-săā\|Pasiolak\|Perbandaran\|Pentadbiran\|Półwysep\|Potamós\|Prikhod\|Pulau\|Pustynia\|Qarku\|Raka\|Rát\|Râāt-chá-aā-naā-zhàk\|[Rr]âul\|Sa mạc\|Schloss\|Sir\|Sông\|Stadt\(kreis\)*\|Sungai\|Swydd\|ti\|[Tt]iếng\|Tỉnh\|Titularbistum\|[Tt]yrt\|Ūlāīẗ\|[Vv]ioska\|[VvWw]il[l]*a\(yah\)*\|Vilojati\|Vostraŭ\|Vương quốc\|Wikang\|Zam[eo]k\|Zhang Wàt\|Z[iı]wanê\) \('"${P_OF}"'\)*//g' \
             -e 's/^\(Chetsey H'"'"'y\|Kâāp-sà-mùt\|Khu vực\|Jimbo ya\|Lalawigan ng\|Marz\|Mkoa wa\|Penrhyn y\|Talaith\|Tawilayt n\|Tighrmt n\Vostraŭ\|W[iı]lay\(a\|ah\|etê\)\) \('"${P_OF}"'\)*//g' \
             -e 's/^\(Bisbat\|Bishopric\|\([CcÇçSs]\|Tz\)[eiy][uv]*[dt]*[aáàæ][dt]*[e]*[a]*\|[CcKk]o[mn][dt]\(a[dt][o]*\|[eé]\)\|[CcKk][aāo]*[uv]*[nṇ][tṭ][iīy][e]*\|Dakbayan\|Dēmokratía\|[Dd][eéi][sz][iy]*er[tz][ho]*\|[JjŽž]ud[iz]*e[ctțţ]\(ul\)*\|Kaharian\|M[a]*ml[u]*k[a]*ẗ\|Parish\|Pr[ei]n[cgs][ei]p[aáà][dt]*[eou]*\|[Ss]hahrest[aā]n\|Thành\|[Tt][h]*[eé]ma\|[Tt]zountéts\|[VvWw]il[l]*[ae]\(ya\)*\|Xian\) \('"${P_OF}"'\)*//g' \
@@ -219,7 +220,7 @@ function normalise-name() {
             -e 's/ mfiadini$/ Mfiadini/g' \
             \
             -e 's/^\(Abhainn\|Afon\|Ri[ou]\) //g' \
-            -e 's/^\(Ducado\|Reinu\) de l'"\'"'//g' \
+            -e 's/^Ducado de l'"\'"'//g' \
             \
             -e 's/[ -]\(eanangoddi\|ili\|[Ss]én[g]*\|vilayəti\)$//g' \
             \
@@ -237,7 +238,6 @@ function normalise-name() {
             -e 's/ zarez’$/ Zarez’/g' \
             -e 's/^biển /Biển /g' \
             -e 's/^m\([ae]re*\) /M\1 /g' \
-            -e 's/ská poušť$/sko/g' \
             \
             -e 's/^la[cg]o* //g' \
             -e 's/^Llyn //g' \
