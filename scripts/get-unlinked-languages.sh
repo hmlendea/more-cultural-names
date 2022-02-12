@@ -154,9 +154,9 @@ function getIrCultures() {
 }
 
 echo "Crusader Kings 3:"        && getCk3Cultures       "CK3"       "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 ATHA:"   && getCk3v14Cultures    "CK3ATHA"   "${CK3ATHA_CULTURES_DIR}"
+echo "Crusader Kings 3 ATHA:"   && getCk3Cultures       "CK3ATHA"   "${CK3ATHA_CULTURES_DIR}"
 echo "Crusader Kings 3 IBL:"    && getCk3Cultures       "CK3IBL"    "${CK3IBL_CULTURES_DIR}"
-echo "Crusader Kings 3 MBP:"    && getCk3v14Cultures    "CK3MBP"    "${CK3MBP_CULTURES_DIR}"
+echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CULTURES_DIR}"
 echo "Crusader Kings 3 TFE:"    && getCk3v14Cultures    "CK3TFE"    "${CK3TFE_CULTURES_DIR}"
 echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS_DIR}" "${HOI4_LOCALISATIONS_DIR}"
 echo "Hearts of Iron 4 TGW:"    && getHoi4Countries     "HOI4TGW"   "${HOI4TGW_TAGS_DIR}" "${HOI4TGW_LOCALISATIONS_DIR}"
