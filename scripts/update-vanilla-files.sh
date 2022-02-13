@@ -22,6 +22,7 @@ CK3IBL_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt"
 CK3MBP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
 CK3TFE_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt"
 IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
+IR_AoE_VANILLA_FILE="${VANILLA_FILES_DIR}/iraoe_province_names.yml"
 
 function update-vanilla-file() {
     local SOURCE_FILE="${1}"
@@ -82,3 +83,6 @@ update-vanilla-file \
 update-vanilla-file \
     "${STEAM_GAMES_DIR}/ImperatorRome/game/localization/english/provincenames_l_english.yml" \
     "${IR_VANILLA_FILE}"
+update-vanilla-file \
+    "${STEAM_WORKSHOP_IR_DIR}/2578689167/localization/english/replace/aoe_provincenames_l_english.yml" \
+    "${IR_AoE_VANILLA_FILE}"
