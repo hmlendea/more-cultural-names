@@ -1,23 +1,6 @@
 #!/bin/bash
 
-if [ -d "${HOME}/.games/Steam/common" ]; then
-    STEAM_APPS_DIR="${HOME}/.games/Steam"
-elif [ -d "${HOME}/.local/share/Steam/steamapps/common" ]; then
-    STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
-fi
-
-STEAM_GAMES_DIR="${STEAM_APPS_DIR}/common"
-STEAM_WORKSHOP_DIR="${STEAM_APPS_DIR}/workshop"
-
-IR_DIR="${STEAM_GAMES_DIR}/ImperatorRome"
-IR_LOCALISATIONS_DIR="${IR_DIR}/game/localization/english"
-
-IR_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/859580"
-
-IR_AoE_DIR="${IR_WORKSHOP_MODS_DIR}/2578689167"
-IR_AoE_LOCALISATIONS_DIR="${IR_AoE_DIR}/localization/english/replace"
-
-
+VANILLA_FILES_DIR="$(pwd)/vanilla"
 LOCATIONS_FILE="locations.xml"
 
 function mapNameToLanguage() {
@@ -97,5 +80,5 @@ function getProvinces() {
     done
 }
 
-getProvinces "IR"       "${IR_LOCALISATIONS_DIR}/provincenames_l_english.yml"           "ir_provinces.txt"
-getProvinces "IR_AoE"   "${IR_AoE_LOCALISATIONS_DIR}/aoe_provincenames_l_english.yml"   "iraoe_provinces.txt"
+getProvinces "IR"       "${VANILLA_FILES_DIR}/ir_province_names.yml"    "ir_provinces.txt"
+getProvinces "IR_AoE"   "${VANILLA_FILES_DIR}/iraoe_province_names.yml" "iraoe_provinces.txt"
