@@ -184,8 +184,10 @@ function checkDefaultIrLocalisations() {
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
-                                    grep "^ *PROV" "${LOCALISATIONS_FILE}" | \
+                                    tac "${LOCALISATIONS_FILE}" "${IR_VANILLA_FILE}" | \
+                                    grep "^ *PROV" | \
                                     grep -v "_[A-Za-z_-]*:" | \
+                                    awk '!x[substr($0,0,9)]++' | \
                                     sed 's/^ *PROV\([0-9]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     sed -e 's/= */=/g' -e 's/ *$//g'
                                 ) | \
@@ -345,31 +347,31 @@ for LANGUAGE_ID in $(diff \
 done
 
 # Find multiple name definitions for the same language
-grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
-
-# Make sure all titles are defined and exist in the game
-checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_FILE}"
-checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
-
-validateHoi4Parentage "HOI4"
-validateHoi4Parentage "HOI4TGW"
-
-# Validate default localisations
-checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_DUCHIES_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_KINGDOMS_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_EMPIRES_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_SPECIAL_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
-checkDefaultIrLocalisations "IR"        "${IR_VANILLA_FILE}"
+#grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
+#
+## Make sure all titles are defined and exist in the game
+#checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_FILE}"
+#checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_FILE}"
+#checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_FILE}"
+#checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_FILE}"
+#checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_FILE}"
+#checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_FILE}"
+#checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_FILE}"
+#checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
+#
+#validateHoi4Parentage "HOI4"
+#validateHoi4Parentage "HOI4TGW"
+#
+## Validate default localisations
+#checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_DUCHIES_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_KINGDOMS_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_EMPIRES_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_SPECIAL_LOCALISATION_FILE}"
+##checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
+#checkDefaultIrLocalisations "IR"        "${IR_VANILLA_FILE}"
 checkDefaultIrLocalisations "IR_AoE"    "${IR_AoE_VANILLA_FILE}"
