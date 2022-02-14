@@ -118,6 +118,10 @@ build-edition \
     "more-cultural-names" "More Cultural Names" \
     "IR" "2.0.*"
 
+build-edition \
+    "aoe-more-cultural-names" "Ashes of Empire: More Cultural Names" \
+    "IR_AoE" "2.0.*"
+
 cd "${STARTDIR}"
 bash "${STARTDIR}/scripts/count-localisations.sh"
 
