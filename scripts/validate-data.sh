@@ -346,7 +346,7 @@ for LANGUAGE_ID in $(diff \
     echo "The \"${LANGUAGE_ID}\" language does not exit"
 done
 
- Find multiple name definitions for the same language
+# Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
 # Make sure all titles are defined and exist in the game
@@ -373,5 +373,5 @@ checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_SPECIAL_LOCALISATION_
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
-checkDefaultIrLocalisations "IR"        "${IR_VANILLA_FILE}"
-checkDefaultIrLocalisations "IR_AoE"    "${IR_AoE_VANILLA_FILE}"
+checkDefaultIrLocalisations  "IR"       "${IR_VANILLA_FILE}"
+checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
