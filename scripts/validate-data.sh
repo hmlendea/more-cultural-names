@@ -346,32 +346,32 @@ for LANGUAGE_ID in $(diff \
     echo "The \"${LANGUAGE_ID}\" language does not exit"
 done
 
-# Find multiple name definitions for the same language
-#grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
-#
-## Make sure all titles are defined and exist in the game
-#checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_FILE}"
-#checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_FILE}"
-#checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_FILE}"
-#checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_FILE}"
-#checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_FILE}"
-#checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_FILE}"
-#checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_FILE}"
-#checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
-#
-#validateHoi4Parentage "HOI4"
-#validateHoi4Parentage "HOI4TGW"
-#
-## Validate default localisations
-#checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_DUCHIES_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_KINGDOMS_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_EMPIRES_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_SPECIAL_LOCALISATION_FILE}"
-##checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
-#checkDefaultIrLocalisations "IR"        "${IR_VANILLA_FILE}"
+ Find multiple name definitions for the same language
+grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
+
+# Make sure all titles are defined and exist in the game
+checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
+
+validateHoi4Parentage "HOI4"
+validateHoi4Parentage "HOI4TGW"
+
+# Validate default localisations
+checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_DUCHIES_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_KINGDOMS_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_EMPIRES_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_SPECIAL_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
+checkDefaultIrLocalisations "IR"        "${IR_VANILLA_FILE}"
 checkDefaultIrLocalisations "IR_AoE"    "${IR_AoE_VANILLA_FILE}"

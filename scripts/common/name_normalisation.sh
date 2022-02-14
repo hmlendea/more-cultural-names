@@ -278,9 +278,10 @@ function normalise-name() {
 function nameToLocationId() {
     local NAME="${1}"
 
-    echo "${NAME}" | \
-        sed -e 's/\([ČčŠšŽž]\)/\1h/g' | \
-        sed -e 's/[Ǧǧ]/j/g' | \
+    echo "${NAME}" | sed \
+            -e 's/æ/ae/g' \
+            -e 's/\([ČčŠšŽž]\)/\1h/g' \
+            -e 's/[Ǧǧ]/j/g' | \
         iconv -f utf8 -t ascii//TRANSLIT | \
         sed 's/-le-/_le_/g' | \
         sed 's/ /_/g' | sed "s/\'//g" | \
