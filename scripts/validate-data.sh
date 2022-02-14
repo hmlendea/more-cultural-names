@@ -370,7 +370,6 @@ findRedundantNamesStrict "Tuscan_Medieval" "Sardinian"
 findRedundantNamesStrict "Tuscan_Medieval" "Sicilian"
 findRedundantNamesStrict "Tuscan_Medieval" "Sicilian_Medieval"
 findRedundantNamesStrict "Tuscan_Medieval" "Venetian_Medieval"
-findRedundantNamesStrict "Tuscan_Medieval" "Venetian"
 
 # Find empty definitions
 grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
