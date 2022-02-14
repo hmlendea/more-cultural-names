@@ -19,6 +19,7 @@ The names are meant to provide an immersive and accurate experience for the game
 |![HOI4](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|[Hearts of Iron 4](https://steamcommunity.com/sharedfiles/filedetails/?id=2459257386)|
 |![HOI4TGW](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|[Hearts of Iron 4 (TGW)](https://steamcommunity.com/sharedfiles/filedetails/?id=2725885905)|
 |![IR](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|[Imperator: Rome](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)|
+|![IR_AoE](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|[Imperator: Rome (AoE)](https://steamcommunity.com/sharedfiles/filedetails/?id=2753371253)|
 
 # Installation
 
