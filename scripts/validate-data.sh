@@ -215,8 +215,8 @@ function findRedundantNames() {
     local PRIMARY_LANGUAGE_ID="${1}"
     local SECONDARY_LANGUAGE_ID="${2}"
 
-    grep -Pzo "\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />\n\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"\1\"" "${LOCATIONS_FILE}"
-    grep -Pzo "\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />\n\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"\1\"" "${LOCATIONS_FILE}"
+    grep -Pzo "\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />\n\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}"
+    grep -Pzo "\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />\n\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}"
 }
 
 ### Make sure locations are sorted alphabetically
@@ -254,14 +254,24 @@ grep "<GameId game=" *.xml | \
 grep -Pzo "\n *<Name language=\"([^\"]*)\" value=\"([^\"]*)\" />((\n *<Name l.*)*)\n *<Name language=\"\1\" value=\"\2\" />.*\n" *.xml
 
 # Find redundant names
+findRedundantNames "Hungarian" "Hungarian_Old"
+findRedundantNames "Danish" "Danish_Middle"
+findRedundantNames "Breton" "Breton_Middle"
 findRedundantNames "Bulgarian" "Bulgarian_Old"
 findRedundantNames "Castilian" "Castilian_Old"
+findRedundantNames "Catalan" "Catalan_Old"
 findRedundantNames "Czech" "Czech_Medieval"
+findRedundantNames "Finnish" "Finnish_Medieval"
 findRedundantNames "French" "French_Old"
 findRedundantNames "German" "German_Middle_High"
+findRedundantNames "Greek_Ancient" "Greek_Medieval"
 findRedundantNames "Latin_Old" "Latin_Classical"
 findRedundantNames "Lithuanian" "Lithuanian_Medieval"
+findRedundantNames "Norwegian" "Norwegian_Old"
+findRedundantNames "Occitan" "Occitan_Old"
+findRedundantNames "Polish" "Polish_Old"
 findRedundantNames "Portuguese" "Portuguese_Old"
+findRedundantNames "Romanian" "Romanian_Old"
 findRedundantNames "Russian" "Russian_Medieval"
 findRedundantNames "SerboCroatian" "Serbian_Medieval"
 findRedundantNames "SerboCroatian" "Serbian"
@@ -269,6 +279,7 @@ findRedundantNames "SerboCroatian" "SerboCroatian_Medieval"
 findRedundantNames "SerboCroatian" "Slovene_Medieval"
 findRedundantNames "Slovak" "Slovak_Medieval"
 findRedundantNames "Slovene" "Slovene_Medieval"
+findRedundantNames "Turkish" "Turkish_Old"
 
 # Find empty definitions
 grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
