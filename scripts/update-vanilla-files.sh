@@ -85,4 +85,5 @@ update-vanilla-file \
     "${IR_VANILLA_FILE}"
 update-vanilla-file \
     "${STEAM_WORKSHOP_IR_DIR}/2578689167/localization/english/replace/aoe_provincenames_l_english.yml" \
-    "${IR_AoE_VANILLA_FILE}"
+    "${IR_AoE_VANILLA_FILE}" \
+    "https://raw.githubusercontent.com/EliteNinjaX/dark_age_mod/Stable/localization/english/replace/aoe_provincenames_l_english.yml"
