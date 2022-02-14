@@ -38,6 +38,7 @@ print_game_titles_count CK3TFE
 print_game_titles_count HOI4
 print_game_titles_count HOI4TGW
 print_game_titles_count IR
+print_game_titles_count IR_AoE
 
 echo ""
 echo "Names: ${NAMES_COUNT}"

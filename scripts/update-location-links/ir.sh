@@ -1,8 +1,6 @@
 #!/bin/bash
 
-STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
-STEAM_GAMES_DIR="${STEAM_APPS_DIR}/common"
-
+VANILLA_FILES_DIR="$(pwd)/vanilla"
 LOCATIONS_FILE="locations.xml"
 
 function mapNameToLanguage() {
@@ -82,4 +80,5 @@ function getProvinces() {
     done
 }
 
-getProvinces "IR" "${STEAM_GAMES_DIR}/ImperatorRome/game/localization/english/provincenames_l_english.yml" "ir_provinces.txt"
+getProvinces "IR"       "${VANILLA_FILES_DIR}/ir_province_names.yml"    "ir_provinces.txt"
+getProvinces "IR_AoE"   "${VANILLA_FILES_DIR}/iraoe_province_names.yml" "iraoe_provinces.txt"

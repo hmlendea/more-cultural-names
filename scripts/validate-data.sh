@@ -23,6 +23,7 @@ CK3IBL_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt"
 CK3MBP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
 CK3TFE_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt"
 IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
+IR_AoE_VANILLA_FILE="${VANILLA_FILES_DIR}/iraoe_province_names.yml"
 
 CK3_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/1158310"
 
@@ -158,6 +159,36 @@ function checkDefaultCk3Localisations() {
                                     grep "^ *[ekdcb]_" "${LOCALISATIONS_FILE}" | \
                                     grep -v "_adj:" | \
                                     sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
+                                    sed -e 's/= */=/g' -e 's/ *$//g'
+                                ) | \
+                            awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
+    done
+}
+
+function checkDefaultIrLocalisations() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_FILE="${2}"
+
+    [ ! -f "${LOCALISATIONS_FILE}" ] && return
+
+    for GAMEID_DEFINITION in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/^ *//g' |
+                            sort
+                        ) <( \
+                            awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
+                                <(getGameIds "${GAME_ID}") \
+                                <( \
+                                    tac "${LOCALISATIONS_FILE}" "${IR_VANILLA_FILE}" | \
+                                    grep "^ *PROV" | \
+                                    grep -v "_[A-Za-z_-]*:" | \
+                                    awk '!x[substr($0,0,9)]++' | \
+                                    sed 's/^ *PROV\([0-9]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     sed -e 's/= */=/g' -e 's/ *$//g'
                                 ) | \
                             awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
@@ -318,7 +349,7 @@ done
 # Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
-# Make sure all CK titles are defined and exist in the game
+# Make sure all titles are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_FILE}"
 checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_FILE}"
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_FILE}"
@@ -331,6 +362,7 @@ checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 validateHoi4Parentage "HOI4"
 validateHoi4Parentage "HOI4TGW"
 
+# Validate default localisations
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE}"
@@ -341,27 +373,5 @@ checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_SPECIAL_LOCALISATION_
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
-
-# Validate default localisations for ImperatorRome
-if [ -f "${IR_VANILLA_FILE}" ]; then
-    for GAMEID_DEFINITION in $(diff \
-                        <( \
-                            grep "GameId game=\"IR\"" "${LOCATIONS_FILE}" | \
-                            sed 's/^ *//g' |
-                            sort
-                        ) <( \
-                            awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
-                                <(getGameIds "IR") \
-                                <( \
-                                    grep "^ *PROV" "${IR_VANILLA_FILE}" | \
-                                    grep -v "_[A-Za-z_-]*:" | \
-                                    sed 's/^ *PROV\([0-9]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
-                                    sed -e 's/= */=/g' -e 's/ *$//g'
-                                ) | \
-                            awk -F"=" '{print "<GameId game=\"IR\">"$1"</GameId> <!-- "$2" -->"}' | \
-                            sort | uniq \
-                        ) | \
-                        grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
-        echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
-    done
-fi
+checkDefaultIrLocalisations  "IR"       "${IR_VANILLA_FILE}"
+checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}"

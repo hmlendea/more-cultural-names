@@ -96,7 +96,7 @@ function normalise-name() {
     local P_LANGUAGE="[Ll]anguage\|[Ll][eií][mn][g]*[buv]*[ao]"
     local P_MOUNTAIN="[GgHh][ao]ra\|[Mm][ouū][u]*nt[aei]*\([gi]*[ln][e]*\)*\|[Pp]arvata[ṁ]*\|San"
     local P_MONASTERY="[Kk]lo[o]*ster\(is\)*\|[Mm][ăo]n[aăe]st[eèi]r\(e[a]*\|i\|io[a]*\|o\|y\)*\|[Mm]onaĥejo\|[Mm]osteiro\|[Ss]hu[u]*dōin"
-    local P_MUNICIPIUM="[Mm]uni[t]*[cs]ip[’]*\(alit[’]*\(as\|et’i\|y\)\|i[ou][lm]*\)\|O[bp]\(č\|s[hj]\|š\)[t]*ina"
+    local P_MUNICIPIUM="[Bb]elediyesi\|Chibang Chach’ije\|Đô thị tự trị\|[Kk]ong-[Ss]iā\|[Kk]otamadya\|[Mm]eūang\|[Mm][y]*un[i]*[t]*[cs]ip[’]*\([aā]*l[i]*[dtṭ][’]*\(a[ds]\|é\|et’i\|[iī]\|y\)\|i[ou][lm]*\)\|[Nn]agara [Ss]abhāva\|[Nn]a[gk][a]*r[aā]\(pālika\|ṭci\)\|O[bp]\(č\|s[hj]\|š\)[t]*ina\|[Pp]ašvaldība\|[Pp][a]*urasabh[āe]\|[Ss]avivaldybė"
     local P_NATIONAL_PARK="[Nn]ational [Pp]ark\|Par[cq]u[el] Na[ctț]ional\|[Vv]ườn [Qq]uốc"
     local P_OASIS="[aā]l-[Ww]āḥāt\|[OoÓóŌō][syẏ]*[aáāeē][sz][h]*[aiīeėē][ans]*[uŭ]*\|Oūh Aēy Sít"
     local P_PENINSULA="[Bb][aá]n[ ]*[dđ][aả]o\|[Dd]uoninsulo\|[Hh]antō\|[Nn]iemimaa\|[Pp][ao][luŭ][ouv]ostr[ao][uŭv]\|[Pp][eé]n[iíì][n]*[t]*[csz][ou][lł][aāe]\|Poàn-tó\|[Ss]emenanjung\|[Yy]arim [Oo]roli\|[Yy]arımadası\|[Žž]arym [Aa]raly"
@@ -154,7 +154,8 @@ function normalise-name() {
             -e 's/ańĭskŭ językŭ$/a/g' \
             -e 's/ans[’]*ka\(ja\)* mova$/a/g' \
             -e 's/as \(vilāj[as]\|mintaka\|meģe\)$/a/g' \
-            -e 's/es \('"${P_MONASTERY}"'\)$/a/g' \
+            -e 's/es \('"${P_MONASTERY}\|${P_MUNICIPIUM}"'\)$/a/g' \
+            -e 's/ės \('"${P_MUNICIPIUM}"'\)$/ė/g' \
             -e 's/bàn$//g' \
             -e 's/halvøen$//g' \
             -e 's/hantou$//g' \
@@ -278,9 +279,10 @@ function normalise-name() {
 function nameToLocationId() {
     local NAME="${1}"
 
-    echo "${NAME}" | \
-        sed -e 's/\([ČčŠšŽž]\)/\1h/g' | \
-        sed -e 's/[Ǧǧ]/j/g' | \
+    echo "${NAME}" | sed \
+            -e 's/æ/ae/g' \
+            -e 's/\([ČčŠšŽž]\)/\1h/g' \
+            -e 's/[Ǧǧ]/j/g' | \
         iconv -f utf8 -t ascii//TRANSLIT | \
         sed 's/-le-/_le_/g' | \
         sed 's/ /_/g' | sed "s/\'//g" | \
