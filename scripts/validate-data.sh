@@ -254,9 +254,21 @@ grep "<GameId game=" *.xml | \
 grep -Pzo "\n *<Name language=\"([^\"]*)\" value=\"([^\"]*)\" />((\n *<Name l.*)*)\n *<Name language=\"\1\" value=\"\2\" />.*\n" *.xml
 
 # Find redundant names
+findRedundantNames "Bulgarian" "Bulgarian_Old"
+findRedundantNames "Castilian" "Castilian_Old"
+findRedundantNames "Czech" "Czech_Medieval"
 findRedundantNames "French" "French_Old"
 findRedundantNames "German" "German_Middle_High"
 findRedundantNames "Latin_Old" "Latin_Classical"
+findRedundantNames "Lithuanian" "Lithuanian_Medieval"
+findRedundantNames "Portuguese" "Portuguese_Old"
+findRedundantNames "Russian" "Russian_Medieval"
+findRedundantNames "SerboCroatian" "Serbian_Medieval"
+findRedundantNames "SerboCroatian" "Serbian"
+findRedundantNames "SerboCroatian" "SerboCroatian_Medieval"
+findRedundantNames "SerboCroatian" "Slovene_Medieval"
+findRedundantNames "Slovak" "Slovak_Medieval"
+findRedundantNames "Slovene" "Slovene_Medieval"
 
 # Find empty definitions
 grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
