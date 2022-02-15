@@ -80,6 +80,7 @@ function normalise-name() {
                     sed 's/\s*$//g')
 
     local P_ANCIENT="[Aa]ncient\|Antiikin [Aa]nti[i]*[ck]\(a\|in\)*\|Ar[c]*ha[ií][ac]"
+    local P_CANTON="[CcKk][’]*[h]*[aā][i]*nt[’]*[aoóuū]n\(i\|o\|s\|u[l]*\)*"
     local P_CASTLE="[CcGgKk]a[i]*[sz][lt][ei]*[aál][il]*[eoulmn]*[a]*\|[Cc]h[aâ]teau\|Dvorac\|[Kk]alesi\|Zam[ao][gk][y]*"
     local P_CATHEDRAL="[CcKk]at[h]*[eé]dr[ai][kl][aeoó]*[s]*"
     local P_CITY="[CcSs]\(ee\|i\)[tṭ][tṭ]*[aàeiy]\|Nagara\|Oraș\(ul\)*\|Śahara\|Sich’i"
@@ -111,7 +112,7 @@ function normalise-name() {
 
     local P_OF="\([dl]*[aeiou]*[l]*\|gia\|of\|ng\|[Tt]a\|[Tt]o[uy]\|van\|w\)[ '\"'\"']"
 
-    local COMMON_PATTERNS="${P_ANCIENT}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_DEPARTMENT}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_HUNDRED}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_P_LANGUAGE}\|${P_MONASTERY}\|${P_MOUNTAIN}\|${P_MUNICIPIUM}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TEMPLE}\|${P_TOWNSHIP}"
+    local COMMON_PATTERNS="${P_ANCIENT}\|${P_CANTON}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_DEPARTMENT}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_HUNDRED}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_P_LANGUAGE}\|${P_MONASTERY}\|${P_MOUNTAIN}\|${P_MUNICIPIUM}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TEMPLE}\|${P_TOWNSHIP}"
 
     local TRANSLITERATED_NAME=$(transliterate-name "${LANGUAGE_CODE}" "${NAME}")
     local NORMALISED_NAME=$(echo "${TRANSLITERATED_NAME}" | \
@@ -154,17 +155,17 @@ function normalise-name() {
             -e 's/ańĭskŭ językŭ$/a/g' \
             -e 's/ans[’]*ka\(ja\)* mova$/a/g' \
             -e 's/as \(vilāj[as]\|mintaka\|meģe\)$/a/g' \
-            -e 's/es \('"${P_MONASTERY}\|${P_MUNICIPIUM}"'\)$/a/g' \
-            -e 's/ės \('"${P_MUNICIPIUM}"'\)$/ė/g' \
             -e 's/bàn$//g' \
+            -e 's/es \('"${P_CANTON}\|${P_MONASTERY}\|${P_MUNICIPIUM}"'\)$/a/g' \
+            -e 's/ės \('"${P_MUNICIPIUM}"'\)$/ė/g' \
             -e 's/halvøen$//g' \
             -e 's/hantou$//g' \
             -e 's/hú$//g' \
-            -e 's/i[ -]\('"${P_DEPARTMENT}"'félsziget\|[Gg]et\|lään\|ringkond\)$//g' \
+            -e 's/i[ -]\('"${P_DEPARTMENT}"'\|félsziget\|[Gg]et\|lään\|ringkond\)$//g' \
             -e 's/iin tsöl$//g' \
             -e 's/in \('"${P_HUNDRED}\|${P_PROVINCE}"'\|autiomaa\|lääni\|linna\|niemimaa\)$//g' \
             -e 's/īn Ardhadvīpaya$//g' \
-            -e 's/is \([Mm]edie\|[Tt]sikhesimagre\)$/i/g' \
+            -e 's/is \('"${P_CANTON}"'\|[Mm]edie\|[Tt]sikhesimagre\)$/i/g' \
             -e 's/janski jazik$/ja/g' \
             -e 's/jas \('"${P_HUNDRED}\|${P_PROVINCE}"'\|grāfiste\|nome\)$/ja/g' \
             -e 's/jos \('"${P_OASIS}\|${P_PROVINCE}"'\|nomas\|pusiasalis\)$/ja/g' \

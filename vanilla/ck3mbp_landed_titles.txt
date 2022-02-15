@@ -62865,6 +62865,24 @@ e_arabia = {
 		}
 	}
 	
+	k_medina = {
+		color = { 100 225 25 }
+		color2 = { 255 255 255 }
+		
+		capital = c_medina
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					NOT = { culture = culture:egyptian }
+					culture = { has_cultural_pillar = heritage_arabic }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+	}
+
+
 	k_israel = {
 		color = { 20 138 255 }
 
