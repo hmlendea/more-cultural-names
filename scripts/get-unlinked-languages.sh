@@ -5,8 +5,8 @@ function getCk2Cultures() {
     local GAME_ID="${1}" && shift
     local CULTURES_DIR="${*}"
 
-    for CULTURE_ID in $(grep -P '^\s[a-z_]* = {' "${CULTURES_DIR}/"* | \
-                        grep -v "\(alternate_start\|graphical_cultures\|hip_culture\|mercenary_names\)" | \
+    for CULTURE_ID in $(grep -Pa '^\s[a-z_]* = {' "${CULTURES_DIR}/"*.txt | \
+                        grep -va "\(alternate_start\|graphical_cultures\|hip_culture\|mercenary_names\)" | \
                         awk -F":" '{print $2}' | \
                         sed 's/^\s*//g' | \
                         awk -F" " '{print $1}' | \
