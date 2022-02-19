@@ -1,22 +1,5 @@
 #!/bin/bash
-
-STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
-STEAM_GAMES_DIR="${STEAM_APPS_DIR}/common"
-STEAM_WORKSHOP_DIR="${STEAM_APPS_DIR}/workshop"
-
-HOI4_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/394360"
-
-HOI4_DIR="${STEAM_GAMES_DIR}/Hearts of Iron IV"
-HOI4_STATES_DIR="${HOI4_DIR}/history/states"
-HOI4_LOCALISATIONS_DIR="${HOI4_DIR}/localisation/english"
-
-HOI4TGW_DIR="${HOI4_WORKSHOP_MODS_DIR}/699709023"
-HOI4TGW_STATES_DIR="${HOI4TGW_DIR}/history/states"
-HOI4TGW_LOCALISATIONS_DIR="${HOI4TGW_DIR}/localisation"
-
-LOCATIONS_FILE="$(pwd)/locations.xml"
-OUTPUT_FILES_DIR="$(pwd)"
-
+source "scripts/common/paths.sh"
 source "scripts/common/name_normalisation.sh"
 
 function getCityName() {
@@ -84,14 +67,14 @@ function getStates() {
             sed 's/\(^\s*\|\s*$\)//g')
 
         for PROVINCE_ID in ${PROVINCE_LIST}; do
-            [[ -n "${PROVINCE_LIST// }" ]] && echo "${PROVINCE_ID}=${STATE_ID}" >> "${OUTPUT_FILES_DIR}/${GAME_ID}_parents.txt"
+            [[ -n "${PROVINCE_LIST// }" ]] && echo "${PROVINCE_ID}=${STATE_ID}" >> "${REPO_DIR}/${GAME_ID}_parents.txt"
         done
         
         #echo "State #${STATE_ID}: Name='${STATE_NAME}'"
         if $(cat "${LOCATIONS_FILE}" | grep "<GameId game=\"${GAME_ID}\"" | grep "type=\"State\"" | grep -q ">${STATE_ID}<"); then
             sed -i 's/\(^\s*<GameId game=\"'"${GAME_ID}"'\" type=\"State\">'"${STATE_ID}"'<\/GameId>\).*/\1 <!-- '"${STATE_NAME}"' -->/g' "${LOCATIONS_FILE}"
         else
-            echo "      <GameId game=\"${GAME_ID}\" type=\"State\">${STATE_ID}</GameId> <!-- ${STATE_NAME} -->" >> "${OUTPUT_FILES_DIR}/${GAME_ID}_states.txt"
+            echo "      <GameId game=\"${GAME_ID}\" type=\"State\">${STATE_ID}</GameId> <!-- ${STATE_NAME} -->" >> "${REPO_DIR}/${GAME_ID}_states.txt"
 
             local LOCATION_ID=$(nameToLocationId "${STATE_NAME}")
 
@@ -111,14 +94,14 @@ function getCities() {
     for CITY_ID in $(find . -name "*victory_points_l_english.yml" | xargs cat | \
                         sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
                         sort -h | uniq); do
-        local STATE_ID=$(grep "^${CITY_ID}=" "${OUTPUT_FILES_DIR}/${GAME_ID}_parents.txt" | awk -F = '{print $2}')
+        local STATE_ID=$(grep "^${CITY_ID}=" "${REPO_DIR}/${GAME_ID}_parents.txt" | awk -F = '{print $2}')
         local CITY_NAME=$(getCityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
 
         #echo "Province #${CITY_ID}: State=#${STATE_ID} Name='${CITY_NAME}'"
         if $(cat "${LOCATIONS_FILE}" | grep "<GameId game=\"${GAME_ID}\"" | grep "type=\"City\"" | grep -q ">${CITY_ID}<"); then
             sed -i 's/\(^\s*<GameId game=\"'"${GAME_ID}"'\" type=\"City\"\)\( parent=\"[^\"]*\"\)*>'"${CITY_ID}"'<.*/\1 parent=\"'"${STATE_ID}"'\">'"${CITY_ID}"'<\/GameId> <!-- '"${CITY_NAME}"' -->/g' "${LOCATIONS_FILE}"
         else
-            echo "      <GameId game=\"${GAME_ID}\" type=\"City\" parent=\"${STATE_ID}\">${CITY_ID}</GameId> <!-- ${CITY_NAME} -->" >> "${OUTPUT_FILES_DIR}/${GAME_ID}_cities.txt"
+            echo "      <GameId game=\"${GAME_ID}\" type=\"City\" parent=\"${STATE_ID}\">${CITY_ID}</GameId> <!-- ${CITY_NAME} -->" >> "${REPO_DIR}/${GAME_ID}_cities.txt"
         
             local LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
 

@@ -1,12 +1,9 @@
 #!/bin/bash
+source "scripts/common/paths.sh"
 
-CK3_VANILLA_LANDED_TITLES_FILE="/home/horatiu/.games/Steam/common/Crusader Kings III/game/common/landed_titles/00_landed_titles.txt"
-CK3_VANILLA_LOCALISATION_FILE="/home/horatiu/.games/Steam/common/Crusader Kings III/game/localization/english/titles_l_english.yml"
-CK3_VANILLA_CULTURAL_LOCALISATION_FILE="/home/horatiu/.games/Steam/common/Crusader Kings III/game/localization/english/titles_cultural_names_l_english.yml"
+OUTPUT_FILE="${REPO_DIR}/3o.txt"
 
-OUTPUT_FILE="3o.txt"
-
-cp "${CK3_VANILLA_LANDED_TITLES_FILE}" "${OUTPUT_FILE}"
+cp "${CK3_VANILLA_FILE}" "${OUTPUT_FILE}"
 sed -i 's/\r//g' "${OUTPUT_FILE}"
 sed -i 's/\t/    /g' "${OUTPUT_FILE}"
 

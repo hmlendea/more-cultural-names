@@ -1,42 +1,5 @@
 #!/bin/bash
-
-VANILLA_FILES_DIR="$(pwd)/vanilla"
-
-LANGUAGES_FILE="languages.xml"
-LOCATIONS_FILE="locations.xml"
-TITLES_FILE="titles.xml"
-
-if [ -d "${HOME}/.games/Steam/common" ]; then
-    STEAM_APPS_DIR="${HOME}/.games/Steam"
-elif [ -d "${HOME}/.local/share/Steam/steamapps/common" ]; then
-    STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
-fi
-
-STEAM_GAMES_DIR="${STEAM_APPS_DIR}/common"
-STEAM_WORKSHOP_DIR="${STEAM_APPS_DIR}/workshop"
-
-CK2_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2_landed_titles.txt"
-CK2HIP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt"
-CK3_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3_landed_titles.txt"
-CK3ATHA_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt"
-CK3IBL_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt"
-CK3MBP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
-CK3TFE_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt"
-IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
-IR_AoE_VANILLA_FILE="${VANILLA_FILES_DIR}/iraoe_province_names.yml"
-
-CK3_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/1158310"
-
-CK3_VANILLA_LOCALISATION_FILE="${STEAM_GAMES_DIR}/Crusader Kings III/game/localization/english/titles_l_english.yml"
-CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_baronies_l_english.yml"
-CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_counties_l_english.yml"
-CK3ATHA_VANILLA_DUCHIES_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_duchies_l_english.yml"
-CK3ATHA_VANILLA_KINGDOMS_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_kingdoms_l_english.yml"
-CK3ATHA_VANILLA_EMPIRES_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_empires_l_english.yml"
-CK3ATHA_VANILLA_SPECIAL_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2618149514/localization/english/ATHA_titles_special_l_english.yml"
-CK3IBL_VANILLA_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2416949291/localization/english/replace/ibl_titles_l_english.yml"
-CK3MBP_VANILLA_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2216670956/localization/english/titles_l_english.yml"
-CK3TFE_VANILLA_LOCALISATION_FILE="${CK3_WORKSHOP_MODS_DIR}/2243307127/localization/english/titles_l_english.yml"
+source "scripts/common/paths.sh"
 
 LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"

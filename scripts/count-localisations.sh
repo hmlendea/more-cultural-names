@@ -1,7 +1,5 @@
 #!/bin/bash
-
-LANGUAGES_FILE="languages.xml"
-LOCATIONS_FILE="locations.xml"
+source "scripts/common/paths.sh"
 
 NAMES_COUNT=$(grep -c "Name language" "${LOCATIONS_FILE}")
 LOCATIONS_COUNT=$(grep -c "<Id>" "${LOCATIONS_FILE}")

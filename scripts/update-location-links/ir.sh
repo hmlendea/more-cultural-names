@@ -1,7 +1,5 @@
 #!/bin/bash
-
-VANILLA_FILES_DIR="$(pwd)/vanilla"
-LOCATIONS_FILE="locations.xml"
+source "scripts/common/paths.sh"
 
 function mapNameToLanguage() {
     local CULTURE="${1}"

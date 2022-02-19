@@ -1,28 +1,5 @@
 #!/bin/bash
-
-VANILLA_FILES_DIR="$(pwd)/vanilla"
-
-if [ ! -d "${VANILLA_FILES_DIR}" ]; then
-    echo "ERROR: The '${VANILLA_FILES_DIR}' directory does not exist!"
-    exit 1
-fi
-
-STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
-STEAM_GAMES_DIR="${STEAM_APPS_DIR}/common"
-STEAM_WORKSHOP_DIR="${STEAM_APPS_DIR}/workshop"
-STEAM_WORKSHOP_CK3_DIR="${STEAM_WORKSHOP_DIR}/content/1158310"
-STEAM_WORKSHOP_IR_DIR="${STEAM_WORKSHOP_DIR}/content/859580"
-CK2_LOCAL_MODS_DIR="${HOME}/.paradoxinteractive/Crusader Kings II/mod"
-
-CK2_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2_landed_titles.txt"
-CK2HIP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt"
-CK3_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3_landed_titles.txt"
-CK3ATHA_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt"
-CK3IBL_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt"
-CK3MBP_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
-CK3TFE_VANILLA_FILE="${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt"
-IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
-IR_AoE_VANILLA_FILE="${VANILLA_FILES_DIR}/iraoe_province_names.yml"
+source "scripts/common/paths.sh"
 
 function update-vanilla-file() {
     local SOURCE_FILE="${1}"

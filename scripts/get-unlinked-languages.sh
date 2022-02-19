@@ -1,43 +1,5 @@
 #!/bin/bash
-LANGUAGES_FILE="languages.xml"
-
-if [ -d "${HOME}/.games/Steam/common" ]; then
-    STEAM_APPS_DIR="${HOME}/.games/Steam"
-elif [ -d "${HOME}/.local/share/Steam/steamapps/common" ]; then
-    STEAM_APPS_DIR="${HOME}/.local/share/Steam/steamapps"
-fi
-
-STEAM_GAMES_DIR="${STEAM_APPS_DIR}/common"
-STEAM_WORKSHOP_DIR="${STEAM_APPS_DIR}/workshop"
-
-CK3_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/1158310"
-HOI4_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/394360"
-IR_WORKSHOP_MODS_DIR="${STEAM_WORKSHOP_DIR}/content/859580"
-
-CK2_DIR="${STEAM_GAMES_DIR}/Crusader Kings II"
-CK2_CULTURES_DIR="${CK2_DIR}/common/cultures"
-CK2_MODS_DIR="${HOME}/.paradoxinteractive/Crusader Kings II/mod"
-CK2HIP_CULTURES_DIR="${CK2_MODS_DIR}/Historical_Immersion_Project/common/cultures"
-
-CK3_DIR="${STEAM_GAMES_DIR}/Crusader Kings III"
-CK3_CULTURES_DIR="${CK3_DIR}/game/common/culture/cultures"
-CK3ATHA_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2618149514/common/culture/cultures"
-CK3IBL_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2416949291/common/culture/cultures"
-CK3MBP_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2216670956/common/culture/cultures"
-CK3TFE_CULTURES_DIR="${CK3_WORKSHOP_MODS_DIR}/2243307127/common/culture/cultures"
-
-HOI4_DIR="${STEAM_GAMES_DIR}/Hearts of Iron IV"
-HOI4_TAGS_DIR="${HOI4_DIR}/common/country_tags"
-HOI4_LOCALISATIONS_DIR="${HOI4_DIR}/localisation/english"
-HOI4TGW_DIR="${HOI4_WORKSHOP_MODS_DIR}/699709023"
-HOI4TGW_TAGS_DIR="${HOI4TGW_DIR}/common/country_tags"
-HOI4TGW_LOCALISATIONS_DIR="${HOI4TGW_DIR}/localisation"
-
-IR_DIR="${STEAM_GAMES_DIR}/ImperatorRome"
-IR_CULTURES_DIR="${IR_DIR}/game/common/cultures"
-
-IR_AoE_DIR="${IR_WORKSHOP_MODS_DIR}/2578689167"
-IR_AoE_CULTURES_DIR="${IR_AoE_DIR}/common/cultures"
+source "scripts/common/paths.sh"
 
 echo "Crusader Kings 2:"
 
