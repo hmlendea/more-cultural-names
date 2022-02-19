@@ -31,6 +31,10 @@ CK2HIP_DIR="${CK2_LOCAL_MODS_DIR}/Historical_Immersion_Project"
 CK2HIP_CULTURES_DIR="${CK2HIP_DIR}/common/cultures"
 CK2HIP_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt"
 
+CK2TWK_DIR="${CK2_LOCAL_MODS_DIR}/britannia"
+CK2TWK_CULTURES_DIR="${CK2TWK_DIR}/common/cultures"
+CK2TWK_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2twk_landed_titles.txt"
+
 CK3_DIR="${STEAM_GAMES_DIR}/Crusader Kings III"
 CK3_CULTURES_DIR="${CK3_DIR}/game/common/culture/cultures"
 CK3_LOCALISATIONS_DIR="${CK3_DIR}/game/localization/english"
@@ -79,8 +83,10 @@ HOI4TGW_LOCALISATIONS_DIR="${HOI4TGW_DIR}/localisation"
 
 IR_DIR="${STEAM_GAMES_DIR}/ImperatorRome"
 IR_CULTURES_DIR="${IR_DIR}/game/common/cultures"
+IR_LOCALISATIONS_DIR="${IR_DIR}/game/localization/english"
 IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
 
 IR_AoE_DIR="${STEAM_WORKSHOP_IR_DIR}/2578689167"
 IR_AoE_CULTURES_DIR="${IR_AoE_DIR}/common/cultures"
+IR_AoE_LOCALISATIONS_DIR="${IR_AoE_DIR}/localization/english"
 IR_AoE_VANILLA_FILE="${VANILLA_FILES_DIR}/iraoe_province_names.yml"
