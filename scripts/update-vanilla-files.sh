@@ -37,26 +37,26 @@ function update-vanilla-files() {
 
 update-vanilla-file \
     "${STEAM_GAMES_DIR}/Crusader Kings II/common/landed_titles/landed_titles.txt" \
-    "${CK2_VANILLA_FILE}"
+    "${CK2_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
     "${CK2_LOCAL_MODS_DIR}/Historical_Immersion_Project/common/landed_titles/swmh_landed_titles.txt"\
-    "${CK2HIP_VANILLA_FILE}"
+    "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
     "${STEAM_GAMES_DIR}/Crusader Kings III/game/common/landed_titles/00_landed_titles.txt" \
-    "${CK3_VANILLA_FILE}"
+    "${CK3_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-files \
     "${STEAM_WORKSHOP_CK3_DIR}/2618149514/common/landed_titles" \
-    "${CK3ATHA_VANILLA_FILE}"
+    "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
     "${STEAM_WORKSHOP_CK3_DIR}/2416949291/common/landed_titles/00_landed_titles.txt" \
-    "${CK3IBL_VANILLA_FILE}"
+    "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
     "${STEAM_WORKSHOP_CK3_DIR}/2216670956/common/landed_titles/00_landed_titles.txt" \
-    "${CK3MBP_VANILLA_FILE}" \
+    "${CK3MBP_VANILLA_LANDED_TITLES_FILE}" \
     "https://raw.githubusercontent.com/Leviathonlx/MoreBookmarks-Plus/main/common/landed_titles/00_landed_titles.txt"
 update-vanilla-file \
     "${STEAM_WORKSHOP_CK3_DIR}/2243307127/common/landed_titles/00_landed_titles.txt" \
-    "${CK3TFE_VANILLA_FILE}"
+    "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
     "${STEAM_GAMES_DIR}/ImperatorRome/game/localization/english/provincenames_l_english.yml" \
     "${IR_VANILLA_FILE}"

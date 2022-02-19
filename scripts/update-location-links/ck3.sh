@@ -3,7 +3,7 @@ source "scripts/common/paths.sh"
 
 OUTPUT_FILE="${REPO_DIR}/3o.txt"
 
-cp "${CK3_VANILLA_FILE}" "${OUTPUT_FILE}"
+cp "${CK3_VANILLA_LANDED_TITLES_FILE}" "${OUTPUT_FILE}"
 sed -i 's/\r//g' "${OUTPUT_FILE}"
 sed -i 's/\t/    /g' "${OUTPUT_FILE}"
 

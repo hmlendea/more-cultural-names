@@ -440,13 +440,13 @@ done
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
 # Make sure all titles are defined and exist in the game
-checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_FILE}"
-checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_FILE}"
+checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 
 validateHoi4Parentage "HOI4"
