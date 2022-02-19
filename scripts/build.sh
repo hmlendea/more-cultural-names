@@ -2,6 +2,7 @@
 source "scripts/common/paths.sh"
 
 BUILD_VERSION="${1}"
+CHECKSUM=$(cat "${REPO_DIR}"/*.xml "${REPO_DIR}/.builder/version.txt" | sha512sum | awk '{print $1}')
 
 if [ -z "${BUILD_VERSION}" ] || ! [[ ${BUILD_VERSION} =~ ^[0-9]+$ ]]; then
     BUILD_VERSION=0
@@ -31,10 +32,25 @@ function build-edition {
     local GAME_VERSION="${1}" && shift
 
     local PACKAGE_NAME="mcn_${GAME}_${VERSION}"
+    local EDITION_DIR="${OUTPUT_DIR}/${GAME}"
+    local EDITION_PACKAGE="${OUTPUT_DIR}/${PACKAGE_NAME}.zip"
+    local EDITION_CHECKSUM_FILE="${EDITION_DIR}/mcn.sha512"
     local ORIGINAL_WORKING_DIRECTORY=$(pwd)
 
-    [ -d "${OUTPUT_DIR}/${GAME}" ] && rm -rf "${OUTPUT_DIR:?}/${GAME:?}"
-    [ -f "${OUTPUT_DIR}/${PACKAGE_NAME}.zip" ] && rm "${OUTPUT_DIR}/${PACKAGE_NAME}.zip"
+    if [ -d "${EDITION_DIR}" ] \
+    || [ -f "${EDITION_PACKAGE}" ]; then
+        local EDITION_CHECKSUM=""
+        [ -f "${EDITION_CHECKSUM_FILE}" ] && EDITION_CHECKSUM=$(cat "${EDITION_CHECKSUM_FILE}")
+
+        if [[ "${EDITION_CHECKSUM}" == "${CHECKSUM}" ]]; then
+            echo "   > INFO: The ${GAME} edition was already built. Skipping..."
+            return
+        else
+            [ -d "${EDITION_DIR}" ] && rm -rf "${OUTPUT_DIR:?}/${GAME:?}"
+            [ -f "${EDITION_PACKAGE}" ] && rm "${EDITION_PACKAGE}"
+            [ -f "${EDITION_CHECKSUM_FILE}" ] && rm "${EDITION_CHECKSUM_FILE}"
+        fi
+    fi
 
     cd "${REPO_DIR}"
     "${REPO_DIR}/.builder/MoreCulturalNamesBuilder" \
@@ -45,20 +61,22 @@ function build-edition {
         --id "${ID}" --name "${NAME}" --ver "${VERSION}" \
         --out "${OUTPUT_DIR}" "$@"
 
-    if [ ! -d "${OUTPUT_DIR}/${GAME}/" ]; then
+    if [ ! -d "${EDITION_DIR}/" ]; then
         echo "   > ERROR: Failed to build the ${GAME} edition!"
         exit 200
     fi
 
     echo "   > Copying extras..."
-    cp -rf "${EXTRAS_DIR}/${GAME}"/* "${OUTPUT_DIR}/${GAME}/"
+    cp -rf "${EXTRAS_DIR}/${GAME}"/* "${EDITION_DIR}/"
 
     echo "   > Building the package..."
-    cd "${OUTPUT_DIR}/${GAME}"
-    zip -q -r "${PACKAGE_NAME}.zip" ./*
-    mv "${PACKAGE_NAME}.zip" "${OUTPUT_DIR}/${PACKAGE_NAME}.zip"
+    cd "${EDITION_DIR}"
+    zip -q -r "${PACKAGE_NAME}.zip" "./${ID}" "./${ID}.mod"
+    mv "${PACKAGE_NAME}.zip" "${EDITION_PACKAGE}"
 
     cd "${ORIGINAL_WORKING_DIRECTORY}"
+
+    echo "${CHECKSUM}" > "${EDITION_CHECKSUM_FILE}"
 }
 
 build-edition \
