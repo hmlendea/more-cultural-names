@@ -45,22 +45,20 @@ if ${WIKIDATA_ENABLED}; then
 fi
 
 function get-name-from-geonames() {
-    LANGUAGE_CODE="${1}"
+    local LANGUAGE_CODE="${1}"
+    local NAME=""
 
-    NAME=$(echo "${GEONAMES_DATA}" | sed 's/%NL%\s*/\n/g' | \
+    echo "${GEONAMES_DATA}" | sed 's/%NL%\s*/\n/g' | \
         grep "<alternateName " | \
         grep "lang=\"${LANGUAGE_CODE}\"" | \
         sed 's/isPreferredName=\"[^\"]*\"\s*//g' | \
-        sed 's/\s*<alternateName lang=\"'"${LANGUAGE_CODE}"'\">\([^<]*\).*/\1/g')
-    
-    echo "${NAME}"
+        sed 's/\s*<alternateName lang=\"'"${LANGUAGE_CODE}"'\">\([^<]*\).*/\1/g'
 }
 
 function get-name-from-wikidata-label() {
-    LANGUAGE_CODE="${1}"
-    LABEL=$(echo "${WIKIDATA_DATA}" | jq '.entities.'"${WIKIDATA_ID}"'.labels.'"\""${LANGUAGE_CODE}"\""'.value')
-
-    echo "${LABEL}"
+    local LANGUAGE_CODE="${1}"
+    
+    echo "${WIKIDATA_DATA}" | jq '.entities.'"${WIKIDATA_ID}"'.labels.'"\""${LANGUAGE_CODE}"\""'.value'
 }
 
 function get-name-from-wikidata-sitelink() {
@@ -99,7 +97,8 @@ function isNameUsable() {
     local LANGUAGE_CODE="${1}"
     local NAME_RAW="${2}"
     local NAME=""
-    
+    local NAME_FOR_COMPARISON=""
+
     NAME=$(normalise-name "${LANGUAGE_CODE}" "${NAME_RAW}")
 
     if [ -z "${NAME}" ] || [ "${NAME}" == "null" ] || [ "${NAME}" == "Null" ]; then
@@ -166,11 +165,13 @@ function get-name-line() {
 }
 
 function get-name-line-2codes() {
-    LANGUAGE_MCN_ID="${1}"
-    LANGUAGE1_CODE="${2}"
-    LANGUAGE2_CODE="${3}"
+    local LANGUAGE_MCN_ID="${1}"
+    local LANGUAGE1_CODE="${2}"
+    local LANGUAGE2_CODE="${3}"
 
-    LANGUAGE1_NAME=$(get-name-for-language "${LANGUAGE1_CODE}")
+    local LANGUAGE1_NAME=$(get-name-for-language "${LANGUAGE1_CODE}")
+    local LANGUAGE2_NAME_RAW=""
+    local LANGUAGE2_NAME=""
 
     if [ -n "${LANGUAGE1_NAME}" ]; then
         get-name-line "${LANGUAGE_MCN_ID}" "${LANGUAGE1_CODE}"
@@ -449,7 +450,7 @@ function get-name-lines() {
 }
 
 function get-location-entry() {
-    LOCATION_ID=$(nameToLocationId "${MAIN_DEFAULT_NAME}")
+    local LOCATION_ID=$(nameToLocationId "${MAIN_DEFAULT_NAME}")
 
     echo "  <LocationEntity>"
     echo "    <Id>${LOCATION_ID}</Id>"

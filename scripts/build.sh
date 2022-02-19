@@ -1,16 +1,8 @@
 #!/bin/bash
-
-STARTDIR="$(pwd)"
-SCRIPTSDIR="${STARTDIR}/scripts"
-OUTDIR="${STARTDIR}/out"
-EXTRAS_DIR="${STARTDIR}/extras"
-VANILLA_FILES_DIR="${STARTDIR}/vanilla"
+source "scripts/common/paths.sh"
 
 BUILD_VERSION="${1}"
-
-LANGUAGES_FILE="languages.xml"
-LOCATIONS_FILE="locations.xml"
-TITLES_FILE="titles.xml"
+CHECKSUM=$(cat "${REPO_DIR}"/*.xml "${REPO_DIR}/.builder/version.txt" | sha512sum | awk '{print $1}')
 
 if [ -z "${BUILD_VERSION}" ] || ! [[ ${BUILD_VERSION} =~ ^[0-9]+$ ]]; then
     BUILD_VERSION=0
@@ -19,8 +11,8 @@ fi
 VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 
 if [[ $* != *--skip-updates* ]]; then
-    bash "${SCRIPTSDIR}/update-builder.sh"
-    bash "${SCRIPTSDIR}/update-vanilla-files.sh"
+    bash "${SCRIPTS_DIR}/update-builder.sh"
+    bash "${SCRIPTS_DIR}/update-vanilla-files.sh"
 fi
 
 if [[ $* != *--skip-validation* ]]; then
@@ -34,40 +26,57 @@ if [[ $* != *--skip-validation* ]]; then
 fi
 
 function build-edition {
-    ID="${1}" && shift
-    NAME="${1}" && shift
-    GAME="${1}" && shift
-    GAME_VERSION="${1}" && shift
+    local ID="${1}" && shift
+    local NAME="${1}" && shift
+    local GAME="${1}" && shift
+    local GAME_VERSION="${1}" && shift
 
-    PACKAGE_NAME="mcn_${GAME}_${VERSION}"
-    ORIGINAL_WORKING_DIRECTORY=$(pwd)
+    local PACKAGE_NAME="mcn_${GAME}_${VERSION}"
+    local EDITION_DIR="${OUTPUT_DIR}/${GAME}"
+    local EDITION_PACKAGE="${OUTPUT_DIR}/${PACKAGE_NAME}.zip"
+    local EDITION_CHECKSUM_FILE="${EDITION_DIR}/mcn.sha512"
+    local ORIGINAL_WORKING_DIRECTORY=$(pwd)
 
-    [ -d "${OUTDIR}/${GAME}" ] && rm -rf "${OUTDIR:?}/${GAME:?}"
-    [ -f "${OUTDIR}/${PACKAGE_NAME}.zip" ] && rm "${OUTDIR}/${PACKAGE_NAME}.zip"
+    if [ -d "${EDITION_DIR}" ] \
+    || [ -f "${EDITION_PACKAGE}" ]; then
+        local EDITION_CHECKSUM=""
+        [ -f "${EDITION_CHECKSUM_FILE}" ] && EDITION_CHECKSUM=$(cat "${EDITION_CHECKSUM_FILE}")
 
-    cd "${STARTDIR}"
-    "${STARTDIR}/.builder/MoreCulturalNamesBuilder" \
+        if [[ "${EDITION_CHECKSUM}" == "${CHECKSUM}" ]]; then
+            echo "   > INFO: The ${GAME} edition was already built. Skipping..."
+            return
+        else
+            [ -d "${EDITION_DIR}" ] && rm -rf "${OUTPUT_DIR:?}/${GAME:?}"
+            [ -f "${EDITION_PACKAGE}" ] && rm "${EDITION_PACKAGE}"
+            [ -f "${EDITION_CHECKSUM_FILE}" ] && rm "${EDITION_CHECKSUM_FILE}"
+        fi
+    fi
+
+    cd "${REPO_DIR}"
+    "${REPO_DIR}/.builder/MoreCulturalNamesBuilder" \
         --lang "${LANGUAGES_FILE}" \
         --loc "${LOCATIONS_FILE}" \
         --titles "${TITLES_FILE}" \
         --game "${GAME}" --game-version "${GAME_VERSION}" \
         --id "${ID}" --name "${NAME}" --ver "${VERSION}" \
-        --out "${OUTDIR}" "$@"
+        --out "${OUTPUT_DIR}" "$@"
 
-    if [ ! -d "${OUTDIR}/${GAME}/" ]; then
+    if [ ! -d "${EDITION_DIR}/" ]; then
         echo "   > ERROR: Failed to build the ${GAME} edition!"
         exit 200
     fi
 
     echo "   > Copying extras..."
-    cp -rf "${EXTRAS_DIR}/${GAME}"/* "${OUTDIR}/${GAME}/"
+    cp -rf "${EXTRAS_DIR}/${GAME}"/* "${EDITION_DIR}/"
 
     echo "   > Building the package..."
-    cd "${OUTDIR}/${GAME}"
-    zip -q -r "${PACKAGE_NAME}.zip" ./*
-    mv "${PACKAGE_NAME}.zip" "${OUTDIR}/${PACKAGE_NAME}.zip"
+    cd "${EDITION_DIR}"
+    zip -q -r "${PACKAGE_NAME}.zip" "./${ID}" "./${ID}.mod"
+    mv "${PACKAGE_NAME}.zip" "${EDITION_PACKAGE}"
 
     cd "${ORIGINAL_WORKING_DIRECTORY}"
+
+    echo "${CHECKSUM}" > "${EDITION_CHECKSUM_FILE}"
 }
 
 build-edition \
@@ -122,8 +131,8 @@ build-edition \
     "aoe-more-cultural-names" "Ashes of Empire: More Cultural Names" \
     "IR_AoE" "2.0.*"
 
-cd "${STARTDIR}"
-bash "${STARTDIR}/scripts/count-localisations.sh"
+cd "${REPO_DIR}"
+bash "${REPO_DIR}/scripts/count-localisations.sh"
 
 echo ""
 echo "Mod version: ${VERSION}"
