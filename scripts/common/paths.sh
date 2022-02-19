@@ -1,9 +1,9 @@
 #!/bin/bash
 
 REPO_DIR="$(pwd)"
-SCRIPTS_DIR="${STARTDIR}/scripts"
-OUTPUT_DIR="${STARTDIR}/out"
-EXTRAS_DIR="${STARTDIR}/extras"
+SCRIPTS_DIR="${REPO_DIR}/scripts"
+OUTPUT_DIR="${REPO_DIR}/out"
+EXTRAS_DIR="${REPO_DIR}/extras"
 VANILLA_FILES_DIR="${REPO_DIR}/vanilla"
 
 LANGUAGES_FILE="${REPO_DIR}/languages.xml"
