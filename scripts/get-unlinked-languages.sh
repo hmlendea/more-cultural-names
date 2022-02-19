@@ -83,7 +83,7 @@ function getIrCultures() {
     local CULTURE_FILE_JSON=""
     local CULTURE_GROUP_ID=""
 
-    for CULTURE_FILE_NAME in $(ls "${CULTURES_DIR}/"*.txt); do
+    for CULTURE_FILE_NAME in $(find "${CULTURES_DIR}" -name "*.txt"); do
         CULTURE_FILE_JSON=$(sed 's/\r*//g' "${CULTURE_FILE_NAME}" | \
             sed '1s/^\xEF\xBB\xBF//' | \
             sed 's/#.*$//g' | \
