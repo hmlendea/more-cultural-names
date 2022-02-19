@@ -34,13 +34,15 @@ function checkForMissingCkLocationLinks() {
                         ) | \
                         grep "^>" | sed 's/^> //g'); do
         LOCATION_ID=${TITLE_ID:2}
-        LOCATION_ID_FOR_SEARCH=$(echo "${LOCATION_ID}" | sed 's/[_-]//g')
+        LOCATION_ID_FOR_SEARCH=$(echo "${LOCATION_ID}" | sed \
+            -e 's/[_-]//g' \
+            -e 's/\(baron\|castle\|church\|city\|temple\|town\)//g')
 
-        if ! $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$")&
+        if ! $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$") &&
            ! $(echo "${GAME_IDS_CK}" | sed 's/[_-]//g' | grep -Eioq "^[ekdcb]_${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME}: ${TITLE_ID} is missing"
         else
-            echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID}\" exists)"
+            echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         fi
     done
 }
@@ -179,16 +181,16 @@ function findRedundantNames() {
     local PRIMARY_LANGUAGE_ID="${1}"
     local SECONDARY_LANGUAGE_ID="${2}"
 
-    grep -Pzo "\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />\n\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\"" &
-    grep -Pzo "\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />\n\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\"" &
+    grep -Pzo "\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />\n\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\""
+    grep -Pzo "\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />\n\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\""
 }
 
 function findRedundantNamesStrict() {
     local PRIMARY_LANGUAGE_ID="${1}"
     local SECONDARY_LANGUAGE_ID="${2}"
 
-    grep -Pzo "\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />(\n\s*<Name .*)*\n\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\"" &
-    grep -Pzo "\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />(\n\s*<Name .*)*\n\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\"" &
+    grep -Pzo "\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />(\n\s*<Name .*)*\n\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\""
+    grep -Pzo "\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />(\n\s*<Name .*)*\n\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\""
 }
 
 ### Make sure locations are sorted alphabetically
@@ -443,12 +445,14 @@ grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 # Make sure all titles are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
-checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 
 validateHoi4Parentage "HOI4"
 validateHoi4Parentage "HOI4TGW"
