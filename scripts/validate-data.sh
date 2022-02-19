@@ -119,9 +119,10 @@ function checkDefaultCk3Localisations() {
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
-                                    grep "^ *[ekdcb]_" "${LOCALISATIONS_FILE}" | \
+                                    tac "${LOCALISATIONS_FILE}" | grep "^ *[ekdcb]_" | \
                                     grep -v "_adj:" | \
                                     sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
+                                    awk -F"=" '!seen[$1]++' | \
                                     sed -e 's/= */=/g' -e 's/ *$//g'
                                 ) | \
                             awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
