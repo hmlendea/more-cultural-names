@@ -1,4 +1,4 @@
-name: CI
+name: Validation
 
 on:
   pull_request:
@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  validate:
-    name: Validate
+  data:
+    name: Data
     runs-on: ubuntu-latest
 
     steps:
@@ -21,3 +21,12 @@ jobs:
               echo "${VALIDATE_DATA_OUTPUT}"
               exit 1
           fi
+  scripts:
+    name: Scripts
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Shellcheck
+        run: shopt -s globstar nullglob; shellcheck **/*.sh --severity error
