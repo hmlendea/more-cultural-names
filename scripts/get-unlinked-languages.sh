@@ -27,8 +27,8 @@ for CULTURE_ID in $(grep -P '^\s[a-z_]* = {' "${CK2HIP_CULTURES_DIR}/"* | \
 done
 
 function getCk3v14Cultures() {
-    GAME_ID="${1}" && shift
-    CULTURES_DIR="${*}"
+    local GAME_ID="${1}" && shift
+    local CULTURES_DIR="${*}"
 
     for CULTURE_ID in $(grep -P '^\t[a-z_]* = {' "${CULTURES_DIR}/"*.txt | \
                         grep -v "\(alternate_start\|graphical_cultures\|male_names\|mercenary_names\)" | \
@@ -43,8 +43,8 @@ function getCk3v14Cultures() {
 }
 
 function getCk3Cultures() {
-    GAME_ID="${1}" && shift
-    CULTURES_DIR="${*}"
+    local GAME_ID="${1}" && shift
+    local CULTURES_DIR="${*}"
 
     for CULTURE_ID in $(grep -P '^[A-Za-z_]* = {' "${CULTURES_DIR}/"*.txt | \
                         awk -F":" '{print $2}' | \
@@ -58,9 +58,10 @@ function getCk3Cultures() {
 }
 
 function getHoi4Countries() {
-    GAME_ID="${1}"
-    TAGS_DIR="${2}"
-    LOCALISATIONS_DIR="${3}"
+    local GAME_ID="${1}"
+    local TAGS_DIR="${2}"
+    local LOCALISATIONS_DIR="${3}"
+    local COUNTRY_NAME=""
 
     for TAG in $(cat "${TAGS_DIR}/"*.txt | awk -F"=" '{print $1}' | sed 's/\s*//g' | sort | uniq); do
         COUNTRY_NAME=$(grep "^\s*${TAG}:0" "${LOCALISATIONS_DIR}/"*_english.yml | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
@@ -77,8 +78,10 @@ function getHoi4Countries() {
 }
 
 function getIrCultures() {
-    GAME_ID="${1}" && shift
-    CULTURES_DIR="${*}"
+    local GAME_ID="${1}" && shift
+    local CULTURES_DIR="${*}"
+    local CULTURE_FILE_JSON=""
+    local CULTURE_GROUP_ID=""
 
     for CULTURE_FILE_NAME in $(ls "${CULTURES_DIR}/"*.txt); do
         CULTURE_FILE_JSON=$(sed 's/\r*//g' "${CULTURE_FILE_NAME}" | \

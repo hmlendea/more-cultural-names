@@ -25,13 +25,13 @@ if [[ $* != *--skip-validation* ]]; then
 fi
 
 function build-edition {
-    ID="${1}" && shift
-    NAME="${1}" && shift
-    GAME="${1}" && shift
-    GAME_VERSION="${1}" && shift
+    local ID="${1}" && shift
+    local NAME="${1}" && shift
+    local GAME="${1}" && shift
+    local GAME_VERSION="${1}" && shift
 
-    PACKAGE_NAME="mcn_${GAME}_${VERSION}"
-    ORIGINAL_WORKING_DIRECTORY=$(pwd)
+    local PACKAGE_NAME="mcn_${GAME}_${VERSION}"
+    local ORIGINAL_WORKING_DIRECTORY=$(pwd)
 
     [ -d "${OUTPUT_DIR}/${GAME}" ] && rm -rf "${OUTPUT_DIR:?}/${GAME:?}"
     [ -f "${OUTPUT_DIR}/${PACKAGE_NAME}.zip" ] && rm "${OUTPUT_DIR}/${PACKAGE_NAME}.zip"

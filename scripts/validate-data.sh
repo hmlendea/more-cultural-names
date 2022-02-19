@@ -7,7 +7,7 @@ LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g'
 GAME_IDS_CK="$(grep "<GameId game=\"CK" "${LOCATIONS_FILE}" | sed 's/^[^>]*>\([^<]*\).*/\1/g' | sort | uniq)"
 
 function getGameIds() {
-    GAME="${1}"
+    local GAME="${1}"
 
     grep "GameId game=\"${GAME}\"" "${LOCATIONS_FILE}" | \
         sed 's/[^>]*>\([^<]*\).*/\1/g' | \
@@ -15,8 +15,8 @@ function getGameIds() {
 }
 
 function checkForMissingCkLocationLinks() {
-    GAME="${1}"
-    VANILLA_FILE="${2}"
+    local GAME="${1}"
+    local VANILLA_FILE="${2}"
 
     for TITLE_ID in $(diff \
                         <(getGameIds "${GAME}") \
@@ -46,8 +46,8 @@ function checkForMissingCkLocationLinks() {
 }
 
 function checkForSurplusCkLocationLinks() {
-    GAME="${1}"
-    VANILLA_FILE="${2}"
+    local GAME="${1}"
+    local VANILLA_FILE="${2}"
 
     for TITLE_ID in $(diff \
                         <( \
@@ -72,8 +72,8 @@ function checkForSurplusCkLocationLinks() {
 }
 
 function checkForSurplusIrLocationLinks() {
-    GAME="${1}"
-    VANILLA_FILE="${2}"
+    local GAME="${1}"
+    local VANILLA_FILE="${2}"
 
     for TITLE_ID in $(diff \
                         <( \

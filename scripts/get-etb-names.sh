@@ -4,14 +4,15 @@ ETB_FILE="etb.csv"
 LOCATIONS_FILE="locations.xml"
 
 function get-name() {
-    TITLE_ID="${1}"
-    COLUMN_INDEX="${2}"
-    LANGUAGE1="${3}"
-    LANGUAGE2="${4}"
-    LANGUAGE3="${5}"
-    LANGUAGE4="${6}"
-    LANGUAGE5="${7}"
-    LANGUAGE6="${8}"
+    local TITLE_ID="${1}"
+    local COLUMN_INDEX="${2}"
+    local LANGUAGE1="${3}"
+    local LANGUAGE2="${4}"
+    local LANGUAGE3="${5}"
+    local LANGUAGE4="${6}"
+    local LANGUAGE5="${7}"
+    local LANGUAGE6="${8}"
+    local NAME=""
 
     NAME=$(grep ",${TITLE_ID}," "${ETB_FILE}" | \
             awk -F, '{print $'"${COLUMN_INDEX}"'}' | \
@@ -27,12 +28,10 @@ function get-name() {
 }
 
 function print-name() {
-    LANGUAGE="${1}"
-    NAME="${2}"
+    local LANGUAGE="${1}"
+    local NAME="${2}"
 
-    if [ -n "${NAME}" ]; then
-        echo "      <Name language=\"${LANGUAGE}\" value=\"${NAME}\" />"
-    fi
+    [ -n "${NAME}" ] && echo "      <Name language=\"${LANGUAGE}\" value=\"${NAME}\" />"
 }
 
 for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \

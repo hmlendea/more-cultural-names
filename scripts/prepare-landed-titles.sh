@@ -34,8 +34,8 @@ function remove-empty-titles {
 }
 
 function replace-cultural-name {
-    CULTURE_ID="$1"
-    LANGUAGE_ID="$2"
+    local CULTURE_ID="$1"
+    local LANGUAGE_ID="$2"
 
     echo "Replacing ${CULTURE_ID} with ${LANGUAGE_ID}"
 
@@ -43,9 +43,9 @@ function replace-cultural-name {
 }
 
 function merge-languages {
-    LANGUAGE_FINAL=${1}
-    LANGUAGE1=${2}
-    LANGUAGE2=${3}
+    local LANGUAGE_FINAL=${1}
+    local LANGUAGE1=${2}
+    local LANGUAGE2=${3}
 
     perl -i -p0e 's/      <Name language=\"'"${LANGUAGE1}"'\" value=\"([^<]*)\" \/>\n *<Name language=\"'"${LANGUAGE2}"'\" value=\"\1\" \/>/      <Name language=\"'"${LANGUAGE_FINAL}"'\" value=\"\1\" \/>/g' "${FILE}"
     perl -i -p0e 's/      <Name language=\"'"${LANGUAGE2}"'\" value=\"([^<]*)\" \/>\n *<Name language=\"'"${LANGUAGE1}"'\" value=\"\1\" \/>/      <Name language=\"'"${LANGUAGE_FINAL}"'\" value=\"\1\" \/>/g' "${FILE}"
