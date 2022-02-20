@@ -111,7 +111,7 @@ function normalise-name() {
     local P_TOWNSHIP="[CcKk]anton[ae]*\(mendua\)*\|[Tt]ownship"
     local P_UNIVERSITY="[Dd]aigaku\|\(Lā \)*[BbVv]i[sś][h]*[vw]\+\(a[bv]\)*idyāla[yẏ][a]*[ṁ]*\|[Oo]llscoil\|[Uu]niversit\(ate[a]a*\|y\)\|[Vv]idyaapith"
 
-    local P_OF="\(d[aeio][l]*\|gia\|of\|ng\|[Tt]a\|[Tt]o[uy]\|van\|w\)[ '\"'\"']"
+    local P_OF="\(d[aeio][l]*\|gia\|of\|ng\|[Tt]a\|t[ēi]s\|[Tt]o[uy]\|van\|w\)[ '\"'\"']"
 
     local COMMON_PATTERNS="${P_ANCIENT}\|${P_CANTON}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_DEPARTMENT}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_HUNDRED}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_LANGUAGE}\|${P_MONASTERY}\|${P_MOUNTAIN}\|${P_MUNICIPIUM}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TEMPLE}\|${P_TOWNSHIP}\|${P_UNIVERSITY}"
 
