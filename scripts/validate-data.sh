@@ -36,13 +36,14 @@ function checkForMissingCkLocationLinks() {
         LOCATION_ID=${TITLE_ID:2}
         LOCATION_ID_FOR_SEARCH=$(echo "${LOCATION_ID}" | sed \
             -e 's/[_-]//g' \
-            -e 's/\(baron\|castle\|church\|city\|temple\|town\)//g')
+            -e 's/\(baron\|castle\|church\|city\|fort\|temple\|town\)//g')
 
-        if ! $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$") &&
-           ! $(echo "${GAME_IDS_CK}" | sed 's/[_-]//g' | grep -Eioq "^[ekdcb]_${LOCATION_ID_FOR_SEARCH}$"); then
-            echo "    > ${GAME}: ${TITLE_ID} is missing"
-        else
+        if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        else
+            echo "    > ${GAME}: ${TITLE_ID} is missing"
         fi
     done
 }
