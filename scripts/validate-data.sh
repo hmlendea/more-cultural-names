@@ -107,6 +107,35 @@ function checkForMismatchingLocationLinks() {
     fi
 }
 
+function checkDefaultCk2Localisations() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+
+    [ ! -d "${LOCALISATIONS_DIR}" ] && return
+
+    for GAMEID_DEFINITION in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/^ *//g' |
+                            sort
+                        ) <( \
+                            awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
+                                <(getGameIds "${GAME_ID}") \
+                                <( \
+                                    tac "${LOCALISATIONS_DIR}"/*.csv | grep "^[ekdcb]_" | \
+                                    grep -v "_adj\(_[a-z]*\)*;" | \
+                                    awk -F";" '!seen[$1]++' | \
+                                    awk -F";" '{print $1"="$2}' | \
+                                    sed -e 's/\s*=\s*/=/g' -e 's/ *$//g'
+                                ) | \
+                            awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
+    done
+}
+
 function checkDefaultCk3Localisations() {
     local GAME_ID="${1}"
     local LOCALISATIONS_FILE="${2}"
@@ -456,6 +485,9 @@ validateHoi4Parentage "HOI4"
 validateHoi4Parentage "HOI4TGW"
 
 # Validate default localisations
+checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"
+checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"
+checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE}"

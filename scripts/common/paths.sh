@@ -25,6 +25,7 @@ CK2_LOCAL_MODS_DIR="${HOME}/.paradoxinteractive/Crusader Kings II/mod"
 
 CK2_DIR="${STEAM_GAMES_DIR}/Crusader Kings II"
 CK2_CULTURES_DIR="${CK2_DIR}/common/cultures"
+CK2_LOCALISATIONS_DIR="${CK2_DIR}/localisation"
 CK2_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2_landed_titles.txt"
 
 CK2HIP_DIR="${CK2_LOCAL_MODS_DIR}/Historical_Immersion_Project"
@@ -33,6 +34,7 @@ CK2HIP_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt
 
 CK2TWK_DIR="${CK2_LOCAL_MODS_DIR}/britannia"
 CK2TWK_CULTURES_DIR="${CK2TWK_DIR}/common/cultures"
+CK2TWK_LOCALISATIONS_DIR="${CK2TWK_DIR}/localisation"
 CK2TWK_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2twk_landed_titles.txt"
 
 CK3_DIR="${STEAM_GAMES_DIR}/Crusader Kings III"
