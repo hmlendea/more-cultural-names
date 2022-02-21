@@ -91,7 +91,7 @@ function normalise-name() {
     local P_FORT="\([CcKk][aá]str[aou][lm]*\|[Ff]ort\(e\(tsya\)*\|ul\)*\|[Ff]ort\(aleza\|[e]*ress[e]*\)\|[Ff]ort[r]*e[t]*s[s]*[y]*[ae]*\|[Kk]repost\|[Tv]rdina\)\( \(roman\|royale\)\)*"
     local P_GMINA="[Gg][e]*m[e]*in[d]*[ae]"
     local P_HUNDRED="[Hh][äe]r[r]*[ae]d\|[Hh]undred\|[Kk]ihlakunta"
-    local P_ISLAND="[Ǧǧ]zīrẗ\|[Ii]nsula\|[Ii]sl[ae]\|[Ii]sland\|[Nn][eḗ]sos\|Sŏm"
+    local P_ISLAND="[Aa]raly\|[Ǧǧ]zīrẗ\|[Ii]nsula\|[Ii]sl[ae]\|[Ii]sland\|[Nn][eḗ]sos\|Sŏm"
     local P_KINGDOM="guó\|[Kk][eoö]ni[n]*[gk]r[e]*[iy][cej]*[hk]\|K[io]ng[e]*d[oø]m\(met\)*\|[Kk]irályság\|[Rr]egatul\|[Rr][eo][giy][an][eolu][m]*[e]*\|[Rr]īce"
     local P_LAKE="Gölü\|[Ll]a\(c\|cul\|go\|ke\)\|[Nn][uú][u]*r\|[Oo]zero"
     local P_LANGUAGE="[Bb][h]*[aā][a]*[sṣ][h]*[aā][a]*\|[Ll][l]*[aeií][mn][g]*[buv]*[ao]\(ge\)*"
