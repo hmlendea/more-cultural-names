@@ -14,6 +14,28 @@ function getGameIds() {
         sort
 }
 
+function checkForSurplusCk3LanguageLinks() {
+    local GAME="${1}"
+    local CULTURES_DIR="${2}"
+
+    for TITLE_ID in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME}\"" "${LANGUAGES_FILE}" | \
+                            sed 's/[^>]*>\([^<]*\).*/\1/g' | \
+                            sort | uniq \
+                        ) <( \
+                            grep -P '^\s*name_list\s*=' "${CULTURES_DIR}/"*.txt | \
+                            awk -F"=" '{print $2}' | \
+                            sed 's/\s//g' | \
+                            sed 's/#.*//g' | \
+                            sed 's/^name_list_//g' | \
+                            sort | uniq \
+                        ) | \
+                        grep "^<" | sed 's/^< //g'); do
+        echo "    > ${GAME}: ${TITLE_ID} is defined but it does not exist"
+    done
+}
+
 function checkForMissingCkLocationLinks() {
     local GAME="${1}"
     local VANILLA_FILE="${2}"
@@ -91,6 +113,17 @@ function checkForSurplusIrLocationLinks() {
                         grep "^<" | sed 's/^< //g'); do
         echo "    > ${GAME}: ${TITLE_ID} is defined but it does not exist"
     done
+}
+
+function checkForMismatchingLanguageLinks() {
+    local GAME="${1}"
+    local CULTURES_DIR="${2}"
+
+    [ ! -f "${VANILLA_FILE}" ] && return
+
+    if [[ ${GAME} == CK3* ]]; then
+        checkForSurplusCk3LanguageLinks "${GAME}" "${CULTURES_DIR}"
+    fi
 }
 
 function checkForMismatchingLocationLinks() {
@@ -362,7 +395,10 @@ done
 # Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
-# Make sure all titles are defined and exist in the game
+# Make sure all languages exist in the game
+checkForMismatchingLanguageLinks "CK3"      "${CK3_CULTURES_DIR}"
+
+# Make sure all locations are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"
