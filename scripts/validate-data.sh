@@ -17,6 +17,7 @@ function getGameIds() {
 function checkForSurplusCk3LanguageLinks() {
     local GAME="${1}"
     local CULTURES_DIR="${2}"
+    local INHERITS_FROM_VANILLA=${3}
 
     for TITLE_ID in $(diff \
                         <( \
@@ -24,7 +25,12 @@ function checkForSurplusCk3LanguageLinks() {
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
                             sort | uniq \
                         ) <( \
-                            grep -P '^\s*name_list\s*=' "${CULTURES_DIR}/"*.txt | \
+                            if ${INHERITS_FROM_VANILLA}; then
+                                cat "${CK3_CULTURES_DIR}"/*.txt "${CULTURES_DIR}"/*.txt
+                            else
+                                cat "${CULTURES_DIR}"/*.txt
+                            fi | \
+                            grep -P '^\s*name_list\s*=' | \
                             awk -F"=" '{print $2}' | \
                             sed 's/\s//g' | \
                             sed 's/#.*//g' | \
@@ -39,11 +45,14 @@ function checkForSurplusCk3LanguageLinks() {
 function checkForMismatchingLanguageLinks() {
     local GAME="${1}"
     local CULTURES_DIR="${2}"
+    local INHERITS_FROM_VANILLA=false
 
     [ ! -d "${CULTURES_DIR}" ] && return
 
+    [ -n "${3}" ] && INHERITS_FROM_VANILLA=${3}
+
     if [[ ${GAME} == CK3* ]]; then
-        checkForSurplusCk3LanguageLinks "${GAME}" "${CULTURES_DIR}"
+        checkForSurplusCk3LanguageLinks "${GAME}" "${CULTURES_DIR}" ${INHERITS_FROM_VANILLA}
     fi
 }
 
@@ -398,6 +407,8 @@ grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 # Make sure all languages exist in the game
 checkForMismatchingLanguageLinks "CK3"      "${CK3_CULTURES_DIR}"
 checkForMismatchingLanguageLinks "CK3ATHA"  "${CK3ATHA_CULTURES_DIR}"
+checkForMismatchingLanguageLinks "CK3IBL"   "${CK3IBL_CULTURES_DIR}" true
+checkForMismatchingLanguageLinks "CK3MBP"   "${CK3MBP_CULTURES_DIR}" true
 
 # Make sure all locations are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"
