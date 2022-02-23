@@ -87,7 +87,7 @@ function normalise-name() {
     local P_COUNCIL="[Cc]o[u]*n[cs][ei]l[l]*\(iul\)\|[Cc]omhairle"
     local P_COUNTRY="[Nn]egeri"
     local P_DEPARTMENT="[Dd][eéi]p[’]*art[’]*[aei]*m[aei][e]*n[gt][’]*\(as\|i\|o\|u[l]*\)*"
-    local P_DISTRICT="[Dd][iy]str[eiy][ckt]*[akt][eouy]*[as]*\|[Iiİi̇]l[cç]esi\|járás\|Quận\|sum"
+    local P_DISTRICT="[Dd][iy]str[eiy][ckt]*[akt][eouy]*[als]*\|[Iiİi̇]l[cç]esi\|járás\|Quận\|sum"
     local P_FORT="\([CcKk][aá]str[aou][lm]*\|[Ff]ort\(e\(tsya\)*\|ul\)*\|[Ff]ort\(aleza\|[e]*ress[e]*\)\|[Ff]ort[r]*e[t]*s[s]*[y]*[ae]*\|[Kk]repost\|[Tv]rdina\)\( \(roman\|royale\)\)*"
     local P_GMINA="[Gg][e]*m[e]*in[d]*[ae]"
     local P_HUNDRED="[Hh][äe]r[r]*[ae]d\|[Hh]undred\|[Kk]ihlakunta"
