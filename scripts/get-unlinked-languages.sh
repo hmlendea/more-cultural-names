@@ -37,10 +37,11 @@ function getCk3Cultures() {
     local GAME_ID="${1}" && shift
     local CULTURES_DIR="${*}"
 
-    for CULTURE_ID in $(grep -P '^[A-Za-z_]* = {' "${CULTURES_DIR}/"*.txt | \
-                        awk -F":" '{print $2}' | \
+    for CULTURE_ID in $(grep -P '^\s*name_list\s*=' "${CULTURES_DIR}/"*.txt | \
+                        awk -F"=" '{print $2}' | \
                         sed 's/\s//g' | \
-                        awk -F"=" '{print $1}' | \
+                        sed 's/#.*//g' | \
+                        sed 's/^name_list_//g' | \
                         sort | uniq); do
         if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
             echo "  ${CULTURE_ID}"
