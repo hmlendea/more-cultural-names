@@ -104,14 +104,14 @@ function normalise-name() {
     local P_PREFECTURE="[Pp]r[aäeé][e]*fe[ckt]t[uúū]r[ae]*"
     local P_PROVINCE="[Pp][’]*r[aāou][bpvw][ëií][nñ][t]*[csz]*[eėiíjoy]*[aeėsz]*"
     local P_REGION="[Rr]e[gģhx][ij]*\([oóu][ou]*n*[ei]*[as]*\|st[aā]n\)"
-    local P_REPUBLIC="D[eēi]mokr[h]*atía\|Köztársaság\|Olómìnira\|[Rr][eéi][s]*[ ]*p[’]*[auüùúy][’]*b[b]*l[ií][ckq][ck]*[’]*\([ai]\|as[ıy]\|en\|[hḥ]y\|i\|ue\)*"
+    local P_REPUBLIC="D[eēi]mokr[h]*atía\|Kongwaguk\|Köztársaság\|Kyōwa\|Olómìnira\|[Rr][eéi][s]*[ ]*p[’]*[aāuüùúy][ā’]*b[ba]*l[ií][’]*[ckq][ck]*[’]*\([ai]\|as[ıy]\|en\|[hḥ]y\|i\|ue\)*"
     local P_RUIN="[Rr]uin[ae]*"
     local P_STATE="Bang\|[EeÉé]*[SsŜŝŜŝŠšŞş]*[h]*[tṭ][’]*[aeē][dtṭu][’]*[aeiıosu]*[l]*\|[Oo]st[’]*an[ıi]\|[Uu]stoni\|valstija*"
     local P_TEMPLE="[Dd]ēvālaya\(mu\)*\|[Kk]ōvil\|[Mm][a]*ndir[a]*\|Ná Tiān\|[Pp]agoda\|[Tt]emp[e]*l[eou]*[l]*"
     local P_TOWNSHIP="[CcKk]anton[ae]*\(mendua\)*\|[Tt]ownship"
     local P_UNIVERSITY="[Dd]aigaku\|\(Lā \)*[BbVv]i[sś][h]*[vw]\+\(a[bv]\)*idyāla[yẏ][a]*[ṁ]*\|[Oo]llscoil\|[Uu]niversit\(ate[a]a*\|y\)\|[Vv]idyaapith"
 
-    local P_OF="\(Āp[h]*\|[Dd]\|[Dd][aeio][l]*\|gia\|of\|ng\|[Tt]a\|t[ēi]s\|[Tt]o[uy]\|van\|w\)[ \'\"’']"
+    local P_OF="\([AaĀā]p[h]*[a]*\|[Dd]\|[Dd][aeio][l]*\|gia\|of\|ng\|[Tt]a\|t[ēi]s\|[Tt]o[uy]\|van\|w\)[ \'\"’']"
 
     local COMMON_PATTERNS="${P_ANCIENT}\|${P_CANTON}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_DEPARTMENT}\|${P_DISTRICT}\|${P_FORT}\|${P_GMINA}\|${P_HUNDRED}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_LANGUAGE}\|${P_MONASTERY}\|${P_MOUNTAIN}\|${P_MUNICIPIUM}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TEMPLE}\|${P_TOWNSHIP}\|${P_UNIVERSITY}"
 
@@ -186,7 +186,7 @@ function normalise-name() {
             -e 's/s’ka\(ya\)* \('"${P_FORT}"'\)$/a/g' \
             -e 's/s[’]*k[iy]y p\(i\|ol\)[uv]ostr[io]v$//g' \
             -e 's/shitii$//g' \
-            -e 's/sk[aá] \(poušť\|říše\|župa.*\)$/sko/g' \
+            -e 's/sk[aá] \(poušť\|župa.*\)$/sko/g' \
             -e 's/sk[iý] \('"${P_PENINSULA}"'\|sayuz\)$//g' \
             -e 's/skagi$//g' \
             -e 's/skaya oblast[’]*$/sk/g' \
