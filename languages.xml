@@ -3847,7 +3847,6 @@
       <GameId game="CK3">danish</GameId>
       <GameId game="CK3IBL">danish</GameId>
       <GameId game="CK3MBP">danish</GameId>
-      <GameId game="CK3TFE">danish</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Danish_Before1219</LanguageId>
@@ -3885,6 +3884,9 @@
   </Language>
   <Language>
     <Id>Danish_Old</Id>
+    <GameIds>
+      <GameId game="CK3TFE">danish</GameId>
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>Norse</LanguageId>
       <LanguageId>Danish_Before1219</LanguageId>
@@ -5568,19 +5570,23 @@
       <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -6345,39 +6351,6 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Frisian_Old</Id> <!-- c. 8th century – c. 16th century -->
-    <Code iso-639-3="ofs" />
-    <GameIds>
-      <GameId game="CK2">frisian</GameId>
-      <GameId game="CK2HIP">frisian</GameId>
-      <GameId game="CK3">frisian</GameId>
-      <GameId game="CK3IBL">frisian</GameId>
-      <GameId game="CK3MBP">frisian</GameId>
-      <GameId game="CK3TFE">frisian</GameId>
-      <GameId game="IR_AoE">frisian</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>English_Old</LanguageId>
-      <LanguageId>English_Old_Early</LanguageId>
-      <LanguageId>German_Old_Low</LanguageId>
-      <LanguageId>Frisian_West</LanguageId>
-      <LanguageId>Frisian_Middle</LanguageId>
-      <LanguageId>Frisian_North</LanguageId>
-      <LanguageId>Frisian_East</LanguageId>
-      <LanguageId>Frisian_Saterland</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Frisian_Middle</Id> <!-- c. 16th century – c. 1820 -->
-    <FallbackLanguages>
-      <LanguageId>Frisian_Old</LanguageId>
-      <LanguageId>Frisian_North</LanguageId>
-      <LanguageId>Frisian_West</LanguageId>
-      <LanguageId>Frisian_East</LanguageId>
-      <LanguageId>Frisian_Saterland</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
     <Id>Frisian_North</Id>
     <Code iso-639-3="frr" />
     <FallbackLanguages>
@@ -6418,6 +6391,54 @@
       <LanguageId>Frisian_West</LanguageId>
       <LanguageId>Frisian_Middle</LanguageId>
       <LanguageId>Frisian_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Frisian_Middle</Id> <!-- c. 16th century – c. 1820 -->
+    <FallbackLanguages>
+      <LanguageId>Frisian_Old</LanguageId>
+      <LanguageId>Frisian_North</LanguageId>
+      <LanguageId>Frisian_West</LanguageId>
+      <LanguageId>Frisian_East</LanguageId>
+      <LanguageId>Frisian_Saterland</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Frisian_Old</Id> <!-- c. 8th century – c. 16th century -->
+    <Code iso-639-3="ofs" />
+    <GameIds>
+      <GameId game="CK2">frisian</GameId>
+      <GameId game="CK2HIP">frisian</GameId>
+      <GameId game="CK3">frisian</GameId>
+      <GameId game="CK3IBL">frisian</GameId>
+      <GameId game="CK3MBP">frisian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>English_Old</LanguageId>
+      <LanguageId>English_Old_Early</LanguageId>
+      <LanguageId>German_Old_Low</LanguageId>
+      <LanguageId>Frisian_West</LanguageId>
+      <LanguageId>Frisian_Middle</LanguageId>
+      <LanguageId>Frisian_North</LanguageId>
+      <LanguageId>Frisian_East</LanguageId>
+      <LanguageId>Frisian_Saterland</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Frisian_Old_Early</Id> <!-- before c. 8th century -->
+    <GameIds>
+      <GameId game="CK3TFE">frisian</GameId>
+      <GameId game="IR_AoE">frisian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>English_Old</LanguageId>
+      <LanguageId>English_Old_Early</LanguageId>
+      <LanguageId>German_Old_Low</LanguageId>
+      <LanguageId>Frisian_West</LanguageId>
+      <LanguageId>Frisian_Middle</LanguageId>
+      <LanguageId>Frisian_North</LanguageId>
+      <LanguageId>Frisian_East</LanguageId>
+      <LanguageId>Frisian_Saterland</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -11377,6 +11398,7 @@
       <LanguageId>Japanese_Before1910</LanguageId>
       <LanguageId>Japanese_Modern_Early</LanguageId>
       <LanguageId>Japanese_Middle_Late</LanguageId>
+      <LanguageId>Japanese_Middle</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -11389,6 +11411,7 @@
       <LanguageId>Japanese_Before1910</LanguageId>
       <LanguageId>Japanese_Modern_Early</LanguageId>
       <LanguageId>Japanese_Middle_Late</LanguageId>
+      <LanguageId>Japanese_Middle</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -11405,6 +11428,7 @@
       <LanguageId>Japanese_Before1910</LanguageId>
       <LanguageId>Japanese_Modern_Early</LanguageId>
       <LanguageId>Japanese_Middle_Late</LanguageId>
+      <LanguageId>Japanese_Middle</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -11417,6 +11441,7 @@
       <LanguageId>Kunigami</LanguageId>
       <LanguageId>Japanese_Modern_Early</LanguageId>
       <LanguageId>Japanese_Middle_Late</LanguageId>
+      <LanguageId>Japanese_Middle</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -11425,6 +11450,7 @@
       <LanguageId>Japanese_Before1910</LanguageId>
       <LanguageId>Japanese_Before1945</LanguageId>
       <LanguageId>Japanese_Middle_Late</LanguageId>
+      <LanguageId>Japanese_Middle</LanguageId>
       <LanguageId>Japanese</LanguageId>
       <LanguageId>Japanese_Kagoshima</LanguageId>
       <LanguageId>Okinawan</LanguageId>
@@ -11434,6 +11460,20 @@
   <Language>
     <Id>Japanese_Middle_Late</Id> <!-- c. 12th century AD – c. 16th century AD -->
     <FallbackLanguages>
+      <LanguageId>Japanese_Middle</LanguageId>
+      <LanguageId>Japanese_Modern_Early</LanguageId>
+      <LanguageId>Japanese_Before1910</LanguageId>
+      <LanguageId>Japanese_Before1945</LanguageId>
+      <LanguageId>Japanese</LanguageId>
+      <LanguageId>Japanese_Kagoshima</LanguageId>
+      <LanguageId>Okinawan</LanguageId>
+      <LanguageId>Kunigami</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Japanese_Middle</Id>
+    <FallbackLanguages>
+      <LanguageId>Japanese_Middle_Late</LanguageId>
       <LanguageId>Japanese_Modern_Early</LanguageId>
       <LanguageId>Japanese_Before1910</LanguageId>
       <LanguageId>Japanese_Before1945</LanguageId>
@@ -12070,20 +12110,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12121,20 +12165,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12172,20 +12220,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12223,20 +12275,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12274,20 +12330,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12325,20 +12385,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12376,20 +12440,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12427,20 +12495,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12478,20 +12550,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12529,20 +12605,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12580,20 +12660,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12631,20 +12715,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12682,20 +12770,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12733,20 +12825,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12784,20 +12880,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12835,20 +12935,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12886,20 +12990,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12937,20 +13045,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -12988,20 +13100,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13039,20 +13155,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13090,20 +13210,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13141,20 +13265,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13192,20 +13320,24 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13228,19 +13360,23 @@
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13279,19 +13415,23 @@
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13334,19 +13474,23 @@
       <LanguageId>Latin_Before1782</LanguageId>
       <LanguageId>Latin_Before1797</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13385,19 +13529,78 @@
       <LanguageId>Latin_Before1780</LanguageId>
       <LanguageId>Latin_Before1782</LanguageId>
       <LanguageId>Latin_Before1797</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Before3CenturyBC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1802</LanguageId>
+      <LanguageId>Latin_Before1855</LanguageId>
+      <LanguageId>Latin_Before1877</LanguageId>
+      <LanguageId>Latin_Before19Century</LanguageId>
+      <LanguageId>Latin_Before1917</LanguageId>
+      <LanguageId>Latin_Before1920</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1924</LanguageId>
+      <LanguageId>Latin_Before1925</LanguageId>
+      <LanguageId>Latin_Before1926</LanguageId>
+      <LanguageId>Latin_Before1934</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1961</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
+      <LanguageId>Latin_Before1976</LanguageId>
+      <LanguageId>Latin_Before1995</LanguageId>
+      <LanguageId>Latin_Before2016</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before1239</Id>
+    <FallbackLanguages>
+      <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1316</LanguageId>
+      <LanguageId>Latin_Before1349</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1624</LanguageId>
+      <LanguageId>Latin_Before1780</LanguageId>
+      <LanguageId>Latin_Before1782</LanguageId>
+      <LanguageId>Latin_Before1797</LanguageId>
+      <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
+      <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before633</LanguageId>
+      <LanguageId>Latin_Before554</LanguageId>
+      <LanguageId>Latin_Before474</LanguageId>
+      <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
+      <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before244</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13429,6 +13632,7 @@
   <Language>
     <Id>Latin_Before1230</Id>
     <FallbackLanguages>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -13438,17 +13642,20 @@
       <LanguageId>Latin_Before1782</LanguageId>
       <LanguageId>Latin_Before1797</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13481,6 +13688,63 @@
     <Id>Latin_Before1219</Id> <!-- 800 AD – 1219 AD -->
     <FallbackLanguages>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
+      <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1316</LanguageId>
+      <LanguageId>Latin_Before1349</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1624</LanguageId>
+      <LanguageId>Latin_Before1780</LanguageId>
+      <LanguageId>Latin_Before1782</LanguageId>
+      <LanguageId>Latin_Before1797</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
+      <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before633</LanguageId>
+      <LanguageId>Latin_Before554</LanguageId>
+      <LanguageId>Latin_Before474</LanguageId>
+      <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
+      <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before244</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Before3CenturyBC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1802</LanguageId>
+      <LanguageId>Latin_Before1855</LanguageId>
+      <LanguageId>Latin_Before1877</LanguageId>
+      <LanguageId>Latin_Before19Century</LanguageId>
+      <LanguageId>Latin_Before1917</LanguageId>
+      <LanguageId>Latin_Before1920</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1924</LanguageId>
+      <LanguageId>Latin_Before1925</LanguageId>
+      <LanguageId>Latin_Before1926</LanguageId>
+      <LanguageId>Latin_Before1934</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1961</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
+      <LanguageId>Latin_Before1976</LanguageId>
+      <LanguageId>Latin_Before1995</LanguageId>
+      <LanguageId>Latin_Before2016</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before1080</Id>
+    <FallbackLanguages>
+      <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -13494,12 +13758,14 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13531,8 +13797,10 @@
   <Language>
     <Id>Latin_Before839</Id>
     <FallbackLanguages>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -13545,12 +13813,14 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13583,8 +13853,10 @@
     <Id>Latin_Before633</Id>
     <FallbackLanguages>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -13596,12 +13868,14 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13638,20 +13912,24 @@
     <FallbackLanguages>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13690,19 +13968,23 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
       <LanguageId>Latin_Medieval</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13742,8 +14024,66 @@
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
+      <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1316</LanguageId>
+      <LanguageId>Latin_Before1349</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
+      <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before244</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Before3CenturyBC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1624</LanguageId>
+      <LanguageId>Latin_Before1780</LanguageId>
+      <LanguageId>Latin_Before1782</LanguageId>
+      <LanguageId>Latin_Before1797</LanguageId>
+      <LanguageId>Latin_Before1802</LanguageId>
+      <LanguageId>Latin_Before1855</LanguageId>
+      <LanguageId>Latin_Before1877</LanguageId>
+      <LanguageId>Latin_Before19Century</LanguageId>
+      <LanguageId>Latin_Before1917</LanguageId>
+      <LanguageId>Latin_Before1920</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1924</LanguageId>
+      <LanguageId>Latin_Before1925</LanguageId>
+      <LanguageId>Latin_Before1926</LanguageId>
+      <LanguageId>Latin_Before1934</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1961</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
+      <LanguageId>Latin_Before1976</LanguageId>
+      <LanguageId>Latin_Before1995</LanguageId>
+      <LanguageId>Latin_Before2016</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before381</Id>
+    <FallbackLanguages>
+      <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before474</LanguageId>
+      <LanguageId>Latin_Before554</LanguageId>
+      <LanguageId>Latin_Before633</LanguageId>
+      <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
+      <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -13754,6 +14094,7 @@
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13789,13 +14130,16 @@
   <Language>
     <Id>Latin_Before312</Id>
     <FallbackLanguages>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -13805,6 +14149,7 @@
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13841,13 +14186,16 @@
     <Id>Latin_Before244</Id>
     <FallbackLanguages>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -13856,6 +14204,7 @@
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13905,13 +14254,16 @@
     <FallbackLanguages>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -13919,6 +14271,7 @@
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13958,12 +14311,14 @@
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -13971,8 +14326,10 @@
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -14009,12 +14366,14 @@
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -14022,8 +14381,10 @@
       <LanguageId>Latin_Old</LanguageId>
       <LanguageId>Oscan</LanguageId>
       <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -14059,6 +14420,7 @@
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
@@ -14068,13 +14430,71 @@
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
+      <LanguageId>Latin_Before1241</LanguageId>
+      <LanguageId>Latin_Before1316</LanguageId>
+      <LanguageId>Latin_Before1349</LanguageId>
+      <LanguageId>Latin_Medieval</LanguageId>
+      <LanguageId>Latin_Before1624</LanguageId>
+      <LanguageId>Latin_Before1780</LanguageId>
+      <LanguageId>Latin_Before1782</LanguageId>
+      <LanguageId>Latin_Before1797</LanguageId>
+      <LanguageId>Latin_Before1802</LanguageId>
+      <LanguageId>Latin_Before1855</LanguageId>
+      <LanguageId>Latin_Before1877</LanguageId>
+      <LanguageId>Latin_Before19Century</LanguageId>
+      <LanguageId>Latin_Before1917</LanguageId>
+      <LanguageId>Latin_Before1920</LanguageId>
+      <LanguageId>Latin_Before1922</LanguageId>
+      <LanguageId>Latin_Before1924</LanguageId>
+      <LanguageId>Latin_Before1925</LanguageId>
+      <LanguageId>Latin_Before1926</LanguageId>
+      <LanguageId>Latin_Before1934</LanguageId>
+      <LanguageId>Latin_Before1942</LanguageId>
+      <LanguageId>Latin_Before1949</LanguageId>
+      <LanguageId>Latin_Before1961</LanguageId>
+      <LanguageId>Latin_Before1972</LanguageId>
+      <LanguageId>Latin_Before1976</LanguageId>
+      <LanguageId>Latin_Before1995</LanguageId>
+      <LanguageId>Latin_Before2016</LanguageId>
+      <LanguageId>Latin</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Latin_Before14BC</Id>
+    <FallbackLanguages>
+      <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Classical</LanguageId>
+      <LanguageId>Latin_Before1Century</LanguageId>
+      <LanguageId>Latin_Before106</LanguageId>
+      <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before48BC</LanguageId>
+      <LanguageId>Latin_Before202BC</LanguageId>
+      <LanguageId>Latin_Before3CenturyBC</LanguageId>
+      <LanguageId>Latin_Old</LanguageId>
+      <LanguageId>Oscan</LanguageId>
+      <LanguageId>Lucanian</LanguageId>
+      <LanguageId>Latin_Before244</LanguageId>
+      <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
+      <LanguageId>Latin_Before466</LanguageId>
+      <LanguageId>Latin_Before474</LanguageId>
+      <LanguageId>Latin_Before554</LanguageId>
+      <LanguageId>Latin_Before633</LanguageId>
+      <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
+      <LanguageId>Latin_Before1219</LanguageId>
+      <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -14111,6 +14531,7 @@
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Before3CenturyBC</LanguageId>
@@ -14119,13 +14540,16 @@
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -14159,6 +14583,7 @@
     <Id>Latin_Before48BC</Id>
     <FallbackLanguages>
       <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
@@ -14170,13 +14595,16 @@
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -14211,6 +14639,7 @@
     <FallbackLanguages>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
@@ -14221,13 +14650,16 @@
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -14263,6 +14695,7 @@
       <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
@@ -14272,13 +14705,16 @@
       <LanguageId>Lucanian</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -14325,19 +14761,23 @@
       <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -14999,19 +15439,23 @@
       <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -16425,19 +16869,23 @@
       <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -17642,19 +18090,23 @@
       <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -18979,7 +19431,6 @@
     <Id>Russian</Id>
     <Code iso-639-1="ru" iso-639-3="rus" />
     <FallbackLanguages>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian_Before2016</LanguageId>
@@ -18990,14 +19441,11 @@
       <LanguageId>Russian_Before1962</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19005,19 +19453,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19030,14 +19474,12 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before2016</Id>
     <FallbackLanguages>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Ukrainian_Before2016</LanguageId>
@@ -19047,14 +19489,11 @@
       <LanguageId>Russian_Before1962</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19062,19 +19501,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19087,7 +19522,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19097,19 +19531,15 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19117,19 +19547,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19142,7 +19568,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19153,20 +19578,16 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1984</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19174,19 +19595,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19199,7 +19616,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19211,19 +19627,15 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19231,19 +19643,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19256,7 +19664,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19269,18 +19676,14 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19288,19 +19691,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19313,7 +19712,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19327,17 +19725,13 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19345,19 +19739,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19370,7 +19760,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19379,7 +19768,6 @@
       <GameId game="HOI4">SOV</GameId>
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19390,14 +19778,11 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19405,19 +19790,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19430,15 +19811,12 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1946</Id>
     <FallbackLanguages>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19449,12 +19827,10 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19462,19 +19838,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19487,16 +19859,13 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1943</Id>
     <FallbackLanguages>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19507,11 +19876,9 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19519,19 +19886,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19544,7 +19907,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19552,9 +19914,7 @@
     <FallbackLanguages>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19565,10 +19925,8 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19576,19 +19934,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19601,7 +19955,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19610,9 +19963,7 @@
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19623,9 +19974,7 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -19633,19 +19982,15 @@
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19658,7 +20003,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19668,9 +20012,7 @@
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19681,28 +20023,22 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1926</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19715,21 +20051,17 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1929</Id>
     <FallbackLanguages>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19740,23 +20072,18 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19769,7 +20096,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19777,14 +20103,11 @@
     <FallbackLanguages>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19795,25 +20118,20 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1926</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19826,7 +20144,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19835,14 +20152,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19853,24 +20167,19 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19883,7 +20192,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19893,14 +20201,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19911,23 +20216,18 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19940,7 +20240,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -19951,14 +20250,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -19969,22 +20265,17 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -19997,13 +20288,11 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1920</Id>
     <FallbackLanguages>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20011,14 +20300,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20029,19 +20315,15 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -20054,14 +20336,12 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1918</Id>
     <FallbackLanguages>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20069,14 +20349,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20087,18 +20364,14 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -20111,7 +20384,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -20120,11 +20392,9 @@
       <GameId game="HOI4TGW">SOV</GameId> <!-- Russia -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20132,14 +20402,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20150,15 +20417,12 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -20171,20 +20435,16 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1914</Id>
     <FallbackLanguages>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20192,14 +20452,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20210,12 +20467,10 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -20228,21 +20483,17 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1907</Id>
     <FallbackLanguages>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20250,14 +20501,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20268,11 +20516,9 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -20285,7 +20531,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -20293,14 +20538,11 @@
     <FallbackLanguages>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20308,14 +20550,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20326,10 +20565,8 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -20342,24 +20579,19 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1893</Id>
     <FallbackLanguages>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20367,14 +20599,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20385,7 +20614,6 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
@@ -20399,25 +20627,20 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1869</Id>
     <FallbackLanguages>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20425,14 +20648,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20443,7 +20663,6 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -20456,7 +20675,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -20464,18 +20682,14 @@
     <FallbackLanguages>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20483,14 +20697,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20501,7 +20712,6 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
       <LanguageId>Russian_Before1802</LanguageId>
@@ -20513,7 +20723,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -20522,18 +20731,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20541,14 +20746,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20559,7 +20761,6 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1802</LanguageId>
       <LanguageId>Russian_Before1797</LanguageId>
@@ -20570,7 +20771,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -20580,18 +20780,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20599,14 +20795,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20617,7 +20810,6 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1797</LanguageId>
       <LanguageId>Russian_Before1795</LanguageId>
@@ -20627,7 +20819,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -20638,18 +20829,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20657,14 +20844,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20675,7 +20859,6 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1795</LanguageId>
       <LanguageId>Russian_Before1782</LanguageId>
@@ -20684,7 +20867,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -20696,18 +20878,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20715,14 +20893,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20733,7 +20908,6 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1782</LanguageId>
       <LanguageId>Russian_Before1780</LanguageId>
@@ -20741,7 +20915,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -20754,18 +20927,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20773,14 +20942,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20791,14 +20957,12 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1780</LanguageId>
       <LanguageId>Russian_Before1776</LanguageId>
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -20812,18 +20976,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20831,14 +20991,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20849,13 +21006,11 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1776</LanguageId>
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -20871,18 +21026,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20890,14 +21041,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20908,12 +21056,10 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -20930,18 +21076,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -20949,14 +21091,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -20967,11 +21106,9 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -20989,18 +21126,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -21008,14 +21141,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -21026,17 +21156,14 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Russian_Before1656</Id>
     <FallbackLanguages>
-      <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1776</LanguageId>
@@ -21049,18 +21176,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -21068,14 +21191,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -21086,7 +21206,6 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian_Before1219</LanguageId>
     </FallbackLanguages>
@@ -21102,7 +21221,6 @@
       <LanguageId>Slavonic_Church_Old</LanguageId>
       <LanguageId>Slavonic_Church</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1776</LanguageId>
@@ -21115,18 +21233,14 @@
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
@@ -21134,14 +21248,11 @@
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
@@ -21152,7 +21263,6 @@
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -25038,7 +25148,6 @@
     <Code iso-639-1="uk" iso-639-3="ukr" />
     <FallbackLanguages>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Russian_Before2016</LanguageId>
@@ -25049,13 +25158,10 @@
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -25064,18 +25170,14 @@
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -25088,7 +25190,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -25096,7 +25197,6 @@
     <FallbackLanguages>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Ukrainian_Before2016</LanguageId>
       <LanguageId>Russian_Before2016</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
@@ -25106,13 +25206,10 @@
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -25121,18 +25218,14 @@
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -25145,7 +25238,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -25155,7 +25247,6 @@
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Russian_Before1991</LanguageId>
       <LanguageId>Russian_Before1987</LanguageId>
       <LanguageId>Russian_Before1984</LanguageId>
@@ -25163,13 +25254,10 @@
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -25178,18 +25266,14 @@
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -25202,7 +25286,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -25212,7 +25295,6 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
       <LanguageId>Russian_Before1984</LanguageId>
@@ -25223,13 +25305,10 @@
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
@@ -25238,18 +25317,14 @@
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -25262,7 +25337,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -25272,22 +25346,18 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1926</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
       <LanguageId>Russian_Before1984</LanguageId>
@@ -25298,18 +25368,14 @@
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -25322,7 +25388,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -25330,22 +25395,18 @@
     <FallbackLanguages>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1926</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
       <LanguageId>Russian_Before1984</LanguageId>
@@ -25356,17 +25417,13 @@
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1914</LanguageId>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -25379,35 +25436,28 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Ukrainian_Before1914</Id>
     <FallbackLanguages>
       <LanguageId>Russian_Before1914</LanguageId>
-      <LanguageId>Belarussian_Before1914</LanguageId>
       <LanguageId>Ukrainian_Before1917</LanguageId>
       <LanguageId>Russian_Before1917</LanguageId>
-      <LanguageId>Belarussian_Before1917</LanguageId>
       <LanguageId>Ukrainian_Before1920</LanguageId>
       <LanguageId>Russian_Before1920</LanguageId>
-      <LanguageId>Belarussian_Before1920</LanguageId>
       <LanguageId>Russian_Before1924</LanguageId>
       <LanguageId>Russian_Before1925</LanguageId>
       <LanguageId>Russian_Before1926</LanguageId>
       <LanguageId>Russian_Before1928</LanguageId>
       <LanguageId>Russian_Before1929</LanguageId>
       <LanguageId>Russian_Before1932</LanguageId>
-      <LanguageId>Belarussian_Before1933</LanguageId>
       <LanguageId>Russian_Before1934</LanguageId>
       <LanguageId>Russian_Before1935</LanguageId>
       <LanguageId>Russian_Before1943</LanguageId>
       <LanguageId>Russian_Before1946</LanguageId>
-      <LanguageId>Belarussian_Before1946</LanguageId>
       <LanguageId>Ukrainian_Before1951</LanguageId>
       <LanguageId>Russian_Before1951</LanguageId>
-      <LanguageId>Belarussian_Before1951</LanguageId>
       <LanguageId>Russian_Before1961</LanguageId>
       <LanguageId>Russian_Before1962</LanguageId>
       <LanguageId>Russian_Before1984</LanguageId>
@@ -25418,12 +25468,10 @@
       <LanguageId>Ukrainian_Before2017</LanguageId>
       <LanguageId>Ukrainian</LanguageId>
       <LanguageId>Russian</LanguageId>
-      <LanguageId>Belarussian</LanguageId>
       <LanguageId>Russian_Before1918</LanguageId>
       <LanguageId>Russian_Before1907</LanguageId>
       <LanguageId>Russian_Before1903</LanguageId>
       <LanguageId>Russian_Before1893</LanguageId>
-      <LanguageId>Belarussian_Before1893</LanguageId>
       <LanguageId>Russian_Before1869</LanguageId>
       <LanguageId>Russian_Before1856</LanguageId>
       <LanguageId>Russian_Before1812</LanguageId>
@@ -25436,7 +25484,6 @@
       <LanguageId>Russian_Before1708</LanguageId>
       <LanguageId>Russian_Before1667</LanguageId>
       <LanguageId>Russian_Before1656</LanguageId>
-      <LanguageId>Belarussian_Before1656</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -25456,19 +25503,23 @@
       <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -25644,19 +25695,23 @@
       <LanguageId>Latin_Before202BC</LanguageId>
       <LanguageId>Latin_Before48BC</LanguageId>
       <LanguageId>Latin_Before27BC</LanguageId>
+      <LanguageId>Latin_Before14BC</LanguageId>
       <LanguageId>Latin_Classical</LanguageId>
       <LanguageId>Latin_Before1Century</LanguageId>
       <LanguageId>Latin_Before106</LanguageId>
       <LanguageId>Latin_Late</LanguageId>
       <LanguageId>Latin_Before244</LanguageId>
       <LanguageId>Latin_Before312</LanguageId>
+      <LanguageId>Latin_Before381</LanguageId>
       <LanguageId>Latin_Before466</LanguageId>
       <LanguageId>Latin_Before474</LanguageId>
       <LanguageId>Latin_Before554</LanguageId>
       <LanguageId>Latin_Before633</LanguageId>
       <LanguageId>Latin_Before839</LanguageId>
+      <LanguageId>Latin_Before1080</LanguageId>
       <LanguageId>Latin_Before1219</LanguageId>
       <LanguageId>Latin_Before1230</LanguageId>
+      <LanguageId>Latin_Before1239</LanguageId>
       <LanguageId>Latin_Before1241</LanguageId>
       <LanguageId>Latin_Before1316</LanguageId>
       <LanguageId>Latin_Before1349</LanguageId>
@@ -26124,5 +26179,19 @@
   <Language>
     <Id>Zulu</Id>
     <Code iso-639-1="zu" iso-639-2="zul" iso-639-3="zul" />
+  </Language>
+  <Language>
+    <Id>zzzzFakeLanguage</Id>
+    <GameIds>
+      <GameId game="CK2">bear</GameId>
+      <GameId game="CK2">cat</GameId>
+      <GameId game="CK2">dog_culture</GameId>
+      <GameId game="CK2">dragon_culture</GameId>
+      <GameId game="CK2">duck_culture</GameId>
+      <GameId game="CK2">elephant_culture</GameId>
+      <GameId game="CK2">hedgehog_culture</GameId>
+      <GameId game="CK2">horse</GameId>
+      <GameId game="CK2">red_panda</GameId>
+    </GameIds>
   </Language>
 </ArrayOfLanguage>
