@@ -869,6 +869,26 @@ e_none = { #for Anatolia/Caucasus to control de_jure conquest. Not actually crea
 	#de_jure_drift_disabled = yes
 }
 
+#I don't use this but adding it into the file
+
+e_west_slavia = { # West Slavs: Polish, Polabian, Czech, etc.
+	color = { 130 20 50 }
+	color2 = { 200 0 0 }
+	
+	capital = c_krakowska # Krakowska
+	
+	definite_form = yes
+		
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_west_slavic }
+			}
+			add = @better_than_the_alternatives_score
+		}
+	}	
+}
+
 #Titles to replace e_byzantium
 
 e_bulgaria = { #Becomes de_jure empire for Bulgaria
@@ -26272,6 +26292,31 @@ e_baltic_empire = {
 		}
 	}
 	
+	k_livonia = {
+		color = { 110 80 168 }
+		color2 = { 255 255 255 }
+		
+		capital = c_vidzeme # Riga
+
+		#Titular: created by decision.
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:latgalian
+				}
+				add = @correct_culture_primary_score
+			}
+			if = {
+				limit = {
+					NOT = {
+						culture = culture:latgalian
+					}
+				}
+				add = @better_than_the_alternatives_score
+			}
+		}
+	}
 	
 	k_lithuania = {
 		color = { 90 10 0 }
@@ -27958,32 +28003,6 @@ e_wendish_empire = {
 				culture = { has_cultural_pillar = heritage_west_slavic }
 			}
 			add = @better_than_the_alternatives_score
-		}
-	}
-	
-	k_livonia = {
-		color = { 110 80 168 }
-		color2 = { 255 255 255 }
-		
-		capital = c_vidzeme # Riga
-
-		#Titular: created by decision.
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = culture:latgalian
-				}
-				add = @correct_culture_primary_score
-			}
-			if = {
-				limit = {
-					NOT = {
-						culture = culture:latgalian
-					}
-				}
-				add = @better_than_the_alternatives_score
-			}
 		}
 	}
 	
@@ -55541,8 +55560,11 @@ e_france = {
 				limit = {
 					is_ai = yes
 				}
-				NOT = { has_title = title:k_france }
+				NOT = { has_title = title:k_france
+						has_title = title:k_england #Let's not let England make this title in later bookmarks
+					}
 			}
+
 		}
 		
 		ai_primary_priority = {
