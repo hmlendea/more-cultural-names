@@ -91,6 +91,18 @@ jobs:
         STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
         STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
 
+    - name: Crusader Kings 3 (SoW)
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 1158310
+        itemid: 2724606810
+        path: "CK3SoW/sow-more-cultural-names/"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+
     - name: Crusader Kings 3 (TFE)
       uses: Weilbyte/steam-workshop-upload@v1
       with:
