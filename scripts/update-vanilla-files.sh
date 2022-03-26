@@ -53,6 +53,10 @@ update-vanilla-file \
     "${CK3MBP_VANILLA_LANDED_TITLES_FILE}" \
     "https://raw.githubusercontent.com/Leviathonlx/MoreBookmarks-Plus/main/common/landed_titles/00_landed_titles.txt"
 update-vanilla-file \
+    "${CK3SoW_DIR}/common/landed_titles/00_landed_titles.txt" \
+    "${CK3SoW_VANILLA_LANDED_TITLES_FILE}" \
+    "https://gitlab.com/Vertimnus/sinews-of-war/-/raw/main/common/landed_titles/00_landed_titles.txt"
+update-vanilla-file \
     "${CK3TFE_DIR}/common/landed_titles/00_landed_titles.txt" \
     "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
