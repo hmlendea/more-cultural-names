@@ -409,6 +409,7 @@ checkForMismatchingLanguageLinks "CK3"      "${CK3_CULTURES_DIR}"
 checkForMismatchingLanguageLinks "CK3ATHA"  "${CK3ATHA_CULTURES_DIR}"
 checkForMismatchingLanguageLinks "CK3IBL"   "${CK3IBL_CULTURES_DIR}" true
 checkForMismatchingLanguageLinks "CK3MBP"   "${CK3MBP_CULTURES_DIR}" true
+checkForMismatchingLanguageLinks "CK3SoW"   "${CK3SoW_CULTURES_DIR}" true
 
 # Make sure all locations are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"
@@ -417,6 +418,7 @@ checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
@@ -434,9 +436,10 @@ checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_DUCHIES_LOCALISATION_
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_KINGDOMS_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_EMPIRES_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_SPECIAL_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3SoW"   "${CK3SoW_VANILLA_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
 checkDefaultIrLocalisations  "IR"       "${IR_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 
