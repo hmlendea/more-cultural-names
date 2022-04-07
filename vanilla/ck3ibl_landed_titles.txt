@@ -4579,7 +4579,6 @@ e_germany = {
 			}
 		}
 
-
 		d_angria = {
 			color = { 205 105 85 }
 			color2 = { 255 255 255 }
@@ -6174,6 +6173,72 @@ e_germany = {
 					color2 = { 255 255 255 }
 				}
 			}	
+		}
+
+		d_bar = {
+			color = { 24 95 226 }
+			color2 = { 255 255 255 }
+			
+			capital = c_bar #Bar	
+
+			c_bar = {
+				color = { 24 95 226 }
+				color2 = { 255 255 255 }
+
+				b_bar = {
+					province = 2388
+
+					color = { 24 95 226 }
+					color2 = { 255 255 255 }
+				}
+				b_verdun = {
+					province = 2395
+
+					color = { 24 95 226 }
+					color2 = { 255 255 255 }
+				}
+				b_argonne = {	#Displayed as Saint-Mihiel
+					province = 2081
+
+					color = { 24 95 226 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_briey = {
+				color = { 53 132 226 }
+				color2 = { 255 255 255 }
+
+				b_briey = {
+					province = 2706
+
+					color = { 53 132 226 }
+					color2 = { 255 255 255 }
+				}
+				b_hayange = {
+					province = 2080
+
+					color = { 53 132 226 }
+					color2 = { 255 255 255 }
+				}
+			}
+
+			c_vaucouleurs = {
+				color = { 15 80 220 }
+				color2 = { 255 255 255 }
+			
+				b_vaucouleurs = {
+					province = 2387
+
+					color = { 15 80 220 }
+					color2 = { 255 255 255 }
+				}
+				b_toul = {
+					province = 2079
+
+					color = { 15 80 220 }
+					color2 = { 255 255 255 }
+				}
+			}
 		}
 	}
 	
@@ -8364,7 +8429,7 @@ e_germany = {
 				}
 			}
 		}
-		
+
 		d_anhalt = {
 			color = { 195 105 80 }
 			color2 = { 255 255 255 }
@@ -8610,513 +8675,6 @@ e_germany = {
 					province = 3000
 
 					color = { 200 145 155 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-	}
-
-	k_bohemia = {
-		color = { 176 110 32 }
-		color2 = { 255 255 255 }
-
-		capital = c_praha # Praha
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = culture:czech
-				}
-				add = @correct_culture_primary_score
-			}
-		}
-		
-		d_bohemia = {
-			color = { 195 110 11 }
-			color2 = { 255 255 255 }
-			
-			capital = c_praha # Praha
-			
-			c_praha = {
-				color = { 199 114 15 }
-				color2 = { 255 255 255 }
-			
-				b_praha = {
-					province = 4125
-
-					color = { 199 114 15 }
-					color2 = { 255 255 255 }
-				}
-				b_vysehrad = {
-					province = 4126
-
-					color = { 199 114 15 }
-					color2 = { 255 255 255 }
-				}
-				b_stare_mesto = {
-					province = 8981
-
-					color = { 199 114 15 }
-					color2 = { 255 255 255 }
-				}
-				b_beroun = {
-					province = 4127
-
-					color = { 199 114 15 }
-					color2 = { 255 255 255 }
-				}
-				b_melnik = {
-					province = 4128
-
-					color = { 199 114 15 }
-					color2 = { 255 255 255 }
-				}
-				b_slany = {
-					province = 4130
-
-					color = { 199 114 15 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_litomerice = {
-				color = { 215 110 15 }
-				color2 = { 255 255 255 }
-			
-				b_litomerice = {
-					province = 4129
-
-					color = { 215 110 15 }
-					color2 = { 255 255 255 }
-				}
-				b_bilina = {
-					province = 4131
-
-					color = { 215 110 15 }
-					color2 = { 255 255 255 }
-				}
-				b_osek = {
-					province = 9701
-
-					color = { 215 110 15 }
-					color2 = { 255 255 255 }
-				}
-				b_decin = {
-					province = 4133
-
-					color = { 215 110 15 }
-					color2 = { 255 255 255 }
-				}
-				b_zitava = {
-					province = 4135
-
-					color = { 215 110 15 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_zatec = {
-				color = { 197 145 13 }
-				color2 = { 255 255 255 }
-			
-				b_zatec = {
-					province = 4147
-
-					color = { 197 145 13 }
-					color2 = { 255 255 255 }
-				}
-				b_kadan = {
-					province = 4132
-
-					color = { 197 145 13 }
-					color2 = { 255 255 255 }
-				}
-				b_sedlec = { #Tepla / Teplá
-					province = 4141
-
-					color = { 197 145 13 }
-					color2 = { 255 255 255 }
-				}
-				b_loket = {
-					province = 4142
-
-					color = { 197 145 13 }
-					color2 = { 255 255 255 }
-				}
-				b_drevic = {
-					province = 9700
-
-					color = { 197 145 13 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_plzen = {
-				color = { 200 105 5 }
-				color2 = { 255 255 255 }
-			
-				b_plzen = {
-					province = 4145
-
-					color = { 200 105 5 }
-					color2 = { 255 255 255 }
-				}
-				b_stribro = {
-					province = 4143
-
-					color = { 200 105 5 }
-					color2 = { 255 255 255 }
-				}
-				b_plasy = {
-					province = 8982
-
-					color = { 200 105 5 }
-					color2 = { 255 255 255 }
-				}
-				b_primda = {
-					province = 4144
-
-					color = { 200 105 5 }
-					color2 = { 255 255 255 }
-				}
-				b_domazlice = {
-					province = 4146
-
-					color = { 200 105 5 }
-					color2 = { 255 255 255 }
-				}
-				b_prachen = {
-					province = 4149
-
-					color = { 200 105 5 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_doudleby = {
-				color = { 140 90 5 }
-				color2 = { 255 255 255 }
-			
-				b_doudleby = {
-					province = 4154
-
-					color = { 140 90 5 }
-					color2 = { 255 255 255 }
-				}
-				b_netolice = {
-					province = 4150
-
-					color = { 140 90 5 }
-					color2 = { 255 255 255 }
-				}
-				b_rozmberk = {
-					province = 4153
-
-					color = { 140 90 5 }
-					color2 = { 255 255 255 }
-				}
-				b_krumlov = {
-					province = 4152
-
-					color = { 140 90 5 }
-					color2 = { 255 255 255 }
-				}
-				b_pisek = {
-					province = 4151
-
-					color = { 140 90 5 }
-					color2 = { 255 255 255 }
-				}
-				b_bechyne = {
-					province = 4157
-
-					color = { 140 90 5 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_boleslav = {
-				color = { 195 65 10 }
-				color2 = { 255 255 255 }
-			
-				b_boleslav = {
-					province = 4136
-
-					color = { 195 65 10 }
-					color2 = { 255 255 255 }
-				}
-				b_libice = {
-					province = 8980
-
-					color = { 195 65 10 }
-					color2 = { 255 255 255 }
-				}
-				b_zeleznice = {
-					province = 9702
-
-					color = { 195 65 10 }
-					color2 = { 255 255 255 }
-				}
-				b_bezdez = {
-					province = 4134
-
-					color = { 195 65 10 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_hradec = {
-				color = { 201 118 11 }
-				color2 = { 255 255 255 }
-			
-				b_hradec = {
-					province = 4138
-
-					color = { 201 118 11 }
-					color2 = { 255 255 255 }
-				}
-				b_dvur-chvojno = { #Skalice
-					province = 4137
-
-					color = { 201 118 11 }
-					color2 = { 255 255 255 }
-				}
-				b_jaromer = { #Opatovice
-					province = 4139
-
-					color = { 201 118 11 }
-					color2 = { 255 255 255 }
-				}
-				b_vraclav = {
-					province = 4140
-
-					color = { 201 118 11 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_kladsko = {
-				color = { 215 130 20 }
-				color2 = { 255 255 255 }
-			
-				b_kladzko = {	#Kladsko
-					province = 3047
-
-					color = { 215 130 20 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_klodzko
-					}
-				}
-				b_police = {	#Police nad Metují
-					province = 9775
-
-					color = { 215 130 20 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_caslav = {
-				color = { 210 165 40 }
-				color2 = { 255 255 255 }
-			
-				b_caslav = {
-					province = 4161
-
-					color = { 210 165 40 }
-					color2 = { 255 255 255 }
-				}
-				b_chrudim = {
-					province = 4160
-
-					color = { 210 165 40 }
-					color2 = { 255 255 255 }
-				}
-				b_kourim = {
-					province = 8979
-
-					color = { 210 165 40 }
-					color2 = { 255 255 255 }
-				}
-				b_milevsko = { #Ostrov
-					province = 4158
-
-					color = { 210 165 40 }
-					color2 = { 255 255 255 }
-				}
-				b_chynov = {
-					province = 4156
-
-					color = { 210 165 40 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-
-		d_moravia = {
-			color = { 177 111 25 }
-			color2 = { 255 255 255 }
-			
-			capital = c_olomouc # Olomouc
-			
-			c_olomouc = {
-				color = { 163 107 41 }
-				color2 = { 255 255 255 }
-				
-				b_olomouc = {
-					province = 4165
-					
-					color = { 163 107 41 }
-					color2 = { 255 255 255 }
-				}
-				b_unicov = {
-					province = 4181
-					
-					color = { 163 107 41 }
-					color2 = { 255 255 255 }
-				}
-				b_kromeriz = {
-					province = 4148
-					
-					color = { 163 107 41 }
-					color2 = { 255 255 255 }
-				}
-				b_hradisko = {
-					province = 8977
-					
-					color = { 163 107 41 }
-					color2 = { 255 255 255 }
-				}
-				b_stavenice = {
-					province = 9703
-					
-					color = { 163 107 41 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_opava = {
-				color = { 190 90 38 }
-				color2 = { 255 255 255 }
-				
-				b_opava = {
-					province = 4184
-					
-					color = { 190 90 38 }
-					color2 = { 255 255 255 }
-				}
-				b_hradec-nad-moravici = {
-					province = 4183
-					
-					color = { 190 90 38 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_prerov = {
-				color = { 155 91 27 }
-				color2 = { 255 255 255 }
-				
-				b_prerov = {
-					province = 4182
-					
-					color = { 165 101 37 }
-					color2 = { 255 255 255 }
-				}
-				b_spytihnev = {
-					province = 4159
-					
-					color = { 165 101 37 }
-					color2 = { 255 255 255 }
-				}
-				b_landek = {
-					province = 8976
-					
-					color = { 165 101 37 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_jihlava = { # -> Velehrad
-				color = { 168 114 35 }
-				color2 = { 255 255 255 }
-				
-				b_breclav = {
-					province = 4169
-					
-					color = { 168 114 35 }
-					color2 = { 255 255 255 }
-				}
-				b_hodonin = {
-					province = 4170
-					
-					color = { 168 114 35 }
-					color2 = { 255 255 255 }
-				}
-				b_velehrad = {
-					province = 8975
-					
-					color = { 168 114 35 }
-					color2 = { 255 255 255 }
-				}
-				b_veseli = {
-					province = 8999
-					
-					color = { 168 114 35 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_brno = {
-				color = { 170 125 80 }
-				color2 = { 255 255 255 }
-				
-				b_brno = {
-					province = 4168
-					
-					color = { 170 125 80 }
-					color2 = { 255 255 255 }
-				}
-				b_ivancice = {
-					province = 4167
-					
-					color = { 170 125 80 }
-					color2 = { 255 255 255 }
-				}
-				b_zdar = {
-					province = 4163
-					
-					color = { 170 125 80 }
-					color2 = { 255 255 255 }
-				}
-				b_rajhrad = {
-					province = 9704
-					
-					color = { 170 125 80 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_znojmo = {
-				color = { 160 118 40 }
-				color2 = { 255 255 255 }
-				
-				b_znojmo = {
-					province = 4166
-					
-					color = { 160 118 40 }
-					color2 = { 255 255 255 }
-				}
-				b_bitov = {
-					province = 4164
-					
-					color = { 160 118 40 }
-					color2 = { 255 255 255 }
-				}
-				b_mikulov = {
-					province = 3080
-					
-					color = { 160 118 40 }
-					color2 = { 255 255 255 }
-				}
-				b_jihlava = {
-					province = 4162
-					
-					color = { 160 118 40 }
-					color2 = { 255 255 255 }
-				}
-				b_telcz = {
-					province = 4155
-					
-					color = { 160 118 40 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -11999,10 +11557,22 @@ e_byzantium = {
 				color = { 120 110 110 }
 				color2 = { 255 255 255 }
 
-				#capital = 501 # Naissos / Nis	
+				#capital = 501 # Naissos / Nis
+
+				cultural_names = {
+					name_list_serbian = cn_nis
+					name_list_croatian = cn_nis
+					name_list_bosnian = cn_nis
+				}
 				
 				b_naissos = {
 					province = 501
+
+					cultural_names = {
+						name_list_serbian = cn_nis
+						name_list_croatian = cn_nis
+						name_list_bosnian = cn_nis
+					}
 
 					color = { 120 110 110 }
 					color2 = { 255 255 255 }
@@ -14292,7 +13862,7 @@ e_byzantium = {
 		}
 		
 		d_charsianon = {
-			color = { 205 140 75 }
+			color = { 205 130 85 }
 			color2= { 255 255 255 }
 			
 			capital = c_charsianon
@@ -16012,16 +15582,43 @@ e_byzantium = {
 			color2 = { 255 255 255 }
 			
 			capital = c_palermo # Palermo
+
+			cultural_names = {
+				name_list_bedouin = cn_siqilliya
+				name_list_levantine = cn_siqilliya
+				name_list_egyptian = cn_siqilliya
+				name_list_maghrebi = cn_siqilliya
+				name_list_andalusian = cn_siqilliya
+				name_list_yemeni = cn_siqilliya
+			}
 			
 			c_palermo = {
 				color = { 155 254 86 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					name_list_bedouin = cn_balarm
+					name_list_levantine = cn_balarm
+					name_list_egyptian = cn_balarm
+					name_list_maghrebi = cn_balarm
+					name_list_andalusian = cn_balarm
+					name_list_yemeni = cn_balarm
+				}
 				
 				b_palermo = {
 					province = 2635
 					
 					color = { 155 254 86 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						name_list_bedouin = cn_balarm
+						name_list_levantine = cn_balarm
+						name_list_egyptian = cn_balarm
+						name_list_maghrebi = cn_balarm
+						name_list_andalusian = cn_balarm
+						name_list_yemeni = cn_balarm
+					}
 				}
 				b_trapani = {
 					province = 2636
@@ -16068,12 +15665,30 @@ e_byzantium = {
 			c_siracusa = {
 				color = { 115 195 85 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					name_list_bedouin = cn_sarqusa
+					name_list_levantine = cn_sarqusa
+					name_list_egyptian = cn_sarqusa
+					name_list_maghrebi = cn_sarqusa
+					name_list_andalusian = cn_sarqusa
+					name_list_yemeni = cn_sarqusa
+				}
 				
 				b_syracusa = {
 					province = 2638
 					
 					color = { 115 195 85 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						name_list_bedouin = cn_sarqusa
+						name_list_levantine = cn_sarqusa
+						name_list_egyptian = cn_sarqusa
+						name_list_maghrebi = cn_sarqusa
+						name_list_andalusian = cn_sarqusa
+						name_list_yemeni = cn_sarqusa
+					}
 				}
 				b_lentini = {
 					province = 2643
@@ -18027,7 +17642,10 @@ e_scandinavia = {
 	ai_primary_priority = {
 		if = {
 			limit = {
-				culture = { has_cultural_pillar = heritage_north_germanic }
+				OR = {
+					culture = { has_cultural_pillar = heritage_north_germanic }
+					culture = { has_cultural_pillar = heritage_balto_finnic }
+				}
 			}
 			add = @correct_culture_primary_score
 		}
@@ -21482,1828 +21100,28 @@ e_scandinavia = {
 			}
 		}
 	}
-	
-	k_esthonia = {
-		color = { 130 73 45 }
-		color2 = { 255 255 255 }
-		
-		capital = c_reval
-		
-		can_create = {
-			trigger_if = {
-				limit = {
-					is_ai = yes
-				}
-				culture = { has_cultural_pillar = heritage_balto_finnic }
-			}
-		}
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = culture:estonian
-				}
-				add = @correct_culture_primary_score
-			}
-		}
-		
-		d_esthonia = {
-			color = { 150 75 75 }
-			color2 = { 255 255 255 }
-			
-			capital = c_reval # Kalevan
-			
-			c_reval = {
-				color = { 160 85 85 }
-				color2 = { 255 255 255 }
-				
-				b_reval = {
-					province = 94
-				
-					color = { 160 85 85 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_swedish = cn_reval
-						name_list_danish = cn_reval
-						name_list_norwegian = cn_reval
-						name_list_franconian = cn_reval
-						name_list_saxon = cn_reval
-						name_list_swabian = cn_reval
-						name_list_bavarian = cn_reval
-						name_list_norse = cn_reval
-					}
-				}
-				b_harjumaa = {
-					province = 95
-				
-					color = { 160 85 85 }
-					color2 = { 255 255 255 }
-				}
-				b_jarva = {
-					province = 96
-				
-					color = { 160 85 85 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_narva = {
-				color = { 175 55 55 }
-				color2 = { 255 255 255 }
-			
-				b_narva = {
-					province = 98
-				
-					color = { 175 55 55 }
-					color2 = { 255 255 255 }
-				}
-				b_wesenburg = {
-					province = 97
-				
-					color = { 175 55 55 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_osel = {
-				color = { 101 48 48 }
-				color2 = { 255 255 255 }
-				
-				b_kuressare = {
-					province = 88
-					
-					color = { 101 48 48 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_swedish = cn_arensborg
-						name_list_norse = cn_arensborg
-						name_list_danish = cn_arensborg
-						name_list_norwegian = cn_arensborg
-						name_list_franconian = cn_arensburg
-						name_list_saxon = cn_arensburg
-						name_list_swabian = cn_arensburg
-						name_list_bavarian = cn_arensburg
-					}
-				}
-				b_maasilinna = {
-					province = 89
-					
-					color = { 101 48 48 }
-					color2 = { 255 255 255 }
-				}
-				b_muhu = {
-					province = 90
-					
-					color = { 101 48 48 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_swedish = cn_moon
-						name_list_norse = cn_moon
-						name_list_danish = cn_moon
-						name_list_norwegian = cn_moon
-						name_list_franconian = cn_moon
-						name_list_saxon = cn_moon
-						name_list_swabian = cn_moon
-						name_list_bavarian = cn_moon
-					}
-				}
-				b_hiiumaa = {
-					province = 91
-					
-					color = { 101 48 48 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_wiek = {
-				color = { 140 55 55 }
-				color2 = { 255 255 255 }
-			
-				cultural_names = {
-					name_list_estonian = cn_laanemaa
-				}
-				
-				b_hapsal = {
-					province = 92
-					
-					color = { 140 55 55 }
-					color2 = { 255 255 255 }
-				}
-				b_leal = {
-					province = 93
-					
-					color = { 140 55 55 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-		
-		d_livonia = {
-			color = { 110 50 50 }
-			color2 = { 255 255 255 }
-			
-			capital = c_vidzeme
-			
-			c_vidzeme = {
-				color = { 125 50 50 }
-				color2 = { 255 255 255 }
-
-				b_riga = {
-					province = 108
-					
-					color = { 200 40 40 }
-					color2 = { 255 255 255 }
-				}
-				
-				b_lemisele = {
-					province = 101
-					
-					color = { 125 50 50 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_lemsal
-						name_list_saxon = cn_lemsal
-						name_list_swabian = cn_lemsal
-						name_list_bavarian = cn_lemsal
-						name_list_swedish = cn_lemsal
-						name_list_norse = cn_lemsal
-						name_list_danish = cn_lemsal
-						name_list_norwegian = cn_lemsal
-					}
-				}
-				b_salacgriva = {
-					province = 148
-					
-					color = { 125 50 50 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_salismunde
-						name_list_saxon = cn_salismunde
-						name_list_swabian = cn_salismunde
-						name_list_bavarian = cn_salismunde
-					}
-				}
-			}
-			c_livs = {
-				color = { 170 50 50 }
-				color2 = { 255 255 255 }
-				
-				b_parnu = {
-					province = 99
-					
-					color = { 170 50 50 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_pernau
-						name_list_saxon = cn_pernau
-						name_list_swabian = cn_pernau
-						name_list_bavarian = cn_pernau
-						name_list_polish = cn_parnawa
-						name_list_lithuanian = cn_pernu
-					}
-				}
-				b_viljandi = {
-					province = 100
-					
-					color = { 170 50 50 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_fellin
-						name_list_saxon = cn_fellin
-						name_list_swabian = cn_fellin
-						name_list_bavarian = cn_fellin
-					}
-				}
-				b_alistegunde = {
-					province = 147
-					
-					color = { 170 50 50 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_karkus
-						name_list_saxon = cn_karkus
-						name_list_swabian = cn_karkus
-						name_list_bavarian = cn_karkus
-					}
-				}
-			}
-			c_dorpat = {
-				color = { 115 5 5 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_norse = cn_dorpat
-					name_list_swedish = cn_dorpat
-					name_list_danish = cn_dorpat
-					name_list_norwegian = cn_dorpat
-					name_list_franconian = cn_dorpat
-					name_list_saxon = cn_dorpat
-					name_list_swabian = cn_dorpat
-					name_list_bavarian = cn_dorpat
-				}
-				
-				b_tartu = {
-					province = 145
-				
-					color = { 115 5 5 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_norse = cn_dorpat
-						name_list_swedish = cn_dorpat
-						name_list_danish = cn_dorpat
-						name_list_norwegian = cn_dorpat
-						name_list_franconian = cn_dorpat
-						name_list_saxon = cn_dorpat
-						name_list_swabian = cn_dorpat
-						name_list_bavarian = cn_dorpat
-					}
-				}
-				b_poltsamaa = {
-					province = 146
-				
-					color = { 115 5 5 }
-					color2 = { 255 255 255 }
-				}
-				b_vastseliina = {
-					province = 143
-				
-					color = { 115 5 5 }
-					color2 = { 255 255 255 }
-				}
-				b_valga = {
-					province = 144
-				
-					color = { 115 5 5 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-	}
 }
 
 e_wendish_empire = {
-	color = { 130 20 50 }
+	color = { 130 10 0 }
 	color2 = { 200 0 0 }
 	
-	capital = c_krakowska # Krakowska
+	capital = c_vidzeme # Riga
 	
 	definite_form = yes
 		
 	ai_primary_priority = {
 		if = {
 			limit = {
-				culture = { has_cultural_pillar = heritage_west_slavic }
+				culture = { has_cultural_pillar = heritage_baltic }
+			}
+			add = @correct_culture_primary_score
+		}
+		else_if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_balto_finnic }
 			}
 			add = @better_than_the_alternatives_score
-		}
-	}
-	
-	k_moravia = {
-		color = { 158 102 36 }
-		color2 = { 200 0 0 }
-
-		capital = c_brno # Brno
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = culture:czech
-				}
-				add = @correct_culture_primary_score
-			}
-		}
-
-#		allow = {
-#			k_bohemia = { has_holder = no }
-#		}
-	}
-
-	k_poland = {
-		color = { 150 23 23 }
-		color2 = { 200 0 0 }
-		
-		capital = c_krakowska #Krakowska
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = culture:polish
-				}
-				add = @correct_culture_primary_score
-			}
-		}
-
-		d_lesser_poland = {
-			color = { 137 6 20 }
-			color2 = { 255 255 255 }
-			
-			capital = c_krakowska # Krakowska
-
-			c_krakowska = {
-				color = { 137 6 20 }
-				color2 = { 255 255 255 }
-				
-				b_krakow = {
-					province = 527
-
-					color = { 137 6 20 }
-					color2 = { 255 255 255 }
-				}
-				b_olsztyn = {
-					province = 440
-
-					color = { 137 6 20 }
-					color2 = { 255 255 255 }
-				}
-				b_czestochowa = {
-					province = 526
-
-					color = { 137 6 20 }
-					color2 = { 255 255 255 }
-				}
-				b_dabrowa_gorn = {
-					province = 4972
-
-					color = { 137 6 20 }
-					color2 = { 255 255 255 }
-				}
-				b_wislica = {
-					province = 4973
-
-					color = { 137 6 20 }
-					color2 = { 255 255 255 }
-				}
-				b_jedrzejow = {
-					province = 4974
-
-					color = { 137 6 20 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_sacz = {
-				color = { 117 6 2 }
-				color2 = { 255 255 255 }
-				
-				b_sacz = {
-					province = 532
-
-					color = { 117 6 2 }
-					color2 = { 255 255 255 }
-				}
-				b_pilzno = {
-					province = 4968
-
-					color = { 117 6 2 }
-					color2 = { 255 255 255 }
-				}
-				b_nowytarg = {
-					province = 4969
-
-					color = { 117 6 2 }
-					color2 = { 255 255 255 }
-				}
-				b_bochnia = {
-					province = 4970
-
-					color = { 117 6 2 }
-					color2 = { 255 255 255 }
-				}
-				b_wieliczka = {
-					province = 4971
-
-					color = { 117 6 2 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_sandomierska = {
-				color = { 147 16 2 }
-				color2 = { 255 255 255 }
-			
-				b_sandomierz = {
-					province = 531
-
-					color = { 147 16 2 }
-					color2 = { 255 255 255 }
-				}
-				b_opatow = {
-					province = 4961
-
-					color = { 147 16 2 }
-					color2 = { 255 255 255 }
-				}
-				b_kielce = {
-					province = 4962
-
-					color = { 147 16 2 }
-					color2 = { 255 255 255 }
-				}
-				b_olesnica_MPL = {
-					province = 4963
-
-					color = { 147 16 2 }
-					color2 = { 255 255 255 }
-				}
-				b_checiny = {
-					province = 4964
-
-					color = { 147 16 2 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_stezycka = {
-				color = { 127 40 32 }
-				color2 = { 255 255 255 }
-			
-				b_stezyca = {
-					province = 4951
-
-					color = { 127 30 2 }
-					color2 = { 255 255 255 }
-				}
-				b_lukow = {
-					province = 4952
-
-					color = { 127 30 2 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_radomska = {
-				color = { 150 30 5 }
-				color2 = { 255 255 255 }
-			
-				b_radom = {
-					province = 4953
-
-					color = { 150 30 5 }
-					color2 = { 255 255 255 }
-				}
-				b_opoczno = {
-					province = 4954
-
-					color = { 150 30 5 }
-					color2 = { 255 255 255 }
-				}
-				b_ilza = {
-					province = 4955
-
-					color = { 150 30 5 }
-					color2 = { 255 255 255 }
-				}
-				b_szydlowiec = {
-					province = 4956
-
-					color = { 150 30 5 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_lubelska = {
-				color = { 147 40 2 }
-				color2 = { 255 255 255 }
-			
-				b_lublin = {
-					province = 4957
-
-					color = { 147 40 2 }
-					color2 = { 255 255 255 }
-				}
-				b_parczew = {
-					province = 4958
-
-					color = { 147 40 2 }
-					color2 = { 255 255 255 }
-				}
-				b_goraj = {
-					province = 4959
-
-					color = { 147 40 2 }
-					color2 = { 255 255 255 }
-				}
-				b_urzedow = {
-					province = 4960
-
-					color = { 147 40 2 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_tarnowska= {
-				color = { 167 60 22 }
-				color2 = { 255 255 255 }
-			
-				b_tarnow = {
-					province = 4965
-
-					color = { 167 60 22 }
-					color2 = { 255 255 255 }
-				}
-				b_mielec = {
-					province = 4966
-
-					color = { 167 60 22 }
-					color2 = { 255 255 255 }
-				}
-				b_baranow = {
-					province = 4967
-
-					color = { 167 60 22 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-		
-		d_wielkopolska = {
-			color = { 140 13 13 }
-			color2 = { 255 255 255 }
-			
-			cultural_names = {
-				name_list_franconian = cn_grosspolen
-				name_list_saxon = cn_grosspolen
-				name_list_swabian = cn_grosspolen
-				name_list_bavarian = cn_grosspolen
-			}
-			
-			capital = c_poznanska # Poznan
-			
-			c_poznanska = {
-				color = { 140 13 13 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_posen
-					name_list_saxon = cn_posen
-					name_list_swabian = cn_posen
-					name_list_bavarian = cn_posen
-				}
-			
-				b_poznan = {
-					province = 4900
-
-					color = { 140 13 13 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_posen
-						name_list_saxon = cn_posen
-						name_list_swabian = cn_posen
-						name_list_bavarian = cn_posen
-					}
-				}
-				b_miedzyrzecz = {
-					province = 4901
-
-					color = { 140 13 13 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_meseritz
-						name_list_saxon = cn_meseritz
-						name_list_swabian = cn_meseritz
-						name_list_bavarian = cn_meseritz
-					}
-				}
-				b_czarnkow = {
-					province = 4902
-
-					color = { 140 13 13 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_scharnikau
-						name_list_saxon = cn_scharnikau
-						name_list_swabian = cn_scharnikau
-						name_list_bavarian = cn_scharnikau
-					}
-				}
-				b_wronki = {
-					province = 4903
-
-					color = { 140 13 13 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_wronke
-						name_list_saxon = cn_wronke
-						name_list_swabian = cn_wronke
-						name_list_bavarian = cn_wronke
-					}
-				}
-				b_wolsztyn = {
-					province = 4904
-
-					color = { 140 13 13 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_wollstein
-						name_list_saxon = cn_wollstein
-						name_list_swabian = cn_wollstein
-						name_list_bavarian = cn_wollstein
-					}
-				}
-			}
-			c_gnieznienska = {
-				color = { 150 15 10 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_gnesen
-					name_list_saxon = cn_gnesen
-					name_list_swabian = cn_gnesen
-					name_list_bavarian = cn_gnesen
-				}
-			
-				b_gniezno = {
-					province = 4905
-
-					color = { 150 15 10 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_gnesen
-						name_list_saxon = cn_gnesen
-						name_list_swabian = cn_gnesen
-						name_list_bavarian = cn_gnesen
-					}
-				}
-				b_sroda = {
-					province = 4906
-
-					color = { 150 15 10 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_schroda
-						name_list_saxon = cn_schroda
-						name_list_swabian = cn_schroda
-						name_list_bavarian = cn_schroda
-					}
-				}
-				b_pyzdry = {
-					province = 4907
-
-					color = { 150 15 10 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_peisern
-						name_list_saxon = cn_peisern
-						name_list_swabian = cn_peisern
-						name_list_bavarian = cn_peisern
-					}
-				}
-				b_konin = {
-					province = 4908
-
-					color = { 150 15 10 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_kaliska = {
-				color = { 160 6 20 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_kalisch
-					name_list_saxon = cn_kalisch
-					name_list_swabian = cn_kalisch
-					name_list_bavarian = cn_kalisch
-				}
-			
-				b_kalisz = {
-					province = 4909
-
-					color = { 155 6 20 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_kalisch
-						name_list_saxon = cn_kalisch
-						name_list_swabian = cn_kalisch
-						name_list_bavarian = cn_kalisch
-					}
-				}
-				b_kozmin = {
-					province = 4910
-
-					color = { 155 6 20 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_koschmin
-						name_list_saxon = cn_koschmin
-						name_list_swabian = cn_koschmin
-						name_list_bavarian = cn_koschmin
-					}
-				}
-				b_turek = {
-					province = 4911
-
-					color = { 155 6 20 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_wschowska = {
-				color = { 135 30 30 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_fraustadt
-					name_list_saxon = cn_fraustadt
-					name_list_swabian = cn_fraustadt
-					name_list_bavarian = cn_fraustadt
-				}
-			
-				b_wschowa = {
-					province = 4912
-
-					color = { 135 30 30 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_fraustadt
-						name_list_saxon = cn_fraustadt
-						name_list_swabian = cn_fraustadt
-						name_list_bavarian = cn_fraustadt
-					}
-				}
-				b_koscian = {
-					province = 4913
-
-					color = { 135 30 30 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_kosten
-						name_list_saxon = cn_kosten
-						name_list_swabian = cn_kosten
-						name_list_bavarian = cn_kosten
-					}
-				}
-				b_srem = {
-					province = 4914
-
-					color = { 135 30 30 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_schrimm
-						name_list_saxon = cn_schrimm
-						name_list_swabian = cn_schrimm
-						name_list_bavarian = cn_schrimm
-					}
-				}
-			}
-			c_krajna = {
-				color = { 150 15 15 }
-				color2 = { 255 255 255 }
-			
-				b_naklo = {
-					province = 4915
-
-					color = { 150 15 15 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_nakel
-						name_list_saxon = cn_nakel
-						name_list_swabian = cn_nakel
-						name_list_bavarian = cn_nakel
-					}
-				}
-				b_zlotow = {
-					province = 4916
-
-					color = { 150 15 15 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_flatow
-						name_list_saxon = cn_flatow
-						name_list_swabian = cn_flatow
-						name_list_bavarian = cn_flatow
-					}
-				}
-				b_znin = {
-					province = 4917
-
-					color = { 150 15 15 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_znin
-						name_list_saxon = cn_znin
-						name_list_swabian = cn_znin
-						name_list_bavarian = cn_znin
-					}
-				}
-			}
-			c_lubusz = {
-				color = { 180 60 25 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_lebus
-					name_list_saxon = cn_lebus
-					name_list_swabian = cn_lebus
-					name_list_bavarian = cn_lebus
-				}
-				
-				b_lebus = {		#Lubusz in PLN
-					province = 3149
-
-					color = { 180 60 25 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_lebus
-						name_list_saxon = cn_lebus
-						name_list_swabian = cn_lebus
-						name_list_bavarian = cn_lebus
-					}
-				}
-				
-				b_oderfrankfurt = {		#Zliwitz in PLN
-					province = 3142
-
-					color = { 180 60 25 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_oderfrankfurt
-						name_list_saxon = cn_oderfrankfurt
-						name_list_swabian = cn_oderfrankfurt
-						name_list_bavarian = cn_oderfrankfurt
-					}
-				}
-
-				b_sulecin = {
-					province = 3148
-
-					color = { 180 60 25 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_zielenzig
-						name_list_saxon = cn_zielenzig
-						name_list_swabian = cn_zielenzig
-						name_list_bavarian = cn_zielenzig
-					}
-				}
-				b_rzepin = {
-					province = 3147
-
-					color = { 180 60 25 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_reppen
-						name_list_saxon = cn_reppen
-						name_list_swabian = cn_reppen
-						name_list_bavarian = cn_reppen
-					}
-				}
-			}
-		}
-		
-		d_mazovia = {
-			color = { 125 46 36 }
-			color2 = { 255 255 255 }
-			
-			capital = c_plocka #Plock
-			
-			c_plocka = {
-				color = { 127 30 2 }
-				color2 = { 255 255 255 }
-
-				b_plock = {
-					province = 529
-					
-					color = { 127 30 2 }
-					color2 = { 255 255 255 }
-				}
-				b_wyszgorod = {
-					province = 4933
-					
-					color = { 127 30 2 }
-					color2 = { 255 255 255 }
-				}
-				b_zawkrze = {
-					province = 4934
-					
-					color = { 127 30 2 }
-					color2 = { 255 255 255 }
-				}
-				b_ciechanow = {
-					province = 4935
-					
-					color = { 127 30 2 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_czerska = {
-				color = { 150 40 25 }
-				color2 = { 255 255 255 }
-				
-				b_czersk = {
-					province = 530
-
-					color = { 150 40 25 }
-					color2 = { 255 255 255 }
-				}
-				b_warszawa = {
-					province = 4936
-
-					color = { 150 40 25 }
-					color2 = { 255 255 255 }
-				}
-				b_liw = {
-					province = 4937
-
-					color = { 150 40 25 }
-					color2 = { 255 255 255 }
-				}
-				b_brodno = {
-					province = 4938
-
-					color = { 150 40 25 }
-					color2 = { 255 255 255 }
-				}
-				b_garwolin = {
-					province = 4939
-
-					color = { 150 40 25 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_gostyninska = {
-				color = { 137 30 18 }
-				color2 = { 255 255 255 }
-				
-				b_gostynin = {
-					province = 4940
-
-					color = { 137 30 18 }
-					color2 = { 255 255 255 }
-				}
-				b_rawa = {
-					province = 4941
-
-					color = { 137 30 18 }
-					color2 = { 255 255 255 }
-				}
-				b_sochaczew = {
-					province = 4942
-
-					color = { 137 30 18 }
-					color2 = { 255 255 255 }
-				}
-				b_lowicz = {
-					province = 4950
-
-					color = { 137 30 18 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_lomzynska = {
-				color = { 127 0 70 }
-				color2 = { 255 255 255 }
-				
-				b_lomza = {
-					province = 4943
-
-					color = { 127 0 70 }
-					color2 = { 255 255 255 }
-				}
-				b_wizna = {
-					province = 4944
-
-					color = { 127 0 70 }
-					color2 = { 255 255 255 }
-				}
-				b_kolno = {
-					province = 4945
-
-					color = { 127 0 70 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_zakroczymska = {
-				color = { 122 6 50 }
-				color2 = { 255 255 255 }
-				
-				b_zakroczym = {
-					province = 4946
-
-					color = { 122 6 50 }
-					color2 = { 255 255 255 }
-				}
-				b_nur = {
-					province = 4947
-
-					color = { 122 6 50 }
-					color2 = { 255 255 255 }
-				}
-				b_wyszkow = {
-					province = 4948
-
-					color = { 122 6 50 }
-					color2 = { 255 255 255 }
-				}
-				b_rozan = {
-					province = 4949
-
-					color = { 122 6 50 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-
-		d_upper_silesia = {
-			color = { 180 20 100 }
-			color2 = { 255 255 255 }
-			
-			capital = c_opole # Opole
-
-			c_opole = {
-				color = { 180 20 100 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_oppeln
-					name_list_saxon = cn_oppeln
-					name_list_swabian = cn_oppeln
-					name_list_bavarian = cn_oppeln
-				}
-				
-				b_opole = {
-					province = 3052
-
-					color = { 180 20 100 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_oppeln
-						name_list_saxon = cn_oppeln
-						name_list_swabian = cn_oppeln
-						name_list_bavarian = cn_oppeln
-					}
-				}
-				b_kreuzburg = {
-					province = 3053
-
-					color = { 180 20 100 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_kluczbork
-						name_list_czech = cn_kluczbork
-						name_list_polabian = cn_kluczbork
-						name_list_pommeranian = cn_kluczbork
-					}
-				}
-				b_strehlitz = {
-					province = 3051
-
-					color = { 180 20 100 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_strzelce
-						name_list_polabian = cn_strzelce
-						name_list_pommeranian = cn_strzelce
-					}
-				}
-			}
-			
-			c_brzeg = {
-				color = { 169 35 75 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_brieg
-					name_list_saxon = cn_brieg
-					name_list_swabian = cn_brieg
-					name_list_bavarian = cn_brieg
-				}
-				
-				b_brzeg = {
-					province = 3049
-
-					color = { 169 35 75 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_brieg
-						name_list_saxon = cn_brieg
-						name_list_swabian = cn_brieg
-						name_list_bavarian = cn_brieg
-					}
-				}
-				b_olawa = {
-					province = 3055
-
-					color = { 169 35 75 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_ohlau
-						name_list_saxon = cn_ohlau
-						name_list_swabian = cn_ohlau
-						name_list_bavarian = cn_ohlau
-					}
-				}
-				b_otmunchow = {
-					province = 3056
-
-					color = { 169 35 75 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_ottmachau
-						name_list_saxon = cn_ottmachau
-						name_list_swabian = cn_ottmachau
-						name_list_bavarian = cn_ottmachau
-					}
-				}
-			}
-		
-			c_nysa = {
-				color = { 175 85 105 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_neisse
-					name_list_saxon = cn_neisse
-					name_list_swabian = cn_neisse
-					name_list_bavarian = cn_neisse
-				}
-
-				b_nysa = {
-					province = 3048
-
-					color = { 175 85 105 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_neisse
-						name_list_saxon = cn_neisse
-						name_list_swabian = cn_neisse
-						name_list_bavarian = cn_neisse
-					}
-				}
-				b_glogowek = {
-					province = 3050
-
-					color = { 175 85 105 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_oberglogau
-						name_list_saxon = cn_oberglogau
-						name_list_swabian = cn_oberglogau
-						name_list_bavarian = cn_oberglogau
-					}
-				}
-				b_frankenstein = {
-					province = 3046
-
-					color = { 175 85 105 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_zabkowice
-						name_list_polabian = cn_zabkowice
-						name_list_pommeranian = cn_zabkowice
-					}
-				}
-			}
-			c_cieszyn = {
-				color = { 190 20 75 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_teschen
-					name_list_saxon = cn_teschen
-					name_list_swabian = cn_teschen
-					name_list_bavarian = cn_teschen
-				}
-				
-				b_cieszyn = {
-					province = 3040
-
-					color = { 190 20 75 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_teschen
-						name_list_saxon = cn_teschen
-						name_list_swabian = cn_teschen
-						name_list_bavarian = cn_teschen
-					}
-				}
-				b_bielsko = {
-					province = 3041
-
-					color = { 190 20 75 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_bielitz
-						name_list_saxon = cn_bielitz
-						name_list_swabian = cn_bielitz
-						name_list_bavarian = cn_bielitz
-					}
-				}
-			}
-			c_ratibor = {
-				color = { 190 35 75 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polish = cn_raciborz
-					name_list_polabian = cn_raciborz
-					name_list_pommeranian = cn_raciborz
-				}
-				
-				b_ratibor = {
-					province = 3042
-
-					color = { 190 35 75 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_raciborz
-						name_list_polabian = cn_raciborz
-						name_list_pommeranian = cn_raciborz
-					}
-				}
-				b_rybnik = {
-					province = 3043
-
-					color = { 190 35 75 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_rybnick
-						name_list_saxon = cn_rybnick
-						name_list_swabian = cn_rybnick
-						name_list_bavarian = cn_rybnick
-					}
-				}
-			}
-			c_bethen = {
-				color = { 190 5 70 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polish = cn_bytom
-					name_list_czech = cn_bytom
-					name_list_polabian = cn_bytom
-					name_list_pommeranian = cn_bytom
-				}
-				
-				b_bethen = {
-					province = 3044
-
-					color = { 190 5 70 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_bytom
-						name_list_czech = cn_bytom
-						name_list_polabian = cn_bytom
-						name_list_pommeranian = cn_bytom
-					}
-				}
-				b_lubliniec = {
-					province = 3054
-
-					color = { 190 5 70 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_lublinitz
-						name_list_saxon = cn_lublinitz
-						name_list_swabian = cn_lublinitz
-						name_list_bavarian = cn_lublinitz
-					}
-				}
-			}
-		}
-		
-		d_lower_silesia = {
-			color = { 230 60 20 }
-			color2 = { 255 255 255 }
-			
-			capital = c_breslau # Opole
-		
-			c_breslau = {
-				color = { 218 37 15 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polish = cn_wroclaw
-					name_list_polabian = cn_wroclaw
-					name_list_pommeranian = cn_wroclaw
-					name_list_czech = cn_vratislav
-				}
-
-				b_breslau = {
-					province = 3045
-
-					color = { 218 37 15 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_wroclaw
-						name_list_polabian = cn_wroclaw
-						name_list_pommeranian = cn_wroclaw
-						name_list_czech = cn_vratislav
-					}
-				}
-				b_bardo = {
-					province = 3057
-
-					color = { 218 37 15 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_wartha
-						name_list_saxon = cn_wartha
-						name_list_swabian = cn_wartha
-						name_list_bavarian = cn_wartha
-					}
-				}
-			}
-			c_miliez = {
-				color = { 225 105 40 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_militsch
-					name_list_saxon = cn_militsch
-					name_list_swabian = cn_militsch
-					name_list_bavarian = cn_militsch
-				}
-
-				b_miliez = {
-					province = 3061
-
-					color = { 225 105 40 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_militsch
-						name_list_saxon = cn_militsch
-						name_list_swabian = cn_militsch
-						name_list_bavarian = cn_militsch
-					}
-				}
-				b_olesnica = {
-					province = 3062
-
-					color = { 225 105 40 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_oels
-						name_list_saxon = cn_oels
-						name_list_swabian = cn_oels
-						name_list_bavarian = cn_oels
-					}
-				}
-			}
-			c_schweibus = {
-				color = { 235 45 5 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polish = cn_swiebodzin
-					name_list_czech = cn_swiebodzin
-					name_list_polabian = cn_swiebodzin
-					name_list_pommeranian = cn_swiebodzin
-				}
-
-				b_schweibus = {
-					province = 3145
-
-					color = { 235 45 5 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_swiebodzin
-						name_list_czech = cn_swiebodzin
-						name_list_polabian = cn_swiebodzin
-						name_list_pommeranian = cn_swiebodzin
-					}
-				}
-				b_siedlischo = {
-					province = 3146
-
-					color = { 235 45 5 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_carolath
-						name_list_saxon = cn_carolath
-						name_list_swabian = cn_carolath
-						name_list_bavarian = cn_carolath
-					}
-				}
-				b_bytom = {	#today Bytom Odrzański
-					province = 3065
-
-					color = { 235 45 5 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_niederbeuthen
-						name_list_saxon = cn_niederbeuthen
-						name_list_swabian = cn_niederbeuthen
-						name_list_bavarian = cn_niederbeuthen
-					}
-				}
-			}
-			c_grunberg = {
-				color = { 210 85 30 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polish = cn_zielona_gora
-					name_list_polabian = cn_zielona_gora
-					name_list_pommeranian = cn_zielona_gora
-					name_list_czech = cn_zelena_hora
-				}
-
-				b_grunberg = {
-					province = 3064
-
-					color = { 210 85 30 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_zielona_gora
-						name_list_polabian = cn_zielona_gora
-						name_list_pommeranian = cn_zielona_gora
-						name_list_czech = cn_zelena_hora
-					}
-				}
-				b_gubin = {
-					province = 3139
-
-					color = { 210 85 30 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_guben
-						name_list_saxon = cn_guben
-						name_list_swabian = cn_guben
-						name_list_bavarian = cn_guben
-					}
-				}
-				b_crossen = {
-					province = 3144
-
-					color = { 210 85 30 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_krosno
-						name_list_polabian = cn_krosno
-						name_list_pommeranian = cn_krosno
-						name_list_czech = cn_krosno
-					}
-				}
-			}
-			c_sprottau = {
-				color = { 240 115 75 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polish = cn_szprotawa
-					name_list_polabian = cn_szprotawa
-					name_list_pommeranian = cn_szprotawa
-				}
-
-				b_sprottau = {
-					province = 3067
-
-					color = { 240 115 75 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polish = cn_szprotawa
-						name_list_polabian = cn_szprotawa
-						name_list_pommeranian = cn_szprotawa
-					}
-				}
-				b_zagan = {
-					province = 3066
-
-					color = { 240 115 75 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_sagan
-						name_list_saxon = cn_sagan
-						name_list_swabian = cn_sagan
-						name_list_bavarian = cn_sagan
-					}
-				}
-				b_nowogrodziec = {
-					province = 3070
-
-					color = { 240 115 75 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_naumburg
-						name_list_saxon = cn_naumburg
-						name_list_swabian = cn_naumburg
-						name_list_bavarian = cn_naumburg
-						#Yes, it's another Naumburg
-					}
-				}
-			}
-			c_przemkow = {
-				color = { 195 75 60 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_franconian = cn_primkenau
-					name_list_saxon = cn_primkenau
-					name_list_swabian = cn_primkenau
-					name_list_bavarian = cn_primkenau
-				}
-
-				b_przemkow = {
-					province = 3068
-
-					color = { 195 75 60 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_primkenau
-						name_list_saxon = cn_primkenau
-						name_list_swabian = cn_primkenau
-						name_list_bavarian = cn_primkenau
-					}
-				}
-				b_wlen = {
-					province = 3069
-
-					color = { 195 75 60 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_lahn
-						name_list_saxon = cn_lahn
-						name_list_swabian = cn_lahn
-						name_list_bavarian = cn_lahn
-					}
-				}
-				b_swiny = {
-					province = 3059
-
-					color = { 195 75 60 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_schweinhausburg
-						name_list_saxon = cn_schweinhausburg
-						name_list_swabian = cn_schweinhausburg
-						name_list_bavarian = cn_schweinhausburg
-					}
-				}
-			}
-			c_legnica = {
-				color = { 225 80 40 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_czech = cn_lehnice
-					name_list_franconian = cn_liegnitz
-					name_list_saxon = cn_liegnitz
-					name_list_swabian = cn_liegnitz
-					name_list_bavarian = cn_liegnitz
-				}
-
-				b_legnica = {
-					province = 3058
-
-					color = { 225 80 40 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_czech = cn_lehnice
-						name_list_franconian = cn_liegnitz
-						name_list_saxon = cn_liegnitz
-						name_list_swabian = cn_liegnitz
-						name_list_bavarian = cn_liegnitz
-					}
-				}
-				b_glogow = {
-					province = 3063
-
-					color = { 225 80 40 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_czech = cn_hlohov
-						name_list_franconian = cn_glogau
-						name_list_saxon = cn_glogau
-						name_list_swabian = cn_glogau
-						name_list_bavarian = cn_glogau
-					}
-				}
-				b_sadowel = {
-					province = 3060
-
-					color = { 225 80 40 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_sandelswalde
-						name_list_saxon = cn_sandelswalde
-						name_list_swabian = cn_sandelswalde
-						name_list_bavarian = cn_sandelswalde
-					}
-				}
-			}
-		}
-		
-		d_kuyavia = {
-			color = { 190 75 50 }
-			color2 = { 255 255 255 }
-			
-			capital = c_kujawy # Kruszwica
-		
-			c_kujawy = {
-				color = { 190 75 50 }
-				color2 = { 255 255 255 }
-			
-				b_kruszwica = {
-					province = 4918
-
-					color = { 190 75 50 }
-					color2 = { 255 255 255 }
-				}
-				b_wloclawek = {
-					province = 4919
-
-					color = { 190 75 50 }
-					color2 = { 255 255 255 }
-				}
-				b_inowroclaw = {
-					province = 4920
-
-					color = { 190 75 50 }
-					color2 = { 255 255 255 }
-				}
-				b_bydgoszcz = {
-					province = 4921
-
-					color = { 190 75 50 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_dobrzynska = {
-				color = { 200 60 20 }
-				color2 = { 255 255 255 }
-			
-				b_dobrzyn = {
-					province = 4922
-
-					color = { 200 60 20 }
-					color2 = { 255 255 255 }
-				}
-				b_michalowo = {
-					province = 4923
-
-					color = { 200 60 20 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_leczycka = {
-				color = { 210 50 10 }
-				color2 = { 255 255 255 }
-			
-				b_leczyca = {
-					province = 4924
-
-					color = { 210 50 10 }
-					color2 = { 255 255 255 }
-				}
-				b_lodz = {
-					province = 4925
-
-					color = { 210 50 10 }
-					color2 = { 255 255 255 }
-				}
-				b_klodawa = {
-					province = 4926
-
-					color = { 210 50 10 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_sieradzka = {
-				color = { 210 75 10 }
-				color2 = { 255 255 255 }
-				
-				b_sieradz = {
-					province = 528
-
-					color = { 210 75 10 }
-					color2 = { 255 255 255 }
-				}
-				b_piotrkow = {
-					province = 4927
-
-					color = { 210 75 10 }
-					color2 = { 255 255 255 }
-				}
-				b_przedborz = {
-					province = 4928
-
-					color = { 210 75 10 }
-					color2 = { 255 255 255 }
-				}
-				b_radomsko = {
-					province = 4929
-
-					color = { 210 75 10 }
-					color2 = { 255 255 255 }
-				}
-				b_uniejow = {
-					province = 4930
-
-					color = { 210 75 10 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_wielunska = {
-				color = { 180 60 25 }
-				color2 = { 255 255 255 }
-			
-				b_wielun = {
-					province = 4931
-
-					color = { 180 60 25 }
-					color2 = { 255 255 255 }
-				}
-				b_grabow = {
-					province = 4932
-
-					color = { 180 60 25 }
-					color2 = { 255 255 255 }
-				}
-			}
 		}
 	}
 	
@@ -24898,21 +22716,6 @@ e_wendish_empire = {
 					
 					color = { 125 50 50 }
 					color2 = { 255 255 255 }
-					
-					cultural_names = {
-					}
-				}
-				b_mitau = {
-					province = 107
-					
-					color = { 200 40 40 }
-					color2 = { 255 255 255 }
-				}
-				b_bauska = {
-					province = 105
-					
-					color = { 200 40 40 }
-					color2 = { 255 255 255 }
 				}
 				b_dobele = {
 					province = 106
@@ -24926,6 +22729,18 @@ e_wendish_empire = {
 						name_list_swabian = cn_dobeln
 						name_list_bavarian = cn_dobeln
 					}
+				}
+				b_mitau = {
+					province = 107
+					
+					color = { 200 40 40 }
+					color2 = { 255 255 255 }
+				}
+				b_bauska = {
+					province = 105
+					
+					color = { 200 40 40 }
+					color2 = { 255 255 255 }
 				}
 				b_neuenburg = {
 					province = 121
@@ -25000,6 +22815,156 @@ e_wendish_empire = {
 					province = 150
 					
 					color = { 192 14 14 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+		
+		d_samogitia = {
+			color = { 150 70 70 }
+			color2 = { 255 255 255 }
+			
+			capital = c_raseiniai # Samogitia
+
+			c_raseiniai = { # Samogitia
+				color = { 166 81 81 }
+				color2 = { 255 255 255 }
+				
+				b_raseiniai = {
+					province = 124
+					
+					color = { 166 81 81 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_raseinen
+						name_list_saxon = cn_raseinen
+						name_list_swabian = cn_raseinen
+						name_list_bavarian = cn_raseinen
+						name_list_swedish = cn_raseinen
+						name_list_norse = cn_raseinen
+						name_list_danish = cn_raseinen
+						name_list_norwegian = cn_raseinen
+					}
+				}
+				b_jurbarkas = {
+					province = 123
+					
+					color = { 166 81 81 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_georgenburg
+						name_list_saxon = cn_georgenburg
+						name_list_swabian = cn_georgenburg
+						name_list_bavarian = cn_georgenburg
+						name_list_swedish = cn_georgsborg
+						name_list_norse = cn_georgsborg
+						name_list_danish = cn_georgsborg
+						name_list_norwegian = cn_georgsborg
+					}
+				}
+				b_veliuona = {
+					province = 129
+					
+					color = { 166 81 81 }
+					color2 = { 255 255 255 }
+				}
+				b_kedainiai = {
+					province = 131
+					
+					color = { 166 81 81 }
+					color2 = { 255 255 255 }
+				}
+			}
+			
+			c_scalovia = {
+				color = { 190 85 85 }
+				color2 = { 255 255 255 }
+				
+				b_ragnit = {
+					province = 120
+					
+					color = { 190 85 85 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_pommeranian = cn_ragneta
+						name_list_polish = cn_ragneta
+						name_list_czech = cn_ragneta
+						name_list_russian = cn_ragneta
+						name_list_prussian = cn_ragnita
+						name_list_lithuanian = cn_ragaine
+						name_list_latgalian = cn_ragaine
+					}
+				}
+				b_tilsit = {
+					province = 119
+					
+					color = { 190 85 85 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_memel = {
+				color = { 166 85 85 }
+				color2 = { 255 255 255 }
+				
+				b_memel = {
+					province = 118
+					
+					color = { 166 85 85 }
+					color2 = { 255 255 255 }
+				}
+				b_taurage = {
+					province = 125
+					
+					color = { 166 85 85 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_palanga = {
+				color = { 150 95 95 }
+				color2 = { 255 255 255 }
+				
+				b_palanga = {
+					province = 115
+					
+					color = { 150 95 95 }
+					color2 = { 255 255 255 }
+				}
+				b_medeniken = {
+					province = 126
+					
+					color = { 150 95 95 }
+					color2 = { 255 255 255 }
+				}
+				b_telsiai = {
+					province = 128
+					
+					color = { 150 95 95 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_siauliai = {
+				color = { 165 105 105 }
+				color2 = { 255 255 255 }
+				
+				b_siauliai = {
+					province = 127
+					
+					color = { 165 105 105 }
+					color2 = { 255 255 255 }
+				}
+				b_upyte = {
+					province = 132
+					
+					color = { 165 105 105 }
+					color2 = { 255 255 255 }
+				}
+				b_birzai = {
+					province = 152
+					
+					color = { 165 105 105 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -25201,152 +23166,357 @@ e_wendish_empire = {
 				}
 			}
 		}
+	}
+	
+	k_esthonia = {
+		color = { 130 73 45 }
+		color2 = { 255 255 255 }
 		
-		d_samogitia = {
-			color = { 150 70 70 }
+		capital = c_reval
+		
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				culture = { has_cultural_pillar = heritage_balto_finnic }
+			}
+		}
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:estonian
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		d_esthonia = {
+			color = { 150 75 75 }
 			color2 = { 255 255 255 }
 			
-			capital = c_raseiniai # Samogitia
-
-			c_raseiniai = { # Samogitia
-				color = { 166 81 81 }
-				color2 = { 255 255 255 }
-				
-				b_raseiniai = {
-					province = 124
-					
-					color = { 166 81 81 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_raseinen
-						name_list_saxon = cn_raseinen
-						name_list_swabian = cn_raseinen
-						name_list_bavarian = cn_raseinen
-						name_list_swedish = cn_raseinen
-						name_list_norse = cn_raseinen
-						name_list_danish = cn_raseinen
-						name_list_norwegian = cn_raseinen
-					}
-				}
-				b_jurbarkas = {
-					province = 123
-					
-					color = { 166 81 81 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_franconian = cn_georgenburg
-						name_list_saxon = cn_georgenburg
-						name_list_swabian = cn_georgenburg
-						name_list_bavarian = cn_georgenburg
-						name_list_swedish = cn_georgsborg
-						name_list_norse = cn_georgsborg
-						name_list_danish = cn_georgsborg
-						name_list_norwegian = cn_georgsborg
-					}
-				}
-				b_veliuona = {
-					province = 129
-					
-					color = { 166 81 81 }
-					color2 = { 255 255 255 }
-				}
-				b_kedainiai = {
-					province = 131
-					
-					color = { 166 81 81 }
-					color2 = { 255 255 255 }
-				}
-			}
+			capital = c_reval # Kalevan
 			
-			c_scalovia = {
-				color = { 190 85 85 }
+			c_reval = {
+				color = { 160 85 85 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					name_list_swedish = cn_reval
+					name_list_danish = cn_reval
+					name_list_norwegian = cn_reval
+					name_list_norse = cn_rafala
+					name_list_franconian = cn_reval
+					name_list_saxon = cn_reval
+					name_list_swabian = cn_reval
+					name_list_bavarian = cn_reval
+				}
 				
-				b_ragnit = {
-					province = 120
-					
-					color = { 190 85 85 }
+				b_reval = {
+					province = 94
+				
+					color = { 160 85 85 }
 					color2 = { 255 255 255 }
 					
 					cultural_names = {
-						name_list_pommeranian = cn_ragneta
-						name_list_polish = cn_ragneta
-						name_list_czech = cn_ragneta
-						name_list_russian = cn_ragneta
-						name_list_prussian = cn_ragnita
-						name_list_lithuanian = cn_ragaine
-						name_list_latgalian = cn_ragaine
+						name_list_swedish = cn_rafala
+						name_list_danish = cn_rafala
+						name_list_norwegian = cn_rafala
+						name_list_norse = cn_rafala
+						name_list_franconian = cn_reval
+						name_list_saxon = cn_reval
+						name_list_swabian = cn_reval
+						name_list_bavarian = cn_reval
 					}
 				}
-				b_tilsit = {
-					province = 119
-					
-					color = { 190 85 85 }
+				b_harjumaa = {
+					province = 95
+				
+					color = { 160 85 85 }
+					color2 = { 255 255 255 }
+				}
+				b_jarva = {
+					province = 96
+				
+					color = { 160 85 85 }
 					color2 = { 255 255 255 }
 				}
 			}
-			c_memel = {
-				color = { 166 85 85 }
+			c_narva = {
+				color = { 175 55 55 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					name_list_swedish = cn_narva
+					name_list_danish = cn_narva
+					name_list_norwegian = cn_narva
+					name_list_norse = cn_narva
+					name_list_franconian = cn_narva
+					name_list_saxon = cn_narva
+					name_list_swabian = cn_narva
+					name_list_bavarian = cn_narva
+				}
+			
+				b_narva = {
+					province = 98
 				
-				b_memel = {
-					province = 118
-					
-					color = { 166 85 85 }
+					color = { 175 55 55 }
 					color2 = { 255 255 255 }
 				}
-				b_taurage = {
-					province = 125
+				b_wesenburg = {
+					province = 97
+				
+					color = { 175 55 55 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						name_list_franconian = cn_wesenburg
+						name_list_saxon = cn_wesenburg
+						name_list_swabian = cn_wesenburg
+						name_list_bavarian = cn_wesenburg
+					}
+				}
+				b_poltsamaa = {
+					province = 146
+				
+					color = { 115 5 5 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						name_list_estonian = cn_mohu
+					}
+				}
+			}
+			c_osel = {
+				color = { 101 48 48 }
+				color2 = { 255 255 255 }
+
+				cultural_names = {
+					name_list_swedish = cn_osel
+					name_list_norse = cn_osel
+					name_list_danish = cn_osel
+					name_list_norwegian = cn_osel
+					name_list_franconian = cn_osel
+					name_list_saxon = cn_osel
+					name_list_swabian = cn_osel
+					name_list_bavarian = cn_osel
+				}
+				
+				b_kuressare = {
+					province = 88
 					
-					color = { 166 85 85 }
+					color = { 101 48 48 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_swedish = cn_arensborg
+						name_list_norse = cn_arensborg
+						name_list_danish = cn_arensborg
+						name_list_norwegian = cn_arensborg
+						name_list_franconian = cn_arensburg
+						name_list_saxon = cn_arensburg
+						name_list_swabian = cn_arensburg
+						name_list_bavarian = cn_arensburg
+					}
+				}
+				b_maasilinna = {
+					province = 89
+					
+					color = { 101 48 48 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						name_list_estonian = cn_poide
+					}
+				}
+				b_muhu = {
+					province = 90
+					
+					color = { 101 48 48 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_swedish = cn_moon
+						name_list_norse = cn_moon
+						name_list_danish = cn_moon
+						name_list_norwegian = cn_moon
+						name_list_franconian = cn_moon
+						name_list_saxon = cn_moon
+						name_list_swabian = cn_moon
+						name_list_bavarian = cn_moon
+					}
+				}
+				b_hiiumaa = {
+					province = 91
+					
+					color = { 101 48 48 }
 					color2 = { 255 255 255 }
 				}
 			}
-			c_palanga = {
-				color = { 150 95 95 }
+			c_wiek = {
+				color = { 140 55 55 }
 				color2 = { 255 255 255 }
+			
+				cultural_names = {
+					name_list_estonian = cn_laanemaa
+				}
 				
-				b_palanga = {
-					province = 115
+				b_hapsal = {
+					province = 92
 					
-					color = { 150 95 95 }
+					color = { 140 55 55 }
 					color2 = { 255 255 255 }
 				}
-				b_medeniken = {
-					province = 126
+				b_leal = {
+					province = 93
 					
-					color = { 150 95 95 }
-					color2 = { 255 255 255 }
-				}
-				b_telsiai = {
-					province = 128
-					
-					color = { 150 95 95 }
+					color = { 140 55 55 }
 					color2 = { 255 255 255 }
 				}
 			}
-			c_siauliai = {
-				color = { 165 105 105 }
+		}
+		
+		d_livonia = {
+			color = { 110 50 50 }
+			color2 = { 255 255 255 }
+			
+			capital = c_vidzeme
+			
+			c_vidzeme = {
+				color = { 125 50 50 }
+				color2 = { 255 255 255 }
+
+				b_riga = {
+					province = 108
+					
+					color = { 200 40 40 }
+					color2 = { 255 255 255 }
+				}
+				
+				b_lemisele = {
+					province = 101
+					
+					color = { 125 50 50 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_lemsal
+						name_list_saxon = cn_lemsal
+						name_list_swabian = cn_lemsal
+						name_list_bavarian = cn_lemsal
+						name_list_swedish = cn_lemsal
+						name_list_norse = cn_lemsal
+						name_list_danish = cn_lemsal
+						name_list_norwegian = cn_lemsal
+					}
+				}
+				b_salacgriva = {
+					province = 148
+					
+					color = { 125 50 50 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_salismunde
+						name_list_saxon = cn_salismunde
+						name_list_swabian = cn_salismunde
+						name_list_bavarian = cn_salismunde
+					}
+				}
+			}
+			c_livs = {
+				color = { 170 50 50 }
 				color2 = { 255 255 255 }
 				
-				b_siauliai = {
-					province = 127
+				b_parnu = {
+					province = 99
 					
-					color = { 165 105 105 }
+					color = { 170 50 50 }
 					color2 = { 255 255 255 }
-				}
-				b_upyte = {
-					province = 132
 					
-					color = { 165 105 105 }
+					cultural_names = {
+						name_list_franconian = cn_pernau
+						name_list_saxon = cn_pernau
+						name_list_swabian = cn_pernau
+						name_list_bavarian = cn_pernau
+						name_list_polish = cn_parnawa
+						name_list_lithuanian = cn_pernu
+					}
+				}
+				b_viljandi = {
+					province = 100
+					
+					color = { 170 50 50 }
 					color2 = { 255 255 255 }
-				}
-				b_birzai = {
-					province = 152
 					
-					color = { 165 105 105 }
+					cultural_names = {
+						name_list_franconian = cn_fellin
+						name_list_saxon = cn_fellin
+						name_list_swabian = cn_fellin
+						name_list_bavarian = cn_fellin
+					}
+				}
+				b_alistegunde = {
+					province = 147
+					
+					color = { 170 50 50 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_karkus
+						name_list_saxon = cn_karkus
+						name_list_swabian = cn_karkus
+						name_list_bavarian = cn_karkus
+					}
+				}
+			}
+			c_dorpat = {
+				color = { 115 5 5 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_norse = cn_dorpat
+					name_list_swedish = cn_dorpat
+					name_list_danish = cn_dorpat
+					name_list_norwegian = cn_dorpat
+					name_list_franconian = cn_dorpat
+					name_list_saxon = cn_dorpat
+					name_list_swabian = cn_dorpat
+					name_list_bavarian = cn_dorpat
+				}
+				
+				b_tartu = {
+					province = 145
+				
+					color = { 115 5 5 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_norse = cn_dorpat
+						name_list_swedish = cn_dorpat
+						name_list_danish = cn_dorpat
+						name_list_norwegian = cn_dorpat
+						name_list_franconian = cn_dorpat
+						name_list_saxon = cn_dorpat
+						name_list_swabian = cn_dorpat
+						name_list_bavarian = cn_dorpat
+					}
+				}
+				b_vastseliina = {
+					province = 143
+				
+					color = { 115 5 5 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						name_list_estonian = cn_voro
+					}
+				}
+				b_valga = {
+					province = 144
+				
+					color = { 115 5 5 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -25378,450 +23548,2035 @@ e_wendish_empire = {
 			}
 		}
 	}
+}
+
+e_west_slavia = { # West Slavs: Polish, Polabian, Czech, etc.
+	color = { 130 20 50 }
+	color2 = { 200 0 0 }
 	
-	k_sorbia = {
-		color = { 75 15 15 }
-		color2 = { 255 255 255 }
+	capital = c_krakowska # Krakowska
+	
+	definite_form = yes
 		
-		cultural_names = {
-			name_list_polabian = cn_polabia
-			#Kingdom of Polabia
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_west_slavic }
+			}
+			add = @better_than_the_alternatives_score
 		}
+	}
+
+	k_moravia = {
+		color = { 158 102 36 }
+		color2 = { 200 0 0 }
+
+		capital = c_brno # Brno
 		
 		ai_primary_priority = {
 			if = {
 				limit = {
-					culture = culture:polabian
+					culture = culture:czech
 				}
 				add = @correct_culture_primary_score
 			}
 		}
 
-		capital = c_meissen #Meissen
-
-		# Temporarily reduced in size due to stability issues in the HRE.
-
-		d_meissen = {
-			color = { 215 175 120 }
-			color2 = { 255 255 255 }
-			
-			cultural_names = {
-				name_list_polabian = cn_milcenia
-				#Based on polabian tribe
-			}
-			
-			capital = c_meissen #Meissen
-			
-			c_meissen = {
-				color = { 215 175 120 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polabian = cn_milcenia
-					#Based on polabian tribe
-				}
-				
-				b_meissen = {
-					province = 3027
-					
-					color = { 215 175 120 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polabian = cn_misni
-					}
-				}
-				b_radebeul = {
-					province = 3035
-					
-					color = { 215 175 120 }
-					color2 = { 255 255 255 }
-				}
-				b_grossenhain = {
-					province = 3034
-					
-					color = { 215 175 120 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_dresden = {
-				color = { 210 165 130 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polabian = cn_drjezdzany
-				}
-				
-				b_dresden = {
-					province = 3030
-					
-					color = { 210 165 130 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polabian = cn_drjezdzany
-					}
-				}
-				b_bischofswerda = {
-					province = 3033
-					
-					color = { 210 165 130 }
-					color2 = { 255 255 255 }
-				}
-				b_freiberg = {
-					province = 3028
-					
-					color = { 210 165 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_wolkenstein = {
-				color = { 205 170 135 }
-				color2 = { 255 255 255 }
-				
-				b_wolkenstein = {
-					province = 3012
-					
-					color = { 205 170 135 }
-					color2 = { 255 255 255 }
-				}
-				b_waldenburg = {
-					province = 3013
-					
-					color = { 205 170 135 }
-					color2 = { 255 255 255 }
-				}
-			}
-			#c_freiberg = {
-			#	color = { 177 177 177 }
-			#	color2 = { 255 255 255 }
-			#	
-			#	b_freiberg = {
-			#		province = 3028
-			#		
-			#		color = { 177 177 177 }
-			#		color2 = { 255 255 255 }
-			#	}
-			#}
-			c_osterland = {
-				color = { 230 170 130 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polabian = cn_jilobor
-				}
-
-				b_eilenburg = {
-					province = 3021
-
-					color = { 230 170 130 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polabian = cn_jilobor
-					}
-				}
-				b_colditz = {
-					province = 3015
-
-					color = { 230 170 130 }
-					color2 = { 255 255 255 }
-				}
-				b_devin = {
-					province = 3017
-
-					color = { 230 170 130 }
-					color2 = { 255 255 255 }
-				}
-				b_leisning = {
-					province = 3016
-
-					color = { 230 170 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_naumburg = {
-				color = { 225 180 105 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polabian = cn_zeiz
-					#based on nearby bishopric which Naumburg functionnally "replaced"
-				}
-
-				b_naumburg = {
-					province = 3020
-
-					color = { 225 180 105 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polabian = cn_zeiz
-					}
-				}
-				b_altenburg = {
-					province = 3014
-
-					color = { 225 180 105 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polabian = cn_plisnia
-						#based on polabian tribe
-					}
-				}
-			}
-			c_vogtland = {
-				color = { 215 185 125 }
-				color2 = { 255 255 255 }
-
-				b_reichenbach = {
-					province = 3039
-
-					color = { 215 185 125 }
-					color2 = { 255 255 255 }
-				}
-				b_plauen = {
-					province = 3004
-
-					color = { 215 185 125 }
-					color2 = { 255 255 255 }
-				}
-				b_gera = {
-					province = 3038
-
-					color = { 215 185 125 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_cottbus = {
-				color = { 240 205 130 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polabian = cn_chosebuz
-				}
-				
-				b_cottbus = {
-					province = 3181
-
-					color = { 240 205 130 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polabian = cn_chosebuz
-					}
-				}
-				b_kamenz = {
-					province = 3141
-
-					color = { 240 205 130 }
-					color2 = { 255 255 255 }
-				}
-				b_lubben = {
-					province = 3182
-
-					color = { 240 205 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_gorlitz = {
-				color = { 215 160 130 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polabian = cn_gorelic
-				}
-				
-				b_gorlitz = {
-					province = 2980
-
-					color = { 215 160 130 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polabian = cn_gorelic
-					}
-				}
-				b_bautzen = {
-					province = 3032
-
-					color = { 215 160 130 }
-					color2 = { 255 255 255 }
-				}
-				b_spremberg = {
-					province = 3136
-
-					color = { 215 160 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
-
-		d_lausitz = {
-			color = { 215 150 145 }
-			color2 = { 255 255 255 }
-			
-			capital = c_juterbog #Jüterbog
-			
-			cultural_names = {
-				name_list_polabian = cn_lusatia
-			}
-
-			c_juterbog = {
-				color = { 215 150 145 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polabian = cn_jutriboc
-				}
-
-				b_juterbog = {
-					province = 3180
-
-					color = { 215 150 145 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polabian = cn_jutriboc
-					}
-				}
-				b_dahme = {
-					province = 3178
-
-					color = { 215 150 145 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_wittenberg = {
-				color = { 200 140 130 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polabian = cn_nizizia
-					#based on polabian tribe
-				}
-				
-				b_wittenberg = {
-					province = 3173
-
-					color = { 200 140 130 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polabian = cn_nizizia
-						#based on polabian tribe
-					}
-				}
-				b_belizi = {
-					province = 3174
-
-					color = { 200 140 130 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_brene = {
-				color = { 235 170 165 }
-				color2 = { 255 255 255 }
-
-				b_torgau = {
-					province = 3025
-
-					color = { 235 170 165 }
-					color2 = { 255 255 255 }
-				}
-				b_brene = {
-					province = 3175
-
-					color = { 235 170 165 }
-					color2 = { 255 255 255 }
-				}
-				b_duben = {
-					province = 3024
-
-					color = { 235 170 165 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_spreewald = {
-				color = { 230 150 160 }
-				color2 = { 255 255 255 }
-				
-				cultural_names = {
-					name_list_polabian = cn_blota
-				}
-
-				b_spreewald = {
-					province = 3140
-
-					color = { 230 150 160 }
-					color2 = { 255 255 255 }
-					
-					cultural_names = {
-						name_list_polabian = cn_blota
-					}
-				}
-				b_storkow = {
-					province = 3159
-
-					color = { 230 150 160 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_naumberg = {
-				color = { 255 175 180 }
-				color2 = { 255 255 255 }
-
-				cultural_names = {
-					name_list_polish = cn_lubsko
-					name_list_polabian = cn_lubsko
-				}
-				
-				b_naumberg = {
-					province = 3143
-
-					color = { 255 175 180 }
-					color2 = { 255 255 255 }
-
-					cultural_names = {
-						name_list_polish = cn_lubsko
-						name_list_polabian = cn_lubsko
-					}
-				}
-				
-				b_forst = {
-					province = 3138
-
-					color = { 255 175 180 }
-					color2 = { 255 255 255 }
-				}
-			}
-		}
+#		allow = {
+#			k_bohemia = { has_holder = no }
+#		}
 	}
-}
 
-e_russia = {	#Kievan Rus
-	color = { 50 150 55 }
-	color2 = { 255 255 255 }
-	
-	capital = c_kiev # Kiev
+	k_poland = {
+		color = { 150 23 23 }
+		color2 = { 200 0 0 }
 		
-	ai_primary_priority = {
-		if = {
-			limit = {
-				culture = { has_cultural_pillar = heritage_east_slavic }
+		capital = c_krakowska #Krakowska
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:polish
+				}
+				add = @correct_culture_primary_score
 			}
-			add = @correct_culture_primary_score
+		}
+
+		d_lesser_poland = {
+			color = { 137 6 20 }
+			color2 = { 255 255 255 }
+			
+			capital = c_krakowska # Krakowska
+
+			c_krakowska = {
+				color = { 137 6 20 }
+				color2 = { 255 255 255 }
+				
+				b_krakow = {
+					province = 527
+
+					color = { 137 6 20 }
+					color2 = { 255 255 255 }
+				}
+				b_olsztyn = {
+					province = 440
+
+					color = { 137 6 20 }
+					color2 = { 255 255 255 }
+				}
+				b_czestochowa = {
+					province = 526
+
+					color = { 137 6 20 }
+					color2 = { 255 255 255 }
+				}
+				b_dabrowa_gorn = {
+					province = 4972
+
+					color = { 137 6 20 }
+					color2 = { 255 255 255 }
+				}
+				b_wislica = {
+					province = 4973
+
+					color = { 137 6 20 }
+					color2 = { 255 255 255 }
+				}
+				b_jedrzejow = {
+					province = 4974
+
+					color = { 137 6 20 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_sacz = {
+				color = { 117 6 2 }
+				color2 = { 255 255 255 }
+				
+				b_sacz = {
+					province = 532
+
+					color = { 117 6 2 }
+					color2 = { 255 255 255 }
+				}
+				b_pilzno = {
+					province = 4968
+
+					color = { 117 6 2 }
+					color2 = { 255 255 255 }
+				}
+				b_nowytarg = {
+					province = 4969
+
+					color = { 117 6 2 }
+					color2 = { 255 255 255 }
+				}
+				b_bochnia = {
+					province = 4970
+
+					color = { 117 6 2 }
+					color2 = { 255 255 255 }
+				}
+				b_wieliczka = {
+					province = 4971
+
+					color = { 117 6 2 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_sandomierska = {
+				color = { 147 16 2 }
+				color2 = { 255 255 255 }
+			
+				b_sandomierz = {
+					province = 531
+
+					color = { 147 16 2 }
+					color2 = { 255 255 255 }
+				}
+				b_opatow = {
+					province = 4961
+
+					color = { 147 16 2 }
+					color2 = { 255 255 255 }
+				}
+				b_kielce = {
+					province = 4962
+
+					color = { 147 16 2 }
+					color2 = { 255 255 255 }
+				}
+				b_olesnica_MPL = {
+					province = 4963
+
+					color = { 147 16 2 }
+					color2 = { 255 255 255 }
+				}
+				b_checiny = {
+					province = 4964
+
+					color = { 147 16 2 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_stezycka = {
+				color = { 127 40 32 }
+				color2 = { 255 255 255 }
+			
+				b_stezyca = {
+					province = 4951
+
+					color = { 127 30 2 }
+					color2 = { 255 255 255 }
+				}
+				b_lukow = {
+					province = 4952
+
+					color = { 127 30 2 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_radomska = {
+				color = { 150 30 5 }
+				color2 = { 255 255 255 }
+			
+				b_radom = {
+					province = 4953
+
+					color = { 150 30 5 }
+					color2 = { 255 255 255 }
+				}
+				b_opoczno = {
+					province = 4954
+
+					color = { 150 30 5 }
+					color2 = { 255 255 255 }
+				}
+				b_ilza = {
+					province = 4955
+
+					color = { 150 30 5 }
+					color2 = { 255 255 255 }
+				}
+				b_szydlowiec = {
+					province = 4956
+
+					color = { 150 30 5 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_lubelska = {
+				color = { 147 40 2 }
+				color2 = { 255 255 255 }
+			
+				b_lublin = {
+					province = 4957
+
+					color = { 147 40 2 }
+					color2 = { 255 255 255 }
+				}
+				b_parczew = {
+					province = 4958
+
+					color = { 147 40 2 }
+					color2 = { 255 255 255 }
+				}
+				b_goraj = {
+					province = 4959
+
+					color = { 147 40 2 }
+					color2 = { 255 255 255 }
+				}
+				b_urzedow = {
+					province = 4960
+
+					color = { 147 40 2 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_tarnowska= {
+				color = { 167 60 22 }
+				color2 = { 255 255 255 }
+			
+				b_tarnow = {
+					province = 4965
+
+					color = { 167 60 22 }
+					color2 = { 255 255 255 }
+				}
+				b_mielec = {
+					province = 4966
+
+					color = { 167 60 22 }
+					color2 = { 255 255 255 }
+				}
+				b_baranow = {
+					province = 4967
+
+					color = { 167 60 22 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+		
+		d_wielkopolska = {
+			color = { 140 13 13 }
+			color2 = { 255 255 255 }
+			
+			cultural_names = {
+				name_list_franconian = cn_grosspolen
+				name_list_saxon = cn_grosspolen
+				name_list_swabian = cn_grosspolen
+				name_list_bavarian = cn_grosspolen
+			}
+			
+			capital = c_poznanska # Poznan
+			
+			c_poznanska = {
+				color = { 140 13 13 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_posen
+					name_list_saxon = cn_posen
+					name_list_swabian = cn_posen
+					name_list_bavarian = cn_posen
+				}
+			
+				b_poznan = {
+					province = 4900
+
+					color = { 140 13 13 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_posen
+						name_list_saxon = cn_posen
+						name_list_swabian = cn_posen
+						name_list_bavarian = cn_posen
+					}
+				}
+				b_miedzyrzecz = {
+					province = 4901
+
+					color = { 140 13 13 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_meseritz
+						name_list_saxon = cn_meseritz
+						name_list_swabian = cn_meseritz
+						name_list_bavarian = cn_meseritz
+					}
+				}
+				b_czarnkow = {
+					province = 4902
+
+					color = { 140 13 13 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_scharnikau
+						name_list_saxon = cn_scharnikau
+						name_list_swabian = cn_scharnikau
+						name_list_bavarian = cn_scharnikau
+					}
+				}
+				b_wronki = {
+					province = 4903
+
+					color = { 140 13 13 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_wronke
+						name_list_saxon = cn_wronke
+						name_list_swabian = cn_wronke
+						name_list_bavarian = cn_wronke
+					}
+				}
+				b_wolsztyn = {
+					province = 4904
+
+					color = { 140 13 13 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_wollstein
+						name_list_saxon = cn_wollstein
+						name_list_swabian = cn_wollstein
+						name_list_bavarian = cn_wollstein
+					}
+				}
+			}
+			c_gnieznienska = {
+				color = { 150 15 10 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_gnesen
+					name_list_saxon = cn_gnesen
+					name_list_swabian = cn_gnesen
+					name_list_bavarian = cn_gnesen
+				}
+			
+				b_gniezno = {
+					province = 4905
+
+					color = { 150 15 10 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_gnesen
+						name_list_saxon = cn_gnesen
+						name_list_swabian = cn_gnesen
+						name_list_bavarian = cn_gnesen
+					}
+				}
+				b_sroda = {
+					province = 4906
+
+					color = { 150 15 10 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_schroda
+						name_list_saxon = cn_schroda
+						name_list_swabian = cn_schroda
+						name_list_bavarian = cn_schroda
+					}
+				}
+				b_pyzdry = {
+					province = 4907
+
+					color = { 150 15 10 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_peisern
+						name_list_saxon = cn_peisern
+						name_list_swabian = cn_peisern
+						name_list_bavarian = cn_peisern
+					}
+				}
+				b_konin = {
+					province = 4908
+
+					color = { 150 15 10 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_kaliska = {
+				color = { 160 6 20 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_kalisch
+					name_list_saxon = cn_kalisch
+					name_list_swabian = cn_kalisch
+					name_list_bavarian = cn_kalisch
+				}
+			
+				b_kalisz = {
+					province = 4909
+
+					color = { 155 6 20 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_kalisch
+						name_list_saxon = cn_kalisch
+						name_list_swabian = cn_kalisch
+						name_list_bavarian = cn_kalisch
+					}
+				}
+				b_kozmin = {
+					province = 4910
+
+					color = { 155 6 20 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_koschmin
+						name_list_saxon = cn_koschmin
+						name_list_swabian = cn_koschmin
+						name_list_bavarian = cn_koschmin
+					}
+				}
+				b_turek = {
+					province = 4911
+
+					color = { 155 6 20 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_wschowska = {
+				color = { 135 30 30 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_fraustadt
+					name_list_saxon = cn_fraustadt
+					name_list_swabian = cn_fraustadt
+					name_list_bavarian = cn_fraustadt
+				}
+			
+				b_wschowa = {
+					province = 4912
+
+					color = { 135 30 30 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_fraustadt
+						name_list_saxon = cn_fraustadt
+						name_list_swabian = cn_fraustadt
+						name_list_bavarian = cn_fraustadt
+					}
+				}
+				b_koscian = {
+					province = 4913
+
+					color = { 135 30 30 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_kosten
+						name_list_saxon = cn_kosten
+						name_list_swabian = cn_kosten
+						name_list_bavarian = cn_kosten
+					}
+				}
+				b_srem = {
+					province = 4914
+
+					color = { 135 30 30 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_schrimm
+						name_list_saxon = cn_schrimm
+						name_list_swabian = cn_schrimm
+						name_list_bavarian = cn_schrimm
+					}
+				}
+			}
+			c_krajna = {
+				color = { 150 15 15 }
+				color2 = { 255 255 255 }
+			
+				b_naklo = {
+					province = 4915
+
+					color = { 150 15 15 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_nakel
+						name_list_saxon = cn_nakel
+						name_list_swabian = cn_nakel
+						name_list_bavarian = cn_nakel
+					}
+				}
+				b_zlotow = {
+					province = 4916
+
+					color = { 150 15 15 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_flatow
+						name_list_saxon = cn_flatow
+						name_list_swabian = cn_flatow
+						name_list_bavarian = cn_flatow
+					}
+				}
+				b_znin = {
+					province = 4917
+
+					color = { 150 15 15 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_znin
+						name_list_saxon = cn_znin
+						name_list_swabian = cn_znin
+						name_list_bavarian = cn_znin
+					}
+				}
+			}
+			c_lubusz = {
+				color = { 180 60 25 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_lebus
+					name_list_saxon = cn_lebus
+					name_list_swabian = cn_lebus
+					name_list_bavarian = cn_lebus
+				}
+				
+				b_lebus = {		#Lubusz in PLN
+					province = 3149
+
+					color = { 180 60 25 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_lebus
+						name_list_saxon = cn_lebus
+						name_list_swabian = cn_lebus
+						name_list_bavarian = cn_lebus
+					}
+				}
+				
+				b_oderfrankfurt = {		#Zliwitz in PLN
+					province = 3142
+
+					color = { 180 60 25 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_oderfrankfurt
+						name_list_saxon = cn_oderfrankfurt
+						name_list_swabian = cn_oderfrankfurt
+						name_list_bavarian = cn_oderfrankfurt
+					}
+				}
+
+				b_sulecin = {
+					province = 3148
+
+					color = { 180 60 25 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_zielenzig
+						name_list_saxon = cn_zielenzig
+						name_list_swabian = cn_zielenzig
+						name_list_bavarian = cn_zielenzig
+					}
+				}
+				b_rzepin = {
+					province = 3147
+
+					color = { 180 60 25 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_reppen
+						name_list_saxon = cn_reppen
+						name_list_swabian = cn_reppen
+						name_list_bavarian = cn_reppen
+					}
+				}
+			}
+		}
+		
+		d_mazovia = {
+			color = { 125 46 36 }
+			color2 = { 255 255 255 }
+			
+			capital = c_plocka #Plock
+			
+			c_plocka = {
+				color = { 127 30 2 }
+				color2 = { 255 255 255 }
+
+				b_plock = {
+					province = 529
+					
+					color = { 127 30 2 }
+					color2 = { 255 255 255 }
+				}
+				b_wyszgorod = {
+					province = 4933
+					
+					color = { 127 30 2 }
+					color2 = { 255 255 255 }
+				}
+				b_zawkrze = {
+					province = 4934
+					
+					color = { 127 30 2 }
+					color2 = { 255 255 255 }
+				}
+				b_ciechanow = {
+					province = 4935
+					
+					color = { 127 30 2 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_czerska = {
+				color = { 150 40 25 }
+				color2 = { 255 255 255 }
+				
+				b_czersk = {
+					province = 530
+
+					color = { 150 40 25 }
+					color2 = { 255 255 255 }
+				}
+				b_warszawa = {
+					province = 4936
+
+					color = { 150 40 25 }
+					color2 = { 255 255 255 }
+				}
+				b_liw = {
+					province = 4937
+
+					color = { 150 40 25 }
+					color2 = { 255 255 255 }
+				}
+				b_brodno = {
+					province = 4938
+
+					color = { 150 40 25 }
+					color2 = { 255 255 255 }
+				}
+				b_garwolin = {
+					province = 4939
+
+					color = { 150 40 25 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_gostyninska = {
+				color = { 137 30 18 }
+				color2 = { 255 255 255 }
+				
+				b_gostynin = {
+					province = 4940
+
+					color = { 137 30 18 }
+					color2 = { 255 255 255 }
+				}
+				b_rawa = {
+					province = 4941
+
+					color = { 137 30 18 }
+					color2 = { 255 255 255 }
+				}
+				b_sochaczew = {
+					province = 4942
+
+					color = { 137 30 18 }
+					color2 = { 255 255 255 }
+				}
+				b_lowicz = {
+					province = 4950
+
+					color = { 137 30 18 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_lomzynska = {
+				color = { 127 0 70 }
+				color2 = { 255 255 255 }
+				
+				b_lomza = {
+					province = 4943
+
+					color = { 127 0 70 }
+					color2 = { 255 255 255 }
+				}
+				b_wizna = {
+					province = 4944
+
+					color = { 127 0 70 }
+					color2 = { 255 255 255 }
+				}
+				b_kolno = {
+					province = 4945
+
+					color = { 127 0 70 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_zakroczymska = {
+				color = { 122 6 50 }
+				color2 = { 255 255 255 }
+				
+				b_zakroczym = {
+					province = 4946
+
+					color = { 122 6 50 }
+					color2 = { 255 255 255 }
+				}
+				b_nur = {
+					province = 4947
+
+					color = { 122 6 50 }
+					color2 = { 255 255 255 }
+				}
+				b_wyszkow = {
+					province = 4948
+
+					color = { 122 6 50 }
+					color2 = { 255 255 255 }
+				}
+				b_rozan = {
+					province = 4949
+
+					color = { 122 6 50 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+
+		d_upper_silesia = {
+			color = { 180 20 100 }
+			color2 = { 255 255 255 }
+			
+			capital = c_opole # Opole
+
+			c_opole = {
+				color = { 180 20 100 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_oppeln
+					name_list_saxon = cn_oppeln
+					name_list_swabian = cn_oppeln
+					name_list_bavarian = cn_oppeln
+				}
+				
+				b_opole = {
+					province = 3052
+
+					color = { 180 20 100 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_oppeln
+						name_list_saxon = cn_oppeln
+						name_list_swabian = cn_oppeln
+						name_list_bavarian = cn_oppeln
+					}
+				}
+				b_kreuzburg = {
+					province = 3053
+
+					color = { 180 20 100 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_kluczbork
+						name_list_czech = cn_kluczbork
+						name_list_polabian = cn_kluczbork
+						name_list_pommeranian = cn_kluczbork
+					}
+				}
+				b_strehlitz = {
+					province = 3051
+
+					color = { 180 20 100 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_strzelce
+						name_list_polabian = cn_strzelce
+						name_list_pommeranian = cn_strzelce
+					}
+				}
+			}
+			
+			c_brzeg = {
+				color = { 169 35 75 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_brieg
+					name_list_saxon = cn_brieg
+					name_list_swabian = cn_brieg
+					name_list_bavarian = cn_brieg
+				}
+				
+				b_brzeg = {
+					province = 3049
+
+					color = { 169 35 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_brieg
+						name_list_saxon = cn_brieg
+						name_list_swabian = cn_brieg
+						name_list_bavarian = cn_brieg
+					}
+				}
+				b_olawa = {
+					province = 3055
+
+					color = { 169 35 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_ohlau
+						name_list_saxon = cn_ohlau
+						name_list_swabian = cn_ohlau
+						name_list_bavarian = cn_ohlau
+					}
+				}
+				b_otmunchow = {
+					province = 3056
+
+					color = { 169 35 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_ottmachau
+						name_list_saxon = cn_ottmachau
+						name_list_swabian = cn_ottmachau
+						name_list_bavarian = cn_ottmachau
+					}
+				}
+			}
+		
+			c_nysa = {
+				color = { 175 85 105 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_neisse
+					name_list_saxon = cn_neisse
+					name_list_swabian = cn_neisse
+					name_list_bavarian = cn_neisse
+				}
+
+				b_nysa = {
+					province = 3048
+
+					color = { 175 85 105 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_neisse
+						name_list_saxon = cn_neisse
+						name_list_swabian = cn_neisse
+						name_list_bavarian = cn_neisse
+					}
+				}
+				b_glogowek = {
+					province = 3050
+
+					color = { 175 85 105 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_oberglogau
+						name_list_saxon = cn_oberglogau
+						name_list_swabian = cn_oberglogau
+						name_list_bavarian = cn_oberglogau
+					}
+				}
+				b_frankenstein = {
+					province = 3046
+
+					color = { 175 85 105 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_zabkowice
+						name_list_polabian = cn_zabkowice
+						name_list_pommeranian = cn_zabkowice
+					}
+				}
+			}
+			c_cieszyn = {
+				color = { 190 20 75 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_teschen
+					name_list_saxon = cn_teschen
+					name_list_swabian = cn_teschen
+					name_list_bavarian = cn_teschen
+				}
+				
+				b_cieszyn = {
+					province = 3040
+
+					color = { 190 20 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_teschen
+						name_list_saxon = cn_teschen
+						name_list_swabian = cn_teschen
+						name_list_bavarian = cn_teschen
+					}
+				}
+				b_bielsko = {
+					province = 3041
+
+					color = { 190 20 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_bielitz
+						name_list_saxon = cn_bielitz
+						name_list_swabian = cn_bielitz
+						name_list_bavarian = cn_bielitz
+					}
+				}
+			}
+			c_ratibor = {
+				color = { 190 35 75 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polish = cn_raciborz
+					name_list_polabian = cn_raciborz
+					name_list_pommeranian = cn_raciborz
+				}
+				
+				b_ratibor = {
+					province = 3042
+
+					color = { 190 35 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_raciborz
+						name_list_polabian = cn_raciborz
+						name_list_pommeranian = cn_raciborz
+					}
+				}
+				b_rybnik = {
+					province = 3043
+
+					color = { 190 35 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_rybnick
+						name_list_saxon = cn_rybnick
+						name_list_swabian = cn_rybnick
+						name_list_bavarian = cn_rybnick
+					}
+				}
+			}
+			c_bethen = {
+				color = { 190 5 70 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polish = cn_bytom
+					name_list_czech = cn_bytom
+					name_list_polabian = cn_bytom
+					name_list_pommeranian = cn_bytom
+				}
+				
+				b_bethen = {
+					province = 3044
+
+					color = { 190 5 70 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_bytom
+						name_list_czech = cn_bytom
+						name_list_polabian = cn_bytom
+						name_list_pommeranian = cn_bytom
+					}
+				}
+				b_lubliniec = {
+					province = 3054
+
+					color = { 190 5 70 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_lublinitz
+						name_list_saxon = cn_lublinitz
+						name_list_swabian = cn_lublinitz
+						name_list_bavarian = cn_lublinitz
+					}
+				}
+			}
+		}
+		
+		d_lower_silesia = {
+			color = { 230 60 20 }
+			color2 = { 255 255 255 }
+			
+			capital = c_breslau # Opole
+		
+			c_breslau = {
+				color = { 218 37 15 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polish = cn_wroclaw
+					name_list_polabian = cn_wroclaw
+					name_list_pommeranian = cn_wroclaw
+					name_list_czech = cn_vratislav
+				}
+
+				b_breslau = {
+					province = 3045
+
+					color = { 218 37 15 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_wroclaw
+						name_list_polabian = cn_wroclaw
+						name_list_pommeranian = cn_wroclaw
+						name_list_czech = cn_vratislav
+					}
+				}
+				b_bardo = {
+					province = 3057
+
+					color = { 218 37 15 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_wartha
+						name_list_saxon = cn_wartha
+						name_list_swabian = cn_wartha
+						name_list_bavarian = cn_wartha
+					}
+				}
+			}
+			c_miliez = {
+				color = { 225 105 40 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_militsch
+					name_list_saxon = cn_militsch
+					name_list_swabian = cn_militsch
+					name_list_bavarian = cn_militsch
+				}
+
+				b_miliez = {
+					province = 3061
+
+					color = { 225 105 40 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_militsch
+						name_list_saxon = cn_militsch
+						name_list_swabian = cn_militsch
+						name_list_bavarian = cn_militsch
+					}
+				}
+				b_olesnica = {
+					province = 3062
+
+					color = { 225 105 40 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_oels
+						name_list_saxon = cn_oels
+						name_list_swabian = cn_oels
+						name_list_bavarian = cn_oels
+					}
+				}
+			}
+			c_schweibus = {
+				color = { 235 45 5 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polish = cn_swiebodzin
+					name_list_czech = cn_swiebodzin
+					name_list_polabian = cn_swiebodzin
+					name_list_pommeranian = cn_swiebodzin
+				}
+
+				b_schweibus = {
+					province = 3145
+
+					color = { 235 45 5 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_swiebodzin
+						name_list_czech = cn_swiebodzin
+						name_list_polabian = cn_swiebodzin
+						name_list_pommeranian = cn_swiebodzin
+					}
+				}
+				b_siedlischo = {
+					province = 3146
+
+					color = { 235 45 5 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_carolath
+						name_list_saxon = cn_carolath
+						name_list_swabian = cn_carolath
+						name_list_bavarian = cn_carolath
+					}
+				}
+				b_bytom = {	#today Bytom Odrzański
+					province = 3065
+
+					color = { 235 45 5 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_niederbeuthen
+						name_list_saxon = cn_niederbeuthen
+						name_list_swabian = cn_niederbeuthen
+						name_list_bavarian = cn_niederbeuthen
+					}
+				}
+			}
+			c_grunberg = {
+				color = { 210 85 30 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polish = cn_zielona_gora
+					name_list_polabian = cn_zielona_gora
+					name_list_pommeranian = cn_zielona_gora
+					name_list_czech = cn_zelena_hora
+				}
+
+				b_grunberg = {
+					province = 3064
+
+					color = { 210 85 30 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_zielona_gora
+						name_list_polabian = cn_zielona_gora
+						name_list_pommeranian = cn_zielona_gora
+						name_list_czech = cn_zelena_hora
+					}
+				}
+				b_gubin = {
+					province = 3139
+
+					color = { 210 85 30 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_guben
+						name_list_saxon = cn_guben
+						name_list_swabian = cn_guben
+						name_list_bavarian = cn_guben
+					}
+				}
+				b_crossen = {
+					province = 3144
+
+					color = { 210 85 30 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_krosno
+						name_list_polabian = cn_krosno
+						name_list_pommeranian = cn_krosno
+						name_list_czech = cn_krosno
+					}
+				}
+			}
+			c_sprottau = {
+				color = { 240 115 75 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polish = cn_szprotawa
+					name_list_polabian = cn_szprotawa
+					name_list_pommeranian = cn_szprotawa
+				}
+
+				b_sprottau = {
+					province = 3067
+
+					color = { 240 115 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_szprotawa
+						name_list_polabian = cn_szprotawa
+						name_list_pommeranian = cn_szprotawa
+					}
+				}
+				b_zagan = {
+					province = 3066
+
+					color = { 240 115 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_sagan
+						name_list_saxon = cn_sagan
+						name_list_swabian = cn_sagan
+						name_list_bavarian = cn_sagan
+					}
+				}
+				b_nowogrodziec = {
+					province = 3070
+
+					color = { 240 115 75 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_naumburg
+						name_list_saxon = cn_naumburg
+						name_list_swabian = cn_naumburg
+						name_list_bavarian = cn_naumburg
+						#Yes, it's another Naumburg
+					}
+				}
+			}
+			c_przemkow = {
+				color = { 195 75 60 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_franconian = cn_primkenau
+					name_list_saxon = cn_primkenau
+					name_list_swabian = cn_primkenau
+					name_list_bavarian = cn_primkenau
+				}
+
+				b_przemkow = {
+					province = 3068
+
+					color = { 195 75 60 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_primkenau
+						name_list_saxon = cn_primkenau
+						name_list_swabian = cn_primkenau
+						name_list_bavarian = cn_primkenau
+					}
+				}
+				b_wlen = {
+					province = 3069
+
+					color = { 195 75 60 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_lahn
+						name_list_saxon = cn_lahn
+						name_list_swabian = cn_lahn
+						name_list_bavarian = cn_lahn
+					}
+				}
+				b_swiny = {
+					province = 3059
+
+					color = { 195 75 60 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_schweinhausburg
+						name_list_saxon = cn_schweinhausburg
+						name_list_swabian = cn_schweinhausburg
+						name_list_bavarian = cn_schweinhausburg
+					}
+				}
+			}
+			c_legnica = {
+				color = { 225 80 40 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_czech = cn_lehnice
+					name_list_franconian = cn_liegnitz
+					name_list_saxon = cn_liegnitz
+					name_list_swabian = cn_liegnitz
+					name_list_bavarian = cn_liegnitz
+				}
+
+				b_legnica = {
+					province = 3058
+
+					color = { 225 80 40 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_czech = cn_lehnice
+						name_list_franconian = cn_liegnitz
+						name_list_saxon = cn_liegnitz
+						name_list_swabian = cn_liegnitz
+						name_list_bavarian = cn_liegnitz
+					}
+				}
+				b_glogow = {
+					province = 3063
+
+					color = { 225 80 40 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_czech = cn_hlohov
+						name_list_franconian = cn_glogau
+						name_list_saxon = cn_glogau
+						name_list_swabian = cn_glogau
+						name_list_bavarian = cn_glogau
+					}
+				}
+				b_sadowel = {
+					province = 3060
+
+					color = { 225 80 40 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_franconian = cn_sandelswalde
+						name_list_saxon = cn_sandelswalde
+						name_list_swabian = cn_sandelswalde
+						name_list_bavarian = cn_sandelswalde
+					}
+				}
+			}
+		}
+		
+		d_kuyavia = {
+			color = { 190 75 50 }
+			color2 = { 255 255 255 }
+			
+			capital = c_kujawy # Kruszwica
+		
+			c_kujawy = {
+				color = { 190 75 50 }
+				color2 = { 255 255 255 }
+			
+				b_kruszwica = {
+					province = 4918
+
+					color = { 190 75 50 }
+					color2 = { 255 255 255 }
+				}
+				b_wloclawek = {
+					province = 4919
+
+					color = { 190 75 50 }
+					color2 = { 255 255 255 }
+				}
+				b_inowroclaw = {
+					province = 4920
+
+					color = { 190 75 50 }
+					color2 = { 255 255 255 }
+				}
+				b_bydgoszcz = {
+					province = 4921
+
+					color = { 190 75 50 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_dobrzynska = {
+				color = { 200 60 20 }
+				color2 = { 255 255 255 }
+			
+				b_dobrzyn = {
+					province = 4922
+
+					color = { 200 60 20 }
+					color2 = { 255 255 255 }
+				}
+				b_michalowo = {
+					province = 4923
+
+					color = { 200 60 20 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_leczycka = {
+				color = { 210 50 10 }
+				color2 = { 255 255 255 }
+			
+				b_leczyca = {
+					province = 4924
+
+					color = { 210 50 10 }
+					color2 = { 255 255 255 }
+				}
+				b_lodz = {
+					province = 4925
+
+					color = { 210 50 10 }
+					color2 = { 255 255 255 }
+				}
+				b_klodawa = {
+					province = 4926
+
+					color = { 210 50 10 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_sieradzka = {
+				color = { 210 75 10 }
+				color2 = { 255 255 255 }
+				
+				b_sieradz = {
+					province = 528
+
+					color = { 210 75 10 }
+					color2 = { 255 255 255 }
+				}
+				b_piotrkow = {
+					province = 4927
+
+					color = { 210 75 10 }
+					color2 = { 255 255 255 }
+				}
+				b_przedborz = {
+					province = 4928
+
+					color = { 210 75 10 }
+					color2 = { 255 255 255 }
+				}
+				b_radomsko = {
+					province = 4929
+
+					color = { 210 75 10 }
+					color2 = { 255 255 255 }
+				}
+				b_uniejow = {
+					province = 4930
+
+					color = { 210 75 10 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_wielunska = {
+				color = { 180 60 25 }
+				color2 = { 255 255 255 }
+			
+				b_wielun = {
+					province = 4931
+
+					color = { 180 60 25 }
+					color2 = { 255 255 255 }
+				}
+				b_grabow = {
+					province = 4932
+
+					color = { 180 60 25 }
+					color2 = { 255 255 255 }
+				}
+			}
 		}
 	}
-	
-	cultural_names = {
-		name_list_norse = cn_gardariki
-		name_list_swedish = cn_gardariki
-		name_list_danish = cn_gardariki
-		name_list_norwegian = cn_gardariki
+
+	k_bohemia = {
+		color = { 176 110 32 }
+		color2 = { 255 255 255 }
+
+		capital = c_praha # Praha
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:czech
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		d_bohemia = {
+			color = { 195 110 11 }
+			color2 = { 255 255 255 }
+			
+			capital = c_praha # Praha
+			
+			c_praha = {
+				color = { 199 114 15 }
+				color2 = { 255 255 255 }
+			
+				b_praha = {
+					province = 4125
+
+					color = { 199 114 15 }
+					color2 = { 255 255 255 }
+				}
+				b_vysehrad = {
+					province = 4126
+
+					color = { 199 114 15 }
+					color2 = { 255 255 255 }
+				}
+				b_stare_mesto = {
+					province = 8981
+
+					color = { 199 114 15 }
+					color2 = { 255 255 255 }
+				}
+				b_beroun = {
+					province = 4127
+
+					color = { 199 114 15 }
+					color2 = { 255 255 255 }
+				}
+				b_melnik = {
+					province = 4128
+
+					color = { 199 114 15 }
+					color2 = { 255 255 255 }
+				}
+				b_slany = {
+					province = 4130
+
+					color = { 199 114 15 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_litomerice = {
+				color = { 215 110 15 }
+				color2 = { 255 255 255 }
+			
+				b_litomerice = {
+					province = 4129
+
+					color = { 215 110 15 }
+					color2 = { 255 255 255 }
+				}
+				b_bilina = {
+					province = 4131
+
+					color = { 215 110 15 }
+					color2 = { 255 255 255 }
+				}
+				b_osek = {
+					province = 9701
+
+					color = { 215 110 15 }
+					color2 = { 255 255 255 }
+				}
+				b_decin = {
+					province = 4133
+
+					color = { 215 110 15 }
+					color2 = { 255 255 255 }
+				}
+				b_zitava = {
+					province = 4135
+
+					color = { 215 110 15 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_zatec = {
+				color = { 197 145 13 }
+				color2 = { 255 255 255 }
+			
+				b_zatec = {
+					province = 4147
+
+					color = { 197 145 13 }
+					color2 = { 255 255 255 }
+				}
+				b_kadan = {
+					province = 4132
+
+					color = { 197 145 13 }
+					color2 = { 255 255 255 }
+				}
+				b_sedlec = { #Tepla / Teplá
+					province = 4141
+
+					color = { 197 145 13 }
+					color2 = { 255 255 255 }
+				}
+				b_loket = {
+					province = 4142
+
+					color = { 197 145 13 }
+					color2 = { 255 255 255 }
+				}
+				b_drevic = {
+					province = 9700
+
+					color = { 197 145 13 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_plzen = {
+				color = { 200 105 5 }
+				color2 = { 255 255 255 }
+			
+				b_plzen = {
+					province = 4145
+
+					color = { 200 105 5 }
+					color2 = { 255 255 255 }
+				}
+				b_stribro = {
+					province = 4143
+
+					color = { 200 105 5 }
+					color2 = { 255 255 255 }
+				}
+				b_plasy = {
+					province = 8982
+
+					color = { 200 105 5 }
+					color2 = { 255 255 255 }
+				}
+				b_primda = {
+					province = 4144
+
+					color = { 200 105 5 }
+					color2 = { 255 255 255 }
+				}
+				b_domazlice = {
+					province = 4146
+
+					color = { 200 105 5 }
+					color2 = { 255 255 255 }
+				}
+				b_prachen = {
+					province = 4149
+
+					color = { 200 105 5 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_doudleby = {
+				color = { 140 90 5 }
+				color2 = { 255 255 255 }
+			
+				b_doudleby = {
+					province = 4154
+
+					color = { 140 90 5 }
+					color2 = { 255 255 255 }
+				}
+				b_netolice = {
+					province = 4150
+
+					color = { 140 90 5 }
+					color2 = { 255 255 255 }
+				}
+				b_rozmberk = {
+					province = 4153
+
+					color = { 140 90 5 }
+					color2 = { 255 255 255 }
+				}
+				b_krumlov = {
+					province = 4152
+
+					color = { 140 90 5 }
+					color2 = { 255 255 255 }
+				}
+				b_pisek = {
+					province = 4151
+
+					color = { 140 90 5 }
+					color2 = { 255 255 255 }
+				}
+				b_bechyne = {
+					province = 4157
+
+					color = { 140 90 5 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_boleslav = {
+				color = { 195 65 10 }
+				color2 = { 255 255 255 }
+			
+				b_boleslav = {
+					province = 4136
+
+					color = { 195 65 10 }
+					color2 = { 255 255 255 }
+				}
+				b_libice = {
+					province = 8980
+
+					color = { 195 65 10 }
+					color2 = { 255 255 255 }
+				}
+				b_zeleznice = {
+					province = 9702
+
+					color = { 195 65 10 }
+					color2 = { 255 255 255 }
+				}
+				b_bezdez = {
+					province = 4134
+
+					color = { 195 65 10 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_hradec = {
+				color = { 201 118 11 }
+				color2 = { 255 255 255 }
+			
+				b_hradec = {
+					province = 4138
+
+					color = { 201 118 11 }
+					color2 = { 255 255 255 }
+				}
+				b_dvur-chvojno = { #Skalice
+					province = 4137
+
+					color = { 201 118 11 }
+					color2 = { 255 255 255 }
+				}
+				b_jaromer = { #Opatovice
+					province = 4139
+
+					color = { 201 118 11 }
+					color2 = { 255 255 255 }
+				}
+				b_vraclav = {
+					province = 4140
+
+					color = { 201 118 11 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_kladsko = {
+				color = { 215 130 20 }
+				color2 = { 255 255 255 }
+			
+				b_kladzko = {	#Kladsko
+					province = 3047
+
+					color = { 215 130 20 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polish = cn_klodzko
+					}
+				}
+				b_police = {	#Police nad Metují
+					province = 9775
+
+					color = { 215 130 20 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_caslav = {
+				color = { 210 165 40 }
+				color2 = { 255 255 255 }
+			
+				b_caslav = {
+					province = 4161
+
+					color = { 210 165 40 }
+					color2 = { 255 255 255 }
+				}
+				b_chrudim = {
+					province = 4160
+
+					color = { 210 165 40 }
+					color2 = { 255 255 255 }
+				}
+				b_kourim = {
+					province = 8979
+
+					color = { 210 165 40 }
+					color2 = { 255 255 255 }
+				}
+				b_milevsko = { #Ostrov
+					province = 4158
+
+					color = { 210 165 40 }
+					color2 = { 255 255 255 }
+				}
+				b_chynov = {
+					province = 4156
+
+					color = { 210 165 40 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+
+		d_moravia = {
+			color = { 177 111 25 }
+			color2 = { 255 255 255 }
+			
+			capital = c_olomouc # Olomouc
+			
+			c_olomouc = {
+				color = { 163 107 41 }
+				color2 = { 255 255 255 }
+				
+				b_olomouc = {
+					province = 4165
+					
+					color = { 163 107 41 }
+					color2 = { 255 255 255 }
+				}
+				b_unicov = {
+					province = 4181
+					
+					color = { 163 107 41 }
+					color2 = { 255 255 255 }
+				}
+				b_kromeriz = {
+					province = 4148
+					
+					color = { 163 107 41 }
+					color2 = { 255 255 255 }
+				}
+				b_hradisko = {
+					province = 8977
+					
+					color = { 163 107 41 }
+					color2 = { 255 255 255 }
+				}
+				b_stavenice = {
+					province = 9703
+					
+					color = { 163 107 41 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_opava = {
+				color = { 190 90 38 }
+				color2 = { 255 255 255 }
+				
+				b_opava = {
+					province = 4184
+					
+					color = { 190 90 38 }
+					color2 = { 255 255 255 }
+				}
+				b_hradec-nad-moravici = {
+					province = 4183
+					
+					color = { 190 90 38 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_prerov = {
+				color = { 155 91 27 }
+				color2 = { 255 255 255 }
+				
+				b_prerov = {
+					province = 4182
+					
+					color = { 165 101 37 }
+					color2 = { 255 255 255 }
+				}
+				b_spytihnev = {
+					province = 4159
+					
+					color = { 165 101 37 }
+					color2 = { 255 255 255 }
+				}
+				b_landek = {
+					province = 8976
+					
+					color = { 165 101 37 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_jihlava = { # -> Velehrad
+				color = { 168 114 35 }
+				color2 = { 255 255 255 }
+				
+				b_breclav = {
+					province = 4169
+					
+					color = { 168 114 35 }
+					color2 = { 255 255 255 }
+				}
+				b_hodonin = {
+					province = 4170
+					
+					color = { 168 114 35 }
+					color2 = { 255 255 255 }
+				}
+				b_velehrad = {
+					province = 8975
+					
+					color = { 168 114 35 }
+					color2 = { 255 255 255 }
+				}
+				b_veseli = {
+					province = 8999
+					
+					color = { 168 114 35 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_brno = {
+				color = { 170 125 80 }
+				color2 = { 255 255 255 }
+				
+				b_brno = {
+					province = 4168
+					
+					color = { 170 125 80 }
+					color2 = { 255 255 255 }
+				}
+				b_ivancice = {
+					province = 4167
+					
+					color = { 170 125 80 }
+					color2 = { 255 255 255 }
+				}
+				b_zdar = {
+					province = 4163
+					
+					color = { 170 125 80 }
+					color2 = { 255 255 255 }
+				}
+				b_rajhrad = {
+					province = 9704
+					
+					color = { 170 125 80 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_znojmo = {
+				color = { 160 118 40 }
+				color2 = { 255 255 255 }
+				
+				b_znojmo = {
+					province = 4166
+					
+					color = { 160 118 40 }
+					color2 = { 255 255 255 }
+				}
+				b_bitov = {
+					province = 4164
+					
+					color = { 160 118 40 }
+					color2 = { 255 255 255 }
+				}
+				b_mikulov = {
+					province = 3080
+					
+					color = { 160 118 40 }
+					color2 = { 255 255 255 }
+				}
+				b_jihlava = {
+					province = 4162
+					
+					color = { 160 118 40 }
+					color2 = { 255 255 255 }
+				}
+				b_telcz = {
+					province = 4155
+					
+					color = { 160 118 40 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
 	}
-	
+
 	k_galicia-volhynia = {
 		color = { 50 150 130 }
 		color2 = { 255 255 255 }
@@ -26362,6 +26117,426 @@ e_russia = {	#Kievan Rus
 					cultural_names = {
 						name_list_polish = cn_lezajsk
 					}
+				}
+			}
+		}
+	}
+
+	k_sorbia = {
+		color = { 75 15 15 }
+		color2 = { 255 255 255 }
+		
+		cultural_names = {
+			name_list_polabian = cn_polabia
+			#Kingdom of Polabia
+		}
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:polabian
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+
+		capital = c_meissen #Meissen
+
+		# Temporarily reduced in size due to stability issues in the HRE.
+
+		d_meissen = {
+			color = { 215 175 120 }
+			color2 = { 255 255 255 }
+			
+			cultural_names = {
+				name_list_polabian = cn_milcenia
+				#Based on polabian tribe
+			}
+			
+			capital = c_meissen #Meissen
+			
+			c_meissen = {
+				color = { 215 175 120 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polabian = cn_milcenia
+					#Based on polabian tribe
+				}
+				
+				b_meissen = {
+					province = 3027
+					
+					color = { 215 175 120 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polabian = cn_misni
+					}
+				}
+				b_radebeul = {
+					province = 3035
+					
+					color = { 215 175 120 }
+					color2 = { 255 255 255 }
+				}
+				b_grossenhain = {
+					province = 3034
+					
+					color = { 215 175 120 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_dresden = {
+				color = { 210 165 130 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polabian = cn_drjezdzany
+				}
+				
+				b_dresden = {
+					province = 3030
+					
+					color = { 210 165 130 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polabian = cn_drjezdzany
+					}
+				}
+				b_bischofswerda = {
+					province = 3033
+					
+					color = { 210 165 130 }
+					color2 = { 255 255 255 }
+				}
+				b_freiberg = {
+					province = 3028
+					
+					color = { 210 165 130 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_wolkenstein = {
+				color = { 205 170 135 }
+				color2 = { 255 255 255 }
+				
+				b_wolkenstein = {
+					province = 3012
+					
+					color = { 205 170 135 }
+					color2 = { 255 255 255 }
+				}
+				b_waldenburg = {
+					province = 3013
+					
+					color = { 205 170 135 }
+					color2 = { 255 255 255 }
+				}
+			}
+			#c_freiberg = {
+			#	color = { 177 177 177 }
+			#	color2 = { 255 255 255 }
+			#	
+			#	b_freiberg = {
+			#		province = 3028
+			#		
+			#		color = { 177 177 177 }
+			#		color2 = { 255 255 255 }
+			#	}
+			#}
+			c_osterland = {
+				color = { 230 170 130 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polabian = cn_jilobor
+				}
+
+				b_eilenburg = {
+					province = 3021
+
+					color = { 230 170 130 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polabian = cn_jilobor
+					}
+				}
+				b_colditz = {
+					province = 3015
+
+					color = { 230 170 130 }
+					color2 = { 255 255 255 }
+				}
+				b_devin = {
+					province = 3017
+
+					color = { 230 170 130 }
+					color2 = { 255 255 255 }
+				}
+				b_leisning = {
+					province = 3016
+
+					color = { 230 170 130 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_naumburg = {
+				color = { 225 180 105 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polabian = cn_zeiz
+					#based on nearby bishopric which Naumburg functionnally "replaced"
+				}
+
+				b_naumburg = {
+					province = 3020
+
+					color = { 225 180 105 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polabian = cn_zeiz
+					}
+				}
+				b_altenburg = {
+					province = 3014
+
+					color = { 225 180 105 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polabian = cn_plisnia
+						#based on polabian tribe
+					}
+				}
+			}
+			c_vogtland = {
+				color = { 215 185 125 }
+				color2 = { 255 255 255 }
+
+				b_reichenbach = {
+					province = 3039
+
+					color = { 215 185 125 }
+					color2 = { 255 255 255 }
+				}
+				b_plauen = {
+					province = 3004
+
+					color = { 215 185 125 }
+					color2 = { 255 255 255 }
+				}
+				b_gera = {
+					province = 3038
+
+					color = { 215 185 125 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_cottbus = {
+				color = { 240 205 130 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polabian = cn_chosebuz
+				}
+				
+				b_cottbus = {
+					province = 3181
+
+					color = { 240 205 130 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polabian = cn_chosebuz
+					}
+				}
+				b_kamenz = {
+					province = 3141
+
+					color = { 240 205 130 }
+					color2 = { 255 255 255 }
+				}
+				b_lubben = {
+					province = 3182
+
+					color = { 240 205 130 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_gorlitz = {
+				color = { 215 160 130 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polabian = cn_gorelic
+				}
+				
+				b_gorlitz = {
+					province = 2980
+
+					color = { 215 160 130 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polabian = cn_gorelic
+					}
+				}
+				b_bautzen = {
+					province = 3032
+
+					color = { 215 160 130 }
+					color2 = { 255 255 255 }
+				}
+				b_spremberg = {
+					province = 3136
+
+					color = { 215 160 130 }
+					color2 = { 255 255 255 }
+				}
+			}
+		}
+
+		d_lausitz = {
+			color = { 215 150 145 }
+			color2 = { 255 255 255 }
+			
+			capital = c_juterbog #Jüterbog
+			
+			cultural_names = {
+				name_list_polabian = cn_lusatia
+			}
+
+			c_juterbog = {
+				color = { 215 150 145 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polabian = cn_jutriboc
+				}
+
+				b_juterbog = {
+					province = 3180
+
+					color = { 215 150 145 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polabian = cn_jutriboc
+					}
+				}
+				b_dahme = {
+					province = 3178
+
+					color = { 215 150 145 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_wittenberg = {
+				color = { 200 140 130 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polabian = cn_nizizia
+					#based on polabian tribe
+				}
+				
+				b_wittenberg = {
+					province = 3173
+
+					color = { 200 140 130 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polabian = cn_nizizia
+						#based on polabian tribe
+					}
+				}
+				b_belizi = {
+					province = 3174
+
+					color = { 200 140 130 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_brene = {
+				color = { 235 170 165 }
+				color2 = { 255 255 255 }
+
+				b_torgau = {
+					province = 3025
+
+					color = { 235 170 165 }
+					color2 = { 255 255 255 }
+				}
+				b_brene = {
+					province = 3175
+
+					color = { 235 170 165 }
+					color2 = { 255 255 255 }
+				}
+				b_duben = {
+					province = 3024
+
+					color = { 235 170 165 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_spreewald = {
+				color = { 230 150 160 }
+				color2 = { 255 255 255 }
+				
+				cultural_names = {
+					name_list_polabian = cn_blota
+				}
+
+				b_spreewald = {
+					province = 3140
+
+					color = { 230 150 160 }
+					color2 = { 255 255 255 }
+					
+					cultural_names = {
+						name_list_polabian = cn_blota
+					}
+				}
+				b_storkow = {
+					province = 3159
+
+					color = { 230 150 160 }
+					color2 = { 255 255 255 }
+				}
+			}
+			c_naumberg = {
+				color = { 255 175 180 }
+				color2 = { 255 255 255 }
+
+				cultural_names = {
+					name_list_polish = cn_lubsko
+					name_list_polabian = cn_lubsko
+				}
+				
+				b_naumberg = {
+					province = 3143
+
+					color = { 255 175 180 }
+					color2 = { 255 255 255 }
+
+					cultural_names = {
+						name_list_polish = cn_lubsko
+						name_list_polabian = cn_lubsko
+					}
+				}
+				
+				b_forst = {
+					province = 3138
+
+					color = { 255 175 180 }
+					color2 = { 255 255 255 }
 				}
 			}
 		}
@@ -48931,55 +49106,6 @@ e_france = {
 					color2 = { 255 255 255 }
 				}
 			}
-		}
-		
-		d_bar = {
-			color = { 24 95 226 }
-			color2 = { 255 255 255 }
-			
-			capital = c_bar #Bar	
-
-			c_bar = {
-				color = { 24 95 226 }
-				color2 = { 255 255 255 }
-
-				b_bar = {
-					province = 2388
-
-					color = { 24 95 226 }
-					color2 = { 255 255 255 }
-				}
-				b_verdun = {
-					province = 2395
-
-					color = { 24 95 226 }
-					color2 = { 255 255 255 }
-				}
-				b_argonne = {	#Displayed as Saint-Mihiel
-					province = 2081
-
-					color = { 24 95 226 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_briey = {
-				color = { 53 132 226 }
-				color2 = { 255 255 255 }
-
-				b_briey = {
-					province = 2706
-
-					color = { 53 132 226 }
-					color2 = { 255 255 255 }
-				}
-				b_hayange = {
-					province = 2080
-
-					color = { 53 132 226 }
-					color2 = { 255 255 255 }
-				}
-			}
-
 			c_langres = {
 				color = { 55 105 225 }
 				color2 = { 255 255 255 }
@@ -49000,24 +49126,6 @@ e_france = {
 					province = 2385
 
 					color = { 55 105 225 }
-					color2 = { 255 255 255 }
-				}
-			}
-
-			c_vaucouleurs = {
-				color = { 15 80 220 }
-				color2 = { 255 255 255 }
-			
-				b_vaucouleurs = {
-					province = 2387
-
-					color = { 15 80 220 }
-					color2 = { 255 255 255 }
-				}
-				b_toul = {
-					province = 2079
-
-					color = { 15 80 220 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -51377,7 +51485,7 @@ e_spain = {
 					province = 1958
 					
 					color = { 212 151 12 }
-					color2 = { 255 255 255 }	
+					color2 = { 255 255 255 }
 				}
 			}
 			c_madrid = { #Guadalajara
@@ -59843,12 +59951,20 @@ e_arabia = {
 			c_shayzar = {
 				color = { 93 252 34 }
 				color2 = { 255 255 255 }
+
+				cultural_names = {
+					name_list_greek = cn_sezer
+				}
 				
 				b_shayzar = {
 					province = 5915
 					
 					color = { 93 252 34 }
 					color2 = { 255 255 255 }
+
+					cultural_names = {
+						name_list_greek = cn_sezer
+					}
 				}
 				b_masyaf = {
 					province = 5914
