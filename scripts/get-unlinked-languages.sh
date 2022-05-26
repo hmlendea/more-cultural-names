@@ -35,17 +35,18 @@ function getCk3v14Cultures() {
 
 function getCk3Cultures() {
     local GAME_ID="${1}" && shift
-    local CULTURES_DIR="${*}"
 
-    for CULTURE_ID in $(grep -P '^\s*name_list\s*=' "${CULTURES_DIR}/"*.txt | \
-                        awk -F"=" '{print $2}' | \
-                        sed 's/\s//g' | \
-                        sed 's/#.*//g' | \
-                        sed 's/^name_list_//g' | \
-                        sort | uniq); do
-        if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
-            echo "  ${CULTURE_ID}"
-        fi
+    for CULTURES_DIR in "${@}"; do
+        for CULTURE_ID in $(grep -P '^\s*name_list\s*=' "${CULTURES_DIR}/"*.txt | \
+                            awk -F"=" '{print $2}' | \
+                            sed 's/\s//g' | \
+                            sed 's/#.*//g' | \
+                            sed 's/^name_list_//g' | \
+                            sort | uniq); do
+            if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
+                echo "  ${CULTURE_ID}"
+            fi
+        done
     done
 }
 
@@ -119,9 +120,9 @@ echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTU
 echo "Crusader Kings 2 HIP:"    && getCk2Cultures       "CK2HIP"    "${CK2HIP_CULTURES_DIR}"
 echo "Crusader Kings 3:"        && getCk3Cultures       "CK3"       "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 ATHA:"   && getCk3Cultures       "CK3ATHA"   "${CK3ATHA_CULTURES_DIR}"
-echo "Crusader Kings 3 CMH:"    && getCk3Cultures       "CK3CMH"    "${CK3CMH_CULTURES_DIR}"
-echo "Crusader Kings 3 IBL:"    && getCk3Cultures       "CK3IBL"    "${CK3IBL_CULTURES_DIR}"
-echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CULTURES_DIR}"
+echo "Crusader Kings 3 CMH:"    && getCk3Cultures       "CK3CMH"    "${CK3CMH_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+echo "Crusader Kings 3 IBL:"    && getCk3Cultures       "CK3IBL"    "${CK3IBL_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 SoW:"    && getCk3Cultures       "CK3SoW"    "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 TFE:"    && getCk3Cultures       "CK3TFE"    "${CK3TFE_CULTURES_DIR}"
 echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS_DIR}" "${HOI4_LOCALISATIONS_DIR}"
