@@ -30,7 +30,7 @@ function getCk3v14Cultures() {
         if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
             echo "  ${CULTURE_ID}"
         fi
-    done 
+    done
 }
 
 function getCk3Cultures() {
@@ -46,7 +46,7 @@ function getCk3Cultures() {
         if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
             echo "  ${CULTURE_ID}"
         fi
-    done 
+    done
 }
 
 function getHoi4Countries() {
@@ -66,7 +66,7 @@ function getHoi4Countries() {
             [ -n "${COUNTRY_NAME}" ] && printf " <!-- ${COUNTRY_NAME} -->"
             printf "\n"
         fi
-    done 
+    done
 }
 
 function getIrCultures() {
@@ -97,7 +97,7 @@ function getIrCultures() {
             sed 's/%NL%/ /g' | \
             sed 's/},\s*$/}/g' | \
             jq)
-        
+
         CULTURE_GROUP_ID=$(echo "${CULTURE_FILE_JSON}" | jq -r 'keys[0]')
 
         #echo "  ### Culture group: ${CULTURE_GROUP_ID}"
@@ -112,13 +112,14 @@ function getIrCultures() {
                 echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
             fi
         done
-    done 
+    done
 }
 
 echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
 echo "Crusader Kings 2 HIP:"    && getCk2Cultures       "CK2HIP"    "${CK2HIP_CULTURES_DIR}"
 echo "Crusader Kings 3:"        && getCk3Cultures       "CK3"       "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 ATHA:"   && getCk3Cultures       "CK3ATHA"   "${CK3ATHA_CULTURES_DIR}"
+echo "Crusader Kings 3 CMH:"    && getCk3Cultures       "CK3CMH"    "${CK3CMH_CULTURES_DIR}"
 echo "Crusader Kings 3 IBL:"    && getCk3Cultures       "CK3IBL"    "${CK3IBL_CULTURES_DIR}"
 echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CULTURES_DIR}"
 echo "Crusader Kings 3 SoW:"    && getCk3Cultures       "CK3SoW"    "${CK3_CULTURES_DIR}"
