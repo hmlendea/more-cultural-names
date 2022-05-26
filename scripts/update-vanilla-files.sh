@@ -46,6 +46,9 @@ update-vanilla-files \
     "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}" \
     "${CK3ATHA_LANDED_TITLES_DIR}"/*.txt
 update-vanilla-file \
+    "${CK3CMH_DIR}/common/landed_titles/00_landed_titles.txt" \
+    "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"
+update-vanilla-file \
     "${CK3IBL_DIR}/common/landed_titles/00_landed_titles.txt" \
     "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
