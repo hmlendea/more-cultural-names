@@ -127,4 +127,4 @@ echo "Crusader Kings 3 TFE:"    && getCk3Cultures       "CK3TFE"    "${CK3TFE_CU
 echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS_DIR}" "${HOI4_LOCALISATIONS_DIR}"
 echo "Hearts of Iron 4 TGW:"    && getHoi4Countries     "HOI4TGW"   "${HOI4TGW_TAGS_DIR}" "${HOI4TGW_LOCALISATIONS_DIR}"
 echo "Imperator Rome:"          && getIrCultures        "IR"        "${IR_CULTURES_DIR}"
-echo "Imperator Rome:"          && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"
+echo "Imperator Rome AoE:"      && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"
