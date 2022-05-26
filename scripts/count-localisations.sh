@@ -11,7 +11,7 @@ WELL_COVERED_LINES_COUNT=$(grep "\(<Name lang\|@@@@ BELOW TITLES NEED REVIEW\)" 
 function get_game_titles_count() {
     local GAME=${1}
     local TITLES_COUNT=0
-    
+
     TITLES_COUNT=$(grep -c "<GameId game=\"${GAME}\"" "${LOCATIONS_FILE}")
 
     echo "${TITLES_COUNT}"
@@ -20,7 +20,7 @@ function get_game_titles_count() {
 function print_game_titles_count() {
     local GAME=${1}
     local TITLES_COUNT=0
-    
+
     TITLES_COUNT=$(get_game_titles_count "${GAME}")
 
     echo "${GAME} titles: ${TITLES_COUNT}" >&2
@@ -30,6 +30,7 @@ print_game_titles_count CK2
 print_game_titles_count CK2HIP
 print_game_titles_count CK3
 print_game_titles_count CK3ATHA
+print_game_titles_count CK3CMH
 print_game_titles_count CK3IBL
 print_game_titles_count CK3MBP
 print_game_titles_count CK3SoW
