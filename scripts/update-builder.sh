@@ -7,7 +7,7 @@ MOD_BUILDER_NAME="more-cultural-names-builder"
 MOD_BUILDER_REPOSITORY="${MOD_BUILDER_AUTHOR}/${MOD_BUILDER_NAME}"
 MOD_BUILDER_REPOSITORY_URL="${GITHUB_BASE_URL}/${MOD_BUILDER_REPOSITORY}"
 MOD_BUILDER_DIRECTORY="${REPO_DIR}/.builder"
-MOD_BUILDER_VERSION=$(curl --silent "${MOD_BUILDER_REPOSITORY_URL}/releases/latest" | sed 's/.*\/tag\/v\([^\"]*\)">redir.*/\1/g')
+MOD_BUILDER_VERSION=$(curl --silent "https://api.github.com/repos/${MOD_BUILDER_REPOSITORY}/releases/latest" | grep tag_name | sed 's/[^:]*: \"v\([^\"]*\).*/\1/g')
 NEEDS_DOWNLOADING=true
 
 echo "Checking for builder updates..."
@@ -29,12 +29,12 @@ if ${NEEDS_DOWNLOADING}; then
 
     echo " > Downloading v${MOD_BUILDER_VERSION}..."
     wget -q -c "${MOD_BUILDER_PACKAGE_URL}" -O "${MOD_BUILDER_PACKAGE_FILE}" 2>/dev/null
-    
+
     echo " > Extracting..."
     mkdir "${MOD_BUILDER_DIRECTORY}"
     unzip -q "${MOD_BUILDER_PACKAGE_FILE}" -d "${MOD_BUILDER_DIRECTORY}"
     echo "${MOD_BUILDER_VERSION}" > "${MOD_BUILDER_DIRECTORY}/version.txt"
-    
+
     echo " > Cleaning up..."
     rm "${MOD_BUILDER_PACKAGE_FILE}"
 fi
