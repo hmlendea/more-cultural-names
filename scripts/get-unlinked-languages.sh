@@ -30,23 +30,24 @@ function getCk3v14Cultures() {
         if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
             echo "  ${CULTURE_ID}"
         fi
-    done 
+    done
 }
 
 function getCk3Cultures() {
     local GAME_ID="${1}" && shift
-    local CULTURES_DIR="${*}"
 
-    for CULTURE_ID in $(grep -P '^\s*name_list\s*=' "${CULTURES_DIR}/"*.txt | \
-                        awk -F"=" '{print $2}' | \
-                        sed 's/\s//g' | \
-                        sed 's/#.*//g' | \
-                        sed 's/^name_list_//g' | \
-                        sort | uniq); do
-        if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
-            echo "  ${CULTURE_ID}"
-        fi
-    done 
+    for CULTURES_DIR in "${@}"; do
+        for CULTURE_ID in $(grep -P '^\s*name_list\s*=' "${CULTURES_DIR}/"*.txt | \
+                            awk -F"=" '{print $2}' | \
+                            sed 's/\s//g' | \
+                            sed 's/#.*//g' | \
+                            sed 's/^name_list_//g' | \
+                            sort | uniq); do
+            if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
+                echo "  ${CULTURE_ID}"
+            fi
+        done
+    done
 }
 
 function getHoi4Countries() {
@@ -66,7 +67,7 @@ function getHoi4Countries() {
             [ -n "${COUNTRY_NAME}" ] && printf " <!-- ${COUNTRY_NAME} -->"
             printf "\n"
         fi
-    done 
+    done
 }
 
 function getIrCultures() {
@@ -97,7 +98,7 @@ function getIrCultures() {
             sed 's/%NL%/ /g' | \
             sed 's/},\s*$/}/g' | \
             jq)
-        
+
         CULTURE_GROUP_ID=$(echo "${CULTURE_FILE_JSON}" | jq -r 'keys[0]')
 
         #echo "  ### Culture group: ${CULTURE_GROUP_ID}"
@@ -112,18 +113,19 @@ function getIrCultures() {
                 echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
             fi
         done
-    done 
+    done
 }
 
 echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
 echo "Crusader Kings 2 HIP:"    && getCk2Cultures       "CK2HIP"    "${CK2HIP_CULTURES_DIR}"
 echo "Crusader Kings 3:"        && getCk3Cultures       "CK3"       "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 ATHA:"   && getCk3Cultures       "CK3ATHA"   "${CK3ATHA_CULTURES_DIR}"
-echo "Crusader Kings 3 IBL:"    && getCk3Cultures       "CK3IBL"    "${CK3IBL_CULTURES_DIR}"
-echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CULTURES_DIR}"
+echo "Crusader Kings 3 CMH:"    && getCk3Cultures       "CK3CMH"    "${CK3CMH_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+echo "Crusader Kings 3 IBL:"    && getCk3Cultures       "CK3IBL"    "${CK3IBL_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 SoW:"    && getCk3Cultures       "CK3SoW"    "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 TFE:"    && getCk3Cultures       "CK3TFE"    "${CK3TFE_CULTURES_DIR}"
 echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS_DIR}" "${HOI4_LOCALISATIONS_DIR}"
 echo "Hearts of Iron 4 TGW:"    && getHoi4Countries     "HOI4TGW"   "${HOI4TGW_TAGS_DIR}" "${HOI4TGW_LOCALISATIONS_DIR}"
 echo "Imperator Rome:"          && getIrCultures        "IR"        "${IR_CULTURES_DIR}"
-echo "Imperator Rome:"          && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"
+echo "Imperator Rome AoE:"      && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"

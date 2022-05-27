@@ -15,7 +15,7 @@ jobs:
 
     - name: Download the release asset
       run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK2_${GITHUB_REF:11}.zip" -O "more-cultural-names.zip"
-        
+
     - name: Upload
       uses: greatness7/nexusmods_file_updater@v2
       with:
@@ -30,7 +30,7 @@ jobs:
         original_file: "more-cultural-names.*"
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "more-cultural-names.zip"
-        
+
   release-ck2hip:
     name: Release (CK2HIP)
     runs-on: ubuntu-latest
@@ -40,7 +40,7 @@ jobs:
 
     - name: Download the release asset
       run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK2HIP_${GITHUB_REF:11}.zip" -O "hip-more-cultural-names.zip"
-        
+
     - name: Upload
       uses: greatness7/nexusmods_file_updater@v2
       with:
@@ -55,7 +55,7 @@ jobs:
         original_file: "hip-more-cultural-names.*"
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "hip-more-cultural-names.zip"
-        
+
   release-ck3:
     name: Release (CK3)
     runs-on: ubuntu-latest
@@ -65,7 +65,7 @@ jobs:
 
     - name: Download the release asset
       run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3_${GITHUB_REF:11}.zip" -O "more-cultural-names.zip"
-        
+
     - name: Upload
       uses: greatness7/nexusmods_file_updater@v2
       with:
@@ -80,7 +80,32 @@ jobs:
         original_file: "more-cultural-names.*"
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "more-cultural-names.zip"
-        
+
+  release-ck3cmh:
+    name: Release (CK3CMH)
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download the release asset
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3CMH_${GITHUB_REF:11}.zip" -O "cmh-more-cultural-names.zip"
+
+    - name: Upload
+      uses: greatness7/nexusmods_file_updater@v2
+      with:
+        username: ${{secrets.NEXUS_UPLOADER1_USERNAME}}
+        password: ${{secrets.NEXUS_UPLOADER1_PASSWORD}}
+        game_domain_name: "crusaderkings3"
+        mod_id: "12"
+        file_name: "cmh-more-cultural-names"
+        file_version: ${{github.ref_name}}
+        update_version: true
+        new_existing_version: true
+        original_file: "cmh-more-cultural-names.*"
+        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        file_path: "cmh-more-cultural-names.zip"
+
   release-ck3ibl:
     name: Release (CK3IBL)
     runs-on: ubuntu-latest
@@ -90,7 +115,7 @@ jobs:
 
     - name: Download the release asset
       run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3IBL_${GITHUB_REF:11}.zip" -O "ibl-more-cultural-names.zip"
-        
+
     - name: Upload
       uses: greatness7/nexusmods_file_updater@v2
       with:
@@ -105,7 +130,7 @@ jobs:
         original_file: "ibl-more-cultural-names.*"
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "ibl-more-cultural-names.zip"
-        
+
   release-ck3mbp:
     name: Release (CK3MBP)
     runs-on: ubuntu-latest
@@ -115,7 +140,7 @@ jobs:
 
     - name: Download the release asset
       run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3MBP_${GITHUB_REF:11}.zip" -O "mbp-more-cultural-names.zip"
-        
+
     - name: Upload
       uses: greatness7/nexusmods_file_updater@v2
       with:
@@ -165,7 +190,7 @@ jobs:
 
     - name: Download the release asset
       run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3TFE_${GITHUB_REF:11}.zip" -O "tfe-more-cultural-names.zip"
-        
+
     - name: Upload
       uses: greatness7/nexusmods_file_updater@v2
       with:
@@ -180,7 +205,7 @@ jobs:
         original_file: "tfe-more-cultural-names.*"
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "tfe-more-cultural-names.zip"
-        
+
   release-hoi4:
     name: Release (HOI4)
     runs-on: ubuntu-latest
@@ -190,7 +215,7 @@ jobs:
 
     - name: Download the release asset
       run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_HOI4_${GITHUB_REF:11}.zip" -O "more-cultural-names.zip"
-        
+
     - name: Upload
       uses: greatness7/nexusmods_file_updater@v2
       with:
@@ -205,7 +230,7 @@ jobs:
         original_file: "more-cultural-names.*"
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "more-cultural-names.zip"
-        
+
   release-hoi4tgw:
     name: Release (HOI4TGW)
     runs-on: ubuntu-latest
@@ -215,7 +240,7 @@ jobs:
 
     - name: Download the release asset
       run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_HOI4TGW_${GITHUB_REF:11}.zip" -O "tgw-more-cultural-names.zip"
-        
+
     - name: Upload
       uses: greatness7/nexusmods_file_updater@v2
       with:
