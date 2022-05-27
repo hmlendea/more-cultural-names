@@ -13,6 +13,7 @@ The names are meant to provide an immersive and accurate experience for the game
 |![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)|
 |![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (HIP)](https://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)|
 |![CK3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)|
+|![CK3CMH](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (CMH)](https://hmlendea.github.io/more-cultural-names/links/ck3cmh-workshop)|
 |![CK3IBL](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (IBL)](https://steamcommunity.com/sharedfiles/filedetails/?id=2490281800)|
 |![CK3MBP](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (MB+)](https://steamcommunity.com/sharedfiles/filedetails/?id=2630872947)|
 |![CK3SoW](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (SoW)](https://steamcommunity.com/sharedfiles/filedetails/?id=2724606810)|
@@ -48,5 +49,5 @@ Here are a few ways in which you can do so:
  - Raising a new [issue](https://github.com/hmlendea/more-cultural-names/issues) for this project
  - Creating a git pull request for this repository (This requires git knowledge)
 
-If you wish to contribute directly to the project, you can find the documentation and 
+If you wish to contribute directly to the project, you can find the documentation and
 [guidelines](https://github.com/hmlendea/more-cultural-names/wiki/Guidelines) on the project's [wiki](https://github.com/hmlendea/more-cultural-names/wiki).
