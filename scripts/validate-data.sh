@@ -16,12 +16,6 @@ function getGameIds() {
 
 function checkForSurplusCk3LanguageLinks() {
     local GAME="${1}" && shift
-    local CULTURES_FILES=""
-
-    for CULTURES_DIR in "${@}"; do
-        [ ! -d "${CULTURES_DIR}" ] && continue
-        CULTURES_FILES="${CULTURES_FILES} "$(ls "${CULTURES_DIR}"/*.txt)
-    done
 
     for CULTURE_ID in $(diff \
                         <( \
@@ -47,7 +41,7 @@ function checkForMismatchingLanguageLinks() {
     local NO_DIRECTORY_EXISTS=true
 
     for CULTURES_DIR in "${@}"; do
-        NO_DIRECTORY_EXISTS=false
+        [ -f "${CULTURES_DIR}" ] && NO_DIRECTORY_EXISTS=false
         break
     done
 
