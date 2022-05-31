@@ -31,6 +31,7 @@ function update-vanilla-files() {
     chmod 755 "${TARGET_FILE}"
     chown "${USER}:${USER}" "${TARGET_FILE}"
     sed -i 's/\r$//' "${TARGET_FILE}"
+    sed -i 's/﻿/\n/g' "${TARGET_FILE}"
 }
 
 update-vanilla-file \
@@ -45,9 +46,11 @@ update-vanilla-file \
 update-vanilla-files \
     "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}" \
     "${CK3ATHA_LANDED_TITLES_DIR}"/*.txt
-update-vanilla-file \
-    "${CK3CMH_DIR}/common/landed_titles/00_landed_titles.txt" \
-    "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"
+update-vanilla-files \
+    "${CK3CMH_VANILLA_LANDED_TITLES_FILE}" \
+    "${CK3AP_DIR}/common/landed_titles/"*.txt \
+    "${CK3IBL_DIR}/common/landed_titles/"*.txt \
+    "${CK3RICE_DIR}/common/landed_titles/"*.txt
 update-vanilla-file \
     "${CK3IBL_DIR}/common/landed_titles/00_landed_titles.txt" \
     "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
