@@ -15,21 +15,15 @@ function getGameIds() {
 }
 
 function checkForSurplusCk3LanguageLinks() {
-    local GAME="${1}"
-    local CULTURES_DIR="${2}"
-    local INHERITS_FROM_VANILLA=${3}
+    local GAME="${1}" && shift
 
-    for TITLE_ID in $(diff \
+    for CULTURE_ID in $(diff \
                         <( \
                             grep "GameId game=\"${GAME}\"" "${LANGUAGES_FILE}" | \
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
                             sort | uniq \
                         ) <( \
-                            if ${INHERITS_FROM_VANILLA}; then
-                                cat "${CK3_CULTURES_DIR}"/*.txt "${CULTURES_DIR}"/*.txt
-                            else
-                                cat "${CULTURES_DIR}"/*.txt
-                            fi | \
+                            find "${@}" -maxdepth 1 -name "*.txt" -exec cat {} + | \
                             grep -P '^\s*name_list\s*=' | \
                             awk -F"=" '{print $2}' | \
                             sed 's/\s//g' | \
@@ -38,21 +32,25 @@ function checkForSurplusCk3LanguageLinks() {
                             sort | uniq \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME}: ${TITLE_ID} is defined but it does not exist"
+        echo "    > ${GAME}: ${CULTURE_ID} culture is defined but it does not exist"
     done
 }
 
 function checkForMismatchingLanguageLinks() {
-    local GAME="${1}"
-    local CULTURES_DIR="${2}"
-    local INHERITS_FROM_VANILLA=false
+    local GAME="${1}" && shift
+    local NO_DIRECTORY_EXISTS=true
 
-    [ ! -d "${CULTURES_DIR}" ] && return
+    for CULTURES_DIR in "${@}"; do
+        [ -f "${CULTURES_DIR}" ] && NO_DIRECTORY_EXISTS=false
+        break
+    done
+
+    ${NO_DIRECTORY_EXISTS} && return
 
     [ -n "${3}" ] && INHERITS_FROM_VANILLA=${3}
 
     if [[ ${GAME} == CK3* ]]; then
-        checkForSurplusCk3LanguageLinks "${GAME}" "${CULTURES_DIR}" ${INHERITS_FROM_VANILLA}
+        checkForSurplusCk3LanguageLinks "${GAME}" "${@}"
     fi
 }
 
@@ -407,10 +405,10 @@ grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 # Make sure all languages exist in the game
 checkForMismatchingLanguageLinks "CK3"      "${CK3_CULTURES_DIR}"
 checkForMismatchingLanguageLinks "CK3ATHA"  "${CK3ATHA_CULTURES_DIR}"
-checkForMismatchingLanguageLinks "CK3CMH"   "${CK3CMH_CULTURES_DIR}" true
-checkForMismatchingLanguageLinks "CK3IBL"   "${CK3IBL_CULTURES_DIR}" true
-checkForMismatchingLanguageLinks "CK3MBP"   "${CK3MBP_CULTURES_DIR}" true
-checkForMismatchingLanguageLinks "CK3SoW"   "${CK3SoW_CULTURES_DIR}" true
+checkForMismatchingLanguageLinks "CK3CMH"   "${CK3AP_CULTURES_DIR}" "${CK3IBL_CULTURES_DIR}" "${CK3RICE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+checkForMismatchingLanguageLinks "CK3IBL"   "${CK3IBL_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+checkForMismatchingLanguageLinks "CK3MBP"   "${CK3MBP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+checkForMismatchingLanguageLinks "CK3SoW"   "${CK3_CULTURES_DIR}"
 
 # Make sure all locations are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"
