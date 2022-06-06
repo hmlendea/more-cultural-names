@@ -105,6 +105,18 @@ d_patriarchate_in_the_east = {
 	destroy_if_invalid_heir = yes
 }
 
+d_zayidi = {
+	color = { 0.3 0.8 0.2 }
+	color2 = { 220 220 0 }
+	capital = c_sanaa
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+}
+
 d_coptic_papacy = {
 	color = { 217 155 177 }
 	color2 = { 220 220 0 }
@@ -267,6 +279,17 @@ d_masmudi = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no							
+}
+
+d_muwalladi = {
+	color = { 11 113 11 }
+	color2 = { 220 220 0 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
 }
 
 e_golden_horde = { #White Horde
@@ -635,6 +658,15 @@ k_austria = {
 
 }
 
+k_visigoths = {
+	color = { 116 135 65 }
+	color2 = { 255 255 255 }
+
+	definite_form = yes
+
+	capital = c_toledo
+}
+
 e_outremer = {
 	color = { 180 180 180 }
 	color2 = { 255 255 255 }
@@ -646,6 +678,18 @@ e_outremer = {
 		add = @always_primary_score
 	}
 
+}
+
+# FP2
+k_toledo = {
+	color = { 99 163 182 }
+	color2 = { 255 255 255 }
+
+	capital = c_toledo
+
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
 }
 
 # HOLY ORDERS
@@ -995,6 +1039,32 @@ e_egypt = { # Misr
 
 # TITULAR KINGDOMS
 
+k_sorbia = {
+		color = { 75 15 15 }
+		color2 = { 255 255 255 }
+
+		cultural_names = {
+			name_list_polabian = cn_polabia
+			#Kingdom of Polabia
+		}
+
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:polabian
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+}
+
+k_mediterranean_sea = { # FP2
+	color = { 180 0 0 }
+	color2 = { 220 220 0 }
+
+	capital = c_cagliari
+}
+		
 k_hammadid = { # Hammadid
 	color = { 149 180 17 }
 	capital = c_allaqi # Allaqi
@@ -57439,6 +57509,25 @@ e_spain = {
 			add = @correct_culture_primary_score
 		}
 	}
+	cultural_names = {
+		name_list_bedouin = cn_isbaniya
+		name_list_butr = cn_isbaniya
+		name_list_baranis = cn_isbaniya
+		name_list_zaghawa = cn_isbaniya
+		name_list_levantine = cn_isbaniya
+		name_list_egyptian = cn_isbaniya
+		name_list_maghrebi = cn_isbaniya
+		name_list_andalusian = cn_isbaniya
+		name_list_yemeni = cn_isbaniya
+	}
+
+	can_create = {
+		custom_description = {
+			text = form_hispania_must_end_struggle_trigger
+
+			NOT = { exists = struggle:iberian_struggle }
+		}
+	}
 	
 	k_andalusia = {
 		color = { 31 138 40 }
@@ -59071,6 +59160,12 @@ e_spain = {
 					color = { 110 65 20 }
 					color2 = { 255 255 255 }
 				}
+				b_uncastillo = {
+					province = 10184
+
+					color = { 110 65 20 }
+					color2 = { 255 255 255 }
+				}
 			}
 		
 
@@ -59241,6 +59336,12 @@ e_spain = {
 				
 				b_lleida = {
 					province = 1881
+
+					color = { 160 80 65 }
+					color2 = { 255 255 255 }
+				}
+				b_agramunt = {
+					province = 10185
 
 					color = { 160 80 65 }
 					color2 = { 255 255 255 }
