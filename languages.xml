@@ -68,7 +68,11 @@
   </Language>
   <Language>
     <Id>Afrikaans</Id>
-    <Code iso-639-1="af" iso-639-3="afr" />
+    <Code iso-639-1="af" iso-639-2="afr" iso-639-3="afr" />
+  </Language>
+  <Language>
+    <Id>Ainu</Id> <!-- Ainu-itak -->
+    <Code iso-639-2="ain" iso-639-3="ain" />
   </Language>
   <Language>
     <Id>Akan</Id>
@@ -207,7 +211,7 @@
   </Language>
   <Language>
     <Id>Alemannic</Id>
-    <Code iso-639-3="gsw" />
+    <Code iso-639-3="gsw" /> <!-- Swiss German -->
     <GameIds>
       <GameId game="HOI4">SWI</GameId> <!-- Switzerland -->
       <GameId game="HOI4TGW">SWI</GameId> <!-- Switzerland -->
@@ -2899,6 +2903,13 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Chavacano</Id> <!-- Chabacano -->
+    <Code iso-639-3="cbk" />
+    <FallbackLanguages>
+      <LanguageId>Spanish</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Chechen</Id>
     <Code iso-639-1="ce" iso-639-2="che" iso-639-3="che" />
   </Language>
@@ -3766,6 +3777,13 @@
       <LanguageId>Thracian_Before342BC</LanguageId>
       <LanguageId>Dacian</LanguageId>
       <LanguageId>Thracian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Dagbani</Id> <!-- Dagbane, Dagbanli, Dagbanle -->
+    <Code iso-639-3="dag" />
+    <FallbackLanguages>
+      <LanguageId>Mamprusi</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -10755,6 +10773,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Hiligaynon</Id> <!-- Ilonggo, Binisaya, Bisaya nga Hiniligaynon, Inilonggo -->
+    <Code iso-639-2="hil" iso-639-3="hil" />
+  </Language>
+  <Language>
     <Id>Hindi</Id>
     <Code iso-639-1="hi" iso-639-2="hin" iso-639-3="hin" />
     <GameIds>
@@ -11594,10 +11616,23 @@
   <Language>
     <Id>Javanese</Id>
     <Code iso-639-1="jv" iso-639-2="jav" iso-639-3="jav" />
+    <FallbackLanguages>
+      <LanguageId>Javanese_Banyumasan</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Javanese_Banyumasan</Id> <!-- Basa Banyumasan, Basa Ngapak -->
+    <FallbackLanguages>
+      <LanguageId>Javanese</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Kabiye</Id>
     <Code iso-639-3="kbp" />
+  </Language>
+  <Language>
+    <Id>Kabuverdianu</Id>
+    <Code iso-639-3="kea" />
   </Language>
   <Language>
     <Id>Kabyle</Id>
@@ -11697,8 +11732,8 @@
     <Code iso-639-2="kaa" iso-639-3="kaa" />
   </Language>
   <Language>
-    <Id>Kabuverdianu</Id>
-    <Code iso-639-3="kea" />
+    <Id>Karaya</Id> <!-- Karay-a, Kinaray-a, Binisayâ nga Kinaray-a, Hinaraya -->
+    <Code iso-639-3="krj" />
   </Language>
   <Language>
     <Id>Karelian</Id>
@@ -15898,6 +15933,17 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Mamprusi</Id> <!-- Mampruli, Mampelle -->
+    <Code iso-639-3="maw" />
+    <FallbackLanguages>
+      <LanguageId>Dagbani</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Manchu</Id>
+    <Code iso-639-2="mnc" iso-639-3="mnc" />
+  </Language>
+  <Language>
     <Id>Manding</Id>
     <Code iso-639-2="man" />
     <GameIds>
@@ -16502,8 +16548,29 @@
   </Language>
   <Language>
     <Id>Norwegian</Id>
-    <Code iso-639-1="no" iso-639-3="nor" />
+    <Code iso-639-1="no" iso-639-2="nor" iso-639-3="nor" />
     <FallbackLanguages>
+      <LanguageId>Norwegian_Bokmal</LanguageId>
+      <LanguageId>Norwegian_Nynorsk</LanguageId>
+      <LanguageId>Norwegian_Before1946</LanguageId>
+      <LanguageId>Norwegian_Before1925</LanguageId>
+      <LanguageId>Norwegian_Before1918</LanguageId>
+      <LanguageId>Norwegian_Before1917</LanguageId>
+      <LanguageId>Norwegian_Before1877</LanguageId>
+      <LanguageId>Norwegian_Middle</LanguageId>
+      <LanguageId>Norwegian_Old</LanguageId>
+      <LanguageId>Icelandic_Old</LanguageId>
+      <LanguageId>Norse</LanguageId>
+      <LanguageId>Icelandic_Before1975</LanguageId>
+      <LanguageId>Icelandic</LanguageId>
+      <LanguageId>Faroese</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Norwegian_Bokmal</Id> <!-- Norwegian Bokmål -->
+    <Code iso-639-1="nb" iso-639-2="nob" iso-639-3="nob" />
+    <FallbackLanguages>
+      <LanguageId>Norwegian</LanguageId>
       <LanguageId>Norwegian_Nynorsk</LanguageId>
       <LanguageId>Norwegian_Before1946</LanguageId>
       <LanguageId>Norwegian_Before1925</LanguageId>
@@ -16524,6 +16591,7 @@
     <Code iso-639-1="nn" iso-639-2="nno" iso-639-3="nno" />
     <FallbackLanguages>
       <LanguageId>Norwegian</LanguageId>
+      <LanguageId>Norwegian_Bokmal</LanguageId>
       <LanguageId>Norwegian_Before1946</LanguageId>
       <LanguageId>Norwegian_Before1925</LanguageId>
       <LanguageId>Norwegian_Before1918</LanguageId>
@@ -22940,7 +23008,7 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Shilha</Id>
+    <Id>Shilha</Id> <!-- Tashelhit, Tasusit, Tachelhit -->
     <Code iso-639-3="shi" />
     <FallbackLanguages>
       <LanguageId>Sanhaja</LanguageId>
@@ -24378,7 +24446,7 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Surinamese</Id>
+    <Id>Surinamese</Id> <!-- Sranan Tongo -->
     <Code iso-639-2="srn" iso-639-3="srn" />
     <GameIds>
       <GameId game="HOI4">SUR</GameId> <!-- Suriname -->
@@ -24414,7 +24482,7 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Swazi</Id>
+    <Id>Swazi</Id> <!-- Swati -->
     <Code iso-639-1="ss" iso-639-2="ssw" iso-639-3="ssw" />
   </Language>
   <Language>
@@ -25435,6 +25503,10 @@
   <Language>
     <Id>Udmurt</Id>
     <Code iso-639-2="udm" iso-639-3="udm" />
+  </Language>
+  <Language>
+    <Id>Uilta</Id> <!-- Ulta, Uilta, Ujlta, Orok -->
+    <Code iso-639-3="oaa" />
   </Language>
   <Language>
     <Id>Ukrainian</Id>
