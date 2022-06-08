@@ -37,17 +37,12 @@ If you wish to contribute directly to the project, you can find the documentatio
 
 # Supported games
 
-| Game | Steam Workshop link |
-|---|---|
-|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)|
-|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|[Crusader Kings 2 (HIP)](https://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)|
-|![CK3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)|
-|![CK3CMH](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (CMH)](https://hmlendea.github.io/more-cultural-names/links/ck3cmh-workshop)|
-|![CK3IBL](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (IBL)](https://steamcommunity.com/sharedfiles/filedetails/?id=2490281800)|
-|![CK3MBP](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (MB+)](https://steamcommunity.com/sharedfiles/filedetails/?id=2630872947)|
-|![CK3SoW](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (SoW)](https://steamcommunity.com/sharedfiles/filedetails/?id=2724606810)|
-|![CK3TFE](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|[Crusader Kings 3 (TFE)](https://steamcommunity.com/sharedfiles/filedetails/?id=2690444295)|
-|![HOI4](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|[Hearts of Iron 4](https://steamcommunity.com/sharedfiles/filedetails/?id=2459257386)|
-|![HOI4TGW](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|[Hearts of Iron 4 (TGW)](https://steamcommunity.com/sharedfiles/filedetails/?id=2725885905)|
-|![IR](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|[Imperator: Rome](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)|
-|![IR_AoE](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|[Imperator: Rome (AoE)](https://steamcommunity.com/sharedfiles/filedetails/?id=2753371253)|
+| Crusader Kings 2 | Crusader Kings 3 | Hearts of Iron 4 | Imperator: Rome |
+|:----------------:|:----------------:|:----------------:|:---------------:|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|![CK3CMH](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|![HOI4](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|![IR](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|
+|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2459257386)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)**|
+|[Historical Immersion Project](https://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)|[Community Mods for Historicity](https://hmlendea.github.io/more-cultural-names/links/ck3cmh-workshop)|[The Great War](https://steamcommunity.com/sharedfiles/filedetails/?id=2725885905)|[Ashes of Empire](https://steamcommunity.com/sharedfiles/filedetails/?id=2753371253)|
+||[Ibn Battuta's Legacy 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2490281800)|||
+||[More Bookmarks+](https://steamcommunity.com/sharedfiles/filedetails/?id=2630872947)|||
+||[Sinews of War](https://steamcommunity.com/sharedfiles/filedetails/?id=2724606810)|||
+||[The Fallen Eagle](https://steamcommunity.com/sharedfiles/filedetails/?id=2690444295)|||
