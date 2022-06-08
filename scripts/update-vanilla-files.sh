@@ -41,6 +41,10 @@ update-vanilla-file \
     "${CK2HIP_DIR}/common/landed_titles/swmh_landed_titles.txt"\
     "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
+    "${CK2TWK_DIR}/common/landed_titles/landed_titles.txt" \
+    "${CK2TWK_VANILLA_LANDED_TITLES_FILE}" \
+    "https://raw.githubusercontent.com/DC123456789/Britannia---The-Winter-King/master/Britannia/common/landed_titles/landed_titles.txt"
+update-vanilla-file \
     "${CK3_DIR}/game/common/landed_titles/00_landed_titles.txt" \
     "${CK3_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-files \
