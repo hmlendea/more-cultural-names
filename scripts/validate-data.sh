@@ -162,11 +162,13 @@ function checkDefaultCk2Localisations() {
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
-                                    tac "${LOCALISATIONS_DIR}"/*.csv | grep "^[ekdcb]_" | \
-                                    grep -v "_adj\(_[a-z]*\)*;" | \
+                                    tac "${LOCALISATIONS_DIR}"/*.csv | \
+                                    grep -a "^[ekdcb]_" | \
+                                    grep -a -v "_adj\(_[a-z]*\)*;" | \
                                     awk -F";" '!seen[$1]++' | \
                                     awk -F";" '{print $1"="$2}' | \
-                                    sed -e 's/\s*=\s*/=/g' -e 's/ *$//g'
+                                    sed -e 's/\s*=\s*/=/g' -e 's/ *$//g' | \
+                                    iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
                                 ) | \
                             awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
                             sort | uniq \
@@ -402,17 +404,10 @@ done
 # Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
-# Make sure all languages exist in the game
-checkForMismatchingLanguageLinks "CK3"      "${CK3_CULTURES_DIR}"
-checkForMismatchingLanguageLinks "CK3ATHA"  "${CK3ATHA_CULTURES_DIR}"
-checkForMismatchingLanguageLinks "CK3CMH"   "${CK3AP_CULTURES_DIR}" "${CK3IBL_CULTURES_DIR}" "${CK3RICE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
-checkForMismatchingLanguageLinks "CK3IBL"   "${CK3IBL_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
-checkForMismatchingLanguageLinks "CK3MBP"   "${CK3MBP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
-checkForMismatchingLanguageLinks "CK3SoW"   "${CK3_CULTURES_DIR}"
-
 # Make sure all locations are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
+#checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"
@@ -428,6 +423,7 @@ validateHoi4Parentage "HOI4TGW"
 # Validate default localisations
 #checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"
 checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"
+checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE}"
