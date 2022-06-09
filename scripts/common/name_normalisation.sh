@@ -101,7 +101,7 @@ function normalise-name() {
     local P_MUNICIPIUM="[Bb]elediyesi\|Chibang Chach’ije\|Chū-tī\|Đô thị tự trị\|[Kk]ong-[Ss]iā\|[Kk]otamadya\|[Mm]eūang\|[Mm][y]*un[i]*[t]*[cs]ip[’]*\([aā]*l[i]*[dtṭ][’]*\(a[ds]\|é\|et’i\|[iī]\|y\)\|i[ou][lm]*\)\|[Nn]agara [Ss]abhāva\|[Nn]a[gk][a]*r[aā]\(pālika\|ṭci\)\|O[bp]\(č\|s[hj]\|š\)[t]*ina\|[Pp]ašvaldība\|[Pp][a]*urasabh[āe]\|[Ss]avivaldybė"
     local P_NATIONAL_PARK="[Nn]ational [Pp]ark\|Par[cq]u[el] Na[ctț]ional\|[Vv]ườn [Qq]uốc"
     local P_OASIS="[aā]l-[Ww]āḥāt\|[OoÓóŌō][syẏ]*[aáāeē][sz][h]*[aiīeėē][ans]*[uŭ]*\|Oūh Aēy Sít"
-    local P_PENINSULA="[Bb][aá]n[ ]*[dđ][aả]o\|[Dd]uoninsulo\|[Hh]antō\|[Ll]edenez\|[Nn]iemimaa\|[Pp][ao][luŭ][ouv]ostr[ao][uŭv]\|[Pp][eé]n[iíì][n]*[t]*[csz][ou][lł][aāe]\|[Pp]enrhyn\|Poàn-tó\|[Ss]emenanjung\|[Yy]arim [Oo]roli\|[Yy]arımadası\|[Žž]arym [Aa]raly"
+    local P_PENINSULA="[Bb][aá]n[ ]*[dđ][aả]o\|[Dd]uoninsulo\|[Hh]antō\|[Ll]edenez\|[Nn]iemimaa\|[Pp][ao][luŭ][ouv]ostr[ao][uŭv]\|[Pp][eé]n[iíì][n]*[t]*[csz][ou][lł][aāe]\|[Pp]enrhyn\|Poàn-tó\|[Ss]emenanjung\|Tīpakaṟpam\|[Yy]arim [Oo]roli\|[Yy]arımadası\|[Žž]arym [Aa]raly"
     local P_PLATEAU="Alt[io]p[il]*[aà]\(no\)*\|Àrd-thìr\|Daichi\|gāoyuán\|Hḍbẗ\|ordokia\|[Pp][’]*lat[’]*[e]*\([aå][nu]\(et\)*\|o\(s[iu]\)*\)\|[Pp]lošina\|[Pp]lynaukštė"
     local P_PREFECTURE="[Pp]r[aäeé][e]*fe[ckt]t[uúū]r[ae]*"
     local P_PROVINCE="[Pp][’]*r[aāou][bpvw][ëií][nñ][t]*[csz]*[eėiíjoy]*[aeėsz]*"
