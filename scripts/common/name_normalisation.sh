@@ -88,7 +88,7 @@ function normalise-name() {
     local P_COUNTRY="[Nn]egeri"
     local P_DEPARTMENT="[Dd][eéi]p[’]*art[’]*[aei]*m[aei][e]*n[gt][’]*\(as\|i\|o\|u[l]*\)*"
     local P_DIOCESE="[Dd]io[eít][cks][eēi][sz][eēi]*[s]*"
-    local P_DISTRICT="[Dd][iy]str[eiy][ckt]*[akt][eouy]*[als]*\|[Iiİi̇]l[cç]esi\|járás\|Quận\|sum"
+    local P_DISTRICT="[Bb]arrutia\|[Bb]ucağı\|[Dd][iy]str[eiy][ckt]*[akt][eouy]*[als]*\|[Iiİi̇]l[cç]esi\|járás\|Qu\(ận\)*\|[Rr]a[iy]on[iu]\|sum"
     local P_FORT="\([CcKk][aá]str[aou][lm]*\|[Ff]ort\(e\(tsya\)*\|ul\)*\|[Ff]ort\(aleza\|[e]*ress[e]*\)\|[Ff]ort[r]*e[t]*s[s]*[y]*[ae]*\|[Kk]repost\|[Tv]rdina\)\( \(roman\|royale\)\)*"
     local P_GMINA="[Gg][e]*m[e]*in[d]*[ae]"
     local P_HUNDRED="[Hh][äe]r[r]*[ae]d\|[Hh]undred\|[Kk]ihlakunta"
@@ -168,6 +168,7 @@ function normalise-name() {
             -e 's/iin tsöl$//g' \
             -e 's/in \('"${P_HUNDRED}\|${P_PROVINCE}"'\|autiomaa\|lääni\|linna\|niemimaa\)$//g' \
             -e 's/īn Ardhadvīpaya$//g' \
+            -e 's/is \('"${P_DISTRICT}"'\)$//g' \
             -e 's/is \('"${P_CANTON}"'\|[Mm]edie\|[Tt]sikhesimagre\)$/i/g' \
             -e 's/janski jazik$/ja/g' \
             -e 's/jas \('"${P_HUNDRED}\|${P_PROVINCE}"'\|grāfiste\|nome\)$/ja/g' \
