@@ -89,7 +89,7 @@ function normalise-name() {
     local P_DEPARTMENT="[Dd][eéi]p[’]*art[’]*[aei]*m[aei][e]*n[gt][’]*\(as\|i\|o\|u[l]*\)*"
     local P_DIOCESE="[Dd]io[eít][cks][eēi][sz][eēi]*[s]*"
     local P_DISTRICT="[Bb]arrutia\|[Bb]ucağı\|[Dd][iy]str[eiy][ckt]*[akt][eouy]*[als]*\|[Iiİi̇]l[cç]esi\|járás\|Qu\(ận\)*\|[Rr]a[iy]on[iu]\|sum"
-    local P_FORT="\([CcKk][aá]str[aou][lm]*\|[Ff]ort\(e\(tsya\)*\|ul\)*\|[Ff]ort\(aleza\|[e]*ress[e]*\)\|[Ff]ort[r]*e[t]*s[s]*[y]*[ae]*\|[Kk]repost\|[Tv]rdina\)\( \(roman\|royale\)\)*"
+    local P_FORT="\([CcKk][aá]str[aou][lm]*\|Festung\|[Ff]ort\(e\(tsya\)*\|ul\)*\|[Ff]ort\(ale[sz]a\|[e]*ress[e]*\)\|[Ff]ort[r]*e[t]*s[s]*[y]*[ae]*\|[Kk]repost\|[Tv]rdina\|[Yy]ōsai\|[Zz]amogy\)\( \(roman\|royale\)\)*"
     local P_GMINA="[Gg][e]*m[e]*in[d]*[ae]"
     local P_HUNDRED="[Hh][äe]r[r]*[ae]d\|[Hh]undred\|[Kk]ihlakunta"
     local P_ISLAND="[Aa]raly\|Đảo\|[Ǧǧ]zīrẗ\|[Ii]l[hl]a\|[Ii]nsula\|[Ii]sl[ae]\|[Ii]sland\|[Îî]le\|[Nn][eḗ]sos\|Ostr[io]v\|Sŏm"
