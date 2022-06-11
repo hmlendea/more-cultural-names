@@ -65,11 +65,11 @@ function getProvinces() {
     cat "${OUTPUT_FILE}" | uniq > "${OUTPUT_FILE}.tmp"
     mv "${OUTPUT_FILE}.tmp" "${OUTPUT_FILE}"
 
-    #for LOCATION_ID in $(grep "<Id>" "${OUTPUT_FILE}" | sed 's/\s*<Id>\(.*\)<\/Id>.*/\1/g' | sort | uniq); do
-    #    if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
-    #        echo "    > ${GAME}: ${LOCATION_ID} could potentially be linked"
-    #    fi
-    #done
+    for LOCATION_ID in $(grep "<Id>" "${OUTPUT_FILE}" | sed 's/\s*<Id>\(.*\)<\/Id>.*/\1/g' | sort | uniq); do
+        if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
+            echo "    > ${GAME}: ${LOCATION_ID} could potentially be linked"
+        fi
+    done
 
     for LOCATION_NAME in $(grep "<!--" "${OUTPUT_FILE}" | sed 's/.*<!-- \(.*\) -->$/\1/g' | sed 's/\s/@/g' | sort | uniq); do
         LOCATION_NAME=$(echo "${LOCATION_NAME}" | sed 's/@/ /g')
@@ -79,5 +79,5 @@ function getProvinces() {
     done
 }
 
-#getProvinces "IR"       "${VANILLA_FILES_DIR}/ir_province_names.yml"    "ir_provinces.txt"
+getProvinces "IR"       "${VANILLA_FILES_DIR}/ir_province_names.yml"    "ir_provinces.txt"
 getProvinces "IR_AoE"   "${VANILLA_FILES_DIR}/iraoe_province_names.yml" "iraoe_provinces.txt"
