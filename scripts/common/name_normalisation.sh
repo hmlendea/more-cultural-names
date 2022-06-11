@@ -83,7 +83,7 @@ function normalise-name() {
     local P_CANTON="[CcKk][’]*[hy]*[aāe][i]*[nṇ][tṭ][’]*[aoóuū]n\(a\|i\|o\|s\|u[l]*\)*"
     local P_CASTLE="[CcGgKk]a[i]*[sz][lt][ei]*[aál][il]*[eoulmn]*[a]*\|[Cc]h[aâ]teau\|Dvorac\|[Kk]alesi\|Z[aá]m[aeo][gk][y]*"
     local P_CATHEDRAL="[CcKk]at[h]*[eé]dr[ai][kl][aeoó]*[s]*"
-    local P_CITY="[CcSs]\(ee\|i\)[tṭ]\+[aàeiy]\|Nagara\|Oraș\(ul\)*\|Śahara\|Sich’i"
+    local P_CITY="[CcSs]\(ee\|i\)[tṭ]\+[aàeiy]\|Nagara\|Oraș\(ul\)*\|Śahara\|Sich’i\|[Ss]tadt"
     local P_COUNCIL="[Cc]o[u]*n[cs][ei]l[l]*\(iul\)\|[Cc]omhairle"
     local P_COUNTRY="[Nn]egeri"
     local P_DEPARTMENT="[Dd][eéi]p[’]*art[’]*[aei]*m[aei][e]*n[gt][’]*\(as\|i\|o\|u[l]*\)*"
