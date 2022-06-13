@@ -3825,6 +3825,20 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Carian</Id>
+    <Code iso-639-3="xcr" />
+    <GameIds>
+      <GameId game="CK3ATHA">carian</GameId>
+      <GameId game="CK3TBA">carian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Lydian</LanguageId>
+      <LanguageId>Mysian</LanguageId>
+      <LanguageId>Luwian</LanguageId>
+      <LanguageId>Hittite</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Castilian_Old</Id> <!-- c. 10th century AD - beginning 15th century AD -->
     <GameIds>
       <GameId game="CK2">castillan</GameId>
@@ -5801,6 +5815,11 @@
   </Language>
   <Language>
     <Id>Egyptian_Old</Id>
+    <GameIds>
+      <GameId game="CK3TBA">egyptian</GameId> <!-- Kemetic -->
+      <GameId game="CK3TBA">lower_egyptian</GameId> <!-- Lower Kemetic -->
+      <GameId game="CK3TBA">upper_egyptian</GameId> <!-- Upper Kemetic -->
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>Egyptian_Middle</LanguageId>
       <LanguageId>Egyptian_Late</LanguageId>
@@ -5838,6 +5857,10 @@
     <Id>Elamite</Id>
     <Code iso-639-2="elx" iso-639-3="elx" />
     <GameIds>
+      <GameId game="CK3TBA">anshanian</GameId>
+      <GameId game="CK3TBA">ellipian</GameId>
+      <GameId game="CK3TBA">liyan</GameId>
+      <GameId game="CK3TBA">susanian</GameId>
       <GameId game="IR">elamite</GameId>
       <GameId game="IR_AoE">elamite</GameId>
     </GameIds>
@@ -13941,7 +13964,7 @@
     <Id>Greek_Ancient_ArcadoCypriot</Id>
     <GameIds>
       <GameId game="CK3ATHA">arcadian</GameId>
-      <GameId game="CK3TBA">cypriot</GameId>
+      <GameId game="CK3TBA">cypriot</GameId> <!-- Alašiyan -->
       <GameId game="IR">arcadian</GameId>
       <GameId game="IR">cypriot</GameId>
       <GameId game="IR_AoE">arcadian</GameId>
@@ -14039,6 +14062,7 @@
     <Id>Greek_Ancient_Antigonid</Id>
     <GameIds>
       <GameId game="CK3ATHA">phrygian</GameId>
+      <GameId game="CK3TGA">bryges</GameId> <!-- Phrygian -->
       <GameId game="IR">PRY</GameId> <!-- Phrygia -->
     </GameIds>
     <FallbackLanguages>
@@ -14555,27 +14579,16 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Hittite</Id> <!-- Hittite_New / New Hittite -->
-    <Code iso-639-2="hit" iso-639-3="nei" />
+    <Id>Hittite</Id>
+    <Code iso-639-2="hit" iso-639-3="hit" />
+    <GameIds>
+      <GameId game="CK3TBA">nesili</GameId> <!-- Nešili -->
+    </GameIds>
     <FallbackLanguages>
-      <LanguageId>Hittite_Middle</LanguageId>
-      <LanguageId>Hittite_Old</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Hittite_Middle</Id>
-    <Code iso-639-3="htx" />
-    <FallbackLanguages>
-      <LanguageId>Hittite_Old</LanguageId>
-      <LanguageId>Hittite</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Hittite_Old</Id>
-    <Code iso-639-3="oht" />
-    <FallbackLanguages>
-      <LanguageId>Hittite_Middle</LanguageId>
-      <LanguageId>Hittite</LanguageId>
+      <LanguageId>Luwian</LanguageId>
+      <LanguageId>Lydian</LanguageId>
+      <LanguageId>Carian</LanguageId>
+      <LanguageId>Mysian</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -17248,6 +17261,15 @@
   <Language>
     <Id>Hurrian</Id>
     <Code iso-639-3="xhu" />
+    <GameIds>
+      <GameId game="CK3TBA">haburi</GameId>
+      <GameId game="CK3TBA">harrani</GameId>
+      <GameId game="CK3TBA">ishuwan</GameId>
+      <GameId game="CK3TBA">kizzuni</GameId>
+      <GameId game="CK3TBA">shubrian</GameId>
+      <GameId game="CK3TBA">tukri</GameId>
+      <GameId game="CK3TBA">zalwari</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Iberian</Id>
@@ -24045,6 +24067,22 @@
   </Language>
   <Language>
     <Id>Luwian</Id>
+    <GameIds>
+      <GameId game="CK3TBA">arzawan</GameId>
+      <GameId game="CK3TBA">hapallan</GameId>
+      <GameId game="CK3TBA">lazpan</GameId>
+      <GameId game="CK3TBA">lukkan</GameId>
+      <GameId game="CK3TBA">miran</GameId>
+      <GameId game="CK3TBA">palaic</GameId>
+      <GameId game="CK3TBA">tarhuntassan</GameId>
+      <GameId game="CK3TBA">wilusan</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Hittite</LanguageId>
+      <LanguageId>Lydian</LanguageId>
+      <LanguageId>Carian</LanguageId>
+      <LanguageId>Mysian</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Luxembourgish</Id>
@@ -24093,6 +24131,12 @@
       <GameId game="CK3TBA">lydian</GameId>
       <GameId game="IR">lydian</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Carian</LanguageId>
+      <LanguageId>Mysian</LanguageId>
+      <LanguageId>Luwian</LanguageId>
+      <LanguageId>Hittite</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Macedonian_Slavic</Id>
@@ -24802,6 +24846,18 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Merya</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Mysian</Id>
+    <Code iso-639-3="yms" />
+    <GameIds>
+      <GameId game="CK3ATHA">mysian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Lydian</LanguageId>
+      <LanguageId>Luwian</LanguageId>
+      <LanguageId>Hittite</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
