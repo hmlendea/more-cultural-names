@@ -260,3 +260,12 @@ function nameToLocationId() {
         sed 's/^\(north\|west\|south\|east\)_\(.*\)$/\2_\1/g' | \
         tr '[:upper:]' '[:lower:]'
 }
+
+function locationIdToSearcheableId() {
+    local LOCATION_ID="${1}"
+
+    echo "${LOCATION_ID}" | sed \
+        -e 's/^[ekdcb]_//g' \
+        -e 's/[_-]//g' \
+        -e 's/\(baron\|castle\|church\|city\|fort\|temple\|town\)//g'
+}
