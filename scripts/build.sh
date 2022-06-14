@@ -84,6 +84,41 @@ function build-edition {
     echo "${CHECKSUM}" > "${EDITION_CHECKSUM_FILE}"
 }
 
+build-edition \
+    "more-cultural-names" "More Cultural Names" \
+    "CK2" "3.3.5.1" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck2_landed_titles.txt" --landed-titles-name "landed_titles.txt"
+
+build-edition \
+    "hip-more-cultural-names" "HIP - More Cultural Names" \
+    "CK2HIP" "Frosty3" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt" --landed-titles-name "swmh_landed_titles.txt" \
+    --dep "HIP - Historical Immersion Project"
+
+build-edition \
+    "more-cultural-names" "More Cultural Names" \
+    "CK3" "1.6.*" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
+
+build-edition \
+    "atha-more-cultural-names" "Apotheosis: More Cultural Names" \
+    "CK3ATHA" "1.5.*" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+
+build-edition \
+    "cmh-more-cultural-names" "Community Mods for Historicity - More Cultural Names" \
+    "CK3CMH" "1.5.*" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+
+build-edition \
+    "ibl-more-cultural-names" "Ibn Battuta's Legacy 2 - More Cultural Names" \
+    "CK3IBL" "1.5.*" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+
+build-edition \
+    "mbp-more-cultural-names" "More Bookmarks+ - More Cultural Names" \
+    "CK3MBP" "1.6.*" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
     "sow-more-cultural-names" "Sinews of War - More Cultural Names" \
@@ -94,6 +129,27 @@ build-edition \
     "tba-more-cultural-names" "The Bronze Age: More Cultural Names" \
     "CK3TBA" "1.2.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tba_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+
+build-edition \
+    "tfe-more-cultural-names" "The Fallen Eagle: More Cultural Names" \
+    "CK3TFE" "1.5.*" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+
+build-edition \
+    "more-cultural-names" "More Cultural Names" \
+    "HOI4" "1.11.*"
+
+build-edition \
+    "tgw-more-cultural-names" "The Great War: More Cultural Names" \
+    "HOI4TGW" "1.11.*"
+
+build-edition \
+    "more-cultural-names" "More Cultural Names" \
+    "IR" "2.0.*"
+
+build-edition \
+    "aoe-more-cultural-names" "Ashes of Empire: More Cultural Names" \
+    "IR_AoE" "2.0.*"
 
 cd "${REPO_DIR}"
 bash "${REPO_DIR}/scripts/count-localisations.sh"
