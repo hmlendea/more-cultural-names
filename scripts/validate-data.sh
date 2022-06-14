@@ -6,6 +6,7 @@ LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g'
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 
 GAME_IDS_CK="$(grep "<GameId game=\"CK" "${LOCATIONS_FILE}" | sed 's/^[^>]*>\([^<]*\).*/\1/g' | sort | uniq)"
+NAME_VALUES="$(grep "<Name language=\"" "${LOCATIONS_FILE}" | sed 's/.*value='"\""'\([^'"\""']*\).*/\1/g' | sort | uniq)"
 
 function getGameIds() {
     local GAME="${1}"
@@ -90,6 +91,8 @@ function checkForMissingCkLocationLinks() {
                 echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
             elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
                 echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+                echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
             else
                 echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
             fi
