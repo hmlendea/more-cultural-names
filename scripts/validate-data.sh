@@ -1,10 +1,12 @@
 #!/bin/bash
 source "scripts/common/paths.sh"
+source "scripts/common/name_normalisation.sh"
 
 LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 
 GAME_IDS_CK="$(grep "<GameId game=\"CK" "${LOCATIONS_FILE}" | sed 's/^[^>]*>\([^<]*\).*/\1/g' | sort | uniq)"
+NAME_VALUES="$(grep "<Name language=\"" "${LOCATIONS_FILE}" | sed 's/.*value='"\""'\([^'"\""']*\).*/\1/g' | sort | uniq)"
 
 function getGameIds() {
     local GAME="${1}"
@@ -57,6 +59,7 @@ function checkForMismatchingLanguageLinks() {
 function checkForMissingCkLocationLinks() {
     local GAME="${1}"
     local VANILLA_FILE="${2}"
+    local LOCALISATIONS_FILE="${3}"
 
     for TITLE_ID in $(diff \
                         <(getGameIds "${GAME}") \
@@ -73,17 +76,26 @@ function checkForMissingCkLocationLinks() {
                             sort | uniq \
                         ) | \
                         grep "^>" | sed 's/^> //g'); do
-        LOCATION_ID=${TITLE_ID:2}
-        LOCATION_ID_FOR_SEARCH=$(echo "${LOCATION_ID}" | sed \
-            -e 's/[_-]//g' \
-            -e 's/\(baron\|castle\|church\|city\|fort\|temple\|town\)//g')
+        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${TITLE_ID}")
 
         if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         else
-            echo "    > ${GAME}: ${TITLE_ID} is missing"
+            LOCATION_DEFAULT_NAME=$(tac "${LOCALISATIONS_FILE}" | grep "^ *${TITLE_ID}:" | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
+            LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
+            LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
+
+            if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+                echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+                echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+                echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
+            else
+                echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
+            fi
         fi
     done
 }
@@ -136,11 +148,12 @@ function checkForSurplusIrLocationLinks() {
 function checkForMismatchingLocationLinks() {
     local GAME="${1}"
     local VANILLA_FILE="${2}"
+    local LOCALISATIONS_FILE="${3}"
 
     [ ! -f "${VANILLA_FILE}" ] && return
 
     if [[ ${GAME} == CK* ]]; then
-        checkForMissingCkLocationLinks "${GAME}" "${VANILLA_FILE}"
+        checkForMissingCkLocationLinks "${GAME}" "${VANILLA_FILE}" "${LOCALISATIONS_FILE}"
         checkForSurplusCkLocationLinks "${GAME}" "${VANILLA_FILE}"
     elif [[ ${GAME} == IR* ]]; then
         checkForSurplusIrLocationLinks "${GAME}" "${VANILLA_FILE}"
@@ -413,6 +426,7 @@ checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FIL
 checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"
+#checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}" "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
@@ -435,6 +449,7 @@ checkDefaultCk3Localisations "CK3CMH"   "${CK3CMH_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3SoW"   "${CK3SoW_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
 checkDefaultIrLocalisations  "IR"       "${IR_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}"

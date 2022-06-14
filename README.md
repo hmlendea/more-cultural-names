@@ -45,4 +45,5 @@ If you wish to contribute directly to the project, you can find the documentatio
 ||[Ibn Battuta's Legacy 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2490281800)|||
 ||[More Bookmarks+](https://steamcommunity.com/sharedfiles/filedetails/?id=2630872947)|||
 ||[Sinews of War](https://steamcommunity.com/sharedfiles/filedetails/?id=2724606810)|||
+||[The Bronze Age](https://steamcommunity.com/sharedfiles/filedetails/?id=2821052607)|||
 ||[The Fallen Eagle](https://steamcommunity.com/sharedfiles/filedetails/?id=2690444295)|||
