@@ -161,10 +161,9 @@ function checkForMismatchingLocationLinks() {
 }
 
 function checkDefaultCk2Localisations() {
-    local GAME_ID="${1}"
-    local LOCALISATIONS_DIR="${2}"
+    local GAME_ID="${1}" && shift
 
-    [ ! -d "${LOCALISATIONS_DIR}" ] && return
+    [ ! -f "${1}" ] && return
 
     for GAMEID_DEFINITION in $(diff \
                         <( \
@@ -175,9 +174,9 @@ function checkDefaultCk2Localisations() {
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
-                                    tac "${LOCALISATIONS_DIR}"/*.csv | \
+                                    tac "${@}" | \
                                     grep -a "^[ekdcb]_" | \
-                                    grep -a -v "_adj\(_[a-z]*\)*;" | \
+                                    grep -a -v ".*_adj_.*" | \
                                     awk -F";" '!seen[$1]++' | \
                                     awk -F";" '{print $1"="$2}' | \
                                     sed -e 's/\s*=\s*/=/g' -e 's/ *$//g' | \
@@ -192,10 +191,9 @@ function checkDefaultCk2Localisations() {
 }
 
 function checkDefaultCk3Localisations() {
-    local GAME_ID="${1}"
-    local LOCALISATIONS_FILE="${2}"
+    local GAME_ID="${1}" && shift
 
-    [ ! -f "${LOCALISATIONS_FILE}" ] && return
+    [ ! -f "${1}" ] && return
 
     for GAMEID_DEFINITION in $(diff \
                         <( \
@@ -206,7 +204,8 @@ function checkDefaultCk3Localisations() {
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
-                                    tac "${LOCALISATIONS_FILE}" | grep "^ *[ekdcb]_" | \
+                                    tac "${@}" | \
+                                    grep -a "^ *[ekdcb]_" | \
                                     grep -v "_adj:" | \
                                     sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     awk -F"=" '!seen[$1]++' | \
@@ -435,19 +434,14 @@ validateHoi4Parentage "HOI4"
 validateHoi4Parentage "HOI4TGW"
 
 # Validate default localisations
-#checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"
-checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"
-checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"
+#checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"/*.csv
+checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
+checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_BARONIES_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_COUNTIES_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_DUCHIES_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_KINGDOMS_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_EMPIRES_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_VANILLA_SPECIAL_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
 checkDefaultCk3Localisations "CK3CMH"   "${CK3CMH_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE_1}" "${CK3MBP_VANILLA_LOCALISATION_FILE_2}"
 checkDefaultCk3Localisations "CK3SoW"   "${CK3SoW_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
