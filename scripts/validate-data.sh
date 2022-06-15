@@ -161,10 +161,9 @@ function checkForMismatchingLocationLinks() {
 }
 
 function checkDefaultCk2Localisations() {
-    local GAME_ID="${1}"
-    local LOCALISATIONS_DIR="${2}"
+    local GAME_ID="${1}" && shift
 
-    [ ! -d "${LOCALISATIONS_DIR}" ] && return
+    [ ! -f "${1}" ] && return
 
     for GAMEID_DEFINITION in $(diff \
                         <( \
@@ -175,7 +174,7 @@ function checkDefaultCk2Localisations() {
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
-                                    tac "${LOCALISATIONS_DIR}"/*.csv | \
+                                    tac "${@}" | \
                                     grep -a "^[ekdcb]_" | \
                                     grep -a -v "_adj\(_[a-z]*\)*;" | \
                                     awk -F";" '!seen[$1]++' | \
@@ -205,7 +204,7 @@ function checkDefaultCk3Localisations() {
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
-                                    tac "$@" | \
+                                    tac "${@}" | \
                                     grep -a "^ *[ekdcb]_" | \
                                     grep -v "_adj:" | \
                                     sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
@@ -435,9 +434,9 @@ validateHoi4Parentage "HOI4"
 validateHoi4Parentage "HOI4TGW"
 
 # Validate default localisations
-#checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"
-checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"
-checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"
+#checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"/*.csv
+checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
+checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
 checkDefaultCk3Localisations "CK3CMH"   "${CK3CMH_VANILLA_LOCALISATION_FILE}"
