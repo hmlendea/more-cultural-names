@@ -256,6 +256,7 @@ function get-name-lines() {
         "Albanian_Tosk" "als" \
         "Albanian" "sq" \
         "Alemannic" "gsw" \
+        "Arabic_Maghreb" "ary" \
         "Arabic" "ar" \
         "Aragonese" "an" \
         "Armenian_West" "hyw" \
@@ -284,6 +285,7 @@ function get-name-lines() {
         "Catalan" "ca" \
         "Cebuano" "ceb" \
         "Chamorro" "ch" \
+        "Chavacano" "cbk-zam" \
         "Chewa" "ny" \
         "Cheyenne" "chy" \
         "Chinese_Hakka" "hak" \
@@ -294,9 +296,11 @@ function get-name-lines() {
         "Cornish" "kw" \
         "Corsican" "co" \
         "Czech" "cs" \
+        "Dagbani" "dag" \
         "Danish" "da" \
         "Dinka" "din" \
         "Dutch" "nl" \
+        "Egyptian_Arabic" "arz" \
         "Emilian_Romagnol" "eml" \
         "English_Old" "ang" \
         "English" "en" \
@@ -347,6 +351,7 @@ function get-name-lines() {
         "Italian" "it" \
         "Jamaican" "jam" \
         "Japanese" "ja" \
+        "Javanese_Banyumasan" "map-bms" \
         "Javanese" "jv" \
         "Kabiye" "kbp" \
         "Kabuverdianu" "kea" \
@@ -368,6 +373,7 @@ function get-name-lines() {
         "Latgalian" "ltg" \
         "Latin" "la" \
         "Latvian" "lv" \
+        "Laz" "lzz" \
         "Ligurian" "lij" \
         "Limburgish" "li" \
         "Lingala" "ln" \
@@ -385,6 +391,7 @@ function get-name-lines() {
         "Maltese" "mt" \
         "Manx" "gv" \
         "Maori" "mi" \
+        "Mapuche" "arn" \
         "Marathi" "mr" \
         "Minangkabau" "min" \
         "Mirandese" "mwl" \
@@ -393,6 +400,7 @@ function get-name-lines() {
         "Nauru" "na" \
         "Navajo" "nv" \
         "Neapolitan" "nap" \
+        "Nias" "nia" \
         "Norman" "nrm" \
         "Novial" "nov" \
         "Occitan" "oc" \
@@ -436,6 +444,8 @@ function get-name-lines() {
         "Somali" "so" \
         "Sorbian_Lower" "dsb" \
         "Sorbian_Upper" "hsb" \
+        "Sotho" "st" \
+        "Sotho_North" "nso" \
         "Spanish" "es" \
         "Sundanese" "su" \
         "Surinamese" "srn" \
@@ -452,9 +462,11 @@ function get-name-lines() {
         "Telugu" "te" \
         "Tetum" "tet" \
         "Thai" "th" \
+        "Toba_Batak" "bbc" \
         "Tok_Pisin" "tpi" \
         "Tongan" "to" \
         "Tsonga" "ts" \
+        "Tswana" "tn" \
         "Turkish" "tr" \
         "Turkmen" "tk" \
         "Udmurt" "udm" \
