@@ -176,7 +176,7 @@ function checkDefaultCk2Localisations() {
                                 <( \
                                     tac "${@}" | \
                                     grep -a "^[ekdcb]_" | \
-                                    grep -a -v "_adj\(_[a-z]*\)*;" | \
+                                    grep -a -v ".*_adj_.*" | \
                                     awk -F";" '!seen[$1]++' | \
                                     awk -F";" '{print $1"="$2}' | \
                                     sed -e 's/\s*=\s*/=/g' -e 's/ *$//g' | \
