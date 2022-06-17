@@ -12,8 +12,8 @@ fi
 
 VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 
-DATA_CONTENT=$(cat "${REPO_DIR}"/*.xml)
-CHECKSUM=$(echo "${CHECKSUM_SEED} ${VERSION} ${BUILDER_VERSION}" | sha512sum | awk '{print $1}')
+CONTENT_CHECKSUM=$(cat "${REPO_DIR}"/*.xml | sha512sum)
+CHECKSUM=$(echo "${CONTENT_CHECKSUM} ${VERSION} ${BUILDER_VERSION}" | sha512sum | awk '{print $1}')
 
 if [[ $* != *--skip-updates* ]]; then
     bash "${SCRIPTS_DIR}/update-builder.sh"
