@@ -21,6 +21,8 @@ function transliterate-name() {
 
     [ -z "${RAW_NAME}" ] && return
 
+    [ "${LANGUAGE_CODE}" == "ary" ] && LANGUAGE_CODE="ar"
+    [ "${LANGUAGE_CODE}" == "arz" ] && LANGUAGE_CODE="ar"
     [ "${LANGUAGE_CODE}" == "be-tarask" ] && LANGUAGE_CODE="be"
 
     if [ "${LANGUAGE_CODE}" == "ab" ] \
