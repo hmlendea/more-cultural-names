@@ -605,6 +605,9 @@
   </Language>
   <Language>
     <Id>Aquitanian_Ancient</Id>
+    <GameIds>
+      <GameId game="IR">aquitani</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Arabic</Id>
@@ -1438,6 +1441,7 @@
     <GameIds>
       <GameId game="CK2">avar</GameId>
       <GameId game="CK2HIP">avar</GameId>
+      <GameId game="CK2HIP">caucasian_avar</GameId>
       <GameId game="CK2TWK">hunnic</GameId>
       <GameId game="CK3">avar</GameId>
       <GameId game="CK3CMH">avar</GameId>
@@ -3018,6 +3022,7 @@
     <Id>Brahui</Id>
     <Code iso-639-3="brh" />
     <GameIds>
+      <GameId game="CK2HIP">brahui</GameId>
       <GameId game="CK3CMH">brahui</GameId>
       <GameId game="CK3MBP">brahui</GameId>
     </GameIds>
@@ -3855,6 +3860,7 @@
       <GameId game="CK3ATHA">carian</GameId>
       <GameId game="CK3TBA">carian</GameId>
       <GameId game="CK3TBA">leleges</GameId>
+      <GameId game="IR">carian</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Lycian</LanguageId>
@@ -4126,6 +4132,21 @@
       <LanguageId>Brittonic</LanguageId>
       <LanguageId>Goidelic_Proto</LanguageId>
       <LanguageId>Celtic_Iberian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Chagatai</Id>
+    <Code iso-639-2="chg" iso-639-3="chg" />
+    <GameIds>
+      <GameId game="CK3MBP">chagatai</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Karluk</LanguageId>
+      <LanguageId>Uzbek</LanguageId>
+      <LanguageId>Uzbek_Before1975</LanguageId>
+      <LanguageId>Uyghur</LanguageId>
+      <LanguageId>Uyghur_Yellow</LanguageId>
+      <LanguageId>Uyghur_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5865,6 +5886,7 @@
   <Language>
     <Id>Egyptian_Late</Id> <!-- c. 1350 BC - -->
     <GameIds>
+      <GameId game="CK3TFE">kemetic</GameId>
       <GameId game="IR">egyptian</GameId>
       <GameId game="IR">upper_egyptian</GameId>
       <GameId game="IR">middle_egyptian</GameId>
@@ -10068,6 +10090,7 @@
       <GameId game="HOI4">DDR</GameId> <!-- East Germany -->
       <GameId game="HOI4">GER</GameId> <!-- Germany -->
       <GameId game="HOI4">HAN</GameId> <!-- Hanover -->
+      <GameId game="HOI4">PRE</GameId> <!-- Prussia -->
       <GameId game="HOI4">SAX</GameId> <!-- Saxony -->
       <GameId game="HOI4">SHL</GameId> <!-- Schleswig-Holstein -->
       <GameId game="HOI4">WGR</GameId> <!-- West Germany -->
@@ -12479,6 +12502,7 @@
       <GameId game="CK2HIP">gothic</GameId>
       <GameId game="CK2TWK">ostrogoth</GameId>
       <GameId game="CK2TWK">visigoth</GameId>
+      <GameId game="CK3MBP">gothic</GameId>
       <GameId game="CK3TFE">gothic</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -14268,8 +14292,6 @@
     <Id>Greek_Ancient_Antigonid</Id>
     <GameIds>
       <GameId game="CK3ATHA">phrygian</GameId>
-      <GameId game="CK3TBA">bryges</GameId> <!-- Phrygian -->
-      <GameId game="IR">PRY</GameId> <!-- Phrygia -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Greek_Ancient</LanguageId>
@@ -14793,6 +14815,9 @@
   <Language>
     <Id>Hindi_Old</Id>
     <GameIds>
+      <GameId game="CK2">hindustani</GameId>
+      <GameId game="CK2HIP">hindustani</GameId>
+      <GameId game="CK3">hindustani</GameId>
       <GameId game="CK3CMH">hindustani</GameId>
       <GameId game="CK3IBL">hindustani</GameId>
       <GameId game="CK3MBP">hindustani</GameId>
@@ -18450,6 +18475,7 @@
       <GameId game="CK3TFE">karluk</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Chagatai</LanguageId>
       <LanguageId>Uyghur</LanguageId>
       <LanguageId>Uyghur_Yellow</LanguageId>
       <LanguageId>Uyghur_Old</LanguageId>
@@ -24307,6 +24333,8 @@
     <Code iso-639-3="xlc" />
     <GameIds>
       <GameId game="CK3TBA">lukkan</GameId>
+      <GameId game="IR_AoE">lycian</GameId>
+      <GameId game="IR">lycian</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Luwian</LanguageId>
@@ -24380,6 +24408,7 @@
     <GameIds>
       <GameId game="CK3ATHA">lydian</GameId>
       <GameId game="CK3TBA">lydian</GameId>
+      <GameId game="IR_AoE">lydian</GameId>
       <GameId game="IR">lydian</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -25111,6 +25140,8 @@
     <Code iso-639-3="yms" />
     <GameIds>
       <GameId game="CK3ATHA">mysian</GameId>
+      <GameId game="IR_AoE">mysian</GameId>
+      <GameId game="IR">mysian</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Lycian</LanguageId>
@@ -25122,6 +25153,7 @@
   <Language>
     <Id>Nabataean</Id>
     <GameIds>
+      <GameId game="CK3TFE">nabatean</GameId>
       <GameId game="IR">nabatean</GameId>
     </GameIds>
   </Language>
@@ -38563,6 +38595,9 @@
   <Language>
     <Id>Silesian</Id>
     <Code iso-639-3="szl" />
+    <GameIds>
+      <GameId game="HOI4">SIL</GameId> <!-- Silesia -->
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>Silesian_Upper</LanguageId>
       <LanguageId>Silesian_Before1926</LanguageId>
@@ -39591,6 +39626,15 @@
   <Language>
     <Id>Tangut</Id>
     <Code iso-639-3="txg" />
+    <GameIds>
+      <GameId game="CK2">tagut</GameId>
+      <GameId game="CK2HIP">tangut</GameId>
+      <GameId game="CK3">tangut</GameId>
+      <GameId game="CK3CMH">tangut</GameId>
+      <GameId game="CK3IBL">tangut</GameId>
+      <GameId game="CK3MBP">tangut</GameId>
+      <GameId game="CK3SoW">tangut</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Tarantino</Id>
@@ -41673,10 +41717,10 @@
       <GameId game="HOI4TGW">SIK</GameId> <!-- Sinkiang -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Uyghur</LanguageId>
       <LanguageId>Uyghur_Yellow</LanguageId>
       <LanguageId>Uyghur_Old</LanguageId>
       <LanguageId>Karluk</LanguageId>
+      <LanguageId>Chagatai</LanguageId>
       <LanguageId>Uzbek</LanguageId>
       <LanguageId>Uzbek_Before1975</LanguageId>
     </FallbackLanguages>
@@ -41695,6 +41739,7 @@
       <LanguageId>Uyghur_Old</LanguageId>
       <LanguageId>Uyghur</LanguageId>
       <LanguageId>Karluk</LanguageId>
+      <LanguageId>Chagatai</LanguageId>
       <LanguageId>Uzbek</LanguageId>
       <LanguageId>Uzbek_Before1975</LanguageId>
     </FallbackLanguages>
@@ -41716,6 +41761,7 @@
       <LanguageId>Uyghur_Yellow</LanguageId>
       <LanguageId>Uyghur</LanguageId>
       <LanguageId>Karluk</LanguageId>
+      <LanguageId>Chagatai</LanguageId>
       <LanguageId>Uzbek</LanguageId>
       <LanguageId>Uzbek_Before1975</LanguageId>
     </FallbackLanguages>
@@ -41725,6 +41771,7 @@
     <Code iso-639-1="uz" iso-639-2="uzb" iso-639-3="uzb" />
     <FallbackLanguages>
       <LanguageId>Karluk</LanguageId>
+      <LanguageId>Chagatai</LanguageId>
       <LanguageId>Uyghur</LanguageId>
       <LanguageId>Uyghur_Yellow</LanguageId>
       <LanguageId>Uyghur_Old</LanguageId>
@@ -41740,6 +41787,7 @@
     <FallbackLanguages>
       <LanguageId>Uzbek</LanguageId>
       <LanguageId>Karluk</LanguageId>
+      <LanguageId>Chagatai</LanguageId>
       <LanguageId>Uyghur</LanguageId>
       <LanguageId>Uyghur_Yellow</LanguageId>
       <LanguageId>Uyghur_Old</LanguageId>
