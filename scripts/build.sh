@@ -6,14 +6,14 @@ BUILDER_VERSION=""
 
 [ -f "${REPO_DIR}/.builder/version.txt" ] && BUILDER_VERSION=$(cat "${REPO_DIR}/.builder/version.txt")
 
+if [ -z "${BUILD_VERSION}" ] || ! [[ ${BUILD_VERSION} =~ ^[0-9]+$ ]]; then
+    BUILD_VERSION=0
+fi
+
 VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 
 DATA_CONTENT=$(cat "${REPO_DIR}"/*.xml)
 CHECKSUM=$(echo "${CHECKSUM_SEED} ${VERSION} ${BUILDER_VERSION}" | sha512sum | awk '{print $1}')
-
-if [ -z "${BUILD_VERSION}" ] || ! [[ ${BUILD_VERSION} =~ ^[0-9]+$ ]]; then
-    BUILD_VERSION=0
-fi
 
 if [[ $* != *--skip-updates* ]]; then
     bash "${SCRIPTS_DIR}/update-builder.sh"
