@@ -6,14 +6,14 @@ BUILDER_VERSION=""
 
 [ -f "${REPO_DIR}/.builder/version.txt" ] && BUILDER_VERSION=$(cat "${REPO_DIR}/.builder/version.txt")
 
+VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
+
 DATA_CONTENT=$(cat "${REPO_DIR}"/*.xml)
-CHECKSUM=$(echo "${CHECKSUM_SEED} ${BUILDER_VERSION}" | sha512sum | awk '{print $1}')
+CHECKSUM=$(echo "${CHECKSUM_SEED} ${VERSION} ${BUILDER_VERSION}" | sha512sum | awk '{print $1}')
 
 if [ -z "${BUILD_VERSION}" ] || ! [[ ${BUILD_VERSION} =~ ^[0-9]+$ ]]; then
     BUILD_VERSION=0
 fi
-
-VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 
 if [[ $* != *--skip-updates* ]]; then
     bash "${SCRIPTS_DIR}/update-builder.sh"
@@ -39,7 +39,7 @@ function build-edition {
     local PACKAGE_NAME="mcn_${GAME}_${VERSION}"
     local EDITION_DIR="${OUTPUT_DIR}/${GAME}"
     local EDITION_PACKAGE="${OUTPUT_DIR}/${PACKAGE_NAME}.zip"
-    local EDITION_CHECKSUM_FILE="${EDITION_DIR}/mcn.sha512"
+    local EDITION_CHECKSUM_FILE="${EDITION_DIR}/checksum.sha512"
     local ORIGINAL_WORKING_DIRECTORY=$(pwd)
 
     if [ -d "${EDITION_DIR}" ] \
