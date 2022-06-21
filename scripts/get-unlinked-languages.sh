@@ -128,6 +128,7 @@ echo "Crusader Kings 3 SoW:"    && getCk3Cultures       "CK3SoW"    "${CK3_CULTU
 echo "Crusader Kings 3 TBA:"    && getCk3v14Cultures    "CK3TBA"    "${CK3TBA_CULTURES_DIR}"
 echo "Crusader Kings 3 TFE:"    && getCk3Cultures       "CK3TFE"    "${CK3TFE_CULTURES_DIR}"
 echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS_DIR}" "${HOI4_LOCALISATIONS_DIR}"
+echo "Hearts of Iron 4 MDM:"    && getHoi4Countries     "HOI4MDM"   "${HOI4MDM_TAGS_DIR}" "${HOI4MDM_LOCALISATIONS_DIR}"
 echo "Hearts of Iron 4 TGW:"    && getHoi4Countries     "HOI4TGW"   "${HOI4TGW_TAGS_DIR}" "${HOI4TGW_LOCALISATIONS_DIR}"
 echo "Imperator Rome:"          && getIrCultures        "IR"        "${IR_CULTURES_DIR}"
 echo "Imperator Rome AoE:"      && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"
