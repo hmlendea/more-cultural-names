@@ -87,6 +87,24 @@ d_iconoclast = {
 	capital = c_byzantion
 }
 
+d_maronite = {
+	color = { 180 137 97 }
+	color2 = { 220 220 0 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+
+	capital = c_antiochea
+
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
+
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+}
+
 d_patriarchate_in_the_east = {
 	color = { 180 137 97 }
 	color2 = { 220 220 0 }
@@ -267,6 +285,77 @@ d_zaydi = {
 	can_be_named_after_dynasty = no	
 	
 	capital = c_mecca
+}
+
+d_alawi = {
+	color = { 20 10 40 }
+	color2 = { 20 0 20 }
+	definite_form = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = no
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = no
+}
+
+d_ishaqiya = {
+	color = { 5 15 55 }
+	color2 = { 0 20 40 }
+	definite_form = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = no
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = no
+}
+
+d_isfahani = {
+	color = { 80 160 120 }
+	color2 = { 220 220 0 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = no
+}
+
+d_hashashin = {
+	color = { 60 190 60 }
+	color2 = { 220 220 0 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = no
+	can_be_named_after_dynasty = no
+}
+
+d_ibadi = {
+	color = { 90 25 0 }
+	color2 = { 220 220 0 }
+	definite_form = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = no
+}
+
+d_wahbiya = {
+	color = { 90 60 5 }
+	color2 = { 220 220 0 }
+	definite_form = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = no
+}
+
+d_nukkari = {
+	color = { 75 40 0 }
+	color2 = { 220 220 0 }
+	definite_form = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = no
 }
 
 d_masmudi = {
@@ -1249,13 +1338,6 @@ k_salerno = { # Principato di Salerno
 
 }
 
-
-k_alodia = { # Aloudia # Alodia
-	color = { 175 100 80 }
-	capital = c_alodia # Soba
-
-}
-
 k_makuria = { # Makouria # Makuria
 	color = { 165 180 95 }
 	capital = c_dongola # Dongola # Makuria
@@ -1802,6 +1884,10 @@ d_barghawata = { # Tamasna # Sala
 	color2 = { 255 255 255 }
 	capital = c_asfi # Asfí # Asfî
 	de_jure_drift_disabled = yes
+	ruler_uses_title_name = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = no
 }
 
 d_lamta = { # Lamta
@@ -67451,6 +67537,15 @@ e_abyssinia = {
 					color2 = { 255 255 255 }
 				}
 			}
+		
+		}
+		
+		d_abwab = {
+			color = { 135 50 30 }
+			color2 = { 255 255 255 }
+			capital = c_abwab
+			definite_form = yes
+			
 			c_abwab = {
 				color = { 145 160 75 }
 				color2 = { 255 255 255 }
@@ -67521,6 +67616,37 @@ e_abyssinia = {
 					color2 = { 255 255 255 }
 				}
 			}
+			
+			c_naga = {
+				color = { 130 55 25 }
+				color2 = { 255 255 255 }
+				
+				b_naga = {
+					province = 6407
+					
+					color = { 130 55 25 }
+					color2 = { 255 255 255 }
+				}
+				b_basa = {
+					province = 6408
+					
+					color = { 130 55 25 }
+					color2 = { 255 255 255 }
+				}
+				b_umm_usuda = {
+					province = 6409
+					
+					color = { 130 55 25 }
+					color2 = { 255 255 255 }
+				}
+				b_jebel_geili = {
+					province = 6410
+					
+					color = { 130 55 25 }
+					color2 = { 255 255 255 }
+				}
+			}
+			
 		}
 		
 		d_shamir = { # Abu-Hammad
@@ -67632,35 +67758,6 @@ e_abyssinia = {
 					province = 6397
 					
 					color = { 135 65 20 }
-					color2 = { 255 255 255 }
-				}
-			}
-			c_naga = {
-				color = { 130 55 25 }
-				color2 = { 255 255 255 }
-				
-				b_naga = {
-					province = 6407
-					
-					color = { 130 55 25 }
-					color2 = { 255 255 255 }
-				}
-				b_basa = {
-					province = 6408
-					
-					color = { 130 55 25 }
-					color2 = { 255 255 255 }
-				}
-				b_umm_usuda = {
-					province = 6409
-					
-					color = { 130 55 25 }
-					color2 = { 255 255 255 }
-				}
-				b_jebel_geili = {
-					province = 6410
-					
-					color = { 130 55 25 }
 					color2 = { 255 255 255 }
 				}
 			}
@@ -74709,29 +74806,6 @@ e_guinea = {
 					color2 = { 255 255 255 }
 				}
 			}
-			c_ilesa = {
-				color = { 47 159 51 }
-				color2 = { 255 255 255 }
-			
-				b_ilesa = {
-					province = 6922
-
-					color = { 47 159 51 }
-					color2 = { 255 255 255 }
-				}
-				b_okuta = {
-					province = 6920
-
-					color = { 47 159 51 }
-					color2 = { 255 255 255 }
-				}
-				b_kenu = {
-					province = 6921
-
-					color = { 47 159 51 }
-					color2 = { 255 255 255 }
-				}
-			}
 			c_djugu = {
 				color = { 49 153 53 }
 				color2 = { 255 255 255 }
@@ -74826,29 +74900,7 @@ e_guinea = {
 					color2 = { 255 255 255 }
 				}
 			}
-			c_shabe = {
-				color = { 60 170 65 }
-				color2 = { 255 255 255 }
-			
-				b_shabe = {
-					province = 8048
-
-					color = { 60 170 65 }
-					color2 = { 255 255 255 }
-				}
-				b_save = {
-					province = 8049
-
-					color = { 60 170 65 }
-					color2 = { 255 255 255 }
-				}
-				b_odo-akaba = {
-					province = 6925
-
-					color = { 60 170 65 }
-					color2 = { 255 255 255 }
-				}
-			}
+		
 		}
 	}
 	
@@ -74987,29 +75039,6 @@ e_guinea = {
 					color2 = { 255 255 255 }
 				}
 			}
-			c_igana = {
-				color = { 47 57 225 }
-				color2 = { 255 255 255 }
-			
-				b_igana = {
-					province = 8055
-
-					color = { 47 57 225 }
-					color2 = { 255 255 255 }
-				}
-				b_iseyin = {
-					province = 8056
-
-					color = { 47 57 225 }
-					color2 = { 255 255 255 }
-				}
-				b_igbodo-saki = {
-					province = 8057
-
-					color = { 47 57 225 }
-					color2 = { 255 255 255 }
-				}
-			}
 			c_ilorin = {
 				color = { 51 61 229 }
 				color2 = { 255 255 255 }
@@ -75033,6 +75062,16 @@ e_guinea = {
 					color2 = { 255 255 255 }
 				}
 			}
+
+
+		}
+		
+		d_ila = {
+			color = { 209 188 65 }
+			color2 = { 255 255 255 }
+			capital =  c_igbomina
+			definite_form = yes
+			
 			c_igbomina = {
 				color = { 53 64 231 }
 				color2 = { 255 255 255 }
@@ -75079,7 +75118,91 @@ e_guinea = {
 					color2 = { 255 255 255 }
 				}
 			}
+			
 		}
+
+		
+		d_shabe = {
+			color = { 10 16 243 }
+			color2 = { 255 255 255 }
+			capital = c_shabe
+			definite_form = yes
+			
+			c_shabe = {
+				color = { 60 170 65 }
+				color2 = { 255 255 255 }
+			
+				b_shabe = {
+					province = 8048
+
+					color = { 60 170 65 }
+					color2 = { 255 255 255 }
+				}
+				b_save = {
+					province = 8049
+
+					color = { 60 170 65 }
+					color2 = { 255 255 255 }
+				}
+				b_odo-akaba = {
+					province = 6925
+
+					color = { 60 170 65 }
+					color2 = { 255 255 255 }
+				}
+			}
+			
+			c_ilesa = {
+				color = { 47 159 51 }
+				color2 = { 255 255 255 }
+			
+				b_ilesa = {
+					province = 6922
+
+					color = { 47 159 51 }
+					color2 = { 255 255 255 }
+				}
+				b_okuta = {
+					province = 6920
+
+					color = { 47 159 51 }
+					color2 = { 255 255 255 }
+				}
+				b_kenu = {
+					province = 6921
+
+					color = { 47 159 51 }
+					color2 = { 255 255 255 }
+				}
+			}
+		
+			c_igana = {
+				color = { 47 57 225 }
+				color2 = { 255 255 255 }
+			
+				b_igana = {
+					province = 8055
+
+					color = { 47 57 225 }
+					color2 = { 255 255 255 }
+				}
+				b_iseyin = {
+					province = 8056
+
+					color = { 47 57 225 }
+					color2 = { 255 255 255 }
+				}
+				b_igbodo-saki = {
+					province = 8057
+
+					color = { 47 57 225 }
+					color2 = { 255 255 255 }
+				}
+			}
+			
+		}
+
+
 		
 		d_ife = {
 			color = { 176 194 56 }
@@ -75306,6 +75429,15 @@ e_guinea = {
 					color2 = { 255 255 255 }
 				}
 			}
+		}
+		
+		d_ijaw = {
+		
+			color = { 240 140 120 }
+			color2 = { 255 255 255 }
+			capital = c_ijaw
+			definite_form = yes
+			
 			c_ijaw = {
 				color = { 45 13 185 }
 				color2 = { 255 255 255 }
@@ -75352,8 +75484,10 @@ e_guinea = {
 					color2 = { 255 255 255 }
 				}
 			}
+			
 		}
-		
+
+
 		d_nupe = {
 			color = { 38 93 153 }
 			color2 = { 255 255 255 }
