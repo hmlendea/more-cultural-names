@@ -82,7 +82,7 @@ function checkForMissingCkLocationLinks() {
             echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-        else
+        elif [ -n "${LOCALISATIONS_FILE}" ]; then
             LOCATION_DEFAULT_NAME=$(tac "${LOCALISATIONS_FILE}" | grep "^ *${TITLE_ID}:" | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
             LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
             LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
@@ -96,6 +96,8 @@ function checkForMissingCkLocationLinks() {
             else
                 echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
             fi
+        else
+            echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
         fi
     done
 }
@@ -423,7 +425,7 @@ checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"
-checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"
+checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}" "${CK3MBP_VANILLA_LOCALISATION_FILE_2}"
 checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"
 #checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}" "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
