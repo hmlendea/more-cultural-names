@@ -94,7 +94,7 @@ d_maronite = {
 	ruler_uses_title_name = no
 	landless = yes
 
-	capital = c_antiochea
+	capital = c_antiocheia
 
 	ai_primary_priority = {
 		add = @always_primary_score
@@ -61387,6 +61387,35 @@ e_maghreb = {
 		
 		
 		
+	}
+	
+	k_canarias = {
+		color = { 242 231 125 }
+		color2 = { 255 255 255 }
+		cultural_names = {
+			name_list_guanches = cn_guanac
+		}
+		
+		capital = c_canarias # Tenerife
+
+		#Titular: created by decision.
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:guanches
+				}
+				add = @correct_culture_primary_score
+			}
+			if = {
+				limit = {
+					NOT = {
+						culture = culture:guanches
+					}
+				}
+				add = @better_than_the_alternatives_score
+			}
+		}
 	}
 	
 	k_tahert = {
