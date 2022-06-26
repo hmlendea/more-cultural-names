@@ -140,6 +140,10 @@ build-edition \
     "HOI4" "1.11.*"
 
 build-edition \
+    "mdm-more-cultural-names" "Millenium Dawn: More Cultural Names" \
+    "HOI4MDM" "1.11.*"
+
+build-edition \
     "tgw-more-cultural-names" "The Great War: More Cultural Names" \
     "HOI4TGW" "1.11.*"
 
