@@ -56,11 +56,15 @@ function getHoi4Countries() {
     local LOCALISATIONS_DIR="${3}"
     local COUNTRY_NAME=""
 
-    for TAG in $(cat "${TAGS_DIR}/"*.txt | awk -F"=" '{print $1}' | sed 's/\s*//g' | sort | uniq); do
-        COUNTRY_NAME=$(grep "^\s*${TAG}:0" "${LOCALISATIONS_DIR}/"*_english.yml | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
+    for TAG in $(cat "${TAGS_DIR}/"*.txt | awk -F"=" '{print $1}' | sed 's/\s*//g' | sort | uniq | grep -v "^#"); do
+        COUNTRY_NAME=$(grep "^\s*${TAG}:[0-9]*" "${LOCALISATIONS_DIR}/"*_english.yml | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
+
+        if [ -z "${COUNTRY_NAME}" ]; then
+            COUNTRY_NAME=$(grep "^\s*${TAG}_democratic:[0-9]*" "${LOCALISATIONS_DIR}/"*_english.yml | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
+        fi
 
         if [ -z "${COUNTRY_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
-            COUNTRY_NAME=$(grep "^\s*${TAG}:0" "${HOI4_LOCALISATIONS_DIR}/"*_english.yml | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
+            COUNTRY_NAME=$(grep "^\s*${TAG}:[0-9]*" "${HOI4_LOCALISATIONS_DIR}/"*_english.yml | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
         fi
         if ! grep -q '<GameId game="'${GAME_ID}'">'${TAG}'</GameId>' "${LANGUAGES_FILE}"; then
             printf "      <GameId game=\"${GAME_ID}\">${TAG}</GameId>"
