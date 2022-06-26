@@ -59,6 +59,11 @@ function getHoi4Countries() {
     for TAG in $(cat "${TAGS_DIR}/"*.txt | awk -F"=" '{print $1}' | sed 's/\s*//g' | sort | uniq | grep -v "^#"); do
         COUNTRY_NAME=$(grep "^\s*${TAG}:[0-9]*" "${LOCALISATIONS_DIR}/"*_english.yml | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
 
+        for TYPE in "DEF" "democratic" "neutrality" "fascism" "communism"; do
+            [ -n "${COUNTRY_NAME}" ] && break
+            COUNTRY_NAME=$(grep "^\s*${TAG}_${TYPE}:[0-9]*" "${LOCALISATIONS_DIR}/"*_english.yml | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
+        done
+
         if [ -z "${COUNTRY_NAME}" ]; then
             COUNTRY_NAME=$(grep "^\s*${TAG}_democratic:[0-9]*" "${LOCALISATIONS_DIR}/"*_english.yml | awk -F"\"" '{print $2}' | sed 's/^\([^\"]*\).*/\1/g' | head -n 1)
         fi
