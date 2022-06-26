@@ -11,13 +11,13 @@ function getCityName() {
     cd "${LOCALISATIONS_DIR}"
     CITY_NAME=$(find . -name "*victory_points_l_english.yml" | xargs cat | \
                 grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
-                sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+                sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g')
     cd "${CWD}"
 
     if [ -z "${CITY_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
         CITY_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/victory_points_l_english.yml" | \
                     grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
-                    sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+                    sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g')
     fi
 
     echo "${CITY_NAME}"
