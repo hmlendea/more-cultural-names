@@ -13,7 +13,7 @@ function getCityName() {
                 grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
                 sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
     cd "${CWD}"
-    
+
     if [ -z "${CITY_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
         CITY_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/victory_points_l_english.yml" | \
                     grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
@@ -32,33 +32,32 @@ function getStateName() {
     cd "${LOCALISATIONS_DIR}"
     STATE_NAME=$(find . -name "*state_names_l_english.yml" | xargs cat | \
                         grep "^\s*STATE_${STATE_ID}:" | \
-                        sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+                        sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g')
     cd "${CWD}"
-    
-    if [ -z "${CITY_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
+
+    if [ -z "${STATE_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
             STATE_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/state_names_l_english.yml" | \
                             grep "^\s*STATE_${STATE_ID}:" | \
-                            sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]\s*\"\([^\"]*\).*/\1/g')
+                            sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g')
     fi
 
     echo "${STATE_NAME}"
 }
 
-for GAME_ID in "HOI4" "HOI4TGW"; do
-    echo "" > "$(pwd)/${GAME_ID}_parents.txt"
-    echo "" > "$(pwd)/${GAME_ID}_cities.txt"
-    echo "" > "$(pwd)/${GAME_ID}_states.txt"
-done
-
 function getStates() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR="${2}"
     local STATES_DIR="${3}"
+    local STATES_OUTPUT_FILE="${REPO_DIR}/${GAME_ID}_states.txt"
+    local PARENTS_OUTPUT_FILE="${REPO_DIR}/${GAME_ID}_parents.txt"
 
-    for  FILE in "${STATES_DIR}"/*.txt ; do
+    echo "" > "${STATES_OUTPUT_FILE}"
+    echo "" > "${PARENTS_OUTPUT_FILE}"
+
+    for FILE in "${STATES_DIR}"/*.txt ; do
         local STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
         local STATE_NAME=$(getStateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
-        
+
         PROVINCE_LIST=$(cat "${FILE}" | \
             sed 's/\r//g' | \
             tr '\n' ' ' | \
@@ -67,14 +66,14 @@ function getStates() {
             sed 's/\(^\s*\|\s*$\)//g')
 
         for PROVINCE_ID in ${PROVINCE_LIST}; do
-            [[ -n "${PROVINCE_LIST// }" ]] && echo "${PROVINCE_ID}=${STATE_ID}" >> "${REPO_DIR}/${GAME_ID}_parents.txt"
+            [[ -n "${PROVINCE_LIST// }" ]] && echo "${PROVINCE_ID}=${STATE_ID}" >> "${PARENTS_OUTPUT_FILE}"
         done
-        
+
         #echo "State #${STATE_ID}: Name='${STATE_NAME}'"
         if $(cat "${LOCATIONS_FILE}" | grep "<GameId game=\"${GAME_ID}\"" | grep "type=\"State\"" | grep -q ">${STATE_ID}<"); then
             sed -i 's/\(^\s*<GameId game=\"'"${GAME_ID}"'\" type=\"State\">'"${STATE_ID}"'<\/GameId>\).*/\1 <!-- '"${STATE_NAME}"' -->/g' "${LOCATIONS_FILE}"
         else
-            echo "      <GameId game=\"${GAME_ID}\" type=\"State\">${STATE_ID}</GameId> <!-- ${STATE_NAME} -->" >> "${REPO_DIR}/${GAME_ID}_states.txt"
+            echo "      <GameId game=\"${GAME_ID}\" type=\"State\">${STATE_ID}</GameId> <!-- ${STATE_NAME} -->" >> "${STATES_OUTPUT_FILE}"
 
             local LOCATION_ID=$(nameToLocationId "${STATE_NAME}")
 
@@ -89,6 +88,9 @@ function getCities() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR="${2}"
     local CWD="$(pwd)"
+    local OUTPUT_FILE="${REPO_DIR}/${GAME_ID}_cities.txt"
+
+    echo "" > "${OUTPUT_FILE}"
 
     cd "${LOCALISATIONS_DIR}"
     for CITY_ID in $(find . -name "*victory_points_l_english.yml" | xargs cat | \
@@ -101,8 +103,8 @@ function getCities() {
         if $(cat "${LOCATIONS_FILE}" | grep "<GameId game=\"${GAME_ID}\"" | grep "type=\"City\"" | grep -q ">${CITY_ID}<"); then
             sed -i 's/\(^\s*<GameId game=\"'"${GAME_ID}"'\" type=\"City\"\)\( parent=\"[^\"]*\"\)*>'"${CITY_ID}"'<.*/\1 parent=\"'"${STATE_ID}"'\">'"${CITY_ID}"'<\/GameId> <!-- '"${CITY_NAME}"' -->/g' "${LOCATIONS_FILE}"
         else
-            echo "      <GameId game=\"${GAME_ID}\" type=\"City\" parent=\"${STATE_ID}\">${CITY_ID}</GameId> <!-- ${CITY_NAME} -->" >> "${REPO_DIR}/${GAME_ID}_cities.txt"
-        
+            echo "      <GameId game=\"${GAME_ID}\" type=\"City\" parent=\"${STATE_ID}\">${CITY_ID}</GameId> <!-- ${CITY_NAME} -->" >> "${OUTPUT_FILE}"
+
             local LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
 
             if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
@@ -115,6 +117,9 @@ function getCities() {
 
 getStates "HOI4" "${HOI4_LOCALISATIONS_DIR}" "${HOI4_STATES_DIR}"
 getCities "HOI4" "${HOI4_LOCALISATIONS_DIR}"
+
+getStates "HOI4MDM" "${HOI4MDM_LOCALISATIONS_DIR}" "${HOI4MDM_STATES_DIR}"
+getCities "HOI4MDM" "${HOI4MDM_LOCALISATIONS_DIR}"
 
 getStates "HOI4TGW" "${HOI4TGW_LOCALISATIONS_DIR}" "${HOI4TGW_STATES_DIR}"
 getCities "HOI4TGW" "${HOI4TGW_LOCALISATIONS_DIR}"
