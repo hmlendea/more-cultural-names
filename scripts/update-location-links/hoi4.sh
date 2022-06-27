@@ -79,6 +79,10 @@ function getStates() {
 
             if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
                 echo "    > ${GAME_ID}: State #${STATE_ID} (${STATE_NAME}) could potentially be linked with location ${LOCATION_ID}"
+            elif grep -q "<!-- ${STATE_NAME} -->" "${LOCATIONS_FILE}"; then
+                echo "    > ${GAME_ID}: State #${STATE_ID} (${STATE_NAME}) could potentially be linked with a location with a link with the same default name"
+            elif grep -q "value=\"${STATE_NAME}\"" "${LOCATIONS_FILE}"; then
+                echo "    > ${GAME_ID}: State #${STATE_ID} (${STATE_NAME}) could potentially be linked with a location with a localisation with the same name"
             fi
         fi
     done
