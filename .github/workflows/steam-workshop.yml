@@ -15,7 +15,7 @@ jobs:
 
     - name: Preparing the release assets
       run: |
-        for GAME_ID in "CK2" "CK2HIP" "CK3" "CK3CMH" "CK3IBL" "CK3MBP" "CK3SoW" "CK3TBA" "CK3TFE" "HOI4" "HOI4TGW" "IR" "IR_AoE"; do
+        for GAME_ID in "CK2" "CK2HIP" "CK3" "CK3CMH" "CK3IBL" "CK3MBP" "CK3SoW" "CK3TBA" "CK3TFE" "HOI4" "HOI4MDM" "HOI4TGW" "IR" "IR_AoE"; do
           mkdir "${GAME_ID}"
           wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${GAME_ID}_${GITHUB_REF:11}.zip" -O "${GAME_ID}.zip"
           unzip "${GAME_ID}.zip" -d "${GAME_ID}/"
@@ -145,6 +145,18 @@ jobs:
         appid: 394360
         itemid: 2459257386
         path: "HOI4/more-cultural-names/"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+
+    - name: Hearts of Iron IV (MDM)
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 394360
+        itemid: 2826972160
+        path: "HOI4MDM/mdm-more-cultural-names/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
