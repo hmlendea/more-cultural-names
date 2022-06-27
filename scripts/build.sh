@@ -140,8 +140,9 @@ build-edition \
     "HOI4" "1.11.*"
 
 build-edition \
-    "mdm-more-cultural-names" "Millenium Dawn: More Cultural Names" \
-    "HOI4MDM" "1.11.*"
+    "mdm-more-cultural-names" "Millennium Dawn: More Cultural Names" \
+    "HOI4MDM" "1.11.*" \
+    --dependency "Millennium Dawn: A Modern Day Mod"
 
 build-edition \
     "tgw-more-cultural-names" "The Great War: More Cultural Names" \
