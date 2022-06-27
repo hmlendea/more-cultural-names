@@ -94,21 +94,27 @@ function getCities() {
 
     cd "${LOCALISATIONS_DIR}"
     for CITY_ID in $(find . -name "*victory_points_l_english.yml" | xargs cat | \
+                        grep "^\s*VICTORY.*" | \
                         sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
                         sort -h | uniq); do
         local STATE_ID=$(grep "^${CITY_ID}=" "${REPO_DIR}/${GAME_ID}_parents.txt" | awk -F = '{print $2}')
         local CITY_NAME=$(getCityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
 
         #echo "Province #${CITY_ID}: State=#${STATE_ID} Name='${CITY_NAME}'"
-        if $(cat "${LOCATIONS_FILE}" | grep "<GameId game=\"${GAME_ID}\"" | grep "type=\"City\"" | grep -q ">${CITY_ID}<"); then
+        if grep "<GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | grep "type=\"City\"" | grep -q ">${CITY_ID}<"; then
             sed -i 's/\(^\s*<GameId game=\"'"${GAME_ID}"'\" type=\"City\"\)\( parent=\"[^\"]*\"\)*>'"${CITY_ID}"'<.*/\1 parent=\"'"${STATE_ID}"'\">'"${CITY_ID}"'<\/GameId> <!-- '"${CITY_NAME}"' -->/g' "${LOCATIONS_FILE}"
         else
             echo "      <GameId game=\"${GAME_ID}\" type=\"City\" parent=\"${STATE_ID}\">${CITY_ID}</GameId> <!-- ${CITY_NAME} -->" >> "${OUTPUT_FILE}"
 
             local LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
+            local STATE_NAME=$(getStateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
 
             if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
-                echo "    > ${GAME_ID}: City #${CITY_ID} (${CITY_NAME}) could potentially be linked with location ${LOCATION_ID}"
+                echo "    > ${GAME_ID}: City #${CITY_ID} (${CITY_NAME}) (belonging to state: ${STATE_NAME}) could potentially be linked with location ${LOCATION_ID}"
+            elif grep -q "<!-- ${CITY_NAME} -->" "${LOCATIONS_FILE}"; then
+                echo "    > ${GAME_ID}: City #${CITY_ID} (${CITY_NAME}) (belonging to state: ${STATE_NAME}) could potentially be linked with a location with a link with the same default name"
+            elif grep -q "value=\"${CITY_NAME}\"" "${LOCATIONS_FILE}"; then
+                echo "    > ${GAME_ID}: City #${CITY_ID} (${CITY_NAME}) (belonging to state: ${STATE_NAME}) could potentially be linked with a location with a localisation with the same name"
             fi
         fi
     done
