@@ -637,8 +637,11 @@
       <GameId game="HOI4MDM">AGF</GameId> <!-- Anti-Governmental Forces of South Sudan -->
       <GameId game="HOI4MDM">AQY</GameId> <!-- Ansar al-Sharia -->
       <GameId game="HOI4MDM">ARA</GameId> <!-- Arabistan -->
+      <GameId game="HOI4MDM">DRU</GameId> <!-- Jabal Al-Druze -->
       <GameId game="HOI4MDM">FSA</GameId> <!-- Free Syrian Army -->
+      <GameId game="HOI4MDM">HAM</GameId> <!-- Hamas -->
       <GameId game="HOI4MDM">HEJ</GameId> <!-- Hejaz -->
+      <GameId game="HOI4MDM">HEZ</GameId> <!-- Hezbollah -->
       <GameId game="HOI4MDM">HOU</GameId> <!-- Houthi Yemen -->
       <GameId game="HOI4MDM">IRQ</GameId> <!-- Iraq -->
       <GameId game="HOI4MDM">ISI</GameId> <!-- Islamic State -->
@@ -651,6 +654,7 @@
       <GameId game="HOI4MDM">PAL</GameId> <!-- Palestine -->
       <GameId game="HOI4MDM">QAT</GameId> <!-- Qatar -->
       <GameId game="HOI4MDM">SAU</GameId> <!-- Republic of Arabia -->
+      <GameId game="HOI4MDM">SHB</GameId> <!-- Al-Shabaab -->
       <GameId game="HOI4MDM">SSU</GameId> <!-- South Sudan -->
       <GameId game="HOI4MDM">SUD</GameId> <!-- Sudan -->
       <GameId game="HOI4MDM">SYR</GameId> <!-- Syria -->
@@ -8433,7 +8437,6 @@
     <Code iso-639-2="fon" iso-639-3="fon" />
     <GameIds>
       <GameId game="HOI4">DAH</GameId> <!-- Dahomey --> <!-- "This is Benin" before colonisation. Benin's present national language is French -->
-      <GameId game="HOI4MDM">BEN</GameId> <!-- Benin -->
       <GameId game="HOI4TGW">DAH</GameId> <!-- Benin -->
     </GameIds>
   </Language>
@@ -8609,6 +8612,7 @@
     <Id>French</Id>
     <Code iso-639-1="fr" iso-639-3="fra" />
     <GameIds>
+      <GameId game="HOI4MDM">BEN</GameId> <!-- Benin -->
       <GameId game="HOI4MDM">CDI</GameId> <!-- Côte d'Ivoire -->
       <GameId game="HOI4MDM">DJI</GameId> <!-- Djibouti -->
       <GameId game="HOI4MDM">FRA</GameId> <!-- France -->
@@ -9889,6 +9893,7 @@
     <GameIds>
       <GameId game="HOI4MDM">AUS</GameId> <!-- Austria -->
       <GameId game="HOI4MDM">GER</GameId> <!-- Germany -->
+      <GameId game="HOI4MDM">LIC</GameId> <!-- Liechtenstein -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>German_Before2017</LanguageId>
@@ -14850,6 +14855,7 @@
       <GameId game="HOI4TGW">CAY</GameId> <!-- Guiana -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Seychellois</LanguageId>
       <LanguageId>French</LanguageId>
       <LanguageId>French_Before1991</LanguageId>
       <LanguageId>French_Before1976</LanguageId>
@@ -28181,6 +28187,7 @@
       <GameId game="HOI4MDM">GUB</GameId> <!-- Guinea-Bissau -->
       <GameId game="HOI4MDM">MOZ</GameId> <!-- Mozambique -->
       <GameId game="HOI4MDM">POR</GameId> <!-- Portugal -->
+      <GameId game="HOI4MDM">SAO</GameId> <!-- São Tomé and Príncipe -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Portuguese_Before1975</LanguageId>
@@ -33057,6 +33064,7 @@
     <Code iso-639-1="ru" iso-639-3="rus" />
     <GameIds>
       <GameId game="HOI4MDM">NOV</GameId> <!-- Novorossiya -->
+      <GameId game="HOI4MDM">PMR</GameId> <!-- Transnistria -->
       <GameId game="HOI4MDM">SOV</GameId> <!-- Russia -->
     </GameIds>
     <FallbackLanguages>
@@ -38001,6 +38009,42 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Seychellois</Id>
+    <Code iso-639-3="crs" />
+    <GameIds>
+      <GameId game="HOI4MDM">SEY</GameId> <!-- Seychelles -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Guianese_French</LanguageId>
+      <LanguageId>French</LanguageId>
+      <LanguageId>French_Before1991</LanguageId>
+      <LanguageId>French_Before1976</LanguageId>
+      <LanguageId>French_Before1975</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French_Before1966</LanguageId>
+      <LanguageId>French_Before1962</LanguageId>
+      <LanguageId>French_Before1961</LanguageId>
+      <LanguageId>French_Before1956</LanguageId>
+      <LanguageId>French_Before1954</LanguageId>
+      <LanguageId>French_Before1932</LanguageId>
+      <LanguageId>French_Before1930</LanguageId>
+      <LanguageId>French_Before1926</LanguageId>
+      <LanguageId>French_Before1925</LanguageId>
+      <LanguageId>French_Before1924</LanguageId>
+      <LanguageId>French_Before1923</LanguageId>
+      <LanguageId>French_Before1919</LanguageId>
+      <LanguageId>French_Before1839</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Before18Century</LanguageId>
+      <LanguageId>French_Middle</LanguageId>
+      <LanguageId>Norman</LanguageId>
+      <LanguageId>French_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  </Language>
+  <Language>
     <Id>Shakacho</Id>
     <Code iso-639-3="moy" />
     <FallbackLanguages>
@@ -39760,6 +39804,7 @@
     <Id>Spanish_Mexico</Id>
     <GameIds>
       <GameId game="HOI4MDM">MEX</GameId> <!-- Mexico -->
+      <GameId game="HOI4MDM">SLA</GameId> <!-- Sinaloa Cartel -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Spanish</LanguageId>
