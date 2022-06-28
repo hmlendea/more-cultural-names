@@ -15,7 +15,7 @@ jobs:
 
     - name: Preparing the release assets
       run: |
-        for GAME_ID in "CK2" "CK2HIP" "CK3" "CK3CMH" "CK3IBL" "CK3MBP" "CK3SoW" "CK3TBA" "CK3TFE" "HOI4" "HOI4MDM" "HOI4TGW" "IR" "IR_AoE"; do
+        for GAME_ID in "CK2" "CK2HIP" "CK3" "CK3CMH" "CK3IBL" "CK3MBP" "CK3SoW" "CK3TBA" "CK3TFE" "HOI4" "HOI4MDM" "HOI4TGW" "IR" "IR_AoE" "IR_TBA"; do
           mkdir "${GAME_ID}"
           wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${GAME_ID}_${GITHUB_REF:11}.zip" -O "${GAME_ID}.zip"
           unzip "${GAME_ID}.zip" -d "${GAME_ID}/"
