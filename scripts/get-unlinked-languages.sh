@@ -14,7 +14,7 @@ function getCk2Cultures() {
         if ! grep -q "<GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>" "${LANGUAGES_FILE}"; then
             echo "  ${CULTURE_ID}"
         fi
-    done
+    done | sort | uniq
 }
 
 function getCk3v14Cultures() {
@@ -30,7 +30,7 @@ function getCk3v14Cultures() {
         if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
             echo "  ${CULTURE_ID}"
         fi
-    done
+    done | sort | uniq
 }
 
 function getCk3Cultures() {
@@ -47,7 +47,7 @@ function getCk3Cultures() {
                 echo "  ${CULTURE_ID}"
             fi
         done
-    done
+    done | sort | uniq
 }
 
 function getHoi4Countries() {
@@ -76,7 +76,7 @@ function getHoi4Countries() {
             [ -n "${COUNTRY_NAME}" ] && printf " <!-- ${COUNTRY_NAME} -->"
             printf "\n"
         fi
-    done
+    done | sort | uniq
 }
 
 function getIrCultures() {
@@ -122,7 +122,7 @@ function getIrCultures() {
                 echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
             fi
         done
-    done
+    done | sort | uniq
 }
 
 echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
