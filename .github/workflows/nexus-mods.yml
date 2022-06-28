@@ -256,6 +256,31 @@ jobs:
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "more-cultural-names.zip"
 
+  release-hoi4mdm:
+    name: Release (HOI4MDM)
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download the release asset
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_HOI4MDM_${GITHUB_REF:11}.zip" -O "mdm-more-cultural-names.zip"
+
+    - name: Upload
+      uses: greatness7/nexusmods_file_updater@v2
+      with:
+        username: ${{secrets.NEXUS_UPLOADER3_USERNAME}}
+        password: ${{secrets.NEXUS_UPLOADER3_PASSWORD}}
+        game_domain_name: "heartsofironiv"
+        mod_id: "35"
+        file_name: "mdm-more-cultural-names"
+        file_version: ${{github.ref_name}}
+        update_version: true
+        new_existing_version: true
+        original_file: "mdm-more-cultural-names.*"
+        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        file_path: "mdm-more-cultural-names.zip"
+
   release-hoi4tgw:
     name: Release (HOI4TGW)
     runs-on: ubuntu-latest
