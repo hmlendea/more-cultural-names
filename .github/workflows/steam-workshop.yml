@@ -198,3 +198,15 @@ jobs:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
         STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
         STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+
+    - name: Imperator Rome (TBA)
+      uses: Weilbyte/steam-workshop-upload@v1
+      with:
+        appid: 859580
+        itemid: 2827468261
+        path: "IR_TBA/tba-more-cultural-names/"
+        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      env:
+        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
+        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
+        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}

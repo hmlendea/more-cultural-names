@@ -156,6 +156,10 @@ build-edition \
     "aoe-more-cultural-names" "Ashes of Empire: More Cultural Names" \
     "IR_AoE" "2.0.*"
 
+build-edition \
+    "tba-more-cultural-names" "The Bronze Age: More Cultural Names" \
+    "IR_TBA" "2.0.*"
+
 cd "${REPO_DIR}"
 bash "${REPO_DIR}/scripts/count-localisations.sh"
 

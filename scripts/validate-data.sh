@@ -449,6 +449,7 @@ checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
 checkDefaultIrLocalisations  "IR"       "${IR_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
+checkDefaultIrLocalisations  "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
 
 # Find redundant names
 findRedundantNames "Albanian" "Albanian_Medieval"

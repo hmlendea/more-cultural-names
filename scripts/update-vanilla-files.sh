@@ -79,3 +79,6 @@ update-vanilla-files \
     "${IR_AoE_VANILLA_FILE}" \
     "${IR_LOCALISATIONS_DIR}/provincenames_l_english.yml" \
     "${IR_AoE_LOCALISATIONS_DIR}/replace/aoe_provincenames_l_english.yml"
+update-vanilla-files \
+    "${IR_TBA_VANILLA_FILE}" \
+    "${IR_TBA_LOCALISATIONS_DIR}/provincenames_l_english.yml"
