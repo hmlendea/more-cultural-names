@@ -79,6 +79,7 @@ function getProvinces() {
     done
 }
 
-getProvinces "IR"       "${VANILLA_FILES_DIR}/ir_province_names.yml"    "ir_provinces.txt"
-getProvinces "IR_AoE"   "${VANILLA_FILES_DIR}/iraoe_province_names.yml" "iraoe_provinces.txt"
-getProvinces "IR_TBA"   "${VANILLA_FILES_DIR}/irtba_province_names.yml" "irtba_provinces.txt"
+getProvinces "IR"       "${IR_VANILLA_FILE}"        "ir_provinces.txt"
+getProvinces "IR_AoE"   "${IR_AoE_VANILLA_FILE}"    "iraoe_provinces.txt"
+getProvinces "IR_INV"   "${IR_INV_VANILLA_FILE}"    "irinv_provinces.txt"
+getProvinces "IR_TBA"   "${IR_TBA_VANILLA_FILE}"    "irtba_provinces.txt"
