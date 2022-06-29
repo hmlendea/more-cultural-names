@@ -26,23 +26,9 @@ function print_game_locations_count() {
     echo "${GAME} locations: ${LOCATIONS_COUNT}" >&2
 }
 
-print_game_locations_count CK2
-print_game_locations_count CK2HIP
-print_game_locations_count CK2TWK
-print_game_locations_count CK3
-print_game_locations_count CK3ATHA
-print_game_locations_count CK3CMH
-print_game_locations_count CK3IBL
-print_game_locations_count CK3MBP
-print_game_locations_count CK3SoW
-print_game_locations_count CK3TBA
-print_game_locations_count CK3TFE
-print_game_locations_count HOI4
-print_game_locations_count HOI4MDM
-print_game_locations_count HOI4TGW
-print_game_locations_count IR
-print_game_locations_count IR_AoE
-print_game_locations_count IR_TBA
+for GAME_ID in $(grep "<GameId " "${LOCATIONS_FILE}" | sed 's/.*game=\"\([^\"]*\)\".*/\1/g' | sort | uniq); do
+    print_game_locations_count "${GAME_ID}"
+done
 
 echo ""
 echo "Names: ${NAMES_COUNT}"
