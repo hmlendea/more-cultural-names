@@ -81,3 +81,4 @@ function getProvinces() {
 
 getProvinces "IR"       "${VANILLA_FILES_DIR}/ir_province_names.yml"    "ir_provinces.txt"
 getProvinces "IR_AoE"   "${VANILLA_FILES_DIR}/iraoe_province_names.yml" "iraoe_provinces.txt"
+getProvinces "IR_TBA"   "${VANILLA_FILES_DIR}/irtba_province_names.yml" "irtba_provinces.txt"

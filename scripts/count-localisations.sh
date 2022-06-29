@@ -42,6 +42,7 @@ print_game_locations_count HOI4MDM
 print_game_locations_count HOI4TGW
 print_game_locations_count IR
 print_game_locations_count IR_AoE
+print_game_locations_count IR_TBA
 
 echo ""
 echo "Names: ${NAMES_COUNT}"

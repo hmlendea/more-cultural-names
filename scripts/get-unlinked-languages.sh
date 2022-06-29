@@ -14,7 +14,7 @@ function getCk2Cultures() {
         if ! grep -q "<GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>" "${LANGUAGES_FILE}"; then
             echo "  ${CULTURE_ID}"
         fi
-    done
+    done | sort | uniq
 }
 
 function getCk3v14Cultures() {
@@ -30,7 +30,7 @@ function getCk3v14Cultures() {
         if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
             echo "  ${CULTURE_ID}"
         fi
-    done
+    done | sort | uniq
 }
 
 function getCk3Cultures() {
@@ -47,7 +47,7 @@ function getCk3Cultures() {
                 echo "  ${CULTURE_ID}"
             fi
         done
-    done
+    done | sort | uniq
 }
 
 function getHoi4Countries() {
@@ -76,7 +76,7 @@ function getHoi4Countries() {
             [ -n "${COUNTRY_NAME}" ] && printf " <!-- ${COUNTRY_NAME} -->"
             printf "\n"
         fi
-    done
+    done | sort | uniq
 }
 
 function getIrCultures() {
@@ -86,6 +86,8 @@ function getIrCultures() {
     local CULTURE_GROUP_ID=""
 
     for CULTURE_FILE_NAME in $(find "${CULTURES_DIR}" -name "*.txt"); do
+        [ $(wc -l "${CULTURE_FILE_NAME}" | awk '{print $1}') -le 2 ] && continue
+
         CULTURE_FILE_JSON=$(sed 's/\r*//g' "${CULTURE_FILE_NAME}" | \
             sed '1s/^\xEF\xBB\xBF//' | \
             sed 's/#.*$//g' | \
@@ -122,7 +124,7 @@ function getIrCultures() {
                 echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
             fi
         done
-    done
+    done | sort | uniq
 }
 
 echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
@@ -141,3 +143,4 @@ echo "Hearts of Iron 4 MDM:"    && getHoi4Countries     "HOI4MDM"   "${HOI4MDM_T
 echo "Hearts of Iron 4 TGW:"    && getHoi4Countries     "HOI4TGW"   "${HOI4TGW_TAGS_DIR}" "${HOI4TGW_LOCALISATIONS_DIR}"
 echo "Imperator Rome:"          && getIrCultures        "IR"        "${IR_CULTURES_DIR}"
 echo "Imperator Rome AoE:"      && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"
+echo "Imperator Rome TBA:"      && getIrCultures        "IR_TBA"    "${IR_TBA_CULTURES_DIR}"
