@@ -143,4 +143,5 @@ echo "Hearts of Iron 4 MDM:"    && getHoi4Countries     "HOI4MDM"   "${HOI4MDM_T
 echo "Hearts of Iron 4 TGW:"    && getHoi4Countries     "HOI4TGW"   "${HOI4TGW_TAGS_DIR}" "${HOI4TGW_LOCALISATIONS_DIR}"
 echo "Imperator Rome:"          && getIrCultures        "IR"        "${IR_CULTURES_DIR}"
 echo "Imperator Rome AoE:"      && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"
+echo "Imperator Rome INV:"      && getIrCultures        "IR_INV"    "${IR_INV_CULTURES_DIR}"
 echo "Imperator Rome TBA:"      && getIrCultures        "IR_TBA"    "${IR_TBA_CULTURES_DIR}"
