@@ -431,6 +431,8 @@ checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
 
 validateHoi4Parentage "HOI4"
 validateHoi4Parentage "HOI4TGW"
@@ -449,6 +451,7 @@ checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}"
 checkDefaultIrLocalisations  "IR"       "${IR_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
+checkDefaultIrLocalisations  "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
 
 # Find redundant names

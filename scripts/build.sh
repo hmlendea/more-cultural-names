@@ -15,12 +15,14 @@ VERSION=$(date +"%y").$(date +"%j").${BUILD_VERSION}
 CONTENT_CHECKSUM=$(cat "${REPO_DIR}"/*.xml | sha512sum)
 CHECKSUM=$(echo "${CONTENT_CHECKSUM} ${VERSION} ${BUILDER_VERSION}" | sha512sum | awk '{print $1}')
 
-if [[ $* != *--skip-updates* ]]; then
+if [[ $* != *--skip-update* ]] \
+&& [[ $* != *--skip-updates* ]]; then
     bash "${SCRIPTS_DIR}/update-builder.sh"
     bash "${SCRIPTS_DIR}/update-vanilla-files.sh"
 fi
 
-if [[ $* != *--skip-validation* ]]; then
+if [[ $* != *--skip-validation* ]] \
+&& [[ $* != *--skip-validations* ]]; then
     echo "Validating the files..."
     VALIDATE_DATA="$(bash scripts/validate-data.sh | tr '\0' '\n')"
     if [ -n "${VALIDATE_DATA}" ]; then
@@ -155,6 +157,10 @@ build-edition \
 build-edition \
     "aoe-more-cultural-names" "Ashes of Empire: More Cultural Names" \
     "IR_AoE" "2.0.*"
+
+build-edition \
+    "inv-more-cultural-names" "Imperator: Invictus - More Cultural Names" \
+    "IR_INV" "2.0.*"
 
 build-edition \
     "tba-more-cultural-names" "The Bronze Age: More Cultural Names" \
