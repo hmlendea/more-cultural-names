@@ -89,7 +89,7 @@ function normalise-name() {
     local P_COMMUNE="[Cc]om[m]*un[ae]\|[Kk]özség"
     local P_COUNCIL="[Cc]o[u]*n[cs][ei]l[l]*\(iul\)\|[Cc]omhairle"
     local P_COUNTRY="[Nn]egeri"
-    local P_DEPARTMENT="[Dd][eéi]p[’]*art[’]*[aei]*m[aei][e]*n[gt][’]*\(as\|i\|o\|u[l]*\)*"
+    local P_DEPARTMENT="[DdḌḍ][eéi]p[’]*[aā][i]*r[tṭ][’]*[aei]*m[aeēi][e]*[nṇ]*[gtṭ]*[’]*\(as\|i\|o\|u\(l\|va\)*\)*\|Ilākhe\|Penbiran\|Tuṟai\|Vibhaaga\|Zhang Wàt"
     local P_DIOCESE="[Dd]io[eít][cks][eēi][sz][eēi]*[s]*"
     local P_DISTRICT="[Bb]arrutia\|[Bb]ucağı\|[Dd][iy]str[eiy][ckt]*[akt][eouy]*[als]*\|[Iiİi̇]l[cç]esi\|járás\|Qu\(ận\)*\|[Rr]a[iy]on[iu]\|sum"
     local P_FORT="\([CcKk][aá]str[aou][lm]*\|Festung\|[Ff]ort\(e\(tsya\)*\|ul\)*\|[Ff]ort\(ale[sz]a\|[e]*ress[e]*\)\|[Ff]ort[r]*e[t]*s[s]*[y]*[ae]*\|[Kk]repost\|[Tv]rdina\|[Yy]ōsai\|[Zz]amogy\)\( \(roman\|royale\)\)*"
@@ -108,8 +108,8 @@ function normalise-name() {
     local P_PENINSULA="[Bb][aá]n[ ]*[dđ][aả]o\|[Dd]uoninsulo\|[Hh]antō\|[Ll]edenez\|[Nn]iemimaa\|[Pp][ao][luŭ][ouv]ostr[ao][uŭv]\|[Pp][eé]n[iíì][n]*[t]*[csz][ou][lł][aāe]\|[Pp]enrhyn\|Poàn-tó\|[Ss]emenanjung\|Tīpakaṟpam\|[Yy]arim [Oo]roli\|[Yy]arımadası\|[Žž]arym [Aa]raly"
     local P_PLATEAU="Alt[io]p[il]*[aà]\(no\)*\|Àrd-thìr\|Daichi\|gāoyuán\|Hḍbẗ\|ordokia\|[Pp][’]*lat[’]*[e]*\([aå][nu]\(et\)*\|o\(s[iu]\)*\)\|[Pp]lošina\|[Pp]lynaukštė"
     local P_PREFECTURE="[Pp]r[aäeé][e]*fe[ckt]t[uúū]r[ae]*"
-    local P_PROVINCE="[Pp][’]*r[aāou][bpvw][ëií][nñ][t]*[csz]*[eėiíjoy]*[aeėsz]*"
-    local P_REGION="[Rr]e[gģhx][ij]*\([oóu][ou]*n*[ei]*[as]*\|st[aā]n\)"
+    local P_PROVINCE="Mḥāfẓẗ\|[Pp][’]*r[aāou][bpvw][ëií][nñ][t]*[csz]*[eėiíjoy]*[aeėsz]*\|Pradēśa\|Prānt[a]*\|Rát\|[Ss][h]*[éě]ng\|Shuu\|suyu"
+    local P_REGION="Gobolka\|Kwáāen\|[Rr]e[gģhx][ij]*\([oóu][ou]*n*[ei]*[as]*\|st[aā]n\)"
     local P_REPUBLIC="D[eēi]mokr[h]*atía\|Kongwaguk\|Köztársaság\|Kyōwa\|Olómìnira\|[Rr][eéi][s]*[ ]*p[’]*[aāuüùúy][ā’]*b[ba]*l[ií][’]*[ckq][ck]*[’]*\([ai]\|as[ıy]\|en\|[hḥ]y\|i\|ue\)*"
     local P_RUIN="[Rr]uin[ae]*"
     local P_STATE="Bang\|[EeÉé]*[SsŜŝŜŝŠšŞş]*[h]*[tṭ][’]*[aeē][dtṭu][’]*[aeiıosu]*[l]*\|[Oo]st[’]*an[ıi]\|[Uu]stoni\|valstija*"
@@ -217,11 +217,14 @@ function normalise-name() {
             -e 's/ norte$/ Norte/g' \
             -e 's/ septentrionale$/ Septentrionale/g' \
             \
+            -e 's/\([^\s]\)-\s*/\1-/g' \
             -e 's/[·]//g' \
             -e 's/\(.\)\1\1/\1\1/g' \
             -e 's/^\s*//g' \
             -e 's/\s*$//g' \
             -e 's/\s\s*/ /g')
+
+        NORMALISED_NAME=$(sed 's/'"${COMMON_PATTERNS}"'//g' <<< "${NORMALISED_NAME}")
 
         NORMALISED_NAME=$(echo "${NORMALISED_NAME}" | \
             perl -p0e 's/\r*\n/ /g' | \
