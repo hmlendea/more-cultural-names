@@ -24,6 +24,7 @@ function transliterate-name() {
     [ "${LANGUAGE_CODE}" == "ary" ] && LANGUAGE_CODE="ar"
     [ "${LANGUAGE_CODE}" == "arz" ] && LANGUAGE_CODE="ar"
     [ "${LANGUAGE_CODE}" == "be-tarask" ] && LANGUAGE_CODE="be"
+    [ "${LANGUAGE_CODE}" == "pnt" ] && LANGUAGE_CODE="grc"
 
     if [ "${LANGUAGE_CODE}" == "ab" ] \
     || [ "${LANGUAGE_CODE}" == "ady" ] \
