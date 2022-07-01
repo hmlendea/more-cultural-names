@@ -357,6 +357,7 @@ function get-name-lines() {
         "Hausa" "ha" \
         "Hawaiian" "haw" \
         "Hindi" "hi" \
+        "Hungarian_Old" "ohu" \
         "Hungarian" "hu" \
         "Icelandic" "is" \
         "Ido" "io" \
@@ -402,6 +403,7 @@ function get-name-lines() {
         "Livvi" "olo" \
         "Lojban" "jbo" \
         "Lombard" "lmo" \
+        "Luba-Katanga" "lu" \
         "Luganda" "lg" \
         "Luxembourgish" "lb" \
         "Macedonian_Slavic" "mk" \
@@ -419,6 +421,7 @@ function get-name-lines() {
         "Nahuatl" "nah" \
         "Nauru" "na" \
         "Navajo" "nv" \
+        "Ndebele_North" "nd" \
         "Neapolitan" "nap" \
         "Nias" "nia" \
         "Norman" "nrm" \
@@ -464,8 +467,8 @@ function get-name-lines() {
         "Somali" "so" \
         "Sorbian_Lower" "dsb" \
         "Sorbian_Upper" "hsb" \
-        "Sotho" "st" \
         "Sotho_North" "nso" \
+        "Sotho" "st" \
         "Spanish" "es" \
         "Sundanese" "su" \
         "Surinamese" "srn" \
