@@ -89,10 +89,10 @@ function normalise-name() {
     local P_CASTLE="[CcGgKk]a[i]*[sz][lt][ei]*[aál][il]*[eoulmn]*[a]*\|[Cc]h[aâ]teau\|Dvorac\|[Kk]alesi\|Z[aá]m[aeo][gk][y]*"
     local P_CATHEDRAL="[CcKk]at[h]*[eé]dr[ai][kl][aeoó]*[s]*"
     local P_CITY="[CcSs]\(ee\|i\)[tṭ]\+[aàeiy]\|Nagara\|Oraș\(ul\)*\|Śahara\|Sich’i\|[Ss]tadt"
-    local P_COMMUNE="[Cc]om[m]*un[ae]\|[Kk]özség"
+    local P_COMMUNE="[CcKk]om[m]*un[ae]*\|[Kk]özség"
     local P_COUNCIL="[Cc]o[u]*n[cs][ei]l[l]*\(iul\)\|[Cc]omhairle"
     local P_COUNTRY="[Nn]egeri"
-    local P_COUNTY="[Cc]ounty\|Landgra[a]*fs\(cha\(ft\|p\)\|tvo\)"
+    local P_COUNTY="[Cc]o[u]*[mn]t\(a\(do\|t\)\|y\)\|Landgra[a]*fs\(cha\(ft\|p\)\|tvo\)"
     local P_DEPARTMENT="[DdḌḍ][eéi]p[’]*[aā][i]*r[tṭ][’]*[aei]*m[aeēi][e]*[nṇ]*[gtṭ]*[’]*\(as\|i\|o\|u\(l\|va\)*\)*\|Ilākhe\|Penbiran\|Tuṟai\|Vibhaaga\|Zhang Wàt"
     local P_DESERT="Anapat\|[Aa]nialwch\|Çölü\|[Dd][i]*[eè]*[sșz][iy]*er[tz]\(h\|o\|ul\)*\|Eḍāri\|Gaineamhh\|Gurun\|Hoang\|Maru[bs]h\(tal\|ūmi\)\|[Mm]ortua\|Pālaivaṉam\|Pustynia\|Raṇa\|Sa[bm]ak[u]*\|Se wedhi\|shāmò\|Tá Laēy Saāi\|Vaalvnt"
     local P_DIOCESE="[Dd]io[eít][cks][eēi][sz][eēi]*[s]*"
@@ -104,7 +104,7 @@ function normalise-name() {
     local P_KINGDOM="guó\|[Kk][eoö]ni[n]*[gk]r[e]*[iy][cej]*[hk]\|K[io]ng[e]*d[oø]m\(met\)*\|[Kk]irályság\|[Kk][o]*r[oa]l\(ev\)*stvo\|Ōkoku\|[Rr]egatul\|[Rr][eo][giy][an][eolu][m]*[e]*\|[Rr]īce\|[Tt]eyrnas"
     local P_LAKE="Gölü\|[Ll]a\(c\|cul\|go\|ke\)\|[Nn][uú][u]*r\|[Oo]zero"
     local P_LANGUAGE="[Bb][h]*[aā][a]*[sṣ][h]*[aā][a]*\|[Ll][l]*[aeií][mn][g]*[buv]*[ao]\(ge\)*"
-    local P_MOUNTAIN="[GgHh][ao]ra\|[Mm][ouū][u]*nt[aei]*\([gi]*[ln][e]*\)*\|[Pp]arvata[ṁ]*\|San"
+    local P_MOUNTAIN="\([Gg]e\)*[Bb]i[e]*rge[r]*\|[Dd]ağları\|[GgHh][ao]ra\|Ǧibāl\|[Mm][ouū][u]*n[tț[[aei]*\([gi]*[ln][es]\|ii\|s\)*\|[Pp]arvata[ṁ]*\|[Ss]hānmài"
     local P_MONASTERY="[Kk]l[aáo][o]*[sš]ter\(is\)*\|[Mm][ăo]n[aăe]st[eèiy]r\(e[a]*\|i\|io[a]*\|o\|y\)*\|[Mm]onaĥejo\|[Mm]osteiro\|[Ss]hu[u]*dōin"
     local P_MUNICIPIUM="[Bb]elediyesi\|Chibang Chach’ije\|Chū-tī\|Đô thị tự trị\|[Kk]ong-[Ss]iā\|[Kk]otamadya\|[Mm]eūang\|[Mm][y]*un[i]*[t]*[cs]ip[’]*\([aā]*l[i]*[dtṭ][’]*\(a[ds]\|é\|et’i\|[iī]\|y\)\|i[ou][lm]*\)\|[Nn]agara [Ss]abhāva\|[Nn]a[gk][a]*r[aā]\(pālika\|ṭci\)\|[Pp]ašvaldība\|[Pp][a]*urasabh[āe]\|[Ss]avivaldybė"
     local P_MUNICIPALITY="Bwrdeistref\|D[ḗií]mos\|O[bp]\([čš]\|s[hj]\)[t]*ina"
@@ -138,6 +138,8 @@ function normalise-name() {
             -e 's/^\s*//g' \
             -e 's/\s*$//g' \
             -e 's/^ẖ/H̱/g' \
+            \
+            -e 's/ AG$//g' \
             \
             -e 's/P‍/P/g' \
             -e 's/T‍/T/g' \
