@@ -439,7 +439,7 @@ validateHoi4Parentage "HOI4"
 validateHoi4Parentage "HOI4TGW"
 
 # Validate default localisations
-#checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"/*.csv
+checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
@@ -458,7 +458,8 @@ checkDefaultIrLocalisations  "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
 # Find redundant names
 findRedundantNames "Albanian" "Albanian_Medieval"
 findRedundantNames "Alemannic" "Alemannic_Medieval"
-findRedundantNames "Arabic" "Arabic_Medieval"
+findRedundantNames "Arabic" "Arabic_Classical"
+findRedundantNames "Arabic" "Egyptian_Arabic"
 findRedundantNames "Armenian" "Armenian_Middle"
 findRedundantNames "Asturian" "Asturian_Medieval"
 findRedundantNames "Bashkir" "Bashkir_Medieval"
