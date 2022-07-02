@@ -133,7 +133,7 @@ build-edition \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tba_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
-    "tfe-more-cultural-names" "The Fallen Eagle: More Cultural Names" \
+    "tfe-more-cultural-names" "The Fallen Eagle - More Cultural Names" \
     "CK3TFE" "1.5.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
