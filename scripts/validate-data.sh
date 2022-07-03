@@ -57,9 +57,8 @@ function checkForMismatchingLanguageLinks() {
 }
 
 function checkForMissingCkLocationLinks() {
-    local GAME="${1}"
-    local VANILLA_FILE="${2}"
-    local LOCALISATIONS_FILE="${3}"
+    local GAME="${1}" && shift
+    local VANILLA_FILE="${1}" && shift
 
     for TITLE_ID in $(diff \
                         <(getGameIds "${GAME}") \
@@ -82,8 +81,8 @@ function checkForMissingCkLocationLinks() {
             echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-        elif [ -n "${LOCALISATIONS_FILE}" ]; then
-            LOCATION_DEFAULT_NAME=$(tac "${LOCALISATIONS_FILE}" | grep "^ *${TITLE_ID}:" | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
+        elif [ -n "${1}" ]; then
+            LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
             LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
             LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
 
@@ -148,14 +147,13 @@ function checkForSurplusIrLocationLinks() {
 }
 
 function checkForMismatchingLocationLinks() {
-    local GAME="${1}"
-    local VANILLA_FILE="${2}"
-    local LOCALISATIONS_FILE="${3}"
+    local GAME="${1}" && shift
+    local VANILLA_FILE="${1}" && shift
 
     [ ! -f "${VANILLA_FILE}" ] && return
 
     if [[ ${GAME} == CK* ]]; then
-        checkForMissingCkLocationLinks "${GAME}" "${VANILLA_FILE}" "${LOCALISATIONS_FILE}"
+        checkForMissingCkLocationLinks "${GAME}" "${VANILLA_FILE}" "${@}"
         checkForSurplusCkLocationLinks "${GAME}" "${VANILLA_FILE}"
     elif [[ ${GAME} == IR* ]]; then
         checkForSurplusIrLocationLinks "${GAME}" "${VANILLA_FILE}"
@@ -423,6 +421,7 @@ checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 #checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"
+#checkForMismatchingLocationLinks "CK3AE"    "${CK3AE_VANILLA_LANDED_TITLES_FILE}" "${CK3AE_LOCALISATIONS_DIR}"/ae_*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"
 checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
@@ -444,6 +443,7 @@ validateHoi4Parentage "HOI4TGW"
 checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3AE"    "${CK3AE_LOCALISATIONS_DIR}"/ae_*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
 checkDefaultCk3Localisations "CK3CMH"   "${CK3CMH_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"

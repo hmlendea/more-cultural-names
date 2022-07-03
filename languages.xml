@@ -868,12 +868,12 @@
       <GameId game="CK2HIP">sicilian_arabic</GameId>
       <GameId game="CK2HIP">yemeni</GameId>
       <GameId game="CK3">andalusian</GameId>
-      <GameId game="CK3AE">andalusian</GameId>
       <GameId game="CK3">bedouin</GameId>
-      <GameId game="CK3AE">bedouin</GameId>
       <GameId game="CK3">levantine</GameId>
-      <GameId game="CK3AE">levantine</GameId>
+      <GameId game="CK3AE">andalusian</GameId>
       <GameId game="CK3">yemeni</GameId>
+      <GameId game="CK3AE">bedouin</GameId>
+      <GameId game="CK3AE">levantine</GameId>
       <GameId game="CK3AE">yemeni</GameId>
       <GameId game="CK3CMH">andalusian</GameId>
       <GameId game="CK3CMH">bedouin</GameId>
@@ -5139,8 +5139,8 @@
       <GameId game="CK2">cuman</GameId>
       <GameId game="CK2HIP">cuman</GameId>
       <GameId game="CK3">cuman</GameId>
-      <GameId game="CK3AE">cuman</GameId>
       <GameId game="CK3">kipchak</GameId>
+      <GameId game="CK3AE">cuman</GameId>
       <GameId game="CK3AE">kipchak</GameId> <!-- TODO: Maybe a language of its own -->
       <GameId game="CK3CMH">cuman</GameId>
       <GameId game="CK3CMH">kipchak</GameId>
@@ -29052,6 +29052,23 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Mon</Id>
+    <Code iso-639-3="mnw" />
+    <FallbackLanguages>
+      <LanguageId>Mon_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Mon_Old</Id>
+    <Code iso-639-3="omx" />
+    <GameIds>
+      <GameId game="CK3AE">mon</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Mon</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Monegasque</Id>
     <FallbackLanguages>
       <LanguageId>Ligurian</LanguageId>
@@ -42563,10 +42580,10 @@
       <GameId game="CK2HIP">croatian</GameId>
       <GameId game="CK2HIP">serbian</GameId>
       <GameId game="CK3">bosnian</GameId>
-      <GameId game="CK3AE">bosnian</GameId>
       <GameId game="CK3">croatian</GameId>
-      <GameId game="CK3AE">croatian</GameId>
       <GameId game="CK3">serbian</GameId>
+      <GameId game="CK3AE">bosnian</GameId>
+      <GameId game="CK3AE">croatian</GameId>
       <GameId game="CK3AE">serbian</GameId>
       <GameId game="CK3CMH">bosnian</GameId>
       <GameId game="CK3CMH">croatian</GameId>
@@ -45465,10 +45482,10 @@
       <GameId game="CK2HIP">bodpa</GameId>
       <GameId game="CK2HIP">sumpa</GameId>
       <GameId game="CK3">bodpa</GameId>
-      <GameId game="CK3AE">bodpa</GameId>
       <GameId game="CK3">sumpa</GameId>
-      <GameId game="CK3AE">sumpa</GameId>
       <GameId game="CK3">tsangpa</GameId>
+      <GameId game="CK3AE">bodpa</GameId>
+      <GameId game="CK3AE">sumpa</GameId>
       <GameId game="CK3AE">tsangpa</GameId>
       <GameId game="CK3CMH">bodpa</GameId>
       <GameId game="CK3CMH">sumpa</GameId>
