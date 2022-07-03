@@ -108,6 +108,8 @@ function getIrCultures() {
             sed 's/}\s*%NL%\(\s*\)\"/},%NL%\1\"/g' | \
             sed 's/%NL%/ /g' | \
             sed 's/},\s*$/}/g' | \
+            sed 's/\"rgb\s*{\s*\([0-9][0-9]*\s\s*[0-9][0-9]*\s\s*[0-9][0-9]*\)\s*\"}/\"rgb {\1}\"/g' | \
+            sed 's/\s\s*/ /g' | \
             jq)
 
         CULTURE_GROUP_ID=$(echo "${CULTURE_FILE_JSON}" | jq -r 'keys[0]')
