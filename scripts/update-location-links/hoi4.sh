@@ -92,23 +92,30 @@ function getCities() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR="${2}"
     local CWD="$(pwd)"
-    local OUTPUT_FILE="${REPO_DIR}/${GAME_ID}_cities.txt"
 
-    echo "" > "${OUTPUT_FILE}"
+    local PARENTS_OUTPUT_FILE="${REPO_DIR}/${GAME_ID}_parents.txt"
+    local CITIES_OUTPUT_FILE="${REPO_DIR}/${GAME_ID}_cities.txt"
+
+    if [ ! -f "${PARENTS_OUTPUT_FILE}" ]; then
+        echo "The parents file is missing: ${PARENTS_OUTPUT_FILE}"
+        return
+    fi
+
+    echo "" > "${CITIES_OUTPUT_FILE}"
 
     cd "${LOCALISATIONS_DIR}"
     for CITY_ID in $(find . -name "*victory_points_l_english.yml" | xargs cat | \
                         grep "^\s*VICTORY.*" | \
                         sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
                         sort -h | uniq); do
-        local STATE_ID=$(grep "^${CITY_ID}=" "${REPO_DIR}/${GAME_ID}_parents.txt" | awk -F = '{print $2}')
+        local STATE_ID=$(grep "^${CITY_ID}=" "${PARENTS_OUTPUT_FILE}" | awk -F = '{print $2}')
         local CITY_NAME=$(getCityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
 
         #echo "Province #${CITY_ID}: State=#${STATE_ID} Name='${CITY_NAME}'"
         if grep "<GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | grep "type=\"City\"" | grep -q ">${CITY_ID}<"; then
             sed -i 's/\(^\s*<GameId game=\"'"${GAME_ID}"'\" type=\"City\"\)\( parent=\"[^\"]*\"\)*>'"${CITY_ID}"'<.*/\1 parent=\"'"${STATE_ID}"'\">'"${CITY_ID}"'<\/GameId> <!-- '"${CITY_NAME}"' -->/g' "${LOCATIONS_FILE}"
         else
-            echo "      <GameId game=\"${GAME_ID}\" type=\"City\" parent=\"${STATE_ID}\">${CITY_ID}</GameId> <!-- ${CITY_NAME} -->" >> "${OUTPUT_FILE}"
+            echo "      <GameId game=\"${GAME_ID}\" type=\"City\" parent=\"${STATE_ID}\">${CITY_ID}</GameId> <!-- ${CITY_NAME} -->" >> "${CITIES_OUTPUT_FILE}"
 
             local LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
             local STATE_NAME=$(getStateName "${STATE_ID}" "${LOCALISATIONS_DIR}")

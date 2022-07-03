@@ -109,12 +109,12 @@ build-edition \
 
 build-edition \
     "cmh-more-cultural-names" "Community Mods for Historicity - More Cultural Names" \
-    "CK3CMH" "1.5.*" \
+    "CK3CMH" "1.6.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
     "ibl-more-cultural-names" "Ibn Battuta's Legacy 2 - More Cultural Names" \
-    "CK3IBL" "1.5.*" \
+    "CK3IBL" "1.6.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
@@ -133,7 +133,7 @@ build-edition \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tba_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
-    "tfe-more-cultural-names" "The Fallen Eagle: More Cultural Names" \
+    "tfe-more-cultural-names" "The Fallen Eagle - More Cultural Names" \
     "CK3TFE" "1.5.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 

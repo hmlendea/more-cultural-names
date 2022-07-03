@@ -21,27 +21,46 @@ while true; do
        [ "${1}" == "--gn" ]; then
         GEONAMES_ENABLED=true && shift
         GEONAMES_ID="${1}" && shift
-        GEONAMES_ENDPOINT="${GEONAMES_API_URL}/get?username=${GEONAMES_USERNAME}&geonameId=${GEONAMES_ID}"
     elif [ "${1}" == "--wikidataid" ] || \
          [ "${1}" == "--wikidata" ] || \
          [ "${1}" == "--wdid" ] || \
          [ "${1}" == "--wd" ]; then
         WIKIDATA_ENABLED=true && shift
         WIKIDATA_ID="${1}" && shift
-        WIKIDATA_ENDPOINT="${WIKIDATA_API_URL}/wiki/Special:EntityData/${WIKIDATA_ID}.json"
     else
         break
     fi
 done
 
-if ${GEONAMES_ENABLED}; then
-    echo "Fetching ${GEONAMES_ENDPOINT}..."
-    GEONAMES_DATA=$(curl -s "${GEONAMES_ENDPOINT}" | perl -p0e 's/\r*//g' | perl -p0e 's/\n/%NL%/g')
-fi
-
 if ${WIKIDATA_ENABLED}; then
+    WIKIDATA_ENDPOINT="${WIKIDATA_API_URL}/wiki/Special:EntityData/${WIKIDATA_ID}.json"
     echo "Fetching ${WIKIDATA_ENDPOINT}..."
     WIKIDATA_DATA=$(curl -s "${WIKIDATA_ENDPOINT}")
+fi
+
+if ! ${GEONAMES_ENABLED} && ${WIKIDATA_ENABLED}; then
+    WIKIDATA_GEONAMES_IDS_COUNT=$(jq '.entities.'"${WIKIDATA_ID}"'.claims.P1566' <<< "${WIKIDATA_DATA}" | grep -c "external-id")
+
+    if [ "${WIKIDATA_GEONAMES_IDS_COUNT}" == "1" ]; then
+        GEONAMES_ENABLED=true
+        GEONAMES_ID=$(jq '.entities.'"${WIKIDATA_ID}"'.claims.P1566[0].mainsnak.datavalue.value' <<< "${WIKIDATA_DATA}" | sed 's/\"//g')
+    else
+        GEONAMES_SEARCH_ENDPOINT="${GEONAMES_API_URL}/searchJSON?username=${GEONAMES_USERNAME}&q=${WIKIDATA_ID}"
+        echo "Fetching ${GEONAMES_SEARCH_ENDPOINT}..."
+        GEONAMES_SEARCH_RESPONSE=$(curl -s "${GEONAMES_SEARCH_ENDPOINT}")
+        GEONAMES_SEARCH_RESULTS_COUNT=$(jq '.totalResultsCount' <<< "${GEONAMES_SEARCH_RESPONSE}")
+
+        if [ "${GEONAMES_SEARCH_RESULTS_COUNT}" == "1" ]; then
+            GEONAMES_ENABLED=true
+            GEONAMES_ID=$(jq '.geonames[0].geonameId' <<< "${GEONAMES_SEARCH_RESPONSE}")
+        fi
+    fi
+fi
+
+if ${GEONAMES_ENABLED}; then
+    GEONAMES_ENDPOINT="${GEONAMES_API_URL}/get?username=${GEONAMES_USERNAME}&geonameId=${GEONAMES_ID}"
+    echo "Fetching ${GEONAMES_ENDPOINT}..."
+    GEONAMES_DATA=$(curl -s "${GEONAMES_ENDPOINT}" | perl -p0e 's/\r*//g' | perl -p0e 's/\n/%NL%/g')
 fi
 
 function get-name-from-geonames() {
@@ -328,6 +347,7 @@ function get-name-lines() {
         "German_Palatine" "pfl" \
         "German_Pennsylvania" "pdc" \
         "German" "de" \
+        "Greek_Ancient_Pontic" "pnt" \
         "Greek" "el" \
         "Greenlandic" "kl" \
         "Guarani" "gn" \
@@ -337,6 +357,7 @@ function get-name-lines() {
         "Hausa" "ha" \
         "Hawaiian" "haw" \
         "Hindi" "hi" \
+        "Hungarian_Old" "ohu" \
         "Hungarian" "hu" \
         "Icelandic" "is" \
         "Ido" "io" \
@@ -382,6 +403,7 @@ function get-name-lines() {
         "Livvi" "olo" \
         "Lojban" "jbo" \
         "Lombard" "lmo" \
+        "Luba-Katanga" "lu" \
         "Luganda" "lg" \
         "Luxembourgish" "lb" \
         "Macedonian_Slavic" "mk" \
@@ -399,6 +421,7 @@ function get-name-lines() {
         "Nahuatl" "nah" \
         "Nauru" "na" \
         "Navajo" "nv" \
+        "Ndebele_North" "nd" \
         "Neapolitan" "nap" \
         "Nias" "nia" \
         "Norman" "nrm" \
@@ -444,8 +467,8 @@ function get-name-lines() {
         "Somali" "so" \
         "Sorbian_Lower" "dsb" \
         "Sorbian_Upper" "hsb" \
-        "Sotho" "st" \
         "Sotho_North" "nso" \
+        "Sotho" "st" \
         "Spanish" "es" \
         "Sundanese" "su" \
         "Surinamese" "srn" \
