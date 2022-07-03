@@ -119,6 +119,11 @@ IR_CULTURES_DIR="${IR_DIR}/game/common/cultures"
 IR_LOCALISATIONS_DIR="${IR_DIR}/game/localization/english"
 IR_VANILLA_FILE="${VANILLA_FILES_DIR}/ir_province_names.yml"
 
+IR_ABW_DIR="${STEAM_WORKSHOP_IR_DIR}/1881249823"
+IR_ABW_CULTURES_DIR="${IR_ABW_DIR}/common/cultures"
+IR_ABW_LOCALISATIONS_DIR="${IR_ABW_DIR}/localization/english"
+IR_ABW_VANILLA_FILE="${VANILLA_FILES_DIR}/irabw_province_names.yml"
+
 IR_AoE_DIR="${STEAM_WORKSHOP_IR_DIR}/2578689167"
 IR_AoE_CULTURES_DIR="${IR_AoE_DIR}/common/cultures"
 IR_AoE_LOCALISATIONS_DIR="${IR_AoE_DIR}/localization/english"

@@ -155,6 +155,10 @@ build-edition \
     "IR" "2.0.*"
 
 build-edition \
+    "abw-more-cultural-names" "A Broken World: More Cultural Names" \
+    "IR_ABW" "2.0.*"
+
+build-edition \
     "aoe-more-cultural-names" "Ashes of Empire: More Cultural Names" \
     "IR_AoE" "2.0.*"
 

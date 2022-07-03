@@ -94,35 +94,38 @@ function getIrCultures() {
             sed 's/\([a-zA-Z_0-9-]*\)\s*=/\"\1\"=/g' | \
             sed 's/=\s*\([a-zA-Z0-9][^}]*\)/=\"\1\"/g' | \
             sed 's/\s*=\s*/:/g' | \
-            sed 's/^}/}\n}/g' | \
-            sed 's/^\"/{\n\"/g' | \
             sed 's/\"\s*$/\",/g' | \
             grep -v "hsv\s*{" | \
             grep -v "^[^{}\:]*$" | \
             sed 's/}/},/g' | \
             sed 's/\t/    /g' | \
+            sed '1 i {' | \
+            sed -e '$a}' | \
             perl -p0e 's/\n/%NL%/g' | \
+            sed 's/\"rgb\s*{\s*\([0-9][0-9]*\s\s*[0-9][0-9]*\s\s*[0-9][0-9]*\)\s*\"}/\"rgb {\1}\"/g' | \
             sed 's/{\s*[^\"}]*}/{}/g' | \
             sed 's/\([}\"]\),\s*%NL%\(\s*\)}/\1%NL%\2}/g' | \
             sed 's/\([}\"]\),\s*%NL%\(\s*\)}/\1%NL%\2}/g' | \
             sed 's/}\s*%NL%\(\s*\)\"/},%NL%\1\"/g' | \
             sed 's/%NL%/ /g' | \
             sed 's/},\s*$/}/g' | \
+            sed 's/\s\s*/ /g' |
             jq)
 
-        CULTURE_GROUP_ID=$(echo "${CULTURE_FILE_JSON}" | jq -r 'keys[0]')
-
-        #echo "  ### Culture group: ${CULTURE_GROUP_ID}"
-
-        for CULTURE_ID in $(echo "${CULTURE_FILE_JSON}" | \
-                                jq ".${CULTURE_GROUP_ID}"'.culture' | \
-                                jq 'keys' | \
-                                grep "^\s*\"" | \
-                                sed 's/^\s*\"\([^\"]*\).*/\1/g'); do
-
-            if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
-                echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
-            fi
+        for CULTURE_GROUP_ID in $(jq -r 'keys' <<< "${CULTURE_FILE_JSON}" | \
+                                    grep "\"" | \
+                                    sed \
+                                        -e 's/^\s*//' \
+                                        -e 's/[,\"]//g'); do
+            for CULTURE_ID in $(echo "${CULTURE_FILE_JSON}" | \
+                                    jq ".${CULTURE_GROUP_ID}"'.culture' | \
+                                    jq 'keys' | \
+                                    grep "^\s*\"" | \
+                                    sed 's/^\s*\"\([^\"]*\).*/\1/g'); do
+                if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
+                    echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
+                fi
+            done
         done
     done | sort | uniq
 }
@@ -142,6 +145,7 @@ echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS
 echo "Hearts of Iron 4 MDM:"    && getHoi4Countries     "HOI4MDM"   "${HOI4MDM_TAGS_DIR}" "${HOI4MDM_LOCALISATIONS_DIR}"
 echo "Hearts of Iron 4 TGW:"    && getHoi4Countries     "HOI4TGW"   "${HOI4TGW_TAGS_DIR}" "${HOI4TGW_LOCALISATIONS_DIR}"
 echo "Imperator Rome:"          && getIrCultures        "IR"        "${IR_CULTURES_DIR}"
+echo "Imperator Rome ABW:"      && getIrCultures        "IR_ABW"    "${IR_ABW_CULTURES_DIR}"
 echo "Imperator Rome AoE:"      && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"
 echo "Imperator Rome INV:"      && getIrCultures        "IR_INV"    "${IR_INV_CULTURES_DIR}"
 echo "Imperator Rome TBA:"      && getIrCultures        "IR_TBA"    "${IR_TBA_CULTURES_DIR}"
