@@ -81,6 +81,31 @@ jobs:
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "more-cultural-names.zip"
 
+  release-ck3ae:
+    name: Release (CK3AE)
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Download the release asset
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_CK3AE_${GITHUB_REF:11}.zip" -O "ae-more-cultural-names.zip"
+
+    - name: Upload
+      uses: greatness7/nexusmods_file_updater@v2
+      with:
+        username: ${{secrets.NEXUS_UPLOADER1_USERNAME}}
+        password: ${{secrets.NEXUS_UPLOADER1_PASSWORD}}
+        game_domain_name: "crusaderkings3"
+        mod_id: "30"
+        file_name: "ae-more-cultural-names"
+        file_version: ${{github.ref_name}}
+        update_version: true
+        new_existing_version: true
+        original_file: "ae-more-cultural-names.*"
+        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        file_path: "ae-more-cultural-names.zip"
+
   release-ck3cmh:
     name: Release (CK3CMH)
     runs-on: ubuntu-latest
