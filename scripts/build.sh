@@ -103,6 +103,11 @@ build-edition \
     --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
 
 build-edition \
+    "ae-more-cultural-names" "Asia Expansion - More Cultural Names" \
+    "CK3AE" "1.6.*" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3ae_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+
+build-edition \
     "atha-more-cultural-names" "Apotheosis: More Cultural Names" \
     "CK3ATHA" "1.6.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
