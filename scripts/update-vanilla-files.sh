@@ -34,6 +34,31 @@ function update-vanilla-files() {
     sed -i 's/﻿/\n/g' "${TARGET_FILE}"
 }
 
+function update-hoi4-parentage-file() {
+    local TARGET_FILE="${1}"
+    local STATES_DIR="${2}"
+
+    if [ -f "${TARGET_FILE}" ]; then
+        rm "${TARGET_FILE}"
+        touch "${TARGET_FILE}"
+    fi
+
+    for FILE in "${STATES_DIR}"/*.txt ; do
+        local STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
+
+        PROVINCE_LIST=$(cat "${FILE}" | \
+            sed 's/\r//g' | \
+            tr '\n' ' ' | \
+            sed 's/\s\s*/ /g' | \
+            sed 's/.*provinces\s*=\s*{\([^}]*\).*/\1/g' | \
+            sed 's/\(^\s*\|\s*$\)//g')
+
+        for PROVINCE_ID in ${PROVINCE_LIST}; do
+            [[ -n "${PROVINCE_LIST// }" ]] && echo "${PROVINCE_ID}=${STATE_ID}" >> "${TARGET_FILE}"
+        done
+    done
+}
+
 update-vanilla-file \
     "${CK2_DIR}/common/landed_titles/landed_titles.txt" \
     "${CK2_VANILLA_LANDED_TITLES_FILE}"
@@ -75,6 +100,15 @@ update-vanilla-file \
 update-vanilla-file \
     "${CK3TFE_DIR}/common/landed_titles/00_landed_titles.txt" \
     "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
+update-hoi4-parentage-file \
+    "${HOI4_VANILLA_PARENTAGE_FILE}" \
+    "${HOI4_STATES_DIR}"
+update-hoi4-parentage-file \
+    "${HOI4MDM_VANILLA_PARENTAGE_FILE}" \
+    "${HOI4MDM_STATES_DIR}"
+update-hoi4-parentage-file \
+    "${HOI4TGW_VANILLA_PARENTAGE_FILE}" \
+    "${HOI4TGW_STATES_DIR}"
 update-vanilla-file \
     "${IR_LOCALISATIONS_DIR}/provincenames_l_english.yml" \
     "${IR_VANILLA_FILE}"

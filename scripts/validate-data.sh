@@ -1,6 +1,7 @@
 #!/bin/bash
 source "scripts/common/paths.sh"
 source "scripts/common/name_normalisation.sh"
+source "scripts/common/hoi4.sh"
 
 LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
@@ -251,12 +252,27 @@ function checkDefaultIrLocalisations() {
 
 function validateHoi4Parentage() {
     local GAME_ID="${1}"
+    local VANILLA_PARENTAGE_FILE="${2}"
+    local LOCALISATIONS_DIR="${3}"
+
+    while IFS= read -r CITY_LINE; do
+        CITY_ID=$(sed 's/.*>\([0-9][0-9]*\)<\/GameId>.*/\1/g' <<< "${CITY_LINE}")
+        ACTUAL_STATE_ID=$(sed 's/.*parent=\"\([^\"]*\).*/\1/g' <<< "${CITY_LINE}")
+        EXPECTED_STATE_ID=$(grep "^${CITY_ID}=" "${VANILLA_PARENTAGE_FILE}" | head -n 1 | awk -F'=' '{print $2}')
+
+        if [ "${ACTUAL_STATE_ID}" != "${EXPECTED_STATE_ID}" ]; then
+            local CITY_NAME=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
+            local STATE_NAME=$(getHoi4StateName "${EXPECTED_STATE_ID}" "${LOCALISATIONS_DIR}")
+
+            echo "${GAME_ID}: City ${CITY_ID} (${CITY_NAME}) is not linked to the correct state. Correct parent: ${EXPECTED_STATE_ID} (${STATE_NAME})"
+        fi
+    done < <(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}")
 
     for STATE_ID in $(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}" | \
                             sed 's/.*parent=\"\([^\"]*\).*/\1/g' | \
                             sort -g | uniq); do
         if ! grep -q "${GAME_ID}\" type=\"State\">${STATE_ID}<" "${LOCATIONS_FILE}"; then
-            echo "${GAME_ID}: State #${STATE_ID} is missing while there are cities referencing it"
+            echo "${GAME_ID}: State ${STATE_ID} is missing while there are cities referencing it"
         fi
     done
 }
@@ -436,8 +452,8 @@ checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
 
-validateHoi4Parentage "HOI4"
-validateHoi4Parentage "HOI4TGW"
+validateHoi4Parentage "HOI4"    "${HOI4_VANILLA_PARENTAGE_FILE}"    "${HOI4_LOCALISATIONS_DIR}"
+validateHoi4Parentage "HOI4TGW" "${HOI4TGW_VANILLA_PARENTAGE_FILE}" "${HOI4TGW_LOCALISATIONS_DIR}"
 
 # Validate default localisations
 #checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"/*.csv
