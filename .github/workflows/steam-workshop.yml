@@ -6,243 +6,52 @@ on:
     - 'v*.*.*'
 
 jobs:
-  release-ck2:
-    name: Release
+  release:
+    name: Release (${{ matrix.config.gameid }})
     runs-on: ubuntu-latest
 
+    strategy:
+      max-parallel: 1
+      matrix:
+        config:
+          - { mod_game_id: 'CK3', steam_app_id: '1158310', steam_item_id: '2217534250', mod_dir_name: 'more-cultural-names' }
+          - { mod_game_id: 'CK3AE', steam_app_id: '1158310', steam_item_id: '2830250537', mod_dir_name: 'ae-more-cultural-names' }
+          - { mod_game_id: 'CK3CMH', steam_app_id: '1158310', steam_item_id: '2813306520', mod_dir_name: 'cmh-more-cultural-names' }
+          - { mod_game_id: 'CK3IBL', steam_app_id: '1158310', steam_item_id: '2490281800', mod_dir_name: 'ibl-more-cultural-names' }
+          - { mod_game_id: 'CK3MBP', steam_app_id: '1158310', steam_item_id: '2630872947', mod_dir_name: 'mbp-more-cultural-names' }
+          - { mod_game_id: 'CK3SoW', steam_app_id: '1158310', steam_item_id: '2724606810', mod_dir_name: 'sow-more-cultural-names' }
+          - { mod_game_id: 'CK3TBA', steam_app_id: '1158310', steam_item_id: '2821052607', mod_dir_name: 'tba-more-cultural-names' }
+          - { mod_game_id: 'CK3TFE', steam_app_id: '1158310', steam_item_id: '2690444295', mod_dir_name: 'tfe-more-cultural-names' }
+          - { mod_game_id: 'HOI4', steam_app_id: '394360', steam_item_id: '2459257386', mod_dir_name: 'more-cultural-names' }
+          - { mod_game_id: 'HOI4MDM', steam_app_id: '394360', steam_item_id: '2826972160', mod_dir_name: 'mdm-more-cultural-names' }
+          - { mod_game_id: 'HOI4TGW', steam_app_id: '394360', steam_item_id: '2725885905', mod_dir_name: 'tgw-more-cultural-names' }
+          - { mod_game_id: 'IR', steam_app_id: '859580', steam_item_id: '2219177532', mod_dir_name: 'more-cultural-names' }
+          - { mod_game_id: 'IR_ABW', steam_app_id: '859580', steam_item_id: '2829772740', mod_dir_name: 'abw-more-cultural-names' }
+          - { mod_game_id: 'IR_AoE', steam_app_id: '859580', steam_item_id: '2753371253', mod_dir_name: 'aoe-more-cultural-names' }
+          - { mod_game_id: 'IR_INV', steam_app_id: '859580', steam_item_id: '2827761791', mod_dir_name: 'inv-more-cultural-names' }
+          - { mod_game_id: 'IR_TBA', steam_app_id: '859580', steam_item_id: '2827468261', mod_dir_name: 'tba-more-cultural-names' }
+
     steps:
-    - uses: actions/checkout@v1
-
-    - name: Preparing the release assets
+    - name: Prepare
       run: |
-        for GAME_ID in "CK2" "CK2HIP" "CK3" "CK3AE" "CK3CMH" "CK3IBL" "CK3MBP" "CK3SoW" "CK3TBA" "CK3TFE" "HOI4" "HOI4MDM" "HOI4TGW" "IR" "IR_ABW" "IR_AoE" "IR_INV" "IR_TBA"; do
-          mkdir "${GAME_ID}"
-          wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${GAME_ID}_${GITHUB_REF:11}.zip" -O "${GAME_ID}.zip"
-          unzip "${GAME_ID}.zip" -d "${GAME_ID}/"
-        done
-#        sed -i 's/^path\s*=.*/archive=\"more-cultural-names.zip\"/g' CK2/more-cultural-names.mod
-#        cp CK2/more-cultural-names.mod CK2/more-cultural-names/descriptor.mod
-#        cd CK2/more-cultural-names && zip -r more-cultural-names.zip . && cd -
-#        mv CK2/more-cultural-names/more-cultural-names.zip CK2/
-#        rm -rf CK2/more-cultural-names/
-#        sed -i 's/^path\s*=.*/archive=\"hip-more-cultural-names.zip\"/g' CK2HIP/hip-more-cultural-names.mod
-#        cp CK2HIP/hip-more-cultural-names.mod CK2HIP/hip-more-cultural-names/descriptor.mod
-#        cd CK2HIP/hip-more-cultural-names && zip -r hip-more-cultural-names.zip . && cd -
-#        mv CK2HIP/hip-more-cultural-names/hip-more-cultural-names.zip CK2HIP/
-#        rm -rf CK2HIP/hip-more-cultural-names/
-#
-#    - name: Crusader Kings 2
-#      uses: Weilbyte/steam-workshop-upload@v1
-#      with:
-#        appid: 203770
-#        itemid: 2243430163
-#        path: "CK2/"
-#        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-#      env:
-#        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-#        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-#        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-#
-#    - name: Crusader Kings 2 (HIP)
-#      uses: Weilbyte/steam-workshop-upload@v1
-#      with:
-#        appid: 203770
-#        itemid: 1175098675
-#        path: "CK2HIP/"
-#        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-#      env:
-#        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-#        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-#        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+          mkdir "${{matrix.config.mod_game_id}}"
+          wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${{matrix.config.mod_game_id}}_${GITHUB_REF:11}.zip" -O "${{matrix.config.mod_game_id}}.zip"
+          unzip "${{matrix.config.mod_game_id}}.zip" -d "${{matrix.config.mod_game_id}}/"
 
-    - name: Crusader Kings 3
+    - name: Upload
       uses: Weilbyte/steam-workshop-upload@v1
       with:
-        appid: 1158310
-        itemid: 2217534250
-        path: "CK3/more-cultural-names/"
+        appid: ${{matrix.config.steam_app_id}}
+        itemid: ${{matrix.config.steam_item_id}}
+        path: "${{matrix.config.mod_game_id}}/${{matrix.config.mod_dir_name}}/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
         STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
         STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
 
-    - name: Crusader Kings 3 (AE)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 1158310
-        itemid: 2830250537
-        path: "CK3AE/ae-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Crusader Kings 3 (CMH)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 1158310
-        itemid: 2813306520
-        path: "CK3CMH/cmh-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Crusader Kings 3 (IBL)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 1158310
-        itemid: 2490281800
-        path: "CK3IBL/ibl-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Crusader Kings 3 (MB+)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 1158310
-        itemid: 2630872947
-        path: "CK3MBP/mbp-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Crusader Kings 3 (SoW)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 1158310
-        itemid: 2724606810
-        path: "CK3SoW/sow-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Crusader Kings 3 (TBA)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 1158310
-        itemid: 2821052607
-        path: "CK3TBA/tba-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Crusader Kings 3 (TFE)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 1158310
-        itemid: 2690444295
-        path: "CK3TFE/tfe-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Hearts of Iron IV
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 394360
-        itemid: 2459257386
-        path: "HOI4/more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Hearts of Iron IV (MDM)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 394360
-        itemid: 2826972160
-        path: "HOI4MDM/mdm-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Hearts of Iron IV (TGW)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 394360
-        itemid: 2725885905
-        path: "HOI4TGW/tgw-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Imperator Rome
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 859580
-        itemid: 2219177532
-        path: "IR/more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Imperator Rome (ABW)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 859580
-        itemid: 2829772740
-        path: "IR_ABW/abw-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Imperator Rome (AoE)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 859580
-        itemid: 2753371253
-        path: "IR_AoE/aoe-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Imperator Rome (INV)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 859580
-        itemid: 2827761791
-        path: "IR_INV/inv-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
-
-    - name: Imperator Rome (TBA)
-      uses: Weilbyte/steam-workshop-upload@v1
-      with:
-        appid: 859580
-        itemid: 2827468261
-        path: "IR_TBA/tba-more-cultural-names/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
-      env:
-        STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
-        STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+    - name: Cooldown
+      run: |
+          COOLDOWN_LENGTH_SEC=30
+          echo "Sleeping for ${COOLDOWN_LENGTH_SEC} to avoid Steam authentication rate-limiting..."
+          sleep ${COOLDOWN_LENGTH_SEC}
