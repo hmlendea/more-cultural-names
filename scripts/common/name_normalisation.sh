@@ -79,8 +79,10 @@ function normalise-name() {
                     awk -F"/" '{print $1}' | \
                     awk -F"(" '{print $1}' | \
                     awk -F"," '{print $1}' | \
-                    sed 's/^\s*//g' | \
-                    sed 's/\s*$//g')
+                    sed \
+                        -e 's/\s*<alternateName .*$//g' \
+                        -e 's/^\s*//g' \
+                        -e 's/\s*$//g')
 
     local P_ABBEY="[AaOo][bp][abd]\([ae][z]*[iy][ae]*\|ij\|tstv[oí]\)\|Benediktinerabtei"
     local P_AGENCY="[Aa]gen[cț][ijy][a]*"
@@ -89,6 +91,7 @@ function normalise-name() {
     local P_CANTON="[CcKk][’]*[hy]*[aāe][i]*[nṇ][tṭ][’]*[aoóuū]n\(a\|i\|o\|s\|u[l]*\)*"
     local P_CASTLE="[CcGgKk]a[i]*[sz][lt][ei]*[aál][il]*[eoulmn]*[a]*\|[Cc]h[aâ]teau\|Dvorac\|[KkQq]al[ae]s[iı]\|Z[aá]m[aeo][gk][y]*"
     local P_CATHEDRAL="[CcKk]at[h]*[eé]dr[ai][kl][aeoó]*[s]*"
+    local P_CHURCH="[Bb]iserica\|[Cc]hiesa\|[Cc]hurch\|[Éé]glise\|[Ii]greja\|[Kk]yōkai"
     local P_CITY="[Cc]iud[aá][dt]*\|[CcSs]\(ee\|i\)[tṭ]\+[aàeiy]\|Nagara\|Oraș\(ul\)*\|Śahara\|Sich’i\|[Ss]tadt"
     local P_COMMUNE="[CcKk]om[m]*un[ae]*\|[Kk]özség"
     local P_COUNCIL="[Cc]o[u]*n[cs][ei]l[l]*\(iul\)\|[Cc]omhairle"
@@ -108,7 +111,7 @@ function normalise-name() {
     local P_LAKE="Gölü\|[Ll]a\(c\|cul\|go\|ke\)\|[Nn][uú][u]*r\|[Oo]zero"
     local P_LANGUAGE="[Bb][h]*[aā][a]*[sṣ][h]*[aā][a]*\|[Ll][l]*[aeií][mn][g]*[buv]*[ao]\(ge\)*"
     local P_MOUNTAIN="\([Gg]e\)*[Bb]i[e]*rge[r]*\|[Dd]ağları\|[GgHh][ao]ra\|Ǧibāl\|[Mm][ouū][u]*n[tț[[aei]*\([gi]*[ln][es]\|ii\|s\)*\|[Pp]arvata[ṁ]*\|[Ss]hānmài"
-    local P_MONASTERY="[Kk]l[aáo][o]*[sš]ter\(is\)*\|[Mm][ăo]n[aăe]st[eèiy]r\(e[a]*\|i\|io[a]*\|o\|y\)*\|[Mm]onaĥejo\|[Mm]osteiro\|[Ss]hu[u]*dōin"
+    local P_MONASTERY="[Kk]l[aáo][o]*[sš]t[eo]r\(is\)*\|\(\(R[eo][y]*al\|[BV]asilikó\) \)*[Mm][ăo]n[aăe]st[eèḗiíy]r\(e[a]*\|i\|io[a]*\|o\|y\)*\|[Mm]onaĥejo\|[Mm]osteiro\|[Ss]hu[u]*dōin"
     local P_MUNICIPIUM="[Bb]elediyesi\|Chibang Chach’ije\|Chū-tī\|Đô thị tự trị\|[Kk]ong-[Ss]iā\|[Kk]otamadya\|[Mm]eūang\|[Mm][y]*un[i]*[t]*[cs]ip[’]*\([aā]*l[i]*[dtṭ][’]*\(a[ds]\|é\|et’i\|[iī]\|y\)\|i[ou][lm]*\)\|[Nn]agara [Ss]abhāva\|[Nn]a[gk][a]*r[aā]\(pālika\|ṭci\)\|[Pp]ašvaldība\|[Pp][a]*urasabh[āe]\|[Ss]avivaldybė"
     local P_MUNICIPALITY="Bwrdeistref\|D[ḗií]mos\|O[bp]\([čš]\|s[hj]\)[t]*ina"
     local P_NATIONAL_PARK="[Nn]ational [Pp]ark\|Par[cq]u[el] Na[ctț]ional\|[Vv]ườn [Qq]uốc"
@@ -128,7 +131,7 @@ function normalise-name() {
 
     local P_OF="\([AaĀā]p[h]*[a]*\|[Dd]\|[Dd][aeio][ls]*\|gia\|[Oo]f\|[Mm]ạc\|ng\|[Tt]a\|t[ēi]s\|[Tt]o[uy]\|van\|w\|[Yy]r\)[ \'\"’']"
 
-    local COMMON_PATTERNS="${P_ABBEY}\|${P_AGENCY}\|${P_ANCIENT}\|${P_AUTONOMOUS_GOVERNMENT}\|${P_CANTON}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CITY}\|${P_COMMUNE}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_COUNTY}\|${P_DESERT}\|${P_DEPARTMENT}\|${P_DIOCESE}\|${P_DISTRICT}\|${P_DUCHY}\|${P_EMIRATE}\|${P_FORT}\|${P_GMINA}\|${P_HUNDRED}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_LANGUAGE}\|${P_MONASTERY}\|${P_MOUNTAIN}\|${P_MUNICIPIUM}\|${P_MUNICIPALITY}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PLATEAU}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TEMPLE}\|${P_TOWNSHIP}\|${P_UNIVERSITY}\|${P_VOIVODESHIP}"
+    local COMMON_PATTERNS="${P_ABBEY}\|${P_AGENCY}\|${P_ANCIENT}\|${P_AUTONOMOUS_GOVERNMENT}\|${P_CANTON}\|${P_CASTLE}\|${P_CATHEDRAL}\|${P_CHURCH}\|${P_CITY}\|${P_COMMUNE}\|${P_COUNCIL}\|${P_COUNTRY}\|${P_COUNTY}\|${P_DESERT}\|${P_DEPARTMENT}\|${P_DIOCESE}\|${P_DISTRICT}\|${P_DUCHY}\|${P_EMIRATE}\|${P_FORT}\|${P_GMINA}\|${P_HUNDRED}\|${P_ISLAND}\|${P_KINGDOM}\|${P_LAKE}\|${P_LANGUAGE}\|${P_MONASTERY}\|${P_MOUNTAIN}\|${P_MUNICIPIUM}\|${P_MUNICIPALITY}\|${P_NATIONAL_PARK}\|${P_OASIS}\|${P_PENINSULA}\|${P_PLATEAU}\|${P_PREFECTURE}\|${P_PROVINCE}\|${P_REGION}\|${P_REPUBLIC}\|${P_RUIN}\|${P_STATE}\|${P_TEMPLE}\|${P_TOWNSHIP}\|${P_UNIVERSITY}\|${P_VOIVODESHIP}"
 
     local TRANSLITERATED_NAME=$(transliterate-name "${LANGUAGE_CODE}" "${NAME}")
     local NORMALISED_NAME=$(echo "${TRANSLITERATED_NAME}" | \
@@ -185,22 +188,25 @@ function normalise-name() {
 
 function nameToLocationId() {
     local NAME="${1}"
+    local LOCATION_ID=""
 
-    local LOCATION_ID=$(echo "${NAME}" | sed \
+    LOCATION_ID=$(echo "${NAME}" | sed \
             -e 's/æ/ae/g' \
             -e 's/\([ČčŠšŽž]\)/\1h/g' \
             -e 's/[Ǧǧ]/j/g' | \
         iconv -f utf8 -t ascii//TRANSLIT | \
-        tr '[:upper:]' '[:lower:]' | \
-        sed \
+        tr '[:upper:]' '[:lower:]')
+
+    LOCATION_ID=$(echo "${LOCATION_ID}" | sed \
             -e 's/ /_/g' \
-            -e 's/'\''/-/g'
-            -e 's/^-*//g' | \
-            -e 's/-*$//g' | \
-            -e 's/-\+/-/g' | \
-        sed 's/central/centre/g' | \
-        sed 's/\(north\|west\|south\|east\)ern/\1/g' | \
-        sed \
+            -e 's/'"\'"'/-/g' \
+            -e 's/^-*//g' \
+            -e 's/-*$//g' \
+            -e 's/-\+/-/g' \
+            \
+            -e 's/central/centre/g' \
+            -e 's/\(north\|west\|south\|east\)ern/\1/g' \
+            \
             -e 's/borealis/north/g' \
             -e 's/occidentalis/west/g' \
             -e 's/australis/south/g' \
