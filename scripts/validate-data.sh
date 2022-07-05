@@ -77,13 +77,13 @@ function checkForMissingCkLocationLinks() {
                         ) | \
                         grep "^>" | sed 's/^> //g'); do
         LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${TITLE_ID}")
+        LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
 
         if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
-            echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
-            echo "    > ${GAME}: ${TITLE_ID} is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            echo "    > ${GAME}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif [ -n "${1}" ]; then
-            LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
             LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
             LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
 
@@ -453,6 +453,7 @@ checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
 
 validateHoi4Parentage "HOI4"    "${HOI4_VANILLA_PARENTAGE_FILE}"    "${HOI4_LOCALISATIONS_DIR}"
+#validateHoi4Parentage "HOI4MDM" "${HOI4MDM_VANILLA_PARENTAGE_FILE}" "${HOI4MDM_LOCALISATIONS_DIR}"
 validateHoi4Parentage "HOI4TGW" "${HOI4TGW_VANILLA_PARENTAGE_FILE}" "${HOI4TGW_LOCALISATIONS_DIR}"
 
 # Validate default localisations
