@@ -176,7 +176,7 @@ function checkDefaultCk2Localisations() {
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
                                     tac "${@}" | \
-                                    grep -a "^[ekdcb]_" | \
+                                    grep -a "^[ekdb]_" | \
                                     grep -a -v ".*_adj_.*" | \
                                     awk -F";" '!seen[$1]++' | \
                                     awk -F";" '{print $1"="$2}' | \

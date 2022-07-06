@@ -81,6 +81,7 @@ function normalise-name() {
                     awk -F"," '{print $1}' | \
                     sed \
                         -e 's/\s*<alternateName .*$//g' \
+                        -e 's/[…]//g' \
                         -e 's/^\s*//g' \
                         -e 's/\s*$//g')
 
