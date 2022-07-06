@@ -7,29 +7,29 @@ on:
 
 jobs:
   release:
-    name: Release (${{ matrix.config.gameid }})
+    name: Release (${{matrix.config.mod_game_id}})
     runs-on: ubuntu-latest
 
     strategy:
       max-parallel: 1
       matrix:
         config:
-          - { mod_game_id: 'CK3', steam_app_id: '1158310', steam_item_id: '2217534250', mod_dir_name: 'more-cultural-names' }
-          - { mod_game_id: 'CK3AE', steam_app_id: '1158310', steam_item_id: '2830250537', mod_dir_name: 'ae-more-cultural-names' }
-          - { mod_game_id: 'CK3CMH', steam_app_id: '1158310', steam_item_id: '2813306520', mod_dir_name: 'cmh-more-cultural-names' }
-          - { mod_game_id: 'CK3IBL', steam_app_id: '1158310', steam_item_id: '2490281800', mod_dir_name: 'ibl-more-cultural-names' }
-          - { mod_game_id: 'CK3MBP', steam_app_id: '1158310', steam_item_id: '2630872947', mod_dir_name: 'mbp-more-cultural-names' }
-          - { mod_game_id: 'CK3SoW', steam_app_id: '1158310', steam_item_id: '2724606810', mod_dir_name: 'sow-more-cultural-names' }
-          - { mod_game_id: 'CK3TBA', steam_app_id: '1158310', steam_item_id: '2821052607', mod_dir_name: 'tba-more-cultural-names' }
-          - { mod_game_id: 'CK3TFE', steam_app_id: '1158310', steam_item_id: '2690444295', mod_dir_name: 'tfe-more-cultural-names' }
-          - { mod_game_id: 'HOI4', steam_app_id: '394360', steam_item_id: '2459257386', mod_dir_name: 'more-cultural-names' }
-          - { mod_game_id: 'HOI4MDM', steam_app_id: '394360', steam_item_id: '2826972160', mod_dir_name: 'mdm-more-cultural-names' }
-          - { mod_game_id: 'HOI4TGW', steam_app_id: '394360', steam_item_id: '2725885905', mod_dir_name: 'tgw-more-cultural-names' }
-          - { mod_game_id: 'IR', steam_app_id: '859580', steam_item_id: '2219177532', mod_dir_name: 'more-cultural-names' }
-          - { mod_game_id: 'IR_ABW', steam_app_id: '859580', steam_item_id: '2829772740', mod_dir_name: 'abw-more-cultural-names' }
-          - { mod_game_id: 'IR_AoE', steam_app_id: '859580', steam_item_id: '2753371253', mod_dir_name: 'aoe-more-cultural-names' }
-          - { mod_game_id: 'IR_INV', steam_app_id: '859580', steam_item_id: '2827761791', mod_dir_name: 'inv-more-cultural-names' }
-          - { mod_game_id: 'IR_TBA', steam_app_id: '859580', steam_item_id: '2827468261', mod_dir_name: 'tba-more-cultural-names' }
+          - { mod_game_id: 'CK3',     steam_app_id: '1158310',  steam_item_id: '2217534250', mod_dir_name: 'more-cultural-names'      }
+          - { mod_game_id: 'CK3AE',   steam_app_id: '1158310',  steam_item_id: '2830250537', mod_dir_name: 'ae-more-cultural-names'   }
+          - { mod_game_id: 'CK3CMH',  steam_app_id: '1158310',  steam_item_id: '2813306520', mod_dir_name: 'cmh-more-cultural-names'  }
+          - { mod_game_id: 'CK3IBL',  steam_app_id: '1158310',  steam_item_id: '2490281800', mod_dir_name: 'ibl-more-cultural-names'  }
+          - { mod_game_id: 'CK3MBP',  steam_app_id: '1158310',  steam_item_id: '2630872947', mod_dir_name: 'mbp-more-cultural-names'  }
+          - { mod_game_id: 'CK3SoW',  steam_app_id: '1158310',  steam_item_id: '2724606810', mod_dir_name: 'sow-more-cultural-names'  }
+          - { mod_game_id: 'CK3TBA',  steam_app_id: '1158310',  steam_item_id: '2821052607', mod_dir_name: 'tba-more-cultural-names'  }
+          - { mod_game_id: 'CK3TFE',  steam_app_id: '1158310',  steam_item_id: '2690444295', mod_dir_name: 'tfe-more-cultural-names'  }
+          - { mod_game_id: 'HOI4',    steam_app_id: '394360',   steam_item_id: '2459257386', mod_dir_name: 'more-cultural-names'      }
+          - { mod_game_id: 'HOI4MDM', steam_app_id: '394360',   steam_item_id: '2826972160', mod_dir_name: 'mdm-more-cultural-names'  }
+          - { mod_game_id: 'HOI4TGW', steam_app_id: '394360',   steam_item_id: '2725885905', mod_dir_name: 'tgw-more-cultural-names'  }
+          - { mod_game_id: 'IR',      steam_app_id: '859580',   steam_item_id: '2219177532', mod_dir_name: 'more-cultural-names'      }
+          - { mod_game_id: 'IR_ABW',  steam_app_id: '859580',   steam_item_id: '2829772740', mod_dir_name: 'abw-more-cultural-names'  }
+          - { mod_game_id: 'IR_AoE',  steam_app_id: '859580',   steam_item_id: '2753371253', mod_dir_name: 'aoe-more-cultural-names'  }
+          - { mod_game_id: 'IR_INV',  steam_app_id: '859580',   steam_item_id: '2827761791', mod_dir_name: 'inv-more-cultural-names'  }
+          - { mod_game_id: 'IR_TBA',  steam_app_id: '859580',   steam_item_id: '2827468261', mod_dir_name: 'tba-more-cultural-names'  }
 
     steps:
     - name: Prepare
