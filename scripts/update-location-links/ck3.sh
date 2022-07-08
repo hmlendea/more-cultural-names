@@ -14,11 +14,12 @@ function updateCk3LocationLinks() {
                             grep "^ *[ekdcb]_" | \
                             sed 's/^ *\([ekdcb]_[^= ]*\).*/\1/g' | \
                             sort | uniq); do
-
         TITLE_NAME=$(tac "${@}" | \
                         grep "^ *[a-zA-Z]_" | \
                         grep "\b${TITLE_ID}:" | \
                         sed 's/ *\([a-zA-Z]_[^:]*\):[0-9] *\"\([^\"]*\)\".*/\2/g')
+
+        echo " > Title ${TITLE_ID} is ${TITLE_NAME}"
 
         sed -i 's/^\( *\)'"${TITLE_ID}"' *= *\([^\r\n]*\)$/\1# '"${TITLE_NAME}"'\n\1'"${TITLE_ID}"' = \2/g' "${OUTPUT_FILE}"
     done
@@ -31,8 +32,11 @@ function updateCk3LocationLinks() {
         CN_ID=$(echo "${CN}" | awk -F= '{print $1}')
         CN_NAME=$(echo "${CN}" | awk -F= '{print $2}' | sed 's/@/ /g' | sed 's/^ *//g' | sed 's/ *$//g')
 
+        echo " > Cultural name ${CN_ID} is ${CN_NAME}"
+
         sed -i 's/'"${CN_ID}"'\b/\"'"${CN_NAME}"'\"/g' "${OUTPUT_FILE}"
     done
 }
 
-updateCk3LocationLinks "CK3" "${CK3_VANILLA_LANDED_TITLES_FILE}" "${CK3_LOCALISATIONS_DIR}"/*.yml
+updateCk3LocationLinks "CK3"    "${CK3_VANILLA_LANDED_TITLES_FILE}"     "${CK3_LOCALISATIONS_DIR}"/*.yml
+updateCk3LocationLinks "CK3TBA" "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_LOCALISATIONS_DIR}"/*.yml
