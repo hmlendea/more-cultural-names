@@ -7,8 +7,8 @@
 #Normally I labeled added or changed titles
 
 e_null_empire = {
-	color = { 0 0 0 }
-	color2 = { 0 0 0 }
+	color =  { 0 0 255 1 }
+	color2 = { 0 0 0 1 }
 	
 	capital = c_roma
 
@@ -1127,25 +1127,6 @@ e_egypt = { # Misr
 
 
 # TITULAR KINGDOMS
-
-k_sorbia = {
-		color = { 75 15 15 }
-		color2 = { 255 255 255 }
-
-		cultural_names = {
-			name_list_polabian = cn_polabia
-			#Kingdom of Polabia
-		}
-
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = culture:polabian
-				}
-				add = @correct_culture_primary_score
-			}
-		}
-}
 
 k_mediterranean_sea = { # FP2
 	color = { 180 0 0 }
@@ -8525,12 +8506,6 @@ e_germany = {
 					color = { 90 95 135 }
 					color2 = { 255 255 255 }
 				}
-				b_maastricht = { # was added to the bishproc of Liege in the late 8th or early 9th century
-					province = 2099
-
-					color = { 145 125 195 }
-					color2 = { 255 255 255 }
-				}
 				b_huy = {
 					province = 2096
 
@@ -8547,7 +8522,14 @@ e_germany = {
 			c_maastricht = {
 				color = { 145 125 195 }
 				color2 = { 255 255 255 }
-			
+				
+				b_maastricht = { # Moved back from Liege
+					province = 2099
+
+					color = { 145 125 195 }
+					color2 = { 255 255 255 }
+				}
+				
 				b_tilburg = {
 					province = 2110
 
@@ -28162,6 +28144,25 @@ e_wendish_empire = {
 		}
 	}
 	
+	k_sorbia = {
+		color = { 75 15 15 }
+		color2 = { 255 255 255 }
+
+		cultural_names = {
+			name_list_polabian = cn_polabia
+			#Kingdom of Polabia
+		}
+
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:polabian
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+	}
+
 	k_moravia = {
 		color = { 158 102 36 }
 		color2 = { 200 0 0 }
