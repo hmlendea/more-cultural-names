@@ -343,6 +343,7 @@ done
 
 # Validate XML structure
 grep -Pzo "\n *<[a-zA-Z]*Entity>\n *<Id>.*\n *</[a-zA-Z]*Entity>.*\n" *.xml
+grep -Pzo "\n *</Names.*\n *<*(Names|GameId|Location).*\n" *.xml
 grep -Pzo "\n *</Names.*\n *</*(Names|GameId).*\n" *.xml
 grep -Pzo "\n *<Names>\n *<[^N].*\n" *.xml
 grep -Pzo "\n *<Name .*\n *</L.*\n" *.xml
