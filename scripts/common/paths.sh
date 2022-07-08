@@ -42,6 +42,7 @@ CK3_DIR="${STEAM_GAMES_DIR}/Crusader Kings III"
 CK3_CULTURES_DIR="${CK3_DIR}/game/common/culture/cultures"
 CK3_LOCALISATIONS_DIR="${CK3_DIR}/game/localization/english"
 CK3_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3_landed_titles.txt"
+CK3_VANILLA_LOCALISATION_FILE="${CK3_LOCALISATIONS_DIR}/titles_l_english.yml"
 
 CK3AE_DIR="${STEAM_WORKSHOP_CK3_DIR}/2706635752"
 CK3AE_CULTURES_DIR="${CK3AE_DIR}/common/culture/cultures"
