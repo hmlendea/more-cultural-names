@@ -120,7 +120,7 @@ function normalise-name() {
     local P_PENINSULA="[Bb][aá]n[ ]*[dđ][aả]o\|[Dd]uoninsulo\|[Hh]antō\|[Ll]edenez\|[Nn]iemimaa\|[Pp][ao][luŭ][ouv]ostr[ao][uŭv]\|[Pp][eé]n[iíì][n]*[t]*[csz][ou][lł][aāe]\|[Pp]enrhyn\|Poàn-tó\|[Ss]emenanjung\|Tīpakaṟpam\|[Yy]arim [Oo]roli\|[Yy]arımadası\|[Žž]arym [Aa]raly"
     local P_PLATEAU="Alt[io]p[il]*[aà]\(no\)*\|Àrd-thìr\|Daichi\|gāoyuán\|Hḍbẗ\|ordokia\|[Pp][’]*lat[’]*[e]*\([aå][nu]\(et\)*\|o\(s[iu]\)*\)\|[Pp]lošina\|[Pp]lynaukštė"
     local P_PREFECTURE="[Pp]r[aäeé][e]*fe[ckt]t[uúū]r[ae]*"
-    local P_PROVINCE="[Ee]par[ck]hía\|Mḥāfẓẗ\|Mqāṭʿẗ\|[Pp][’]*r[aāou][bpvw][ëií][nñ][t]*[csz]*[eėiíjoy]*[aeėnsz]*\|Pradēśa\|Pr[aā][a]*nt[a]*\|Rát\|[Ss][h]*[éě]ng\|Shuu\|suyu\|Wilayah"
+    local P_PROVINCE="eanangoddi\|[Ee]par[ck]hía\|[Ll]alawigan\|[Mm]ākāṇam\|Mḥāfẓẗ\|Mkoa\|Mqāṭʿẗ\|[Pp][’]*r[aāou][bpvw][ëií][nñ][t]*[csz]*[eėiíjoy]*[aeėnsz]*\|Pradēśa\|Pr[aā][a]*nt[y]*[a]*\|Rát\|[Ss][h]*[éě]ng\|Shuu\|suyu\|[Tt]alaith\|[VvWw]il[ao][jy][ae][ht][i]*"
     local P_REGION="[Aa]ñcala\|[Bb]ölgesi\|[Ee]skualdea\|Gobolka\|[Kk]alāpaya\|Khu vực\|[Kk]shetr\|Kwáāen\|[Pp]akuti\|[Pp]aḷāta\|[Pp]eri\(f\|ph\)[eéē]r[e]*i[j]*a\|[Pp]iirkond\|[Pp]r[a]*desh[a]*\|[Pp]rāntaṁ\|[Rr][eé][gģhx][ij]*\([ãoóu][ou]*n*[ei]*[as]*\|st[aā]n\)\|[Rr]ijn"
     local P_REPUBLIC="Cộng hòa\|[DdTt][aáä][aä]*[ʹ]*s[s]*[ei]*v[aäá][ʹ]*ld[di]\|[Dd][eēi]mokr[h]*atía\|gōnghé\|[Gg]weriniaeth\|[Jj]anarajaya\|Khiung-fò-koet\|Kongwaguk\|Köztársaság\|Kyōwa\( Koku\)*\|Olómìnira\|Praj[aā][a]*[s]*t[t]*a[a]*\(k\|ntra\)\|[Rr][eéi][s]*[ ]*p[’]*[aāuüùúy][ā’]*b[ba]*l[eií][’]*[cgkq][ck]*[’]*\([ai]\|as[ıy]\|en\|[hḥ]y\|i\|ue\)*\|[Ss]ăā-taā-rá-ná-rát\|[Tt]a[sz][ao]val[dt]\(a\|kund\)"
     local P_RIVER="Abhainn\|Afon\|[Ff][il]u\(me\|viul\)\|Gawa\|Nadī\|Nhr\|[Rr]âu[l]*\|[Rr]iver\|Sungai"
