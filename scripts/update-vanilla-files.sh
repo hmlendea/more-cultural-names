@@ -22,11 +22,7 @@ function update-vanilla-file() {
 function update-vanilla-files() {
     local TARGET_FILE="${1}" && shift
 
-    [ -f "${TARGET_FILE}" ] && rm "${TARGET_FILE}"
-
-    for SOURCE_FILE in $*; do
-        cat "${SOURCE_FILE}" >> "${TARGET_FILE}"
-    done
+    cat "${@}" > "${TARGET_FILE}"
 
     chmod 755 "${TARGET_FILE}"
     chown "${USER}:${USER}" "${TARGET_FILE}"
@@ -67,8 +63,8 @@ update-vanilla-file \
     "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
     "${CK2TWK_DIR}/common/landed_titles/landed_titles.txt" \
-    "${CK2TWK_VANILLA_LANDED_TITLES_FILE}" \
-    "https://raw.githubusercontent.com/DC123456789/Britannia---The-Winter-King/master/Britannia/common/landed_titles/landed_titles.txt"
+    "${CK2TWK_VANILLA_LANDED_TITLES_FILE}" #\
+    #"https://raw.githubusercontent.com/DC123456789/Britannia---The-Winter-King/master/Britannia/common/landed_titles/landed_titles.txt"
 update-vanilla-file \
     "${CK3_DIR}/game/common/landed_titles/00_landed_titles.txt" \
     "${CK3_VANILLA_LANDED_TITLES_FILE}"
@@ -79,10 +75,14 @@ update-vanilla-files \
     "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}" \
     "${CK3ATHA_LANDED_TITLES_DIR}"/*.txt
 update-vanilla-files \
+    "${CK3CE_VANILLA_LANDED_TITLES_FILE}" \
+    "${CK3CE_LANDED_TITLES_DIR}"/*.txt \
+    "${CK3_LANDED_TITLES_DIR}"/*.txt
+update-vanilla-files \
     "${CK3CMH_VANILLA_LANDED_TITLES_FILE}" \
-    "${CK3AP_DIR}/common/landed_titles/"*.txt \
-    "${CK3IBL_DIR}/common/landed_titles/"*.txt \
-    "${CK3RICE_DIR}/common/landed_titles/"*.txt
+    "${CK3AP_LANDED_TITLES_DIR}"/*.txt \
+    "${CK3IBL_LANDED_TITLES_DIR}"/*.txt \
+    "${CK3RICE_LANDED_TITLES_DIR}"/*.txt
 update-vanilla-file \
     "${CK3IBL_DIR}/common/landed_titles/00_landed_titles.txt" \
     "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
