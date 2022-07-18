@@ -73,6 +73,18 @@ k_fashion = { # Kingdom of Fashion from Establish a New Fashion at Court decisio
 	de_jure_drift_disabled = yes
 }
 
+d_kambuja_devaraja = {
+    color = { 253 40 121 }
+    color2 = { 255 255 255 }
+
+    definite_form = yes
+    ruler_uses_title_name = no
+    always_follows_primary_heir = yes
+    no_automatic_claims = yes
+    destroy_if_invalid_heir = yes
+    can_be_named_after_dynasty = no
+}
+
 d_iconoclast = {
 	landless = yes
 	color = { 153 50 125 }
@@ -1427,7 +1439,7 @@ d_khawarij = { # Khawarij # (used for the Kharijite Rebellion - NYI)
 
 d_saxon_ostmark = { # Ostmark # March of the East or March of Gero
 	color = { 94 83 162 }
-	capital = c_vogtland # Plauen
+	capital = c_mersenburg # Plauen
 }
 
 d_bornholm = { # Burghændæholm #Leaving as titular since there was no Bornholm duchy in this time period.
@@ -76195,26 +76207,8 @@ e_rajastan = {
 					color = { 190 100 31 }
 					color2 = { 255 255 255 }
 				}
-				b_rahon = {
-					province = 3431
-					
-					color = { 190 100 31 }
-					color2 = { 255 255 255 }
-				}
 				b_pathankot = {
 					province = 3432
-					
-					color = { 190 100 31 }
-					color2 = { 255 255 255 }
-				}
-				b_kahlur = {
-					province = 3433
-					
-					color = { 190 100 31 }
-					color2 = { 255 255 255 }
-				}
-				b_kangra = {
-					province = 3434
 					
 					color = { 190 100 31 }
 					color2 = { 255 255 255 }
@@ -76225,7 +76219,32 @@ e_rajastan = {
 					color = { 190 100 31 }
 					color2= { 255 255 255 }
 				}
-			}		
+			}	
+			c_kangra = {
+				color = { 170 70 31 }
+				color2 = { 255 255 255 }
+				
+				b_kangra = {
+					province = 3434
+					
+					color = { 190 100 31 }
+					color2 = { 255 255 255 }
+				}
+				b_rahon = {
+					province = 3431
+					
+					color = { 190 100 31 }
+					color2 = { 255 255 255 }
+				}
+				b_kahlur = {
+					province = 3433
+					
+					color = { 190 100 31 }
+					color2 = { 255 255 255 }
+				}
+				
+				
+			}
 			
 			
 			
