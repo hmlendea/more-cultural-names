@@ -22,6 +22,9 @@
   <Language>
     <Id>Acehnese</Id> <!-- Achense, Achinese -->
     <Code iso-639-2="ace" iso-639-3="ace" />
+    <GameIds>
+      <GameId game="HOI4MDM">ACE</GameId> <!-- Aceh -->
+    </GameIds>
   </Language>
   <Language>
     <Id>Adyghe</Id> <!-- West Circassian -->
@@ -749,6 +752,7 @@
       <GameId game="HOI4MDM">ARA</GameId> <!-- Arabistan -->
       <GameId game="HOI4MDM">DRU</GameId> <!-- Jabal Al-Druze -->
       <GameId game="HOI4MDM">FSA</GameId> <!-- Free Syrian Army -->
+      <GameId game="HOI4MDM">ALA</GameId> <!-- Alawite State -->
       <GameId game="HOI4MDM">HAM</GameId> <!-- Hamas -->
       <GameId game="HOI4MDM">HEJ</GameId> <!-- Hejaz -->
       <GameId game="HOI4MDM">HEZ</GameId> <!-- Hezbollah -->
@@ -1416,6 +1420,7 @@
     <Id>Argobba</Id>
     <Code iso-639-3="agj" />
     <GameIds>
+      <GameId game="CK3CE">argobba</GameId>
       <GameId game="CK3MBP">argobba</GameId>
     </GameIds>
   </Language>
@@ -1656,6 +1661,9 @@
       <GameId game="CK3MBP">assamese</GameId>
       <GameId game="CK3SoW">assamese</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kamarupi</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Asturian</Id>
@@ -3748,6 +3756,13 @@
     <Id>Beurla_Reagaird</Id> <!-- Beurla Reagair -->
   </Language>
   <Language>
+    <Id>Bihari</Id>
+    <Code iso-639-1="bh" iso-639-2="bih" iso-639-5="bih" />
+    <GameIds>
+      <GameId game="CK3MBP">bihari</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Bikol_Central</Id> <!-- Central Bikol -->
     <Code iso-639-3="bcl" />
   </Language>
@@ -4643,23 +4658,38 @@
   <Language>
     <Id>Caribbean_Hindustani</Id>
     <Code iso-639-3="hns" />
+    <FallbackLanguages>
+      <LanguageId>Caribbean_Hindustani_Guyanese</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Sarnami</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Trinidadian</LanguageId>
+      <LanguageId>Sadri</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Caribbean_Hindustani_Guyanese</Id> <!-- Guyanese Hindustani, Guyanese Bhojpuri, Aili Gaili -->
     <FallbackLanguages>
       <LanguageId>Caribbean_Hindustani</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Sarnami</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Trinidadian</LanguageId>
+      <LanguageId>Sadri</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Caribbean_Hindustani_Sarnami</Id> <!-- Sarnami, Sarnami Hindoestani, Sarnami Hindustani, Surinamese Hindustani -->
     <FallbackLanguages>
       <LanguageId>Caribbean_Hindustani</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Guyanese</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Trinidadian</LanguageId>
+      <LanguageId>Sadri</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Caribbean_Hindustani_Trinidadian</Id> <!-- Trinidadian Hindustani, Trinidadian Bhojpuri, Trinidadian Hindi, Indian, Plantation Hindustani, Gaon ke Bolee, Village Speech -->
     <FallbackLanguages>
       <LanguageId>Caribbean_Hindustani</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Guyanese</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Sarnami</LanguageId>
+      <LanguageId>Sadri</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -7462,6 +7492,13 @@
     <Id>Dzongkha</Id> <!-- Bhutanese -->
     <Code iso-639-1="dz" iso-639-2="dzo" iso-639-3="dzo" />
     <GameIds>
+      <GameId game="CK3">lhomon</GameId>
+      <GameId game="CK3AE">lhomon</GameId>
+      <GameId game="CK3CE">lhomon</GameId>
+      <GameId game="CK3CMH">lhomon</GameId>
+      <GameId game="CK3IBL">lhomon</GameId>
+      <GameId game="CK3MBP">lhomon</GameId>
+      <GameId game="CK3SoW">lhomon</GameId>
       <GameId game="HOI4">BHU</GameId> <!-- Bhutan -->
       <GameId game="HOI4MDM">BHU</GameId> <!-- Bhutan -->
       <GameId game="HOI4TGW">BHU</GameId> <!-- Bhutan -->
@@ -7680,8 +7717,10 @@
     <GameIds>
       <GameId game="HOI4MDM">AST</GameId> <!-- Australia -->
       <GameId game="HOI4MDM">BAH</GameId> <!-- Bahamas -->
+      <GameId game="HOI4MDM">BAR</GameId> <!-- Barbados -->
       <GameId game="HOI4MDM">BLZ</GameId> <!-- Belize -->
       <GameId game="HOI4MDM">BOT</GameId> <!-- Botswana -->
+      <GameId game="HOI4MDM">CAL</GameId> <!-- California -->
       <GameId game="HOI4MDM">CAN</GameId> <!-- Canada -->
       <GameId game="HOI4MDM">CAS</GameId> <!-- Cascadia -->
       <GameId game="HOI4MDM">CSA</GameId> <!-- Confederation of America -->
@@ -7697,6 +7736,7 @@
       <GameId game="HOI4MDM">NZL</GameId> <!-- New Zealand -->
       <GameId game="HOI4MDM">SAF</GameId> <!-- South Africa -->
       <GameId game="HOI4MDM">SIE</GameId> <!-- Sierra Leone -->
+      <GameId game="HOI4MDM">TEX</GameId> <!-- Texas -->
       <GameId game="HOI4MDM">TRI</GameId> <!-- Trinidad and Tobago -->
       <GameId game="HOI4MDM">USA</GameId> <!-- United States of America -->
       <GameId game="HOI4MDM">ZIM</GameId> <!-- Zimbabwe -->
@@ -12344,10 +12384,12 @@
     <Code iso-639-1="fr" iso-639-3="fra" />
     <GameIds>
       <GameId game="HOI4MDM">BEN</GameId> <!-- Benin -->
+      <GameId game="HOI4MDM">BFA</GameId> <!-- Burkina Faso -->
       <GameId game="HOI4MDM">CDI</GameId> <!-- Côte d'Ivoire -->
       <GameId game="HOI4MDM">DJI</GameId> <!-- Djibouti -->
       <GameId game="HOI4MDM">FRA</GameId> <!-- France -->
       <GameId game="HOI4MDM">GNA</GameId> <!-- Guinea -->
+      <GameId game="HOI4MDM">MNC</GameId> <!-- Monaco -->
       <GameId game="HOI4MDM">SEN</GameId> <!-- Senegal -->
       <GameId game="HOI4MDM">TOG</GameId> <!-- Togo -->
     </GameIds>
@@ -18518,12 +18560,14 @@
   <Language>
     <Id>Germanic_Proto</Id>
     <GameIds>
+      <GameId game="CK2TWK">taifal</GameId>
       <GameId game="CK2TWK">vandal</GameId>
       <GameId game="CK3TFE">burgundian</GameId>
       <GameId game="CK3TFE">gepid</GameId>
       <GameId game="CK3TFE">herulian</GameId>
       <GameId game="CK3TFE">old_suebi</GameId>
       <GameId game="CK3TFE">rugian</GameId>
+      <GameId game="CK3TFE">taifalian</GameId>
       <GameId game="CK3TFE">vandal</GameId>
       <GameId game="CK3TFE">varinian</GameId>
       <GameId game="IR">bastarnae</GameId>
@@ -25357,6 +25401,14 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Ijaw</Id>
+    <Code iso-639-2="ijo" iso-639-5="ijo" />
+    <GameIds>
+      <GameId game="CK3CE">ijaw</GameId>
+      <GameId game="CK3MBP">ijaw</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Ilmenian</Id>
     <GameIds>
       <GameId game="CK2">ilmenian</GameId>
@@ -26464,6 +26516,13 @@
     <Code iso-639-3="jii" /> <!-- Jiddu, Af-Jiiddu -->
   </Language>
   <Language>
+    <Id>Jukun</Id>
+    <GameIds>
+      <GameId game="CK3CE">jukun</GameId>
+      <GameId game="CK3MBP">jukun</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Jurchen</Id>
     <Code iso-639-3="juc" />
     <GameIds>
@@ -26564,6 +26623,17 @@
   <Language>
     <Id>Kalinago</Id>
     <Code iso-639-3="crb" />
+  </Language>
+  <Language>
+    <Id>Kamarupi</Id> <!-- c. 5th century AD – c. 13th century AD -->
+    <GameIds>
+      <GameId game="CK3MBP">kamarupi</GameId>
+      <GameId game="IR">kamarupi</GameId>
+      <GameId game="IR_INV">kamarupi</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Assamese</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Kamba</Id> <!-- Kikamba -->
@@ -26893,6 +26963,18 @@
       <GameId game="HOI4">RWA</GameId> <!-- Rwanda -->
       <GameId game="HOI4MDM">RWA</GameId> <!-- Rwanda -->
       <GameId game="HOI4TGW">RWA</GameId> <!-- Rwanda -->
+    </GameIds>
+  </Language>
+  <Language>
+    <Id>Kirati</Id>
+    <GameIds>
+      <GameId game="CK3">kirati</GameId>
+      <GameId game="CK3AE">kirati</GameId>
+      <GameId game="CK3CE">kirati</GameId>
+      <GameId game="CK3CMH">kirati</GameId>
+      <GameId game="CK3IBL">kirati</GameId>
+      <GameId game="CK3MBP">kirati</GameId>
+      <GameId game="CK3SoW">kirati</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -34253,6 +34335,7 @@
     <GameIds>
       <GameId game="HOI4MDM">MAL</GameId> <!-- Malaysia -->
       <GameId game="HOI4MDM">MAY</GameId> <!-- Malaysia -->
+      <GameId game="HOI4MDM">SIN</GameId> <!-- Singapore -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Malay_Cocos</LanguageId>
@@ -35130,6 +35213,19 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Moore</Id> <!-- Mooré, Mossi -->
+    <Code iso-639-2="mos" iso-639-3="mos" />
+    <GameIds>
+      <GameId game="CK3">mossi</GameId>
+      <GameId game="CK3AE">mossi</GameId>
+      <GameId game="CK3CE">mossi</GameId>
+      <GameId game="CK3CMH">mossi</GameId>
+      <GameId game="CK3IBL">mossi</GameId>
+      <GameId game="CK3MBP">mossi</GameId>
+      <GameId game="CK3SoW">mossi</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Mozarabic</Id> <!-- Andalusi Romance -->
     <Code iso-639-3="mxi" />
   </Language>
@@ -35466,6 +35562,17 @@
       <LanguageId>Genoese_Medieval</LanguageId>
       <LanguageId>Tuscan_Before1225</LanguageId>
       <LanguageId>Genoese_Before1225</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Nenets</Id> <!-- Yurak -->
+    <Code iso-639-3="yrk" />
+    <GameIds>
+      <GameId game="CK3MBP">nenets</GameId>
+      <GameId game="HOI4">NEN</GameId> <!-- Nenetsia -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Samoyed</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -36607,6 +36714,15 @@
   <Language>
     <Id>Palauan</Id>
     <Code iso-639-2="pau" iso-639-3="pau" />
+    <GameIds>
+      <GameId game="HOI4MDM">PAU</GameId> <!-- Palau -->
+    </GameIds>
+  </Language>
+  <Language>
+    <Id>Palaungic</Id>
+    <GameIds>
+      <GameId game="CK3AE">palaungic</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Pali</Id>
@@ -44496,6 +44612,7 @@
   <Language>
     <Id>Russian_Before1946</Id>
     <GameIds>
+      <GameId game="HOI4">CRI</GameId> <!-- Crimea -->
       <GameId game="HOI4">SOV</GameId> <!-- Russia -->
       <GameId game="HOI4">VLA</GameId> <!-- Vladivostok Independent Republic -->
     </GameIds>
@@ -47535,6 +47652,19 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Sadri</Id> <!-- Nagpuri -->
+    <Code iso-639-3="sck" />
+    <GameIds>
+      <GameId game="CK3MBP">nagpuri</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Caribbean_Hindustani</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Guyanese</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Sarnami</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Trinidadian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Sakizaya</Id>
     <Code iso-639-3="szy" />
   </Language>
@@ -47725,6 +47855,9 @@
       <GameId game="CK3MBP">samoyed</GameId>
       <GameId game="CK3SoW">samoyed</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Nenets</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Sango</Id>
@@ -55517,6 +55650,14 @@
   <Language>
     <Id>Yemsa</Id> <!-- Yem -->
     <Code iso-639-3="jnj" />
+  </Language>
+  <Language>
+    <Id>Yeniseian</Id> <!-- Yeniseic -->
+    <GameIds>
+      <GameId game="CK3CE">yeniseian</GameId>
+      <GameId game="CK3CMH">yeniseian</GameId>
+      <GameId game="CK3TFE">yeniseian</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Yokuts</Id> <!-- Mariposa -->
