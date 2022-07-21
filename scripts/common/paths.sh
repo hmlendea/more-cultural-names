@@ -8,7 +8,6 @@ VANILLA_FILES_DIR="${REPO_DIR}/vanilla"
 
 LANGUAGES_FILE="${REPO_DIR}/languages.xml"
 LOCATIONS_FILE="${REPO_DIR}/locations.xml"
-TITLES_FILE="${REPO_DIR}/titles.xml"
 
 if [ -d "${HOME}/.games/Steam/common" ]; then
     STEAM_APPS_DIR="${HOME}/.games/Steam"
