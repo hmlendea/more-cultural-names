@@ -61,7 +61,7 @@ function checkForMissingCkLocationLinks() {
     local GAME_ID="${1}" && shift
     local VANILLA_LANDED_TITLES="${1}" && shift
 
-    for TITLE_ID in $(diff \
+    for LANDED_TITLE_ID in $(diff \
                         <(getGameIds "${GAME_ID}") \
                         <( \
                             cat "${VANILLA_LANDED_TITLES}" | \
@@ -76,28 +76,28 @@ function checkForMissingCkLocationLinks() {
                             sort | uniq \
                         ) | \
                         grep "^>" | sed 's/^> //g'); do
-        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${TITLE_ID}")
-        [ -n "${1}" ] && LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
+        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LANDED_TITLE_ID}")
+        [ -n "${1}" ] && LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${LANDED_TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
 
         if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
-            echo "    > ${GAME_ID}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
-            echo "    > ${GAME_ID}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif [ -n "${LOCATION_DEFAULT_NAME}" ]; then
             LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
             LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
 
             if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
-                echo "    > ${GAME_ID}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+                echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
             elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
-                echo "    > ${GAME_ID}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+                echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
             elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
-                echo "    > ${GAME_ID}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
+                echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
             else
-                echo "    > ${GAME_ID}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
+                echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
             fi
         else
-            echo "    > ${GAME_ID}: ${TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
+            echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
         fi
     done
 }
@@ -106,7 +106,7 @@ function checkForSurplusCkLocationLinks() {
     local GAME_ID="${1}"
     local VANILLA_LANDED_TITLES="${2}"
 
-    for TITLE_ID in $(diff \
+    for LANDED_TITLE_ID in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
@@ -124,7 +124,7 @@ function checkForSurplusCkLocationLinks() {
                             sort | uniq \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: ${TITLE_ID} is defined but it does not exist"
+        echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist"
     done
 }
 
@@ -132,7 +132,7 @@ function checkForSurplusIrLocationLinks() {
     local GAME_ID="${1}"
     local VANILLA_FILE="${2}"
 
-    for TITLE_ID in $(diff \
+    for PROVINCE_ID in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
@@ -143,7 +143,7 @@ function checkForSurplusIrLocationLinks() {
                             sort | uniq \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: ${TITLE_ID} is defined but it does not exist"
+        echo "    > ${GAME_ID}: ${PROVINCE_ID} is defined but it does not exist"
     done
 }
 
@@ -328,7 +328,7 @@ grep "<GameId game=" *.xml | \
 grep -Pzo "\n *<Name language=\"([^\"]*)\" value=\"([^\"]*)\" />((\n *<Name l.*)*)\n *<Name language=\"\1\" value=\"\2\" />.*\n" *.xml
 
 # Find empty definitions
-grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}" "${TITLES_FILE}"
+grep "><" "${LOCATIONS_FILE}" "${LANGUAGES_FILE}"
 
 # Find duplicated language codes
 for I in {1..3}; do
@@ -399,21 +399,6 @@ for FALLBACK_LOCATION_ID in $(diff \
                         sed 's/ /\n/g') | \
                     grep "^<" | sed 's/^< //g' | sed 's/ /@/g'); do
     echo "The \"${FALLBACK_LOCATION_ID}\" fallback location does not exit"
-done
-
-# Find non-existing fallback titles
-for FALLBACK_TITLE_ID in $(diff \
-                    <( \
-                        grep "<TitleId>" "${TITLES_FILE}" | \
-                        sed 's/.*<TitleId>\([^<>]*\)<\/TitleId>.*/\1/g' | \
-                        sort | uniq \
-                    ) <( \
-                        grep "<Id>" "${TITLES_FILE}" | \
-                        sed 's/^[^<]*<Id>\([^<]*\).*/\1/g' | \
-                        sort | uniq \
-                    ) | \
-                    grep "^<" | sed 's/^< //g' | sed 's/ /@/g'); do
-    echo "The \"${FALLBACK_TITLE_ID}\" fallback title does not exit"
 done
 
 # Find non-existing name languages
