@@ -63,7 +63,6 @@ function build-edition {
     "${REPO_DIR}/.builder/MoreCulturalNamesBuilder" \
         --lang "${LANGUAGES_FILE}" \
         --loc "${LOCATIONS_FILE}" \
-        --titles "${TITLES_FILE}" \
         --game "${GAME}" --game-version "${GAME_VERSION}" \
         --id "${ID}" --name "${NAME}" --ver "${VERSION}" \
         --out "${OUTPUT_DIR}" "$@"
