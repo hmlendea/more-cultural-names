@@ -44,6 +44,7 @@ jobs:
         file_version: ${{github.ref_name}}
         update_version: true
         new_existing_version: true
+        remove_old_version: true
         original_file: "${{matrix.config.mod_file_name}}.*"
         file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
         file_path: "${{matrix.config.mod_game_id}}.zip"
