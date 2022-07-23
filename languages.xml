@@ -39,6 +39,9 @@
   <Language>
     <Id>Acehnese</Id> <!-- Achense, Achinese -->
     <Code iso-639-2="ace" iso-639-3="ace" />
+    <GameIds>
+      <GameId game="HOI4MDM">ACE</GameId> <!-- Aceh -->
+    </GameIds>
   </Language>
   <Language>
     <Id>Adyghe</Id> <!-- West Circassian -->
@@ -202,7 +205,7 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Alan</Id>
+    <Id>Alan</Id> <!-- Alanian -->
     <GameIds>
       <GameId game="CK2">alan</GameId>
       <GameId game="CK2HIP">alan</GameId>
@@ -218,6 +221,12 @@
       <GameId game="IR_ABW">alans</GameId>
       <GameId game="IR_AoE">alans</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Scythian</LanguageId>
+      <LanguageId>Ossetic_Old</LanguageId>
+      <LanguageId>Ossetic_Before1946</LanguageId>
+      <LanguageId>Ossetic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Albanian</Id>
@@ -823,8 +832,10 @@
     <Code iso-639-1="ar" iso-639-3="ara" />
     <GameIds>
       <GameId game="HOI4MDM">AGF</GameId> <!-- Anti-Governmental Forces of South Sudan -->
+      <GameId game="HOI4MDM">ALA</GameId> <!-- Alawite State -->
       <GameId game="HOI4MDM">AQY</GameId> <!-- Ansar al-Sharia -->
       <GameId game="HOI4MDM">ARA</GameId> <!-- Arabistan -->
+      <GameId game="HOI4MDM">BHR</GameId> <!-- Bahrain -->
       <GameId game="HOI4MDM">DRU</GameId> <!-- Jabal Al-Druze -->
       <GameId game="HOI4MDM">FSA</GameId> <!-- Free Syrian Army -->
       <GameId game="HOI4MDM">HAM</GameId> <!-- Hamas -->
@@ -843,6 +854,7 @@
       <GameId game="HOI4MDM">QAT</GameId> <!-- Qatar -->
       <GameId game="HOI4MDM">SAU</GameId> <!-- Republic of Arabia -->
       <GameId game="HOI4MDM">SHB</GameId> <!-- Al-Shabaab -->
+      <GameId game="HOI4MDM">SRF</GameId> <!-- Sudan Revolutionary Front -->
       <GameId game="HOI4MDM">SSU</GameId> <!-- South Sudan -->
       <GameId game="HOI4MDM">SUD</GameId> <!-- Sudan -->
       <GameId game="HOI4MDM">SYR</GameId> <!-- Syria -->
@@ -1108,6 +1120,7 @@
       <GameId game="CK3MBP">andalusian</GameId>
       <GameId game="CK3MBP">bedouin</GameId>
       <GameId game="CK3MBP">levantine</GameId>
+      <GameId game="CK3MBP">south_arabian</GameId>
       <GameId game="CK3MBP">yemeni</GameId>
       <GameId game="CK3SoW">andalusian</GameId>
       <GameId game="CK3SoW">bedouin</GameId>
@@ -1632,6 +1645,7 @@
       <GameId game="CK3TBA">aramean</GameId>
       <GameId game="IR">aramaic</GameId>
       <GameId game="IR_TBA">aramean</GameId>
+      <GameId game="IR_TBA">palmyrene</GameId>
       <GameId game="IR_INV">aramaic</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -1651,6 +1665,14 @@
     <Code iso-639-3="xrm" />
   </Language>
   <Language>
+    <Id>Argobba</Id>
+    <Code iso-639-3="agj" />
+    <GameIds>
+      <GameId game="CK3CE">argobba</GameId>
+      <GameId game="CK3MBP">argobba</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Armenian</Id> <!-- c. 1700 AD – present -->
     <Code iso-639-1="hy" iso-639-3="hye" />
     <GameIds>
@@ -1658,6 +1680,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Armenian_West</LanguageId>
+      <LanguageId>Armenian_Before2019</LanguageId>
       <LanguageId>Armenian_Before1993</LanguageId>
       <LanguageId>Armenian_Before1946</LanguageId>
       <LanguageId>Armenian_Before1930</LanguageId>
@@ -1671,6 +1694,20 @@
     <Code iso-639-3="hyw" />
     <FallbackLanguages>
       <LanguageId>Armenian</LanguageId>
+      <LanguageId>Armenian_Before2019</LanguageId>
+      <LanguageId>Armenian_Before1993</LanguageId>
+      <LanguageId>Armenian_Before1946</LanguageId>
+      <LanguageId>Armenian_Before1930</LanguageId>
+      <LanguageId>Armenian_Middle</LanguageId>
+      <LanguageId>Armenian_Classical</LanguageId>
+      <LanguageId>Armenian_Proto</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Armenian_Before2019</Id>
+    <FallbackLanguages>
+      <LanguageId>Armenian</LanguageId>
+      <LanguageId>Armenian_West</LanguageId>
       <LanguageId>Armenian_Before1993</LanguageId>
       <LanguageId>Armenian_Before1946</LanguageId>
       <LanguageId>Armenian_Before1930</LanguageId>
@@ -1682,6 +1719,7 @@
   <Language>
     <Id>Armenian_Before1993</Id>
     <FallbackLanguages>
+      <LanguageId>Armenian_Before2019</LanguageId>
       <LanguageId>Armenian</LanguageId>
       <LanguageId>Armenian_West</LanguageId>
       <LanguageId>Armenian_Before1946</LanguageId>
@@ -1698,6 +1736,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Armenian_Before1993</LanguageId>
+      <LanguageId>Armenian_Before2019</LanguageId>
       <LanguageId>Armenian</LanguageId>
       <LanguageId>Armenian_West</LanguageId>
       <LanguageId>Armenian_Before1930</LanguageId>
@@ -1714,6 +1753,7 @@
     <FallbackLanguages>
       <LanguageId>Armenian_Before1946</LanguageId>
       <LanguageId>Armenian_Before1993</LanguageId>
+      <LanguageId>Armenian_Before2019</LanguageId>
       <LanguageId>Armenian</LanguageId>
       <LanguageId>Armenian_West</LanguageId>
       <LanguageId>Armenian_Middle</LanguageId>
@@ -1740,6 +1780,7 @@
       <LanguageId>Armenian_Before1930</LanguageId>
       <LanguageId>Armenian_Before1946</LanguageId>
       <LanguageId>Armenian_Before1993</LanguageId>
+      <LanguageId>Armenian_Before2019</LanguageId>
       <LanguageId>Armenian</LanguageId>
       <LanguageId>Armenian_West</LanguageId>
       <LanguageId>Armenian_Classical</LanguageId>
@@ -1760,6 +1801,7 @@
       <LanguageId>Armenian_Before1930</LanguageId>
       <LanguageId>Armenian_Before1946</LanguageId>
       <LanguageId>Armenian_Before1993</LanguageId>
+      <LanguageId>Armenian_Before2019</LanguageId>
       <LanguageId>Armenian</LanguageId>
       <LanguageId>Armenian_West</LanguageId>
     </FallbackLanguages>
@@ -1776,6 +1818,7 @@
       <LanguageId>Armenian_Before1930</LanguageId>
       <LanguageId>Armenian_Before1946</LanguageId>
       <LanguageId>Armenian_Before1993</LanguageId>
+      <LanguageId>Armenian_Before2019</LanguageId>
       <LanguageId>Armenian</LanguageId>
       <LanguageId>Armenian_West</LanguageId>
     </FallbackLanguages>
@@ -1914,6 +1957,9 @@
       <GameId game="CK3MBP">assamese</GameId>
       <GameId game="CK3SoW">assamese</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kamarupi</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Assiniboine</Id> <!-- Assiniboin, Hohe, Nakota, Nakoda, Nakon, Nakona, Stoney -->
@@ -2110,68 +2156,6 @@
     <Code iso-639-3="atj" />
   </Language>
   <Language>
-    <Id>Avar</Id>
-    <Code iso-639-1="av" iso-639-3="ava" />
-    <FallbackLanguages>
-      <LanguageId>Avar_Old</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Avar_Old</Id>
-    <Code iso-639-3="oav" />
-    <GameIds>
-      <GameId game="CK2">avar</GameId>
-      <GameId game="CK2HIP">avar</GameId>
-      <GameId game="CK2HIP">caucasian_avar</GameId>
-      <GameId game="CK2TWK">hunnic</GameId>
-      <GameId game="CK3">avar</GameId>
-      <GameId game="CK3AE">avar</GameId>
-      <GameId game="CK3CE">avar</GameId>
-      <GameId game="CK3CMH">avar</GameId>
-      <GameId game="CK3IBL">avar</GameId>
-      <GameId game="CK3MBP">avar</GameId>
-      <GameId game="CK3MBP">avaric</GameId>
-      <GameId game="CK3SoW">avar</GameId>
-      <GameId game="CK3TFE">avar</GameId>
-      <GameId game="IR_AoE">avars</GameId>
-      <GameId game="IR_AoE">huns</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
-      <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Bulgar</LanguageId>
-      <LanguageId>Bashkir_Medieval</LanguageId>
-      <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Khazar_Kabar</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
-      <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Turkish_Old</LanguageId>
-      <LanguageId>Turkish_Before1487</LanguageId>
-      <LanguageId>Turkish_Before1530</LanguageId>
-      <LanguageId>Turkish_Before1593</LanguageId>
-      <LanguageId>Turkish_Before1650</LanguageId>
-      <LanguageId>Turkish_Before1791</LanguageId>
-      <LanguageId>Turkish_Before1878</LanguageId>
-      <LanguageId>Turkish_Before1923</LanguageId>
-      <LanguageId>Turkish_Ottoman</LanguageId>
-      <LanguageId>Turkish_Before1925</LanguageId>
-      <LanguageId>Turkmen_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1961</LanguageId>
-      <LanguageId>Turkish_Before1970</LanguageId>
-      <LanguageId>Turkish_Before1984</LanguageId>
-      <LanguageId>Turkish_Before2005</LanguageId>
-      <LanguageId>Avar</LanguageId>
-      <LanguageId>Bashkir</LanguageId>
-      <LanguageId>Turkmen</LanguageId>
-      <LanguageId>Turkish</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
     <Id>Avestan</Id>
     <Code iso-639-1="ae" iso-639-2="ave" iso-639-3="ave" />
   </Language>
@@ -2293,6 +2277,13 @@
   <Language>
     <Id>Bactrian</Id>
     <Code iso-639-3="xbc" />
+    <GameIds>
+      <GameId game="CK3CE">hephthalite</GameId>
+      <GameId game="CK3CMH">hephthalite</GameId>
+      <GameId game="CK3TFE">hephthalite</GameId>
+      <GameId game="CK3TFE">bactrian</GameId>
+      <GameId game="IR">bactrian</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Baibai</Id>
@@ -2329,6 +2320,7 @@
       <GameId game="CK3IBL">baloch</GameId>
       <GameId game="CK3MBP">baloch</GameId>
       <GameId game="CK3SoW">baloch</GameId>
+      <GameId game="CK3TFE">baloch</GameId>
       <GameId game="HOI4MDM">BLC</GameId> <!-- Balochistan -->
       <GameId game="IR_ABW">balochi</GameId>
     </GameIds>
@@ -2356,44 +2348,6 @@
     <Id>Bashkir</Id>
     <Code iso-639-1="ba" iso-639-2="bak" iso-639-3="bak" />
     <GameIds>
-      <GameId game="HOI4">BSK</GameId> <!-- Bashkortostan -->
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
-      <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Bulgar</LanguageId>
-      <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Khazar_Kabar</LanguageId>
-      <LanguageId>Bashkir_Medieval</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
-      <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Turkish_Old</LanguageId>
-      <LanguageId>Turkish_Before1487</LanguageId>
-      <LanguageId>Turkish_Before1530</LanguageId>
-      <LanguageId>Turkish_Before1593</LanguageId>
-      <LanguageId>Turkish_Before1650</LanguageId>
-      <LanguageId>Turkish_Before1791</LanguageId>
-      <LanguageId>Turkish_Before1878</LanguageId>
-      <LanguageId>Turkish_Before1923</LanguageId>
-      <LanguageId>Turkish_Ottoman</LanguageId>
-      <LanguageId>Turkish_Before1925</LanguageId>
-      <LanguageId>Turkmen_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1961</LanguageId>
-      <LanguageId>Turkish_Before1970</LanguageId>
-      <LanguageId>Turkish_Before1984</LanguageId>
-      <LanguageId>Turkish_Before2005</LanguageId>
-      <LanguageId>Turkmen</LanguageId>
-      <LanguageId>Turkish</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Bashkir_Medieval</Id>
-    <GameIds>
       <GameId game="CK2HIP">bashkir</GameId>
       <GameId game="CK3">bashkir</GameId>
       <GameId game="CK3AE">bashkir</GameId>
@@ -2403,18 +2357,12 @@
       <GameId game="CK3MBP">bashkir</GameId>
       <GameId game="CK3SoW">bashkir</GameId>
       <GameId game="CK3TFE">bashkir</GameId>
+      <GameId game="HOI4">BSK</GameId> <!-- Bashkortostan -->
     </GameIds>
     <FallbackLanguages>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Turkic_Old</LanguageId>
       <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Bulgar</LanguageId>
       <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Khazar_Kabar</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Turkish_Before1487</LanguageId>
@@ -2432,7 +2380,6 @@
       <LanguageId>Turkish_Before1970</LanguageId>
       <LanguageId>Turkish_Before1984</LanguageId>
       <LanguageId>Turkish_Before2005</LanguageId>
-      <LanguageId>Bashkir</LanguageId>
       <LanguageId>Turkmen</LanguageId>
       <LanguageId>Turkish</LanguageId>
     </FallbackLanguages>
@@ -2640,6 +2587,7 @@
   <Language>
     <Id>Bavarian_Before1920</Id>
     <GameIds>
+      <GameId game="HOI4TGW">BAV</GameId> <!-- Bavaria -->
       <GameId game="HOI4TGW">BAY</GameId> <!-- Bavaria -->
     </GameIds>
     <FallbackLanguages>
@@ -4238,6 +4186,13 @@
     <Id>Beurla_Reagaird</Id> <!-- Beurla Reagair -->
   </Language>
   <Language>
+    <Id>Bihari</Id>
+    <Code iso-639-1="bh" iso-639-2="bih" iso-639-5="bih" />
+    <GameIds>
+      <GameId game="CK3MBP">bihari</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Bikol_Central</Id> <!-- Central Bikol -->
     <Code iso-639-3="bcl" />
   </Language>
@@ -4530,58 +4485,6 @@
   <Language>
     <Id>Buginese</Id>
     <Code iso-639-2="bug" iso-639-3="bug" />
-  </Language>
-  <Language>
-    <Id>Bulgar</Id>
-    <Code iso-639-3="xbo" />
-    <GameIds>
-      <GameId game="CK2">bolghar</GameId>
-      <GameId game="CK2HIP">bolghar</GameId>
-      <GameId game="CK3">bolghar</GameId>
-      <GameId game="CK3AE">bolghar</GameId>
-      <GameId game="CK3CE">bolghar</GameId>
-      <GameId game="CK3CMH">bolghar</GameId>
-      <GameId game="CK3IBL">bolghar</GameId>
-      <GameId game="CK3MBP">bolghar</GameId>
-      <GameId game="CK3SoW">bolghar</GameId>
-      <GameId game="CK3TFE">bolghar</GameId>
-      <GameId game="IR_ABW">bulghar</GameId>
-      <GameId game="IR_AoE">bulgars</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
-      <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Avar_Old</LanguageId>
-      <LanguageId>Bashkir_Medieval</LanguageId>
-      <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Khazar_Kabar</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
-      <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Turkish_Old</LanguageId>
-      <LanguageId>Avar</LanguageId>
-      <LanguageId>Turkish_Before1487</LanguageId>
-      <LanguageId>Turkish_Before1530</LanguageId>
-      <LanguageId>Turkish_Before1593</LanguageId>
-      <LanguageId>Turkish_Before1650</LanguageId>
-      <LanguageId>Turkish_Before1791</LanguageId>
-      <LanguageId>Turkish_Before1878</LanguageId>
-      <LanguageId>Turkish_Before1923</LanguageId>
-      <LanguageId>Turkish_Ottoman</LanguageId>
-      <LanguageId>Turkish_Before1925</LanguageId>
-      <LanguageId>Turkmen_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1961</LanguageId>
-      <LanguageId>Turkish_Before1970</LanguageId>
-      <LanguageId>Turkish_Before1984</LanguageId>
-      <LanguageId>Turkish_Before2005</LanguageId>
-      <LanguageId>Bashkir</LanguageId>
-      <LanguageId>Turkmen</LanguageId>
-      <LanguageId>Turkish</LanguageId>
-    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Bulgarian</Id>
@@ -5180,6 +5083,7 @@
       <GameId game="IR_INV">cappadocian</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Paphlagonian</LanguageId>
       <LanguageId>Hittite</LanguageId>
       <LanguageId>Luwian</LanguageId>
       <LanguageId>Carian</LanguageId>
@@ -5200,6 +5104,7 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Cappadocian</LanguageId>
+      <LanguageId>Paphlagonian</LanguageId>
       <LanguageId>Lycian</LanguageId>
       <LanguageId>Lydian</LanguageId>
       <LanguageId>Mysian</LanguageId>
@@ -5210,23 +5115,38 @@
   <Language>
     <Id>Caribbean_Hindustani</Id>
     <Code iso-639-3="hns" />
+    <FallbackLanguages>
+      <LanguageId>Caribbean_Hindustani_Guyanese</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Sarnami</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Trinidadian</LanguageId>
+      <LanguageId>Sadri</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Caribbean_Hindustani_Guyanese</Id> <!-- Guyanese Hindustani, Guyanese Bhojpuri, Aili Gaili -->
     <FallbackLanguages>
       <LanguageId>Caribbean_Hindustani</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Sarnami</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Trinidadian</LanguageId>
+      <LanguageId>Sadri</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Caribbean_Hindustani_Sarnami</Id> <!-- Sarnami, Sarnami Hindoestani, Sarnami Hindustani, Surinamese Hindustani -->
     <FallbackLanguages>
       <LanguageId>Caribbean_Hindustani</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Guyanese</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Trinidadian</LanguageId>
+      <LanguageId>Sadri</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Caribbean_Hindustani_Trinidadian</Id> <!-- Trinidadian Hindustani, Trinidadian Bhojpuri, Trinidadian Hindi, Indian, Plantation Hindustani, Gaon ke Bolee, Village Speech -->
     <FallbackLanguages>
       <LanguageId>Caribbean_Hindustani</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Guyanese</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Sarnami</LanguageId>
+      <LanguageId>Sadri</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5275,6 +5195,7 @@
     <Id>Catalan</Id>
     <Code iso-639-1="ca" iso-639-3="cat" />
     <GameIds>
+      <GameId game="HOI4MDM">ADO</GameId> <!-- Andorra -->
       <GameId game="HOI4MDM">CAT</GameId> <!-- Catalonia -->
     </GameIds>
     <FallbackLanguages>
@@ -5686,6 +5607,7 @@
       <GameId game="HOI4TGW">CHI</GameId> <!-- China -->
       <GameId game="HOI4TGW">MAN</GameId> <!-- China -->
       <GameId game="HOI4TGW">PRC</GameId> <!-- China -->
+      <GameId game="HOI4TGW">QIN</GameId> <!-- Republic of China -->
       <GameId game="HOI4TGW">SHX</GameId> <!-- Shanxi -->
       <GameId game="HOI4TGW">YUN</GameId> <!-- Yunnan -->
     </GameIds>
@@ -5908,6 +5830,15 @@
       <GameId game="CK3CE">circassian</GameId>
       <GameId game="CK3IBL">circassian</GameId>
       <GameId game="CK3MBP">circassian</GameId>
+      <GameId game="IR">agathyrsian</GameId>
+      <GameId game="IR">maeotian</GameId>
+      <GameId game="IR">thyssagetae</GameId>
+      <GameId game="IR_AoE">agathyrsian</GameId>
+      <GameId game="IR_AoE">maeotian</GameId>
+      <GameId game="IR_AoE">thyssagetae</GameId>
+      <GameId game="IR_INV">agathyrsian</GameId>
+      <GameId game="IR_INV">maeotian</GameId>
+      <GameId game="IR_INV">thyssagetae</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -6237,65 +6168,6 @@
   <Language>
     <Id>Crow</Id> <!-- Apsáalooke -->
     <Code iso-639-3="cro" />
-  </Language>
-  <Language>
-    <Id>Cuman</Id>
-    <Code iso-639-3="qwm" />
-    <GameIds>
-      <GameId game="CK2">cuman</GameId>
-      <GameId game="CK2HIP">cuman</GameId>
-      <GameId game="CK3">cuman</GameId>
-      <GameId game="CK3">kipchak</GameId>
-      <GameId game="CK3AE">cuman</GameId>
-      <GameId game="CK3AE">kipchak</GameId> <!-- TODO: Maybe a language of its own -->
-      <GameId game="CK3CE">cuman</GameId>
-      <GameId game="CK3CE">kipchak</GameId>
-      <GameId game="CK3CMH">cuman</GameId>
-      <GameId game="CK3CMH">kipchak</GameId>
-      <GameId game="CK3IBL">cuman</GameId>
-      <GameId game="CK3IBL">kipchak</GameId>
-      <GameId game="CK3MBP">cuman</GameId>
-      <GameId game="CK3MBP">kipchak</GameId> <!-- TODO: Maybe a language of its own -->
-      <GameId game="CK3SoW">cuman</GameId>
-      <GameId game="CK3SoW">kipchak</GameId>
-      <GameId game="CK3TFE">cuman</GameId>
-      <GameId game="CK3TFE">kipchak</GameId> <!-- TODO: Maybe a language of its own -->
-      <GameId game="IR_ABW">cuman</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>KarachayBalkar</LanguageId>
-      <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Avar_Old</LanguageId>
-      <LanguageId>Bulgar</LanguageId>
-      <LanguageId>Bashkir_Medieval</LanguageId>
-      <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Khazar_Kabar</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
-      <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Turkish_Old</LanguageId>
-      <LanguageId>Avar</LanguageId>
-      <LanguageId>Turkish_Before1487</LanguageId>
-      <LanguageId>Turkish_Before1530</LanguageId>
-      <LanguageId>Turkish_Before1593</LanguageId>
-      <LanguageId>Turkish_Before1650</LanguageId>
-      <LanguageId>Turkish_Before1791</LanguageId>
-      <LanguageId>Turkish_Before1878</LanguageId>
-      <LanguageId>Turkish_Before1923</LanguageId>
-      <LanguageId>Turkish_Ottoman</LanguageId>
-      <LanguageId>Turkish_Before1925</LanguageId>
-      <LanguageId>Turkmen_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1961</LanguageId>
-      <LanguageId>Turkish_Before1970</LanguageId>
-      <LanguageId>Turkish_Before1984</LanguageId>
-      <LanguageId>Turkish_Before2005</LanguageId>
-      <LanguageId>Bashkir</LanguageId>
-      <LanguageId>Turkmen</LanguageId>
-      <LanguageId>Turkish</LanguageId>
-    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Cumbric</Id>
@@ -7960,6 +7832,7 @@
       <GameId game="HOI4">MLD</GameId> <!-- Maldives -->
       <GameId game="HOI4MDM">MLD</GameId> <!-- Maldives -->
       <GameId game="HOI4TGW">MLD</GameId> <!-- Maldives -->
+      <GameId game="IR_INV">dhivehi</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Sinhala</LanguageId>
@@ -8276,6 +8149,13 @@
     <Id>Dzongkha</Id> <!-- Bhutanese -->
     <Code iso-639-1="dz" iso-639-2="dzo" iso-639-3="dzo" />
     <GameIds>
+      <GameId game="CK3">lhomon</GameId>
+      <GameId game="CK3AE">lhomon</GameId>
+      <GameId game="CK3CE">lhomon</GameId>
+      <GameId game="CK3CMH">lhomon</GameId>
+      <GameId game="CK3IBL">lhomon</GameId>
+      <GameId game="CK3MBP">lhomon</GameId>
+      <GameId game="CK3SoW">lhomon</GameId>
       <GameId game="HOI4">BHU</GameId> <!-- Bhutan -->
       <GameId game="HOI4MDM">BHU</GameId> <!-- Bhutan -->
       <GameId game="HOI4TGW">BHU</GameId> <!-- Bhutan -->
@@ -8382,6 +8262,7 @@
       <GameId game="IR_TBA">khasutans</GameId>
       <GameId game="IR_TBA">kheman</GameId>
       <GameId game="IR_TBA">men_neferi</GameId>
+      <GameId game="IR_TBA">mu_kedi</GameId>
       <GameId game="IR_TBA">per_atumans</GameId>
       <GameId game="IR_TBA">per_bastans</GameId>
       <GameId game="IR_TBA">per_sopduans</GameId>
@@ -8432,6 +8313,7 @@
       <GameId game="CK2HIP">coptic</GameId>
       <GameId game="CK3CE">coptic</GameId>
       <GameId game="CK3MBP">egyptian_coptic</GameId>
+      <GameId game="IR_ABW">coptic</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -8505,8 +8387,10 @@
     <GameIds>
       <GameId game="HOI4MDM">AST</GameId> <!-- Australia -->
       <GameId game="HOI4MDM">BAH</GameId> <!-- Bahamas -->
+      <GameId game="HOI4MDM">BAR</GameId> <!-- Barbados -->
       <GameId game="HOI4MDM">BLZ</GameId> <!-- Belize -->
       <GameId game="HOI4MDM">BOT</GameId> <!-- Botswana -->
+      <GameId game="HOI4MDM">CAL</GameId> <!-- California -->
       <GameId game="HOI4MDM">CAN</GameId> <!-- Canada -->
       <GameId game="HOI4MDM">CAS</GameId> <!-- Cascadia -->
       <GameId game="HOI4MDM">CSA</GameId> <!-- Confederation of America -->
@@ -8522,6 +8406,7 @@
       <GameId game="HOI4MDM">NZL</GameId> <!-- New Zealand -->
       <GameId game="HOI4MDM">SAF</GameId> <!-- South Africa -->
       <GameId game="HOI4MDM">SIE</GameId> <!-- Sierra Leone -->
+      <GameId game="HOI4MDM">TEX</GameId> <!-- Texas -->
       <GameId game="HOI4MDM">TRI</GameId> <!-- Trinidad and Tobago -->
       <GameId game="HOI4MDM">USA</GameId> <!-- United States of America -->
       <GameId game="HOI4MDM">ZIM</GameId> <!-- Zimbabwe -->
@@ -10153,6 +10038,7 @@
       <GameId game="HOI4">PNG</GameId> <!-- Papua New Guinea -->
       <GameId game="HOI4">SAF</GameId> <!-- South Africa -->
       <GameId game="HOI4">SIE</GameId> <!-- Sierra Leone -->
+      <GameId game="HOI4">SOL</GameId> <!-- Solomon Islands -->
       <GameId game="HOI4">TRI</GameId> <!-- Trinidad and Tobago -->
       <GameId game="HOI4">USA</GameId> <!-- United States of America -->
       <GameId game="HOI4">USB</GameId> <!-- Unaligned States of America -->
@@ -11109,6 +10995,7 @@
     <Id>English_Before1918</Id>
     <GameIds>
       <GameId game="HOI4TGW">AST</GameId> <!-- Australia -->
+      <GameId game="HOI4MDM">SOL</GameId> <!-- Solomon Islands -->
       <GameId game="HOI4TGW">BAH</GameId> <!-- Bahamas -->
       <GameId game="HOI4TGW">BLZ</GameId> <!-- Belize -->
       <GameId game="HOI4TGW">BOT</GameId> <!-- Botswana -->
@@ -11124,6 +11011,7 @@
       <GameId game="HOI4TGW">PNG</GameId> <!-- Papua -->
       <GameId game="HOI4TGW">SAF</GameId> <!-- South Africa -->
       <GameId game="HOI4TGW">SIE</GameId> <!-- Sierra Leone -->
+      <GameId game="HOI4TGW">SOL</GameId> <!-- Solomon Islands -->
       <GameId game="HOI4TGW">TRI</GameId> <!-- Trinidad and Tobago -->
       <GameId game="HOI4TGW">USA</GameId> <!-- America -->
       <GameId game="HOI4TGW">USB</GameId> <!-- Unaligned States of America -->
@@ -14444,10 +14332,12 @@
     <Code iso-639-1="fr" iso-639-3="fra" />
     <GameIds>
       <GameId game="HOI4MDM">BEN</GameId> <!-- Benin -->
+      <GameId game="HOI4MDM">BFA</GameId> <!-- Burkina Faso -->
       <GameId game="HOI4MDM">CDI</GameId> <!-- Côte d'Ivoire -->
       <GameId game="HOI4MDM">DJI</GameId> <!-- Djibouti -->
       <GameId game="HOI4MDM">FRA</GameId> <!-- France -->
       <GameId game="HOI4MDM">GNA</GameId> <!-- Guinea -->
+      <GameId game="HOI4MDM">MNC</GameId> <!-- Monaco -->
       <GameId game="HOI4MDM">SEN</GameId> <!-- Senegal -->
       <GameId game="HOI4MDM">TOG</GameId> <!-- Togo -->
     </GameIds>
@@ -15600,9 +15490,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Fulah</Id> <!-- Fula -->
+    <Id>Fulah</Id> <!-- Fula, Fulani -->
     <Code iso-639-1="ff" iso-639-2="ful" iso-639-3="ful" />
     <FallbackLanguages>
+      <LanguageId>Pulaar</LanguageId>
       <LanguageId>Pular</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -15610,16 +15501,8 @@
     <Id>Gagauz</Id>
     <Code iso-639-3="gag" />
     <FallbackLanguages>
-      <LanguageId>Bashkir_Medieval</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Turkic_Old</LanguageId>
       <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Bulgar</LanguageId>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Khazar_Kabar</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
       <LanguageId>Turkish_Old</LanguageId>
       <LanguageId>Turkish_Before1487</LanguageId>
@@ -18181,6 +18064,7 @@
   <Language>
     <Id>German_Before1918</Id>
     <GameIds>
+      <GameId game="HOI4TGW">AUH</GameId> <!-- Austrian Empire -->
       <GameId game="HOI4TGW">AUS</GameId> <!-- Austria -->
       <GameId game="HOI4TGW">DDR</GameId> <!-- Germany -->
       <GameId game="HOI4TGW">GER</GameId> <!-- Germany -->
@@ -20777,12 +20661,14 @@
   <Language>
     <Id>Germanic_Proto</Id>
     <GameIds>
+      <GameId game="CK2TWK">taifal</GameId>
       <GameId game="CK2TWK">vandal</GameId>
       <GameId game="CK3TFE">burgundian</GameId>
       <GameId game="CK3TFE">gepid</GameId>
       <GameId game="CK3TFE">herulian</GameId>
       <GameId game="CK3TFE">old_suebi</GameId>
       <GameId game="CK3TFE">rugian</GameId>
+      <GameId game="CK3TFE">taifalian</GameId>
       <GameId game="CK3TFE">vandal</GameId>
       <GameId game="CK3TFE">varinian</GameId>
       <GameId game="IR">bastarnae</GameId>
@@ -20969,6 +20855,19 @@
       <LanguageId>Manx</LanguageId>
       <LanguageId>Scottish_Gaelic</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Gondi</Id>
+    <Code iso-639-2="gon" iso-639-3="gon" />
+    <GameIds>
+      <GameId game="CK3">gond</GameId>
+      <GameId game="CK3AE">gond</GameId>
+      <GameId game="CK3CE">gond</GameId>
+      <GameId game="CK3CMH">gond</GameId>
+      <GameId game="CK3IBL">gond</GameId>
+      <GameId game="CK3MBP">gond</GameId>
+      <GameId game="CK3SoW">gond</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Gorontalo</Id>
@@ -23465,6 +23364,9 @@
   </Language>
   <Language>
     <Id>Greek_Ancient_ArcadoCypriot_Pamphylian</Id>
+    <GameIds>
+      <GameId game="IR">pamphylian</GameId>
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>Greek_Ancient_ArcadoCypriot</LanguageId>
       <LanguageId>Greek_Ancient_Doric</LanguageId>
@@ -23521,6 +23423,7 @@
     <Id>Greek_Ancient_Macedonian</Id>
     <GameIds>
       <GameId game="CK3ATHA">macedonian</GameId>
+      <GameId game="IR">macedonian</GameId>
       <GameId game="IR_AoE">macedonian</GameId>
       <GameId game="IR_INV">macedonian</GameId>
     </GameIds>
@@ -24047,9 +23950,101 @@
   <Language>
     <Id>Grenadian_English</Id> <!-- Grenadian Creole English -->
     <Code iso-639-3="gcl" />
+    <FallbackLanguages>
+      <LanguageId>English</LanguageId>
+      <LanguageId>English_Before2001</LanguageId>
+      <LanguageId>English_Before2000</LanguageId>
+      <LanguageId>English_Before1995</LanguageId>
+      <LanguageId>English_Before1989</LanguageId>
+      <LanguageId>English_Before1985</LanguageId>
+      <LanguageId>English_Before1979</LanguageId>
+      <LanguageId>English_Before1976</LanguageId>
+      <LanguageId>English_Before1975</LanguageId>
+      <LanguageId>English_Before1974</LanguageId>
+      <LanguageId>English_Before1973</LanguageId>
+      <LanguageId>English_Before1972</LanguageId>
+      <LanguageId>English_Before1966</LanguageId>
+      <LanguageId>English_Before1963</LanguageId>
+      <LanguageId>English_Before1961</LanguageId>
+      <LanguageId>English_Before1956</LanguageId>
+      <LanguageId>English_Before1954</LanguageId>
+      <LanguageId>English_Before1949</LanguageId>
+      <LanguageId>English_Before1938</LanguageId>
+      <LanguageId>English_Before1937</LanguageId>
+      <LanguageId>English_Before1935</LanguageId>
+      <LanguageId>English_Before1932</LanguageId>
+      <LanguageId>English_Before1930</LanguageId>
+      <LanguageId>English_Before1928</LanguageId>
+      <LanguageId>English_Before1926</LanguageId>
+      <LanguageId>English_Before1925</LanguageId>
+      <LanguageId>English_Before1923</LanguageId>
+      <LanguageId>English_Before1920</LanguageId>
+      <LanguageId>English_Before1919</LanguageId>
+      <LanguageId>English_Before1918</LanguageId>
+      <LanguageId>English_Before1917</LanguageId>
+      <LanguageId>English_Before1916</LanguageId>
+      <LanguageId>English_Before1915</LanguageId>
+      <LanguageId>English_Before1914</LanguageId>
+      <LanguageId>English_Before1911</LanguageId>
+      <LanguageId>English_Before1907</LanguageId>
+      <LanguageId>English_Before1901</LanguageId>
+      <LanguageId>English_Before20Century</LanguageId>
+      <LanguageId>English_Before1888</LanguageId>
+      <LanguageId>English_Before1881</LanguageId>
+      <LanguageId>English_Before1880</LanguageId>
+      <LanguageId>English_Before1877</LanguageId>
+      <LanguageId>English_Before1876</LanguageId>
+      <LanguageId>English_Before1874</LanguageId>
+      <LanguageId>English_Before1869</LanguageId>
+      <LanguageId>English_Before1868</LanguageId>
+      <LanguageId>English_Before1859</LanguageId>
+      <LanguageId>English_Before1857</LanguageId>
+      <LanguageId>English_Before1855</LanguageId>
+      <LanguageId>English_Before1822</LanguageId>
+      <LanguageId>English_Before1821</LanguageId>
+      <LanguageId>English_Before1805</LanguageId>
+      <LanguageId>English_Before1803</LanguageId>
+      <LanguageId>English_Before19Century</LanguageId>
+      <LanguageId>English_Before1794</LanguageId>
+      <LanguageId>English_Before1767</LanguageId>
+      <LanguageId>English_Before1705</LanguageId>
+      <LanguageId>English_Before1703</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Grenadian_French</Id> <!-- Grenadian Creole French -->
+    <FallbackLanguages>
+      <LanguageId>French</LanguageId>
+      <LanguageId>French_Before1991</LanguageId>
+      <LanguageId>French_Before1979</LanguageId>
+      <LanguageId>French_Before1976</LanguageId>
+      <LanguageId>French_Before1975</LanguageId>
+      <LanguageId>French_Before1972</LanguageId>
+      <LanguageId>French_Before1966</LanguageId>
+      <LanguageId>French_Before1962</LanguageId>
+      <LanguageId>French_Before1961</LanguageId>
+      <LanguageId>French_Before1956</LanguageId>
+      <LanguageId>French_Before1954</LanguageId>
+      <LanguageId>French_Before1932</LanguageId>
+      <LanguageId>French_Before1930</LanguageId>
+      <LanguageId>French_Before1926</LanguageId>
+      <LanguageId>French_Before1925</LanguageId>
+      <LanguageId>French_Before1924</LanguageId>
+      <LanguageId>French_Before1923</LanguageId>
+      <LanguageId>French_Before1919</LanguageId>
+      <LanguageId>French_Before1839</LanguageId>
+      <LanguageId>French_Before1822</LanguageId>
+      <LanguageId>French_Before1804</LanguageId>
+      <LanguageId>French_Before19Century</LanguageId>
+      <LanguageId>French_Before1793</LanguageId>
+      <LanguageId>French_Before1705</LanguageId>
+      <LanguageId>French_Before18Century</LanguageId>
+      <LanguageId>French_Before17Century</LanguageId>
+      <LanguageId>French_Before16Century</LanguageId>
+      <LanguageId>French_Middle</LanguageId>
+      <LanguageId>Norman</LanguageId>
+      <LanguageId>French_Old</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Gronings</Id> <!-- Grönnegs -->
@@ -24066,6 +24061,18 @@
   <Language>
     <Id>Gros_Ventre</Id> <!-- Atsina, Ananin, Ahahnelin, Ahe, A’ani -->
     <Code iso-639-3="ats" />
+  </Language>
+  <Language>
+    <Id>Guan</Id>
+    <GameIds>
+      <GameId game="CK3">guan</GameId>
+      <GameId game="CK3AE">guan</GameId>
+      <GameId game="CK3CE">guan</GameId>
+      <GameId game="CK3CMH">guan</GameId>
+      <GameId game="CK3IBL">guan</GameId>
+      <GameId game="CK3MBP">guan</GameId>
+      <GameId game="CK3SoW">guan</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Guanche</Id>
@@ -24345,6 +24352,14 @@
     <Id>Hebrew_Medieval</Id> <!-- c. 4th century AD – c. 19th century AD -->
     <GameIds>
       <GameId game="CK2TWK">hebrew</GameId>
+      <GameId game="CK3">radhanite</GameId>
+      <GameId game="CK3AE">radhanite</GameId>
+      <GameId game="CK3CE">radhanite</GameId>
+      <GameId game="CK3CMH">radhanite</GameId>
+      <GameId game="CK3IBL">radhanite</GameId>
+      <GameId game="CK3MBP">radhanite</GameId>
+      <GameId game="CK3SoW">radhanite</GameId>
+      <GameId game="CK3TFE">hebrew</GameId>
       <GameId game="IR_ABW">hebrew</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -24391,6 +24406,9 @@
   </Language>
   <Language>
     <Id>Hejazi</Id> <!-- Hejazi Arabic, Hijazi Arabic, West Arabian Arabic -->
+    <GameIds>
+      <GameId game="HOI4TGW">HJZ</GameId> <!-- Hejaz -->
+    </GameIds>
     <FallbackLanguages>
       <LanguageId>Arabic</LanguageId>
       <LanguageId>Egyptian_Arabic</LanguageId>
@@ -24545,6 +24563,7 @@
       <LanguageId>Lycian</LanguageId>
       <LanguageId>Lydian</LanguageId>
       <LanguageId>Cappadocian</LanguageId>
+      <LanguageId>Paphlagonian</LanguageId>
       <LanguageId>Carian</LanguageId>
       <LanguageId>Mysian</LanguageId>
     </FallbackLanguages>
@@ -25199,6 +25218,7 @@
   <Language>
     <Id>Hungarian_Before1920</Id>
     <GameIds>
+      <GameId game="HOI4TGW">HSR</GameId> <!-- Hungarian Republic -->
       <GameId game="HOI4TGW">HUN</GameId> <!-- Hungary -->
     </GameIds>
     <FallbackLanguages>
@@ -27674,6 +27694,14 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Ijaw</Id>
+    <Code iso-639-2="ijo" iso-639-5="ijo" />
+    <GameIds>
+      <GameId game="CK3CE">ijaw</GameId>
+      <GameId game="CK3MBP">ijaw</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Ilmenian</Id>
     <GameIds>
       <GameId game="CK2">ilmenian</GameId>
@@ -28824,6 +28852,7 @@
     <Id>Japanese_Middle_Late</Id> <!-- c. 12th century AD – c. 16th century AD -->
     <GameIds>
       <GameId game="CK3AE">japan</GameId>
+      <GameId game="CK3AE">kaizuka</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Japanese_Middle</LanguageId>
@@ -28908,6 +28937,13 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Jukun</Id>
+    <GameIds>
+      <GameId game="CK3CE">jukun</GameId>
+      <GameId game="CK3MBP">jukun</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Jurchen</Id>
     <Code iso-639-3="juc" />
     <GameIds>
@@ -28920,6 +28956,7 @@
       <GameId game="CK3IBL">jurchen</GameId>
       <GameId game="CK3MBP">jurchen</GameId>
       <GameId game="CK3SoW">jurchen</GameId>
+      <GameId game="CK3TFE">jurchen</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -28976,6 +29013,13 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Kachari</Id>
+    <Code iso-639-3="xac" />
+    <GameIds>
+      <GameId game="CK3MBP">kachari</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Kafa</Id>
     <Code iso-639-3="kbr" />
     <FallbackLanguages>
@@ -29002,6 +29046,17 @@
   <Language>
     <Id>Kalinago</Id>
     <Code iso-639-3="crb" />
+  </Language>
+  <Language>
+    <Id>Kamarupi</Id> <!-- c. 5th century AD – c. 13th century AD -->
+    <GameIds>
+      <GameId game="CK3MBP">kamarupi</GameId>
+      <GameId game="IR">kamarupi</GameId>
+      <GameId game="IR_INV">kamarupi</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Assamese</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Kamba</Id> <!-- Kikamba -->
@@ -29070,14 +29125,6 @@
     <Code iso-639-3="cak" />
   </Language>
   <Language>
-    <Id>KarachayBalkar</Id>
-    <Code iso-639-2="krc" iso-639-3="krc" />
-    <FallbackLanguages>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>Kumyc</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
     <Id>Karakalpak</Id> <!-- Kara-Kalpak -->
     <Code iso-639-2="kaa" iso-639-3="kaa" />
   </Language>
@@ -29123,6 +29170,19 @@
       <LanguageId>Uzbek_Before2019</LanguageId>
       <LanguageId>Uzbek_Before1975</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Kashmiri</Id>
+    <Code iso-639-1="ks" iso-639-2="kas" iso-639-3="kas" />
+    <GameIds>
+      <GameId game="CK3">kashmiri</GameId>
+      <GameId game="CK3AE">kashmiri</GameId>
+      <GameId game="CK3CE">kashmiri</GameId>
+      <GameId game="CK3CMH">kashmiri</GameId>
+      <GameId game="CK3IBL">kashmiri</GameId>
+      <GameId game="CK3MBP">kashmiri</GameId>
+      <GameId game="CK3SoW">kashmiri</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Kashubian</Id>
@@ -29186,127 +29246,6 @@
     <GameIds>
       <GameId game="CK2HIP">khalaj</GameId>
     </GameIds>
-  </Language>
-  <Language>
-    <Id>Khazar</Id>
-    <Code iso-639-3="zkz" />
-    <FallbackLanguages>
-      <LanguageId>Khazar_Kabar</LanguageId>
-      <LanguageId>Bashkir_Medieval</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
-      <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
-      <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Turkish_Old</LanguageId>
-      <LanguageId>Turkish_Before1487</LanguageId>
-      <LanguageId>Turkish_Before1530</LanguageId>
-      <LanguageId>Turkish_Before1593</LanguageId>
-      <LanguageId>Turkish_Before1650</LanguageId>
-      <LanguageId>Turkish_Before1791</LanguageId>
-      <LanguageId>Turkish_Before1878</LanguageId>
-      <LanguageId>Turkish_Before1923</LanguageId>
-      <LanguageId>Turkish_Ottoman</LanguageId>
-      <LanguageId>Turkish_Before1925</LanguageId>
-      <LanguageId>Turkmen_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1961</LanguageId>
-      <LanguageId>Turkish_Before1970</LanguageId>
-      <LanguageId>Turkish_Before1984</LanguageId>
-      <LanguageId>Turkish_Before2005</LanguageId>
-      <LanguageId>Bashkir</LanguageId>
-      <LanguageId>Turkmen</LanguageId>
-      <LanguageId>Turkish</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Khazar_Kabar</Id>
-    <GameIds>
-      <GameId game="CK2HIP">khavar</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Bashkir_Medieval</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
-      <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Bulgar</LanguageId>
-      <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
-      <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Turkish_Old</LanguageId>
-      <LanguageId>Turkish_Before1487</LanguageId>
-      <LanguageId>Turkish_Before1530</LanguageId>
-      <LanguageId>Turkish_Before1593</LanguageId>
-      <LanguageId>Turkish_Before1650</LanguageId>
-      <LanguageId>Turkish_Before1791</LanguageId>
-      <LanguageId>Turkish_Before1878</LanguageId>
-      <LanguageId>Turkish_Before1923</LanguageId>
-      <LanguageId>Turkish_Ottoman</LanguageId>
-      <LanguageId>Turkish_Before1925</LanguageId>
-      <LanguageId>Turkmen_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1961</LanguageId>
-      <LanguageId>Turkish_Before1970</LanguageId>
-      <LanguageId>Turkish_Before1984</LanguageId>
-      <LanguageId>Turkish_Before2005</LanguageId>
-      <LanguageId>Bashkir</LanguageId>
-      <LanguageId>Turkmen</LanguageId>
-      <LanguageId>Turkish</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
-    <Id>Khazar_Medieval</Id>
-    <GameIds>
-      <GameId game="CK2">khazar</GameId>
-      <GameId game="CK2HIP">khazar</GameId>
-      <GameId game="CK3">khazar</GameId>
-      <GameId game="CK3AE">khazar</GameId>
-      <GameId game="CK3CE">khazar</GameId>
-      <GameId game="CK3CMH">khazar</GameId>
-      <GameId game="CK3IBL">khazar</GameId>
-      <GameId game="CK3MBP">khazar</GameId>
-      <GameId game="CK3SoW">khazar</GameId>
-      <GameId game="CK3TFE">khazar</GameId>
-      <GameId game="IR_AoE">khazars</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Khazar_Medieval</LanguageId>
-      <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Khazar_Kabar</LanguageId>
-      <LanguageId>Bashkir_Medieval</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
-      <LanguageId>Bashkir</LanguageId>
-      <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Turkmen</LanguageId>
-      <LanguageId>Turkish_Old</LanguageId>
-      <LanguageId>Turkish_Before1487</LanguageId>
-      <LanguageId>Turkish_Before1530</LanguageId>
-      <LanguageId>Turkish_Before1593</LanguageId>
-      <LanguageId>Turkish_Before1650</LanguageId>
-      <LanguageId>Turkish_Before1791</LanguageId>
-      <LanguageId>Turkish_Before1878</LanguageId>
-      <LanguageId>Turkish_Before1923</LanguageId>
-      <LanguageId>Turkish_Ottoman</LanguageId>
-      <LanguageId>Turkish_Before1925</LanguageId>
-      <LanguageId>Turkmen_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1961</LanguageId>
-      <LanguageId>Turkish_Before1970</LanguageId>
-      <LanguageId>Turkish_Before1984</LanguageId>
-      <LanguageId>Turkish_Before2005</LanguageId>
-      <LanguageId>Turkish</LanguageId>
-    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Khanty</Id>
@@ -29421,9 +29360,33 @@
       <GameId game="CK3MBP">saka</GameId>
       <GameId game="CK3SoW">saka</GameId>
       <GameId game="CK3TFE">saka</GameId>
-      <GameId game="IR">saka</GameId> <!-- TODO: Likely doesn't fit the time period -->
+      <GameId game="IR_INV">derbiccan</GameId> <!-- TODO: Likely doesn't fit the time period -->
+      <GameId game="IR_INV">khotanese</GameId> <!-- TODO: Likely doesn't fit the time period -->
       <GameId game="IR_INV">saka</GameId> <!-- TODO: Likely doesn't fit the time period -->
+      <GameId game="IR">saka</GameId> <!-- TODO: Likely doesn't fit the time period -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Scythian</LanguageId>
+      <LanguageId>Ossetic_Old</LanguageId>
+      <LanguageId>Alan</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Scythian</Id>
+    <Code iso-639-3="xsc" />
+    <GameIds>
+      <GameId game="IR_AoE">sarmatian</GameId>
+      <GameId game="IR_AoE">scythian</GameId>
+      <GameId game="IR_INV">sarmatian</GameId>
+      <GameId game="IR_INV">scythian</GameId>
+      <GameId game="IR">sarmatian</GameId>
+      <GameId game="IR">scythian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Ossetic_Old</LanguageId>
+      <LanguageId>Alan</LanguageId>
+      <LanguageId>Khotanese</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Khwarezmi</Id> <!-- c. 550 BC – c. 1200 AD --> <!-- Khwarezmian, Khwārezmian, Khwarazmian, Chorasmian, Khorezmian -->
@@ -29437,6 +29400,7 @@
       <GameId game="CK3IBL">khwarezmian</GameId>
       <GameId game="CK3MBP">khwarezmian</GameId>
       <GameId game="CK3SoW">khwarezmian</GameId>
+      <GameId game="CK3TFE">khwarezmian</GameId>
       <GameId game="IR">kharesmian</GameId>
       <GameId game="IR_AoE">kharesmian</GameId>
       <GameId game="IR_INV">kharesmian</GameId>
@@ -29476,6 +29440,18 @@
   <Language>
     <Id>Kiowa</Id> <!-- Cáuijògà, Cáuijò:gyà -->
     <Code iso-639-3="kio" />
+  </Language>
+  <Language>
+    <Id>Kirati</Id>
+    <GameIds>
+      <GameId game="CK3">kirati</GameId>
+      <GameId game="CK3AE">kirati</GameId>
+      <GameId game="CK3CE">kirati</GameId>
+      <GameId game="CK3CMH">kirati</GameId>
+      <GameId game="CK3IBL">kirati</GameId>
+      <GameId game="CK3MBP">kirati</GameId>
+      <GameId game="CK3SoW">kirati</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Klallam</Id> <!-- Clallam, Ns'Klallam, S'klallam -->
@@ -29838,6 +29814,9 @@
   <Language>
     <Id>Kumaoni</Id>
     <Code iso-639-3="kfy" />
+    <GameIds>
+      <GameId game="CK3MBP">kumaoni</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Kumeyaay</Id> <!-- Kumiai, Central Diegueño, Kamia, Campo -->
@@ -29849,8 +29828,7 @@
     <Id>Kumyc</Id> <!-- Kumyk -->
     <Code iso-639-2="kum" iso-639-3="kum" />
     <FallbackLanguages>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Turkic_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -29879,6 +29857,7 @@
     <GameIds>
       <GameId game="HOI4">KUR</GameId> <!-- Kurdistan -->
       <GameId game="HOI4MDM">KUR</GameId> <!-- Kurdistan -->
+      <GameId game="HOI4MDM">PKK</GameId> <!-- Kurdish Worker's Party -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Kurdish_Before1930</LanguageId>
@@ -29914,6 +29893,7 @@
       <GameId game="CK3IBL">kurdish</GameId>
       <GameId game="CK3MBP">kurdish</GameId>
       <GameId game="CK3SoW">kurdish</GameId>
+      <GameId game="CK3TFE">kurdish</GameId>
       <GameId game="IR_ABW">kurds</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -36542,6 +36522,7 @@
     <Id>Livonian_Medieval</Id>
     <GameIds>
       <GameId game="CK2HIP">livonian</GameId>
+      <GameId game="CK3TFE">livonian</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Livonian</LanguageId>
@@ -36888,6 +36869,19 @@
     <Code iso-639-3="luy" />
   </Language>
   <Language>
+    <Id>Lullubi</Id> <!-- Lulubi -->
+    <GameIds>
+      <GameId game="CK3TBA">lullubi</GameId>
+      <GameId game="IR_TBA">lullubi</GameId>
+    </GameIds>
+  </Language>
+  <Language>
+    <Id>Luri</Id> <!-- Lurish -->
+    <GameIds>
+      <GameId game="IR_ABW">lurish</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Lushootseed</Id> <!-- Puget Salish, Puget Sound Salish, Skagit-Nisqually -->
     <Code iso-639-3="lut" />
   </Language>
@@ -36911,6 +36905,7 @@
       <LanguageId>Lycian</LanguageId>
       <LanguageId>Lydian</LanguageId>
       <LanguageId>Cappadocian</LanguageId>
+      <LanguageId>Paphlagonian</LanguageId>
       <LanguageId>Carian</LanguageId>
       <LanguageId>Mysian</LanguageId>
     </FallbackLanguages>
@@ -36974,6 +36969,7 @@
       <LanguageId>Hittite</LanguageId>
       <LanguageId>Lydian</LanguageId>
       <LanguageId>Cappadocian</LanguageId>
+      <LanguageId>Paphlagonian</LanguageId>
       <LanguageId>Carian</LanguageId>
       <LanguageId>Mysian</LanguageId>
     </FallbackLanguages>
@@ -36991,6 +36987,7 @@
     <FallbackLanguages>
       <LanguageId>Lycian</LanguageId>
       <LanguageId>Cappadocian</LanguageId>
+      <LanguageId>Paphlagonian</LanguageId>
       <LanguageId>Carian</LanguageId>
       <LanguageId>Mysian</LanguageId>
       <LanguageId>Luwian</LanguageId>
@@ -37097,8 +37094,10 @@
     <Id>Malay</Id>
     <Code iso-639-1="ms" iso-639-3="msa" />
     <GameIds>
+      <GameId game="HOI4MDM">BRU</GameId> <!-- Brunei -->
       <GameId game="HOI4MDM">MAL</GameId> <!-- Malaysia -->
       <GameId game="HOI4MDM">MAY</GameId> <!-- Malaysia -->
+      <GameId game="HOI4MDM">SIN</GameId> <!-- Singapore -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Malay_Cocos</LanguageId>
@@ -37264,6 +37263,19 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Malvi</Id>
+    <Code iso-639-3="mup" />
+    <GameIds>
+      <GameId game="CK3">malvi</GameId>
+      <GameId game="CK3AE">malvi</GameId>
+      <GameId game="CK3CE">malvi</GameId>
+      <GameId game="CK3CMH">malvi</GameId>
+      <GameId game="CK3IBL">malvi</GameId>
+      <GameId game="CK3MBP">malvi</GameId>
+      <GameId game="CK3SoW">malvi</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Mamprusi</Id> <!-- Mampruli, Mampelle -->
     <Code iso-639-3="maw" />
     <FallbackLanguages>
@@ -37282,9 +37294,12 @@
       <GameId game="CK2HIP">manden</GameId>
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Maninka</LanguageId>
+      <LanguageId>Marka</LanguageId>
       <LanguageId>Soninke</LanguageId>
       <LanguageId>Soninke_Bozo</LanguageId>
       <LanguageId>Soninke_Bobo</LanguageId>
+      <LanguageId>Mandinka</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -37292,6 +37307,29 @@
     <Code iso-639-3="mnk" />
     <FallbackLanguages>
       <LanguageId>Manding</LanguageId>
+      <LanguageId>Maninka</LanguageId>
+      <LanguageId>Marka</LanguageId>
+      <LanguageId>Soninke</LanguageId>
+      <LanguageId>Soninke_Bozo</LanguageId>
+      <LanguageId>Soninke_Bobo</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Maninka</Id>
+    <Code iso-639-3="emk" />
+    <GameIds>
+      <GameId game="CK3">malinke</GameId>
+      <GameId game="CK3AE">malinke</GameId>
+      <GameId game="CK3CE">malinke</GameId>
+      <GameId game="CK3CMH">malinke</GameId>
+      <GameId game="CK3IBL">malinke</GameId>
+      <GameId game="CK3MBP">malinke</GameId>
+      <GameId game="CK3SoW">malinke</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Manding</LanguageId>
+      <LanguageId>Mandinka</LanguageId>
+      <LanguageId>Marka</LanguageId>
       <LanguageId>Soninke</LanguageId>
       <LanguageId>Soninke_Bozo</LanguageId>
       <LanguageId>Soninke_Bobo</LanguageId>
@@ -37381,6 +37419,27 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Marka</Id>
+    <Code iso-639-3="rkm" />
+    <GameIds>
+      <GameId game="CK3">marka</GameId>
+      <GameId game="CK3AE">marka</GameId>
+      <GameId game="CK3CE">marka</GameId>
+      <GameId game="CK3CMH">marka</GameId>
+      <GameId game="CK3IBL">marka</GameId>
+      <GameId game="CK3MBP">marka</GameId>
+      <GameId game="CK3SoW">marka</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Manding</LanguageId>
+      <LanguageId>Maninka</LanguageId>
+      <LanguageId>Soninke</LanguageId>
+      <LanguageId>Soninke_Bozo</LanguageId>
+      <LanguageId>Soninke_Bobo</LanguageId>
+      <LanguageId>Mandinka</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Marshallese</Id>
     <Code iso-639-1="mh" iso-639-2="mah" iso-639-3="mah" />
   </Language>
@@ -37450,6 +37509,9 @@
   <Language>
     <Id>Mazanderani</Id> <!-- Tabari -->
     <Code iso-639-3="mzn" />
+    <GameIds>
+      <GameId game="HOI4MDM">TAB</GameId> <!-- Tabaristan -->
+    </GameIds>
   </Language>
   <Language>
     <Id>Median</Id> <!-- Medean, Medic -->
@@ -37826,8 +37888,13 @@
     <Id>Mon_Old</Id>
     <Code iso-639-3="omx" />
     <GameIds>
+      <GameId game="CK3">mon</GameId>
       <GameId game="CK3AE">mon</GameId>
       <GameId game="CK3CE">mon</GameId>
+      <GameId game="CK3IBL">mon</GameId>
+      <GameId game="CK3MBP">mon</GameId>
+      <GameId game="CK3SoW">mon</GameId>
+      <GameId game="CK3TFE">mon</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Mon</LanguageId>
@@ -37911,12 +37978,19 @@
       <GameId game="CK2">mongol</GameId>
       <GameId game="CK2HIP">mongol</GameId>
       <GameId game="CK3">mongol</GameId>
+      <GameId game="CK3">naiman</GameId>
       <GameId game="CK3AE">mongol</GameId>
+      <GameId game="CK3AE">naiman</GameId>
       <GameId game="CK3CE">mongol</GameId>
+      <GameId game="CK3CE">naiman</GameId>
       <GameId game="CK3CMH">mongol</GameId>
+      <GameId game="CK3CMH">naiman</GameId>
       <GameId game="CK3IBL">mongol</GameId>
+      <GameId game="CK3IBL">naiman</GameId>
       <GameId game="CK3MBP">mongol</GameId>
+      <GameId game="CK3MBP">naiman</GameId>
       <GameId game="CK3SoW">mongol</GameId>
+      <GameId game="CK3SoW">naiman</GameId>
       <GameId game="CK3TFE">mongol</GameId>
     </GameIds>
     <FallbackLanguages>
@@ -37968,6 +38042,19 @@
       <LanguageId>SerboCroatian_Medieval</LanguageId>
       <LanguageId>Slovene_Medieval</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Moore</Id> <!-- Mooré, Mossi -->
+    <Code iso-639-2="mos" iso-639-3="mos" />
+    <GameIds>
+      <GameId game="CK3">mossi</GameId>
+      <GameId game="CK3AE">mossi</GameId>
+      <GameId game="CK3CE">mossi</GameId>
+      <GameId game="CK3CMH">mossi</GameId>
+      <GameId game="CK3IBL">mossi</GameId>
+      <GameId game="CK3MBP">mossi</GameId>
+      <GameId game="CK3SoW">mossi</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Mozarabic</Id> <!-- Andalusi Romance -->
@@ -38313,6 +38400,18 @@
       <LanguageId>Genoese_Medieval</LanguageId>
       <LanguageId>Tuscan_Before1225</LanguageId>
       <LanguageId>Genoese_Before1225</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Nenets</Id> <!-- Yurak -->
+    <Code iso-639-3="yrk" />
+    <GameIds>
+      <GameId game="CK3MBP">nenets</GameId>
+      <GameId game="HOI4">NEN</GameId> <!-- Nenetsia -->
+      <GameId game="HOI4">YAM</GameId> <!-- Yamalian Republic -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Samoyed</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -38782,6 +38881,8 @@
       <GameId game="CK3TBA">nubian</GameId>
       <GameId game="CK3TFE">nubian</GameId>
       <GameId game="IR_ABW">nubi</GameId>
+      <GameId game="IR_INV">lower_nubian</GameId>
+      <GameId game="IR_INV">nubian</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Meroitic</LanguageId>
@@ -38821,7 +38922,13 @@
     <Id>Nupe</Id> <!-- Anufe, Nupenci, Nyinfe, Tapa -->
     <Code iso-639-3="nup" />
     <GameIds>
+      <GameId game="CK3">nupe</GameId>
+      <GameId game="CK3AE">nupe</GameId>
       <GameId game="CK3CE">nupe</GameId>
+      <GameId game="CK3CMH">nupe</GameId>
+      <GameId game="CK3IBL">nupe</GameId>
+      <GameId game="CK3MBP">nupe</GameId>
+      <GameId game="CK3SoW">nupe</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -39312,47 +39419,24 @@
     </GameIds>
   </Language>
   <Language>
-    <Id>Oghuz</Id>
-    <GameIds>
-      <GameId game="CK2HIP">oghuz</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Bashkir_Medieval</LanguageId>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
-      <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Bulgar</LanguageId>
-      <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Khazar_Kabar</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
-      <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Turkish_Before1487</LanguageId>
-      <LanguageId>Turkish_Old</LanguageId>
-      <LanguageId>Turkish_Before1530</LanguageId>
-      <LanguageId>Turkish_Before1593</LanguageId>
-      <LanguageId>Turkish_Before1650</LanguageId>
-      <LanguageId>Turkish_Before1791</LanguageId>
-      <LanguageId>Turkish_Before1878</LanguageId>
-      <LanguageId>Turkish_Before1923</LanguageId>
-      <LanguageId>Turkish_Ottoman</LanguageId>
-      <LanguageId>Turkish_Before1925</LanguageId>
-      <LanguageId>Turkmen_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1961</LanguageId>
-      <LanguageId>Turkish_Before1970</LanguageId>
-      <LanguageId>Turkish_Before1984</LanguageId>
-      <LanguageId>Turkish_Before2005</LanguageId>
-      <LanguageId>Bashkir</LanguageId>
-      <LanguageId>Turkmen</LanguageId>
-      <LanguageId>Turkish</LanguageId>
-    </FallbackLanguages>
-  </Language>
-  <Language>
     <Id>Oirat</Id>
     <GameIds>
+      <GameId game="CK3">oirat</GameId>
+      <GameId game="CK3">uriankhai</GameId>
+      <GameId game="CK3AE">oirat</GameId>
+      <GameId game="CK3AE">uriankhai</GameId>
       <GameId game="CK3CE">oirat</GameId>
+      <GameId game="CK3CE">uriankhai</GameId>
+      <GameId game="CK3CMH">oirat</GameId>
+      <GameId game="CK3CMH">uriankhai</GameId>
+      <GameId game="CK3IBL">oirat</GameId>
+      <GameId game="CK3IBL">uriankhai</GameId>
+      <GameId game="CK3MBP">oirat</GameId>
+      <GameId game="CK3MBP">uriankhai</GameId>
+      <GameId game="CK3TFE">oirat</GameId>
+      <GameId game="CK3TFE">uriankhai</GameId>
+      <GameId game="CK3SoW">oirat</GameId>
+      <GameId game="CK3SoW">uriankhai</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Oirat_Kalmyk</LanguageId>
@@ -39395,6 +39479,7 @@
     <Code iso-639-1="om" iso-639-2="orm" iso-639-3="orm" />
     <GameIds>
       <GameId game="CK3CE">oromo</GameId>
+      <GameId game="CK3MBP">oromo</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -39488,6 +39573,8 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Ossetic_Before1946</LanguageId>
+      <LanguageId>Ossetic_Old</LanguageId>
+      <LanguageId>Alan</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -39497,6 +39584,16 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Ossetic</LanguageId>
+      <LanguageId>Ossetic_Old</LanguageId>
+      <LanguageId>Alan</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Ossetic_Old</Id>
+    <FallbackLanguages>
+      <LanguageId>Ossetic_Before1946</LanguageId>
+      <LanguageId>Ossetic</LanguageId>
+      <LanguageId>Alan</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -39532,6 +39629,9 @@
   </Language>
   <Language>
     <Id>Paeonian</Id> <!-- Paionian -->
+    <GameIds>
+      <GameId game="IR">paeonian</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Paipai</Id>
@@ -39547,6 +39647,15 @@
   <Language>
     <Id>Palauan</Id>
     <Code iso-639-2="pau" iso-639-3="pau" />
+    <GameIds>
+      <GameId game="HOI4MDM">PAU</GameId> <!-- Palau -->
+    </GameIds>
+  </Language>
+  <Language>
+    <Id>Palaungic</Id>
+    <GameIds>
+      <GameId game="CK3AE">palaungic</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Pali</Id>
@@ -39555,6 +39664,23 @@
   <Language>
     <Id>Pangasinan</Id>
     <Code iso-639-2="pag" iso-639-3="pag" />
+  </Language>
+  <Language>
+    <Id>Paphlagonian</Id>
+    <GameIds>
+      <GameId game="IR">paphlagonian</GameId>
+      <GameId game="IR_AoE">paphlagonian</GameId>
+      <GameId game="IR_INV">paphlagonian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Cappadocian</LanguageId>
+      <LanguageId>Carian</LanguageId>
+      <LanguageId>Hittite</LanguageId>
+      <LanguageId>Luwian</LanguageId>
+      <LanguageId>Lycian</LanguageId>
+      <LanguageId>Lydian</LanguageId>
+      <LanguageId>Mysian</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Papiamento</Id>
@@ -39658,54 +39784,6 @@
       <GameId game="HOI4TGW">AFG</GameId> <!-- Afghanistan -->
       <GameId game="IR_ABW">afghans</GameId>
     </GameIds>
-  </Language>
-  <Language>
-    <Id>Pecheneg</Id>
-    <Code iso-639-3="xpc" />
-    <GameIds>
-      <GameId game="CK2">pecheneg</GameId>
-      <GameId game="CK2HIP">pecheneg</GameId>
-      <GameId game="CK3">pecheneg</GameId>
-      <GameId game="CK3AE">pecheneg</GameId>
-      <GameId game="CK3CE">pecheneg</GameId>
-      <GameId game="CK3CMH">pecheneg</GameId>
-      <GameId game="CK3IBL">pecheneg</GameId>
-      <GameId game="CK3MBP">pecheneg</GameId>
-      <GameId game="CK3SoW">pecheneg</GameId>
-      <GameId game="CK3TFE">pecheneg</GameId>
-    </GameIds>
-    <FallbackLanguages>
-      <LanguageId>Bashkir_Medieval</LanguageId>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
-      <LanguageId>Kumyc</LanguageId>
-      <LanguageId>Bulgar</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Khazar_Kabar</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
-      <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Turkish_Before1487</LanguageId>
-      <LanguageId>Turkish_Old</LanguageId>
-      <LanguageId>Turkish_Before1530</LanguageId>
-      <LanguageId>Turkish_Before1593</LanguageId>
-      <LanguageId>Turkish_Before1650</LanguageId>
-      <LanguageId>Turkish_Before1791</LanguageId>
-      <LanguageId>Turkish_Before1878</LanguageId>
-      <LanguageId>Turkish_Before1923</LanguageId>
-      <LanguageId>Turkish_Ottoman</LanguageId>
-      <LanguageId>Turkish_Before1925</LanguageId>
-      <LanguageId>Turkmen_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1930</LanguageId>
-      <LanguageId>Turkish_Before1961</LanguageId>
-      <LanguageId>Turkish_Before1970</LanguageId>
-      <LanguageId>Turkish_Before1984</LanguageId>
-      <LanguageId>Turkish_Before2005</LanguageId>
-      <LanguageId>Bashkir</LanguageId>
-      <LanguageId>Turkmen</LanguageId>
-      <LanguageId>Turkish</LanguageId>
-    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Pelasgian</Id>
@@ -39859,6 +39937,7 @@
     <Code iso-639-2="phn" iso-639-3="phn" />
     <GameIds>
       <GameId game="CK3TBA">phoenician</GameId>
+      <GameId game="CK3TFE">phoenician</GameId>
       <GameId game="IR">phoenician</GameId>
       <GameId game="IR_INV">phoenician</GameId>
       <GameId game="IR_TBA">phoenician</GameId>
@@ -41604,9 +41683,27 @@
     <Code iso-639-3="xps" />
   </Language>
   <Language>
+    <Id>Pulaar</Id>
+    <Code iso-639-3="fuc" />
+    <GameIds>
+      <GameId game="CK3">pulaar</GameId>
+      <GameId game="CK3AE">pulaar</GameId>
+      <GameId game="CK3CE">pulaar</GameId>
+      <GameId game="CK3CMH">pulaar</GameId>
+      <GameId game="CK3IBL">pulaar</GameId>
+      <GameId game="CK3MBP">pulaar</GameId>
+      <GameId game="CK3SoW">pulaar</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Pular</LanguageId>
+      <LanguageId>Fulah</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Pular</Id>
     <Code iso-639-3="fuf" />
     <FallbackLanguages>
+      <LanguageId>Pulaar</LanguageId>
       <LanguageId>Fulah</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -41659,6 +41756,7 @@
       <GameId game="CK3IBL">qiang</GameId>
       <GameId game="CK3MBP">qiang</GameId>
       <GameId game="CK3SoW">qiang</GameId>
+      <GameId game="CK3TFE">qiang</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Tangut</LanguageId>
@@ -47508,7 +47606,10 @@
   <Language>
     <Id>Russian_Before1946</Id>
     <GameIds>
+      <GameId game="HOI4">CKK</GameId> <!-- Chukotka Republic -->
+      <GameId game="HOI4">CRI</GameId> <!-- Crimea -->
       <GameId game="HOI4">SOV</GameId> <!-- Russia -->
+      <GameId game="HOI4">TAY</GameId> <!-- Taymyria -->
       <GameId game="HOI4">VLA</GameId> <!-- Vladivostok Independent Republic -->
     </GameIds>
     <FallbackLanguages>
@@ -48470,6 +48571,7 @@
   <Language>
     <Id>Russian_Before1918</Id>
     <GameIds>
+      <GameId game="HOI4TGW">RUS</GameId> <!-- Russia -->
       <GameId game="HOI4TGW">SOV</GameId> <!-- Russia -->
     </GameIds>
     <FallbackLanguages>
@@ -50553,6 +50655,19 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Sadri</Id> <!-- Nagpuri -->
+    <Code iso-639-3="sck" />
+    <GameIds>
+      <GameId game="CK3MBP">nagpuri</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Caribbean_Hindustani</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Guyanese</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Sarnami</LanguageId>
+      <LanguageId>Caribbean_Hindustani_Trinidadian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Sahaptin</Id> <!-- Shahaptin, Ichishkin -->
   </Language>
   <Language>
@@ -50794,6 +50909,9 @@
       <GameId game="CK3MBP">samoyed</GameId>
       <GameId game="CK3SoW">samoyed</GameId>
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Nenets</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Sango</Id>
@@ -52178,6 +52296,7 @@
       <GameId game="HOI4TGW">CRO</GameId> <!-- Croatia -->
       <GameId game="HOI4TGW">HRZ</GameId> <!-- Herzegovina -->
       <GameId game="HOI4TGW">MNT</GameId> <!-- Montenegro -->
+      <GameId game="HOI4TGW">MTN</GameId> <!-- Montenegro -->
       <GameId game="HOI4TGW">SER</GameId> <!-- Serbia -->
       <GameId game="HOI4TGW">SLV</GameId> <!-- Slovenia -->
       <GameId game="HOI4TGW">YUG</GameId> <!-- Yugoslavia -->
@@ -52808,6 +52927,7 @@
     <Code iso-639-2="sid" iso-639-3="sid" />
     <GameIds>
       <GameId game="CK3CE">sidama</GameId>
+      <GameId game="CK3MBP">sidama</GameId>
     </GameIds>
   </Language>
   <Language>
@@ -52876,6 +52996,8 @@
       <GameId game="CK3IBL">sindhi</GameId>
       <GameId game="CK3MBP">sindhi</GameId>
       <GameId game="CK3SoW">sindhi</GameId>
+      <GameId game="IR">sindhi</GameId>
+      <GameId game="IR_ABW">sindhi</GameId>
       <GameId game="IR_INV">sindhi</GameId>
     </GameIds>
   </Language>
@@ -53956,6 +54078,7 @@
       <GameId game="HOI4MDM">SML</GameId> <!-- Somaliland -->
       <GameId game="HOI4MDM">SNA</GameId> <!-- Somali National Alliance -->
       <GameId game="HOI4MDM">SOM</GameId> <!-- Somalia -->
+      <GameId game="HOI4MDM">SWS</GameId> <!-- Southwestern State of Somalia -->
       <GameId game="HOI4TGW">SOM</GameId> <!-- Somalia -->
       <GameId game="IR_ABW">somali</GameId>
     </GameIds>
@@ -53970,6 +54093,7 @@
       <GameId game="CK3CE">songhai</GameId>
       <GameId game="CK3CMH">songhai</GameId>
       <GameId game="CK3IBL">songhai</GameId>
+      <GameId game="CK3MBP">songhai</GameId>
       <GameId game="CK3SoW">songhai</GameId>
     </GameIds>
   </Language>
@@ -53992,6 +54116,9 @@
       <LanguageId>Soninke_Bozo</LanguageId>
       <LanguageId>Soninke_Bobo</LanguageId>
       <LanguageId>Manding</LanguageId>
+      <LanguageId>Maninka</LanguageId>
+      <LanguageId>Mandinka</LanguageId>
+      <LanguageId>Marka</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -54010,6 +54137,9 @@
       <LanguageId>Soninke_Bozo</LanguageId>
       <LanguageId>Soninke</LanguageId>
       <LanguageId>Manding</LanguageId>
+      <LanguageId>Maninka</LanguageId>
+      <LanguageId>Mandinka</LanguageId>
+      <LanguageId>Marka</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -54017,17 +54147,27 @@
     <Code iso-639-3="boz" />
     <GameIds>
       <GameId game="CK3">bozo</GameId>
+      <GameId game="CK3">sorko</GameId>
       <GameId game="CK3AE">bozo</GameId>
+      <GameId game="CK3AE">sorko</GameId>
       <GameId game="CK3CE">bozo</GameId>
+      <GameId game="CK3CE">sorko</GameId>
       <GameId game="CK3CMH">bozo</GameId>
+      <GameId game="CK3CMH">sorko</GameId>
       <GameId game="CK3IBL">bozo</GameId>
+      <GameId game="CK3IBL">sorko</GameId>
       <GameId game="CK3MBP">bozo</GameId>
+      <GameId game="CK3MBP">sorko</GameId>
       <GameId game="CK3SoW">bozo</GameId>
+      <GameId game="CK3SoW">sorko</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Soninke_Bobo</LanguageId>
       <LanguageId>Soninke</LanguageId>
       <LanguageId>Manding</LanguageId>
+      <LanguageId>Maninka</LanguageId>
+      <LanguageId>Mandinka</LanguageId>
+      <LanguageId>Marka</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -54915,6 +55055,8 @@
     <GameIds>
       <GameId game="HOI4MDM">MEX</GameId> <!-- Mexico -->
       <GameId game="HOI4MDM">SLA</GameId> <!-- Sinaloa Cartel -->
+      <GameId game="HOI4MDM">TAM</GameId> <!-- Tamaulpas -->
+      <GameId game="HOI4MDM">YUC</GameId> <!-- Yucatán -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Spanish</LanguageId>
@@ -55405,9 +55547,11 @@
       <GameId game="CK3">assyrian</GameId>
       <GameId game="CK3AE">assyrian</GameId>
       <GameId game="CK3CE">assyrian</GameId>
+      <GameId game="CK3CE">assyrian_ce</GameId>
       <GameId game="CK3CMH">assyrian</GameId>
       <GameId game="CK3IBL">assyrian</GameId>
       <GameId game="CK3MBP">assyrian</GameId>
+      <GameId game="CK3MBP">assyrian_ce</GameId>
       <GameId game="CK3SoW">assyrian</GameId>
       <GameId game="CK3TBA">assyrian</GameId>
       <GameId game="CK3TFE">assyrian</GameId>
@@ -55415,6 +55559,7 @@
       <GameId game="IR_ABW">syrian</GameId>
       <GameId game="IR_INV">assyrian</GameId>
       <GameId game="IR_TBA">assyrian</GameId>
+      <GameId game="IR_TBA">nineveh</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Aramaic_Old</LanguageId>
@@ -55557,6 +55702,7 @@
       <GameId game="CK3IBL">tajik</GameId>
       <GameId game="CK3MBP">tajik</GameId>
       <GameId game="CK3SoW">tajik</GameId>
+      <GameId game="CK3TFE">tajik</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Tajiki_Before1593</LanguageId>
@@ -56165,6 +56311,7 @@
       <GameId game="CK3SoW">sumpa</GameId>
       <GameId game="CK3SoW">tsangpa</GameId>
       <GameId game="CK3TFE">tsangpa</GameId>
+      <GameId game="IR">sumpa</GameId> <!-- TODO: Should be in an older time period -->
       <GameId game="IR">tibetan</GameId> <!-- TODO: Should be in an older time period -->
       <GameId game="IR">tsang</GameId> <!-- TODO: Should be in an older time period -->
       <GameId game="IR">yarlung</GameId> <!-- TODO: Should be in an older time period -->
@@ -56329,6 +56476,7 @@
     <GameIds>
       <GameId game="CK2HIP">tuareg</GameId> <!-- Kel Tamashek -->
       <GameId game="CK3CE">tuareg</GameId>
+      <GameId game="CK3MBP">tuareg</GameId>
       <GameId game="HOI4MDM">TUA</GameId> <!-- Tuareg Confederation -->
     </GameIds>
     <FallbackLanguages>
@@ -56422,6 +56570,145 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Tartessian</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Turkic_Old</Id>  <!-- c. 8th century AD - c. 13th century AD --> <!-- Old Turkic -->
+    <GameIds>
+      <GameId game="CK2">avar</GameId>
+      <GameId game="CK2">bolghar</GameId>
+      <GameId game="CK2">cuman</GameId>
+      <GameId game="CK2">khazar</GameId>
+      <GameId game="CK2">pecheneg</GameId>
+      <GameId game="CK2HIP">avar</GameId>
+      <GameId game="CK2HIP">bolghar</GameId>
+      <GameId game="CK2HIP">caucasian_avar</GameId>
+      <GameId game="CK2HIP">cuman</GameId>
+      <GameId game="CK2HIP">khavar</GameId>
+      <GameId game="CK2HIP">khazar</GameId>
+      <GameId game="CK2HIP">oghuz</GameId>
+      <GameId game="CK2HIP">pecheneg</GameId>
+      <GameId game="CK2TWK">hunnic</GameId>
+      <GameId game="CK3">avar</GameId>
+      <GameId game="CK3">bolghar</GameId>
+      <GameId game="CK3">cuman</GameId>
+      <GameId game="CK3">kerait</GameId>
+      <GameId game="CK3">khazar</GameId>
+      <GameId game="CK3">kimek</GameId>
+      <GameId game="CK3">kipchak</GameId>
+      <GameId game="CK3">laktan</GameId>
+      <GameId game="CK3">ongud</GameId>
+      <GameId game="CK3">pecheneg</GameId>
+      <GameId game="CK3">shatuo</GameId>
+      <GameId game="CK3AE">avar</GameId>
+      <GameId game="CK3AE">bolghar</GameId>
+      <GameId game="CK3AE">cuman</GameId>
+      <GameId game="CK3AE">kerait</GameId>
+      <GameId game="CK3AE">khazar</GameId>
+      <GameId game="CK3AE">kimek</GameId>
+      <GameId game="CK3AE">kipchak</GameId>
+      <GameId game="CK3AE">laktan</GameId>
+      <GameId game="CK3AE">ongud</GameId>
+      <GameId game="CK3AE">pecheneg</GameId>
+      <GameId game="CK3AE">shatuo</GameId>
+      <GameId game="CK3CE">avar</GameId>
+      <GameId game="CK3CE">bolghar</GameId>
+      <GameId game="CK3CE">cuman</GameId>
+      <GameId game="CK3CE">kerait</GameId>
+      <GameId game="CK3CE">khazar</GameId>
+      <GameId game="CK3CE">kimek</GameId>
+      <GameId game="CK3CE">kipchak</GameId>
+      <GameId game="CK3CE">laktan</GameId>
+      <GameId game="CK3CE">ongud</GameId>
+      <GameId game="CK3CE">pecheneg</GameId>
+      <GameId game="CK3CE">shatuo</GameId>
+      <GameId game="CK3CMH">avar</GameId>
+      <GameId game="CK3CMH">bolghar</GameId>
+      <GameId game="CK3CMH">cuman</GameId>
+      <GameId game="CK3CMH">kerait</GameId>
+      <GameId game="CK3CMH">khazar</GameId>
+      <GameId game="CK3CMH">kimek</GameId>
+      <GameId game="CK3CMH">kipchak</GameId>
+      <GameId game="CK3CMH">laktan</GameId>
+      <GameId game="CK3CMH">ongud</GameId>
+      <GameId game="CK3CMH">pecheneg</GameId>
+      <GameId game="CK3CMH">shatuo</GameId>
+      <GameId game="CK3IBL">avar</GameId>
+      <GameId game="CK3IBL">bolghar</GameId>
+      <GameId game="CK3IBL">cuman</GameId>
+      <GameId game="CK3IBL">kerait</GameId>
+      <GameId game="CK3IBL">khazar</GameId>
+      <GameId game="CK3IBL">kimek</GameId>
+      <GameId game="CK3IBL">kipchak</GameId>
+      <GameId game="CK3IBL">laktan</GameId>
+      <GameId game="CK3IBL">ongud</GameId>
+      <GameId game="CK3IBL">pecheneg</GameId>
+      <GameId game="CK3IBL">shatuo</GameId>
+      <GameId game="CK3MBP">avar</GameId>
+      <GameId game="CK3MBP">avaric</GameId>
+      <GameId game="CK3MBP">bolghar</GameId>
+      <GameId game="CK3MBP">cuman</GameId>
+      <GameId game="CK3MBP">kerait</GameId>
+      <GameId game="CK3MBP">khazar</GameId>
+      <GameId game="CK3MBP">kimek</GameId>
+      <GameId game="CK3MBP">kipchak</GameId>
+      <GameId game="CK3MBP">laktan</GameId>
+      <GameId game="CK3MBP">ongud</GameId>
+      <GameId game="CK3MBP">pecheneg</GameId>
+      <GameId game="CK3MBP">shatuo</GameId>
+      <GameId game="CK3SoW">avar</GameId>
+      <GameId game="CK3SoW">bolghar</GameId>
+      <GameId game="CK3SoW">cuman</GameId>
+      <GameId game="CK3SoW">kerait</GameId>
+      <GameId game="CK3SoW">khazar</GameId>
+      <GameId game="CK3SoW">kimek</GameId>
+      <GameId game="CK3SoW">kipchak</GameId>
+      <GameId game="CK3SoW">laktan</GameId>
+      <GameId game="CK3SoW">ongud</GameId>
+      <GameId game="CK3SoW">pecheneg</GameId>
+      <GameId game="CK3SoW">shatuo</GameId>
+      <GameId game="CK3TFE">avar</GameId>
+      <GameId game="CK3TFE">bolghar</GameId>
+      <GameId game="CK3TFE">cuman</GameId>
+      <GameId game="CK3TFE">kerait</GameId>
+      <GameId game="CK3TFE">khazar</GameId>
+      <GameId game="CK3TFE">kimek</GameId>
+      <GameId game="CK3TFE">kipchak</GameId>
+      <GameId game="CK3TFE">laktan</GameId>
+      <GameId game="CK3TFE">ongud</GameId>
+      <GameId game="CK3TFE">pecheneg</GameId>
+      <GameId game="CK3TFE">shatuo</GameId>
+      <GameId game="IR_ABW">bulghar</GameId>
+      <GameId game="IR_ABW">cuman</GameId>
+      <GameId game="IR_AoE">avars</GameId>
+      <GameId game="IR_AoE">bulgars</GameId>
+      <GameId game="IR_AoE">huns</GameId>
+      <GameId game="IR_AoE">khazars</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Kumyc</LanguageId>
+      <LanguageId>Gagauz</LanguageId>
+      <LanguageId>Turkmen_Medieval</LanguageId>
+      <LanguageId>Turkish_Before1487</LanguageId>
+      <LanguageId>Turkish_Old</LanguageId>
+      <LanguageId>Turkish_Before1530</LanguageId>
+      <LanguageId>Turkish_Before1593</LanguageId>
+      <LanguageId>Turkish_Before1650</LanguageId>
+      <LanguageId>Turkish_Before1791</LanguageId>
+      <LanguageId>Turkish_Before1878</LanguageId>
+      <LanguageId>Turkish_Before1923</LanguageId>
+      <LanguageId>Turkish_Ottoman</LanguageId>
+      <LanguageId>Turkish_Before1925</LanguageId>
+      <LanguageId>Turkmen_Before1930</LanguageId>
+      <LanguageId>Turkish_Before1930</LanguageId>
+      <LanguageId>Turkish_Before1961</LanguageId>
+      <LanguageId>Turkish_Before1970</LanguageId>
+      <LanguageId>Turkish_Before1984</LanguageId>
+      <LanguageId>Turkish_Before2005</LanguageId>
+      <LanguageId>Tatar_Crimean</LanguageId>
+      <LanguageId>Bashkir</LanguageId>
+      <LanguageId>Turkmen</LanguageId>
+      <LanguageId>Turkish</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -56575,6 +56862,7 @@
   <Language>
     <Id>Turkish_Before1923</Id>
     <GameIds>
+      <GameId game="HOI4TGW">TUK</GameId> <!-- Turkey -->
       <GameId game="HOI4TGW">TUR</GameId> <!-- Turkey -->
     </GameIds>
     <FallbackLanguages>
@@ -56768,10 +57056,9 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Bashkir</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
+      <LanguageId>Turkic_Old</LanguageId>
       <LanguageId>Turkmen_Before1930</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Bashkir_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -56782,9 +57069,8 @@
     <FallbackLanguages>
       <LanguageId>Turkmen</LanguageId>
       <LanguageId>Bashkir</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
+      <LanguageId>Turkic_Old</LanguageId>
       <LanguageId>Turkmen_Medieval</LanguageId>
-      <LanguageId>Bashkir_Medieval</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -56796,18 +57082,11 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Turkish_Old</LanguageId>
-      <LanguageId>Khazar_Medieval</LanguageId>
-      <LanguageId>Bashkir_Medieval</LanguageId>
       <LanguageId>Turkmen_Before1930</LanguageId>
       <LanguageId>Turkmen</LanguageId>
-      <LanguageId>Oghuz</LanguageId>
-      <LanguageId>Pecheneg</LanguageId>
-      <LanguageId>Cuman</LanguageId>
-      <LanguageId>KarachayBalkar</LanguageId>
+      <LanguageId>Turkic_Old</LanguageId>
       <LanguageId>Kumyc</LanguageId>
       <LanguageId>Gagauz</LanguageId>
-      <LanguageId>Khazar</LanguageId>
-      <LanguageId>Khazar_Kabar</LanguageId>
       <LanguageId>Bashkir</LanguageId>
       <LanguageId>Turkish_Before1487</LanguageId>
       <LanguageId>Turkish_Before1530</LanguageId>
@@ -56932,10 +57211,16 @@
   <Language>
     <Id>Tutchone_North</Id>
     <Code iso-639-3="ttm" />
+    <FallbackLanguages>
+      <LanguageId>Tutchone_South</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tutchone_South</Id>
     <Code iso-639-3="tce" />
+    <FallbackLanguages>
+      <LanguageId>Tutchone_North</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tuvan</Id>
@@ -56948,6 +57233,29 @@
   <Language>
     <Id>Tuxa</Id> <!-- Tuxá, Tusha, Todela ~ Rodela, Carapató, Payacú -->
     <Code iso-639-3="tud" />
+  </Language>
+  <Language>
+    <Id>Tuyuhun</Id> <!-- ‘Azha -->
+    <GameIds>
+      <GameId game="CK3">tuyuhun</GameId>
+      <GameId game="CK3AE">tuyuhun</GameId>
+      <GameId game="CK3CE">tuyuhun</GameId>
+      <GameId game="CK3CMH">tuyuhun</GameId>
+      <GameId game="CK3IBL">tuyuhun</GameId>
+      <GameId game="CK3MBP">tuyuhun</GameId>
+      <GameId game="CK3SoW">tuyuhun</GameId>
+      <GameId game="CK3TFE">tuyuhun</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Mongol_Proto</LanguageId>
+      <LanguageId>Buryat_Proto</LanguageId>
+      <LanguageId>Mongol_Middle</LanguageId>
+      <LanguageId>Mongol_Classical</LanguageId>
+      <LanguageId>Mongol_Before1911</LanguageId>
+      <LanguageId>Mongol_Before1924</LanguageId>
+      <LanguageId>Mongol</LanguageId>
+      <LanguageId>Buryat</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Tyap</Id>
@@ -58314,6 +58622,7 @@
     <GameIds>
       <GameId game="HOI4">PAK</GameId> <!-- Pakistan -->
       <GameId game="HOI4MDM">PAK</GameId> <!-- Pakistan -->
+      <GameId game="HOI4MDM">TTP</GameId> <!-- Tehrik-i-Taliban -->
       <GameId game="HOI4TGW">PAK</GameId> <!-- Pakistan -->
     </GameIds>
   </Language>
@@ -58667,6 +58976,7 @@
     <GameIds>
       <GameId game="HOI4">VIN</GameId> <!-- Vietnam -->
       <GameId game="HOI4TGW">VIN</GameId> <!-- Vietnam -->
+      <GameId game="HOI4TGW">VNM</GameId> <!-- Vietnam -->
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Vietnamese</LanguageId>
@@ -59101,6 +59411,14 @@
     <Code iso-639-3="jnj" />
   </Language>
   <Language>
+    <Id>Yeniseian</Id> <!-- Yeniseic -->
+    <GameIds>
+      <GameId game="CK3CE">yeniseian</GameId>
+      <GameId game="CK3CMH">yeniseian</GameId>
+      <GameId game="CK3TFE">yeniseian</GameId>
+    </GameIds>
+  </Language>
+  <Language>
     <Id>Yokuts</Id> <!-- Mariposa -->
     <Code iso-639-3="yok" />
   </Language>
@@ -59337,6 +59655,7 @@
       <GameId game="CK2TWK">hedgehog_culture</GameId>
       <GameId game="CK2TWK">horse</GameId>
       <GameId game="CK2TWK">red_panda</GameId>
+      <GameId game="CK3TFE">horse</GameId>
       <GameId game="IR_ABW">primitiveculture</GameId>
     </GameIds>
   </Language>
