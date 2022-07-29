@@ -356,6 +356,7 @@ grep -n "^\s*</[^>]*>\s*[a-zA-Z0-9\s]" *.xml # Text after ending tags
 grep -Pzo "\n\s*<(/[^>]*)>.*\n\s*<\1>\n" *.xml # Double tags
 grep -Pzo "\n\s*<([^>]*)>\s*\n\s*</\1>\n" *.xml # Empty tags
 grep -Pzo "\n\s*<Name .*\n\s*</GameId.*\n" *.xml # </GameId.* after <Name>
+grep -Pzo "</[a-zA-Z]*>\n\s*<Id>.*\n" *.xml # <Id> after a closing tag
 grep -Pzo "</(Id|GeonamesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeonamesId> or </WikidataId>
 grep -Pzo "</(Id|GeonamesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeonamesId> or </WikidataId>
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
