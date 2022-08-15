@@ -324,8 +324,8 @@ grep "<GameId game=" *.xml | \
     sort | uniq -c | \
     grep "^ *[2-9]"
 
-# Find duplicated Wikidata IDs
-grep "^\s*<WikidataId>" *.xml | \
+# Find duplicated db IDs
+grep "^\s*<\(Geo[Nn]ames\|Wiki[Dd]ata\)Id>" *.xml | \
     sort | uniq -c | \
     grep "^ *[2-9]"
 
