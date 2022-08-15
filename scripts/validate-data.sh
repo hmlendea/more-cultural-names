@@ -314,13 +314,18 @@ diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST
 export LC_COLLATE=${OLD_LC_COLLATE}
 
 # Find duplicated IDs
-grep "^ *<Id>" *.xml | \
+grep "^\s*<Id>" *.xml | \
     sort | uniq -c | \
     grep "^ *[2-9]"
 
 # Find duplicated game IDs
 grep "<GameId game=" *.xml | \
     sed -e 's/[ \t]*<!--.*-->.*//g' -e 's/^[ \t]*//g' | \
+    sort | uniq -c | \
+    grep "^ *[2-9]"
+
+# Find duplicated db IDs
+grep "^\s*<\(Geo[Nn]ames\|Wiki[Dd]ata\)Id>" *.xml | \
     sort | uniq -c | \
     grep "^ *[2-9]"
 
