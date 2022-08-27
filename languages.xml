@@ -3535,6 +3535,10 @@
     </GameIds>
   </Language>
   <Language>
+    <Id>Baekje</Id> <!-- Paekche -->
+    <Code iso-639-3="pkc" />
+  </Language>
+  <Language>
     <Id>Baibai</Id>
     <Code iso-639-3="bbf" />
   </Language>
@@ -6414,6 +6418,10 @@
     <Id>Beurla_Reagaird</Id> <!-- Beurla Reagair -->
   </Language>
   <Language>
+    <Id>Biafada</Id> <!-- Beafada, Bedfola, Biafar, Bidyola, Dfola, Fada -->
+    <Code iso-639-3="bif" />
+  </Language>
+  <Language>
     <Id>Bihari</Id>
     <Code iso-639-1="bh" iso-639-2="bih" iso-639-5="bih" />
     <GameIds>
@@ -6423,6 +6431,10 @@
   <Language>
     <Id>Bikol_Central</Id> <!-- Central Bikol -->
     <Code iso-639-3="bcl" />
+  </Language>
+  <Language>
+    <Id>Bikol_Pandan</Id> <!-- Northern Catanduanes Bicolano -->
+    <Code iso-639-3="cts" />
   </Language>
   <Language>
     <Id>Bikol_Rinconada</Id> <!-- Iriga Bicolano -->
@@ -7583,10 +7595,47 @@
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Burmese_Before1976</LanguageId>
+      <LanguageId>Burmese_Before1929</LanguageId>
+      <LanguageId>Burmese_Middle</LanguageId>
+      <LanguageId>Burmese_Old</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
     <Id>Burmese_Before1976</Id>
+    <GameIds>
+      <GameId game="HOI4">BRM</GameId> <!-- Burma -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Burmese</LanguageId>
+      <LanguageId>Burmese_Before1929</LanguageId>
+      <LanguageId>Burmese_Middle</LanguageId>
+      <LanguageId>Burmese_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Burmese_Before1929</Id>
+    <GameIds>
+      <GameId game="HOI4TGW">BRM</GameId> <!-- Burma -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Burmese_Before1976</LanguageId>
+      <LanguageId>Burmese</LanguageId>
+      <LanguageId>Burmese_Middle</LanguageId>
+      <LanguageId>Burmese_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Burmese_Middle</Id> <!-- c. 16th century – c. 18th century -->
+    <FallbackLanguages>
+      <LanguageId>Burmese_Before1929</LanguageId>
+      <LanguageId>Burmese_Before1976</LanguageId>
+      <LanguageId>Burmese</LanguageId>
+      <LanguageId>Burmese_Old</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Burmese_Old</Id>
+    <Code iso-639-3="obr" />
     <GameIds>
       <GameId game="CK3">burmese</GameId>
       <GameId game="CK3AE">burmese</GameId>
@@ -7596,10 +7645,11 @@
       <GameId game="CK3MBP">burmese</GameId>
       <GameId game="CK3SoW">burmese</GameId>
       <GameId game="CK3TFE">burmese</GameId>
-      <GameId game="HOI4">BRM</GameId> <!-- Burma -->
-      <GameId game="HOI4TGW">BRM</GameId> <!-- Burma -->
     </GameIds>
     <FallbackLanguages>
+      <LanguageId>Burmese_Middle</LanguageId>
+      <LanguageId>Burmese_Before1929</LanguageId>
+      <LanguageId>Burmese_Before1976</LanguageId>
       <LanguageId>Burmese</LanguageId>
     </FallbackLanguages>
   </Language>
@@ -8556,10 +8606,30 @@
   <Language>
     <Id>Chamorro</Id>
     <Code iso-639-1="ch" iso-639-2="cha" iso-639-3="cha" />
+    <FallbackLanguages>
+      <LanguageId>Chamorro_Before1950</LanguageId>
+      <LanguageId>Chamorro_Before1920</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Chamorro_Before1950</Id>
     <GameIds>
       <GameId game="HOI4">GUM</GameId> <!-- Mariana Islands -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Chamorro</LanguageId>
+      <LanguageId>Chamorro_Before1920</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Chamorro_Before1920</Id>
+    <GameIds>
       <GameId game="HOI4TGW">GUM</GameId> <!-- Mariana Islands -->
     </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Chamorro_Before1950</LanguageId>
+      <LanguageId>Chamorro</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Chavacano</Id> <!-- Chabacano -->
@@ -9171,6 +9241,7 @@
       <LanguageId>Italian_Before1979</LanguageId>
       <LanguageId>Italian_Before1961</LanguageId>
       <LanguageId>Italian_Before1955</LanguageId>
+      <LanguageId>Corsican_Before1950</LanguageId>
       <LanguageId>Italian_Before1946</LanguageId>
       <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1930</LanguageId>
@@ -9183,12 +9254,14 @@
       <LanguageId>Italian_Before1923</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Sardinian_Before1921</LanguageId>
+      <LanguageId>Corsican_Before1920</LanguageId>
       <LanguageId>Italian_Before1919</LanguageId>
       <LanguageId>Italian_Before1907</LanguageId>
       <LanguageId>Italian_Before1895</LanguageId>
       <LanguageId>Italian_Before1869</LanguageId>
       <LanguageId>Genoese_Before1593</LanguageId>
       <LanguageId>Italian_Before1565</LanguageId>
+      <LanguageId>Corsican_Medieval</LanguageId>
       <LanguageId>Sardinian_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
@@ -9215,6 +9288,7 @@
       <LanguageId>Italian_Before1979</LanguageId>
       <LanguageId>Italian_Before1961</LanguageId>
       <LanguageId>Italian_Before1955</LanguageId>
+      <LanguageId>Corsican_Before1950</LanguageId>
       <LanguageId>Italian_Before1946</LanguageId>
       <LanguageId>Italian_Before1944</LanguageId>
       <LanguageId>Italian_Before1930</LanguageId>
@@ -9227,18 +9301,177 @@
       <LanguageId>Italian_Before1923</LanguageId>
       <LanguageId>Italian_Before1922</LanguageId>
       <LanguageId>Sardinian_Before1921</LanguageId>
+      <LanguageId>Corsican_Before1920</LanguageId>
       <LanguageId>Italian_Before1919</LanguageId>
       <LanguageId>Italian_Before1907</LanguageId>
       <LanguageId>Italian_Before1895</LanguageId>
       <LanguageId>Italian_Before1869</LanguageId>
       <LanguageId>Genoese_Before1593</LanguageId>
       <LanguageId>Italian_Before1565</LanguageId>
+      <LanguageId>Corsican_Medieval</LanguageId>
       <LanguageId>Sardinian_Medieval</LanguageId>
       <LanguageId>Tuscan_Medieval</LanguageId>
       <LanguageId>Genoese_Medieval</LanguageId>
       <LanguageId>Tuscan_Before1225</LanguageId>
       <LanguageId>Genoese_Before1225</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Corsican_Before1950</Id>
+    <GameIds>
+      <GameId game="HOI4">COR</GameId> <!-- Corsica -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Italian_Before1955</LanguageId>
+      <LanguageId>Italian_Before1961</LanguageId>
+      <LanguageId>Italian_Before1979</LanguageId>
+      <LanguageId>Italian_Before1991</LanguageId>
+      <LanguageId>Italian_Before1992</LanguageId>
+      <LanguageId>Sardinian_Before1993</LanguageId>
+      <LanguageId>Italian_Before2005</LanguageId>
+      <LanguageId>Sardinian_Before2019</LanguageId>
+      <LanguageId>Corsican</LanguageId>
+      <LanguageId>Corsican_Ajaccio</LanguageId>
+      <LanguageId>Sassarese</LanguageId>
+      <LanguageId>Gallurese</LanguageId>
+      <LanguageId>Sardinian</LanguageId>
+      <LanguageId>Parmigiano</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1946</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
+      <LanguageId>Italian_Before1930</LanguageId>
+      <LanguageId>Italian_Before1929</LanguageId>
+      <LanguageId>Parmigiano_Before1927</LanguageId>
+      <LanguageId>Italian_Before1927</LanguageId>
+      <LanguageId>Italian_Before1926</LanguageId>
+      <LanguageId>Italian_Before1925</LanguageId>
+      <LanguageId>Italian_Before1924</LanguageId>
+      <LanguageId>Italian_Before1923</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Sardinian_Before1921</LanguageId>
+      <LanguageId>Corsican_Before1920</LanguageId>
+      <LanguageId>Italian_Before1919</LanguageId>
+      <LanguageId>Italian_Before1907</LanguageId>
+      <LanguageId>Italian_Before1895</LanguageId>
+      <LanguageId>Italian_Before1869</LanguageId>
+      <LanguageId>Genoese_Before1593</LanguageId>
+      <LanguageId>Italian_Before1565</LanguageId>
+      <LanguageId>Corsican_Medieval</LanguageId>
+      <LanguageId>Sardinian_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Genoese_Medieval</LanguageId>
+      <LanguageId>Tuscan_Before1225</LanguageId>
+      <LanguageId>Genoese_Before1225</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Corsican_Before1920</Id>
+    <GameIds>
+      <GameId game="HOI4TGW">COR</GameId> <!-- Corsica -->
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Sardinian_Before1921</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Italian_Before1923</LanguageId>
+      <LanguageId>Italian_Before1924</LanguageId>
+      <LanguageId>Italian_Before1925</LanguageId>
+      <LanguageId>Italian_Before1926</LanguageId>
+      <LanguageId>Parmigiano_Before1927</LanguageId>
+      <LanguageId>Italian_Before1927</LanguageId>
+      <LanguageId>Italian_Before1929</LanguageId>
+      <LanguageId>Italian_Before1930</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
+      <LanguageId>Italian_Before1946</LanguageId>
+      <LanguageId>Corsican_Before1950</LanguageId>
+      <LanguageId>Italian_Before1955</LanguageId>
+      <LanguageId>Italian_Before1961</LanguageId>
+      <LanguageId>Italian_Before1979</LanguageId>
+      <LanguageId>Italian_Before1991</LanguageId>
+      <LanguageId>Italian_Before1992</LanguageId>
+      <LanguageId>Sardinian_Before1993</LanguageId>
+      <LanguageId>Italian_Before2005</LanguageId>
+      <LanguageId>Sardinian_Before2019</LanguageId>
+      <LanguageId>Corsican</LanguageId>
+      <LanguageId>Corsican_Ajaccio</LanguageId>
+      <LanguageId>Sassarese</LanguageId>
+      <LanguageId>Gallurese</LanguageId>
+      <LanguageId>Sardinian</LanguageId>
+      <LanguageId>Parmigiano</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Genoese</LanguageId>
+      <LanguageId>Italian_Before1919</LanguageId>
+      <LanguageId>Italian_Before1907</LanguageId>
+      <LanguageId>Italian_Before1895</LanguageId>
+      <LanguageId>Italian_Before1869</LanguageId>
+      <LanguageId>Genoese_Before1593</LanguageId>
+      <LanguageId>Italian_Before1565</LanguageId>
+      <LanguageId>Corsican_Medieval</LanguageId>
+      <LanguageId>Sardinian_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Genoese_Medieval</LanguageId>
+      <LanguageId>Tuscan_Before1225</LanguageId>
+      <LanguageId>Genoese_Before1225</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Corsican_Medieval</Id>
+    <GameIds>
+      <GameId game="IR_AoE">corsian</GameId>
+    </GameIds>
+    <FallbackLanguages>
+      <LanguageId>Corsican_Medieval</LanguageId>
+      <LanguageId>Sardinian_Medieval</LanguageId>
+      <LanguageId>Tuscan_Medieval</LanguageId>
+      <LanguageId>Genoese_Medieval</LanguageId>
+      <LanguageId>Tuscan_Before1225</LanguageId>
+      <LanguageId>Genoese_Before1225</LanguageId>
+      <LanguageId>Italian_Before1565</LanguageId>
+      <LanguageId>Genoese_Before1593</LanguageId>
+      <LanguageId>Italian_Before1869</LanguageId>
+      <LanguageId>Italian_Before1895</LanguageId>
+      <LanguageId>Italian_Before1907</LanguageId>
+      <LanguageId>Italian_Before1919</LanguageId>
+      <LanguageId>Corsican_Before1920</LanguageId>
+      <LanguageId>Sardinian_Before1921</LanguageId>
+      <LanguageId>Italian_Before1922</LanguageId>
+      <LanguageId>Italian_Before1923</LanguageId>
+      <LanguageId>Italian_Before1924</LanguageId>
+      <LanguageId>Italian_Before1925</LanguageId>
+      <LanguageId>Italian_Before1926</LanguageId>
+      <LanguageId>Parmigiano_Before1927</LanguageId>
+      <LanguageId>Italian_Before1927</LanguageId>
+      <LanguageId>Italian_Before1929</LanguageId>
+      <LanguageId>Italian_Before1930</LanguageId>
+      <LanguageId>Italian_Before1944</LanguageId>
+      <LanguageId>Italian_Before1946</LanguageId>
+      <LanguageId>Corsican_Before1950</LanguageId>
+      <LanguageId>Italian_Before1955</LanguageId>
+      <LanguageId>Italian_Before1961</LanguageId>
+      <LanguageId>Italian_Before1979</LanguageId>
+      <LanguageId>Italian_Before1991</LanguageId>
+      <LanguageId>Italian_Before1992</LanguageId>
+      <LanguageId>Sardinian_Before1993</LanguageId>
+      <LanguageId>Italian_Before2005</LanguageId>
+      <LanguageId>Sardinian_Before2019</LanguageId>
+      <LanguageId>Corsican</LanguageId>
+      <LanguageId>Corsican_Ajaccio</LanguageId>
+      <LanguageId>Sassarese</LanguageId>
+      <LanguageId>Gallurese</LanguageId>
+      <LanguageId>Sardinian</LanguageId>
+      <LanguageId>Parmigiano</LanguageId>
+      <LanguageId>Tuscan</LanguageId>
+      <LanguageId>Italian</LanguageId>
+      <LanguageId>Genoese</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Corsican_Paleo</Id>
+    <GameIds>
+      <GameId game="IR_INV">corsian</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Cree</Id>
@@ -37026,6 +37259,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Goguryeo</Id> <!-- Koguryoan -->
+    <Code iso-639-3="zkg" />
+  </Language>
+  <Language>
     <Id>Goidelic_Proto</Id>
     <GameIds>
       <GameId game="IR">gaelic</GameId>
@@ -41190,6 +41427,10 @@
     <Code iso-639-3="hop" />
   </Language>
   <Language>
+    <Id>Hruso</Id> <!-- Aka, Angka -->
+    <Code iso-639-3="hru" />
+  </Language>
+  <Language>
     <Id>Hualapai</Id>
     <FallbackLanguages>
       <LanguageId>HavasupaiHualapai</LanguageId>
@@ -44885,6 +45126,10 @@
     <Code iso-639-3="xhc" />
   </Language>
   <Language>
+    <Id>Hunsrik</Id> <!-- Riograndenser Hunsrückisch -->
+    <Code iso-639-3="hrx" />
+  </Language>
+  <Language>
     <Id>Hurrian</Id>
     <Code iso-639-3="xhu" />
     <GameIds>
@@ -46898,6 +47143,10 @@
     <FallbackLanguages>
       <LanguageId>Javanese</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Jeju</Id> <!-- Jejueo, Jejuan -->
+    <Code iso-639-3="jje" />
   </Language>
   <Language>
     <Id>Jemez</Id> <!-- Towa -->
@@ -58364,6 +58613,10 @@
   <Language>
     <Id>Nez_Perce</Id> <!-- Nez Percé, Nimipuutímt -->
     <Code iso-639-3="nez" />
+  </Language>
+  <Language>
+    <Id>Ngarrindjeri</Id> <!-- Narrinyeri, Ngarinyeri -->
+    <Code iso-639-3="nay" />
   </Language>
   <Language>
     <Id>Nheengatu</Id> <!-- Nhengatu, Modern Tupi -->
@@ -74875,6 +75128,7 @@
       <LanguageId>Sardinian_Before1993</LanguageId>
       <LanguageId>Sardinian_Before1921</LanguageId>
       <LanguageId>Sardinian_Medieval</LanguageId>
+      <LanguageId>Sardinian_Paleo</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -74884,6 +75138,7 @@
       <LanguageId>Sardinian_Before1993</LanguageId>
       <LanguageId>Sardinian_Before1921</LanguageId>
       <LanguageId>Sardinian_Medieval</LanguageId>
+      <LanguageId>Sardinian_Paleo</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -74893,6 +75148,7 @@
       <LanguageId>Sardinian</LanguageId>
       <LanguageId>Sardinian_Before1921</LanguageId>
       <LanguageId>Sardinian_Medieval</LanguageId>
+      <LanguageId>Sardinian_Paleo</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -74902,6 +75158,7 @@
       <LanguageId>Sardinian_Before2019</LanguageId>
       <LanguageId>Sardinian</LanguageId>
       <LanguageId>Sardinian_Medieval</LanguageId>
+      <LanguageId>Sardinian_Paleo</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -74960,7 +75217,14 @@
       <LanguageId>Parmigiano</LanguageId>
       <LanguageId>Italian</LanguageId>
       <LanguageId>Genoese</LanguageId>
+      <LanguageId>Sardinian_Paleo</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Sardinian_Paleo</Id> <!-- Proto-Sardinian, Nuragic -->
+    <GameIds>
+      <GameId game="IR">nuragic</GameId>
+    </GameIds>
   </Language>
   <Language>
     <Id>Sassarese</Id>
@@ -75663,12 +75927,12 @@
     <Id>Scythian</Id>
     <Code iso-639-3="xsc" />
     <GameIds>
+      <GameId game="IR">sarmatian</GameId>
+      <GameId game="IR">scythian</GameId>
       <GameId game="IR_AoE">sarmatian</GameId>
       <GameId game="IR_AoE">scythian</GameId>
       <GameId game="IR_INV">sarmatian</GameId>
       <GameId game="IR_INV">scythian</GameId>
-      <GameId game="IR">sarmatian</GameId>
-      <GameId game="IR">scythian</GameId>
     </GameIds>
     <FallbackLanguages>
       <LanguageId>Ossetic_Old</LanguageId>
@@ -77265,6 +77529,7 @@
   </Language>
   <Language>
     <Id>Serer</Id>
+    <Code iso-639-2="srr" iso-639-3="srr" />
     <GameIds>
       <GameId game="CK3">serer</GameId>
       <GameId game="CK3AE">serer</GameId>
@@ -84626,6 +84891,10 @@
   <Language>
     <Id>Tzutujil</Id> <!-- Tzʼutujil -->
     <Code iso-639-3="tzj" />
+  </Language>
+  <Language>
+    <Id>Ubykh</Id> <!-- Päkhy -->
+    <Code iso-639-3="uby" />
   </Language>
   <Language>
     <Id>Udege</Id> <!-- Udihe, Udekhe, Udeghe -->
