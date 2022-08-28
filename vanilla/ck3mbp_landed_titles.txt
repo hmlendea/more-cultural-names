@@ -5,6 +5,7 @@
 
 #Title order determines which title shows in title history if multiple titles are held. ie: If k_croatia is higher in this file than k_hungary then the Kings of Hungary will show as Kings of Croatia in the title history when they hold both titles. The main effect from this is screwing up regnal numbers
 #Normally I labeled added or changed titles
+#The 'capital' of a duchy MUST be the first province in the listing or it won't get the duchy capital building
 
 e_null_empire = {
 	color =  { 0 0 255 1 }
@@ -793,7 +794,62 @@ k_toledo = {
 	}
 }
 
+d_danzig = {
+	color = { 55 105 55 }
+	color2 = { 255 255 255 }
+	capital = c_danzig # Gdansk
+	
+	cultural_names = {
+		name_list_franconian = cn_danzig
+		name_list_saxon = cn_danzig
+		name_list_swabian = cn_danzig
+		name_list_bavarian = cn_danzig
+	}
+}
+
+k_muscovy = {
+	color = { 190  140  50 }
+	color2 = { 255 255 255 }
+	
+	capital = c_moskva # Moscow
+	
+	can_be_named_after_dynasty = no
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_east_slavic }
+			}
+			add = @correct_culture_primary_score
+		}
+	}
+}
+
+d_moscow = {
+	color = { 100  150  30 }
+	color2 = { 255 255 255 }
+	
+	can_be_named_after_dynasty = no
+	capital = c_moskva # Moscow
+}
+
 # HOLY ORDERS
+
+k_livonian_order = {
+	color = { 50 60 90 }
+	color2 = { 200 200 30 }
+	capital = c_vidzeme # Riga
+	
+	definite_form = yes
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_central_germanic }
+			}
+			add = @correct_culture_primary_score
+		}
+	}
+}
 
 d_knights_templar = {
 	color = { 230 230 230 }
@@ -12465,6 +12521,21 @@ e_byzantium = {
 		color = { 238 79 182 }
 	}
 	
+	k_albania = {
+	color = { 149 45 102 }
+	color2 = { 200 0 0 }
+	capital = c_dyrrachion # Durrës
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:arberian
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+	}
+
 	k_thessalonika = {
 		color = { 175 30 130 }
 		color2 = { 255 255 23 }

@@ -367,6 +367,7 @@ grep -Pzo "</(Id|GeonamesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* 
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
 grep -Pzo "\n.*=\s*\"\s*\".*\n" *.xml # Empty attributes
 grep -n "^\s*<\([^> ]*\).*<\/.*" *.xml | grep -v "^[a-z0-9:.]*\s*<\([^> ]*\).*<\/\1>.*" # Mismatching start/end tag on same line
+grep -Pzo "\n *</(Fallback).*\n *<(Language|Location|Title).*\n" *.xml
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -Pzo "\n *</(GameIds)>.*\n *<LanguageId.*\n" *.xml
 grep -Pzo "\n *</[A-Za-z]*Entity.*\n *<(Id|Name).*\n" *.xml
