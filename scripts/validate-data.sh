@@ -298,9 +298,8 @@ function findRedundantNamesStrict() {
 OLD_LC_COLLATE=${LC_COLLATE}
 export LC_COLLATE=C
 
-WELL_COVERED_SECTION_END_LINE_NR=$(grep -n "@@@@ BELOW TITLES NEED REVIEW" "${LOCATIONS_FILE}" | awk -F":" '{print $1}')
-ACTUAL_LOCATIONS_LIST=$(head "${LOCATIONS_FILE}" -n "${WELL_COVERED_SECTION_END_LINE_NR}" | \
-                        grep "^\s*<Id>" | \
+ACTUAL_LOCATIONS_LIST=$(grep "Id>$" "${LOCATIONS_FILE}" | grep -Pzo "\n\s*<Id>[^<]*</Id>*\n\s*<(Geo|Wiki)" |\
+                        grep -a "<Id>" | \
                         sed 's/^\s*<Id>\([^<]*\).*/\1/g' | \
                         sed -r '/^\s*$/d' | \
                         perl -p0e 's/\r*\n/%NL%/g')
