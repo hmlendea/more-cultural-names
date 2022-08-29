@@ -297,9 +297,14 @@ function findRedundantNamesStrict() {
 
 OLD_LC_COLLATE=${LC_COLLATE}
 export LC_COLLATE=C
-
-ACTUAL_LOCATIONS_LIST=$(grep "Id>$" "${LOCATIONS_FILE}" | grep -Pzo "\n\s*<Id>[^<]*</Id>*\n\s*<(Geo|Wiki)" |\
-                        grep -a "<Id>" | \
+WELL_COVERED_SECTION_END_LINE_NR=$(grep -n "@@@@ BELOW TITLES NEED REVIEW" "${LOCATIONS_FILE}" | awk -F":" '{print $1}')
+ACTUAL_LOCATIONS_LIST=$(head "${LOCATIONS_FILE}" -n "${WELL_COVERED_SECTION_END_LINE_NR}" | \
+                        grep -a "<Id>" && \
+                        tail -n +"${WELL_COVERED_SECTION_END_LINE_NR}" "${LOCATIONS_FILE}" | grep "Id>$" | \
+                        grep -Pzo "\n\s*<Id>[^<]*</Id>*\n\s*<(Geo|Wiki)" | \
+                        grep -av "^\s*$" | \
+                        grep -a "<Id>")
+ACTUAL_LOCATIONS_LIST=$(grep -a "<Id>" <<< "${ACTUAL_LOCATIONS_LIST}" | \
                         sed 's/^\s*<Id>\([^<]*\).*/\1/g' | \
                         sed -r '/^\s*$/d' | \
                         perl -p0e 's/\r*\n/%NL%/g')
@@ -311,6 +316,7 @@ EXPECTED_LOCATIONS_LIST=$(echo "${ACTUAL_LOCATIONS_LIST}" | \
 
 diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
 export LC_COLLATE=${OLD_LC_COLLATE}
+exit
 
 # Find duplicated IDs
 grep "^\s*<Id>" *.xml | \
