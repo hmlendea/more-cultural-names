@@ -316,7 +316,6 @@ EXPECTED_LOCATIONS_LIST=$(echo "${ACTUAL_LOCATIONS_LIST}" | \
 
 diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
 export LC_COLLATE=${OLD_LC_COLLATE}
-exit
 
 # Find duplicated IDs
 grep "^\s*<Id>" *.xml | \
@@ -371,7 +370,7 @@ grep -Pzo "</(Id|GeonamesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* 
 grep -Pzo "</(Id|GeonamesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeonamesId> or </WikidataId>
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
 grep -Pzo "\n.*=\s*\"\s*\".*\n" *.xml # Empty attributes
-grep -n "^\s*<\([^> ]*\).*<\/.*" *.xml | grep -v "^[a-z0-9:.]*\s*<\([^> ]*\).*<\/\1>.*" # Mismatching start/end tag on same line
+grep -n "^\s*<\([^> ]*\).*</.*" *.xml | grep -v "^[a-z0-9:.]*\s*<\([^> ]*\).*</\1>.*" # Mismatching start/end tag on same line
 grep -Pzo "\n *</(Fallback).*\n *<(Language|Location|Title).*\n" *.xml
 grep -Pzo "\n *</(Language|Location|Title)>.*\n *<Fallback.*\n" *.xml
 grep -Pzo "\n *</(GameIds)>.*\n *<LanguageId.*\n" *.xml
