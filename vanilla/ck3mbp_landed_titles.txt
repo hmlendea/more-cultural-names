@@ -32,6 +32,32 @@ k_papal_state = {
 	male_names = { Alexander Anastasius Benedictus Caelestinus Callistus Clemens Eugenius Leo Gregorius Hadrianus Honorius Innocentius Ioannes Lucius Marinus Martinus Nicolaus Sergius Silvester Stephanus Urbanus Victor }
 }
 
+k_papal_states = { #Basically to use this as the de jure title instead of the above since you can't properly usurp faith head titles
+
+	color = { 255 249 198 }
+	
+	definite_form = yes
+	ruler_uses_title_name = no
+	
+	capital = c_roma
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = culture:italian
+			}
+			add = @correct_culture_primary_score
+		}
+	}
+
+	destroy_if_invalid_heir = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	#de_jure_drift_disabled = yes
+
+	#male_names = { Alexander Anastasius Benedictus Caelestinus Callistus Clemens Eugenius Leo Gregorius Hadrianus Honorius Innocentius Ioannes Lucius Marinus Martinus Nicolaus Sergius Silvester Stephanus Urbanus Victor }
+}
+
 k_orthodox = {
 	landless = yes
 	capital = c_byzantion # Constantinople
@@ -1211,12 +1237,19 @@ k_lower_lorraine = { # Niederlothringen
 		capital = c_antwerpen # Herstal
 		can_create = {
 			trigger_if = {
-			limit = { is_ai = yes }
-		OR = {
-		is_independent_ruler=yes
-		NOT = { exists = title:e_hre }
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
 			}
-				}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
 		}
 		
 		
@@ -1228,12 +1261,19 @@ k_upper_lorraine = { # Oberlothringen
 		capital = c_nancy # Blâmont # Lorraine - Nancy
 		can_create = {
 			trigger_if = {
-			limit = { is_ai = yes }
-		OR = {
-		is_independent_ruler=yes
-		NOT = { exists = title:e_hre }
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
 			}
-				}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
 		}
 	
 	}
@@ -6957,12 +6997,19 @@ e_germany = {
 		
 		can_create = {
 			trigger_if = {
-			limit = { is_ai = yes }
-		OR = {
-		is_independent_ruler=yes
-		NOT = { exists = title:e_hre }
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
 			}
-				}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
 		}
 		
 		ai_primary_priority = {
@@ -8136,16 +8183,25 @@ e_germany = {
 		
 		
 		capital = c_holland #Holland
+		
 		can_create = {
 			trigger_if = {
-				limit = {
-					is_ai = yes
-					NOT = { exists = title:e_hre }
-				}
-				OR = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
+			}
+			OR = {
 					culture = culture:frisian
 					culture = culture:dutch
 				}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
 			}
 		}
 		
@@ -9504,12 +9560,19 @@ e_germany = {
 		
 		can_create = {
 			trigger_if = {
-			limit = { is_ai = yes }
-		OR = {
-		is_independent_ruler=yes
-		NOT = { exists = title:e_hre }
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
 			}
-				}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
 		}
 		
 		ai_primary_priority = {
@@ -10105,12 +10168,19 @@ e_germany = {
 		
 		can_create = {
 			trigger_if = {
-			limit = { is_ai = yes }
-		OR = {
-		is_independent_ruler=yes
-		NOT = { exists = title:e_hre }
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
 			}
-				}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
 		}
 		
 		ai_primary_priority = {
@@ -10796,11 +10866,18 @@ e_germany = {
 		
 		can_create = {
 			trigger_if = {
-			limit = { is_ai = yes }
-			OR = {
-				is_independent_ruler = yes
+				limit = { is_ai = yes }
 				NOT = { exists = title:e_hre }
-				}
+			}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
 			}
 		}
 		
@@ -11386,13 +11463,22 @@ e_germany = {
 		
 		can_create = {
 			trigger_if = {
-			limit = { is_ai = yes }
-		OR = {
-		is_independent_ruler=yes
-		NOT = { exists = title:e_hre }
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
 			}
-				}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
 		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
+		}
+
+
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -14831,6 +14917,12 @@ e_byzantium = {
 					color = { 110 100 130 }
 					
 				}
+				b_maleshevo = {
+					province = 3649
+					
+					color = { 140 95 130 }
+					
+				}
 			}
 			
 			c_strumica = {
@@ -14847,12 +14939,6 @@ e_byzantium = {
 				}
 				b_shtip = {
 					province = 3648
-					
-					color = { 140 95 130 }
-					
-				}
-				b_maleshevo = {
-					province = 3649
 					
 					color = { 140 95 130 }
 					
@@ -22483,18 +22569,26 @@ e_italy = {
 	k_romagna = {
 		color = { 215 141 152 }
 		
-		can_create_on_partition = { always = no }
-		
 		capital = c_ravenna # Ravenna
+		
 		can_create = {
 			trigger_if = {
-				limit = {
-					is_ai = yes
-					NOT = { exists = title:e_hre }
-				}
-				faith = { religion_tag = christianity_religion }
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
+			}
+			faith = { religion_tag = christianity_religion }
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
 			}
 		}
+		
 
 		cultural_names = {
 			name_list_greek = cn_ravenna
@@ -29695,10 +29789,19 @@ e_wendish_empire = {
 		
 		can_create = {
 			trigger_if = {
-				limit = {
-					is_ai = yes
-				}
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
 				culture = culture:pommeranian
+			}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
+		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
 			}
 		}
 		
@@ -44009,47 +44112,13 @@ e_turan = {
 			}
 		}
 		
-		d_karashar = {
-			color = { 90 170 220 }
+		d_kucha = {
+			color = { 80 182 185 }
 			
 			
-			capital = c_karashar # Karashar
+			capital = c_kucha # Kucha
 			
-			c_karashar = {
-				color = { 93 165 240 }
-				
-				
-				b_karashar = {
-					province = 1443
-					
-					color = { 93 165 240 }
-					
-				}
-				b_bosten = {
-					province = 7983
-					
-					color = { 93 165 240 }
-					
-				}
-				b_narinkira = {
-					province = 7984
-					
-					color = { 93 165 240 }
-					
-				}
-				b_korla = {
-					province = 7988
-					
-					color = { 93 165 240 }
-					
-				}
-				b_kongque = {
-					province = 7989
-					
-					color = { 93 165 240 }
-					
-				}
-			}
+			
 			c_kucha = {
 				color = { 70 150 185 }
 				
@@ -44120,6 +44189,49 @@ e_turan = {
 					
 				}
 			}
+		}
+		
+		d_karashar = {
+			color = { 90 170 220 }
+			
+			
+			capital = c_karashar # Karashar
+			
+			c_karashar = {
+				color = { 93 165 240 }
+				
+				
+				b_karashar = {
+					province = 1443
+					
+					color = { 93 165 240 }
+					
+				}
+				b_bosten = {
+					province = 7983
+					
+					color = { 93 165 240 }
+					
+				}
+				b_narinkira = {
+					province = 7984
+					
+					color = { 93 165 240 }
+					
+				}
+				b_korla = {
+					province = 7988
+					
+					color = { 93 165 240 }
+					
+				}
+				b_kongque = {
+					province = 7989
+					
+					color = { 93 165 240 }
+					
+				}
+			}
 			c_toksun = {
 				color = { 120 125 210 }
 				
@@ -44144,6 +44256,8 @@ e_turan = {
 				}
 			}
 		}
+		
+		
 		
 		d_charkliq = {
 			color = { 50 180 200 }
@@ -46153,6 +46267,7 @@ e_persia = {
 				NOT = { culture = culture:mongol } #Don't want Ilkhanate making Persia
 			}
 		}
+	
 	can_create_on_partition = { always = no }	
 	
 	capital = c_isfahan #	Esfahan
@@ -57024,15 +57139,24 @@ e_france = {
 		
 		
 		capital	= c_venaissin # Arles
+		
 		can_create = {
 			trigger_if = {
-			limit = { is_ai = yes }
-		OR = {
-		is_independent_ruler=yes
-		NOT = { exists = title:e_hre }
+				limit = { is_ai = yes }
+				NOT = { exists = title:e_hre }
 			}
-				}
+            NOT = {
+				exists = title:e_hre.holder
+				is_vassal_or_below_of = title:e_hre.holder
+            }
 		}
+
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:e_hre.holder
+			}
+		}
+		
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -58939,6 +59063,25 @@ e_spain = {
 				}
 			}
 			
+			c_palencia = { #
+				color = { 230 180 20 }
+				
+
+				b_palencia = {
+					province = 1905
+
+					color = { 242 196 12 }
+					
+				}
+
+				b_sedano = {
+					province = 1904
+
+					color = { 245 205 60 }
+					
+				}
+			}
+			
 			c_valladolid = {
 				color = { 210 160 10 }
 				
@@ -59064,23 +59207,9 @@ e_spain = {
 					color = { 230 180 20 }
 					
 				}
-				b_medinadepomar = {
-					province = 1812
-
-					color = { 230 180 20 }
-					
-				}
 			}
-			c_amaya = { #re-localized as Palencia
+			c_amaya = { #
 				color = { 245 205 60 }
-				
-
-				b_palencia = {
-					province = 1905
-
-					color = { 242 196 12 }
-					
-				}
 				
 				b_amaya = {
 					province = 1814
@@ -59088,12 +59217,13 @@ e_spain = {
 					color = { 245 205 60 }
 					
 				}
-				b_sedano = {
-					province = 1904
+				b_medinadepomar = {
+					province = 1812
 
-					color = { 245 205 60 }
+					color = { 230 180 20 }
 					
 				}
+
 			}
 		}
 	}
@@ -79052,6 +79182,30 @@ e_bengal = {
 		
 		capital = c_laksmanavati # Laksmanavati
 		
+		d_jaintia = {
+            color = { 71 186 107 }
+
+            c_srihatta = {
+                color = { 25 210 80 }
+
+                b_srihatta = {
+                    province = 1245
+
+                    color = { 25 210 80 }
+                }
+                b_jangalbari = {
+                    province = 824
+
+                    color = { 25 210 80 }
+                }
+                b_habiganj = {
+                    province = 825
+
+                    color = { 25 210 80 }
+                }
+            }
+        }
+		
 		d_gauda = {
 			color = { 60 200 60 }
 			
@@ -79749,29 +79903,6 @@ e_bengal = {
 					province = 823
 					
 					color = { 15 220 60 }
-					
-				}
-			}
-			c_srihatta = {
-				color = { 25 210 80 }
-				
-				
-				b_srihatta = {
-					province = 1245
-					
-					color = { 25 210 80 }
-					
-				}
-				b_jangalbari = {
-					province = 824
-					
-					color = { 25 210 80 }
-					
-				}
-				b_habiganj = {
-					province = 825
-					
-					color = { 25 210 80 }
 					
 				}
 			}
