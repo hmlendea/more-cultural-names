@@ -128,7 +128,7 @@ build-edition \
 
 build-edition \
     "mbp-more-cultural-names" "More Bookmarks+ - More Cultural Names" \
-    "CK3MBP" "1.7" \
+    "CK3MBP" "1.7.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
@@ -143,7 +143,7 @@ build-edition \
 
 build-edition \
     "tfe-more-cultural-names" "The Fallen Eagle - More Cultural Names" \
-    "CK3TFE" "1.6.1.2" \
+    "CK3TFE" "1.7.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
