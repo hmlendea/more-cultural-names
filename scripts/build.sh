@@ -148,7 +148,7 @@ build-edition \
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
-    "HOI4" "1.11.*"
+    "HOI4" "1.12.*"
 
 build-edition \
     "mdm-more-cultural-names" "Millennium Dawn: More Cultural Names" \
@@ -157,7 +157,7 @@ build-edition \
 
 build-edition \
     "tgw-more-cultural-names" "The Great War: More Cultural Names" \
-    "HOI4TGW" "1.11.*"
+    "HOI4TGW" "1.12.*"
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
