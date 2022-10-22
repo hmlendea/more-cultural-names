@@ -506,6 +506,7 @@ checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}" # "${CK3_VANILLA_LOCALISATION_FILE}"
 
 checkDefaultHoi4Localisations   "HOI4"      "${HOI4_LOCALISATIONS_DIR}"
+checkDefaultHoi4Localisations   "HOI4MDM"   "${HOI4MDM_LOCALISATIONS_DIR}"
 checkDefaultHoi4Localisations   "HOI4TGW"   "${HOI4TGW_LOCALISATIONS_DIR}"
 
 checkDefaultIrLocalisations  "IR"       "${IR_VANILLA_FILE}"
