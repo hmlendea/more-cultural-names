@@ -147,6 +147,38 @@ function checkForSurplusIrLocationLinks() {
     done
 }
 
+
+function checkForMissingVic3CountryLinks() {
+    local GAME_ID="${1}" && shift
+    local VANILLA_COUNTRIES_FILE="${1}" && shift
+
+    for COUNTRY_ID in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\" type=\"Country\"" "${LOCATIONS_FILE}" |
+                            sed 's/.*Country\">\([A-Z][A-Z][A-Z]\).*/\1/g' |
+                            sort | uniq \
+                        ) <( \
+                            cat "${VANILLA_COUNTRIES_FILE}" | \
+                            awk -F"=" '{print $1}' | \
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g'); do
+        LOCATION_DEFAULT_NAME=$(grep "^${COUNTRY_ID}=" "${VANILLA_COUNTRIES_FILE}" | awk -F"=" '{print $2}')
+        LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
+        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
+
+        if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+            echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
+        else
+            echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing"
+        fi
+    done
+}
+
 function checkForMismatchingLocationLinks() {
     local GAME_ID="${1}" && shift
     local VANILLA_FILE="${1}" && shift
@@ -158,6 +190,8 @@ function checkForMismatchingLocationLinks() {
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == IR* ]]; then
         checkForSurplusIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
+    elif [[ ${GAME_ID} == Vic3* ]]; then
+        checkForMissingVic3CountryLinks "${GAME_ID}" "${VANILLA_FILE}"
     fi
 }
 
@@ -489,6 +523,7 @@ checkForMismatchingLocationLinks "IR_ABW"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
+checkForMismatchingLocationLinks "Vic3"     "${Vic3_VANILLA_COUNTRIES_FILE}"
 
 validateHoi4Parentage "HOI4"    "${HOI4_VANILLA_PARENTAGE_FILE}"    "${HOI4_LOCALISATIONS_DIR}"
 #validateHoi4Parentage "HOI4MDM" "${HOI4MDM_VANILLA_PARENTAGE_FILE}" "${HOI4MDM_LOCALISATIONS_DIR}"
