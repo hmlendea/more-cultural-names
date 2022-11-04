@@ -147,7 +147,6 @@ function checkForSurplusIrLocationLinks() {
     done
 }
 
-
 function checkForMissingVic3CountryLinks() {
     local GAME_ID="${1}" && shift
     local VANILLA_COUNTRIES_FILE="${1}" && shift
@@ -179,6 +178,37 @@ function checkForMissingVic3CountryLinks() {
     done
 }
 
+function checkForMissingVic3StateLinks() {
+    local GAME_ID="${1}" && shift
+    local VANILLA_STATES_FILE="${1}" && shift
+
+    for STATE_ID in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\" type=\"State\"" "${LOCATIONS_FILE}" |
+                            sed 's/.*State\">\([A-Z][A-Z][A-Z]\).*/\1/g' |
+                            sort | uniq \
+                        ) <( \
+                            cat "${VANILLA_STATES_FILE}" | \
+                            awk -F"=" '{print $1}' | \
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g'); do
+        LOCATION_DEFAULT_NAME=$(grep "^${STATE_ID}=" "${VANILLA_STATES_FILE}" | awk -F"=" '{print $2}')
+        LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
+        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
+
+        if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+            echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
+        else
+            echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
+        fi
+    done
+}
+
 function checkForMismatchingLocationLinks() {
     local GAME_ID="${1}" && shift
     local VANILLA_FILE="${1}" && shift
@@ -191,7 +221,8 @@ function checkForMismatchingLocationLinks() {
     elif [[ ${GAME_ID} == IR* ]]; then
         checkForSurplusIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
-        checkForMissingVic3CountryLinks "${GAME_ID}" "${VANILLA_FILE}"
+        checkForMissingVic3CountryLinks "${GAME_ID}" "${VANILLA_FILES_DIR}/${GAME_ID}_countries.txt"
+        checkForMissingVic3StateLinks "${GAME_ID}" "${VANILLA_FILES_DIR}/${GAME_ID}_states.txt"
     fi
 }
 
