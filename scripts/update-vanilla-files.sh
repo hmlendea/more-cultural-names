@@ -55,6 +55,30 @@ function update-hoi4-parentage-file() {
     done
 }
 
+function update-vic3-countries() {
+    local TARGET_FILE="${1}"
+    local COUNTRIES_DIR="${2}"
+    local LOCALISATIONS_DIR="${3}"
+
+    if [ -f "${TARGET_FILE}" ]; then
+        rm "${TARGET_FILE}"
+        touch "${TARGET_FILE}"
+    fi
+
+    local COUNTRY_IDS=$(grep "^[A-Z][A-Z][A-Z]\s*=\s*{" "${COUNTRIES_DIR}"/*.txt | \
+                    sed 's/^[^:]*://g' |
+                    sed 's/^\([A-Z][A-Z][A-Z]\).*/\1/g' | \
+                    sort | uniq)
+    local COUNTRY_NAME=""
+
+    for COUNTRY_ID in ${COUNTRY_IDS} ; do
+        COUNTRY_NAME=$(grep "^ ${COUNTRY_ID}:[0-9]\s*" "${LOCALISATIONS_DIR}"/*.yml | \
+                                sed 's/^[^\"]*\"\([^\"]*\)\".*/\1/g' | \
+                                tail -n 1)
+        echo "${COUNTRY_ID}=${COUNTRY_NAME}" >> "${TARGET_FILE}"
+    done
+}
+
 update-vanilla-file \
     "${CK2_DIR}/common/landed_titles/landed_titles.txt" \
     "${CK2_VANILLA_LANDED_TITLES_FILE}"
@@ -125,3 +149,7 @@ update-vanilla-files \
 update-vanilla-files \
     "${IR_TBA_VANILLA_FILE}" \
     "${IR_TBA_LOCALISATIONS_DIR}/provincenames_l_english.yml"
+update-vic3-countries \
+    "${Vic3_VANILLA_COUNTRIES_FILE}" \
+    "${Vic3_COUNTRIES_DIR}" \
+    "${Vic3_LOCALISATIONS_DIR}"
