@@ -79,6 +79,29 @@ function update-vic3-countries() {
     done
 }
 
+function update-vic3-states() {
+    local TARGET_FILE="${1}"
+    local STATES_DIR="${2}"
+    local LOCALISATIONS_DIR="${3}"
+
+    if [ -f "${TARGET_FILE}" ]; then
+        rm "${TARGET_FILE}"
+        touch "${TARGET_FILE}"
+    fi
+
+    local STATE_IDS=$(grep "^\s*s:[^ ]*\s*=\s*{" "${STATES_DIR}"/*.txt | \
+                    sed 's/^\s*s:\([^ ]*\).*/\1/g' |
+                    sort | uniq)
+    local STATE_NAME=""
+
+    for STATE_ID in ${STATE_IDS} ; do
+        STATE_NAME=$(grep "^ ${STATE_ID}:[0-9]\s*" "${LOCALISATIONS_DIR}/map"/*.yml | \
+                                sed 's/^[^\"]*\"\([^\"]*\)\".*/\1/g' | \
+                                tail -n 1)
+        echo "${STATE_ID}=${STATE_NAME}" >> "${TARGET_FILE}"
+    done
+}
+
 update-vanilla-file \
     "${CK2_DIR}/common/landed_titles/landed_titles.txt" \
     "${CK2_VANILLA_LANDED_TITLES_FILE}"
@@ -152,4 +175,8 @@ update-vanilla-files \
 update-vic3-countries \
     "${Vic3_VANILLA_COUNTRIES_FILE}" \
     "${Vic3_COUNTRIES_DIR}" \
+    "${Vic3_LOCALISATIONS_DIR}"
+update-vic3-states \
+    "${Vic3_VANILLA_STATES_FILE}" \
+    "${Vic3_STATES_DIR}" \
     "${Vic3_LOCALISATIONS_DIR}"
