@@ -148,8 +148,8 @@ function checkForSurplusIrLocationLinks() {
 }
 
 function checkForMissingVic3CountryLinks() {
-    local GAME_ID="${1}" && shift
-    local VANILLA_COUNTRIES_FILE="${1}" && shift
+    local GAME_ID="${1}"
+    local VANILLA_COUNTRIES_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_countries.txt"
 
     for COUNTRY_ID in $(diff \
                         <( \
@@ -179,8 +179,8 @@ function checkForMissingVic3CountryLinks() {
 }
 
 function checkForMissingVic3StateLinks() {
-    local GAME_ID="${1}" && shift
-    local VANILLA_STATES_FILE="${1}" && shift
+    local GAME_ID="${1}"
+    local VANILLA_STATES_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_states.txt"
 
     for STATE_ID in $(diff \
                         <( \
@@ -209,11 +209,42 @@ function checkForMissingVic3StateLinks() {
     done
 }
 
+function checkForMissingVic3HubLinks() {
+    local GAME_ID="${1}"
+    local VANILLA_HUBS_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_hubs.txt"
+
+    for HUB_ID in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\" type=\"Hub\"" "${LOCATIONS_FILE}" |
+                            sed 's/.*Hub\">\([A-Z][A-Z][A-Z]\).*/\1/g' |
+                            sort | uniq \
+                        ) <( \
+                            cat "${VANILLA_HUBS_FILE}" | \
+                            awk -F"=" '{print $1}' | \
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g'); do
+        LOCATION_DEFAULT_NAME=$(grep "^${HUB_ID}=" "${VANILLA_HUBS_FILE}" | awk -F"=" '{print $2}')
+        LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
+        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
+
+        if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+            echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
+        else
+            echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing"
+        fi
+    done
+}
+
 function checkForMismatchingLocationLinks() {
     local GAME_ID="${1}" && shift
     local VANILLA_FILE="${1}" && shift
 
-    [ ! -f "${VANILLA_FILE}" ] && return
+    [[ ${GAME_ID} != Vic3* ]] && [ ! -f "${VANILLA_FILE}" ] && return
 
     if [[ ${GAME_ID} == CK* ]]; then
         checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
@@ -221,8 +252,9 @@ function checkForMismatchingLocationLinks() {
     elif [[ ${GAME_ID} == IR* ]]; then
         checkForSurplusIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
-        checkForMissingVic3CountryLinks "${GAME_ID}" "${VANILLA_FILES_DIR}/${GAME_ID}_countries.txt"
-        checkForMissingVic3StateLinks "${GAME_ID}" "${VANILLA_FILES_DIR}/${GAME_ID}_states.txt"
+        checkForMissingVic3CountryLinks "${GAME_ID}"
+        checkForMissingVic3StateLinks "${GAME_ID}"
+        checkForMissingVic3HubLinks "${GAME_ID}"
     fi
 }
 
@@ -554,7 +586,7 @@ checkForMismatchingLocationLinks "IR_ABW"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
-checkForMismatchingLocationLinks "Vic3"     "${Vic3_VANILLA_COUNTRIES_FILE}"
+checkForMismatchingLocationLinks "Vic3"
 
 validateHoi4Parentage "HOI4"    "${HOI4_VANILLA_PARENTAGE_FILE}"    "${HOI4_LOCALISATIONS_DIR}"
 #validateHoi4Parentage "HOI4MDM" "${HOI4MDM_VANILLA_PARENTAGE_FILE}" "${HOI4MDM_LOCALISATIONS_DIR}"
