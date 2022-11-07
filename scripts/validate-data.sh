@@ -154,7 +154,7 @@ function checkForMissingVic3CountryLinks() {
     for COUNTRY_ID in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\" type=\"Country\"" "${LOCATIONS_FILE}" |
-                            sed 's/.*Country\">\([A-Z][A-Z][A-Z]\).*/\1/g' |
+                            sed 's/.*>\([^<]*\)<\/GameId.*/\1/g' |
                             sort | uniq \
                         ) <( \
                             cat "${VANILLA_COUNTRIES_FILE}" | \
@@ -185,7 +185,7 @@ function checkForMissingVic3StateLinks() {
     for STATE_ID in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\" type=\"State\"" "${LOCATIONS_FILE}" |
-                            sed 's/.*State\">\([A-Z][A-Z][A-Z]\).*/\1/g' |
+                            sed 's/.*>\([^<]*\)<\/GameId.*/\1/g' |
                             sort | uniq \
                         ) <( \
                             cat "${VANILLA_STATES_FILE}" | \
@@ -216,7 +216,7 @@ function checkForMissingVic3HubLinks() {
     for HUB_ID in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\" type=\"Hub\"" "${LOCATIONS_FILE}" |
-                            sed 's/.*Hub\">\([A-Z][A-Z][A-Z]\).*/\1/g' |
+                            sed 's/.*>\([^<]*\)<\/GameId.*/\1/g' |
                             sort | uniq \
                         ) <( \
                             cat "${VANILLA_HUBS_FILE}" | \
