@@ -56,9 +56,10 @@ function update-hoi4-parentage-file() {
 }
 
 function update-vic3-countries() {
-    local TARGET_FILE="${1}"
-    local COUNTRIES_DIR="${2}"
-    local LOCALISATIONS_DIR="${3}"
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+    local COUNTRIES_DIR="${3}"
+    local TARGET_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_countries.txt"
 
     if [ -f "${TARGET_FILE}" ]; then
         rm "${TARGET_FILE}"
@@ -80,9 +81,10 @@ function update-vic3-countries() {
 }
 
 function update-vic3-states() {
-    local TARGET_FILE="${1}"
-    local STATES_DIR="${2}"
-    local LOCALISATIONS_DIR="${3}"
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+    local STATES_DIR="${3}"
+    local TARGET_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_states.txt"
 
     if [ -f "${TARGET_FILE}" ]; then
         rm "${TARGET_FILE}"
@@ -100,6 +102,40 @@ function update-vic3-states() {
                                 tail -n 1)
         echo "${STATE_ID}=${STATE_NAME}" >> "${TARGET_FILE}"
     done
+}
+
+function update-vic3-hubs() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+    local TARGET_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_hubs.txt"
+
+    if [ -f "${TARGET_FILE}" ]; then
+        rm "${TARGET_FILE}"
+        touch "${TARGET_FILE}"
+    fi
+
+    local HUB_NAME=""
+    local HUB_IDS=$(grep "^\s*HUB_NAME_" "${LOCALISATIONS_DIR}"/*.yml | \
+                    sed 's/^[^:]*:\s*HUB_NAME_\([^:]*\).*/\1/g' |
+                    sort | uniq)
+
+    for HUB_ID in ${HUB_IDS} ; do
+        HUB_NAME=$(grep "^ HUB_NAME_${HUB_ID}:[0-9]\s*" "${LOCALISATIONS_DIR}"/*.yml | \
+                    sed 's/^[^\"]*\"\([^\"]*\)\".*/\1/g' | \
+                    tail -n 1)
+        echo "${HUB_ID}=${HUB_NAME}" >> "${TARGET_FILE}"
+    done
+}
+
+function update-vic3-files() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+    local COUNTRIES_DIR="${3}"
+    local STATES_DIR="${4}"
+
+    #update-vic3-countries "${GAME_ID}" "${LOCALISATIONS_DIR}" "${COUNTRIES_DIR}"
+    #update-vic3-states "${GAME_ID}" "${LOCALISATIONS_DIR}" "${STATES_DIR}"
+    update-vic3-hubs "${GAME_ID}" "${LOCALISATIONS_DIR}"
 }
 
 update-vanilla-file \
@@ -172,11 +208,7 @@ update-vanilla-files \
 update-vanilla-files \
     "${IR_TBA_VANILLA_FILE}" \
     "${IR_TBA_LOCALISATIONS_DIR}/provincenames_l_english.yml"
-update-vic3-countries \
-    "${Vic3_VANILLA_COUNTRIES_FILE}" \
+update-vic3-files "Vic3" \
+    "${Vic3_LOCALISATIONS_DIR}" \
     "${Vic3_COUNTRIES_DIR}" \
-    "${Vic3_LOCALISATIONS_DIR}"
-update-vic3-states \
-    "${Vic3_VANILLA_STATES_FILE}" \
-    "${Vic3_STATES_DIR}" \
-    "${Vic3_LOCALISATIONS_DIR}"
+    "${Vic3_STATES_DIR}"
