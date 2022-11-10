@@ -168,10 +168,13 @@ function checkForMissingVic3CountryLinks() {
 
         if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            echo "      <GameId game=\"Vic3\" type=\"Country\">${COUNTRY_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
         elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            echo "      <GameId game=\"Vic3\" type=\"Country\">${COUNTRY_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
         elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
             echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
+            echo "      <GameId game=\"Vic3\" type=\"Country\">${COUNTRY_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
         else
             echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing"
         fi
@@ -199,10 +202,13 @@ function checkForMissingVic3StateLinks() {
 
         if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            echo "      <GameId game=\"Vic3\" type=\"State\">${STATE_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
         elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            echo "      <GameId game=\"Vic3\" type=\"State\">${STATE_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
         elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
             echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
+            echo "      <GameId game=\"Vic3\" type=\"State\">${STATE_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
         else
             echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
         fi
@@ -230,10 +236,13 @@ function checkForMissingVic3HubLinks() {
 
         if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            echo "      <GameId game=\"Vic3\" type=\"Hub\">${HUB_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
         elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            echo "      <GameId game=\"Vic3\" type=\"Hub\">${HUB_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
         elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
             echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
+            echo "      <GameId game=\"Vic3\" type=\"Hub\">${HUB_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
         else
             echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing"
         fi
@@ -582,7 +591,7 @@ checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE
 #checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"  "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
-checkForMismatchingLocationLinks "IR_ABW"   "${IR_AoE_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR_ABW"   "${IR_ABW_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
