@@ -1399,15 +1399,24 @@ k_zenata = { # Zenata
 k_lower_lorraine = { # Niederlothringen
 		color = { 37 114 179 }
 		capital = c_antwerpen # Herstal
+		
 		can_create = {
-			trigger_if = {
-				limit = { is_ai = yes }
-				NOT = { exists = title:e_hre }
+		
+			custom_description = {
+				text = form_hre_kingdoms
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+				}
+				
+				
+			
+				NOT = {
+					exists = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
+				}
 			}
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
 		}
 
 		can_create_on_partition = {
@@ -1423,15 +1432,24 @@ k_lower_lorraine = { # Niederlothringen
 k_upper_lorraine = { # Oberlothringen
 		color = { 90 90 125 }
 		capital = c_nancy # Blâmont # Lorraine - Nancy
+		
 		can_create = {
-			trigger_if = {
-				limit = { is_ai = yes }
-				NOT = { exists = title:e_hre }
+		
+			custom_description = {
+				text = form_hre_kingdoms
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+				}
+				
+				
+			
+				NOT = {
+					exists = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
+				}
 			}
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
 		}
 
 		can_create_on_partition = {
@@ -7131,14 +7149,22 @@ e_germany = {
 		capital = c_dessau
 		
 		can_create = {
-			trigger_if = {
-				limit = { is_ai = yes }
-				NOT = { exists = title:e_hre }
+		
+			custom_description = {
+				text = form_hre_kingdoms
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+				}
+				
+				
+			
+				NOT = {
+					exists = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
+				}
 			}
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
 		}
 
 		can_create_on_partition = {
@@ -8320,18 +8346,27 @@ e_germany = {
 		capital = c_holland #Holland
 		
 		can_create = {
-			trigger_if = {
-				limit = { is_ai = yes }
-				NOT = { exists = title:e_hre }
-			}
-			OR = {
-					culture = culture:frisian
-					culture = culture:dutch
+		
+			custom_description = {
+				text = form_hre_kingdoms
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+					
+					OR = {
+						culture = culture:frisian
+						culture = culture:dutch
+					}
 				}
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
+				
+
+			
+				NOT = {
+					exists = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
+				}
+			}
 		}
 
 		can_create_on_partition = {
@@ -8339,9 +8374,7 @@ e_germany = {
 				is_vassal_or_below_of = title:e_hre.holder
 			}
 		}
-		
-		
-		
+
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -9694,14 +9727,22 @@ e_germany = {
 		capital = c_karnten
 		
 		can_create = {
-			trigger_if = {
-				limit = { is_ai = yes }
-				NOT = { exists = title:e_hre }
+		
+			custom_description = {
+				text = form_hre_kingdoms
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+				}
+				
+				
+			
+				#NOT = {
+				#	exists = title:e_hre.holder
+				#	is_vassal_or_below_of = title:e_hre.holder
+				#}
 			}
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
 		}
 
 		can_create_on_partition = {
@@ -10302,14 +10343,22 @@ e_germany = {
 		capital = c_vaihingen # Hohenstaufen
 		
 		can_create = {
-			trigger_if = {
-				limit = { is_ai = yes }
-				NOT = { exists = title:e_hre }
+		
+			custom_description = {
+				text = form_hre_kingdoms
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+				}
+				
+				
+			
+				NOT = {
+					exists = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
+				}
 			}
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
 		}
 
 		can_create_on_partition = {
@@ -11000,14 +11049,22 @@ e_germany = {
 		capital = c_regensburg
 		
 		can_create = {
-			trigger_if = {
-				limit = { is_ai = yes }
-				NOT = { exists = title:e_hre }
+		
+			custom_description = {
+				text = form_hre_kingdoms
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+				}
+				
+				
+			
+				NOT = {
+					exists = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
+				}
 			}
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
 		}
 
 		can_create_on_partition = {
@@ -11597,14 +11654,22 @@ e_germany = {
 		capital = c_frankfurt
 		
 		can_create = {
-			trigger_if = {
-				limit = { is_ai = yes }
-				NOT = { exists = title:e_hre }
+		
+			custom_description = {
+				text = form_hre_kingdoms
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+				}
+				
+				
+			
+				NOT = {
+					exists = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
+				}
 			}
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
 		}
 
 		can_create_on_partition = {
@@ -21269,7 +21334,7 @@ e_italy = {
 		d_vercelli_republic = { # Comune di Vercelli # vercelli republic
 			color = { 26 60 102 }
 			
-			
+			definite_form = yes
 			capital = c_turin # Vercelli
 			
 			
@@ -21279,7 +21344,7 @@ e_italy = {
 		d_vicenza_republic = { # Comune di Vicenza # Vicenza republic
 			color = { 44 102 26 }
 			
-			
+			definite_form = yes
 			capital = c_bassano # Vicenza
 			
 			
@@ -21289,7 +21354,7 @@ e_italy = {
 		d_verona_republic = { # Comune di Verona # Verona republic
 			color = { 15 166 111 }
 			
-			
+			definite_form = yes
 			capital = c_verona # Verona
 			
 			
@@ -21299,7 +21364,7 @@ e_italy = {
 		d_padova_republic = { # Comune di Padova # Padua republic
 			color = { 102 26 68 }
 			
-			
+			definite_form = yes
 			capital = c_padua # Padua
 			
 			
@@ -21309,7 +21374,7 @@ e_italy = {
 		d_ferrara_republic = { # Comune di Ferrara # Ferrara republic
 			color = { 141 179 213 }
 			
-			
+			definite_form = yes
 			capital = c_ferrara # Rovigo # Ferrara
 			
 			
@@ -21319,7 +21384,7 @@ e_italy = {
 		d_mantua_republic = { # Comune di Mantova # Mantua republic
 			color = { 74 174 83 }
 			
-			
+			definite_form = yes
 			capital = c_novellara # San Martino # Mantua
 			
 
@@ -21328,7 +21393,7 @@ e_italy = {
 		d_brescia_republic = { # Comune di Brescia # Brescia republic
 			color = { 201 136 79 }
 			
-			
+			definite_form = yes
 			capital = c_brescia # Brescia
 			
 			
@@ -21338,7 +21403,7 @@ e_italy = {
 		d_bergamo_republic = { # Comune di Bergamo # Bergamo republic
 			color = { 74 174 83 }
 			
-			
+			definite_form = yes
 			capital = c_bergamo # Bergamo
 			
 			
@@ -21348,7 +21413,7 @@ e_italy = {
 		d_milano_republic = { # Comune di Milano # Milanese republic
 			color = { 68 86 102 }
 			
-			
+			definite_form = yes
 			capital = c_lombardia # Burgaria # Milano
 			
 			
@@ -21358,7 +21423,7 @@ e_italy = {
 		d_pavia_republic = { # Comune di Pavia # Pavia republic
 			color = { 201 136 79 }
 			
-			
+			definite_form = yes
 			capital = c_pavia # Pavia
 			
 			
@@ -21368,7 +21433,7 @@ e_italy = {
 		d_modena_republic = { # Comune di Modena # Modena republic
 			color = { 86 166 15 }
 			
-			
+			definite_form = yes
 			capital = c_modena # Modena
 			
 			
@@ -21378,7 +21443,7 @@ e_italy = {
 		d_reggio_republic = { # Comune di Reggio # Reggio republic
 			color = { 166 93 131 }
 			
-			
+			definite_form = yes
 			capital = c_reggionellemilia # Reggio # Reggio in Emilia
 			
 			
@@ -21388,7 +21453,7 @@ e_italy = {
 		d_parma_republic = { # Comune di Parma # Parma republic
 			color = { 87 189 183 }
 			
-			
+			definite_form = yes
 			capital = c_parma # Parma
 			
 			
@@ -21398,7 +21463,7 @@ e_italy = {
 		d_piacenza_republic = { # Comune di Piacenza # Piacenza republic
 			color = { 102 82 68 }
 			
-			
+			definite_form = yes
 			capital = c_piacenza # Piacenza
 			
 			
@@ -21408,7 +21473,7 @@ e_italy = {
 		d_cremona_republic = { # Comune di Cremona # Cremona republic
 			color = { 238 166 15 }
 			
-			
+			definite_form = yes
 			capital = c_cremona # Camisano # Cremona
 			
 			
@@ -21418,7 +21483,7 @@ e_italy = {
 		d_asti_republic = { # Comune di Asti # Asti # Asti republic
 			color = { 45 124 39 }
 			
-			
+			definite_form = yes
 			capital = c_monferrato # Asti # Monferrato
 			
 			
@@ -21428,7 +21493,7 @@ e_italy = {
 		d_firenze_republic = { # Comune di Firenze # Firenze # Florentine republic
 			color = { 203 19 54 }
 			
-			
+			definite_form = yes
 			capital = c_firenze # Firenze
 			
 			
@@ -21438,7 +21503,7 @@ e_italy = {
 		d_lucca_republic = { # Comune di Lucca # Lucca # Luccan republic
 			color = { 203 184 19 }
 			
-			
+			definite_form = yes
 			capital = c_lucca # Lucca
 			
 			
@@ -21448,7 +21513,7 @@ e_italy = {
 		d_arezzo_republic = { # Comune di Arezzo # Arezzo # Arentine republic
 			color = { 76 124 69 }
 			
-			
+			definite_form = yes
 			capital = c_arezzo # Arezzo
 			
 			
@@ -21458,7 +21523,7 @@ e_italy = {
 		d_siena_republic = { # Comune di Siena # Siena # Sienese republic
 			color = { 2 19 127 }
 			
-			
+			definite_form = yes
 			capital = c_siena # Siena
 			
 
@@ -22713,10 +22778,10 @@ e_italy = {
 				NOT = { exists = title:e_hre }
 			}
 			faith = { religion_tag = christianity_religion }
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
+            #NOT = {
+			#	exists = title:e_hre.holder
+			#	is_vassal_or_below_of = title:e_hre.holder
+            #}
 		}
 
 		can_create_on_partition = {
@@ -29924,16 +29989,25 @@ e_wendish_empire = {
 		capital = c_stettin # Szczecin
 		
 		can_create = {
-			trigger_if = {
-				limit = { is_ai = yes }
-				NOT = { exists = title:e_hre }
-				culture = culture:pommeranian
+		
+			custom_description = {
+				text = form_hre_kingdoms
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+					culture = culture:pommeranian
+				}
+				
+				
+			
+				NOT = {
+					exists = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
+				}
 			}
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
 		}
+		
 
 		can_create_on_partition = {
 			NOT = { 
@@ -34556,6 +34630,28 @@ e_caspian-pontic_steppe = {
 	k_pontic_steppe = {
 		color = { 85 40 5 }
 		
+		can_create = {
+			trigger_if = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:k_pechenegs }
+				NOT = { exists = title:k_cumania }
+				NOT = { exists = title:k_qipchaq }
+				NOT = { exists = title:k_qangli }
+				NOT = { exists = title:k_kipchak }
+			}
+			
+			NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+			
+		}
+		
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:k_pechenegs.holder
+			}
+			NOT = { 
+				is_vassal_or_below_of = title:k_cumania.holder
+			}
+		}
 		
 		capital = c_odessa # Odessa
 		
@@ -35512,30 +35608,28 @@ e_caspian-pontic_steppe = {
 		color = { 166 82 10 }
 		
 		
-		#can_create = {
-		#	trigger_if = {
-		#		#limit = { is_ai = yes }
-		#		NOT = { exists = title:k_pechenegs }
-		#		NOT = { exists = title:k_cumania }
-		#	}
-        #    NOT = {
-		#		exists = title:k_pechenegs.holder
-		#		is_vassal_or_below_of = title:k_pechenegs.holder
-        #    }
-		#	NOT = {
-		#		exists = title:k_cumania.holder
-		#		is_vassal_or_below_of = title:k_cumania.holder
-        #    }
-		#}
-		#
-		#can_create_on_partition = {
-		#	NOT = { 
-		#		is_vassal_or_below_of = title:k_pechenegs.holder
-		#	}
-		#	NOT = { 
-		#		is_vassal_or_below_of = title:k_cumania.holder
-		#	}
-		#}
+		can_create = {
+			trigger_if = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:k_pechenegs }
+				NOT = { exists = title:k_cumania }
+				NOT = { exists = title:k_qipchaq }
+				NOT = { exists = title:k_qangli }
+				NOT = { exists = title:k_kipchak }
+			}
+			
+			NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+			
+		}
+		
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:k_pechenegs.holder
+			}
+			NOT = { 
+				is_vassal_or_below_of = title:k_cumania.holder
+			}
+		}
 		
 		capital = c_itil # Itil
 		
@@ -36194,6 +36288,29 @@ e_volga-ural = {
 	k_mordvinia = {
 		color = { 26 46 50 }
 		
+		
+		can_create = {
+			trigger_if = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:k_pechenegs }
+				NOT = { exists = title:k_cumania }
+				NOT = { exists = title:k_qipchaq }
+				NOT = { exists = title:k_qangli }
+				NOT = { exists = title:k_kipchak }
+			}
+			
+			NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+			
+		}
+		
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:k_pechenegs.holder
+			}
+			NOT = { 
+				is_vassal_or_below_of = title:k_cumania.holder
+			}
+		}
 		
 		capital = c_cheboksary
 		
@@ -41947,6 +42064,29 @@ e_tartaria = {
 		
 		capital = c_mugodzhar_hills
 		
+		can_create = {
+			trigger_if = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:k_pechenegs }
+				NOT = { exists = title:k_cumania }
+				NOT = { exists = title:k_qipchaq }
+				NOT = { exists = title:k_qangli }
+				NOT = { exists = title:k_kipchak }
+			}
+			
+			NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+			
+		}
+		
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:k_pechenegs.holder
+			}
+			NOT = { 
+				is_vassal_or_below_of = title:k_cumania.holder
+			}
+		}
+		
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -42293,6 +42433,29 @@ e_tartaria = {
 		
 		
 		capital = c_turgay
+		
+		can_create = {
+			trigger_if = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:k_pechenegs }
+				NOT = { exists = title:k_cumania }
+				NOT = { exists = title:k_qipchaq }
+				NOT = { exists = title:k_qangli }
+				NOT = { exists = title:k_kipchak }
+			}
+			
+			NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+			
+		}
+		
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:k_pechenegs.holder
+			}
+			NOT = { 
+				is_vassal_or_below_of = title:k_cumania.holder
+			}
+		}
 		
 		ai_primary_priority = {
 			if = {
@@ -42876,6 +43039,29 @@ e_tartaria = {
 		
 		
 		capital = c_jiren_suat #'The summer home of the Kimak Khakans was in the town of Imak, in the middle Irtysh, the winter capital was Tamim on the southern shore of lake Balkhash.' 
+		
+		can_create = {
+			trigger_if = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:k_pechenegs }
+				NOT = { exists = title:k_cumania }
+				NOT = { exists = title:k_qipchaq }
+				NOT = { exists = title:k_qangli }
+				NOT = { exists = title:k_kipchak }
+			}
+			
+			NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+			
+		}
+		
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:k_pechenegs.holder
+			}
+			NOT = { 
+				is_vassal_or_below_of = title:k_cumania.holder
+			}
+		}
 		
 		ai_primary_priority = {
 			if = {
@@ -44566,6 +44752,29 @@ e_turan = {
 		
 		can_be_named_after_dynasty = no #Don't want dynasty names
 		
+		can_create = {
+			trigger_if = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:k_pechenegs }
+				NOT = { exists = title:k_cumania }
+				NOT = { exists = title:k_qipchaq }
+				NOT = { exists = title:k_qangli }
+				NOT = { exists = title:k_kipchak }
+			}
+			
+			NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+			
+		}
+		
+		can_create_on_partition = {
+			NOT = { 
+				is_vassal_or_below_of = title:k_pechenegs.holder
+			}
+			NOT = { 
+				is_vassal_or_below_of = title:k_cumania.holder
+			}
+		}
+		
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -45406,7 +45615,7 @@ e_turan = {
 				limit = {
 					is_ai = yes
 				}
-				NOT = { culture = culture:mongol }
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
 			}
 		}
 		
@@ -46442,7 +46651,7 @@ e_persia = {
 				limit = {
 					is_ai = yes
 				}
-				NOT = { culture = culture:mongol } #Don't want Ilkhanate making Persia
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } } #Don't want Ilkhanate making Persia
 			}
 	}
 	
@@ -46470,7 +46679,7 @@ e_persia = {
 				limit = {
 					is_ai = yes
 				}
-				NOT = { culture = culture:mongol } #Don't want Ilkhanate making Persia
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
 			}
 		}
 		
@@ -47625,7 +47834,7 @@ e_persia = {
 				limit = {
 					is_ai = yes
 				}
-				NOT = { culture = culture:mongol }
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
 			}
 		}
 		
@@ -48694,7 +48903,7 @@ e_persia = {
 				limit = {
 					is_ai = yes
 				}
-				NOT = { culture = culture:mongol }
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
 			}
 		}
 		
@@ -49166,7 +49375,7 @@ e_persia = {
 				limit = {
 					is_ai = yes
 				}
-				NOT = { culture = culture:mongol }
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
 			}
 		}
 		
@@ -49647,7 +49856,7 @@ e_persia = {
 				limit = {
 					is_ai = yes
 				}
-				NOT = { culture = culture:mongol }
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
 			}
 		}
 		
@@ -51482,13 +51691,14 @@ e_carpathia = {
 		
 		
 		capital = c_suceava # Suceava
-		
+	
 		can_create = {
 			trigger_if = {
 				limit = {
 					is_ai = yes
 				}
 				NOT = { culture = { has_cultural_pillar = heritage_turkic } } #Don't want nomadic peoples (like the Pechenegs) making this
+				NOT = { culture = { has_cultural_pillar = heritage_mongolic } }
 			}
 		}
 		
@@ -56642,14 +56852,20 @@ e_france = {
 					color = { 110 100 155 }
 					
 				}
-				b_limoux = {
-					province = 2447
+				b_saissac = {
+					province = 9792
 					
 					color = { 110 100 155 }
 					
 				}
-				b_saissac = {
-					province = 9792
+			}
+			
+			c_limoux = {
+				color = { 175 100 155 }
+				
+
+				b_limoux = {
+					province = 2447
 					
 					color = { 110 100 155 }
 					
@@ -57359,14 +57575,22 @@ e_france = {
 		capital	= c_venaissin # Arles
 		
 		can_create = {
-			trigger_if = {
-				limit = { is_ai = yes }
-				NOT = { exists = title:e_hre }
+		
+			custom_description = {
+				text = form_hre_kingdoms
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+				}
+				
+				
+			
+				NOT = {
+					exists = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
+				}
 			}
-            NOT = {
-				exists = title:e_hre.holder
-				is_vassal_or_below_of = title:e_hre.holder
-            }
 		}
 
 		can_create_on_partition = {
@@ -57843,19 +58067,27 @@ e_france = {
 					color = { 170 35 70 }
 					
 				}
-				b_lons_le_saunier = {
-					province = 2073
-					
-					color = { 170 35 70 }
-					
-				}
+			}
+			
+			c_salins = {
+				color = { 250 35 70 }
+				
 				b_salins = {
 					province = 2072
 					
 					color = { 170 35 70 }
 					
 				}
+				
+				b_lons_le_saunier = {
+					province = 2073
+					
+					color = { 170 35 70 }
+					
+				}
+				
 			}
+			
 		}
 		
 		d_transjurania = {
