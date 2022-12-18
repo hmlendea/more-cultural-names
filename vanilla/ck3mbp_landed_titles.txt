@@ -1421,7 +1421,7 @@ k_lower_lorraine = { # Niederlothringen
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 		
@@ -1454,7 +1454,7 @@ k_upper_lorraine = { # Oberlothringen
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 	
@@ -7169,7 +7169,7 @@ e_germany = {
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 		
@@ -8364,14 +8364,14 @@ e_germany = {
 			
 				NOT = {
 					exists = title:e_hre.holder
-					is_vassal_or_below_of = title:e_hre.holder
+					#is_vassal_or_below_of = title:e_hre.holder
 				}
 			}
 		}
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 
@@ -9747,7 +9747,7 @@ e_germany = {
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 		
@@ -10363,7 +10363,7 @@ e_germany = {
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 		
@@ -11062,14 +11062,14 @@ e_germany = {
 			
 				NOT = {
 					exists = title:e_hre.holder
-					is_vassal_or_below_of = title:e_hre.holder
+					#is_vassal_or_below_of = title:e_hre.holder
 				}
 			}
 		}
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 		
@@ -11667,14 +11667,14 @@ e_germany = {
 			
 				NOT = {
 					exists = title:e_hre.holder
-					is_vassal_or_below_of = title:e_hre.holder
+					#is_vassal_or_below_of = title:e_hre.holder
 				}
 			}
 		}
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 
@@ -22786,7 +22786,7 @@ e_italy = {
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 		
@@ -30011,7 +30011,7 @@ e_wendish_empire = {
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 		
@@ -34644,14 +34644,7 @@ e_caspian-pontic_steppe = {
 			
 		}
 		
-		can_create_on_partition = {
-			NOT = { 
-				is_vassal_or_below_of = title:k_pechenegs.holder
-			}
-			NOT = { 
-				is_vassal_or_below_of = title:k_cumania.holder
-			}
-		}
+		can_create_on_partition = { always = no }
 		
 		capital = c_odessa # Odessa
 		
@@ -35622,14 +35615,7 @@ e_caspian-pontic_steppe = {
 			
 		}
 		
-		can_create_on_partition = {
-			NOT = { 
-				is_vassal_or_below_of = title:k_pechenegs.holder
-			}
-			NOT = { 
-				is_vassal_or_below_of = title:k_cumania.holder
-			}
-		}
+		can_create_on_partition = { always = no }
 		
 		capital = c_itil # Itil
 		
@@ -36303,14 +36289,7 @@ e_volga-ural = {
 			
 		}
 		
-		can_create_on_partition = {
-			NOT = { 
-				is_vassal_or_below_of = title:k_pechenegs.holder
-			}
-			NOT = { 
-				is_vassal_or_below_of = title:k_cumania.holder
-			}
-		}
+		can_create_on_partition = { always = no }
 		
 		capital = c_cheboksary
 		
@@ -42078,14 +42057,7 @@ e_tartaria = {
 			
 		}
 		
-		can_create_on_partition = {
-			NOT = { 
-				is_vassal_or_below_of = title:k_pechenegs.holder
-			}
-			NOT = { 
-				is_vassal_or_below_of = title:k_cumania.holder
-			}
-		}
+		can_create_on_partition = { always = no }
 		
 		ai_primary_priority = {
 			if = {
@@ -42448,14 +42420,7 @@ e_tartaria = {
 			
 		}
 		
-		can_create_on_partition = {
-			NOT = { 
-				is_vassal_or_below_of = title:k_pechenegs.holder
-			}
-			NOT = { 
-				is_vassal_or_below_of = title:k_cumania.holder
-			}
-		}
+		can_create_on_partition = { always = no }
 		
 		ai_primary_priority = {
 			if = {
@@ -43054,14 +43019,7 @@ e_tartaria = {
 			
 		}
 		
-		can_create_on_partition = {
-			NOT = { 
-				is_vassal_or_below_of = title:k_pechenegs.holder
-			}
-			NOT = { 
-				is_vassal_or_below_of = title:k_cumania.holder
-			}
-		}
+		can_create_on_partition = { always = no }
 		
 		ai_primary_priority = {
 			if = {
@@ -44766,14 +44724,7 @@ e_turan = {
 			
 		}
 		
-		can_create_on_partition = {
-			NOT = { 
-				is_vassal_or_below_of = title:k_pechenegs.holder
-			}
-			NOT = { 
-				is_vassal_or_below_of = title:k_cumania.holder
-			}
-		}
+		can_create_on_partition = { always = no }
 		
 		ai_primary_priority = {
 			if = {
@@ -57595,7 +57546,7 @@ e_france = {
 
 		can_create_on_partition = {
 			NOT = { 
-				is_vassal_or_below_of = title:e_hre.holder
+				game_start_date >= 950.1.1
 			}
 		}
 		
