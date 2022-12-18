@@ -40,7 +40,7 @@ jobs:
           unzip "${{matrix.config.mod_game_id}}.zip" -d "${{matrix.config.mod_game_id}}/"
 
     - name: Upload
-      uses: Weilbyte/steam-workshop-upload@v1
+      uses: hmlendea/steam-workshop-update@v1.0.0
       with:
         appid: ${{matrix.config.steam_app_id}}
         itemid: ${{matrix.config.steam_item_id}}
@@ -49,7 +49,7 @@ jobs:
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
         STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
-        STEAM_TFASEED: ${{secrets.STEAM_2FA_SEED}}
+        STEAM_2FASEED: ${{secrets.STEAM_2FASEED}}
 
     - name: Cooldown
       run: |
