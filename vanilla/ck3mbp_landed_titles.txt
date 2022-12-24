@@ -1277,6 +1277,7 @@ e_bulgaria = { #Becomes de_jure empire for Bulgaria
 	
 	capital = c_turnovo # Tyrnovo
 	definite_form = yes
+	can_be_named_after_dynasty = no #Don't want dynasty names
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -8364,7 +8365,7 @@ e_germany = {
 			
 				NOT = {
 					exists = title:e_hre.holder
-					#is_vassal_or_below_of = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
 				}
 			}
 		}
@@ -9738,10 +9739,10 @@ e_germany = {
 				
 				
 			
-				#NOT = {
-				#	exists = title:e_hre.holder
-				#	is_vassal_or_below_of = title:e_hre.holder
-				#}
+				NOT = {
+					exists = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
+				}
 			}
 		}
 
@@ -11060,10 +11061,10 @@ e_germany = {
 				
 				
 			
-				NOT = {
-					exists = title:e_hre.holder
-					#is_vassal_or_below_of = title:e_hre.holder
-				}
+				#NOT = {
+				#	exists = title:e_hre.holder
+				#	is_vassal_or_below_of = title:e_hre.holder
+				#}
 			}
 		}
 
@@ -11667,7 +11668,7 @@ e_germany = {
 			
 				NOT = {
 					exists = title:e_hre.holder
-					#is_vassal_or_below_of = title:e_hre.holder
+					is_vassal_or_below_of = title:e_hre.holder
 				}
 			}
 		}
@@ -14654,6 +14655,9 @@ e_byzantium = {
 		
 		
 		capital = c_turnovo # Turnovo
+		
+		definite_form = yes
+		can_be_named_after_dynasty = no #Don't want dynasty names
 		
 		ai_primary_priority = {
 			if = {
@@ -30001,10 +30005,10 @@ e_wendish_empire = {
 				
 				
 			
-				NOT = {
-					exists = title:e_hre.holder
-					is_vassal_or_below_of = title:e_hre.holder
-				}
+				#NOT = {
+				#	exists = title:e_hre.holder
+				#	is_vassal_or_below_of = title:e_hre.holder
+				#}
 			}
 		}
 		
@@ -57537,10 +57541,10 @@ e_france = {
 				
 				
 			
-				NOT = {
-					exists = title:e_hre.holder
-					is_vassal_or_below_of = title:e_hre.holder
-				}
+				#NOT = {
+				#	exists = title:e_hre.holder
+				#	is_vassal_or_below_of = title:e_hre.holder
+				#}
 			}
 		}
 
@@ -62493,6 +62497,7 @@ e_maghreb = {
 	
 	k_africa = {
 		color = { 67 96 179 }
+		
 		
 		
 		capital = c_kairwan # Kairouan
