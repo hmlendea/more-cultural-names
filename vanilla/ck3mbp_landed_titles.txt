@@ -7143,7 +7143,46 @@ e_germany = {
 
 		
 		
+	k_old_franconia = {
+		color = { 210 210 255 }
 		
+		
+		capital = c_frankfurt
+		
+		can_create = {
+		
+			custom_description = {
+			
+				trigger_if = {
+					limit = { is_ai = yes }
+					NOT = { exists = title:e_hre }
+				}
+
+			}
+		}
+
+
+
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:german
+				}
+				add = @correct_culture_primary_score
+			}
+			if = {
+				limit = {
+					NOT = { culture = culture:german }
+					culture = { has_cultural_pillar = heritage_central_germanic }
+				}
+				add = @better_than_the_alternatives_score
+			}
+		}
+		
+		
+		
+	}
+
 	k_saxony = {
 		color = { 78 98 120 }
 
@@ -7557,29 +7596,6 @@ e_germany = {
 					
 				}
 			}
-			c_mark = {
-				color = { 145 135 175 }
-				
-				
-				b_mark = {
-					province = 2679
-
-					color = { 145 135 175 }
-					
-				}
-				b_hagen = {
-					province = 2678
-
-					color = { 145 135 175 }
-					
-				}
-				b_hukeswag = {
-					province = 2676
-
-					color = { 145 135 175 }
-					
-				}
-			}
 			
 			c_bentheim = {
 				color = { 225 170 65 }
@@ -7596,6 +7612,13 @@ e_germany = {
 					province = 9665
 
 					color = { 250 170 65 }
+					
+				}
+				
+				b_almelo = {
+					province = 2431
+
+					color = { 180 120 10 }
 					
 				}
 				
@@ -7765,7 +7788,14 @@ e_germany = {
 		
 		
 		
-		
+		d_luneburg = { #Titular for after 1269 when Brunswick-Luneburg is divided. Ostfalen re-named to Brunswick
+			color = { 180 150 100 }
+			
+			
+			capital = c_luneburg 
+			
+			
+		}
 		
 		d_ostfalen = {
 			color = { 200 160 125 }
@@ -8423,8 +8453,30 @@ e_germany = {
 					color = { 235 85 30 }
 					
 				}
+				
+				b_den_haag = {
+					province = 10309
+
+					color = { 235 85 30 }
+				}
 			}
-		
+			
+			c_amstelland = {
+				color = { 225 85 50 }
+	
+				b_ouderkerk = {
+					province = 10310
+
+					color = { 225 85 50 }
+				}	
+				b_amsterdam = {
+					province = 2406
+
+					color = { 235 85 30 }
+					
+				}
+			}
+			
 			c_westfriesland = {
 				color = { 245 99 50 }
 				
@@ -8449,6 +8501,23 @@ e_germany = {
 				}				
 			
 			}
+			
+			c_altena = {
+				color = { 225 85 50 }
+			
+				b_woudrichem = {
+					province = 10272
+
+					color = { 225 85 50 }
+
+				}
+				b_geertruidenberg = {
+					province = 10271
+
+					color = { 235 85 30 }
+				}
+			}	
+			
 			c_zeeland = {
 				color = { 200 100 30 }
 				
@@ -8460,18 +8529,23 @@ e_germany = {
 					
 				}
 
-				b_bergen_op_zoom = {
-					province = 2113
-
-					color = { 200 100 30 }
-					
-				}
-
 				b_brielle = {
 					province = 2401
 
 					color = { 200 100 30 }
 					
+				}
+				
+				b_goes = {
+					province = 10269
+
+					color = { 200 100 30 }
+				}
+				
+				b_zierikzee = {
+					province = 10270
+
+					color = { 200 100 30 }
 				}
 			}
 		}
@@ -8498,12 +8572,25 @@ e_germany = {
 					color = { 160 100 10 }
 					
 				}
-				b_amsterdam = {
-					province = 2406
+				
+				b_naarden = {
+					province = 10311
 
-					color = { 235 85 30 }
-					
+					color = { 160 100 10 }
 				}
+				
+				b_woerden = {
+					province = 10312
+
+					color = { 160 100 10 }
+				}
+				
+				b_baarn = {
+					province = 10313
+
+					color = { 160 100 10 }
+				}
+				
 			}
 
 			c_oversticht = {
@@ -8527,13 +8614,13 @@ e_germany = {
 
 					color = { 180 120 10 }
 					
-				}				
-				b_almelo = {
-					province = 2431
+				}
 
-					color = { 180 120 10 }
-					
-				}				
+				b_deventer = {
+					province = 10318
+
+					color = { 195 30 5 }
+				}
 			}
 
 			c_groningen = {
@@ -8672,20 +8759,27 @@ e_germany = {
 					color = { 200 60 40 }
 					
 				}
-				b_nijmegen = {
-					province = 2103
+				
+				b_venlo = {
+					province = 10301
 
 					color = { 200 60 40 }
-					
 				}
-				b_tiel = {
-					province = 2425
+				
+				b_venray = {
+					province = 10302
 
 					color = { 200 60 40 }
-					
 				}
+				
+				b_grave = {
+					province = 10306
+
+					color = { 200 60 40 }
+				}
+				
 			}
-
+		
 			c_arnhem = {
 				color = { 235 45 30 }
 				
@@ -8707,6 +8801,18 @@ e_germany = {
 
 					color = { 235 45 30 }
 					
+				}
+				
+				b_barneveld = {
+					province = 10316
+
+					color = { 235 45 30}
+				}
+				
+				b_elburg = {
+					province = 10317
+
+					color = { 235 45 30 }
 				}
 			}
 
@@ -8732,7 +8838,41 @@ e_germany = {
 					color = { 195 30 5 }
 					
 				}
+				
+				b_doetinchem = {
+					province = 10319
+
+					color = { 195 30 5 }
+				}
 			}
+			
+			c_nijmegen = {
+				color = { 160 165 40 }
+
+				b_nijmegen = {
+					province = 2103
+
+					color = { 200 60 40 }
+					
+				}
+				b_tiel = {
+					province = 2425
+
+					color = { 200 60 40 }
+					
+				}
+				b_dorestad = {
+					province = 10315
+
+					color = { 200 60 40 }
+				}
+				b_leerdam = {
+					province = 10314
+
+					color = { 200 60 40 }
+				}	
+			}
+			
 		}
 	}
 	
@@ -8766,8 +8906,71 @@ e_germany = {
 			}
 		}
 		
-		
 		d_bouillon = {
+			color = { 175 160 155 }
+			
+			
+			capital = c_bouillon #c_bouillon
+			
+			c_bouillon = {
+				color = { 100 110 180 }
+				
+				b_bouillon = {
+					province = 2091
+
+					color = { 100 110 180 }
+					
+				}
+				
+				b_paliseul = {
+					province = 10241
+
+					color = { 245 247 0 }
+				}
+			}
+			
+			c_namur = {
+				color = { 100 95 150 }
+				
+			
+				b_namur = {
+					province = 2098
+
+					color = { 100 95 150 }
+					
+				}
+				b_couvin = {
+					province = 2122
+
+					color = { 100 95 150 }
+					
+				}
+				
+				b_florennes = {
+					province = 10276
+
+					color = { 234 247 0 }
+				}
+				
+				b_dinant = {
+					province = 10277
+
+					color = { 220 247 0 }
+				}
+				
+				b_andenne = {
+					province = 10279
+
+					color = { 234 247 0 }
+				}
+				
+			}
+			
+			
+			
+		}
+		
+		d_liege = {
 			color = { 150 150 155 }
 			
 			
@@ -8788,37 +8991,115 @@ e_germany = {
 
 					color = { 90 95 135 }
 					
-				}			
-				b_bouillon = {
-					province = 2091
+				}	
 
-					color = { 100 110 180 }
+				b_durbuy = {
+					province = 10280
+
+					color = { 234 247 0 }
+				}
+				
+				b_waremme = {
+					province = 10287
+
+					color = { 234 247 0 }
+				}
+				b_stablo = {
+					province = 9664
+
+					color = { 130 125 175 }
 					
 				}
+				
 			}
+			
+			c_horne = {
+				color = { 245 60 43 }
+
+				b_hoorn = {
+					province = 10299
+
+					color = { 245 60 43 }
+				
+				}			
+				b_roermond = {
+					province = 10300
+
+					color = { 245 60 43 }
+					
+				}
+				b_deurne = {
+					province = 10303
+
+					color = { 245 60 43 }
+				
+				}
+				b_weert = {
+					province = 10304
+
+					color = { 245 60 43 }
+			
+				}
+				b_bree = {
+					province = 10298
+
+					color = { 255 235 0 }
+				}
+				
+			}
+			
+			c_stavelot = {
+				color = { 235 15 15 }
+				
+				b_stavelot = {
+					province = 10282
+
+					color = { 234 247 0 }
+				}
+				b_malmedy = {
+					province = 10283
+
+					color = { 234 247 0 }
+				}
+				b_ferriere = {
+					province = 10281
+
+					color = { 234 247 0 }
+				}
+			}
+			
 			c_maastricht = {
 				color = { 145 125 195 }
 				
 				
-				b_maastricht = { # Moved back from Liege
-					province = 2099
+				b_loon = {
+					province = 10291
 
-					color = { 145 125 195 }
-					
+					color = { 255 235 0 }
+				}
+		
+				b_tongeren = {
+					province = 10290
+
+					color = { 255 235 0 }
 				}
 				
-				b_tilburg = {
-					province = 2110
+				b_sint_truiden = {
+					province = 10292
 
-					color = { 145 125 195 }
-					
+					color = { 255 235 0 }
 				}
 				
-				b_eindhoven = {
-					province = 2100
+				b_leeuw = {
+					province = 10293
 
-					color = { 145 125 195 }
-					
+					color = { 110 85 125 }
+				}
+				
+				b_hasselt = {
+					province = 10297
+
+					color = { 255 235 0 }
 				}
 				
 			}			
@@ -8842,19 +9123,37 @@ e_germany = {
 					color = { 110 110 155 }
 					
 				}
-				b_bastogne = {
-					province = 2090
+	
+				b_garnich = {
+					province = 10238
+
+					color = { 110 110 155 }
+				}
+				
+				b_diekirch = {
+					province = 2089
 
 					color = { 110 110 155 }
 					
 				}
-				b_clervaux = {
-					province = 2449
 
-					color = { 110 110 155 }
+			}
+			
+			c_chiny = {
+				color = { 110 110 160 }
+
+				b_chiny = {
+					province = 2686
+
+					color = { 100 110 180 }
 					
 				}
+				b_virton = {
+					province = 2095
 
+					color = { 100 110 180 }
+					
+				}
 			}
 			
 			c_vianden = {
@@ -8867,8 +9166,9 @@ e_germany = {
 					color = { 110 110 155 }
 					
 				}
-				b_diekirch = {
-					province = 2089
+				
+				b_clervaux = {
+					province = 2449
 
 					color = { 110 110 155 }
 					
@@ -8882,9 +9182,25 @@ e_germany = {
 				}
 				
 				
+				
 			}
 			
-			
+			c_arlon = {
+				color = { 100 105 155 }
+
+
+				b_arlon = {
+					province = 10239
+
+
+					color = { 100 105 155 }
+				}
+				b_messancy = {
+					province = 10240
+
+					color = { 100 105 155 }
+				}
+			}
 						
 			c_laroche = {
 				color = { 125 125 155 }
@@ -8901,6 +9217,19 @@ e_germany = {
 					province = 2687
 
 					color = { 100 110 180 }
+					
+				}
+				
+				b_rochefort = {
+					province = 10278
+
+					color = { 115 115 165 }
+				}
+				
+				b_bastogne = {
+					province = 2090
+
+					color = { 110 110 155 }
 					
 				}
 				
@@ -8947,24 +9276,6 @@ e_germany = {
 					province = 2081
 
 					color = { 24 95 226 }
-					
-				}
-			}
-			
-			c_bouillon = { #re-localized as Chiny
-				color = { 100 110 180 }
-				
-
-				b_chiny = {
-					province = 2686
-
-					color = { 100 110 180 }
-					
-				}
-				b_virton = {
-					province = 2095
-
-					color = { 100 110 180 }
 					
 				}
 			}	
@@ -9035,6 +9346,17 @@ e_germany = {
 					color = { 100 95 150 }
 					
 				}
+				b_leuze = {
+					province = 10255
+
+					color = { 110 95 145 }
+				}
+				
+				b_soignies = {
+					province = 10274
+
+					color = { 110 95 145 }
+				}
 			}
 			
 			c_valenciennes = {
@@ -9056,6 +9378,12 @@ e_germany = {
 					color = { 95 80 135 }
 					
 				}
+				
+				b_avesnes = {
+					province = 10242
+
+					color = { 95 80 135 }
+				}
 
 				
 			}
@@ -9069,11 +9397,11 @@ e_germany = {
 					color = { 95 80 135 }
 					
 				}
-				b_tournai = {
-					province = 2127
+				
+				b_chastel = {
+					province = 10243
 
-					color = { 110 95 145 }
-					
+					color = { 85 70 135 }
 				}
 			}
 			
@@ -9098,12 +9426,50 @@ e_germany = {
 					color = { 110 85 125 }
 					
 				}
-
-				b_turnhout = {
-					province = 2111
+				
+				b_geldenaken = {
+					province = 10288
 
 					color = { 110 85 125 }
-					
+				}
+				
+				b_aarschot = {
+					province = 10295
+
+					color = { 110 85 125 }
+				}
+				
+				b_diest = {
+					province = 10296
+
+					color = { 110 85 125 }
+				}
+				
+				b_tienen = {
+					province = 10294
+
+					color = { 110 85 125 }
+				}
+			}
+			
+			c_den_bosch = {
+				color = { 115 95 100 }
+			
+			
+				b_den_bosch = {
+					province = 10308
+
+					color = { 115 95 100 }
+				}
+				b_eindhoven = {
+					province = 2100
+
+					color = { 145 125 195 }
+				}
+				b_sint_oedenrode = {
+					province = 10307
+
+					color = { 115 95 100 }
 				}
 			}
 			
@@ -9125,9 +9491,48 @@ e_germany = {
 					color = { 110 85 125 }
 					
 				}
+				
+				b_asse = {
+					province = 10264
+
+					color = { 105 75 115 }
+				}
+				
+				b_halle_belgium = {
+					province = 10273
+
+					color = { 105 75 115 }
+				}
+				
+				b_nijvel = {
+					province = 10275
+
+					color = { 105 75 115 }
+				}
 
 				
 			}
+			
+			c_mechelen = {
+				color = { 100 85 125 }
+
+				b_mechelen = {
+					province = 10266
+
+					color = { 110 85 125 }
+				}
+				b_londerzeel = {
+					province = 10265
+
+					color = { 105 75 115 }
+				}
+				b_heist_op_den_berg = {
+					province = 10320
+
+					color = { 110 85 125 }
+				}
+			}
+			
 			c_antwerpen = {
 				color = { 125 85 110 }
 				
@@ -9138,39 +9543,67 @@ e_germany = {
 					color = { 125 85 110 }
 					
 				}
-
-				b_rosendaal = {
-					province = 2108
+				
+				b_lier = {
+					province = 10267
 
 					color = { 125 85 110 }
+				}
+				
+				b_turnhout = {
+					province = 2111
+
+					color = { 110 85 125 }
 					
 				}
+				
+				b_hoogstraten = {
+					province = 10268
 
+					color = { 125 85 110 }
+				}
+				
+				b_arendonk = {
+					province = 10305
+
+					color = { 125 85 110 }
+				}
+				
+			}
+			
+			c_breda = {
+				color = { 105 75 110 }
+			
 				b_breda = {
 					province = 2109
 
 					color = { 125 85 110 }
 					
 				}
-			}
-			
-			c_namur = {
-				color = { 100 95 150 }
 				
-			
-				b_namur = {
-					province = 2098
+				b_rosendaal = {
+					province = 2108
 
-					color = { 100 95 150 }
+					color = { 125 85 110 }
 					
 				}
-				b_couvin = {
-					province = 2122
+				
+				b_bergen_op_zoom = {
+					province = 2113
 
-					color = { 100 95 150 }
+					color = { 200 100 30 }
 					
 				}
+				
+				b_tilburg = {
+					province = 2110
+
+					color = { 145 125 195 }
+					
+				}
+				
 			}
+			
 		}
 
 		d_limburg = {
@@ -9189,6 +9622,14 @@ e_germany = {
 					color = { 130 125 175 }
 					
 				}
+				
+				b_maastricht = { # Moved back from Liege
+					province = 2099
+
+					color = { 145 125 195 }
+					
+				}
+				
 				b_valkenburg = {
 					province = 9662
 
@@ -9196,9 +9637,22 @@ e_germany = {
 					
 				}
 				
+				b_eupen = {
+					province = 10285
+
+					color = { 255 60 43 }
+				}
+				
+				b_verviers = {
+					province = 10286
+
+					color = { 234 247 0 }
+				}
+
+
 				
 			}
-			
+				
 			c_salm = {
 				color = { 150 150 190 }
 				
@@ -9209,15 +9663,16 @@ e_germany = {
 					color = { 130 125 175 }
 					
 				}
-				b_stablo = {
-					province = 9664
+				
+				b_sankt_vith = {
+					province = 10284
 
 					color = { 130 125 175 }
-					
 				}
+				
 			
 			
-		}
+			}
 			
 		}
 		
@@ -9263,6 +9718,13 @@ e_germany = {
 					color = { 130 125 175 }
 					
 				}
+				
+				b_heerlen = {
+					province = 10289
+
+					color = { 245 60 43 }
+				}
+				
 			}
 			
 			c_julich = {
@@ -9291,6 +9753,30 @@ e_germany = {
 				
 				
 				
+			}
+			
+			c_mark = {
+				color = { 145 135 175 }
+				
+				
+				b_mark = {
+					province = 2679
+
+					color = { 145 135 175 }
+					
+				}
+				b_hagen = {
+					province = 2678
+
+					color = { 145 135 175 }
+					
+				}
+				b_hukeswag = {
+					province = 2676
+
+					color = { 145 135 175 }
+					
+				}
 			}
 			
 			c_bergh = {
@@ -9359,6 +9845,13 @@ e_germany = {
 					color = { 165 120 190 }
 					
 				}
+				
+				b_emmerik = {
+					province = 10321
+
+					color = { 165 120 190 }
+				}
+				
 			}
 		}	
 
@@ -14656,7 +15149,6 @@ e_byzantium = {
 		
 		capital = c_turnovo # Turnovo
 		
-		definite_form = yes
 		can_be_named_after_dynasty = no #Don't want dynasty names
 		
 		ai_primary_priority = {
@@ -56039,11 +56531,11 @@ e_france = {
 					
 				}
 				
-				b_aire = { #re-localized to Thérouanne
-					province = 2134
+				b_bapaume = {
+					province = 10247
+				
 					
 					color = { 75 115 205 }
-					
 				}
 				
 				
@@ -56065,17 +56557,13 @@ e_france = {
 					
 				}
 
-
-
-				b_hesdin = {
-					province = 2135
+				b_azincourt = {
+					province = 10245
 					
 					color = { 78 103 165 }
 					
 				}
 
-
-			
 			}
 			
 			c_boulogne = {
@@ -56096,6 +56584,13 @@ e_france = {
 					color = { 78 103 165 }
 					
 				}
+				
+				b_deveren = {
+					province = 10248
+									
+					
+					color = { 78 103 165 }
+				}
 
 
 			}
@@ -56107,6 +56602,13 @@ e_france = {
 				
 				b_crotoy = {
 					province = 9797
+					
+					color = { 78 103 165 }
+					
+				}
+				
+				b_hesdin = {
+					province = 2135
 					
 					color = { 78 103 165 }
 					
@@ -56154,11 +56656,29 @@ e_france = {
 					color = { 80 90 170 }
 					
 				}
+				
+			}
+			
+			c_audomarois = {
+				color = { 65 125 185 }
+
 				b_saint_omer = {
 					province = 2133
 					
 					color = { 80 90 170 }
 					
+				}
+				b_aire = { #re-localized to Thérouanne
+					province = 2134
+					
+					color = { 75 115 205 }
+					
+				}
+				b_hazebroek = {
+			
+					province = 10249
+					
+					color = { 65 125 185 }
 				}
 			}
 			
@@ -56194,6 +56714,20 @@ e_france = {
 					color = { 65 95 180 }
 					
 				}
+				
+				b_tielt = {
+					province = 10256
+					
+					color = { 65 95 180 }
+				}
+				
+				b_roeselare = { #re-localized to Sint-Baafs
+
+					province = 2124
+					
+					color = { 65 95 180 }
+					
+				}
 
 			}
 			
@@ -56213,17 +56747,46 @@ e_france = {
 					color = { 65 95 180 }
 					
 				}
-				b_roeselare = { #re-localized to Sint-Baafs
-
-					province = 2124
+				
+				b_deinze = {
+					province = 10257
 					
 					color = { 65 95 180 }
-					
 				}
+				
+				b_sint_niklaas = {
+					province = 10258
+					
+					color = { 20 94 185 }
+				}
+				
 			
-
-
+			}
 			
+			c_aalst = {
+				color = { 35 94 185 }
+
+				b_aalst = {
+					province = 10263
+					
+					color = { 35 94 185 }
+				}
+				b_geraardsbergen = {
+					province = 10261 #
+					
+					color = { 20 94 185 }
+				}
+				b_dendermonde = {
+					province = 10262
+					
+					color = { 20 94 185 }
+				}
+				b_oudenaarde = {
+					province = 10260
+					
+					color = { 20 94 185 }
+				}
+				
 			}
 
 			c_yperen = {
@@ -56248,6 +56811,24 @@ e_france = {
 					color = { 78 94 185 }
 					
 				}
+				
+				b_kassel_yperen = {
+					province = 10252
+					
+					color = { 78 94 185 }
+				}
+				
+				b_diksmuide = {
+					province = 10254
+					
+					color = { 78 94 185 }
+				}
+				
+				b_poperinge = {
+					province = 10253
+					
+					color = { 75 115 205 }
+				}
 			}
 			
 			c_lille = {
@@ -56260,12 +56841,47 @@ e_france = {
 					color = { 75 115 205 }
 					
 				}
+				b_dowaai = {
+					province = 10246
+					
+					color = { 65 95 180 }
+				}
+				b_toerkonje = {
+					province = 10250
+
+					color = { 65 95 180 }
+				}
+				b_wervik = {
+					province = 10251
+
+					color = { 65 95 180 }
+				}
+			}
+			
+			c_tournaisis = {
+				color = { 85 105 200 }
+				
+
+				b_mortagne = {
+					province = 10244
+					
+					color = { 85 105 200 }
+				}				
+				b_tournai = {
+					province = 2127
+
+					color = { 85 105 200 }
+				}
 				b_courtrai = {
 					province = 2123
 					
 					color = { 75 115 205 }
-					
 				}
+				b_waregem = {
+					province = 10259
+					
+					color = { 65 95 180 }
+				}	
 			}
 			
 		}
@@ -61092,7 +61708,7 @@ e_maghreb = {
 	color = { 209 63 44 }
 	
 	can_be_named_after_dynasty = yes 
-	capital = c_kairwan # Kairouan
+	capital = c_marrakesh # Marrakesh
 	
 	ai_primary_priority = {
 		if = {
@@ -70256,43 +70872,15 @@ e_kanem_bornu = {
 		color = { 124 184 124 }
 		
 
-		capital = c_kanem # Manan
+		capital = c_jimi # Manan
 		
 		d_kanem = {
 			color = { 120 185 120 }
 			
 			
-			capital = c_kanem
+			capital = c_jimi
 			
-			c_kanem = {
-				color = { 123 188 123 }
-				
 			
-				b_manan = { #capital of Duguwa dynasty
-					province = 6485
-
-					color = { 123 188 123 }
-					
-				}
-				b_nguigmi = {
-					province = 6484
-
-					color = { 123 188 123 }
-					
-				}
-				b_kanem = {
-					province = 6486
-
-					color = { 123 188 123 }
-					
-				}
-				b_kagusti = { #anachronistic from 16th century
-					province = 6490
-
-					color = { 123 188 123 }
-					
-				}
-			}
 			c_jimi = {
 				color = { 126 190 120 }
 				
@@ -70328,6 +70916,37 @@ e_kanem_bornu = {
 					
 				}
 			}
+			
+			c_kanem = {
+				color = { 123 188 123 }
+				
+			
+				b_manan = { #capital of Duguwa dynasty
+					province = 6485
+
+					color = { 123 188 123 }
+					
+				}
+				b_nguigmi = {
+					province = 6484
+
+					color = { 123 188 123 }
+					
+				}
+				b_kanem = {
+					province = 6486
+
+					color = { 123 188 123 }
+					
+				}
+				b_kagusti = { #anachronistic from 16th century
+					province = 6490
+
+					color = { 123 188 123 }
+					
+				}
+			}
+		
 		}
 		
 		d_bornu = {
@@ -83142,6 +83761,13 @@ e_deccan = {
 				color = { 140 45 65 }
 				
 				
+				b_gangaikondacolapuram = {
+					province = 7837
+					
+					color = { 140 45 65 }
+					
+				}
+				
 				b_tanjavur = {
 					province = 1115
 					
@@ -83156,12 +83782,6 @@ e_deccan = {
 				}
 				b_kannanur_2 = {
 					province = 7836
-					
-					color = { 140 45 65 }
-					
-				}
-				b_gangaikondacolapuram = {
-					province = 7837
 					
 					color = { 140 45 65 }
 					
