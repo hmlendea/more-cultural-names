@@ -51206,6 +51206,7 @@ e_persia = {
 					is_ai = yes
 				}
 				NOT = { culture = culture:mongol }
+				NOT = { has_title = title:k_egypt }
 			}
 		}
 		
@@ -62642,6 +62643,16 @@ e_maghreb = {
 		
 		capital = c_tahert # Tahert
 		
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = { has_title = title:e_maghreb }
+			}
+
+		}
+		
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -63114,7 +63125,15 @@ e_maghreb = {
 	k_africa = {
 		color = { 67 96 179 }
 		
-		
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = { has_title = title:e_maghreb }
+			}
+
+		}
 		
 		capital = c_kairwan # Kairouan
 		
@@ -64336,6 +64355,16 @@ e_arabia = {
 		
 		capital = c_medina
 		
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = { has_title = title:k_egypt }
+			}
+
+		}
+		
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -65497,6 +65526,16 @@ e_arabia = {
 		
 		
 		capital	= c_sanaa
+		
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = { has_title = title:k_egypt }
+			}
+
+		}
 		
 		ai_primary_priority = {
 			if = {
@@ -67204,6 +67243,16 @@ e_arabia = {
 		color = { 60 90 130 }
 		
 		
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = { has_title = title:k_egypt }
+			}
+
+		}
+		
 		capital = c_antiocheia
 		
 		d_antioch = {
@@ -67447,6 +67496,16 @@ e_arabia = {
 	k_syria = {
 		color = { 130 180 88 }
 		
+		
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = { has_title = title:k_egypt }
+			}
+
+		}
 		
 		capital = c_damascus
 		
