@@ -103,8 +103,8 @@ build-edition \
 
 build-edition \
     "ae-more-cultural-names" "Asia Expansion - More Cultural Names" \
-    "CK3AE" "1.8.*" \
-    --landed-titles "${VANILLA_FILES_DIR}/ck3ae_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+    "CK3AEP" "1.9.*" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3aep_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
     "atha-more-cultural-names" "Apotheosis: More Cultural Names" \
