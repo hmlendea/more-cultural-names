@@ -145,7 +145,7 @@ echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTU
 echo "Crusader Kings 2 HIP:"    && getCk2Cultures       "CK2HIP"    "${CK2HIP_CULTURES_DIR}"
 echo "Crusader Kings 2 TWK:"    && getCk2Cultures       "CK2TWK"    "${CK2TWK_CULTURES_DIR}"
 echo "Crusader Kings 3:"        && getCk3Cultures       "CK3"       "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 AE:"     && getCk3Cultures       "CK3AE"     "${CK3AE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+echo "Crusader Kings 3 AE:"     && getCk3Cultures       "CK3AEP"    "${CK3AEP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 ATHA:"   && getCk3Cultures       "CK3ATHA"   "${CK3ATHA_CULTURES_DIR}"
 echo "Crusader Kings 3 CE:"     && getCk3Cultures       "CK3CE"     "${CK3CE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 CMH:"    && getCk3Cultures       "CK3CMH"    "${CK3AP_CULTURES_DIR}" "${CK3IBL_CULTURES_DIR}" "${CK3RICE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
