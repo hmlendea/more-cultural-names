@@ -271,11 +271,11 @@ function checkDefaultIrLocalisations() {
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
                                     tac "${LOCALISATIONS_FILE}" "${IR_VANILLA_FILE}" | \
-                                    grep "^ *PROV" | \
+                                    grep "^\s*PROV" | \
                                     grep -v "_[A-Za-z_-]*:" | \
-                                    awk '!x[substr($0,0,9)]++' | \
-                                    sed 's/^ *PROV\([0-9]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
-                                    sed -e 's/= */=/g' -e 's/ *$//g'
+                                    awk '!x[substr($0,0,index($0, ":"))]++' | \
+                                    sed 's/^\s*PROV\([0-9]*\):[0-9]*\s*\"\([^\"]*\).*/\1=\2/g' | \
+                                    sed -e 's/=\s*/=/g' -e 's/\s*$//g'
                                 ) | \
                             awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
                             sort | uniq \

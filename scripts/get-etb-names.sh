@@ -174,7 +174,7 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
             print-name "SerboCroatian" "${CROATIAN_NAME}"
             print-name "SerboCroatian" "${SERBIAN_NAME}"
         fi
-        
+
         print-name "Severian" "${SEVERIAN_NAME}"
         print-name "Scottish_Gaelic" "${SCOTTISH_NAME}"
         print-name "Sicilian" "${SICILIAN_NAME}"
