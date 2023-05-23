@@ -352,6 +352,9 @@ EXPECTED_LOCATIONS_LIST=$(echo "${ACTUAL_LOCATIONS_LIST}" | \
 diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
 export LC_COLLATE=${OLD_LC_COLLATE}
 
+# Find missing / on node ending on the same line
+grep "^\s*<[^>]*>[^<]*<[^/!]" *.xml
+
 # Find duplicated IDs
 grep "^\s*<Id>" *.xml | \
     sort | uniq -c | \
