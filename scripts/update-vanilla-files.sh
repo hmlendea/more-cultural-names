@@ -69,8 +69,8 @@ update-vanilla-file \
     "${CK3_DIR}/game/common/landed_titles/00_landed_titles.txt" \
     "${CK3_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-files \
-    "${CK3AE_VANILLA_LANDED_TITLES_FILE}" \
-    "${CK3AE_LANDED_TITLES_DIR}"/*.txt
+    "${CK3AEP_VANILLA_LANDED_TITLES_FILE}" \
+    "${CK3AEP_LANDED_TITLES_DIR}"/*.txt
 update-vanilla-files \
     "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}" \
     "${CK3ATHA_LANDED_TITLES_DIR}"/*.txt

@@ -271,11 +271,11 @@ function checkDefaultIrLocalisations() {
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
                                     tac "${LOCALISATIONS_FILE}" "${IR_VANILLA_FILE}" | \
-                                    grep "^ *PROV" | \
+                                    grep "^\s*PROV" | \
                                     grep -v "_[A-Za-z_-]*:" | \
-                                    awk '!x[substr($0,0,9)]++' | \
-                                    sed 's/^ *PROV\([0-9]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
-                                    sed -e 's/= */=/g' -e 's/ *$//g'
+                                    awk '!x[substr($0,0,index($0, ":"))]++' | \
+                                    sed 's/^\s*PROV\([0-9]*\):[0-9]*\s*\"\([^\"]*\).*/\1=\2/g' | \
+                                    sed -e 's/=\s*/=/g' -e 's/\s*$//g'
                                 ) | \
                             awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
                             sort | uniq \
@@ -472,7 +472,7 @@ checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}" 
 checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"  "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
 #checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE}"  "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"     "${CK3_VANILLA_LOCALISATION_FILE}"
-#checkForMismatchingLocationLinks "CK3AE"    "${CK3AE_VANILLA_LANDED_TITLES_FILE}"   "${CK3AE_LOCALISATIONS_DIR}"/ae_*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
+#checkForMismatchingLocationLinks "CK3AEP"    "${CK3AEP_VANILLA_LANDED_TITLES_FILE}"   "${CK3AEP_LOCALISATIONS_DIR}"/aep_*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}" "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
 checkForMismatchingLocationLinks "CK3CE"    "${CK3CE_VANILLA_LANDED_TITLES_FILE}"   "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"  "${CK3CMH_VANILLA_LOCALISATION_FILE}"
@@ -496,7 +496,7 @@ checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3AE"    "${CK3AE_LOCALISATIONS_DIR}"/ae_*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3AEP"   "${CK3AEP_LOCALISATIONS_DIR}"/AEP_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
 checkDefaultCk3Localisations "CK3CE"    "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3CMH"   "${CK3CMH_VANILLA_LOCALISATION_FILE}"
