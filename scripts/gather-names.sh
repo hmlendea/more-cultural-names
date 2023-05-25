@@ -7,12 +7,12 @@ fi
 
 source "scripts/common/name_normalisation.sh"
 
-GEONAMES_ENABLED=false
+EXONYMSAPI_URL="http://hmlendea-exonyms.duckdns.org:8263/Exonyms"
 GEONAMES_API_URL="http://api.geonames.org"
-GEONAMES_USERNAME="geonamesfreeaccountt"
-
-WIKIDATA_ENABLED=false
 WIKIDATA_API_URL="https://www.wikidata.org"
+
+GEONAMES_ENABLED=false
+WIKIDATA_ENABLED=false
 
 while true; do
     if [ "${1}" == "--geonamesid" ] || \
@@ -32,13 +32,11 @@ while true; do
     fi
 done
 
-if ${WIKIDATA_ENABLED}; then
+if ! ${GEONAMES_ENABLED} && ${WIKIDATA_ENABLED}; then
     WIKIDATA_ENDPOINT="${WIKIDATA_API_URL}/wiki/Special:EntityData/${WIKIDATA_ID}.json"
     echo "Fetching ${WIKIDATA_ENDPOINT}..."
     WIKIDATA_DATA=$(curl -s "${WIKIDATA_ENDPOINT}")
-fi
 
-if ! ${GEONAMES_ENABLED} && ${WIKIDATA_ENABLED}; then
     WIKIDATA_GEONAMES_IDS_COUNT=$(jq '.entities.'"${WIKIDATA_ID}"'.claims.P1566' <<< "${WIKIDATA_DATA}" | grep -c "external-id")
 
     if [ "${WIKIDATA_GEONAMES_IDS_COUNT}" == "1" ]; then
@@ -57,121 +55,21 @@ if ! ${GEONAMES_ENABLED} && ${WIKIDATA_ENABLED}; then
     fi
 fi
 
-if ${GEONAMES_ENABLED}; then
-    GEONAMES_ENDPOINT="${GEONAMES_API_URL}/get?username=${GEONAMES_USERNAME}&geonameId=${GEONAMES_ID}"
-    echo "Fetching ${GEONAMES_ENDPOINT}..."
-    GEONAMES_DATA=$(curl -s "${GEONAMES_ENDPOINT}" | perl -p0e 's/\r*//g' | perl -p0e 's/\n/%NL%/g')
-fi
+EXONYMSAPI_ENDPOINT="${EXONYMSAPI_URL}?geoNamesId=${GEONAMES_ID}&wikiDataId=${WIKIDATA_ID}"
 
-function get-name-from-geonames() {
-    local LANGUAGE_CODE="${1}"
-    local NAME=""
+echo "Fetching ${EXONYMSAPI_ENDPOINT}..."
+EXONYMSAPI_RESPONSE=$(curl -s "${EXONYMSAPI_ENDPOINT}")
 
-    echo "${GEONAMES_DATA}" | sed 's/%NL%\s*/\n/g' | \
-        grep "<alternateName " | \
-        grep "lang=\"${LANGUAGE_CODE}\"" | \
-        sed 's/isPreferredName=\"[^\"]*\"\s*//g' | \
-        sed 's/\s*<alternateName lang=\"'"${LANGUAGE_CODE}"'\">\([^<]*\).*/\1/g'
-}
-
-function get-name-from-wikidata-label() {
-    local LANGUAGE_CODE="${1}"
-
-    echo "${WIKIDATA_DATA}" | jq '.entities.'"${WIKIDATA_ID}"'.labels.'"\""${LANGUAGE_CODE}"\""'.value'
-}
-
-function get-name-from-wikidata-sitelink() {
-    local LANGUAGE_CODE="${1}"
-    local SITELINK_TITLE=""
-    local NAME=""
-
-    LANGUAGE_CODE="$(echo "${LANGUAGE_CODE}" | sed 's/-/_/g')"
-    SITELINK_TITLE=$(echo "${WIKIDATA_DATA}" | jq '.entities.'"${WIKIDATA_ID}"'.sitelinks.'"\""${LANGUAGE_CODE}wiki"\""'.title')
-
-    echo "${SITELINK_TITLE}"
-}
-
-function get-name-for-comparison() {
-    echo "${@}" | tr '[:upper:]' '[:lower:]'
-}
-
-if ${GEONAMES_ENABLED}; then
-    echo "Getting the GeoNames default name..."
-    GEONAMES_DEFAULT_NAME=$(echo "${GEONAMES_DATA}" | sed 's/%NL%\s*/\n/g' | grep "<name>" | sed 's/\s*<name>\([^<]*\).*/\1/g')
-    GEONAMES_DEFAULT_NAME_FOR_COMPARISON="$(echo "${GEONAMES_DEFAULT_NAME}" | tr '[:upper:]' '[:lower:]')"
-fi
-
-if ${WIKIDATA_ENABLED}; then
-    echo "Getting the WikiData default name..."
-    WIKIDATA_DEFAULT_NAME_RAW="$(get-name-from-wikidata-label "en")"
-    WIKIDATA_DEFAULT_NAME=$(normalise-name "en" "${WIKIDATA_DEFAULT_NAME_RAW}")
-    WIKIDATA_DEFAULT_NAME_FOR_COMPARISON="$(echo "${WIKIDATA_DEFAULT_NAME}" | tr '[:upper:]' '[:lower:]')"
-fi
-
-MAIN_DEFAULT_NAME="${WIKIDATA_DEFAULT_NAME}"
-
-[ -z "${MAIN_DEFAULT_NAME}" ] && MAIN_DEFAULT_NAME="${GEONAMES_DEFAULT_NAME}"
-
-function isNameUsable() {
-    local LANGUAGE_CODE="${1}"
-    local NAME_RAW="${2}"
-    local NAME=""
-    local NAME_FOR_COMPARISON=""
-
-    NAME=$(normalise-name "${LANGUAGE_CODE}" "${NAME_RAW}")
-
-    if [ -z "${NAME}" ] || [ "${NAME}" == "null" ] || [ "${NAME}" == "Null" ]; then
-        return 1 # false
-    fi
-
-    NAME_FOR_COMPARISON="$(get-name-for-comparison "${NAME}")"
-
-    if [ "${LANGUAGE_CODE}" != "en" ]; then
-        if [ "${NAME_FOR_COMPARISON}" == "${GEONAMES_DEFAULT_NAME_FOR_COMPARISON}" ] ||
-           [ "${NAME_FOR_COMPARISON}" == "${GEONAMES_DEFAULT_NAME_FOR_COMPARISON}'" ] ||
-           [ "${NAME_FOR_COMPARISON}" == "${WIKIDATA_DEFAULT_NAME_FOR_COMPARISON}" ] ||
-           [ "${NAME_FOR_COMPARISON}" == "${WIKIDATA_DEFAULT_NAME_FOR_COMPARISON}'" ]; then
-            return 1 # false
-        fi
-    fi
-
-    return 0 # true
-}
-
-function get-raw-name-for-language() {
-    local LANGUAGE_CODE="${1}"
-    local NAME=""
-
-    if ${WIKIDATA_ENABLED}; then
-        NAME=$(get-name-from-wikidata-label "${LANGUAGE_CODE}")
-
-        if ! isNameUsable "${LANGUAGE_CODE}" "${NAME}"; then
-            NAME=$(get-name-from-wikidata-sitelink "${LANGUAGE_CODE}")
-        fi
-    fi
-
-    if ${GEONAMES_ENABLED}; then
-        if ! isNameUsable "${LANGUAGE_CODE}" "${NAME}"; then
-            NAME=$(get-name-from-geonames "${LANGUAGE_CODE}")
-        fi
-    fi
-
-    if ! isNameUsable "${LANGUAGE_CODE}" "${NAME}"; then
-        NAME=""
-    fi
-
-    echo "${NAME}"
-}
+MAIN_DEFAULT_NAME=$(echo "${EXONYMSAPI_RESPONSE}" | jq -r '.defaultName')
 
 function get-name-for-language() {
     local LANGUAGE_CODE="${1}"
     local NAME=""
 
-    NAME=$(get-raw-name-for-language "${LANGUAGE_CODE}")
+    LANGUAGE_CODE=$(echo "${LANGUAGE_CODE}" | sed -E 's/([^\.]+)/"\1"/g; s/\./\./g')
+    NAME=$(echo "${EXONYMSAPI_RESPONSE}" | jq -r '.names.'"${LANGUAGE_CODE}")
 
-    [ -z "${NAME}" ] && return
-
-    NAME=$(normalise-name "${LANGUAGE_CODE}" "${NAME}")
+    [ "${NAME}" == "null" ] && return
 
     echo "${NAME}"
 }
@@ -192,15 +90,13 @@ function get-name-line-2codes() {
     local LANGUAGE2_CODE="${3}"
 
     local LANGUAGE1_NAME=$(get-name-for-language "${LANGUAGE1_CODE}")
-    local LANGUAGE2_NAME_RAW=""
     local LANGUAGE2_NAME=""
 
     if [ -n "${LANGUAGE1_NAME}" ]; then
         get-name-line "${LANGUAGE_MCN_ID}" "${LANGUAGE1_CODE}"
     else
         if [ "${LANGUAGE1_CODE}" == "grc" ]; then
-            LANGUAGE2_NAME_RAW=$(get-raw-name-for-language "${LANGUAGE2_CODE}")
-            LANGUAGE2_NAME=$(normalise-name "${LANGUAGE1_CODE}" "${LANGUAGE2_NAME_RAW}")
+            LANGUAGE2_NAME=$(get-name-for-language "${LANGUAGE2_CODE}")
             [ -n "${LANGUAGE2_NAME}" ] && echo "      <Name language=\"${LANGUAGE_MCN_ID}\" value=\"${LANGUAGE2_NAME}\" />"
         else
             get-name-line "${LANGUAGE_MCN_ID}" "${LANGUAGE2_CODE}"
