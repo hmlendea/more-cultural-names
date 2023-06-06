@@ -102,7 +102,7 @@ build-edition \
     --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
 
 build-edition \
-    "ae-more-cultural-names" "Asia Expansion - More Cultural Names" \
+    "ae-more-cultural-names" "Asia Expansion Project - More Cultural Names" \
     "CK3AEP" "1.9.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3aep_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
