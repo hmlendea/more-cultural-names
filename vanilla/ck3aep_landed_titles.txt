@@ -62188,7 +62188,7 @@ e_bengal = {
 
 					color = { 58 200 41 }
 				}
-				b_bhitagarh = {
+				b_bhitagarh = { # Modded, moved from c_kamatapur
 					province = 818
 
 					color = { 25 140 40 }
@@ -62365,12 +62365,14 @@ e_bengal = {
 
 					color = { 45 155 45 }
 				}
+				#b_tripura moved to c_tripura
 				b_mainamati = {
 					province = 832
 
 					color = { 45 155 45 }
 				}
-				b_chandpur = {
+				#b_udaipur moved to c_tripura
+				b_chandpur = { # Modded, Moved from c_bikrampur
 					province = 834
 
 					color = { 55 165 35 }
@@ -62426,12 +62428,12 @@ e_bengal = {
 			c_tripura = { # Split from c_karmanta
 				color = { 50 160 40 }
 				
-				b_tripura = {
+				b_tripura = { # Modded, moved from c_karmanta
 					province = 831
 
 					color = { 50 160 40 }
 				}
-				b_udaipur = {
+				b_udaipur = { # Modded, moved from c_karmanta
 					province = 9657
 
 					color = { 50 160 40 }
@@ -62450,7 +62452,7 @@ e_bengal = {
 
 					color = { 35 145 35 }
 				}
-				b_karnaphuli = {
+				b_karnaphuli = { # Modded, moved from c_samatata
 					province = 8722
 
 					color = { 35 145 35 }
@@ -62634,7 +62636,7 @@ e_bengal = {
 
 					color = { 25 140 40 }
 				}
-				b_dhubri = {
+				b_dhubri = { # Modded, moved from c_kamarupanagara
 					province = 816
 
 					color = { 15 120 50 }
@@ -78969,8 +78971,9 @@ e_nippon = {
 			}
 		}
 	
-		d_kansai = {
+		d_kinai = {
 			color = { 186 38 54 }
+			definite_form = yes
 			capital = c_yamashiro
 
 			c_yamashiro = {
@@ -79073,39 +79076,45 @@ e_nippon = {
 				}
 			}
 			
-			c_kii = {
-				color = { 187 85 72 }
+			c_omi = {
+				color = { 208 87 107 }
 
-				b_nagusa= {
-					province = 11329
+				b_otsu= {
+					province = 11301
 
-					color = { 187 85 72 }
+					color = { 208 87 107 }
 				}
-				b_arida= {
-					province = 11328
-
-					color = { 187 85 72 }
+				b_enryakuji= {
+					province = 11300
+					definite_form = yes
+					color = { 208 87 107 }
 				}
-				b_muro= {
-					province = 11245
+				b_inukami= {
+					province = 11297
 
-					color = { 187 85 72 }
+					color = { 208 87 107 }
+				}
+				b_azai= {
+					province = 11298
+
+					color = { 208 87 107 }
 				}
 			}
 			
-			c_awaji = {
-				color = { 236 109 81 }
+			c_iga = {
+				color = { 171 105 83 }
 				
-				b_awaji= {
-					province = 11211
+				b_iga= {
+					province = 11246
 
-					color = { 236 109 81 }
+					color = { 171 105 83 }
 				}
 			}
 		}
 		
 		d_west_kanto = {
 			color = { 197 197 106 }
+			definite_form = yes
 			capital = c_sagami
 			
 			c_sagami = {
@@ -79190,6 +79199,7 @@ e_nippon = {
 		
 		d_east_kanto = {
 			color = { 157 137 108 }
+			definite_form = yes
 			capital = c_shimosa
 			
 			c_shimosa = {
@@ -79290,6 +79300,7 @@ e_nippon = {
 		
 		d_chubu = {
 			color = { 180 76 151 }
+			definite_form = yes
 			capital = c_mino
 			
 			c_mino = {
@@ -79327,31 +79338,6 @@ e_nippon = {
 				}
 			}
 			
-			c_omi = {
-				color = { 208 87 107 }
-
-				b_otsu= {
-					province = 11301
-
-					color = { 208 87 107 }
-				}
-				b_enryakuji= {
-					province = 11300
-					definite_form = yes
-					color = { 208 87 107 }
-				}
-				b_inukami= {
-					province = 11297
-
-					color = { 208 87 107 }
-				}
-				b_azai= {
-					province = 11298
-
-					color = { 208 87 107 }
-				}
-			}
-			
 			c_ise = {
 				color = { 137 91 138 }
 
@@ -79369,16 +79355,6 @@ e_nippon = {
 					province = 11249
 
 					color = { 137 91 138 }
-				}
-			}
-			
-			c_iga = {
-				color = { 171 105 83 }
-				
-				b_iga= {
-					province = 11246
-
-					color = { 171 105 83 }
 				}
 			}
 			
@@ -79410,6 +79386,7 @@ e_nippon = {
 		
 		d_tokai = {
 			color = { 112 88 163 }
+			definite_form = yes
 			capital = c_suruga
 			
 			c_suruga = {
@@ -79475,6 +79452,7 @@ e_nippon = {
 		
 		d_hokuriku = {
 			color = { 136 128 132 }
+			definite_form = yes
 			capital = c_echizen
 			
 			c_echizen = {
@@ -79550,6 +79528,7 @@ e_nippon = {
 		
 		d_koshinetsu = {
 			color = { 56 60 60 }
+			definite_form = yes
 			capital = c_shinano
 			
 			c_shinano = {
@@ -79640,6 +79619,7 @@ e_nippon = {
 		
 		d_chugoku = {
 			color = { 250 191 20 }
+			definite_form = yes
 			capital = c_suo
 
 			c_suo = {
@@ -79760,6 +79740,7 @@ e_nippon = {
 		
 		d_sanyo = {
 			color = { 246 173 73 }
+			definite_form = yes
 			capital = c_harima
 			
 			c_harima = {
@@ -79835,6 +79816,7 @@ e_nippon = {
 		
 		d_sanin = {
 			color = { 180 138 118 }
+			definite_form = yes
 			capital = c_tanba
 			
 			c_tanba = {
@@ -79913,8 +79895,9 @@ e_nippon = {
 			}
 		}
 		
-		d_shikoku = {
+		d_nankai = {
 			color = { 240 131 0 }
+			definite_form = yes
 			capital = c_sanuki
 			
 			c_sanuki = {
@@ -80001,10 +79984,41 @@ e_nippon = {
 					color = { 219 132 73 }
 				}
 			}
+			
+			c_kii = {
+				color = { 187 85 72 }
+
+				b_nagusa= {
+					province = 11329
+
+					color = { 187 85 72 }
+				}
+				b_arida= {
+					province = 11328
+
+					color = { 187 85 72 }
+				}
+				b_muro= {
+					province = 11245
+
+					color = { 187 85 72 }
+				}
+			}
+			
+			c_awaji = {
+				color = { 236 109 81 }
+				
+				b_awaji= {
+					province = 11211
+
+					color = { 236 109 81 }
+				}
+			}
 		}
 		
 		d_north_kyushu = {
 			color = { 175 195 197 }
+			definite_form = yes
 			capital = c_chikuzen
 			
 			c_chikuzen = {
@@ -80894,6 +80908,7 @@ e_nippon = {
 		
 		d_south_kyushu = {
 			color = { 50 123 187 }
+			definite_form = yes
 			capital = c_higo
 			
 			c_higo = {
