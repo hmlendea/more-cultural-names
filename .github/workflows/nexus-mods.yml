@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      max-parallel: 3
+      max-parallel: 1
       matrix:
         config:
           - { mod_game_id: 'CK2',     nexus_game_id: 'crusaderkings2',  nexus_mod_id: '70', mod_file_name: 'more-cultural-names'      }
