@@ -40,7 +40,7 @@ jobs:
           unzip "${{matrix.config.mod_game_id}}.zip" -d "${{matrix.config.mod_game_id}}/"
 
     - name: Upload
-      uses: hmlendea/steam-workshop-update@v1.0.0
+      uses: hmlendea/steam-workshop-update@latest
       with:
         appid: ${{matrix.config.steam_app_id}}
         itemid: ${{matrix.config.steam_item_id}}
