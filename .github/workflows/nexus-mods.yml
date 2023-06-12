@@ -43,4 +43,4 @@ jobs:
         mod_file_name: ${{matrix.config.mod_file_name}}
         mod_version: ${{github.ref_name}}
         file_description: "Changelog: https://github.com/hmlendea/stellaris-ui-flags/releases/${{github.ref_name}}"
-        file_path: "release.zip"
+        file_path: "${{matrix.config.mod_game_id}}.zip"
