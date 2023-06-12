@@ -34,7 +34,7 @@ jobs:
       run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${{matrix.config.mod_game_id}}_${GITHUB_REF:11}.zip" -O "${{matrix.config.mod_game_id}}.zip"
 
     - name: Upload
-      uses: hmlendea/nexusmods-update@v1.0.0
+      uses: hmlendea/nexusmods-update@latest
       with:
         account_email_address: ${{secrets.NEXUS_USERNAME}}
         account_password: ${{secrets.NEXUS_PASSWORD}}
