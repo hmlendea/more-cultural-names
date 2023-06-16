@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      max-parallel: 3
+      max-parallel: 1
       matrix:
         config:
           - { mod_game_id: 'CK2',     nexus_game_id: 'crusaderkings2',  nexus_mod_id: '70', mod_file_name: 'more-cultural-names'      }
           - { mod_game_id: 'CK2HIP',  nexus_game_id: 'crusaderkings2',  nexus_mod_id: '71', mod_file_name: 'hip-more-cultural-names'  }
           - { mod_game_id: 'CK3',     nexus_game_id: 'crusaderkings3',  nexus_mod_id: '11', mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'CK3AEP',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '30', mod_file_name: 'ae-more-cultural-names'   }
+          - { mod_game_id: 'CK3AEP',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '30', mod_file_name: 'aep-more-cultural-names'  }
           - { mod_game_id: 'CK3CE',   nexus_game_id: 'crusaderkings3',  nexus_mod_id: '31', mod_file_name: 'ce-more-cultural-names'   }
           - { mod_game_id: 'CK3CMH',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '28', mod_file_name: 'cmh-more-cultural-names'  }
           - { mod_game_id: 'CK3IBL',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '12', mod_file_name: 'ibl-more-cultural-names'  }
@@ -34,17 +34,13 @@ jobs:
       run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${{matrix.config.mod_game_id}}_${GITHUB_REF:11}.zip" -O "${{matrix.config.mod_game_id}}.zip"
 
     - name: Upload
-      uses: greatness7/nexusmods_file_updater@v2
+      uses: hmlendea/nexusmods-update@latest
       with:
-        username: ${{secrets.NEXUS_USERNAME}}
-        password: ${{secrets.NEXUS_PASSWORD}}
-        game_domain_name: ${{matrix.config.nexus_game_id}}
-        mod_id: ${{matrix.config.nexus_mod_id}}
-        file_name: ${{matrix.config.mod_file_name}}
-        file_version: ${{github.ref_name}}
-        update_version: true
-        new_existing_version: true
-        remove_old_version: true
-        original_file: "${{matrix.config.mod_file_name}}.*"
-        file_description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{github.ref_name}}"
+        account_email_address: ${{secrets.NEXUS_USERNAME}}
+        account_password: ${{secrets.NEXUS_PASSWORD}}
+        nexus_game_id: ${{matrix.config.nexus_game_id}}
+        nexus_mod_id: ${{matrix.config.nexus_mod_id}}
+        mod_file_name: ${{matrix.config.mod_file_name}}
+        mod_version: ${{github.ref_name}}
+        file_description: "Changelog: https://github.com/hmlendea/stellaris-ui-flags/releases/${{github.ref_name}}"
         file_path: "${{matrix.config.mod_game_id}}.zip"
