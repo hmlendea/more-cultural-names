@@ -1,4 +1,8 @@
 
+@correct_culture_primary_score = 100
+@better_than_the_alternatives_score = 50
+@always_primary_score = 1000
+
 e_bulgarian_empire = {
 	color = { 113 88 101 }
 	
@@ -29,6 +33,12 @@ k_grand_saxony = {
 	color = { 205 105 85 }
 
     capital = c_dessau
+}
+
+k_wendia = {
+	color = { 175 50 70 }
+
+    capital = c_brandenburg
 }
 
 k_illyria = {
@@ -67,12 +77,96 @@ k_oman = {
 	capital = c_nizwa
 }
 
+k_cumbria = {
+	color = { 97 108 146 }
+
+    capital = c_cumberland
+}
+
+d_cumbria = {
+	color = { 158 50 50 }
+
+    capital = c_cumberland
+}
+
 k_fake_egypt = {
 	color = { 255 194 10 }
 
 	definite_form = yes
 
 	capital = c_cairo
+}
+
+k_khwarazm = {
+	color = { 55 155 70 }
+
+	capital = c_gurganj	#	Gurganj
+}
+
+e_transcaucasia = {
+	color = { 190 39 39 }
+	
+	definite_form = yes
+	
+	capital = c_hayk
+
+	can_create = {
+		custom_description = {
+			text = establish_transcaucasia_trigger
+		
+			trigger_if = {
+				limit = {
+					has_global_variable = ce_transcaucasia_has_been_established
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					NOT = { 
+						has_global_variable = ce_transcaucasia_has_been_established
+					}
+				}
+				always = no
+			}
+		}
+	}
+
+	can_create_on_partition = {
+		custom_description = {
+			text = establish_transcaucasia_trigger
+		
+			trigger_if = {
+				limit = {
+					has_global_variable = ce_transcaucasia_has_been_established
+				}
+				always = yes
+			}
+			trigger_if = {
+				limit = {
+					NOT = { 
+						has_global_variable = ce_transcaucasia_has_been_established
+					}
+				}
+				always = no
+			}
+		}
+	}
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_caucasian }
+			}
+			add = @better_than_the_alternatives_score
+		}
+	}
+
+}
+
+k_shirvan = {
+	color = { 55 75 55 }
+
+	capital = c_shirvan
 }
 @correct_culture_primary_score = 100
 @better_than_the_alternatives_score = 50
