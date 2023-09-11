@@ -1527,53 +1527,8 @@ k_liao = {
 	
 }
 		
-		
-#Can't believe these English Kingdoms aren't in the CK3 history
-
-
-	k_east_anglia = { # Eastengle
-		color = { 60 109 121 }
-		capital = c_norfolk # Norfolk
-
-	}
-	k_mercia = { # Mierce
-		color = { 6 42 127 }
-		capital = c_hereford # Hereford
-	}
-	k_northumberland = { # Northymbraland
-		color = { 234 207 99 }
-		capital = c_northumberland # Northumberland
-	}
-	k_wessex = { # Westseaxe
-		color = { 68 140 48 }
-		capital = c_hampton # Winchester
-	}
-	k_kent = { # Kent
-		color = { 241 100 15 }
-		capital = c_kent # Dover
-	}
-	k_essex = { #
-			color = { 200 30 30 }
-			capital = c_essex
-				cultural_names = {
-				name_list_anglo_saxon = cn_east_seaxe
-				name_list_old_saxon = cn_east_seaxe
-			}
-	}
-	k_hwicce = { # Hwicce
-			color = { 241 79 15 }
-			capital = c_gloucestershire # Gloucester
-	}
 	
-	k_strathclyde = { # Ystrad Clut
-		color = { 90 226 196 }
-		
-		capital = c_lennox # Rinn Friu # Strathclyde
-	}
-	
-	
-	
-	k_armenia_minor = { # Mikrá Armenia
+k_armenia_minor = { # Mikrá Armenia
 	color = { 14 30 131 }
 
 	capital = c_marash # Marash # Teluch
@@ -3517,9 +3472,89 @@ e_britannia = {
 		}
 	}
 	
+	
+	k_east_anglia = { # Eastengle
+		color = { 60 109 121 }
+		capital = c_norfolk # Norfolk
+		can_create_on_partition = { always = no }
+
+	}
+	k_mercia = { # Mierce
+		color = { 6 42 127 }
+		capital = c_staffordshire # Hereford
+		can_create_on_partition = { always = no }
+	}
+	k_northumberland = { # Northymbraland
+		color = { 234 207 99 }
+		capital = c_northumberland # Northumberland
+		can_create_on_partition = { always = no }
+	}
+	k_wessex = { # Westseaxe
+		color = { 68 140 48 }
+		capital = c_hampton # Winchester
+		can_create_on_partition = { always = no }
+	}
+	k_kent = { # Kent
+		color = { 241 100 15 }
+		capital = c_kent # Dover
+		can_create_on_partition = { always = no }
+	}
+	k_essex = { #
+		color = { 200 30 30 }
+		capital = c_essex
+			cultural_names = {
+			name_list_anglo_saxon = cn_east_seaxe
+			name_list_old_saxon = cn_east_seaxe
+		}
+		can_create_on_partition = { always = no }
+	}
+	k_hwicce = { # Hwicce
+		color = { 241 79 15 }
+		capital = c_gloucestershire # Gloucester
+		can_create_on_partition = { always = no }
+	}
+	
+	k_strathclyde = { # Ystrad Clut
+		color = { 90 226 196 }
+		can_create_on_partition = { always = no }
+		capital = c_lennox # Rinn Friu # Strathclyde
+	}
+	
+	##############
+	###SCOTLAND###
+	##############
+	k_picts_mbrn = {
+		color = { 0 94 184 }
+		can_create_on_partition = { always = no }
+		capital = c_moray
+		definite_form = yes
+		ruler_uses_title_name = no
+	}
+	k_dalriata_mbrn = {
+		color = { 0 204 0 }
+		can_create_on_partition = { always = no }		
+		capital = c_inner_hebrides #Islay
+	
+	}
+
 	k_england = {
 		color = { 191 16 16 }
 		
+		
+		can_create = {
+			trigger_if = {
+				NOT = { 
+					#Force the use of the decision
+					has_primary_title = title:k_wessex
+					has_primary_title = title:k_mercia
+					has_primary_title = title:k_hwicce
+					has_primary_title = title:k_east_anglia
+					has_primary_title = title:k_essex
+					has_primary_title = title:k_kent
+					has_primary_title = title:k_northumberland
+				}
+			}
+		}
 		
 		capital = c_middlesex
 		
@@ -5422,6 +5457,15 @@ e_britannia = {
 		
 		capital = c_inner_hebrides #Islay
 		
+		can_create = {
+			trigger_if = {
+				NOT = { 
+					has_primary_title = title:k_dalriata_mbrn
+					has_primary_title = title:k_strathclyde
+				}
+			}
+		}
+		
 		d_hebrides = {
 			color = { 200 100 45 }
 			
@@ -5677,6 +5721,12 @@ e_britannia = {
 			name_list_irish = cn_alba
 			name_list_gaelic = cn_alba
 			name_list_pictish = cn_pictland
+		}
+		
+		can_create = {
+			trigger_if = {
+				culture = { has_cultural_pillar = heritage_west_germanic }
+			}
 		}
 		
 		ai_primary_priority = {
@@ -15379,6 +15429,13 @@ e_byzantium = {
 				
 				#capital = 508	# Silistra / Dorostorum
 				
+				b_preslav = {
+					province = 3689
+					
+					color = { 108 100 80 }
+					
+				}
+				
 				b_dorostorum = {
 					province = 508
 					
@@ -15409,12 +15466,7 @@ e_byzantium = {
 					color = { 108 100 80 }
 					
 				}
-				b_preslav = {
-					province = 3689
-					
-					color = { 108 100 80 }
-					
-				}
+
 			}
 			c_vratsa = {
 				color = { 53 38 51 }
@@ -19823,10 +19875,51 @@ e_byzantium = {
 			color = { 203 86 66 }
 			
 			
-			capital = c_hayk # Ani
+			capital = c_ani # Ani
 			
 			cultural_names = {
 				name_list_armenian = cn_mets_hayk_
+			}
+			
+			c_ani = {
+				color = { 150 66 86 }
+				
+				
+				b_ani = {
+					province = 681
+					
+					color = { 203 76 76 }
+					
+					
+					cultural_names = {
+						name_list_greek = cn_anion
+						name_list_turkish = cn_ani
+					}
+				}
+				b_dlim = { #re-localized to Marmashen
+					province = 5725
+					
+					color = { 203 76 76 }
+					
+				}
+				b_erazgewors = {
+					province = 9920
+					
+					color = { 203 76 76 }
+					
+				}
+				b_tekor = {
+					province = 9921
+					
+					color = { 203 76 76 }
+					
+				}
+				b_kumayri = {
+					province = 5727
+					
+					color = { 203 76 76 }
+					
+				}
 			}
 			
 			c_hayk = {
@@ -19871,47 +19964,6 @@ e_byzantium = {
 					color = { 203 76 76 }
 					
 				
-				}
-			}
-			
-			c_ani = {
-				color = { 150 66 86 }
-				
-				
-				b_ani = {
-					province = 681
-					
-					color = { 203 76 76 }
-					
-					
-					cultural_names = {
-						name_list_greek = cn_anion
-						name_list_turkish = cn_ani
-					}
-				}
-				b_dlim = { #re-localized to Marmashen
-					province = 5725
-					
-					color = { 203 76 76 }
-					
-				}
-				b_erazgewors = {
-					province = 9920
-					
-					color = { 203 76 76 }
-					
-				}
-				b_tekor = {
-					province = 9921
-					
-					color = { 203 76 76 }
-					
-				}
-				b_kumayri = {
-					province = 5727
-					
-					color = { 203 76 76 }
-					
 				}
 			}
 			
@@ -20612,6 +20664,14 @@ e_byzantium = {
 		
 		
 		capital = c_palermo #	Palermo
+		
+		can_create = {
+			trigger_if = {
+				NOT = { 
+					has_primary_title = title:k_italy
+				}
+			}
+		}
 		
 		ai_primary_priority = {
 			if = {
@@ -21808,6 +21868,14 @@ e_italy = {
 		capital = c_genoa # Genoa
 		can_create_on_partition = { always = no }
 		
+		can_create = {
+			trigger_if = {
+				NOT = { 
+					has_primary_title = title:k_italy
+				}
+			}
+		}
+		
 		d_genoa = {
 			color = { 244 141 120 }
 			
@@ -21851,6 +21919,14 @@ e_italy = {
 		color = { 255 125 150 }
 		
 		can_create_on_partition = { always = no }
+		
+		can_create = {
+			trigger_if = {
+				NOT = { 
+					has_primary_title = title:k_italy
+				}
+			}
+		}
 		
 		capital = c_pisa # Pisa
 		
@@ -23363,6 +23439,10 @@ e_italy = {
 			trigger_if = {
 				limit = { is_ai = yes }
 				NOT = { exists = title:e_hre }
+			}
+			
+			NOT = { 
+				has_primary_title = title:k_italy
 			}
 			faith = { religion_tag = christianity_religion }
             #NOT = {
@@ -46891,7 +46971,13 @@ e_persia = {
 			c_nishapur = {
 				color = { 85 250 250 }
 				
-			
+				
+				b_nishapur = {
+					province = 4017
+
+					color = { 85 250 250 }
+					
+				}
 				b_farhajird = {
 					province = 4014
 
@@ -46910,12 +46996,7 @@ e_persia = {
 					color = { 85 250 250 }
 					
 				}
-				b_nishapur = {
-					province = 4017
-
-					color = { 85 250 250 }
-					
-				}
+		
 				b_rivand = {
 					province = 4018
 
@@ -53716,7 +53797,13 @@ e_carpathia = {
 e_france = {
 	color = { 11 22 170 }
 	
-	
+	#can_create = {
+	#
+	#	 completely_controls = title:k_france
+	#	 completely_controls = title:k_brittany
+	#	 completely_controls = title:k_aquitaine
+	#}
+		
 	capital = c_ile_de_france
 		
 	ai_primary_priority = {
@@ -58016,6 +58103,13 @@ e_spain = {
 		color = { 138 243 53 }
 		
 		
+		can_create = {
+			trigger_if = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:k_andalusia }
+			}
+		}
+		
 		capital = c_badajoz # Badajoz
 		
 		#christian = "Lusitania"
@@ -58358,7 +58452,17 @@ e_spain = {
 	k_valencia = {	#Valencia
 		color = { 85 201 122 }
 		
-
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = { 
+					has_primary_title = title:k_andalusia
+				}
+			}
+		}
+		
 		capital = c_valencia # Valencia
 
 		cultural_names = {
