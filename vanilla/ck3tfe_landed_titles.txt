@@ -34,7 +34,7 @@ e_gaul = {
 		}
 	}
 
-	color = { 59 177 67 }
+	color = { 19 57 17 }
 	
 }
 
@@ -56,7 +56,7 @@ e_palmyrene = {
 		}
 	}
 
-	color = { 188 206 71 }
+	color = { 188 106 11 }
 
 }
 
@@ -949,6 +949,13 @@ k_goths = {
 	landless = yes
 
 	capital = c_roma
+}
+
+d_gokturks = {
+	color = { 94 69 180 }
+	landless = yes
+
+	capital = c_altay
 }
 
 # TITULAR DUCHIES
@@ -16142,10 +16149,6 @@ e_italy = {
 		
 		
 		capital = c_ravenna # Ravenna
-
-		cultural_names = {
-			name_list_roman = cn_italia_annonariae
-		}
 		
 		can_create = {
 			trigger_if = {
@@ -26736,6 +26739,7 @@ e_mongolia = {
 
 	cultural_names = {
 		name_list_rouran = cn_rouran
+		name_list_turkish = cn_gokturks
 	}
 	
 	ai_primary_priority = {
@@ -26751,7 +26755,7 @@ e_mongolia = {
 		color = { 20 65 25 }
 		
 		
-		capital = c_karakorum
+		capital = c_mumo
 		
 		cultural_names = {
 			name_list_khitan = cn_great_liao	#technically should only be the Liao specifically, but at least we don't have "name_list_Mongolia" showing up in 1066 BM that way
@@ -26771,7 +26775,7 @@ e_mongolia = {
 			color = { 20 115 32 }
 			
 			
-			capital = c_karakorum
+			capital = c_mumo
 			
 			c_karakorum = {
 				color = { 15 90 25 }
@@ -43491,7 +43495,7 @@ e_france = {
 		color = { 110 110 160 }
 		
 		
-		capital = c_chalons #Chalons
+		capital = c_metz #Chalons
 		
 		ai_primary_priority = {
 			if = {
@@ -44824,7 +44828,7 @@ e_france = {
 			}
 		}
 		d_anjou = {
-			color = { 5 45 95 }
+			color = { 5 95 235 }
 			
 			
 			capital = c_anjou # Angers
@@ -44988,13 +44992,15 @@ e_france = {
 			}
 		}
 		d_normandy = {
-			color = { 0 46 124 }
+			color = { 7 7 145 }
 			
 			cultural_names = {
-				name_list_roman = cn_neustria
-				name_list_hispano_roman = cn_neustria
-				name_list_gallo_roman = cn_neustria
-				name_list_afro_roman = cn_neustria
+				name_list_roman = cn_lugdunensis_secunda
+				name_list_hispano_roman = cn_lugdunensis_secunda
+				name_list_gallo_roman = cn_lugdunensis_secunda
+				name_list_afro_roman = cn_lugdunensis_secunda
+				name_list_frankish = cn_neustria
+				name_list_norman = cn_normandy
 			}
 			capital = c_rouen # Rouen
 
@@ -46335,7 +46341,7 @@ e_france = {
 	}
 	
 	k_aquitaine = {
-		color = { 101 50 253 }
+		color = { 101 150 253 }
 		
 		
 		capital = c_bordeaux # Bordaeux
@@ -46372,7 +46378,7 @@ e_france = {
 		
 		
 		d_gascogne = {
-			color = { 81 30 243 }
+			color = { 81 130 243 }
 			
 			
 			capital = c_marsan # Bordeaux
@@ -46581,7 +46587,7 @@ e_france = {
 			
 		}
 		d_aquitaine = {
-			color = { 43 24 226 }
+			color = { 83 124 226 }
 			
 			
 			capital = c_angouleme # Angouleme
@@ -46761,7 +46767,7 @@ e_france = {
 			}
 		}
 		d_toulouse = {
-			color = { 95 24 226 }
+			color = { 95 124 226 }
 			
 			
 			capital = c_toulouse # Toulouse	
@@ -46904,7 +46910,7 @@ e_france = {
 		}
 		
 		d_languedoc = {
-			color = { 90 80 190 }
+			color = { 90 140 190 }
 			
 			
 			capital = c_carcassonne # Albi
@@ -47016,14 +47022,14 @@ e_france = {
 		}
 		
 		d_armagnac = {
-			color = { 145 30 175 }
+			color = { 115 130 175 }
 			
 			
 			capital = c_marsan # Armagnac
 			
 		}
 		d_poitou = {
-			color = { 50 50 130 }
+			color = { 110 130 170 }
 			
 			
 			capital = c_poitiers # Poitiers
@@ -47142,7 +47148,7 @@ e_france = {
 			
 		}
 		d_auvergne = {
-			color = { 54 10 243 }
+			color = { 84 110 243 }
 			
 			
 			capital = c_auvergne
@@ -47237,7 +47243,7 @@ e_france = {
 			
 		}
 		d_bourbon = {
-			color = { 26 10 135 }
+			color = { 86 100 165 }
 			
 			
 			capital = c_bourbon # Bourbon
@@ -47352,7 +47358,7 @@ e_france = {
 		color = { 134 0 37 }
 		
 		
-		capital	= c_venaissin # Arles
+		capital	= c_geneva # Arles
 		
 		ai_primary_priority = {
 			if = {
@@ -47458,6 +47464,10 @@ e_france = {
 					color = { 165 20 65 }
 					
 				}
+			}
+			c_embrun = {
+				color = { 165 20 65 }
+
 				b_embrun = {
 					province = 2027
 					
@@ -77892,11 +77902,17 @@ e_western_roman_empire = {
 		}
 
 		can_create = {
+			custom_description = {
+				text = romans_have_not_abandoned_britannia_trigger
+
+				NOT = {
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_decisions
+						target = flag:flag_abandoned_britannia
+					}
+				}
+			}
 			NOT = {
-        is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:flag_abandoned_britannia
-        }
 				OR = { #Nor roman emperor or vassals can create the title
 					any_liege_or_above = {
 						OR = {
@@ -77913,12 +77929,12 @@ e_western_roman_empire = {
 						has_title = title:e_gaul
 					}
 				}
-        NOT = {  #Can only do it once.
+				NOT = {  #Can only do it once.
 					is_target_in_global_variable_list = {
 						name = unavailable_unique_decisions
 						target = flag:britannia_reclaimed
 					}
-        }
+				}
 			}
 		}
 	}
@@ -86787,7 +86803,31 @@ d_san = {
 	}
 }
 
+d_alpes_maritimae = {
+	color = { 165 20 65 }
+	capital = c_embrun
+}
+
 d_metz = {
 	color = { 32 51 99 }
 	capital = c_frankfurt
+}
+
+### 532 Frankish Kingdoms ###
+
+k_frankish_rheims = {
+	color = { 91 121 159 }
+	capital = c_rheims
+}
+k_frankish_soissons = {
+	color = { 52 111 179 }
+	capital = c_valois
+}
+k_frankish_paris = {
+	color = { 12 61 169 }
+	capital = c_ile_de_france
+}
+k_frankish_orleans = {
+	color = { 32 51 99 }
+	capital = c_orleans
 }
