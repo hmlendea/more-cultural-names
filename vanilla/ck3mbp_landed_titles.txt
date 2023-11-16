@@ -371,6 +371,13 @@ d_sunni = {
 
 	capital = c_baghdad
 	
+	can_destroy = {
+		custom_tooltip = {
+			text = persian_struggle.tt.forbid_title_destruction
+			NOT = { exists = struggle:persian_struggle }
+		}
+	}
+	
 }
 
 d_shiite = {
@@ -456,6 +463,18 @@ d_imami = {
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
 	landless = yes
+}
+
+d_ismaili = {
+	color = { 28 142 62 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_cairo
 }
 
 d_zaydi = {
@@ -575,6 +594,18 @@ d_muwalladi = {
 	
 	capital = c_toledo
 	
+}
+
+d_ghulat = {
+	color = { 48 207 48 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_kufa
 }
 
 e_golden_horde = { #White Horde
@@ -63067,6 +63098,13 @@ e_arabia = {
 				culture = { has_cultural_pillar = heritage_arabic }
 			}
 			add = @correct_culture_primary_score
+		}
+	}
+	
+	can_destroy = {
+		custom_tooltip = {
+			text = persian_struggle.tt.forbid_title_destruction
+			NOT = { exists = struggle:persian_struggle }
 		}
 	}
 	
