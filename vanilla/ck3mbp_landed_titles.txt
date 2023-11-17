@@ -88,6 +88,40 @@ k_fashion = { # Kingdom of Fashion from Establish a New Fashion at Court decisio
 	de_jure_drift_disabled = yes
 }
 
+k_myrdidin = {
+	color = { 50 119 120 }
+	
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	
+	capital = c_wiltshire
+	
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
+
+	destroy_if_invalid_heir = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	de_jure_drift_disabled = yes
+
+	
+}
+
+# Ammon Religious Head
+d_ammon = {
+	color = { 180 120 40 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	landless = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	
+	capital = c_siwa
+}
+
 d_kambuja_devaraja = {
     color = { 253 40 121 }
     
@@ -98,6 +132,7 @@ d_kambuja_devaraja = {
     no_automatic_claims = yes
     destroy_if_invalid_heir = yes
     can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_iconoclast = {
@@ -187,25 +222,6 @@ d_messalian = {
 	destroy_if_invalid_heir = yes
 }
 
-
-d_patriarchate_in_the_east = {
-	color = { 180 137 97 }
-	
-	definite_form = yes
-	ruler_uses_title_name = no
-	landless = yes
-
-	capital = c_antiocheia
-
-	ai_primary_priority = {
-		add = @always_primary_score
-	}
-
-	no_automatic_claims = yes
-	always_follows_primary_heir = yes
-	destroy_if_invalid_heir = yes
-}
-
 d_syriac = {
 	color = { 151 125 20 }
 	
@@ -234,6 +250,7 @@ d_zayidi = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_coptic_papacy = {
@@ -354,6 +371,13 @@ d_sunni = {
 
 	capital = c_baghdad
 	
+	can_destroy = {
+		custom_tooltip = {
+			text = persian_struggle.tt.forbid_title_destruction
+			NOT = { exists = struggle:persian_struggle }
+		}
+	}
+	
 }
 
 d_shiite = {
@@ -382,6 +406,7 @@ d_kharijite = { # The Kharijite Caliphate
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_nizari = { # Nizari Inamate
@@ -395,6 +420,7 @@ d_nizari = { # Nizari Inamate
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 ####
@@ -410,6 +436,7 @@ d_barghawata = { # Tamasna # Sala
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_seveners = {
@@ -423,6 +450,7 @@ d_seveners = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_imami = {
@@ -434,6 +462,19 @@ d_imami = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
+}
+
+d_ismaili = {
+	color = { 28 142 62 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_cairo
 }
 
 d_zaydi = {
@@ -455,6 +496,7 @@ d_alawi = {
 	no_automatic_claims = no
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_ishaqiya = {
@@ -464,6 +506,7 @@ d_ishaqiya = {
 	no_automatic_claims = no
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_isfahani = {
@@ -474,6 +517,7 @@ d_isfahani = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_hashashin = {
@@ -485,6 +529,7 @@ d_hashashin = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_ibadi = {
@@ -495,6 +540,7 @@ d_ibadi = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_wahbiya = {
@@ -505,6 +551,7 @@ d_wahbiya = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_nukkari = {
@@ -515,6 +562,7 @@ d_nukkari = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_masmudi = {
@@ -527,6 +575,7 @@ d_masmudi = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no		
+	landless = yes
 
 	capital = c_marrakesh
 	
@@ -541,9 +590,22 @@ d_muwalladi = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
 	
 	capital = c_toledo
 	
+}
+
+d_ghulat = {
+	color = { 48 207 48 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_kufa
 }
 
 e_golden_horde = { #White Horde
@@ -1512,53 +1574,8 @@ k_liao = {
 	
 }
 		
-		
-#Can't believe these English Kingdoms aren't in the CK3 history
-
-
-	k_east_anglia = { # Eastengle
-		color = { 60 109 121 }
-		capital = c_norfolk # Norfolk
-
-	}
-	k_mercia = { # Mierce
-		color = { 6 42 127 }
-		capital = c_hereford # Hereford
-	}
-	k_northumberland = { # Northymbraland
-		color = { 234 207 99 }
-		capital = c_northumberland # Northumberland
-	}
-	k_wessex = { # Westseaxe
-		color = { 68 140 48 }
-		capital = c_hampton # Winchester
-	}
-	k_kent = { # Kent
-		color = { 241 100 15 }
-		capital = c_kent # Dover
-	}
-	k_essex = { #
-			color = { 200 30 30 }
-			capital = c_essex
-				cultural_names = {
-				name_list_anglo_saxon = cn_east_seaxe
-				name_list_old_saxon = cn_east_seaxe
-			}
-	}
-	k_hwicce = { # Hwicce
-			color = { 241 79 15 }
-			capital = c_gloucestershire # Gloucester
-	}
 	
-	k_strathclyde = { # Ystrad Clut
-		color = { 90 226 196 }
-		
-		capital = c_lennox # Rinn Friu # Strathclyde
-	}
-	
-	
-	
-	k_armenia_minor = { # Mikrá Armenia
+k_armenia_minor = { # Mikrá Armenia
 	color = { 14 30 131 }
 
 	capital = c_marash # Marash # Teluch
@@ -3502,9 +3519,89 @@ e_britannia = {
 		}
 	}
 	
+	
+	k_east_anglia = { # Eastengle
+		color = { 60 109 121 }
+		capital = c_norfolk # Norfolk
+		can_create_on_partition = { always = no }
+
+	}
+	k_mercia = { # Mierce
+		color = { 6 42 127 }
+		capital = c_staffordshire # Hereford
+		can_create_on_partition = { always = no }
+	}
+	k_northumberland = { # Northymbraland
+		color = { 234 207 99 }
+		capital = c_northumberland # Northumberland
+		can_create_on_partition = { always = no }
+	}
+	k_wessex = { # Westseaxe
+		color = { 68 140 48 }
+		capital = c_hampton # Winchester
+		can_create_on_partition = { always = no }
+	}
+	k_kent = { # Kent
+		color = { 241 100 15 }
+		capital = c_kent # Dover
+		can_create_on_partition = { always = no }
+	}
+	k_essex = { #
+		color = { 200 30 30 }
+		capital = c_essex
+			cultural_names = {
+			name_list_anglo_saxon = cn_east_seaxe
+			name_list_old_saxon = cn_east_seaxe
+		}
+		can_create_on_partition = { always = no }
+	}
+	k_hwicce = { # Hwicce
+		color = { 241 79 15 }
+		capital = c_gloucestershire # Gloucester
+		can_create_on_partition = { always = no }
+	}
+	
+	k_strathclyde = { # Ystrad Clut
+		color = { 90 226 196 }
+		can_create_on_partition = { always = no }
+		capital = c_lennox # Rinn Friu # Strathclyde
+	}
+	
+	##############
+	###SCOTLAND###
+	##############
+	k_picts_mbrn = {
+		color = { 0 94 184 }
+		can_create_on_partition = { always = no }
+		capital = c_moray
+		definite_form = yes
+		ruler_uses_title_name = no
+	}
+	k_dalriata_mbrn = {
+		color = { 0 204 0 }
+		can_create_on_partition = { always = no }		
+		capital = c_inner_hebrides #Islay
+	
+	}
+
 	k_england = {
 		color = { 191 16 16 }
 		
+		
+		can_create = {
+			trigger_if = {
+				NOT = { 
+					#Force the use of the decision
+					has_primary_title = title:k_wessex
+					has_primary_title = title:k_mercia
+					has_primary_title = title:k_hwicce
+					has_primary_title = title:k_east_anglia
+					has_primary_title = title:k_essex
+					has_primary_title = title:k_kent
+					has_primary_title = title:k_northumberland
+				}
+			}
+		}
 		
 		capital = c_middlesex
 		
@@ -3948,7 +4045,7 @@ e_britannia = {
 					color = { 255 15 15 }
 					
 				}
-				b_darlington = {
+				b_darlingtonlocalize = {
 					province = 1608
 
 					color = { 255 15 15 }
@@ -5407,6 +5504,15 @@ e_britannia = {
 		
 		capital = c_inner_hebrides #Islay
 		
+		can_create = {
+			trigger_if = {
+				NOT = { 
+					has_primary_title = title:k_dalriata_mbrn
+					has_primary_title = title:k_strathclyde
+				}
+			}
+		}
+		
 		d_hebrides = {
 			color = { 200 100 45 }
 			
@@ -5662,6 +5768,12 @@ e_britannia = {
 			name_list_irish = cn_alba
 			name_list_gaelic = cn_alba
 			name_list_pictish = cn_pictland
+		}
+		
+		can_create = {
+			trigger_if = {
+				culture = { has_cultural_pillar = heritage_west_germanic }
+			}
 		}
 		
 		ai_primary_priority = {
@@ -15364,6 +15476,13 @@ e_byzantium = {
 				
 				#capital = 508	# Silistra / Dorostorum
 				
+				b_preslav = {
+					province = 3689
+					
+					color = { 108 100 80 }
+					
+				}
+				
 				b_dorostorum = {
 					province = 508
 					
@@ -15394,12 +15513,7 @@ e_byzantium = {
 					color = { 108 100 80 }
 					
 				}
-				b_preslav = {
-					province = 3689
-					
-					color = { 108 100 80 }
-					
-				}
+
 			}
 			c_vratsa = {
 				color = { 53 38 51 }
@@ -19808,10 +19922,51 @@ e_byzantium = {
 			color = { 203 86 66 }
 			
 			
-			capital = c_hayk # Ani
+			capital = c_ani # Ani
 			
 			cultural_names = {
 				name_list_armenian = cn_mets_hayk_
+			}
+			
+			c_ani = {
+				color = { 150 66 86 }
+				
+				
+				b_ani = {
+					province = 681
+					
+					color = { 203 76 76 }
+					
+					
+					cultural_names = {
+						name_list_greek = cn_anion
+						name_list_turkish = cn_ani
+					}
+				}
+				b_dlim = { #re-localized to Marmashen
+					province = 5725
+					
+					color = { 203 76 76 }
+					
+				}
+				b_erazgewors = {
+					province = 9920
+					
+					color = { 203 76 76 }
+					
+				}
+				b_tekor = {
+					province = 9921
+					
+					color = { 203 76 76 }
+					
+				}
+				b_kumayri = {
+					province = 5727
+					
+					color = { 203 76 76 }
+					
+				}
 			}
 			
 			c_hayk = {
@@ -19856,47 +20011,6 @@ e_byzantium = {
 					color = { 203 76 76 }
 					
 				
-				}
-			}
-			
-			c_ani = {
-				color = { 150 66 86 }
-				
-				
-				b_ani = {
-					province = 681
-					
-					color = { 203 76 76 }
-					
-					
-					cultural_names = {
-						name_list_greek = cn_anion
-						name_list_turkish = cn_ani
-					}
-				}
-				b_dlim = { #re-localized to Marmashen
-					province = 5725
-					
-					color = { 203 76 76 }
-					
-				}
-				b_erazgewors = {
-					province = 9920
-					
-					color = { 203 76 76 }
-					
-				}
-				b_tekor = {
-					province = 9921
-					
-					color = { 203 76 76 }
-					
-				}
-				b_kumayri = {
-					province = 5727
-					
-					color = { 203 76 76 }
-					
 				}
 			}
 			
@@ -20597,6 +20711,14 @@ e_byzantium = {
 		
 		
 		capital = c_palermo #	Palermo
+		
+		can_create = {
+			trigger_if = {
+				NOT = { 
+					has_primary_title = title:k_italy
+				}
+			}
+		}
 		
 		ai_primary_priority = {
 			if = {
@@ -21745,12 +21867,61 @@ e_italy = {
 
 	}
 	
+	
+	k_cagliari = {
+		color = { 255 193 0 }
+	
+		capital = c_cagliari
+	
+		can_create = {
+			culture = culture:sardinian
+		}
+	}
+	
+	k_arborea = {
+		color = { 32 198 55 }
+	
+		capital = c_arborea
+	
+		can_create = {
+			culture = culture:sardinian
+		}
+		
+	}
+	
+	k_gallura = {
+		color = { 0 0 0 }
+	
+		capital = c_gallura
+		can_create = {
+			culture = culture:sardinian
+		}
+	}
+	
+	k_logudoro = {
+		color = { 213 23 23 }
+	
+		capital = c_logudoro
+	
+		can_create = {
+			culture = culture:sardinian
+		}
+	}
+	
 	#Republics put into their de jure Kingdom titles and given no de jure empire liege. This is mostly to control them getting de jure conquered within a year
 	
 	k_genoa = {
 		color = { 234 131 110 }
 		capital = c_genoa # Genoa
 		can_create_on_partition = { always = no }
+		
+		can_create = {
+			trigger_if = {
+				NOT = { 
+					has_primary_title = title:k_italy
+				}
+			}
+		}
 		
 		d_genoa = {
 			color = { 244 141 120 }
@@ -21795,6 +21966,14 @@ e_italy = {
 		color = { 255 125 150 }
 		
 		can_create_on_partition = { always = no }
+		
+		can_create = {
+			trigger_if = {
+				NOT = { 
+					has_primary_title = title:k_italy
+				}
+			}
+		}
 		
 		capital = c_pisa # Pisa
 		
@@ -23308,6 +23487,10 @@ e_italy = {
 				limit = { is_ai = yes }
 				NOT = { exists = title:e_hre }
 			}
+			
+			NOT = { 
+				has_primary_title = title:k_italy
+			}
 			faith = { religion_tag = christianity_religion }
             #NOT = {
 			#	exists = title:e_hre.holder
@@ -24710,6 +24893,7 @@ e_scandinavia = {
 			name_list_norse = cn_lappland
 		}
 		
+		can_be_named_after_dynasty = no 
 		capital = c_jahkamakke # Jåhkåmåhkke
 		
 		can_create = {
@@ -46834,7 +47018,13 @@ e_persia = {
 			c_nishapur = {
 				color = { 85 250 250 }
 				
-			
+				
+				b_nishapur = {
+					province = 4017
+
+					color = { 85 250 250 }
+					
+				}
 				b_farhajird = {
 					province = 4014
 
@@ -46853,12 +47043,7 @@ e_persia = {
 					color = { 85 250 250 }
 					
 				}
-				b_nishapur = {
-					province = 4017
-
-					color = { 85 250 250 }
-					
-				}
+		
 				b_rivand = {
 					province = 4018
 
@@ -53659,7 +53844,13 @@ e_carpathia = {
 e_france = {
 	color = { 11 22 170 }
 	
-	
+	#can_create = {
+	#
+	#	 completely_controls = title:k_france
+	#	 completely_controls = title:k_brittany
+	#	 completely_controls = title:k_aquitaine
+	#}
+		
 	capital = c_ile_de_france
 		
 	ai_primary_priority = {
@@ -57959,6 +58150,13 @@ e_spain = {
 		color = { 138 243 53 }
 		
 		
+		can_create = {
+			trigger_if = {
+				limit = { is_ai = yes }
+				NOT = { exists = title:k_andalusia }
+			}
+		}
+		
 		capital = c_badajoz # Badajoz
 		
 		#christian = "Lusitania"
@@ -58301,7 +58499,17 @@ e_spain = {
 	k_valencia = {	#Valencia
 		color = { 85 201 122 }
 		
-
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = { 
+					has_primary_title = title:k_andalusia
+				}
+			}
+		}
+		
 		capital = c_valencia # Valencia
 
 		cultural_names = {
@@ -62890,6 +63098,13 @@ e_arabia = {
 				culture = { has_cultural_pillar = heritage_arabic }
 			}
 			add = @correct_culture_primary_score
+		}
+	}
+	
+	can_destroy = {
+		custom_tooltip = {
+			text = persian_struggle.tt.forbid_title_destruction
+			NOT = { exists = struggle:persian_struggle }
 		}
 	}
 	

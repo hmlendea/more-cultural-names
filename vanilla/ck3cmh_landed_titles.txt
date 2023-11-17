@@ -67,6 +67,16 @@ k_socotra = {
 	definite_form = yes
 }
 
+e_air = {
+	#Created by decision
+	color = { 9 31 146 }
+	can_be_named_after_dynasty = no
+	
+	capital = c_air
+	
+	#definite_form = yes
+}
+
 k_tuyuhun_restored = {
 	#Created by decision
 	color = { 225 25 25 }
@@ -76,6 +86,48 @@ k_tuyuhun_restored = {
 	
 	definite_form = yes
 }
+@always_primary_score = 1000
+
+d_yazidi = {
+
+	landless = yes
+
+	color = { 254 189 17 }
+
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_ninive
+
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
+}
+
+# Yarsani are more decentralized
+# d_yarsani = {
+
+# 	landless = yes
+
+# 	color = { 227 202 100 }
+
+# 	definite_form = yes
+# 	ruler_uses_title_name = no
+# 	no_automatic_claims = yes
+# 	always_follows_primary_heir = yes
+# 	destroy_if_invalid_heir = yes
+# 	can_be_named_after_dynasty = no
+
+# 	capital = c_ninive
+
+# 	ai_primary_priority = {
+# 		add = @always_primary_score
+# 	}
+# }
 @correct_culture_primary_score = 100
 @better_than_the_alternatives_score = 50
 @always_primary_score = 1000
@@ -40273,7 +40325,7 @@ e_turan = {
 				color = { 25 195 90 }
 				
 			
-				b_samarqand = {
+				b_samarkand = {
 					province = 4404
 
 					color = { 25 195 90 }
@@ -44127,7 +44179,7 @@ e_persia = {
 				color = { 150 75 0 }
 				
 			
-				b_bamiyan = {
+				b_bamian = {
 					province = 4343
 
 					color = { 150 75 0 }
@@ -51207,17 +51259,10 @@ e_spain = {
 					name_list_yemeni = cn_qurtubah
 				}
 				
-				b_alcocer = {
-					province = 9790
-					
-					color = { 60 180 12 }
-					
-				}
 				b_cordoba = {
 					province = 1995
 
 					color = { 60 180 12 }
-					
 
 					cultural_names = {
 						name_list_bedouin = cn_qurtubah
@@ -51230,6 +51275,12 @@ e_spain = {
 						name_list_andalusian = cn_qurtubah
 						name_list_yemeni = cn_qurtubah
 					}
+				}
+				b_alcocer = {
+					province = 9790
+					
+					color = { 60 180 12 }
+					
 				}
 				b_guadiato = {
 					province = 1999
@@ -61970,7 +62021,7 @@ e_nubia = {
 			color = { 162 133 85 }
 			
 			
-			capital = c_faras
+			capital = c_qasr_ibrim
 			
 			c_qasr_ibrim = {
 				color = { 165 135 85 }
@@ -80164,6 +80215,12 @@ e_deccan = {
 				color = { 150 135 100 }
 				
 				
+				b_malaya_rata = { #Samantakuta
+					province = 3288
+
+					color = { 150 135 100 }
+					
+				}
 				b_senkadagalapura = {
 					province = 3278
 					
@@ -80173,12 +80230,6 @@ e_deccan = {
 				b_matale = {
 					province = 3279
 					
-					color = { 150 135 100 }
-					
-				}
-				b_malaya_rata = { #Samantakuta
-					province = 3288
-
 					color = { 150 135 100 }
 					
 				}
@@ -85690,6 +85741,16 @@ k_socotra = {
 	definite_form = yes
 }
 
+e_air = {
+	#Created by decision
+	color = { 9 31 146 }
+	can_be_named_after_dynasty = no
+	
+	capital = c_air
+	
+	#definite_form = yes
+}
+
 k_tuyuhun_restored = {
 	#Created by decision
 	color = { 225 25 25 }
@@ -85699,3 +85760,45 @@ k_tuyuhun_restored = {
 	
 	definite_form = yes
 }
+@always_primary_score = 1000
+
+d_yazidi = {
+
+	landless = yes
+
+	color = { 254 189 17 }
+
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_ninive
+
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
+}
+
+# Yarsani are more decentralized
+# d_yarsani = {
+
+# 	landless = yes
+
+# 	color = { 227 202 100 }
+
+# 	definite_form = yes
+# 	ruler_uses_title_name = no
+# 	no_automatic_claims = yes
+# 	always_follows_primary_heir = yes
+# 	destroy_if_invalid_heir = yes
+# 	can_be_named_after_dynasty = no
+
+# 	capital = c_ninive
+
+# 	ai_primary_priority = {
+# 		add = @always_primary_score
+# 	}
+# }
