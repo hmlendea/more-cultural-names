@@ -132,6 +132,7 @@ d_kambuja_devaraja = {
     no_automatic_claims = yes
     destroy_if_invalid_heir = yes
     can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_iconoclast = {
@@ -249,6 +250,7 @@ d_zayidi = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_coptic_papacy = {
@@ -369,6 +371,13 @@ d_sunni = {
 
 	capital = c_baghdad
 	
+	can_destroy = {
+		custom_tooltip = {
+			text = persian_struggle.tt.forbid_title_destruction
+			NOT = { exists = struggle:persian_struggle }
+		}
+	}
+	
 }
 
 d_shiite = {
@@ -397,6 +406,7 @@ d_kharijite = { # The Kharijite Caliphate
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_nizari = { # Nizari Inamate
@@ -410,6 +420,7 @@ d_nizari = { # Nizari Inamate
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 ####
@@ -425,6 +436,7 @@ d_barghawata = { # Tamasna # Sala
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_seveners = {
@@ -438,6 +450,7 @@ d_seveners = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_imami = {
@@ -449,6 +462,19 @@ d_imami = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
+}
+
+d_ismaili = {
+	color = { 28 142 62 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_cairo
 }
 
 d_zaydi = {
@@ -470,6 +496,7 @@ d_alawi = {
 	no_automatic_claims = no
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_ishaqiya = {
@@ -479,6 +506,7 @@ d_ishaqiya = {
 	no_automatic_claims = no
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_isfahani = {
@@ -489,6 +517,7 @@ d_isfahani = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_hashashin = {
@@ -500,6 +529,7 @@ d_hashashin = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
 	can_be_named_after_dynasty = no
+	landless = yes
 }
 
 d_ibadi = {
@@ -510,6 +540,7 @@ d_ibadi = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_wahbiya = {
@@ -520,6 +551,7 @@ d_wahbiya = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_nukkari = {
@@ -530,6 +562,7 @@ d_nukkari = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = no
+	landless = yes
 }
 
 d_masmudi = {
@@ -542,6 +575,7 @@ d_masmudi = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no		
+	landless = yes
 
 	capital = c_marrakesh
 	
@@ -556,9 +590,22 @@ d_muwalladi = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	landless = yes
 	
 	capital = c_toledo
 	
+}
+
+d_ghulat = {
+	color = { 48 207 48 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_kufa
 }
 
 e_golden_horde = { #White Horde
@@ -3998,7 +4045,7 @@ e_britannia = {
 					color = { 255 15 15 }
 					
 				}
-				b_darlington = {
+				b_darlingtonlocalize = {
 					province = 1608
 
 					color = { 255 15 15 }
@@ -63051,6 +63098,13 @@ e_arabia = {
 				culture = { has_cultural_pillar = heritage_arabic }
 			}
 			add = @correct_culture_primary_score
+		}
+	}
+	
+	can_destroy = {
+		custom_tooltip = {
+			text = persian_struggle.tt.forbid_title_destruction
+			NOT = { exists = struggle:persian_struggle }
 		}
 	}
 	
