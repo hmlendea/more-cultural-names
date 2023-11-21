@@ -67,7 +67,7 @@ function get-name-for-language() {
     local NAME=""
 
     LANGUAGE_CODE=$(echo "${LANGUAGE_CODE}" | sed -E 's/([^\.]+)/"\1"/g; s/\./\./g')
-    NAME=$(echo "${EXONYMSAPI_RESPONSE}" | jq -r '.names.'"${LANGUAGE_CODE}")
+    NAME=$(echo "${EXONYMSAPI_RESPONSE}" | jq -r '.names.'"${LANGUAGE_CODE}"'.value')
 
     [ "${NAME}" == "null" ] && return
 
