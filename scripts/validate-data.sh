@@ -614,3 +614,5 @@ findRedundantNamesStrict "Tuscan_Medieval" "Sicilian"
 findRedundantNamesStrict "Tuscan_Medieval" "Sicilian_Medieval"
 findRedundantNamesStrict "Tuscan_Medieval" "Venetian_Medieval"
 wait
+
+sh scripts/find-redundant-languages.sh

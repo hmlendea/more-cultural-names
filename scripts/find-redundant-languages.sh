@@ -15,5 +15,5 @@ for LANGUAGE_ID in ${LANGUAGE_IDS}; do
         LANGUAGE_IS_REDUNDANT=false
     fi
 
-    ${LANGUAGE_IS_REDUNDANT} && echo "${LANGUAGE_ID}"
+    ${LANGUAGE_IS_REDUNDANT} && echo "Unused langauge: ${LANGUAGE_ID}"
 done
