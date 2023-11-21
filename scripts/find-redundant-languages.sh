@@ -11,7 +11,8 @@ for LANGUAGE_ID in ${LANGUAGE_IDS}; do
 
     if grep -q "${LANGUAGE_ID}" <<< "${LOCATIONS_FILE_LANGUAGE_IDS}" \
     || grep -q "<LanguageId>${LANGUAGE_ID}</LanguageId>" <<< "${LANGUAGES_FILE_CONTENT}" \
-    || grep -Pzoq "\n\s*<Id>${LANGUAGE_ID}</Id>.*(\n\s*<Code.*)*\n\s*<(GameId)" <<< "${LANGUAGES_FILE_CONTENT}"; then
+    || grep -Pzoq "\n\s*<Id>${LANGUAGE_ID}</Id>.*\n\s*<Code.*\n\s*<(GameId)" <<< "${LANGUAGES_FILE_CONTENT}" \
+    || grep -Pzoq "\n\s*<Id>${LANGUAGE_ID}</Id>.*\n\s*<(GameId)" <<< "${LANGUAGES_FILE_CONTENT}"; then
         LANGUAGE_IS_REDUNDANT=false
     fi
 
