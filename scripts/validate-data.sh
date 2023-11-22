@@ -1,7 +1,7 @@
 #!/bin/bash
 source "scripts/common/paths.sh"
 source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
-source "${SCRIPTS_COMMON_DIR}/common/hoi4.sh"
+source "${SCRIPTS_COMMON_DIR}/hoi4.sh"
 
 LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
