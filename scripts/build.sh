@@ -108,7 +108,7 @@ build-edition \
 
 build-edition \
     "atha-more-cultural-names" "Apotheosis: More Cultural Names" \
-    "CK3ATHA" "1.6.*" \
+    "CK3ATHA" "1.9.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
@@ -152,7 +152,7 @@ build-edition \
 
 build-edition \
     "mdm-more-cultural-names" "Millennium Dawn: More Cultural Names" \
-    "HOI4MDM" "1.12.*" \
+    "HOI4MDM" "1.13.*" \
     --dependency "Millennium Dawn: A Modern Day Mod"
 
 build-edition \
