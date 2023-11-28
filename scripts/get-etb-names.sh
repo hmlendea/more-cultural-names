@@ -41,10 +41,10 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
     BASQUE_NAME=$(get-name "${TITLE_ID}" 19 "Basque")
     BRETON_NAME=$(get-name "${TITLE_ID}" 11 "Breton_Middle")
     BULGARIAN_NAME=$(get-name "${TITLE_ID}" 82 "Bulgarian_Old")
-    CASTILIAN_NAME=$(get-name "${TITLE_ID}" 20 "Castilian_Old" "Castilian" "Spanish")
+    CASTILIAN_NAME=$(get-name "${TITLE_ID}" 20 "Castilian_Old" "Spanish")
     CATALAN_NAME=$(get-name "${TITLE_ID}" 21 "Catalan_Old" "Catalan")
     CORNISH_NAME=$(get-name "${TITLE_ID}" 12 "Cornish_Middle")
-    CROATIAN_NAME=$(get-name "${TITLE_ID}" 77 "SerboCroatian" "Serbian" "Serbian_Medieval" "Croatian" "Croatian_Medieval" "SerboCroatian_Medieval")
+    CROATIAN_NAME=$(get-name "${TITLE_ID}" 77 "SerboCroatian" "Serbian" "Croatian" "SerboCroatian_Medieval")
     CUMBRIC_NAME=$(get-name "${TITLE_ID}" 13 "Cumbric")
     CZECH_NAME=$(get-name "${TITLE_ID}" 84 "Czech_Medieval" "Czech")
     DANISH_NAME=$(get-name "${TITLE_ID}" 31 "Danish_Middle")
@@ -71,10 +71,10 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
     POLISH_NAME=$(get-name "${TITLE_ID}" 85 "Polish_Old" "Polish")
     POMERANIAN_NAME=$(get-name "${TITLE_ID}" 83 "Pomeranian")
     PORTUGUESE_NAME=$(get-name "${TITLE_ID}" 22 "Portuguese_Old" "Portuguese")
-    ROMANIAN_NAME=$(get-name "${TITLE_ID}" 80 "Romanian_Old" "Romanian")
+    ROMANIAN_NAME=$(get-name "${TITLE_ID}" 80 "Romanian")
     SAMI_NAME=$(get-name "${TITLE_ID}" 33 "Sami" )
     SARDINIAN_NAME=$(get-name "${TITLE_ID}" 73 "Sardinian" )
-    SERBIAN_NAME=$(get-name "${TITLE_ID}" 79 "SerboCroatian" "Serbian" "Serbian_Medieval" "Croatian" "Croatian_Medieval" "SerboCroatian_Medieval")
+    SERBIAN_NAME=$(get-name "${TITLE_ID}" 79 "SerboCroatian" "Serbian" "Croatian" "Croatian_Medieval" "SerboCroatian_Medieval")
     SEVERIAN_NAME=$(get-name "${TITLE_ID}" 96 "Severian")
     SCOTTISH_NAME=$(get-name "${TITLE_ID}" 4 "Scottish_Gaelic" "Irish_Middle")
     SICILIAN_NAME=$(get-name "${TITLE_ID}" 74 "Sicilian")
@@ -164,7 +164,7 @@ for TITLE_ID in $(awk -F, '{print $2}' "${ETB_FILE}" | \
         print-name "Polish_Old" "${POLISH_NAME}"
         print-name "Pomeranian" "${POMERANIAN_NAME}"
         print-name "Portuguese_Old" "${PORTUGUESE_NAME}"
-        print-name "Romanian_Old" "${ROMANIAN_NAME}"
+        print-name "Romanian" "${ROMANIAN_NAME}"
         print-name "Sami" "${SAMI_NAME}"
         print-name "Sardinian" "${SARDINIAN_NAME}"
 
