@@ -108,7 +108,7 @@ build-edition \
 
 build-edition \
     "atha-more-cultural-names" "Apotheosis: More Cultural Names" \
-    "CK3ATHA" "1.6.*" \
+    "CK3ATHA" "1.9.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
@@ -123,12 +123,12 @@ build-edition \
 
 build-edition \
     "ibl-more-cultural-names" "Ibn Battuta's Legacy 2 - More Cultural Names" \
-    "CK3IBL" "1.9.*" \
+    "CK3IBL" "1.11.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
     "mbp-more-cultural-names" "More Bookmarks+ - More Cultural Names" \
-    "CK3MBP" "1.10.*" \
+    "CK3MBP" "1.11.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
