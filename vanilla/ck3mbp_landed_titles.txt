@@ -615,7 +615,7 @@ e_golden_horde = { #White Horde
 	can_be_named_after_dynasty = no
 
 	capital = c_itil
-	can_create_on_partition = { always = no }
+	#can_create_on_partition = { always = no }
 				 
 }
 
@@ -626,7 +626,7 @@ e_blue_horde = { #Blue Horde
 	can_be_named_after_dynasty = no
 
 	capital = c_sighnaq
-	can_create_on_partition = { always = no }
+	#can_create_on_partition = { always = no }
 				 
 }
 
@@ -638,7 +638,7 @@ e_ilkhanate = {
 	can_be_named_after_dynasty = no
 
 	capital = c_tabriz
-	can_create_on_partition = { always = no }
+	#can_create_on_partition = { always = no }
 }
 
 e_chagatai = {
@@ -648,7 +648,7 @@ e_chagatai = {
 	can_be_named_after_dynasty = no
 
 	capital = c_iliq
-	can_create_on_partition = { always = no }
+	#can_create_on_partition = { always = no }
 }
 
 e_black_horde = {
@@ -658,7 +658,7 @@ e_black_horde = {
 	can_be_named_after_dynasty = no
 
 	capital = c_delhi
-	can_create_on_partition = { always = no }
+	#can_create_on_partition = { always = no }
 }
 
 e_white_horde = {
@@ -669,7 +669,7 @@ e_white_horde = {
 	can_be_named_after_dynasty = no
 
 	capital = c_itil
-	can_create_on_partition = { always = no }
+	#can_create_on_partition = { always = no }
 }
 
 e_aarlud_khanate = {
@@ -680,7 +680,7 @@ e_aarlud_khanate = {
 	can_be_named_after_dynasty = no
 
 	capital = c_sjaelland
-	can_create_on_partition = { always = no }
+	#can_create_on_partition = { always = no }
 }
 
 e_togskol_khanate = {
@@ -691,7 +691,7 @@ e_togskol_khanate = {
 	can_be_named_after_dynasty = no
 
 	capital = c_roma
-	can_create_on_partition = { always = no }
+	#can_create_on_partition = { always = no }
 }
 
 e_baruun_khanate = {
@@ -702,7 +702,7 @@ e_baruun_khanate = {
 	can_be_named_after_dynasty = no
 
 	capital = c_alexandria
-	can_create_on_partition = { always = no }
+	#can_create_on_partition = { always = no }
 }
 
 #Kingdom Mongol Titles
@@ -45833,6 +45833,12 @@ e_persia = {
 		}
 	}
 	
+	k_ormus = {
+		color = { 111 210 21 }
+		
+		capital = c_hormuz 
+		
+	}
 	k_injuid = {
 		color = { 135 240 20 }
 		
@@ -75853,6 +75859,123 @@ e_rajastan = {
 		}
 	}
 	
+	k_jaisalmer = {
+		color = { 170 60 30 }
+		
+		capital = c_ludrava
+				
+	}
+	
+	k_mawar = {
+		color = { 194 67 10 }
+		
+		capital = c_mandavyapura
+				
+	}
+	
+	k_mewar = {
+		color = { 136 66 52 }
+		
+		capital = c_chitrakut
+				
+	}
+	
+	k_jangladesh = {
+		color = { 210 190 51 }
+		
+		capital = c_vairata
+		
+	}
+	
+	k_baghela = {
+		color = { 58 138 41 }
+		
+		capital = c_jharkand
+		
+	}
+	
+	k_chandela = {
+		color = { 120 50 10 }
+		
+		capital = c_kalanjara
+		
+	}
+	
+	k_kangra = { 
+		color = { 170 70 31 }
+		
+		capital = c_kangra
+				
+	}
+	
+	k_chand = { 
+		color = { 230 90 40 }
+		
+		capital = c_kali_kumaon
+				
+	}
+	
+	k_doti = { 
+		color = { 225 105 50 }
+		
+		capital = c_doti
+				
+	}
+	
+	k_khas_malla = { 
+		color = { 255 45 5 }
+		
+		capital = c_kathmandu
+				
+	}
+	
+	k_limbuwan = { 
+		color = { 195 55 5 }
+		
+		capital = c_ilam
+				
+	}
+	
+	k_kutch = {
+		color = { 195 70 10 }
+		
+		
+		capital = c_kutch
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:gujarati
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+	}
+	
+	k_chudasama = {
+		color = { 220 120 50 }
+		
+		
+		capital = c_bhumilka
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:gujarati
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		d_bhumilka = {
+			color = { 220 120 50 }
+			
+			
+			capital = c_bhumilka
+
+		}
+	}
+	
 	k_sindh = {
 		color = { 225 135 20 }
 		
@@ -76948,7 +77071,7 @@ e_rajastan = {
 			}
 		}
 	}
-	
+
 	k_gujarat = {
 		color = { 155 80 28 }
 		
@@ -78922,6 +79045,23 @@ e_rajastan = {
 					
 				}
 			}
+			c_daramdin = { #Belongs in this region for this time period
+				color = { 160 171 89 }
+				
+				
+				b_daramdin = {
+					province = 9129
+					
+					color = { 160 171 89 }
+					
+				}
+				b_darjeeling = {
+					province = 9128
+					
+					color = { 160 171 89 }
+					
+				}
+			}
 		}
 	}
 	
@@ -79090,12 +79230,129 @@ e_bengal = {
 		}
 	}
 	
+	
+	k_kachari = {
+		color = { 15 220 60 }
+		
+		capital = c_dimapur
+
+	}
+	
+	k_chutia = {
+		color = { 40 180 150 }
+		
+		capital = c_kundina
+
+	}
+	
+	k_ahom = {
+		color = { 60 200 150 }
+		
+		capital = c_charaideo
+
+	}
+	
+	d_ahom = {
+		color = { 60 200 150 }
+		
+		capital = c_charaideo
+
+	}
+	
+	k_manipur = {
+		color = { 35 200 100 }
+		
+		capital = c_manipur
+		
+		d_manipur = {
+			color = { 35 200 100 }
+			
+			c_manipur = {
+					color = { 35 200 100 }
+					
+					
+					b_manipur = {
+						province = 826
+						
+						color = { 35 200 100 }
+						
+					}
+					b_khoupum = {
+						province = 827
+						
+						color = { 35 200 100 }
+						
+					}
+				}
+		}
+	}
+	
+	k_tripura = {
+		color = { 35 200 100 }
+		
+		capital = c_manipur
+		
+		d_tripura = {
+			color = { 55 165 35 }
+			
+			
+			capital = c_harikela
+			
+			 c_harikela = {
+                color = { 55 165 35 }
+
+                b_unakoti = {
+                    province = 853
+
+                    color = { 35 145 35 }
+                }
+                b_tlawng = {
+                    province = 854
+
+                    color = { 35 145 35 }
+                }
+            }
+			
+		}
+	}
+	
+	k_jaintia = {
+		color = { 71 186 107 }
+		
+		capital = c_srihatta
+		
+		d_jaintia = {
+            color = { 71 186 107 }
+
+            c_srihatta = {
+                color = { 25 210 80 }
+
+                b_srihatta = {
+                    province = 1245
+
+                    color = { 25 210 80 }
+                }
+                b_jangalbari = {
+                    province = 824
+
+                    color = { 25 210 80 }
+                }
+                b_habiganj = {
+                    province = 825
+
+                    color = { 25 210 80 }
+                }
+            }
+        }
+	}
+	
 	#To give various dynasties a Kingdom title while also making it so the Delhi Sultanate doesn't have an overly large area to de jure conquer with its Bengal title
 	k_bengal_east = {
 		color = { 65 130 30 }
 		
 		
-		capital = c_bikrampur 
+		capital = c_suvarnagram 
+		
 		
 		d_vanga = {
 			color = { 35 190 35 }
@@ -79195,6 +79452,34 @@ e_bengal = {
 					
 				}
 			}
+		}
+		
+		d_chattogram = {
+            color = { 86 125 55 }
+
+            c_chatigama = {
+                color = { 86 125 55 }
+
+                b_chatigama = {
+                    province = 828
+
+                    color = { 86 125 55 }
+
+                    cultural_names = {
+                        name_list_burmese = cn_sittagaung
+                    }
+                }
+                b_kaptai = {
+                    province = 11542
+
+                    color = { 86 125 55 }
+                }
+                b_karnaphuli = {
+                    province = 8722
+
+                    color = { 86 145 35 }
+                }
+            }
 			c_samatata = {
 				color = { 35 145 35 }
 				
@@ -79218,30 +79503,6 @@ e_bengal = {
 					
 				}
 			}
-		}
-		
-		d_jaintia = {
-            color = { 71 186 107 }
-
-            c_srihatta = {
-                color = { 25 210 80 }
-
-                b_srihatta = {
-                    province = 1245
-
-                    color = { 25 210 80 }
-                }
-                b_jangalbari = {
-                    province = 824
-
-                    color = { 25 210 80 }
-                }
-                b_habiganj = {
-                    province = 825
-
-                    color = { 25 210 80 }
-                }
-            }
         }
 		
 		d_varendra = {
@@ -79827,23 +80088,6 @@ e_bengal = {
                 }
 				
 			}
-			c_manipur = {
-				color = { 35 200 100 }
-				
-				
-				b_manipur = {
-					province = 826
-					
-					color = { 35 200 100 }
-					
-				}
-				b_khoupum = {
-					province = 827
-					
-					color = { 35 200 100 }
-					
-				}
-			}
 		}
 	}
 	
@@ -80293,27 +80537,10 @@ e_bengal = {
 	
 	}
 	
-	k_pegu = {
-		color = { 140 60 224 }
-		
-		
-		capital = c_pegu
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = { has_cultural_pillar = heritage_burman }
-				}
-				add = @correct_culture_primary_score
-			}
-		}
-
-	}
-	
     k_arakan = {
         color = { 126 155 35 }
 
-        capital = c_chatigama # Chittagong
+        capital = c_launggyet # Chittagong
 
         ai_primary_priority = {
             if = {
@@ -80324,47 +80551,69 @@ e_bengal = {
             }
         }
 
-        d_chattogram = {
-            color = { 86 125 55 }
+		d_arakan = {
+            color = { 230 37 82 }
 
-            c_chatigama = {
-                color = { 86 125 55 }
+            capital = c_launggyet
 
-                b_chatigama = {
-                    province = 828
+			c_launggyet = {
+                color = { 163 66 102 }
 
-                    color = { 86 125 55 }
+                b_launggyet = {
+                    province = 9577
 
-                    cultural_names = {
-                        name_list_burmese = cn_sittagaung
-                    }
+                    color = { 210 17 62 }
                 }
-                b_kaptai = {
-                    province = 11542
+                b_myebon = {
+                    province = 11544
 
-                    color = { 86 125 55 }
+                    color = { 163 66 102 }
                 }
-                b_karnaphuli = {
-                    province = 8722
+                b_thanphanbin = {
+                    province = 11545
 
-                    color = { 86 145 35 }
+                    color = { 163 66 102 }
                 }
             }
-            c_harikela = {
-                color = { 55 165 35 }
+			
+            c_vaisali = {
+                color = { 210 17 62 }
 
-                b_unakoti = {
-                    province = 853
-
-                    color = { 35 145 35 }
+                cultural_names = {
+                    name_list_burmese = cn_waithali
                 }
-                b_tlawng = {
-                    province = 854
 
-                    color = { 35 145 35 }
+                b_vaisali = {
+                    province = 9576
+
+                    color = { 210 17 62 }
+
+                    cultural_names = {
+                        name_list_burmese = cn_waithali
+                    }
+                }
+                b_mrauk_u = {
+                    province = 9578
+
+                    color = { 210 17 62 }
+                }
+                b_mahamuni = {
+                    province = 9579
+
+                    color = { 210 17 62 }
+                }
+                b_akyab = {
+                    province = 9580
+
+                    color = { 210 17 62 }
+
+                    cultural_names = {
+                        name_list_burmese =  cn_sittwe
+                    }
                 }
             }
         }
+		
         d_ramu = {
             color = { 230 67 42 }
 
@@ -80421,67 +80670,6 @@ e_bengal = {
             }
         }
 
-        d_arakan = {
-            color = { 230 37 82 }
-
-            capital = c_vaisali
-
-            c_vaisali = {
-                color = { 210 17 62 }
-
-                cultural_names = {
-                    name_list_burmese = cn_waithali
-                }
-
-                b_vaisali = {
-                    province = 9576
-
-                    color = { 210 17 62 }
-
-                    cultural_names = {
-                        name_list_burmese = cn_waithali
-                    }
-                }
-                b_mrauk_u = {
-                    province = 9578
-
-                    color = { 210 17 62 }
-                }
-                b_mahamuni = {
-                    province = 9579
-
-                    color = { 210 17 62 }
-                }
-                b_akyab = {
-                    province = 9580
-
-                    color = { 210 17 62 }
-
-                    cultural_names = {
-                        name_list_burmese =  cn_sittwe
-                    }
-                }
-            }
-            c_launggyet = {
-                color = { 163 66 102 }
-
-                b_launggyet = {
-                    province = 9577
-
-                    color = { 210 17 62 }
-                }
-                b_myebon = {
-                    province = 11544
-
-                    color = { 163 66 102 }
-                }
-                b_thanphanbin = {
-                    province = 11545
-
-                    color = { 163 66 102 }
-                }
-            }
-        }
         d_sandoway = {
             color = { 230 47 82 }
 
@@ -81176,6 +81364,22 @@ e_kalinga = {
 		}
 	
 	
+	k_bastar = {
+		color = { 58 150 70 }
+		
+		
+		capital = c_cakrakuta # 
+		
+	}
+	
+	k_ratnapura = {
+		color = { 36 175 65 }
+		
+		
+		capital = c_ratanpur # 
+		
+	}
+	
 	k_gondwana = {
 		color = { 32 128 55 }
 		
@@ -81422,87 +81626,6 @@ e_kalinga = {
 					
 				}
 			}
-			c_khinjali_mandala = {
-				color = { 115 170 25 }
-				
-				
-				b_khinjali = {
-					province = 1229
-					
-					color = { 115 170 25 }
-					
-				}
-				b_nilamadhav = {
-					province = 3989
-					
-					color = { 115 170 25 }
-					
-				}
-				b_nayagarh = {
-					province = 3990
-					
-					color = { 115 170 25 }
-					
-				}
-			}
-			c_kodalaka_mandala = {
-				color = { 135 190 25 }
-				
-				
-				b_kodalaka = {
-					province = 1156
-					
-					color = { 135 190 25 }
-					
-				}
-				b_bajrakot = {
-					province = 3987
-					
-					color = { 135 190 25 }
-					
-				}
-				b_deogarh = {
-					province = 3988
-					
-					color = { 135 190 25 }
-					
-				}
-			}
-			c_khijjingakota = {
-				color = { 125 175 30 }
-				
-				
-				b_khijjinga = {
-					province = 1247
-					
-					color = { 125 175 30 }
-					
-				}
-				b_asanapat = {
-					province = 3983
-					
-					color = { 125 175 30 }
-					
-				}
-				b_bahalda = {
-					province = 3984
-					
-					color = { 125 175 30 }
-					
-				}
-				b_ghatagaon = {
-					province = 3985
-					
-					color = { 125 175 30 }
-					
-				}
-				b_malayagiri = {
-					province = 3986
-					
-					color = { 125 175 30 }
-					
-				}
-			}
 		}
 		
 		d_daksina_kosala = {
@@ -81548,58 +81671,6 @@ e_kalinga = {
 					province = 3993
 					
 					color = { 125 150 41 }
-					
-				}
-			}
-			c_suvarnapura = {
-				color = { 105 140 31 }
-				
-				
-				b_suvarnapura = {
-					province = 1230
-					
-					color = { 105 140 31 }
-					
-				}
-				b_yajatinagara = {
-					province = 3994
-					
-					color = { 105 140 31 }
-					
-				}
-				b_vinitapura = {
-					province = 3995
-					
-					color = { 105 140 31 }
-					
-				}
-				b_ranipur = {
-					province = 3996
-					
-					color = { 105 140 31 }
-					
-				}
-			}
-			c_sambalpur = {
-				color = { 95 155 41 }
-				
-				
-				b_sambalpur = {
-					province = 1249
-					
-					color = { 95 155 41 }
-					
-				}
-				b_rajgangpur = {
-					province = 3997
-					
-					color = { 95 155 41 }
-					
-				}
-				b_bikramkhol = {
-					province = 3998
-					
-					color = { 95 155 41 }
 					
 				}
 			}
@@ -81686,29 +81757,6 @@ e_kalinga = {
 					
 				}
 			}
-			c_swetaka_mandala = {
-				color = { 70 200 115 }
-				
-				
-				b_swetakapura = {
-					province = 1228
-					
-					color = { 70 200 115 }
-					
-				}
-				b_rayagada = {
-					province = 9652
-					
-					color = { 70 200 115 }
-					
-				}
-				b_asurgarh = {
-					province = 9653
-					
-					color = { 70 200 115 }
-					
-				}
-			}
 			c_vizagipatam = {
 				color = { 70 220 95 }
 				
@@ -81787,6 +81835,186 @@ e_kalinga = {
 				}
 			}
 		}
+		
+		d_garhjats = {
+		
+			color = { 105 140 31 }
+			
+			capital = c_suvarnapura
+			
+			c_suvarnapura = {
+				color = { 105 140 31 }
+				
+				
+				b_suvarnapura = {
+					province = 1230
+					
+					color = { 105 140 31 }
+					
+				}
+				b_yajatinagara = {
+					province = 3994
+					
+					color = { 105 140 31 }
+					
+				}
+				b_vinitapura = {
+					province = 3995
+					
+					color = { 105 140 31 }
+					
+				}
+				b_ranipur = {
+					province = 3996
+					
+					color = { 105 140 31 }
+					
+				}
+			}
+			
+			c_khinjali_mandala = {
+				color = { 115 170 25 }
+				
+				
+				b_khinjali = {
+					province = 1229
+					
+					color = { 115 170 25 }
+					
+				}
+				b_nilamadhav = {
+					province = 3989
+					
+					color = { 115 170 25 }
+					
+				}
+				b_nayagarh = {
+					province = 3990
+					
+					color = { 115 170 25 }
+					
+				}
+			}
+			
+			c_swetaka_mandala = {
+				color = { 70 200 115 }
+				
+				
+				b_swetakapura = {
+					province = 1228
+					
+					color = { 70 200 115 }
+					
+				}
+				b_rayagada = {
+					province = 9652
+					
+					color = { 70 200 115 }
+					
+				}
+				b_asurgarh = {
+					province = 9653
+					
+					color = { 70 200 115 }
+					
+				}
+			}
+			
+		
+		}
+		
+		d_chotanagpur = {
+			color = { 105 150 41 }
+			
+			capital = c_khijjingakota
+			
+			c_khijjingakota = {
+				color = { 125 175 30 }
+				
+				
+				b_khijjinga = {
+					province = 1247
+					
+					color = { 125 175 30 }
+					
+				}
+				b_asanapat = {
+					province = 3983
+					
+					color = { 125 175 30 }
+					
+				}
+				b_bahalda = {
+					province = 3984
+					
+					color = { 125 175 30 }
+					
+				}
+				b_ghatagaon = {
+					province = 3985
+					
+					color = { 125 175 30 }
+					
+				}
+				b_malayagiri = {
+					province = 3986
+					
+					color = { 125 175 30 }
+					
+				}
+			}
+			
+			
+			c_kodalaka_mandala = {
+				color = { 135 190 25 }
+				
+				
+				b_kodalaka = {
+					province = 1156
+					
+					color = { 135 190 25 }
+					
+				}
+				b_bajrakot = {
+					province = 3987
+					
+					color = { 135 190 25 }
+					
+				}
+				b_deogarh = {
+					province = 3988
+					
+					color = { 135 190 25 }
+					
+				}
+			}
+	
+			c_sambalpur = {
+				color = { 95 155 41 }
+				
+				
+				b_sambalpur = {
+					province = 1249
+					
+					color = { 95 155 41 }
+					
+				}
+				b_rajgangpur = {
+					province = 3997
+					
+					color = { 95 155 41 }
+					
+				}
+				b_bikramkhol = {
+					province = 3998
+					
+					color = { 95 155 41 }
+					
+				}
+			}
+			
+		}
+		
 	}
 	
 	
@@ -81821,6 +82049,20 @@ e_deccan = {
 				add = @always_primary_score
 			}
 		}
+	}
+	
+	k_kandamba_goa = {
+		color = { 115 20 60 }
+
+		capital = c_kanara
+
+	}
+	
+	k_chanda = {
+		color = { 190 30 10 }
+
+		capital = c_canda
+
 	}
 	
 	k_maharastra = {
@@ -82908,7 +83150,48 @@ e_chola = {
 		}
 	}
 	
+	k_madurai = {
+		color = { 190 20 65 }
+		
+		capital = c_madurai
+		
+	}
 	
+	k_venadu = {
+		color = { 140 55 75 }
+		
+		capital = c_venadu
+		
+	}
+	
+	k_cochin = {
+		color = { 160 75 75 }
+		
+		capital = c_kerala
+		
+	}
+	
+	k_kozhikode = {
+		color = { 140 75 95 }
+		
+		capital = c_eranad
+		
+	}
+	
+	k_chera = {
+		color = { 140 75 95 }
+		
+		capital = c_eranad
+		
+	}
+	
+	k_alupas = {
+		color = { 140 75 95 }
+				
+		
+		capital = c_alupa
+		
+	}
 	
 	k_tamilakam = {
 		color = { 200 25 65 }
@@ -83577,6 +83860,28 @@ e_chola = {
 		}
 	}
 	
+	
+	k_jaffna = {
+		color = { 181 155 55 }
+		
+		
+		capital = c_phiti
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:sinhala
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		
+		
+	}
+	
+	
+	
 	k_lanka = {
 		color = { 221 187 80 }
 		
@@ -83802,6 +84107,21 @@ e_tibet = {
 	
 	
 	capital = c_lhasa
+	
+	
+	k_maqpon = {
+		color = { 190 210 245 }
+		
+		capital = c_skardu
+				
+	}
+	
+	k_gilgit = {
+		color = { 250 60 20 }
+		
+		capital = c_gilgit
+				
+	}
 	
 	k_u = {
 		color = { 3 144 252 }
@@ -87578,23 +87898,6 @@ e_tibet = {
 					province = 9141
 					
 					color = { 218 240 72 }
-					
-				}
-			}
-			c_daramdin = {
-				color = { 160 171 89 }
-				
-				
-				b_daramdin = {
-					province = 9129
-					
-					color = { 160 171 89 }
-					
-				}
-				b_darjeeling = {
-					province = 9128
-					
-					color = { 160 171 89 }
 					
 				}
 			}

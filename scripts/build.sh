@@ -113,7 +113,7 @@ build-edition \
 
 build-edition \
     "ce-more-cultural-names" "Culture Expanded - More Cultural Names" \
-    "CK3CE" "1.10.*" \
+    "CK3CE" "1.11.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ce_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
@@ -123,12 +123,12 @@ build-edition \
 
 build-edition \
     "ibl-more-cultural-names" "Ibn Battuta's Legacy 2 - More Cultural Names" \
-    "CK3IBL" "1.9.*" \
+    "CK3IBL" "1.11.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
     "mbp-more-cultural-names" "More Bookmarks+ - More Cultural Names" \
-    "CK3MBP" "1.10.*" \
+    "CK3MBP" "1.11.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
