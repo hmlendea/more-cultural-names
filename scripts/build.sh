@@ -98,12 +98,12 @@ build-edition \
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
-    "CK3" "1.10.*" \
+    "CK3" "1.11.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
 
 build-edition \
     "aep-more-cultural-names" "Asia Expansion Project - More Cultural Names" \
-    "CK3AEP" "1.10.*" \
+    "CK3AEP" "1.11.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3aep_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
@@ -143,7 +143,7 @@ build-edition \
 
 build-edition \
     "tfe-more-cultural-names" "The Fallen Eagle - More Cultural Names" \
-    "CK3TFE" "1.9.*" \
+    "CK3TFE" "1.11.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
