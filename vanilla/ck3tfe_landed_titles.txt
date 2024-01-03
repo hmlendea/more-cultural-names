@@ -1183,6 +1183,9 @@ e_britannia = {
 			name_list_afro_roman = cn_britannia
 			name_list_gallo_roman = cn_britannia
 			name_list_britano_roman = cn_britannia
+			name_list_anglo_saxon = cn_england
+			name_list_old_saxon = cn_england
+			name_list_english = cn_england
 		}
 		
 		d_bedford = { # Essex
@@ -11398,6 +11401,36 @@ e_byzantium = {
 		color = { 200 70 50 }
 		
 		
+		d_hellespontus = {
+			color = { 175 20 100 }
+			capital = c_abydos
+		}
+
+		d_caria = {
+			color = { 215 40 70 }
+			capital = c_caria
+		}
+
+		d_lycia = {
+			color = { 210 40 30 }
+			capital = c_lycia
+		}
+
+		d_phyrgia_pacatiana = {
+			color = { 185 70 140 }
+			capital = c_hadrianeia
+		}
+
+		d_phyrgia_salutaris = {
+			color = { 200 75 75 }
+			capital = c_pacatiana
+		}
+		
+		d_pisidia = {
+			color = { 200 47 22 }
+			capital = c_philomelium
+		}
+
 		capital = c_ionia # Ephesus
 		no_automatic_claims = yes
 		can_create = {
@@ -11435,6 +11468,19 @@ e_byzantium = {
 			
 			capital = c_negev
 		}
+		
+
+		d_isauria = {
+			color = { 220 67 5 }
+			capital = c_seleucia
+		}
+
+		d_cilicia_secunda = {
+			color = { 112 197 50 }
+			capital = c_alexandretta
+		}
+
+
 		#d_phoenicia = {
 		#	color = { 160 160 200 }
 		#	
@@ -11677,6 +11723,11 @@ e_byzantium = {
 			}
 		}
 		
+		d_macedonia_salutaris = {
+			color = { 175 30 130 }
+			capital = c_skopje
+		}
+
 		d_thessaly = {
 			color = { 170 30 165 }
 			
@@ -13289,12 +13340,21 @@ e_byzantium = {
 			}
 		}
 		
+		d_galatia_salutaris = {
+			color = { 197 70 42 }
+			capital = c_galatia_salutaris
+		}
+
+		d_honorias = {
+			color = { 180 62 127 }
+			capital = c_honorias
+		}
 		
 		d_opsikion = {
 			color = { 146 47 130 }
 			
 			
-			capital = c_nikaea
+			capital = c_bithynia
 			
 			c_mysia = {
 				color = { 134 47 165 }
@@ -14491,7 +14551,7 @@ e_byzantium = {
 			capital = c_trebizond
 			
 			cultural_names = {
-				name_list_greek = cn_khaldia
+				#name_list_greek = cn_khaldia # temporarily turned off in the ERE rework
 			}
 			
 			c_trebizond = {
@@ -14754,7 +14814,7 @@ e_byzantium = {
 			}
 		}
 		d_bucellaria = {
-			color = { 180 62 127 }
+			color = { 215 60 115 }
 			
 			
 			capital = c_galatia
@@ -14941,7 +15001,7 @@ e_byzantium = {
 		}
 		
 		cultural_names = {
-			name_list_greek = cn_anatolikon
+			#name_list_greek = cn_anatolikon # temp disabled ere rework
 			name_list_turkish = cn_anadolu
 			name_list_roman = cn_asia
 		}
@@ -15209,7 +15269,7 @@ e_byzantium = {
 			capital = c_pamphylia
 			
 			cultural_names = {
-				name_list_greek = cn_kibyrrhaiotai
+				#name_list_greek = cn_kibyrrhaiotai commented out for now in favor of PAMPHYLIA
 				name_list_turkish = cn_kibirreoton
 			}
 			
@@ -30004,6 +30064,115 @@ e_tartaria = {
 				}
 			}
 		}
+
+		
+		d_jemba = {
+			color = { 186 13 53 }
+			
+			
+			capital = c_qoshagyl
+			
+			c_qoshagyl = {
+				color = { 156 6 41 }
+				
+				
+				b_qoshagyl = {
+					province = 7065
+					
+					color = { 156 6 41 }
+					
+				}
+				b_azgyl = {
+					province = 7066
+					
+					color = { 156 6 41 }
+					
+				}
+				b_kumstan = {
+					province = 7072
+					
+					color = { 156 6 41 }
+					
+				}
+				b_tengiz = {
+					province = 7073
+					
+					color = { 156 6 41 }
+					
+				}
+				b_beyneu = {
+					province = 7074
+					
+					color = { 156 6 41 }
+					
+				}
+			}
+			c_akkityk = {
+				color = { 145 25 25 }
+				
+				
+				b_akkityk = {
+					province = 621
+					
+					color = { 145 25 25 }
+					
+				}
+				b_kashkarata = {
+					province = 7093
+					
+					color = { 145 25 25 }
+					
+				}
+				b_issenjau = {
+					province = 7067
+					
+					color = { 145 25 25 }
+					
+				}
+				b_namastau = {
+					province = 7068
+					
+					color = { 145 25 25 }
+					
+				}
+				b_asheh-atrik = {
+					province = 7069
+					
+					color = { 145 25 25 }
+					
+				}
+			}
+			c_kos-buwak = {
+				color = { 163 44 70 }
+				
+				
+				b_kos-buwak = {
+					province = 7070
+					
+					color = { 163 44 70 }
+					
+				}
+				b_chumishtikul = {
+					province = 7071
+					
+					color = { 163 44 70 }
+					
+				}
+				b_sam = {
+					province = 7075
+					
+					color = { 163 44 70 }
+					
+				}
+				b_churuk = {
+					province = 7076
+					
+					color = { 163 44 70 }
+					
+				}
+			}
+		}
+
 	}
 	
 	k_cuman = {
@@ -34177,113 +34346,26 @@ e_turan = {
 				}
 			}
 		}
+
+
+
+	}
+	
+	k_syr_darya = {
+		color = { 194 214 62 }
 		
-		d_jemba = {
-			color = { 186 13 53 }
-			
-			
-			capital = c_qoshagyl
-			
-			c_qoshagyl = {
-				color = { 156 6 41 }
-				
-				
-				b_qoshagyl = {
-					province = 7065
-					
-					color = { 156 6 41 }
-					
+		
+		capital = c_chah
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_turkic } 
 				}
-				b_azgyl = {
-					province = 7066
-					
-					color = { 156 6 41 }
-					
-				}
-				b_kumstan = {
-					province = 7072
-					
-					color = { 156 6 41 }
-					
-				}
-				b_tengiz = {
-					province = 7073
-					
-					color = { 156 6 41 }
-					
-				}
-				b_beyneu = {
-					province = 7074
-					
-					color = { 156 6 41 }
-					
-				}
-			}
-			c_akkityk = {
-				color = { 145 25 25 }
-				
-				
-				b_akkityk = {
-					province = 621
-					
-					color = { 145 25 25 }
-					
-				}
-				b_kashkarata = {
-					province = 7093
-					
-					color = { 145 25 25 }
-					
-				}
-				b_issenjau = {
-					province = 7067
-					
-					color = { 145 25 25 }
-					
-				}
-				b_namastau = {
-					province = 7068
-					
-					color = { 145 25 25 }
-					
-				}
-				b_asheh-atrik = {
-					province = 7069
-					
-					color = { 145 25 25 }
-					
-				}
-			}
-			c_kos-buwak = {
-				color = { 163 44 70 }
-				
-				
-				b_kos-buwak = {
-					province = 7070
-					
-					color = { 163 44 70 }
-					
-				}
-				b_chumishtikul = {
-					province = 7071
-					
-					color = { 163 44 70 }
-					
-				}
-				b_sam = {
-					province = 7075
-					
-					color = { 163 44 70 }
-					
-				}
-				b_churuk = {
-					province = 7076
-					
-					color = { 163 44 70 }
-					
-				}
+				add = @better_than_the_alternatives_score
 			}
 		}
+
 		
 		d_aral_il = {	#fictional name for "land of Aral"
 			color = { 250 50 50 }
@@ -34400,23 +34482,6 @@ e_turan = {
 					color = { 230 40 75 }
 					
 				}
-			}
-		}
-
-	}
-	
-	k_syr_darya = {
-		color = { 194 214 62 }
-		
-		
-		capital = c_chah
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = { has_cultural_pillar = heritage_turkic } 
-				}
-				add = @better_than_the_alternatives_score
 			}
 		}
 		
@@ -47946,7 +48011,12 @@ e_spain = {
 		
 		capital = c_tarragona
 		ai_primary_priority = {
-			add = @always_primary_score
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_iberian }
+				}
+				add = @correct_culture_primary_score
+			}
 		}
 	}
 	k_carthaginensis = {
@@ -47954,7 +48024,12 @@ e_spain = {
 		
 		capital = c_murcia
 		ai_primary_priority = {
-			add = @always_primary_score
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_iberian }
+				}
+				add = @correct_culture_primary_score
+			}
 		}
 	}
 	k_andalusia = {
@@ -57116,6 +57191,10 @@ e_abyssinia = {
 				add = @correct_culture_primary_score
 			}
 		}
+
+		cultural_names = {
+			name_list_meroitic = cn_kush
+		}
 		
 		d_nobatia = {
 			color = { 162 133 85 }
@@ -57321,7 +57400,7 @@ e_abyssinia = {
 			color = { 187 123 1 }
 			
 			
-			capital = c_meroe
+			capital = c_abwab
 
 			c_meroe = {
 				color = { 155 140 67 }
@@ -77638,6 +77717,15 @@ k_visigoths = {
 	ignore_titularity_for_title_weighting = yes
 
 	capital = c_toledo
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_east_germanic }
+			}
+			add = @correct_culture_primary_score
+		}
+	}
 	
 	d_visigoths = {
 		color = { 81 64 53 }
@@ -77660,7 +77748,7 @@ k_thracian_goths = {
 	ignore_titularity_for_title_weighting = yes
 }
 k_ostrogoths = {
-	color = { 37 80 156 }
+	color = { 27 110 136 }
 	landless = yes
 	ignore_titularity_for_title_weighting = yes
 
@@ -77721,6 +77809,17 @@ k_lombardia = {
 		landless = yes 
 
 		definite_form = yes
+
+		ignore_titularity_for_title_weighting = yes
+
+		ai_primary_priority = {
+			if = {
+				limit = {
+				culture = { has_cultural_pillar = heritage_central_germanic }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
 	}
 	d_visigoths = {
 		color = { 81 64 53 }
@@ -78159,6 +78258,16 @@ d_eastbavares = {
 }
 d_baquates = {
 	color = { 199 59 10 }
+	landless = yes
+	definite_form = yes
+}
+d_avaritana = {
+	color = { 109 59 10 }
+	landless = yes
+	definite_form = yes
+}
+d_zaba = {
+	color = { 159 69 30 }
 	landless = yes
 	definite_form = yes
 }
@@ -80827,7 +80936,8 @@ e_yugoslavia = {
 			color = { 120 110 110 }
 			
 			
-			capital = c_naissus # Naissos / Nis
+			#capital = c_naissus # Naissos / Nis
+			capital = c_hvosno
 			
 			
 			c_hvosno = {
@@ -86682,7 +86792,12 @@ k_toledo = {
 	
 	capital = c_toledo
 	ai_primary_priority = {
-		add = @always_primary_score
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_iberian }
+			}
+			add = @correct_culture_primary_score
+		}
 	}
 }
 
@@ -86814,18 +86929,22 @@ d_metz = {
 ### 532 Frankish Kingdoms ###
 
 k_frankish_rheims = {
-	color = { 35 60 210 }
-	capital = c_rheims
+	color = { 55 80 210 }
+	capital = c_reims
 }
 k_frankish_soissons = {
 	color = { 15 40 210 }
 	capital = c_valois
 }
 k_frankish_paris = {
-	color = { 24 52 226 }
+	color = { 33 64 242 }
 	capital = c_ile_de_france
 }
 k_frankish_orleans = {
 	color = { 32 51 99 }
 	capital = c_orleans
+}
+k_mauro_roman_kingdom = {
+	color = { 72 111 29 }
+	capital = c_tlemcen
 }
