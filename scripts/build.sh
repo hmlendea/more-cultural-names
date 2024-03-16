@@ -152,7 +152,7 @@ build-edition \
 
 build-edition \
     "mdm-more-cultural-names" "Millennium Dawn: More Cultural Names" \
-    "HOI4MDM" "1.13.*" \
+    "HOI4MDM" "1.14.*" \
     --dependency "Millennium Dawn: A Modern Day Mod"
 
 build-edition \
