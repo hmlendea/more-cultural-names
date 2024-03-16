@@ -148,7 +148,7 @@ build-edition \
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
-    "HOI4" "1.13.*"
+    "HOI4" "1.14.*"
 
 build-edition \
     "mdm-more-cultural-names" "Millennium Dawn: More Cultural Names" \
