@@ -1406,6 +1406,8 @@ e_ottoman = { #Becomes de_jure Empire for Anatolia for last bookmarks
 		color = { 115 205 130 }
 		capital = c_prusa #Moved all over the place in the 1300's. Going with Bursa since that's what it was in 1337
 		definite_form = yes
+		
+		
 }
 
 
@@ -2147,7 +2149,7 @@ d_zunbil = { # Rutbils # Zunbils
 d_shabankara = { # Shabankara
 	color = { 244 190 91 }
 	capital = c_darabjerd # Darabjird #was 642 # Larestan
-	can_be_named_after_dynasty = no 
+	#can_be_named_after_dynasty = no 
 	de_jure_drift_disabled = yes
 
 }
@@ -13418,6 +13420,9 @@ e_byzantium = {
 	k_ottoman = {
 		color = { 247 145 30 }
 		capital = c_prusa #Moved all over the place in the 1300's. Going with Bursa since that's what it was in 1337
+		
+		can_be_named_after_dynasty = no
+		
 	}
 
 	k_rum = {
@@ -76134,9 +76139,10 @@ e_india = {					  # Titular, created by special decision only if entire India is
 e_rajastan = {
 	color = { 255 100 0 }
 	
+	can_be_named_after_dynasty = no
 	
 	capital = c_delhi # Kanyakubja
-	definite_form = yes
+	#definite_form = yes
 	ai_primary_priority = {
 		if = {
 			limit = {
