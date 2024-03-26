@@ -80,8 +80,8 @@ update-vanilla-files \
     "${CK3_LANDED_TITLES_DIR}"/*.txt
 update-vanilla-files \
     "${CK3CMH_VANILLA_LANDED_TITLES_FILE}" \
-    "${CK3AP_LANDED_TITLES_DIR}"/*.txt \
     "${CK3IBL_LANDED_TITLES_DIR}"/*.txt \
+    "${CK3CE_LANDED_TITLES_DIR}"/*.txt \
     "${CK3RICE_LANDED_TITLES_DIR}"/*.txt
 update-vanilla-file \
     "${CK3IBL_DIR}/common/landed_titles/00_landed_titles.txt" \
