@@ -299,7 +299,7 @@ function get-name-lines() {
         "Livvi" "olo" \
         "Lojban" "jbo" \
         "Lombard" "lmo" \
-        "Luba-Katanga" "lu" \
+        "LubaKatanga" "lu" \
         "Luganda" "lg" \
         "Luxembourgish" "lb" \
         "Macedonian_Slavic" "mk" \
@@ -315,7 +315,7 @@ function get-name-lines() {
         "Mirandese" "mwl" \
         "Mongol" "mn" \
         "Nahuatl" "nah" \
-        "Nauru" "na" \
+        "Nauruan" "na" \
         "Navajo" "nv" \
         "Ndebele_North" "nd" \
         "Neapolitan" "nap" \
