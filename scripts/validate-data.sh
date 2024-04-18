@@ -3,10 +3,10 @@ source "scripts/common/paths.sh"
 source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
 source "${SCRIPTS_COMMON_DIR}/hoi4.sh"
 
-LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
-LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
-
-LOCATION_FALLBACKS=$(grep "<LocationId>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort | uniq)
+LANGUAGE_IDS="$(xmlstarlet sel -t -m "//Id" -v "." -n "${LANGUAGES_FILE}" | sort | uniq)"
+LOCATION_IDS="$(xmlstarlet sel -t -m "//Id" -v "." -n "${LOCATIONS_FILE}" | sort | uniq)"
+UNLINKED_LOCATION_IDS=$(xmlstarlet sel -t -m "//LocationEntity[not(GameIds/GameId)]" -v "Id" -n "${LOCATIONS_FILE}" | sort | uniq)
+FALLBACK_LOCATION_IDS=$(xmlstarlet sel -t -m "//FallbackLocations/LocationId" -v "." -n "${LOCATIONS_FILE}" | sort | uniq)
 
 LOCATIONS_FILE_LANGUAGE_IDS=$(grep "<Name language=" "${LOCATIONS_FILE}" | sed 's/^.*language=\"\([^\"]*\).*/\1/g' | sort | uniq)
 LANGUAGES_FILE_CONTENT=$(cat "${LANGUAGES_FILE}")
@@ -630,7 +630,7 @@ findRedundantNamesStrict "Tuscan_Medieval" "Sicilian_Medieval"
 findRedundantNamesStrict "Tuscan_Medieval" "Venetian_Medieval"
 wait
 
-for LOCATION_ID in $(xmlstarlet sel -t -m "/ArrayOfLocationEntity/LocationEntity[not(GameIds) and not(../../LocationEntity/FallbackLocations/LocationId[text()=current()/Id])] " -v "Id" -n "${LOCATIONS_FILE}" | sort); do
+for LOCATION_ID in $(comm -23 <(echo "${UNLINKED_LOCATION_IDS}" | tr ' ' '\n' | sort) <(echo "${FALLBACK_LOCATION_IDS}" | tr ' ' '\n' | sort) | tr '\n' ' '); do
     echo "Unused location: ${LOCATION_ID} -> Delete or move it to '${UNUSED_LOCATIONS_FILE}'"
 done
 
