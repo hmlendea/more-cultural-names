@@ -5,10 +5,14 @@ SCRIPTS_DIR="${REPO_DIR}/scripts"
 SCRIPTS_COMMON_DIR="${SCRIPTS_DIR}/common"
 OUTPUT_DIR="${REPO_DIR}/out"
 EXTRAS_DIR="${REPO_DIR}/extras"
+UNUSED_DATA_DIR="${REPO_DIR}/unused-data"
 VANILLA_FILES_DIR="${REPO_DIR}/vanilla"
 
 LANGUAGES_FILE="${REPO_DIR}/languages.xml"
 LOCATIONS_FILE="${REPO_DIR}/locations.xml"
+
+UNUSED_LANGUAGES_FILE="${UNUSED_DATA_DIR}/languages.xml"
+UNUSED_LOCATIONS_FILE="${UNUSED_DATA_DIR}/locations.xml"
 
 if [ -d "${HOME}/.games/Steam/common" ]; then
     STEAM_APPS_DIR="${HOME}/.games/Steam"

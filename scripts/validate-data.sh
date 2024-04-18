@@ -620,6 +620,14 @@ findRedundantNamesStrict "Tuscan_Medieval" "Sicilian_Medieval"
 findRedundantNamesStrict "Tuscan_Medieval" "Venetian_Medieval"
 wait
 
+for LOCATION_ID in ${LOCATION_IDS}; do
+    if ! xmlstarlet sel -t -c "//LocationEntity[Id='${LOCATION_ID}']" "${LOCATIONS_FILE}" | grep -q "<GameIds>"; then
+        if ! xmlstarlet sel -t -c "//LocationEntity[FallbackLocations/LocationId='${LOCATION_ID}']" "${LOCATIONS_FILE}" | grep -q "<LocationEntity>"; then
+            echo "Unused location: ${LOCATION_ID} -> Delete or move it to '${UNUSED_LOCATIONS_FILE}'"
+        fi
+    fi
+done
+
 for LANGUAGE_ID in ${LANGUAGE_IDS}; do
     LANGUAGE_IS_REDUNDANT=true
 
@@ -629,5 +637,5 @@ for LANGUAGE_ID in ${LANGUAGE_IDS}; do
         LANGUAGE_IS_REDUNDANT=false
     fi
 
-    ${LANGUAGE_IS_REDUNDANT} && echo "Unused langauge: ${LANGUAGE_ID}"
+    ${LANGUAGE_IS_REDUNDANT} && echo "Unused langauge: ${LANGUAGE_ID} -> Delete or move it to '${UNUSED_LANGUAGES_FILE}'"
 done
