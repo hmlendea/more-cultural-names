@@ -6,6 +6,8 @@ source "${SCRIPTS_COMMON_DIR}/hoi4.sh"
 LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 
+LOCATION_FALLBACKS=$(grep "<LocationId>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort | uniq)
+
 LOCATIONS_FILE_LANGUAGE_IDS=$(grep "<Name language=" "${LOCATIONS_FILE}" | sed 's/^.*language=\"\([^\"]*\).*/\1/g' | sort | uniq)
 LANGUAGES_FILE_CONTENT=$(cat "${LANGUAGES_FILE}")
 
@@ -334,6 +336,30 @@ function findRedundantNamesStrict() {
     grep -Pzo "\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />(\n\s*<Name .*)*\n\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\""
 }
 
+function validateThatTheLocationsAreOrdered() {
+    local LOCATIONS_FILE_TO_CHECK="${1}"
+    local ACTUAL_LOCATIONS_LIST=""
+    local EXPECTED_LOCATIONS_LIST=""
+
+    ACTUAL_LOCATIONS_LIST=$(head "${LOCATIONS_FILE_TO_CHECK}" -n "${WELL_COVERED_SECTION_END_LINE_NR}" | \
+                            grep -a "<Id>" && \
+                            tail -n +"${WELL_COVERED_SECTION_END_LINE_NR}" "${LOCATIONS_FILE_TO_CHECK}" | grep "Id>$" | \
+                            grep -Pzo "\n\s*<Id>[^<]*</Id>*\n\s*<(GeoNamesId|Pleiades|Wikidata)" | \
+                            grep -av "^\s*$" | \
+                            grep -a "<Id>")
+    ACTUAL_LOCATIONS_LIST=$(grep -a "<Id>" <<< "${ACTUAL_LOCATIONS_LIST}" | \
+                            sed 's/^\s*<Id>\([^<]*\).*/\1/g' | \
+                            sed -r '/^\s*$/d' | \
+                            perl -p0e 's/\r*\n/%NL%/g')
+    EXPECTED_LOCATIONS_LIST=$(echo "${ACTUAL_LOCATIONS_LIST}" | \
+                                sed 's/%NL%/\n/g' | \
+                                sort | \
+                                sed -r '/^\s*$/d' | \
+                                perl -p0e 's/\r*\n/%NL%/g')
+
+    diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
+}
+
 ### Make sure locations are sorted alphabetically
 
 OLD_LC_COLLATE=${LC_COLLATE}
@@ -349,26 +375,10 @@ EXPECTED_LANGUAGES_LIST=$(echo "${ACTUAL_LANGUAGES_LIST}" | \
                             sed -r '/^\s*$/d' | \
                             perl -p0e 's/\r*\n/%NL%/g')
 
-ACTUAL_LOCATIONS_LIST=$(head "${LOCATIONS_FILE}" -n "${WELL_COVERED_SECTION_END_LINE_NR}" | \
-                        grep -a "<Id>" && \
-                        tail -n +"${WELL_COVERED_SECTION_END_LINE_NR}" "${LOCATIONS_FILE}" | grep "Id>$" | \
-                        grep -Pzo "\n\s*<Id>[^<]*</Id>*\n\s*<(GeoNamesId|Pleiades|Wikidata)" | \
-                        grep -av "^\s*$" | \
-                        grep -a "<Id>")
-ACTUAL_LOCATIONS_LIST=$(grep -a "<Id>" <<< "${ACTUAL_LOCATIONS_LIST}" | \
-                        sed 's/^\s*<Id>\([^<]*\).*/\1/g' | \
-                        sed -r '/^\s*$/d' | \
-                        perl -p0e 's/\r*\n/%NL%/g')
-EXPECTED_LOCATIONS_LIST=$(echo "${ACTUAL_LOCATIONS_LIST}" | \
-                            sed 's/%NL%/\n/g' | \
-                            sort | \
-                            sed -r '/^\s*$/d' | \
-                            perl -p0e 's/\r*\n/%NL%/g')
-
-
+validateThatTheLocationsAreOrdered "${LOCATIONS_FILE}"
+validateThatTheLocationsAreOrdered "${UNUSED_LOCATIONS_FILE}"
 
 diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LANGUAGES_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LANGUAGES_LIST}" | sed 's/%NL%/\n/g')
-diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
 export LC_COLLATE=${OLD_LC_COLLATE}
 
 # Find missing / on node ending on the same line
@@ -620,12 +630,8 @@ findRedundantNamesStrict "Tuscan_Medieval" "Sicilian_Medieval"
 findRedundantNamesStrict "Tuscan_Medieval" "Venetian_Medieval"
 wait
 
-for LOCATION_ID in ${LOCATION_IDS}; do
-    if ! xmlstarlet sel -t -c "//LocationEntity[Id='${LOCATION_ID}']" "${LOCATIONS_FILE}" | grep -q "<GameIds>"; then
-        if ! xmlstarlet sel -t -c "//LocationEntity[FallbackLocations/LocationId='${LOCATION_ID}']" "${LOCATIONS_FILE}" | grep -q "<LocationEntity>"; then
-            echo "Unused location: ${LOCATION_ID} -> Delete or move it to '${UNUSED_LOCATIONS_FILE}'"
-        fi
-    fi
+for LOCATION_ID in $(xmlstarlet sel -t -m "/ArrayOfLocationEntity/LocationEntity[not(GameIds) and not(../../LocationEntity/FallbackLocations/LocationId[text()=current()/Id])] " -v "Id" -n "${LOCATIONS_FILE}" | sort); do
+    echo "Unused location: ${LOCATION_ID} -> Delete or move it to '${UNUSED_LOCATIONS_FILE}'"
 done
 
 for LANGUAGE_ID in ${LANGUAGE_IDS}; do
