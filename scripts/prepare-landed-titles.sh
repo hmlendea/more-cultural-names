@@ -181,7 +181,7 @@ fi
 
 if [ "${GAME}" == "CK2HIP" ] || [ "${GAME}" == "CK3MBP" ] || [ "${GAME}" == "CK3TFE" ]; then
     replace-cultural-name "gothic" "Gothic"
-    replace-cultural-name "thuringian" "Thuringian_Medieval"
+    replace-cultural-name "thuringian" "Thuringian"
 fi
 
 if [ "${GAME}" == "CK2HIP" ]; then
@@ -314,7 +314,7 @@ if [ "${GAME}" == "CK3TFE" ]; then
     replace-cultural-name "aquitanian" "Occitan_Old"
     replace-cultural-name "aramean" "Aramaic_Middle"
     replace-cultural-name "armenian" "Armenian_Classical"
-    replace-cultural-name "asturian" "Asturian_Medieval"
+    replace-cultural-name "asturian" "Asturian"
     replace-cultural-name "bastarnian" "Germanic_Proto"
     replace-cultural-name "breton" "Breton_Old"
     replace-cultural-name "briton" "Brittonic"
@@ -398,10 +398,10 @@ merge-languages "Tuscan_Medieval" "Tuscan_Medieval" "Venetian_Medieval"
 merge-languages "Italian" "Italian_Central" "Dalmatian_Medieval"
 merge-languages "Italian" "Italian" "Tuscan_Medieval"
 
-merge-languages "Alemannic_Medieval" "Alemannic_Medieval" "Thuringian_Medieval"
+merge-languages "Alemannic_Medieval" "Alemannic_Medieval" "Thuringian"
 merge-languages "Bavarian_Medieval" "Bavarian_Medieval" "Frankish"
 merge-languages "Bavarian_Medieval" "Bavarian_Medieval" "Alemannic_Medieval"
-merge-languages "Bavarian_Medieval" "Bavarian_Medieval" "Thuringian_Medieval"
+merge-languages "Bavarian_Medieval" "Bavarian_Medieval" "Thuringian"
 merge-languages "German_Old_Low" "German_Old_Low" "Alemannic_Medieval"
 merge-languages "German_Middle_Low" "German_Middle_Low" "German_Old_Low"
 merge-languages "German_Middle_Low" "German_Middle_Low" "Dutch_Middle"

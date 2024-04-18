@@ -1,10 +1,13 @@
 #!/bin/bash
 source "scripts/common/paths.sh"
-source "scripts/common/name_normalisation.sh"
-source "scripts/common/hoi4.sh"
+source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
+source "${SCRIPTS_COMMON_DIR}/hoi4.sh"
 
 LANGUAGE_IDS="$(grep "<Id>" "${LANGUAGES_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
 LOCATION_IDS="$(grep "<Id>" "${LOCATIONS_FILE}" | sed 's/[^>]*>\([^<]*\).*/\1/g' | sort)"
+
+LOCATIONS_FILE_LANGUAGE_IDS=$(grep "<Name language=" "${LOCATIONS_FILE}" | sed 's/^.*language=\"\([^\"]*\).*/\1/g' | sort | uniq)
+LANGUAGES_FILE_CONTENT=$(cat "${LANGUAGES_FILE}")
 
 GAME_IDS_CK="$(grep "<GameId game=\"CK" "${LOCATIONS_FILE}" | sed 's/^[^>]*>\([^<]*\).*/\1/g' | sort | uniq)"
 NAME_VALUES="$(grep "<Name language=\"" "${LOCATIONS_FILE}" | sed 's/.*value='"\""'\([^'"\""']*\).*/\1/g' | sort | uniq)"
@@ -336,6 +339,16 @@ function findRedundantNamesStrict() {
 OLD_LC_COLLATE=${LC_COLLATE}
 export LC_COLLATE=C
 WELL_COVERED_SECTION_END_LINE_NR=$(grep -n "@@@@ BELOW TITLES NEED REVIEW" "${LOCATIONS_FILE}" | awk -F":" '{print $1}')
+
+ACTUAL_LANGUAGES_LIST=$(grep -a '<Id>' "${LANGUAGES_FILE}" | \
+                            grep -v '_\(Ancient\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Proto\)' | \
+                            perl -p0e 's/\r*\n/%NL%/g')
+EXPECTED_LANGUAGES_LIST=$(echo "${ACTUAL_LANGUAGES_LIST}" | \
+                            sed 's/%NL%/\n/g' | \
+                            sort | \
+                            sed -r '/^\s*$/d' | \
+                            perl -p0e 's/\r*\n/%NL%/g')
+
 ACTUAL_LOCATIONS_LIST=$(head "${LOCATIONS_FILE}" -n "${WELL_COVERED_SECTION_END_LINE_NR}" | \
                         grep -a "<Id>" && \
                         tail -n +"${WELL_COVERED_SECTION_END_LINE_NR}" "${LOCATIONS_FILE}" | grep "Id>$" | \
@@ -352,6 +365,9 @@ EXPECTED_LOCATIONS_LIST=$(echo "${ACTUAL_LOCATIONS_LIST}" | \
                             sed -r '/^\s*$/d' | \
                             perl -p0e 's/\r*\n/%NL%/g')
 
+
+
+diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LANGUAGES_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LANGUAGES_LIST}" | sed 's/%NL%/\n/g')
 diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
 export LC_COLLATE=${OLD_LC_COLLATE}
 
@@ -529,22 +545,15 @@ findRedundantNames "Alemannic" "Alemannic_Medieval"
 findRedundantNames "Arabic" "Arabic_Classical"
 findRedundantNames "Arabic" "Egyptian_Arabic"
 findRedundantNames "Armenian" "Armenian_Middle"
-findRedundantNames "Asturian" "Asturian_Medieval"
-findRedundantNames "Bashkir" "Bashkir_Medieval"
-findRedundantNames "Basque" "Basque_Medieval"
 findRedundantNames "Bavarian" "Bavarian_Medieval"
 findRedundantNames "Breton" "Breton_Middle"
 findRedundantNames "Bulgarian" "Bulgarian_Old"
-findRedundantNames "Castilian" "Castilian_Old"
 findRedundantNames "Catalan" "Catalan_Old"
-findRedundantNames "Croatian" "Croatian_Medieval"
 findRedundantNames "Czech" "Czech_Medieval"
 findRedundantNames "Dalmatian" "Dalmatian_Medieval"
 findRedundantNames "Danish" "Danish_Middle"
 findRedundantNames "Dutch" "Dutch_Middle"
 findRedundantNames "English" "English_Middle"
-findRedundantNames "Estonian" "Estonian_Medieval"
-findRedundantNames "Finnish" "Finnish_Medieval"
 findRedundantNames "French" "French_Old"
 findRedundantNames "Galician" "Galician_Medieval"
 findRedundantNames "Genoese" "Genoese_Medieval"
@@ -553,7 +562,6 @@ findRedundantNames "Greek_Ancient" "Greek_Medieval"
 #findRedundantNames "Hungarian" "Hungarian_Old"
 findRedundantNames "Icelandic" "Icelandic_Old"
 findRedundantNames "Irish" "Irish_Middle"
-findRedundantNames "Khazar" "Khazar_Medieval"
 findRedundantNames "Kyrgyz" "Kyrgyz_Medieval"
 findRedundantNames "Latin_Old" "Latin_Classical"
 findRedundantNames "Latvian" "Latvian_Medieval"
@@ -567,18 +575,13 @@ findRedundantNames "Norwegian" "Norwegian_Old"
 findRedundantNames "Occitan" "Occitan_Old"
 findRedundantNames "Polish" "Polish_Old"
 findRedundantNames "Portuguese" "Portuguese_Old"
-findRedundantNames "Romanian" "Romanian_Old"
-findRedundantNames "Russian" "Russian_Medieval"
 findRedundantNames "Sami" "Sami_Medieval"
 findRedundantNames "Samogitian" "Samogitian_Medieval"
 findRedundantNames "Scottish_Gaelic" "Scottish_Gaelic_Medieval"
-findRedundantNames "Serbian" "Serbian_Medieval"
 findRedundantNames "SerboCroatian_Medieval" "Slovene_Medieval"
 findRedundantNames "Sicilian" "Sicilian_Medieval"
 findRedundantNames "Slovak" "Slovak_Medieval"
 findRedundantNames "Slovene" "Slovene_Medieval"
-findRedundantNames "Tajiki" "Tajiki_Medieval"
-findRedundantNames "Tajiki" "Thuringian_Medieval"
 findRedundantNames "Turkish" "Turkish_Old"
 findRedundantNames "Venetian" "Venetian_Medieval"
 findRedundantNames "Vepsian" "Vepsian_Medieval"
@@ -602,7 +605,6 @@ findRedundantNamesStrict "Norse" "Irish_Middle_Norse"
 findRedundantNamesStrict "Norse" "Norwegian_Old"
 findRedundantNamesStrict "Norse" "Swedish_Old"
 findRedundantNamesStrict "Spanish" "Castilian_Old"
-findRedundantNamesStrict "Spanish" "Castilian"
 findRedundantNamesStrict "Tuscan_Medieval" "Corsican"
 findRedundantNamesStrict "Tuscan_Medieval" "Dalmatian_Medieval"
 findRedundantNamesStrict "Tuscan_Medieval" "Dalmatian"
@@ -617,3 +619,15 @@ findRedundantNamesStrict "Tuscan_Medieval" "Sicilian"
 findRedundantNamesStrict "Tuscan_Medieval" "Sicilian_Medieval"
 findRedundantNamesStrict "Tuscan_Medieval" "Venetian_Medieval"
 wait
+
+for LANGUAGE_ID in ${LANGUAGE_IDS}; do
+    LANGUAGE_IS_REDUNDANT=true
+
+    if grep -q "${LANGUAGE_ID}" <<< "${LOCATIONS_FILE_LANGUAGE_IDS}" \
+    || grep -Pzoq "\n\s*<Id>${LANGUAGE_ID}</Id>.*\n\s*<Code.*\n\s*<(GameId)" <<< "${LANGUAGES_FILE_CONTENT}" \
+    || grep -Pzoq "\n\s*<Id>${LANGUAGE_ID}</Id>.*\n\s*<(GameId)" <<< "${LANGUAGES_FILE_CONTENT}"; then
+        LANGUAGE_IS_REDUNDANT=false
+    fi
+
+    ${LANGUAGE_IS_REDUNDANT} && echo "Unused langauge: ${LANGUAGE_ID}"
+done

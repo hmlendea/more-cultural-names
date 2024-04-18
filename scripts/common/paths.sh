@@ -2,6 +2,7 @@
 
 REPO_DIR="$(pwd)"
 SCRIPTS_DIR="${REPO_DIR}/scripts"
+SCRIPTS_COMMON_DIR="${SCRIPTS_DIR}/common"
 OUTPUT_DIR="${REPO_DIR}/out"
 EXTRAS_DIR="${REPO_DIR}/extras"
 VANILLA_FILES_DIR="${REPO_DIR}/vanilla"
