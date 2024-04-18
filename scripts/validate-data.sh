@@ -339,6 +339,16 @@ function findRedundantNamesStrict() {
 OLD_LC_COLLATE=${LC_COLLATE}
 export LC_COLLATE=C
 WELL_COVERED_SECTION_END_LINE_NR=$(grep -n "@@@@ BELOW TITLES NEED REVIEW" "${LOCATIONS_FILE}" | awk -F":" '{print $1}')
+
+ACTUAL_LANGUAGES_LIST=$(grep -a '<Id>' "${LANGUAGES_FILE}" | \
+                            grep -v '_\(Ancient\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Proto\)' | \
+                            perl -p0e 's/\r*\n/%NL%/g')
+EXPECTED_LANGUAGES_LIST=$(echo "${ACTUAL_LANGUAGES_LIST}" | \
+                            sed 's/%NL%/\n/g' | \
+                            sort | \
+                            sed -r '/^\s*$/d' | \
+                            perl -p0e 's/\r*\n/%NL%/g')
+
 ACTUAL_LOCATIONS_LIST=$(head "${LOCATIONS_FILE}" -n "${WELL_COVERED_SECTION_END_LINE_NR}" | \
                         grep -a "<Id>" && \
                         tail -n +"${WELL_COVERED_SECTION_END_LINE_NR}" "${LOCATIONS_FILE}" | grep "Id>$" | \
@@ -355,6 +365,9 @@ EXPECTED_LOCATIONS_LIST=$(echo "${ACTUAL_LOCATIONS_LIST}" | \
                             sed -r '/^\s*$/d' | \
                             perl -p0e 's/\r*\n/%NL%/g')
 
+
+
+diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LANGUAGES_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LANGUAGES_LIST}" | sed 's/%NL%/\n/g')
 diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
 export LC_COLLATE=${OLD_LC_COLLATE}
 
