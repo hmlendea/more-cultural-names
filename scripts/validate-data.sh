@@ -3,17 +3,20 @@ source "scripts/common/paths.sh"
 source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
 source "${SCRIPTS_COMMON_DIR}/hoi4.sh"
 
-LANGUAGE_IDS="$(xmlstarlet sel -t -m "//Id" -v "." -n "${LANGUAGES_FILE}" | sort | uniq)"
-LOCATION_IDS="$(xmlstarlet sel -t -m "//Id" -v "." -n "${LOCATIONS_FILE}" | sort | uniq)"
-UNLINKED_LOCATION_IDS=$(xmlstarlet sel -t -m "//LocationEntity[not(GameIds/GameId)]" -v "Id" -n "${LOCATIONS_FILE}" | sort | uniq)
-FALLBACK_LOCATION_IDS=$(xmlstarlet sel -t -m "//FallbackLocations/LocationId" -v "." -n "${LOCATIONS_FILE}" | sort | uniq)
+LANGUAGE_IDS=$(xmlstarlet sel -t -m "//Language" -v "Id" -n "${LANGUAGES_FILE}" | sort -u)
+UNLINKED_LANGUAGE_IDS=$(xmlstarlet sel -t -m "//Language[not(GameIds/GameId)]" -v "Id" -n "${LANGUAGES_FILE}" | sort -u)
+REFERENCED_LANGUAGE_IDS=$(xmlstarlet sel -t -m "//Name" -v "@language" -n "${LOCATIONS_FILE}" | sort -u)
+FALLBACK_LANGUAGE_IDS=$(xmlstarlet sel -t -m "//Language/FallbackLanguages/LanguageId" -v "." -n "${LANGUAGES_FILE}" | sort -u)
 
-LOCATIONS_FILE_LANGUAGE_IDS=$(grep "<Name language=" "${LOCATIONS_FILE}" | sed 's/^.*language=\"\([^\"]*\).*/\1/g' | sort | uniq)
+LOCATION_IDS=$(xmlstarlet sel -t -m "//LocationEntity" -v "Id" -n "${LOCATIONS_FILE}" | sort -u)
+UNLINKED_LOCATION_IDS=$(xmlstarlet sel -t -m "//LocationEntity[not(GameIds/GameId)]" -v "Id" -n "${LOCATIONS_FILE}" | sort -u)
+FALLBACK_LOCATION_IDS=$(xmlstarlet sel -t -m "//FallbackLocations/LocationId" -v "." -n "${LOCATIONS_FILE}" | sort -u)
+
 LANGUAGES_FILE_CONTENT=$(cat "${LANGUAGES_FILE}")
 
-GAME_IDS_CK="$(grep "<GameId game=\"CK" "${LOCATIONS_FILE}" | sed 's/^[^>]*>\([^<]*\).*/\1/g' | sort | uniq)"
-NAME_VALUES="$(grep "<Name language=\"" "${LOCATIONS_FILE}" | sed 's/.*value='"\""'\([^'"\""']*\).*/\1/g' | sort | uniq)"
-DEFAULT_NAME_VALUES="$(grep "<GameId game=" "${LOCATIONS_FILE}" | sed 's/.*<\!-- (.*) -->$/\1/g' | sort | uniq)"
+GAME_IDS_CK="$(xmlstarlet sel -t -m "//GameId[starts-with(@game, 'CK')]" -v "." -n "${LOCATIONS_FILE}" | sort -u)"
+NAME_VALUES="$(xmlstarlet sel -t -m "//Name" -v "@value" -n "${LOCATIONS_FILE}" | sort -u)"
+DEFAULT_NAME_VALUES="$(grep "<GameId game=" "${LOCATIONS_FILE}" | sed 's/.*<\!-- (.*) -->$/\1/g' | sort -u)"
 
 function getGameIds() {
     local GAME="${1}"
@@ -30,7 +33,7 @@ function checkForSurplusCk3LanguageLinks() {
                         <( \
                             grep "GameId game=\"${GAME}\"" "${LANGUAGES_FILE}" | \
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
-                            sort | uniq \
+                            sort -u \
                         ) <( \
                             find "${@}" -maxdepth 1 -name "*.txt" -exec cat {} + | \
                             grep -P '^\s*name_list\s*=' | \
@@ -38,7 +41,7 @@ function checkForSurplusCk3LanguageLinks() {
                             sed 's/\s//g' | \
                             sed 's/#.*//g' | \
                             sed 's/^name_list_//g' | \
-                            sort | uniq \
+                            sort -u \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
         echo "    > ${GAME}: ${CULTURE_ID} culture is defined but it does not exist"
@@ -79,7 +82,7 @@ function checkForMissingCkLocationLinks() {
                             grep -i "^\s*[ekdcb]_.*=" | \
                             awk -F"=" '{print $1}' | \
                             sed 's/[^a-zA-Z0-9_\-]//g' | \
-                            sort | uniq \
+                            sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g'); do
         LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LANDED_TITLE_ID}")
@@ -118,7 +121,7 @@ function checkForSurplusCkLocationLinks() {
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
-                            sort | uniq \
+                            sort -u \
                         ) <( \
                             cat "${VANILLA_LANDED_TITLES}" | \
                             if file "${VANILLA_LANDED_TITLES}" | grep -q 'Non-ISO\|ISO-8859'; then
@@ -129,7 +132,7 @@ function checkForSurplusCkLocationLinks() {
                             grep -i "^\s*[ekdcb]_.*=" | \
                             awk -F"=" '{print $1}' | \
                             sed 's/[^a-zA-Z0-9_\-]//g' | \
-                            sort | uniq \
+                            sort -u \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
         echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist"
@@ -144,11 +147,11 @@ function checkForSurplusIrLocationLinks() {
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
-                            sort | uniq \
+                            sort -u \
                         ) <( \
                             grep -i "^\s*PROV[0-9]*:.*" "${VANILLA_FILE}" | \
                             sed 's/^\s*PROV\([0-9]*\):.*$/\1/g' | \
-                            sort | uniq \
+                            sort -u \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
         echo "    > ${GAME_ID}: ${PROVINCE_ID} is defined but it does not exist"
@@ -192,7 +195,7 @@ function checkDefaultCk2Localisations() {
                                     iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
                                 ) | \
                             awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
-                            sort | uniq \
+                            sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
@@ -221,7 +224,7 @@ function checkDefaultCk3Localisations() {
                                     sed -e 's/= */=/g' -e 's/ *$//g'
                                 ) | \
                             awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
-                            sort | uniq \
+                            sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
@@ -286,7 +289,7 @@ function checkDefaultIrLocalisations() {
                                     sed -e 's/=\s*/=/g' -e 's/\s*$//g'
                                 ) | \
                             awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
-                            sort | uniq \
+                            sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
@@ -336,6 +339,18 @@ function findRedundantNamesStrict() {
     grep -Pzo "\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />(\n\s*<Name .*)*\n\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\""
 }
 
+function validateThatTheLanguagesAreOrdered() {
+    local LANGUAGES_FILE_TO_CHECK="${1}"
+    local ACTUAL_LANGUAGES_LIST=""
+    local EXPECTED_LANGUAGES_LIST=""
+
+    ACTUAL_LANGUAGES_LIST=$(xmlstarlet sel -t -m "//Id" -v "." -n "${LANGUAGES_FILE_TO_CHECK}" | \
+                            grep -v '_\(Ancient\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Proto\)')
+    EXPECTED_LANGUAGES_LIST=$(sort <<< ${ACTUAL_LANGUAGES_LIST})
+
+    diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LANGUAGES_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LANGUAGES_LIST}" | sed 's/%NL%/\n/g')
+}
+
 function validateThatTheLocationsAreOrdered() {
     local LOCATIONS_FILE_TO_CHECK="${1}"
     local ACTUAL_LOCATIONS_LIST=""
@@ -366,38 +381,40 @@ OLD_LC_COLLATE=${LC_COLLATE}
 export LC_COLLATE=C
 WELL_COVERED_SECTION_END_LINE_NR=$(grep -n "@@@@ BELOW TITLES NEED REVIEW" "${LOCATIONS_FILE}" | awk -F":" '{print $1}')
 
-ACTUAL_LANGUAGES_LIST=$(grep -a '<Id>' "${LANGUAGES_FILE}" | \
-                            grep -v '_\(Ancient\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Proto\)' | \
-                            perl -p0e 's/\r*\n/%NL%/g')
-EXPECTED_LANGUAGES_LIST=$(echo "${ACTUAL_LANGUAGES_LIST}" | \
-                            sed 's/%NL%/\n/g' | \
-                            sort | \
-                            sed -r '/^\s*$/d' | \
-                            perl -p0e 's/\r*\n/%NL%/g')
-
 validateThatTheLocationsAreOrdered "${LOCATIONS_FILE}"
 validateThatTheLocationsAreOrdered "${UNUSED_LOCATIONS_FILE}"
 
+validateThatTheLanguagesAreOrdered "${LANGUAGES_FILE}"
+validateThatTheLanguagesAreOrdered "${UNUSED_LANGUAGES_FILE}"
+
 diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LANGUAGES_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LANGUAGES_LIST}" | sed 's/%NL%/\n/g')
 export LC_COLLATE=${OLD_LC_COLLATE}
+
+for LANGUAGE_ID in $(comm -23 <(echo "${UNLINKED_LANGUAGE_IDS}") <(echo "${REFERENCED_LANGUAGE_IDS}") | grep -vf <(echo "${FALLBACK_LANGUAGE_IDS}")); do
+    echo "Unused language: ${LANGUAGE_ID} -> Delete or move it to '${UNUSED_LANGUAGES_FILE}'"
+done
+
+for LOCATION_ID in $(comm -23 <(echo "${UNLINKED_LOCATION_IDS}" | tr ' ' '\n' | sort) <(echo "${FALLBACK_LOCATION_IDS}" | tr ' ' '\n' | sort) | tr '\n' ' '); do
+    echo "Unused location: ${LOCATION_ID} -> Delete or move it to '${UNUSED_LOCATIONS_FILE}'"
+done
 
 # Find missing / on node ending on the same line
 grep "^\s*<[^>]*>[^<]*<[^/!]" *.xml
 
 # Find duplicated IDs
 grep "^\s*<Id>" *.xml | \
-    sort | uniq -c | \
+    sort -u -c | \
     grep "^ *[2-9]"
 
 # Find duplicated game IDs
 grep "<GameId game=" *.xml | \
     sed -e 's/[ \t]*<!--.*-->.*//g' -e 's/^[ \t]*//g' | \
-    sort | uniq -c | \
+    sort -u -c | \
     grep "^ *[2-9]"
 
 # Find duplicated db IDs
 grep "^\s*<\(Geo[Nn]ames\|Wiki[Dd]ata\)Id>" *.xml | \
-    sort | uniq -c | \
+    sort -u -c | \
     grep "^ *[2-9]"
 
 # Find duplicated names
@@ -414,7 +431,7 @@ for I in {1..3}; do
             -e 's/\"//g' | \
         grep "iso-639-${I}" | \
         awk -F"=" '{print $2}' | \
-        sort | uniq -c | grep "^ *[2-9]"
+        sort -u -c | grep "^ *[2-9]"
 done
 
 # Validate XML structure
@@ -461,7 +478,7 @@ for FALLBACK_LANGUAGE_ID in $(diff \
                     <( \
                         grep "<LanguageId>" "${LANGUAGES_FILE}" | \
                         sed 's/.*<LanguageId>\([^<>]*\)<\/LanguageId>.*/\1/g' | \
-                        sort | uniq \
+                        sort -u \
                     ) <( \
                         echo "${LANGUAGE_IDS}" | \
                         sed 's/ /\n/g') | \
@@ -474,7 +491,7 @@ for FALLBACK_LOCATION_ID in $(diff \
                     <( \
                         grep "<LocationId>" "${LOCATIONS_FILE}" | \
                         sed 's/.*<LocationId>\([^<>]*\)<\/LocationId>.*/\1/g' | \
-                        sort | uniq \
+                        sort -u \
                     ) <( \
                         echo "${LOCATION_IDS}" | \
                         sed 's/ /\n/g') | \
@@ -487,11 +504,11 @@ for LANGUAGE_ID in $(diff \
                     <( \
                         grep "<Name " *.xml | \
                         sed 's/.*language=\"\([^\"]*\).*/\1/g' | \
-                        sort | uniq \
+                        sort -u \
                     ) <( \
                         grep "<Id>" "${LANGUAGES_FILE}" | \
                         sed 's/^[^<]*<Id>\([^<]*\).*/\1/g' | \
-                        sort | uniq \
+                        sort -u \
                     ) | \
                     grep "^<" | sed 's/^< //g' | sed 's/ /@/g'); do
     echo "The \"${LANGUAGE_ID}\" language does not exit"
@@ -629,19 +646,3 @@ findRedundantNamesStrict "Tuscan_Medieval" "Sicilian"
 findRedundantNamesStrict "Tuscan_Medieval" "Sicilian_Medieval"
 findRedundantNamesStrict "Tuscan_Medieval" "Venetian_Medieval"
 wait
-
-for LOCATION_ID in $(comm -23 <(echo "${UNLINKED_LOCATION_IDS}" | tr ' ' '\n' | sort) <(echo "${FALLBACK_LOCATION_IDS}" | tr ' ' '\n' | sort) | tr '\n' ' '); do
-    echo "Unused location: ${LOCATION_ID} -> Delete or move it to '${UNUSED_LOCATIONS_FILE}'"
-done
-
-for LANGUAGE_ID in ${LANGUAGE_IDS}; do
-    LANGUAGE_IS_REDUNDANT=true
-
-    if grep -q "${LANGUAGE_ID}" <<< "${LOCATIONS_FILE_LANGUAGE_IDS}" \
-    || grep -Pzoq "\n\s*<Id>${LANGUAGE_ID}</Id>.*\n\s*<Code.*\n\s*<(GameId)" <<< "${LANGUAGES_FILE_CONTENT}" \
-    || grep -Pzoq "\n\s*<Id>${LANGUAGE_ID}</Id>.*\n\s*<(GameId)" <<< "${LANGUAGES_FILE_CONTENT}"; then
-        LANGUAGE_IS_REDUNDANT=false
-    fi
-
-    ${LANGUAGE_IS_REDUNDANT} && echo "Unused langauge: ${LANGUAGE_ID} -> Delete or move it to '${UNUSED_LANGUAGES_FILE}'"
-done
