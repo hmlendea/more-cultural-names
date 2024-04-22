@@ -16,7 +16,7 @@ LANGUAGES_FILE_CONTENT=$(cat "${LANGUAGES_FILE}")
 
 GAME_IDS_CK="$(xmlstarlet sel -t -m "//GameId[starts-with(@game, 'CK')]" -v "." -n "${LOCATIONS_FILE}" | sort -u)"
 NAME_VALUES="$(xmlstarlet sel -t -m "//Name" -v "@value" -n "${LOCATIONS_FILE}" | sort -u)"
-DEFAULT_NAME_VALUES="$(grep "<GameId game=" "${LOCATIONS_FILE}" | sed 's/.*<\!-- (.*) -->$/\1/g' | sort -u)"
+DEFAULT_NAME_VALUES="$(grep "<GameId game=" "${LOCATIONS_FILE}" | sed 's/.*<\!-- \(.*\) -->$/\1/g' | sort -u)"
 
 function getGameIds() {
     local GAME="${1}"
