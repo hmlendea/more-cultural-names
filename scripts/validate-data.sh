@@ -10,6 +10,7 @@ FALLBACK_LANGUAGE_IDS=$(xmlstarlet sel -t -m "//Language/FallbackLanguages/Langu
 
 LOCATION_IDS=$(xmlstarlet sel -t -m "//LocationEntity" -v "Id" -n "${LOCATIONS_FILE}" | sort -u)
 UNLINKED_LOCATION_IDS=$(xmlstarlet sel -t -m "//LocationEntity[not(GameIds/GameId)]" -v "Id" -n "${LOCATIONS_FILE}" | sort -u)
+UNUSED_LOCATION_IDS=$(xmlstarlet sel -t -m "//LocationEntity" -v "Id" -n "${UNUSED_LOCATIONS_FILE}" | sort -u)
 FALLBACK_LOCATION_IDS=$(xmlstarlet sel -t -m "//FallbackLocations/LocationId" -v "." -n "${LOCATIONS_FILE}" | sort -u)
 
 LANGUAGES_FILE_CONTENT=$(cat "${LANGUAGES_FILE}")
@@ -90,6 +91,8 @@ function checkForMissingCkLocationLinks() {
 
         if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif $(echo "${UNUSED_LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but unused location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
             echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif [ -n "${LOCATION_DEFAULT_NAME}" ]; then
@@ -98,6 +101,8 @@ function checkForMissingCkLocationLinks() {
 
             if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            elif $(echo "${UNUSED_LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+                echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but unused location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
             elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
             elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
@@ -324,19 +329,20 @@ function validateHoi4Parentage() {
 }
 
 function findRedundantNames() {
-    local PRIMARY_LANGUAGE_ID="${1}"
-    local SECONDARY_LANGUAGE_ID="${2}"
+    local PRIMARY_LANGUAGE_ID="${1}" && shift
 
-    grep -Pzo "\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />\n\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\""
-    grep -Pzo "\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />\n\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\""
-}
-
-function findRedundantNamesStrict() {
-    local PRIMARY_LANGUAGE_ID="${1}"
-    local SECONDARY_LANGUAGE_ID="${2}"
-
-    grep -Pzo "\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />(\n\s*<Name .*)*\n\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\""
-    grep -Pzo "\s*<Name language=\"${SECONDARY_LANGUAGE_ID}\" value=\"([^\"]*)\" />(\n\s*<Name .*)*\n\s*<Name language=\"${PRIMARY_LANGUAGE_ID}\" value=\"\1\" />\n" "${LOCATIONS_FILE}" | grep -a "\"${SECONDARY_LANGUAGE_ID}\""
+    for SECONDARY_LANGUAGE_ID in "${@}"; do
+        for LOCATION_ID in $(xmlstarlet \
+                                    sel -t -m \
+                                    "//LocationEntity[
+                                        Names/Name[@language='${PRIMARY_LANGUAGE_ID}']/@value = Names/Name[@language='${SECONDARY_LANGUAGE_ID}']/@value
+                                        and (not(Names/Name[@language='${PRIMARY_LANGUAGE_ID}']/@comment) and not(Names/Name[@language='${SECONDARY_LANGUAGE_ID}']/@comment))
+                                        or (Names/Name[@language='${PRIMARY_LANGUAGE_ID}']/@comment = Names/Name[@language='${SECONDARY_LANGUAGE_ID}']/@comment)
+                                    ]" \
+                                    -v "Id" -n "${LOCATIONS_FILE}"); do
+            echo "Redundant name for location '${LOCATION_ID}': ${SECONDARY_LANGUAGE_ID}"
+        done
+    done
 }
 
 function validateThatTheLanguagesAreOrdered() {
@@ -473,45 +479,16 @@ grep -Pzo "\n *<Code.*\n *<Language>.*\n" "${LANGUAGES_FILE}"
 
 grep -Pzo "\n *<LocationEntity.*\n *<[^I].*\n" "${LOCATIONS_FILE}"
 
-# Find non-existing fallback languages
-for FALLBACK_LANGUAGE_ID in $(diff \
-                    <( \
-                        grep "<LanguageId>" "${LANGUAGES_FILE}" | \
-                        sed 's/.*<LanguageId>\([^<>]*\)<\/LanguageId>.*/\1/g' | \
-                        sort -u \
-                    ) <( \
-                        echo "${LANGUAGE_IDS}" | \
-                        sed 's/ /\n/g') | \
-                    grep "^<" | sed 's/^< //g' | sed 's/ /@/g'); do
-    echo "The \"${FALLBACK_LANGUAGE_ID}\" fallback language does not exit"
+for LANGUAGE_ID in $(comm -13 <(echo "${LANGUAGE_IDS}") <(echo "${FALLBACK_LANGUAGE_IDS}")); do
+    echo "Inexistent fallback language: ${LANGUAGE_ID}"
 done
 
-# Find non-existing fallback locations
-for FALLBACK_LOCATION_ID in $(diff \
-                    <( \
-                        grep "<LocationId>" "${LOCATIONS_FILE}" | \
-                        sed 's/.*<LocationId>\([^<>]*\)<\/LocationId>.*/\1/g' | \
-                        sort -u \
-                    ) <( \
-                        echo "${LOCATION_IDS}" | \
-                        sed 's/ /\n/g') | \
-                    grep "^<" | sed 's/^< //g' | sed 's/ /@/g'); do
-    echo "The \"${FALLBACK_LOCATION_ID}\" fallback location does not exit"
+for LOCATION_ID in $(comm -13 <(echo "${LOCATION_IDS}") <(echo "${FALLBACK_LOCATION_IDS}")); do
+    echo "Inexistent fallback location: ${LOCATION_ID}"
 done
 
-# Find non-existing name languages
-for LANGUAGE_ID in $(diff \
-                    <( \
-                        grep "<Name " *.xml | \
-                        sed 's/.*language=\"\([^\"]*\).*/\1/g' | \
-                        sort -u \
-                    ) <( \
-                        grep "<Id>" "${LANGUAGES_FILE}" | \
-                        sed 's/^[^<]*<Id>\([^<]*\).*/\1/g' | \
-                        sort -u \
-                    ) | \
-                    grep "^<" | sed 's/^< //g' | sed 's/ /@/g'); do
-    echo "The \"${LANGUAGE_ID}\" language does not exit"
+for LANGUAGE_ID in $(comm -13 <(echo "${LANGUAGE_IDS}") <(echo "${REFERENCED_LANGUAGE_IDS}")); do
+    echo "Inexistent name language: ${LANGUAGE_ID}"
 done
 
 # Find multiple name definitions for the same language
@@ -567,10 +544,10 @@ checkDefaultIrLocalisations  "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
 
 # Find redundant names
+#findRedundantNames "Hungarian" "Hungarian_Old"
 findRedundantNames "Albanian" "Albanian_Medieval"
 findRedundantNames "Alemannic" "Alemannic_Medieval"
-findRedundantNames "Arabic" "Arabic_Classical"
-findRedundantNames "Arabic" "Egyptian_Arabic"
+findRedundantNames "Arabic" "Arabic_Classical" "Egyptian_Arabic" "Maghrebi"
 findRedundantNames "Armenian" "Armenian_Middle"
 findRedundantNames "Bavarian" "Bavarian_Medieval"
 findRedundantNames "Breton" "Breton_Middle"
@@ -581,14 +558,16 @@ findRedundantNames "Dalmatian" "Dalmatian_Medieval"
 findRedundantNames "Danish" "Danish_Middle"
 findRedundantNames "Dutch" "Dutch_Middle"
 findRedundantNames "English" "English_Middle"
+findRedundantNames "French_Middle" "French_Old"
 findRedundantNames "French" "French_Old"
 findRedundantNames "Galician" "Galician_Medieval"
 findRedundantNames "Genoese" "Genoese_Medieval"
 findRedundantNames "German" "German_Middle_High"
 findRedundantNames "Greek_Ancient" "Greek_Medieval"
-#findRedundantNames "Hungarian" "Hungarian_Old"
+findRedundantNames "Greek" "Greek_Medieval" "Greek_Ancient"
 findRedundantNames "Icelandic" "Icelandic_Old"
 findRedundantNames "Irish" "Irish_Middle"
+findRedundantNames "Italian" "Dalmatian_Medieval" "Dalmatian" "Langobardic" "Ligurian_Medieval" "Lombard_Medieval" "Neapolitan_Medieval" "Sicilian_Medieval" "Tuscan_Medieval" "Venetian_Medieval"
 findRedundantNames "Kyrgyz" "Kyrgyz_Medieval"
 findRedundantNames "Latin_Old" "Latin_Classical"
 findRedundantNames "Latvian" "Latvian_Medieval"
@@ -597,6 +576,7 @@ findRedundantNames "Lithuanian" "Lithuanian_Medieval"
 findRedundantNames "Livonian" "Livonian_Medieval"
 findRedundantNames "Lombard" "Lombard_Medieval"
 findRedundantNames "Neapolitan" "Neapolitan_Medieval"
+findRedundantNames "Norse" "Danish_Middle" "Danish_Old" "English_Old_Norse" "Gothic" "Icelandic_Old" "Irish_Middle_Norse" "Norwegian_Old" "Swedish_Old"
 findRedundantNames "Norwegian" "Norwegian_Nynorsk"
 findRedundantNames "Norwegian" "Norwegian_Old"
 findRedundantNames "Occitan" "Occitan_Old"
@@ -605,44 +585,16 @@ findRedundantNames "Portuguese" "Portuguese_Old"
 findRedundantNames "Sami" "Sami_Medieval"
 findRedundantNames "Samogitian" "Samogitian_Medieval"
 findRedundantNames "Scottish_Gaelic" "Scottish_Gaelic_Medieval"
+findRedundantNames "SerboCroatian" "SerboCroatian_Medieval" "Slovene_Medieval"
 findRedundantNames "SerboCroatian_Medieval" "Slovene_Medieval"
 findRedundantNames "Sicilian" "Sicilian_Medieval"
 findRedundantNames "Slovak" "Slovak_Medieval"
 findRedundantNames "Slovene" "Slovene_Medieval"
+findRedundantNames "Spanish" "Castilian_Old"
 findRedundantNames "Turkish" "Turkish_Old"
+findRedundantNames "Tuscan_Medieval" "Corsican" "Dalmatian_Medieval" "Dalmatian" "Langobardic" "Ligurian_Medieval" "Ligurian" "Lombard_Medieval" "Lombard" "Neapolitan_Medieval" "Sardinian" "Sicilian_Medieval" "Sicilian" "Venetian_Medieval"
 findRedundantNames "Venetian" "Venetian_Medieval"
 findRedundantNames "Vepsian" "Vepsian_Medieval"
 findRedundantNames "Welsh_Middle" "Welsh_Old"
 findRedundantNames "Welsh" "Welsh_Middle"
-findRedundantNamesStrict "Italian" "Dalmatian_Medieval"
-findRedundantNamesStrict "Italian" "Dalmatian"
-findRedundantNamesStrict "Italian" "Langobardic"
-findRedundantNamesStrict "Italian" "Ligurian_Medieval"
-findRedundantNamesStrict "Italian" "Lombard_Medieval"
-findRedundantNamesStrict "Italian" "Neapolitan_Medieval"
-findRedundantNamesStrict "Italian" "Sicilian_Medieval"
-findRedundantNamesStrict "Italian" "Tuscan_Medieval"
-findRedundantNamesStrict "Italian" "Venetian_Medieval"
-findRedundantNamesStrict "Norse" "Danish_Middle"
-findRedundantNamesStrict "Norse" "Danish_Old"
-findRedundantNamesStrict "Norse" "English_Old_Norse"
-findRedundantNamesStrict "Norse" "Gothic"
-findRedundantNamesStrict "Norse" "Icelandic_Old"
-findRedundantNamesStrict "Norse" "Irish_Middle_Norse"
-findRedundantNamesStrict "Norse" "Norwegian_Old"
-findRedundantNamesStrict "Norse" "Swedish_Old"
-findRedundantNamesStrict "Spanish" "Castilian_Old"
-findRedundantNamesStrict "Tuscan_Medieval" "Corsican"
-findRedundantNamesStrict "Tuscan_Medieval" "Dalmatian_Medieval"
-findRedundantNamesStrict "Tuscan_Medieval" "Dalmatian"
-findRedundantNamesStrict "Tuscan_Medieval" "Langobardic"
-findRedundantNamesStrict "Tuscan_Medieval" "Ligurian_Medieval"
-findRedundantNamesStrict "Tuscan_Medieval" "Ligurian"
-findRedundantNamesStrict "Tuscan_Medieval" "Lombard_Medieval"
-findRedundantNamesStrict "Tuscan_Medieval" "Lombard"
-findRedundantNamesStrict "Tuscan_Medieval" "Neapolitan_Medieval"
-findRedundantNamesStrict "Tuscan_Medieval" "Sardinian"
-findRedundantNamesStrict "Tuscan_Medieval" "Sicilian"
-findRedundantNamesStrict "Tuscan_Medieval" "Sicilian_Medieval"
-findRedundantNamesStrict "Tuscan_Medieval" "Venetian_Medieval"
 wait
