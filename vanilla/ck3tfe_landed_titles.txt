@@ -39100,6 +39100,19 @@ e_persia = {
 		
 		
 		capital	= c_ctesiphon # Ctesiphon
+
+		d_exilarchate = {
+			color = { 200 200 200 }
+
+			capital = c_ctesiphon
+	
+			definite_form = yes
+	
+			ai_primary_priority = {
+				add = @always_primary_score
+			}
+		}
+
 		
 		d_samarra = {
 			color = { 62 153 130 }
@@ -52208,35 +52221,6 @@ e_maghreb = {
 					
 				}
 			}
-			c_djanet = {
-				color = { 166 120 35 }
-				
-				
-				b_djanet = {
-					province = 6463
-					
-					color = { 166 120 35 }
-					
-				}
-				b_eferi = {
-					province = 6464
-					
-					color = { 166 120 35 }
-					
-				}
-				b_ahaggar = { #empty_corridor
-					province = 6663
-					
-					color = { 166 120 35 }
-					
-				}
-				b_east_ahaggar = { # empty_corridor
-					province = 6662
-					
-					color = { 166 120 35 }
-					
-				}
-			}
 		}
 		d_fezzan = {
 			color = { 173 85 19 }
@@ -52404,6 +52388,35 @@ e_maghreb = {
 					province = 6664
 					
 					color = { 168 138 40 }
+					
+				}
+			}
+			c_djanet = {
+				color = { 166 120 35 }
+				
+				
+				b_djanet = {
+					province = 6463
+					
+					color = { 166 120 35 }
+					
+				}
+				b_eferi = {
+					province = 6464
+					
+					color = { 166 120 35 }
+					
+				}
+				b_ahaggar = { #empty_corridor
+					province = 6663
+					
+					color = { 166 120 35 }
+					
+				}
+				b_east_ahaggar = { # empty_corridor
+					province = 6662
+					
+					color = { 166 120 35 }
 					
 				}
 			}
@@ -52775,57 +52788,6 @@ e_maghreb = {
 					province = 4717
 					
 					color = { 125 48 39 }
-					
-				}
-			}
-		}
-		d_canarias = {
-			color = { 42 127 201 }
-			
-			
-			capital = c_canarias # Gran Canaria
-			
-			c_canarias = {
-				color = { 22 107 181 }
-				
-				
-				b_grancanaria = {
-					province = 849
-					
-					color = { 22 107 181 }
-					
-				}
-				b_tenerife = {
-					province = 8713
-					
-					color = { 22 107 181 }
-					
-				}
-			}
-			c_fuerteventura = {
-				color = { 52 107 151 }
-				
-				b_fuerteventura = {
-					province = 8714
-					
-					color = { 22 127 161 }
-					
-				}
-				b_lanzarote = {
-					province = 8715
-					
-					color = { 22 127 161 }
-					
-				}
-			}
-			c_madeira = {
-				color = { 42 87 151 }
-				
-				
-				b_madeira = {
-					province = 8716
-					
-					color = { 42 107 161 }
 					
 				}
 			}
@@ -53228,6 +53190,85 @@ e_maghreb = {
 			}
 		}
 	}
+	k_canarias = {
+		color = { 242 231 125 }
+		cultural_names = {
+			name_list_guanches = cn_guanac
+		}
+		
+		capital = c_canarias # Tenerife
+
+		#Titular: created by decision.
+		can_create = { always = no }
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:guanches
+				}
+				add = @correct_culture_primary_score
+			}
+			if = {
+				limit = {
+					NOT = {
+						culture = culture:guanches
+					}
+				}
+				add = @better_than_the_alternatives_score
+			}
+		}
+		d_canarias = {
+			color = { 42 127 201 }
+			
+			
+			capital = c_canarias # Gran Canaria
+			
+			c_canarias = {
+				color = { 22 107 181 }
+				
+				
+				b_grancanaria = {
+					province = 849
+					
+					color = { 22 107 181 }
+					
+				}
+				b_tenerife = {
+					province = 8713
+					
+					color = { 22 107 181 }
+					
+				}
+			}
+			c_fuerteventura = {
+				color = { 52 107 151 }
+				
+				b_fuerteventura = {
+					province = 8714
+					
+					color = { 22 127 161 }
+					
+				}
+				b_lanzarote = {
+					province = 8715
+					
+					color = { 22 127 161 }
+					
+				}
+			}
+			c_madeira = {
+				color = { 42 87 151 }
+				
+				
+				b_madeira = {
+					province = 8716
+					
+					color = { 42 107 161 }
+					
+				}
+			}
+		}
+	}
 	k_tahert = {
 		color = { 210 235 87 }
 
@@ -53264,10 +53305,29 @@ e_arabia = {
 		}
 	}
 	
-	k_israel = {
+	k_israel = { # Changed to Judea
 		color = { 20 138 255 }
 
 		capital = c_jerusalem
+
+		d_sanhedrin = {
+			color = { 20 200 200 }
+	
+			capital = c_jerusalem
+		
+			definite_form = yes
+	
+			landless = yes
+		
+			ai_primary_priority = {
+				add = @always_primary_score
+			}
+	
+			destroy_if_invalid_heir = yes
+			no_automatic_claims = yes
+			always_follows_primary_heir = yes
+			de_jure_drift_disabled = yes
+		}
 	}
 	k_nabatea = {
 		color = { 81 36 78 }
@@ -72815,7 +72875,13 @@ e_deccan = {
 			
 			c_dakhina_desa = {
 				color = { 225 175 90 }
-				
+
+				b_malaya_rata = {
+					province = 3288
+
+					color = { 225 175 90 }
+					
+				}
 				
 				b_gimhathiththa = {
 					province = 3271
@@ -72825,12 +72891,6 @@ e_deccan = {
 				}
 				b_sitawaka = {
 					province = 3277
-
-					color = { 225 175 90 }
-					
-				}
-				b_malaya_rata = {
-					province = 3288
 
 					color = { 225 175 90 }
 					
