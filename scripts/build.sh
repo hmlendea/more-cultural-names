@@ -137,8 +137,8 @@ build-edition \
     --landed-titles "${CK3SoW_VANILLA_LANDED_TITLES_FILE}" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
-    "tba-more-cultural-names" "The Bronze Age: More Cultural Names" \
-    "CK3TBA" "1.2.*" \
+    "tba-more-cultural-names" "Bronze Age Reborn: More Cultural Names" \
+    "CK3TBA" "1.12.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tba_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
