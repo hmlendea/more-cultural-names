@@ -330,6 +330,7 @@ function validateHoi4Parentage() {
 
 function findRedundantNames() {
     local PRIMARY_LANGUAGE_ID="${1}" && shift
+    return # TODO: Rethink this because of fallbacks and time periods
 
     for SECONDARY_LANGUAGE_ID in "${@}"; do
         for LOCATION_ID in $(xmlstarlet \
@@ -407,20 +408,30 @@ done
 # Find missing / on node ending on the same line
 grep "^\s*<[^>]*>[^<]*<[^/!]" *.xml
 
-# Find duplicated IDs
-grep "^\s*<Id>" *.xml | \
-    sort -u -c | \
-    grep "^ *[2-9]"
+function checkForDuplicateEntries() {
+    local XML_FILE="${1}"
+    local ENTITY_FIELD="${2}"
+
+    for DUPLICATE_ENTRY in $(xmlstarlet sel -t -m '//*['"${ENTITY_FIELD}"']' -v "${ENTITY_FIELD}" -n "${XML_FILE}" | sort | uniq -d); do
+        echo "Duplicated ${ENTITY_FIELD} in '${XML_FILE}': ${DUPLICATE_ENTRY}"
+    done
+}
+
+for LANGUAGES_XML in "${LANGUAGES_FILE}" "${UNUSED_LANGUAGES_FILE}"; do
+    checkForDuplicateEntries "${LANGUAGES_XML}" 'Id'
+done
+
+for LOCATIONS_XML in "${LOCATIONS_FILE}" "${UNUSED_LOCATIONS_FILE}"; do
+    checkForDuplicateEntries "${LOCATIONS_XML}" 'Id'
+    checkForDuplicateEntries "${LOCATIONS_XML}" 'GeoNamesId'
+    checkForDuplicateEntries "${LOCATIONS_XML}" 'PleiadesId'
+    checkForDuplicateEntries "${LOCATIONS_XML}" 'WikiDataId'
+done
 
 # Find duplicated game IDs
 grep "<GameId game=" *.xml | \
     sed -e 's/[ \t]*<!--.*-->.*//g' -e 's/^[ \t]*//g' | \
-    sort -u -c | \
-    grep "^ *[2-9]"
-
-# Find duplicated db IDs
-grep "^\s*<\(Geo[Nn]ames\|Wiki[Dd]ata\)Id>" *.xml | \
-    sort -u -c | \
+    sort | uniq -c | \
     grep "^ *[2-9]"
 
 # Find duplicated names
@@ -437,7 +448,7 @@ for I in {1..3}; do
             -e 's/\"//g' | \
         grep "iso-639-${I}" | \
         awk -F"=" '{print $2}' | \
-        sort -u -c | grep "^ *[2-9]"
+        sort | uniq -c | grep "^ *[2-9]"
 done
 
 # Validate XML structure
