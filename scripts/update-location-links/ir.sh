@@ -84,8 +84,9 @@ function getProvinces() {
     done
 }
 
-getProvinces "IR"       "${IR_VANILLA_FILE}"        "ir_provinces.txt"
-getProvinces "IR_ABW"   "${IR_ABW_VANILLA_FILE}"    "irabw_provinces.txt"
-getProvinces "IR_AoE"   "${IR_AoE_VANILLA_FILE}"    "iraoe_provinces.txt"
-getProvinces "IR_INV"   "${IR_INV_VANILLA_FILE}"    "irinv_provinces.txt"
-getProvinces "IR_TBA"   "${IR_TBA_VANILLA_FILE}"    "irtba_provinces.txt"
+#getProvinces "IR"       "${IR_VANILLA_FILE}"        "ir_provinces.txt"
+#getProvinces "IR_ABW"   "${IR_ABW_VANILLA_FILE}"    "irabw_provinces.txt"
+#getProvinces "IR_AoE"   "${IR_AoE_VANILLA_FILE}"    "iraoe_provinces.txt"
+#getProvinces "IR_INV"   "${IR_INV_VANILLA_FILE}"    "irinv_provinces.txt"
+#getProvinces "IR_TBA"   "${IR_TBA_VANILLA_FILE}"    "irtba_provinces.txt"
+getProvinces "IR_TI"    "${IR_TI_VANILLA_FILE}"     "irti_provinces.txt"
