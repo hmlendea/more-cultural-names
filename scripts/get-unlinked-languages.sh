@@ -83,11 +83,20 @@ function getHoi4Countries() {
         [ -z "${COUNTRY_NAME}" ] && COUNTRY_NAME=$(getHoi4CountryName "${TAG}" "${LOCALISATIONS_DIR}/replace")
 
         if ! grep -q '<GameId game="'${GAME_ID}'">'${TAG}'</GameId>' "${LANGUAGES_FILE}"; then
+            if [ -n "${COUNTRY_NAME}" ]; then
+                if grep -qi 'Id>.*\b'"${COUNTRY_NAME}" "${LANGUAGES_FILE}"; then
+                    echo "    > ${GAME_ID}: Language with GameId ${TAG} is missing but it could potentially be linked to an existing one"
+                elif grep -qi 'Id>.*\b'"${COUNTRY_NAME}" "${UNUSED_LANGUAGES_FILE}"; then
+                    echo "    > ${GAME_ID}: Language with GameId ${TAG} is missing but it could potentially be linked to an existing unused one"
+                fi
+            fi
+
             printf "      <GameId game=\"${GAME_ID}\">${TAG}</GameId>"
             [ -n "${COUNTRY_NAME}" ] && printf " <!-- ${COUNTRY_NAME} -->"
             printf "\n"
         fi
-    done | sort | uniq
+
+    done
 }
 
 function getIrCultures() {
@@ -135,9 +144,9 @@ function getIrCultures() {
                                     sed 's/^\s*\"\([^\"]*\).*/\1/g'); do
                 if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
                     if grep -qi 'Id>.*\b'"${CULTURE_ID}" "${LANGUAGES_FILE}"; then
-                        echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing could potentially be linked to an existing one"
+                        echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing but it could potentially be linked to an existing one"
                     elif grep -qi 'Id>.*\b'"${CULTURE_ID}" "${UNUSED_LANGUAGES_FILE}"; then
-                        echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing could potentially be linked to an existing unused one"
+                        echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing but it could potentially be linked to an existing unused one"
                     fi
 
                     echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
