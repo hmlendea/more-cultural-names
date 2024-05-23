@@ -134,11 +134,17 @@ function getIrCultures() {
                                     grep "^\s*\"" | \
                                     sed 's/^\s*\"\([^\"]*\).*/\1/g'); do
                 if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
+                    if grep -qi 'Id>.*\b'"${CULTURE_ID}" "${LANGUAGES_FILE}"; then
+                        echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing could potentially be linked to an existing one"
+                    elif grep -qi 'Id>.*\b'"${CULTURE_ID}" "${UNUSED_LANGUAGES_FILE}"; then
+                        echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing could potentially be linked to an existing unused one"
+                    fi
+
                     echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
                 fi
             done
         done
-    done | sort | uniq
+    done
 }
 
 echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
