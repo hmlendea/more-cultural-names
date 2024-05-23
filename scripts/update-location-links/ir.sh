@@ -31,6 +31,7 @@ function getProvinces() {
 
     sed -i 's/^\([0-9]*\)_aaa=\(.*\)/    <\/Names>\n  <\/LocationEntity>\n  <LocationEntity>\n    <Id>\2<\/Id>\n    <GameIds>\n      <GameId game=\"'"${GAME}"'\">\1<\/GameId> <!-- \2 -->\n    <\/GameIds>\n    <Names>/g' "${OUTPUT_FILE}"
     sed -i 's/<Id>\([^<]*\)/<Id>\L\1/g' "${OUTPUT_FILE}"
+    sed -i 's/<Id>\([^<]*\)'"'"'/<Id>\1/g' "${OUTPUT_FILE}"
     sed -i '/<Id>/s/ /_/g' "${OUTPUT_FILE}"
     sed -i 's/^____/    /g' "${OUTPUT_FILE}"
 
@@ -66,8 +67,10 @@ function getProvinces() {
     mv "${OUTPUT_FILE}.tmp" "${OUTPUT_FILE}"
 
     for LOCATION_ID in $(grep "<Id>" "${OUTPUT_FILE}" | sed 's/\s*<Id>\(.*\)<\/Id>.*/\1/g' | sort | uniq); do
-        if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
+        if [ -n "$(xmlstarlet sel -t -m '//LocationEntity[Id='"'${LOCATION_ID}'"']' -v 'Id' -n ${LOCATIONS_FILE})" ]; then
             echo "    > ${GAME}: ${LOCATION_ID} could potentially be linked"
+        elif [ -n "$(xmlstarlet sel -t -m '//LocationEntity[Id='"'${LOCATION_ID}'"']' -v 'Id' -n ${UNUSED_LOCATIONS_FILE})" ]; then
+            echo "    > ${GAME}: ${LOCATION_ID} (unused) could potentially be linked"
         fi
     done
 
@@ -75,6 +78,8 @@ function getProvinces() {
         LOCATION_NAME=$(echo "${LOCATION_NAME}" | sed 's/@/ /g')
         if grep -q "value=\"${LOCATION_NAME}\"" "${LOCATIONS_FILE}"; then
             echo "    > ${GAME}: '${LOCATION_NAME}' could potentially be linked"
+        elif grep -q "value=\"${LOCATION_NAME}\"" "${UNUSED_LOCATIONS_FILE}"; then
+            echo "    > ${GAME}: '${LOCATION_NAME}' (unused) could potentially be linked"
         fi
     done
 }
