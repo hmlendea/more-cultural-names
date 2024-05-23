@@ -177,3 +177,4 @@ echo "Imperator Rome ABW:"      && getIrCultures        "IR_ABW"    "${IR_ABW_CU
 echo "Imperator Rome AoE:"      && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"
 echo "Imperator Rome INV:"      && getIrCultures        "IR_INV"    "${IR_INV_CULTURES_DIR}"
 echo "Imperator Rome TBA:"      && getIrCultures        "IR_TBA"    "${IR_TBA_CULTURES_DIR}"
+echo "Imperator Rome TI:"       && getIrCultures        "IR_TI"     "${IR_TI_CULTURES_DIR}"
