@@ -36,6 +36,7 @@ function getProvinces() {
     sed -i 's/^____/    /g' "${OUTPUT_FILE}"
 
     mapNameToLanguage "aeolian" "Greek_Aeolic"
+    mapNameToLanguage "armenian" "Armenian_Proto"
     mapNameToLanguage "aryan" "Sanskrit_Old"
     mapNameToLanguage "carthaginian" "Punic"
     mapNameToLanguage "east_levantine" "Akkadian"
@@ -44,6 +45,7 @@ function getProvinces() {
     mapNameToLanguage "etruscan" "Etruscan"
     mapNameToLanguage "gallic" "Gaulish"
     mapNameToLanguage "germanic" "Germanic_Proto"
+    mapNameToLanguage "greco_indian" "Greek_Ancient_India"
     mapNameToLanguage "hellenic" "Greek_Ancient"
     mapNameToLanguage "iberia" "Iberian"
     mapNameToLanguage "latin" "Latin_Old"
@@ -84,9 +86,9 @@ function getProvinces() {
     done
 }
 
-#getProvinces "IR"       "${IR_VANILLA_FILE}"        "ir_provinces.txt"
-#getProvinces "IR_ABW"   "${IR_ABW_VANILLA_FILE}"    "irabw_provinces.txt"
-#getProvinces "IR_AoE"   "${IR_AoE_VANILLA_FILE}"    "iraoe_provinces.txt"
-#getProvinces "IR_INV"   "${IR_INV_VANILLA_FILE}"    "irinv_provinces.txt"
-#getProvinces "IR_TBA"   "${IR_TBA_VANILLA_FILE}"    "irtba_provinces.txt"
+getProvinces "IR"       "${IR_VANILLA_FILE}"        "ir_provinces.txt"
+getProvinces "IR_ABW"   "${IR_ABW_VANILLA_FILE}"    "irabw_provinces.txt"
+getProvinces "IR_AoE"   "${IR_AoE_VANILLA_FILE}"    "iraoe_provinces.txt"
+getProvinces "IR_INV"   "${IR_INV_VANILLA_FILE}"    "irinv_provinces.txt"
+getProvinces "IR_TBA"   "${IR_TBA_VANILLA_FILE}"    "irtba_provinces.txt"
 getProvinces "IR_TI"    "${IR_TI_VANILLA_FILE}"     "irti_provinces.txt"
