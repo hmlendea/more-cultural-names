@@ -179,6 +179,10 @@ build-edition \
     "tba-more-cultural-names" "The Bronze Age: More Cultural Names" \
     "IR_TBA" "2.0.*"
 
+build-edition \
+    "ti-more-cultural-names" "Terra Indomita: More Cultural Names" \
+    "IR_TI" "2.0.*"
+
 cd "${REPO_DIR}"
 bash "${REPO_DIR}/scripts/count-localisations.sh"
 
