@@ -2,6 +2,7 @@
 source "scripts/common/paths.sh"
 source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
 source "${SCRIPTS_COMMON_DIR}/hoi4.sh"
+source "${SCRIPTS_COMMON_DIR}/parser.sh"
 
 LANGUAGE_IDS=$(xmlstarlet sel -t -m "//Language" -v "Id" -n "${LANGUAGES_FILE}" | sort -u)
 UNLINKED_LANGUAGE_IDS=$(xmlstarlet sel -t -m "//Language[not(GameIds/GameId)]" -v "Id" -n "${LANGUAGES_FILE}" | sort -u)
@@ -144,6 +145,52 @@ function checkForSurplusCkLocationLinks() {
     done
 }
 
+function checkForMissingIrLocationLinks() {
+    local GAME_ID="${1}" && shift
+    local VANILLA_LOCALISATION_FILE="${1}" && shift
+
+    for PROVINCE_ID in $(diff \
+                        <(getGameIds "${GAME_ID}") \
+                        <( \
+                            cat "${VANILLA_LOCALISATION_FILE}" | \
+                            grep "^\s*PROV[0-9][0-9]*:" | \
+                            awk -F':' '{print $1}' | \
+                            sed 's/^\s*PROV//g' | \
+                            sort -u \
+                        ) | \
+                        grep "^>" | sed 's/^> //g'); do
+        LOCATION_DEFAULT_NAME=$(getVanillaIrLocationName "${VANILLA_LOCALISATION_FILE}" "${PROVINCE_ID}")
+        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_NAME}")
+
+        if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME_ID}: ${PROVINCE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif $(echo "${UNUSED_LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME_ID}: ${PROVINCE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but unused location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            echo "    > ${GAME_ID}: ${PROVINCE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+        elif [ -n "${LOCATION_DEFAULT_NAME}" ]; then
+            LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
+            LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
+
+            if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+                echo "    > ${GAME_ID}: ${PROVINCE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            elif $(echo "${UNUSED_LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+                echo "    > ${GAME_ID}: ${PROVINCE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but unused location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+                echo "    > ${GAME_ID}: ${PROVINCE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
+            elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+                echo "    > ${GAME_ID}: ${PROVINCE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
+            elif $(echo "${DEFAULT_NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+                echo "    > ${GAME_ID}: ${PROVINCE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" default name exists)"
+            else
+                echo "    > ${GAME_ID}: ${PROVINCE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
+            fi
+        else
+            echo "    > ${GAME_ID}: ${PROVINCE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
+        fi
+    done
+}
+
 function checkForSurplusIrLocationLinks() {
     local GAME_ID="${1}"
     local VANILLA_FILE="${2}"
@@ -173,6 +220,7 @@ function checkForMismatchingLocationLinks() {
         checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == IR* ]]; then
+        #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
         checkForSurplusIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     fi
 }
@@ -524,6 +572,7 @@ checkForMismatchingLocationLinks "IR_ABW"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR_TI"   "${IR_TI_VANILLA_FILE}"
 
 validateHoi4Parentage "HOI4"    "${HOI4_VANILLA_PARENTAGE_FILE}"    "${HOI4_LOCALISATIONS_DIR}"
 #validateHoi4Parentage "HOI4MDM" "${HOI4MDM_VANILLA_PARENTAGE_FILE}" "${HOI4MDM_LOCALISATIONS_DIR}"

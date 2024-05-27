@@ -123,5 +123,8 @@ update-vanilla-files \
     "${IR_INV_VANILLA_FILE}" \
     "${IR_INV_LOCALISATIONS_DIR}/provincenames_l_english.yml"
 update-vanilla-files \
+    "${IR_TI_VANILLA_FILE}" \
+    "${IR_TI_LOCALISATIONS_DIR}/provincenames_l_english.yml"
+update-vanilla-files \
     "${IR_TBA_VANILLA_FILE}" \
     "${IR_TBA_LOCALISATIONS_DIR}/provincenames_l_english.yml"

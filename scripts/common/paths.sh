@@ -159,3 +159,8 @@ IR_TBA_DIR="${STEAM_WORKSHOP_IR_DIR}/2448788091"
 IR_TBA_CULTURES_DIR="${IR_TBA_DIR}/common/cultures"
 IR_TBA_LOCALISATIONS_DIR="${IR_TBA_DIR}/localization/english"
 IR_TBA_VANILLA_FILE="${VANILLA_FILES_DIR}/irtba_province_names.yml"
+
+IR_TI_DIR="${STEAM_WORKSHOP_IR_DIR}/2856497654"
+IR_TI_CULTURES_DIR="${IR_TI_DIR}/common/cultures"
+IR_TI_LOCALISATIONS_DIR="${IR_TI_DIR}/localization/english"
+IR_TI_VANILLA_FILE="${VANILLA_FILES_DIR}/irti_province_names.yml"
