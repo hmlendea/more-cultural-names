@@ -3,6 +3,34 @@ source "scripts/common/paths.sh"
 source "scripts/common/name_normalisation.sh"
 source "scripts/common/hoi4.sh"
 
+function logLinkableState() {
+    local GAME_ID="${1}"
+    local STATE_ID="${2}"
+    local STATE_NAME="${3}"
+    local REASON="${4}"
+
+    echo "    > ${GAME_ID}: State ${STATE_ID} (${STATE_NAME}) could potentially be linked ${REASON}"
+    echo '    <GameIds>'
+    echo "      <GameId game=\"${GAME_ID}\" type=\"State\">${STATE_ID}</GameId> <!-- ${STATE_NAME} -->"
+    echo '    </GameIds>'
+    echo ''
+}
+
+function logLinkableCity() {
+    local GAME_ID="${1}"
+    local CITY_ID="${2}"
+    local CITY_NAME="${3}"
+    local STATE_ID="${4}"
+    local STATE_NAME="${5}"
+    local REASON="${6}"
+
+    echo "    > ${GAME_ID}: City #${CITY_ID} (${CITY_NAME}) (State: ${STATE_NAME}) could potentially be linked ${REASON}"
+    echo '    <GameIds>'
+    echo "      <GameId game=\"${GAME_ID}\" type=\"City\" parent=\"${STATE_ID}\">${CITY_ID}</GameId> <!-- ${CITY_NAME} -->"
+    echo '    </GameIds>'
+    echo ''
+}
+
 function getStates() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR="${2}"
@@ -13,6 +41,11 @@ function getStates() {
     local LOCATIONS_FILE_LOCATIONID_LINES=$(grep "<Id>" "${LOCATIONS_FILE}")
     local LOCATIONS_FILE_GAMEID_LINES=$(grep "<GameId " "${LOCATIONS_FILE}")
     local LOCATIONS_FILE_GAME_GAMEID_LINES=$(grep "game=\"${GAME_ID}\"" <<< "${LOCATIONS_FILE_GAMEID_LINES}")
+
+    local UNUSED_LOCATIONS_FILE_NAME_LINES=$(grep "<Name language=" "${UNUSED_LOCATIONS_FILE}")
+    local UNUSED_LOCATIONS_FILE_LOCATIONID_LINES=$(grep "<Id>" "${UNUSED_LOCATIONS_FILE}")
+    local UNUSED_LOCATIONS_FILE_GAMEID_LINES=$(grep "<GameId " "${UNUSED_LOCATIONS_FILE}")
+    local UNUSED_LOCATIONS_FILE_GAME_GAMEID_LINES=$(grep "game=\"${GAME_ID}\"" <<< "${UNUSED_LOCATIONS_FILE_GAMEID_LINES}")
 
     echo "" > "${STATES_OUTPUT_FILE}"
 
@@ -27,11 +60,17 @@ function getStates() {
         local LOCATION_ID=$(nameToLocationId "${STATE_NAME}")
 
         if grep -q "<Id>${LOCATION_ID}</Id>" <<< "${LOCATIONS_FILE_LOCATIONID_LINES}"; then
-            echo "    > ${GAME_ID}: State #${STATE_ID} (${STATE_NAME}) could potentially be linked with location ${LOCATION_ID}"
+            logLinkableState "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with location <Id>${LOCATION_ID}</Id>"
+        elif grep -q "<Id>${LOCATION_ID}</Id>" <<< "${UNUSED_LOCATIONS_FILE_LOCATIONID_LINES}"; then
+            logLinkableState "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with unused location <Id>${LOCATION_ID}</Id>"
         elif grep -q "<!-- ${STATE_NAME} -->" <<< "${LOCATIONS_FILE_GAMEID_LINES}"; then
-            echo "    > ${GAME_ID}: State #${STATE_ID} (${STATE_NAME}) could potentially be linked with a location with a link with the same default name"
+            logLinkableState "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with a location with a link with the same default name (${STATE_NAME})"
+        elif grep -q "<!-- ${STATE_NAME} -->" <<< "${UNUSED_LOCATIONS_FILE_GAMEID_LINES}"; then
+            logLinkableState "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with an unused location with a link with the same default name (${STATE_NAME})"
         elif grep -q "value=\"${STATE_NAME}\"" <<< "${LOCATIONS_FILE_NAME_LINES}"; then
-            echo "    > ${GAME_ID}: State #${STATE_ID} (${STATE_NAME}) could potentially be linked with a location with a localisation with the same name"
+            logLinkableState "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with a location with a localisation with the same name (${STATE_NAME})"
+        elif grep -q "value=\"${STATE_NAME}\"" <<< "${UNUSED_LOCATIONS_FILE_NAME_LINES}"; then
+            logLinkableState "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with an unused location with a localisation with the same name (${STATE_NAME})"
         fi
     done
 }
@@ -67,11 +106,17 @@ function getCities() {
         local STATE_NAME=$(getHoi4StateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
 
         if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
-            echo "    > ${GAME_ID}: City #${CITY_ID} (${CITY_NAME}) (belonging to state: ${STATE_NAME}) could potentially be linked with location ${LOCATION_ID}"
+            logLinkableCity "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "with location <Id>${LOCATION_ID}</Id>"
+        elif grep -q "<Id>${LOCATION_ID}</Id>" "${UNUSED_LOCATIONS_FILE}"; then
+            logLinkableCity "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "with unused location <Id>${LOCATION_ID}</Id>"
         elif grep -q "<!-- ${CITY_NAME} -->" "${LOCATIONS_FILE}"; then
-            echo "    > ${GAME_ID}: City #${CITY_ID} (${CITY_NAME}) (belonging to state: ${STATE_NAME}) could potentially be linked with a location with a link with the same default name"
+            logLinkableCity "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "with a location with a link with the same default name"
+        elif grep -q "<!-- ${CITY_NAME} -->" "${UNUSED_LOCATIONS_FILE}"; then
+            logLinkableCity "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "with an unused location with a link with the same default name"
         elif grep -q "value=\"${CITY_NAME}\"" "${LOCATIONS_FILE}"; then
-            echo "    > ${GAME_ID}: City #${CITY_ID} (${CITY_NAME}) (belonging to state: ${STATE_NAME}) could potentially be linked with a location with a localisation with the same name"
+            logLinkableCity "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "with a location with a localisation with the same name"
+        elif grep -q "value=\"${CITY_NAME}\"" "${UNUSED_LOCATIONS_FILE}"; then
+            logLinkableCity "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "with an unused location with a localisation with the same name"
         fi
     done
     cd "${CWD}"

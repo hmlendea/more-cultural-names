@@ -5,10 +5,14 @@ SCRIPTS_DIR="${REPO_DIR}/scripts"
 SCRIPTS_COMMON_DIR="${SCRIPTS_DIR}/common"
 OUTPUT_DIR="${REPO_DIR}/out"
 EXTRAS_DIR="${REPO_DIR}/extras"
+UNUSED_DATA_DIR="${REPO_DIR}/unused-data"
 VANILLA_FILES_DIR="${REPO_DIR}/vanilla"
 
 LANGUAGES_FILE="${REPO_DIR}/languages.xml"
 LOCATIONS_FILE="${REPO_DIR}/locations.xml"
+
+UNUSED_LANGUAGES_FILE="${UNUSED_DATA_DIR}/languages.xml"
+UNUSED_LOCATIONS_FILE="${UNUSED_DATA_DIR}/locations.xml"
 
 if [ -d "${HOME}/.games/Steam/common" ]; then
     STEAM_APPS_DIR="${HOME}/.games/Steam"
@@ -101,7 +105,7 @@ CK3SoW_LOCALISATIONS_DIR="${CK3SoW_DIR}/localization/english"
 CK3SoW_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3sow_landed_titles.txt"
 CK3SoW_VANILLA_LOCALISATION_FILE="${CK3SoW_LOCALISATIONS_DIR}/replace/demd_titles_l_english.yml"
 
-CK3TBA_DIR="${STEAM_WORKSHOP_CK3_DIR}/2216525506"
+CK3TBA_DIR="${STEAM_WORKSHOP_CK3_DIR}/3232096613"
 CK3TBA_CULTURES_DIR="${CK3TBA_DIR}/common/culture/cultures"
 CK3TBA_LOCALISATIONS_DIR="${CK3TBA_DIR}/localization/english"
 CK3TBA_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3tba_landed_titles.txt"
@@ -155,9 +159,18 @@ IR_TBA_DIR="${STEAM_WORKSHOP_IR_DIR}/2448788091"
 IR_TBA_CULTURES_DIR="${IR_TBA_DIR}/common/cultures"
 IR_TBA_LOCALISATIONS_DIR="${IR_TBA_DIR}/localization/english"
 IR_TBA_VANILLA_FILE="${VANILLA_FILES_DIR}/irtba_province_names.yml"
+<<<<<<< HEAD
 
 Vic3_DIR="${STEAM_GAMES_DIR}/Victoria 3"
 Vic3_COMMON_DIR="${Vic3_DIR}/game/common"
 Vic3_COUNTRIES_DIR="${Vic3_COMMON_DIR}/country_definitions"
 Vic3_STATES_DIR="${Vic3_COMMON_DIR}/history/states"
 Vic3_LOCALISATIONS_DIR="${Vic3_DIR}/game/localization/english"
+||||||| 909b0fb
+=======
+
+IR_TI_DIR="${STEAM_WORKSHOP_IR_DIR}/2856497654"
+IR_TI_CULTURES_DIR="${IR_TI_DIR}/common/cultures"
+IR_TI_LOCALISATIONS_DIR="${IR_TI_DIR}/localization/english"
+IR_TI_VANILLA_FILE="${VANILLA_FILES_DIR}/irti_province_names.yml"
+>>>>>>> master

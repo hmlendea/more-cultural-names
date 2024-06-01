@@ -177,9 +177,9 @@ update-vanilla-file \
     "${CK3SoW_DIR}/common/landed_titles/00_landed_titles.txt" \
     "${CK3SoW_VANILLA_LANDED_TITLES_FILE}" \
     "https://gitlab.com/Vertimnus/sinews-of-war/-/raw/main/common/landed_titles/00_landed_titles.txt"
-update-vanilla-file \
-    "${CK3TBA_DIR}/common/landed_titles/00_landed_titles.txt" \
-    "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"
+update-vanilla-files \
+    "${CK3TBA_VANILLA_LANDED_TITLES_FILE}" \
+    "${CK3TBA_DIR}/common/landed_titles/"/*.txt
 update-vanilla-file \
     "${CK3TFE_DIR}/common/landed_titles/00_landed_titles.txt" \
     "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
@@ -205,6 +205,9 @@ update-vanilla-files \
 update-vanilla-files \
     "${IR_INV_VANILLA_FILE}" \
     "${IR_INV_LOCALISATIONS_DIR}/provincenames_l_english.yml"
+update-vanilla-files \
+    "${IR_TI_VANILLA_FILE}" \
+    "${IR_TI_LOCALISATIONS_DIR}/provincenames_l_english.yml"
 update-vanilla-files \
     "${IR_TBA_VANILLA_FILE}" \
     "${IR_TBA_LOCALISATIONS_DIR}/provincenames_l_english.yml"
