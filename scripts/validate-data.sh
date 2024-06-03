@@ -618,6 +618,18 @@ for LOCATIONS_XML in "${LOCATIONS_FILE}" "${UNUSED_LOCATIONS_FILE}"; do
     checkForDuplicateEntries "${LOCATIONS_XML}" 'WikiDataId'
 done
 
+# Find duplicate used-unused IDs
+cat "${LANGUAGES_FILE}" "${UNUSED_LANGUAGES_FILE}" | \
+    grep "<Id>" | \
+    sed 's/^\s*<Id>\(.*\)<\/Id>.*/\1/g' | \
+    sort | uniq -c | \
+    grep "^\s*[2-9]"
+cat "${LOCATIONS_FILE}" "${UNUSED_LOCATIONS_FILE}" | \
+    grep "<Id>" | \
+    sed 's/^\s*<Id>\(.*\)<\/Id>.*/\1/g' | \
+    sort | uniq -c | \
+    grep "^\s*[2-9]"
+
 # Find duplicated game IDs
 grep "<GameId game=" *.xml | \
     sed -e 's/[ \t]*<!--.*-->.*//g' -e 's/^[ \t]*//g' | \
