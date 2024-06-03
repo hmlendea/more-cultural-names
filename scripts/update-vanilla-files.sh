@@ -55,6 +55,89 @@ function update-hoi4-parentage-file() {
     done
 }
 
+function update-vic3-countries() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+    local COUNTRIES_DIR="${3}"
+    local TARGET_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_countries.txt"
+
+    if [ -f "${TARGET_FILE}" ]; then
+        rm "${TARGET_FILE}"
+        touch "${TARGET_FILE}"
+    fi
+
+    local COUNTRY_IDS=$(grep "^[A-Z][A-Z][A-Z]\s*=\s*{" "${COUNTRIES_DIR}"/*.txt | \
+                    sed 's/^[^:]*://g' |
+                    sed 's/^\([A-Z][A-Z][A-Z]\).*/\1/g' | \
+                    sort | uniq)
+    local COUNTRY_NAME=""
+
+    for COUNTRY_ID in ${COUNTRY_IDS} ; do
+        COUNTRY_NAME=$(grep "^ ${COUNTRY_ID}:[0-9]\s*" "${LOCALISATIONS_DIR}"/*.yml | \
+                                sed 's/^[^\"]*\"\([^\"]*\)\".*/\1/g' | \
+                                tail -n 1)
+        echo "${COUNTRY_ID}=${COUNTRY_NAME}" >> "${TARGET_FILE}"
+    done
+}
+
+function update-vic3-states() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+    local STATES_DIR="${3}"
+    local TARGET_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_states.txt"
+
+    if [ -f "${TARGET_FILE}" ]; then
+        rm "${TARGET_FILE}"
+        touch "${TARGET_FILE}"
+    fi
+
+    local STATE_IDS=$(grep "^\s*s:[^ ]*\s*=\s*{" "${STATES_DIR}"/*.txt | \
+                    sed 's/^\s*s:\([^ ]*\).*/\1/g' |
+                    sort | uniq)
+    local STATE_NAME=""
+
+    for STATE_ID in ${STATE_IDS} ; do
+        STATE_NAME=$(grep "^ ${STATE_ID}:[0-9]\s*" "${LOCALISATIONS_DIR}/map"/*.yml | \
+                                sed 's/^[^\"]*\"\([^\"]*\)\".*/\1/g' | \
+                                tail -n 1)
+        echo "${STATE_ID}=${STATE_NAME}" >> "${TARGET_FILE}"
+    done
+}
+
+function update-vic3-hubs() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+    local TARGET_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_hubs.txt"
+
+    if [ -f "${TARGET_FILE}" ]; then
+        rm "${TARGET_FILE}"
+        touch "${TARGET_FILE}"
+    fi
+
+    local HUB_NAME=""
+    local HUB_IDS=$(grep "^\s*HUB_NAME_" "${LOCALISATIONS_DIR}"/*.yml | \
+                    sed 's/^[^:]*:\s*HUB_NAME_\([^:]*\).*/\1/g' |
+                    sort | uniq)
+
+    for HUB_ID in ${HUB_IDS} ; do
+        HUB_NAME=$(grep "^ HUB_NAME_${HUB_ID}:[0-9]\s*" "${LOCALISATIONS_DIR}"/*.yml | \
+                    sed 's/^[^\"]*\"\([^\"]*\)\".*/\1/g' | \
+                    tail -n 1)
+        echo "${HUB_ID}=${HUB_NAME}" >> "${TARGET_FILE}"
+    done
+}
+
+function update-vic3-files() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+    local COUNTRIES_DIR="${3}"
+    local STATES_DIR="${4}"
+
+    #update-vic3-countries "${GAME_ID}" "${LOCALISATIONS_DIR}" "${COUNTRIES_DIR}"
+    #update-vic3-states "${GAME_ID}" "${LOCALISATIONS_DIR}" "${STATES_DIR}"
+    update-vic3-hubs "${GAME_ID}" "${LOCALISATIONS_DIR}"
+}
+
 update-vanilla-file \
     "${CK2_DIR}/common/landed_titles/landed_titles.txt" \
     "${CK2_VANILLA_LANDED_TITLES_FILE}"
@@ -128,3 +211,7 @@ update-vanilla-files \
 update-vanilla-files \
     "${IR_TBA_VANILLA_FILE}" \
     "${IR_TBA_LOCALISATIONS_DIR}/provincenames_l_english.yml"
+update-vic3-files "Vic3" \
+    "${Vic3_LOCALISATIONS_DIR}" \
+    "${Vic3_COUNTRIES_DIR}" \
+    "${Vic3_STATES_DIR}"
