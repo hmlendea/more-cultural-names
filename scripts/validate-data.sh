@@ -375,6 +375,7 @@ function checkDefaultCk2Localisations() {
     for GAMEID_DEFINITION in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/ defaultLanguage=\"[^\"]*\"//g' | \
                             sed 's/^ *//g' |
                             sort
                         ) <( \
@@ -405,6 +406,7 @@ function checkDefaultCk3Localisations() {
     for GAMEID_DEFINITION in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/ defaultLanguage=\"[^\"]*\"//g' | \
                             sed 's/^ *//g' |
                             sort
                         ) <( \
@@ -470,6 +472,7 @@ function checkDefaultIrLocalisations() {
     for GAMEID_DEFINITION in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/ defaultLanguage=\"[^\"]*\"//g' | \
                             sed 's/^ *//g' |
                             sort
                         ) <( \
@@ -512,7 +515,7 @@ function validateHoi4Parentage() {
     for STATE_ID in $(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}" | \
                             sed 's/.*parent=\"\([^\"]*\).*/\1/g' | \
                             sort -g | uniq); do
-        if ! grep -q "${GAME_ID}\" type=\"State\">${STATE_ID}<" "${LOCATIONS_FILE}"; then
+        if ! grep -q "${GAME_ID}\" type=\"State\"[^>]*>${STATE_ID}<" "${LOCATIONS_FILE}"; then
             echo "${GAME_ID}: State ${STATE_ID} is missing while there are cities referencing it"
         fi
     done
