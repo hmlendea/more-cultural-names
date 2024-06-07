@@ -14,27 +14,28 @@ jobs:
       max-parallel: 1
       matrix:
         config:
-          - { mod_game_id: 'CK2',     nexus_game_id: 'crusaderkings2',  nexus_mod_id: '70', mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'CK2HIP',  nexus_game_id: 'crusaderkings2',  nexus_mod_id: '71', mod_file_name: 'hip-more-cultural-names'  }
-          - { mod_game_id: 'CK3',     nexus_game_id: 'crusaderkings3',  nexus_mod_id: '11', mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'CK3AEP',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '30', mod_file_name: 'aep-more-cultural-names'  }
-          - { mod_game_id: 'CK3ATHA', nexus_game_id: 'crusaderkings3',  nexus_mod_id: '76', mod_file_name: 'atha-more-cultural-names' }
-          - { mod_game_id: 'CK3CE',   nexus_game_id: 'crusaderkings3',  nexus_mod_id: '31', mod_file_name: 'ce-more-cultural-names'   }
-          - { mod_game_id: 'CK3CMH',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '28', mod_file_name: 'cmh-more-cultural-names'  }
-          - { mod_game_id: 'CK3IBL',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '12', mod_file_name: 'ibl-more-cultural-names'  }
-          - { mod_game_id: 'CK3MBP',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '19', mod_file_name: 'mbp-more-cultural-names'  }
-          - { mod_game_id: 'CK3SoW',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '24', mod_file_name: 'sow-more-cultural-names'  }
-          - { mod_game_id: 'CK3TBA',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '29', mod_file_name: 'tba-more-cultural-names'  }
-          - { mod_game_id: 'CK3TFE',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '22', mod_file_name: 'tfe-more-cultural-names'  }
-          - { mod_game_id: 'HOI4',    nexus_game_id: 'heartsofironiv',  nexus_mod_id: '22', mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'HOI4MDM', nexus_game_id: 'heartsofironiv',  nexus_mod_id: '35', mod_file_name: 'mdm-more-cultural-names'  }
-          - { mod_game_id: 'HOI4TGW', nexus_game_id: 'heartsofironiv',  nexus_mod_id: '32', mod_file_name: 'tgw-more-cultural-names'  }
-          - { mod_game_id: 'IR',      nexus_game_id: 'imperatorrome',   nexus_mod_id: '5',  mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'IR_ABW',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '6',  mod_file_name: 'abw-more-cultural-names'  }
-          - { mod_game_id: 'IR_AoE',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '7',  mod_file_name: 'aoe-more-cultural-names'  }
-          - { mod_game_id: 'IR_INV',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '8',  mod_file_name: 'inv-more-cultural-names'  }
-          - { mod_game_id: 'IR_TBA',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '9',  mod_file_name: 'tba-more-cultural-names'  }
-          - { mod_game_id: 'IR_TI',   nexus_game_id: 'imperatorrome',   nexus_mod_id: '14', mod_file_name: 'ti-more-cultural-names'   }
+          - { mod_game_id: 'CK2',     nexus_game_id: 'crusaderkings2',  nexus_mod_id: '70',  mod_file_name: 'more-cultural-names'      }
+          - { mod_game_id: 'CK2HIP',  nexus_game_id: 'crusaderkings2',  nexus_mod_id: '71',  mod_file_name: 'hip-more-cultural-names'  }
+          - { mod_game_id: 'CK2RoI',  nexus_game_id: 'crusaderkings2',  nexus_mod_id: '109', mod_file_name: 'roi-more-cultural-names'  }
+          - { mod_game_id: 'CK3',     nexus_game_id: 'crusaderkings3',  nexus_mod_id: '11',  mod_file_name: 'more-cultural-names'      }
+          - { mod_game_id: 'CK3AEP',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '30',  mod_file_name: 'aep-more-cultural-names'  }
+          - { mod_game_id: 'CK3ATHA', nexus_game_id: 'crusaderkings3',  nexus_mod_id: '76',  mod_file_name: 'atha-more-cultural-names' }
+          - { mod_game_id: 'CK3CE',   nexus_game_id: 'crusaderkings3',  nexus_mod_id: '31',  mod_file_name: 'ce-more-cultural-names'   }
+          - { mod_game_id: 'CK3CMH',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '28',  mod_file_name: 'cmh-more-cultural-names'  }
+          - { mod_game_id: 'CK3IBL',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '12',  mod_file_name: 'ibl-more-cultural-names'  }
+          - { mod_game_id: 'CK3MBP',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '19',  mod_file_name: 'mbp-more-cultural-names'  }
+          - { mod_game_id: 'CK3SoW',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '24',  mod_file_name: 'sow-more-cultural-names'  }
+          - { mod_game_id: 'CK3TBA',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '29',  mod_file_name: 'tba-more-cultural-names'  }
+          - { mod_game_id: 'CK3TFE',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '22',  mod_file_name: 'tfe-more-cultural-names'  }
+          - { mod_game_id: 'HOI4',    nexus_game_id: 'heartsofironiv',  nexus_mod_id: '22',  mod_file_name: 'more-cultural-names'      }
+          - { mod_game_id: 'HOI4MDM', nexus_game_id: 'heartsofironiv',  nexus_mod_id: '35',  mod_file_name: 'mdm-more-cultural-names'  }
+          - { mod_game_id: 'HOI4TGW', nexus_game_id: 'heartsofironiv',  nexus_mod_id: '32',  mod_file_name: 'tgw-more-cultural-names'  }
+          - { mod_game_id: 'IR',      nexus_game_id: 'imperatorrome',   nexus_mod_id: '5',   mod_file_name: 'more-cultural-names'      }
+          - { mod_game_id: 'IR_ABW',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '6',   mod_file_name: 'abw-more-cultural-names'  }
+          - { mod_game_id: 'IR_AoE',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '7',   mod_file_name: 'aoe-more-cultural-names'  }
+          - { mod_game_id: 'IR_INV',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '8',   mod_file_name: 'inv-more-cultural-names'  }
+          - { mod_game_id: 'IR_TBA',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '9',   mod_file_name: 'tba-more-cultural-names'  }
+          - { mod_game_id: 'IR_TI',   nexus_game_id: 'imperatorrome',   nexus_mod_id: '14',  mod_file_name: 'ti-more-cultural-names'   }
 
     steps:
     - name: Prepare
