@@ -375,6 +375,7 @@ function checkDefaultCk2Localisations() {
     for GAMEID_DEFINITION in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/ defaultLanguage=\"[^\"]*\"//g' | \
                             sed 's/^ *//g' |
                             sort
                         ) <( \
@@ -405,6 +406,7 @@ function checkDefaultCk3Localisations() {
     for GAMEID_DEFINITION in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/ defaultLanguage=\"[^\"]*\"//g' | \
                             sed 's/^ *//g' |
                             sort
                         ) <( \
@@ -470,6 +472,7 @@ function checkDefaultIrLocalisations() {
     for GAMEID_DEFINITION in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/ defaultLanguage=\"[^\"]*\"//g' | \
                             sed 's/^ *//g' |
                             sort
                         ) <( \
