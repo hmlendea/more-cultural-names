@@ -145,8 +145,8 @@ update-vanilla-file \
     "${CK2HIP_DIR}/common/landed_titles/swmh_landed_titles.txt"\
     "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
-    "${CK2ROI_DIR}/common/landed_titles/landed_titles.txt"\
-    "${CK2ROI_VANILLA_LANDED_TITLES_FILE}"
+    "${CK2RoI_DIR}/common/landed_titles/landed_titles.txt"\
+    "${CK2RoI_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
     "${CK2TWK_DIR}/common/landed_titles/landed_titles.txt" \
     "${CK2TWK_VANILLA_LANDED_TITLES_FILE}" #\
