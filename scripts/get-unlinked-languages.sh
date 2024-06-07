@@ -158,6 +158,7 @@ function getIrCultures() {
 
 echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
 echo "Crusader Kings 2 HIP:"    && getCk2Cultures       "CK2HIP"    "${CK2HIP_CULTURES_DIR}"
+echo "Crusader Kings 2 ROI:"    && getCk2Cultures       "CK2RoI"    "${CK2RoI_CULTURES_DIR}" && getCk2Cultures "CK2RoI" "${CK2_CULTURES_DIR}"
 echo "Crusader Kings 2 TWK:"    && getCk2Cultures       "CK2TWK"    "${CK2TWK_CULTURES_DIR}"
 echo "Crusader Kings 3:"        && getCk3Cultures       "CK3"       "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 AEP:"    && getCk3Cultures       "CK3AEP"    "${CK3AEP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"

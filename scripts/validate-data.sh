@@ -713,6 +713,7 @@ grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 # Make sure all locations are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"     "${CK2_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"  "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
+checkForMismatchingLocationLinks "CK2RoI"   "${CK2RoI_VANILLA_LANDED_TITLES_FILE}"  "${CK2RoI_LOCALISATIONS_DIR}"/*.csv
 #checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE}"  "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"     "${CK3_VANILLA_LOCALISATION_FILE}"
 #checkForMismatchingLocationLinks "CK3AEP"    "${CK3AEP_VANILLA_LANDED_TITLES_FILE}"   "${CK3AEP_LOCALISATIONS_DIR}"/aep_*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
@@ -739,6 +740,7 @@ validateHoi4Parentage "HOI4TGW" "${HOI4TGW_VANILLA_PARENTAGE_FILE}" "${HOI4TGW_L
 # Validate default localisations
 checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
+checkDefaultCk2Localisations "CK2RoI"   "${CK2RoI_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3AEP"   "${CK3AEP_LOCALISATIONS_DIR}"/AEP_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
