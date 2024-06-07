@@ -97,6 +97,12 @@ build-edition \
     --dep "HIP - Historical Immersion Project"
 
 build-edition \
+    "roi-more-cultural-names" "A.D. 633: Rise of Islam - More Cultural Names" \
+    "CK2RoI" "3.3.5.1" \
+    --landed-titles "${VANILLA_FILES_DIR}/ck2roi_landed_titles.txt" --landed-titles-name "landed_titles.txt" \
+    --dep "A.D. 633: Rise of Islam"
+
+build-edition \
     "more-cultural-names" "More Cultural Names" \
     "CK3" "1.12.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
