@@ -596,12 +596,6 @@ function validateThatTheLocationsAreOrdered() {
     diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
 }
 
-
-checkDefaultVic3Localisations "Vic3" "${Vic3_LOCALISATIONS_DIR}"
-
-exit
-
-
 ### Make sure locations are sorted alphabetically
 
 OLD_LC_COLLATE=${LC_COLLATE}
