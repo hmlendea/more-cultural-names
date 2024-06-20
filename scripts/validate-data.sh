@@ -494,6 +494,27 @@ function checkDefaultIrLocalisations() {
     done
 }
 
+function checkDefaultVic3Localisations() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+
+    [ ! -d "${LOCALISATIONS_DIR}" ] && return
+
+    while IFS= read -r HUB_LINE; do
+        HUB_ID=$(sed 's/.*>\(STATE_[A-Z][A-Z_]*_[a-z][a-z]*\)<\/GameId>.*/\1/g' <<< "${HUB_LINE}")
+
+        local HUB_NAME_EXPECTED=$(getVanillaVic3HubName "${HUB_ID}" "${LOCALISATIONS_DIR}")
+
+        if [ -n "${HUB_NAME_EXPECTED}" ]; then
+            local HUB_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${HUB_LINE}")
+
+            if [ "${HUB_NAME_ACTUAL}" != "${HUB_NAME_EXPECTED}" ]; then
+                echo "Wrong default localisation for ${GAME_ID} hub ${HUB_ID} (${HUB_NAME_ACTUAL}) ! Correct one is: ${HUB_NAME_EXPECTED}"
+            fi
+        fi
+    done < <(grep "${GAME_ID}\" type=\"Hub" "${LOCATIONS_FILE}")
+}
+
 function validateHoi4Parentage() {
     local GAME_ID="${1}"
     local VANILLA_PARENTAGE_FILE="${2}"
@@ -574,6 +595,12 @@ function validateThatTheLocationsAreOrdered() {
 
     diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LOCATIONS_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LOCATIONS_LIST}" | sed 's/%NL%/\n/g')
 }
+
+
+checkDefaultVic3Localisations "Vic3" "${Vic3_LOCALISATIONS_DIR}"
+
+exit
+
 
 ### Make sure locations are sorted alphabetically
 
@@ -762,6 +789,8 @@ checkDefaultIrLocalisations  "IR_ABW"   "${IR_ABW_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
+
+checkDefaultVic3Localisations "Vic3" "${Vic3_LOCALISATIONS_DIR}"
 
 # Find redundant names
 #findRedundantNames "Hungarian" "Hungarian_Old"
