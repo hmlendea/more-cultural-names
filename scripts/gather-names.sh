@@ -240,6 +240,7 @@ function get-name-lines() {
         "Georgian" "ka" \
         "German_Low_Dutch" "nds-nl" \
         "German_Low" "nds" \
+        "German_Middle_High" "gmh" \
         "German_Palatine" "pfl" \
         "German_Pennsylvania" "pdc" \
         "German" "de" \
