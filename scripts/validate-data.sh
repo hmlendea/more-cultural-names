@@ -479,7 +479,7 @@ function checkDefaultIrLocalisations() {
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
-                                    tac "${LOCALISATIONS_FILE}" "${IR_VANILLA_FILE}" | \
+                                    tac "${@}" | \
                                     grep "^\s*PROV" | \
                                     grep -v "_[A-Za-z_-]*:" | \
                                     awk '!x[substr($0,0,index($0, ":"))]++' | \
