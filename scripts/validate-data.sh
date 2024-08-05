@@ -479,7 +479,7 @@ function checkDefaultIrLocalisations() {
                             awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
-                                    tac "${LOCALISATIONS_FILE}" "${IR_VANILLA_FILE}" | \
+                                    tac "${@}" | \
                                     grep "^\s*PROV" | \
                                     grep -v "_[A-Za-z_-]*:" | \
                                     awk '!x[substr($0,0,index($0, ":"))]++' | \
@@ -747,7 +747,7 @@ checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE
 #checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"  "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
-checkForMismatchingLocationLinks "IR_ABW"   "${IR_AoE_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR_ABW"   "${IR_ABW_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"

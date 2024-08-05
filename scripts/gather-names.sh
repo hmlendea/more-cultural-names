@@ -244,7 +244,7 @@ function get-name-lines() {
         "German_Palatine" "pfl" \
         "German_Pennsylvania" "pdc" \
         "German" "de" \
-        "Greek_Ancient_Pontic" "pnt" \
+        "Greek_Pontic" "pnt" \
         "Greek" "el" \
         "Greenlandic" "kl" \
         "Guarani" "gn" \
