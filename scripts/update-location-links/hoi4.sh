@@ -82,7 +82,7 @@ function getCities() {
     local CWD="$(pwd)"
 
     if [ ! -f "${VANILLA_PARENTAGE_FILE}" ]; then
-        echo "The vanilla parents fle for ${GAME_ID} is missing!"
+        echo "The vanilla parents file for ${GAME_ID} is missing!"
         return
     fi
 
