@@ -3,6 +3,8 @@
 REPO_DIR="$(pwd)"
 SCRIPTS_DIR="${REPO_DIR}/scripts"
 SCRIPTS_COMMON_DIR="${SCRIPTS_DIR}/common"
+ASSETS_DIR="${REPO_DIR}/assets"
+DOCS_DIR="${REPO_DIR}/docs"
 OUTPUT_DIR="${REPO_DIR}/out"
 EXTRAS_DIR="${REPO_DIR}/extras"
 UNUSED_DATA_DIR="${REPO_DIR}/unused-data"
@@ -29,25 +31,31 @@ STEAM_WORKSHOP_IR_DIR="${STEAM_WORKSHOP_DIR}/content/859580"
 STEAM_WORKSHOP_Vic3_DIR="${STEAM_WORKSHOP_DIR}/content/529340"
 CK2_LOCAL_MODS_DIR="${HOME}/.paradoxinteractive/Crusader Kings II/mod"
 
+AOD_DIR="${STEAM_GAMES_DIR}/Arsenal of Democracy"
+
 CK1_DIR="${STEAM_GAMES_DIR}/Crusader Kings"
 
 CK2_DIR="${STEAM_GAMES_DIR}/Crusader Kings II"
 CK2_CULTURES_DIR="${CK2_DIR}/common/cultures"
+CK2_LANDED_TITLES_DIR="${CK2_DIR}/common/landed_titles"
 CK2_LOCALISATIONS_DIR="${CK2_DIR}/localisation"
 CK2_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2_landed_titles.txt"
 
 CK2HIP_DIR="${CK2_LOCAL_MODS_DIR}/Historical_Immersion_Project"
 CK2HIP_CULTURES_DIR="${CK2HIP_DIR}/common/cultures"
+CK2HIP_LANDED_TITLES_DIR="${CK2HIP_DIR}/common/landed_titles"
 CK2HIP_LOCALISATIONS_DIR="${CK2HIP_DIR}/localisation"
 CK2HIP_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt"
 
 CK2RoI_DIR="${CK2_LOCAL_MODS_DIR}/633 rise of islam"
 CK2RoI_CULTURES_DIR="${CK2RoI_DIR}/common/cultures"
+CK2RoI_LANDED_TITLES_DIR="${CK2RoI_DIR}/common/landed_titles"
 CK2RoI_LOCALISATIONS_DIR="${CK2RoI_DIR}/localisation"
 CK2RoI_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2roi_landed_titles.txt"
 
 CK2TWK_DIR="${CK2_LOCAL_MODS_DIR}/britannia"
 CK2TWK_CULTURES_DIR="${CK2TWK_DIR}/common/cultures"
+CK2TWK_LANDED_TITLES_DIR="${CK2TWK_DIR}/common/landed_titles"
 CK2TWK_LOCALISATIONS_DIR="${CK2TWK_DIR}/localisation"
 CK2TWK_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2twk_landed_titles.txt"
 
@@ -84,6 +92,7 @@ CK3CE_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3ce_landed_titles.txt"
 
 CK3CMH_DIR="${STEAM_WORKSHOP_CK3_DIR}/2416949291"
 CK3CMH_CULTURES_DIR="${CK3CMH_DIR}/common/culture/cultures"
+CK3CMH_LANDED_TITLES_DIR="${CK3CMH_DIR}/common/landed_titles"
 CK3CMH_LOCALISATIONS_DIR="${CK3CMH_DIR}/localization/english"
 CK3CMH_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt"
 CK3CMH_VANILLA_LOCALISATION_FILE="${CK3CMH_LOCALISATIONS_DIR}/replace/ibl_titles_l_english.yml"
@@ -97,6 +106,7 @@ CK3IBL_VANILLA_LOCALISATION_FILE="${CK3IBL_LOCALISATIONS_DIR}/replace/ibl_titles
 
 CK3MBP_DIR="${STEAM_WORKSHOP_CK3_DIR}/2216670956"
 CK3MBP_CULTURES_DIR="${CK3MBP_DIR}/common/culture/cultures"
+CK3MBP_LANDED_TITLES_DIR="${CK3MBP_DIR}/common/landed_titles"
 CK3MBP_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
 CK3MBP_VANILLA_LOCALISATION_FILE_1="${CK3MBP_DIR}/localization/english/titles_l_english.yml"
 CK3MBP_VANILLA_LOCALISATION_FILE_2="${CK3MBP_DIR}/localization/replace/english/zNB_Titles_l_english.yml"
@@ -110,24 +120,39 @@ CK3RICE_VANILLA_LOCALISATION_FILE="${CK3RICE_LOCALISATIONS_DIR}/titles_l_english
 
 CK3SoW_DIR="${STEAM_WORKSHOP_CK3_DIR}/2566883856"
 CK3SoW_CULTURES_DIR="${CK3SoW_DIR}/common/culture/cultures"
+CK3SoW_LANDED_TITLES_DIR="${CK3SoW_DIR}/common/landed_titles"
 CK3SoW_LOCALISATIONS_DIR="${CK3SoW_DIR}/localization/english"
 CK3SoW_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3sow_landed_titles.txt"
 CK3SoW_VANILLA_LOCALISATION_FILE="${CK3SoW_LOCALISATIONS_DIR}/replace/demd_titles_l_english.yml"
 
 CK3TBA_DIR="${STEAM_WORKSHOP_CK3_DIR}/3232096613"
 CK3TBA_CULTURES_DIR="${CK3TBA_DIR}/common/culture/cultures"
+CK3TBA_LANDED_TITLES_DIR="${CK3TBA_DIR}/common/landed_titles"
 CK3TBA_LOCALISATIONS_DIR="${CK3TBA_DIR}/localization/english"
 CK3TBA_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3tba_landed_titles.txt"
 CK3TBA_VANILLA_LOCALISATION_FILE="${CK3TBA_LOCALISATIONS_DIR}/titles_l_english.yml"
 
 CK3TFE_DIR="${STEAM_WORKSHOP_CK3_DIR}/2243307127"
 CK3TFE_CULTURES_DIR="${CK3TFE_DIR}/common/culture/cultures"
+CK3TFE_LANDED_TITLES_DIR="${CK3TFE_DIR}/common/landed_titles"
 CK3TFE_LOCALISATIONS_DIR="${CK3TFE_DIR}/localization/english"
 CK3TFE_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt"
 CK3TFE_VANILLA_LOCALISATION_FILE="${CK3TFE_LOCALISATIONS_DIR}/replace/TFE_titles_l_english.yml"
 
+DH_DIR="${STEAM_GAMES_DIR}/Darkest Hour A HOI Game"
+
+EU3_DIR="${STEAM_GAMES_DIR}/Europa Universalis III - Complete"
+EU3_LOCALISATIONS_DIR="${EU3_DIR}/localisation"
+
 EU4_DIR="${STEAM_GAMES_DIR}/Europa Universalis IV"
 EU4_CULTURES_DIR="${EU4_DIR}/common/cultures"
+
+EUR_DIR="${STEAM_GAMES_DIR}/Europa Universalis Rome"
+EUR_LOCALISATIONS_DIR="${EUR_DIR}/localisation"
+
+FTG_DIR="${STEAM_GAMES_DIR}/For The Glory"
+
+HOI2_DIR="${STEAM_GAMES_DIR}/Hearts of Iron 2 Complete Pack"
 
 HOI3_DIR="${STEAM_GAMES_DIR}/Hearts of Iron 3"
 HOI3_LOCALISATIONS_DIR="${HOI3_DIR}/localisation"
@@ -180,11 +205,20 @@ IR_TI_CULTURES_DIR="${IR_TI_DIR}/common/cultures"
 IR_TI_LOCALISATIONS_DIR="${IR_TI_DIR}/localization/english"
 IR_TI_VANILLA_FILE="${VANILLA_FILES_DIR}/irti_province_names.yml"
 
+MOTE_DIR="${STEAM_GAMES_DIR}/March of the Eagles"
+MOTE_LOCALISATIONS_DIR="${MOTE_DIR}/localisation"
+
+Sen_DIR="${STEAM_GAMES_DIR}/Sengoku"
+Sen_LOCALISATIONS_DIR="${Sen_DIR}/localisation"
+
+Vic1_DIR="${STEAM_GAMES_DIR}/Victoria Revolutions"
+
 Vic2_DIR="${STEAM_GAMES_DIR}/Victoria 2"
 Vic2_LOCALISATIONS_DIR="${Vic2_DIR}/localisation"
 
 Vic3_DIR="${STEAM_GAMES_DIR}/Victoria 3"
 Vic3_COMMON_DIR="${Vic3_DIR}/game/common"
 Vic3_COUNTRIES_DIR="${Vic3_COMMON_DIR}/country_definitions"
+Vic3_CULTURES_DIR="${Vic3_COMMON_DIR}/cultures"
 Vic3_STATES_DIR="${Vic3_COMMON_DIR}/history/states"
 Vic3_LOCALISATIONS_DIR="${Vic3_DIR}/game/localization/english"
