@@ -139,20 +139,20 @@ function update-vic3-files() {
 }
 
 update-vanilla-file \
-    "${CK2_DIR}/common/landed_titles/landed_titles.txt" \
+    "${CK2_LANDED_TITLES_DIR}/landed_titles.txt" \
     "${CK2_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
-    "${CK2HIP_DIR}/common/landed_titles/swmh_landed_titles.txt"\
+    "${CK2HIP_LANDED_TITLES_DIR}/swmh_landed_titles.txt"\
     "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
-    "${CK2RoI_DIR}/common/landed_titles/landed_titles.txt"\
+    "${CK2RoI_LANDED_TITLES_DIR}/landed_titles.txt"\
     "${CK2RoI_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
-    "${CK2TWK_DIR}/common/landed_titles/landed_titles.txt" \
+    "${CK2TWK_LANDED_TITLES_DIR}/landed_titles.txt" \
     "${CK2TWK_VANILLA_LANDED_TITLES_FILE}" #\
     #"https://raw.githubusercontent.com/DC123456789/Britannia---The-Winter-King/master/Britannia/common/landed_titles/landed_titles.txt"
 update-vanilla-file \
-    "${CK3_DIR}/game/common/landed_titles/00_landed_titles.txt" \
+    "${CK3_LANDED_TITLES_DIR}/00_landed_titles.txt" \
     "${CK3_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-files \
     "${CK3AEP_VANILLA_LANDED_TITLES_FILE}" \
@@ -170,21 +170,21 @@ update-vanilla-files \
     "${CK3CE_LANDED_TITLES_DIR}"/*.txt \
     "${CK3RICE_LANDED_TITLES_DIR}"/*.txt
 update-vanilla-file \
-    "${CK3IBL_DIR}/common/landed_titles/00_landed_titles.txt" \
+    "${CK3IBL_LANDED_TITLES_DIR}/00_landed_titles.txt" \
     "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
-    "${CK3MBP_DIR}/common/landed_titles/00_landed_titles.txt" \
+    "${CK3MBP_LANDED_TITLES_DIR}/00_landed_titles.txt" \
     "${CK3MBP_VANILLA_LANDED_TITLES_FILE}" \
     "https://raw.githubusercontent.com/Leviathonlx/MoreBookmarks-Plus/main/common/landed_titles/00_landed_titles.txt"
 update-vanilla-file \
-    "${CK3SoW_DIR}/common/landed_titles/00_landed_titles.txt" \
+    "${CK3SoW_LANDED_TITLES_DIR}/00_landed_titles.txt" \
     "${CK3SoW_VANILLA_LANDED_TITLES_FILE}" \
     "https://gitlab.com/Vertimnus/sinews-of-war/-/raw/main/common/landed_titles/00_landed_titles.txt"
 update-vanilla-files \
     "${CK3TBA_VANILLA_LANDED_TITLES_FILE}" \
-    "${CK3TBA_DIR}/common/landed_titles/"/*.txt
+    "${CK3TBA_LANDED_TITLES_DIR}/"/*.txt
 update-vanilla-file \
-    "${CK3TFE_DIR}/common/landed_titles/00_landed_titles.txt" \
+    "${CK3TFE_LANDED_TITLES_DIR}/00_landed_titles.txt" \
     "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
 update-hoi4-parentage-file \
     "${HOI4_VANILLA_PARENTAGE_FILE}" \
