@@ -110,6 +110,7 @@ CK3MBP_LANDED_TITLES_DIR="${CK3MBP_DIR}/common/landed_titles"
 CK3MBP_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt"
 CK3MBP_VANILLA_LOCALISATION_FILE_1="${CK3MBP_DIR}/localization/english/titles_l_english.yml"
 CK3MBP_VANILLA_LOCALISATION_FILE_2="${CK3MBP_DIR}/localization/replace/english/zNB_Titles_l_english.yml"
+CK3MBP_VANILLA_LOCALISATION_FILE_3="${CK3MBP_DIR}/localization/replace/english/z_MB_game_rules_l_english.yml"
 
 CK3RICE_DIR="${STEAM_WORKSHOP_CK3_DIR}/2273832430"
 CK3RICE_CULTURES_DIR="${CK3RICE_DIR}/common/culture/cultures"

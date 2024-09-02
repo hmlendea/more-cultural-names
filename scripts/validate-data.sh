@@ -769,7 +769,7 @@ checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titl
 checkDefaultCk3Localisations "CK3CE"    "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3CMH"   "${CK3CMH_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE_1}" "${CK3MBP_VANILLA_LOCALISATION_FILE_2}"
+checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE_1}" "${CK3MBP_VANILLA_LOCALISATION_FILE_2}" "${CK3MBP_VANILLA_LOCALISATION_FILE_3}"
 checkDefaultCk3Localisations "CK3SoW"   "${CK3SoW_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}" # "${CK3_VANILLA_LOCALISATION_FILE}"
@@ -783,6 +783,7 @@ checkDefaultIrLocalisations  "IR_ABW"   "${IR_ABW_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
+checkDefaultIrLocalisations  "IR_TI"   "${IR_TI_VANILLA_FILE}"
 
 checkDefaultVic3Localisations "Vic3" "${Vic3_LOCALISATIONS_DIR}"
 
