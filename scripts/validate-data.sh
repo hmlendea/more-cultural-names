@@ -639,7 +639,7 @@ for LOCATIONS_XML in "${LOCATIONS_FILE}" "${UNUSED_LOCATIONS_FILE}"; do
     checkForDuplicateEntries "${LOCATIONS_XML}" 'Id'
     checkForDuplicateEntries "${LOCATIONS_XML}" 'GeoNamesId'
     checkForDuplicateEntries "${LOCATIONS_XML}" 'PleiadesId'
-    checkForDuplicateEntries "${LOCATIONS_XML}" 'WikiDataId'
+    checkForDuplicateEntries "${LOCATIONS_XML}" 'WikidataId'
 done
 
 # Find duplicate used-unused IDs
@@ -695,8 +695,8 @@ grep -Pzo "\n\s*<Name .*\n\s*</GameId.*\n" *.xml # </GameId.* after <Name>
 grep -Pzo "\n\s*.*</[^<]*\n\s*<Name .*\n" *.xml # <Name> after closing tags
 grep -Pzo "</[a-zA-Z]*>\n\s*<Id>.*\n" *.xml # <Id> after a closing tag
 grep -Pzo "<Fallback(Languages|Locations)>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <FallbackLanguages> or <FallbackLocations>
-grep -Pzo "</(Id|GeonamesId|PleiadesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeonamesId> or </PleiadesId> or </WikidataId>
-grep -Pzo "</(Id|GeonamesId|PleiadesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeonamesId> or </PleiadesId> or </WikidataId>
+grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
+grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
 grep -Pzo "\n.*=\s*\"\s*\".*\n" *.xml # Empty attributes
 grep -n "^\s*<\([^> ]*\).*</.*" *.xml | grep -v "^[a-z0-9:.]*\s*<\([^> ]*\).*</\1>.*" # Mismatching start/end tag on same line
