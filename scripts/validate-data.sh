@@ -763,7 +763,7 @@ checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2RoI"   "${CK2RoI_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
-checkDefaultCk3Localisations "CK3"      "${CK3__LOCALISATIONS_DIR}"
+checkDefaultCk3Localisations "CK3"      "${CK3_LOCALISATIONS_DIR}"
 checkDefaultCk3Localisations "CK3AEP"   "${CK3AEP_LOCALISATIONS_DIR}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"
 checkDefaultCk3Localisations "CK3CE"    "${CK3CE_LOCALISATIONS_DIR}"
@@ -779,11 +779,11 @@ checkDefaultHoi4Localisations   "HOI4MDM"   "${HOI4MDM_LOCALISATIONS_DIR}"
 checkDefaultHoi4Localisations   "HOI4TGW"   "${HOI4TGW_LOCALISATIONS_DIR}"
 
 checkDefaultIrLocalisations  "IR"       "${IR_LOCALISATIONS_DIR}"
-checkDefaultIrLocalisations  "IR_ABW"   "${IR_LOCALISATIONS_DIR}"
-checkDefaultIrLocalisations  "IR_AoE"   "${IR_LOCALISATIONS_DIR}"
-checkDefaultIrLocalisations  "IR_INV"   "${IR_LOCALISATIONS_DIR}"
-checkDefaultIrLocalisations  "IR_TBA"   "${IR_LOCALISATIONS_DIR}"
-checkDefaultIrLocalisations  "IR_TI"   "${IR_LOCALISATIONS_DIR}"
+checkDefaultIrLocalisations  "IR_ABW"   "${IR_ABW_LOCALISATIONS_DIR}"
+checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_LOCALISATIONS_DIR}"
+checkDefaultIrLocalisations  "IR_INV"   "${IR_INV_LOCALISATIONS_DIR}"
+checkDefaultIrLocalisations  "IR_TBA"   "${IR_TBA_LOCALISATIONS_DIR}"
+checkDefaultIrLocalisations  "IR_TI"   "${IR_TI_LOCALISATIONS_DIR}"
 
 checkDefaultVic3Localisations "Vic3" "${Vic3_LOCALISATIONS_DIR}"
 
