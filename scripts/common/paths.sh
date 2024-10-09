@@ -29,11 +29,16 @@ STEAM_WORKSHOP_EU4_DIR="${STEAM_WORKSHOP_DIR}/content/236850"
 STEAM_WORKSHOP_HOI4_DIR="${STEAM_WORKSHOP_DIR}/content/394360"
 STEAM_WORKSHOP_IR_DIR="${STEAM_WORKSHOP_DIR}/content/859580"
 STEAM_WORKSHOP_Vic3_DIR="${STEAM_WORKSHOP_DIR}/content/529340"
-CK2_LOCAL_MODS_DIR="${HOME}/.paradoxinteractive/Crusader Kings II/mod"
+
+LOCAL_MODS_DIR="${HOME}/.paradoxinteractive"
+LOCAL_MODS_CK2_DIR="${HOME}/.paradoxinteractive/Crusader Kings II/mod"
+LOCAL_MODS_CK3_DIR="${HOME}/.paradoxinteractive/Crusader Kings III/mod"
 
 AOD_DIR="${STEAM_GAMES_DIR}/Arsenal of Democracy"
+AOD_LOCALISATIONS_DIR="${AOD_DIR}/config"
 
 CK1_DIR="${STEAM_GAMES_DIR}/Crusader Kings"
+CK1_LOCALISATIONS_DIR="${CK1_DIR}/config"
 
 CK2_DIR="${STEAM_GAMES_DIR}/Crusader Kings II"
 CK2_CULTURES_DIR="${CK2_DIR}/common/cultures"
@@ -41,19 +46,19 @@ CK2_LANDED_TITLES_DIR="${CK2_DIR}/common/landed_titles"
 CK2_LOCALISATIONS_DIR="${CK2_DIR}/localisation"
 CK2_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2_landed_titles.txt"
 
-CK2HIP_DIR="${CK2_LOCAL_MODS_DIR}/Historical_Immersion_Project"
+CK2HIP_DIR="${LOCAL_MODS_CK2_DIR}/Historical_Immersion_Project"
 CK2HIP_CULTURES_DIR="${CK2HIP_DIR}/common/cultures"
 CK2HIP_LANDED_TITLES_DIR="${CK2HIP_DIR}/common/landed_titles"
 CK2HIP_LOCALISATIONS_DIR="${CK2HIP_DIR}/localisation"
 CK2HIP_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2hip_landed_titles.txt"
 
-CK2RoI_DIR="${CK2_LOCAL_MODS_DIR}/633 rise of islam"
+CK2RoI_DIR="${LOCAL_MODS_CK2_DIR}/633 rise of islam"
 CK2RoI_CULTURES_DIR="${CK2RoI_DIR}/common/cultures"
 CK2RoI_LANDED_TITLES_DIR="${CK2RoI_DIR}/common/landed_titles"
 CK2RoI_LOCALISATIONS_DIR="${CK2RoI_DIR}/localisation"
 CK2RoI_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck2roi_landed_titles.txt"
 
-CK2TWK_DIR="${CK2_LOCAL_MODS_DIR}/britannia"
+CK2TWK_DIR="${LOCAL_MODS_CK2_DIR}/britannia"
 CK2TWK_CULTURES_DIR="${CK2TWK_DIR}/common/cultures"
 CK2TWK_LANDED_TITLES_DIR="${CK2TWK_DIR}/common/landed_titles"
 CK2TWK_LOCALISATIONS_DIR="${CK2TWK_DIR}/localisation"
@@ -141,19 +146,23 @@ CK3TFE_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt
 CK3TFE_VANILLA_LOCALISATION_FILE="${CK3TFE_LOCALISATIONS_DIR}/replace/TFE_titles_l_english.yml"
 
 DH_DIR="${STEAM_GAMES_DIR}/Darkest Hour A HOI Game"
+DH_LOCALISATIONS_DIR="${DH_DIR}/config"
 
 EU3_DIR="${STEAM_GAMES_DIR}/Europa Universalis III - Complete"
 EU3_LOCALISATIONS_DIR="${EU3_DIR}/localisation"
 
 EU4_DIR="${STEAM_GAMES_DIR}/Europa Universalis IV"
 EU4_CULTURES_DIR="${EU4_DIR}/common/cultures"
+EU4_LOCALISATIONS_DIR="${EUR_DIR}/localisation"
 
 EUR_DIR="${STEAM_GAMES_DIR}/Europa Universalis Rome"
 EUR_LOCALISATIONS_DIR="${EUR_DIR}/localisation"
 
 FTG_DIR="${STEAM_GAMES_DIR}/For The Glory"
+FTG_LOCALISATIONS_DIR="${FTG_DIR}/Localisation/English"
 
 HOI2_DIR="${STEAM_GAMES_DIR}/Hearts of Iron 2 Complete Pack"
+HOI2_LOCALISATIONS_DIR="${HOI2_DIR}/config"
 
 HOI3_DIR="${STEAM_GAMES_DIR}/Hearts of Iron 3"
 HOI3_LOCALISATIONS_DIR="${HOI3_DIR}/localisation"
