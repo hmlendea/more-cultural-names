@@ -350,7 +350,7 @@ function checkForMismatchingLocationLinks() {
         checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == IR* ]]; then
-        #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
+        checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
         checkForSurplusIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
         checkForMissingVic3CountryLinks "${GAME_ID}"
@@ -566,7 +566,7 @@ function validateThatTheLanguagesAreOrdered() {
     local EXPECTED_LANGUAGES_LIST=""
 
     ACTUAL_LANGUAGES_LIST=$(xmlstarlet sel -t -m "//Id" -v "." -n "${LANGUAGES_FILE_TO_CHECK}" | \
-                            grep -v '_\(Ancient\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Proto\)')
+                            grep -v '_\(Ancient\|Archaic\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Proto\)')
     EXPECTED_LANGUAGES_LIST=$(sort <<< ${ACTUAL_LANGUAGES_LIST})
 
     diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LANGUAGES_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LANGUAGES_LIST}" | sed 's/%NL%/\n/g')
@@ -639,7 +639,7 @@ for LOCATIONS_XML in "${LOCATIONS_FILE}" "${UNUSED_LOCATIONS_FILE}"; do
     checkForDuplicateEntries "${LOCATIONS_XML}" 'Id'
     checkForDuplicateEntries "${LOCATIONS_XML}" 'GeoNamesId'
     checkForDuplicateEntries "${LOCATIONS_XML}" 'PleiadesId'
-    checkForDuplicateEntries "${LOCATIONS_XML}" 'WikiDataId'
+    checkForDuplicateEntries "${LOCATIONS_XML}" 'WikidataId'
 done
 
 # Find duplicate used-unused IDs
@@ -695,8 +695,8 @@ grep -Pzo "\n\s*<Name .*\n\s*</GameId.*\n" *.xml # </GameId.* after <Name>
 grep -Pzo "\n\s*.*</[^<]*\n\s*<Name .*\n" *.xml # <Name> after closing tags
 grep -Pzo "</[a-zA-Z]*>\n\s*<Id>.*\n" *.xml # <Id> after a closing tag
 grep -Pzo "<Fallback(Languages|Locations)>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <FallbackLanguages> or <FallbackLocations>
-grep -Pzo "</(Id|GeonamesId|PleiadesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeonamesId> or </PleiadesId> or </WikidataId>
-grep -Pzo "</(Id|GeonamesId|PleiadesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeonamesId> or </PleiadesId> or </WikidataId>
+grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
+grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
 grep -Pzo "\n.*=\s*\"\s*\".*\n" *.xml # Empty attributes
 grep -n "^\s*<\([^> ]*\).*</.*" *.xml | grep -v "^[a-z0-9:.]*\s*<\([^> ]*\).*</\1>.*" # Mismatching start/end tag on same line
@@ -735,27 +735,27 @@ grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"     "${CK2_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"  "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK2RoI"   "${CK2RoI_VANILLA_LANDED_TITLES_FILE}"  "${CK2RoI_LOCALISATIONS_DIR}"/*.csv
-#checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE}"  "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
+checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE}"  "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"     "${CK3_VANILLA_LOCALISATION_FILE}"
-#checkForMismatchingLocationLinks "CK3AEP"    "${CK3AEP_VANILLA_LANDED_TITLES_FILE}"   "${CK3AEP_LOCALISATIONS_DIR}"/aep_*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
-checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}" "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
+checkForMismatchingLocationLinks "CK3AEP"    "${CK3AEP_VANILLA_LANDED_TITLES_FILE}"   "${CK3AEP_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}" "${CK3ATHA_LOCALISATIONS_DIR}"/*_titles*_l_english.yml
 checkForMismatchingLocationLinks "CK3CE"    "${CK3CE_VANILLA_LANDED_TITLES_FILE}"   "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
-checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"  "${CK3CMH_VANILLA_LOCALISATION_FILE}"
-checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"  "${CK3IBL_VANILLA_LOCALISATION_FILE}"
-checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"  "${CK3MBP_VANILLA_LOCALISATION_FILE_2}"
-checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"  "${CK3SoW_VANILLA_LOCALISATION_FILE}"
-#checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"  "${CK3CMH_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"  "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"  "${CK3MBP_VANILLA_LOCALISATION_FILE_1}" "${CK3MBP_VANILLA_LOCALISATION_FILE_2}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"  "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"  "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_ABW"   "${IR_ABW_VANILLA_FILE}"
-checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
-checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}" "${IR_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}" "${IR_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
-checkForMismatchingLocationLinks "IR_TI"   "${IR_TI_VANILLA_FILE}"
+checkForMismatchingLocationLinks "IR_TI"   "${IR_TI_VANILLA_FILE}" "${IR_VANILLA_FILE}"
 #checkForMismatchingLinks "Vic3"
 
 validateHoi4Parentage "HOI4"    "${HOI4_VANILLA_PARENTAGE_FILE}"    "${HOI4_LOCALISATIONS_DIR}"
-#validateHoi4Parentage "HOI4MDM" "${HOI4MDM_VANILLA_PARENTAGE_FILE}" "${HOI4MDM_LOCALISATIONS_DIR}"
+validateHoi4Parentage "HOI4MDM" "${HOI4MDM_VANILLA_PARENTAGE_FILE}" "${HOI4MDM_LOCALISATIONS_DIR}"
 validateHoi4Parentage "HOI4TGW" "${HOI4TGW_VANILLA_PARENTAGE_FILE}" "${HOI4TGW_LOCALISATIONS_DIR}"
 
 # Validate default localisations
@@ -764,15 +764,15 @@ checkDefaultCk2Localisations "CK2HIP"   "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2RoI"   "${CK2RoI_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3AEP"   "${CK3AEP_LOCALISATIONS_DIR}"/AEP_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
+checkDefaultCk3Localisations "CK3AEP"   "${CK3AEP_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"/*_titles*_l_english.yml
 checkDefaultCk3Localisations "CK3CE"    "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3CMH"   "${CK3CMH_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE_1}" "${CK3MBP_VANILLA_LOCALISATION_FILE_2}"
-checkDefaultCk3Localisations "CK3SoW"   "${CK3SoW_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3CMH"   "${CK3CMH_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE_1}" "${CK3MBP_VANILLA_LOCALISATION_FILE_2}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3SoW"   "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}" # "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 
 checkDefaultHoi4Localisations   "HOI4"      "${HOI4_LOCALISATIONS_DIR}"
 checkDefaultHoi4Localisations   "HOI4MDM"   "${HOI4MDM_LOCALISATIONS_DIR}"
@@ -780,9 +780,10 @@ checkDefaultHoi4Localisations   "HOI4TGW"   "${HOI4TGW_LOCALISATIONS_DIR}"
 
 checkDefaultIrLocalisations  "IR"       "${IR_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_ABW"   "${IR_ABW_VANILLA_FILE}"
-checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
-checkDefaultIrLocalisations  "IR_INV"   "${IR_INV_VANILLA_FILE}"
+checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}" "${IR_VANILLA_FILE}"
+checkDefaultIrLocalisations  "IR_INV"   "${IR_INV_VANILLA_FILE}" "${IR_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
+checkDefaultIrLocalisations  "IR_TI"   "${IR_TI_VANILLA_FILE}" "${IR_VANILLA_FILE}"
 
 checkDefaultVic3Localisations "Vic3" "${Vic3_LOCALISATIONS_DIR}"
 
