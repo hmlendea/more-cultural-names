@@ -7745,7 +7745,9 @@ e_byzantium = {
 		custom_tooltip = {
 			text = is_latin_emperor_tt
 			NOT = {
-				primary_title = title:e_latin_empire
+				any_held_title = {
+					this = title:e_latin_empire
+				} 
 			}
 		}
 	}
@@ -71693,6 +71695,48 @@ d_laamp_enian = { # Enian Qaghan
 	ai_primary_priority = { add = @never_primary_score }
 }
 
+d_laamp_sevener_caliph = { # Hussayn Fatimid
+	color = { 100 100 100 }
+	capital = c_al-hasa
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_twelver_caliph = { # Ali Fatimid
+	color = { 100 100 100 }
+	capital = c_qasim
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_qutid = { # Suleyman ibn Hakam Qutid.
+	color = { 100 100 100 }
+	capital = c_cordoba
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
 # 1066
 
 d_laamp_sabbah = { # Hassan-i Sabbah
@@ -71824,6 +71868,34 @@ d_laamp_aelfwine = { # Aelfwine Haroldson
 d_laamp_karatzas = { # Argyros Karatzas
 	color = { 100 100 100 }
 	capital = c_philippopolis
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_kalbid = { # Muhammad ibn Ibrahim Kalbid.
+	color = { 100 100 100 }
+	capital = c_melilla
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_du_leon = { # Ordonu du Leon.
+	color = { 100 100 100 }
+	capital = c_navarra
 
 	definite_form = yes
 	landless = yes
