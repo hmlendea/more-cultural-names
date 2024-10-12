@@ -31,8 +31,8 @@ STEAM_WORKSHOP_IR_DIR="${STEAM_WORKSHOP_DIR}/content/859580"
 STEAM_WORKSHOP_Vic3_DIR="${STEAM_WORKSHOP_DIR}/content/529340"
 
 LOCAL_MODS_DIR="${HOME}/.paradoxinteractive"
-LOCAL_MODS_CK2_DIR="${HOME}/.paradoxinteractive/Crusader Kings II/mod"
-LOCAL_MODS_CK3_DIR="${HOME}/.paradoxinteractive/Crusader Kings III/mod"
+LOCAL_MODS_CK2_DIR="${LOCAL_MODS_DIR}/Crusader Kings II/mod"
+LOCAL_MODS_CK3_DIR="${LOCAL_MODS_DIR}/Crusader Kings III/mod"
 
 AOD_DIR="${STEAM_GAMES_DIR}/Arsenal of Democracy"
 AOD_LOCALISATIONS_DIR="${AOD_DIR}/config"
