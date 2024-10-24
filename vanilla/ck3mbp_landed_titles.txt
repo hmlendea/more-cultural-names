@@ -128,6 +128,19 @@ e_null_empire_kabulistan = {
 	can_create_on_partition = { always = no }
 }
 
+e_null_empire_japan = {
+	color =  { 0 0 255 1 }
+	
+	
+	capital = c_roma
+
+	can_create = { always = no }
+	no_automatic_claims = yes
+	definite_form = yes
+	#de_jure_drift_disabled = yes
+	can_create_on_partition = { always = no }
+}
+
 #For MGR
 #Empire Titles I keep for MGR: e_francia when it exists, e_hre, e_byzantium, e_bulgaria, e_maghreb, e_persia, e_arabia, e_kanem_bornu, e_mali, e_rajputana, e_deccan, e_kara_khitai
 
@@ -2190,6 +2203,7 @@ e_persia2 = { #To deal with CK3's way of handling the way it flavorizes titles (
 	
 	
 	can_create = {
+			rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 			trigger_if = {
 				limit = {
 					is_ai = yes
@@ -2213,9 +2227,6 @@ e_persia2 = { #To deal with CK3's way of handling the way it flavorizes titles (
 		}
 	}
 	
-	can_create = {
-		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-	}
 }
 
 e_hre = {
@@ -2932,6 +2943,7 @@ e_bulgaria = { #Becomes de_jure empire for Bulgaria
 		}
 	}
 	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -2939,10 +2951,7 @@ e_bulgaria = { #Becomes de_jure empire for Bulgaria
 			culture = culture:bulgarian
 		}
 	}	
-	
-	can_create = {
-		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-	}
+
 } 
 
 e_serbia = { #Becomes de_jure empire for Serbia and Epirus in final bookmark.
@@ -2960,6 +2969,7 @@ e_serbia = { #Becomes de_jure empire for Serbia and Epirus in final bookmark.
 		}
 	}
 	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -2967,10 +2977,6 @@ e_serbia = { #Becomes de_jure empire for Serbia and Epirus in final bookmark.
 			culture = culture:serbian
 		}
 	}	
-	
-	can_create = {
-		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-	}
 }
 
 e_ottoman = { #Becomes de_jure Empire for Anatolia for last bookmarks
@@ -49168,12 +49174,10 @@ e_bactria = {
 
 e_persia = {
 	color = { 30 240 230 }
-	
+
 	can_create = {
-		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-	}
-	
-	can_create = {
+			rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+			
 			trigger_if = {
 				limit = {
 					is_ai = yes
@@ -60993,9 +60997,6 @@ e_spain = {
 	
 	capital = c_toledo # Toledo
 	
-	can_create = {
-		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-	}
 		
 	ai_primary_priority = {
 		if = {
@@ -61018,6 +61019,8 @@ e_spain = {
 	}
 
 	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+		
 		custom_description = {
 			text = form_hispania_must_end_struggle_trigger
 
@@ -100957,11 +100960,8 @@ e_goguryeo = { #
 	capital = c_pyongyang
 	
 	can_create = {
-		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-	}
-	
-	
-	can_create = {
+			rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+			
 			trigger_if = {
 				limit = {
 					is_ai = yes
@@ -119151,21 +119151,6 @@ d_nf_arcruni = { # Arcruni (Sebasteia)
 	ai_primary_priority = { add = @never_primary_score }
 }
 
-d_nf_argyros = { # Argyros (Ephesos)
-	color = { 100 100 100 }
-	capital = c_byzantion
-
-	definite_form = yes
-	landless = yes
-	ruler_uses_title_name = no
-	always_follows_primary_heir = yes
-	no_automatic_claims = yes
-	noble_family = yes
-	destroy_if_invalid_heir = yes
-
-	ai_primary_priority = { add = @never_primary_score }
-}
-
 d_nf_basiliakos = { # Basiliakos (Thessalonika)
 	color = { 100 100 100 }
 	capital = c_byzantion
@@ -119801,6 +119786,907 @@ d_nf_sarantapechos = { #
 
 	ai_primary_priority = { add = @never_primary_score }
 }
+
+d_nf_argyros = { # Argyros (Ephesos)
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_lekapenos = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tornikes = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_dalassenos = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_apokaukos = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_chalkoutzes = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_kastamonites = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_anemas = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_mouzalon = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_monomachos = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_glabas = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tatikios = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_euforbenos = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_laskaris = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_aspietes = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_orsini = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_soultanos = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_choumnos = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tagares = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_philanthropenos = { # 
+	color = { 100 100 100 }
+	capital = c_byzantion
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+###
+d_nf_tang_li = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_yan = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_lu = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_du = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_yuan = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_wang = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_ma = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_cui = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_zhang = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_feng = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_liu = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_xiao = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_wei = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_chen = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_pei = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_tang = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_gao = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_li3 = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_shi = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_tuoba = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_meng = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_li2 = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_yang = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_qian = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_wang = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_ma = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_liu2 = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_duong = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_tang_cao = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_song_zhao = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_japan_tachibana = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_japan_taira = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_japan_minamoto = { # 
+	color = { 100 100 100 }
+	capital = c_changan_china
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_japan_fujiwara_oshu = { # 
+	color = { 100 100 100 }
+	capital = c_yamato
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_japan_fujiwara_nanke = { # 
+	color = { 100 100 100 }
+	capital = c_yamato
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_japan_fujiwara_hokke = { # 
+	color = { 100 100 100 }
+	capital = c_yamato
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_japan_fujiwara_shikike = { # 
+	color = { 100 100 100 }
+	capital = c_yamato
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_japan_fujiwara_kyoke = { # 
+	color = { 100 100 100 }
+	capital = c_yamato
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_japan_yamato = { # 
+	color = { 100 100 100 }
+	capital = c_yamato
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_nf_japan_shogunate_hojo = { # 
+	color = { 100 100 100 }
+	capital = c_yamato
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	always_follows_primary_heir = yes
+	no_automatic_claims = yes
+	noble_family = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
 
 # LAAMP TITLES
 
