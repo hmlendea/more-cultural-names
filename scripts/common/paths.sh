@@ -153,7 +153,7 @@ EU3_LOCALISATIONS_DIR="${EU3_DIR}/localisation"
 
 EU4_DIR="${STEAM_GAMES_DIR}/Europa Universalis IV"
 EU4_CULTURES_DIR="${EU4_DIR}/common/cultures"
-EU4_LOCALISATIONS_DIR="${EUR_DIR}/localisation"
+EU4_LOCALISATIONS_DIR="${EU4_DIR}/localisation"
 
 EUR_DIR="${STEAM_GAMES_DIR}/Europa Universalis Rome"
 EUR_LOCALISATIONS_DIR="${EUR_DIR}/localisation"
