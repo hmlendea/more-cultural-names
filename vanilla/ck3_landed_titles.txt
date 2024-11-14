@@ -499,6 +499,14 @@ e_timurids = {
 	}
 }
 
+k_bosporan_kingdom = {
+	color = { 139 0 0 }
+
+	capital = c_kerch
+
+	definite_form = yes
+}
+
 #Jewish Religious Heads
 d_karaism = {
 	color = { 0 100 255 }
@@ -7938,7 +7946,7 @@ e_byzantium = {
 			capital = c_mosynopolis # Mosynopolis
 
 			c_mosynopolis = {
-				color = { 49 43 135 }
+				color = { 39 53 135 }
 
 				b_mosynopolis = {
 					province = 492
@@ -10170,6 +10178,10 @@ e_byzantium = {
 
 		d_dobrudja = {
 			color = { 75 100 80 }
+
+			cultural_names = {
+				name_list_greek = cn_scythia_minor
+			}
 
 			capital = c_constanta # Constanta
 
@@ -25747,10 +25759,15 @@ e_caspian-pontic_steppe = {
 				name_list_bavarian = cn_jedisan
 				name_list_polish = cn_jedysan
 				name_list_vlach = cn_edisan
+				name_list_greek = cn_borysthenes
 			}
 
 			c_odessa = {
 				color = { 137 69 13 }
+
+				cultural_names = {
+					name_list_greek = cn_olbia
+				}
 
 				b_okachiv = {
 					province = 543
@@ -25885,8 +25902,16 @@ e_caspian-pontic_steppe = {
 
 			capital = c_khortytsia # Khortytsia
 
+			cultural_names = {
+				name_list_greek = cn_scythia
+			}
+
 			c_khortytsia = {
 				color = { 180 130 50 }
+
+				cultural_names = {
+					name_list_greek = cn_hygreis
+				}
 
 				b_khortytsia = {
 					province = 557
@@ -25911,6 +25936,10 @@ e_caspian-pontic_steppe = {
 			}
 			c_oleshye = {
 				color = { 183 125 94 }
+
+				cultural_names = {
+					name_list_greek = cn_oleshia
+				}
 
 				b_oleshye = {
 					province = 558
@@ -25986,13 +26015,25 @@ e_caspian-pontic_steppe = {
 		d_don_valley = {
 			color = { 227 201 98 }
 
+			cultural_names = {
+				name_list_greek = cn_tanais
+			}
+
 			capital = c_tana # Tana
 
 			c_tana = {
 				color = { 205 200 95 }
 
+				cultural_names = {
+					name_list_greek = cn_tanais
+				}
+
 				b_tana = {
 					province = 596
+
+					cultural_names = {
+						name_list_greek = cn_tanais
+					}
 
 					color = { 205 200 95 }
 				}
@@ -26113,18 +26154,24 @@ e_caspian-pontic_steppe = {
 			c_kalos_limen = {
 				color = { 110 32 44 }
 
-				b_kalos_limen = {
-					province = 559
-
-					color = { 110 32 44 }
+				cultural_names = {
+					name_list_greek = cn_kerkinitis
+					name_list_russian = cn_kozlov
 				}
+
 				b_kerkinitis = {
 					province = 5276
 
 					color = { 110 32 44 }
+
+					cultural_names = {
+						name_list_greek = cn_kerkinitis
+						name_list_russian = cn_kozlov
+					}
 				}
-				b_aqmescit = {
-					province = 5330
+
+				b_kalos_limen = {
+					province = 559
 
 					color = { 110 32 44 }
 				}
@@ -26132,11 +26179,30 @@ e_caspian-pontic_steppe = {
 			c_perekop = {
 				color = { 105 56 64 }
 
+				cultural_names = {
+					name_list_greek = cn_scythian_neapolis
+				}
+
+				b_aqmescit = {
+					province = 5330
+
+					color = { 110 32 44 }
+
+					cultural_names = {
+						name_list_greek = cn_scythian_neapolis
+					}
+				}
+
 				b_perekop = {
 					province = 5277
 
+					cultural_names = {
+						name_list_greek = cn_taphros
+					}
+
 					color = { 105 56 64 }
 				}
+
 				b_dzhankoi = {
 					province = 5331
 
@@ -26223,8 +26289,16 @@ e_caspian-pontic_steppe = {
 			c_tmutarakan = {
 				color = { 66 55 10 }
 
+				cultural_names = {
+					name_list_greek = cn_tmutarakan
+				}
+
 				b_tmutarakan = {
 					province = 598
+
+					cultural_names = {
+						name_list_greek = cn_tmutarakan
+					}
 
 					color = { 66 55 10 }
 				}
@@ -26236,10 +26310,18 @@ e_caspian-pontic_steppe = {
 				b_kuban = {
 					province = 5335
 
+					cultural_names = {
+						name_list_greek = cn_labrys
+					}
+
 					color = { 66 55 10 }
 				}
 				b_soleny = {
 					province = 5336
+
+					cultural_names = {
+						name_list_greek = cn_azara
+					}
 
 					color = { 66 55 10 }
 				}
@@ -26247,8 +26329,16 @@ e_caspian-pontic_steppe = {
 			c_khumar = {
 				color = { 83 61 5 }
 
+				cultural_names = {
+					name_list_greek = cn_pataroue
+				}
+
 				b_yaseni = {
 					province = 599
+
+					cultural_names = {
+						name_list_greek = cn_pataroue
+					}
 
 					color = { 83 61 5 }
 				}
@@ -26266,8 +26356,16 @@ e_caspian-pontic_steppe = {
 			c_azov = {
 				color = { 100 72 15 }
 
+				cultural_names = {
+					name_list_greek = cn_paniardis
+				}
+
 				b_azov = {
 					province = 597
+
+					cultural_names = {
+						name_list_greek = cn_paniardis
+					}
 
 					color = { 100 72 15 }
 				}
@@ -26345,8 +26443,16 @@ e_caspian-pontic_steppe = {
 			c_zichia = {
 				color = { 100 44 16 }
 
+				cultural_names = {
+					name_list_greek = cn_gorgippia
+				}
+
 				b_bata = {
 					province = 5296
+
+					cultural_names = {
+						name_list_greek = cn_gorgippia
+					}
 
 					color = { 100 44 16 }
 				}
@@ -26357,6 +26463,10 @@ e_caspian-pontic_steppe = {
 				}
 				b_ulmi = {
 					province = 5298
+
+					cultural_names = {
+						name_list_greek = cn_torikos
+					}
 
 					color = { 100 44 16 }
 				}
@@ -39634,6 +39744,10 @@ e_carpathia = {
 
 			#Budjak in Turkish
 
+			cultural_names = {
+				name_list_greek = cn_tyras
+			}
+
 			capital = c_tigheci # Tigheci
 
 			c_tigheci = {
@@ -39653,8 +39767,16 @@ e_carpathia = {
 			c_cetatea_alba = {
 				color = { 190 240 20 }
 
+				cultural_names = {
+					name_list_greek = cn_tyras
+				}
+
 				b_cetatea_alba = {
 					province = 512
+
+					cultural_names = {
+						name_list_greek = cn_tyras
+					}
 
 					color = { 180 235 40 }
 				}
@@ -39667,8 +39789,16 @@ e_carpathia = {
 			c_chilia = {
 				color = { 180 210 40 }
 
+				cultural_names = {
+					name_list_greek = cn_aepolium
+				}
+
 				b_chilia = {
 					province = 5012
+
+					cultural_names = {
+						name_list_greek = cn_aepolium
+					}
 
 					color = { 175 230 40 }
 				}
