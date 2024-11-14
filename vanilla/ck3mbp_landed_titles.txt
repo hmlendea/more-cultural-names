@@ -2230,7 +2230,7 @@ e_persia2 = { #To deal with CK3's way of handling the way it flavorizes titles (
 }
 
 e_hre = {
-	color = { 255 255 255 }
+	color = { 224 195 65 }
 
 	capital = c_aachen
 	definite_form = yes
@@ -2297,7 +2297,7 @@ e_ilkhanate = {
 }
 
 e_chagatai = {
-	color = { 200 200 200 }
+	color = { 210 200 215 }
 
 	definite_form = yes
 	can_be_named_after_dynasty = no
@@ -2437,6 +2437,14 @@ e_timurids = {
 	}
 }
 
+k_bosporan_kingdom = {
+	color = { 139 0 0 }
+
+	capital = c_kerch
+
+	definite_form = yes
+}
+
 #Titular Asia
 
 e_kirghiz_khanate = {
@@ -2463,7 +2471,7 @@ e_kirghiz_khanate = {
 }
 
 e_kara_khitai = { #aka Western Liao / Great Liao
-	color = { 10 10 10 }
+	color = { 15 15 15 }
 	can_be_named_after_dynasty = no
 	
 	capital = c_balashagun
@@ -2500,7 +2508,7 @@ e_nanyue = { # Created by decision
 }
 
 e_kambujadesa = {
-    color = { 253 40 121 }
+    color = { 243 40 121 }
 
     capital = c_aninditapura
 
@@ -3049,7 +3057,7 @@ e_armenia = {
 }
 
 e_egypt = { # Misr
-	color = { 200 255 200 }
+	color = { 145 210 180 }
 	
 	capital = c_cairo # Cairo
 	ruler_uses_title_name = no
@@ -5392,7 +5400,7 @@ k_sorbs = { # Sorbi
 # Lutici tribes
 #####
 d_lutici = { # Ljutici
-	color = { 22 57 233 }
+	color = { 22 57 213 }
 	de_jure_drift_disabled = yes
 	capital = c_brandenburg # Mittelmark # Brandenburg
 
@@ -14533,7 +14541,7 @@ e_germany = {
 	}
 	
 	k_east_francia = {	#Franconia
-		color = { 210 210 255 }
+		color = { 224 195 65 }
 		
 		
 		capital = c_frankfurt
@@ -15610,7 +15618,7 @@ e_roman_empire = {
 }
 
 e_byzantium = {
-	color =  hsv{ 0.9 1 0.3 } #hsv{ 0.73 0.8 0.4 }  #hsv{ 0.77 0.8 0.6 } #{ 143 12 125 }
+	color = { 143 12 125 }
 	
 	
 	capital = c_byzantion
@@ -17861,6 +17869,9 @@ e_byzantium = {
 		d_dobrudja = {
 			color = { 75 100 80 }
 			
+			cultural_names = {
+				name_list_greek = cn_scythia_minor
+			}
 			
 			capital = c_constanta # Constanta
 			
@@ -22381,7 +22392,7 @@ e_byzantium = {
 	}
 	
 	k_georgia = {
-		color = { 122 26 98 }
+		color = { 100 26 98 }
 		
 		
 		capital = c_tbilisi # Tbilisi
@@ -37732,11 +37743,15 @@ e_caspian-pontic_steppe = {
 				name_list_bavarian = cn_jedisan
 				name_list_polish = cn_jedysan
 				name_list_vlach = cn_edisan
+				name_list_greek = cn_borysthenes
 			}
 			
 			c_odessa = {
 				color = { 137 69 13 }
 				
+				cultural_names = {
+					name_list_greek = cn_olbia
+				}
 				
 				b_odessa = {
 					province = 5268
@@ -37890,12 +37905,18 @@ e_caspian-pontic_steppe = {
 		d_levedia = {
 			color = { 180 130 50 }
 			
+			cultural_names = {
+				name_list_greek = cn_scythia
+			}
 			
 			capital = c_khortytsia # Khortytsia
 			
 			c_khortytsia = {
 				color = { 180 130 50 }
 				
+				cultural_names = {
+					name_list_greek = cn_hygreis
+				}
 				
 				b_khortytsia = {
 					province = 557
@@ -37925,6 +37946,9 @@ e_caspian-pontic_steppe = {
 			c_oleshye = {
 				color = { 183 125 94 }
 				
+				cultural_names = {
+					name_list_greek = cn_oleshia
+				}
 				
 				b_oleshye = {
 					province = 558
@@ -38014,15 +38038,25 @@ e_caspian-pontic_steppe = {
 		d_don_valley = {
 			color = { 205 175 85 }
 			
+			cultural_names = {
+				name_list_greek = cn_tanais
+			}
 			
 			capital = c_tana # Tana
 			
 			c_tana = { #re localized as Taganrog as I moved Tana to be properly in Azov
 				color = { 205 200 95 }
 				
+				cultural_names = {
+					name_list_greek = cn_tanais
+				}
 				
 				b_taganrog = {
 					province = 563
+					
+					cultural_names = {
+						name_list_greek = cn_tanais
+					}
 				
 					color = { 205 200 95 }
 					
@@ -38138,11 +38172,21 @@ e_caspian-pontic_steppe = {
 			c_kalos_limen = {
 				color = { 114 69 57 }
 				
+				cultural_names = {
+					name_list_greek = cn_kerkinitis
+					name_list_russian = cn_kozlov
+						  
+				}
 				
 				b_kalos_limen = {
 					province = 559
 				
 					color = { 114 69 57 }
+					
+					cultural_names = {
+						name_list_greek = cn_kerkinitis
+						name_list_russian = cn_kozlov
+					}
 					
 				}
 				b_kerkinitis = {
@@ -38161,11 +38205,18 @@ e_caspian-pontic_steppe = {
 			c_perekop = {
 				color = { 121 82 63 }
 				
+				cultural_names = {
+					name_list_greek = cn_scythian_neapolis
+				}
 				
 				b_perekop = {
 					province = 5277
 				
 					color = { 121 82 63 }
+					
+					cultural_names = {
+						name_list_greek = cn_taphros
+					}
 					
 				}
 				b_dzhankoi = {
@@ -38379,6 +38430,10 @@ e_caspian-pontic_steppe = {
 			c_tmutarakan = { #
 				color = { 66 55 10 }
 				
+				cultural_names = {
+						name_list_greek = cn_tmutarakan
+					}
+				
 				
 				b_tmutarakan = {
 					province = 598
@@ -38386,6 +38441,10 @@ e_caspian-pontic_steppe = {
 					color = { 66 55 10 }
 					
 				}
+				
+				cultural_names = {
+						name_list_greek = cn_tmutarakan
+					}
 				b_batacrim = {
 					province = 9838
 				
@@ -38423,16 +38482,26 @@ e_caspian-pontic_steppe = {
 			
 			
 			capital = c_azov # Azov
+			
+			cultural_names = {
+					name_list_greek = cn_paniardis
+				}
 
 			c_azov = {
 				color = { 100 72 15 }
 				
-				
+				cultural_names = {
+						name_list_greek = cn_paniardis
+					}
 				
 				b_azov = {
 					province = 597
 				
 					color = { 100 72 15 }
+					
+					cultural_names = {
+						name_list_greek = cn_paniardis
+					}
 					
 				}
 			
@@ -38461,6 +38530,10 @@ e_caspian-pontic_steppe = {
 				
 					color = { 66 55 10 }
 					
+					cultural_names = {
+						name_list_greek = cn_labrys
+					}
+					
 				}
 				
 				b_papagia = {
@@ -38474,6 +38547,10 @@ e_caspian-pontic_steppe = {
 				
 					color = { 66 55 10 }
 					
+					cultural_names = {
+						name_list_greek = cn_azara
+					}
+					
 				}
 				
 			}
@@ -38481,11 +38558,19 @@ e_caspian-pontic_steppe = {
 			c_khumar = {
 				color = { 83 61 5 }
 				
+				cultural_names = {
+					name_list_greek = cn_pataroue
+				}
+				
 				
 				b_yaseni = {
 					province = 599
 				
 					color = { 83 61 5 }
+					
+					cultural_names = {
+						name_list_greek = cn_pataroue
+					}
 					
 				}
 				b_chelbaska = {
@@ -38529,11 +38614,19 @@ e_caspian-pontic_steppe = {
 			c_zichia = {
 				color = { 100 44 16 }
 				
+				cultural_names = {
+					name_list_greek = cn_gorgippia
+				}
+				
 				
 				b_bata = {
 					province = 5296
 				
 					color = { 100 44 16 }
+					
+					cultural_names = {
+					name_list_greek = cn_gorgippia
+				}
 					
 				}
 				b_zapaxi = {
@@ -38546,6 +38639,10 @@ e_caspian-pontic_steppe = {
 					province = 5298
 				
 					color = { 100 44 16 }
+					
+					cultural_names = {
+						name_list_greek = cn_torikos
+					}
 					
 				}
 			}
@@ -49357,7 +49454,7 @@ e_persia = {
 		}
 		
 		d_kirman = {
-			color = { 168 250 86 }
+			color = { 168 240 86 }
 			
 			
 			capital = c_kirman # Kirman
@@ -54582,6 +54679,10 @@ e_carpathia = {
 			
 			#Budjak in Turkish
 			
+			cultural_names = {
+				name_list_greek = cn_tyras
+			}
+			
 			capital = c_tigheci # Tigheci
 			
 			c_tigheci = {
@@ -54604,11 +54705,18 @@ e_carpathia = {
 			c_cetatea_alba = {
 				color = { 190 240 20 }
 				
+				cultural_names = {
+					name_list_greek = cn_tyras
+				}
 			
 				b_cetatea_alba = {
 					province = 512
 
 					color = { 180 235 40 }
+					
+					cultural_names = {
+					name_list_greek = cn_tyras
+				}
 					
 				}
 				b_tighina = {
@@ -54621,11 +54729,19 @@ e_carpathia = {
 			c_chilia = {
 				color = { 180 210 40 }
 				
+				cultural_names = {
+					name_list_greek = cn_aepolium
+				}
+				
 				
 				b_chilia = {
 					province = 5012
 
 					color = { 175 230 40 }
+					
+					cultural_names = {
+					name_list_greek = cn_aepolium
+				}
 					
 				}
 				b_oblucita = {
@@ -57305,7 +57421,7 @@ e_carpathia = {
 }
 	
 e_france = {
-	color = { 11 22 170 }
+	color = { 11 10 200 }
 	
 	#can_create = {
 	#
@@ -62182,7 +62298,7 @@ e_spain = {
 	}
 
 	k_castille = { #Spain
-		color = { 188 150 0 }
+		color = { 243 209 23 }
 	
 		
 		capital = c_burgos # Burgos
@@ -62473,7 +62589,7 @@ e_spain = {
 	}
 	
 	k_aragon = {
-		color = { 255 237 120 }
+		color = { 166 98 22 }
 		
 		capital = c_zaragoza # Zaragoza
 		
@@ -63450,7 +63566,7 @@ e_spain = {
 	}
 	
 	k_spanish_galicia = {
-		color = { 255 224 94 }
+		color = { 245 224 94 }
 		
 		capital = c_santiago # La Coruña
 		
@@ -70193,7 +70309,7 @@ e_nubia = { #To make it so Abyssinia doesn't de jure conquer all of east Africa 
 	}
 	
 	k_alodia = { #Alodia/Arwa
-		color = { 197 255 198 }
+		color = { 175 100 80 }
 		
 		capital = c_alodia
 		#definite_form = yes
@@ -79371,7 +79487,7 @@ e_india = {					  # Titular, created by special decision only if entire India is
 }
 
 e_rajastan = {
-	color = { 255 100 0 }
+	color = { 245 100 10 }
 	
 	can_be_named_after_dynasty = no
 	
@@ -85560,7 +85676,7 @@ e_kalinga = {
 }
 
 e_deccan = {
-	color = { 190 20 50 }
+	color = { 190 25 55 }
 	
 	
 	capital = c_kalyani
@@ -86135,7 +86251,7 @@ e_deccan = {
 	}
 	
 	k_karnata = {
-		color = { 150 20 0 }
+		color = { 150 20 15 }
 		
 		
 		capital = c_kalyani # Kalyani
@@ -86678,7 +86794,7 @@ e_deccan = {
 
 #Shrinks the 'Deccan Empire' and makes it so the Chola Dynasty and later Pandya Dynasty can properly be an empire
 e_chola = {
-	color = { 210 35 60 }
+	color = { 135 30 95 }
 	
 	capital = c_cholamandalam
 	
@@ -87650,7 +87766,7 @@ e_chola = {
 }
 
 e_tibet = {
-	color = { 250 40 0 }
+	color = { 230 40 15 }
 	
 	
 	capital = c_lhasa
@@ -121107,6 +121223,124 @@ d_laamp_raoul = { # Roger Raoul
 	ai_primary_priority = { add = @never_primary_score }
 }
 
+#MB
+
+d_laamp_montfort1337 = { #
+	color = { 100 100 100 }
+	capital = c_rennes #
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_ibn1337 = { #
+	color = { 100 100 100 }
+	capital = c_delhi #He was visiting the court of Delhi in 1337
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_ockham1337 = { #
+	color = { 100 100 100 }
+	capital = c_munchen #Where he fled after being summoned to Avignon
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_tokiyuki1337 = { #
+	color = { 100 100 100 }
+	capital = c_shinano
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_werner1337 = { #
+	color = { 100 100 100 }
+	capital = c_ferrara
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_cervole1337 = { #
+	color = { 100 100 100 }
+	capital = c_perigord
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_marignoli1337 = { #
+	color = { 100 100 100 }
+	capital = c_venaissin #He would leave for Asia in 1338, beginning his famous journey that would take him through Constantinople, Almaliq, Khan Baliq (modern Beijing), and India.
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_calv1337 = { #
+	color = { 100 100 100 }
+	capital = c_cheshire
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_umari1337 = { #
+	color = { 100 100 100 }
+	capital = c_cairo
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
 
 
 ########################################################################################OBSOLETE TITLES########################################################################################
