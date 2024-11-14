@@ -109,7 +109,7 @@ build-edition \
 
 build-edition \
     "aep-more-cultural-names" "Asia Expansion Project - More Cultural Names" \
-    "CK3AEP" "1.13.*" \
+    "CK3AEP" "1.14.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3aep_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
