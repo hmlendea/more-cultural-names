@@ -139,7 +139,7 @@ build-edition \
 
 build-edition \
     "sow-more-cultural-names" "Sinews of War - More Cultural Names" \
-    "CK3SoW" "1.8.*" \
+    "CK3SoW" "1.14.*" \
     --landed-titles "${CK3SoW_VANILLA_LANDED_TITLES_FILE}" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
