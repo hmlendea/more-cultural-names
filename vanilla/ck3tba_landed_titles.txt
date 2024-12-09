@@ -6807,7 +6807,7 @@ e_amurru = {
 		if = {
 			limit = {
 				OR = {
-					culture = culture:cypriot
+					culture = culture:ba_cypriot
 					culture = culture:amoritic
 					culture = culture:eblaite
 					culture = culture:zalwari
@@ -6866,7 +6866,7 @@ e_amurru = {
 		ai_primary_priority = {
 			if = {
 				limit = {
-					culture = culture:cypriot
+					culture = culture:ba_cypriot
 				}
 				add = @correct_culture_primary_score
 			}
@@ -28371,14 +28371,11 @@ k_twelfth_dynasty = {
 }
 #Religious Heads
 d_cult_of_enlil = {
-	landless = yes
 	color = { 221 254 1 }
-	definite_form = yes
-	ruler_uses_title_name = no
-
-	no_automatic_claims = yes
-	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	no_automatic_claims = yes
+	de_jure_drift_disabled = yes
+	definite_form = yes
 
 	capital = c_nippur
 }
