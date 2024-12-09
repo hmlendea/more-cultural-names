@@ -139,7 +139,7 @@ build-edition \
 
 build-edition \
     "sow-more-cultural-names" "Sinews of War - More Cultural Names" \
-    "CK3SoW" "1.8.*" \
+    "CK3SoW" "1.14.*" \
     --landed-titles "${CK3SoW_VANILLA_LANDED_TITLES_FILE}" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
@@ -154,16 +154,16 @@ build-edition \
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
-    "HOI4" "1.14.*"
+    "HOI4" "1.15.*"
 
 build-edition \
     "mdm-more-cultural-names" "Millennium Dawn: More Cultural Names" \
-    "HOI4MDM" "1.14.*" \
+    "HOI4MDM" "1.15.*" \
     --dependency "Millennium Dawn: A Modern Day Mod"
 
 build-edition \
     "tgw-more-cultural-names" "The Great War: More Cultural Names" \
-    "HOI4TGW" "1.14.*"
+    "HOI4TGW" "1.15.*"
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
