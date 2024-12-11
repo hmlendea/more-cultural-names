@@ -105,7 +105,8 @@ function getIrCultures() {
     local CULTURE_FILE_JSON=""
     local CULTURE_GROUP_ID=""
 
-    for CULTURE_FILE_NAME in $(find "${CULTURES_DIR}" -name "*.txt"); do
+    for CULTURE_FILE_NAME in "${CULTURES_DIR}/"*.txt; do
+    #for CULTURE_FILE_NAME in $(find "${CULTURES_DIR}" -name "*.txt"); do
         [ $(wc -l "${CULTURE_FILE_NAME}" | awk '{print $1}') -le 2 ] && continue
 
         CULTURE_FILE_JSON=$(sed 's/\r*//g' "${CULTURE_FILE_NAME}" | \
@@ -156,26 +157,50 @@ function getIrCultures() {
     done
 }
 
-echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
-echo "Crusader Kings 2 HIP:"    && getCk2Cultures       "CK2HIP"    "${CK2HIP_CULTURES_DIR}"
-echo "Crusader Kings 2 ROI:"    && getCk2Cultures       "CK2RoI"    "${CK2RoI_CULTURES_DIR}" && getCk2Cultures "CK2RoI" "${CK2_CULTURES_DIR}"
-echo "Crusader Kings 2 TWK:"    && getCk2Cultures       "CK2TWK"    "${CK2TWK_CULTURES_DIR}"
-echo "Crusader Kings 3:"        && getCk3Cultures       "CK3"       "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 AEP:"    && getCk3Cultures       "CK3AEP"    "${CK3AEP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 ATHA:"   && getCk3Cultures       "CK3ATHA"   "${CK3ATHA_CULTURES_DIR}"
-echo "Crusader Kings 3 CE:"     && getCk3Cultures       "CK3CE"     "${CK3CE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 CMH:"    && getCk3Cultures       "CK3CMH"    "${CK3AP_CULTURES_DIR}" "${CK3IBL_CULTURES_DIR}" "${CK3RICE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 IBL:"    && getCk3Cultures       "CK3IBL"    "${CK3IBL_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 SoW:"    && getCk3Cultures       "CK3SoW"    "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 TBA:"    && getCk3v14Cultures    "CK3TBA"    "${CK3TBA_CULTURES_DIR}"
-echo "Crusader Kings 3 TFE:"    && getCk3Cultures       "CK3TFE"    "${CK3TFE_CULTURES_DIR}"
-echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS_DIR}" "${HOI4_LOCALISATIONS_DIR}"
-echo "Hearts of Iron 4 MDM:"    && getHoi4Countries     "HOI4MDM"   "${HOI4MDM_TAGS_DIR}" "${HOI4MDM_LOCALISATIONS_DIR}"
-echo "Hearts of Iron 4 TGW:"    && getHoi4Countries     "HOI4TGW"   "${HOI4TGW_TAGS_DIR}" "${HOI4TGW_LOCALISATIONS_DIR}"
-echo "Imperator Rome:"          && getIrCultures        "IR"        "${IR_CULTURES_DIR}"
-echo "Imperator Rome ABW:"      && getIrCultures        "IR_ABW"    "${IR_ABW_CULTURES_DIR}"
-echo "Imperator Rome AoE:"      && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"
-echo "Imperator Rome INV:"      && getIrCultures        "IR_INV"    "${IR_INV_CULTURES_DIR}"
-echo "Imperator Rome TBA:"      && getIrCultures        "IR_TBA"    "${IR_TBA_CULTURES_DIR}"
-echo "Imperator Rome TI:"       && getIrCultures        "IR_TI"     "${IR_TI_CULTURES_DIR}"
+function getVic3Cultures() {
+    local GAME_ID="${1}" && shift
+    local CULTURES_DIR="${*}"
+
+    for CULTURE_FILE_NAME in "${CULTURES_DIR}/"*.txt; do
+        [ $(wc -l "${CULTURE_FILE_NAME}" | awk '{print $1}') -le 2 ] && continue
+
+        for CULTURE_ID in $(cat "${CULTURE_FILE_NAME}" | grep "^[a-z]" | sed 's/\([A-Za-z0-9_-]*\)\s*=.*/\1/g' | sort | uniq); do
+            if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
+                if grep -qi '>.*\b'"${CULTURE_ID}"'\b</GameId>' "${LANGUAGES_FILE}"; then
+                    echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing but it could potentially be linked to an existing one with the same linked GameId"
+                elif grep -qi 'Id>.*\b'"${CULTURE_ID}"'\b' "${LANGUAGES_FILE}"; then
+                    echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing but it could potentially be linked to an existing one"
+                elif grep -qi 'Id>.*\b'"${CULTURE_ID}"'\b' "${UNUSED_LANGUAGES_FILE}"; then
+                    echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing but it could potentially be linked to an existing unused one"
+                fi
+
+                echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
+            fi
+        done
+    done
+}
+
+#echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
+#echo "Crusader Kings 2 HIP:"    && getCk2Cultures       "CK2HIP"    "${CK2HIP_CULTURES_DIR}"
+#echo "Crusader Kings 2 ROI:"    && getCk2Cultures       "CK2RoI"    "${CK2RoI_CULTURES_DIR}" && getCk2Cultures "CK2RoI" "${CK2_CULTURES_DIR}"
+#echo "Crusader Kings 2 TWK:"    && getCk2Cultures       "CK2TWK"    "${CK2TWK_CULTURES_DIR}"
+#echo "Crusader Kings 3:"        && getCk3Cultures       "CK3"       "${CK3_CULTURES_DIR}"
+#echo "Crusader Kings 3 AEP:"    && getCk3Cultures       "CK3AEP"    "${CK3AEP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+#echo "Crusader Kings 3 ATHA:"   && getCk3Cultures       "CK3ATHA"   "${CK3ATHA_CULTURES_DIR}"
+#echo "Crusader Kings 3 CE:"     && getCk3Cultures       "CK3CE"     "${CK3CE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+#echo "Crusader Kings 3 CMH:"    && getCk3Cultures       "CK3CMH"    "${CK3AP_CULTURES_DIR}" "${CK3IBL_CULTURES_DIR}" "${CK3RICE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+#echo "Crusader Kings 3 IBL:"    && getCk3Cultures       "CK3IBL"    "${CK3IBL_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+#echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+#echo "Crusader Kings 3 SoW:"    && getCk3Cultures       "CK3SoW"    "${CK3_CULTURES_DIR}"
+#echo "Crusader Kings 3 TBA:"    && getCk3v14Cultures    "CK3TBA"    "${CK3TBA_CULTURES_DIR}"
+#echo "Crusader Kings 3 TFE:"    && getCk3Cultures       "CK3TFE"    "${CK3TFE_CULTURES_DIR}"
+#echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS_DIR}" "${HOI4_LOCALISATIONS_DIR}"
+#echo "Hearts of Iron 4 MDM:"    && getHoi4Countries     "HOI4MDM"   "${HOI4MDM_TAGS_DIR}" "${HOI4MDM_LOCALISATIONS_DIR}"
+#echo "Hearts of Iron 4 TGW:"    && getHoi4Countries     "HOI4TGW"   "${HOI4TGW_TAGS_DIR}" "${HOI4TGW_LOCALISATIONS_DIR}"
+#echo "Imperator Rome:"          && getIrCultures        "IR"        "${IR_CULTURES_DIR}"
+#echo "Imperator Rome ABW:"      && getIrCultures        "IR_ABW"    "${IR_ABW_CULTURES_DIR}"
+#echo "Imperator Rome AoE:"      && getIrCultures        "IR_AoE"    "${IR_AoE_CULTURES_DIR}"
+#echo "Imperator Rome INV:"      && getIrCultures        "IR_INV"    "${IR_INV_CULTURES_DIR}"
+#echo "Imperator Rome TBA:"      && getIrCultures        "IR_TBA"    "${IR_TBA_CULTURES_DIR}"
+#echo "Imperator Rome TI:"       && getIrCultures        "IR_TI"     "${IR_TI_CULTURES_DIR}"
+echo "Victoria 3:"       && getVic3Cultures        "Vic3"     "${Vic3_CULTURES_DIR}"
