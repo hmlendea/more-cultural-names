@@ -18,7 +18,7 @@ function nameToLocationId() {
             -e 's/-*$//g' \
             -e 's/-\+/-/g' \
             \
-            -e 's/central/centre/g' \
+            -e 's/central/centre/middle/g' \
             -e 's/\(north\|west\|south\|east\)ern/\1/g' \
             \
             -e 's/borealis/north/g' \
@@ -31,7 +31,7 @@ function nameToLocationId() {
             -e 's/^\(north\|west\|south\|east\)_\(.*\)$/\2_\1/g' \
             -e 's/^\(lower\|upper\|inferior\|superior\)_\(.*\)$/\2_\1/g' \
             -e 's/^\(minor\|maior\|lesser\|greater\)_\(.*\)$/\2_\1/g' \
-            -e 's/^\(centre\)_\(.*\)$/\2_\1/g')
+            -e 's/^\(central\|centre\|middle\)_\(.*\)$/\2_\1/g')
     done
 
     echo "${LOCATION_ID}"
