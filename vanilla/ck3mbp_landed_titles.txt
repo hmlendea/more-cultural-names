@@ -3483,19 +3483,7 @@ d_mingrelia = { # Samegrelo
 
 	capital = c_odishi # Odishi
 
-}
-
-d_sharif_medina = { # Madinah # Medina
-	color = { 71 159 102 }
-	capital = c_medina # Madinah # Medina
-
-}
-
-d_sharif_mecca = { # Makkah # Mecca
-	color = { 188 6 133 }
-	capital = c_mecca # Makkah # Mecca
-
-}		
+}	
 
 d_amiralarab = { # Arabiyya # Amir-al-Arab
 	color = { 217 96 63 }
@@ -3525,22 +3513,22 @@ d_houseofyngling = {
 	can_create = { always = no }
 }
 
-d_ternate = {
-    color = { 176 179 30 }
-}
-
-d_tidore = {
-    color = { 143 20 181 }
-}
+#d_ternate = {
+#    color = { 176 179 30 }
+#}
+#
+#d_tidore = {
+#    color = { 143 20 181 }
+#}
 d_nagur = {
 	color = { 59 216 191 }
 }
 d_panai = {
 	color = { 61 172 182 }
 }
-d_pariaman = {
-	color = { 69 200 200 }
-}
+#d_pariaman = {
+#	color = { 69 200 200 }
+#}
 
 #Titular China
 
@@ -50111,18 +50099,6 @@ e_tokhara = { # To represent the region being a borderlands between India and Ir
 					color = { 100 210 80 }
 					
 				}
-				b_saindak = {
-					province = 4468
-
-					color = { 100 210 80 }
-					
-				}
-				b_chagai = {
-					province = 4469
-
-					color = { 100 210 80 }
-					
-				}
 				b_jalk = {
 					province = 4470
 
@@ -50162,35 +50138,6 @@ e_tokhara = { # To represent the region being a borderlands between India and Ir
 					province = 4287
 
 					color = { 102 202 72 }
-					
-				}
-			}
-			c_sanij = {
-				color = { 110 200 75 }
-				
-			
-				b_sanij = {
-					province = 4277
-
-					color = { 110 200 75 }
-					
-				}
-				b_qantarat_kirman = {
-					province = 4278
-
-					color = { 110 200 75 }
-					
-				}
-				b_ladhir = {
-					province = 4279
-
-					color = { 110 200 75 }
-					
-				}
-				b_khwash = {
-					province = 4280
-
-					color = { 110 200 75 }
 					
 				}
 			}
@@ -50389,6 +50336,21 @@ e_tokhara = { # To represent the region being a borderlands between India and Ir
 				}
 			}
 		}
+	}
+	
+	k_sistan = { #
+		color = { 190 85 230 }
+		capital = c_zaranj
+		
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+			}
+		}
+		
 		d_sistan = {
 			color = { 5 75 5 }
 			
@@ -50488,6 +50450,13 @@ e_tokhara = { # To represent the region being a borderlands between India and Ir
 					
 				}
 			}
+		}
+		
+		d_rukhkhaj = {
+			color = { 15 50 20 }
+			
+			capital = c_bost
+			
 			c_rudbar = {
 				color = { 0 75 10 }
 				
@@ -50559,6 +50528,60 @@ e_tokhara = { # To represent the region being a borderlands between India and Ir
 				}
 			}
 		}
+		
+		d_nushki = {
+			color = { 30 40 15 }
+			
+			capital = c_sanij
+			
+			c_sanij = {
+				color = { 110 200 75 }
+				
+			
+				b_sanij = {
+					province = 4277
+
+					color = { 110 200 75 }
+					
+				}
+				b_qantarat_kirman = {
+					province = 4278
+
+					color = { 110 200 75 }
+					
+				}
+				b_ladhir = {
+					province = 4279
+
+					color = { 110 200 75 }
+					
+				}
+				b_khwash = {
+					province = 4280
+
+					color = { 110 200 75 }
+					
+				}
+			}
+			
+			c_chagai = { 
+				color = { 100 210 80 }
+				
+				b_chagai = {
+					province = 4469
+
+					color = { 100 210 80 }
+					
+				}
+				b_saindak = {
+					province = 4468
+
+					color = { 100 210 80 }
+					
+				}
+			}
+			
+		}
 	}
 }
 
@@ -50589,83 +50612,6 @@ e_persia = {
 				culture = culture:persian
 			}
 			add = @better_than_the_alternatives_score
-		}
-	}
-	
-	k_kerman = { # Kermán
-		color = { 205 70 255 }
-		capital = c_kirman # Kermán # Kerman
-	}
-	
-	k_ormus = {
-		color = { 111 210 21 }
-		
-		capital = c_hormuz 
-		
-		d_hormuz = {
-			color = { 111 210 21 }
-			
-			
-			capital = c_hormuz # Hormuz
-			
-			c_hormuz = {
-				color = { 115 205 25 }
-				
-			
-				b_hormuz = {
-					province = 4185
-
-					color = { 115 205 25 }
-					
-				}
-				b_shahru = {
-					province = 4186
-
-					color = { 115 205 25 }
-					
-				}
-				b_laft = {
-					province = 4187
-
-					color = { 115 205 25 }
-					
-				}
-			}
-			c_sif-i-umara = {
-				color = { 120 215 20 }
-				
-			
-				b_huzu = {
-					province = 4191
-
-					color = { 120 215 20 }
-					
-				}
-				b_kaurestan = {
-					province = 4188
-
-					color = { 120 215 20 }
-					
-				}
-				b_beiram = {
-					province = 4189
-
-					color = { 120 215 20 }
-					
-				}
-				b_dun = {
-					province = 4190
-
-					color = { 120 215 20 }
-					
-				}
-				b_dazuk = {
-					province = 4192
-
-					color = { 120 215 20 }
-					
-				}
-			}
 		}
 	}
 	
@@ -50813,280 +50759,6 @@ e_persia = {
 					province = 4113
 
 					color = { 125 255 15 }
-					
-				}
-			}
-		}
-		
-		d_kirman = {
-			color = { 168 240 86 }
-			
-			
-			capital = c_kirman # Kirman
-			
-			c_kirman = {
-				color = { 165 245 85 }
-				
-			
-				b_khabis = {
-					province = 4076
-
-					color = { 165 245 85 }
-					
-				}
-				b_kirman = {
-					province = 4078
-
-					color = { 165 245 85 }
-					
-				}
-				b_mashiz = {
-					province = 4081
-
-					color = { 165 245 85 }
-					
-				}
-				b_rawar = {
-					province = 4075
-
-					color = { 160 255 90 }
-					
-				}
-			}
-			
-			c_anar = {
-				color = { 125 245 85 }
-				
-			
-				b_anar = {
-					province = 4079
-
-					color = { 165 245 85 }
-					
-				}
-				b_zarand_PER = {
-					province = 4077
-
-					color = { 165 245 85 }
-					
-				}
-				b_rudhan = {
-					province = 4080
-
-					color = { 165 245 85 }
-					
-				}
-				
-			}
-			
-			c_behabad = {
-				color = { 160 255 90 }
-				
-			
-				b_behabad = {
-					province = 4073
-
-					color = { 160 255 90 }
-					
-				}
-				b_nayband = {
-					province = 4072
-
-					color = { 160 255 90 }
-					
-				}
-				b_khubayan = {
-					province = 4074
-
-					color = { 160 255 90 }
-					
-				}
-			}
-			c_bam = {
-				color = { 160 240 95 }
-				
-			
-				b_bamm = {
-					province = 4083
-
-					color = { 160 240 95 }
-					
-				}
-				b_kashid = {
-					province = 4082
-
-					color = { 160 240 95 }
-					
-				}
-				b_dardjiin = {
-					province = 4084
-
-					color = { 160 240 95 }
-					
-				}
-				b_nurmashiir = {
-					province = 4085
-
-					color = { 160 240 95 }
-					
-				}
-				b_dafariid = {
-					province = 4086
-
-					color = { 160 240 95 }
-					
-				}
-			}
-			c_sirjan = {
-				color = { 180 250 75 }
-				
-			
-				b_sirjan = {
-					province = 4088
-
-					color = { 180 250 75 }
-					
-				}
-				b_bimand = {
-					province = 4087
-
-					color = { 180 250 75 }
-					
-				}
-				b_baaft = {
-					province = 4092
-
-					color = { 180 250 75 }
-					
-				}
-			}
-			c_jiruft = {
-				color = { 160 240 75 }
-				
-			
-				b_jiruft = {
-					province = 4089
-
-					color = { 160 240 75 }
-					
-				}
-				b_maghun = {
-					province = 4090
-
-					color = { 160 240 75 }
-					
-				}
-				b_ruyan-jirufti = {
-					province = 4091
-
-					color = { 160 240 75 }
-					
-				}
-			}
-		}
-		
-		d_yazd = {
-			color = { 140 255 100 }
-			
-			
-			capital = c_yazd # Yazd
-			
-			c_yazd = {
-				color = { 142 250 103 }
-				
-			
-				b_yazd = {
-					province = 4053
-
-					color = { 142 250 103 }
-					
-				}
-				b_nain = {
-					province = 4051
-
-					color = { 142 250 103 }
-					
-				}
-				b_uqda = {
-					province = 4052
-
-					color = { 142 250 103 }
-					
-				}
-				b_maibud = {
-					province = 4054
-
-					color = { 142 250 103 }
-					
-				}
-				b_fahraj_yazd = {
-					province = 4055
-
-					color = { 142 250 103 }
-					
-				}
-				b_khazana = {
-					province = 4056
-
-					color = { 142 250 103 }
-					
-				}
-			}
-			c_mafaza = {
-				color = { 130 255 95 }
-				
-			
-				b_jarmaq = {
-					province = 4057
-
-					color = { 130 255 95 }
-					
-				}
-				b_wandah = {
-					province = 4058
-
-					color = { 130 255 95 }
-					
-				}
-				b_mihrijan = {
-					province = 4060
-
-					color = { 130 255 95 }
-					
-				}
-				b_biyadaq = {
-					province = 4061
-
-					color = { 130 255 95 }
-					
-				}
-			}
-			c_shahre-babak = {
-				color = { 150 245 110 }
-				
-			
-				b_shahr-e-babak = {
-					province = 4096
-
-					color = { 150 245 110 }
-					
-				}
-				b_muralziyan = {
-					province = 4097
-
-					color = { 150 245 110 }
-					
-				}
-				b_abarquh = {
-					province = 4098
-
-					color = { 150 245 110 }
-					
-				}
-				b_qaryat-al-asad = {
-					province = 4099
-
-					color = { 150 245 110 }
 					
 				}
 			}
@@ -51270,245 +50942,6 @@ e_persia = {
 			}
 		}
 		
-		d_fars = {
-			color = { 155 235 35}
-			
-			
-			capital = c_shiraz # Shiraz(Farsi)
-			
-			c_shiraz = {
-				color = { 152 233 33 }
-				
-			
-				b_shiraz-farsi = {
-					province = 4177
-
-					color = { 152 233 33 }
-					
-				}
-				b_sarwistan-shirazi-runiz = {
-					province = 4176
-
-					color = { 152 233 33 }
-					
-				}
-				b_kubanjan = {
-					province = 4178
-
-					color = { 152 233 33 }
-					
-				}
-				b_kazarun = {
-					province = 4179
-
-					color = { 152 233 33 }
-					
-				}
-				b_sabur = {
-					province = 4180
-
-					color = { 152 233 33 }
-					
-				}
-			}
-			c_lar = {
-				color = { 150 230 30 }
-				
-			
-				b_lar = {
-					province = 4093
-
-					color = { 150 230 30 }
-					
-				}
-				b_gerash = {
-					province = 4094
-
-					color = { 150 230 30 }
-					
-				}
-				b_jahrum = {
-					province = 4095
-
-					color = { 150 230 30 }
-					
-				}
-			}
-			c_darabjerd = {
-				color = { 140 230 35 }
-				
-			
-				b_darabjerd = {
-					province = 4171
-
-					color = { 140 230 35 }
-					
-				}
-				b_fustujan = {
-					province = 4172
-
-					color = { 140 230 35 }
-					
-				}
-				b_nariz = {
-					province = 4173
-
-					color = { 140 230 35 }
-					
-				}
-				b_istakhbanat = {
-					province = 4174
-
-					color = { 140 230 35 }
-					
-				}
-				b_abade-darabjerd = {
-					province = 4175
-
-					color = { 140 230 35 }
-					
-				}
-			}
-			c_istakhr = {
-				color = { 140 240 30 }
-				
-			
-				b_istakhr = {
-					province = 4118
-
-					color = { 140 240 30 }
-					
-				}
-				b_iqlid = {
-					province = 4117
-
-					color = { 140 240 30 }
-					
-				}
-				b_mayin = {
-					province = 4119
-
-					color = { 140 240 30 }
-					
-				}
-				b_abraj = {
-					province = 4120
-
-					color = { 140 240 30 }
-					
-				}
-				b_abada = {
-					province = 4121
-
-					color = { 140 240 30 }
-					
-				}
-			}
-		}
-		
-		d_bushehr  = { #Ostān-e Būshehr #Let's make Fars a bit less of a monstrously large duchy
-			color = { 130 200 35}
-			
-			
-			capital = c_mandestan 
-			
-			c_mandestan = {
-				color = { 155 240 25 }
-				
-			
-				b_mandestan = {
-					province = 4195
-
-					color = { 155 240 25 }
-					
-				}
-				b_bushkanat = {
-					province = 4197
-
-					color = { 155 240 25 }
-					
-				}
-				b_gundijan = {
-					province = 4198
-
-					color = { 155 240 25 }
-					
-				}
-				b_firuzabad = {
-					province = 4199
-
-					color = { 155 240 25 }
-					
-				}
-				b_karzin = {
-					province = 4200
-
-					color = { 155 240 25 }
-					
-				}
-			}
-			
-			c_irahistan = {
-				color = { 160 245 35 }
-				
-			
-				b_naband = {
-					province = 4193
-
-					color = { 160 245 35 }
-					
-				}
-				b_siraf = {
-					province = 4194
-
-					color = { 160 245 35 }
-					
-				}
-				b_kariyan = {
-					province = 4196
-
-					color = { 160 245 35 }
-					
-				}
-			}
-			
-			c_arrajan = {
-				color = { 145 225 25 }
-				
-			
-				b_arrajan = {
-					province = 4305
-
-					color = { 145 225 25 }
-					
-				}
-				b_jannaba = {
-					province = 4301
-
-					color = { 145 225 25 }
-					
-				}
-				b_siniz = {
-					province = 4302
-
-					color = { 145 225 25 }
-					
-				}
-				b_tawwaj = {
-					province = 4303
-
-					color = { 145 225 25 }
-					
-				}
-				b_khubadan = {
-					province = 4304
-
-					color = { 145 225 25 }
-					
-				}
-			}	
-		}
-		
 		d_ahvaz = {
 			color = { 150 220 120 }
 			
@@ -51596,87 +51029,7 @@ e_persia = {
 			
 			
 		}
-		
-		d_khuzestan = {
-			color = { 180 240 120 }
-			
-			
-			capital = c_ramhurmuz
-			
-			c_ramhurmuz = {
-				color = { 185 245 125 }
-				
-			
-				b_ramhurmuz = {
-					province = 4308
 
-					color = { 185 245 125 }
-					
-				}
-				b_asak = {
-					province = 4307
-
-					color = { 185 245 125 }
-					
-				}
-				b_idhaj = {
-					province = 4309
-
-					color = { 185 245 125 }
-					
-				}
-				b_dariyan = {
-					province = 4306
-
-					color = { 185 245 125 }
-					
-				}
-			}
-			c_sardan = {
-				color = { 182 241 122 }
-				
-			
-				b_lurijan = {
-					province = 4122
-
-					color = { 182 241 122 }
-					
-				}
-				b_aruj = {
-					province = 4123
-
-					color = { 182 241 122 }
-					
-				}
-				b_samshiborid = {
-					province = 4124
-
-					color = { 182 241 122 }
-					
-				}
-			}
-
-			
-		
-			c_dawraq = {
-				color = { 175 246 120 }
-				
-				
-				b_dawraq = {
-					province = 6014
-					
-					color = { 175 246 120 }
-					
-				}
-				b_azam = {
-					province = 6013
-					
-					color = { 175 246 120 }
-					
-				}
-			}
-		}
-		
 		d_kermanshah = {
 			color = { 55 144 95 }
 			
@@ -52193,6 +51546,84 @@ e_persia = {
 				}
 			}
 		}
+		
+		d_yazd = {
+			color = { 140 255 100 }
+			
+			
+			capital = c_yazd # Yazd
+			
+			c_yazd = {
+				color = { 142 250 103 }
+				
+			
+				b_yazd = {
+					province = 4053
+
+					color = { 142 250 103 }
+					
+				}
+				b_nain = {
+					province = 4051
+
+					color = { 142 250 103 }
+					
+				}
+				b_uqda = {
+					province = 4052
+
+					color = { 142 250 103 }
+					
+				}
+				b_maibud = {
+					province = 4054
+
+					color = { 142 250 103 }
+					
+				}
+				b_fahraj_yazd = {
+					province = 4055
+
+					color = { 142 250 103 }
+					
+				}
+				b_khazana = {
+					province = 4056
+
+					color = { 142 250 103 }
+					
+				}
+			}
+			c_mafaza = {
+				color = { 130 255 95 }
+				
+			
+				b_jarmaq = {
+					province = 4057
+
+					color = { 130 255 95 }
+					
+				}
+				b_wandah = {
+					province = 4058
+
+					color = { 130 255 95 }
+					
+				}
+				b_mihrijan = {
+					province = 4060
+
+					color = { 130 255 95 }
+					
+				}
+				b_biyadaq = {
+					province = 4061
+
+					color = { 130 255 95 }
+					
+				}
+			}
+		}
 	}
 
 	k_daylam = {
@@ -52424,6 +51855,647 @@ e_persia = {
 					province = 4035
 
 					color = { 85 190 250 }
+					
+				}
+			}
+		}
+	}
+	
+	k_kerman = { # Kermán
+		color = { 65 120 200 }
+		capital = c_kirman # Kermán # Kerman
+		
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+			}
+		}
+		
+		d_kirman = {
+			color = { 168 240 86 }
+			
+			
+			capital = c_kirman # Kirman
+			
+			c_kirman = {
+				color = { 165 245 85 }
+				
+			
+				b_khabis = {
+					province = 4076
+
+					color = { 165 245 85 }
+					
+				}
+				b_kirman = {
+					province = 4078
+
+					color = { 165 245 85 }
+					
+				}
+				b_mashiz = {
+					province = 4081
+
+					color = { 165 245 85 }
+					
+				}
+				b_rawar = {
+					province = 4075
+
+					color = { 160 255 90 }
+					
+				}
+			}
+			
+			c_anar = {
+				color = { 125 245 85 }
+				
+			
+				b_anar = {
+					province = 4079
+
+					color = { 165 245 85 }
+					
+				}
+				b_zarand_PER = {
+					province = 4077
+
+					color = { 165 245 85 }
+					
+				}
+				b_rudhan = {
+					province = 4080
+
+					color = { 165 245 85 }
+					
+				}
+				
+			}
+			
+			c_behabad = {
+				color = { 160 255 90 }
+				
+			
+				b_behabad = {
+					province = 4073
+
+					color = { 160 255 90 }
+					
+				}
+				b_nayband = {
+					province = 4072
+
+					color = { 160 255 90 }
+					
+				}
+				b_khubayan = {
+					province = 4074
+
+					color = { 160 255 90 }
+					
+				}
+			}
+			c_sirjan = {
+				color = { 180 250 75 }
+				
+			
+				b_sirjan = {
+					province = 4088
+
+					color = { 180 250 75 }
+					
+				}
+				b_bimand = {
+					province = 4087
+
+					color = { 180 250 75 }
+					
+				}
+				b_baaft = {
+					province = 4092
+
+					color = { 180 250 75 }
+					
+				}
+			}
+		}
+		
+		d_jiruft = {
+			color = { 180 230 100 }
+			
+			
+			capital = c_jiruft
+			
+			c_jiruft = {
+				color = { 160 240 75 }
+				
+			
+				b_jiruft = {
+					province = 4089
+
+					color = { 160 240 75 }
+					
+				}
+				b_maghun = {
+					province = 4090
+
+					color = { 160 240 75 }
+					
+				}
+				b_ruyan-jirufti = {
+					province = 4091
+
+					color = { 160 240 75 }
+					
+				}
+			}
+			
+			c_bam = {
+				color = { 160 240 95 }
+				
+			
+				b_bamm = {
+					province = 4083
+
+					color = { 160 240 95 }
+					
+				}
+				b_kashid = {
+					province = 4082
+
+					color = { 160 240 95 }
+					
+				}
+				b_dardjiin = {
+					province = 4084
+
+					color = { 160 240 95 }
+					
+				}
+				b_nurmashiir = {
+					province = 4085
+
+					color = { 160 240 95 }
+					
+				}
+				b_dafariid = {
+					province = 4086
+
+					color = { 160 240 95 }
+					
+				}
+			}
+		}
+		
+		d_mogistan = {
+			color = { 195 220 110 }
+			
+			
+			capital = c_lar
+			
+			c_lar = {
+				color = { 150 230 30 }
+				
+			
+				b_lar = {
+					province = 4093
+
+					color = { 150 230 30 }
+					
+				}
+				b_gerash = {
+					province = 4094
+
+					color = { 150 230 30 }
+					
+				}
+				b_jahrum = {
+					province = 4095
+
+					color = { 150 230 30 }
+					
+				}
+			}
+			
+			c_sif-i-umara = {
+				color = { 120 215 20 }
+				
+			
+				b_huzu = {
+					province = 4191
+
+					color = { 120 215 20 }
+					
+				}
+				b_kaurestan = {
+					province = 4188
+
+					color = { 120 215 20 }
+					
+				}
+				b_beiram = {
+					province = 4189
+
+					color = { 120 215 20 }
+					
+				}
+				b_dun = {
+					province = 4190
+
+					color = { 120 215 20 }
+					
+				}
+				b_dazuk = {
+					province = 4192
+
+					color = { 120 215 20 }
+					
+				}
+			}
+			
+			c_darabjerd = {
+				color = { 140 230 35 }
+				
+			
+				b_darabjerd = {
+					province = 4171
+
+					color = { 140 230 35 }
+					
+				}
+				b_fustujan = {
+					province = 4172
+
+					color = { 140 230 35 }
+					
+				}
+			}
+			
+		}
+	}
+	
+	
+	k_ormus = {
+		color = { 111 210 21 }
+		
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+				NOT = { has_title = title:k_persia }
+			}
+		}
+		
+		capital = c_hormuz 
+		
+		d_hormuz = {
+			color = { 111 210 21 }
+			
+			
+			capital = c_hormuz # Hormuz
+			
+			c_hormuz = {
+				color = { 115 205 25 }
+				
+			
+				b_hormuz = {
+					province = 4185
+
+					color = { 115 205 25 }
+					
+				}
+				b_shahru = {
+					province = 4186
+
+					color = { 115 205 25 }
+					
+				}
+				b_laft = {
+					province = 4187
+
+					color = { 115 205 25 }
+					
+				}
+			}
+		}
+	}
+	
+	k_fars = {
+		color = { 95 165 215 }
+		
+		capital = c_shiraz
+		
+		d_fars = {
+			color = { 155 235 35}
+			
+			
+			capital = c_shiraz # Shiraz(Farsi)
+			
+			c_shiraz = {
+				color = { 152 233 33 }
+				
+			
+				b_shiraz-farsi = {
+					province = 4177
+
+					color = { 152 233 33 }
+					
+				}
+				b_sarwistan-shirazi-runiz = {
+					province = 4176
+
+					color = { 152 233 33 }
+					
+				}
+				b_kubanjan = {
+					province = 4178
+
+					color = { 152 233 33 }
+					
+				}
+				b_kazarun = {
+					province = 4179
+
+					color = { 152 233 33 }
+					
+				}
+				b_sabur = {
+					province = 4180
+
+					color = { 152 233 33 }
+					
+				}
+			}
+			c_nariz = {
+				color = { 120 220 30 }
+				
+				b_nariz = {
+					province = 4173
+
+					color = { 140 230 35 }
+					
+				}
+				b_istakhbanat = {
+					province = 4174
+
+					color = { 140 230 35 }
+					
+				}
+				b_abade-darabjerd = {
+					province = 4175
+
+					color = { 140 230 35 }
+					
+				}
+			}
+			c_istakhr = {
+				color = { 140 240 30 }
+				
+			
+				b_istakhr = {
+					province = 4118
+
+					color = { 140 240 30 }
+					
+				}
+				b_iqlid = {
+					province = 4117
+
+					color = { 140 240 30 }
+					
+				}
+				b_mayin = {
+					province = 4119
+
+					color = { 140 240 30 }
+					
+				}
+				b_abraj = {
+					province = 4120
+
+					color = { 140 240 30 }
+					
+				}
+				b_abada = {
+					province = 4121
+
+					color = { 140 240 30 }
+					
+				}
+			}
+			c_shahre-babak = {
+				color = { 150 245 110 }
+				
+			
+				b_shahr-e-babak = {
+					province = 4096
+
+					color = { 150 245 110 }
+					
+				}
+				b_muralziyan = {
+					province = 4097
+
+					color = { 150 245 110 }
+					
+				}
+				b_abarquh = {
+					province = 4098
+
+					color = { 150 245 110 }
+					
+				}
+				b_qaryat-al-asad = {
+					province = 4099
+
+					color = { 150 245 110 }
+					
+				}
+			}
+		}
+		
+		d_bushehr  = { #Ostān-e Būshehr #Let's make Fars a bit less of a monstrously large duchy
+			color = { 130 200 35}
+			
+			
+			capital = c_mandestan 
+			
+			c_mandestan = {
+				color = { 155 240 25 }
+				
+			
+				b_mandestan = {
+					province = 4195
+
+					color = { 155 240 25 }
+					
+				}
+				b_bushkanat = {
+					province = 4197
+
+					color = { 155 240 25 }
+					
+				}
+				b_gundijan = {
+					province = 4198
+
+					color = { 155 240 25 }
+					
+				}
+				b_firuzabad = {
+					province = 4199
+
+					color = { 155 240 25 }
+					
+				}
+				b_karzin = {
+					province = 4200
+
+					color = { 155 240 25 }
+					
+				}
+			}
+			
+			c_irahistan = {
+				color = { 160 245 35 }
+				
+			
+				b_naband = {
+					province = 4193
+
+					color = { 160 245 35 }
+					
+				}
+				b_siraf = {
+					province = 4194
+
+					color = { 160 245 35 }
+					
+				}
+				b_kariyan = {
+					province = 4196
+
+					color = { 160 245 35 }
+					
+				}
+			}
+			
+			c_arrajan = {
+				color = { 145 225 25 }
+				
+			
+				b_arrajan = {
+					province = 4305
+
+					color = { 145 225 25 }
+					
+				}
+				b_jannaba = {
+					province = 4301
+
+					color = { 145 225 25 }
+					
+				}
+				b_siniz = {
+					province = 4302
+
+					color = { 145 225 25 }
+					
+				}
+				b_tawwaj = {
+					province = 4303
+
+					color = { 145 225 25 }
+					
+				}
+				b_khubadan = {
+					province = 4304
+
+					color = { 145 225 25 }
+					
+				}
+			}	
+		}
+		
+		d_khuzestan = {
+			color = { 180 240 120 }
+			
+			
+			capital = c_ramhurmuz
+			
+			c_ramhurmuz = {
+				color = { 185 245 125 }
+				
+			
+				b_ramhurmuz = {
+					province = 4308
+
+					color = { 185 245 125 }
+					
+				}
+				b_asak = {
+					province = 4307
+
+					color = { 185 245 125 }
+					
+				}
+				b_idhaj = {
+					province = 4309
+
+					color = { 185 245 125 }
+					
+				}
+				b_dariyan = {
+					province = 4306
+
+					color = { 185 245 125 }
+					
+				}
+			}
+			
+			c_sardan = {
+				color = { 182 241 122 }
+				
+			
+				b_lurijan = {
+					province = 4122
+
+					color = { 182 241 122 }
+					
+				}
+				b_aruj = {
+					province = 4123
+
+					color = { 182 241 122 }
+					
+				}
+				b_samshiborid = {
+					province = 4124
+
+					color = { 182 241 122 }
+					
+				}
+			}
+
+			c_dawraq = {
+				color = { 175 246 120 }
+				
+				
+				b_dawraq = {
+					province = 6014
+					
+					color = { 175 246 120 }
+					
+				}
+				b_azam = {
+					province = 6013
+					
+					color = { 175 246 120 }
 					
 				}
 			}
@@ -68177,7 +68249,6 @@ e_arabia = {
 	k_medina = {
 		color = { 100 225 25 }
 		
-		
 		capital = c_medina
 		
 		can_create = {
@@ -68199,408 +68270,19 @@ e_arabia = {
 				add = @correct_culture_primary_score
 			}
 		}
-	}
-
-
-	k_israel = {
-		color = { 20 138 255 }
-
-		capital = c_jerusalem
-	}
-
-
-	k_oman = {
-		color = { 90 200 50 }
 		
+		d_sharif_medina = { # Madinah # Medina
+			color = { 71 159 102 }
+			capital = c_medina # Madinah # Medina
 		
-		capital = c_nizwa
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					NOT = { culture = culture:egyptian }
-					culture = { has_cultural_pillar = heritage_arabic }
-				}
-				add = @correct_culture_primary_score
-			}
 		}
 		
-		d_oman = {
-			color = { 235 160 30 }
-			
-			
-			capital = c_nizwa
-			
-			c_nizwa = {
-				color = { 232 163 27 }
-				
-				
-				b_nizwa = {
-					province = 6140
-					
-					color = { 232 163 27 }
-					
-				}
-				b_bahla = {
-					province = 6139
-					
-					color = { 232 163 27 }
-					
-				}
-				b_samad = {
-					province = 6141
-					
-					color = { 232 163 27 }
-					
-				}
-			}
-			c_julfar = {
-				color = { 233 162 33 }
-				
-				
-				b_julfar = {
-					province = 6131
-					
-					color = { 233 162 33 }
-					
-				}
-				b_tawwam = {
-					province = 6129
-					
-					color = { 233 162 33 }
-					
-				}
-				b_tawwam_west = {
-					province = 6130
-					
-					color = { 233 162 33 }
-					
-				}
-				b_musandam = {
-					province = 6132
-					
-					color = { 233 162 33 }
-					
-				}
-				b_dabba = {
-					province = 6133
-					
-					color = { 233 162 33 }
-					
-				}
-			}
-			c_batina = {
-				color = { 233 157 27 }
-				
-				
-				b_sohar = {
-					province = 6134
-					
-					color = { 233 157 27 }
-					
-				}
-				b_batina-east = {
-					province = 6135
-					
-					color = { 233 157 27 }
-					
-				}
-				b_rustaq-oman = {
-					province = 6136
-					
-					color = { 233 157 27 }
-					
-				}
-			}
-			c_az-dhahira = {
-				color = { 238 157 36 }
-				
-				
-				b_hafit = {
-					province = 6137
-					
-					color = { 238 157 36 }
-					
-				}
-				b_dhank = {
-					province = 6138
-					
-					color = { 238 157 36 }
-					
-				}
-			}
-			c_muscat = {
-				color = { 230 154 24 }
-				
-				
-				b_muscat = {
-					province = 6144
-					
-					color = { 230 154 24 }
-					
-				}
-				b_matrah = {
-					province = 6143
-					
-					color = { 230 154 24 }
-					
-				}
-				b_qalhat = {
-					province = 6145
-					
-					color = { 230 154 24 }
-					
-				}
-				b_sur = {
-					province = 6146
-					
-					color = { 230 154 24 }
-					
-				}
-				b_jaalan = {
-					province = 6147
-					
-					color = { 230 154 24 }
-					
-				}
-			}
-			c_duqm = {
-				color = { 240 166 36 }
-				
-				
-				b_duqm = {
-					province = 6269
-					
-					color = { 240 166 36 }
-					
-				}
-				b_wahiba = {
-					province = 6268
-					
-					color = { 240 166 36 }
-					
-				}
-			}
-		}
+		d_sharif_mecca = { # Makkah # Mecca
+			color = { 188 6 133 }
+			capital = c_mecca # Makkah # Mecca
 		
-		
-		
-	}
-	
-	
-	
-	
-	k_arabia = {
-		color = { 124 199 50 }
-		
-		
-		capital = c_medina
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					NOT = { culture = culture:egyptian }
-					culture = { has_cultural_pillar = heritage_arabic }
-				}
-				add = @correct_culture_primary_score
-			}
-		}
-		
-		d_jawf = {
-			color = { 150 250 50 }
-			
-			
-			capital = c_al_jawf
-			
-			c_al_jawf = {
-				color = { 154 253 47 }
-				
-				
-				b_al_jawf = {
-					province = 6178
+		}	
 
-					color = { 154 253 47 }
-					
-				}
-				b_sakaka = {
-					province = 6176
-					
-					color = { 154 253 47 }
-					
-				}
-				b_al-qara-jawf = {
-					province = 6177
-					
-					color = { 154 253 47 }
-					
-				}
-			}
-			c_thalabiya = {
-				color = { 148 248 49 }
-				
-				
-				b_ath-thalabiya = {
-					province = 6168
-					
-					color = { 148 248 49 }
-					
-				}
-				b_zubala = {
-					province = 6169
-					
-					color = { 148 248 49 }
-					
-				}
-				b_lina = {
-					province = 6170
-					
-					color = { 148 248 49 }
-					
-				}
-				b_bitan = {
-					province = 6175
-					
-					color = { 148 248 49 }
-					
-				}
-			}
-			c_sirhan = {
-				color = { 152 246 52 }
-				
-				
-				b_quraqir = {
-					province = 5989
-					
-					color = { 125 255 18 }
-					
-				}
-				b_sirhan = {
-					province = 6180
-					
-					color = { 152 246 52 }
-					
-				}
-			}
-		}
-		
-		d_shammar = {
-			color = { 121 196 2 }
-			
-			
-			capital = c_tabuk
-			
-			c_tabuk = {
-				color = { 130 205 11 }
-				
-				
-				b_tabuk = {
-					province = 6188
-					
-					color = { 130 205 11 }
-					
-				}
-				b_sarj = {
-					province = 6186
-					
-					color = { 130 205 11 }
-					
-				}
-				b_fajr = {
-					province = 6189
-					
-					color = { 130 205 11 }
-					
-				}
-			}
-			c_al_aqabah = {
-				color = { 124 199 5 }
-				
-				
-				b_aqaba = {
-					province = 5974
-					
-					color = { 124 199 5 }
-					
-				}
-				b_maqna = {
-					province = 6183
-					
-					color = { 124 199 5 }
-					
-				}
-				b_ainun = {
-					province = 6184
-					
-					color = { 124 199 5 }
-					
-				}
-				b_sharaf_al-bal = {
-					province = 6185
-					
-					color = { 124 199 5 }
-					
-				}
-				b_madyan = {
-					province = 6187
-					
-					color = { 124 199 5 }
-					
-				}
-				b_ziba = {
-					province = 6193
-					
-					color = { 124 199 5 }
-					
-				}
-			}
-			c_maan = {
-				color = { 127 202 8 }
-				
-				
-				b_maan = {
-					province = 5976
-					
-					color = { 127 202 8 }
-					
-				}
-				b_al-humayma = {
-					province = 5975
-					
-					color = { 127 202 8 }
-					
-				}
-				b_adruh = {
-					province = 5977
-					
-					color = { 127 202 8 }
-					
-				}
-			}
-			c_tayma = {
-				color = { 97 208 137 }
-				
-				
-				b_tayma = {
-					province = 6192
-					
-					color = { 97 208 137 }
-					
-				}
-				b_al-aqra = {
-					province = 6190
-					
-					color = { 97 208 137 }
-					
-				}
-				b_al-muhdatha = {
-					province = 6191
-					
-					color = { 97 208 137 }
-					
-				}
-			}
-		}
-		
 		d_medina = {
 			color = { 160 250 50 }
 			
@@ -68866,6 +68548,593 @@ e_arabia = {
 			}
 		}
 		
+		d_shammar = {
+			color = { 121 196 2 }
+			
+			
+			capital = c_tabuk
+			
+			c_tabuk = {
+				color = { 130 205 11 }
+				
+				
+				b_tabuk = {
+					province = 6188
+					
+					color = { 130 205 11 }
+					
+				}
+				b_sarj = {
+					province = 6186
+					
+					color = { 130 205 11 }
+					
+				}
+				b_fajr = {
+					province = 6189
+					
+					color = { 130 205 11 }
+					
+				}
+			}
+			c_al_aqabah = {
+				color = { 124 199 5 }
+				
+				
+				b_aqaba = {
+					province = 5974
+					
+					color = { 124 199 5 }
+					
+				}
+				b_maqna = {
+					province = 6183
+					
+					color = { 124 199 5 }
+					
+				}
+				b_ainun = {
+					province = 6184
+					
+					color = { 124 199 5 }
+					
+				}
+				b_sharaf_al-bal = {
+					province = 6185
+					
+					color = { 124 199 5 }
+					
+				}
+				b_madyan = {
+					province = 6187
+					
+					color = { 124 199 5 }
+					
+				}
+				b_ziba = {
+					province = 6193
+					
+					color = { 124 199 5 }
+					
+				}
+			}
+			c_maan = {
+				color = { 127 202 8 }
+				
+				
+				b_maan = {
+					province = 5976
+					
+					color = { 127 202 8 }
+					
+				}
+				b_al-humayma = {
+					province = 5975
+					
+					color = { 127 202 8 }
+					
+				}
+				b_adruh = {
+					province = 5977
+					
+					color = { 127 202 8 }
+					
+				}
+			}
+			c_tayma = {
+				color = { 97 208 137 }
+				
+				
+				b_tayma = {
+					province = 6192
+					
+					color = { 97 208 137 }
+					
+				}
+				b_al-aqra = {
+					province = 6190
+					
+					color = { 97 208 137 }
+					
+				}
+				b_al-muhdatha = {
+					province = 6191
+					
+					color = { 97 208 137 }
+					
+				}
+			}
+		}
+	}
+
+
+	k_israel = {
+		color = { 20 138 255 }
+
+		capital = c_jerusalem
+	}
+
+
+	k_oman = {
+		color = { 90 200 50 }
+		
+		
+		capital = c_nizwa
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					NOT = { culture = culture:egyptian }
+					culture = { has_cultural_pillar = heritage_arabic }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		d_oman = {
+			color = { 235 160 30 }
+			
+			
+			capital = c_nizwa
+			
+			c_nizwa = {
+				color = { 232 163 27 }
+				
+				
+				b_nizwa = {
+					province = 6140
+					
+					color = { 232 163 27 }
+					
+				}
+				b_bahla = {
+					province = 6139
+					
+					color = { 232 163 27 }
+					
+				}
+				b_samad = {
+					province = 6141
+					
+					color = { 232 163 27 }
+					
+				}
+			}
+			c_az-dhahira = {
+				color = { 238 157 36 }
+				
+				
+				b_hafit = {
+					province = 6137
+					
+					color = { 238 157 36 }
+					
+				}
+				b_dhank = {
+					province = 6138
+					
+					color = { 238 157 36 }
+					
+				}
+			}
+			c_duqm = {
+				color = { 240 166 36 }
+				
+				
+				b_duqm = {
+					province = 6269
+					
+					color = { 240 166 36 }
+					
+				}
+				b_wahiba = {
+					province = 6268
+					
+					color = { 240 166 36 }
+					
+				}
+			}
+		}
+		
+		d_sharqiyah = {
+			color = { 220 180 45 }
+			
+			
+			capital = c_muscat
+			
+			c_muscat = {
+				color = { 230 154 24 }
+				
+				
+				b_muscat = {
+					province = 6144
+					
+					color = { 230 154 24 }
+					
+				}
+				b_matrah = {
+					province = 6143
+					
+					color = { 230 154 24 }
+					
+				}
+				b_qalhat = {
+					province = 6145
+					
+					color = { 230 154 24 }
+					
+				}
+				b_sur = {
+					province = 6146
+					
+					color = { 230 154 24 }
+					
+				}
+				b_jaalan = {
+					province = 6147
+					
+					color = { 230 154 24 }
+					
+				}
+			}
+			c_julfar = {
+				color = { 233 162 33 }
+				
+				
+				b_julfar = {
+					province = 6131
+					
+					color = { 233 162 33 }
+					
+				}
+				b_tawwam = {
+					province = 6129
+					
+					color = { 233 162 33 }
+					
+				}
+				b_tawwam_west = {
+					province = 6130
+					
+					color = { 233 162 33 }
+					
+				}
+				b_musandam = {
+					province = 6132
+					
+					color = { 233 162 33 }
+					
+				}
+				b_dabba = {
+					province = 6133
+					
+					color = { 233 162 33 }
+					
+				}
+			}
+			c_batina = {
+				color = { 233 157 27 }
+				
+				
+				b_sohar = {
+					province = 6134
+					
+					color = { 233 157 27 }
+					
+				}
+				b_batina-east = {
+					province = 6135
+					
+					color = { 233 157 27 }
+					
+				}
+				b_rustaq-oman = {
+					province = 6136
+					
+					color = { 233 157 27 }
+					
+				}
+			}
+		}
+	}
+	
+	
+	k_bahrein = {
+		color = { 140 215 75 }
+		
+		
+		capital = c_qatif
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					NOT = { culture = culture:egyptian }
+					culture = { has_cultural_pillar = heritage_arabic }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		
+		d_bahrain = {
+			color = { 20 100 30 }
+			
+			definite_form = no
+			capital = c_qatif
+			
+			c_qatif = {
+				color = { 18 104 28 }
+				
+				
+				b_al-qatif = {
+					province = 6158
+					
+					color = { 18 104 28 }
+					
+				}
+				b_al-khatt = {
+					province = 6157
+					
+					color = { 18 104 28 }
+					
+				}
+				b_al-jubayl = {
+					province = 6159
+					
+					color = { 18 104 28 }
+					
+				}
+				b_thaj = {
+					province = 6160
+					
+					color = { 18 104 28 }
+					
+				}
+			}
+			c_uwal = {
+				color = { 22 102 33 }
+				
+				
+				b_uwal = {
+					province = 6156
+					
+					color = { 22 102 33 }
+					
+				}
+			}
+			c_samman = {
+				color = { 20 99 30 }
+				
+				
+				b_kazima = {
+					province = 6161
+					
+					color = { 20 99 30 }
+					
+				}
+				b_ar-ruqaii = {
+					province = 6162
+					
+					color = { 20 99 30 }
+					
+				}
+				b_hafar = {
+					province = 6164
+					
+					color = { 20 99 30 }
+					
+				}
+				b_al-mawiya = {
+					province = 6165
+					
+					color = { 20 99 30 }
+					
+				}
+				b_as-samman = {
+					province = 6166
+					
+					color = { 20 99 30 }
+					
+				}
+			}
+		}
+		
+		d_al-hasa = {
+			color = { 32 127 30 }
+			
+			
+			capital = c_al-hasa
+			
+			c_al-hasa = {
+				color = { 30 112 20 }
+				
+				
+				b_al-hasa = {
+					province = 6154
+					
+					color = { 30 112 20 }
+					
+				}
+				b_al-hajar = {
+					province = 6152
+					
+					color = { 30 112 20 }
+					
+				}
+			}
+			c_dhafra = {
+				color = { 33 115 22 }
+				
+				
+				b_az-dhafra = {
+					province = 6148
+					
+					color = { 33 115 22 }
+					
+				}
+				b_al-jiwa = {
+					province = 6149
+					
+					color = { 33 115 22 }
+					
+				}
+			}
+			c_uqayr = {
+				color = { 30 125 30 }
+				
+				
+				b_al-uqayr = {
+					province = 6155
+					
+					color = { 30 132 37 }
+					
+				}
+				b_murwab = {
+					province = 6150
+					
+					color = { 30 132 37 }
+					
+				}
+				b_mashqar = {
+					province = 6151
+					
+					color = { 30 132 37 }
+					
+				}
+			}
+			c_yabrin = {
+				color = { 30 120 25 }
+				
+				
+				b_yabrin = {
+					province = 6163
+					
+					color = { 30 120 25 }
+					
+				}
+				b_al-mushaqqar = {
+					province = 6153
+					
+					color = { 30 112 20 }
+					
+				}
+			}
+		}
+	}
+	
+	k_arabia = {
+		color = { 124 199 50 }
+		
+		
+		capital = c_medina
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					NOT = { culture = culture:egyptian }
+					culture = { has_cultural_pillar = heritage_arabic }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		d_jawf = {
+			color = { 150 250 50 }
+			
+			
+			capital = c_al_jawf
+			
+			c_al_jawf = {
+				color = { 154 253 47 }
+				
+				
+				b_al_jawf = {
+					province = 6178
+
+					color = { 154 253 47 }
+					
+				}
+				b_sakaka = {
+					province = 6176
+					
+					color = { 154 253 47 }
+					
+				}
+				b_al-qara-jawf = {
+					province = 6177
+					
+					color = { 154 253 47 }
+					
+				}
+			}
+			c_thalabiya = {
+				color = { 148 248 49 }
+				
+				
+				b_ath-thalabiya = {
+					province = 6168
+					
+					color = { 148 248 49 }
+					
+				}
+				b_zubala = {
+					province = 6169
+					
+					color = { 148 248 49 }
+					
+				}
+				b_lina = {
+					province = 6170
+					
+					color = { 148 248 49 }
+					
+				}
+				b_bitan = {
+					province = 6175
+					
+					color = { 148 248 49 }
+					
+				}
+			}
+			c_sirhan = {
+				color = { 152 246 52 }
+				
+				
+				b_quraqir = {
+					province = 5989
+					
+					color = { 125 255 18 }
+					
+				}
+				b_sirhan = {
+					province = 6180
+					
+					color = { 152 246 52 }
+					
+				}
+			}
+		}
+
 		d_asir = { #Note: Name is little anachronistic, but there's no better
 			color = { 150 210 20 }
 			
@@ -69174,171 +69443,6 @@ e_arabia = {
 					province = 6249
 					
 					color = { 156 186 0 }
-					
-				}
-			}
-		}
-		
-		d_al-hasa = {
-			color = { 32 127 30 }
-			
-			
-			capital = c_al-hasa
-			
-			c_al-hasa = {
-				color = { 30 112 20 }
-				
-				
-				b_al-hasa = {
-					province = 6154
-					
-					color = { 30 112 20 }
-					
-				}
-				b_al-hajar = {
-					province = 6152
-					
-					color = { 30 112 20 }
-					
-				}
-			}
-			c_dhafra = {
-				color = { 33 115 22 }
-				
-				
-				b_az-dhafra = {
-					province = 6148
-					
-					color = { 33 115 22 }
-					
-				}
-				b_al-jiwa = {
-					province = 6149
-					
-					color = { 33 115 22 }
-					
-				}
-			}
-			c_uqayr = {
-				color = { 30 125 30 }
-				
-				
-				b_al-uqayr = {
-					province = 6155
-					
-					color = { 30 132 37 }
-					
-				}
-				b_murwab = {
-					province = 6150
-					
-					color = { 30 132 37 }
-					
-				}
-				b_mashqar = {
-					province = 6151
-					
-					color = { 30 132 37 }
-					
-				}
-			}
-			c_yabrin = {
-				color = { 30 120 25 }
-				
-				
-				b_yabrin = {
-					province = 6163
-					
-					color = { 30 120 25 }
-					
-				}
-				b_al-mushaqqar = {
-					province = 6153
-					
-					color = { 30 112 20 }
-					
-				}
-			}
-		}
-		
-		d_bahrain = {
-			color = { 20 100 30 }
-			
-			definite_form = no
-			capital = c_qatif
-			
-			c_qatif = {
-				color = { 18 104 28 }
-				
-				
-				b_al-qatif = {
-					province = 6158
-					
-					color = { 18 104 28 }
-					
-				}
-				b_al-khatt = {
-					province = 6157
-					
-					color = { 18 104 28 }
-					
-				}
-				b_al-jubayl = {
-					province = 6159
-					
-					color = { 18 104 28 }
-					
-				}
-				b_thaj = {
-					province = 6160
-					
-					color = { 18 104 28 }
-					
-				}
-			}
-			c_uwal = {
-				color = { 22 102 33 }
-				
-				
-				b_uwal = {
-					province = 6156
-					
-					color = { 22 102 33 }
-					
-				}
-			}
-			c_samman = {
-				color = { 20 99 30 }
-				
-				
-				b_kazima = {
-					province = 6161
-					
-					color = { 20 99 30 }
-					
-				}
-				b_ar-ruqaii = {
-					province = 6162
-					
-					color = { 20 99 30 }
-					
-				}
-				b_hafar = {
-					province = 6164
-					
-					color = { 20 99 30 }
-					
-				}
-				b_al-mawiya = {
-					province = 6165
-					
-					color = { 20 99 30 }
-					
-				}
-				b_as-samman = {
-					province = 6166
-					
-					color = { 20 99 30 }
 					
 				}
 			}
@@ -118710,18 +118814,6 @@ d_map_color_pink = {
 
 d_map_base_color = {
 	color = { 84 78 60 }
-}
-d_map_color_majority = {
-	color = { 0 0 255 }
-}
-d_map_color_majority_shared_hof = {
-	color = { 0.678 0.847 0.902 }
-}
-d_map_color_large_minority = {
-	color = { 0 255 0 }
-}
-d_map_color_small_minority = {
-	color = { 255 255 0 }
 }
 
 ## base
