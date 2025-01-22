@@ -464,10 +464,9 @@ function checkDefaultHoi4Localisations() {
 }
 
 function checkDefaultIrLocalisations() {
-    local GAME_ID="${1}"
-    local LOCALISATIONS_FILE="${2}"
+    local GAME_ID="${1}" && shift
 
-    [ ! -f "${LOCALISATIONS_FILE}" ] && return
+    [ ! -f "${1}" ] && return
 
     for GAMEID_DEFINITION in $(diff \
                         <( \

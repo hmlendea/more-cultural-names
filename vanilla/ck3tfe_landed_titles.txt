@@ -1,12 +1,17 @@
 ﻿@correct_culture_primary_score = 100
 @better_than_the_alternatives_score = 50
 @always_primary_score = 1000
+@never_primary_score = -1000
 
 # special titles
 
 e_rashidun = {
 	capital = c_medina
 	ruler_uses_title_name = yes
+    
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	ai_primary_priority = {
 		add = @always_primary_score
@@ -23,6 +28,10 @@ e_gaul = {
 	capital = c_lyon
 	ruler_uses_title_name = no
 	definite_form = yes
+    
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	ai_primary_priority = {
 		if = {
@@ -42,6 +51,10 @@ e_palmyrene = {
 	capital = c_palmyrene
 	ruler_uses_title_name = no
 	definite_form = yes
+    
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	ai_primary_priority = {
 		if = {
@@ -61,12 +74,11 @@ e_palmyrene = {
 }
 
 k_papal_state = {
-	color = { 255 249 198 }
-	
+	color = { 255 249 198 }	
 	definite_form = yes
 	ruler_uses_title_name = no
 	landless = yes
-	
+
 	capital = c_roma
 	
 	ai_primary_priority = {
@@ -78,7 +90,7 @@ k_papal_state = {
 	always_follows_primary_heir = yes
 	de_jure_drift_disabled = yes
 
-	male_names = { Alexander Anastasius Benedictus Caelestinus Callistus Clemens Eugenius Leo Gregorius Hadrianus Honorius Innocentius Ioannes Lucius Martinus Nicolaus Sergius Silvester Stepus Urbanus Victor }
+	male_names = { Alexander Anastasius Benedictus Caelestinus Callistus Clemens Eugenius Leo Gregorius Hadrianus Honorius Innocentius Ioannes Lucius Marinus Martinus Nicolaus Sergius Silvester Stephanus Urbanus Victor }
 }
 
 k_orthodox = {
@@ -93,7 +105,6 @@ k_orthodox = {
 
 	#color = { 150 90 30 }
 	color = { 183 60 155 }
-	
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
@@ -101,7 +112,6 @@ k_orthodox = {
 
 k_fashion = { # Kingdom of Fashion from Establish a New Fashion at Court decision
 	color = { 140 45 165 }
-	
 	landless = yes
 	destroy_on_succession = yes
 	can_be_named_after_dynasty = no
@@ -114,7 +124,6 @@ k_fashion = { # Kingdom of Fashion from Establish a New Fashion at Court decisio
 d_iconoclast = {
 	landless = yes
 	color = { 153 50 125 }
-	
 	definite_form = yes
 	ruler_uses_title_name = no
 	
@@ -201,9 +210,7 @@ d_manichean = {
 	definite_form = yes
 	ruler_uses_title_name = no
 	landless = yes
-	
 	capital = c_samarkand
-	
 	ai_primary_priority = {
 		add = @always_primary_score
 	}
@@ -217,7 +224,6 @@ d_manichean = {
 
 k_danelaw = {
 	color = { 255 60 15 }
-	
 	de_jure_drift_disabled = yes
 
 	capital = c_north_riding
@@ -250,6 +256,12 @@ k_daneland = {
 	}
 }
 
+k_mediterranean_sea = { # FP2
+	color = { 180 0 0 }
+
+	capital = c_cagliari
+}
+
 d_sunni = {
 	color = { 40 160 40 }
 	
@@ -259,6 +271,15 @@ d_sunni = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+    	
+	capital = c_baghdad
+
+	can_destroy = {
+		custom_tooltip = {
+			text = persian_struggle.tt.forbid_title_destruction
+			NOT = { exists = struggle:persian_struggle }
+		}
+	}
 }
 
 d_shiite = {
@@ -270,6 +291,8 @@ d_shiite = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+	
+	capital = c_cairo
 }
 
 
@@ -282,6 +305,36 @@ d_imami = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
+
+	capital = c_cairo
+}
+
+d_nizari = {
+	color = { 72 110 72 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
+
+	capital = c_qazwin #Alamut 
+}
+
+d_zayidi = {
+	color = { 33 110 33 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_qazwin #Alamut 
 }
 
 d_masmudi = {
@@ -295,83 +348,145 @@ d_masmudi = {
 	can_be_named_after_dynasty = no
 }
 
+d_muwalladi = {
+	color = { 11 113 11 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	
+	capital = c_toledo
+}
+
+d_ghulat = {
+	color = { 48 207 48 }
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_kufa
+}
+
 e_golden_horde = {
 	color = { 243 180 17 }
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
-	capital = c_karakorum
+	capital = c_itil
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_ilkhanate = {
 	color = { 140 180 20 }
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
 	capital = c_tabriz
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_chagatai = {
 	color = { 200 200 200 }
-	
+	can_be_named_after_dynasty = no
 
-	definite_form = yes
+	#definite_form = yes
 
 	capital = c_samarkand
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_black_horde = {
 	color = { 50 50 50 }
-	
+	can_be_named_after_dynasty = no	
 
 	definite_form = yes
 
 	capital = c_delhi
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_white_horde = {
 	color = { 230 230 230 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
 	capital = c_praha
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_aarlud_khanate = {
 	color = { 80 152 200 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
-	capital = c_sjaelland
+	capital = c_upland
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_togskol_khanate = {
 	color = { 50 150 180 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
 	capital = c_roma
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_baruun_khanate = {
 	color = { 100 180 50 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
 
 	capital = c_alexandria
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_uyghur_khanate = {
 	color = { 90 70 40 }
+	can_be_named_after_dynasty = no
 	
 
 	definite_form = yes
-	
 	capital = c_karabalgasun
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	ai_primary_priority = {
 		if = {
@@ -385,11 +500,14 @@ e_uyghur_khanate = {
 
 e_kirghiz_khanate = {
 	color = { 245 180 100 }
-	
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
-	
 	capital = c_karabalgasun
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	ai_primary_priority = {
 		if = {
@@ -403,8 +521,14 @@ e_kirghiz_khanate = {
 
 e_mongol_empire = {
 	color = { 130 180 240 }
+	can_be_named_after_dynasty = no
 
 	definite_form = yes
+    
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	ai_primary_priority = {
 		add = @always_primary_score
@@ -415,9 +539,15 @@ e_mongol_empire = {
 
 e_kara_khitai = { #aka Western Liao / Great Liao
 	color = { 10 10 10 }
-	
-	
+
 	capital = c_balashagun
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
+	cultural_names = {
+		name_list_khitan = cn_kara_khitai
+	}
 }
 
 
@@ -425,8 +555,21 @@ e_timurids = {
 	color = { 120 20 20 }
 
 	definite_form = yes
-
+	
 	capital = c_samarkand
+    
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
+}
+
+k_bosporan_kingdom = {
+	color = { 139 0 0 }
+
+	capital = c_kerch
+
+	definite_form = yes
 }
 
 #Jewish Religious Heads
@@ -451,7 +594,7 @@ d_karaism = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+	can_be_named_after_dynasty = no
 	capital = c_jerusalem
 }
 
@@ -463,7 +606,7 @@ d_haymanot = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+	can_be_named_after_dynasty = no
 	capital = c_semien
 }
 
@@ -476,7 +619,6 @@ d_malabarism = {
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
-	
 	capital = c_jerusalem
 }
 
@@ -488,7 +630,7 @@ d_samaritan = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+	can_be_named_after_dynasty = no
 	capital = c_jerusalem
 }
 
@@ -500,7 +642,7 @@ d_kabarism = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+	can_be_named_after_dynasty = no
 	capital = c_jerusalem
 }
 
@@ -537,7 +679,7 @@ d_zurvanism = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+
 	capital = c_yazd
 }
 d_gayomarthianism = {
@@ -548,7 +690,7 @@ d_gayomarthianism = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+
 	capital = c_yazd
 }
 d_khurmazta = {
@@ -559,7 +701,7 @@ d_khurmazta = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
-	
+
 	capital = c_yazd
 }
 d_mazdakism = {
@@ -596,7 +738,7 @@ d_urartuism = {
 	capital = c_yazd
 }
 
-#Sakya Trizin (religious head of lamaism/vassal-ruler of Tibet under name_list_Mongol and Yuan Empires)
+#Sakya Trizin (religious head of lamaism/vassal-ruler of Tibet under Mongol and Yuan Empires)
 k_sakya_trizin = {
 	color = { 52 235 152 }
 	
@@ -663,17 +805,14 @@ k_bohemia_slav = {
 #Guiyi Circuit
 k_guiyi = {
 	color = { 181 135 55 }
-	
-	
+
 	capital = c_shazhou # Shazhou/Dunhuang
 }
 
 k_switzerland = {
 	color = { 255 80 80 }
-	
 
-	definite_form = yes
-	
+	definite_form = yes	
 	capital = c_bern
 }
 k_austria = {
@@ -688,9 +827,13 @@ k_austria = {
 
 e_outremer = {
 	color = { 180 180 180 }
-	
 
 	capital = c_jerusalem
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	
 	ai_primary_priority = {
 		add = @always_primary_score
@@ -698,17 +841,27 @@ e_outremer = {
 
 }
 
+# FP2
+k_toledo = {
+	color = { 99 163 182 }
+
+	capital = c_toledo
+
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
+}
+
 # HOLY ORDERS
 
 d_knights_templar = {
 	color = { 230 230 230 }
-	
-	
+
 	capital = c_jerusalem
 }
 
 d_teutonic_order = {
-	
+
 	color = { 50 50 50 }
 	
 	
@@ -905,25 +1058,53 @@ e_latin_empire = {
 	definite_form = yes
 
 	capital = c_byzantion
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_slavia = {
 	color = { 39 27 27 }
 	
 	capital = c_kiev # Kiev
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_armenia = {
 	color = { 198 29 29 }
 	
 	capital = c_hayk # Ani
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_indo_scythia = {
 	color = { 198 59 29 }
 	
 	capital = c_purushapura
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
+
+e_north_sea = {
+	color = { 0 0 60 }
+	definite_form = yes
+
+	capital = c_sjaelland	#Roskilde
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+}
+
 
 # TITULAR KINGDOMS
 
@@ -1058,6 +1239,10 @@ e_hre = {
 
 	capital = c_aachen
 	definite_form = yes
+	
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 		
 	ai_primary_priority = {
 		if = {
@@ -1076,13 +1261,6 @@ k_hansa = {
 	capital = c_lubeck # Lübeck
 }
 
-e_north_sea = {
-		color = { 0 0 60 }
-		definite_form = yes
-		
-		capital = c_sjaelland	#Roskilde
-}
-
 ############################################################################
 e_britannia = {
 	color = { 34 70 12 }
@@ -1093,6 +1271,7 @@ e_britannia = {
 
 			NOT = { exists = struggle:britannia_struggle }
 		}
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 	}
 	
 	capital = c_middlesex
@@ -1120,6 +1299,7 @@ e_britannia = {
 			add = @correct_culture_primary_score
 		}
 	}
+
 	
 	k_mann_the_isles = {
 		color = { 124 59 8 }
@@ -6258,18 +6438,26 @@ e_britannia = {
 
 e_britannia_2 = {
 	color = { 172 22 22 }
+	    
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 e_france_2 = {
 	color = { 15 27 187 }
+	    
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_germany = {
 	color = { 50 60 50 }
-	
 
 	capital = c_nassau
 
 	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 		NOT = {
 			faith = {
 				religion_tag = christianity_religion
@@ -7089,7 +7277,7 @@ e_germany = {
 				}
 			}
 
-c_wittenberg = {
+			c_wittenberg = {
 				color = { 200 140 130 }
 				
 				
@@ -7539,6 +7727,13 @@ c_wittenberg = {
 			capital = c_lubeck
 			
 			c_lubeck = {
+				
+				cultural_names = {
+					name_list_polabian = cn_liubice
+					name_list_polish = cn_liubice
+					name_list_czech = cn_liubice
+					name_list_pommeranian = cn_liubice
+				}
 				color = { 172 112 112 }
 				
 				
@@ -11088,6 +11283,9 @@ c_wittenberg = {
 					
 					
 					cultural_names = {
+						name_list_italian = cn_merano
+						name_list_cisalpine = cn_merano
+						name_list_sicilian = cn_merano
 						name_list_sardinian = cn_merano
 					}
 				}
@@ -11253,11 +11451,26 @@ c_wittenberg = {
 			c_kranj = {
 				color = { 95 120 100 }
 				
+				cultural_names = {
+					name_list_swabian = cn_krain
+					name_list_swabian = cn_krain
+					name_list_franconian = cn_krain
+					name_list_bavarian = cn_krain
+					name_list_saxon = cn_krain
+				}
 	
 				b_kranj = {
 					province = 3100
 
 					color = { 95 120 100 }
+
+					cultural_names = {
+						name_list_swabian = cn_krainburg
+						name_list_swabian = cn_krainburg
+						name_list_franconian = cn_krainburg
+						name_list_bavarian = cn_krainburg
+						name_list_saxon = cn_krainburg
+					}
 					
 				}
 				b_krsko = {
@@ -11342,7 +11555,10 @@ c_wittenberg = {
 
 e_roman_empire = {
 	color = { 158 5 10 }
-	
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_roma # Rome
 	definite_form = yes
@@ -11351,7 +11567,10 @@ e_roman_empire = {
 
 e_byzantium = {
 	color =  hsv{ 0.9 1 0.3 }
-	
+	    
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_byzantion
 	
@@ -11428,7 +11647,7 @@ e_byzantium = {
 		
 		d_pisidia = {
 			color = { 200 47 22 }
-			capital = c_philomelium
+			capital = c_pisidia
 		}
 
 		capital = c_ionia # Ephesus
@@ -11562,13 +11781,18 @@ e_byzantium = {
 		capital = c_thessalonika
 		d_krete = {
 			color = { 205 110 35 }
+			cultural_names = {
+				name_list_italian = cn_candia
+			}
 			
 			
 			capital = c_chandax # Cname_list_handax
 			
 			c_chandax = {
 				color = { 205 110 35 }
-				
+				cultural_names = {
+					name_list_italian = cn_candia
+				}
 				
 				b_iraklio = {
 					province = 480
@@ -11591,7 +11815,9 @@ e_byzantium = {
 			}
 			c_chania = {
 				color = { 210 145 20 }
-				
+				cultural_names = {
+					name_list_italian = cn_la_canea
+				}
 				
 				#capital = 479 # Cname_list_hania
 				
@@ -16147,8 +16373,11 @@ e_byzantium = {
 e_italy = {
 	color = { 234 217 110 }
 	
-	
 	capital = c_lombardia # Rome
+	
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	k_sicily = {
 		color = { 180 160 80 }
@@ -17153,6 +17382,14 @@ e_italy = {
 		
 		d_sicily = {
 			color = { 235 214 86 }
+			cultural_names = {
+				name_list_bedouin = cn_siqilliya
+				name_list_levantine = cn_siqilliya
+				name_list_egyptian = cn_siqilliya
+				name_list_maghrebi = cn_siqilliya
+				name_list_andalusian = cn_siqilliya
+				name_list_yemeni = cn_siqilliya
+			}
 			
 			
 			capital = c_palermo # Palermo
@@ -17160,8 +17397,25 @@ e_italy = {
 			c_palermo = {
 				color = { 155 254 86 }
 				
-				
+			
+				cultural_names = {
+					name_list_bedouin = cn_balarm
+					name_list_levantine = cn_balarm
+					name_list_egyptian = cn_balarm
+					name_list_maghrebi = cn_balarm
+					name_list_andalusian = cn_balarm
+					name_list_yemeni = cn_balarm
+				}	
 				b_palermo = {
+					
+				cultural_names = {
+					name_list_bedouin = cn_balarm
+					name_list_levantine = cn_balarm
+					name_list_egyptian = cn_balarm
+					name_list_maghrebi = cn_balarm
+					name_list_andalusian = cn_balarm
+					name_list_yemeni = cn_balarm
+				}
 					province = 2635
 					
 					color = { 155 254 86 }
@@ -17217,7 +17471,14 @@ e_italy = {
 			c_siracusa = {
 				color = { 115 195 85 }
 				
-				
+				cultural_names = {
+					name_list_bedouin = cn_sarqusa
+					name_list_levantine = cn_sarqusa
+					name_list_egyptian = cn_sarqusa
+					name_list_maghrebi = cn_sarqusa
+					name_list_andalusian = cn_sarqusa
+					name_list_yemeni = cn_sarqusa
+				}
 				b_syracusa = {
 					province = 2638
 					
@@ -17240,7 +17501,15 @@ e_italy = {
 			c_agrigento = {
 				color = { 125 230 110 }
 				
-				
+								cultural_names = {
+					name_list_bedouin = cn_qasriyana
+					name_list_levantine = cn_qasriyana
+					name_list_egyptian = cn_qasriyana
+					name_list_maghrebi = cn_qasriyana
+					name_list_andalusian = cn_qasriyana
+					name_list_yemeni = cn_qasriyana
+					name_list_greek = cn_enna
+				}
 				b_agricento = {
 					province = 2637
 					
@@ -17251,6 +17520,15 @@ e_italy = {
 					province = 2640
 					
 					color = { 125 230 110 }
+					cultural_names = {
+						name_list_bedouin = cn_qasriyana
+						name_list_levantine = cn_qasriyana
+						name_list_egyptian = cn_qasriyana
+						name_list_maghrebi = cn_qasriyana
+						name_list_andalusian = cn_qasriyana
+						name_list_yemeni = cn_qasriyana
+						name_list_greek = cn_enna
+					}
 					
 				}
 				b_caltanisetta = { #Caltanissetta
@@ -18022,7 +18300,10 @@ e_italy = {
 
 e_scandinavia = {
 	color = { 62 122 189 }
-	
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_skane #Lund - Archbishop seat of Scandinavia
 		
@@ -20024,7 +20305,10 @@ e_scandinavia = {
 e_wendish_empire = {
 	color = { 5 90 70 }
 	
-	
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	capital = c_kernave # Riga
 	
 	definite_form = yes
@@ -23047,8 +23331,11 @@ e_wendish_empire = {
 e_russia = {	#Kievan Rus
 	color = { 50 150 55 }
 	
-	
 	capital = c_kiev # Kiev
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 		
 	ai_primary_priority = {
 		if = {
@@ -23069,7 +23356,10 @@ e_russia = {	#Kievan Rus
 
 e_caspian-pontic_steppe = {
 	color = { 230 180 10 }
-	
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_itil # Itil
 	
@@ -24160,6 +24450,10 @@ e_caspian-pontic_steppe = {
 
 e_volga-ural = {
 	color = { 94 83 70 }
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	
 	capital = c_bolghar
@@ -25335,7 +25629,10 @@ e_volga-ural = {
 
 e_siberia = {
 	color = { 205 212 250 }
-	
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_tyumen
 	
@@ -26794,8 +27091,11 @@ e_siberia = {
 e_mongolia = {
 	color = { 90 90 240 }
 	
-	
 	capital = c_karakorum
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	cultural_names = {
 		name_list_rouran = cn_rouran
@@ -26813,8 +27113,7 @@ e_mongolia = {
 	
 	k_mongolia = {
 		color = { 20 65 25 }
-		
-		
+
 		capital = c_mumo
 		
 		cultural_names = {
@@ -29243,8 +29542,11 @@ e_mongolia = {
 e_tartaria = {
 	color = { 205 5 5 }
 	
-	
 	capital = c_turgay
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	ai_primary_priority = {
 		if = {
@@ -31987,8 +32289,11 @@ e_tartaria = {
 e_western_regions = {
 	color = { 58 52 88 }
 	
-	
 	capital = c_khotan
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	ai_primary_priority = {
 		if = {
@@ -33922,7 +34227,10 @@ e_western_regions = {
 
 e_turan = {
 	color = { 175 237 135 }
-	
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_bukhara
 	
@@ -35334,20 +35642,31 @@ e_bactria = {
 	can_be_named_after_dynasty = no
 	
 	#capital = c_balkh
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 e_caucasia = {
 	color = { 200 193 193 }
 	capital = c_tbilisi
 	can_be_named_after_dynasty = no
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 e_persia = {
 	color = { 52 180 170 }
 	
-	
 	capital = c_ctesiphon # Ctesiphon
 	
 	definite_form = yes
-	
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	ai_primary_priority = {
 		if = {
 			limit = {
@@ -40708,11 +41027,14 @@ e_persia = {
 e_carpathia = {
 	color = { 210 115 35 }
 	
-	
 	capital = c_hewes # Pest
 
 	cultural_names = {
 		name_list_avar = cn_avar_khaganate
+	}
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 	}
 	
 	k_hungary = {
@@ -43265,12 +43587,15 @@ e_carpathia = {
 		}
 	}
 }
-	
+
 e_france = {
 	color = { 11 22 170 }
 	
-	
 	capital = c_ile_de_france
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 		
 	ai_primary_priority = {
 		if = {
@@ -43885,6 +44210,9 @@ e_france = {
 				cultural_names = {
 					name_list_french = cn_aix_la_chapelle
 					name_list_occitan = cn_aquisgrana
+					name_list_italian = cn_aquisgrana
+					name_list_cisalpine = cn_aquisgrana
+					name_list_sicilian = cn_aquisgrana
 				}
 				b_beda = {
 					province = 2085
@@ -43996,7 +44324,11 @@ e_france = {
 		d_upper_lorraine = {
 			color = { 90 90 125 }
 			
-					
+			
+			cultural_names = {
+				name_list_french = cn_upper_lorraine
+				name_list_norman = cn_upper_lorraine
+			}		
 			capital = c_trier #Trier		
 			
 			
@@ -47986,9 +48318,10 @@ e_france = {
 e_spain = {
 	color = { 233 200 20 }
 	
-
 	capital = c_toledo # Toledo
 	can_be_named_after_dynasty = no
+			
+
 
 	cultural_names = {
 		name_list_bedouin = cn_isbaniya
@@ -48003,6 +48336,7 @@ e_spain = {
 	}
 
 	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 		custom_description = {
 			text = form_hispania_must_end_struggle_trigger
 
@@ -52058,10 +52392,12 @@ e_spain = {
 	
 }
 
-
 e_maghreb = {
 	color = { 209 63 44 }
-	
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_marrakesh # Kairouan
 	
@@ -52227,6 +52563,29 @@ e_maghreb = {
 			
 			
 			capital = c_germa
+			c_germa = {
+				color = { 176 103 20 }
+				
+				
+				b_germa = {
+					province = 6449
+					
+					color = { 176 143 90 }
+					
+				}
+				b_sabha = {
+					province = 6448
+					
+					color = { 176 143 90 }
+					
+				}
+				b_tamzawa = {
+					province = 6459
+					
+					color = { 176 143 90 }
+					
+				}
+			}
 			c_waddan = {
 				color = { 180 107 10 }
 				
@@ -52293,29 +52652,6 @@ e_maghreb = {
 					province = 6446
 					
 					color = { 125 97 52 }
-					
-				}
-			}
-			c_germa = {
-				color = { 176 103 20 }
-				
-				
-				b_germa = {
-					province = 6449
-					
-					color = { 176 143 90 }
-					
-				}
-				b_sabha = {
-					province = 6448
-					
-					color = { 176 143 90 }
-					
-				}
-				b_tamzawa = {
-					province = 6459
-					
-					color = { 176 143 90 }
 					
 				}
 			}
@@ -53291,10 +53627,13 @@ e_maghreb = {
 e_arabia = {
 	color = { 32 130 25 }
 	
-	
 	capital = c_mecca
 	
 	definite_form = yes
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 		
 	ai_primary_priority = {
 		if = {
@@ -53346,7 +53685,10 @@ e_arabia = {
 	}	
 	k_arabia = {
 		color = { 124 199 50 }
-		
+				
+		can_create = {
+			rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+		}
 		
 		capital = c_medina
 		
@@ -55095,10 +55437,25 @@ e_arabia = {
 
 e_egypt = {
 
-	color = { 24 84 167 }
+	color = { 24 84 167 } # 225 188 25
 	
-		
 	capital	= c_alexandria
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				OR = {
+					culture = culture:egyptian
+					culture = { has_cultural_pillar = heritage_kemetic }
+				}
+			}
+			add = @correct_culture_primary_score
+		}
+	}
 	
 	k_cyrenaica = {
 		color = { 30 80 137 }
@@ -55117,7 +55474,10 @@ e_egypt = {
 		ai_primary_priority = {
 			if = {
 				limit = {
-					culture = culture:egyptian
+					OR = {
+						culture = culture:egyptian
+						culture = { has_cultural_pillar = heritage_kemetic }
+					}
 				}
 				add = @correct_culture_primary_score
 			}
@@ -56670,7 +57030,10 @@ e_egypt = {
 e_abyssinia = {
 	color = { 181 133 68 }
 	
-	
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	capital = c_lasta
 	
 	ai_primary_priority = {
@@ -57236,1009 +57599,7 @@ e_abyssinia = {
 			}
 		}
 	}
-	
-	k_nubia = {
-		color = { 180 85 39 }
-		
-		
-		capital = c_dongola
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = { has_cultural_pillar = heritage_east_african }
-				}
-				add = @correct_culture_primary_score
-			}
-		}
 
-		cultural_names = {
-			name_list_meroitic = cn_kush
-		}
-		
-		d_nobatia = {
-			color = { 162 133 85 }
-			
-			
-			capital = c_faras
-			
-			c_qasr_ibrim = {
-				color = { 165 135 85 }
-				
-				
-				b_qasr_ibrim = {
-					province = 6334
-					
-					color = { 165 135 85 }
-					
-				}
-				b_korosko = {
-					province = 6332
-					
-					color = { 165 135 85 }
-					
-				}
-				b_sheikh_dawud = {
-					province = 6333
-					
-					color = { 165 135 85 }
-					
-				}
-			}
-			c_faras = {
-				color = { 160 130 85 }
-				
-				
-				b_faras = {
-					province = 6336
-					
-					color = { 160 130 85 }
-					
-				}
-				b_serra = {
-					province = 6335
-					
-					color = { 160 130 85 }
-					
-				}
-			}
-			c_batn_al-hajar = {
-				color = { 150 140 65 }
-				
-				
-				b_semna = {
-					province = 6337
-					
-					color = { 150 140 65 }
-					
-				}
-				b_akasha = {
-					province = 6338
-					
-					color = { 150 140 65 }
-					
-				}
-			}
-			c_qurta = {
-				color = { 155 130 60 }
-				
-				
-				b_qurta = {
-					province = 6329
-					
-					color = { 155 130 60 }
-					
-				}
-				b_ikhmindi = {
-					province = 6330
-					
-					color = { 155 130 60 }
-					
-				}
-				b_sayala = {
-					province = 6331
-					
-					color = { 155 130 60 }
-					
-				}
-			}
-			c_kalabsha = {
-				color = { 165 130 80 }
-				
-				
-				b_kalabsha = {
-					province = 6362
-					
-					color = { 165 130 80 }
-					
-				}
-				b_sabagura = {
-					province = 6361
-					
-					color = { 165 130 80 }
-					
-				}
-			}
-		}
-		
-		d_makuria = {
-			color = { 141 162 79 }
-			
-			
-			capital = c_dongola
-			
-			c_dongola = {
-				color = { 145 150 80 }
-				
-				
-				b_old_dongola = {
-					province = 6344
-					
-					color = { 145 150 80 }
-					
-				}
-				b_tumbus = {
-					province = 6341
-					
-					color = { 145 150 80 }
-					
-				}
-				b_kemna = {
-					province = 6342
-					
-					color = { 145 150 80 }
-					
-				}
-				b_dongola = {
-					province = 6343
-					
-					color = { 145 150 80 }
-					
-				}
-				b_debba = {
-					province = 6345
-					
-					color = { 145 150 80 }
-					
-				}
-			}
-			c_sai = {
-				color = { 140 155 75 }
-				
-				
-				b_sai = {
-					province = 6339
-					
-					color = { 140 155 75 }
-					
-				}
-				b_delgo = {
-					province = 6340
-					
-					color = { 140 155 75 }
-					
-				}
-				b_kassi-markol = {
-					province = 6359
-					
-					color = { 140 155 75 }
-					
-				}
-			}
-			c_wadi_el-milk = {
-				color = { 140 160 70 }
-				
-				
-				b_wadi_el-milk = {
-					province = 6415
-					
-					color = { 140 160 70 }
-					
-				}
-				b_jebel_abu_negila = {
-					province = 6427
-					
-					color = { 140 160 70 }
-					
-				}
-				b_bir_el-kai = {
-					province = 6428
-					
-					color = { 140 160 70 }
-					
-				}
-				b_upper_milk = {
-					province = 6896
-					
-					color = { 140 160 70 }
-					
-				}
-			}
-		}
-
-		d_kush = {
-			color = { 187 123 1 }
-			
-			
-			capital = c_abwab
-
-			c_meroe = {
-				color = { 155 140 67 }
-				
-				
-				b_grnetti = {
-					province = 6346
-					
-					color = { 155 140 67 }
-					
-				}
-				b_tankasi = {
-					province = 6347
-					
-					color = { 155 140 67 }
-					
-				}
-				b_kareima = {
-					province = 6348
-					
-					color = { 155 140 67 }
-					
-				}
-				b_nuri = {
-					province = 6349
-					
-					color = { 155 140 67 }
-					
-				}
-				b_diffar = {
-					province = 6360
-					
-					color = { 155 140 67 }
-					
-				}
-			}
-			c_shamir = {
-				color = { 140 125 45 }
-				
-				
-				b_shemkhiya = {
-					province = 6367
-					
-					color = { 140 125 45 }
-					
-				}
-				b_redab = {
-					province = 6368
-					
-					color = { 140 125 45 }
-					
-				}
-				b_kuweib = {
-					province = 6369
-					
-					color = { 140 125 45 }
-					
-				}
-			}
-			c_abu_hammad = {
-				color = { 135 120 55 }
-				
-				
-				b_abu_hammad = {
-					province = 6352
-					
-					color = { 135 120 55 }
-					
-				}
-				b_korosko_road = {
-					province = 6354
-					
-					color = { 135 120 55 }
-					
-				}
-				b_al-hajar_nubia = {
-					province = 6370
-					
-					color = { 135 120 55 }
-					
-				}
-			}
-			c_kurgus = {
-				color = { 145 130 40 }
-				
-				
-				b_kurgus = {
-					province = 6351
-					
-					color = { 145 130 40 }
-					
-				}
-				b_tarfaya = {
-					province = 6353
-					
-					color = { 145 130 40 }
-					
-				}
-			}
-			c_atbara = {
-				color = { 150 160 50 }
-				
-				
-				b_atbara = {
-					province = 6356
-					
-					color = { 150 160 50 }
-					
-				}
-				b_berber = {
-					province = 6355
-					
-					color = { 150 160 50 }
-					
-				}
-				b_al-bawga = {
-					province = 6357
-					
-					color = { 150 160 50 }
-					
-				}
-				b_ed-damer = {
-					province = 6358
-					
-					color = { 150 160 50 }
-					
-				}
-				b_shunqayr = {
-					province = 6389
-					
-					color = { 150 160 50 }
-					
-				}
-			}
-			c_abwab = {
-				color = { 145 160 75 }
-				
-				
-				b_al-abwab = {
-					province = 6363
-					
-					color = { 145 160 75 }
-					
-				}
-				b_shendi = {
-					province = 6364
-					
-					color = { 145 160 75 }
-					
-				}
-				b_keli = {
-					province = 6365
-					
-					color = { 145 160 75 }
-					
-				}
-				b_wad_hamid = {
-					province = 6366
-					
-					color = { 145 160 75 }
-					
-				}
-				b_al-ghazali = {
-					province = 6350
-					
-					color = { 145 160 75 }
-					
-				}
-			}
-		}
-		
-		d_alwa = { # Alodia
-			color = { 128 60 20 }
-			
-			
-			capital = c_alodia
-			c_wolqayt = {
-				color = { 230 150 60 }
-				
-				
-				b_wolqayt = {
-					province = 6436
-					
-					color = { 230 150 60 }
-					
-				}
-				b_wad_abu_nahl = {
-					province = 6445
-					
-					color = { 230 150 60 }
-					
-				}
-			}
-			c_alodia = {
-				color = { 135 65 20 }
-				
-				
-				b_soba = {
-					province = 6394
-					
-					color = { 135 65 20 }
-					
-				}
-				b_geili = {
-					province = 6391
-					
-					color = { 135 65 20 }
-					
-				}
-				b_kadero = {
-					province = 6392
-					
-					color = { 135 65 20 }
-					
-				}
-				b_alti = {
-					province = 6395
-					
-					color = { 135 65 20 }
-					
-				}
-				b_kamlin = {
-					province = 6397
-					
-					color = { 135 65 20 }
-					
-				}
-			}
-			c_naga = {
-				color = { 130 55 25 }
-				
-				
-				b_naga = {
-					province = 6407
-					
-					color = { 130 55 25 }
-					
-				}
-				b_basa = {
-					province = 6408
-					
-					color = { 130 55 25 }
-					
-				}
-				b_umm_usuda = {
-					province = 6409
-					
-					color = { 130 55 25 }
-					
-				}
-				b_jebel_geili = {
-					province = 6410
-					
-					color = { 130 55 25 }
-					
-				}
-			}
-			c_gezira = {
-				color = { 125 60 30 }
-				
-				
-				b_geteina = {
-					province = 6396
-					
-					color = { 125 60 30 }
-					
-				}
-				b_arbaji = {
-					province = 6398
-					
-					color = { 125 60 30 }
-					
-				}
-				b_um_sunt = {
-					province = 6399
-					
-					color = { 125 60 30 }
-					
-				}
-				b_saqadi = {
-					province = 6401
-					
-					color = { 125 60 30 }
-					
-				}
-			}
-			c_eleila = {
-				color = { 135 70 40 }
-				
-				
-				b_el-eleila = {
-					province = 6405
-					
-					color = { 135 70 40 }
-					
-				}
-				b_abu_geili = {
-					province = 6404
-					
-					color = { 135 70 40 }
-					
-				}
-				b_basharga = {
-					province = 6406
-					
-					color = { 135 70 40 }
-					
-				}
-			}
-			c_ushara = {
-				color = { 135 50 30 }
-				
-				
-				b_ushara = {
-					province = 6393
-					
-					color = { 135 50 30 }
-					
-				}
-				b_shaheinab = {
-					province = 6390
-					
-					color = { 135 50 30 }
-					
-				}
-			}
-		}
-		
-		d_sennar = { # Alodia
-			color = { 113 53 23 }
-			
-			
-			capital = c_sennar
-			c_agaw_meder = {
-				color = { 139 86 39 }
-				
-			
-				b_agaw_meder = {
-					province = 8371
-
-					color = { 139 86 39 }
-					
-				}
-				b_upper_dinder = {
-					province = 8314
-
-					color = { 139 86 39 }
-					
-				}
-				b_dinder = {
-					province = 8315
-
-					color = { 139 86 39 }
-					
-				}
-			}
-			c_sennar = {
-				color = { 115 60 20 }
-				
-				
-				b_sennar = {
-					province = 6400
-					
-					color = { 115 60 20 }
-					
-				}
-				b_jebel_moya = {
-					province = 6402
-					
-					color = { 115 60 20 }
-					
-				}
-				b_singa = {
-					province = 6403
-					
-					color = { 115 60 20 }
-					
-				}
-				b_renk = {
-					province = 6432
-					
-					color = { 115 60 20 }
-					
-				}
-			}
-			c_fazughli = {
-				color = { 110 55 25 }
-				
-				
-				b_fazughli = {
-					province = 6433
-					
-					color = { 110 55 25 }
-					
-				}
-				b_al-rusayrisi = {
-					province = 6434
-					
-					color = { 110 55 25 }
-					
-				}
-				b_fazughli_east = {
-					province = 6435
-					
-					color = { 110 55 25 }
-					
-				}
-			}
-			c_tagali = {
-				color = { 120 60 15 }
-				
-				
-				b_kosti = {
-					province = 6429
-					
-					color = { 120 60 15 }
-					
-				}
-				b_tagali = {
-					province = 6430
-					
-					color = { 120 60 15 }
-					
-				}
-				b_tagali_south = {
-					province = 6431
-					
-					color = { 120 60 15 }
-					
-				}
-			}
-			c_gumuz = {
-				color = { 113 58 28 }
-				
-			
-				b_gumuz_north = {
-					province = 8514
-
-					color = { 113 58 28 }
-					
-				}
-				b_gumuz_west = {
-					province = 8515
-
-					color = { 113 58 28 }
-					
-				}
-				b_gumuz_south = {
-					province = 8516
-
-					color = { 113 58 28 }
-					
-				}
-			}
-		}
-	}
-	
-	k_blemmyia = { #Maikele Bahr or Bejaland
-		color = { 124 36 3 }
-		
-		
-		capital = c_aydhab
-		
-		ai_primary_priority = {
-			if = {
-				limit = {
-					culture = { has_cultural_pillar = heritage_somalian }
-				}
-				add = @correct_culture_primary_score
-			}
-		}
-		
-		d_naqis = {
-			color = { 225 130 98 }
-			
-			
-			capital = c_aydhab
-			
-			c_aydhab = {
-				color = { 220 140 100 }
-				
-				
-				b_aydhab = {
-					province = 6110
-					
-					color = { 220 140 100 }
-					
-				}
-				b_lower_odib = {
-					province = 6388
-					
-					color = { 220 140 100 }
-					
-				}
-			}
-			c_allaqi = {
-				color = { 225 135 90 }
-				
-				
-				b_allaqi = {
-					province = 6113
-					
-					color = { 225 135 90 }
-					
-				}
-				b_south_jbl_quzlum = {
-					province = 6120
-					
-					color = { 45 195 130 }
-					
-				}
-				b_um_shashoba = {
-					province = 6121
-					
-					color = { 45 195 130 }
-					
-				}
-				b_derahib = {
-					province = 6111
-					
-					color = { 225 135 90 }
-					
-				}
-				b_haimur = {
-					province = 6112
-					
-					color = { 225 135 90 }
-					
-				}
-			}
-			c_naqis = {
-				color = { 230 135 95 }
-				
-				
-				b_gebeit = {
-					province = 6373
-					
-					color = { 230 135 95 }
-					
-				}
-				b_wadi_odib = {
-					province = 6372
-					
-					color = { 230 135 95 }
-					
-				}
-				b_naqis-north = {
-					province = 6374
-					
-					color = { 230 135 95 }
-					
-				}
-				b_naqis-south = {
-					province = 6384
-					
-					color = { 230 135 95 }
-					
-				}
-			}
-			c_wadi_amur = {
-				color = { 215 120 90 }
-				
-				
-				b_khawr_nubt = {
-					province = 6375
-					
-					color = { 215 120 90 }
-					
-				}
-				b_wadi_amur = {
-					province = 6382
-					
-					color = { 215 120 90 }
-					
-				}
-				b_upper_amur = {
-					province = 6383
-					
-					color = { 215 120 90 }
-					
-				}
-			}
-		}
-		
-		d_bazin = {
-			color = { 253 135 87 }
-			
-			
-			capital = c_bazin
-			
-			c_bazin = {
-				color = { 240 145 85 }
-				
-				
-				b_tokar = {
-					province = 6378
-					
-					color = { 240 145 85 }
-					
-				}
-				b_akik = {
-					province = 6379
-					
-					color = { 240 145 85 }
-					
-				}
-				b_bazin = {
-					province = 6381
-					
-					color = { 240 145 85 }
-					
-				}
-			}
-			c_suakin = {
-				color = { 220 130 90 }
-				
-				
-				b_suakin = {
-					province = 6377
-					
-					color = { 220 130 90 }
-					
-				}
-				b_dungunab = {
-					province = 6371
-					
-					color = { 220 130 90 }
-					
-				}
-			}
-			c_badi = {
-				color = { 235 140 75 }
-				
-				
-				b_badi = {
-					province = 6380
-					
-					color = { 235 140 75 }
-					
-				}
-				b_ka'abir = {
-					province = 6441
-					
-					color = { 235 140 75 }
-					
-				}
-			}
-		}
-		
-		d_baqlin = {
-			color = { 233 155 77 }
-			
-			
-			capital = c_baqlin
-			
-			c_baqlin = {
-				color = { 235 155 80 }
-				
-				
-				b_sinkat = {
-					province = 6376
-					
-					color = { 235 155 80 }
-					
-				}
-				b_baqlin-north = {
-					province = 6385
-					
-					color = { 235 155 80 }
-					
-				}
-				b_baqlin-west = {
-					province = 6386
-					
-					color = { 235 155 80 }
-					
-				}
-				b_middle_atbara = {
-					province = 6411
-					
-					color = { 200 101 34 }
-					
-				}
-				b_baqlin-east = {
-					province = 6387
-					
-					color = { 235 155 80 }
-					
-				}
-			}
-			c_djarin = {
-				color = { 245 160 70 }
-				
-				
-				b_dherbe = {
-					province = 6440
-					
-					color = { 245 160 70 }
-					
-				}
-				b_djarin = {
-					province = 6414
-					
-					color = { 245 160 70 }
-					
-				}
-				b_khawr_baraka = {
-					province = 6413
-					
-					color = { 245 160 70 }
-					
-				}
-			}
-			c_qataa = {
-				color = { 255 150 80 }
-				
-				
-				b_qataa = {
-					province = 6438
-					
-					color = { 255 150 80 }
-					
-				}
-				b_marya = {
-					province = 6439
-					
-					color = { 255 150 80 }
-					
-				}
-			}
-			c_kassala = {
-				color = { 230 150 80 }
-				
-				
-				b_kassala = {
-					province = 6412
-					
-					color = { 200 101 34 }
-					
-				}
-				b_to_lus = {
-					province = 6442
-					
-					color = { 200 101 34 }
-					
-				}
-			}
-			c_showak = {
-				color = { 235 160 65 }
-				
-				
-				b_showak = {
-					province = 6437
-					
-					color = { 235 160 65 }
-					
-				}
-				b_gash = {
-					province = 6443
-					
-					color = { 235 160 65 }
-					
-				}
-				b_showak_south = {
-					province = 6444
-					
-					color = { 235 160 65 }
-					
-				}
-				b_wegera = {
-					province = 8302
-					
-					color = { 230 150 60 }
-					
-				}
-			}
-		}
-	}
 	
 	k_damot = {
 		color = { 166 68 208 }
@@ -58992,11 +58353,1123 @@ e_abyssinia = {
 	}
 }
 
+
+
+e_nubia = {
+	color = { 228 185 25 }
+	
+	capital = c_dongola
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_east_african }
+			}
+			add = @correct_culture_primary_score
+		}
+	}
+
+
+	cultural_names = {
+		name_list_meroitic = cn_kush
+	}
+
+		
+	k_nubia = {
+		color = { 180 85 39 }
+		
+		
+		capital = c_dongola
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_east_african }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+
+		cultural_names = {
+			name_list_meroitic = cn_kush
+		}
+		
+		d_nobatia = {
+			color = { 162 133 85 }
+			
+			
+			capital = c_faras
+			
+			c_qasr_ibrim = {
+				color = { 165 135 85 }
+				
+				
+				b_qasr_ibrim = {
+					province = 6334
+					
+					color = { 165 135 85 }
+					
+				}
+				b_korosko = {
+					province = 6332
+					
+					color = { 165 135 85 }
+					
+				}
+				b_sheikh_dawud = {
+					province = 6333
+					
+					color = { 165 135 85 }
+					
+				}
+			}
+			c_faras = {
+				color = { 160 130 85 }
+				
+				
+				b_faras = {
+					province = 6336
+					
+					color = { 160 130 85 }
+					
+				}
+				b_serra = {
+					province = 6335
+					
+					color = { 160 130 85 }
+					
+				}
+			}
+			c_batn_al-hajar = {
+				color = { 150 140 65 }
+				
+				
+				b_semna = {
+					province = 6337
+					
+					color = { 150 140 65 }
+					
+				}
+				b_akasha = {
+					province = 6338
+					
+					color = { 150 140 65 }
+					
+				}
+			}
+			c_qurta = {
+				color = { 155 130 60 }
+				
+				
+				b_qurta = {
+					province = 6329
+					
+					color = { 155 130 60 }
+					
+				}
+				b_ikhmindi = {
+					province = 6330
+					
+					color = { 155 130 60 }
+					
+				}
+				b_sayala = {
+					province = 6331
+					
+					color = { 155 130 60 }
+					
+				}
+			}
+			c_kalabsha = {
+				color = { 165 130 80 }
+				
+				
+				b_kalabsha = {
+					province = 6362
+					
+					color = { 165 130 80 }
+					
+				}
+				b_sabagura = {
+					province = 6361
+					
+					color = { 165 130 80 }
+					
+				}
+			}
+		}
+		
+		d_makuria = {
+			color = { 141 162 79 }
+			
+			
+			capital = c_dongola
+			
+			c_dongola = {
+				color = { 145 150 80 }
+				
+				
+				b_old_dongola = {
+					province = 6344
+					
+					color = { 145 150 80 }
+					
+				}
+				b_tumbus = {
+					province = 6341
+					
+					color = { 145 150 80 }
+					
+				}
+				b_kemna = {
+					province = 6342
+					
+					color = { 145 150 80 }
+					
+				}
+				b_dongola = {
+					province = 6343
+					
+					color = { 145 150 80 }
+					
+				}
+				b_debba = {
+					province = 6345
+					
+					color = { 145 150 80 }
+					
+				}
+			}
+			c_sai = {
+				color = { 140 155 75 }
+				
+				
+				b_sai = {
+					province = 6339
+					
+					color = { 140 155 75 }
+					
+				}
+				b_delgo = {
+					province = 6340
+					
+					color = { 140 155 75 }
+					
+				}
+				b_kassi-markol = {
+					province = 6359
+					
+					color = { 140 155 75 }
+					
+				}
+			}
+			c_wadi_el-milk = {
+				color = { 140 160 70 }
+				
+				
+				b_wadi_el-milk = {
+					province = 6415
+					
+					color = { 140 160 70 }
+					
+				}
+				b_jebel_abu_negila = {
+					province = 6427
+					
+					color = { 140 160 70 }
+					
+				}
+				b_bir_el-kai = {
+					province = 6428
+					
+					color = { 140 160 70 }
+					
+				}
+				b_upper_milk = {
+					province = 6896
+					
+					color = { 140 160 70 }
+					
+				}
+			}
+		}
+
+		d_kush = {
+			color = { 187 123 1 }
+			
+			
+			capital = c_abwab
+
+			c_meroe = {
+				color = { 155 140 67 }
+				
+				
+				b_grnetti = {
+					province = 6346
+					
+					color = { 155 140 67 }
+					
+				}
+				b_tankasi = {
+					province = 6347
+					
+					color = { 155 140 67 }
+					
+				}
+				b_kareima = {
+					province = 6348
+					
+					color = { 155 140 67 }
+					
+				}
+				b_nuri = {
+					province = 6349
+					
+					color = { 155 140 67 }
+					
+				}
+				b_diffar = {
+					province = 6360
+					
+					color = { 155 140 67 }
+					
+				}
+			}
+			c_shamir = {
+				color = { 140 125 45 }
+				
+				
+				b_shemkhiya = {
+					province = 6367
+					
+					color = { 140 125 45 }
+					
+				}
+				b_redab = {
+					province = 6368
+					
+					color = { 140 125 45 }
+					
+				}
+				b_kuweib = {
+					province = 6369
+					
+					color = { 140 125 45 }
+					
+				}
+			}
+			c_abu_hammad = {
+				color = { 135 120 55 }
+				
+				
+				b_abu_hammad = {
+					province = 6352
+					
+					color = { 135 120 55 }
+					
+				}
+				b_korosko_road = {
+					province = 6354
+					
+					color = { 135 120 55 }
+					
+				}
+				b_al-hajar_nubia = {
+					province = 6370
+					
+					color = { 135 120 55 }
+					
+				}
+			}
+			c_kurgus = {
+				color = { 145 130 40 }
+				
+				
+				b_kurgus = {
+					province = 6351
+					
+					color = { 145 130 40 }
+					
+				}
+				b_tarfaya = {
+					province = 6353
+					
+					color = { 145 130 40 }
+					
+				}
+			}
+			c_atbara = {
+				color = { 150 160 50 }
+				
+				
+				b_atbara = {
+					province = 6356
+					
+					color = { 150 160 50 }
+					
+				}
+				b_berber = {
+					province = 6355
+					
+					color = { 150 160 50 }
+					
+				}
+				b_al-bawga = {
+					province = 6357
+					
+					color = { 150 160 50 }
+					
+				}
+				b_ed-damer = {
+					province = 6358
+					
+					color = { 150 160 50 }
+					
+				}
+				b_shunqayr = {
+					province = 6389
+					
+					color = { 150 160 50 }
+					
+				}
+			}
+			c_abwab = {
+				color = { 145 160 75 }
+				
+				
+				b_al-abwab = {
+					province = 6363
+					
+					color = { 145 160 75 }
+					
+				}
+				b_shendi = {
+					province = 6364
+					
+					color = { 145 160 75 }
+					
+				}
+				b_keli = {
+					province = 6365
+					
+					color = { 145 160 75 }
+					
+				}
+				b_wad_hamid = {
+					province = 6366
+					
+					color = { 145 160 75 }
+					
+				}
+				b_al-ghazali = {
+					province = 6350
+					
+					color = { 145 160 75 }
+					
+				}
+			}
+		}
+		
+		d_alwa = { # Alodia
+			color = { 128 60 20 }
+			
+			
+			capital = c_alodia
+			c_wolqayt = {
+				color = { 230 150 60 }
+				
+				
+				b_wolqayt = {
+					province = 6436
+					
+					color = { 230 150 60 }
+					
+				}
+				b_wad_abu_nahl = {
+					province = 6445
+					
+					color = { 230 150 60 }
+					
+				}
+			}
+			c_alodia = {
+				color = { 135 65 20 }
+				
+				
+				b_soba = {
+					province = 6394
+					
+					color = { 135 65 20 }
+					
+				}
+				b_geili = {
+					province = 6391
+					
+					color = { 135 65 20 }
+					
+				}
+				b_kadero = {
+					province = 6392
+					
+					color = { 135 65 20 }
+					
+				}
+				b_alti = {
+					province = 6395
+					
+					color = { 135 65 20 }
+					
+				}
+				b_kamlin = {
+					province = 6397
+					
+					color = { 135 65 20 }
+					
+				}
+			}
+			c_naga = {
+				color = { 130 55 25 }
+				
+				
+				b_naga = {
+					province = 6407
+					
+					color = { 130 55 25 }
+					
+				}
+				b_basa = {
+					province = 6408
+					
+					color = { 130 55 25 }
+					
+				}
+				b_umm_usuda = {
+					province = 6409
+					
+					color = { 130 55 25 }
+					
+				}
+				b_jebel_geili = {
+					province = 6410
+					
+					color = { 130 55 25 }
+					
+				}
+			}
+			c_gezira = {
+				color = { 125 60 30 }
+				
+				
+				b_geteina = {
+					province = 6396
+					
+					color = { 125 60 30 }
+					
+				}
+				b_arbaji = {
+					province = 6398
+					
+					color = { 125 60 30 }
+					
+				}
+				b_um_sunt = {
+					province = 6399
+					
+					color = { 125 60 30 }
+					
+				}
+				b_saqadi = {
+					province = 6401
+					
+					color = { 125 60 30 }
+					
+				}
+			}
+			c_eleila = {
+				color = { 135 70 40 }
+				
+				
+				b_el-eleila = {
+					province = 6405
+					
+					color = { 135 70 40 }
+					
+				}
+				b_abu_geili = {
+					province = 6404
+					
+					color = { 135 70 40 }
+					
+				}
+				b_basharga = {
+					province = 6406
+					
+					color = { 135 70 40 }
+					
+				}
+			}
+			c_ushara = {
+				color = { 135 50 30 }
+				
+				
+				b_ushara = {
+					province = 6393
+					
+					color = { 135 50 30 }
+					
+				}
+				b_shaheinab = {
+					province = 6390
+					
+					color = { 135 50 30 }
+					
+				}
+			}
+		}
+		
+		d_sennar = { # Alodia
+			color = { 113 53 23 }
+			
+			
+			capital = c_sennar
+			c_agaw_meder = {
+				color = { 139 86 39 }
+				
+			
+				b_agaw_meder = {
+					province = 8371
+
+					color = { 139 86 39 }
+					
+				}
+				b_upper_dinder = {
+					province = 8314
+
+					color = { 139 86 39 }
+					
+				}
+				b_dinder = {
+					province = 8315
+
+					color = { 139 86 39 }
+					
+				}
+			}
+			c_sennar = {
+				color = { 115 60 20 }
+				
+				
+				b_sennar = {
+					province = 6400
+					
+					color = { 115 60 20 }
+					
+				}
+				b_jebel_moya = {
+					province = 6402
+					
+					color = { 115 60 20 }
+					
+				}
+				b_singa = {
+					province = 6403
+					
+					color = { 115 60 20 }
+					
+				}
+				b_renk = {
+					province = 6432
+					
+					color = { 115 60 20 }
+					
+				}
+			}
+			c_fazughli = {
+				color = { 110 55 25 }
+				
+				
+				b_fazughli = {
+					province = 6433
+					
+					color = { 110 55 25 }
+					
+				}
+				b_al-rusayrisi = {
+					province = 6434
+					
+					color = { 110 55 25 }
+					
+				}
+				b_fazughli_east = {
+					province = 6435
+					
+					color = { 110 55 25 }
+					
+				}
+			}
+			c_tagali = {
+				color = { 120 60 15 }
+				
+				
+				b_kosti = {
+					province = 6429
+					
+					color = { 120 60 15 }
+					
+				}
+				b_tagali = {
+					province = 6430
+					
+					color = { 120 60 15 }
+					
+				}
+				b_tagali_south = {
+					province = 6431
+					
+					color = { 120 60 15 }
+					
+				}
+			}
+			c_gumuz = {
+				color = { 113 58 28 }
+				
+			
+				b_gumuz_north = {
+					province = 8514
+
+					color = { 113 58 28 }
+					
+				}
+				b_gumuz_west = {
+					province = 8515
+
+					color = { 113 58 28 }
+					
+				}
+				b_gumuz_south = {
+					province = 8516
+
+					color = { 113 58 28 }
+					
+				}
+			}
+		}
+		
+		d_kordofan = {
+			color = { 186 72 99 }
+			
+			
+			capital = c_kordofan
+			
+			c_kordofan = {
+				color = { 163 43 63 }
+				
+			
+				b_el-obeid = {
+					province = 6883
+
+					color = { 163 43 63 }
+					
+				}
+				b_east_kordofan = {
+					province = 6884
+
+					color = { 163 43 63 }
+					
+				}
+				b_sidrah = {
+					province = 6901
+
+					color = { 163 43 63 }
+					
+				}
+			}
+			c_west_kordofan = {
+				color = { 165 46 66 }
+				
+			
+				b_en-nahud = {
+					province = 6881
+
+					color = { 165 46 66 }
+					
+				}
+				b_west_kordofan = {
+					province = 6882
+
+					color = { 165 46 66 }
+					
+				}
+				b_lagowa = {
+					province = 6897
+
+					color = { 165 46 66 }
+					
+				}
+			}
+			c_south_kordofan = {
+				color = { 167 48 60 }
+				
+			
+				b_shatt = {
+					province = 6898
+
+					color = { 167 48 60 }
+					
+				}
+				b_liguri = {
+					province = 6899
+
+					color = { 167 48 60 }
+					
+				}
+				b_central_kordofan = {
+					province = 6900
+
+					color = { 167 48 60 }
+					
+				}
+			}
+		}
+
+	}
+	
+	k_blemmyia = { #Maikele Bahr or Bejaland
+		color = { 124 36 3 }
+		
+		
+		capital = c_aydhab
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_somalian }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+		
+		d_naqis = {
+			color = { 225 130 98 }
+			
+			
+			capital = c_aydhab
+			
+			c_aydhab = {
+				color = { 220 140 100 }
+				
+				
+				b_aydhab = {
+					province = 6110
+					
+					color = { 220 140 100 }
+					
+				}
+				b_lower_odib = {
+					province = 6388
+					
+					color = { 220 140 100 }
+					
+				}
+			}
+			c_allaqi = {
+				color = { 225 135 90 }
+				
+				
+				b_allaqi = {
+					province = 6113
+					
+					color = { 225 135 90 }
+					
+				}
+				b_south_jbl_quzlum = {
+					province = 6120
+					
+					color = { 45 195 130 }
+					
+				}
+				b_um_shashoba = {
+					province = 6121
+					
+					color = { 45 195 130 }
+					
+				}
+				b_derahib = {
+					province = 6111
+					
+					color = { 225 135 90 }
+					
+				}
+				b_haimur = {
+					province = 6112
+					
+					color = { 225 135 90 }
+					
+				}
+			}
+			c_naqis = {
+				color = { 230 135 95 }
+				
+				
+				b_gebeit = {
+					province = 6373
+					
+					color = { 230 135 95 }
+					
+				}
+				b_wadi_odib = {
+					province = 6372
+					
+					color = { 230 135 95 }
+					
+				}
+				b_naqis-north = {
+					province = 6374
+					
+					color = { 230 135 95 }
+					
+				}
+				b_naqis-south = {
+					province = 6384
+					
+					color = { 230 135 95 }
+					
+				}
+			}
+			c_wadi_amur = {
+				color = { 215 120 90 }
+				
+				
+				b_khawr_nubt = {
+					province = 6375
+					
+					color = { 215 120 90 }
+					
+				}
+				b_wadi_amur = {
+					province = 6382
+					
+					color = { 215 120 90 }
+					
+				}
+				b_upper_amur = {
+					province = 6383
+					
+					color = { 215 120 90 }
+					
+				}
+			}
+		}
+		
+		d_bazin = {
+			color = { 253 135 87 }
+			
+			
+			capital = c_bazin
+			
+			c_bazin = {
+				color = { 240 145 85 }
+				
+				
+				b_tokar = {
+					province = 6378
+					
+					color = { 240 145 85 }
+					
+				}
+				b_akik = {
+					province = 6379
+					
+					color = { 240 145 85 }
+					
+				}
+				b_bazin = {
+					province = 6381
+					
+					color = { 240 145 85 }
+					
+				}
+			}
+			c_suakin = {
+				color = { 220 130 90 }
+				
+				
+				b_suakin = {
+					province = 6377
+					
+					color = { 220 130 90 }
+					
+				}
+				b_dungunab = {
+					province = 6371
+					
+					color = { 220 130 90 }
+					
+				}
+			}
+			c_badi = {
+				color = { 235 140 75 }
+				
+				
+				b_badi = {
+					province = 6380
+					
+					color = { 235 140 75 }
+					
+				}
+				b_ka'abir = {
+					province = 6441
+					
+					color = { 235 140 75 }
+					
+				}
+			}
+		}
+		
+		d_baqlin = {
+			color = { 233 155 77 }
+			
+			
+			capital = c_baqlin
+			
+			c_baqlin = {
+				color = { 235 155 80 }
+				
+				
+				b_sinkat = {
+					province = 6376
+					
+					color = { 235 155 80 }
+					
+				}
+				b_baqlin-north = {
+					province = 6385
+					
+					color = { 235 155 80 }
+					
+				}
+				b_baqlin-west = {
+					province = 6386
+					
+					color = { 235 155 80 }
+					
+				}
+				b_middle_atbara = {
+					province = 6411
+					
+					color = { 200 101 34 }
+					
+				}
+				b_baqlin-east = {
+					province = 6387
+					
+					color = { 235 155 80 }
+					
+				}
+			}
+			c_djarin = {
+				color = { 245 160 70 }
+				
+				
+				b_dherbe = {
+					province = 6440
+					
+					color = { 245 160 70 }
+					
+				}
+				b_djarin = {
+					province = 6414
+					
+					color = { 245 160 70 }
+					
+				}
+				b_khawr_baraka = {
+					province = 6413
+					
+					color = { 245 160 70 }
+					
+				}
+			}
+			c_qataa = {
+				color = { 255 150 80 }
+				
+				
+				b_qataa = {
+					province = 6438
+					
+					color = { 255 150 80 }
+					
+				}
+				b_marya = {
+					province = 6439
+					
+					color = { 255 150 80 }
+					
+				}
+			}
+			c_kassala = {
+				color = { 230 150 80 }
+				
+				
+				b_kassala = {
+					province = 6412
+					
+					color = { 200 101 34 }
+					
+				}
+				b_to_lus = {
+					province = 6442
+					
+					color = { 200 101 34 }
+					
+				}
+			}
+			c_showak = {
+				color = { 235 160 65 }
+				
+				
+				b_showak = {
+					province = 6437
+					
+					color = { 235 160 65 }
+					
+				}
+				b_gash = {
+					province = 6443
+					
+					color = { 235 160 65 }
+					
+				}
+				b_showak_south = {
+					province = 6444
+					
+					color = { 235 160 65 }
+					
+				}
+				b_wegera = {
+					province = 8302
+					
+					color = { 230 150 60 }
+					
+				}
+			}
+		}
+	}
+
+}
+
 e_ajuraan = {
 	color = { 218 86 25 }
 	
-	
 	capital = c_mogadishu
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	ai_primary_priority = {
 		if = {
@@ -59600,8 +60073,12 @@ e_ajuraan = {
 }
 
 e_kanem_bornu = {
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	color = { 55 230 250 }
-	
 	
 	capital = c_kanem #	Manan
 
@@ -61092,90 +61569,17 @@ e_kanem_bornu = {
 				}
 			}
 		}
-		
-		d_kordofan = {
-			color = { 186 72 99 }
-			
-			
-			capital = c_kordofan
-			
-			c_kordofan = {
-				color = { 163 43 63 }
-				
-			
-				b_el-obeid = {
-					province = 6883
 
-					color = { 163 43 63 }
-					
-				}
-				b_east_kordofan = {
-					province = 6884
-
-					color = { 163 43 63 }
-					
-				}
-				b_sidrah = {
-					province = 6901
-
-					color = { 163 43 63 }
-					
-				}
-			}
-			c_west_kordofan = {
-				color = { 165 46 66 }
-				
-			
-				b_en-nahud = {
-					province = 6881
-
-					color = { 165 46 66 }
-					
-				}
-				b_west_kordofan = {
-					province = 6882
-
-					color = { 165 46 66 }
-					
-				}
-				b_lagowa = {
-					province = 6897
-
-					color = { 165 46 66 }
-					
-				}
-			}
-			c_south_kordofan = {
-				color = { 167 48 60 }
-				
-			
-				b_shatt = {
-					province = 6898
-
-					color = { 167 48 60 }
-					
-				}
-				b_liguri = {
-					province = 6899
-
-					color = { 167 48 60 }
-					
-				}
-				b_central_kordofan = {
-					province = 6900
-
-					color = { 167 48 60 }
-					
-				}
-			}
-		}
 	}
 }
 
 e_mali = {
 	color = { 225 223 0 }
-	
-	
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	capital = c_niani #	Niani
 	
 	ai_primary_priority = {
@@ -63308,7 +63712,10 @@ e_mali = {
 
 e_guinea = {
 	color = { 175 173 90 }
-	
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_temne
 	
@@ -65875,6 +66282,10 @@ e_guinea = {
 
 e_india = { # Titular, created by special decision only if entire India is united ##Changed to Jambudvipa
 	color = { 255 110 0 }
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	ai_primary_priority = {
 		add = @always_primary_score
@@ -65885,6 +66296,10 @@ e_bengal = { #Aryavarta
 	color = { 255 100 0 }
 
 	capital = c_magadha #Pataliputra
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	ai_primary_priority = {
 		if = {
@@ -71111,7 +71526,10 @@ e_bengal = { #Aryavarta
 
 e_deccan = {
 	color = { 190 20 50 }
-	
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_vatsagulma
 	
@@ -73073,6 +73491,10 @@ e_deccan = {
 
 e_airavati = {
 	color = { 166 40 224 }
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 		
 	capital = c_sriksetra
 		
@@ -73627,6 +74049,11 @@ e_airavati = {
 }
 
 e_tibet = {
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	color = { 250 40 0 }
 	
 	
@@ -77999,6 +78426,11 @@ k_burgundia = {
 
 ###Hunnic Empire
 e_hunnic_empire = {
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	color = { 33 33 33 }
 	landless = yes
 
@@ -78009,14 +78441,12 @@ e_hunnic_empire = {
 k_noricum = {
 	color = { 80 150 10 }
 	
-	
 	capital = c_karnten  # Maybe Noreia
 }
 ######### Remake of the WRE
 
 e_western_roman_empire = {
 	color = { 111 5 5 }
-	
 	
 	capital = c_lombardia # Milan
 
@@ -78039,6 +78469,7 @@ e_western_roman_empire = {
 			}
 			always = no
 		}
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 	}
 	
 	k_britannia = {
@@ -78265,6 +78696,10 @@ k_yuehban = {
 e_rouran = {
 	color = { 30 79 20 }
 	landless = yes
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 k_kangui = {
 	color = { 110 59 40 }
@@ -78366,13 +78801,20 @@ k_tuyuhun = {
 
 e_red_sea = {
 	color = { 150 20 20 }
-	
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	capital = c_tigre
 }
 
 e_assyria = {
 	color = { 186 135 70 }
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 
 	capital = c_ninive
@@ -78381,6 +78823,10 @@ e_assyria = {
 e_illyria_pirate = {
 	color = { 100 5 30 }
 	definite_form = yes
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	capital = c_zadar
 }
@@ -78388,7 +78834,10 @@ e_illyria_pirate = {
 # Other stuff
 e_west_slavia = { # West Slavia empire title, from vanilla
 	color = { 130 20 50 }
-	
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_krakowska # Krakowska
 	
@@ -78402,6 +78851,7 @@ e_west_slavia = { # West Slavia empire title, from vanilla
 			add = @better_than_the_alternatives_score
 		}
 	}
+
 	k_poland = {
 		color = { 150 23 23 }
 		
@@ -80545,6 +80995,10 @@ e_hephthalite = {
 	can_be_named_after_dynasty = no
 	
 	capital = c_balkh
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	definite_form = yes
 	# ai_primary_priority = {
@@ -80630,6 +81084,11 @@ e_plc = {
 	capital = c_krakowska
 
 	definite_form = yes
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	ai_primary_priority = {
 		add = @always_primary_score
 	}
@@ -80640,6 +81099,10 @@ e_plc = {
 e_yugoslavia = {
 	color = { 110 85 100 }
 	capital = c_sredets
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	# Can also use for the First Bulgarian Empire in later start dates
 	cultural_names = {
@@ -81423,6 +81886,9 @@ e_yugoslavia = {
 				cultural_names = {
 					name_list_roman = cn_diadora
 					name_list_greek = cn_diadora
+					name_list_italian = cn_zara
+					name_list_cisalpine = cn_zara
+					name_list_sicilian = cn_zara
 					name_list_sardinian = cn_zara
 				}
 
@@ -81808,7 +82274,11 @@ e_yugoslavia = {
 			}
 			c_usora = {
 				color = { 170 70 100 }
-				
+			cultural_names = {
+				name_list_serbian = cn_zahumlje
+				name_list_croatian = cn_zahumlje
+				name_list_bosnian = cn_zahumlje
+			}				
 				
 				#capital = 3513 # Srebrenik
 				
@@ -82169,6 +82639,10 @@ e_fennia = {
 	color = { 130 75 45 }
 	capital = c_suomi
 	definite_form = yes
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	k_finland = {
 		color = { 180 110 0 }
@@ -84453,6 +84927,10 @@ e_fennia = {
 
 e_ugria = {
 	color = { 76 222 54 }
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	k_mordvinia = {
 		color = { 38 66 71 }
@@ -85943,6 +86421,10 @@ e_ugria = {
 e_carthage = {
 	color = { 100 30 99 }
 	capital = c_tunis # Carthage
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	k_africae = {
 		color = { 97 96 179 }
@@ -86869,6 +87351,10 @@ k_toledo = {
 e_kushan = {
 	color = { 202 80 50 }
 	can_be_named_after_dynasty = no
+			
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 	
 	capital = c_purushapura
 	
@@ -87013,3 +87499,34 @@ k_mauro_roman_kingdom = {
 	color = { 72 111 29 }
 	capital = c_tlemcen
 }
+
+## EXAMPLE NF AND LANDLESS
+#
+#d_nf_rogerios = { # Rogerios
+#	color = { 100 100 100 }
+#	capital = c_byzantion
+#
+#	definite_form = yes
+#	landless = yes
+#	ruler_uses_title_name = no
+#	always_follows_primary_heir = yes
+#	no_automatic_claims = yes
+#	noble_family = yes
+#	destroy_if_invalid_heir = yes
+#
+#	ai_primary_priority = { add = @never_primary_score }
+#}
+#
+#d_laamp_anangapida = { # Anangapida
+#	color = { 100 100 100 }
+#	capital = c_kasmira
+#
+#	definite_form = yes
+#	landless = yes
+#	require_landless = yes
+#	ruler_uses_title_name = no
+#	no_automatic_claims = yes
+#	destroy_if_invalid_heir = yes
+#
+#	ai_primary_priority = { add = @never_primary_score }
+#}
