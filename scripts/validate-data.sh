@@ -565,7 +565,7 @@ function validateThatTheLanguagesAreOrdered() {
     local EXPECTED_LANGUAGES_LIST=""
 
     ACTUAL_LANGUAGES_LIST=$(xmlstarlet sel -t -m "//Id" -v "." -n "${LANGUAGES_FILE_TO_CHECK}" | \
-                            grep -v '_\(Ancient\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Proto\)')
+                            grep -v '_\(Ancient\|Archaic\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Proto\)')
     EXPECTED_LANGUAGES_LIST=$(sort <<< ${ACTUAL_LANGUAGES_LIST})
 
     diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LANGUAGES_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LANGUAGES_LIST}" | sed 's/%NL%/\n/g')
@@ -638,7 +638,7 @@ for LOCATIONS_XML in "${LOCATIONS_FILE}" "${UNUSED_LOCATIONS_FILE}"; do
     checkForDuplicateEntries "${LOCATIONS_XML}" 'Id'
     checkForDuplicateEntries "${LOCATIONS_XML}" 'GeoNamesId'
     checkForDuplicateEntries "${LOCATIONS_XML}" 'PleiadesId'
-    checkForDuplicateEntries "${LOCATIONS_XML}" 'WikiDataId'
+    checkForDuplicateEntries "${LOCATIONS_XML}" 'WikidataId'
 done
 
 # Find duplicate used-unused IDs
@@ -694,8 +694,8 @@ grep -Pzo "\n\s*<Name .*\n\s*</GameId.*\n" *.xml # </GameId.* after <Name>
 grep -Pzo "\n\s*.*</[^<]*\n\s*<Name .*\n" *.xml # <Name> after closing tags
 grep -Pzo "</[a-zA-Z]*>\n\s*<Id>.*\n" *.xml # <Id> after a closing tag
 grep -Pzo "<Fallback(Languages|Locations)>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <FallbackLanguages> or <FallbackLocations>
-grep -Pzo "</(Id|GeonamesId|PleiadesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeonamesId> or </PleiadesId> or </WikidataId>
-grep -Pzo "</(Id|GeonamesId|PleiadesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeonamesId> or </PleiadesId> or </WikidataId>
+grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
+grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
 grep -Pzo "\n.*=\s*\"\s*\".*\n" *.xml # Empty attributes
 grep -n "^\s*<\([^> ]*\).*</.*" *.xml | grep -v "^[a-z0-9:.]*\s*<\([^> ]*\).*</\1>.*" # Mismatching start/end tag on same line
