@@ -499,6 +499,14 @@ e_timurids = {
 	}
 }
 
+k_bosporan_kingdom = {
+	color = { 139 0 0 }
+
+	capital = c_kerch
+
+	definite_form = yes
+}
+
 #Jewish Religious Heads
 d_rabbinism = {
 	color = { 0 80 255 }
@@ -44929,13 +44937,13 @@ e_spain = {
 					name_list_yemeni = cn_al_gazirah_al_hadra
 				}
 
-				b_tarifa = {
-					province = 1844
+				b_algeciras = {
+					province = 1845
 					
 					color = { 130 175 0 }
 				}
-				b_algeciras = {
-					province = 1845
+				b_tarifa = {
+					province = 1844
 					
 					color = { 130 175 0 }
 				}
@@ -46400,13 +46408,13 @@ e_spain = {
 					name_list_yemeni = cn_siqubiyyah
 				}
 
-				b_cuellar = {
-					province = 1925
+				b_segovia = {
+					province = 1924
 
 					color = { 255 245 10 }
 				}
-				b_segovia = {
-					province = 1924
+				b_cuellar = {
+					province = 1925
 
 					color = { 255 245 10 }
 				}
@@ -47723,13 +47731,13 @@ e_spain = {
 					name_list_yemeni = cn_qaruniyah
 				}
 				
-				b_betanzos = {
-					province = 1786
+				b_corunna = {
+					province = 1787
 
 					color = { 230 190 80 }
 				}
-				b_corunna = {
-					province = 1787
+				b_betanzos = {
+					province = 1786
 
 					color = { 230 190 80 }
 				}
@@ -74780,6 +74788,48 @@ d_laamp_enian = { # Enian Qaghan
 	ai_primary_priority = { add = @never_primary_score }
 }
 
+d_laamp_sevener_caliph = { # Hussayn Fatimid
+	color = { 100 100 100 }
+	capital = c_al-hasa
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_twelver_caliph = { # Ali Fatimid
+	color = { 100 100 100 }
+	capital = c_qasim
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_qutid = { # Suleyman ibn Hakam Qutid.
+	color = { 100 100 100 }
+	capital = c_cordoba
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
 # 1066
 
 d_laamp_sabbah = { # Hassan-i Sabbah
@@ -74905,6 +74955,48 @@ d_laamp_karatzas = { # Argyros Karatzas
 
 	definite_form = yes
 	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_karatzas = { # Argyros Karatzas
+	color = { 100 100 100 }
+	capital = c_philippopolis
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_kalbid = { # Muhammad ibn Ibrahim Kalbid.
+	color = { 100 100 100 }
+	capital = c_melilla
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_du_leon = { # Ordonu du Leon.
+	color = { 100 100 100 }
+	capital = c_navarra
+
+	definite_form = yes
+	landless = yes
+	require_landless = yes
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
@@ -76456,6 +76548,47 @@ d_laamp_RICE_cynewulf = {
 d_laamp_RICE_margaret_of_beverley = {
 	color = { 100 100 100 }
 	capital = c_jerusalem
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+@never_primary_score = -1000
+
+
+e_zhangzhung = {
+	#Created by decision
+	color = { 208 150 8 }
+	can_be_named_after_dynasty = no
+	
+	capital = c_tsaparang
+	
+	#definite_form = yes
+}
+
+# LAAMP TITLES
+
+d_laamp_RICE_nyangrel = {
+	color = { 100 100 100 }
+	capital = c_lhasa # He was born somewhere in Lhodrak a little south of Lhasa
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+d_laamp_RICE_khutsa_dawo = {
+	color = { 100 100 100 }
+	capital = c_comai # Where Lhozhag (Lho brag/Lhodrak) is located
 
 	definite_form = yes
 	landless = yes
