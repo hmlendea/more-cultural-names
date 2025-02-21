@@ -863,7 +863,7 @@ d_maronite_patriarchate = {
 	destroy_if_invalid_heir = yes
 }
 
-d_melkite_patriarchate = {
+d_antioch_patriarchate = { # Was d_melkite_patriarchate
 	color = { 90 25 222 }
 	definite_form = yes
 	ruler_uses_title_name = no
@@ -1060,7 +1060,7 @@ d_alexandrian_melkite_patriarchate = {
 	destroy_if_invalid_heir = yes
 }
 
-d_jerusalem_melkite_patriarchate = {
+d_jerusalem_patriarchate = { # Was d_jerusalem_melkite_patriarchate
 	color = { 25 25 25 }
 	definite_form = yes
 	ruler_uses_title_name = no
@@ -1586,6 +1586,7 @@ d_imami = {
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
 	landless = yes
+	
 }
 
 d_ismaili = {
@@ -2376,7 +2377,8 @@ e_golden_horde = { #White Horde
 }
 
 e_blue_horde = { #Blue Horde
-	color = { 97 101 133 }
+	
+	color = { 234 235 220 }
 
 	definite_form = yes
 	can_be_named_after_dynasty = no
@@ -2388,6 +2390,21 @@ e_blue_horde = { #Blue Horde
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 	}
 				 
+}
+
+e_white_horde = {
+	
+	color = { 97 101 133 }
+	
+	definite_form = yes
+	can_be_named_after_dynasty = no
+
+	capital = c_itil
+	#can_create_on_partition = { always = no }
+	
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_ilkhanate = {
@@ -2426,21 +2443,6 @@ e_black_horde = {
 	can_be_named_after_dynasty = no
 
 	capital = c_delhi
-	#can_create_on_partition = { always = no }
-	
-	can_create = {
-		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-	}
-}
-
-e_white_horde = {
-	color = { 234 235 220 }
-	
-
-	definite_form = yes
-	can_be_named_after_dynasty = no
-
-	capital = c_itil
 	#can_create_on_partition = { always = no }
 	
 	can_create = {
@@ -5678,10 +5680,6 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					
-					NOT = { 
-						has_primary_title = title:k_england
-					}
 					faith = { religion_tag = christianity_religion }
 			}
 	
@@ -5866,10 +5864,6 @@ e_britannia = {
 				trigger_if = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
-					}
-					
-					NOT = { 
-						has_primary_title = title:k_england
 					}
 					faith = { religion_tag = christianity_religion }
 			}
@@ -6219,10 +6213,6 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					
-					NOT = { 
-						has_primary_title = title:k_england
-					}
 					faith = { religion_tag = christianity_religion }
 			}
 			
@@ -6414,10 +6404,6 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					
-					NOT = { 
-						has_primary_title = title:k_england
-					}
 					faith = { religion_tag = christianity_religion }
 			}
 			
@@ -6523,10 +6509,6 @@ e_britannia = {
 				trigger_if = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
-					}
-					
-					NOT = { 
-						has_primary_title = title:k_england
 					}
 					faith = { religion_tag = christianity_religion }
 			}
@@ -6690,10 +6672,6 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					
-					NOT = { 
-						has_primary_title = title:k_england
-					}
 					faith = { religion_tag = christianity_religion }
 			}
 			
@@ -6820,10 +6798,6 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					
-					NOT = { 
-						has_primary_title = title:k_england
-					}
 					faith = { religion_tag = christianity_religion }
 			}
 			
@@ -6938,10 +6912,6 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					
-					NOT = { 
-						has_primary_title = title:k_england
-					}
 					faith = { religion_tag = christianity_religion }
 			}
 			
@@ -7044,10 +7014,6 @@ e_britannia = {
 				trigger_if = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
-					}
-					
-					NOT = { 
-						has_primary_title = title:k_england
 					}
 					faith = { religion_tag = christianity_religion }
 			}
@@ -7178,10 +7144,6 @@ e_britannia = {
 				trigger_if = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
-					}
-					
-					NOT = { 
-						has_primary_title = title:k_england
 					}
 					faith = { religion_tag = christianity_religion }
 			}
@@ -118432,7 +118394,6 @@ e_nippon = {
 				}
 				culture = culture:ainu
 				culture = culture:emishi
-				culture = culture:mishihase
 			}
 		}
 		
@@ -118441,7 +118402,6 @@ e_nippon = {
 				limit = {
 					culture = culture:ainu
 					culture = culture:emishi
-					culture = culture:mishihase
 				}
 				add = @correct_culture_primary_score
 			}
