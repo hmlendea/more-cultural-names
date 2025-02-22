@@ -154,6 +154,7 @@ EU3_DIR="${STEAM_GAMES_DIR}/Europa Universalis III - Complete"
 EU3_LOCALISATIONS_DIR="${EU3_DIR}/localisation"
 
 EU4_DIR="${STEAM_GAMES_DIR}/Europa Universalis IV"
+EU4_TAGS_DIR="${EU4_DIR}/common/country_tags"
 EU4_CULTURES_DIR="${EU4_DIR}/common/cultures"
 EU4_LOCALISATIONS_DIR="${EU4_DIR}/localisation"
 
