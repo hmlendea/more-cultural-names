@@ -356,7 +356,7 @@ fi
 sed -i 's/> \+/>/g' "${FILE}"
 sed -i 's/ \+<\//<\//g' "${FILE}"
 
-# Combine arabic names
+# Combine Arabic names
 sed -i '/.*_Arabic.*/d' "${FILE}"
 sed -i '/.*Arabic_.*/d' "${FILE}"
 
