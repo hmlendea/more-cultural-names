@@ -171,7 +171,8 @@ function get-name-lines() {
         "Albanian_Tosk" "als" \
         "Albanian" "sq" \
         "Alemannic" "gsw" \
-        "Arabic_Maghreb" "ary" \
+        "Arabic_Egyptian" "arz" \
+        "Arabic_Maghrebi" "ary" \
         "Arabic" "ar" \
         "Aragonese" "an" \
         "Armenian_West" "hyw" \
@@ -215,7 +216,6 @@ function get-name-lines() {
         "Danish" "da" \
         "Dinka" "din" \
         "Dutch" "nl" \
-        "Egyptian_Arabic" "arz" \
         "Emilian_Romagnol" "eml" \
         "English_Old" "ang" \
         "English" "en" \
