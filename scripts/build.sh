@@ -103,8 +103,8 @@ build-edition \
     --dep "A.D. 633: Rise of Islam"
 
 build-edition \
-    "more-cultural-names" "More Cultural Names" \
-    "CK3" "1.14.*" \
+    'more-cultural-names' 'More Cultural Names' \
+    "CK3" "1.15.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
 
 build-edition \
