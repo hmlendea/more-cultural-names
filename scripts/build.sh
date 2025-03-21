@@ -128,8 +128,8 @@ build-edition \
     --landed-titles "${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
-    "ibl-more-cultural-names" "Ibn Battuta's Legacy 2 - More Cultural Names" \
-    "CK3IBL" "1.14.*" \
+    'ibl-more-cultural-names' "Ibn Battuta's Legacy 2 - More Cultural Names" \
+    "CK3IBL" "1.15.*" \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
 
 build-edition \
