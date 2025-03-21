@@ -114,7 +114,7 @@ function checkForMissingCkLocationLinks() {
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
             fi
         else
-            echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
+            echo "    > 2 ${GAME_ID}: ${LANDED_TITLE_ID} is missing"
         fi
     done
 }
