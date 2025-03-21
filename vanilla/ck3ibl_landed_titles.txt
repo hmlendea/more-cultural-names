@@ -943,6 +943,15 @@ e_slavia = {
 	}
 }
 
+e_beth_nahrain = {
+	color = { 35 79 78 }
+	capital = c_damascus # Damascus
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+}
+
 e_armenia = {
 	color = { 198 29 29 }
 	
@@ -26210,18 +26219,24 @@ e_caspian-pontic_steppe = {
 			c_kalos_limen = {
 				color = { 110 32 44 }
 
-				b_kalos_limen = {
-					province = 559
-
-					color = { 110 32 44 }
+				cultural_names = {
+					name_list_greek = cn_kerkinitis
+					name_list_russian = cn_kozlov
 				}
+
 				b_kerkinitis = {
 					province = 5276
 
 					color = { 110 32 44 }
+
+					cultural_names = {
+						name_list_greek = cn_kerkinitis
+						name_list_russian = cn_kozlov
+					}
 				}
-				b_aqmescit = {
-					province = 5330
+
+				b_kalos_limen = {
+					province = 559
 
 					color = { 110 32 44 }
 				}
@@ -26229,11 +26244,30 @@ e_caspian-pontic_steppe = {
 			c_perekop = {
 				color = { 105 56 64 }
 
+				cultural_names = {
+					name_list_greek = cn_scythian_neapolis
+				}
+
+				b_aqmescit = {
+					province = 5330
+
+					color = { 110 32 44 }
+
+					cultural_names = {
+						name_list_greek = cn_scythian_neapolis
+					}
+				}
+
 				b_perekop = {
 					province = 5277
 
+					cultural_names = {
+						name_list_greek = cn_taphros
+					}
+
 					color = { 105 56 64 }
 				}
+
 				b_dzhankoi = {
 					province = 5331
 
@@ -62815,6 +62849,16 @@ e_india = {		# Titular, created by special decision only if entire India is unit
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 	}
+
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
+}
+
+e_hindustan = {		# Titular, created by special decision by Islamic Invaders
+	color = { 0 76 76 }
+
+	capital = c_delhi
 
 	ai_primary_priority = {
 		add = @always_primary_score
