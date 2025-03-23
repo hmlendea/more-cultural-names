@@ -932,6 +932,15 @@ e_slavia = {
 	}
 }
 
+e_beth_nahrain = {
+	color = { 35 79 78 }
+	capital = c_damascus # Damascus
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+}
+
 e_armenia = {
 	color = { 198 29 29 }
 
@@ -3891,6 +3900,31 @@ e_britannia = {
 
 			capital = c_mayo # Cruachu
 
+			c_mayo = {
+				color = { 15 190 70 }
+
+				b_cruachu = {
+					province = 8745
+
+					color = { 15 190 70 }
+				}
+				b_castlebar = {
+					province = 21
+
+					color = { 15 190 70 }
+				}
+				b_sligo = {
+					province = 22
+
+					color = { 15 190 70 }
+				}
+				b_killala = {
+					province = 8748
+
+					color = { 15 190 70 }
+				}
+			}
+
 			c_connacht = {	#Hy Many
 				color = { 45 230 70 }
 
@@ -3921,31 +3955,6 @@ e_britannia = {
 					province = 8747
 
 					color = { 45 230 70 }
-				}
-			}
-
-			c_mayo = {
-				color = { 15 190 70 }
-
-				b_cruachu = {
-					province = 8745
-
-					color = { 15 190 70 }
-				}
-				b_castlebar = {
-					province = 21
-
-					color = { 15 190 70 }
-				}
-				b_sligo = {
-					province = 22
-
-					color = { 15 190 70 }
-				}
-				b_killala = {
-					province = 8748
-
-					color = { 15 190 70 }
 				}
 			}
 
@@ -59846,6 +59855,16 @@ e_india = {		# Titular, created by special decision only if entire India is unit
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 	}
+
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
+}
+
+e_hindustan = {		# Titular, created by special decision by Islamic Invaders
+	color = { 0 76 76 }
+
+	capital = c_delhi
 
 	ai_primary_priority = {
 		add = @always_primary_score

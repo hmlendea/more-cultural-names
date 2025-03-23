@@ -180,15 +180,15 @@
   </Language>
   <Language>
     <Id>AmericanIndian_Central</Id>
-    <Code iso-639-2="cai" so-639-5="cai" />
+    <Code iso-639-2="cai" iso-639-5="cai" />
   </Language>
   <Language>
     <Id>AmericanIndian_North</Id>
-    <Code iso-639-2="nai" so-639-5="nai" />
+    <Code iso-639-2="nai" iso-639-5="nai" />
   </Language>
   <Language>
     <Id>AmericanIndian_South</Id>
-    <Code iso-639-2="sai" so-639-5="sai" />
+    <Code iso-639-2="sai" iso-639-5="sai" />
   </Language>
   <Language>
     <Id>Amho</Id> <!-- Amhó, Ivitorocái -->
@@ -278,6 +278,9 @@
     </FallbackLanguages>
   </Language>
   <Language>
+    <Id>Arabic_Hejazi_Old</Id> <!-- Old Hijazi Arabic, Old Hijazi, Qurayshi Arabic -->
+  </Language>
+  <Language>
     <Id>Arabic_JudeoIraqi</Id> <!-- Judeo-Iraqi Arabic, Iraqi Judeo-Arabic, Yahudic -->
     <Code iso-639-3="yhd" />
   </Language>
@@ -301,7 +304,7 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Arabic_Levantine</Id> <!-- Shami -->
+    <Id>Arabic_Levantine</Id> <!-- Shami, Syro-Palestinian Arabic -->
     <Code iso-639-3="apc" />
     <FallbackLanguages>
       <LanguageId>Arabic</LanguageId>
@@ -309,6 +312,9 @@
   </Language>
   <Language>
     <Id>Arabic_Mashriqi</Id> <!-- ʿAmmiya, Eastern Arabic -->
+    <FallbackLanguages>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Mesopotamian_North</Id> <!-- Qeltu -->
@@ -327,9 +333,9 @@
       <LanguageId>Arabic_Najdi</LanguageId>
       <LanguageId>Arabic_Sicilian</LanguageId>
       <LanguageId>Arabic_Tunisian</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Hejazi</LanguageId>
-      <LanguageId>Maghrebi</LanguageId>
+      <LanguageId>Arabic_Egyptian</LanguageId>
+      <LanguageId>Arabic_Hejazi</LanguageId>
+      <LanguageId>Arabic_Maghrebi</LanguageId>
       <LanguageId>Zaghawa</LanguageId>
       <LanguageId>Arabic_Before2022</LanguageId>
       <LanguageId>Arabic_Before2019</LanguageId>
@@ -338,28 +344,28 @@
       <LanguageId>Arabic_Before1976</LanguageId>
       <LanguageId>Arabic_Before1945</LanguageId>
       <LanguageId>Arabic_Algerian_Before1945</LanguageId>
-      <LanguageId>Maghrebi_Before1945</LanguageId>
+      <LanguageId>Arabic_Maghrebi_Before1945</LanguageId>
       <LanguageId>Arabic_Moroccan_Before1945</LanguageId>
-      <LanguageId>Egyptian_Arabic_Before1945</LanguageId>
-      <LanguageId>Hejazi_Before1945</LanguageId>
+      <LanguageId>Arabic_Egyptian_Before1945</LanguageId>
+      <LanguageId>Arabic_Hejazi_Before1945</LanguageId>
       <LanguageId>Arabic_Before1938</LanguageId>
       <LanguageId>Arabic_Before1930</LanguageId>
       <LanguageId>Arabic_Before1929</LanguageId>
       <LanguageId>Arabic_Before1924</LanguageId>
       <LanguageId>Arabic_Before1918</LanguageId>
       <LanguageId>Arabic_Algerian_Before1918</LanguageId>
-      <LanguageId>Maghrebi_Before1918</LanguageId>
+      <LanguageId>Arabic_Maghrebi_Before1918</LanguageId>
       <LanguageId>Arabic_Moroccan_Before1918</LanguageId>
-      <LanguageId>Egyptian_Arabic_Before1918</LanguageId>
-      <LanguageId>Hejazi_Before1918</LanguageId>
+      <LanguageId>Arabic_Egyptian_Before1918</LanguageId>
+      <LanguageId>Arabic_Hejazi_Before1918</LanguageId>
       <LanguageId>Arabic_Before1914</LanguageId>
       <LanguageId>Arabic_Before1778</LanguageId>
       <LanguageId>Arabic_Before1650</LanguageId>
       <LanguageId>Arabic_Before1593</LanguageId>
       <LanguageId>Arabic_Sicilian_Before1593</LanguageId>
-      <LanguageId>Egyptian_Arabic_Before1593</LanguageId>
-      <LanguageId>Hejazi_Before1593</LanguageId>
-      <LanguageId>Maghrebi_Before1593</LanguageId>
+      <LanguageId>Arabic_Egyptian_Before1593</LanguageId>
+      <LanguageId>Arabic_Hejazi_Before1593</LanguageId>
+      <LanguageId>Arabic_Maghrebi_Before1593</LanguageId>
       <LanguageId>Arabic_Classical</LanguageId>
       <LanguageId>Arabic_Before1219</LanguageId>
       <LanguageId>Arabic_Before13Century</LanguageId>
@@ -406,6 +412,9 @@
     <Id>Arabic_Peninsular</Id> <!-- Arabian Arabic -->
   </Language>
   <Language>
+    <Id>Arabic_Proto</Id> <!-- before 9th century BC -->
+  </Language>
+  <Language>
     <Id>Arabic_Saharan</Id> <!-- Algerian Saharan Arabic, Tamanrasset Arabic, Tamanghasset Arabic -->
     <Code iso-639-3="aao" />
   </Language>
@@ -436,10 +445,6 @@
   <Language>
     <Id>Arabic_Yemeni_Judeo</Id> <!-- Judeo-Yemeni Arabic, Judeo-Yemeni, Yemenite Judeo-Arabic -->
     <Code iso-639-3="jye" />
-  </Language>
-  <Language>
-    <Id>Arakanese</Id> <!-- Rakhine -->
-    <Code iso-639-3="rki" />
   </Language>
   <Language>
     <Id>Arakanese_Marma</Id> <!-- Burmese -->
@@ -945,6 +950,14 @@
   <Language>
     <Id>Chitimacha</Id> <!-- Sitimaxa, Čitimaaša -->
     <Code iso-639-3="ctm" />
+  </Language>
+  <Language>
+    <Id>Chiwere</Id> <!-- Iowa-Otoe-Missouria, Báxoje-Jíwere-Ñút'achi -->
+    <Code iso-639-3="iow" />
+  </Language>
+  <Language>
+    <Id>Chocho</Id> <!-- Chocholtec, Chocholteco Chochotec, Chochon, Ngigua -->
+    <Code iso-639-3="coz" />
   </Language>
   <Language>
     <Id>Chokwe</Id> <!-- Batshokwe, Ciokwe, Kioko, Kiokwe, Quioca, Quioco, Shioko, Tschiokloe, Tshokwe, Ucôkwe, Wuchokwe -->
@@ -3368,15 +3381,48 @@
     <Code iso-639-3="nfr" />
   </Language>
   <Language>
+    <Id>Nahuatl_Cosoleacaque</Id>
+    <Code iso-639-3="nhk" />
+    <FallbackLanguages>
+      <LanguageId>Nahuatl_Isthmus</LanguageId>
+      <LanguageId>Nahuatl</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
     <Id>Nahuatl_Durango</Id> <!-- Durango Aztec, Mexicanero -->
+    <FallbackLanguages>
+      <LanguageId>Nahuatl</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Nahuatl_Durango_East</Id>
     <Code iso-639-3="azd" />
+    <FallbackLanguages>
+      <LanguageId>Nahuatl_Durango</LanguageId>
+      <LanguageId>Nahuatl</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Nahuatl_Durango_West</Id>
     <Code iso-639-3="azn" />
+    <FallbackLanguages>
+      <LanguageId>Nahuatl_Durango</LanguageId>
+      <LanguageId>Nahuatl</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Nahuatl_HighlandPuebla</Id>
+    <Code iso-639-3="azz" />
+    <FallbackLanguages>
+      <LanguageId>Nahuatl_SierraPuebla</LanguageId>
+      <LanguageId>Nahuatl</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Nahuatl_Isthmus</Id>
+    <FallbackLanguages>
+      <LanguageId>Nahuatl</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Nahuatl_Mecayapan</Id>
@@ -4295,8 +4341,8 @@
       <LanguageId>Minaean</LanguageId>
       <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Egyptian</LanguageId>
+      <LanguageId>Arabic_Maghrebi</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -4665,11 +4711,11 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>She</Id> <!--  Ho Le, Ho Ne, Ho Nte -->
+    <Id>She</Id> <!-- Ho Le, Ho Ne, Ho Nte -->
     <Code iso-639-3="shx" />
   </Language>
   <Language>
-    <Id>Shehua</Id> <!--  Shanha, San-hak, Shanhahua -->
+    <Id>Shehua</Id> <!-- Shanha, San-hak, Shanhahua -->
   </Language>
   <Language>
     <Id>Shekhawati</Id>
@@ -4821,8 +4867,8 @@
     <Code iso-639-3="tvx" />
   </Language>
   <Language>
-    <Id>Tamahaq</Id>
-    <Code iso-639-3="thv" /> <!-- Tahaggart Tamahaq, Tamahaq Tahaggart -->
+    <Id>Tamahaq</Id> <!-- Tahaggart Tamahaq, Tamahaq Tahaggart -->
+    <Code iso-639-3="thv" />
     <FallbackLanguages>
       <LanguageId>Tuareg</LanguageId>
       <LanguageId>Tuareg_Tagelmust</LanguageId>
@@ -4838,8 +4884,8 @@
       <LanguageId>Zenaga</LanguageId>
       <!-- Not sure of the below ones -->
       <LanguageId>Arabic</LanguageId>
-      <LanguageId>Egyptian_Arabic</LanguageId>
-      <LanguageId>Arabic_Maghreb</LanguageId>
+      <LanguageId>Arabic_Egyptian</LanguageId>
+      <LanguageId>Arabic_Maghrebi</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
@@ -5256,7 +5302,7 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Vai</Id> <!--  Vy, Gallinas -->
+    <Id>Vai</Id> <!-- Vy, Gallinas -->
     <Code iso-639-2="vai" iso-639-3="vai" />
   </Language>
   <Language>
@@ -5467,6 +5513,10 @@
     <Id>WoiwurrungTaungurung</Id> <!-- Woiwurrung–Taungurung -->
   </Language>
   <Language>
+    <Id>Wolio</Id> <!--  Buton -->
+    <Code iso-639-3="wlo" />
+  </Language>
+  <Language>
     <Id>Wulguru</Id> <!-- Manbara, Manbarra, Korambelbara, Mun ba rah, Nyawaygi, Wulgurukaba -->
   </Language>
   <Language>
@@ -5542,13 +5592,13 @@
     <Code iso-639-3="yim" />
   </Language>
   <Language>
-    <Id>Yokuts_Choynimni</Id> <!-- Choinimni, Choinumne-->
+    <Id>Yokuts_Choynimni</Id> <!-- Choinimni, Choinumne -->
     <FallbackLanguages>
       <LanguageId>Yokuts</LanguageId>
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Yokuts_Chukchansi</Id> <!-- Chuk'chansi-->
+    <Id>Yokuts_Chukchansi</Id> <!-- Chuk'chansi -->
     <FallbackLanguages>
       <LanguageId>Yokuts</LanguageId>
     </FallbackLanguages>

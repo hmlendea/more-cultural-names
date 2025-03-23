@@ -148,10 +148,17 @@ CK3TFE_VANILLA_LOCALISATION_FILE="${CK3TFE_LOCALISATIONS_DIR}/replace/TFE_titles
 DH_DIR="${STEAM_GAMES_DIR}/Darkest Hour A HOI Game"
 DH_LOCALISATIONS_DIR="${DH_DIR}/config"
 
+DHF_DIR="${DH_DIR}/Mods/Darkest Hour Full"
+DHF_LOCALISATIONS_DIR="${DHF_DIR}/config"
+
+DHL_DIR="${DH_DIR}/Mods/Darkest Hour Light"
+DHL_LOCALISATIONS_DIR="${DHL_DIR}/config"
+
 EU3_DIR="${STEAM_GAMES_DIR}/Europa Universalis III - Complete"
 EU3_LOCALISATIONS_DIR="${EU3_DIR}/localisation"
 
 EU4_DIR="${STEAM_GAMES_DIR}/Europa Universalis IV"
+EU4_TAGS_DIR="${EU4_DIR}/common/country_tags"
 EU4_CULTURES_DIR="${EU4_DIR}/common/cultures"
 EU4_LOCALISATIONS_DIR="${EU4_DIR}/localisation"
 
@@ -160,6 +167,9 @@ EUR_LOCALISATIONS_DIR="${EUR_DIR}/localisation"
 
 FTG_DIR="${STEAM_GAMES_DIR}/For The Glory"
 FTG_LOCALISATIONS_DIR="${FTG_DIR}/Localisation/English"
+
+FTGA_DIR="${FTG_DIR}/Mods/AGCEEP_FTG"
+FTGA_LOCALISATIONS_DIR="${FTGA_DIR}/Localisation/English"
 
 HOI2_DIR="${STEAM_GAMES_DIR}/Hearts of Iron 2 Complete Pack"
 HOI2_LOCALISATIONS_DIR="${HOI2_DIR}/config"
@@ -222,6 +232,7 @@ Sen_DIR="${STEAM_GAMES_DIR}/Sengoku"
 Sen_LOCALISATIONS_DIR="${Sen_DIR}/localisation"
 
 Vic1_DIR="${STEAM_GAMES_DIR}/Victoria Revolutions"
+Vic1_LOCALISATIONS_DIR="${Vic1_DIR}/config"
 
 Vic2_DIR="${STEAM_GAMES_DIR}/Victoria 2"
 Vic2_LOCALISATIONS_DIR="${Vic2_DIR}/localisation"
