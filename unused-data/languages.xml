@@ -17,6 +17,10 @@
     <Code iso-639-3="acv" />
   </Language>
   <Language>
+    <Id>Paelignian</Id> <!-- Paeligni, Peligni -->
+    <Code iso-639-3="pgn" />
+  </Language>
+  <Language>
     <Id>Adai</Id> <!-- Adaizan, Adaizi, Adaise, Adahi, Adaes, Adees, Atayos -->
     <Code iso-639-3="xad" />
   </Language>
@@ -252,13 +256,26 @@
   <Language>
     <Id>Arabic_Dhofari</Id>
     <Code iso-639-3="adf" />
+    <FallbackLanguages>
+      <LanguageId>Arabic_Peninsular</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Emirati</Id>
+    <FallbackLanguages>
+      <LanguageId>Arabic_Gulf</LanguageId>
+      <LanguageId>Arabic_Peninsular</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Hadhrami</Id> <!-- Ḥaḍrami Arabic -->
     <Code iso-639-3="ayh" />
+    <FallbackLanguages>
+      <LanguageId>Arabic_Peninsular</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_JudeoIraqi</Id> <!-- Judeo-Iraqi Arabic, Iraqi Judeo-Arabic, Yahudic -->
@@ -270,18 +287,31 @@
   </Language>
   <Language>
     <Id>Arabic_Khuzestani</Id>
+    <FallbackLanguages>
+      <LanguageId>Arabic_Mesopotamian_North</LanguageId>
+      <LanguageId>Arabic_Mesopotamian</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Lebanese</Id>
+    <FallbackLanguages>
+      <LanguageId>Arabic_Levantine</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Levantine</Id> <!-- Shami -->
+    <Code iso-639-3="apc" />
+    <FallbackLanguages>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Mashriqi</Id> <!-- ʿAmmiya, Eastern Arabic -->
   </Language>
   <Language>
-    <Id>Arabic_Mesopotamian_North</Id>
+    <Id>Arabic_Mesopotamian_North</Id> <!-- Qeltu -->
     <Code iso-639-3="ayp" />
     <FallbackLanguages>
       <LanguageId>Arabic_Mesopotamian</LanguageId>
@@ -343,7 +373,11 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Arabic_Mesopotamian_South</Id>
+    <Id>Arabic_Mesopotamian_South</Id> <!-- Gelet -->
+    <FallbackLanguages>
+      <LanguageId>Arabic_Mesopotamian</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Moroccan_Judeo</Id> <!-- Judeo-Moroccan Arabic -->
@@ -356,12 +390,20 @@
   <Language>
     <Id>Arabic_Omani</Id> <!-- Omani Hadari Arabic -->
     <Code iso-639-3="acx" />
+    <FallbackLanguages>
+      <LanguageId>Arabic_Peninsular</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Palestinian</Id>
+    <FallbackLanguages>
+      <LanguageId>Arabic_Levantine</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Arabic_Peninsular</Id>
+    <Id>Arabic_Peninsular</Id> <!-- Arabian Arabic -->
   </Language>
   <Language>
     <Id>Arabic_Saharan</Id> <!-- Algerian Saharan Arabic, Tamanrasset Arabic, Tamanghasset Arabic -->
@@ -370,14 +412,26 @@
   <Language>
     <Id>Arabic_Sanani</Id> <!-- Sanʽani Arabic -->
     <Code iso-639-3="ayn" />
+    <FallbackLanguages>
+      <LanguageId>Arabic_Peninsular</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Shihhi</Id> <!-- Shehhi, Shihu, Shihuh, Al-Shihuh -->
     <Code iso-639-3="ssh" />
+    <FallbackLanguages>
+      <LanguageId>Arabic_Peninsular</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_TaizziAdeni</Id> <!-- Ta’izzi-Adeni Arabic, Southern Yemeni Arabic -->
     <Code iso-639-3="acq" />
+    <FallbackLanguages>
+      <LanguageId>Arabic_Peninsular</LanguageId>
+      <LanguageId>Arabic</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Arabic_Yemeni_Judeo</Id> <!-- Judeo-Yemeni Arabic, Judeo-Yemeni, Yemenite Judeo-Arabic -->
@@ -2025,7 +2079,7 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Jukun_Wapan</Id> <!-- Wapan, Kororofa, Wukari  -->
+    <Id>Jukun_Wapan</Id> <!-- Wapan, Kororofa, Wukari -->
     <Code iso-639-3="juk" />
     <FallbackLanguages>
       <LanguageId>Jukun</LanguageId>
@@ -3983,8 +4037,22 @@
     <Code iso-639-3="pog" />
   </Language>
   <Language>
-    <Id>Powhatan</Id> <!-- Virginia Algonquian -->
+    <Id>Powhatan</Id> <!-- Virginia Algonquian, Kikitowämak -->
     <Code iso-639-3="pim" />
+  </Language>
+  <Language>
+    <Id>Powhatan_A</Id> <!-- Dialect A -->
+    <FallbackLanguages>
+      <LanguageId>Powhatan</LanguageId>
+      <LanguageId>Powhatan_B</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Powhatan_B</Id> <!-- Dialect B -->
+    <FallbackLanguages>
+      <LanguageId>Powhatan</LanguageId>
+      <LanguageId>Powhatan_A</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Pucikwar</Id> <!-- A-Pucikwar -->
@@ -5750,5 +5818,32 @@
     <FallbackLanguages>
       <LanguageId>Tarahumara</LanguageId>
     </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Hernican</Id>
+    <Code iso-639-3="xhr" />
+  </Language>
+  <Language>
+    <Id>Huamoe</Id> <!-- Huamoé, Wamoe, Uamué, Uman, Atikum, Huamuê, Huamoi, Uame, Wamoé, Umã, Aticum, Araticum -->
+    <Code iso-639-3="uam" />
+  </Language>
+  <Language>
+    <Id>Katabangan</Id> <!-- Catanauanin, Katabaga -->
+    <Code iso-639-3="ktq" />
+  </Language>
+  <Language>
+    <Id>Makolkol</Id>
+    <Code iso-639-3="zmh" />
+  </Language>
+  <Language>
+    <Id>Ukaan</Id> <!-- Ikan, Anyaran, Auga, Kakumo -->
+    <Code iso-639-3="kcf" />
+  </Language>
+  <Language>
+    <Id>Ukaan_Proto</Id> <!-- Proto-Ukaan -->
+  </Language>
+  <Language>
+    <Id>Wawa</Id>
+    <Code iso-639-3="www" iso-639-6="wxwa" />
   </Language>
 </ArrayOfLanguage>

@@ -142,14 +142,14 @@ update-vanilla-file \
     "${CK2_LANDED_TITLES_DIR}/landed_titles.txt" \
     "${CK2_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
-    "${CK2HIP_LANDED_TITLES_DIR}/swmh_landed_titles.txt"\
-    "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"
+    "${CK2HIP_VANILLA_LANDED_TITLES_FILE}" \
+    "${CK2HIP_LANDED_TITLES_DIR}/"/*.txt
 update-vanilla-file \
     "${CK2RoI_LANDED_TITLES_DIR}/landed_titles.txt"\
     "${CK2RoI_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
-    "${CK2TWK_LANDED_TITLES_DIR}/landed_titles.txt" \
-    "${CK2TWK_VANILLA_LANDED_TITLES_FILE}" #\
+    "${CK2TWK_VANILLA_LANDED_TITLES_FILE}" \
+    "${CK2TWK_LANDED_TITLES_DIR}/"/*.txt
     #"https://raw.githubusercontent.com/DC123456789/Britannia---The-Winter-King/master/Britannia/common/landed_titles/landed_titles.txt"
 update-vanilla-file \
     "${CK3_LANDED_TITLES_DIR}/00_landed_titles.txt" \
@@ -173,8 +173,8 @@ update-vanilla-file \
     "${CK3IBL_LANDED_TITLES_DIR}/00_landed_titles.txt" \
     "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"
 update-vanilla-file \
-    "${CK3MBP_LANDED_TITLES_DIR}/00_landed_titles.txt" \
     "${CK3MBP_VANILLA_LANDED_TITLES_FILE}" \
+    "${CK3MBP_LANDED_TITLES_DIR}/"/*.txt
     "https://raw.githubusercontent.com/Leviathonlx/MoreBookmarks-Plus/main/common/landed_titles/00_landed_titles.txt"
 update-vanilla-file \
     "${CK3SoW_LANDED_TITLES_DIR}/00_landed_titles.txt" \
