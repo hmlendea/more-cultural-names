@@ -1,5 +1,3429 @@
 # -*- ck2.landed_titles -*-
 
+d_targa = { # Targa
+	color = { 150 97 51 }
+	#tribe = yes
+	culture = tuareg
+	capital = 1405 # Zawila
+	#title = RAIS
+	#foa = RAIS_FOA
+	allow = { title_duke_basic_allow = yes }
+}
+d_azben = { # Azben
+	color = { 22 238 106 }
+	capital = 1225 # Agadez # Agadés
+	#tribe = yes
+	culture = tuareg
+	#title = RAIS
+	#foa = RAIS_FOA
+	allow = { title_duke_basic_allow = yes }
+}
+d_soninke = { # Soninke
+	color = { 110 50 30 }
+	#tribe = yes
+	culture = soninke
+	capital = 913 # Wagadu # Ghana
+	allow = { title_duke_basic_allow = yes }
+}
+d_zaghawa = { # Zagháwa
+	color = { 22 111 22 }
+	capital = 1235 # Koufra # Borkou
+	#tribe = yes
+	culture = zaghawa
+	#title = RAIS
+	#foa = RAIS_FOA
+	allow = { title_duke_basic_allow = yes }
+}
+d_duguwa = { # Duguwa
+	color = { 143 64 64 }
+	#tribe = yes
+	culture = zaghawa
+	capital = 1480 # Wadai # Gasga
+	allow = { title_duke_basic_allow = yes }
+}
+# -*- ck2.landed_titles -*-
+
+e_baltic_empire = {
+	color = { 50 80 102 }
+	color2 = { 255 255 255 }
+
+	capital = 420 # c_aukshayts of d_lithuanians
+	culture = lithuanian
+
+	lithuanian = "Baltijos"
+	prussian = "Baltijos"
+	lettigallish = "Baltijas"
+
+	allow = {
+		trigger_if = {
+			limit = { FROM = { has_holder = no } }
+			has_landed_title = k_lithuania
+			trigger_if = {
+				limit = { emf_has_swmh = yes }
+				has_landed_title = k_terra
+			}
+		}
+		title_emperor_basic_allow = yes
+	}
+}
+# -*- ck2.landed_titles -*-
+
+
+# Titles used for dynamic CoA switching (see events/emf_coa.txt)
+
+k_emf_saxon_england = {
+	color={ 191 16 16 } # Only for the CoA
+
+	capital = 26 # Winchester
+
+	allow = { always = no }
+}
+
+k_emf_norman_england = {
+	color={ 191 16 16 } # Only for the CoA
+
+	capital = 26 # Winchester
+
+	allow = { always = no }
+}
+
+k_emf_english_england = {
+	color={ 191 16 16 } # Only for the CoA
+
+	capital = 26 # Winchester
+
+	allow = { always = no }
+}
+
+k_emf_barcelona_aragon = {
+	color = { 255 237 120 } # Only for the CoA
+
+	capital = 204 # Barcelona
+
+	allow = { always = no }
+}
+
+# For Chinese dynasties
+
+# Only for the CoA
+e_china_cheng = { allow = { always = no } }
+e_china_chu = { allow = { always = no } }
+e_china_dai = { allow = { always = no } }
+e_china_han = { allow = { always = no } }
+e_china_jin = { allow = { always = no } }
+e_china_liang = { allow = { always = no } }
+e_china_liao = { allow = { always = no } }
+e_china_ming = { allow = { always = no } }
+e_china_qi = { allow = { always = no } }
+e_china_qin = { allow = { always = no } }
+e_china_qing = { allow = { always = no } }
+e_china_shu = { allow = { always = no } }
+e_china_shun = { allow = { always = no } }
+e_china_song = { allow = { always = no } }
+e_china_tang = { allow = { always = no } }
+e_china_wei = { allow = { always = no } }
+e_china_wu = { allow = { always = no } }
+e_china_xia = { allow = { always = no } }
+e_china_yan = { allow = { always = no } }
+e_china_yin = { allow = { always = no } }
+e_china_yuan = { allow = { always = no } }
+e_china_yue = { allow = { always = no } }
+e_china_zhao = { allow = { always = no } }
+e_china_zhou = { allow = { always = no } }
+
+# Title used as base title for emf_revolt rebels
+
+d_rebel_coa = {
+	color = { 0 0 0 }
+	color2 = { 0 0 0 }
+	tribe = yes
+}
+# -*- ck2.landed_titles -*-
+
+d_arsiyah = {
+	color={ 217 160 27 }
+	color2={ 255 255 255 }
+
+	# graphical_culture = hashshashingfx
+
+	capital = 620 #	Itil
+
+	title = "GRANDHEADMASTER"
+	foa = "GRANDHEADMASTER_FOA"
+
+	holy_order = yes
+
+	# Always exists
+	landless = yes
+
+	culture = khazar
+
+	# Parent Religion
+	religion = sunni
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Cannot be vassalized
+	independent = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = arsiyah_composition
+}
+
+d_saqaliba = {
+	color={ 25 128 70 }
+	color2={ 255 255 255 }
+
+	# graphical_culture = bektashigfx
+
+	capital = 502 # Rashka
+
+	title = "GRANDHEADMASTER"
+	foa = "GRANDHEADMASTER_FOA"
+
+	holy_order = yes
+
+	# Always exists
+	landless = yes
+
+	culture = serbian
+
+	# Parent Religion
+	religion = ismaili
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Cannot be vassalized
+	independent = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = saqaliba_composition
+}
+# -*- ck2.landed_titles -*-
+
+e_hre_french = {
+	color = { 96 172 240 }
+	color2 = { 255 255 255 }
+
+	capital = 112 # Paris
+	culture = frankish
+	short_name = yes
+
+	allow = {
+		trigger_if = {
+			limit = {
+				ai = yes
+				FROM = { has_holder = no } # Don't limit culture of AI peaceful usurpers
+			}
+			OR = {
+				culture = low_frankish
+				culture = dutch
+				culture = frankish
+				culture = occitan
+				culture = norman
+				culture = arpitan
+			}
+		}
+		FROM = { is_de_jure_title = yes }
+		trigger_if = {
+			limit = {
+				FROM = { has_holder = yes } # Usurpation
+			}
+			OR = {
+				realm_size >= 320
+				FROM = { has_law = crown_authority_4 }
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				FROM = { has_holder = no } # Creation
+			}
+			OR = {
+				realm_size >= 320
+				primary_title = {
+					emf_laws_has_high_ca_plus = yes
+				}
+			}
+		}
+		title_emperor_basic_allow = yes
+	}
+}
+# -*- ck2.landed_titles -*-
+
+
+# Alternate versions of kingdom-tier titles for New World Order
+
+# Currently these are only to replace certain SWMH HRE stem duchies that are king-tier but name_tier = DUKE
+# with lookalikes that have normal name_tier and creation conditions when NWO is used.
+
+k_emf_lower_lorraine = {
+	color={ 255 204 20 }
+	color2={ 255 204 0 }
+
+	capital = 117 #Brabant
+	culture = dutch
+
+	catholic = 4000 # Crusade target weight
+	norse_pagan_reformed = 50 # Crusade target weight
+
+	dutch = "Lotharingen"
+	german = "Lothringen"
+
+	allow = {
+		title_king_basic_allow = yes
+	}
+}
+
+k_emf_saxony = {
+	color={ 78 98 40 }
+	color2={ 220 220 20 }
+
+	capital = 258 #Lüneburg
+	culture = german
+
+	catholic = 2500 # Crusade target weight
+	norse_pagan_reformed = 200 # Crusade target weight
+	slavic_pagan_reformed = 200 # Crusade target weight
+	baltic_pagan_reformed = 50 # Crusade target weight
+
+	allow = {
+		title_king_basic_allow = yes
+	}
+}
+
+k_emf_franconia = {
+	color={ 130 100 100 }
+	color2={ 220 220 20 }
+
+	capital = 123 #Mainz
+	culture = german
+
+	catholic = 4000 # Crusade target weight
+
+	allow = {
+		title_king_basic_allow = yes
+	}
+}
+
+k_emf_bavaria = {
+	color={ 56 67 158 }
+	color2={ 220 220 20 }
+
+	capital = 360 #Oberbayern
+	culture = german
+
+	catholic = 3000 # Crusade target weight
+	slavic_pagan_reformed = 50 # Crusade target weight
+
+	allow = {
+		title_king_basic_allow = yes
+	}
+}
+
+k_emf_schwaben = {
+	color={ 57 142 157 }
+	color2={ 220 220 20 }
+
+	capital = 249 #Schwaben
+	culture = german
+
+	catholic = 3000 # Crusade target weight
+
+	allow = {
+		title_king_basic_allow = yes
+	}
+}
+# -*- ck2.landed_titles -*-
+
+# Here to override the titular e_null definition from HIP_Common (this placeholder
+# empire is already defined de jure in swmh_landed_titles.txt)
+# -*- ck2.landed_titles -*-
+
+
+e_hip = {
+	color = { 123 0 255 }
+	color2 = { 224 224 224 }
+
+	capital = 1 # Give her a remote capital so that her diplomatic range is limited (no capital = unlimited range)
+
+	culture = hip_culture
+	religion = hip_religion
+
+	# this way, her religion cannot change (without unsafe_religion), so the event pre-trigger religion = hip_religion
+	# alone is the fastest possible filter & we can rely on isis to simply never change religion.
+	controls_religion = hip_religion
+
+	title = HIP_TITLE
+	title_female = HIP_TITLE
+	foa = HIP_TITLE_FOA
+
+	landless = yes
+	primary = yes
+	short_name = yes
+	dynasty_title_names = no
+	can_be_usurped = no
+	can_be_claimed = no
+
+	allow = { always = no }
+}
+# -*- ck2.landed_titles -*-
+
+e_rebels = { # Rebels
+	rebel = yes
+	landless = yes
+	primary = yes
+	culture = swedish
+	tribe = yes
+	color = { 0 0 0 }
+	color2 = { 0 0 0 }
+}
+e_pirates = { # Pirates
+	pirate = yes
+	landless = yes
+	primary = yes
+	culture = swedish
+	tribe = yes
+	color = { 0 0 0 }
+	color2 = { 0 0 0 }
+}
+# SPECIAL TITLES
+k_hellenic_pagan = {
+	color = { 124 0 175 }
+	color2 = { 220 220 0 }
+	capital = 333 # Rome
+	title = PONTIFEX_MAXIMUS
+	title_female = PONTIFEX_MAXIMA
+	foa = POPE_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	creation_requires_capital = no
+	dignity = 100 # Counted as having this many more counties than it does
+	# Controls a religion
+	controls_religion = hellenic_pagan_reformed
+	religion = hellenic_pagan_reformed
+	assimilate = no
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+k_papal_state = { # Status Pontificius
+	color = { 255 249 198 }
+	color2 = { 220 220 0 }
+	capital = 333 # Roma # Rome
+	title = POPE
+	title_female = POPESS
+	foa = POPE_FOA
+	short_name = yes
+	location_ruler_title = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = catholic
+	religion = catholic
+	# Cannot be held as a secondary title
+	primary = yes
+	assimilate = no
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	# Regnal names
+	male_names = {
+		Ioannes:13 Benedictus:10 Gregorius:8 Innocentius:7 Clemens:5 Leo:5 Nicolaus:5 Stephanus:5 Urbanus:5
+		Coelestinus:4 Hadrianus:4 Alexander:3 Bonifatius:3 Honorius:3 Anastasius:2 Callistus:2 Eugenius:2 Lucius:2
+		Marinus:2 Martinus:2 Sergius:2 Silvester:2 Victor:2 Agapitus:1 Damasus:1 Formosus:1 Gelasius:1 Landus:1
+		Paschalis:1 Paulus:1 Pius:1 Romanus:1 Theodorus:1 Xystus:1
+	}
+}
+k_orthodox = { # The Ecumenical Patriarchate
+	#color = { 150 90 30 }
+	color = { 183 60 155 }
+	color2 = { 220 220 0 }
+	capital = 496 # Konstantinoupolis # Constantinople
+	title = ECUMENICAL_PATRIARCH
+	foa = ECUMENICAL_PATRIARCH_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = orthodox
+	religion = orthodox
+	# Cannot be held as a secondary title
+	primary = yes
+	assimilate = no
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	# Regnal names
+	male_names = {
+		Alexios Alexandros Anastasios Anthimos Athanasios Antonios Basileios Dionysios Dositheos Eustathios
+		Eustratios Euthymios Gabriel Gennadios Georgios Gerasimos Germanos Gregorios Ieremias Ignatios Ioakeim
+		Ioannes Ioseph Isidoros Kallinikos Kallistos Konstantinos Kosmas Kyrillos Leon Leontios Loukas Makarios
+		Manuel Markos Matthaios Maximos Meletios Methodios Metrophanes Michael Neophytos Nephon Nikephoros Niketas
+		Nikolaos Pavlos Petros Photios Polykarpos Sergios Stephanos Sophronios Theodoros Theodosios Theodotos
+		Theophylaktos Thomas Timotheos
+	}
+}
+e_sunni = { # The Sunni Caliphate
+	# OBSOLETE
+	color = { 40 160 40 }
+	color2 = { 220 220 0 }
+	capital = 719 # Makkah # Mecca
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	short_name = yes
+	religion = sunni
+	#controls_religion = sunni
+	#caliphate = yes
+	allow = { always = no }
+}
+e_shiite = { # The Shia Caliphate
+	# OBSOLETE
+	color = { 60 190 60 }
+	color2 = { 220 220 0 }
+	capital = 719 # Makkah # Mecca
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	short_name = yes
+	religion = shiite
+	#controls_religion = shiite
+	#caliphate = yes
+	allow = { always = no }
+}
+e_golden_horde = { # Golden Horde
+	color = { 243 180 17 }
+	short_name = yes
+	capital = 619 # Saray
+	culture = mongol
+	religion = tengri_pagan
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
+}
+e_il-khanate = { # Ilkhanate
+	color = { 120 180 20 }
+	short_name = yes
+	capital = 667 # Tabriz # Tabriz and Maragheh
+	culture = mongol
+	religion = tengri_pagan
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
+}
+e_mongol_empire = { # Yeke Mongol Ulus
+	color = { 255 255 255 }
+	color2 = { 255 20 20 }
+	short_name = yes
+	capital = 1571 # Yulduz # Almaliq # (Chagatid Capital)
+	culture = mongol
+	religion = tengri_pagan
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
+}
+e_timurids = { # Timurids
+	color = { 120 20 20 }
+	capital = 903 # Samarkand
+	culture = mongol
+	religion = sunni
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
+}
+# SoA head of religion
+d_miaphysite = { # The Miaphysite Papacy
+	color = { 217 155 177 }
+	color2 = { 220 220 0 }
+	capital = 802 # Iskandaríya # Iskandarîya # Alexandria
+	title = COPTIC_POPE
+	foa = POPE_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = miaphysite
+	religion = miaphysite
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	# Regnal names
+	male_names = {
+		Abraham Alexandros Alexios Agatho Anastasios Andronikos Athanasios Benjamin Christodolos Cosmas Kyril Damian
+		Demetrius Dioscorus Gabriel Yohannes Iosephos Isaakios Iakobos Makarios Markianos Markos Matheos Khail Mina
+		Petros Philotheos Shenouda Simeon Theodoros Theophilus Timotheos Zacharias
+	}
+}
+d_monophysite = { # The Monophysite Papacy
+	color = { 200 115 167 }
+	color2 = { 220 220 0 }
+	capital = 802 # Iskandaríya # Iskandarîya # Alexandria
+	title = MONOPHYSITE_POPE
+	foa = POPE_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = monophysite
+	religion = monophysite
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	# Regnal names
+	male_names = {
+		Abraham Alexandros Alexios Agatho Anastasius Andronicus Athanasios Benjamin Christodolos Cosmas Cyril Damian
+		Demetrius Dioscorus Gabriel Ioannes Iosephos Isaakios Iakobos Makarios Markianos Matheos Michail Mina Petros
+		Philotheos Shenouda Simeon Theodoros Theophilus Timotheos Zacharias
+	}
+}
+d_nestorian = { # The Patriarchate of the East
+	color = { 180 137 97 }
+	color2 = { 220 220 0 }
+	capital = 693 # Baghdad
+	title = PATRIARCH_IN_THE_EAST
+	foa = ECUMENICAL_PATRIARCH_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = nestorian
+	religion = nestorian
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	# Regnal names
+	male_names = {
+		Aba Abraham Eliya Denha Emmanuel Giwargis Hnanisho Ishoyahb Makkikha Maremmeh Pethion Sabrisho Shemon Sargis
+		Surin Theodosios Timotheos Yahballaha Yohannan
+	}
+}
+d_paulician = { # The Paulician Patriarchate
+	color = { 195 130 157 }
+	color2 = { 255 255 255 }
+	capital = 496 # Konstantinoupolis # Constantinople
+	title = PAULICIAN_PATRIARCH
+	foa = ECUMENICAL_PATRIARCH_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = paulician
+	religion = paulician
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	# Regnal names
+	male_names = {
+		Alexios Alexandros Anastasios Anthimos Athanasios Antonios Basileios Dionysios Dositheos Eustathios
+		Eustratios Euthymios Gennadios Georgios Gerasimos Germanos Gregorios Ieremias Ignatios Ioakeim Ioannes Ioseph
+		Isidoros Kallinikos Kallistos Konstantinos Kosmas Kyrillos Leon Leontios Loukas Makarios Manuel Markos
+		Matthaios Maximos Meletios Methodios Metrophanes Michael Neophytos Nephon Nikephoros Niketas Nikolaos Pavlos
+		Petros Photios Polykarpos Sergios Stephanos Sophronios Theodoros Theodosios Theodotos Theophylaktos Thomas
+		Timotheos
+	}
+}
+d_monothelite = { # The Monothelite Patriarchate
+	color = { 180 170 65 }
+	color2 = { 220 220 0 }
+	capital = 764 # Antioch
+	title = MONOTHELITE_PATRIARCH
+	foa = ECUMENICAL_PATRIARCH_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = monothelite
+	religion = monothelite
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	# Regnal names
+	male_names = {
+		Alexios Alexandros Anastasios Anthimos Athanasios Antonios Basileios Dionysios Dositheos Eustathios
+		Eustratios Euthymios Gennadios Georgios Gerasimos Germanos Gregorios Ieremias Ignatios Ioakeim Ioannes Ioseph
+		Isidoros Kallinikos Kallistos Konstantinos Kosmas Kyrillos Leon Leontios Loukas Makarios Manuel Markos
+		Matthaios Maximos Meletios Methodios Metrophanes Michael Neophytos Nephon Nikephoros Niketas Nikolaos Pavlos
+		Petros Photios Polykarpos Sergios Stephanos Sophronios Theodoros Theodosios Theodotos Theophylaktos Thomas
+		Timotheos
+	}
+}
+d_fraticelli = { # The Fraticelli Papacy
+	color = { 198 249 255 }
+	color2 = { 220 220 0 }
+	capital = 333 # Roma # Rome
+	title = POPE
+	foa = POPE_FOA
+	short_name = yes
+	location_ruler_title = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = fraticelli
+	religion = fraticelli
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	# Regnal names
+	male_names = {
+		Ioannes:13 Benedictus:10 Gregorius:8 Innocentius:7 Clemens:5 Leo:5 Nicolaus:5 Stephanus:5 Urbanus:5
+		Coelestinus:4 Hadrianus:4 Alexander:3 Bonifatius:3 Honorius:3 Anastasius:2 Callistus:2 Eugenius:2 Lucius:2
+		Marinus:2 Martinus:2 Sergius:2 Silvester:2 Victor:2 Agapitus:1 Damasus:1 Formosus:1 Gelasius:1 Landus:1
+		Paschalis:1 Paulus:1 Pius:1 Romanus:1 Theodorus:1 Xystus:1
+	}
+	allow = {
+		always = no # Only by special decision
+	}
+}
+d_iconoclast = { # The Iconoclast Patriarchate
+	color = { 153 50 125 }
+	color2 = { 220 220 0 }
+	capital = 496 # Konstantinoupolis # Constantinople
+	title = ECUMENICAL_PATRIARCH
+	foa = ECUMENICAL_PATRIARCH_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = iconoclast
+	religion = iconoclast
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	# Regnal names
+	male_names = {
+		Alexios Antonios Athanasios Basileios Chariton Dionysios Dositheos Eustathios Eustratios Euthymios Gennadios
+		Georgios Gerasimos Germanos Gregoras Ioannes Iosephos Isidoros Kallistos Konstantinos Kosmas Leon Leontios
+		Loukas Makarios Manuel Maximos Metrophanes Michael Neophytos Nephon Niketas Nikolaos Nilos Matthaios Paulos
+		Sergios Sisinnios Symeon Theodoros Theodosios Theodotos
+	}
+	allow = {
+		always = no # Only by special decision
+	}
+}
+d_yazidi = { # The Yazidi Sheikhdom
+	color = { 20 50 160 }
+	color2 = { 220 220 0 }
+	capital = 697 # Mosul
+	dignity = 80 # Counted as having this many more counties than it does
+	title = SHEIKH
+	title_female = SHEIKHA
+	foa = IMAM_FOA
+	short_name = yes
+	religion = yazidi
+	# Controls a religion
+	controls_religion = yazidi
+	caliphate = yes
+	coat_of_arms = {
+		data = { 0 0 3 0 0 11 11 }
+		religion = yazidi
+	}
+	allow = { piety = 1000 }
+}
+d_ibadi = { # The Ibadi Imamate
+	color = { 20 130 20 }
+	color2 = { 220 220 0 }
+	capital = 719 # Makkah # Mecca
+	creation_requires_capital = no
+	dignity = 80 # Counted as having this many more counties than it does
+	title = IMAM
+	title_female = IMAMA
+	foa = IMAM_FOA
+	short_name = yes
+	religion = ibadi
+	# Controls a religion
+	controls_religion = ibadi
+	caliphate = yes
+	coat_of_arms = {
+		data = { 0 0 0 8 0 2 2 }
+		religion = ibadi
+	}
+	allow = {
+		OR = {
+			trait = mirza
+			trait = sayyid
+			piety = 1000
+		}
+		trigger_if = {
+			limit = {
+				NOT = {
+					has_alternate_start_parameter = {
+						key = religion_names
+						value = random
+					}
+				}
+			}
+			custom_tooltip = {
+				text = ibadi_creation_independent
+				hidden_tooltip = {
+					in_revolt = no
+					OR = {
+						independent = yes
+						NOT = {
+							any_liege = {
+								OR = {
+									in_revolt = yes
+									NOT = { religion = ibadi }
+								}
+							}
+						}
+					}
+				}
+			}
+			OR = {
+				AND = {
+					trait = sayyid
+					piety = 1000
+				}
+				trigger_if = {
+					limit = { NOT = { has_global_flag = destroyed_caliphates } }
+					custom_tooltip = {
+						text = controls_mecca_medina
+						hidden_tooltip = {
+							c_mecca = { owner_under_ROOT = yes }
+							c_medina = { owner_under_ROOT = yes }
+						}
+					}
+				}
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+					hidden_tooltip = {
+						c_jerusalem = { owner_under_ROOT = yes }
+						c_damascus = { owner_under_ROOT = yes }
+						c_baghdad = { owner_under_ROOT = yes }
+					}
+				}
+			}
+		}
+		trigger_else = {
+			custom_tooltip = {
+				text = THREE_HOLY_SITES_TT
+				hidden_tooltip = {
+					any_realm_title = {
+						count = 3
+						is_holy_site = ROOT
+					}
+				}
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = destroyed_caliphates }
+			custom_tooltip = {
+				text = controls_mecca_medina
+				hidden_tooltip = {
+					c_mecca = { owner_under_ROOT = yes }
+					c_medina = { owner_under_ROOT = yes }
+				}
+			}
+		}
+	}
+} # end d_ibadi
+d_kharijite = { # The Kharijite Caliphate
+	color = { 10 110 10 }
+	color2 = { 220 220 0 }
+	capital = 719 # Makkah # Mecca
+	creation_requires_capital = no
+	dignity = 80 # Counted as having this many more counties than it does
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	short_name = yes
+	religion = kharijite
+	# Controls a religion
+	controls_religion = kharijite
+	caliphate = yes
+	coat_of_arms = {
+		data = { 0 0 0 8 0 2 2 }
+		religion = kharijite
+	}
+	allow = {
+		piety = 1000
+		trigger_if = {
+			limit = {
+				NOT = {
+					has_alternate_start_parameter = {
+						key = religion_names
+						value = random
+					}
+				}
+			}
+			OR = {
+				trigger_if = {
+					limit = { NOT = { has_global_flag = destroyed_caliphates } }
+					custom_tooltip = {
+						text = controls_mecca_medina
+						hidden_tooltip = {
+							c_mecca = { owner_under_ROOT = yes }
+							c_medina = { owner_under_ROOT = yes }
+						}
+					}
+				}
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+					hidden_tooltip = {
+						c_jerusalem = { owner_under_ROOT = yes }
+						c_damascus = { owner_under_ROOT = yes }
+						c_baghdad = { owner_under_ROOT = yes }
+					}
+				}
+			}
+		}
+		trigger_else = {
+			custom_tooltip = {
+				text = THREE_HOLY_SITES_TT
+				hidden_tooltip = {
+					any_realm_title = {
+						count = 3
+						is_holy_site = ROOT
+					}
+				}
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = destroyed_caliphates }
+			custom_tooltip = {
+				text = controls_mecca_medina
+				hidden_tooltip = {
+					c_mecca = { owner_under_ROOT = yes }
+					c_medina = { owner_under_ROOT = yes }
+				}
+			}
+		}
+	}
+} # end d_kharijite
+d_hurufi = { # The Hurufi Skeikhdom
+	color = { 80 220 80 }
+	color2 = { 220 220 0 }
+	capital = 719 # Makkah # Mecca
+	creation_requires_capital = no
+	dignity = 100 # Counted as having this many more counties than it does
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	short_name = yes
+	religion = hurufi
+	# Controls a religion
+	controls_religion = hurufi
+	caliphate = yes
+	coat_of_arms = {
+		data = { 0 0 0 7 1 7 7 }
+		religion = hurufi
+	}
+	allow = {
+		OR = {
+			trait = mirza
+			trait = sayyid
+			piety = 1000
+		}
+		trigger_if = {
+			limit = {
+				NOT = {
+					has_alternate_start_parameter = {
+						key = religion_names
+						value = random
+					}
+				}
+			}
+			OR = {
+				AND = {
+					trait = sayyid
+					piety = 1000
+				}
+				trigger_if = {
+					limit = { NOT = { has_global_flag = destroyed_caliphates } }
+					custom_tooltip = {
+						text = controls_mecca_medina
+						hidden_tooltip = {
+							c_mecca = { owner_under_ROOT = yes }
+							c_medina = { owner_under_ROOT = yes }
+						}
+					}
+				}
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+					hidden_tooltip = {
+						c_jerusalem = { owner_under_ROOT = yes }
+						c_damascus = { owner_under_ROOT = yes }
+						c_baghdad = { owner_under_ROOT = yes }
+					}
+				}
+			}
+		}
+		trigger_else = {
+			custom_tooltip = {
+				text = THREE_HOLY_SITES_TT
+				hidden_tooltip = {
+					any_realm_title = {
+						count = 3
+						is_holy_site = ROOT
+					}
+				}
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = destroyed_caliphates }
+			custom_tooltip = {
+				text = controls_mecca_medina
+				hidden_tooltip = {
+					c_mecca = { owner_under_ROOT = yes }
+					c_medina = { owner_under_ROOT = yes }
+				}
+			}
+		}
+	}
+} # end d_hurufi
+d_jewish = { # The Jewish High Priesthood
+	color = { 0 80 255 }
+	capital = 774 # Jérusalem # Jerusalem
+	title = HEAD_KOHEN_GADOL
+	foa = POPE_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = jewish
+	religion = jewish
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+# Pagan heads of religion
+d_norse_pagan_reformed = { # The Fylkirate
+	color = { 155 155 235 }
+	color2 = { 220 220 0 }
+	capital = 290 # Tiundaland # Uppland
+	title = FYLKIR
+	title_female = FYLKJA
+	foa = FYLKIR_FOA
+	creation_requires_capital = no
+	short_name = yes
+	# Always exists
+	landless = yes
+	dignity = 100 # Counted as having this many more counties than it does
+	# Controls a religion
+	controls_religion = norse_pagan_reformed
+	religion = norse_pagan_reformed
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	allow = {
+		religion = norse_pagan_reformed
+		num_of_holy_sites = 3
+		piety = 500
+	}
+}
+d_tengri_pagan_reformed = { # The Tengri Church
+	color = { 100 80 100 }
+	color2 = { 220 220 0 }
+	capital = 594 # Sharkel # Sarkel
+	title = HEAD_PRIEST
+	title_female = HEAD_PRIESTESS
+	foa = HEAD_PRIEST_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = tengri_pagan_reformed
+	religion = tengri_pagan_reformed
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+d_baltic_pagan_reformed = { # The Romuvan Church
+	color = { 122 165 70 }
+	color2 = { 220 220 0 }
+	capital = 366 # Stettin
+	title = HEAD_PRIEST
+	title_female = HEAD_PRIESTESS
+	foa = HEAD_PRIEST_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = baltic_pagan_reformed
+	religion = baltic_pagan_reformed
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+d_finnish_pagan_reformed = { # The Suomenusko Church
+	color = { 240 240 220 }
+	color2 = { 220 220 0 }
+	capital = 381 # Nyland # Uusimaa
+	title = HEAD_PRIEST
+	title_female = HEAD_PRIESTESS
+	foa = HEAD_PRIEST_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = finnish_pagan_reformed
+	religion = finnish_pagan_reformed
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+d_slavic_pagan_reformed = { # The Slavic Church
+	color = { 175 50 136 }
+	color2 = { 220 220 0 }
+	capital = 515 # Tirgoviste
+	title = HEAD_PRIEST
+	title_female = HEAD_PRIESTESS
+	foa = HEAD_PRIEST_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = slavic_pagan_reformed
+	religion = slavic_pagan_reformed
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+d_aztec_reformed = { # The Aztec Church
+	color = { 245 245 135 }
+	color2 = { 220 220 0 }
+	capital = 1 # Vesturland # ???????
+	title = HEAD_PRIEST
+	title_female = HEAD_PRIESTESS
+	foa = HEAD_PRIEST_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = aztec_reformed
+	religion = aztec_reformed
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+d_west_african_pagan_reformed = { # West African Church
+	color = { 91 49 13 }
+	color2 = { 220 220 0 }
+	capital = 925 # Manding # Mali
+	title = HEAD_PRIEST
+	title_female = HEAD_PRIESTESS
+	foa = HEAD_PRIEST_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = west_african_pagan_reformed
+	religion = west_african_pagan_reformed
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+d_zun_pagan_reformed = { # The Church of Zun
+	color = { 220 255 0 }
+	color2 = { 220 220 0 }
+	capital = 637 # Sístán # Sîstân # Sistan
+	title = HEAD_PRIEST
+	title_female = HEAD_PRIESTESS
+	foa = HEAD_PRIEST_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = zun_pagan_reformed
+	religion = zun_pagan_reformed
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+d_bon_reformed = {
+	color = { 141 130 77 }
+	capital = 1985
+	title = HEAD_DALAI_LAMA
+	foa = POPE_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = bon_reformed
+	religion = bon_reformed
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+d_zoroastrian = { # The Zoroastrian Church
+	color = { 180 120 40 }
+	color2 = { 220 220 0 }
+	capital = 646 # Isfahan # Esfahan
+	title = HEAD_MOABADAN_MOABAD
+	foa = POPE_FOA
+	short_name = yes
+	# Always exists
+	landless = yes
+	# Controls a religion
+	controls_religion = zoroastrian
+	religion = zoroastrian
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+}
+e_china_west_governor = { # placeholder for the Chinese Empire Western Governor
+	color = { 245 240 10 }
+	color2 = { 220 220 0 }
+	capital = 1570 # Qarashahr
+	title_female = WESTERN_GOVERNOR_FEMALE
+	title = WESTERN_GOVERNOR_MALE
+	foa = WESTERN_GOVERNOR_TITLE_FOA
+	short_name = yes
+	#location_ruler_title = yes
+	# Always exists
+	landless = yes
+	# Cannot be vassalized
+	independent = yes
+	# Cannot be held as a secondary title
+	primary = yes
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+	can_be_claimed = no
+	can_be_usurped = no
+	extra_ai_eval_troops = 7500
+}
+# -*- ck2.landed_titles -*-
+
+d_band_of_the_brave = { # The brave band
+	color = { 91 183 102 }
+	color2 = { 255 255 255 }
+	capital = 52 # Northumberland
+	# Parent Religion
+	religion = catholic
+	mercenary = yes
+	title = CAPTAIN
+	foa = CAPTAIN_FOA
+	# Always exists
+	landless = yes
+	# Cannot be held as a secondary title
+	primary = yes
+	# Cannot be vassalized
+	independent = yes
+	mercenary_type = d_band_of_the_brave_composition
+	strength_growth_per_century = 0.25
+	# Hire Trigger
+	allow = {
+		OR = {
+			culture = saxon
+			culture = scottish
+			culture = anglonorse
+			culture = welsh
+			culture = norsegaelic
+			culture = irish
+			culture = cornish
+			culture = english
+		}
+	}
+}
+d_band_of_the_red = { # Floti hinn rauði
+	color = { 101 0 0 }
+	color2 = { 255 255 255 }
+	capital = 1258 # Suðurland # Southiceland
+	# Parent Religion
+	religion = catholic
+	mercenary = yes
+	title = DROTTINN
+	foa = CAPTAIN_FOA
+	# Always exists
+	landless = yes
+	# Cannot be held as a secondary title
+	primary = yes
+	# Cannot be vassalized
+	independent = yes
+	mercenary_type = d_band_of_the_red_composition
+	strength_growth_per_century = 0.25
+	# Hire Trigger
+	allow = {
+		OR = {
+			culture_group = north_germanic
+			culture = norsegaelic
+			culture = anglonorse
+		}
+	}
+}
+d_black_gang = { # Arumer Zwarte Hoop
+	color = { 101 0 0 }
+	color2 = { 255 255 255 }
+	capital = 84 # Friesland
+	# Parent Religion
+	religion = catholic
+	mercenary = yes
+	title = CAPTAIN
+	foa = CAPTAIN_FOA
+	# Always exists
+	landless = yes
+	# Cannot be held as a secondary title
+	primary = yes
+	# Cannot be vassalized
+	independent = yes
+	mercenary_type = d_black_gang_composition
+	strength_growth_per_century = 0.25
+	# Hire Trigger
+	allow = { culture = frisian }
+}
+d_ulfhedar = { # Úlfhéðnar
+	color = { 231 232 227 }
+	color2 = { 255 255 255 }
+	capital = 271 # Vestfold
+	# Parent Religion
+	religion = norse_pagan
+	mercenary = yes
+	title = DROTTINN
+	foa = CAPTAIN_FOA
+	# Always exists
+	landless = yes
+	# Cannot be held as a secondary title
+	primary = yes
+	# Cannot be vassalized
+	independent = yes
+	mercenary_type = d_ulfhedar_composition
+	strength_growth_per_century = 0.25
+	# Hire Trigger
+	allow = { religion = norse_pagan }
+}
+d_valr = { # Valr
+	color = { 20 20 20 }
+	color2 = { 255 255 255 }
+	capital = 301 # Gotland
+	# Parent Religion
+	religion = norse_pagan
+	mercenary = yes
+	title = DROTTINN
+	foa = CAPTAIN_FOA
+	# Always exists
+	landless = yes
+	# Cannot be held as a secondary title
+	primary = yes
+	# Cannot be vassalized
+	independent = yes
+	mercenary_type = d_valr_composition
+	strength_growth_per_century = 0.25
+	# Hire Trigger
+	allow = { religion = norse_pagan }
+}
+# -*- ck2.landed_titles -*-
+
+##############
+# Tribal titles
+##############
+######################################
+# Baltic
+######################################
+# Latvian tribes
+#####
+d_curonian = { # Kurši
+	color = { 141 55 29 }
+	capital = 373 # Vredecuren # Kurzeme
+	culture = lettigallish
+	#tribe = yes
+	allow = { always = no }
+}
+d_selonians = { # Seli
+	color = { 22 96 143 }
+	color2 = { 255 255 255 }
+	culture = lettigallish
+	#tribe = yes
+	capital = 985 # Sèlija # Selija
+	allow = { always = no }
+}
+d_talavians = { # Tãlavi
+	color = { 169 41 27 }
+	color2 = { 255 255 255 }
+	culture = lettigallish
+	#tribe = yes
+	capital = 375 # Tholowa # Talava
+	allow = { always = no }
+}
+d_lettigalians = { # Latgali
+	color = { 126 51 51 }
+	capital = 375 # Tholowa # Letigalia
+	culture = lettigallish
+	#tribe = yes
+	allow = { always = no }
+}
+d_zemigalians = { # Zemgali
+	color = { 183 21 21 }
+	culture = lettigallish
+	#tribe = yes
+	capital = 374 # Opemele # zemgali
+	allow = { always = no }
+}
+#####
+# Lithuanian tribes
+#####
+d_deltuvians = { # Deltuvai
+	color = { 81 164 104 }
+	color2 = { 255 255 255 }
+	culture = lithuanian
+	#tribe = yes
+	capital = 979 # Deltuva
+	allow = { always = no }
+}
+d_yatviags = { # Jotvingiai
+	color = { 149 97 97 }
+	capital = 426 # Dainava
+	culture = lithuanian
+	#tribe = yes
+	allow = { always = no }
+}
+#####
+# Prussian tribes
+#####
+d_pruthenians = { # Prùsà #  prussian uprising.
+	color = { 159 195 75 }
+	capital = 370 # Warmia # Marienburg
+	culture = prussian
+	#tribe = yes
+	allow = { always = no }
+}
+d_goliadj = { # Goladi # Galindians
+	color = { 42 132 210 }
+	capital = 427 # Galindia
+	culture = lithuanian
+	polish = "Galindowie"
+	bohemian = "Galindowie"
+	pommeranian = "Galindowie"
+	slovieni = "Galindowie"
+	russian = "Goliadj"
+	allow = { always = no }
+}
+d_warmians = { # Varmi
+	color = { 1 49 93 }
+	capital = 370 # Warmia
+	culture = prussian
+	#tribe = yes
+	allow = { always = no }
+}
+d_pomesanians = { # Pomedi
+	color = { 200 99 3 }
+	capital = 1297 # Pomesania
+	culture = prussian
+	#tribe = yes
+	allow = { always = no }
+}
+d_sasnians = { # Sasnai
+	color = { 25 70 31 }
+	capital = 427 # Galindia
+	culture = prussian
+	#tribe = yes
+	allow = { always = no }
+}
+d_pogesanians = { # Paugudi
+	color = { 7 99 129 }
+	capital = 1298 # Pogesania
+	culture = prussian
+	#tribe = yes
+	allow = { always = no }
+}
+d_bartians = { # Barthi
+	color = { 22 1 7 }
+	capital = 1299 # Bartia
+	culture = prussian
+	#tribe = yes
+	allow = { always = no }
+}
+d_nadruvians = { # Nadrawai
+	color = { 93 9 77 }
+	capital = 1300 # Nadruvia
+	culture = prussian
+	#tribe = yes
+	allow = { always = no }
+}
+d_scalovians = { # Skalwai
+	color = { 95 24 55 }
+	capital = 422 # Skalva # Scalovia
+	culture = prussian
+	#tribe = yes
+	allow = { always = no }
+}
+d_sambians = { # Sembai
+	color = { 22 24 66 }
+	capital = 371 # Sambi # Sambia
+	culture = prussian
+	#tribe = yes
+	allow = { always = no }
+}
+######################################
+# West Slavic
+######################################
+######################################
+# Wends
+######################################
+# Kingdom tier
+######################################
+k_oborites = { # Obodriti
+	color = { 41 85 98 }
+	capital = 260 # Mecklemburg # Mecklenburg
+	culture = pommeranian
+	allow = { FROM = { is_de_jure_title = yes } }
+}
+k_pommeranians = { # Pomorzani
+	color = { 11 5 129 }
+	capital = 1313 # Belgard # Kolberg
+	culture = pommeranian
+	allow = { FROM = { is_de_jure_title = yes } }
+}
+k_lutici = { # Ljutici
+	color = { 22 57 233 }
+	capital = 365 # Mittelmark # Brandenburg
+	culture = pommeranian
+	allow = { FROM = { is_de_jure_title = yes } }
+}
+k_sorbs = { # Sorbi
+	color = { 209 147 2 }
+	capital = 364 # Oberlausitz
+	culture = pommeranian
+	allow = { FROM = { is_de_jure_title = yes } }
+}
+######################################
+# Lutici tribes
+#####
+d_lutici = { # Ljutici
+	color = { 22 57 233 }
+	capital = 365 # Mittelmark # Brandenburg
+	culture = pommeranian
+	allow = { always = no }
+}
+d_hevelli = { # Hawolani
+	color = { 66 35 86 }
+	capital = 365 # Mittelmark # Brandenburg
+	culture = pommeranian
+	allow = { always = no }
+}
+d_sprevani = { # Sprewjani
+	color = { 111 55 139 }
+	capital = 1064 # Niederlausitz
+	culture = pommeranian
+	allow = { always = no }
+}
+# Dossanen/Doxani/Dasseri/Desseri
+d_doxani = { # Dossani
+	color = { 88 55 100 }
+	capital = 1074 # Magdeburg
+	culture = pommeranian
+	allow = { always = no }
+}
+d_lunkini = { # Glinjani
+	color = { 14 51 79 }
+	capital = 982 # Prignitz
+	culture = pommeranian
+	allow = { always = no }
+}
+d_circipanes = { # Czerzpjani
+	color = { 33 72 55 }
+	capital = 1028 # Gützkow
+	culture = pommeranian
+	allow = { always = no }
+}
+d_kessians = { # Chyzani
+	color = { 94 125 49 }
+	capital = 306 # Rostock
+	culture = pommeranian
+	allow = { always = no }
+}
+d_readrians = { # Ratari
+	color = { 66 88 9 }
+	capital = 307 # Werle
+	culture = pommeranian
+	allow = { always = no }
+}
+d_tollensians = { # Dolenci
+	color = { 12 81 22 }
+	capital = 1505 # Barth
+	culture = pommeranian
+	allow = { always = no }
+}
+# Zamzizi/Zamcici/Zemzizi
+d_rani = { # Rujani
+	color = { 76 51 33 }
+	capital = 304 # Rügen # Rugen
+	culture = pommeranian
+	allow = { always = no }
+}
+d_veleti = { # Wilci # Wilzi
+	color = { 115 92 133 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 307 # Werle
+	allow = { always = no }
+}
+d_wolinians = { # Wolinjani # Velunzani
+	color = { 115 92 56 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 308 # Wolgast
+	allow = { always = no }
+}
+######################################
+# Oborite tribes
+#####
+d_oborites = { # Obodriti
+	color = { 131 66 114 }
+	capital = 260 # Mecklemburg # Mecklenburg
+	culture = pommeranian
+	allow = { always = no }
+}
+d_wagrians = { # Wajiri
+	color = { 199 155 11 }
+	capital = 1066 # Kiel # Wagrien # Wagrinen
+	culture = pommeranian
+	allow = { always = no }
+}
+d_drevani = { # Drewani
+	color = { 141 55 179 }
+	capital = 1053 # Dannenberg
+	culture = pommeranian
+	allow = { always = no }
+}
+d_travnjane = { # Trawnjani
+	color = { 41 175 201 }
+	capital = 1098 # Ratzeburg # Lauenburg
+	culture = pommeranian
+	allow = { always = no }
+}
+d_warnabi = { # Warnowi
+	color = { 118 65 99 }
+	capital = 951 # Schwerin
+	culture = pommeranian
+	allow = { always = no }
+}
+######################################
+# Pomeranian tribes
+#####
+d_pommeranians = { # Pomorzani
+	color = { 87 23 83 }
+	capital = 1313 # Belgard # Kolberg
+	culture = pommeranian
+	allow = { always = no }
+}
+d_prissani = { # Przicani
+	color = { 160 202 210 }
+	capital = 366 # Stettin
+	culture = pommeranian
+	allow = { always = no }
+}
+d_slovinici = { # Slowinci
+	color = { 79 51 28 }
+	capital = 367 # Stolp # Schlawe-Stolp
+	culture = pommeranian
+	allow = { always = no }
+}
+d_kashubians = { # Kassubi
+	color = { 11 35 210 }
+	capital = 368 # Danzig # Gdansk
+	culture = pommeranian
+	allow = { always = no }
+}
+########################################
+# Sorbs
+#########
+d_sorbs = { # Sorbi
+	color = { 209 147 2 }
+	capital = 364 # Oberlausitz
+	culture = pommeranian
+	allow = { always = no }
+}
+d_chutizi = { # Chutici # Chutizi
+	color = { 81 126 201 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 978 # Landsberg # Merseburg
+	allow = { always = no }
+}
+d_leubuzzi = { # Lestkowici # Licicaviki
+	color = { 191 188 175 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 430 # Sternberg # Lubusz
+	allow = { always = no }
+}
+d_glomacze = { # Glomaci # Glomacze # Aka Dolomici
+	color = { 215 143 156 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 331 # Voigtland
+	allow = { always = no }
+}
+d_lusatians = { # Lusitzi
+	color = { 76 45 37 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 1064 # Niederlausitz
+	allow = { always = no }
+}
+d_nizzi = { # Niccici
+	color = { 45 25 88 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 310 # Anhalt
+	allow = { always = no }
+}
+d_milceni = { # Milcani
+	color = { 56 37 19 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 312 # Meissen
+	allow = { always = no }
+}
+d_nudzici = { # Nudici
+	color = { 48 180 110 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 1075 # Wittenberg
+	allow = { always = no }
+}
+d_nisan = { # Nizani
+	color = { 65 205 30 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 1077 # Brehna
+	allow = { always = no }
+}
+d_coledizi = { # Koledici
+	color = { 67 88 10 }
+	color2 = { 255 255 255 }
+	culture = pommeranian
+	#tribe = yes
+	capital = 954 # Groitzsch # Zeitz
+	allow = { always = no }
+}
+#####
+# Polish tribes
+#####
+d_lendians = { # Ledzianie # aka Lechs
+	color = { 245 163 176 }
+	color2 = { 255 255 255 }
+	culture = polish
+	#tribe = yes
+	capital = 527 # Krakow # Krakowskie
+	allow = { always = no }
+}
+#####
+# Bohemian and Moravian tribes
+#####
+d_bohemians = { # Czechowé
+	color = { 191 117 13 }
+	color2 = { 255 255 255 }
+	capital = 437 # Praha
+	culture = bohemian
+	#tribe = yes
+	allow = { always = no }
+}
+######################################
+# East Slavic
+######################################
+d_drevlyans = { # Drevlyane
+	color = { 115 31 56 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 1280 # Ovruch # Iskorosten
+	allow = { always = no }
+}
+d_ulichs = { # Ulichi # Ulichane
+	color = { 39 77 104 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 541 # Podolya # Peresechen
+	allow = { always = no }
+}
+d_volhynians = { # Volyniane
+	color = { 191 165 46 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 535 # Vladimir Volynsky
+	allow = { always = no }
+}
+d_buzhans = { # Buzhane
+	color = { 20 75 90 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 546 # Terebovl # Kamyanetspodilsky
+	allow = { always = no }
+}
+d_tivertsi = { # Tivertsy # Tivertsi
+	color = { 54 92 124 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 1283 # Yanbu # Cern
+	allow = { always = no }
+}
+d_meshcheras = { # Meshcheras
+	color = { 151 71 41 }
+	capital = 580 # Riazan' # Ryazan
+	culture = mordvin
+	#tribe = yes
+	allow = { always = no }
+}
+d_kryvians = { # Krivichi
+	color = { 128 133 104 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 419 # Polotsk
+	allow = { always = no }
+}
+d_severians = { # Severiane
+	color = { 120 155 40 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 567 # Novgorod Seversky
+	allow = { always = no }
+}
+d_vyatichi = { # Vyatichi
+	color = { 169 183 125 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 570 # Tver
+	allow = { always = no }
+}
+d_dregovichi = { # Dregovichi
+	color = { 100 100 20 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 548 # Pinsk
+	allow = { always = no }
+}
+d_radimichi = { # Radimichi
+	color = { 110 136 68 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 551 # Mstislavl
+	allow = { always = no }
+}
+d_polyane = { # Polyane
+	color = { 82 81 75 }
+	color2 = { 255 255 255 }
+	culture = russian
+	#tribe = yes
+	capital = 547 # Kiev
+	allow = { always = no }
+}
+##############
+# Mongol
+# d_naimans = { # Naiman
+# color = { 75 195 50 }
+# culture = mongol
+# capital = 1580 # Jungaria
+# }
+######################################
+# Pecheneg tribes
+######################################
+d_yawdi_ertim = { # Yawdi Ertim # aka Shining horses
+	color = { 171 21 162 }
+	color2 = { 255 255 255 }
+	capital = 556 # Aq Samar # Khortitza
+	culture = pecheneg
+	allow = { always = no }
+}
+d_kuerchi_chur = { # Küerchi Chür # aka blue horses
+	color = { 44 53 106 }
+	color2 = { 255 255 255 }
+	capital = 558 # Özü # Lower dneiper
+	culture = pecheneg
+	allow = { always = no }
+}
+d_qabuqsin_yula = { # Qabuqsin Yula # aka bark colored horses
+	color = { 147 152 87 }
+	color2 = { 255 255 255 }
+	capital = 557 # Tokmak # Lukomorie
+	culture = pecheneg
+	allow = { always = no }
+}
+d_suru_kulbej = { # Suru Külbej # aka grey horses of the bey.
+	color = { 182 198 176 }
+	color2 = { 255 255 255 }
+	capital = 566 # Duna-Jük # Sugrov/Donents
+	culture = pecheneg
+	allow = { always = no }
+}
+d_qara_bay = { # Qara Bay # aka black horses.
+	color = { 38 41 37 }
+	color2 = { 255 255 255 }
+	capital = 511 # Basarabia
+	culture = pecheneg
+	allow = { always = no }
+}
+d_boru_tolmach = { # Boru Tolmach # aka grey horses of the tolmach.
+	color = { 105 111 102 }
+	color2 = { 255 255 255 }
+	capital = 597 # Azaq # Azov
+	culture = pecheneg
+	allow = { always = no }
+}
+d_yazi_qapan = { # Yazi Qapan # aka darkbrown horses.
+	color = { 145 99 10 }
+	color2 = { 255 255 255 }
+	capital = 1149 # Buzau
+	culture = pecheneg
+	allow = { always = no }
+}
+d_bula_chopan = { # Bula Chopan # aka piebald horses
+	color = { 133 102 112 }
+	color2 = { 255 255 255 }
+	capital = 605 # Ugru # manych
+	culture = pecheneg
+	allow = { always = no }
+}
+######################################
+# Uighur
+######################################
+d_uighurs = { # Uighurs
+	color = { 113 91 255 }
+	#tribe = yes
+	culture = uyghur
+	capital = 1570 # Qarashahr
+	title = Idiqut
+	foa = Idiqut_FOA
+	title_prefix = Yabghuluq_OF
+	allow = { always = no }
+}
+######################################
+# Kirghiz
+######################################
+d_qirghiz = { # Qirghiz
+	color = { 147 21 39 }
+	#tribe = yes
+	culture = kirghiz
+	capital = 1580 # Khotan # Jungaria
+	title = Elteber
+	foa = Elteber_FOA
+	title_prefix = Elteberluq_OF
+	allow = { always = no }
+}
+######################################
+# Oghuz
+######################################
+# Uzes tribes
+d_uzes = { # Uzes
+	color = { 154 92 24 }
+	color2 = { 255 255 255 }
+	culture = oghuz
+	#tribe = yes
+	capital = 607 # Sarpa
+	allow = { always = no }
+}
+d_tekule = { # Teküle
+	color = { 40 91 60 }
+	color2 = { 255 255 255 }
+	culture = oghuz
+	#tribe = yes
+	capital = 896 # Op
+	allow = { always = no }
+}
+d_oghuz = { # Oghuz
+	color = { 31 45 147 }
+	#tribe = yes
+	culture = oghuz
+	capital = 900 # Jand
+	title = Yabghu
+	foa = Yabghu_FOA
+	title_prefix = Yabghuluq_OF
+	allow = { always = no }
+}
+d_ghuzz = { # Ghuzz
+	color = { 210 45 45 }
+	culture = oghuz
+	capital = 904 # Balkh
+	allow = { always = no }
+}
+######################################
+# Karluk
+######################################
+d_qarluq = { # Qarluq
+	color = { 65 100 130 }
+	culture = karluk
+	capital = 1577 # Barskhan
+	allow = { always = no }
+}
+d_yaghma = { # Yaghma
+	color = { 58 110 170 }
+	#tribe = yes
+	culture = karluk
+	capital = 1567 # Kashgar
+	title = Yabghu
+	foa = Yabghu_FOA
+	title_prefix = Yabghuluq_OF
+	allow = { always = no }
+}
+d_chigil = { # Chigil
+	color = { 65 100 130 }
+	#tribe = yes
+	culture = karluk
+	capital = 1563 # Talas
+	title = Yabghu
+	foa = Yabghu_FOA
+	title_prefix = Yabghuluq_OF
+	allow = { always = no }
+}
+d_basmils = { # Bamils
+	color = { 147 21 39 }
+	#tribe = yes
+	culture = karluk
+	capital = 1574 # Emil
+	title = Yabghu
+	foa = Yabghu_FOA
+	title_prefix = Yabghuluq_OF
+	allow = { always = no }
+}
+d_tukhsi = { # Tukhsi
+	color = { 147 21 39 }
+	#tribe = yes
+	culture = karluk
+	capital = 1572 # Balasaghun
+	title = Yabghu
+	foa = Yabghu_FOA
+	title_prefix = Yabghuluq_OF
+	allow = { always = no }
+}
+######################################
+# Qipchaq
+######################################
+d_qipchaq = { # Qipchaq
+	color = { 137 41 59 }
+	#tribe = yes
+	culture = cuman
+	capital = 1579 # Balkhash
+	title = Opa
+	foa = Opa_FOA
+	title_prefix = Kuren_OF
+	allow = { always = no }
+}
+# Tribes
+d_ay_opa = { # Ay-opa
+	color = { 33 1 66 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 895 # Yaik
+	allow = { always = no }
+}
+d_dorut = { # Dörüt
+	color = { 130 50 6 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 618 # Saray-Jük
+	allow = { always = no }
+}
+d_terteroba = { # Terteroba
+	color = { 80 83 50 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 605 # Ugru
+	allow = { always = no }
+}
+d_toqsoba = { # Toqsoba
+	color = { 28 30 150 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 565 # Uda # Duna-Jük
+	allow = { always = no }
+}
+d_yimek = { # Yimek
+	color = { 128 30 110 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 564 # Vskol'
+	allow = { always = no }
+}
+d_enchogli = { # Ençogli
+	color = { 99 71 16 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 542 # Yedisan
+	allow = { always = no }
+}
+d_olberlig = { # Ölberli
+	color = { 43 60 70 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 619 # Saray
+	allow = { always = no }
+}
+d_targil = { # Targil
+	color = { 240 60 10 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 593 # Khoper
+	allow = { always = no }
+}
+d_qongurogli = { # Bekrüti
+	color = { 20 230 190 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 599 # Cuba
+	allow = { always = no }
+}
+d_oren = { # Ören
+	color = { 220 200 190 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 893 # Turgay
+	allow = { always = no }
+}
+d_qor = { # Qor
+	color = { 20 20 60 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 511 # Basarabia
+	allow = { always = no }
+}
+d_burchali = { # Burçali
+	color = { 14 230 78 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 556 # Aq Samar
+	allow = { always = no }
+}
+d_chortan = { # Çortan
+	color = { 146 29 18 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 559 # Qirim
+	allow = { always = no }
+}
+d_ulasgoli = { # Ulashogli
+	color = { 89 134 185 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 557 # Tokmak
+	allow = { always = no }
+}
+d_urusoba = { # Urus-oba
+	color = { 189 10 18 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 558 # Özü
+	allow = { always = no }
+}
+d_bayawut = { # Bayawut
+	color = { 59 98 77 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 622 # Sighnaq
+	allow = { always = no }
+}
+d_chaghraq = { # Çaghraq
+	color = { 41 90 69 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 897 # Irgiz
+	allow = { always = no }
+}
+d_baruq = { # Baruq
+	color = { 163 41 66 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 624 # Mangyshlak
+	allow = { always = no }
+}
+d_badach = { # Badaç # Badach
+	color = { 120 40 79 }
+	color2 = { 255 255 255 }
+	culture = cuman
+	#tribe = yes
+	capital = 604 # Kuma
+	allow = { always = no }
+}
+######################################
+# Khazars
+######################################
+d_khavars = { # Qavarlar
+	color = { 18 200 18 }
+	color2 = { 255 255 255 }
+	culture = khavar
+	#tribe = yes
+	capital = 520 # Bihar
+	allow = { always = no }
+}
+######################################
+######################################
+######################################
+# Persians
+######################################
+d_zunbil = { # Rutbils # Zunbils
+	color = { 255 150 81 }
+	culture = afghan
+	capital = 852 # Zamindavar
+	allow = { always = no }
+}
+d_shabankara = { # Shabankara
+	color = { 244 190 91 }
+	culture = kurdish
+	capital = 1534 # Darabjird #was 642 # Larestan
+	allow = { always = no }
+}
+######################################
+######################################
+######################################
+# Vlach
+######################################
+d_brodniks = { # Brodnici
+	color = { 181 70 28 }
+	color2 = { 255 255 255 }
+	culture = romanian
+	#tribe = yes
+	capital = 515 # Tirgoviste
+	allow = { always = no }
+}
+d_bolohoveni = { # Bolohoveni
+	color = { 40 170 88 }
+	color2 = { 255 255 255 }
+	culture = romanian
+	#tribe = yes
+	capital = 1147 # Bacau
+	allow = { always = no }
+}
+######################################
+######################################
+######################################
+# Finns
+######################################
+# Komi tribes
+#####
+d_zyriane = { # Zyriana
+	color = { 200 170 60 }
+	color2 = { 255 255 255 }
+	culture = komi
+	#tribe = yes
+	danish = "Syrjænger"
+	russian = "Zyriane"
+	polish = "Zyriane"
+	bohemian = "Zyriane"
+	pommeranian = "Zyriane"
+	slovieni = "Zyriane"
+	serbian = "Zyriane"
+	croatian = "Zyriane"
+	bulgarian = "Zyriane"
+	carantanian = "Zyriane"
+	bosnian = "Zyriane"
+	capital = 400 # Ežva # Vychegda
+	allow = { always = no }
+}
+#####
+# Mari tribes
+#####
+d_maris = { # Vice Mari
+	color = { 150 130 45 }
+	capital = 588 # Šošma # Mari
+	khazar = "Sarmäslar"
+	khavar = "Sarmäslar"
+	pecheneg = "Çirmislar"
+	oghuz = "Çirmislar"
+	turkmen = "Çirmislar"
+	kasogi = "Çirmislar"
+	avar = "Sarmäslar"
+	bashkir = "Çirmislar"
+	karluk = "Çirmeslär"
+	mongol = "Çirmeslär"
+	cuman = "Çirmeslär"
+	kirghiz = "Çirmeslär"
+	bolghar = "Sarmäslar"
+	uyghur = "Çirmeslär"
+	turkish = "Çirmislar"
+	culture = mordvin
+	#tribe = yes
+	allow = { always = no }
+}
+d_maris_vetluga = { # Vütla Mari
+	color = { 180 15 63 }
+	color2 = { 255 255 255 }
+	culture = mari
+	#tribe = yes
+	khazar = "Tuçi Sarmäslar"
+	khavar = "Tuçi Sarmäslar"
+	pecheneg = "Tepe Çirmislar"
+	oghuz = "Tepe Çirmislar"
+	turkmen = "Tepe Çirmislar"
+	kasogi = "Tepe Çirmislar"
+	avar = "Tuçi Sarmäslar"
+	bashkir = "Tepe Çirmislar"
+	karluk = "Tepe Çirmeslär"
+	mongol = "Tepe Çirmeslär"
+	cuman = "Tepe Çirmeslär"
+	kirghiz = "Tepe Çirmeslär"
+	bolghar = "Tuçi Sarmäslar"
+	uyghur = "Tepe Çirmeslär"
+	turkish = "Tepe Çirmislar"
+	russian = "Gornyye Cheremis"
+	polish = "Gornyye Cheremis"
+	bohemian = "Gornyye Cheremis"
+	pommeranian = "Gornyye Cheremis"
+	slovieni = "Gornyye Cheremis"
+	serbian = "Gornyye Cheremis"
+	croatian = "Gornyye Cheremis"
+	bulgarian = "Gornyye Cheremis"
+	carantanian = "Gornyye Cheremis"
+	bosnian = "Gornyye Cheremis"
+	capital = 589 # Vütla # Vetluga
+	allow = { always = no }
+}
+d_meryas = { # Meryas
+	color = { 131 41 41 }
+	capital = 574 # Rostov # Rostov / Merya
+	culture = mordvin
+	#tribe = yes
+	allow = { always = no }
+}
+######
+# Mordvin tribes
+######
+d_mordvins_erza = { # Erzyät
+	color = { 150 47 47 }
+	color2 = { 255 255 255 }
+	culture = mordvin
+	#tribe = yes
+	capital = 1273 # Kadom
+	khazar = "Irçëlar"
+	khavar = "Irçëlar"
+	pecheneg = "Irçilar"
+	oghuz = "Irçilar"
+	turkmen = "Irçilar"
+	kasogi = "Irçilar"
+	avar = "Irçëlar"
+	bashkir = "Ïrzälar"
+	karluk = "Ïrzälar"
+	mongol = "Ïrzälär"
+	cuman = "Ïrzälär"
+	kirghiz = "Ïrzälär"
+	bolghar = "Irçëlar"
+	uyghur = "Ïrzälär"
+	turkish = "Irçilar"
+	allow = { always = no }
+}
+d_mordvins = { # Mokshet
+	color = { 148 165 45 }
+	color2 = { 255 255 255 }
+	capital = 579 # Moksha
+	pahlavi = "Tuqshi"
+	persian = "Tuqshi"
+	adhari = "Tuqshi"
+	khorasani = "Tuqshi"
+	tajik = "Tuqshi"
+	daylamite = "Tuqshi"
+	khalaj = "Tuqshi"
+	sogdian = "Tuqshi"
+	khwarezmi = "Tuqshi"
+	kurdish = "Tuqshi"
+	afghan = "Tuqshi"
+	qufs = "Tuqshi"
+	baloch = "Tuqshi"
+	bedouin_arabic = "Tuqshi"
+	hijazi = "Tuqshi"
+	yemeni = "Tuqshi"
+	maghreb_arabic = "Tuqshi"
+	levantine_arabic = "Tuqshi"
+	egyptian_arabic = "Tuqshi"
+	andalusian_arabic = "Tuqshi"
+	sicilian_arabic = "Tuqshi"
+	sanhaja = "Tuqshi"
+	tagelmust = "Tuqshi"
+	tuareg = "Tuqshi"
+	masmuda = "Tuqshi"
+	zanata = "Tuqshi"
+	khazar = "Tuqšilar"
+	khavar = "Tuqšilar"
+	pecheneg = "Tuqšilar"
+	oghuz = "Tuqšilar"
+	turkmen = "Tuqšilar"
+	kasogi = "Tuqšilar"
+	avar = "Tuqšilar"
+	bashkir = "Tuqšilar"
+	karluk = "Tuqšilar"
+	mongol = "Tuqšilär"
+	cuman = "Tuqšilar"
+	kirghiz = "Tuqšilär"
+	bolghar = "Tuqšilar"
+	uyghur = "Tuqšilar"
+	turkish = "Tuqšilar"
+	old_hungarian = "Mordva"
+	hungarian = "Mordva"
+	szekely = "Mordva"
+	alan = "Mordia"
+	arberian = "Mordia"
+	armenian = "Mordia"
+	georgian = "Mordia"
+	greek = "Mordia"
+	crimean_gothic = "Mordens"
+	gothic = "Merdas"
+	swedish = "Merdas"
+	danish = "Merdas"
+	basque = "Merdas"
+	aragonese = "Merdas"
+	castillan = "Merdas"
+	catalan = "Merdas"
+	leonese = "Merdas"
+	thuringian = "Merdas"
+	swabian = "Merdas"
+	bavarian = "Merdas"
+	low_saxon = "Merdas"
+	franconian = "Merdas"
+	low_german = "Merdas"
+	low_frankish = "Merdas"
+	german = "Merdas"
+	frankish = "Merdas"
+	norman = "Merdas"
+	arpitan = "Merdas"
+	occitan = "Merdas"
+	dalmatian = "Merdas"
+	italian = "Merdas"
+	sardinian = "Merdas"
+	sicilian = "Merdas"
+	umbrian = "Merdas"
+	laziale = "Merdas"
+	neapolitan = "Merdas"
+	tuscan = "Merdas"
+	ligurian = "Merdas"
+	langobardisch = "Merdas"
+	venetian = "Merdas"
+	english = "Merdas"
+	romanian = "Merdas"
+	polish = "Mordva"
+	bohemian = "Mordva"
+	pommeranian = "Mordva"
+	slovieni = "Mordva"
+	serbian = "Mordva"
+	croatian = "Mordva"
+	bulgarian = "Mordva"
+	carantanian = "Mordva"
+	bosnian = "Mordva"
+	culture = mordvin
+	#tribe = yes
+	allow = { always = no }
+} # end d_mordvins
+d_burtas = { # Burtas
+	color = { 120 74 130 }
+	color2 = { 255 255 255 }
+	capital = 592 # Barysh
+	pahlavi = "Burdas"
+	persian = "Burdas"
+	adhari = "Burdas"
+	khorasani = "Burdas"
+	tajik = "Burdas"
+	daylamite = "Burdas"
+	khalaj = "Burdas"
+	sogdian = "Burdas"
+	khwarezmi = "Burdas"
+	kurdish = "Burdas"
+	afghan = "Burdas"
+	qufs = "Burdas"
+	baloch = "Burdas"
+	bedouin_arabic = "Burdas"
+	hijazi = "Burdas"
+	yemeni = "Burdas"
+	maghreb_arabic = "Burdas"
+	levantine_arabic = "Burdas"
+	egyptian_arabic = "Burdas"
+	andalusian_arabic = "Burdas"
+	sicilian_arabic = "Burdas"
+	sanhaja = "Burdas"
+	tagelmust = "Burdas"
+	tuareg = "Burdas"
+	masmuda = "Burdas"
+	zanata = "Burdas"
+	khazar = "Bortaslar"
+	khavar = "Bortaslar"
+	pecheneg = "Bortaslar"
+	oghuz = "Bortaslar"
+	turkmen = "Bortaslar"
+	kasogi = "Bortaslar"
+	avar = "Bortaslar"
+	bashkir = "Bortaslar"
+	karluk = "Bortaslar"
+	mongol = "Bortaslär"
+	cuman = "Bortaslär"
+	kirghiz = "Bortaslär"
+	bolghar = "Bortaslar"
+	uyghur = "Bortaslar"
+	turkish = "Bortaslar"
+	russian = "Burtasy"
+	polish = "Burtasy"
+	bohemian = "Burtasy"
+	pommeranian = "Burtasy"
+	slovieni = "Burtasy"
+	serbian = "Burtasy"
+	croatian = "Burtasy"
+	bulgarian = "Burtasy"
+	carantanian = "Burtasy"
+	bosnian = "Burtasy"
+	culture = mordvin
+	#tribe = yes
+	allow = { always = no }
+} # end d_burtas
+d_muromians = { # Muromians
+	color = { 160 120 75 }
+	capital = 581 # Murom
+	culture = mordvin
+	#tribe = yes
+	allow = { always = no }
+}
+######
+# Vepsian tribes
+######
+d_lyydians = { # Lüüdiläižed
+	color = { 105 138 187 }
+	color2 = { 255 255 255 }
+	culture = vepsian
+	#tribe = yes
+	capital = 403 # Latša # Kargopol
+	russian = "Ljudiny"
+	polish = "Ljudiny"
+	bohemian = "Ljudiny"
+	pommeranian = "Ljudiny"
+	slovieni = "Ljudiny"
+	serbian = "Ljudiny"
+	croatian = "Ljudiny"
+	bulgarian = "Ljudiny"
+	carantanian = "Ljudiny"
+	bosnian = "Ljudiny"
+	allow = { always = no }
+}
+d_chudes = { # Vepsläižed
+	color = { 113 39 124 }
+	color2 = { 255 255 255 }
+	culture = vepsian
+	#tribe = yes
+	capital = 406 # Vologda
+	russian = "Chud'"
+	polish = "Chud'"
+	bohemian = "Chud'"
+	pommeranian = "Chud'"
+	slovieni = "Chud'"
+	serbian = "Chud'"
+	croatian = "Chud'"
+	bulgarian = "Chud'"
+	carantanian = "Chud'"
+	bosnian = "Chud'"
+	lappish = "Etelätšuudilaš"
+	allow = { always = no }
+}
+# Bjarmians
+d_toimians = { # Toimiläižed
+	color = { 159 150 150 }
+	color2 = { 255 255 255 }
+	culture = vepsian
+	#tribe = yes
+	capital = 396 # Pinega
+	allow = { always = no }
+}
+d_bjarmians = { # Bjarmiläižed
+	color = { 37 21 83 }
+	color2 = { 255 255 255 }
+	culture = vepsian
+	#tribe = yes
+	capital = 395 # Výnva # North dvina
+	saxon = "Beormas"
+	norwegian = "Bjarmir"
+	danish = "Bjarmir"
+	swedish = "Bjarmir"
+	anglonorse = "Bjarmir"
+	norse = "Bjarmir"
+	norsegaelic = "Bjarmir"
+	icelandic = "Bjarmir"
+	gothic = "Bjarmir"
+	roman = "Biarmones"
+	russian = "Zavoloch'e Chud'"
+	polish = "Zavoloch'e Chud'"
+	bohemian = "Zavoloch'e Chud'"
+	pommeranian = "Zavoloch'e Chud'"
+	slovieni = "Zavoloch'e Chud'"
+	serbian = "Zavoloch'e Chud'"
+	croatian = "Zavoloch'e Chud'"
+	bulgarian = "Zavoloch'e Chud'"
+	carantanian = "Zavoloch'e Chud'"
+	bosnian = "Zavoloch'e Chud'"
+	lappish = "Norjantšuudilaš"
+	allow = { always = no }
+}
+######
+# Karelian tribes
+######
+d_livgians = { # Livgilaižed
+	color = { 99 152 70 }
+	color2 = { 255 255 255 }
+	culture = karelian
+	#tribe = yes
+	capital = 387 # Olonec
+	allow = { always = no }
+}
+d_karelians = { # Karjalaižed
+	color = { 193 192 108 }
+	capital = 388 # Karjala
+	culture = karelian
+	#tribe = yes
+	allow = { always = no }
+}
+d_horse_karelians = { # Tamma-Karjalaižed
+	color = { 63 114 74 }
+	capital = 1296 # Viipuri
+	culture = karelian
+	#tribe = yes
+	allow = { always = no }
+}
+#####
+# Estonian tribes
+#####
+d_estonia = { # Eestlased
+	color = { 94 60 22 }
+	capital = 378 # Harria # Reval
+	#tribe = yes
+	culture = ugricbaltic
+	allow = { always = no }
+}
+d_ugandians = { # Ugandilased
+	color = { 115 143 196 }
+	color2 = { 255 255 255 }
+	culture = ugricbaltic
+	#tribe = yes
+	capital = 379 # Ugaunia # Dorpat
+	allow = { always = no }
+}
+d_oseelians = { # Saarlased
+	color = { 124 124 124 }
+	color2 = { 255 255 255 }
+	culture = ugricbaltic
+	#tribe = yes
+	capital = 376 # Osilia # Osel
+	allow = { always = no }
+}
+d_rotalians = { # Läänelased
+	color = { 121 39 17 }
+	color2 = { 255 255 255 }
+	culture = ugricbaltic
+	#tribe = yes
+	capital = 987 # Rotalia # Läänemaa
+	allow = { always = no }
+}
+d_vironians = { # Virulased
+	color = { 30 25 90 }
+	color2 = { 255 255 255 }
+	culture = ugricbaltic
+	#tribe = yes
+	capital = 380 # Vironia # Narva
+	allow = { always = no }
+}
+#####
+# Livonian tribes
+#####
+d_sakalians = { # Sakali
+	color = { 21 73 21 }
+	color2 = { 255 255 255 }
+	culture = livonian
+	#tribe = yes
+	capital = 377 # Saccalia # Sakala
+	allow = { always = no }
+}
+d_vanemas = { # Vanemi
+	color = { 95 160 73 }
+	color2 = { 255 255 255 }
+	culture = livonian
+	#tribe = yes
+	capital = 373 # Vredecuren # Kurs
+	allow = { always = no }
+}
+#####
+# Sami
+#####
+d_sami = { # Sami
+	color = { 101 99 35 }
+	capital = 850 # Kantalahti # Kandalax
+	russian = "Lop'"
+	polish = "Lop'"
+	bohemian = "Lop'"
+	pommeranian = "Lop'"
+	slovieni = "Lop'"
+	serbian = "Lop'"
+	croatian = "Lop'"
+	bulgarian = "Lop'"
+	carantanian = "Lop'"
+	bosnian = "Lop'"
+	culture = lappish
+	#tribe = yes
+	allow = { always = no }
+}
+#####
+# Finns
+#####
+d_satakunta = { # Satakuntans
+	color = { 117 47 47 }
+	#tribe = yes
+	capital = 384 # Satakunda # Satakunta
+	culture = finnish
+	allow = { always = no }
+}
+d_tavasts = { # Hämäläiset
+	color = { 131 21 21 }
+	#tribe = yes
+	capital = 383 # Tavastland # Tavast
+	russian = "Jem"
+	polish = "Jem"
+	bohemian = "Jem"
+	pommeranian = "Jem"
+	slovieni = "Jem"
+	serbian = "Jem"
+	croatian = "Jem"
+	bulgarian = "Jem"
+	carantanian = "Jem"
+	bosnian = "Jem"
+	culture = finnish
+	allow = { always = no }
+}
+d_suomi_finns = { # Suomalaiset
+	color = { 100 11 114 }
+	#tribe = yes
+	capital = 382 # Finland
+	russian = "Sum"
+	polish = "Sum"
+	bohemian = "Sum"
+	pommeranian = "Sum"
+	slovieni = "Sum"
+	serbian = "Sum"
+	croatian = "Sum"
+	bulgarian = "Sum"
+	carantanian = "Sum"
+	bosnian = "Sum"
+	culture = finnish
+	allow = { always = no }
+}
+d_savonians = { # Savolaiset
+	color = { 186 125 181 }
+	#tribe = yes
+	capital = 390 # Savolax
+	russian = "Savaki"
+	polish = "Savaki"
+	bohemian = "Savaki"
+	pommeranian = "Savaki"
+	slovieni = "Savaki"
+	serbian = "Savaki"
+	croatian = "Savaki"
+	bulgarian = "Savaki"
+	carantanian = "Savaki"
+	bosnian = "Savaki"
+	culture = finnish
+	allow = { always = no }
+}
+#####
+# Ingrians
+#####
+d_votes = { # Vadjalased
+	color = { 1 193 119 }
+	#tribe = yes
+	capital = 1268 # Koporje
+	russian = "Vod'"
+	polish = "Vod'"
+	bohemian = "Vod'"
+	pommeranian = "Vod'"
+	slovieni = "Vod'"
+	serbian = "Vod'"
+	croatian = "Vod'"
+	bulgarian = "Vod'"
+	carantanian = "Vod'"
+	bosnian = "Vod'"
+	lettigallish = "Krievini"
+	lithuanian = "Krievini"
+	prussian = "Krievini"
+	thuringian = "Woten"
+	swabian = "Woten"
+	bavarian = "Woten"
+	low_saxon = "Woten"
+	franconian = "Woten"
+	low_german = "Woten"
+	low_frankish = "Woten"
+	german = "Woten"
+	dutch = "Woten"
+	culture = ugricbaltic
+	allow = { always = no }
+}
+d_ingrians = { # Inkerilaižed
+	color = { 193 40 40 }
+	#tribe = yes
+	capital = 411 # Ingria
+	russian = "Ižory"
+	polish = "Ižory"
+	bohemian = "Ižory"
+	pommeranian = "Ižory"
+	slovieni = "Ižory"
+	serbian = "Ižory"
+	croatian = "Ižory"
+	bulgarian = "Ižory"
+	carantanian = "Ižory"
+	bosnian = "Ižory"
+	lettigallish = "Ižorai"
+	lithuanian = "Ižorai"
+	prussian = "Ižorai"
+	culture = karelian
+	allow = { always = no }
+}
+#####
+# Sami
+#####
+d_kylfings = { # Kylfingilaš
+	color = { 11 114 28 }
+	capital = 280 # Norrland # Västerbotten
+	russian = "Kolbiagi"
+	polish = "Kolbiagi"
+	bohemian = "Kolbiagi"
+	pommeranian = "Kolbiagi"
+	slovieni = "Kolbiagi"
+	serbian = "Kolbiagi"
+	croatian = "Kolbiagi"
+	bulgarian = "Kolbiagi"
+	carantanian = "Kolbiagi"
+	bosnian = "Kolbiagi"
+	alan = "Koulpingoi"
+	arberian = "Koulpingoi"
+	armenian = "Koulpingoi"
+	georgian = "Koulpingoi"
+	greek = "Koulpingoi"
+	crimean_gothic = "Koulpingoi"
+	norwegian = "Kylfingar"
+	danish = "Kylfingar"
+	swedish = "Kylfingar"
+	anglonorse = "Kylfingar"
+	norse = "Kylfingar"
+	norsegaelic = "Kylfingar"
+	icelandic = "Kylfingar"
+	gothic = "Kylfingar"
+	culture = lappish
+	#tribe = yes
+	allow = { always = no }
+}
+d_kvens = { # Kveanatlaš
+	color = { 117 47 47 }
+	capital = 385 # Österbotten
+	culture = lappish
+	#tribe = yes
+	allow = { always = no }
+}
+d_kvens_birkarls = { # Bircharlaboa
+	color = { 7 190 23 }
+	capital = 386 # Kvänland
+	culture = lappish
+	#tribe = yes
+	allow = { always = no }
+}
+####
+# Samoyed
+####
+d_samoyeds = { # Sikhirti
+	color = { 217 118 50 }
+	color2 = { 255 255 255 }
+	culture = samoyed
+	#tribe = yes
+	capital = 397 # Ižva # Izhma
+	allow = { always = no }
+}
+####
+# Ghor
+####
+d_ghor = { # Ghór
+	color = { 195 165 65 }
+	color2 = { 255 255 255 }
+	culture = khorasani
+	#tribe = yes
+	capital = 1540 # Ghór
+	allow = { always = no }
+}
+####
+# Banu Ifran
+####
+d_sala = { # Sala
+	color = { 68 255 20 }
+	color2 = { 255 255 255 }
+	culture = zanata
+	#tribe = yes
+	capital = 1361 # Sala
+	allow = { always = no }
+}
+####
+# Barghawata
+####
+d_barghawata = { # Tamasna # Sala
+	color = { 35 160 62 }
+	color2 = { 255 255 255 }
+	culture = masmuda
+	#tribe = yes
+	capital = 844 # Asfí # Asfî
+	allow = { always = no }
+}
+####
+# Nafusa
+####
+d_nafusa = { # Nafusa/Infusen
+	color = { 105 85 85 }
+	color2 = { 255 255 255 }
+	culture = zanata
+	#tribe = yes
+	capital = 1398 # Nafusa
+	allow = { title_duke_basic_allow = yes }
+}
+####
+# Uri
+####
+d_darfur = { # Uri
+	color = { 105 121 97 }
+	color2 = { 255 255 255 }
+	culture = daju
+	#tribe = yes
+	capital = 1229 # Uri
+	allow = { title_duke_basic_allow = yes }
+}
+######################################
+# nomads for HL compatch
+######################################
+####
+# Persian
+####
+d_baloch = { # Baloch
+	color = { 217 118 50 }
+	color2 = { 255 255 255 }
+	culture = baloch
+	#tribe = yes
+	capital = 853 # Jiruft
+	allow = { always = no }
+}
+d_kufichi = { # Kufichi # Qufs
+	color = { 190 165 65 }
+	color2 = { 255 255 255 }
+	culture = qufs
+	#tribe = yes
+	capital = 899 # Pandjgúr
+	allow = { always = no }
+}
+#k_hilal = { # Hilal
+#	color = { 173 150 43 }
+#	color2 = { 0 128 128 }
+#	capital = 1352 # Qashtiliya # Qamuda
+#	#tribe = yes
+#	culture = bedouin_arabic
+#	allow = { FROM = { is_de_jure_title = yes } }
+#}
+# -*- ck2.landed_titles -*-
+
+###########
+# SWMH ones
+###########
+# Utlande:
+b_brethaestath = {
+	culture = danish
+	religion = catholic
+}
+b_giaethning = {
+	culture = danish
+	religion = catholic
+}
+b_braaklem = {
+	culture = frisian
+	religion = catholic
+}
+b_odenbel = {
+	culture = frisian
+	religion = catholic
+}
+b_taning = {
+	culture = frisian
+	religion = catholic
+}
+# Ragusa:
+b_cerva = {
+	culture = dalmatian
+	religion = catholic
+}
+b_de_gundula = {
+	culture = dalmatian
+	religion = catholic
+}
+b_de_guzzei = {
+	culture = dalmatian
+	religion = catholic
+}
+b_caboga = {
+	culture = dalmatian
+	religion = catholic
+}
+b_zamanjic = {
+	culture = croatian
+	religion = catholic
+}
+# ANCONA:
+b_capodimonte = {
+	culture = umbrian
+	religion = catholic
+}
+b_porto_ancona = {
+	culture = umbrian
+	religion = catholic
+}
+b_sanpietro = {
+	culture = umbrian
+	religion = catholic
+}
+b_raguseo = {
+	culture = dalmatian
+	religion = catholic
+}
+b_longibardopoulos = {
+	culture = greek
+	religion = orthodox
+}
+b_torrette = {
+	culture = umbrian
+	religion = catholic
+}
+#############
+# Cinque Ports
+####
+b_de_arsic = {
+	culture = norman
+	religion = catholic
+}
+b_de_badlesmere = {
+	culture = english
+	religion = catholic
+}
+b_de_burghersh = {
+	culture = english
+	religion = catholic
+}
+b_de_cobham = {
+	culture = english
+	religion = catholic
+}
+b_de_crevecoeur = {
+	culture = norman
+	religion = catholic
+}
+b_de_criol = {
+	culture = norman
+	religion = catholic
+}
+b_de_fiennes = {
+	culture = norman
+	religion = catholic
+}
+b_de_magminot = {
+	culture = norman
+	religion = catholic
+}
+b_de_northwode = {
+	culture = english
+	religion = catholic
+}
+b_de_peche = {
+	culture = english
+	religion = catholic
+}
+b_de_pencester = {
+	culture = english
+	religion = catholic
+}
+b_de_sandwich = {
+	culture = english
+	religion = catholic
+}
+b_de_wrotham = {
+	culture = english
+	religion = catholic
+}
+############
+# Vanilla ones
+######################################
+# Historical Merchant Republic Palaces
+######################################
+# VENICE:
+b_dandolo = {
+	culture = venetian
+	religion = catholic
+}
+b_contarini = {
+	culture = venetian
+	religion = catholic
+}
+b_faliero = {
+	culture = venetian
+	religion = catholic
+}
+b_morosini = {
+	culture = venetian
+	religion = catholic
+}
+b_ziani = {
+	culture = venetian
+	religion = catholic
+}
+b_silvio = {
+	culture = venetian
+	religion = catholic
+}
+b_candiano = {
+	culture = venetian
+	religion = catholic
+}
+b_orsoleo = {
+	culture = venetian
+	religion = catholic
+}
+b_participazio = {
+	culture = venetian
+	religion = catholic
+}
+b_tribuno = {
+	culture = venetian
+	religion = catholic
+}
+b_tradonico = {
+	culture = venetian
+	religion = catholic
+}
+b_antenoreo = {
+	culture = italian
+	religion = catholic
+}
+b_galbaio = {
+	culture = italian
+	religion = catholic
+}
+b_monegario = {
+	culture = italian
+	religion = catholic
+}
+b_gaulo = {
+	culture = italian
+	religion = catholic
+}
+# GENOA:
+b_doria = {
+	culture = ligurian
+	religion = catholic
+}
+b_spinola = {
+	culture = ligurian
+	religion = catholic
+}
+b_grimaldi = {
+	culture = ligurian
+	religion = catholic
+}
+b_fieschi = {
+	culture = ligurian
+	religion = catholic
+}
+b_embriaco = {
+	culture = ligurian
+	religion = catholic
+}
+b_da_mare = {
+	culture = ligurian
+	religion = catholic
+}
+# PISA:
+b_dappiano = {
+	culture = tuscan
+	religion = catholic
+}
+b_della_gherardesca = {
+	culture = tuscan
+	religion = catholic
+}
+b_visconti = {
+	culture = tuscan
+	religion = catholic
+}
+b_alliata = {
+	culture = tuscan
+	religion = catholic
+}
+b_caetani = {
+	culture = tuscan
+	religion = catholic
+}
+# LÜBECK:
+b_bardewik = {
+	culture = low_german
+	religion = catholic
+}
+b_vorrade = {
+	culture = low_german
+	religion = catholic
+}
+b_warendorp = {
+	culture = low_german
+	religion = catholic
+}
+b_pat_luneburg = {
+	culture = low_german
+	religion = catholic
+}
+b_wittenborg = {
+	culture = low_german
+	religion = catholic
+}
+# GOTLAND:
+b_stenkyrka = {
+	culture = gothic
+	religion = catholic
+}
+b_guldsmed = {
+	culture = gothic
+	religion = catholic
+}
+b_hejnum = {
+	culture = gothic
+	religion = catholic
+}
+b_gildehusen = {
+	culture = gothic
+	religion = catholic
+}
+b_strabain = {
+	culture = gothic
+	religion = catholic
+}
+# AMALFI:
+b_konstantios = {
+	culture = greek
+	religion = catholic
+}
+b_mauro = {
+	culture = langobardisch
+	religion = catholic
+}
+b_musco = {
+	culture = langobardisch
+	religion = catholic
+}
+b_polkarios = {
+	culture = greek
+	religion = catholic
+}
+b_urso = {
+	culture = langobardisch
+	religion = catholic
+}
+#b_amalfinos = {
+#	culture = greek
+#	religion = catholic
+#}
+#b_manginos = {
+#	culture = greek
+#	religion = catholic
+#}
+#b_kanakares = {
+#	culture = greek
+#	religion = catholic
+#}
+#b_sorrenti = {
+#	culture = italian
+#	religion = catholic
+#}
+#b_ravelli = {
+#	culture = italian
+#	religion = catholic
+#}
+# Pechina
+#b_al_gassani = {
+#	culture = andalusian_arabic
+#	religion = sunni
+#}
+#b_ruayn = {
+#	culture = andalusian_arabic
+#	religion = sunni
+#}
+#b_banu_sarray = {
+#	culture = zanata
+#	religion = sunni
+#}
+#b_aswadid = {
+#	culture = andalusian_arabic
+#	religion = sunni
+#}
+#b_yeshayahu = {
+#	culture = sephardi
+#	religion = jewish
+#}
+# -*- ck2.landed_titles -*-
+
+# List of Titular Stem Duchies in the HRE by Darrigan
+# Landed_titles.txt now has d_burgau, d_oberbayern, d_styria, d_saxewittenberg and d_rheinfranken
+# Swabia
+d_swabia = { # Schwaben
+	color = { 57 142 157 }
+	color2 = { 220 220 20 }
+	capital = 249 # Montfort # Schwaben
+	dignity = 100
+	allow = { title_duke_basic_allow = yes }
+}
+# Lower Lorraine
+d_lower_lorraine = { # Niederlothringen
+	color = { 37 114 179 }
+	color2 = { 220 220 20 }
+	capital = 117 # Leuven # Brabant
+	dignity = 5
+	allow = { title_duke_basic_allow = yes }
+}
+# Bavaria
+d_bavaria = { # Baiern
+	color = { 56 67 158 }
+	color2 = { 220 220 20 }
+	capital = 360 # Scheyern # Oberbayern
+	dignity = 100
+	allow = { title_duke_basic_allow = yes }
+}
+# Saxony
+d_saxony = { # Sachsen
+	color = { 78 98 40 }
+	color2 = { 220 220 20 }
+	dignity = 100
+	capital = 258 # Lüneburg
+	allow = { title_duke_basic_allow = yes }
+}
+# Franconia
+d_franconia = { # Franken
+	color = { 130 100 100 }
+	color2 = { 220 220 20 }
+	capital = 123 # Mainz
+	dignity = 100
+	allow = { title_duke_basic_allow = yes }
+}
+# -*- ck2.landed_titles -*-
+
+d_sunni = { # The Sunni Caliphate
+	color = { 40 160 40 }
+	color2 = { 220 220 0 }
+	capital = 693 # Baghdad
+	creation_requires_capital = no
+	dignity = 100 # Counted as having this many more counties than it does
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	short_name = yes
+	religion = sunni
+	# Controls a religion
+	controls_religion = sunni
+	caliphate = yes
+	coat_of_arms = {
+		data = { 0 0 0 3 0 2 2 }
+		religion = sunni
+	}
+	allow = {
+		OR = {
+			trait = mirza
+			trait = sayyid
+			piety = 1000
+		}
+		trigger_if = {
+			limit = {
+				NOT = {
+					has_alternate_start_parameter = {
+						key = religion_names
+						value = random
+					}
+				}
+			}
+			custom_tooltip = {
+				text = sunni_creation_independent
+				hidden_tooltip = {
+					in_revolt = no
+					OR = {
+						independent = yes
+						NOT = {
+							any_liege = {
+								OR = {
+									in_revolt = yes
+									NOT = { religion = sunni }
+								}
+							}
+						}
+					}
+				}
+			}
+			OR = {
+				AND = {
+					trait = sayyid
+					piety = 1000
+				}
+				trigger_if = {
+					limit = { NOT = { has_global_flag = destroyed_caliphates } }
+					custom_tooltip = {
+						text = controls_mecca_medina
+						hidden_tooltip = {
+							c_mecca = { owner_under_ROOT = yes }
+							c_medina = { owner_under_ROOT = yes }
+						}
+					}
+				}
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+					hidden_tooltip = {
+						c_jerusalem = { owner_under_ROOT = yes }
+						c_damascus = { owner_under_ROOT = yes }
+						c_baghdad = { owner_under_ROOT = yes }
+					}
+				}
+			}
+		}
+		trigger_else = {
+			custom_tooltip = {
+				text = THREE_HOLY_SITES_TT
+				hidden_tooltip = {
+					any_realm_title = {
+						count = 3
+						is_holy_site = ROOT
+					}
+				}
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = destroyed_caliphates }
+			custom_tooltip = {
+				text = controls_mecca_medina
+				hidden_tooltip = {
+					c_mecca = { owner_under_ROOT = yes }
+					c_medina = { owner_under_ROOT = yes }
+				}
+			}
+		}
+	}
+} # end d_sunni
+# -*- ck2.landed_titles -*-
+
 # HOLY ORDERS
 d_knights_templar = { # Knights Templar
 	color = { 230 230 230 }
@@ -74868,3 +78292,2767 @@ e_nicaea = {
 		}
 	}
 }
+# -*- ck2.landed_titles -*-
+
+# List of extra Titular Titles
+# ToG de jure stuff
+d_oxford = { # Oxford
+	color = { 99 68 5 }
+	capital = 22 # Oxford
+	allow = { title_duke_basic_allow = yes }
+}
+d_chester = { # Chester
+	color = { 121 29 29 }
+	capital = 59 # Chester
+	allow = { title_duke_basic_allow = yes }
+}
+d_gloucester = { # Hwicce
+	color = { 57 21 209 }
+	capital = 21 # Gloucester
+	allow = { title_duke_basic_allow = yes }
+}
+b_zussow = {}
+d_yaroslavl = { # Yaroslavl
+	color = { 178 192 134 }
+	capital = 572 # Yaroslavl
+	allow = { title_duke_basic_allow = yes }
+}
+d_vitebsk = { # Vitebsk
+	color = { 196 33 55 }
+	capital = 417 # Vitebsk
+	allow = { title_duke_basic_allow = yes }
+}
+d_pronsk = { # Pronsk
+	color = { 23 132 81 }
+	capital = 577 # Pronsk
+	allow = { title_duke_basic_allow = yes }
+}
+d_aosta = { # Aosta
+	color = { 120 170 220 }
+	color2 = { 255 255 255 }
+	capital = 246 # Aosta
+	culture = arpitan
+	allow = { title_duke_basic_allow = yes }
+}
+# TITULAR SWMH
+e_ulm = { # Ulm
+	color = { 110 110 110 }
+	capital = 1034 # Helfenstein
+	title = ULM
+	foa = ULM_FOA
+	short_name = yes
+	allow = {
+		has_landed_title = c_helfenstein
+		c_ferrara = { owner_under_ROOT = yes }
+		prestige = 2000
+		title_emperor_basic_allow = yes
+	}
+}
+e_outremer = {
+	color = { 180 180 180 }
+	color2 = { 255 255 255 }
+	capital = 774 # Jerusalem
+	allow = {
+		trigger_if = {
+			limit = {
+				NAND = {
+					is_heretic = no
+					OR = {
+						religion = catholic
+						religion = cathar
+						religion = fraticelli
+						religion = waldensian
+						religion = lollard
+						religion = adoptionist
+						religion = arian
+					}
+				}
+			}
+			is_heretic = no
+			OR = {
+				religion = catholic
+				religion = cathar
+				religion = fraticelli
+				religion = waldensian
+				religion = lollard
+				religion = adoptionist
+				religion = arian
+			}
+		}
+		trigger_if = {
+			limit = { FROM = { is_de_jure_title = no } }
+			FROM = { is_de_jure_title = yes }
+		}
+		title_emperor_basic_allow = yes
+	}
+} # end e_outremer
+e_lechczechrus = {
+	color = { 0 90 30 }
+	color2 = { 255 255 255 }
+	short_name = yes
+	capital = 547 # Kiev
+	allow = {
+		trigger_if = {
+			limit = { FROM = { is_de_jure_title = no } }
+			FROM = { is_de_jure_title = yes }
+		}
+		title_emperor_basic_allow = yes
+	}
+} # end e_lechczechrus
+e_bulgaria = {
+	color = { 108 78 110 }
+	color2 = { 255 255 255 }
+	culture = bulgarian
+	# NOTE: TODO: capital unchecked for SWMH map
+	capital = 499 # Tyrnovo
+	allow = {
+		conditional_tooltip = {
+			trigger = { FROM = { is_de_jure_title = no } }
+			FROM = { is_de_jure_title = yes }
+		}
+		title_emperor_basic_allow = yes
+	}
+} # end e_bulgaria
+e_cordoba = {
+	color = { 255 218 185 }
+	color2 = { 255 255 255 }
+	# NOTE: TODO: capital unchecked for SWMH map
+	capital = 181 # Cordoba
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	#short_name = yes
+	religion = sunni
+	assimilate = no
+	caliphate = yes
+	allow = { always = no }
+}
+e_khazaria = { # Qasarstan
+	color = { 200 157 81 }
+	capital = 620 # Itil
+	mongol = "Xäzärstan"
+	kirghiz = "Xäzärstan"
+	bedouin_arabic = "Khazarstan"
+	hijazi = "Khazarstan"
+	yemeni = "Khazarstan"
+	maghreb_arabic = "Khazarstan"
+	levantine_arabic = "Khazarstan"
+	egyptian_arabic = "Khazarstan"
+	andalusian_arabic = "Khazarstan"
+	sicilian_arabic = "Khazarstan"
+	sanhaja = "Khazarstan"
+	tagelmust = "Khazarstan"
+	tuareg = "Khazarstan"
+	masmuda = "Khazarstan"
+	zanata = "Khazarstan"
+	pahlavi = "Xazarstán"
+	persian = "Xazarstán"
+	adhari = "Xazarstán"
+	khorasani = "Xazarstán"
+	tajik = "Xazarstán"
+	daylamite = "Xazarstán"
+	khalaj = "Xazarstán"
+	sogdian = "Xazarstán"
+	khwarezmi = "Xazarstán"
+	kurdish = "Xazarstán"
+	afghan = "Xazarstán"
+	qufs = "Xazarstán"
+	baloch = "Xazarstán"
+	alan = "Chazaria"
+	arberian = "Chazaria"
+	armenian = "Chazaria"
+	georgian = "Chazaria"
+	greek = "Chazaria"
+	crimean_gothic = "Chazaria"
+	dalmatian = "Cassaria"
+	italian = "Cassaria"
+	sardinian = "Cassaria"
+	sicilian = "Cassaria"
+	umbrian = "Cassaria"
+	laziale = "Cassaria"
+	neapolitan = "Cassaria"
+	tuscan = "Cassaria"
+	ligurian = "Cassaria"
+	langobardisch = "Cassaria"
+	venetian = "Cassaria"
+	turkish = "Hazarstan"
+	turkmen = "Hazarstan"
+	oghuz = "Hazarstan"
+	polish = "Kozariaia"
+	bohemian = "Kozaria"
+	pommeranian = "Kozaria"
+	slovieni = "Kozaria"
+	russian = "Kozarye"
+	serbian = "Kozaria"
+	croatian = "Kozaria"
+	bulgarian = "Kozaria"
+	carantanian = "Kozaria"
+	bosnian = "Kozaria"
+	allow = {
+		hidden_tooltip = {
+			OR = {
+				ai = no
+				religion_group = jewish_group
+				religion = tengri_pagan
+				religion = tengri_pagan_reformed
+			}
+		}
+		has_landed_title = k_khazaria
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
+} # end e_khazaria
+e_khitan = { # Huldji Qidai Gur # Kara Khitai
+	color = { 130 10 50 }
+	capital = 1572 # Balasaghun
+	short_name = yes
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
+}
+k_qipchaq = { # Qipchaqlar # Wild Cumans
+	color = { 45 92 150 }
+	color2 = { 255 255 255 }
+	capital = 619 # Saray
+	dynasty_title_names = no
+	culture = cuman
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_king_basic_allow = yes
+	}
+}
+k_cuman = { # Kumanlar # Non wild Cumans
+	color = { 166 76 99 }
+	color2 = { 255 255 255 }
+	capital = 557 # Tokmak
+	dynasty_title_names = no
+	culture = cuman
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_king_basic_allow = yes
+	}
+}
+k_qangli = { # Qanglilar # Qangli
+	color = { 25 130 65 }
+	color2 = { 255 255 255 }
+	capital = 893 # Turgay
+	dynasty_title_names = no
+	culture = cuman
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_king_basic_allow = yes
+	}
+}
+k_pechenegs = { # Beçeneklar
+	color = { 79 116 79 }
+	color2 = { 255 255 255 }
+	capital = 618 # Saray-Jük # Little Sarai
+	dynasty_title_names = no
+	culture = pecheneg
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_king_basic_allow = yes
+	}
+}
+k_qangar = { # Qangar
+	color = { 45 99 180 }
+	color2 = { 255 255 255 }
+	dynasty_title_names = no
+	capital = 557 # Tokmak
+	culture = pecheneg
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_king_basic_allow = yes
+	}
+}
+k_uzes = { # Uzlar
+	color = { 220 158 121 }
+	color2 = { 255 255 255 }
+	dynasty_title_names = no
+	capital = 895 # Yaik
+	culture = oghuz
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_king_basic_allow = yes
+	}
+}
+#d_black_caps = { # Karakalpaklar
+#	color = { 189 121 13 }
+#	color2 = { 255 255 255 }
+#	dynasty_title_names = no
+#	capital = 544 # Ros’
+#	russian = "Chyornye Klobuki"
+#	persian = "Qaum-i Kulah-i Siyahan"
+#	culture = oghuz
+#	allow = { always = no }
+#}
+e_kaleva = { # Kalevala
+	color = { 144 157 181 }
+	capital = 381 # Nyland
+	allow = {
+		OR = {
+			culture_group = finno_ugric
+			FROM = { is_de_jure_title = yes }
+		}
+		has_landed_title = k_finland
+		has_landed_title = k_terra
+		title_emperor_basic_allow = yes
+	}
+}
+k_geats = { # Gautaríki
+	color = { 208 191 99 }
+	capital = 293 # Östergötland # Ostrogothia
+	allow = {
+		independent = yes
+		d_vastergotland = { owner_under_ROOT = yes }
+		d_ostergotland = { owner_under_ROOT = yes }
+		OR = {
+			lower_real_tier_than = KING
+			AND = {
+				OR = {
+					has_landed_title = k_denmark
+					has_landed_title = k_sweden
+					has_landed_title = k_norway
+				}
+				prestige = 1500
+			}
+		}
+		title_king_basic_allow = yes
+	}
+}
+e_germany = { # Germania
+	color = { 190 200 190 }
+	color2 = { 220 220 20 }
+	capital = 121 # Nassau
+	culture = german
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
+}
+k_avaria = { # Avaria
+	color = { 250 120 90 } # Only for the CoA
+	culture = avar
+	capital = 444 # Visegrád # Esztergom
+	allow = { always = no }
+}
+k_lombardy = { # Lombardy
+	color = { 234 217 110 } # Only for the CoA
+	culture = lombard
+	capital = 234 # Pavia
+	allow = { always = no }
+}
+d_sangermano = { # Terra Sancti Benedicti
+	capital = 1318 # Bosco # Aquino # Sangermano
+	color = { 77 127 196 }
+	color2 = { 255 255 255 }
+	short_name = yes
+	allow = {
+		religion_group = christian
+		is_theocracy = yes
+		piety = 500
+		title_duke_basic_allow = yes
+	}
+}
+k_salerno = { # Principato di Salerno
+	color = { 0 132 250 }
+	culture = langobardisch
+	capital = 336 # Principato # Salerno
+	short_name = yes
+	allow = {
+		hidden_tooltip = {
+			OR = {
+				ai = no
+				culture = langobardisch
+			}
+		}
+		OR = {
+			religion_group = christian
+			FROM = { is_de_jure_title = yes }
+		}
+		has_landed_title = d_salerno
+		title_king_basic_allow = yes
+	}
+}
+d_krain = { # Krain # Marcher County of Krain/Carniola
+	color = { 4 33 122 }
+	culture = german
+	capital = 457 # Krain # Carniola
+	title = MARGRAVE
+	title_female = MARGRAVINE
+	foa = MARGRAVE_FOA
+	title_prefix = MARGRAVE_OF
+	allow = {
+		culture_group = central_germanic
+		religion_group = christian
+		has_landed_title = c_celje
+		has_landed_title = c_krain
+		title_duke_basic_allow = yes
+	}
+}
+d_austrialombardic = { # Austria
+	color = { 4 33 122 }
+	culture = langobardisch
+	capital = 319 # Verona
+	allow = {
+		culture = langobardisch
+		religion_group = christian
+		has_landed_title = d_verona
+		has_landed_title = d_aquileia
+		title_duke_basic_allow = yes
+	}
+}
+d_neustria = { # Neustria
+	color = { 4 33 11 }
+	culture = langobardisch
+	capital = 234 # Pavia
+	dignity = 15 # Counted as having 15 more counties than it does
+	allow = {
+		culture = langobardisch
+		religion_group = christian
+		has_landed_title = d_parma
+		has_landed_title = d_modena
+		has_landed_title = d_ivrea
+		has_landed_title = d_monferrato
+		title_duke_basic_allow = yes
+	}
+}
+d_tuscia = { # Tuscia
+	color = { 250 241 220 }
+	culture = langobardisch
+	capital = 323 # Lucca
+	allow = {
+		culture = langobardisch
+		religion_group = christian
+		has_landed_title = d_lucca
+		has_landed_title = d_toscana
+		title_duke_basic_allow = yes
+	}
+}
+k_duklja = { # Duklja
+	color = { 224 186 36 }
+	culture = serbian
+	capital = 469 # Crna Gora # Zeta
+	allow = {
+		k_serbia = { # Srbija
+			has_holder = no
+		}
+		title_king_basic_allow = yes
+	}
+}
+k_switzerland = {
+	color = { 255 80 80 }
+	color2 = { 200 50 50 }
+	capital = 245 # c_schwyz
+	short_name = yes
+	allow = {
+		trigger_if = {
+			limit = { FROM = { is_de_jure_title = no } }
+			FROM = { is_de_jure_title = yes }
+		}
+		title_king_basic_allow = yes
+	}
+} # end k_switzerland
+d_smaland = { # Småland
+	color = { 88 138 70 }
+	capital = 298 # Njudung # Småland
+	norse = "Smáland"
+	allow = {
+		OR = {
+			has_landed_title = c_smaland
+			has_landed_title = c_tjust
+			has_landed_title = c_finnveden
+		}
+		lower_tier_than = KING
+		title_duke_basic_allow = yes
+	}
+}
+e_occitania = { # Occitània
+	color = { 230 0 70 }
+	color2 = { 255 255 255 }
+	capital = 214 # Tolosa # Toulouse
+	culture = occitan
+	dignity = 100 # Counted as having 100 more counties than it does
+	allow = {
+		OR = {
+			AND = {
+				OR = {
+					culture = occitan
+					culture = catalan
+				}
+				religion_group = christian
+			}
+			FROM = { is_de_jure_title = yes }
+		}
+		title_emperor_basic_allow = yes
+	}
+}
+# Titular Darrigan
+# The county of Flanders had more autonomy than other regions under the French crown. They did lose the independence wars # in the 13th and 14th century. But what if they had won?
+k_flanders = { # Vlaanderen
+	color = { 255 120 0 }
+	color2 = { 255 255 255 }
+	capital = 78 # Brugge
+	allow = {
+		has_landed_title = d_flanders
+		OR = {
+			c_brugge = { owner_under_ROOT = yes }
+			c_gent = { owner_under_ROOT = yes }
+			c_yperen = { owner_under_ROOT = yes }
+			c_lille = { owner_under_ROOT = yes }
+		}
+		OR = {
+			lower_tier_than = KING
+			FROM = { is_de_jure_title = yes }
+		}
+		title_king_basic_allow = yes
+	}
+}
+# ARKO
+d_narbonne = { # Narbona # titre porté par les ducs de Toulouse pour affirmer leur pouvoir sur les vassaux de la côte mais sans succès. # Oh, obviously, yeah, +1.
+	color = { 0 20 188 }
+	color2 = { 255 255 255 }
+	capital = 214 # Tolosa # Toulouse
+	culture = occitan
+	allow = { title_duke_basic_allow = yes }
+}
+# King
+d_saxon_ostmark = { # Ostmark # March of the East or March of Gero
+	color = { 94 83 162 }
+	capital = 311 # Plauen
+	culture = german
+	title = MARGRAVE
+	title_female = MARGRAVINE
+	foa = MARGRAVE_FOA
+	title_prefix = MARGRAVE_OF
+	allow = {
+		OR = {
+			AND = {
+				OR = {
+					culture = thuringian
+					culture = low_saxon
+					culture = franconian
+					culture = bavarian
+					culture = swabian
+				}
+				religion_group = christian
+			}
+			FROM = { is_de_jure_title = yes }
+		}
+		title_king_basic_allow = yes
+	}
+}
+d_billungmark = { # Billungmark # March of the Billungs
+	color = { 120 7 188 }
+	capital = 263 # Holstein
+	culture = german
+	title = MARGRAVE
+	title_female = MARGRAVINE
+	foa = MARGRAVE_FOA
+	title_prefix = MARGRAVE_OF
+	allow = {
+		OR = {
+			AND = {
+				OR = { culture = low_saxon }
+				religion_group = christian
+			}
+			FROM = { is_de_jure_title = yes }
+		}
+		title_king_basic_allow = yes
+	}
+}
+d_paulicians = { # Paulikianoi
+	color = { 78 33 125 }
+	capital = 944 # Tephrike
+	allow = { always = no }
+}
+#d_melitene = {
+#	color = { 11 34 128 }
+#	culture = levantine_arabic
+#	capital = 707 # Melitene
+#	allow = {
+#		OR = {
+#			culture = levantine_arabic
+#			culture = kurdish
+#			culture = turkish
+#		}
+#		religion_group = muslim
+#	}
+#}
+#d_lori = {
+#	color = { 12 33 130 }
+#	culture = armenian
+#	capital = 1013 # Lori
+#	allow = {
+#		culture = armenian
+#		religion_group = christian
+#	}
+#}
+k_armenia_minor = { # Mikrá Armenia
+	color = { 14 30 131 }
+	culture = armenian
+	capital = 735 # Marash # Teluch
+	allow = {
+		hidden_tooltip = {
+			OR = {
+				ai = no
+				culture = armenian
+			}
+		}
+		OR = {
+			religion_group = christian
+			FROM = { is_de_jure_title = yes }
+		}
+		title_king_basic_allow = yes
+	}
+}
+d_pagania = { # Neretljani
+	color = { 114 230 1 }
+	capital = 1330 # Omis
+	allow = {
+		OR = {
+			culture = serbian
+			culture = croatian
+		}
+		religion = slavic_pagan
+		title_duke_basic_allow = yes
+	}
+}
+d_rhodos = { # Rhodos
+	color = { 144 230 19 }
+	capital = 483 # Dodekánisa # Rhodos
+	title = CAESAR
+	foa = CAESAR_FOA
+	title_prefix = CAESAR_OF
+	allow = {
+		OR = {
+			culture = greek
+			culture = frankish
+		}
+		religion_group = christian
+		has_landed_title = c_rhodos
+		title_duke_basic_allow = yes
+	}
+}
+d_amiralarab = { # Arabiyya # Amir-al-Arab
+	color = { 217 96 63 }
+	capital = 730 # Palmyra
+	title = AMIR_AL_ARAB
+	allow = {
+		culture = bedouin_arabic
+		religion_group = muslim
+		title_duke_basic_allow = yes
+	}
+}
+d_norman_apulia = { # Apulia
+	color = { 124 30 77 }
+	capital = 347 # Melfi # Apulia
+	name_tier = count
+	allow = {
+		culture = frankish
+		religion_group = christian
+		title_duke_basic_allow = yes
+	}
+}
+e_chagatai = { # Chagatai
+	color = { 200 200 200 }
+	color2 = { 0 250 250 }
+	capital = 1571 # Yulduz # Almaliq
+	culture = mongol
+	religion = tengri_pagan
+	allow = {
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
+}
+d_tiflis = { # Tiflis
+	color = { 104 20 12 }
+	capital = 1357 # Tbilisi
+	allow = {
+		religion_group = muslim
+		title_duke_basic_allow = yes
+	}
+}
+k_vaspurakan = { # Vaspurakan
+	color = { 175 5 102 }
+	culture = armenian
+	capital = 682 # Vaspurakan
+	allow = {
+		OR = {
+			AND = {
+				culture = armenian
+				religion_group = christian
+			}
+			FROM = { is_de_jure_title = yes }
+		}
+		title_king_basic_allow = yes
+	}
+}
+d_vanand = { # Vanand
+	color = { 155 100 7 }
+	culture = armenian
+	capital = 1088 # Vanand
+	allow = {
+		culture = armenian
+		religion_group = christian
+		title_duke_basic_allow = yes
+	}
+}
+d_mingrelia = { # Samegrelo
+	color = { 25 183 33 }
+	culture = georgian
+	capital = 1081 # Odishi
+	allow = {
+		culture = georgian
+		religion_group = christian
+		title_duke_basic_allow = yes
+	}
+}
+d_theodoro = { # Gotthías # Gothia
+	color = { 82 199 44 }
+	culture = crimean_gothic
+	capital = 1699 # Doros # Theodoro
+	allow = {
+		culture = crimean_gothic
+		title_duke_basic_allow = yes
+	}
+}
+d_meshketi = { # Meskheti
+	color = { 99 152 44 }
+	culture = georgian
+	capital = 1350 # Samtskhe # Meskheti
+	allow = {
+		culture = georgian
+		religion_group = christian
+		title_duke_basic_allow = yes
+	}
+}
+k_abkhazia = { # Apkhazeti
+	color = { 99 175 4 }
+	capital = 601 # Imereti # Imeretia
+	title = MEPE
+	foa = MEPE_FOA
+	title_prefix = MEPE_OF
+	allow = {
+		OR = {
+			AND = {
+				OR = {
+					culture = greek
+					culture = armenian
+					culture = georgian
+				}
+				religion_group = christian
+			}
+			FROM = { is_de_jure_title = yes }
+		}
+		title_king_basic_allow = yes
+	}
+}
+k_imereti = { # Imereti
+	color = { 99 175 4 }
+	capital = 601 # Imereti # Imeretia
+	title = MEPE
+	foa = MEPE_FOA
+	title_prefix = MEPE_OF
+	allow = {
+		OR = {
+			AND = {
+				culture = georgian
+				religion_group = christian
+			}
+			FROM = { is_de_jure_title = yes }
+		}
+		title_king_basic_allow = yes
+	}
+}
+k_kakheti = { # Kakheti
+	color = { 194 110 67 }
+	capital = 676 # Kakheti
+	title = MEPE
+	foa = MEPE_FOA
+	title_prefix = MEPE_OF
+	allow = {
+		OR = {
+			AND = {
+				culture = georgian
+				religion_group = christian
+			}
+			FROM = { is_de_jure_title = yes }
+		}
+		title_king_basic_allow = yes
+	}
+}
+k_iberia = { # Kartli
+	color = { 44 215 119 }
+	capital = 679 # Kartli
+	title = MEPE
+	foa = MEPE_FOA
+	title_prefix = MEPE_OF
+	allow = {
+		OR = {
+			AND = {
+				OR = {
+					culture = greek
+					culture = armenian
+					culture = georgian
+				}
+				religion_group = christian
+			}
+			FROM = { is_de_jure_title = yes }
+		}
+		title_king_basic_allow = yes
+	}
+}
+d_dahlak = { # Dahlak
+	color = { 255 164 17 }
+	capital = 1509 # Saho # Dahlak
+	allow = { title_duke_basic_allow = yes }
+}
+d_sadah = { # Sadah
+	color = { 155 114 99 }
+	capital = 865 # Sadah # Rafha
+	allow = {
+		OR = {
+			culture = bedouin_arabic
+			culture = hijazi
+			culture = yemeni
+			culture = egyptian_arabic
+			culture = levantine_arabic
+			culture = ethiopian
+			culture = beja
+			culture = afar
+			culture = somali
+		}
+		religion_group = muslim
+		title_duke_basic_allow = yes
+	}
+}
+d_sharif_medina = { # Madinah # Medina
+	color = { 71 159 102 }
+	capital = 718 # Madinah # Medina
+	allow = {
+		OR = {
+			culture = bedouin_arabic
+			culture = hijazi
+			culture = yemeni
+			culture = egyptian_arabic
+			culture = levantine_arabic
+			culture = ethiopian
+			culture = beja
+			culture = afar
+			culture = somali
+		}
+		religion_group = muslim
+		title_duke_basic_allow = yes
+	}
+}
+d_sharif_mecca = { # Makkah # Mecca
+	color = { 188 6 133 }
+	capital = 719 # Makkah # Mecca
+	allow = {
+		OR = {
+			culture = bedouin_arabic
+			culture = hijazi
+			culture = yemeni
+			culture = egyptian_arabic
+			culture = levantine_arabic
+			culture = ethiopian
+			culture = beja
+			culture = afar
+			culture = somali
+		}
+		religion_group = muslim
+		title_duke_basic_allow = yes
+	}
+}
+d_siraf = { # Siráf
+	color = { 40 200 200 }
+	capital = 642 # Irahistan
+	allow = {
+		OR = {
+			culture = persian
+			culture = pahlavi
+			culture = bedouin_arabic
+		}
+		is_republic = yes
+		title_duke_basic_allow = yes
+	}
+}
+e_egypt = { # Misr
+	color = { 200 255 200 }
+	color2 = { 255 255 255 }
+	capital = 796 # Cairo
+	roman = "Aegyptus"
+	greek = "Aigyptos"
+	coptic = "Khemi"
+	nubian = "Khemi"
+	ethiopian = "Gibs"
+	falashim = "Misrayim"
+	sanhaja = "Igibt"
+	tagelmust = "Igibt"
+	tuareg = "Igibt"
+	masmuda = "Igibt"
+	zanata = "Igibt"
+	allow = {
+		has_landed_title = k_egypt
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
+} # end e_egypt
+e_wendish_empire = { # Wendish Empire
+	color = { 65 25 125 }
+	capital = 441 # Brno # Boruy
+	short_name = yes
+	bohemian = "Velké Czechy"
+	slovieni = "Velká Morava"
+	polish = "Wiêksza Polska"
+	pommeranian = "Vendia"
+	carantanian = "Vendia"
+	croatian = "Vendia"
+	allow = {
+		has_landed_title = k_moravia
+		OR = {
+			has_landed_title = k_poland
+			has_landed_title = k_pomerania
+			has_landed_title = k_bohemia
+			has_landed_title = k_hungary
+		}
+		FROM = { is_de_jure_title = yes }
+		title_emperor_basic_allow = yes
+	}
+} # end e_wendish_empire
+# Ireland
+d_breifne = { # Breifne
+	color = { 54 135 39 }
+	color2 = { 136 0 21 }
+	irish = "Bréifne"
+	scottish = "Bréifne"
+	norsegaelic = "Bréifne"
+	welsh = "Bréifne"
+	cumbric = "Bréifne"
+	cornish = "Bréifne"
+	breton = "Bréifne"
+	saxon = "Breffny"
+	anglonorse = "Breffny"
+	norse = "Breffny"
+	norwegian = "Breffny"
+	danish = "Breffny"
+	swedish = "Breffny"
+	gothic = "Breffny"
+	icelandic = "Breffny"
+	capital = 8 # Leitrim
+	allow = { title_duke_basic_allow = yes }
+}
+d_thomond = { # Thomond
+	color = { 30 100 80 }
+	color2 = { 255 255 255 }
+	irish = "Tuadhmhumhain"
+	scottish = "Tuadhmhumhain"
+	norsegaelic = "Tuadhmhumhain"
+	welsh = "Tuadhmhumhain"
+	cumbric = "Tuadhmhumhain"
+	breton = "Tuadhmhumhain"
+	cornish = "Tuadhmhumhain"
+	capital = 13 # Clare # Thomond
+	allow = { title_duke_basic_allow = yes }
+}
+d_ossory = { # Ossory
+	color = { 60 200 10 }
+	color2 = { 255 255 255 }
+	irish = "Osraige"
+	scottish = "Osraige"
+	norsegaelic = "Osraige"
+	welsh = "Osraige"
+	cumbric = "Osraige"
+	breton = "Osraige"
+	cornish = "Osraige"
+	capital = 12 # Ossory
+	allow = { title_duke_basic_allow = yes }
+}
+d_oneill = { # O'Neill
+	color = { 70 106 21 }
+	color2 = { 255 255 255 }
+	capital = 4 # Tyrone
+	irish = "Uí Néill"
+	scottish = "Uí Néill"
+	norsegaelic = "Uí Néill"
+	cornish = "Uí Néill"
+	breton = "Uí Néill"
+	cumbric = "Uí Néill"
+	welsh = "Uí Néill"
+	allow = { title_duke_basic_allow = yes }
+}
+d_airgialla = { # Airgíalla
+	color = { 30 180 20 }
+	color2 = { 251 140 17 }
+	irish = "Airgíalla"
+	scottish = "Oirialla"
+	norsegaelic = "Airgíalla"
+	welsh = "Airgíalla"
+	cornish = "Airgíalla"
+	breton = "Airgíalla"
+	cumbric = "Airgíalla"
+	saxon = "Oriel"
+	anglonorse = "Oriel"
+	english = "Oriel"
+	norse = "Oriel"
+	norwegian = "Oriel"
+	danish = "Oriel"
+	swedish = "Oriel"
+	gothic = "Oriel"
+	icelandic = "Oriel"
+	capital = 7 # Oriel
+	allow = { title_duke_basic_allow = yes }
+}
+d_khawarij = { # Khawarij # (used for the Kharijite Rebellion)
+	color = { 70 130 10 }
+	color2 = { 255 255 255 }
+	capital = 697 # Mosul
+	allow = {
+		religion = kharijite
+		title_duke_basic_allow = yes
+	}
+}
+# moved from k_asturias to fix usurpation bug
+d_asturias = { # Asturias
+	color = { 41 83 180 }
+	color2 = { 0 0 0 }
+	capital = 155 # Asturias de Oviedo
+	allow = { title_duke_basic_allow = yes }
+}
+# -*- ck2.landed_titles -*-
+
+e_mexikha = { # Aztec Empire
+	color = { 255 127 0 }
+	short_name = yes
+	capital = 180 # Granada
+	# Always exists
+	landless = yes
+	#tribe = yes
+	culture = nahuatl
+	religion = aztec
+}
+# -*- ck2.landed_titles -*-
+
+c_koln = { # Köln (119) # Cologne
+	holy_site = catholic
+	holy_site = lollard
+}
+c_karnten = { # Kärnten (456)
+	holy_site = slavic_pagan
+	holy_site = slavic_pagan_reformed
+}
+c_napoli = { # Acerra (334)
+	holy_site = hellenic_pagan
+	holy_site = hellenic_pagan_reformed
+}
+c_byzantion = { # Konstantinoupolis (496)
+	holy_site = orthodox
+	holy_site = waldensian
+	holy_site = maronite
+	holy_site = bogomilist
+}
+b_hagiasophia = {
+	pentarchy = orthodox
+	pentarchy = monothelite
+	pentarchy = iconoclast
+}
+c_chalkidike = { # Chalkidike (491)
+	holy_site = orthodox
+}
+c_achaia = { # Achaía (476)
+	holy_site = hellenic_pagan
+	holy_site = hellenic_pagan_reformed
+}
+c_atheniai = { # Attika (482)
+	holy_site = hellenic_pagan
+	holy_site = hellenic_pagan_reformed
+	holy_site = druze
+}
+c_ephesos = { # Ionía (746)
+	holy_site = orthodox
+}
+c_tephrike = { # Tephrike (944)
+	holy_site = paulician
+}
+c_sis = { # Sision (969)
+	holy_site = apostolic
+}
+c_philippopolis = { # Plovdiv (493)
+	holy_site = bogomilist
+	holy_site = cathar
+}
+c_sjaelland = { # Nørræ Syaland (266) # Northern Sjælland
+	holy_site = norse_pagan
+	holy_site = norse_pagan_reformed
+}
+c_uppland = { # Tiundaland (290)
+	holy_site = norse_pagan
+	holy_site = norse_pagan_reformed
+}
+c_steinkjer = { # Innriþrœndalóg (1257)
+	holy_site = pagan
+	holy_site = norse_pagan
+	holy_site = norse_pagan_reformed
+}
+c_ryazan = { # Riazan' (580)
+	holy_site = finnish_pagan
+	holy_site = finnish_pagan_reformed
+}
+c_kiev = { # Kiev (547)
+	holy_site = baltic_pagan
+	holy_site = baltic_pagan_reformed
+}
+c_vyazma = { # Vyazma (569) # Viazma
+	holy_site = baltic_pagan
+	holy_site = baltic_pagan_reformed
+}
+c_novgorod = { # Novgorod (414)
+	holy_site = slavic_pagan
+	holy_site = slavic_pagan_reformed
+	holy_site = bogomilist
+}
+c_wroclaw = { # Wroclaw (434)
+	holy_site = slavic_pagan
+	holy_site = slavic_pagan_reformed
+}
+c_deltuva = { # Deltuva (979)
+	holy_site = baltic_pagan
+	holy_site = baltic_pagan_reformed
+}
+c_nadruvia = { # Nadruvia (1300)
+	holy_site = baltic_pagan
+	holy_site = baltic_pagan_reformed
+}
+c_severin = { # Severin (516)
+	holy_site = tengri_pagan
+	holy_site = tengri_pagan_reformed
+}
+c_vodica = { # Vodica (959)
+	holy_site = bogomilist
+}
+c_medina = { # Madinah (718) # Medina
+	holy_site = sunni
+	holy_site = shiite
+	holy_site = ibadi
+	holy_site = ismaili
+	holy_site = zaydi
+}
+c_mecca = { # Makkah (719) # Mecca
+	holy_site = sunni
+	holy_site = shiite
+	holy_site = pagan
+	holy_site = yazidi
+	holy_site = ibadi
+	holy_site = ismaili
+	holy_site = zaydi
+}
+c_hajar = { # Nizwa (869) # Hajar
+	holy_site = ibadi
+}
+c_dhofar = { # Zufar (866) # Dhofar
+	holy_site = jewish
+	holy_site = samaritan
+	holy_site = karaite
+}
+c_alexandria = { # Iskandaríya (802)
+	holy_site = syriac
+	holy_site = miaphysite
+	holy_site = monophysite
+	holy_site = nestorian
+	holy_site = paulician
+	holy_site = apostolic
+	holy_site = maronite
+	holy_site = nabawiyya
+}
+b_alexandria = { pentarchy = yes }
+c_quattara = { # Santariya (803), aka Siwa
+	holy_site = hellenic_pagan
+	holy_site = hellenic_pagan_reformed
+}
+c_cairo = { # Cairo (796)
+	holy_site = druze
+}
+c_eilat = { # Jabal Katrina (786)
+	holy_site = jewish
+	holy_site = samaritan
+	holy_site = karaite
+}
+c_damascus = { # Ghutah (728)
+	holy_site = jewish
+	holy_site = samaritan
+	holy_site = karaite
+	holy_site = shiite
+	holy_site = ismaili
+	holy_site = zaydi
+}
+c_baalbek = { # Bekaa (768)
+	holy_site = druze
+}
+c_aksum = { # Aksum (875)
+	holy_site = miaphysite
+	holy_site = monophysite
+}
+c_makuria = { # Dongola (1230)
+	holy_site = miaphysite
+	holy_site = monophysite
+}
+c_kent = { # Kent (73)
+	holy_site = catholic
+	holy_site = lollard
+}
+c_gloucester = { # Gloucester (21)
+	holy_site = lollard
+}
+c_middlesex = { # Middlesex (32)
+	holy_site = aztec
+	holy_site = aztec_reformed
+}
+c_york = { # West York Ridding # West ridding / York Vale
+	holy_site = norse_pagan
+	holy_site = norse_pagan_reformed
+}
+c_asti = { # Asti (232)
+	holy_site = waldensian
+}
+c_roma = { # Roma (333)
+	holy_site = catholic
+	holy_site = hellenic_pagan
+	holy_site = hellenic_pagan_reformed
+	holy_site = pagan
+	holy_site = aztec
+	holy_site = aztec_reformed
+}
+b_roma = { pentarchy = yes }
+c_ferrara = { # Rovigo (353)
+	holy_site = waldensian
+	holy_site = cathar
+	holy_site = lollard
+}
+c_lyon = { # Lyon (227)
+	holy_site = cathar
+	holy_site = waldensian
+}
+c_brugge = { # Brugge (78)
+	holy_site = norse_pagan
+	holy_site = norse_pagan_reformed
+}
+c_ile_de_france = { # Paris (112)
+	holy_site = aztec
+	holy_site = aztec_reformed
+}
+c_carcassonne = { # Carcassona (213)
+	holy_site = cathar
+}
+c_santiago = { # Santiago (157)
+	holy_site = catholic
+}
+c_cordoba = { # Cordoba (181)
+	holy_site = aztec
+	holy_site = aztec_reformed
+}
+c_kairwan = { # Kairwan (815)
+	holy_site = sunni
+}
+c_tunis = { # Tunis (817)
+	holy_site = nabawiyya
+}
+c_al_djazair = { # Al-Jazáir (831)
+	holy_site = ibadi
+}
+c_marrakech = { # Marrákush (843)
+	holy_site = aztec
+	holy_site = aztec_reformed
+}
+c_massat = { # Asfí (844)
+	holy_site = nabawiyya
+}
+c_ghana = { # Wagadu (913)
+	holy_site = west_african_pagan
+	holy_site = west_african_pagan_reformed
+}
+c_mali = { # Manding (925)
+	holy_site = west_african_pagan
+	holy_site = west_african_pagan_reformed
+}
+c_timbuktu = { # Timbuktu (911)
+	holy_site = west_african_pagan
+	holy_site = west_african_pagan_reformed
+}
+c_esfahan = { # Isfahan (646)
+	holy_site = manichean
+	holy_site = zun_pagan
+	holy_site = zun_pagan_reformed
+}
+c_shiraz = { # Shíráz (644) # Shiraz
+	holy_site = nabawiyya
+	holy_site = zun_pagan
+	holy_site = zun_pagan_reformed
+}
+c_larestan = { # Darabjird (642) # Larestan
+	holy_site = zoroastrian # The Great Fire of Adur Farnbag (unidentified location in Pars, possibly near Juyum)
+	holy_site = mazdaki
+	holy_site = manichean
+}
+c_sistan = { # Sistan (637)
+	holy_site = zoroastrian # Fire temple of Karkuya
+	holy_site = mazdaki
+}
+c_maragheh = { # Maragheh (650)
+	holy_site = zoroastrian # The Great Fire of Adur Gushnasp (Shiz, Media)
+	holy_site = mazdaki
+	holy_site = yazidi # Placeholder
+}
+c_nishapur = { # Níshápúr (634) # Nishápur
+	holy_site = zoroastrian # The Great Fire of Adur Burzen-Mehr (on a mountain near Nishapur)
+	holy_site = mazdaki
+	holy_site = manichean
+	holy_site = yazidi
+	holy_site = zun_pagan
+	holy_site = zun_pagan_reformed
+}
+c_samarqand = { # Samarkand (903)
+	holy_site = manichean
+}
+c_al_nadjaf = { # Qadisiyyah (692) # Al Nadjaf
+	holy_site = ismaili
+}
+c_kufa = { # Al-Kufah (655) # Kufa
+	holy_site = shiite
+	holy_site = zaydi
+}
+c_baghdad = { # Baghdad (693)
+	holy_site = sunni
+	holy_site = nestorian
+	holy_site = manichean
+	holy_site = zoroastrian # Great fire temples of Ctesiphon and Madain
+	holy_site = mazdaki
+}
+c_mathura = { # Mathura (1664)
+	holy_site = hindu
+	holy_site = buddhist
+}
+c_kol = { # Kol (1665)
+	holy_site = buddhist # Sankassa
+}
+c_garhwal = { # Garhwal (1980)
+	holy_site = hindu # Haridwar/Gangadvara
+}
+c_sarasvata_mandala = { # Anahilapataka/Vadnagar (1629)
+	holy_site = jain
+}
+c_dvaraka = { # Dvaraka (1633)
+	holy_site = hindu
+}
+c_kutch = { # Kutch (1634)
+	holy_site = jain # Bhadreshwar
+}
+c_bhumilka = { # Bhumilka (1635)
+	holy_site = jain # Girnar
+}
+c_godwad = { # Godwad (1644)
+	holy_site = jain
+}
+c_ujjayini = { # Ujjayini (1673)
+	holy_site = hindu
+}
+c_vidisa = { # Vidisa (1675)
+	holy_site = buddhist
+}
+c_purushapura = { # Purushapura (1625)
+	holy_site = buddhist # Kanishka Vihara
+	holy_site = bon # placeholder
+	holy_site = bon_reformed
+}
+c_varazhnunik = { # Varazhnunik (1531)
+	holy_site = apostolic
+}
+c_jerusalem = { # Jérusalem (774)
+	holy_site = catholic
+	holy_site = orthodox
+	holy_site = sunni
+	holy_site = shiite
+	holy_site = miaphysite
+	holy_site = monophysite
+	holy_site = nestorian
+	holy_site = syriac
+	holy_site = pagan
+	holy_site = yazidi
+	holy_site = jewish
+	holy_site = samaritan
+	holy_site = karaite
+	holy_site = ibadi
+	holy_site = waldensian
+	holy_site = cathar
+	holy_site = lollard
+	holy_site = paulician
+	holy_site = apostolic
+	holy_site = maronite
+	holy_site = bogomilist
+	holy_site = ismaili
+	holy_site = zaydi
+	holy_site = nabawiyya
+}
+b_jerusalem = {
+	pentarchy = orthodox
+	pentarchy = monothelite
+	pentarchy = iconoclast
+}
+c_beirut = { # Beirut (770)
+	holy_site = maronite
+	holy_site = druze
+}
+c_antiocheia = { # Antioch (764)
+	holy_site = syriac
+	holy_site = orthodox
+	holy_site = miaphysite
+	holy_site = monophysite
+	holy_site = nestorian
+	holy_site = paulician
+	holy_site = apostolic
+	holy_site = maronite
+	holy_site = druze
+}
+b_antiocheia = { pentarchy = yes }
+c_amida = { # Amida (683)
+	holy_site = syriac
+}
+c_mardin = { # Mardin (1239)
+	holy_site = syriac
+	holy_site = nestorian
+}
+c_nineveh = { # Ninawa (685)
+	holy_site = yazidi
+}
+c_mecklemburg = { # Mecklemburg (260) # Mecklenburg
+	holy_site = slavic_pagan
+	holy_site = slavic_pagan_reformed
+}
+c_rugen = { # Rügen (304)
+	holy_site = slavic_pagan
+	holy_site = slavic_pagan_reformed
+}
+c_jeriska = { # Jersika (963)
+	holy_site = baltic_pagan
+	holy_site = baltic_pagan_reformed
+}
+c_osel = { # Osilia (376)
+	holy_site = finnish_pagan
+	holy_site = finnish_pagan_reformed
+}
+c_crimea = { # Qirim (559)
+	holy_site = tengri_pagan
+	holy_site = tengri_pagan_reformed
+}
+c_itil = { # Itil (620)
+	holy_site = pagan
+	holy_site = jewish
+	holy_site = samaritan
+	holy_site = karaite
+	holy_site = tengri_pagan
+	holy_site = tengri_pagan_reformed
+}
+c_ghazna = { # Ghazna (1547)
+	holy_site = zun_pagan
+	holy_site = zun_pagan_reformed
+	holy_site = buddhist # site of "pagan" pilgrimage according to Muslim records
+}
+c_zamindawar = { # Zamindavar (852)
+	holy_site = zun_pagan
+	holy_site = zun_pagan_reformed
+}
+c_jand = { # Jand (900)
+	holy_site = tengri_pagan
+	holy_site = tengri_pagan_reformed
+}
+c_barskhan = { # Barskhan (1577)
+	holy_site = tengri_pagan
+	holy_site = tengri_pagan_reformed
+}
+c_viipuri = { # Viipuri (1296)
+	holy_site = finnish_pagan
+	holy_site = finnish_pagan_reformed
+}
+c_perm = { # Viser (886) # Višera
+	holy_site = finnish_pagan
+	holy_site = finnish_pagan_reformed
+}
+c_hlynov = { # Vice (401) # Vyatka
+	holy_site = finnish_pagan
+	holy_site = finnish_pagan_reformed
+}
+c_absheron = { # Abšaran (668)
+	holy_site = paulician
+}
+c_tuat = { # Tuat (1396)
+	holy_site = west_african_pagan
+	holy_site = west_african_pagan_reformed
+}
+c_zamfara = { # Zamfara (1323)
+	holy_site = west_african_pagan
+	holy_site = west_african_pagan_reformed
+}
+c_kashgar = { # Kashgar (1567)
+	holy_site = taoist # one of the four main bases of the Anxi Protectorate
+}
+c_kucha = { # Kucha (1569)
+	holy_site = taoist # one of the four main bases of the Anxi Protectorate
+}
+c_balasaghun = { # Balasaghun (1572)
+	holy_site = taoist # one of the four main bases of the Anxi Protectorate (transferred from Qarashahr)
+}
+c_khotan = { # Khotan (1580)
+	holy_site = taoist # one of the four main bases of the Anxi Protectorate
+}
+c_badakhshan = { # Badakhshan (1553)
+	holy_site = bon # placeholder
+	holy_site = bon_reformed
+}
+c_gilgit = { # Gilgit (1975)
+	holy_site = bon
+	holy_site = bon_reformed
+}
+c_purang = { # Purang (1985)
+	holy_site = hindu # Mount Kailash
+	holy_site = jain
+	holy_site = bon
+	holy_site = bon_reformed
+}
+c_kunlun = { # Kunlun (1989)
+	holy_site = taoist # shares the same name as a mythical mountain in Chinese/Taoist mythology
+	holy_site = bon # placeholder
+	holy_site = bon_reformed
+}
+#baronial CoA code entry template
+
+#coat_of_arms= {
+#		data= { 
+#			0 #composition/template 
+#			5 #index de texture/texture ID
+#			0 #élément en superposition/emblem
+#			13 #index interne à la texture/texture internal
+#			0 #couleur 1/colour 1
+#			0 #couleur 2/colour 2
+#			0 #couleur 3/colour 3
+#			}
+#		religion="catholic" #blason seulement actif pour cette religion, sinon random
+#	}
+
+#compact version #b_cluny = { coat_of_arms = { data = { 0 5 0 13 0 0 0 }	religion="catholic"	} }#
+
+#from dynasty file
+b_cluny  	= 	{ coat_of_arms = { data =	{ 0 5 0 13 0 0 0 }	religion="catholic" } }
+b_chalon  	= 	{ coat_of_arms = { data =	{ 0 5 0 6 0 0 0 }	religion="catholic" } }
+b_orange  	= 	{ coat_of_arms = { data =	{ 0 5 0 32 0 0 0 }	religion="catholic" } }
+b_metz  	= 	{ coat_of_arms = { data =	{ 0 5 0 104 0 0 0 }	religion="catholic" } }
+b_geldern	=	{ coat_of_arms = { data =	{ 0 5 0 107 0 0 0 }	religion="catholic" } }
+
+#from barony file
+b_geneve 	=	{ coat_of_arms = { data =	{ 0 4 0 10 0 0 0 }	religion="catholic" } }
+b_lausanne 	=	{ coat_of_arms = { data =	{ 0 4 0 13 0 0 0 }	religion="catholic" } }
+
+b_blois 	 = { coat_of_arms = { data =	{ 0 4 0 41 0 0 0 }	religion="catholic" } }
+b_troyes	 = { coat_of_arms = { data =	{ 0 4 0 42 0 0 0 }	religion="catholic" } }
+b_meaux	=	{ coat_of_arms = { data =	{ 0 4 0 43 0 0 0 }	religion="catholic" } }
+b_langres	=	{ coat_of_arms = { data =	{ 0 4 0 44 0 0 0 }	religion="catholic" } }
+b_provins	=	{ coat_of_arms = { data =	{ 0 4 0 45 0 0 0 }	religion="catholic" } }
+b_chatillon = { coat_of_arms = { data =	{ 0 4 0 46 0 0 0 }	religion="catholic" } }
+b_bonneval = { coat_of_arms = { data =	{ 0 4 0 47 0 0 0 }	religion="catholic" } }
+
+b_brienne	=	{ coat_of_arms = { data =	{ 0 4 0 29 0 0 0 }	religion="catholic" } }
+b_marseille	=	{ coat_of_arms = { data =	{ 0 4 0 81 0 0 0 }	religion="catholic" } }
+b_grimaud	=	{ coat_of_arms = { data =	{ 0 4 0 82 0 0 0 }	religion="catholic" } }
+b_forcalquier=	{ coat_of_arms = { data =	{ 0 4 0 90 0 0 0 }	religion="catholic" } }
+b_grasse	=	{ coat_of_arms = { data =	{ 0 4 0 101 0 0 0 }	religion="catholic" } }
+b_venasque	=	{ coat_of_arms = { data =	{ 0 4 0 114 0 0 0 }	religion="catholic" } }
+#b_chateauneufdupape={ coat_of_arms = {data ={ 0 4 0 119 0 0 0 }	religion="catholic" } }
+b_gap	=		{ coat_of_arms = { data =	{ 0 4 0 141 0 0 0 }	religion="catholic" } }
+b_basel	=		{ coat_of_arms = { data =	{ 0 4 0 170 0 0 0 }	religion="catholic" } }
+b_melun	=		{ coat_of_arms = { data =	{ 0 4 0 176 0 0 0 }	religion="catholic" } }
+b_stdenis	=	{ coat_of_arms = { data =	{ 0 4 0 177 0 0 0 }	religion="catholic" } }
+b_compiegne	=	{ coat_of_arms = { data =	{ 0 4 0 178 0 0 0 }	religion="catholic" } }
+b_montreuil	=	{ coat_of_arms = { data =	{ 0 4 0 179 0 0 0 }	religion="catholic" } }
+b_besancon	=	{ coat_of_arms = { data =	{ 0 4 0 210 0 0 0 }	religion="catholic" } }
+b_montbeliard = { coat_of_arms = { data = 	{ 0 4 0 220 0 0 0 } religion="catholic" } }	
+b_ferette =		{ coat_of_arms = { data = 	{ 0 4 0 221 0 0 0 } religion="catholic" } }	
+b_saintdizier =	{ coat_of_arms = { data = 	{ 0 4 0 222 0 0 0 } religion="catholic" } } #Pont-à-Mousson	
+b_strassburg =	{ coat_of_arms = { data =	{ 0 4 0 241 0 0 0 }	religion="catholic" } }
+b_kolmar = 		{ coat_of_arms = { data =	{ 0 4 0 243 0 0 0 }	religion="catholic" } }
+b_murbach =		{ coat_of_arms = { data =	{ 0 4 0 242 0 0 0 }	religion="catholic" } }
+b_mulhouse = 	{ coat_of_arms = { data =	{ 0 4 0 244 0 0 0 }	religion="catholic" } }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# -*- ck2.landed_titles -*-
+
+
+
+k_germany = {
+	color = { 128 128 128 }
+	color2 = { 220 220 20 }
+}
+# -*- ck2.landed_titles -*-
+
+d_apostolic = {
+	color = { 51 25 0 }
+	color2 = { 230 220 108 }
+	capital = 1531 # Varazhnunik
+
+	title = "CATHOLICOS"
+	foa = "POPE_FOA"
+
+	allow = {
+		always = no
+	}
+
+	# Always exists
+	landless = yes
+	short_name = yes
+	dignity = 80 # Counted as having this many more counties than it does
+
+	# Controls a religion
+	controls_religion = apostolic
+	religion = apostolic
+	culture = armenian
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+
+	# Regnal names
+	male_names = {
+		Aleksandr Ananias Aristaces Asdvadzadur Constantine Davit Dertad Eliazar Gevorg Giragos Grigor Isaiah Hacob Joab Hovhannes Hovsep
+		Karapet Khachig Mashdotz Mekhitar Mesrop Mikayel Movses Nahabed Nerses Parsegh Petros Philippos Sarkis Sion Soghomon Stephan
+		Thoros Vahan Yeghishe Zacharias
+	}
+}
+
+d_bogomilist = {
+	color = { 236 112 254 }
+	color2 = { 230 220 108 }
+	capital = 493 #Plovdiv
+
+	title = "ELDER"
+	title_female = "ELDER"
+	foa = "POPE_FOA"
+
+	allow = {
+		always = no # Only by special decision
+	}
+
+	# Always exists
+	landless = yes
+	short_name = yes
+	dignity = 80 # Counted as having this many more counties than it does
+
+	# Controls a religion
+	controls_religion = bogomilist
+	religion = bogomilist
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+
+}
+
+d_paulician = {
+	color = { 195 130 157 }
+	color2 = { 255 255 255 }
+
+	capital = 944 # Tephrice
+
+	title = "PAULICIAN_PATRIARCH"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+
+	short_name = yes
+
+	# Always exists
+	landless = yes
+	primary = no
+
+	# Controls a religion
+	controls_religion = paulician
+
+	religion = paulician
+	culture = armenian
+
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+
+	# Regnal names
+	male_names = {
+		Alexios Alexandros Anastasios Anthimos Athanasios Antonios Basileios Gabriel Dionysios Dositheos
+		Epaphroditus Eustathios Eustratios Euthymios Gegnesius Gennadios Georgios Gerasimos Germanos Gregorios Ieremias
+		Ignatios Ioakeim Ioannes Ioseph Isidoros Kallinikos Kallistos Konstantinos Kosmas Kyrillos Leon
+		Leontios Loukas Makarios Manuel Markos Matthaios Maximos Meletios Methodios Metrophanes Michael
+		Neophytos Nephon Nikephoros Niketas Nikolaos Paul Pavlos Petros Photios Polykarpos Sergius Silvanus Stephanos
+		Sophronios Theodoros Theodosios Theodotos Theophylaktos Thomas Timotheos Titus
+	}
+}
+
+d_saint_blaise = {
+	color = { 190 175 70 }
+
+	graphical_culture = orthodoxholygfx
+
+	capital = 1531 # Varazhnunik
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+
+	# Parent Religion
+	religion = apostolic
+
+	culture = armenian
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 2
+
+	mercenary_type = saint_addai_composition
+}
+
+c_philippopolis = { # 493 (Plovdiv)
+	b_st_bogomil = {}
+}
+# -*- ck2.landed_titles -*-
+
+d_army_light = {
+
+	color = { 120 160 30 }
+	color2 = { 255 255 255 }
+
+	graphical_culture = holygfx
+
+	capital = 693 # Baghdad
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+	holy_order = yes
+
+	# Parent Religion
+	religion = manichean
+
+	culture = persian
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 3 # (Must be an integer between 1 and 512)
+
+	mercenary_type = saint_addai_composition
+	coat_of_arms = {
+		data = { 2 0 3 4 7 11 11 }
+		religion = manichean
+	}
+}
+
+d_army_lucifer = {
+
+	color = { 170 70 147 }
+	color2 = { 255 255 255 }
+
+	graphical_culture = holygfx
+
+	capital = 693 # Baghdad
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+	holy_order = yes
+
+	# Parent Religion
+	religion = messalian
+
+	culture = persian
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 3 # (Must be an integer between 1 and 512)
+
+	mercenary_type = saint_addai_composition
+}
+
+d_cathar = {
+	color = { 238 224 147 }
+	color2 = { 230 220 108 }
+	capital = 213 # Carcassone
+
+	allow = {
+		always = no # Only by special decision
+	}
+
+	# Always exists
+	landless = yes
+	primary = yes
+	dignity = 100
+
+	title = "CATHAR_PATRIARCH"
+	title_female = "CATHAR_MATRIARCH"
+	foa = "POPE_FOA"
+	short_name = yes
+
+	religion = cathar
+
+	# Controls a religion
+	controls_religion = cathar
+
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+
+	gain_effect = {
+		if = {
+			limit = { NOT = { trait = perfecti } }
+			emf_notify_add_perfecti = yes
+		}
+	}
+}
+
+d_druze = {
+	color = { 60 190 60 }
+	color2 = { 220 220 0 }
+	capital = 770 # Beirut
+	creation_requires_capital = no
+	dignity = 100 # Counted as having this many more counties than it does
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+	caliphate = yes
+
+	title = "SHAYKH"
+	title_female = "SHAYKHA"
+	foa = "IMAM_FOA"
+	short_name = yes
+
+	religion = druze
+	# Controls a religion
+	controls_religion = druze
+
+	allow = {
+		religion = druze
+		is_adult = yes
+		has_regent = no
+		war = no
+		piety = 1000
+		trait = druze_ajawid
+		num_of_holy_sites = 1
+		higher_tier_than = DUKE
+	}
+	gain_effect = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = druze_shaykh }
+			}
+			hidden_tooltip = {
+				narrative_event = { id = emf_heresy.1968 }
+			}
+		}
+	}
+}
+
+d_hashshashin = {
+	religion = ismaili
+}
+
+d_ismaili = {
+	color = { 60 190 60 }
+	color2 = { 220 220 0 }
+	capital = 719 # Mecca
+
+	creation_requires_capital = no
+	dignity = 100 # Counted as having this many more counties than it does
+	religion = ismaili
+	# Controls a religion
+	controls_religion = ismaili
+	assimilate = no
+	caliphate = yes
+	coat_of_arms = {
+		data = { 0 0 0 9 1 7 7 }
+		religion = ismaili
+	}
+	allow = {
+		trigger_if = {
+			limit = { NOT = { religion = ismaili } }
+			religion = ismaili
+		}
+		OR = {
+			trait = mirza
+			trait = sayyid
+			piety = 1000
+			custom_tooltip = {
+				text = ismaili_bloodline_TT
+				any_owned_bloodline = {
+					has_bloodline_flag = bloodline_ismaili_leader
+					bloodline_is_active_for = PREV
+				}
+			}
+		}
+		trigger_if = {
+			limit = { has_random_religions = no }
+			custom_tooltip = {
+				text = ismaili_creation_independent
+				in_revolt = no
+				OR = {
+					independent = yes
+					NOT = {
+						any_liege = {
+							OR = {
+								in_revolt = yes
+								NOT = { religion = ismaili }
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = not_shia_caliphate_revolt_ongoing
+				NOT = { has_global_flag = ismaili_caliphate_revolt_ongoing }
+			}
+			OR = {
+				AND = {
+					trait = sayyid
+					piety = 1000
+				}
+				AND = {
+					custom_tooltip = {
+						text = ismaili_bloodline_TT
+						any_owned_bloodline = {
+							has_bloodline_flag = bloodline_ismaili_leader
+							bloodline_is_active_for = PREV
+						}
+					}
+					piety = 500
+				}
+				trigger_if = {
+					limit = { NOT = { has_global_flag = destroyed_caliphates } }
+					custom_tooltip = {
+						text = controls_mecca_medina
+						c_mecca = { owner_under_ROOT = yes }
+						c_medina = { owner_under_ROOT = yes }
+					}
+				}
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+					c_jerusalem = { owner_under_ROOT = yes }
+					c_damascus = { owner_under_ROOT = yes }
+					c_baghdad = { owner_under_ROOT = yes }
+				}
+			}
+		}
+		trigger_else = {
+			custom_tooltip = {
+				text = THREE_HOLY_SITES_TT
+				any_realm_title = {
+					count = 3
+					is_holy_site = ROOT
+				}
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = destroyed_caliphates }
+			OR = {
+				piety = 500
+				custom_tooltip = {
+					text = controls_mecca_medina
+					c_mecca = { owner_under_ROOT = yes }
+					c_medina = { owner_under_ROOT = yes }
+				}
+				custom_tooltip = {
+					text = ismaili_bloodline_TT
+					any_owned_bloodline = {
+						has_bloodline_flag = bloodline_ismaili_leader
+						bloodline_is_active_for = PREV
+					}
+				}
+			}
+		}
+	}
+
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	short_name = yes
+
+	gain_effect = {
+		if = {
+			limit = {
+				d_ismaili = { NOT = { has_title_flag = ismaili_followers } }
+			}
+			hidden_effect = {
+				character_event = { id = emf_heresy.1973 days = 30 }
+			}
+		}
+	}
+} # end d_ismaili
+
+d_knights_saint_mark = {
+
+	color = { 170 155 60 }
+
+	graphical_culture = holygfx
+
+	capital = 802 #Alexandria
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+
+	culture = coptic
+
+	religion = miaphysite
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 5
+
+	mercenary_type = saint_anthony_composition
+}
+
+d_lollard = {
+	color = { 157 37 17 }
+	color2 = { 230 220 108 }
+	capital = 21 # Gloucester
+
+	# Always exists
+	landless = yes
+	primary = yes
+	dignity = 20
+
+	title = "LOLLARD_PRIMATE"
+	foa = "POPE_FOA"
+	short_name = yes
+
+	religion = lollard
+
+	# Controls a religion
+	controls_religion = lollard
+
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+}
+
+d_mahdiyya = {
+	color = { 180 0 0 }
+	color2 = { 220 220 0 }
+	capital = 719 # Mecca
+
+	creation_requires_capital = no
+	dignity = 100 # Counted as having this many more counties than it does
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+
+	short_name = yes
+	religion = mahdiyya
+	# Controls a religion
+	controls_religion = mahdiyya
+	assimilate = no
+	caliphate = yes
+	coat_of_arms = {
+		data = { 0 0 0 9 1 7 7 }
+		religion = mahdiyya
+	}
+
+	allow = {
+		trigger_if = {
+			limit = { NOT = { religion = mahdiyya } }
+			religion = mahdiyya
+		}
+		OR = {
+			trait = mirza
+			trait = sayyid
+			piety = 1000
+		}
+		trigger_if = {
+			limit = { has_random_religions = no }
+			custom_tooltip = {
+				text = mahdiyya_creation_independent
+				in_revolt = no
+				OR = {
+					independent = yes
+					NOT = {
+						any_liege = {
+							OR = {
+								in_revolt = yes
+								NOT = { religion = mahdiyya }
+							}
+						}
+					}
+				}
+			}
+			OR = {
+				AND = {
+					trait = sayyid
+					piety = 1000
+				}
+				trigger_if = {
+					limit = { NOT = { has_global_flag = destroyed_caliphates } }
+					custom_tooltip = {
+						text = controls_mecca_medina
+						c_mecca = { owner_under_ROOT = yes }
+						c_medina = { owner_under_ROOT = yes }
+					}
+				}
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+					c_jerusalem = { owner_under_ROOT = yes }
+					c_damascus = { owner_under_ROOT = yes }
+					c_baghdad = { owner_under_ROOT = yes }
+				}
+			}
+		}
+		trigger_else = {
+			custom_tooltip = {
+				text = THREE_HOLY_SITES_TT
+				any_realm_title = {
+					count = 3
+					is_holy_site = ROOT
+				}
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = destroyed_caliphates }
+			custom_tooltip = {
+				text = controls_mecca_medina
+				c_mecca = { owner_under_ROOT = yes }
+				c_medina = { owner_under_ROOT = yes }
+			}
+		}
+	}
+}
+
+d_manichean = {
+	color = { 180 120 40 }
+	color2 = { 220 220 0 }
+
+	capital = 693 #Baghdad
+
+	title = "MANI_LEADER"
+	foa = "POPE_FOA"
+
+	allow = {
+		is_title_active = FROM
+		religion = manichean
+		is_adult = yes
+		has_regent = no
+		war = no
+		num_of_holy_sites = 1
+		piety = 500
+	}
+
+	short_name = yes
+	dignity = 80 # Counted as having this many more counties than it does
+	# Always exists
+	landless = yes
+
+	# Controls a religion
+	controls_religion = manichean
+
+	religion = manichean
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+}
+
+d_maronite = {
+	color = { 51 25 0 }
+	color2 = { 170 172 88 }
+	capital = 770 # Beirut
+
+	title = "MARONITE_PATRIARCH"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+
+	# Always exists
+	landless = yes
+	short_name = yes
+	dignity = 80 # Counted as having this many more counties than it does
+
+	# Controls a religion
+	controls_religion = maronite
+	religion = maronite
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+
+	allow = { always = no }
+}
+
+d_syriac = { # Syriac Orthodox Church
+	color = { 151 125 20 }
+	color2 = { 170 172 88 }
+	capital = 683 # Amida
+
+	title = SYRIAC_PATRIARCH
+	foa = ECUMENICAL_PATRIARCH_FOA
+
+	# Always exists
+	landless = yes
+	short_name = yes
+	dignity = 80 # Counted as having this many more counties than it does
+
+	# Controls a religion
+	controls_religion = syriac
+	religion = syriac
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	dynasty_title_names = no # Will not be named "Seljuk", etc.
+
+	allow = { always = no }
+}
+
+d_mazdaki = {
+	color = { 170 130 45 }
+	color2 = { 220 220 0 }
+
+	capital = 646 #	Esfahan
+
+	title = "HEAD_MOABADAN_MOABAD"
+	foa = "POPE_FOA"
+	allow = {
+		always = no # Only by special decision
+	}
+
+	short_name = yes
+	dignity = 80 # Counted as having this many more counties than it does
+	# Always exists
+	landless = yes
+
+	# Controls a religion
+	controls_religion = mazdaki
+
+	religion = mazdaki
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+}
+
+d_messalian = {
+	color = { 150 107 67 }
+	color2 = { 220 220 0 }
+
+	capital = 764 # Antioch
+
+	title = "EUCHITE_PATRIARCH"
+	foa = "ECUMENICAL_PATRIARCH_FOA"
+
+	short_name = yes
+
+	# Always exists
+	landless = yes
+	primary = yes
+	dignity = 100
+
+	# Controls a religion
+	controls_religion = messalian
+
+	religion = messalian
+
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+
+	# Regnal names
+	male_names = {
+		Aba Abraham Eliya Denha Emmanuel Giwargis Hnanisho Ishoyahb Makkikha
+		Maremmeh Pethion Sabrisho Shemon Sargis Surin Theodosios Timotheos Yahballaha Yohannan
+	}
+}
+
+d_nabawiyya = {
+	color = { 225 220 80 }
+	color2 = { 220 220 0 }
+	capital = 719 # Mecca
+
+	creation_requires_capital = no
+	dignity = 100 # Counted as having this many more counties than it does
+	title = MALIK
+	title_female = MALIKA
+	foa = MALIK_FOA
+
+	short_name = yes
+	religion = nabawiyya
+	# Controls a religion
+	controls_religion = nabawiyya
+	assimilate = no
+	caliphate = yes
+	coat_of_arms = {
+		data = { 0 0 0 9 1 7 7 }
+		religion = nabawiyya
+	}
+
+	allow = {
+		trigger_if = {
+			limit = { NOT = { religion = nabawiyya } }
+			religion = nabawiyya
+		}
+		OR = {
+			trait = mirza
+			trait = sayyid
+			piety = 1000
+		}
+		trigger_if = {
+			limit = { has_random_religions = no }
+			custom_tooltip = {
+				text = nabawiyya_creation_independent
+				in_revolt = no
+				OR = {
+					independent = yes
+					NOT = {
+						any_liege = {
+							OR = {
+								in_revolt = yes
+								NOT = { religion = nabawiyya }
+							}
+						}
+					}
+				}
+			}
+			OR = {
+				AND = {
+					trait = sayyid
+					piety = 1000
+				}
+				trigger_if = {
+					limit = { NOT = { has_global_flag = destroyed_caliphates } }
+					custom_tooltip = {
+						text = controls_mecca_medina
+						c_mecca = { owner_under_ROOT = yes }
+						c_medina = { owner_under_ROOT = yes }
+					}
+				}
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+					c_jerusalem = { owner_under_ROOT = yes }
+					c_damascus = { owner_under_ROOT = yes }
+					c_baghdad = { owner_under_ROOT = yes }
+				}
+			}
+		}
+		trigger_else = {
+			custom_tooltip = {
+				text = THREE_HOLY_SITES_TT
+				any_realm_title = {
+					count = 3
+					is_holy_site = ROOT
+				}
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = destroyed_caliphates }
+			custom_tooltip = {
+				text = controls_mecca_medina
+				c_mecca = { owner_under_ROOT = yes }
+				c_medina = { owner_under_ROOT = yes }
+			}
+		}
+	}
+}
+
+d_shiite = {
+	color = { 200 250 200 }
+	color2 = { 220 220 0 }
+	capital = 719 # Mecca
+	creation_requires_capital = no
+	dignity = 100 # Counted as having this many more counties than it does
+	religion = shiite
+	landless = yes
+	dynasty_title_names = no
+	# Controls a religion
+	controls_religion = shiite
+	assimilate = no
+	caliphate = yes
+	coat_of_arms = {
+		data = { 0 0 0 9 1 7 7 }
+		religion = shiite
+	}
+	allow = {
+		trigger_if = {
+			limit = { NOT = { religion = shiite } }
+			religion = shiite
+		}
+		OR = {
+			trait = mirza
+			trait = sayyid
+			piety = 1000
+		}
+		trigger_if = {
+			limit = { has_random_religions = no }
+			custom_tooltip = {
+				text = shia_creation_independent
+				in_revolt = no
+				OR = {
+					independent = yes
+					NOT = {
+						any_liege = {
+							OR = {
+								in_revolt = yes
+								NOT = { religion = shiite }
+							}
+						}
+					}
+				}
+			}
+			OR = {
+				AND = {
+					trait = sayyid
+					piety = 1000
+				}
+				trigger_if = {
+					limit = { NOT = { has_global_flag = destroyed_caliphates } }
+					custom_tooltip = {
+						text = controls_mecca_medina
+						c_mecca = { owner_under_ROOT = yes }
+						c_medina = { owner_under_ROOT = yes }
+					}
+				}
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+					c_jerusalem = { owner_under_ROOT = yes }
+					c_damascus = { owner_under_ROOT = yes }
+					c_baghdad = { owner_under_ROOT = yes }
+				}
+			}
+		}
+		trigger_else = {
+			custom_tooltip = {
+				text = THREE_HOLY_SITES_TT
+				any_realm_title = {
+					count = 3
+					is_holy_site = ROOT
+				}
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = destroyed_caliphates }
+			custom_tooltip = {
+				text = controls_mecca_medina
+				c_mecca = { owner_under_ROOT = yes }
+				c_medina = { owner_under_ROOT = yes }
+			}
+		}
+	}
+	title = IMAM
+	title_female = IMAMA
+	foa = IMAM_FOA
+	short_name = yes
+} # end d_shiite
+
+d_waldensian = {
+	color = { 170 254 255 }
+	color2 = { 230 220 108 }
+	capital = 227 # Lyons
+
+	# Always exists
+	landless = yes
+	dignity = 20
+
+	title = "WALDENSIAN_PRIMATE"
+	foa = "POPE_FOA"
+	short_name = yes
+
+	religion = waldensian
+
+	# Controls a religion
+	controls_religion = waldensian
+
+	dynasty_title_names = no	 # Will not be named "Seljuk", etc.
+}
+
+d_zaydi = {
+	color = { 40 160 40 }
+	color2 = { 220 220 0 }
+	capital = 719 # Makkah # Mecca
+
+	creation_requires_capital = no
+	dignity = 80 # Counted as having this many more counties than it does
+	religion = zaydi
+	# Controls a religion
+	controls_religion = zaydi
+	caliphate = yes
+
+	title = IMAM
+	title_female = IMAMA
+	foa = IMAM_FOA
+	short_name = yes
+
+	allow = {
+		trigger_if = {
+			limit = { NOT = { religion = zaydi } }
+			religion = zaydi
+		}
+		OR = {
+			trait = mirza
+			trait = sayyid
+			piety = 1000
+		}
+		trigger_if = {
+			limit = { has_random_religions = no }
+			custom_tooltip = {
+				text = zaydi_creation_independent
+				in_revolt = no
+				OR = {
+					independent = yes
+					NOT = {
+						any_liege = {
+							OR = {
+								in_revolt = yes
+								NOT = { religion = zaydi }
+							}
+						}
+					}
+				}
+			}
+			OR = {
+				AND = {
+					trait = sayyid
+					piety = 1000
+				}
+				trigger_if = {
+					limit = { NOT = { has_global_flag = destroyed_caliphates } }
+					custom_tooltip = {
+						text = controls_mecca_medina
+						c_mecca = { owner_under_ROOT = yes }
+						c_medina = { owner_under_ROOT = yes }
+					}
+				}
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+					c_jerusalem = { owner_under_ROOT = yes }
+					c_damascus = { owner_under_ROOT = yes }
+					c_baghdad = { owner_under_ROOT = yes }
+				}
+			}
+		}
+		trigger_else = {
+			custom_tooltip = {
+				text = THREE_HOLY_SITES_TT
+				any_realm_title = {
+					count = 3
+					is_holy_site = ROOT
+				}
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = destroyed_caliphates }
+			custom_tooltip = {
+				text = controls_mecca_medina
+				c_mecca = { owner_under_ROOT = yes }
+				c_medina = { owner_under_ROOT = yes }
+			}
+		}
+	}
+} # end d_zaydi
+c_roma ={
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 0
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan"
+	}
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 0
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan_reformed"
+	}
+}
+e_roman_empire ={
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 1
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan"
+	}
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 1
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan_reformed"
+	}
+}
+e_byzantium ={
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 2
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan"
+	}
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 2
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan_reformed"
+	}
+}
+e_italy ={
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 3
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan"
+	}
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 3
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan_reformed"
+	}
+}
+e_hre ={
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 4
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan"
+	}
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 4
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan_reformed"
+	}
+}
+c_korinthos ={
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 5
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan"
+	}
+	pagan_coa = {
+		template = 0
+		layer = {
+			texture = 2
+			texture_internal = 5
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion="hellenic_pagan_reformed"
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
