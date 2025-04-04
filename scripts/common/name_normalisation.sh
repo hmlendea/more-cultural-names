@@ -18,7 +18,7 @@ function nameToLocationId() {
             -e 's/-*$//g' \
             -e 's/-\+/-/g' \
             \
-            -e 's/central/centre/middle/g' \
+            -e 's/central/centre/g' \
             -e 's/\(north\|west\|south\|east\)ern/\1/g' \
             \
             -e 's/borealis/north/g' \

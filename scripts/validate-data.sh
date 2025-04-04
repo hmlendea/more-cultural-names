@@ -87,6 +87,9 @@ function checkForMissingCkLocationLinks() {
                             sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g'); do
+
+        [[ ${LANDED_TITLE_ID} =~ _color$ ]] && continue
+
         LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LANDED_TITLE_ID}")
         [ -n "${1}" ] && LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${LANDED_TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
 
@@ -114,7 +117,7 @@ function checkForMissingCkLocationLinks() {
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
             fi
         else
-            echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
+            echo "    > 2 ${GAME_ID}: ${LANDED_TITLE_ID} is missing"
         fi
     done
 }
