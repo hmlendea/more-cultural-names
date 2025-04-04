@@ -153,8 +153,8 @@ build-edition \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
-    "more-cultural-names" "More Cultural Names" \
-    "HOI4" "1.15.*"
+    'more-cultural-names' 'More Cultural Names' \
+    'HOI4' '1.16.*'
 
 build-edition \
     "mdm-more-cultural-names" "Millennium Dawn: More Cultural Names" \
