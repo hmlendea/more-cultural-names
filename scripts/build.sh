@@ -123,8 +123,8 @@ build-edition \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ce_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
-    "cmh-more-cultural-names" "Community Mods for Historicity - More Cultural Names" \
-    "CK3CMH" "1.14.*" \
+    'cmh-more-cultural-names' 'Community Mods for Historicity - More Cultural Names' \
+    'CK3CMH' '1.15.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
