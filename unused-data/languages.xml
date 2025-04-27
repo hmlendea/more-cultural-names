@@ -461,12 +461,16 @@
     <Code iso-639-3="xrt" />
   </Language>
   <Language>
-    <Id>Arawak</Id> <!-- Arowak, Aruák, Lokono, Lokono Dian -->
-    <Code iso-639-2="arw" iso-639-3="arw" />
-  </Language>
-  <Language>
     <Id>Ardhamagadhi_Prakit</Id> <!-- Ardhamāgadhī -->
     <Code iso-639-3="pka" />
+  </Language>
+  <Language>
+    <Id>Zay</Id> <!-- Lak'i, Laqi -->
+    <Code iso-639-3="zwa" />
+  </Language>
+  <Language>
+    <Id>Wolane</Id>
+    <Code iso-639-3="wle" />
   </Language>
   <Language>
     <Id>Arikara</Id>
@@ -552,9 +556,6 @@
   <Language>
     <Id>Bantoanon</Id> <!-- Asi, Binantoanon -->
     <Code iso-639-3="bno" />
-  </Language>
-  <Language>
-    <Id>Bantu_GreatLakes</Id> <!-- Great Lakes Bantu, Lacustrine Bantu, Bantu zone J -->
   </Language>
   <Language>
     <Id>Barngarla</Id> <!-- Parnkalla -->
@@ -1218,8 +1219,28 @@
     <Code iso-639-2="dua" iso-639-3="dua" />
   </Language>
   <Language>
-    <Id>Dusun</Id> <!-- Central Dusun, Bunduliwan -->
+    <Id>Dusun</Id> <!-- Dusunic -->
+  </Language>
+  <Language>
+    <Id>Dusun_Central</Id> <!-- Dusun, Boros Dusun, Bunduliwan -->
     <Code iso-639-3="dtp" />
+    <FallbackLanguages>
+      <LanguageId>Dusun</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Kadazan_Coastal</Id> <!-- Dusun Tangara -->
+    <Code iso-639-3="kzj" />
+    <FallbackLanguages>
+      <LanguageId>Dusun</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Kadazan_KliasRiver</Id>
+    <Code iso-639-3="kqt" />
+    <FallbackLanguages>
+      <LanguageId>Dusun</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Dyula</Id> <!-- Jula, Dioula, Julakan -->
@@ -4731,7 +4752,28 @@
     <Code iso-639-3="soh" />
   </Language>
   <Language>
-    <Id>Silte</Id> <!-- Siltʼe, Silt'e -->
+    <Id>Mijikenda_Duruma</Id>
+    <Code iso-639-3="dug" />
+    <FallbackLanguages>
+      <LanguageId>Mijikenda</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Mijikenda_Giryama</Id>
+    <Code iso-639-3="nyf" />
+    <FallbackLanguages>
+      <LanguageId>Mijikenda</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Mijikenda_Segeju</Id>
+    <Code iso-639-3="seg" />
+    <FallbackLanguages>
+      <LanguageId>Mijikenda</LanguageId>
+    </FallbackLanguages>
+  </Language>
+  <Language>
+    <Id>Silte</Id> <!-- Siltʼe, Silt'e, Yesiltʼe -->
     <Code iso-639-3="stv" />
   </Language>
   <Language>
@@ -4742,7 +4784,10 @@
     </FallbackLanguages>
   </Language>
   <Language>
-    <Id>Sinixt</Id>
+    <Id>Sinixt</Id> <!-- Arrow Lakes, snsəlxcín -->
+    <FallbackLanguages>
+      <LanguageId>Okanagan</LanguageId>
+    </FallbackLanguages>
   </Language>
   <Language>
     <Id>Sirenik</Id> <!-- Sirenik Yupik, Sireniki Yupik, Old Sirenik, Vuteen, Sirenikskiy, Uqeghllistun -->
@@ -4798,10 +4843,6 @@
   <Language>
     <Id>Surjapuri</Id> <!-- Sura, Deshi Bhasa -->
     <Code iso-639-3="sjp" />
-  </Language>
-  <Language>
-    <Id>Susquehannock</Id> <!-- Conestoga -->
-    <Code iso-639-3="sqn" />
   </Language>
   <Language>
     <Id>Tagish</Id> <!-- Tā̀gish, Carcross-Tagish -->
