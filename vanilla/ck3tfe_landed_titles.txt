@@ -1074,6 +1074,15 @@ e_slavia = {
 	}
 }
 
+e_beth_nahrain = {
+	color = { 35 79 78 }
+	capital = c_damascus # Damascus
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+}
+
 e_armenia = {
 	color = { 198 29 29 }
 	
@@ -5887,6 +5896,31 @@ e_britannia = {
 				name_list_afro_roman = cn_connactum
 			}
 
+			c_mayo = {
+				color = { 15 190 70 }
+
+				b_cruachu = {
+					province = 8745
+
+					color = { 15 190 70 }
+				}
+				b_castlebar = {
+					province = 21
+
+					color = { 15 190 70 }
+				}
+				b_sligo = {
+					province = 22
+
+					color = { 15 190 70 }
+				}
+				b_killala = {
+					province = 8748
+
+					color = { 15 190 70 }
+				}
+			}
+
 			c_connacht = {	#Hy Many
 				color = { 45 230 70 }
 				
@@ -5923,36 +5957,6 @@ e_britannia = {
 					color = { 45 230 70 }
 					
 				}				
-			}
-			
-			c_mayo = {
-				color = { 15 190 70 }
-				
-				
-				b_cruachu = {
-					province = 8745
-
-					color = { 15 190 70 }
-					
-				}
-				b_castlebar = {
-					province = 21
-
-					color = { 15 190 70 }
-					
-				}
-				b_sligo = {
-					province = 22
-
-					color = { 15 190 70 }
-					
-				}
-				b_killala = {
-					province = 8748
-
-					color = { 15 190 70 }
-					
-				}
 			}
 			
 			c_breifne = {
@@ -18020,18 +18024,6 @@ e_italy = {
 					color = { 245 245 195 }
 					
 				}
-				b_gubbio = {
-					province = 2582
-
-					color = { 245 245 195 }
-					
-				}
-				b_camerino = {
-					province = 2587
-
-					color = { 245 245 195 }
-					
-				}
 			}
 			
 			c_fermo = {
@@ -18075,22 +18067,16 @@ e_italy = {
 					color = { 197 162 133 }
 					
 				}
-				b_assissi = { #Assisi
-					province = 2581
-
-					color = { 197 162 133 }
-					
-				}
-				b_terni = {
-					province = 2586
-
-					color = { 197 162 133 }
-					
-				}
 				b_rieti = {
 					province = 2588
 
 					color = { 227 152 133 }
+					
+				}
+				b_camerino = {
+					province = 2587
+
+					color = { 245 245 195 }
 					
 				}
 			}
@@ -18106,7 +18092,29 @@ e_italy = {
 					
 				}
 			}
-			
+
+			c_gubbio = {
+				color = { 157 132 123 }
+
+				b_gubbio = {
+					province = 2582
+
+					color = { 245 245 195 }
+					
+				}
+				b_assissi = { #Assisi
+					province = 2581
+
+					color = { 197 162 133 }
+					
+				}
+				b_terni = {
+					province = 2586
+
+					color = { 197 162 133 }
+					
+				}
+			}
 			
 			c_abruzzi = {
 				color = { 157 132 123 }
@@ -66293,6 +66301,16 @@ e_india = { # Titular, created by special decision only if entire India is unite
 	}
 }
 
+e_hindustan = {		# Titular, created by special decision by Islamic Invaders
+	color = { 0 76 76 }
+
+	capital = c_delhi
+
+	ai_primary_priority = {
+		add = @always_primary_score
+	}
+}
+
 e_bengal = { #Aryavarta
 	color = { 255 100 0 }
 
@@ -78612,9 +78630,9 @@ e_western_roman_empire = {
 	}
 
 	k_romagna = {
-		color = { 215 141 152 }
+		color = { 145 41 22 }
 
-		capital = c_roma # Rome
+		capital = c_ravenna # Rome
 		
 		can_create = {
 			trigger_if = {
@@ -83215,6 +83233,9 @@ e_fennia = {
 					
 				}
 			}
+		}
+		d_vainola={
+			color = { 220 160 50 }
 		}
 	}
 

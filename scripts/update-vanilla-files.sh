@@ -168,7 +168,9 @@ update-vanilla-files \
     "${CK3CMH_VANILLA_LANDED_TITLES_FILE}" \
     "${CK3IBL_LANDED_TITLES_DIR}"/*.txt \
     "${CK3CE_LANDED_TITLES_DIR}"/*.txt \
-    "${CK3RICE_LANDED_TITLES_DIR}"/*.txt
+    "${CK3RICE_LANDED_TITLES_DIR}"/*.txt \
+    "${CK3SuccExp_LANDED_TITLES_DIR}"/*.txt \
+    "${CK3Trinity_LANDED_TITLES_DIR}"/*.txt
 update-vanilla-file \
     "${CK3IBL_LANDED_TITLES_DIR}/00_landed_titles.txt" \
     "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"

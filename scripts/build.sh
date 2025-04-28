@@ -104,66 +104,66 @@ build-edition \
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
-    "CK3" "1.15.*" \
+    'CK3' '1.15.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
 
 build-edition \
-    "aep-more-cultural-names" "Asia Expansion Project - More Cultural Names" \
-    "CK3AEP" "1.15.*" \
-    --landed-titles "${VANILLA_FILES_DIR}/ck3aep_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+    'aep-more-cultural-names' 'Asia Expansion Project - More Cultural Names' \
+    'CK3AEP' '1.15.*' \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3aep_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
     "atha-more-cultural-names" "Apotheosis: More Cultural Names" \
     "CK3ATHA" "1.9.*" \
-    --landed-titles "${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+    --landed-titles "${VANILLA_FILES_DIR}/ck3atha_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
-    "ce-more-cultural-names" "Culture Expanded - More Cultural Names" \
-    "CK3CE" "1.15.*" \
-    --landed-titles "${VANILLA_FILES_DIR}/ck3ce_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+    'ce-more-cultural-names' 'Culture Expanded - More Cultural Names' \
+    'CK3CE' '1.15.*' \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3ce_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
-    "cmh-more-cultural-names" "Community Mods for Historicity - More Cultural Names" \
-    "CK3CMH" "1.14.*" \
-    --landed-titles "${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+    'cmh-more-cultural-names' 'Community Mods for Historicity - More Cultural Names' \
+    'CK3CMH' '1.15.*' \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
     'ibl-more-cultural-names' "Ibn Battuta's Legacy 2 - More Cultural Names" \
-    "CK3IBL" "1.15.*" \
-    --landed-titles "${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+    'CK3IBL' '1.15.*' \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
-    "mbp-more-cultural-names" "More Bookmarks+ - More Cultural Names" \
-    "CK3MBP" "1.14.*" \
-    --landed-titles "${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+    'mbp-more-cultural-names' 'More Bookmarks+ - More Cultural Names' \
+    'CK3MBP' '1.14.*' \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
     "sow-more-cultural-names" "Sinews of War - More Cultural Names" \
     "CK3SoW" "1.14.*" \
-    --landed-titles "${CK3SoW_VANILLA_LANDED_TITLES_FILE}" --landed-titles-name "873_MoreCulturalNames.txt"
+    --landed-titles "${CK3SoW_VANILLA_LANDED_TITLES_FILE}" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
-    "tba-more-cultural-names" "Bronze Age Reborn: More Cultural Names" \
-    "CK3TBA" "1.14.*" \
-    --landed-titles "${VANILLA_FILES_DIR}/ck3tba_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+    'tba-more-cultural-names' 'Bronze Age Reborn: More Cultural Names' \
+    'CK3TBA' '1.15.*' \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3tba_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
-    "tfe-more-cultural-names" "The Fallen Eagle - More Cultural Names" \
-    "CK3TFE" "1.14.*" \
-    --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name "873_MoreCulturalNames.txt"
+    'tfe-more-cultural-names' 'The Fallen Eagle - More Cultural Names' \
+    'CK3TFE' '1.15.*' \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
-    "more-cultural-names" "More Cultural Names" \
-    "HOI4" "1.15.*"
+    'more-cultural-names' 'More Cultural Names' \
+    'HOI4' '1.16.*'
 
 build-edition \
-    "mdm-more-cultural-names" "Millennium Dawn: More Cultural Names" \
-    "HOI4MDM" "1.15.*" \
-    --dependency "Millennium Dawn: A Modern Day Mod"
+    'mdm-more-cultural-names' 'Millennium Dawn: More Cultural Names' \
+    'HOI4MDM' '1.15.*' \
+    --dependency 'Millennium Dawn: A Modern Day Mod'
 
 build-edition \
-    "tgw-more-cultural-names" "The Great War: More Cultural Names" \
-    "HOI4TGW" "1.15.*"
+    'tgw-more-cultural-names' 'The Great War: More Cultural Names' \
+    'HOI4TGW' '1.16.*'
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
