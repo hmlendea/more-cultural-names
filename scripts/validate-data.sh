@@ -568,7 +568,7 @@ function validateThatTheLanguagesAreOrdered() {
     local EXPECTED_LANGUAGES_LIST=""
 
     ACTUAL_LANGUAGES_LIST=$(xmlstarlet sel -t -m "//Id" -v "." -n "${LANGUAGES_FILE_TO_CHECK}" | \
-                            grep -v '_\(Ancient\|Archaic\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Proto\)')
+                            grep -v '_\(Ancient\|Archaic\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Paleo\|Proto\)')
     EXPECTED_LANGUAGES_LIST=$(sort <<< ${ACTUAL_LANGUAGES_LIST})
 
     diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LANGUAGES_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LANGUAGES_LIST}" | sed 's/%NL%/\n/g')
