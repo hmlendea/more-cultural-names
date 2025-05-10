@@ -785,6 +785,7 @@ checkDefaultIrLocalisations  "IR_ABW"   "${IR_ABW_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkDefaultIrLocalisations  "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
+checkDefaultIrLocalisations  "IR_TI"   "${IR_TI_VANILLA_FILE}"
 
 checkDefaultVic3Localisations "Vic3" "${Vic3_LOCALISATIONS_DIR}"
 
