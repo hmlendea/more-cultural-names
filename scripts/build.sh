@@ -104,8 +104,8 @@ build-edition \
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
-    'CK3' '1.15.*' \
-    --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name "999_MoreCulturalNames.txt"
+    'CK3' '1.16.*' \
+    --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name '999_MoreCulturalNames.txt'
 
 build-edition \
     'aep-more-cultural-names' 'Asia Expansion Project - More Cultural Names' \
