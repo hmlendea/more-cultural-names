@@ -124,12 +124,12 @@ build-edition \
 
 build-edition \
     'cmh-more-cultural-names' 'Community Mods for Historicity - More Cultural Names' \
-    'CK3CMH' '1.15.*' \
+    'CK3CMH' '1.16.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
-    'ibl-more-cultural-names' "Ibn Battuta's Legacy 2 - More Cultural Names" \
-    'CK3IBL' '1.15.*' \
+    'ibl-more-cultural-names' 'Ibn Battuta'"\'"'s Legacy 2 - More Cultural Names' \
+    'CK3IBL' '1.16.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
