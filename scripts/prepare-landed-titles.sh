@@ -394,7 +394,6 @@ merge-languages "Sicilian_Medieval" "Sicilian_Medieval" "Sardinian"
 merge-languages "Sicilian_Medieval" "Sicilian" "Sardinian"
 merge-languages "Tuscan_Medieval" "Tuscan_Medieval" "Sicilian"
 merge-languages "Tuscan_Medieval" "Tuscan_Medieval" "Umbrian_Medieval"
-merge-languages "Tuscan_Medieval" "Tuscan_Medieval" "Venetian_Medieval"
 merge-languages "Italian" "Italian_Central" "Dalmatian_Medieval"
 merge-languages "Italian" "Italian" "Tuscan_Medieval"
 
