@@ -119,7 +119,7 @@ build-edition \
 
 build-edition \
     'ce-more-cultural-names' 'Culture Expanded - More Cultural Names' \
-    'CK3CE' '1.15.*' \
+    'CK3CE' '1.16.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ce_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \

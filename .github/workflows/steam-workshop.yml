@@ -42,12 +42,29 @@ jobs:
           unzip "${{matrix.config.mod_game_id}}.zip" -d "${{matrix.config.mod_game_id}}/"
 
     - name: Upload
-      uses: hmlendea/steam-workshop-update@latest
-      with:
-        appid: ${{matrix.config.steam_app_id}}
-        itemid: ${{matrix.config.steam_item_id}}
-        path: "${{matrix.config.mod_game_id}}/${{matrix.config.mod_dir_name}}/"
-        changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+      run: |
+        MAX_ATTEMPTS=3
+        ATTEMPT=1
+        until [ ${ATTEMPT} -gt ${MAX_ATTEMPTS} ]
+        do
+          echo "Attempt ${ATTEMPT} of ${MAX_ATTEMPTS}"
+
+          npx steam-workshop-update \
+            --appid ${{matrix.config.steam_app_id}} \
+            --itemid ${{matrix.config.steam_item_id}} \
+            --path "${{matrix.config.mod_game_id}}/${{matrix.config.mod_dir_name}}/" \
+            --changenote "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]" \
+            && break
+
+          echo "Upload attempt #${ATTEMPT} failed. Retrying in 15 seconds..."
+          ATTEMPT=$((${ATTEMPT}+1))
+          sleep 15
+        done
+
+        if [ ${ATTEMPT} -gt ${MAX_ATTEMPTS} ]; then
+          echo "Upload failed after ${MAX_ATTEMPTS} attempts. Giving up..."
+          exit 1
+        fi
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
         STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
