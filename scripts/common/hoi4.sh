@@ -44,7 +44,7 @@ function getHoi4StateName() {
     echo "${STATE_NAME}"
 }
 
-function logHoi4LinkableState() {
+function logLinkableHoi4State() {
     local GAME_ID="${1}"
     local STATE_ID="${2}"
     local STATE_NAME="${3}"
@@ -57,7 +57,7 @@ function logHoi4LinkableState() {
     echo ''
 }
 
-function logHoi4LinkableCity() {
+function logLinkableHoi4City() {
     local GAME_ID="${1}"
     local CITY_ID="${2}"
     local CITY_NAME="${3}"
