@@ -43,3 +43,31 @@ function getHoi4StateName() {
 
     echo "${STATE_NAME}"
 }
+
+function logHoi4LinkableState() {
+    local GAME_ID="${1}"
+    local STATE_ID="${2}"
+    local STATE_NAME="${3}"
+    local REASON="${4}"
+
+    echo "    > ${GAME_ID}: State ${STATE_ID} (${STATE_NAME}) could potentially be linked with ${REASON}"
+    echo '    <GameIds>'
+    echo "      <GameId game=\"${GAME_ID}\" type=\"State\">${STATE_ID}</GameId> <!-- ${STATE_NAME} -->"
+    echo '    </GameIds>'
+    echo ''
+}
+
+function logHoi4LinkableCity() {
+    local GAME_ID="${1}"
+    local CITY_ID="${2}"
+    local CITY_NAME="${3}"
+    local STATE_ID="${4}"
+    local STATE_NAME="${5}"
+    local REASON="${6}"
+
+    echo "    > ${GAME_ID}: City #${CITY_ID} (${CITY_NAME}) (State: ${STATE_NAME}) could potentially be linked with ${REASON}"
+    echo '    <GameIds>'
+    echo "      <GameId game=\"${GAME_ID}\" type=\"City\" parent=\"${STATE_ID}\">${CITY_ID}</GameId> <!-- ${CITY_NAME} -->"
+    echo '    </GameIds>'
+    echo ''
+}
