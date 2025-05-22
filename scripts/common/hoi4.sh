@@ -7,7 +7,7 @@ function checkForMissingHoi4CityLinks() {
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
     local CWD="$(pwd)"
 
-    if [ ! find "${LOCALISATIONS_DIR}" -name '*victory_points_l_english.yml' | xargs cat | grep -q 'VICTORY_POINTS' ]; then
+    if [ ! $(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | grep -q 'VICTORY_POINTS') ]; then
         LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
     fi
 
@@ -147,6 +147,10 @@ function getHoi4StateName() {
     local LOCALISATIONS_DIR="${2}"
     local STATE_NAME=""
     local CWD="$(pwd)"
+
+    if [[ "${LOCALISATIONS_DIR}" != */english ]]; then
+        LOCALISATIONS_DIR="${LOCALISATIONS_DIR%/}/english"
+    fi
 
     STATE_NAME=$(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
                         grep "^\s*STATE_${STATE_ID}:" | \

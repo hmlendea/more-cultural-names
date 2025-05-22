@@ -451,7 +451,7 @@ function checkDefaultHoi4Localisations() {
             local CITY_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${CITY_LINE}")
 
             if [ "${CITY_NAME_ACTUAL}" != "${CITY_NAME_EXPECTED}" ]; then
-                echo "Wrong default localisation for ${GAME_ID} city ${CITY_ID} ! Correct one is: ${CITY_NAME_EXPECTED}"
+                echo "Wrong default localisation for ${GAME_ID} city ${CITY_ID} ! Correct one is: ${CITY_NAME_EXPECTED} | Find it with HOI4.*City.*>${CITY_ID}<"
             fi
         fi
     done < <(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}")
@@ -465,7 +465,7 @@ function checkDefaultHoi4Localisations() {
             local STATE_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${STATE_LINE}")
 
             if [ "${STATE_NAME_ACTUAL}" != "${STATE_NAME_EXPECTED}" ]; then
-                echo "Wrong default localisation for ${GAME_ID} state ${STATE_ID} ! Correct one is: ${STATE_NAME_EXPECTED}"
+                echo "Wrong default localisation for ${GAME_ID} state ${STATE_ID} ! Correct one is: ${STATE_NAME_EXPECTED} | Find it with HOI4.*State.*>${STATE_ID}<"
             fi
         fi
     done < <(grep "${GAME_ID}\" type=\"State" "${LOCATIONS_FILE}")
