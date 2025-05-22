@@ -108,7 +108,7 @@ function checkForSurplusHoi4CityLinks() {
                             sort -h | uniq \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: ${CITY_ID} is defined but it does not exist"
+        echo "    > ${GAME_ID}: City ${CITY_ID} is defined but it does not exist. Find it with: HOI4TGW.*>${CITY_ID}<"
     done
 }
 
