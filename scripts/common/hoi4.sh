@@ -3,9 +3,14 @@ source "scripts/common/paths.sh"
 
 function checkForMissingHoi4CityLinks() {
     local GAME_ID="${1}"
-    local PARENTAGE_FILE="${2}"
-    local LOCALISATIONS_DIR="${3}"
+    local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
+    local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
     local CWD="$(pwd)"
+
+    if [ ! -f "${VANILLA_FILE}" ]; then
+        echo "The vanilla parents file (${VANILLA_FILE}) for ${GAME_ID} is missing!"
+        return
+    fi
 
     cd "${LOCALISATIONS_DIR}"
     for CITY_ID in $(find . -name "*victory_points_l_english.yml" | xargs cat | \
@@ -14,7 +19,7 @@ function checkForMissingHoi4CityLinks() {
                         sort -h | uniq); do
         grep "<GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | grep "type=\"City\"" | grep -q ">${CITY_ID}<" && continue
 
-        local STATE_ID=$(grep "^${CITY_ID}=" "${PARENTAGE_FILE}" | awk -F = '{print $2}')
+        local STATE_ID=$(grep "^${CITY_ID}=" "${VANILLA_FILE}" | awk -F = '{print $2}')
         local CITY_NAME=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
 
         local LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
@@ -39,9 +44,8 @@ function checkForMissingHoi4CityLinks() {
 
 function checkForMissingHoi4StateLinks() {
     local GAME_ID="${1}"
-    local LOCALISATIONS_DIR="${2}"
-    local STATES_DIR_VAR="${GAME_ID}_STATES_DIR"
-    local STATES_DIR="${!STATES_DIR_VAR}"
+    local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
+    local STATES_DIR=$(get_variable "${GAME_ID}_STATES_DIR")
     local CWD="$(pwd)"
 
     local LOCATIONS_FILE_NAME_LINES=$(grep "<Name language=" "${LOCATIONS_FILE}")
@@ -80,17 +84,10 @@ function checkForMissingHoi4StateLinks() {
 
 function checkForMissingHoi4LocationLinks() {
     local GAME_ID="${1}"
-    local PARENTAGE_FILE="${2}"
-    local LOCALISATIONS_DIR="${3}"
     local CWD="$(pwd)"
 
-    if [ ! -f "${PARENTAGE_FILE}" ]; then
-        echo "The vanilla parents file (${PARENTAGE_FILE}) for ${GAME_ID} is missing!"
-        return
-    fi
-
-    checkForMissingHoi4StateLinks "${GAME_ID}" "${LOCALISATIONS_DIR}"
-    checkForMissingHoi4CityLinks "${GAME_ID}" "${PARENTAGE_FILE}" "${LOCALISATIONS_DIR}"
+    checkForMissingHoi4StateLinks "${GAME_ID}"
+    checkForMissingHoi4CityLinks "${GAME_ID}"
 
     cd "${CWD}"
 }
