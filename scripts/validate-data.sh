@@ -1,5 +1,6 @@
 #!/bin/bash
 source "scripts/common/paths.sh"
+source "${SCRIPTS_COMMON_DIR}/utils.sh"
 source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
 source "${SCRIPTS_COMMON_DIR}/hoi4.sh"
 source "${SCRIPTS_COMMON_DIR}/parser.sh"
@@ -242,6 +243,33 @@ function checkForMissingHoi4LocationLinks() {
     cd "${CWD}"
 }
 
+function checkForSurplusHoi4CityLinks() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+
+    for CITY_ID in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | grep "type=\"City\"" | \
+                            sed 's/[^>]*>\([^<]*\).*/\1/g' | \
+                            sort -h | uniq \
+                        ) <( \
+                            find "${LOCALISATIONS_DIR}" -name '*victory_points_l_english.yml' | xargs cat | \
+                            grep "^\s*VICTORY_POINTS_.*" | \
+                            sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
+                            sort -h | uniq \
+                        ) | \
+                        grep "^<" | sed 's/^< //g'); do
+        echo "    > ${GAME_ID}: ${CITY_ID} is defined but it does not exist"
+    done
+}
+
+function checkForSurplusHoi4LocationLinks() {
+    local GAME_ID="${1}"
+    local LOCALISATIONS_DIR="${2}"
+
+    checkForSurplusHoi4CityLinks "${GAME_ID}" "${LOCALISATIONS_DIR}"
+}
+
 function checkForMissingIrLocationLinks() {
     local GAME_ID="${1}" && shift
     local VANILLA_LOCALISATION_FILE="${1}" && shift
@@ -447,8 +475,11 @@ function checkForMismatchingLocationLinks() {
         checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == HOI4* ]]; then
-        validateHoi4Parentage "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
+
         #checkForMissingHoi4LocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        checkForSurplusHoi4LocationLinks "${GAME_ID}" "${LOCALISATIONS_DIR}"
+        validateHoi4Parentage "${GAME_ID}" "${VANILLA_FILE}" "${@}"
     elif [[ ${GAME_ID} == IR* ]]; then
         #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
         checkForSurplusIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
