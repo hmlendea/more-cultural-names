@@ -1,5 +1,6 @@
 #!/bin/bash
 source "scripts/common/paths.sh"
+source "${SCRIPTS_COMMON_DIR}/utils.sh"
 source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
 source "${SCRIPTS_COMMON_DIR}/hoi4.sh"
 source "${SCRIPTS_COMMON_DIR}/parser.sh"
@@ -146,100 +147,6 @@ function checkForSurplusCkLocationLinks() {
                         grep "^<" | sed 's/^< //g'); do
         echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist"
     done
-}
-
-function checkForMissingHoi4CityLinks() {
-    local GAME_ID="${1}"
-    local PARENTAGE_FILE="${2}"
-    local LOCALISATIONS_DIR="${3}"
-    local CWD="$(pwd)"
-
-    cd "${LOCALISATIONS_DIR}"
-    for CITY_ID in $(find . -name "*victory_points_l_english.yml" | xargs cat | \
-                        grep "^\s*VICTORY.*" | \
-                        sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
-                        sort -h | uniq); do
-        grep "<GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | grep "type=\"City\"" | grep -q ">${CITY_ID}<" && continue
-
-        local STATE_ID=$(grep "^${CITY_ID}=" "${PARENTAGE_FILE}" | awk -F = '{print $2}')
-        local CITY_NAME=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
-
-        local LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
-        local STATE_NAME=$(getHoi4StateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
-
-        if grep -q "<Id>${LOCATION_ID}</Id>" "${LOCATIONS_FILE}"; then
-            logLinkableHoi4City "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "location <Id>${LOCATION_ID}</Id>"
-        elif grep -q "<Id>${LOCATION_ID}</Id>" "${UNUSED_LOCATIONS_FILE}"; then
-            logLinkableHoi4City "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "unused location <Id>${LOCATION_ID}</Id>"
-        elif grep -q "<!-- ${CITY_NAME} -->" "${LOCATIONS_FILE}"; then
-            logLinkableHoi4City "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "a location with a link with the same default name"
-        elif grep -q "<!-- ${CITY_NAME} -->" "${UNUSED_LOCATIONS_FILE}"; then
-            logLinkableHoi4City "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "an unused location with a link with the same default name"
-        elif grep -q "value=\"${CITY_NAME}\"" "${LOCATIONS_FILE}"; then
-            logLinkableHoi4City "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "a location with a localisation with the same name"
-        elif grep -q "value=\"${CITY_NAME}\"" "${UNUSED_LOCATIONS_FILE}"; then
-            logLinkableHoi4City "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "an unused location with a localisation with the same name"
-        fi
-    done
-    cd "${CWD}"
-}
-
-function checkForMissingHoi4StateLinks() {
-    local GAME_ID="${1}"
-    local LOCALISATIONS_DIR="${2}"
-    local STATES_DIR_VAR="${GAME_ID}_STATES_DIR"
-    local STATES_DIR="${!STATES_DIR_VAR}"
-    local CWD="$(pwd)"
-
-    local LOCATIONS_FILE_NAME_LINES=$(grep "<Name language=" "${LOCATIONS_FILE}")
-    local LOCATIONS_FILE_LOCATIONID_LINES=$(grep "<Id>" "${LOCATIONS_FILE}")
-    local LOCATIONS_FILE_GAMEID_LINES=$(grep "<GameId " "${LOCATIONS_FILE}")
-    local LOCATIONS_FILE_GAME_GAMEID_LINES=$(grep "game=\"${GAME_ID}\"" <<< "${LOCATIONS_FILE_GAMEID_LINES}")
-
-    local UNUSED_LOCATIONS_FILE_NAME_LINES=$(grep "<Name language=" "${UNUSED_LOCATIONS_FILE}")
-    local UNUSED_LOCATIONS_FILE_LOCATIONID_LINES=$(grep "<Id>" "${UNUSED_LOCATIONS_FILE}")
-    local UNUSED_LOCATIONS_FILE_GAMEID_LINES=$(grep "<GameId " "${UNUSED_LOCATIONS_FILE}")
-    local UNUSED_LOCATIONS_FILE_GAME_GAMEID_LINES=$(grep "game=\"${GAME_ID}\"" <<< "${UNUSED_LOCATIONS_FILE_GAMEID_LINES}")
-
-    for FILE in "${STATES_DIR}"/*.txt ; do
-        local STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
-
-        grep "type=\"State\"" <<< "${LOCATIONS_FILE_GAME_GAMEID_LINES}" | grep -q ">${STATE_ID}<" && continue
-
-        local STATE_NAME=$(getHoi4StateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
-        local LOCATION_ID=$(nameToLocationId "${STATE_NAME}")
-
-        if grep -q "<Id>${LOCATION_ID}</Id>" <<< "${LOCATIONS_FILE_LOCATIONID_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with location <Id>${LOCATION_ID}</Id>"
-        elif grep -q "<Id>${LOCATION_ID}</Id>" <<< "${UNUSED_LOCATIONS_FILE_LOCATIONID_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with unused location <Id>${LOCATION_ID}</Id>"
-        elif grep -q "<!-- ${STATE_NAME} -->" <<< "${LOCATIONS_FILE_GAMEID_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with a location with a link with the same default name (${STATE_NAME})"
-        elif grep -q "<!-- ${STATE_NAME} -->" <<< "${UNUSED_LOCATIONS_FILE_GAMEID_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with an unused location with a link with the same default name (${STATE_NAME})"
-        elif grep -q "value=\"${STATE_NAME}\"" <<< "${LOCATIONS_FILE_NAME_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with a location with a localisation with the same name (${STATE_NAME})"
-        elif grep -q "value=\"${STATE_NAME}\"" <<< "${UNUSED_LOCATIONS_FILE_NAME_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with an unused location with a localisation with the same name (${STATE_NAME})"
-        fi
-    done
-}
-
-function checkForMissingHoi4LocationLinks() {
-    local GAME_ID="${1}"
-    local PARENTAGE_FILE="${2}"
-    local LOCALISATIONS_DIR="${3}"
-    local CWD="$(pwd)"
-
-    if [ ! -f "${PARENTAGE_FILE}" ]; then
-        echo "The vanilla parents file (${PARENTAGE_FILE}) for ${GAME_ID} is missing!"
-        return
-    fi
-
-    checkForMissingHoi4StateLinks "${GAME_ID}" "${LOCALISATIONS_DIR}"
-    checkForMissingHoi4CityLinks "${GAME_ID}" "${PARENTAGE_FILE}" "${LOCALISATIONS_DIR}"
-
-    cd "${CWD}"
 }
 
 function checkForMissingIrLocationLinks() {
@@ -447,8 +354,9 @@ function checkForMismatchingLocationLinks() {
         checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == HOI4* ]]; then
-        validateHoi4Parentage "${GAME_ID}" "${VANILLA_FILE}" "${@}"
         checkForMissingHoi4LocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        checkForSurplusHoi4LocationLinks "${GAME_ID}"
+        validateHoi4Parentage "${GAME_ID}" "${VANILLA_FILE}" "${@}"
     elif [[ ${GAME_ID} == IR* ]]; then
         #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
         checkForSurplusIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
@@ -838,6 +746,7 @@ checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE
 #checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"  "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 #checkForMismatchingLocationLinks "HOI4"     "${HOI4_VANILLA_PARENTAGE_FILE}" "${HOI4_LOCALISATIONS_DIR}"
+#checkForMismatchingLocationLinks "HOI4MDM"     "${HOI4MDM_VANILLA_PARENTAGE_FILE}" "${HOI4MDM_LOCALISATIONS_DIR}"
 checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_ABW"   "${IR_ABW_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
