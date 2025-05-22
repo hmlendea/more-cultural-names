@@ -7,13 +7,16 @@ function checkForMissingHoi4CityLinks() {
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
     local CWD="$(pwd)"
 
+    if [ ! find "${LOCALISATIONS_DIR}" -name '*victory_points_l_english.yml' | xargs cat | grep -q 'VICTORY_POINTS' ]; then
+        LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
+    fi
+
     if [ ! -f "${VANILLA_FILE}" ]; then
         echo "The vanilla parents file (${VANILLA_FILE}) for ${GAME_ID} is missing!"
         return
     fi
 
-    cd "${LOCALISATIONS_DIR}"
-    for CITY_ID in $(find . -name "*victory_points_l_english.yml" | xargs cat | \
+    for CITY_ID in $(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
                         grep "^\s*VICTORY.*" | \
                         sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
                         sort -h | uniq); do
@@ -39,7 +42,6 @@ function checkForMissingHoi4CityLinks() {
             logLinkableHoi4City "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "an unused location with a localisation with the same name"
         fi
     done
-    cd "${CWD}"
 }
 
 function checkForMissingHoi4StateLinks() {
@@ -84,17 +86,18 @@ function checkForMissingHoi4StateLinks() {
 
 function checkForMissingHoi4LocationLinks() {
     local GAME_ID="${1}"
-    local CWD="$(pwd)"
 
     checkForMissingHoi4StateLinks "${GAME_ID}"
     checkForMissingHoi4CityLinks "${GAME_ID}"
-
-    cd "${CWD}"
 }
 
 function checkForSurplusHoi4CityLinks() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
+
+    if [ ! $(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | grep -q 'VICTORY_POINTS') ]; then
+        LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
+    fi
 
     for CITY_ID in $(diff \
                         <( \
@@ -102,13 +105,13 @@ function checkForSurplusHoi4CityLinks() {
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
                             sort -h | uniq \
                         ) <( \
-                            find "${LOCALISATIONS_DIR}" -name '*victory_points_l_english.yml' | xargs cat | \
+                            find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
                             grep "^\s*VICTORY_POINTS_.*" | \
                             sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
                             sort -h | uniq \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: City ${CITY_ID} is defined but it does not exist. Find it with: HOI4TGW.*>${CITY_ID}<"
+        echo "    > ${GAME_ID}: City ${CITY_ID} is defined but it does not exist. Find it with: HOI4TGW.*City.*>${CITY_ID}<"
     done
 }
 
@@ -124,12 +127,10 @@ function getHoi4CityName() {
     local CITY_NAME=""
     local CWD="$(pwd)"
 
-    cd "${LOCALISATIONS_DIR}"
-    CITY_NAME=$(find . -name "*victory_points_l_english.yml" | xargs cat | \
+    CITY_NAME=$(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
                 grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
                 sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g' | \
                 head -n 1)
-    cd "${CWD}"
 
     if [ -z "${CITY_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
         CITY_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/victory_points_l_english.yml" | \
@@ -147,11 +148,9 @@ function getHoi4StateName() {
     local STATE_NAME=""
     local CWD="$(pwd)"
 
-    cd "${LOCALISATIONS_DIR}"
-    STATE_NAME=$(find . -name "*state_names_l_english.yml" | xargs cat | \
+    STATE_NAME=$(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
                         grep "^\s*STATE_${STATE_ID}:" | \
                         sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g')
-    cd "${CWD}"
 
     if [ -z "${STATE_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
             STATE_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/state_names_l_english.yml" | \
