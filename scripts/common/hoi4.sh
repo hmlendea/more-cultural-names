@@ -48,6 +48,7 @@ function checkForMissingHoi4CityLinks() {
 
 function checkForMissingHoi4StateLinks() {
     local GAME_ID="${1}"
+    local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
     local STATES_DIR=$(get_variable "${GAME_ID}_STATES_DIR")
     local CWD="$(pwd)"
