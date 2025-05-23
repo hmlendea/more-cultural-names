@@ -117,10 +117,35 @@ function checkForSurplusHoi4CityLinks() {
     done
 }
 
+function checkForSurplusHoi4StateLinks() {
+    local GAME_ID="${1}"
+    local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
+    local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
+
+    if  ! find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | grep -q 'STATE_[1-9][0-9]*:'; then
+        LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
+    fi
+
+    for STATE_ID in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | grep "type=\"State\"" | \
+                            sed 's/[^>]*>\([^<]*\).*/\1/g' | \
+                            sort -h | uniq \
+                        ) <( \
+                            cat "${VANILLA_FILE}" | \
+                            awk -F'=' '{print $2}' | \
+                            sort -h | uniq \
+                        ) | \
+                        grep "^<" | sed 's/^< //g'); do
+        echo "    > ${GAME_ID}: State ${STATE_ID} is defined but it does not exist. Find it with: HOI4TGW[^A-Z].*State.*>${STATE_ID}<"
+    done
+}
+
 function checkForSurplusHoi4LocationLinks() {
     local GAME_ID="${1}"
 
-    checkForSurplusHoi4CityLinks "${GAME_ID}" "${LOCALISATIONS_DIR}"
+    checkForSurplusHoi4CityLinks "${GAME_ID}"
+    checkForSurplusHoi4StateLinks "${GAME_ID}"
 }
 
 function getHoi4CityName() {
