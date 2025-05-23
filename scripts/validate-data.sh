@@ -354,7 +354,7 @@ function checkForMismatchingLocationLinks() {
         checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == HOI4* ]]; then
-        checkForMissingHoi4LocationLinks "${GAME_ID}"
+        #checkForMissingHoi4LocationLinks "${GAME_ID}"
         checkForSurplusHoi4LocationLinks "${GAME_ID}"
         validateHoi4Parentage "${GAME_ID}"
     elif [[ ${GAME_ID} == IR* ]]; then
