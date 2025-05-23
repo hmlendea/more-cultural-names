@@ -16,9 +16,8 @@ function checkForMissingHoi4CityLinks() {
         return
     fi
 
-    for CITY_ID in $(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
-                        grep "^\s*VICTORY.*" | \
-                        sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
+    for CITY_ID in $(cat "${VANILLA_FILE}" | \
+                        awk -F'=' '{print $1}' | \
                         sort -h | uniq); do
         grep "<GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | grep "type=\"City\"" | grep -q ">${CITY_ID}<" && continue
 
@@ -60,9 +59,9 @@ function checkForMissingHoi4StateLinks() {
     local UNUSED_LOCATIONS_FILE_GAMEID_LINES=$(grep "<GameId " "${UNUSED_LOCATIONS_FILE}")
     local UNUSED_LOCATIONS_FILE_GAME_GAMEID_LINES=$(grep "game=\"${GAME_ID}\"" <<< "${UNUSED_LOCATIONS_FILE_GAMEID_LINES}")
 
-    for FILE in "${STATES_DIR}"/*.txt ; do
-        local STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
-
+    for STATE_ID in $(cat "${VANILLA_FILE}" | \
+                        awk -F'=' '{print $2}' | \
+                        sort -h | uniq); do
         grep "type=\"State\"" <<< "${LOCATIONS_FILE_GAME_GAMEID_LINES}" | grep -q ">${STATE_ID}<" && continue
 
         local STATE_NAME=$(getHoi4StateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
@@ -93,6 +92,7 @@ function checkForMissingHoi4LocationLinks() {
 
 function checkForSurplusHoi4CityLinks() {
     local GAME_ID="${1}"
+    local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
 
     if [ ! $(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | grep -q 'VICTORY_POINTS') ]; then
@@ -105,9 +105,8 @@ function checkForSurplusHoi4CityLinks() {
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
                             sort -h | uniq \
                         ) <( \
-                            find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
-                            grep "^\s*VICTORY_POINTS_.*" | \
-                            sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
+                            cat "${VANILLA_FILE}" | \
+                            awk -F'=' '{print $1}' | \
                             sort -h | uniq \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
@@ -126,6 +125,10 @@ function getHoi4CityName() {
     local LOCALISATIONS_DIR="${2}"
     local CITY_NAME=""
     local CWD="$(pwd)"
+
+    if [[ "${LOCALISATIONS_DIR}" != */english ]]; then
+        LOCALISATIONS_DIR="${LOCALISATIONS_DIR%/}/english"
+    fi
 
     CITY_NAME=$(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
                 grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
