@@ -72,17 +72,17 @@ function checkForMissingHoi4StateLinks() {
         local LOCATION_ID=$(nameToLocationId "${STATE_NAME}")
 
         if grep -q "<Id>${LOCATION_ID}</Id>" <<< "${LOCATIONS_FILE_LOCATIONID_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with location <Id>${LOCATION_ID}</Id>"
+            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "location <Id>${LOCATION_ID}</Id>"
         elif grep -q "<Id>${LOCATION_ID}</Id>" <<< "${UNUSED_LOCATIONS_FILE_LOCATIONID_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with unused location <Id>${LOCATION_ID}</Id>"
+            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "unused location <Id>${LOCATION_ID}</Id>"
         elif grep -q "<!-- ${STATE_NAME} -->" <<< "${LOCATIONS_FILE_GAMEID_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with a location with a link with the same default name (${STATE_NAME})"
+            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "a location with a link with the same default name (${STATE_NAME})"
         elif grep -q "<!-- ${STATE_NAME} -->" <<< "${UNUSED_LOCATIONS_FILE_GAMEID_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with an unused location with a link with the same default name (${STATE_NAME})"
+            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "an unused location with a link with the same default name (${STATE_NAME})"
         elif grep -q "value=\"${STATE_NAME}\"" <<< "${LOCATIONS_FILE_NAME_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with a location with a localisation with the same name (${STATE_NAME})"
+            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "a location with a localisation with the same name (${STATE_NAME})"
         elif grep -q "value=\"${STATE_NAME}\"" <<< "${UNUSED_LOCATIONS_FILE_NAME_LINES}"; then
-            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "with an unused location with a localisation with the same name (${STATE_NAME})"
+            logLinkableHoi4State "${GAME_ID}" "${STATE_ID}" "${STATE_NAME}" "an unused location with a localisation with the same name (${STATE_NAME})"
         fi
     done
 }
@@ -114,7 +114,7 @@ function checkForSurplusHoi4CityLinks() {
                             sort -h | uniq \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: City ${CITY_ID} is defined but it does not exist. Find it with: HOI4TGW[^A-Z].*City.*>${CITY_ID}<"
+        echo "    > ${GAME_ID}: City ${CITY_ID} is defined but it does not exist. Find it with: ${GAME_ID}[^A-Z].*City.*>${CITY_ID}<"
     done
 }
 
@@ -138,7 +138,7 @@ function checkForSurplusHoi4StateLinks() {
                             sort -h | uniq \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: State ${STATE_ID} is defined but it does not exist. Find it with: HOI4TGW[^A-Z].*State.*>${STATE_ID}<"
+        echo "    > ${GAME_ID}: State ${STATE_ID} is defined but it does not exist. Find it with: ${GAME_ID}[^A-Z].*State.*>${STATE_ID}<"
     done
 }
 
