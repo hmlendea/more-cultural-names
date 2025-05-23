@@ -38,7 +38,7 @@ function update_hoi4_parentage_file() {
     local STATES_DIR=$(get_variable "${GAME_ID}_STATES_DIR")
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
 
-    if  ! find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | grep -q 'VICTORY_POINTS'; then
+    if ! find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | grep -q 'VICTORY_POINTS'; then
         LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
     fi
 
@@ -49,7 +49,7 @@ function update_hoi4_parentage_file() {
 
     LOCALISED_CITY_IDS=$(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
                             grep "^\s*VICTORY_POINTS_[1-9][0-9]*:" | \
-                            sed 's/^\s*VICTORY_POINTS_\([1-9][0-9]*\):.*/\1/g')
+                            sed 's/^\s*VICTORY_POINTS_\([1-9][0-9]*\)\s*:.*/\1/g')
 
     for FILE in "${STATES_DIR}"/*.txt ; do
         local STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
@@ -62,14 +62,14 @@ function update_hoi4_parentage_file() {
             sed 's/.*provinces\s*=\s*{\([^}]*\).*/\1/g' | \
             sed 's/\(^\s*\|\s*$\)//g')
 
-        if [[ -n "${CITY_IDS// }" ]]; then
-            for CITY_ID in ${CITY_IDS}; do
-                echo "${CITY_ID}" | grep -q '[^0-9]' && continue
-                ! echo "${LOCALISED_CITY_IDS}" | grep -q "\b${CITY_ID}\b" && continue
+        [[ -z "${CITY_IDS// }" ]] && continue
 
-                echo "${CITY_ID}=${STATE_ID}" >> "${TARGET_FILE}"
-            done
-        fi
+        for CITY_ID in ${CITY_IDS}; do
+            echo "${CITY_ID}" | grep -q '[^0-9]' && continue
+            ! echo "${LOCALISED_CITY_IDS}" | grep -q "\b${CITY_ID}\b" && continue
+
+            echo "${CITY_ID}=${STATE_ID}" >> "${TARGET_FILE}"
+        done
     done
 }
 
