@@ -3,19 +3,29 @@ source "scripts/common/paths.sh"
 
 function checkForMissingHoi4CityLinks() {
     local GAME_ID="${1}"
-    local PARENTAGE_FILE="${2}"
-    local LOCALISATIONS_DIR="${3}"
+    local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
+    local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
     local CWD="$(pwd)"
 
-    cd "${LOCALISATIONS_DIR}"
-    for CITY_ID in $(find . -name "*victory_points_l_english.yml" | xargs cat | \
-                        grep "^\s*VICTORY.*" | \
-                        sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
+    if  ! find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | grep -q 'VICTORY_POINTS'; then
+        LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
+    fi
+
+    if [ ! -f "${VANILLA_FILE}" ]; then
+        echo "The vanilla parents file (${VANILLA_FILE}) for ${GAME_ID} is missing!"
+        return
+    fi
+
+    for CITY_ID in $(cat "${VANILLA_FILE}" | \
+                        awk -F'=' '{print $1}' | \
                         sort -h | uniq); do
         grep "<GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | grep "type=\"City\"" | grep -q ">${CITY_ID}<" && continue
 
-        local STATE_ID=$(grep "^${CITY_ID}=" "${PARENTAGE_FILE}" | awk -F = '{print $2}')
         local CITY_NAME=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
+
+        [ -z "${CITY_NAME}" ] && continue
+
+        local STATE_ID=$(grep "^${CITY_ID}=" "${VANILLA_FILE}" | awk -F = '{print $2}')
 
         local LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
         local STATE_NAME=$(getHoi4StateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
@@ -34,14 +44,13 @@ function checkForMissingHoi4CityLinks() {
             logLinkableHoi4City "${GAME_ID}" "${CITY_ID}" "${CITY_NAME}" "${STATE_ID}" "${STATE_NAME}" "an unused location with a localisation with the same name"
         fi
     done
-    cd "${CWD}"
 }
 
 function checkForMissingHoi4StateLinks() {
     local GAME_ID="${1}"
-    local LOCALISATIONS_DIR="${2}"
-    local STATES_DIR_VAR="${GAME_ID}_STATES_DIR"
-    local STATES_DIR="${!STATES_DIR_VAR}"
+    local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
+    local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
+    local STATES_DIR=$(get_variable "${GAME_ID}_STATES_DIR")
     local CWD="$(pwd)"
 
     local LOCATIONS_FILE_NAME_LINES=$(grep "<Name language=" "${LOCATIONS_FILE}")
@@ -54,9 +63,9 @@ function checkForMissingHoi4StateLinks() {
     local UNUSED_LOCATIONS_FILE_GAMEID_LINES=$(grep "<GameId " "${UNUSED_LOCATIONS_FILE}")
     local UNUSED_LOCATIONS_FILE_GAME_GAMEID_LINES=$(grep "game=\"${GAME_ID}\"" <<< "${UNUSED_LOCATIONS_FILE_GAMEID_LINES}")
 
-    for FILE in "${STATES_DIR}"/*.txt ; do
-        local STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
-
+    for STATE_ID in $(cat "${VANILLA_FILE}" | \
+                        awk -F'=' '{print $2}' | \
+                        sort -h | uniq); do
         grep "type=\"State\"" <<< "${LOCATIONS_FILE_GAME_GAMEID_LINES}" | grep -q ">${STATE_ID}<" && continue
 
         local STATE_NAME=$(getHoi4StateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
@@ -80,24 +89,19 @@ function checkForMissingHoi4StateLinks() {
 
 function checkForMissingHoi4LocationLinks() {
     local GAME_ID="${1}"
-    local PARENTAGE_FILE="${2}"
-    local LOCALISATIONS_DIR="${3}"
-    local CWD="$(pwd)"
 
-    if [ ! -f "${PARENTAGE_FILE}" ]; then
-        echo "The vanilla parents file (${PARENTAGE_FILE}) for ${GAME_ID} is missing!"
-        return
-    fi
-
-    checkForMissingHoi4StateLinks "${GAME_ID}" "${LOCALISATIONS_DIR}"
-    checkForMissingHoi4CityLinks "${GAME_ID}" "${PARENTAGE_FILE}" "${LOCALISATIONS_DIR}"
-
-    cd "${CWD}"
+    checkForMissingHoi4StateLinks "${GAME_ID}"
+    checkForMissingHoi4CityLinks "${GAME_ID}"
 }
 
 function checkForSurplusHoi4CityLinks() {
     local GAME_ID="${1}"
+    local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
+
+    if  ! find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | grep -q 'VICTORY_POINTS'; then
+        LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
+    fi
 
     for CITY_ID in $(diff \
                         <( \
@@ -105,34 +109,63 @@ function checkForSurplusHoi4CityLinks() {
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
                             sort -h | uniq \
                         ) <( \
-                            find "${LOCALISATIONS_DIR}" -name '*victory_points_l_english.yml' | xargs cat | \
-                            grep "^\s*VICTORY_POINTS_.*" | \
-                            sed 's/^\s*VICTORY_POINTS_\([0-9]*\).*/\1/g' | \
+                            cat "${VANILLA_FILE}" | \
+                            awk -F'=' '{print $1}' | \
                             sort -h | uniq \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: ${CITY_ID} is defined but it does not exist"
+        echo "    > ${GAME_ID}: City ${CITY_ID} is defined but it does not exist. Find it with: HOI4TGW[^A-Z].*City.*>${CITY_ID}<"
+    done
+}
+
+function checkForSurplusHoi4StateLinks() {
+    local GAME_ID="${1}"
+    local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
+    local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
+
+    if  ! find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | grep -q 'STATE_[1-9][0-9]*:'; then
+        LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
+    fi
+
+    for STATE_ID in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | grep "type=\"State\"" | \
+                            sed 's/[^>]*>\([^<]*\).*/\1/g' | \
+                            sort -h | uniq \
+                        ) <( \
+                            cat "${VANILLA_FILE}" | \
+                            awk -F'=' '{print $2}' | \
+                            sort -h | uniq \
+                        ) | \
+                        grep "^<" | sed 's/^< //g'); do
+        echo "    > ${GAME_ID}: State ${STATE_ID} is defined but it does not exist. Find it with: HOI4TGW[^A-Z].*State.*>${STATE_ID}<"
     done
 }
 
 function checkForSurplusHoi4LocationLinks() {
     local GAME_ID="${1}"
 
-    checkForSurplusHoi4CityLinks "${GAME_ID}" "${LOCALISATIONS_DIR}"
+    checkForSurplusHoi4CityLinks "${GAME_ID}"
+    checkForSurplusHoi4StateLinks "${GAME_ID}"
 }
 
 function getHoi4CityName() {
     local CITY_ID="${1}"
+
+    [[ -z "${CITY_ID// }" ]] && return
+
     local LOCALISATIONS_DIR="${2}"
     local CITY_NAME=""
     local CWD="$(pwd)"
 
-    cd "${LOCALISATIONS_DIR}"
-    CITY_NAME=$(find . -name "*victory_points_l_english.yml" | xargs cat | \
+    if [[ "${LOCALISATIONS_DIR}" != */english ]]; then
+        LOCALISATIONS_DIR="${LOCALISATIONS_DIR%/}/english"
+    fi
+
+    CITY_NAME=$(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
                 grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
                 sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g' | \
                 head -n 1)
-    cd "${CWD}"
 
     if [ -z "${CITY_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
         CITY_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/victory_points_l_english.yml" | \
@@ -150,11 +183,13 @@ function getHoi4StateName() {
     local STATE_NAME=""
     local CWD="$(pwd)"
 
-    cd "${LOCALISATIONS_DIR}"
-    STATE_NAME=$(find . -name "*state_names_l_english.yml" | xargs cat | \
+    if [[ "${LOCALISATIONS_DIR}" != */english ]]; then
+        LOCALISATIONS_DIR="${LOCALISATIONS_DIR%/}/english"
+    fi
+
+    STATE_NAME=$(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
                         grep "^\s*STATE_${STATE_ID}:" | \
                         sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g')
-    cd "${CWD}"
 
     if [ -z "${STATE_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
             STATE_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/state_names_l_english.yml" | \
