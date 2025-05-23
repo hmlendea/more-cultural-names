@@ -7,7 +7,7 @@ function checkForMissingHoi4CityLinks() {
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
     local CWD="$(pwd)"
 
-    if [ ! $(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | grep -q 'VICTORY_POINTS') ]; then
+    if  ! find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | grep -q 'VICTORY_POINTS'; then
         LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
     fi
 
@@ -21,8 +21,11 @@ function checkForMissingHoi4CityLinks() {
                         sort -h | uniq); do
         grep "<GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | grep "type=\"City\"" | grep -q ">${CITY_ID}<" && continue
 
-        local STATE_ID=$(grep "^${CITY_ID}=" "${VANILLA_FILE}" | awk -F = '{print $2}')
         local CITY_NAME=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
+
+        [ -z "${CITY_NAME}" ] && continue
+
+        local STATE_ID=$(grep "^${CITY_ID}=" "${VANILLA_FILE}" | awk -F = '{print $2}')
 
         local LOCATION_ID=$(nameToLocationId "${CITY_NAME}")
         local STATE_NAME=$(getHoi4StateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
@@ -95,7 +98,7 @@ function checkForSurplusHoi4CityLinks() {
     local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
 
-    if [ ! $(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | grep -q 'VICTORY_POINTS') ]; then
+    if  ! find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | grep -q 'VICTORY_POINTS'; then
         LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
     fi
 
@@ -122,6 +125,9 @@ function checkForSurplusHoi4LocationLinks() {
 
 function getHoi4CityName() {
     local CITY_ID="${1}"
+
+    [[ -z "${CITY_ID// }" ]] && return
+
     local LOCALISATIONS_DIR="${2}"
     local CITY_NAME=""
     local CWD="$(pwd)"
