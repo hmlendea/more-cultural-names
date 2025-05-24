@@ -261,24 +261,26 @@ function checkForMismatchingLocationLinks() {
     if [[ ${GAME_ID} == CK* ]]; then
         checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
-    elif [[ ${GAME_ID} == HOI4* ]]; then
-        #checkForMissingHoi4LocationLinks "${GAME_ID}"
-        checkForSurplusHoi4LocationLinks "${GAME_ID}"
-        validateHoi4Parentage "${GAME_ID}"
     elif [[ ${GAME_ID} == IR* ]]; then
         #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
         checkForSurplusIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
-    elif [[ ${GAME_ID} == Vic3* ]]; then
-        #list_missing_vic3_hubs "${GAME_ID}"
-        list_missing_vic3_states "${GAME_ID}"
     fi
 }
 
-function list_mismatching_links() {
+function validate_links() {
     local GAME_ID="${1}"
+    local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
 
-    #checkForMismatchingLanguageLinks "${GAME_ID}"
-    checkForMismatchingLocationLinks "${GAME_ID}"
+    if [[ ${GAME_ID} == HOI4* ]]; then
+        #checkForMissingHoi4LocationLinks "${GAME_ID}"
+        checkForSurplusHoi4LocationLinks "${GAME_ID}"
+        validateHoi4Parentage "${GAME_ID}"
+        checkDefaultHoi4Localisations 'HOI4' "${LOCALISATIONS_DIR}"
+    elif [[ ${GAME_ID} == Vic3* ]]; then
+        #list_missing_vic3_hubs "${GAME_ID}"
+        list_missing_vic3_states "${GAME_ID}"
+        checkDefaultVic3Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
+    fi
 }
 
 function checkDefaultCk2Localisations() {
@@ -636,10 +638,10 @@ done
 # Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
-list_mismatching_links 'HOI4'
-#list_mismatching_links 'HOI4MDM'
-list_mismatching_links 'HOI4TGW'
-list_mismatching_links 'Vic3'
+validate_links 'HOI4'
+#validate_links 'HOI4MDM'
+validate_links 'HOI4TGW'
+validate_links 'Vic3'
 
 # Make sure all locations are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"     "${CK2_LOCALISATIONS_DIR}"/*.csv
@@ -679,17 +681,11 @@ checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}" "$
 checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 
-checkDefaultHoi4Localisations "HOI4"    "${HOI4_LOCALISATIONS_DIR}"
-checkDefaultHoi4Localisations "HOI4MDM" "${HOI4MDM_LOCALISATIONS_DIR}"
-checkDefaultHoi4Localisations "HOI4TGW" "${HOI4TGW_LOCALISATIONS_DIR}"
-
 checkDefaultIrLocalisations "IR"        "${IR_VANILLA_FILE}"
 checkDefaultIrLocalisations "IR_ABW"    "${IR_ABW_VANILLA_FILE}"
 checkDefaultIrLocalisations "IR_AoE"    "${IR_AoE_VANILLA_FILE}"
 checkDefaultIrLocalisations "IR_INV"    "${IR_INV_VANILLA_FILE}"
 checkDefaultIrLocalisations "IR_TBA"    "${IR_TBA_VANILLA_FILE}"
-
-checkDefaultVic3Localisations "Vic3" "${Vic3_LOCALISATIONS_DIR}"
 
 # Find redundant names
 #findRedundantNames "Hungarian" "Hungarian_Old"
