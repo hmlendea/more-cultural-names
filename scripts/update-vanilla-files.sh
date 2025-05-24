@@ -234,7 +234,7 @@ update-vanilla-files \
 update-vanilla-files \
     "${IR_TBA_VANILLA_FILE}" \
     "${IR_TBA_LOCALISATIONS_DIR}/provincenames_l_english.yml"
-update-vic3-files "Vic3" \
+update-vic3-files 'Vic3' \
     "${Vic3_LOCALISATIONS_DIR}" \
     "${Vic3_COUNTRIES_DIR}" \
     "${Vic3_STATES_DIR}"

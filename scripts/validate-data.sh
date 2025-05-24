@@ -3,6 +3,7 @@ source "scripts/common/paths.sh"
 source "${SCRIPTS_COMMON_DIR}/utils.sh"
 source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
 source "${SCRIPTS_COMMON_DIR}/hoi4.sh"
+source "${SCRIPTS_COMMON_DIR}/vic3.sh"
 source "${SCRIPTS_COMMON_DIR}/parser.sh"
 
 LANGUAGE_IDS=$(xmlstarlet sel -t -m "//Language" -v "Id" -n "${LANGUAGES_FILE}" | sort -u)
@@ -243,99 +244,6 @@ function checkForMissingVic3LanguageLinks() {
     done
 }
 
-function checkForMissingVic3CountryLinks() {
-    local GAME_ID="${1}"
-    local VANILLA_COUNTRIES_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_countries.txt"
-
-    for COUNTRY_ID in $(diff \
-                        <( \
-                            grep "GameId game=\"${GAME_ID}\" type=\"Country\"" "${LOCATIONS_FILE}" |
-                            sed 's/.*>\([^<]*\)<\/GameId.*/\1/g' |
-                            sort | uniq \
-                        ) <( \
-                            cat "${VANILLA_COUNTRIES_FILE}" | \
-                            awk -F"=" '{print $1}' | \
-                            sort | uniq \
-                        ) | \
-                        grep "^>" | sed 's/^> //g'); do
-        LOCATION_DEFAULT_NAME=$(grep "^${COUNTRY_ID}=" "${VANILLA_COUNTRIES_FILE}" | awk -F"=" '{print $2}')
-        LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
-        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
-
-        if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
-            echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-            echo "      <GameId game=\"Vic3\" type=\"Country\">${COUNTRY_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
-        elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
-            echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
-            echo "      <GameId game=\"Vic3\" type=\"Country\">${COUNTRY_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
-        else
-            echo "    > ${GAME_ID}: Country ${COUNTRY_ID} (${LOCATION_DEFAULT_NAME}) is missing"
-        fi
-    done
-}
-
-function checkForMissingVic3StateLinks() {
-    local GAME_ID="${1}"
-    local VANILLA_STATES_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_states.txt"
-
-    for STATE_ID in $(diff \
-                        <( \
-                            grep "GameId game=\"${GAME_ID}\" type=\"State\"" "${LOCATIONS_FILE}" |
-                            sed 's/.*>\([^<]*\)<\/GameId.*/\1/g' |
-                            sort | uniq \
-                        ) <( \
-                            cat "${VANILLA_STATES_FILE}" | \
-                            awk -F"=" '{print $1}' | \
-                            sort | uniq \
-                        ) | \
-                        grep "^>" | sed 's/^> //g'); do
-        LOCATION_DEFAULT_NAME=$(grep "^${STATE_ID}=" "${VANILLA_STATES_FILE}" | awk -F"=" '{print $2}')
-        LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
-        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
-
-        if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
-            echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-            echo "      <GameId game=\"Vic3\" type=\"State\">${STATE_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
-        elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
-            echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
-            echo "      <GameId game=\"Vic3\" type=\"State\">${STATE_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
-        else
-            echo "    > ${GAME_ID}: State ${STATE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
-        fi
-    done
-}
-
-function checkForMissingVic3HubLinks() {
-    local GAME_ID="${1}"
-    local VANILLA_HUBS_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_hubs.txt"
-
-    for HUB_ID in $(diff \
-                        <( \
-                            grep "GameId game=\"${GAME_ID}\" type=\"Hub\"" "${LOCATIONS_FILE}" |
-                            sed 's/.*>\([^<]*\)<\/GameId.*/\1/g' |
-                            sort | uniq \
-                        ) <( \
-                            cat "${VANILLA_HUBS_FILE}" | \
-                            awk -F"=" '{print $1}' | \
-                            sort | uniq \
-                        ) | \
-                        grep "^>" | sed 's/^> //g'); do
-        LOCATION_DEFAULT_NAME=$(grep "^${HUB_ID}=" "${VANILLA_HUBS_FILE}" | awk -F"=" '{print $2}')
-        LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
-        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
-
-        if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
-            echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-            echo "      <GameId game=\"Vic3\" type=\"Hub\">${HUB_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
-        elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
-            echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
-            echo "      <GameId game=\"Vic3\" type=\"Hub\">${HUB_ID}</GameId> <!-- ${LOCATION_DEFAULT_NAME} -->"
-        else
-            echo "    > ${GAME_ID}: Hub ${HUB_ID} (${LOCATION_DEFAULT_NAME}) is missing"
-        fi
-    done
-}
-
 function checkForMismatchingLanguageLinks() {
     local GAME_ID="${1}" && shift
 
@@ -361,17 +269,16 @@ function checkForMismatchingLocationLinks() {
         #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
         checkForSurplusIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
-        checkForMissingVic3CountryLinks "${GAME_ID}"
-        checkForMissingVic3StateLinks "${GAME_ID}"
-        checkForMissingVic3HubLinks "${GAME_ID}"
+        #list_missing_vic3_hubs "${GAME_ID}"
+        list_missing_vic3_states "${GAME_ID}"
     fi
 }
 
-function checkForMismatchingLinks() {
+function list_mismatching_links() {
     local GAME_ID="${1}" && shift
     local VANILLA_FILE="${1}" && shift
 
-    checkForMismatchingLanguageLinks "${GAME_ID}"
+    #checkForMismatchingLanguageLinks "${GAME_ID}"
     checkForMismatchingLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
 }
 
@@ -754,7 +661,7 @@ checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_TI"    "${IR_TI_VANILLA_FILE}"
-#checkForMismatchingLinks "Vic3"
+list_mismatching_links 'Vic3'
 
 # Validate default localisations
 checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"/*.csv
