@@ -134,7 +134,7 @@ build-edition \
 
 build-edition \
     'mbp-more-cultural-names' 'More Bookmarks+ - More Cultural Names' \
-    'CK3MBP' '1.14.*' \
+    'CK3MBP' '1.16.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
