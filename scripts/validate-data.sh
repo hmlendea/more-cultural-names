@@ -598,7 +598,6 @@ checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE
 checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"  "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 #checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"  "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
-checkForMismatchingLocationLinks "IR"       "${IR_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_ABW"   "${IR_ABW_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_AoE"   "${IR_AoE_VANILLA_FILE}"
 checkForMismatchingLocationLinks "IR_INV"   "${IR_INV_VANILLA_FILE}"
