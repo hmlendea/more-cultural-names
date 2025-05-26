@@ -565,7 +565,7 @@ function validateThatTheLanguagesAreOrdered() {
     local EXPECTED_LANGUAGES_LIST=""
 
     ACTUAL_LANGUAGES_LIST=$(xmlstarlet sel -t -m "//Id" -v "." -n "${LANGUAGES_FILE_TO_CHECK}" | \
-                            grep -v '_\(Ancient\|Archaic\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Proto\)')
+                            grep -v '_\(Ancient\|Archaic\|Before\|Classical\|Early\|Late\|Medieval\|Middle\|Old\|Paleo\|Proto\)')
     EXPECTED_LANGUAGES_LIST=$(sort <<< ${ACTUAL_LANGUAGES_LIST})
 
     diff --context=1 --color --suppress-common-lines <(echo "${ACTUAL_LANGUAGES_LIST}" | sed 's/%NL%/\n/g') <(echo "${EXPECTED_LANGUAGES_LIST}" | sed 's/%NL%/\n/g')
@@ -743,7 +743,7 @@ checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE
 checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"  "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 #checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"  "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"  "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
-#checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"  "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks 'HOI4'
 #checkForMismatchingLocationLinks 'HOI4MDM'
@@ -781,6 +781,7 @@ checkDefaultIrLocalisations "IR_ABW"    "${IR_ABW_VANILLA_FILE}"
 checkDefaultIrLocalisations "IR_AoE"    "${IR_AoE_VANILLA_FILE}"
 checkDefaultIrLocalisations "IR_INV"    "${IR_INV_VANILLA_FILE}"
 checkDefaultIrLocalisations "IR_TBA"    "${IR_TBA_VANILLA_FILE}"
+checkDefaultIrLocalisations "IR_TI"     "${IR_TBA_VANILLA_FILE}"
 
 checkDefaultVic3Localisations "Vic3" "${Vic3_LOCALISATIONS_DIR}"
 
