@@ -101,5 +101,5 @@ function get_ir_location_name() {
     cat "${VANILLA_FILE}" | \
         grep "^\s*PROV${PROVINCE_ID}:" | \
         sed 's/^\s*PROV'"${PROVINCE_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g' | \
-        head -n 1
+        tail -n 1
 }
