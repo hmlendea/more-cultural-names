@@ -3,7 +3,7 @@ source 'scripts/common/paths.sh'
 
 function list_missing_ir_provinces() {
     local GAME_ID="${1}"
-    local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
+    local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_FILE")
     local LOCATION_TYPE='Province'
 
     local LOCATIONS_FILE_NAME_LINES=$(grep "<Name language=" "${LOCATIONS_FILE}")
@@ -17,7 +17,7 @@ function list_missing_ir_provinces() {
     for PROVINCE_ID in $(diff \
                         <(getGameIds "${GAME_ID}") \
                         <( \
-                            cat "${LOCALISATIONS_DIR}"/*.yml | \
+                            cat "${VANILLA_FILE}" | \
                             grep "^\s*PROV[0-9][0-9]*:" | \
                             awk -F':' '{print $1}' | \
                             sed 's/^\s*PROV//g' | \
