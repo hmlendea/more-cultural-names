@@ -2,10 +2,10 @@
 source "scripts/common/paths.sh"
 source "${SCRIPTS_COMMON_DIR}/utils.sh"
 source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
-source "${SCRIPTS_COMMON_DIR}/hoi4.sh"
-source "${SCRIPTS_COMMON_DIR}/ir.sh"
-source "${SCRIPTS_COMMON_DIR}/vic3.sh"
 source "${SCRIPTS_COMMON_DIR}/parser.sh"
+source "${SCRIPTS_COMMON_GAMES_DIR}/hoi4.sh"
+source "${SCRIPTS_COMMON_GAMES_DIR}/ir.sh"
+source "${SCRIPTS_COMMON_GAMES_DIR}/vic3.sh"
 
 LANGUAGE_IDS=$(xmlstarlet sel -t -m "//Language" -v "Id" -n "${LANGUAGES_FILE}" | sort -u)
 UNLINKED_LANGUAGE_IDS=$(xmlstarlet sel -t -m "//Language[not(GameIds/GameId)]" -v "Id" -n "${LANGUAGES_FILE}" | sort -u)
@@ -572,7 +572,7 @@ checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE
 checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"  "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"  "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"  "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
-#checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
+#checkForMismatchingLocationLinks 'CK3TBA'   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"  "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 
 # Validate default localisations
