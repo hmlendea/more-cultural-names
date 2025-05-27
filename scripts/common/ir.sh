@@ -1,6 +1,37 @@
 #!/bin/bash
 source 'scripts/common/paths.sh'
 
+function list_mismatching_ir_localisations() {
+    local GAME_ID="${1}" && shift
+    local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_FILE")
+
+    [ ! -f "${1}" ] && return
+
+    for GAMEID_DEFINITION in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/ defaultLanguage=\"[^\"]*\"//g' | \
+                            sed 's/^ *//g' |
+                            sort
+                        ) <( \
+                            awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
+                                <(getGameIds "${GAME_ID}") \
+                                <( \
+                                    tac "${VANILLA_FILE}" | \
+                                    grep "^\s*PROV" | \
+                                    grep -v "_[A-Za-z_-]*:" | \
+                                    awk '!x[substr($0,0,index($0, ":"))]++' | \
+                                    sed 's/^\s*PROV\([0-9]*\):[0-9]*\s*\"\([^\"]*\).*/\1=\2/g' | \
+                                    sed -e 's/=\s*/=/g' -e 's/\s*$//g'
+                                ) | \
+                            awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
+                            sort -u \
+                        ) | \
+                        grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
+    done
+}
+
 function list_missing_ir_provinces() {
     local GAME_ID="${1}"
     local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_FILE")

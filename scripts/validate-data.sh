@@ -215,6 +215,7 @@ function validate_links() {
     elif [[ ${GAME_ID} == IR* ]]; then
         #list_missing_ir_provinces "${GAME_ID}"
         list_surplus_ir_provinces "${GAME_ID}"
+        list_mismatching_ir_localisations "${GAME_ID}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
         #list_missing_vic3_hubs "${GAME_ID}"
         list_missing_vic3_states "${GAME_ID}"
@@ -316,36 +317,6 @@ function checkDefaultHoi4Localisations() {
             fi
         fi
     done < <(grep "${GAME_ID}\" type=\"State" "${LOCATIONS_FILE}")
-}
-
-function checkDefaultIrLocalisations() {
-    local GAME_ID="${1}" && shift
-
-    [ ! -f "${1}" ] && return
-
-    for GAMEID_DEFINITION in $(diff \
-                        <( \
-                            grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
-                            sed 's/ defaultLanguage=\"[^\"]*\"//g' | \
-                            sed 's/^ *//g' |
-                            sort
-                        ) <( \
-                            awk -F= 'NR==FNR{a[$0]; next} $1 in a' \
-                                <(getGameIds "${GAME_ID}") \
-                                <( \
-                                    tac "${@}" | \
-                                    grep "^\s*PROV" | \
-                                    grep -v "_[A-Za-z_-]*:" | \
-                                    awk '!x[substr($0,0,index($0, ":"))]++' | \
-                                    sed 's/^\s*PROV\([0-9]*\):[0-9]*\s*\"\([^\"]*\).*/\1=\2/g' | \
-                                    sed -e 's/=\s*/=/g' -e 's/\s*$//g'
-                                ) | \
-                            awk -F"=" '{print "<GameId game=\"'${GAME_ID}'\">"$1"</GameId> <!-- "$2" -->"}' | \
-                            sort -u \
-                        ) | \
-                        grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
-        echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
-    done
 }
 
 function checkDefaultVic3Localisations() {
@@ -584,6 +555,7 @@ validate_links 'IR'
 validate_links 'IR_ABW'
 validate_links 'IR_AoE'
 validate_links 'IR_INV'
+validate_links 'IR_TBA'
 validate_links 'IR_TI'
 validate_links 'Vic3'
 
@@ -602,7 +574,6 @@ checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE
 checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"  "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 #checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"  "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
-checkForMismatchingLocationLinks "IR_TBA"   "${IR_TBA_VANILLA_FILE}"
 
 # Validate default localisations
 checkDefaultCk2Localisations "CK2"      "${CK2_LOCALISATIONS_DIR}"/*.csv
@@ -619,11 +590,6 @@ checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}" "$
 #checkDefaultCk3Localisations "CK3SoW"   "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
-
-checkDefaultIrLocalisations "IR_ABW"    "${IR_ABW_VANILLA_FILE}"
-checkDefaultIrLocalisations "IR_AoE"    "${IR_AoE_VANILLA_FILE}"
-checkDefaultIrLocalisations "IR_INV"    "${IR_INV_VANILLA_FILE}"
-checkDefaultIrLocalisations "IR_TBA"    "${IR_TBA_VANILLA_FILE}"
 
 # Find redundant names
 #findRedundantNames "Hungarian" "Hungarian_Old"
