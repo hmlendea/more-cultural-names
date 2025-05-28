@@ -1,6 +1,6 @@
 #!/bin/bash
 source "scripts/common/paths.sh"
-source "${SCRIPTS_COMMON_GAMES_DIR}/utils.sh"
+source "${SCRIPTS_COMMON_DIR}/utils.sh"
 source "${SCRIPTS_COMMON_GAMES_DIR}/hoi4.sh"
 
 function update-vanilla-file() {
