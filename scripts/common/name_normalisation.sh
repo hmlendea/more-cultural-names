@@ -13,7 +13,7 @@ function nameToLocationId() {
 
     LOCATION_ID=$(echo "${LOCATION_ID}" | sed \
             -e 's/ /_/g' \
-            -e 's/'"\'"'/-/g' \
+            -e 's/'"'"'//g' \
             -e 's/^-*//g' \
             -e 's/-*$//g' \
             -e 's/-\+/-/g' \
