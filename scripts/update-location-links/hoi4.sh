@@ -1,7 +1,7 @@
 #!/bin/bash
 source "scripts/common/paths.sh"
-source "scripts/common/name_normalisation.sh"
-source "scripts/common/hoi4.sh"
+source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
+source "${SCRIPTS_COMMON_GAMES_DIR}/hoi4.sh"
 
 function logLinkableState() {
     local GAME_ID="${1}"
