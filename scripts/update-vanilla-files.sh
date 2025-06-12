@@ -1,5 +1,7 @@
 #!/bin/bash
 source "scripts/common/paths.sh"
+source "${SCRIPTS_COMMON_DIR}/utils.sh"
+source "${SCRIPTS_COMMON_GAMES_DIR}/hoi4.sh"
 
 function update-vanilla-file() {
     local SOURCE_FILE="${1}"
@@ -30,27 +32,43 @@ function update-vanilla-files() {
     sed -i 's/﻿/\n/g' "${TARGET_FILE}"
 }
 
-function update-hoi4-parentage-file() {
-    local TARGET_FILE="${1}"
-    local STATES_DIR="${2}"
+function update_hoi4_parentage_file() {
+    local GAME_ID="${1}"
+    local TARGET_FILE="${2}"
+    local STATES_DIR=$(get_variable "${GAME_ID}_STATES_DIR")
+    local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
+
+    if ! find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | grep -q 'VICTORY_POINTS'; then
+        LOCALISATIONS_DIR="${HOI4_LOCALISATIONS_DIR}"
+    fi
 
     if [ -f "${TARGET_FILE}" ]; then
         rm "${TARGET_FILE}"
         touch "${TARGET_FILE}"
     fi
 
+    LOCALISED_CITY_IDS=$(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
+                            grep "^\s*VICTORY_POINTS_[1-9][0-9]*:" | \
+                            sed 's/^\s*VICTORY_POINTS_\([1-9][0-9]*\)\s*:.*/\1/g')
+
     for FILE in "${STATES_DIR}"/*.txt ; do
         local STATE_ID=$(basename "${FILE}" | sed 's/^\([0-9]*\)\s*-\s*.*/\1/g')
+        echo "${STATE_ID}" | grep -q '[^0-9]' && continue
 
-        PROVINCE_LIST=$(cat "${FILE}" | \
+        CITY_IDS=$(cat "${FILE}" | \
             sed 's/\r//g' | \
             tr '\n' ' ' | \
             sed 's/\s\s*/ /g' | \
             sed 's/.*provinces\s*=\s*{\([^}]*\).*/\1/g' | \
             sed 's/\(^\s*\|\s*$\)//g')
 
-        for PROVINCE_ID in ${PROVINCE_LIST}; do
-            [[ -n "${PROVINCE_LIST// }" ]] && echo "${PROVINCE_ID}=${STATE_ID}" >> "${TARGET_FILE}"
+        [[ -z "${CITY_IDS// }" ]] && continue
+
+        for CITY_ID in ${CITY_IDS}; do
+            echo "${CITY_ID}" | grep -q '[^0-9]' && continue
+            ! echo "${LOCALISED_CITY_IDS}" | grep -q "\b${CITY_ID}\b" && continue
+
+            echo "${CITY_ID}=${STATE_ID}" >> "${TARGET_FILE}"
         done
     done
 }
@@ -188,15 +206,15 @@ update-vanilla-files \
 update-vanilla-file \
     "${CK3TFE_LANDED_TITLES_DIR}/00_landed_titles.txt" \
     "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"
-update-hoi4-parentage-file \
-    "${HOI4_VANILLA_PARENTAGE_FILE}" \
-    "${HOI4_STATES_DIR}"
-update-hoi4-parentage-file \
-    "${HOI4MDM_VANILLA_PARENTAGE_FILE}" \
-    "${HOI4MDM_STATES_DIR}"
-update-hoi4-parentage-file \
-    "${HOI4TGW_VANILLA_PARENTAGE_FILE}" \
-    "${HOI4TGW_STATES_DIR}"
+update_hoi4_parentage_file \
+    'HOI4' \
+    "${HOI4_VANILLA_PARENTAGE_FILE}"
+update_hoi4_parentage_file \
+    'HOI4MDM' \
+    "${HOI4MDM_VANILLA_PARENTAGE_FILE}"
+update_hoi4_parentage_file \
+    'HOI4TGW' \
+    "${HOI4TGW_VANILLA_PARENTAGE_FILE}"
 update-vanilla-file \
     "${IR_LOCALISATIONS_DIR}/provincenames_l_english.yml" \
     "${IR_VANILLA_FILE}"
@@ -216,7 +234,7 @@ update-vanilla-files \
 update-vanilla-files \
     "${IR_TBA_VANILLA_FILE}" \
     "${IR_TBA_LOCALISATIONS_DIR}/provincenames_l_english.yml"
-update-vic3-files "Vic3" \
+update-vic3-files 'Vic3' \
     "${Vic3_LOCALISATIONS_DIR}" \
     "${Vic3_COUNTRIES_DIR}" \
     "${Vic3_STATES_DIR}"
