@@ -130,7 +130,7 @@ CK3SoW_LOCALISATIONS_DIR="${CK3SoW_DIR}/localization/english"
 CK3SoW_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3sow_landed_titles.txt"
 CK3SoW_VANILLA_LOCALISATION_FILE="${CK3SoW_LOCALISATIONS_DIR}/replace/demd_titles_l_english.yml"
 
-CK3SuccExp_DIR="${STEAM_WORKSHOP_CK3_DIR}/3113107852"
+CK3SuccExp_DIR="${STEAM_WORKSHOP_CK3_DIR}/2650385452"
 CK3SuccExp_CULTURES_DIR="${CK3SuccExp_DIR}/common/culture/cultures"
 CK3SuccExp_LANDED_TITLES_DIR="${CK3SuccExp_DIR}/common/landed_titles"
 CK3SuccExp_LOCALISATIONS_DIR="${CK3SuccExp_DIR}/localization/english"
