@@ -211,7 +211,7 @@ function validate_links() {
         #checkForMissingHoi4LocationLinks "${GAME_ID}"
         checkForSurplusHoi4LocationLinks "${GAME_ID}"
         validateHoi4Parentage "${GAME_ID}"
-        checkDefaultHoi4Localisations 'HOI4' "${LOCALISATIONS_DIR}"
+        checkDefaultHoi4Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
     elif [[ ${GAME_ID} == IR* ]]; then
         #list_missing_ir_provinces "${GAME_ID}"
         list_surplus_ir_provinces "${GAME_ID}"
@@ -550,6 +550,7 @@ grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
 validate_links 'HOI4'
 #validate_links 'HOI4MDM'
+validate_links 'HOI4RT56'
 validate_links 'HOI4TGW'
 validate_links 'IR'
 validate_links 'IR_ABW'
