@@ -549,7 +549,7 @@ done
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
 validate_links 'HOI4'
-#validate_links 'HOI4MDM'
+validate_links 'HOI4MDM'
 validate_links 'HOI4RT56'
 validate_links 'HOI4TGW'
 validate_links 'IR'
