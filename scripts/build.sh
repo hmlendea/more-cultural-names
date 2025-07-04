@@ -162,6 +162,11 @@ build-edition \
     --dependency 'Millennium Dawn: A Modern Day Mod'
 
 build-edition \
+    'rt56-more-cultural-names' 'The Road to 56 - More Cultural Names' \
+    'HOI4RT56' '1.16.*' \
+    --dependency 'The Road to 56'
+
+build-edition \
     'tgw-more-cultural-names' 'The Great War: More Cultural Names' \
     'HOI4TGW' '1.16.*'
 
