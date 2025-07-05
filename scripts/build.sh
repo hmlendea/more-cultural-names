@@ -144,7 +144,7 @@ build-edition \
 
 build-edition \
     'tba-more-cultural-names' 'Bronze Age Reborn: More Cultural Names' \
-    'CK3TBA' '1.15.*' \
+    'CK3TBA' '1.16.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tba_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
@@ -158,7 +158,7 @@ build-edition \
 
 build-edition \
     'mdm-more-cultural-names' 'Millennium Dawn: More Cultural Names' \
-    'HOI4MDM' '1.15.*' \
+    'HOI4MDM' '1.16.*' \
     --dependency 'Millennium Dawn: A Modern Day Mod'
 
 build-edition \
