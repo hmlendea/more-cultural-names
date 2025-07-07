@@ -198,7 +198,7 @@ function checkForMismatchingLocationLinks() {
         checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == IR* ]]; then
-        #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
+        checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
         checkForSurplusIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     fi
 }
@@ -213,7 +213,7 @@ function validate_links() {
         validateHoi4Parentage "${GAME_ID}"
         checkDefaultHoi4Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
     elif [[ ${GAME_ID} == IR* ]]; then
-        #list_missing_ir_provinces "${GAME_ID}"
+        list_missing_ir_provinces "${GAME_ID}"
         list_surplus_ir_provinces "${GAME_ID}"
         list_mismatching_ir_localisations "${GAME_ID}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
