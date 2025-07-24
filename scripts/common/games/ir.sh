@@ -74,8 +74,8 @@ function list_missing_ir_provinces() {
             log_missing_ir_province "${GAME_ID}" "${LOCATION_TYPE}" "${PROVINCE_ID}" "${LOCATION_NAME}" "a location with a localisation with the same name (${LOCATION_NAME})"
         elif grep -q "value=\"${LOCATION_NAME}\"" <<< "${UNUSED_LOCATIONS_FILE_NAME_LINES}"; then
             log_missing_ir_province "${GAME_ID}" "${LOCATION_TYPE}" "${PROVINCE_ID}" "${LOCATION_NAME}" "an unused location with a localisation with the same name (${LOCATION_NAME})"
-        #else
-        #    log_missing_ir_province "${GAME_ID}" "${LOCATION_TYPE}" "${PROVINCE_ID}" "${LOCATION_NAME}" 'a new location'
+        else
+            log_missing_ir_province "${GAME_ID}" "${LOCATION_TYPE}" "${PROVINCE_ID}" "${LOCATION_NAME}" 'a new location'
         fi
     done
 }
