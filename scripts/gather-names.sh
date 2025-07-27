@@ -191,6 +191,7 @@ function get-name-lines() {
         'Banjarese' 'bjn' \
         'Bashkir' 'ba' \
         'Basque' 'eu' \
+        'Batak_Toba' 'bbc' \
         'Bavarian' 'bar' \
         'Belarussian' 'be' \
         'Bengali' 'bn' \
@@ -395,7 +396,6 @@ function get-name-lines() {
         'Telugu' 'te' \
         'Tetum' 'tet' \
         'Thai' 'th' \
-        'Toba_Batak' 'bbc' \
         'Tok_Pisin' 'tpi' \
         'Toki_Pona' 'tok' \
         'Tongan' 'to' \
