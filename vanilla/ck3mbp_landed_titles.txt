@@ -44575,6 +44575,8 @@ e_cathay = {
 
     k_yinshan_china = {
 		color = { 20 35 203 }
+		
+		can_be_named_after_dynasty = no
 
         d_zhenwu_china = {
 			color = { 20 24 119 }
@@ -88687,28 +88689,28 @@ e_xi_xia = {
 		capital = c_ganzhou
 		can_be_named_after_dynasty = no
 
-        cultural_names = {
-            name_list_tangut = cn_mjinjaa
-            name_list_qiang = cn_miniah
-            
-			#name_list_han = cn_xixia #Apparently cultural names overwrite forced name changes in title history
-            #name_list_mongolic_group = cn_tangyud
-            name_list_mongol = cn_tangyud
-            name_list_buryat = cn_tangyud
-            name_list_oirat = cn_tangyud
-            name_list_naiman = cn_tangyud
-            name_list_kerait = cn_tangyud
-            name_list_khitan = cn_tangyud
-            name_list_tuyuhun = cn_tangyud
-            name_list_jurchen = cn_tangyud
-            name_list_kirghiz = cn_tangyud
-            name_list_uyghur = cn_tangyud
-            name_list_bodpa = cn_minyak
-            name_list_zhangzhung = cn_minyak
-            name_list_sumpa = cn_minyak
-            name_list_tsangpa = cn_minyak
-            name_list_lhomon = cn_minyak
-        }
+        #cultural_names = {
+        #    name_list_tangut = cn_mjinjaa
+        #    name_list_qiang = cn_miniah
+        #    
+		#	 #name_list_han = cn_xixia #Apparently cultural names overwrite forced name changes in title history
+        #    #name_list_mongolic_group = cn_tangyud
+        #    name_list_mongol = cn_tangyud
+        #    name_list_buryat = cn_tangyud
+        #    name_list_oirat = cn_tangyud
+        #    name_list_naiman = cn_tangyud
+        #    name_list_kerait = cn_tangyud
+        #    name_list_khitan = cn_tangyud
+        #    name_list_tuyuhun = cn_tangyud
+        #    name_list_jurchen = cn_tangyud
+        #    name_list_kirghiz = cn_tangyud
+        #    name_list_uyghur = cn_tangyud
+        #    name_list_bodpa = cn_minyak
+        #    name_list_zhangzhung = cn_minyak
+        #    name_list_sumpa = cn_minyak
+        #    name_list_tsangpa = cn_minyak
+        #    name_list_lhomon = cn_minyak
+        #}
 
         d_ganzhou = {
 			color = { 20 35 214 }
@@ -89739,54 +89741,153 @@ e_celestia_china = {
 	k_shandong_east = {
 		color = { 161 209 112 }
 		capital = c_qingzhou_qi_china
+		can_be_named_after_dynasty = no
 	}
 	k_shandong_west = { 
 		color = { 155 210 69 }
 		capital = c_yanzhou_china 
+		can_be_named_after_dynasty = no
 	}
 	k_bianjing = { 
 		color = { 182 155 35 }
 		capital = c_bianzhou_china
+		can_be_named_after_dynasty = no
 	}
 	k_jingzhaofu = {
 		color = { 180 140 20 }
 		capital = c_changan_china 
+		can_be_named_after_dynasty = no
 	}
 	k_hebei_east = {
 		color = { 254 247 175 }
 		capital = c_cangzhou_china
+		can_be_named_after_dynasty = no
 	}
 	k_hebei_west = { 
 		color = { 157 199 20 }
 		capital = c_hengzhou_china
+		can_be_named_after_dynasty = no
 	}
 	k_hedong_north = {
 		color = { 201 223 124 }
 		capital = c_taiyuan_china
+		can_be_named_after_dynasty = no
 	}
 	k_hedong_south = { 
 		color = { 200 213 38 }
 		capital = c_jinzhou_hezhong_china
+		can_be_named_after_dynasty = no
 	}
 	k_qingyuan = { 
 		color = { 163 182 20 }
 		capital = c_jingzhou_xia_china
+		can_be_named_after_dynasty = no
 	}
 	k_fuyan = {
 		color = { 145 191 13 }
 		capital = c_yanzhou_xia_china
+		can_be_named_after_dynasty = no
 	}
 	k_ziqin = {
 		color = { 254 219 64 }
 		capital = c_didao_xizhou_china
+		can_be_named_after_dynasty = no
 	}
 	k_weibo_jin = { # Too small to be a viable Kingdom/Circuit in game. It literally had 4 Zhou.
 		color = { 243 172 20 }
 		capital = c_weizhou_china
+		can_be_named_after_dynasty = no
 	}
 	k_fengxian_jin = {
 		color = { 161 192 101 }
 		capital = c_fengxiang_china
+		can_be_named_after_dynasty = no
+	}
+	
+	
+	#Yuan
+	
+	
+	k_jiangzhe = { 			# -- Jiāngzhè
+		color = { 225 150 90 }
+		capital = c_hangzhou_china
+		can_be_named_after_dynasty = no
+	}
+	
+	
+	#Ming - Yuan de_jure. The Yuan had massive administrative divisions so they'd work better as empire titles instead of kingdoms. With that going to make the Kingdoms based on the Ming provinces. The most reliable map I can find for those is a 1391 map which isn't too far from the 1368 founding. These borders will not be as good as the Jin and Song as the county setup is based on the Song Zhou and you apparently cannot change de jure lieges for baronies in title history
+	
+	
+	k_guangdong = { 			# Guangdong -- Guǎngdōng
+		color = { 187 176 90 }
+		capital = c_nanhai_china
+		can_be_named_after_dynasty = no
+	}
+	
+	k_guangxi = { 				# Guangxi -- Guǎngxī
+		color = { 223 175 20 }
+		capital = c_guilin_china
+		can_be_named_after_dynasty = no
+	}
+	
+	k_zhejiang = { 				# Zhejiang -- Zhèjiāng
+		color = { 207 173 50 }
+		capital = c_hangzhou_china
+		can_be_named_after_dynasty = no
+	}
+	
+	k_jiangxi = { 				# Jiangxi -- Jiāngxī
+		color = { 189 254 44 }
+		capital = c_fuzhou_jiangxi_china # Nanchang
+		can_be_named_after_dynasty = no
+	}
+	
+	k_south_zhili = { 			# Southern Zhili -- Nánzhílì
+		color = { 198 170 30 }
+		capital = c_jinling_china # Nanjing
+		can_be_named_after_dynasty = no
+	}
+	
+	k_huguang = { 				# Huguang -- Húguǎng
+		color = { 203 236 89 }
+		capital = c_ezhou_china # Wuchang
+		can_be_named_after_dynasty = no
+	}
+	
+	k_sichuan = { 				# Sichuan -- Sìchuān
+		color = { 219 221 131 }
+		capital = c_chengdu_china
+		can_be_named_after_dynasty = no
+	}
+	
+	k_shaanxi = {				# Shaanxi -- Shānxī
+		color = { 161 192 101 }
+		capital = c_changan_china
+		can_be_named_after_dynasty = no
+	}
+	
+	k_shanxi = { 				# Shanxi -- Shǎnxī
+		color = { 201 223 124 }
+		capital = c_taiyuan_china
+		can_be_named_after_dynasty = no
+	}
+	
+	k_henan = { 				# Henan -- Hénán
+		color = { 182 155 35 }
+		capital = c_bianzhou_china
+		can_be_named_after_dynasty = no
+	}
+	
+	k_shandong = {				# Shandong -- Shāndōng
+		color = { 161 209 112 }
+		capital = c_qingzhou_qi_china
+		can_be_named_after_dynasty = no
+	}
+	
+	k_north_zhili = {			# Northern Zhili -- Běizhílì
+		color = { 254 247 175 }
+		capital = c_youzhou_china
+		can_be_named_after_dynasty = no
 	}
 	
 	
@@ -116967,10 +117068,4 @@ d_durazzo = {
 	color = { 180 85 120 }
 }
 
-# Blanked for compatibility. Preferably I wouldn't need to do this but these files loading will overwrite my landed_titles
-# Blanked for compatibility. Preferably I wouldn't need to do this but these files loading will overwrite my landed_titles
-# Blanked for compatibility. Preferably I wouldn't need to do this but these files loading will overwrite my landed_titles
-# Blanked for compatibility. Preferably I wouldn't need to do this but these files loading will overwrite my landed_titles
-# Blanked for compatibility. Preferably I wouldn't need to do this but these files loading will overwrite my landed_titles
-# Blanked for compatibility. Preferably I wouldn't need to do this but these files loading will overwrite my landed_titles
-# Blanked for compatibility. Preferably I wouldn't need to do this but these files loading will overwrite my landed_titles
+#BLANKED ME#BLANKED ME
