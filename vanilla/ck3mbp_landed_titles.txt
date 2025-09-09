@@ -13371,7 +13371,7 @@ e_germany = {
 		}
 
 		d_salzburg = { #Now Titular for the single county
-			color = { 110 110 110 }
+			color = { 125 145 110 }
 
 			capital = c_salzburg
 
@@ -35207,6 +35207,7 @@ e_caspian-pontic_steppe = {
 		}
 
 		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
 
 		can_create_on_partition = { always = no }
 
@@ -36094,6 +36095,7 @@ e_caspian-pontic_steppe = {
 		}
 
 		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
 
 		can_create_on_partition = { always = no }
 
@@ -42320,7 +42322,7 @@ e_tartaria = {
 	}
 
 	k_zhetysu = {
-		color = { 223 208 254 }
+		color = { 193 208 240 }
 
 		capital = c_qayaliq
 		definite_form = yes
@@ -43136,6 +43138,7 @@ e_tartaria = {
 		}
 
 		can_use_nomadic_naming = no
+		can_be_named_after_dynasty = no
 
 		can_create_on_partition = { always = no }
 
@@ -48282,6 +48285,22 @@ e_persia = {
 		}
 	}
 
+	k_gurgan = {
+		color = { 105 225 225 }
+
+		can_create = {
+			trigger_if = {
+				limit = {
+					is_ai = yes
+				}
+				NOT = {  culture = { has_cultural_pillar = heritage_mongolic } }
+			}
+		}
+
+		capital = c_gurgan
+		
+	}
+	
 	k_injuid = {
 		color = { 135 240 20 }
 
