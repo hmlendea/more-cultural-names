@@ -1,7 +1,7 @@
 ﻿@correct_culture_primary_score = 100
 @better_than_the_alternatives_score = 50
-@always_primary_score = 1000
-@never_primary_score = -1000
+@always_primary_score = 100000
+@never_primary_score = -100000
 
 # special titles
 
@@ -48,7 +48,7 @@ e_gaul = {
 }
 
 e_palmyrene = {
-	capital = c_palmyrene
+	capital = c_palmyra
 	ruler_uses_title_name = no
 	definite_form = yes
     
@@ -95,6 +95,9 @@ k_papal_state = {
 	male_names = { Alexander Anastasius Benedictus Caelestinus Callistus Clemens Eugenius Leo Gregorius Hadrianus Honorius Innocentius Ioannes Lucius Marinus Martinus Nicolaus Sergius Silvester Stephanus Urbanus Victor }
 }
 
+# Ecumenical Patriarchy title removed from TFE.
+# The Catholic-Orthodox schism is out of scope for the era covered by TFE,
+# and the title will not be present until a proper Pentarchy system is established in CK3 vanilla.
 k_orthodox = {
 	landless = yes
 	capital = c_byzantion # Constantinople
@@ -802,6 +805,21 @@ d_urartuism = {
 	capital = c_yazd
 }
 
+
+d_maslama_hof = {
+	color = { 217 44 76 }
+	
+	definite_form = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	destroy_if_invalid_heir = yes
+	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
+	
+	capital = c_yamama
+}
+
 #Sakya Trizin (religious head of lamaism/vassal-ruler of Tibet under Mongol and Yuan Empires)
 k_sakya_trizin = {
 	color = { 52 235 152 }
@@ -1225,13 +1243,13 @@ d_caledonia = {
 d_hibernia_superior = {
 	color = { 94 138 22 }
 	
-	capital = c_waterford
+	capital = c_ormond
 }
 
 d_hibernia_inferior = {
 	color = { 114 178 32 }
 	
-	capital = c_dundalk
+	capital = c_oriel
 }
 
 d_south_cantabria = {
@@ -1344,10 +1362,18 @@ e_britannia = {
 		name_list_irish = cn_alba
 		name_list_gaelic = cn_alba
 		name_list_roman = cn_britannia
+		name_list_sardino_roman = cn_britannia
+		name_list_illyro_roman = cn_britannia
 		name_list_hispano_roman = cn_britannia
-		name_list_afro_roman = cn_britannia
 		name_list_gallo_roman = cn_britannia
+		name_list_afro_roman = cn_britannia
+		name_list_mauro_roman = cn_britannia
 		name_list_britano_roman = cn_britannia
+		name_list_helleno_roman = cn_britannia
+		name_list_thracio_roman = cn_britannia
+		name_list_dacio_roman = cn_britannia
+		name_list_rhaetio_roman = cn_britannia
+		name_list_germano_roman = cn_britannia
 	}
 	
 	ai_primary_priority = {
@@ -1371,10 +1397,18 @@ e_britannia = {
 
 		cultural_names = {
 			name_list_roman = cn_manavia
+			name_list_sardino_roman = cn_manavia
+			name_list_illyro_roman = cn_manavia
 			name_list_hispano_roman = cn_manavia
-			name_list_afro_roman = cn_manavia
 			name_list_gallo_roman = cn_manavia
+			name_list_afro_roman = cn_manavia
+			name_list_mauro_roman = cn_manavia
 			name_list_britano_roman = cn_manavia
+			name_list_helleno_roman = cn_manavia
+			name_list_thracio_roman = cn_manavia
+			name_list_dacio_roman = cn_manavia
+			name_list_rhaetio_roman = cn_manavia
+			name_list_germano_roman = cn_manavia
 		}
 	}
 	
@@ -1422,10 +1456,18 @@ e_britannia = {
 
 		cultural_names = {
 			name_list_roman = cn_britannia
+			name_list_sardino_roman = cn_britannia
+			name_list_illyro_roman = cn_britannia
 			name_list_hispano_roman = cn_britannia
-			name_list_afro_roman = cn_britannia
 			name_list_gallo_roman = cn_britannia
+			name_list_afro_roman = cn_britannia
+			name_list_mauro_roman = cn_britannia
 			name_list_britano_roman = cn_britannia
+			name_list_helleno_roman = cn_britannia
+			name_list_thracio_roman = cn_britannia
+			name_list_dacio_roman = cn_britannia
+			name_list_rhaetio_roman = cn_britannia
+			name_list_germano_roman = cn_britannia
 			name_list_anglo_saxon = cn_england
 			name_list_old_saxon = cn_england
 			name_list_english = cn_england
@@ -1442,11 +1484,19 @@ e_britannia = {
 				name_list_old_saxon = cn_east_seaxe
 
 				name_list_roman = cn_maxima_caeserensis
+				name_list_sardino_roman = cn_maxima_caeserensis
+				name_list_illyro_roman = cn_maxima_caeserensis
 				name_list_hispano_roman = cn_maxima_caeserensis
 				name_list_gallo_roman = cn_maxima_caeserensis
 				name_list_afro_roman = cn_maxima_caeserensis
-				name_list_briton = cn_londein
+				name_list_mauro_roman = cn_maxima_caeserensis
 				name_list_britano_roman = cn_londein
+				name_list_helleno_roman = cn_maxima_caeserensis
+				name_list_thracio_roman = cn_maxima_caeserensis
+				name_list_dacio_roman = cn_maxima_caeserensis
+				name_list_rhaetio_roman = cn_maxima_caeserensis
+				name_list_germano_roman = cn_maxima_caeserensis
+				name_list_briton = cn_londein
 			}
 
 			c_middlesex = {
@@ -1459,10 +1509,18 @@ e_britannia = {
 					
 					name_list_briton = cn_londein
 					name_list_roman = cn_londinium
-					name_list_britano_roman = cn_londinium
-					name_list_gallo_roman = cn_londinium
+					name_list_sardino_roman = cn_londinium
+					name_list_illyro_roman = cn_londinium
 					name_list_hispano_roman = cn_londinium
+					name_list_gallo_roman = cn_londinium
 					name_list_afro_roman = cn_londinium
+					name_list_mauro_roman = cn_londinium
+					name_list_britano_roman = cn_londinium
+					name_list_helleno_roman = cn_londinium
+					name_list_thracio_roman = cn_londinium
+					name_list_dacio_roman = cn_londinium
+					name_list_rhaetio_roman = cn_londinium
+					name_list_germano_roman = cn_londinium
 				}
 				
 				b_london = {
@@ -1477,10 +1535,18 @@ e_britannia = {
 						
 						name_list_briton = cn_londein
 						name_list_roman = cn_londinium
-						name_list_britano_roman = cn_londinium
-						name_list_gallo_roman = cn_londinium
+						name_list_sardino_roman = cn_londinium
+						name_list_illyro_roman = cn_londinium
 						name_list_hispano_roman = cn_londinium
+						name_list_gallo_roman = cn_londinium
 						name_list_afro_roman = cn_londinium
+						name_list_mauro_roman = cn_londinium
+						name_list_britano_roman = cn_londinium
+						name_list_helleno_roman = cn_londinium
+						name_list_thracio_roman = cn_londinium
+						name_list_dacio_roman = cn_londinium
+						name_list_rhaetio_roman = cn_londinium
+						name_list_germano_roman = cn_londinium
 						
 						name_list_welsh = cn_llundein
 						name_list_cornish = cn_llundein
@@ -1531,10 +1597,18 @@ e_britannia = {
 					name_list_old_saxon = cn_east_seaxe
 					
 					name_list_roman = cn_camulodunum
-					name_list_britano_roman = cn_camulodunum
-					name_list_gallo_roman = cn_camulodunum
+					name_list_sardino_roman = cn_camulodunum
+					name_list_illyro_roman = cn_camulodunum
 					name_list_hispano_roman = cn_camulodunum
+					name_list_gallo_roman = cn_camulodunum
 					name_list_afro_roman = cn_camulodunum
+					name_list_mauro_roman = cn_camulodunum
+					name_list_britano_roman = cn_camulodunum
+					name_list_helleno_roman = cn_camulodunum
+					name_list_thracio_roman = cn_camulodunum
+					name_list_dacio_roman = cn_camulodunum
+					name_list_rhaetio_roman = cn_camulodunum
+					name_list_germano_roman = cn_camulodunum
 				}
 				
 				b_colchester = {
@@ -1547,10 +1621,18 @@ e_britannia = {
 						name_list_briton = cn_camulodunum
 						
 						name_list_roman = cn_camulodunum
-						name_list_britano_roman = cn_camulodunum
-						name_list_gallo_roman = cn_camulodunum
+						name_list_sardino_roman = cn_camulodunum
+						name_list_illyro_roman = cn_camulodunum
 						name_list_hispano_roman = cn_camulodunum
+						name_list_gallo_roman = cn_camulodunum
 						name_list_afro_roman = cn_camulodunum
+						name_list_mauro_roman = cn_camulodunum
+						name_list_britano_roman = cn_camulodunum
+						name_list_helleno_roman = cn_camulodunum
+						name_list_thracio_roman = cn_camulodunum
+						name_list_dacio_roman = cn_camulodunum
+						name_list_rhaetio_roman = cn_camulodunum
+						name_list_germano_roman = cn_camulodunum
 					}
 					
 					color = { 220 20 30 }
@@ -1584,10 +1666,18 @@ e_britannia = {
 					name_list_old_saxon = cn_bedanford
 					name_list_briton = cn_irencestre
 					name_list_roman = cn_irenis_castra
-					name_list_britano_roman = cn_irenis_castra
-					name_list_gallo_roman = cn_irenis_castra
+					name_list_sardino_roman = cn_irenis_castra
+					name_list_illyro_roman = cn_irenis_castra
 					name_list_hispano_roman = cn_irenis_castra
+					name_list_gallo_roman = cn_irenis_castra
 					name_list_afro_roman = cn_irenis_castra
+					name_list_mauro_roman = cn_irenis_castra
+					name_list_britano_roman = cn_irenis_castra
+					name_list_helleno_roman = cn_irenis_castra
+					name_list_thracio_roman = cn_irenis_castra
+					name_list_dacio_roman = cn_irenis_castra
+					name_list_rhaetio_roman = cn_irenis_castra
+					name_list_germano_roman = cn_irenis_castra
 				}
 				
 				b_bedford = {
@@ -1598,10 +1688,18 @@ e_britannia = {
 						name_list_old_saxon = cn_bedanford
 						name_list_briton = cn_irencestre
 						name_list_roman = cn_irenis_castra
-						name_list_britano_roman = cn_irenis_castra
-						name_list_gallo_roman = cn_irenis_castra
+						name_list_sardino_roman = cn_irenis_castra
+						name_list_illyro_roman = cn_irenis_castra
 						name_list_hispano_roman = cn_irenis_castra
+						name_list_gallo_roman = cn_irenis_castra
 						name_list_afro_roman = cn_irenis_castra
+						name_list_mauro_roman = cn_irenis_castra
+						name_list_britano_roman = cn_irenis_castra
+						name_list_helleno_roman = cn_irenis_castra
+						name_list_thracio_roman = cn_irenis_castra
+						name_list_dacio_roman = cn_irenis_castra
+						name_list_rhaetio_roman = cn_irenis_castra
+						name_list_germano_roman = cn_irenis_castra
 					}
 					
 					color = { 205 20 15 }
@@ -1630,10 +1728,18 @@ e_britannia = {
 					name_list_old_saxon = cn_herutford
 					name_list_briton = cn_verlamion
 					name_list_roman = cn_verulamium
-					name_list_britano_roman = cn_verulamium
-					name_list_gallo_roman = cn_verulamium
+					name_list_sardino_roman = cn_verulamium
+					name_list_illyro_roman = cn_verulamium
 					name_list_hispano_roman = cn_verulamium
+					name_list_gallo_roman = cn_verulamium
 					name_list_afro_roman = cn_verulamium
+					name_list_mauro_roman = cn_verulamium
+					name_list_britano_roman = cn_verulamium
+					name_list_helleno_roman = cn_verulamium
+					name_list_thracio_roman = cn_verulamium
+					name_list_dacio_roman = cn_verulamium
+					name_list_rhaetio_roman = cn_verulamium
+					name_list_germano_roman = cn_verulamium
 				}
 
 				b_berkhamsted = {
@@ -1645,10 +1751,18 @@ e_britannia = {
 				cultural_names = {
 					name_list_briton = cn_verlamion
 					name_list_roman = cn_verulamium
-					name_list_britano_roman = cn_verulamium
-					name_list_gallo_roman = cn_verulamium
+					name_list_sardino_roman = cn_verulamium
+					name_list_illyro_roman = cn_verulamium
 					name_list_hispano_roman = cn_verulamium
+					name_list_gallo_roman = cn_verulamium
 					name_list_afro_roman = cn_verulamium
+					name_list_mauro_roman = cn_verulamium
+					name_list_britano_roman = cn_verulamium
+					name_list_helleno_roman = cn_verulamium
+					name_list_thracio_roman = cn_verulamium
+					name_list_dacio_roman = cn_verulamium
+					name_list_rhaetio_roman = cn_verulamium
+					name_list_germano_roman = cn_verulamium
 				}
 
 				}
@@ -1674,10 +1788,18 @@ e_britannia = {
 					name_list_anglo_saxon = cn_buccingahamm
 					name_list_old_saxon = cn_buccingahamm
 					name_list_roman = cn_magrovinium
+					name_list_sardino_roman = cn_magrovinium
+					name_list_illyro_roman = cn_magrovinium
+					name_list_hispano_roman = cn_magrovinium
+					name_list_gallo_roman = cn_magrovinium
+					name_list_afro_roman = cn_magrovinium
+					name_list_mauro_roman = cn_magrovinium
 					name_list_britano_roman = cn_magrovinium
-						name_list_gallo_roman = cn_magrovinium
-						name_list_hispano_roman = cn_magrovinium
-						name_list_afro_roman = cn_magrovinium
+					name_list_helleno_roman = cn_magrovinium
+					name_list_thracio_roman = cn_magrovinium
+					name_list_dacio_roman = cn_magrovinium
+					name_list_rhaetio_roman = cn_magrovinium
+					name_list_germano_roman = cn_magrovinium
 				}
 				
 				b_buckingham = {
@@ -1771,18 +1893,26 @@ e_britannia = {
 				name_list_cumbrian = cn_bryneich
 				name_list_pictish = cn_bryneich
 				name_list_welsh = cn_bryneich
+				name_list_briton = cn_bryneich
 				
 				name_list_norman = cn_norroy
 				name_list_french = cn_norroy
 				name_list_outremer = cn_norroy
 				name_list_occitan = cn_norroy
-				
-				name_list_briton = cn_bryneich
+
 				name_list_roman = cn_valentia
+				name_list_sardino_roman = cn_valentia
+				name_list_illyro_roman = cn_valentia
 				name_list_hispano_roman = cn_valentia
-				name_list_afro_roman = cn_valentia
 				name_list_gallo_roman = cn_valentia
-				
+				name_list_afro_roman = cn_valentia
+				name_list_mauro_roman = cn_valentia
+				name_list_britano_roman = cn_valentia
+				name_list_helleno_roman = cn_valentia
+				name_list_thracio_roman = cn_valentia
+				name_list_dacio_roman = cn_valentia
+				name_list_rhaetio_roman = cn_valentia
+				name_list_germano_roman = cn_valentia				
 			}
 		
 			ai_primary_priority = {
@@ -1811,10 +1941,18 @@ e_britannia = {
 					name_list_briton = cn_verterae
 					#Latin Group
 					name_list_roman = cn_verterae
+					name_list_sardino_roman = cn_verterae
+					name_list_illyro_roman = cn_verterae
 					name_list_hispano_roman = cn_verterae
-					name_list_britano_roman = cn_verterae
-					name_list_afro_roman = cn_verterae
 					name_list_gallo_roman = cn_verterae
+					name_list_afro_roman = cn_verterae
+					name_list_mauro_roman = cn_verterae
+					name_list_britano_roman = cn_verterae
+					name_list_helleno_roman = cn_verterae
+					name_list_thracio_roman = cn_verterae
+					name_list_dacio_roman = cn_verterae
+					name_list_rhaetio_roman = cn_verterae
+					name_list_germano_roman = cn_verterae
 				}
 				b_richmond = {
 					province = 1598
@@ -1826,10 +1964,18 @@ e_britannia = {
 					name_list_briton = cn_verterae
 					#Latin Group
 					name_list_roman = cn_verterae
+					name_list_sardino_roman = cn_verterae
+					name_list_illyro_roman = cn_verterae
 					name_list_hispano_roman = cn_verterae
-					name_list_britano_roman = cn_verterae
-					name_list_afro_roman = cn_verterae
 					name_list_gallo_roman = cn_verterae
+					name_list_afro_roman = cn_verterae
+					name_list_mauro_roman = cn_verterae
+					name_list_britano_roman = cn_verterae
+					name_list_helleno_roman = cn_verterae
+					name_list_thracio_roman = cn_verterae
+					name_list_dacio_roman = cn_verterae
+					name_list_rhaetio_roman = cn_verterae
+					name_list_germano_roman = cn_verterae
 					}
 				}
 				b_hexham = {
@@ -1842,10 +1988,18 @@ e_britannia = {
 					name_list_briton = cn_corstopitum
 					#Latin Group
 					name_list_roman = cn_corstopitum
+					name_list_sardino_roman = cn_corstopitum
+					name_list_illyro_roman = cn_corstopitum
 					name_list_hispano_roman = cn_corstopitum
-					name_list_britano_roman = cn_corstopitum
-					name_list_afro_roman = cn_corstopitum
 					name_list_gallo_roman = cn_corstopitum
+					name_list_afro_roman = cn_corstopitum
+					name_list_mauro_roman = cn_corstopitum
+					name_list_britano_roman = cn_corstopitum
+					name_list_helleno_roman = cn_corstopitum
+					name_list_thracio_roman = cn_corstopitum
+					name_list_dacio_roman = cn_corstopitum
+					name_list_rhaetio_roman = cn_corstopitum
+					name_list_germano_roman = cn_corstopitum
 					}
 				}
 				b_durham = {
@@ -1864,10 +2018,18 @@ e_britannia = {
 					name_list_briton = cn_pons_aelii
 					#Latin Group
 					name_list_roman = cn_pons_aelii
+					name_list_sardino_roman = cn_pons_aelii
+					name_list_illyro_roman = cn_pons_aelii
 					name_list_hispano_roman = cn_pons_aelii
-					name_list_britano_roman = cn_pons_aelii
-					name_list_afro_roman = cn_pons_aelii
 					name_list_gallo_roman = cn_pons_aelii
+					name_list_afro_roman = cn_pons_aelii
+					name_list_mauro_roman = cn_pons_aelii
+					name_list_britano_roman = cn_pons_aelii
+					name_list_helleno_roman = cn_pons_aelii
+					name_list_thracio_roman = cn_pons_aelii
+					name_list_dacio_roman = cn_pons_aelii
+					name_list_rhaetio_roman = cn_pons_aelii
+					name_list_germano_roman = cn_pons_aelii
 					}
 
 					color = { 255 15 15 }
@@ -1897,10 +2059,18 @@ e_britannia = {
 					name_list_briton = cn_gabrosenium
 					#Latin Group
 					name_list_roman = cn_gabrosenium
+					name_list_sardino_roman = cn_gabrosenium
+					name_list_illyro_roman = cn_gabrosenium
 					name_list_hispano_roman = cn_gabrosenium
-					name_list_britano_roman = cn_gabrosenium
-					name_list_afro_roman = cn_gabrosenium
 					name_list_gallo_roman = cn_gabrosenium
+					name_list_afro_roman = cn_gabrosenium
+					name_list_mauro_roman = cn_gabrosenium
+					name_list_britano_roman = cn_gabrosenium
+					name_list_helleno_roman = cn_gabrosenium
+					name_list_thracio_roman = cn_gabrosenium
+					name_list_dacio_roman = cn_gabrosenium
+					name_list_rhaetio_roman = cn_gabrosenium
+					name_list_germano_roman = cn_gabrosenium
 				}
 				
 				ai_primary_priority = {
@@ -1924,10 +2094,18 @@ e_britannia = {
 					name_list_briton = cn_gabrosenium
 					#Latin Group
 					name_list_roman = cn_gabrosenium
+					name_list_sardino_roman = cn_gabrosenium
+					name_list_illyro_roman = cn_gabrosenium
 					name_list_hispano_roman = cn_gabrosenium
-					name_list_britano_roman = cn_gabrosenium
-					name_list_afro_roman = cn_gabrosenium
 					name_list_gallo_roman = cn_gabrosenium
+					name_list_afro_roman = cn_gabrosenium
+					name_list_mauro_roman = cn_gabrosenium
+					name_list_britano_roman = cn_gabrosenium
+					name_list_helleno_roman = cn_gabrosenium
+					name_list_thracio_roman = cn_gabrosenium
+					name_list_dacio_roman = cn_gabrosenium
+					name_list_rhaetio_roman = cn_gabrosenium
+					name_list_germano_roman = cn_gabrosenium
 					}
 				}
 				b_furness = {
@@ -1953,10 +2131,18 @@ e_britannia = {
 					name_list_briton = cn_din_guarie
 						#Latin Group
 					name_list_roman = cn_habitancium
+					name_list_sardino_roman = cn_habitancium
+					name_list_illyro_roman = cn_habitancium
 					name_list_hispano_roman = cn_habitancium
-					name_list_britano_roman = cn_habitancium
-					name_list_afro_roman = cn_habitancium
 					name_list_gallo_roman = cn_habitancium
+					name_list_afro_roman = cn_habitancium
+					name_list_mauro_roman = cn_habitancium
+					name_list_britano_roman = cn_habitancium
+					name_list_helleno_roman = cn_habitancium
+					name_list_thracio_roman = cn_habitancium
+					name_list_dacio_roman = cn_habitancium
+					name_list_rhaetio_roman = cn_habitancium
+					name_list_germano_roman = cn_habitancium
 				}
 				
 				b_bamburgh = {
@@ -1983,10 +2169,18 @@ e_britannia = {
 						name_list_pictish = cn_din_guarie
 						#Latin Group
 						name_list_roman = cn_castra_curiae
+						name_list_sardino_roman = cn_castra_curiae
+						name_list_illyro_roman = cn_castra_curiae
 						name_list_hispano_roman = cn_castra_curiae
-						name_list_britano_roman = cn_castra_curiae
-						name_list_afro_roman = cn_castra_curiae
 						name_list_gallo_roman = cn_castra_curiae
+						name_list_afro_roman = cn_castra_curiae
+						name_list_mauro_roman = cn_castra_curiae
+						name_list_britano_roman = cn_castra_curiae
+						name_list_helleno_roman = cn_castra_curiae
+						name_list_thracio_roman = cn_castra_curiae
+						name_list_dacio_roman = cn_castra_curiae
+						name_list_rhaetio_roman = cn_castra_curiae
+						name_list_germano_roman = cn_castra_curiae
 					}
 				}
 				b_rothbury = {
@@ -2250,9 +2444,19 @@ e_britannia = {
 				name_list_pictish = cn_deifr
 
 				name_list_roman = cn_britannia_secunda
+				name_list_sardino_roman = cn_britannia_secunda
+				name_list_illyro_roman = cn_britannia_secunda
 				name_list_hispano_roman = cn_britannia_secunda
 				name_list_gallo_roman = cn_britannia_secunda
 				name_list_afro_roman = cn_britannia_secunda
+				name_list_mauro_roman = cn_britannia_secunda
+				name_list_britano_roman = cn_britannia_secunda
+				name_list_helleno_roman = cn_britannia_secunda
+				name_list_thracio_roman = cn_britannia_secunda
+				name_list_dacio_roman = cn_britannia_secunda
+				name_list_rhaetio_roman = cn_britannia_secunda
+				name_list_germano_roman = cn_britannia_secunda
+
 				name_list_briton = cn_eboracum
 			}
 			
@@ -2272,11 +2476,19 @@ e_britannia = {
 				cultural_names = {
 					name_list_briton = cn_lindum
 					name_list_roman = cn_lindum
-					name_list_afro_roman = cn_lindum
-					name_list_gallo_roman = cn_lindum
+					name_list_sardino_roman = cn_lindum
+					name_list_illyro_roman = cn_lindum
 					name_list_hispano_roman = cn_lindum
+					name_list_gallo_roman = cn_lindum
+					name_list_afro_roman = cn_lindum
+					name_list_mauro_roman = cn_lindum
 					name_list_britano_roman = cn_lindum
-					}
+					name_list_helleno_roman = cn_lindum
+					name_list_thracio_roman = cn_lindum
+					name_list_dacio_roman = cn_lindum
+					name_list_rhaetio_roman = cn_lindum
+					name_list_germano_roman = cn_lindum
+				}
 				
 				b_lincoln = {
 					province = 1583
@@ -2287,10 +2499,18 @@ e_britannia = {
 					cultural_names = {
 					name_list_briton = cn_lindum
 					name_list_roman = cn_lindum
-					name_list_afro_roman = cn_lindum
-					name_list_gallo_roman = cn_lindum
+					name_list_sardino_roman = cn_lindum
+					name_list_illyro_roman = cn_lindum
 					name_list_hispano_roman = cn_lindum
+					name_list_gallo_roman = cn_lindum
+					name_list_afro_roman = cn_lindum
+					name_list_mauro_roman = cn_lindum
 					name_list_britano_roman = cn_lindum
+					name_list_helleno_roman = cn_lindum
+					name_list_thracio_roman = cn_lindum
+					name_list_dacio_roman = cn_lindum
+					name_list_rhaetio_roman = cn_lindum
+					name_list_germano_roman = cn_lindum
 					}
 				}
 				b_stamford = {
@@ -2333,10 +2553,18 @@ e_britannia = {
 					name_list_briton = cn_efrog
 					#Latin Group
 					name_list_roman = cn_eboracum
+					name_list_sardino_roman = cn_eboracum
+					name_list_illyro_roman = cn_eboracum
 					name_list_hispano_roman = cn_eboracum
-					name_list_afro_roman = cn_eboracum
-					name_list_britano_roman = cn_eboracum
 					name_list_gallo_roman = cn_eboracum
+					name_list_afro_roman = cn_eboracum
+					name_list_mauro_roman = cn_eboracum
+					name_list_britano_roman = cn_eboracum
+					name_list_helleno_roman = cn_eboracum
+					name_list_thracio_roman = cn_eboracum
+					name_list_dacio_roman = cn_eboracum
+					name_list_rhaetio_roman = cn_eboracum
+					name_list_germano_roman = cn_eboracum
 				}
 				
 				b_york = {
@@ -2545,10 +2773,18 @@ e_britannia = {
 				name_list_norse = cn_jarnamoda
 				name_list_norwegian = cn_jarnamoda
 				name_list_roman = cn_literis_saxonica
-				name_list_afro_roman = cn_literis_saxonica
-				name_list_gallo_roman = cn_literis_saxonica
+				name_list_sardino_roman = cn_literis_saxonica
+				name_list_illyro_roman = cn_literis_saxonica
 				name_list_hispano_roman = cn_literis_saxonica
+				name_list_gallo_roman = cn_literis_saxonica
+				name_list_afro_roman = cn_literis_saxonica
+				name_list_mauro_roman = cn_literis_saxonica
 				name_list_britano_roman = cn_literis_saxonica
+				name_list_helleno_roman = cn_literis_saxonica
+				name_list_thracio_roman = cn_literis_saxonica
+				name_list_dacio_roman = cn_literis_saxonica
+				name_list_rhaetio_roman = cn_literis_saxonica
+				name_list_germano_roman = cn_literis_saxonica
 				name_list_briton = cn_icenia
 			}
 			c_norfolk = {
@@ -2719,10 +2955,18 @@ e_britannia = {
 			
 			cultural_names = {
 				name_list_roman = cn_flavia_caeserensis
+				name_list_sardino_roman = cn_flavia_caeserensis
+				name_list_illyro_roman = cn_flavia_caeserensis
 				name_list_hispano_roman = cn_flavia_caeserensis
 				name_list_gallo_roman = cn_flavia_caeserensis
 				name_list_afro_roman = cn_flavia_caeserensis
+				name_list_mauro_roman = cn_flavia_caeserensis
 				name_list_britano_roman = cn_flavia_caeserensis
+				name_list_helleno_roman = cn_flavia_caeserensis
+				name_list_thracio_roman = cn_flavia_caeserensis
+				name_list_dacio_roman = cn_flavia_caeserensis
+				name_list_rhaetio_roman = cn_flavia_caeserensis
+				name_list_germano_roman = cn_flavia_caeserensis
 				name_list_briton = cn_linnuis
 			}
 			
@@ -3041,10 +3285,18 @@ e_britannia = {
 			
 			cultural_names = {
 				name_list_roman = cn_britannia_prima
+				name_list_sardino_roman = cn_britannia_prima
+				name_list_illyro_roman = cn_britannia_prima
 				name_list_hispano_roman = cn_britannia_prima
 				name_list_gallo_roman = cn_britannia_prima
 				name_list_afro_roman = cn_britannia_prima
+				name_list_mauro_roman = cn_britannia_prima
 				name_list_britano_roman = cn_britannia_prima
+				name_list_helleno_roman = cn_britannia_prima
+				name_list_thracio_roman = cn_britannia_prima
+				name_list_dacio_roman = cn_britannia_prima
+				name_list_rhaetio_roman = cn_britannia_prima
+				name_list_germano_roman = cn_britannia_prima
 				name_list_briton = cn_dobunnia
 			}
 			
@@ -3833,10 +4085,18 @@ e_britannia = {
 			#latin Group
 			name_list_welsh = cn_cymru
 			name_list_roman = cn_cambria
+			name_list_sardino_roman = cn_cambria
+			name_list_illyro_roman = cn_cambria
 			name_list_hispano_roman = cn_cambria
-			name_list_afro_roman = cn_cambria
 			name_list_gallo_roman = cn_cambria
+			name_list_afro_roman = cn_cambria
+			name_list_mauro_roman = cn_cambria
 			name_list_britano_roman = cn_cambria
+			name_list_helleno_roman = cn_cambria
+			name_list_thracio_roman = cn_cambria
+			name_list_dacio_roman = cn_cambria
+			name_list_rhaetio_roman = cn_cambria
+			name_list_germano_roman = cn_cambria
 		}
 		
 		d_gwynedd = {
@@ -6348,10 +6608,18 @@ e_britannia = {
 
 		cultural_names = {
 			name_list_roman = cn_dumnonia
+			name_list_sardino_roman = cn_dumnonia
+			name_list_illyro_roman = cn_dumnonia
 			name_list_hispano_roman = cn_dumnonia
-			name_list_afro_roman = cn_dumnonia
-			name_list_afro_roman = cn_dumnonia
 			name_list_gallo_roman = cn_dumnonia
+			name_list_afro_roman = cn_dumnonia
+			name_list_mauro_roman = cn_dumnonia
+			name_list_britano_roman = cn_dumnonia
+			name_list_helleno_roman = cn_dumnonia
+			name_list_thracio_roman = cn_dumnonia
+			name_list_dacio_roman = cn_dumnonia
+			name_list_rhaetio_roman = cn_dumnonia
+			name_list_germano_roman = cn_dumnonia
 			name_list_briton = cn_dumnonia
 		}
 
@@ -15545,6 +15813,12 @@ e_byzantium = {
 						name_list_turkish = cn_ninica
 					}
 				}
+				b_soloi = {
+					province = 5674
+				
+					color = { 220 67 5 }
+					
+				}
 			}
 		}
 		d_cibyrrhaeot = {
@@ -15865,12 +16139,6 @@ e_byzantium = {
 					cultural_names = {
 						name_list_turkish = cn_karaman
 					}
-				}
-				b_soloi = {
-					province = 5674
-				
-					color = { 200 20 40 }
-					
 				}
 				b_derbe = {
 					province = 5675
@@ -16319,6 +16587,16 @@ e_byzantium = {
 						name_list_turkish = cn_gemerek
 					}
 				}
+				b_arasaxa = {
+					province = 5616
+				
+					color = { 195 118 65 }
+					
+					
+					cultural_names = {
+						name_list_turkish = cn_akmescit
+					}
+				}
 			}
 			c_kyzistra = {
 				color = { 205 118 118 }
@@ -16346,16 +16624,6 @@ e_byzantium = {
 					
 					cultural_names = {
 						name_list_turkish = cn_zile
-					}
-				}
-				b_arasaxa = {
-					province = 5616
-				
-					color = { 205 118 118 }
-					
-					
-					cultural_names = {
-						name_list_turkish = cn_akmescit
 					}
 				}
 			}
@@ -16495,7 +16763,6 @@ e_italy = {
 	k_italy = {
 		color = { 244 227 160 }
 		
-		
 		capital = c_ravenna # Ravenna
 		
 		can_create = {
@@ -16504,6 +16771,15 @@ e_italy = {
 					is_ai = yes
 				}
 				faith = { religion_tag = christianity_religion }
+			}
+		}
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:ostrogothic # Ostrogoths in Italy will officially use Kingdom of Italy
+				}
+				add = @always_primary_score
 			}
 		}
 		
@@ -16523,7 +16799,7 @@ e_italy = {
 						culture = { has_cultural_pillar = heritage_central_germanic } # Unruoch of Friuli
 					}
 					add = @correct_culture_primary_score
-				}				
+				}
 			}
 			
 			c_aquileia = {
@@ -17451,7 +17727,7 @@ e_italy = {
 			}
 			
 			
-			capital = c_palermo # Palermo
+			capital = c_siracusa # Syracuse
 			
 			c_palermo = {
 				color = { 155 254 86 }
@@ -17706,7 +17982,7 @@ e_italy = {
 			color = { 167 172 63 }
 			
 			
-			capital = c_apulia # Trani
+			capital = c_bari # Bari
 			
 			c_apulia = {
 				color = { 152 157 48 }
@@ -33956,13 +34232,6 @@ e_western_regions = {
 					name_list_tsangpa = cn_lingchu
 					name_list_lhomon = cn_lingchu
 				}
-				
-				b_gulang = {
-					province = 9523
-					
-					color = { 60 64 199 }
-					
-				}
 				b_liangzhou = { #Wuwei
 					province = 9521
 					
@@ -33977,6 +34246,13 @@ e_western_regions = {
 						name_list_lhomon = cn_lingchu
 					}
 				}
+				b_gulang = {
+					province = 9523
+					
+					color = { 60 64 199 }
+					
+				}
+				
 				b_huangcheng = {
 					province = 9522
 					
@@ -34168,7 +34444,78 @@ e_western_regions = {
 				}
 			}
 		}
-		
+		d_jiuquan = {
+			color = { 100 30 95 }
+
+			capital = c_suzhou
+
+			cultural_names = {
+				name_list_han = cn_jiuquan
+			}
+			c_jinta = {
+				color = { 195 130 225 }
+				
+				
+				b_jinta = {
+					province = 9496
+					
+					color = { 195 130 225 }
+					
+				}
+				b_xiba = {
+					province = 9495
+					
+					color = { 195 130 225 }
+					
+				}
+			}
+			c_suzhou = {
+				color = { 220 140 210 }
+				
+				
+				b_jiayuguan = {
+					province = 9493
+					
+					color = { 220 140 210 }
+					
+				}
+				b_suzhou = { #Jiuquan
+					province = 9494
+					
+					color = { 220 140 210 }
+					
+				}
+				b_qingshui = {
+					province = 9498
+					
+					color = { 220 140 210 }
+					
+				}
+			}
+			c_yumen = {
+				color = { 195 120 215 }
+				
+				
+				b_chijin = {
+					province = 9491
+					
+					color = { 195 120 215 }
+					
+				}
+				b_yumen = {
+					province = 9487
+					
+					color = { 195 120 215 }
+					
+				}
+				b_huahai = {
+					province = 9492
+					
+					color = { 195 120 215 }
+					
+				}
+			}
+		}
 		d_qilin = {
 			color = { 190 160 250 }
 			
@@ -34289,69 +34636,6 @@ e_western_regions = {
 					province = 9499
 					
 					color = { 200 100 220 }
-					
-				}
-			}
-			c_jinta = {
-				color = { 195 130 225 }
-				
-				
-				b_jinta = {
-					province = 9496
-					
-					color = { 195 130 225 }
-					
-				}
-				b_xiba = {
-					province = 9495
-					
-					color = { 195 130 225 }
-					
-				}
-			}
-			c_suzhou = {
-				color = { 220 140 210 }
-				
-				
-				b_jiayuguan = {
-					province = 9493
-					
-					color = { 220 140 210 }
-					
-				}
-				b_suzhou = { #Jiuquan
-					province = 9494
-					
-					color = { 220 140 210 }
-					
-				}
-				b_qingshui = {
-					province = 9498
-					
-					color = { 220 140 210 }
-					
-				}
-			}
-			c_yumen = {
-				color = { 195 120 215 }
-				
-				
-				b_chijin = {
-					province = 9491
-					
-					color = { 195 120 215 }
-					
-				}
-				b_yumen = {
-					province = 9487
-					
-					color = { 195 120 215 }
-					
-				}
-				b_huahai = {
-					province = 9492
-					
-					color = { 195 120 215 }
 					
 				}
 			}
@@ -34787,7 +35071,7 @@ e_persia = {
 			color = { 70 70 80 }
 			
 			
-			capital = c_abkhazia # Tskhumi
+			capital = c_odishi # Archaeopolis/Kutaisi
 			
 			c_acampse = {
 				color = { 70 55 55 }
@@ -34971,16 +35255,16 @@ e_persia = {
 					color = { 88 104 67 }
 					
 				}
-				b_mingachevir = {
-					province = 5778
-
-					color = { 88 104 67 }
-					
-				}
 				b_barda = {
 					province = 5779
 
 					color = { 88 104 67 }
+					
+				}
+				b_paidangaran = {
+					province = 5776
+
+					color = { 62 95 44 }
 					
 				}
 			}
@@ -37215,10 +37499,10 @@ e_persia = {
 					color = { 62 95 44 }
 					
 				}
-				b_paidangaran = {
-					province = 5776
+				b_mingachevir = {
+					province = 5778
 
-					color = { 62 95 44 }
+					color = { 88 104 67 }
 					
 				}
 			}
@@ -39271,11 +39555,6 @@ e_persia = {
 					color = { 25 150 90 }
 					
 				}
-				b_hisn_kaifa = {
-					province = 4847
-				
-					color = { 95 186 30 }
-				}
 			}
 			c_ninive = {
 				color = { 21 180 70 }
@@ -39516,11 +39795,22 @@ e_persia = {
 					color = { 70 160 30 }
 					
 				}
+			}
+			c_tall_fafan = {
+				color = { 80 150 40 }
+				
+				
 				b_tall_fafan = {
 					province = 4857
 					
 					color = { 153 160 52 }
 					
+				}
+				
+				b_hisn_kaifa = {
+					province = 4847
+				
+					color = { 95 186 30 }
 				}
 			}
 			c_mayyafariqin = {
@@ -43411,6 +43701,20 @@ e_france = {
 			
 			
 			cultural_names = {
+				name_list_roman = cn_belgica_prima
+				name_list_sardino_roman = cn_belgica_prima
+				name_list_illyro_roman = cn_belgica_prima
+				name_list_hispano_roman = cn_belgica_prima
+				name_list_gallo_roman = cn_belgica_prima
+				name_list_afro_roman = cn_belgica_prima
+				name_list_mauro_roman = cn_belgica_prima
+				name_list_britano_roman = cn_belgica_prima
+				name_list_helleno_roman = cn_belgica_prima
+				name_list_thracio_roman = cn_belgica_prima
+				name_list_dacio_roman = cn_belgica_prima
+				name_list_rhaetio_roman = cn_belgica_prima
+				name_list_germano_roman = cn_belgica_prima
+
 				name_list_french = cn_upper_lorraine
 				name_list_norman = cn_upper_lorraine
 			}		
@@ -43589,9 +43893,24 @@ e_france = {
 		}
 		d_lower_lorraine = {
 			color = { 150 145 180 }
-			
-			
+
 			capital = c_cologne # Cologne
+
+			cultural_names = {
+				name_list_roman = cn_colonia
+				name_list_sardino_roman = cn_colonia
+				name_list_illyro_roman = cn_colonia
+				name_list_hispano_roman = cn_colonia
+				name_list_gallo_roman = cn_colonia
+				name_list_afro_roman = cn_colonia
+				name_list_mauro_roman = cn_colonia
+				name_list_britano_roman = cn_colonia
+				name_list_helleno_roman = cn_colonia
+				name_list_thracio_roman = cn_colonia
+				name_list_dacio_roman = cn_colonia
+				name_list_rhaetio_roman = cn_colonia
+				name_list_germano_roman = cn_colonia
+			}
 			
 			c_cologne = {
 				color = { 150 145 180 }
@@ -43846,13 +44165,25 @@ e_france = {
 		capital = c_ile_de_france
 		
 		cultural_names = {
-			#name_list_roman = cn_gallia
-			#name_list_gallo_roman = cn_gallia  # For Soissons flavor
+			name_list_roman = k_soissons
+			name_list_sardino_roman = k_soissons
+			name_list_illyro_roman = k_soissons
+			name_list_hispano_roman = k_soissons
+			name_list_gallo_roman = k_soissons
+			name_list_afro_roman = k_soissons
+			name_list_mauro_roman = k_soissons
+			name_list_britano_roman = k_soissons
+			name_list_helleno_roman = k_soissons
+			name_list_thracio_roman = k_soissons
+			name_list_dacio_roman = k_soissons
+			name_list_rhaetio_roman = k_soissons
+			name_list_germano_roman = k_soissons
 		}
 		ai_primary_priority = {
 			if = {
 				limit = {
 					culture = culture:french
+					culture = culture:frankish
 				}
 				add = @correct_culture_primary_score
 			}
@@ -45525,7 +45856,23 @@ e_france = {
 			
 			
 			capital = c_reims # Reims
-			
+
+			cultural_names = {
+				name_list_roman = cn_belgica_secunda
+				name_list_sardino_roman = cn_belgica_secunda
+				name_list_illyro_roman = cn_belgica_secunda
+				name_list_hispano_roman = cn_belgica_secunda
+				name_list_gallo_roman = cn_belgica_secunda
+				name_list_afro_roman = cn_belgica_secunda
+				name_list_mauro_roman = cn_belgica_secunda
+				name_list_britano_roman = cn_belgica_secunda
+				name_list_helleno_roman = cn_belgica_secunda
+				name_list_thracio_roman = cn_belgica_secunda
+				name_list_dacio_roman = cn_belgica_secunda
+				name_list_rhaetio_roman = cn_belgica_secunda
+				name_list_germano_roman = cn_belgica_secunda
+			}
+
 			c_reims = {
 				color = { 7 60 160 }
 				
@@ -45878,6 +46225,22 @@ e_france = {
 			
 			capital = c_marsan # Bordeaux
 			
+			cultural_names = {
+				name_list_roman = cn_aquitanica_secunda
+				name_list_sardino_roman = cn_aquitanica_secunda
+				name_list_illyro_roman = cn_aquitanica_secunda
+				name_list_hispano_roman = cn_aquitanica_secunda
+				name_list_gallo_roman = cn_aquitanica_secunda
+				name_list_afro_roman = cn_aquitanica_secunda
+				name_list_mauro_roman = cn_aquitanica_secunda
+				name_list_britano_roman = cn_aquitanica_secunda
+				name_list_helleno_roman = cn_aquitanica_secunda
+				name_list_thracio_roman = cn_aquitanica_secunda
+				name_list_dacio_roman = cn_aquitanica_secunda
+				name_list_rhaetio_roman = cn_aquitanica_secunda
+				name_list_germano_roman = cn_aquitanica_secunda
+			}
+
 			c_labourd = {
 				color = { 105 45 245 }
 				
@@ -46083,10 +46446,25 @@ e_france = {
 		}
 		d_aquitaine = {
 			color = { 83 124 226 }
-			
-			
+
 			capital = c_angouleme # Angouleme
-			
+
+			cultural_names = {
+				name_list_roman = cn_aquitainia
+				name_list_sardino_roman = cn_aquitainia
+				name_list_illyro_roman = cn_aquitainia
+				name_list_hispano_roman = cn_aquitainia
+				name_list_gallo_roman = cn_aquitainia
+				name_list_afro_roman = cn_aquitainia
+				name_list_mauro_roman = cn_aquitainia
+				name_list_britano_roman = cn_aquitainia
+				name_list_helleno_roman = cn_aquitainia
+				name_list_thracio_roman = cn_aquitainia
+				name_list_dacio_roman = cn_aquitainia
+				name_list_rhaetio_roman = cn_aquitainia
+				name_list_germano_roman = cn_aquitainia
+			}
+
 			c_bordeaux = {
 				color = { 81 30 243 }
 				
@@ -46410,6 +46788,22 @@ e_france = {
 			
 			capital = c_carcassonne # Albi
 			
+			cultural_names = {
+				name_list_roman = cn_narbonensis_prima
+				name_list_sardino_roman = cn_narbonensis_prima
+				name_list_illyro_roman = cn_narbonensis_prima
+				name_list_hispano_roman = cn_narbonensis_prima
+				name_list_gallo_roman = cn_narbonensis_prima
+				name_list_afro_roman = cn_narbonensis_prima
+				name_list_mauro_roman = cn_narbonensis_prima
+				name_list_britano_roman = cn_narbonensis_prima
+				name_list_helleno_roman = cn_narbonensis_prima
+				name_list_thracio_roman = cn_narbonensis_prima
+				name_list_dacio_roman = cn_narbonensis_prima
+				name_list_rhaetio_roman = cn_narbonensis_prima
+				name_list_germano_roman = cn_narbonensis_prima
+			}
+
 			c_albi = {
 				color = { 90 80 190 }
 				
@@ -46529,6 +46923,9 @@ e_france = {
 			
 			capital = c_poitiers # Poitiers
 			
+			cultural_names = {
+				name_list_taifalian = TAIFALIA
+			}
 			
 			c_poitiers = {
 				color = { 50 50 130 }
@@ -46742,8 +47139,23 @@ e_france = {
 			
 			
 			capital = c_bourbon # Bourbon
-			
-			
+
+			cultural_names = {
+				name_list_roman = cn_aquitanica_prima
+				name_list_sardino_roman = cn_aquitanica_prima
+				name_list_illyro_roman = cn_aquitanica_prima
+				name_list_hispano_roman = cn_aquitanica_prima
+				name_list_gallo_roman = cn_aquitanica_prima
+				name_list_afro_roman = cn_aquitanica_prima
+				name_list_mauro_roman = cn_aquitanica_prima
+				name_list_britano_roman = cn_aquitanica_prima
+				name_list_helleno_roman = cn_aquitanica_prima
+				name_list_thracio_roman = cn_aquitanica_prima
+				name_list_dacio_roman = cn_aquitanica_prima
+				name_list_rhaetio_roman = cn_aquitanica_prima
+				name_list_germano_roman = cn_aquitanica_prima
+			}
+
 			c_bourbon = {
 				color = { 26 10 135 }
 				
@@ -46874,6 +47286,22 @@ e_france = {
 			
 			capital = c_provence # Arles
 			
+			cultural_names = {
+				name_list_roman = cn_narbonensis_secunda
+				name_list_sardino_roman = cn_narbonensis_secunda
+				name_list_illyro_roman = cn_narbonensis_secunda
+				name_list_hispano_roman = cn_narbonensis_secunda
+				name_list_gallo_roman = cn_narbonensis_secunda
+				name_list_afro_roman = cn_narbonensis_secunda
+				name_list_mauro_roman = cn_narbonensis_secunda
+				name_list_britano_roman = cn_narbonensis_secunda
+				name_list_helleno_roman = cn_narbonensis_secunda
+				name_list_thracio_roman = cn_narbonensis_secunda
+				name_list_dacio_roman = cn_narbonensis_secunda
+				name_list_rhaetio_roman = cn_narbonensis_secunda
+				name_list_germano_roman = cn_narbonensis_secunda
+			}
+
 			c_venaissin = {
 				color = { 180 30 70 }
 				
@@ -47025,6 +47453,22 @@ e_france = {
 			
 			capital = c_nice # Savoie
 			
+			cultural_names = {
+				name_list_roman = cn_alpes_poenninae
+				name_list_sardino_roman = cn_alpes_poenninae
+				name_list_illyro_roman = cn_alpes_poenninae
+				name_list_hispano_roman = cn_alpes_poenninae
+				name_list_gallo_roman = cn_alpes_poenninae
+				name_list_afro_roman = cn_alpes_poenninae
+				name_list_mauro_roman = cn_alpes_poenninae
+				name_list_britano_roman = cn_alpes_poenninae
+				name_list_helleno_roman = cn_alpes_poenninae
+				name_list_thracio_roman = cn_alpes_poenninae
+				name_list_dacio_roman = cn_alpes_poenninae
+				name_list_rhaetio_roman = cn_alpes_poenninae
+				name_list_germano_roman = cn_alpes_poenninae
+			}
+
 			c_savoie = {
 				color = { 81 8 14 }
 				
@@ -47313,6 +47757,22 @@ e_france = {
 			
 			capital = c_besancon # Besancon
 			
+			cultural_names = {
+				name_list_roman = cn_maxima_sequanorum
+				name_list_sardino_roman = cn_maxima_sequanorum
+				name_list_illyro_roman = cn_maxima_sequanorum
+				name_list_hispano_roman = cn_maxima_sequanorum
+				name_list_gallo_roman = cn_maxima_sequanorum
+				name_list_afro_roman = cn_maxima_sequanorum
+				name_list_mauro_roman = cn_maxima_sequanorum
+				name_list_britano_roman = cn_maxima_sequanorum
+				name_list_helleno_roman = cn_maxima_sequanorum
+				name_list_thracio_roman = cn_maxima_sequanorum
+				name_list_dacio_roman = cn_maxima_sequanorum
+				name_list_rhaetio_roman = cn_maxima_sequanorum
+				name_list_germano_roman = cn_maxima_sequanorum
+			}
+
 			c_besancon = {
 				color = { 139 10 38 }
 				
@@ -49052,6 +49512,20 @@ e_spain = {
 			can_be_named_after_dynasty = no
 
 			cultural_names = {
+				name_list_roman = cn_balearica
+				name_list_sardino_roman = cn_balearica
+				name_list_illyro_roman = cn_balearica
+				name_list_hispano_roman = cn_balearica
+				name_list_gallo_roman = cn_balearica
+				name_list_afro_roman = cn_balearica
+				name_list_mauro_roman = cn_balearica
+				name_list_britano_roman = cn_balearica
+				name_list_helleno_roman = cn_balearica
+				name_list_thracio_roman = cn_balearica
+				name_list_dacio_roman = cn_balearica
+				name_list_rhaetio_roman = cn_balearica
+				name_list_germano_roman = cn_balearica
+
 				name_list_bedouin = cn_mayurqa
 				name_list_baranis = cn_mayurqa
 				name_list_butr = cn_mayurqa
@@ -57465,6 +57939,21 @@ e_nubia = {
 		name_list_meroitic = cn_kush
 	}
 
+	k_kemet = {
+		color = { 200 185 25 }
+
+		capital = c_al-gharbiya
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_kemetic }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+	}
+
 		
 	k_nubia = {
 		color = { 180 85 39 }
@@ -57860,6 +58349,24 @@ e_nubia = {
 				}
 			}
 		}
+
+	}
+
+		
+	k_alodia = { # Alodia/Alwa
+		color = { 160 130 80 }
+		
+		capital = c_alodia
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_east_african }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+
 		
 		d_alwa = { # Alodia
 			color = { 128 60 20 }
@@ -68442,7 +68949,7 @@ e_bengal = { #Aryavarta
 	}
 	
 	k_himalaya = {
-		color = { 250 40 0 }
+		color = { 250 28 28 }
 		
 		
 		capital = c_kathmandu
@@ -80041,7 +80548,7 @@ k_liang_later = { # Later Liang
 	color = { 82 42 15 } # Brown
 	
 
-	capital = c_xingqing
+	capital = c_liangzhou
 	ai_primary_priority = {
 		add = @always_primary_score
 	}
@@ -86635,3 +87142,12 @@ k_mauro_roman_kingdom = {
 #
 #	ai_primary_priority = { add = @never_primary_score }
 #}
+
+k_numidia = {
+    color = { 185 135 80 }
+    color2 = { 230 205 102 }
+    
+    capital = c_constantine
+    
+    # I don't define the duchies so I can acc get it to spawn it type shit
+}
