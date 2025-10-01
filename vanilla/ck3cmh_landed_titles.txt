@@ -76751,6 +76751,104 @@ d_laamp_RICE_audun_of_the_west_fjords = {
 
 	ai_primary_priority = { add = @never_primary_score }
 }
+@correct_culture_primary_score = 100
+@never_primary_score = -1000
+
+e_RICE_nile = {
+	color = { 208 199 125 }
+	
+	capital = c_cairo
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_east_african
+						has_cultural_pillar = heritage_arabic
+					}
+				}
+			}
+			add = @correct_culture_primary_score
+		}
+	}
+
+}
+
+
+# e_nubia and k_alodia are adapted from Ibn Battuta's Legacy
+
+e_nubia = {
+	color = { 165 150 70 }
+	
+	capital = c_dongola
+	
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_east_african }
+			}
+			add = @correct_culture_primary_score
+		}
+	}
+
+		
+	k_alodia = { # Alodia/Alwa
+		color = { 160 130 80 }
+		
+		capital = c_alodia
+		
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_east_african }
+				}
+				add = @correct_culture_primary_score
+			}
+		}
+	}
+
+
+}
+
+
+d_nobatia_fake = {
+	color = { 162 133 85 }
+	
+	capital = c_qasr_ibrim
+}
+
+d_dar_daju = {
+	color = { 128 85 69 }
+
+	capital = c_abwab
+}
+
+
+
+# LAAMP TITLES
+
+d_laamp_RICE_guido_of_nubia = {
+	color = { 100 100 100 }
+	capital = c_alexandria # Put him somewhere close to Crusader States but not quite; Wadi Natrun was a major Coptic pilgrimage/worship site where Nubians are attested
+
+	definite_form = yes
+	landless = yes
+	ruler_uses_title_name = no
+	no_automatic_claims = yes
+	destroy_if_invalid_heir = yes
+
+	ai_primary_priority = { add = @never_primary_score }
+}
+
+
+
+
+
 @never_primary_score = -1000
 
 e_hephthalite_restored = {
@@ -76837,7 +76935,7 @@ d_laamp_RICE_hugo_von_hildesheim = {
 
 d_laamp_RICE_eldad_ha_dani = {
 	color = { 100 100 100 }
-	capital = c_tadjoura 	# Starts in Africa as a nod to his claim that he was from Africa
+	capital = c_mogadishu 	# Starts in Azania as he supposedly was rescued from a cannibal tribe in this region by another Jewish merchant
 
 	definite_form = yes
 	landless = yes
@@ -77215,6 +77313,64 @@ d_nf_RICE_al_uzgandi = {
 
 	ai_primary_priority = { add = @never_primary_score }
 }
+# ###############################################
+# # 
+# # Titles included here are from other mods to ensure compatibility
+# # Colors have been replaced to bright pink as a way to check whether overriding is done correctly
+# # 
+# ###############################################
+
+
+# #@never_primary_score = -1000
+
+# ########## IBN BATTUTA'S LEGACY
+
+# c_bayuda = {
+# 	color = { 255 0 127 }
+# 	#color = { 145 160 75 }
+# }
+
+# d_wadi_milk = {
+# 	color = { 255 0 127 }
+# 	#color = { 190 140 60 }
+	
+# 	capital = c_wadi_el-milk
+# }
+
+# c_upper_milk = {
+# 	color = { 255 0 127 }
+# 	#color = { 195 140 65 }
+# }
+
+# d_abwab = {
+# 	color = { 255 0 127 }
+# 	#color = { 135 50 30 }
+	
+# 	capital = c_abwab
+# }
+
+# c_keraba = {
+# 	color = { 255 0 127 }
+# 	#color = { 140 60 35 }
+# }
+
+# c_selima = {
+# 	color = { 255 0 127 }
+# 	#color = { 45 223 120 }
+# }
+
+# d_djarin = {
+# 	color = { 255 0 127 }
+# 	#color = { 243 165 87 }
+	
+# 	capital = c_djarin
+# }
+
+# c_musmar = {
+# 	color = { 255 0 127 }
+# 	#color = { 245 160 70 }
+# }
+
 
 e_air = {
 	#Created by decision
