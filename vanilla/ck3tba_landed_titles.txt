@@ -3621,6 +3621,7 @@ e_akkad = {
 	
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+		NOT = { is_mesopotamian_trigger = yes } #Use declare universal kingship decision instead
 	}
 	
 	ai_primary_priority = {
@@ -24528,6 +24529,7 @@ e_kemet = {
 	
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+		NOT = { is_egyptian_trigger = yes } #Use reunify egypt decision instead
 	}
 	
 	ai_primary_priority = {
@@ -28358,6 +28360,7 @@ k_fashion = { # Kingdom of Fashion from Establish a New Fashion at Court decisio
 	landless = yes
 	destroy_on_succession = yes
 	can_be_named_after_dynasty = no
+	can_use_nomadic_naming = no
 	capital = c_henennesut # De-Jure capital has to be somewhere, will move as characters gain the title. Setting it to default at Milan for memes.
 
 	no_automatic_claims = yes
@@ -28371,8 +28374,18 @@ k_first_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_abdju #Tjenu
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_second_dynasty = {
 	color = { 10 18 171 }
@@ -28380,8 +28393,18 @@ k_second_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_abdju #Tjenu
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 ##Old Kingdom
 k_third_dynasty = {
@@ -28390,8 +28413,18 @@ k_third_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_mennefer
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_fourth_dynasty = {
 	color = { 10 18 171 }
@@ -28399,8 +28432,18 @@ k_fourth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_mennefer
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_fifth_dynasty = {
 	color = { 10 18 171 }
@@ -28408,8 +28451,18 @@ k_fifth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_mennefer
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_sixth_dynasty = {
 	color = { 10 18 171 }
@@ -28417,8 +28470,18 @@ k_sixth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_mennefer
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 #First Intermediate Period
 k_seventh_dynasty = {
@@ -28427,8 +28490,18 @@ k_seventh_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_mennefer
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_eighth_dynasty = {
 	color = { 170 191 10 }
@@ -28436,8 +28509,18 @@ k_eighth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_mennefer
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_ninth_dynasty = {
 	color = { 2 110 18 }
@@ -28445,8 +28528,18 @@ k_ninth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_henennesut
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_tenth_dynasty = {
 	color = { 166 10 12 }
@@ -28454,8 +28547,18 @@ k_tenth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_henennesut
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 #Middle Kingdom
 k_eleventh_dynasty = {
@@ -28464,8 +28567,18 @@ k_eleventh_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_waset
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_twelfth_dynasty = {
 	color = { 173 72 22 }
@@ -28473,8 +28586,18 @@ k_twelfth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_girzah #Itjtawy
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_thirteenth_dynasty = {
 	color = { 173 72 22 }
@@ -28482,8 +28605,18 @@ k_thirteenth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_girzah #Itjtawy
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 #Second Intermediate Period
 k_fourteenth_dynasty = {
@@ -28492,8 +28625,18 @@ k_fourteenth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 		
 	capital = c_hutwaret
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_fifteenth_dynasty = {
 	color = { 224 199 109 }
@@ -28501,8 +28644,18 @@ k_fifteenth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_hutwaret
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_sixteenth_dynasty = {
 	color = { 197 169 123 }
@@ -28510,8 +28663,18 @@ k_sixteenth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_waset
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_seventeenth_dynasty = {
 	color = { 197 169 123 }
@@ -28519,8 +28682,18 @@ k_seventeenth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_waset
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 #New Kingdom
 k_eighteenth_dynasty = {
@@ -28529,8 +28702,18 @@ k_eighteenth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_waset
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_nineteenth_dynasty = {
 	color = { 197 169 123 }
@@ -28538,8 +28721,18 @@ k_nineteenth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_hutwaret #Per-Ramesses
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_twentieth_dynasty = {
 	color = { 197 169 123 }
@@ -28547,8 +28740,18 @@ k_twentieth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_hutwaret #Per-Ramesses
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 #Third Intermediate Period
 k_twenty_first_dynasty = {
@@ -28557,8 +28760,18 @@ k_twenty_first_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_djanet
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_twenty_second_dynasty = {
 	color = { 197 169 123 }
@@ -28566,8 +28779,18 @@ k_twenty_second_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_perbast
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_twenty_third_dynasty = {
 	color = { 197 169 123 }
@@ -28575,8 +28798,18 @@ k_twenty_third_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_taremu
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_twenty_fourth_dynasty = {
 	color = { 197 169 123 }
@@ -28584,8 +28817,18 @@ k_twenty_fourth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_zau
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_twenty_fifth_dynasty = {
 	color = { 197 169 123 }
@@ -28593,8 +28836,18 @@ k_twenty_fifth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_waset
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 #Late Period
 k_twenty_sixth_dynasty = {
@@ -28603,8 +28856,18 @@ k_twenty_sixth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_zau
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_twenty_seventh_dynasty = {
 	color = { 197 169 123 }
@@ -28612,8 +28875,18 @@ k_twenty_seventh_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_mennefer
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_twenty_eighth_dynasty = {
 	color = { 197 169 123 }
@@ -28621,8 +28894,18 @@ k_twenty_eighth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_zau
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_twenty_ninth_dynasty = {
 	color = { 197 169 123 }
@@ -28630,8 +28913,18 @@ k_twenty_ninth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_djedet
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_thirtieth_dynasty = {
 	color = { 197 169 123 }
@@ -28639,8 +28932,18 @@ k_thirtieth_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_tjebnutjer
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 k_thirty_first_dynasty = {
 	color = { 197 169 123 }
@@ -28648,8 +28951,18 @@ k_thirty_first_dynasty = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_mennefer
+	
+	ai_primary_priority = {
+		if = {
+			limit = {
+				is_egyptian_trigger = yes
+			}
+			add = @always_primary_score
+		}
+	}
 }
 #Religious Heads
 d_cult_of_enlil = {
@@ -28658,6 +28971,7 @@ d_cult_of_enlil = {
 	no_automatic_claims = yes
 	de_jure_drift_disabled = yes
 	definite_form = yes
+	can_use_nomadic_naming = no
 
 	capital = c_nippur
 }
@@ -28670,6 +28984,7 @@ d_cult_of_inzak = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_failaka
 }
@@ -28682,6 +28997,7 @@ d_cult_of_ashur = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_ashur
 }
@@ -28694,6 +29010,7 @@ d_cult_of_marduk = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_babylon
 }
@@ -28706,6 +29023,7 @@ d_cult_of_hadad = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_halab
 }
@@ -28718,6 +29036,7 @@ d_cult_of_kura = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_ebla
 }
@@ -28730,6 +29049,7 @@ d_cult_of_yahweh = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_jerusalem
 }
@@ -28742,6 +29062,7 @@ d_cult_of_teshub = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_arrapha
 }
@@ -28754,6 +29075,7 @@ d_cult_of_indra = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_wassukanni
 }
@@ -28766,6 +29088,7 @@ d_cult_of_humban = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_kurangun
 }
@@ -28778,6 +29101,7 @@ d_cult_of_inshushinak = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_susa
 }
@@ -28790,6 +29114,7 @@ d_cult_of_poseidawonos = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_pylos
 }
@@ -28802,6 +29127,7 @@ d_cult_of_velchanos = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_phaistos
 }
@@ -28814,6 +29140,7 @@ d_cult_of_deiwos = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_dodona
 }
@@ -28826,6 +29153,7 @@ d_cult_of_teteshapi = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_hattusha
 }
@@ -28838,6 +29166,7 @@ d_cult_of_tarhunz = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_tarhuntassa
 }
@@ -28850,6 +29179,7 @@ d_cult_of_tarhunna = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_hattusha
 }
@@ -28862,6 +29192,7 @@ d_cult_of_ammon = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_siwa
 }
@@ -28874,6 +29205,7 @@ d_cult_of_aman = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_kerma
 } 
@@ -28886,6 +29218,7 @@ d_cult_of_harbe = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_parsha
 }
@@ -28898,6 +29231,7 @@ d_cult_of_astarte = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_pappa #Pahphos
 }
@@ -28910,6 +29244,7 @@ d_cult_of_bendis = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_oisyme
 }
@@ -28922,6 +29257,7 @@ d_cult_of_kubeleya = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_karkamisa
 }
@@ -28934,6 +29270,7 @@ d_cult_of_khaldi = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_hattusha #TODO - MOVE
 }
@@ -28946,6 +29283,7 @@ d_cult_of_armazi = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_hattusha #TODO - MOVE
 }
@@ -28958,6 +29296,7 @@ d_cult_of_amun = {
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
 	destroy_if_invalid_heir = yes
+	can_use_nomadic_naming = no
 
 	capital = c_waset
 }
