@@ -633,6 +633,17 @@ e_kara_khitai = { #aka Western Liao / Great Liao
 	}
 }
 
+e_jin = { #aka Great Jin / Jin dynasty
+	#It's the Jurchens
+	color = { 210 175 50 }
+	can_use_nomadic_naming = no
+
+	capital = c_LIAO_linhuang
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+}
 
 e_timurids = {
 	color = { 120 20 20 }
@@ -7963,6 +7974,24 @@ e_anatolia = {
 	color = { 180 60 40 }
 
 	capital = c_nikaea
+}
+
+e_oriens = {
+	color = { 140 120 75 }
+
+	capital = c_antiocheia
+}
+
+e_aegyptus = {
+	color = { 20 240 80 }
+
+	capital = c_alexandria
+}
+
+e_africa = {
+	color = { 65 100 170 }
+
+	capital = c_tunis
 }
 
 e_byzantium = {
@@ -34495,7 +34524,6 @@ e_tartaria = {
 
 		cultural_names = {
 			name_list_uyghur = cn_qocho
-			name_list_han = cn_xinjiang
 		}
 
 		d_kara_khoja = {
@@ -55883,11 +55911,6 @@ e_azania = {
 
 					color = { 241 117 47 }
 				}
-				b_marka = {
-					province = 8461
-
-					color = { 241 117 47 }
-				}
 				b_afgooye = {
 					province = 8462
 
@@ -55981,6 +56004,11 @@ e_azania = {
 			c_jubba = {
 				color = { 230 129 61 }
 
+				b_bardhere = {
+					province = 8459
+
+					color = { 230 129 61 }
+				}
 				b_jubba-ajuraan = {
 					province = 8457
 
@@ -56033,18 +56061,18 @@ e_azania = {
 			c_jilib = {
 				color = { 227 126 58 }
 
-				b_jilib = {
-					province = 8473
+				b_marka = { # Qoryoley
+					province = 8461
 
-					color = { 227 126 58 }
-				}
-				b_bardhere = {
-					province = 8459
-
-					color = { 227 126 58 }
+					color = { 241 117 47 }
 				}
 				b_baraawe = {
 					province = 8460
+
+					color = { 227 126 58 }
+				}
+				b_jilib = {
+					province = 8473
 
 					color = { 227 126 58 }
 				}
@@ -56213,13 +56241,13 @@ e_azania = {
 			c_marsabit = {
 				color = { 73 173 203 }
 
-				b_lagh_bogal = {
-					province = 8488
+				b_marsabit = {
+					province = 8489
 
 					color = { 73 173 203 }
 				}
-				b_marsabit = {
-					province = 8489
+				b_lagh_bogal = {
+					province = 8488
 
 					color = { 73 173 203 }
 				}
@@ -56436,11 +56464,6 @@ e_azania = {
 
 					color = { 217 197 145 }
 				}
-				b_empusel = { # Amboseli
-					province = 12807
-
-					color = { 217 197 145 }
-				}
 			}
 			c_taveta = {
 				color = { 219 163 68 }
@@ -56454,6 +56477,11 @@ e_azania = {
 					province = 12785
 
 					color = { 219 163 68 }
+				}
+				b_empusel = { # Amboseli
+					province = 12807
+
+					color = { 217 197 145 }
 				}
 			}
 			c_mto_galana = {
@@ -71630,6 +71658,146 @@ e_andong = {
                 }
             }
         }
+
+		d_LIAO_dongjing = {
+			color = { 5 170 85 }
+
+			cultural_names = {
+				name_list_khitan = cn_dongjing
+			}
+
+			capital = c_LIAO_shenyang
+
+			c_LIAO_shenyang = {
+				color = { 10 175 90 }
+
+				b_Liao_Shenyang = {
+					province = 11785
+
+					color = { 10 175 90 }
+				}
+				b_Liao_Tangzhou = {
+					province = 11784
+
+					color = { 10 175 90 }
+				}
+				b_Liao_Liaoyang = {
+					province = 11786
+
+					color = { 10 175 90 }
+				}
+				b_Liao_Haizhou = {
+					province = 11787
+
+					color = { 10 175 90 }
+				}
+				b_Liao_Yaozhou = {
+					province = 11788
+
+					color = { 10 175 90 }
+				}
+			}
+
+			c_LIAO_yinzhou = {
+				color = { 15 90 50 }
+
+				b_Liao_Yinzhou = {
+					province = 11782
+
+					color = { 15 90 50 }
+				}
+				b_Liao_Qizhou = {
+					province = 11781
+
+					color = { 15 90 50 }
+				}
+				b_Liao_Guangzhou = {
+					province = 11783
+
+					color = { 15 90 50 }
+				}
+				b_FIC_Liao_Huangcaocun = {
+					province = 11803
+
+					color = { 15 90 50 }
+				}
+			}
+
+			c_LIAO_zhenzhou = {
+				color = { 30 120 100 }
+
+				b_Liao_Zhenzhou = {
+					province = 11790
+
+					color = { 30 120 100 }
+				}
+				b_Liao_Fuping = {
+					province = 11791
+
+					color = { 30 120 100 }
+				}
+				b_Liao_Suning = {
+					province = 11792
+
+					color = { 30 120 100 }
+				}
+				b_FIC_Liao_Biliujiang = {
+					province = 11793
+
+					color = { 30 120 100 }
+				}
+			}
+
+			c_LIAO_diezhou = {
+				color = { 45 205 175 }
+
+				b_Liao_Diezhou = {
+					province = 11794
+
+					color = { 45 205 175 }
+				}
+				b_Liao_Tongzhou = {
+					province = 11789
+
+					color = { 45 205 175 }
+				}
+				b_Liao_Kaizhou = {
+					province = 11795
+
+					color = { 45 205 175 }
+				}
+				b_Liao_Dandong = {
+					province = 11796
+
+					color = { 45 205 175 }
+				}
+			}
+
+			c_LIAO_guidezhou = {
+				color = { 35 170 70 }
+
+				b_Liao_Guidezhou = {
+					province = 11799
+
+					color = { 35 170 70 }
+				}
+				b_Liao_Xiyuan = {
+					province = 11798
+
+					color = { 35 170 70 }
+				}
+				b_Liao_Fengcheng = {
+					province = 11800
+
+					color = { 35 170 70 }
+				}
+				b_FIC_Liao_Shaozijiang = {
+					province = 11797
+
+					color = { 35 170 70 }
+				}
+			}
+		}
     }
 
 	k_shiwei = {
@@ -72572,146 +72740,6 @@ e_andong = {
 					province = 11730
 
 					color = { 95 195 95 }
-				}
-			}
-		}
-
-		d_LIAO_dongjing = {
-			color = { 5 170 85 }
-
-			cultural_names = {
-				name_list_khitan = cn_dongjing
-			}
-
-			capital = c_LIAO_shenyang
-
-			c_LIAO_shenyang = {
-				color = { 10 175 90 }
-
-				b_Liao_Shenyang = {
-					province = 11785
-
-					color = { 10 175 90 }
-				}
-				b_Liao_Tangzhou = {
-					province = 11784
-
-					color = { 10 175 90 }
-				}
-				b_Liao_Liaoyang = {
-					province = 11786
-
-					color = { 10 175 90 }
-				}
-				b_Liao_Haizhou = {
-					province = 11787
-
-					color = { 10 175 90 }
-				}
-				b_Liao_Yaozhou = {
-					province = 11788
-
-					color = { 10 175 90 }
-				}
-			}
-
-			c_LIAO_yinzhou = {
-				color = { 15 90 50 }
-
-				b_Liao_Yinzhou = {
-					province = 11782
-
-					color = { 15 90 50 }
-				}
-				b_Liao_Qizhou = {
-					province = 11781
-
-					color = { 15 90 50 }
-				}
-				b_Liao_Guangzhou = {
-					province = 11783
-
-					color = { 15 90 50 }
-				}
-				b_FIC_Liao_Huangcaocun = {
-					province = 11803
-
-					color = { 15 90 50 }
-				}
-			}
-
-			c_LIAO_zhenzhou = {
-				color = { 30 120 100 }
-
-				b_Liao_Zhenzhou = {
-					province = 11790
-
-					color = { 30 120 100 }
-				}
-				b_Liao_Fuping = {
-					province = 11791
-
-					color = { 30 120 100 }
-				}
-				b_Liao_Suning = {
-					province = 11792
-
-					color = { 30 120 100 }
-				}
-				b_FIC_Liao_Biliujiang = {
-					province = 11793
-
-					color = { 30 120 100 }
-				}
-			}
-
-			c_LIAO_diezhou = {
-				color = { 45 205 175 }
-
-				b_Liao_Diezhou = {
-					province = 11794
-
-					color = { 45 205 175 }
-				}
-				b_Liao_Tongzhou = {
-					province = 11789
-
-					color = { 45 205 175 }
-				}
-				b_Liao_Kaizhou = {
-					province = 11795
-
-					color = { 45 205 175 }
-				}
-				b_Liao_Dandong = {
-					province = 11796
-
-					color = { 45 205 175 }
-				}
-			}
-
-			c_LIAO_guidezhou = {
-				color = { 35 170 70 }
-
-				b_Liao_Guidezhou = {
-					province = 11799
-
-					color = { 35 170 70 }
-				}
-				b_Liao_Xiyuan = {
-					province = 11798
-
-					color = { 35 170 70 }
-				}
-				b_Liao_Fengcheng = {
-					province = 11800
-
-					color = { 35 170 70 }
-				}
-				b_FIC_Liao_Shaozijiang = {
-					province = 11797
-
-					color = { 35 170 70 }
 				}
 			}
 		}
