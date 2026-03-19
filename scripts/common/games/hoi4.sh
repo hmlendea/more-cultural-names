@@ -171,7 +171,7 @@ function getHoi4CityName() {
         CITY_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/victory_points_l_english.yml" | \
                     grep "^\s*VICTORY_POINTS_${CITY_ID}:" | \
                     sed 's/^\s*VICTORY_POINTS_'"${CITY_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g' | \
-                head -n 1)
+                    head -n 1)
     fi
 
     echo "${CITY_NAME}"
@@ -189,12 +189,14 @@ function getHoi4StateName() {
 
     STATE_NAME=$(find "${LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + | \
                         grep "^\s*STATE_${STATE_ID}:" | \
-                        sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g')
+                        sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g' | \
+                        head -n 1)
 
     if [ -z "${STATE_NAME}" ] && [ "${LOCALISATIONS_DIR}" != "${HOI4_LOCALISATIONS_DIR}" ]; then
             STATE_NAME=$(cat "${HOI4_LOCALISATIONS_DIR}/state_names_l_english.yml" | \
                             grep "^\s*STATE_${STATE_ID}:" | \
-                            sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g')
+                            sed 's/^\s*STATE_'"${STATE_ID}"':[0-9]*\s*\"\([^\"]*\).*/\1/g' | \
+                            head -n 1)
     fi
 
     echo "${STATE_NAME}"
