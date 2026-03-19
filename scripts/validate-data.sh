@@ -147,7 +147,7 @@ function checkForSurplusCkLocationLinks() {
                             sort -u \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist"
+        echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist. Find it with ${GAME_ID}\"[^>]*>${LANDED_TITLE}<"
     done
 }
 
