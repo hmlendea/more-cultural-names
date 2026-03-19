@@ -195,7 +195,10 @@ function checkForMismatchingLocationLinks() {
     [[ ${GAME_ID} != HOI4* ]] && [[ ${GAME_ID} != Vic3* ]] && [ ! -f "${VANILLA_FILE}" ] && return
 
     if [[ ${GAME_ID} == CK* ]]; then
-        checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        if [[ "${GAME_ID}" != 'CK3CE' ]]; then
+            checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        fi
+
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == IR* ]]; then
         #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
@@ -354,7 +357,7 @@ function validateHoi4Parentage() {
             local CITY_NAME=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
             local STATE_NAME=$(getHoi4StateName "${EXPECTED_STATE_ID}" "${LOCALISATIONS_DIR}")
 
-            echo "${GAME_ID}: City ${CITY_ID} (${CITY_NAME}) is not linked to the correct state. Correct parent: ${EXPECTED_STATE_ID} (${STATE_NAME})"
+            echo "${GAME_ID}: City ${CITY_ID} (${CITY_NAME}) is not linked to the correct state. Correct parent: ${EXPECTED_STATE_ID} (${STATE_NAME}) | Find it with ${GAME_ID}[^A-Z].*City.*>${CITY_ID}<"
         fi
     done < <(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}")
 }
@@ -547,6 +550,10 @@ done
 
 # Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
+
+checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
+exit
 
 validate_links 'HOI4'
 validate_links 'HOI4MDM'
