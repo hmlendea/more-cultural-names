@@ -159,13 +159,6 @@ function update-vic3-files() {
     update-vic3-hubs "${GAME_ID}" "${LOCALISATIONS_DIR}"
 }
 
-
-update_hoi4_parentage_file \
-    'HOI4TGW' \
-    "${HOI4TGW_VANILLA_PARENTAGE_FILE}"
-
-exit
-
 update-vanilla-file \
     "${CK2_LANDED_TITLES_DIR}/landed_titles.txt" \
     "${CK2_VANILLA_LANDED_TITLES_FILE}"
