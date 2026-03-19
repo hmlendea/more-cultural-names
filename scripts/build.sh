@@ -104,7 +104,7 @@ build-edition \
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
-    'CK3' '1.16.*' \
+    'CK3' '1.18.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name '999_MoreCulturalNames.txt'
 
 build-edition \
@@ -119,7 +119,7 @@ build-edition \
 
 build-edition \
     'ce-more-cultural-names' 'Culture Expanded - More Cultural Names' \
-    'CK3CE' '1.16.*' \
+    'CK3CE' '1.18.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ce_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
@@ -154,7 +154,7 @@ build-edition \
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
-    'HOI4' '1.16.*'
+    'HOI4' '1.17.*'
 
 build-edition \
     'mdm-more-cultural-names' 'Millennium Dawn: More Cultural Names' \
