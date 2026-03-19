@@ -551,7 +551,7 @@ done
 # Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
-validate_links 'HOI4'
+validate_links 'HOI4TGW'
 exit
 
 validate_links 'HOI4'
