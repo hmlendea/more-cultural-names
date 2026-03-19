@@ -129,7 +129,7 @@ build-edition \
 
 build-edition \
     'ibl-more-cultural-names' 'Ibn Battuta'"'"'s Legacy 2 - More Cultural Names' \
-    'CK3IBL' '1.16.*' \
+    'CK3IBL' '1.18.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ibl_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
@@ -158,7 +158,7 @@ build-edition \
 
 build-edition \
     'mdm-more-cultural-names' 'Millennium Dawn: More Cultural Names' \
-    'HOI4MDM' '1.16.*' \
+    'HOI4MDM' '1.17.*' \
     --dependency 'Millennium Dawn: A Modern Day Mod'
 
 build-edition \
