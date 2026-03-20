@@ -147,7 +147,7 @@ function checkForSurplusCkLocationLinks() {
                             sort -u \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist"
+        echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist. Find it with ${GAME_ID}\"[^>]*>${LANDED_TITLE_ID}<"
     done
 }
 
@@ -195,7 +195,10 @@ function checkForMismatchingLocationLinks() {
     [[ ${GAME_ID} != HOI4* ]] && [[ ${GAME_ID} != Vic3* ]] && [ ! -f "${VANILLA_FILE}" ] && return
 
     if [[ ${GAME_ID} == CK* ]]; then
-        checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        if [[ "${GAME_ID}" != 'CK3CE' ]]; then
+            checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        fi
+
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == IR* ]]; then
         #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
@@ -217,7 +220,9 @@ function validate_links() {
         list_surplus_ir_provinces "${GAME_ID}"
         list_mismatching_ir_localisations "${GAME_ID}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
-        #list_missing_vic3_hubs "${GAME_ID}"
+        list_surplus_vic3_hubs "${GAME_ID}"
+        list_surplus_vic3_states "${GAME_ID}"
+        list_missing_vic3_hubs "${GAME_ID}"
         list_missing_vic3_states "${GAME_ID}"
         checkDefaultVic3Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
     fi
@@ -354,7 +359,7 @@ function validateHoi4Parentage() {
             local CITY_NAME=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
             local STATE_NAME=$(getHoi4StateName "${EXPECTED_STATE_ID}" "${LOCALISATIONS_DIR}")
 
-            echo "${GAME_ID}: City ${CITY_ID} (${CITY_NAME}) is not linked to the correct state. Correct parent: ${EXPECTED_STATE_ID} (${STATE_NAME})"
+            echo "${GAME_ID}: City ${CITY_ID} (${CITY_NAME}) is not linked to the correct state. Correct parent: ${EXPECTED_STATE_ID} (${STATE_NAME}) | Find it with ${GAME_ID}[^A-Z].*City.*>${CITY_ID}<"
         fi
     done < <(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}")
 }
@@ -512,6 +517,7 @@ grep -Pzo "\n\s*<Name .*\n\s*</GameId.*\n" *.xml # </GameId.* after <Name>
 grep -Pzo "\n\s*.*</[^<]*\n\s*<Name .*\n" *.xml # <Name> after closing tags
 grep -Pzo "</[a-zA-Z]*>\n\s*<Id>.*\n" *.xml # <Id> after a closing tag
 grep -Pzo "<Fallback(Languages|Locations)>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <FallbackLanguages> or <FallbackLocations>
+grep -Pzo "<Name>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <Name>
 grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
@@ -547,6 +553,9 @@ done
 
 # Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
+
+validate_links 'Vic3'
+exit
 
 validate_links 'HOI4'
 validate_links 'HOI4MDM'
