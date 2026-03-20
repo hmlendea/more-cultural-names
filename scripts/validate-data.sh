@@ -554,7 +554,8 @@ done
 # Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
-validate_links 'Vic3'
+checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"  "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 exit
 
 validate_links 'HOI4'
