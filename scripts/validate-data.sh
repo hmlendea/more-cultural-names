@@ -220,7 +220,9 @@ function validate_links() {
         list_surplus_ir_provinces "${GAME_ID}"
         list_mismatching_ir_localisations "${GAME_ID}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
-        #list_missing_vic3_hubs "${GAME_ID}"
+        list_surplus_vic3_hubs "${GAME_ID}"
+        list_surplus_vic3_states "${GAME_ID}"
+        list_missing_vic3_hubs "${GAME_ID}"
         list_missing_vic3_states "${GAME_ID}"
         checkDefaultVic3Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
     fi
@@ -515,6 +517,7 @@ grep -Pzo "\n\s*<Name .*\n\s*</GameId.*\n" *.xml # </GameId.* after <Name>
 grep -Pzo "\n\s*.*</[^<]*\n\s*<Name .*\n" *.xml # <Name> after closing tags
 grep -Pzo "</[a-zA-Z]*>\n\s*<Id>.*\n" *.xml # <Id> after a closing tag
 grep -Pzo "<Fallback(Languages|Locations)>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <FallbackLanguages> or <FallbackLocations>
+grep -Pzo "<Name>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <Name>
 grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
@@ -551,8 +554,7 @@ done
 # Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
-checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"  "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+validate_links 'Vic3'
 exit
 
 validate_links 'HOI4'
