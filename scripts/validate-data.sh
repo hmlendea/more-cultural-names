@@ -220,6 +220,8 @@ function validate_links() {
         list_surplus_ir_provinces "${GAME_ID}"
         list_mismatching_ir_localisations "${GAME_ID}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
+        list_surplus_vic3_hubs "${GAME_ID}"
+        list_surplus_vic3_states "${GAME_ID}"
         #list_missing_vic3_hubs "${GAME_ID}"
         #list_missing_vic3_states "${GAME_ID}"
         checkDefaultVic3Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
