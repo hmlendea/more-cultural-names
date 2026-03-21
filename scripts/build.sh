@@ -109,7 +109,7 @@ build-edition \
 
 build-edition \
     'aep-more-cultural-names' 'Asia Expansion Project - More Cultural Names' \
-    'CK3AEP' '1.16.*' \
+    'CK3AEP' '1.17.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3aep_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
@@ -124,7 +124,7 @@ build-edition \
 
 build-edition \
     'cmh-more-cultural-names' 'Community Mods for Historicity - More Cultural Names' \
-    'CK3CMH' '1.16.*' \
+    'CK3CMH' '1.18.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
