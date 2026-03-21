@@ -92,13 +92,14 @@ CK3CE_CULTURES_DIR="${CK3CE_DIR}/common/culture/cultures"
 CK3CE_LANDED_TITLES_DIR="${CK3CE_DIR}/common/landed_titles"
 CK3CE_LOCALISATIONS_DIR="${CK3CE_DIR}/localization/english"
 CK3CE_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3ce_landed_titles.txt"
+CK3CE_VANILLA_LOCALISATION_FILE="${CK3CE_LOCALISATIONS_DIR}/replace/xCE_titles.yml"
 
 CK3Counterfactuals_DIR="${STEAM_WORKSHOP_CK3_DIR}/3024808852"
 CK3Counterfactuals_CULTURES_DIR="${CK3Counterfactuals_DIR}/common/culture/cultures"
 CK3Counterfactuals_LANDED_TITLES_DIR="${CK3Counterfactuals_DIR}/common/landed_titles"
 CK3Counterfactuals_LOCALISATIONS_DIR="${CK3Counterfactuals_DIR}/localization/english"
 CK3Counterfactuals_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3counterfactuals_landed_titles.txt"
-CK3Counterfactuals_VANILLA_LOCALISATION_FILE="${CK3Counterfactuals_LOCALISATIONS_DIR}/english/counterfactuals_l_english.yml"
+CK3Counterfactuals_VANILLA_LOCALISATION_FILE="${CK3Counterfactuals_LOCALISATIONS_DIR}/counterfactuals_l_english.yml"
 
 CK3CMH_VANILLA_LANDED_TITLES_FILE="${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt"
 
