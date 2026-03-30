@@ -2324,7 +2324,7 @@ e_hre = {
 
 		definite_form = yes
 		ruler_uses_title_name = no
-	can_use_nomadic_naming = no
+		can_use_nomadic_naming = no
 		capital = c_lubeck # Lübeck
 	}
 
@@ -5761,7 +5761,7 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					faith = { religion_tag = christianity_religion }
+					#faith = { religion_tag = christianity_religion }
 			}
 
 			cultural_names = {
@@ -5930,7 +5930,7 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					faith = { religion_tag = christianity_religion }
+					#faith = { religion_tag = christianity_religion }
 			}
 
 			c_bedford = {
@@ -6264,7 +6264,7 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					faith = { religion_tag = christianity_religion }
+					#faith = { religion_tag = christianity_religion }
 			}
 
 			cultural_names = {
@@ -6459,7 +6459,7 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					faith = { religion_tag = christianity_religion }
+					#faith = { religion_tag = christianity_religion }
 			}
 
 			capital = c_norfolk # Norwich
@@ -6561,7 +6561,7 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					faith = { religion_tag = christianity_religion }
+					#faith = { religion_tag = christianity_religion }
 			}
 
 			c_lincolnshire = {
@@ -6708,7 +6708,7 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					faith = { religion_tag = christianity_religion }
+					#faith = { religion_tag = christianity_religion }
 			}
 
 			ai_primary_priority = {
@@ -6828,7 +6828,7 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					faith = { religion_tag = christianity_religion }
+					#faith = { religion_tag = christianity_religion }
 			}
 
 			c_gloucestershire = {
@@ -6937,7 +6937,7 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					faith = { religion_tag = christianity_religion }
+					#faith = { religion_tag = christianity_religion }
 			}
 
 			c_kent = {
@@ -7036,7 +7036,7 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					faith = { religion_tag = christianity_religion }
+					#faith = { religion_tag = christianity_religion }
 			}
 
 			ai_primary_priority = {
@@ -7160,7 +7160,7 @@ e_britannia = {
 						limit = { is_ai = yes }
 						NOT = { exists = title:k_england }
 					}
-					faith = { religion_tag = christianity_religion }
+					#faith = { religion_tag = christianity_religion }
 			}
 
 			ai_primary_priority = {
@@ -14888,7 +14888,7 @@ h_roman_empire = {
 	}
 }
 
-h_eastern_roman_empire = {
+h_eastern_roman_empire = { 
 	color = { 150 35 165 }
 
 	capital = c_byzantion # Constantinople
@@ -14942,6 +14942,7 @@ e_byzantium = {
 	capital = c_byzantion
 
 	definite_form = yes
+	ruler_uses_title_name = no
 
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
@@ -19051,7 +19052,7 @@ e_byzantium = {
 
 		can_be_named_after_dynasty = no
 		capital = c_lycaonia # Ikonion
-		definite_form = yes
+		#definite_form = yes
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -35445,6 +35446,8 @@ e_caspian-pontic_steppe = {
 
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
+	ruler_uses_title_name = no
+
 	capital = c_sarai # Itil
 
 	can_create = {
@@ -35470,6 +35473,7 @@ e_caspian-pontic_steppe = {
 
 		can_use_nomadic_naming = no
 		can_be_named_after_dynasty = no
+		ruler_uses_title_name = no
 
 		can_create_on_partition = { always = no }
 
@@ -36358,6 +36362,7 @@ e_caspian-pontic_steppe = {
 
 		can_use_nomadic_naming = no
 		can_be_named_after_dynasty = no
+		ruler_uses_title_name = no
 
 		can_create_on_partition = { always = no }
 
@@ -40033,28 +40038,6 @@ e_kirghiz_khanate = {
 
 				}
 			}
-			c_biia = {
-				color = { 20 20 58 }
-
-				b_biia = {
-					province = 1132
-
-					color = { 165 140 240 }
-
-				}
-				b_chumych = {
-					province = 7413
-
-					color = { 165 140 240 }
-
-				}
-				b_yeshil_chumych = {
-					province = 7414
-
-					color = { 165 140 240 }
-
-				}
-			}
 			c_torema = {
 				color = { 22 10 42 }
 
@@ -40188,6 +40171,28 @@ e_kirghiz_khanate = {
 					province = 7409
 
 					color = { 190 170 205 }
+				}
+			}
+			c_biia = {
+				color = { 20 20 58 }
+
+				b_biia = {
+					province = 1132
+
+					color = { 165 140 240 }
+
+				}
+				b_chumych = {
+					province = 7413
+
+					color = { 165 140 240 }
+
+				}
+				b_yeshil_chumych = {
+					province = 7414
+
+					color = { 165 140 240 }
+
 				}
 			}
 		}
@@ -41019,6 +41024,71 @@ e_mongolia = {
 		
 		#Paradox East
 		
+		d_khiyat_china = {
+			color = { 20 87 177 }
+
+            c_EM_kizilkhentii = {
+				color = { 125 180 150 }
+
+				b_FIC_Mong_Paljigol = {
+					province = 14565
+
+					color = { 125 180 150 }
+				}
+				b_FIC_Mong_Ingedei = {
+					province = 14566
+
+					color = { 125 180 150 }
+				}
+				b_FIC_Mong_Chulereg = {
+					province = 14567
+
+					color = { 125 180 150 }
+				}
+			}
+			c_EM_doodonon = {
+				color = { 60 145 100 }
+
+				b_FIC_Mong_Doodonon = {
+					province = 14570
+
+					color = { 60 145 100 }
+				}
+				b_FIC_Mong_Kharbelcheer = {
+					province = 14569
+
+					color = { 60 145 100 }
+				}
+				b_FIC_Mong_Shitagol = {
+					province = 14568
+
+					color = { 60 145 100 }
+				}
+			}
+			
+			c_EM_khoyorgol = {
+				color = { 95 115 95 }
+
+				b_FIC_Mong_Khoyorgol = {
+					province = 14572
+
+					color = { 95 115 95 }
+				}
+				b_FIC_Mong_Zatalbar = {
+					province = 14571
+
+					color = { 95 115 95 }
+				}
+				b_FIC_Mong_Khurtskhandii = {
+					province = 14585
+
+					color = { 95 115 95 }
+				}
+			}
+			
+			
+        }
+
 		d_EM_onon = {
 			color = { 75 225 130 }
 
@@ -41073,46 +41143,7 @@ e_mongolia = {
 					color = { 50 200 50 }
 				}
 			}
-
-			c_EM_kizilkhentii = {
-				color = { 125 180 150 }
-
-				b_FIC_Mong_Paljigol = {
-					province = 14565
-
-					color = { 125 180 150 }
-				}
-				b_FIC_Mong_Ingedei = {
-					province = 14566
-
-					color = { 125 180 150 }
-				}
-				b_FIC_Mong_Chulereg = {
-					province = 14567
-
-					color = { 125 180 150 }
-				}
-			}
-
-			c_EM_doodonon = {
-				color = { 60 145 100 }
-
-				b_FIC_Mong_Doodonon = {
-					province = 14570
-
-					color = { 60 145 100 }
-				}
-				b_FIC_Mong_Kharbelcheer = {
-					province = 14569
-
-					color = { 60 145 100 }
-				}
-				b_FIC_Mong_Shitagol = {
-					province = 14568
-
-					color = { 60 145 100 }
-				}
-			}
+			
 		}
 
 		d_EM_yujuelu = {
@@ -41246,25 +41277,6 @@ e_mongolia = {
 				}
 			}
 
-			c_EM_khoyorgol = {
-				color = { 95 115 95 }
-
-				b_FIC_Mong_Khoyorgol = {
-					province = 14572
-
-					color = { 95 115 95 }
-				}
-				b_FIC_Mong_Zatalbar = {
-					province = 14571
-
-					color = { 95 115 95 }
-				}
-				b_FIC_Mong_Khurtskhandii = {
-					province = 14585
-
-					color = { 95 115 95 }
-				}
-			}
 			c_julop_china = {
 				color = { 104 119 254 }
 
@@ -43512,6 +43524,7 @@ e_tartaria = {
 		}
 
 		can_create_on_partition = { always = no }
+		ruler_uses_title_name = no
 
 		ai_primary_priority = {
 			if = {
@@ -43865,7 +43878,8 @@ e_tartaria = {
 
 		can_use_nomadic_naming = no
 		can_be_named_after_dynasty = no
-
+		ruler_uses_title_name = no
+		
 		can_create_on_partition = { always = no }
 
 		ai_primary_priority = {
@@ -44717,6 +44731,7 @@ e_tartaria = {
 		}
 
 		can_create_on_partition = { always = no }
+		ruler_uses_title_name = no
 
 		ai_primary_priority = {
 			if = {
@@ -45076,11 +45091,6 @@ e_great_liao = {
 
 					color = { 105 125 20 }
 				}
-				b_Liao_Huaizhou = {
-					province = 14606
-
-					color = { 105 125 20 }
-				}
 				b_Liao_Songzhanzhou = {
 					province = 14608
 
@@ -45147,11 +45157,6 @@ e_great_liao = {
 			c_LIAO_heicaoan = {
 				color = { 95 85 40 }
 
-				b_FIC_Liao_Matudi = {
-					province = 14620
-
-					color = { 95 85 40 }
-				}
 				b_FIC_Liao_Baicaoer = {
 					province = 14621
 
@@ -45161,6 +45166,11 @@ e_great_liao = {
 					province = 14622
 
 					color = { 95 85 40 }
+				}
+				b_Liao_Huaizhou = {
+					province = 14606
+
+					color = { 105 125 20 }
 				}
 			}
 
@@ -45557,6 +45567,11 @@ e_great_liao = {
 
 					color = { 215 80 80 }
 				}
+				b_FIC_Liao_Matudi = {
+					province = 14620
+
+					color = { 95 85 40 }
+				}
 				b_FIC_Amur_Shangwulu = {
 					province = 14466
 
@@ -45871,6 +45886,7 @@ e_turan = {
 	}
 
 	can_use_nomadic_naming = no
+	definite_form = yes
 
 	ai_primary_priority = {
 		if = {
@@ -48832,6 +48848,60 @@ e_tokhara = { # To represent the region being a borderlands between India and Ir
 				}
 			}
 
+		}
+	}
+}
+
+
+# Abbasid Caliphate
+k_sunni = {
+	color = { 55 145 30 }
+	
+	capital = c_baghdad
+	can_be_named_after_dynasty = no
+	landless = yes
+	figurehead = yes
+	allow_domicile = no
+	always_follows_primary_heir = yes
+	definite_form = yes
+
+	can_create = { always = no }
+
+	# Ceremonial Liege/Regent in personal relation summary
+	# (reminder: the ceremonial liege if mechanically a vassal of the ceremonial regent)
+	#
+	# Scopes
+	# ------
+	# root: Inspected character (who holds this title).
+	# target: Character we are evaluating relationships to (usually local player).
+	# title: This title (held by inspected character).
+	# liege: Inspected characters liege.
+	# vassal: Vassal who matches the trigger below, if any.
+	#
+	# Alternate descriptions are provided to trim the extra "Your" before this entry in the summary.
+	#
+	personal_relation_entry = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					exists = scope:target
+					scope:liege ?= scope:target
+				}
+				desc = japan_personal_relation_ceremonial_liege_same
+			}
+			triggered_desc = {
+				trigger = { exists = scope:liege }
+				desc = japan_personal_relation_ceremonial_liege_other
+			}
+		}
+	}
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = heritage_arabic }
+			}
+			add = @correct_culture_primary_score
 		}
 	}
 }
@@ -90606,6 +90676,8 @@ e_jurchen_china = {
 			color = { 75 95 225 }
 	
 			capital = c_BAL_dongpyeong_yizhou
+			
+			can_be_named_after_dynasty = no
 
 			cultural_names = {
 				name_list_korean = cn_dongpyeong
@@ -90662,6 +90734,8 @@ e_jurchen_china = {
 			color = { 170 65 115}
 
 			capital = c_BAL_delizhen
+			
+			can_be_named_after_dynasty = no
 
 			cultural_names = {
 				name_list_korean = cn_cheolli
@@ -90678,11 +90752,6 @@ e_jurchen_china = {
 
 				b_Liao_Delizhen = {
 					province = 12906
-
-					color = { 160 55 105 }
-				}
-				b_FIC_Liao_Xitielian = {
-					province = 14378
 
 					color = { 160 55 105 }
 				}
@@ -90860,17 +90929,13 @@ e_jurchen_china = {
 			}
 		}
 		
-		d_BAL_yeojintang = {
-			#this duchy packages a lot of Balhae "provinces" together for gameplay reasons
-			#thus, we give it a name that should somewhat mean "land of the Jurchens", since they are more or less from there
-			color = { 90 140 200 }
-
+		d_BAL_shuaibin = { # Shuaibin
+		
+			color = { 75 130 200 }
+			
+			can_be_named_after_dynasty = no
+			
 			capital = c_BAL_solbin
-
-			cultural_names = {
-				name_list_korean = cn_solbin_anwon
-				name_list_balhae = cn_solbin_anwon
-			}
 
 			c_BAL_solbin = {	#Shuaibin
 				color = { 80 130 190 }
@@ -90890,13 +90955,18 @@ e_jurchen_china = {
 
 					color = { 80 130 190 }
 				}
-				b_Liao_Jianzhou2 = {
-					province = 14379
+				b_FIC_EMan_Shuaibinan = {
+					province = 12589
 
 					color = { 80 130 190 }
 				}
-				b_FIC_EMan_Shuaibinan = {
-					province = 12589
+			}
+			
+			c_BAL_solbin2 = {
+				color = { 80 130 190 }
+
+				b_Liao_Jianzhou2 = {
+					province = 14379
 
 					color = { 80 130 190 }
 				}
@@ -90906,6 +90976,17 @@ e_jurchen_china = {
 					color = { 80 130 190 }
 				}
 			}
+		
+		}
+		
+		d_BAL_yeojintang = { # I always hate how Paradox does provinces (I mean just look at the mess that is Anatolia in vanilla). They literally only needed to add 2 more counties to be able to properly detail the Balhae provinces here. This is now Dingli
+			#this duchy packages a lot of Balhae "provinces" together for gameplay reasons
+			#thus, we give it a name that should somewhat mean "land of the Jurchens", since they are more or less from there
+			color = { 90 140 200 }
+
+			capital = c_BAL_jeongni
+			
+			can_be_named_after_dynasty = no
 
 			c_BAL_jeongni = {	#Dingli
 				color = { 100 145 180 }
@@ -90930,6 +91011,11 @@ e_jurchen_china = {
 
 					color = { 100 145 180 }
 				}
+			}
+			
+			c_BAL_jeongni2 = {
+				color = { 100 145 180 }
+
 				b_FIC_EMan_Dinglian = {
 					province = 12533
 
@@ -90941,7 +91027,15 @@ e_jurchen_china = {
 					color = { 100 145 180 }
 				}
 			}
+		}
+		
+		d_BAL_anbian = { # Anbian
+			color = { 110 100 200 }
 
+			capital = c_BAL_anbyeon
+			
+			can_be_named_after_dynasty = no
+			
 			c_BAL_anbyeon = {	#Anbian
 				color = { 45 145 210 }
 
@@ -90996,12 +91090,15 @@ e_jurchen_china = {
 					color = { 30 100 160 }
 				}
 			}
+
 		}
 
 		d_BAL_anwon = {	#Anyuan
 			color = { 155 105 255 }
 
 			capital = c_BAL_ningzhou
+			
+			can_be_named_after_dynasty = no
 
 			cultural_names = {
 				name_list_korean = cn_anwon
@@ -91350,11 +91447,6 @@ e_jurchen_china = {
 
                     color = { 21 21 87 }
                 }
-                b_susuhai_china = {
-                    province = 12718 
-
-                    color = { 21 21 87 }
-                }
 				b_dalugucheng_china = {
                     province = 12749 
 
@@ -91367,6 +91459,16 @@ e_jurchen_china = {
                     province = 12838 
 
                     color = { 15 15 90 }
+                }
+				b_FIC_Liao_Xitielian = {
+					province = 14378
+
+					color = { 160 55 105 }
+				}
+				b_susuhai_china = {
+                    province = 12718 
+
+                    color = { 21 21 87 }
                 }
             }
 			
@@ -91412,6 +91514,10 @@ h_china = {
 	color = { 230 180 10 }
 
 	capital = c_bianzhou # Kaifeng
+	
+	definite_form = yes
+	ruler_uses_title_name = no
+
 
 	can_create = {
 		custom_tooltip = {
@@ -93937,45 +94043,6 @@ h_china = {
 						color = { 185 255 208 }
 					}
 				}
-				c_xuandezhou_china = {
-					color = { 20 20 133 }
-	
-					b_xuande_monan_china = {
-						province = 12321
-	
-						color = { 242 205 210 }
-					}
-					b_jinheshan_china = {
-						province = 12332
-	
-						color = { 242 205 210 }
-					}
-					b_nintyninespring_china = {
-						province = 12406
-	
-						color = { 250 198 200 }
-					}
-				}
-				#Hiyaxu
-				c_qibingga_china = {
-					color = { 20 37 156 }
-	
-					b_yanzicheng_china = {
-						province = 12394
-	
-						color = { 125 85 110 }
-					}
-					b_yuanyangpo_china = {
-						province = 12437
-	
-						color = { 125 85 110 }
-					}
-					b_goupo_china = {
-						province = 12444
-	
-						color = { 110 85 125 }
-					}
-				}
 			}
 	
 			d_hezhong_china = {
@@ -95023,8 +95090,28 @@ h_china = {
 			d_zhenwu_china = {
 				color = { 20 24 119 }
 	
-				capital = c_chanyufu_china
+				capital = c_xuandezhou_china
+				
+				c_xuandezhou_china = {
+					color = { 20 20 133 }
 	
+					b_xuande_monan_china = {
+						province = 12321
+	
+						color = { 242 205 210 }
+					}
+					b_jinheshan_china = {
+						province = 12332
+	
+						color = { 242 205 210 }
+					}
+					b_nintyninespring_china = {
+						province = 12406
+	
+						color = { 250 198 200 }
+					}
+				}
+				
 				c_chanyufu_china = {
 					color = { 20 23 147 }
 	
@@ -95047,6 +95134,26 @@ h_china = {
 						province = 12270
 	
 						color = { 245 194 199 }
+					}
+				}
+				#Hiyaxu
+				c_qibingga_china = {
+					color = { 20 37 156 }
+	
+					b_yanzicheng_china = {
+						province = 12394
+	
+						color = { 125 85 110 }
+					}
+					b_yuanyangpo_china = {
+						province = 12437
+	
+						color = { 125 85 110 }
+					}
+					b_goupo_china = {
+						province = 12444
+	
+						color = { 110 85 125 }
 					}
 				}
 			}
@@ -102235,6 +102342,7 @@ k_yongson_throne = {
 	allow_domicile = no
 	always_follows_primary_heir = yes
 	definite_form = yes
+	ruler_uses_title_name = no
 
 	can_create = { always = no }
 
@@ -116072,6 +116180,7 @@ k_chrysanthemum_throne = {
 	allow_domicile = no
 	always_follows_primary_heir = yes
 	definite_form = yes
+	ruler_uses_title_name = no
 
 	can_create = { always = no }
 
@@ -116343,6 +116452,7 @@ e_japan = {
 	can_be_named_after_dynasty = no
 
 	definite_form = yes
+	ruler_uses_title_name = no
 
 	capital = c_yamashiro
 	

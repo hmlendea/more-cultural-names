@@ -4,6 +4,11 @@ on:
   push:
     tags:
     - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release'
+        required: true
 
 jobs:
   release:
@@ -14,41 +19,40 @@ jobs:
       max-parallel: 1
       matrix:
         config:
-          - { mod_game_id: 'CK2',     nexus_game_id: 'crusaderkings2',  nexus_mod_id: '70',  mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'CK2HIP',  nexus_game_id: 'crusaderkings2',  nexus_mod_id: '71',  mod_file_name: 'hip-more-cultural-names'  }
-          - { mod_game_id: 'CK2RoI',  nexus_game_id: 'crusaderkings2',  nexus_mod_id: '109', mod_file_name: 'roi-more-cultural-names'  }
-          - { mod_game_id: 'CK3',     nexus_game_id: 'crusaderkings3',  nexus_mod_id: '11',  mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'CK3AEP',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '30',  mod_file_name: 'aep-more-cultural-names'  }
-          - { mod_game_id: 'CK3ATHA', nexus_game_id: 'crusaderkings3',  nexus_mod_id: '76',  mod_file_name: 'atha-more-cultural-names' }
-          - { mod_game_id: 'CK3CE',   nexus_game_id: 'crusaderkings3',  nexus_mod_id: '31',  mod_file_name: 'ce-more-cultural-names'   }
-          - { mod_game_id: 'CK3CMH',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '28',  mod_file_name: 'cmh-more-cultural-names'  }
-          - { mod_game_id: 'CK3IBL',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '12',  mod_file_name: 'ibl-more-cultural-names'  }
-          - { mod_game_id: 'CK3MBP',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '19',  mod_file_name: 'mbp-more-cultural-names'  }
-          - { mod_game_id: 'CK3SoW',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '24',  mod_file_name: 'sow-more-cultural-names'  }
-          - { mod_game_id: 'CK3TBA',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '29',  mod_file_name: 'tba-more-cultural-names'  }
-          - { mod_game_id: 'CK3TFE',  nexus_game_id: 'crusaderkings3',  nexus_mod_id: '22',  mod_file_name: 'tfe-more-cultural-names'  }
-          - { mod_game_id: 'HOI4',    nexus_game_id: 'heartsofironiv',  nexus_mod_id: '22',  mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'HOI4MDM', nexus_game_id: 'heartsofironiv',  nexus_mod_id: '35',  mod_file_name: 'mdm-more-cultural-names'  }
-          - { mod_game_id: 'HOI4TGW', nexus_game_id: 'heartsofironiv',  nexus_mod_id: '32',  mod_file_name: 'tgw-more-cultural-names'  }
-          - { mod_game_id: 'IR',      nexus_game_id: 'imperatorrome',   nexus_mod_id: '5',   mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'IR_ABW',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '6',   mod_file_name: 'abw-more-cultural-names'  }
-          - { mod_game_id: 'IR_AoE',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '7',   mod_file_name: 'aoe-more-cultural-names'  }
-          - { mod_game_id: 'IR_INV',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '8',   mod_file_name: 'inv-more-cultural-names'  }
-          - { mod_game_id: 'IR_TBA',  nexus_game_id: 'imperatorrome',   nexus_mod_id: '9',   mod_file_name: 'tba-more-cultural-names'  }
-          - { mod_game_id: 'IR_TI',   nexus_game_id: 'imperatorrome',   nexus_mod_id: '14',  mod_file_name: 'ti-more-cultural-names'   }
+          - { mod_game_id: 'CK2',     nexus_game_id: 'crusaderkings2',  nexus_file_group_id: '544069', mod_file_name: 'more-cultural-names'      }
+          - { mod_game_id: 'CK2HIP',  nexus_game_id: 'crusaderkings2',  nexus_file_group_id: '545050', mod_file_name: 'hip-more-cultural-names'  }
+          - { mod_game_id: 'CK2RoI',  nexus_game_id: 'crusaderkings2',  nexus_file_group_id: '861790', mod_file_name: 'roi-more-cultural-names'  }
+          - { mod_game_id: 'CK3',     nexus_game_id: 'crusaderkings3',  nexus_file_group_id: '201385', mod_file_name: 'more-cultural-names'      }
+          - { mod_game_id: 'CK3AEP',  nexus_game_id: 'crusaderkings3',  nexus_file_group_id: '634384', mod_file_name: 'aep-more-cultural-names'  }
+          - { mod_game_id: 'CK3ATHA', nexus_game_id: 'crusaderkings3',  nexus_file_group_id: '981868', mod_file_name: 'atha-more-cultural-names' }
+          - { mod_game_id: 'CK3CE',   nexus_game_id: 'crusaderkings3',  nexus_file_group_id: '676705', mod_file_name: 'ce-more-cultural-names'   }
+          - { mod_game_id: 'CK3CMH',  nexus_game_id: 'crusaderkings3',  nexus_file_group_id: '517144', mod_file_name: 'cmh-more-cultural-names'  }
+          - { mod_game_id: 'CK3IBL',  nexus_game_id: 'crusaderkings3',  nexus_file_group_id: '204496', mod_file_name: 'ibl-more-cultural-names'  }
+          - { mod_game_id: 'CK3MBP',  nexus_game_id: 'crusaderkings3',  nexus_file_group_id: '262513', mod_file_name: 'mbp-more-cultural-names'  }
+          - { mod_game_id: 'CK3SoW',  nexus_game_id: 'crusaderkings3',  nexus_file_group_id: '391957', mod_file_name: 'sow-more-cultural-names'  }
+          - { mod_game_id: 'CK3TBA',  nexus_game_id: 'crusaderkings3',  nexus_file_group_id: '559057', mod_file_name: 'tba-more-cultural-names'  }
+          - { mod_game_id: 'CK3TFE',  nexus_game_id: 'crusaderkings3',  nexus_file_group_id: '350593', mod_file_name: 'tfe-more-cultural-names'  }
+          - { mod_game_id: 'HOI4',    nexus_game_id: 'heartsofironiv',  nexus_file_group_id: '891598', mod_file_name: 'more-cultural-names'      }
+          - { mod_game_id: 'HOI4MDM', nexus_game_id: 'heartsofironiv',  nexus_file_group_id: '963964', mod_file_name: 'mdm-more-cultural-names'  }
+          - { mod_game_id: 'HOI4TGW', nexus_game_id: 'heartsofironiv',  nexus_file_group_id: '924133', mod_file_name: 'tgw-more-cultural-names'  }
+          - { mod_game_id: 'IR',      nexus_game_id: 'imperatorrome',   nexus_file_group_id: '177820', mod_file_name: 'more-cultural-names'      }
+          - { mod_game_id: 'IR_ABW',  nexus_game_id: 'imperatorrome',   nexus_file_group_id: '180820', mod_file_name: 'abw-more-cultural-names'  }
+          - { mod_game_id: 'IR_AoE',  nexus_game_id: 'imperatorrome',   nexus_file_group_id: '183427', mod_file_name: 'aoe-more-cultural-names'  }
+          - { mod_game_id: 'IR_INV',  nexus_game_id: 'imperatorrome',   nexus_file_group_id: '186169', mod_file_name: 'inv-more-cultural-names'  }
+          - { mod_game_id: 'IR_TBA',  nexus_game_id: 'imperatorrome',   nexus_file_group_id: '189268', mod_file_name: 'tba-more-cultural-names'  }
+          - { mod_game_id: 'IR_TI',   nexus_game_id: 'imperatorrome',   nexus_file_group_id: '328441', mod_file_name: 'ti-more-cultural-names'   }
 
     steps:
     - name: Prepare
-      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{github.ref_name}}/mcn_${{matrix.config.mod_game_id}}_${GITHUB_REF:11}.zip" -O "${{matrix.config.mod_game_id}}.zip"
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{inputs.tag}}/mcn_${{matrix.config.mod_game_id}}_${GITHUB_REF:11}.zip" -O "${{matrix.config.mod_game_id}}.zip"
 
     - name: Upload
-      uses: hmlendea/nexusmods-update@latest
+      uses: Nexus-Mods/upload-action@v1.0.0-beta.3
       with:
-        account_email_address: ${{secrets.NEXUS_USERNAME}}
-        account_password: ${{secrets.NEXUS_PASSWORD}}
-        nexus_game_id: ${{matrix.config.nexus_game_id}}
-        nexus_mod_id: ${{matrix.config.nexus_mod_id}}
-        mod_file_name: ${{matrix.config.mod_file_name}}
-        mod_version: ${{github.ref_name}}
-        file_description: "Changelog: https://github.com/hmlendea/stellaris-ui-flags/releases/${{github.ref_name}}"
-        file_path: "${{matrix.config.mod_game_id}}.zip"
+        api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+        file_group_id: ${{matrix.config.nexus_file_group_id}}
+        filename: ${{matrix.config.mod_game_id}}.zip
+        display_name: ${{matrix.config.mod_file_name}}.zip
+        version: ${{inputs.tag}}
+        description: "Changelog: https://github.com/hmlendea/stellaris-ui-flags/releases/${{inputs.tag}}"
+        file_category: main
