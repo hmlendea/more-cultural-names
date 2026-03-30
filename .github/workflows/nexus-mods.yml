@@ -44,7 +44,7 @@ jobs:
 
     steps:
     - name: Prepare
-      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{inputs.tag}}/mcn_${{matrix.config.mod_game_id}}_${GITHUB_REF:11}.zip" -O "${{matrix.config.mod_game_id}}.zip"
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{inputs.tag}}/mcn_${{matrix.config.mod_game_id}}_26.089.0.zip" -O "${{matrix.config.mod_game_id}}.zip"
 
     - name: Upload
       uses: Nexus-Mods/upload-action@v1.0.0-beta.3
