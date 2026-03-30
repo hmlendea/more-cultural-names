@@ -15,6 +15,9 @@ jobs:
     name: Release (${{matrix.config.mod_game_id}})
     runs-on: ubuntu-latest
 
+    env:
+      VERSION: ${{ inputs.tag || github.ref_name }}
+
     strategy:
       max-parallel: 1
       matrix:
@@ -44,7 +47,8 @@ jobs:
 
     steps:
     - name: Prepare
-      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${{inputs.tag}}/mcn_${{matrix.config.mod_game_id}}_${GITHUB_REF:11}.zip" -O "${{matrix.config.mod_game_id}}.zip"
+        RELEASE_ASSET_NAME="mcn_${{matrix.config.mod_game_id}}_${VERSION#v}.zip"
+      run: wget "https://github.com/hmlendea/more-cultural-names/releases/download/${VERSION}/${RELEASE_ASSET_NAME}" -O "${{matrix.config.mod_game_id}}.zip"
 
     - name: Upload
       uses: Nexus-Mods/upload-action@v1.0.0-beta.3
@@ -53,6 +57,6 @@ jobs:
         file_group_id: ${{matrix.config.nexus_file_group_id}}
         filename: ${{matrix.config.mod_game_id}}.zip
         display_name: ${{matrix.config.mod_file_name}}.zip
-        version: ${{inputs.tag}}
-        description: "Changelog: https://github.com/hmlendea/stellaris-ui-flags/releases/${{inputs.tag}}"
+        version: ${{env.VERSION}}
+        description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{env.VERSION}}"
         file_category: main
