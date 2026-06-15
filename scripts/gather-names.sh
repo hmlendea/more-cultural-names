@@ -7,7 +7,7 @@ fi
 
 source "scripts/common/name_normalisation.sh"
 
-EXONYMSAPI_URL="https://www.nucilandia.ro/apis/exonyms-api/Exonyms"
+EXONYMSAPI_URL="https://api.nucilandia.ro/exonyms/Exonyms"
 GEONAMES_API_URL="http://api.geonames.org"
 WIKIDATA_API_URL="https://www.wikidata.org"
 

@@ -66,7 +66,10 @@ function update_hoi4_parentage_file() {
 
         for CITY_ID in ${CITY_IDS}; do
             echo "${CITY_ID}" | grep -q '[^0-9]' && continue
-            ! echo "${LOCALISED_CITY_IDS}" | grep -q "\b${CITY_ID}\b" && continue
+
+            if [ "${GAME_ID}" != "HOI4TGW" ] && ! echo "${LOCALISED_CITY_IDS}" | grep -q "\b${CITY_ID}\b"; then
+                continue
+            fi
 
             echo "${CITY_ID}=${STATE_ID}" >> "${TARGET_FILE}"
         done

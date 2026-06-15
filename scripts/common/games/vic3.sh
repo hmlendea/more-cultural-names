@@ -99,6 +99,47 @@ function list_missing_vic3_states() {
     done
 }
 
+function list_surplus_vic3_hubs() {
+    local GAME_ID="${1}"
+    local VANILLA_HUBS_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_hubs.txt"
+    local LOCATION_TYPE='Hub'
+
+
+    for HUB_ID in $(diff \
+                        <( \
+                            cat "${VANILLA_HUBS_FILE}" | \
+                            awk -F"=" '{print $1}' | \
+                            sort | uniq \
+                        ) <( \
+                            grep "GameId game=\"${GAME_ID}\" type=\"${LOCATION_TYPE}\"" "${LOCATIONS_FILE}" |
+                            sed 's/.*>\([^<]*\)<\/GameId.*/\1/g' |
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g'); do
+        echo "    > ${GAME_ID}: ${LOCATION_TYPE} ${HUB_ID} is defined but it does not exist. Find it with: ${GAME_ID}[^A-Z].*${LOCATION_TYPE}.*>${HUB_ID}<"
+    done
+}
+
+function list_surplus_vic3_states() {
+    local GAME_ID="${1}"
+    local VANILLA_STATES_FILE="${VANILLA_FILES_DIR}/${GAME_ID}_states.txt"
+    local LOCATION_TYPE='State'
+
+    for STATE_ID in $(diff \
+                        <( \
+                            cat "${VANILLA_STATES_FILE}" | \
+                            awk -F"=" '{print $1}' | \
+                            sort | uniq \
+                        ) <( \
+                            grep "GameId game=\"${GAME_ID}\" type=\"${LOCATION_TYPE}\"" "${LOCATIONS_FILE}" |
+                            sed 's/.*>\([^<]*\)<\/GameId.*/\1/g' |
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g'); do
+        echo "    > ${GAME_ID}: ${LOCATION_TYPE} ${HUB_ID} is defined but it does not exist. Find it with: ${GAME_ID}[^A-Z].*${LOCATION_TYPE}.*>${HUB_ID}<"
+    done
+}
+
 function log_missing_vic3_location() {
     local GAME_ID="${1}"
     local LOCATION_TYPE="${2}"
