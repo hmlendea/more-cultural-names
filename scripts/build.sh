@@ -124,7 +124,7 @@ build-edition \
 
 build-edition \
     'cmh-more-cultural-names' 'Community Mods for Historicity - More Cultural Names' \
-    'CK3CMH' '1.18.*' \
+    'CK3CMH' '1.19.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
@@ -154,7 +154,7 @@ build-edition \
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
-    'HOI4' '1.17.*'
+    'HOI4' '1.19.*'
 
 build-edition \
     'mdm-more-cultural-names' 'Millennium Dawn: More Cultural Names' \
