@@ -163,7 +163,7 @@ build-edition \
 
 build-edition \
     'tgw-more-cultural-names' 'The Great War: More Cultural Names' \
-    'HOI4TGW' '1.17.*'
+    'HOI4TGW' '1.19.*'
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
