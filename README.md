@@ -1,4 +1,4 @@
-[![Donate](https://img.shields.io/badge/-%E2%99%A5%20Donate-%23ff69b4)](https://hmlendea.go.ro/fund.html)
+[![Donate](https://img.shields.io/badge/-%E2%99%A5%20Donate-%23ff69b4)](https://hmlendea.go.ro/funding)
 [![Latest Release](https://img.shields.io/github/v/release/hmlendea/more-cultural-names)](https://github.com/hmlendea/more-cultural-names/releases/latest)
 [![Build Status](https://github.com/hmlendea/more-cultural-names/actions/workflows/build.yml/badge.svg)](https://github.com/hmlendea/more-cultural-names/actions/workflows/build.yml)
 [![License](https://img.shields.io/github/license/hmlendea/more-cultural-names)](https://github.com/hmlendea/more-cultural-names/blob/master/LICENSE)
@@ -14,6 +14,7 @@ This is a mod for various strategy games that adds new place names based on thei
 - [Installation](#-installation)
 - [Compatibility](#-compatibility)
 - [Contributing](#-contributing)
+- [Project Engagement](#-project-engagement)
 - [License](#-license)
 
 ## ✨ Capabilities
@@ -42,32 +43,47 @@ This is a mod for various strategy games that adds new place names based on thei
 
 ## 📦 Installation
 
-[![Obtain it from Steam Workshop](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/steam-workshop.png)](https://hmlendea.github.io/more-cultural-names/workshop) [![Obtain it from Nexus Mods](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/nexus.png)](https://hmlendea.github.io/more-cultural-names/nexus) [![Obtain it from Paradox Mods](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/paradox-mods.png)](https://hmlendea.github.io/more-cultural-names/paradox) [![Obtain it from GitHub](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/github.png)](https://github.com/hmlendea/more-cultural-names/releases)
+[![Obtain it from Steam Workshop](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/steam-workshop.png)](https://hmlendea.github.io/more-cultural-names/workshop)
+[![Obtain it from Nexus Mods](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/nexus.png)](https://hmlendea.github.io/more-cultural-names/nexus)
+[![Obtain it from Paradox Mods](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/paradox-mods.png)](https://hmlendea.github.io/more-cultural-names/paradox)
+[![Obtain it from GitHub](https://raw.githubusercontent.com/hmlendea/readme-assets/master/badges/stores/github.png)](https://github.com/hmlendea/more-cultural-names/releases)
 
 ### Manual Installation
 
 - Download the [latest release](https://github.com/hmlendea/more-cultural-names/releases/latest)
 - Extract the contents into your game's mod directory
 
-## ⚙️ Compatibility
+## 🧩 Compatibility
 
-The mod is **OS-agnostic**, working on all operating systems supported by the game (Windows, Linux, and macOS).
-
-It is actively developed and tested on **Linux**, where it is guaranteed to work with both the native version and through Steam Play.
-
-The mod is **save-game compatible** and can be added to or removed from your installation at any time without breaking existing saves or causing data loss.
+| Component | Supported Versions | Notes |
+|-----------|--------------------|-------|
+| Operating Systems | Windows, Linux, macOS | All operating systems supported by the game |
+| Steam Play | Any version | Guaranteed to work through Steam Play on Linux |
+| Save Games | Any version | Save-game compatible; can be added or removed without breaking saves |
 
 ## 🤝 Contributing
 
-You are welcome to bring suggestions, feedback, or modifications to this project.
+You are welcome to submit any suggestion, feedback, or modification to this project.
 
-Here are several ways to contribute:
+When doing so, please:
+- Submit focused pull requests that conform to the existing code style
+- Maintain your branch synchronised with `master`
+- Revise the documentation when functionality changes
+- Raise a new [issue](https://github.com/hmlendea/more-cultural-names/issues) for problems or suggestions
+
+You can also:
 - Comment on the [Steam Workshop page](https://hmlendea.github.io/more-cultural-names/workshop) or its discussion threads
-- Raise a new [issue](https://github.com/hmlendea/more-cultural-names/issues) on GitHub
-- Create a pull request for this repository (requires Git knowledge)
+- Consult the [guidelines](https://github.com/hmlendea/more-cultural-names/wiki/Guidelines) and documentation on the project's [wiki](https://github.com/hmlendea/more-cultural-names/wiki)
 
-For direct contributions, please consult the [guidelines](https://github.com/hmlendea/more-cultural-names/wiki/Guidelines) and documentation on the project's [wiki](https://github.com/hmlendea/more-cultural-names/wiki).
+## 💝 Project Engagement
+
+Discovered a problem or have a suggestion? [Open an issue](https://github.com/hmlendea/more-cultural-names/issues)!
+
+If you find this project useful, consider [funding it](https://hmlendea.go.ro/funding) or starring ⭐️ it on GitHub!
+
+[![Donate](https://raw.githubusercontent.com/hmlendea/readme-assets/master/donate_generic.png)](https://hmlendea.go.ro/funding)
 
 ## 📄 License
 
-This project is licensed under the [GNU General Public Licence v3](https://github.com/hmlendea/more-cultural-names/blob/master/LICENSE) or later.
+This project is being distributed under the GNU General Public Licence v3 or later.
+See [LICENSE](./LICENSE) for further information.
