@@ -104,7 +104,7 @@ build-edition \
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
-    'CK3' '1.18.*' \
+    'CK3' '1.19.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3_landed_titles.txt" --landed-titles-name '999_MoreCulturalNames.txt'
 
 build-edition \
@@ -119,12 +119,12 @@ build-edition \
 
 build-edition \
     'ce-more-cultural-names' 'Culture Expanded - More Cultural Names' \
-    'CK3CE' '1.18.*' \
+    'CK3CE' '1.19.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3ce_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
     'cmh-more-cultural-names' 'Community Mods for Historicity - More Cultural Names' \
-    'CK3CMH' '1.18.*' \
+    'CK3CMH' '1.19.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3cmh_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
@@ -134,7 +134,7 @@ build-edition \
 
 build-edition \
     'mbp-more-cultural-names' 'More Bookmarks+ - More Cultural Names' \
-    'CK3MBP' '1.18.*' \
+    'CK3MBP' '1.19.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3mbp_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
 
 build-edition \
@@ -154,16 +154,16 @@ build-edition \
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
-    'HOI4' '1.17.*'
+    'HOI4' '1.19.*'
 
 build-edition \
     'mdm-more-cultural-names' 'Millennium Dawn: More Cultural Names' \
-    'HOI4MDM' '1.17.*' \
+    'HOI4MDM' '1.19.*' \
     --dependency 'Millennium Dawn: A Modern Day Mod'
 
 build-edition \
     'tgw-more-cultural-names' 'The Great War: More Cultural Names' \
-    'HOI4TGW' '1.17.*'
+    'HOI4TGW' '1.19.*'
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
