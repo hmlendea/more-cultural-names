@@ -52,12 +52,14 @@ jobs:
         wget "https://github.com/hmlendea/more-cultural-names/releases/download/${VERSION}/${RELEASE_ASSET_NAME}" -O "${{matrix.config.mod_game_id}}.zip"
 
     - name: Upload
-      uses: Nexus-Mods/upload-action@v1.0.0-beta.3
+      uses: Nexus-Mods/upload-action@v1.0.0-beta.10
       with:
         api_key: ${{ secrets.NEXUSMODS_API_KEY }}
-        file_group_id: ${{matrix.config.nexus_file_group_id}}
+        file_id: ${{matrix.config.nexus_file_group_id}}
         filename: ${{matrix.config.mod_game_id}}.zip
         display_name: ${{matrix.config.mod_file_name}}.zip
         version: ${{env.VERSION}}
         description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{env.VERSION}}"
-        file_category: main
+        category: main
+        archive_existing_version: true
+        update_mod_version: true
