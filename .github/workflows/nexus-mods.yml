@@ -22,42 +22,42 @@ jobs:
       max-parallel: 1
       matrix:
         config:
-          - { mod_game_id: 'CK2',     nexus_file_group_id: '544069', mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'CK2HIP',  nexus_file_group_id: '545050', mod_file_name: 'hip-more-cultural-names'  }
-          - { mod_game_id: 'CK2RoI',  nexus_file_group_id: '861790', mod_file_name: 'roi-more-cultural-names'  }
-          - { mod_game_id: 'CK3',     nexus_file_group_id: '201385', mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'CK3AEP',  nexus_file_group_id: '634384', mod_file_name: 'aep-more-cultural-names'  }
-          - { mod_game_id: 'CK3ATHA', nexus_file_group_id: '981868', mod_file_name: 'atha-more-cultural-names' }
-          - { mod_game_id: 'CK3CE',   nexus_file_group_id: '676705', mod_file_name: 'ce-more-cultural-names'   }
-          - { mod_game_id: 'CK3CMH',  nexus_file_group_id: '517144', mod_file_name: 'cmh-more-cultural-names'  }
-          - { mod_game_id: 'CK3IBL',  nexus_file_group_id: '204496', mod_file_name: 'ibl-more-cultural-names'  }
-          - { mod_game_id: 'CK3MBP',  nexus_file_group_id: '262513', mod_file_name: 'mbp-more-cultural-names'  }
-          - { mod_game_id: 'CK3SoW',  nexus_file_group_id: '391957', mod_file_name: 'sow-more-cultural-names'  }
-          - { mod_game_id: 'CK3TBA',  nexus_file_group_id: '559057', mod_file_name: 'tba-more-cultural-names'  }
-          - { mod_game_id: 'CK3TFE',  nexus_file_group_id: '350593', mod_file_name: 'tfe-more-cultural-names'  }
-          - { mod_game_id: 'HOI4',    nexus_file_group_id: '891598', mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'HOI4MDM', nexus_file_group_id: '963964', mod_file_name: 'mdm-more-cultural-names'  }
-          - { mod_game_id: 'HOI4TGW', nexus_file_group_id: '924133', mod_file_name: 'tgw-more-cultural-names'  }
-          - { mod_game_id: 'IR',      nexus_file_group_id: '177820', mod_file_name: 'more-cultural-names'      }
-          - { mod_game_id: 'IR_ABW',  nexus_file_group_id: '180820', mod_file_name: 'abw-more-cultural-names'  }
-          - { mod_game_id: 'IR_AoE',  nexus_file_group_id: '183427', mod_file_name: 'aoe-more-cultural-names'  }
-          - { mod_game_id: 'IR_INV',  nexus_file_group_id: '186169', mod_file_name: 'inv-more-cultural-names'  }
-          - { mod_game_id: 'IR_TBA',  nexus_file_group_id: '189268', mod_file_name: 'tba-more-cultural-names'  }
-          - { mod_game_id: 'IR_TI',   nexus_file_group_id: '328441', mod_file_name: 'ti-more-cultural-names'   }
+          - { game_id: 'CK2',     file_id: '544069', file_name: 'more-cultural-names'      }
+          - { game_id: 'CK2HIP',  file_id: '545050', file_name: 'hip-more-cultural-names'  }
+          - { game_id: 'CK2RoI',  file_id: '861790', file_name: 'roi-more-cultural-names'  }
+          - { game_id: 'CK3',     file_id: '201385', file_name: 'more-cultural-names'      }
+          - { game_id: 'CK3AEP',  file_id: '634384', file_name: 'aep-more-cultural-names'  }
+          - { game_id: 'CK3ATHA', file_id: '981868', file_name: 'atha-more-cultural-names' }
+          - { game_id: 'CK3CE',   file_id: '676705', file_name: 'ce-more-cultural-names'   }
+          - { game_id: 'CK3CMH',  file_id: '517144', file_name: 'cmh-more-cultural-names'  }
+          - { game_id: 'CK3IBL',  file_id: '204496', file_name: 'ibl-more-cultural-names'  }
+          - { game_id: 'CK3MBP',  file_id: '262513', file_name: 'mbp-more-cultural-names'  }
+          - { game_id: 'CK3SoW',  file_id: '391957', file_name: 'sow-more-cultural-names'  }
+          - { game_id: 'CK3TBA',  file_id: '559057', file_name: 'tba-more-cultural-names'  }
+          - { game_id: 'CK3TFE',  file_id: '350593', file_name: 'tfe-more-cultural-names'  }
+          - { game_id: 'HOI4',    file_id: '891598', file_name: 'more-cultural-names'      }
+          - { game_id: 'HOI4MDM', file_id: '963964', file_name: 'mdm-more-cultural-names'  }
+          - { game_id: 'HOI4TGW', file_id: '924133', file_name: 'tgw-more-cultural-names'  }
+          - { game_id: 'IR',      file_id: '177820', file_name: 'more-cultural-names'      }
+          - { game_id: 'IR_ABW',  file_id: '180820', file_name: 'abw-more-cultural-names'  }
+          - { game_id: 'IR_AoE',  file_id: '183427', file_name: 'aoe-more-cultural-names'  }
+          - { game_id: 'IR_INV',  file_id: '186169', file_name: 'inv-more-cultural-names'  }
+          - { game_id: 'IR_TBA',  file_id: '189268', file_name: 'tba-more-cultural-names'  }
+          - { game_id: 'IR_TI',   file_id: '328441', file_name: 'ti-more-cultural-names'   }
 
     steps:
     - name: Prepare
       run: |
-        RELEASE_ASSET_NAME="mcn_${{matrix.config.mod_game_id}}_${VERSION#v}.zip"
-        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${VERSION}/${RELEASE_ASSET_NAME}" -O "${{matrix.config.mod_game_id}}.zip"
+        RELEASE_ASSET_NAME="mcn_${{matrix.config.game_id}}_${VERSION#v}.zip"
+        wget "https://github.com/hmlendea/more-cultural-names/releases/download/${VERSION}/${RELEASE_ASSET_NAME}" -O "${{matrix.config.game_id}}.zip"
 
     - name: Upload
       uses: Nexus-Mods/upload-action@v1.0.0-beta.10
       with:
         api_key: ${{ secrets.NEXUSMODS_API_KEY }}
-        file_id: ${{matrix.config.nexus_file_group_id}}
-        filename: ${{matrix.config.mod_game_id}}.zip
-        display_name: ${{matrix.config.mod_file_name}}.zip
+        file_id: ${{matrix.config.file_id}}
+        filename: ${{matrix.config.game_id}}.zip
+        display_name: ${{matrix.config.file_name}}.zip
         version: ${{env.VERSION}}
         description: "Changelog: https://github.com/hmlendea/more-cultural-names/releases/${{env.VERSION}}"
         category: main
