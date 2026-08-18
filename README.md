@@ -14,6 +14,7 @@ This is a mod for various strategy games that adds new place names based on thei
 - [Installation](#-installation)
 - [Compatibility](#-compatibility)
 - [Contributing](#-contributing)
+- [Architecture](#-architecture)
 - [Project Engagement](#-project-engagement)
 - [License](#-license)
 
@@ -74,6 +75,10 @@ When doing so, please:
 You can also:
 - Comment on the [Steam Workshop page](https://hmlendea.github.io/more-cultural-names/workshop) or its discussion threads
 - Consult the [guidelines](https://github.com/hmlendea/more-cultural-names/wiki/Guidelines) and documentation on the project's [wiki](https://github.com/hmlendea/more-cultural-names/wiki)
+
+## 🏛️ Architecture
+
+The current repository architecture is documented in [ARCHITECTURE.md](./ARCHITECTURE.md).
 
 ## 💝 Project Engagement
 
