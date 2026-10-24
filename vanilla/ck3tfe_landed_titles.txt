@@ -1163,10 +1163,11 @@ e_hre = {
 	capital = c_aachen
 	definite_form = yes
 	
-	can_create = {
-		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
-	}
-		
+	### TFE EDIT START - HRE is anachronistic for the Fallen Eagle timeframe; block all creation routes ###
+	can_create = { always = no }
+	can_create_on_partition = { always = no }
+	### TFE EDIT END ###
+
 	ai_primary_priority = {
 		if = {
 			limit = {
@@ -6314,7 +6315,7 @@ e_britannia = {
 }
 
 e_germany = {
-	color = { 50 60 50 }
+	color = { 60 50 50 }
 
 	capital = c_nassau
 
@@ -6928,6 +6929,7 @@ e_germany = {
 			
 			cultural_names = {
 				name_list_polabian = cn_veletia
+				name_list_varinian = cn_varinia
 			}
 			
 			c_mecklenburg = {
@@ -7875,7 +7877,10 @@ e_germany = {
 		
 		d_bructeria = {
 			color = { 150 165 185 }
-			
+			landless = yes
+			ignore_titularity_for_title_weighting = yes
+
+			definite_form = yes
 
 			capital = c_dortmund
 		}
@@ -9026,6 +9031,23 @@ e_germany = {
 					
 				}
 				b_kreusnach = {
+					### TFE EDIT START
+					cultural_names = {
+						name_list_roman = cn_b_kreusnach
+						name_list_sardino_roman = cn_b_kreusnach
+						name_list_illyro_roman = cn_b_kreusnach
+						name_list_hispano_roman = cn_b_kreusnach
+						name_list_gallo_roman = cn_b_kreusnach
+						name_list_afro_roman = cn_b_kreusnach
+						name_list_mauro_roman = cn_b_kreusnach
+						name_list_britano_roman = cn_b_kreusnach
+						name_list_helleno_roman = cn_b_kreusnach
+						name_list_thracio_roman = cn_b_kreusnach
+						name_list_dacio_roman = cn_b_kreusnach
+						name_list_rhaetio_roman = cn_b_kreusnach
+						name_list_germano_roman = cn_b_kreusnach
+					}
+					### TFE EDIT END
 					province = 2707
 					
 					color = { 145 140 153 }
@@ -10497,18 +10519,6 @@ e_germany = {
 					color = { 110 110 110 }
 					
 				}
-				b_braunau = {
-					province = 2973
-
-					color = { 110 110 110 }
-					
-				}
-				b_traunstein = {
-					province = 2983
-
-					color = { 110 110 110 }
-					
-				}
 				b_hallein = {
 					province = 2978
 
@@ -10521,62 +10531,16 @@ e_germany = {
 					color = { 110 110 110 }
 					
 				}
-				b_burghausen = {
-					province = 2981
-
-					color = { 110 110 110 }
-					
-				}
 				b_marquardstein = {
 					province = 2984
 
 					color = { 110 110 110 }
-					
-				}
-			}
-			c_berchtesgaden = {
-				color = { 115 105 115 }
-				
-			
-				b_berchtesgaden = {
-					province = 2977
 
-					color = { 115 105 115 }
-					
-				}
-				b_laukental = {
-					province = 2985
-
-					color = { 115 105 115 }
-					
-				}
+				}		
 				b_kitzbuhel = {
 					province = 2976
 
-					color = { 115 105 115 }
-					
-				}
-			}
-			c_hallstatt = {
-				color = { 105 105 115 }
-				
-			
-				b_hallstatt = {
-					province = 3135
-
-					color = { 105 105 115 }
-					
-				}
-				b_liezen = {
-					province = 3130
-
-					color = { 105 105 115 }
-					
-				}
-				b_wels = {
-					province = 3133
-
-					color = { 105 105 115 }
+					color = { 110 110 110 }
 					
 				}
 			}
@@ -10588,10 +10552,22 @@ e_germany = {
 					province = 3131
 
 					color = { 115 105 105 }
+								
+				}
+				b_hallstatt = {
+					province = 3135
+
+					color = { 115 105 105 }
 					
 				}
-				b_steyr = {
-					province = 3132
+				b_liezen = {
+					province = 3130
+
+					color = { 115 105 105 }
+					
+				}
+				b_wels = {
+					province = 3133
 
 					color = { 115 105 105 }
 					
@@ -10599,8 +10575,13 @@ e_germany = {
 			}
 			c_schaumberg = {
 				color = { 120 120 120 }
-					
 
+				b_scharding = {
+					province = 2970
+
+					color = { 120 120 120 }
+				
+				}
 				b_schaumberg = {
 					province = 2971
 
@@ -10609,18 +10590,6 @@ e_germany = {
 				}
 				b_strasswalchen = {
 					province = 2979
-
-					color = { 120 120 120 }
-					
-				}
-				b_ried = {
-					province = 2972
-
-					color = { 120 120 120 }
-					
-				}
-				b_scharding = {
-					province = 2970
 
 					color = { 120 120 120 }
 					
@@ -10879,23 +10848,6 @@ e_germany = {
 					province = 3094
 
 					color = { 200 180 180 }
-					
-				}
-			}
-			c_amstetten = {
-				color = { 170 160 160 }
-					
-
-				b_amstetten = {
-					province = 3093
-
-					color = { 170 160 160 }
-					
-				}
-				b_waidhofen = {
-					province = 3124
-
-					color = { 170 160 160 }
 					
 				}
 			}
@@ -11206,6 +11158,21 @@ e_germany = {
 					name_list_franconian = cn_krain
 					name_list_bavarian = cn_krain
 					name_list_saxon = cn_krain
+					### TFE EDIT START
+					name_list_roman = cn_c_kranj
+					name_list_sardino_roman = cn_c_kranj
+					name_list_illyro_roman = cn_c_kranj
+					name_list_hispano_roman = cn_c_kranj
+					name_list_gallo_roman = cn_c_kranj
+					name_list_afro_roman = cn_c_kranj
+					name_list_mauro_roman = cn_c_kranj
+					name_list_britano_roman = cn_c_kranj
+					name_list_helleno_roman = cn_c_kranj
+					name_list_thracio_roman = cn_c_kranj
+					name_list_dacio_roman = cn_c_kranj
+					name_list_rhaetio_roman = cn_c_kranj
+					name_list_germano_roman = cn_c_kranj
+					### TFE EDIT END
 				}
 	
 				b_kranj = {
@@ -11430,16 +11397,7 @@ h_roman_empire = {
 
 	capital = c_roma # Rome
 	definite_form = yes
-	destroy_on_succession = yes
 	can_be_named_after_dynasty = no
-	# Succession routes through h_roman_empire's imperial elective (the
-	# +1M bias forces one of the partition recipients to win), then
-	# TFE_split_on_h_roman_empire_gain fires on the new holder, distributes
-	# both empires to their designated recipients, and destroys
-	# h_roman_empire at the end. For non-split natural succession the
-	# on_title_gain handler also unconditionally destroys h_roman_empire
-	# after the new holder briefly takes it — preserves the "hegemon is a
-	# once-in-a-lifetime title" invariant.
 
 	# Golden Era modifiers — applied to the title holder while h_roman_empire
 	# is created. Represents the Constantine / Diocletian / Augustus tier of
@@ -11623,7 +11581,7 @@ h_roman_empire = {
 			color = { 160 80 80 }
 			capital = c_skopje
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11633,7 +11591,7 @@ h_roman_empire = {
 			color = { 150 70 70 }
 			capital = c_philippopolis
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11643,7 +11601,7 @@ h_roman_empire = {
 			color = { 140 60 60 }
 			capital = c_antiocheia
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11653,7 +11611,7 @@ h_roman_empire = {
 			color = { 130 50 50 }
 			capital = c_alexandria
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11663,7 +11621,7 @@ h_roman_empire = {
 			color = { 120 40 40 }
 			capital = c_helenopontus
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11673,7 +11631,7 @@ h_roman_empire = {
 			color = { 200 140 80 }
 			capital = c_branicevo
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11683,7 +11641,7 @@ h_roman_empire = {
 			color = { 195 135 75 }
 			capital = c_vidin
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11693,7 +11651,7 @@ h_roman_empire = {
 			color = { 190 130 70 }
 			capital = c_aytos
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11703,7 +11661,7 @@ h_roman_empire = {
 			color = { 185 125 65 }
 			capital = c_constanta
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11713,7 +11671,7 @@ h_roman_empire = {
 			color = { 180 120 60 }
 			capital = c_trebizond
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11723,7 +11681,7 @@ h_roman_empire = {
 			color = { 175 115 55 }
 			capital = c_theodosiopolis
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11733,7 +11691,7 @@ h_roman_empire = {
 			color = { 170 110 50 }
 			capital = c_edessa
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11743,7 +11701,7 @@ h_roman_empire = {
 			color = { 165 105 45 }
 			capital = c_amida
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11753,7 +11711,7 @@ h_roman_empire = {
 			color = { 160 100 40 }
 			capital = c_negev
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -11763,7 +11721,7 @@ h_roman_empire = {
 			color = { 155 95 35 }
 			capital = c_qus
 			landless = yes
-			allow_domicile = yes
+			allow_domicile = no
 			no_automatic_claims = yes
 			de_jure_drift_disabled = yes
 			can_be_named_after_dynasty = no
@@ -12558,6 +12516,23 @@ h_roman_empire = {
 					
 					}
 					b_vigevano = {
+						### TFE EDIT START
+						cultural_names = {
+							name_list_roman = cn_b_vigevano
+							name_list_sardino_roman = cn_b_vigevano
+							name_list_illyro_roman = cn_b_vigevano
+							name_list_hispano_roman = cn_b_vigevano
+							name_list_gallo_roman = cn_b_vigevano
+							name_list_afro_roman = cn_b_vigevano
+							name_list_mauro_roman = cn_b_vigevano
+							name_list_britano_roman = cn_b_vigevano
+							name_list_helleno_roman = cn_b_vigevano
+							name_list_thracio_roman = cn_b_vigevano
+							name_list_dacio_roman = cn_b_vigevano
+							name_list_rhaetio_roman = cn_b_vigevano
+							name_list_germano_roman = cn_b_vigevano
+						}
+						### TFE EDIT END
 						province = 2474
 
 						color = { 200 155 255 }
@@ -12704,6 +12679,23 @@ h_roman_empire = {
 					
 					}
 					b_val_camonica = {
+						### TFE EDIT START
+						cultural_names = {
+							name_list_roman = cn_b_val_camonica
+							name_list_sardino_roman = cn_b_val_camonica
+							name_list_illyro_roman = cn_b_val_camonica
+							name_list_hispano_roman = cn_b_val_camonica
+							name_list_gallo_roman = cn_b_val_camonica
+							name_list_afro_roman = cn_b_val_camonica
+							name_list_mauro_roman = cn_b_val_camonica
+							name_list_britano_roman = cn_b_val_camonica
+							name_list_helleno_roman = cn_b_val_camonica
+							name_list_thracio_roman = cn_b_val_camonica
+							name_list_dacio_roman = cn_b_val_camonica
+							name_list_rhaetio_roman = cn_b_val_camonica
+							name_list_germano_roman = cn_b_val_camonica
+						}
+						### TFE EDIT END
 						province = 2495
 
 						color = { 250 150 220 }
@@ -13178,6 +13170,23 @@ h_roman_empire = {
 					
 					}
 					b_vignola = {
+						### TFE EDIT START
+						cultural_names = {
+							name_list_roman = cn_b_vignola
+							name_list_sardino_roman = cn_b_vignola
+							name_list_illyro_roman = cn_b_vignola
+							name_list_hispano_roman = cn_b_vignola
+							name_list_gallo_roman = cn_b_vignola
+							name_list_afro_roman = cn_b_vignola
+							name_list_mauro_roman = cn_b_vignola
+							name_list_britano_roman = cn_b_vignola
+							name_list_helleno_roman = cn_b_vignola
+							name_list_thracio_roman = cn_b_vignola
+							name_list_dacio_roman = cn_b_vignola
+							name_list_rhaetio_roman = cn_b_vignola
+							name_list_germano_roman = cn_b_vignola
+						}
+						### TFE EDIT END
 						province = 2540
 
 						color = { 230 185 185 }
@@ -15957,6 +15966,23 @@ h_roman_empire = {
 				}
 			
 				c_kalliopolis = {
+					### TFE EDIT START
+					cultural_names = {
+						name_list_roman = cn_c_kalliopolis
+						name_list_sardino_roman = cn_c_kalliopolis
+						name_list_illyro_roman = cn_c_kalliopolis
+						name_list_hispano_roman = cn_c_kalliopolis
+						name_list_gallo_roman = cn_c_kalliopolis
+						name_list_afro_roman = cn_c_kalliopolis
+						name_list_mauro_roman = cn_c_kalliopolis
+						name_list_britano_roman = cn_c_kalliopolis
+						name_list_helleno_roman = cn_c_kalliopolis
+						name_list_thracio_roman = cn_c_kalliopolis
+						name_list_dacio_roman = cn_c_kalliopolis
+						name_list_rhaetio_roman = cn_c_kalliopolis
+						name_list_germano_roman = cn_c_kalliopolis
+					}
+					### TFE EDIT END
 					color = { 185 10 80 }
 				
 				
@@ -21926,7 +21952,7 @@ e_scandinavia = {
 }
 
 e_wendish_empire = {
-	color = { 5 90 70 }
+	color = { 35 90 70 }
 	
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
@@ -21934,7 +21960,7 @@ e_wendish_empire = {
 
 	capital = c_kernave # Riga
 	
-	definite_form = yes
+	#definite_form = yes
 		
 	ai_primary_priority = {
 		if = {
@@ -24978,7 +25004,7 @@ e_russia = {	#Kievan Rus
 }
 
 e_caspian-pontic_steppe = {
-	color = { 230 180 10 }
+	color = { 230 120 30 }
 
 	capital = c_itil # Itil
 
@@ -40019,7 +40045,7 @@ e_persia = {
 }
 
 e_carpathia = {
-	color = { 210 115 35 }
+	color = { 150 55 35 }
 	
 	capital = c_hewes # Pest
 
@@ -43701,6 +43727,23 @@ e_france = {
 				}
 			}
 			c_valois = {
+				### TFE EDIT START
+				cultural_names = {
+					name_list_roman = cn_c_valois
+					name_list_sardino_roman = cn_c_valois
+					name_list_illyro_roman = cn_c_valois
+					name_list_hispano_roman = cn_c_valois
+					name_list_gallo_roman = cn_c_valois
+					name_list_afro_roman = cn_c_valois
+					name_list_mauro_roman = cn_c_valois
+					name_list_britano_roman = cn_c_valois
+					name_list_helleno_roman = cn_c_valois
+					name_list_thracio_roman = cn_c_valois
+					name_list_dacio_roman = cn_c_valois
+					name_list_rhaetio_roman = cn_c_valois
+					name_list_germano_roman = cn_c_valois
+				}
+				### TFE EDIT END
 				color = { 15 40 210 }
 			
 
@@ -43717,6 +43760,23 @@ e_france = {
 					
 				}
 				b_coucy = {
+					### TFE EDIT START
+					cultural_names = {
+						name_list_roman = cn_b_coucy
+						name_list_sardino_roman = cn_b_coucy
+						name_list_illyro_roman = cn_b_coucy
+						name_list_hispano_roman = cn_b_coucy
+						name_list_gallo_roman = cn_b_coucy
+						name_list_afro_roman = cn_b_coucy
+						name_list_mauro_roman = cn_b_coucy
+						name_list_britano_roman = cn_b_coucy
+						name_list_helleno_roman = cn_b_coucy
+						name_list_thracio_roman = cn_b_coucy
+						name_list_dacio_roman = cn_b_coucy
+						name_list_rhaetio_roman = cn_b_coucy
+						name_list_germano_roman = cn_b_coucy
+					}
+					### TFE EDIT END
 					province = 2398
 
 					color = { 15 40 210 }
@@ -44046,6 +44106,23 @@ e_france = {
 				}
 			}
 			c_evreux = {
+				### TFE EDIT START
+				cultural_names = {
+					name_list_roman = cn_c_evreux
+					name_list_sardino_roman = cn_c_evreux
+					name_list_illyro_roman = cn_c_evreux
+					name_list_hispano_roman = cn_c_evreux
+					name_list_gallo_roman = cn_c_evreux
+					name_list_afro_roman = cn_c_evreux
+					name_list_mauro_roman = cn_c_evreux
+					name_list_britano_roman = cn_c_evreux
+					name_list_helleno_roman = cn_c_evreux
+					name_list_thracio_roman = cn_c_evreux
+					name_list_dacio_roman = cn_c_evreux
+					name_list_rhaetio_roman = cn_c_evreux
+					name_list_germano_roman = cn_c_evreux
+				}
+				### TFE EDIT END
 				color = { 0 15 130 }
 				
 
@@ -44439,6 +44516,23 @@ e_france = {
 				}
 			}
 			c_guines = {
+				### TFE EDIT START
+				cultural_names = {
+					name_list_roman = cn_c_guines
+					name_list_sardino_roman = cn_c_guines
+					name_list_illyro_roman = cn_c_guines
+					name_list_hispano_roman = cn_c_guines
+					name_list_gallo_roman = cn_c_guines
+					name_list_afro_roman = cn_c_guines
+					name_list_mauro_roman = cn_c_guines
+					name_list_britano_roman = cn_c_guines
+					name_list_helleno_roman = cn_c_guines
+					name_list_thracio_roman = cn_c_guines
+					name_list_dacio_roman = cn_c_guines
+					name_list_rhaetio_roman = cn_c_guines
+					name_list_germano_roman = cn_c_guines
+				}
+				### TFE EDIT END
 				color = { 80 90 170 }
 
 				
@@ -46097,6 +46191,23 @@ e_france = {
 				}
 			}
 			c_embrun = {
+				### TFE EDIT START
+				cultural_names = {
+					name_list_roman = cn_c_embrun
+					name_list_sardino_roman = cn_c_embrun
+					name_list_illyro_roman = cn_c_embrun
+					name_list_hispano_roman = cn_c_embrun
+					name_list_gallo_roman = cn_c_embrun
+					name_list_afro_roman = cn_c_embrun
+					name_list_mauro_roman = cn_c_embrun
+					name_list_britano_roman = cn_c_embrun
+					name_list_helleno_roman = cn_c_embrun
+					name_list_thracio_roman = cn_c_embrun
+					name_list_dacio_roman = cn_c_embrun
+					name_list_rhaetio_roman = cn_c_embrun
+					name_list_germano_roman = cn_c_embrun
+				}
+				### TFE EDIT END
 				color = { 165 20 65 }
 
 				b_embrun = {
@@ -46162,6 +46273,23 @@ e_france = {
 			capital = c_nice # Savoie
 			
 			c_savoie = {
+				### TFE EDIT START
+				cultural_names = {
+					name_list_roman = cn_c_savoie
+					name_list_sardino_roman = cn_c_savoie
+					name_list_illyro_roman = cn_c_savoie
+					name_list_hispano_roman = cn_c_savoie
+					name_list_gallo_roman = cn_c_savoie
+					name_list_afro_roman = cn_c_savoie
+					name_list_mauro_roman = cn_c_savoie
+					name_list_britano_roman = cn_c_savoie
+					name_list_helleno_roman = cn_c_savoie
+					name_list_thracio_roman = cn_c_savoie
+					name_list_dacio_roman = cn_c_savoie
+					name_list_rhaetio_roman = cn_c_savoie
+					name_list_germano_roman = cn_c_savoie
+				}
+				### TFE EDIT END
 				color = { 81 8 14 }
 				
 				
@@ -47217,6 +47345,21 @@ e_spain = {
 					name_list_maghrebi = cn_al_manijah
 					name_list_andalusian = cn_al_manijah
 					name_list_yemeni = cn_al_manijah
+					### TFE EDIT START
+					name_list_roman = cn_c_moura
+					name_list_sardino_roman = cn_c_moura
+					name_list_illyro_roman = cn_c_moura
+					name_list_hispano_roman = cn_c_moura
+					name_list_gallo_roman = cn_c_moura
+					name_list_afro_roman = cn_c_moura
+					name_list_mauro_roman = cn_c_moura
+					name_list_britano_roman = cn_c_moura
+					name_list_helleno_roman = cn_c_moura
+					name_list_thracio_roman = cn_c_moura
+					name_list_dacio_roman = cn_c_moura
+					name_list_rhaetio_roman = cn_c_moura
+					name_list_germano_roman = cn_c_moura
+					### TFE EDIT END
 				}
 
 				b_moura = {
@@ -48300,6 +48443,21 @@ e_spain = {
 					name_list_maghrebi = cn_manurqa
 					name_list_andalusian = cn_manurqa
 					name_list_yemeni = cn_manurqa
+					### TFE EDIT START
+					name_list_roman = cn_c_menorca
+					name_list_sardino_roman = cn_c_menorca
+					name_list_illyro_roman = cn_c_menorca
+					name_list_hispano_roman = cn_c_menorca
+					name_list_gallo_roman = cn_c_menorca
+					name_list_afro_roman = cn_c_menorca
+					name_list_mauro_roman = cn_c_menorca
+					name_list_britano_roman = cn_c_menorca
+					name_list_helleno_roman = cn_c_menorca
+					name_list_thracio_roman = cn_c_menorca
+					name_list_dacio_roman = cn_c_menorca
+					name_list_rhaetio_roman = cn_c_menorca
+					name_list_germano_roman = cn_c_menorca
+					### TFE EDIT END
 				}
 
 				b_menorca = {
@@ -55105,219 +55263,597 @@ e_azania = {
 		name_list_somali = e_ajuraan
 	}
 
+	k_ajuraan = {
+		color = { 225 90 30 }
+		
+		
+		capital = c_mogadishu
+		
+		d_hafun = {
+			color = { 70 170 200 }
+			
+			
+			capital = c_ras_hafun
+			
+			c_ras_hafun = {
+				color = { 73 173 203 }
+				
+			
+				b_ras_hafun = {
+					province = 8432
 
-	k_bale = {
+					color = { 73 173 203 }
+					
+				}
+				b_gardafuul = {
+					province = 8431
+
+					color = { 73 173 203 }
+					
+				}
+				b_jaceyl_bid = {
+					province = 8508
+
+					color = { 73 173 203 }
+					
+				}
+			}
+			c_barbacadle = {
+				color = { 76 176 205 }
+				
+			
+				b_barbacadle = {
+					province = 8509
+
+					color = { 76 176 205 }
+					
+				}
+				b_lower_nugaal = {
+					province = 8506
+
+					color = { 76 176 205 }
+					
+				}
+				b_dhuudo = {
+					province = 8507
+
+					color = { 76 176 205 }
+					
+				}
+			}
+			c_nugaal = {
+				color = { 79 171 209 }
+				
+			
+				b_lower_togdheer = {
+					province = 8504
+
+					color = { 79 171 209 }
+					
+				}
+				b_upper_nugaal = {
+					province = 8505
+
+					color = { 79 171 209 }
+					
+				}
+			}
+			c_mudug = {
+				color = { 78 179 207 }
+				
+			
+				b_mudug-south = {
+					province = 8512
+
+					color = { 78 179 207 }
+					
+				}
+				b_mudug-north = {
+					province = 8513
+
+					color = { 78 179 207 }
+					
+				}
+			}
+		}
+		
+		d_mogadishu = {
+			color = { 230 95 35 }
+			
+			
+			capital = c_mogadishu
+			
+			c_mogadishu = {
+				color = { 241 117 47 }
+				
+			
+				b_mogadishu = {
+					province = 8463
+
+					color = { 241 117 47 }
+					
+				}
+				b_marka = {
+					province = 8461
+
+					color = { 241 117 47 }
+					
+				}
+				b_afgooye = {
+					province = 8462
+
+					color = { 241 117 47 }
+					
+				}
+				b_warsheikh = {
+					province = 8464
+
+					color = { 241 117 47 }
+					
+				}
+				b_jowhaar = {
+					province = 8475
+
+					color = { 241 117 47 }
+					
+				}
+			}
+			c_hobyo = {
+				color = { 232 98 38 }
+				
+			
+				b_hobyo = {
+					province = 8466
+
+					color = { 232 98 38 }
+					
+				}
+				b_galkayo = {
+					province = 8510
+
+					color = { 232 98 38 }
+					
+				}
+				b_hobyo-north = {
+					province = 8511
+
+					color = { 232 98 38 }
+					
+				}
+			}
+			c_mareeg = {
+				color = { 235 101 40 }
+				
+			
+				b_mareeg = {
+					province = 8470
+
+					color = { 235 101 40 }
+					
+				}
+				b_el_dere = {
+					province = 8465
+
+					color = { 235 101 40 }
+					
+				}
+				b_el_buur = {
+					province = 8471
+
+					color = { 235 101 40 }
+					
+				}
+				b_dhusamareb = {
+					province = 8472
+
+					color = { 235 101 40 }
+					
+				}
+			}
+			c_hiraab = {
+				color = { 238 114 43 }
+				
+			
+				b_hiraab = {
+					province = 8469
+
+					color = { 238 114 43 }
+					
+				}
+				b_beletweyne = {
+					province = 8467
+
+					color = { 238 114 43 }
+					
+				}
+				b_shabelle-hiran = {
+					province = 8497
+
+					color = { 238 114 43 }
+					
+				}
+				b_hudur = {
+					province = 8474
+
+					color = { 224 124 55 }
+					
+				}
+			}
+		}
+		
+		d_west_ajuraan = {
+			color = { 220 120 50 }
+			
+			
+			capital = c_jubba
+			
+			c_jubba = {
+				color = { 230 129 61 }
+				
+			
+				b_jubba-ajuraan = {
+					province = 8457
+
+					color = { 230 129 61 }
+					
+				}
+				b_jubba-north = {
+					province = 8491
+
+					color = { 230 129 61 }
+					
+				}
+			}
+			c_baydhabo = {
+				color = { 222 122 53 }
+				
+			
+				b_baydhabo = {
+					province = 8458
+
+					color = { 222 122 53 }
+					
+				}
+				b_buur_heybe = {
+					province = 8476
+
+					color = { 222 122 53 }
+					
+				}
+				b_bug = {
+					province = 8477
+
+					color = { 222 122 53 }
+					
+				}
+				b_wajid = {
+					province = 8496
+
+					color = { 222 122 53 }
+					
+				}
+			}
+			c_qalaafe = {
+				color = { 224 124 55 }
+				
+			
+				b_qalaafe = {
+					province = 8468
+
+					color = { 224 124 55 }
+					
+				}
+				b_reewin = {
+					province = 8495
+
+					color = { 224 124 55 }
+					
+				}
+			}
+			c_jilib = {
+				color = { 227 126 58 }
+				
+			
+				b_jilib = {
+					province = 8473
+
+					color = { 227 126 58 }
+					
+				}
+				b_bardhere = {
+					province = 8459
+
+					color = { 227 126 58 }
+					
+				}
+				b_baraawe = {
+					province = 8460
+
+					color = { 227 126 58 }
+					
+				}
+			}
+			c_luuq = {
+				color = { 233 121 64 }
+				
+			
+				b_luuq = {
+					province = 8455
+
+					color = { 233 121 64 }
+					
+				}
+				b_marehan-north = {
+					province = 8478
+
+					color = { 233 121 64 }
+					
+				}
+				b_marehan-south = {
+					province = 8479
+
+					color = { 233 121 64 }
+					
+				}
+			}
+		}
+	}
+	k_outer_ajuraan = {
 		color = { 32 116 126 }
+		
 
 		capital = c_bali
 
 		d_shabelle = {
 			color = { 36 118 128 }
-
+			
+			
 			capital = c_gode
-
+			
 			c_gode = {
 				color = { 43 122 132 }
-
+				
+			
 				b_gode = {
 					province = 8499
 
 					color = { 43 122 132 }
+					
 				}
 				b_mustahil = {
 					province = 8498
 
 					color = { 43 122 132 }
+					
 				}
 				b_hanan = {
 					province = 8501
 
 					color = { 43 122 132 }
+					
 				}
 			}
 			c_ganale = {
 				color = { 38 120 130 }
-
+				
+			
 				b_ganale = {
 					province = 8492
 
 					color = { 38 120 130 }
+					
 				}
 				b_gestro = {
 					province = 8490
 
 					color = { 38 120 130 }
+					
 				}
 				b_audo = {
 					province = 8493
 
 					color = { 38 120 130 }
+					
 				}
 				b_middle_shebelle = {
 					province = 8494
 
 					color = { 38 120 130 }
+					
 				}
 			}
 			c_gidaya = {
 				color = { 45 124 135 }
-
+				
+			
 				b_gidaya = {
 					province = 8421
 
 					color = { 45 124 135 }
+					
 				}
 				b_shabelle = {
 					province = 8417
 
 					color = { 45 124 135 }
+					
 				}
 				b_gidaya-north = {
 					province = 8422
 
 					color = { 45 124 135 }
+					
 				}
 				b_gidaya-east = {
 					province = 8423
 
 					color = { 45 124 135 }
+					
 				}
 			}
 		}
-
+		
 		d_bali = {
 			color = { 51 131 142 }
-
+			
+			
 			capital = c_sidamo
-
+			
 			c_sidamo = {
 				color = { 57 137 147 }
-
+				
+			
 				b_west_sidamo = {
 					province = 8452
 
 					color = { 57 137 147 }
+					
 				}
 				b_east_sidamo = {
 					province = 8453
 
 					color = { 57 137 147 }
+					
 				}
 				b_lower_dawa = {
 					province = 8454
 
 					color = { 57 137 147 }
+					
 				}
 				b_sidamo-south = {
 					province = 8456
 
 					color = { 57 137 147 }
+					
 				}
 			}
 			c_bali = {
 				color = { 54 134 144 }
-
+				
+			
 				b_dumali = {
 					province = 8383
 
 					color = { 54 134 144 }
+					
 				}
 				b_bali-west = {
 					province = 8382
 
 					color = { 54 134 144 }
+					
 				}
 				b_bali-east = {
 					province = 8418
 
 					color = { 54 134 144 }
+					
 				}
 				b_bali = {
 					province = 8419
 
 					color = { 54 134 144 }
+					
 				}
 			}
 		}
-
+		
 		d_samalo = {
-			color = { 70 170 200 }
-
+			color = { 209 73 44 }
+			
+			
 			capital = c_marsabit
-
+			
 			c_marsabit = {
-				color = { 73 173 203 }
-
-				b_marsabit = {
-					province = 8489
-
-					color = { 73 173 203 }
-				}
+				color = { 219 84 53 }
+				
+			
 				b_lagh_bogal = {
 					province = 8488
 
-					color = { 73 173 203 }
+					color = { 219 84 53 }
+					
+				}
+				b_marsabit = {
+					province = 8489
+
+					color = { 219 84 53 }
+					
 				}
 			}
 			c_fudalhi = {
-				color = { 76 176 205 }
-
+				color = { 211 75 47 }
+				
+			
 				b_fudalhi = {
 					province = 8451
 
-					color = { 76 176 205 }
+					color = { 211 75 47 }
+					
 				}
 				b_upper_kutulo = {
 					province = 8484
 
-					color = { 76 176 205 }
+					color = { 211 75 47 }
+					
 				}
 				b_lak_bor = {
 					province = 8487
 
-					color = { 76 176 205 }
+					color = { 211 75 47 }
+					
 				}
 			}
 			c_el_waak = {
-				color = { 79 171 209 }
-
+				color = { 214 78 49 }
+				
+			
 				b_el_waak = {
 					province = 8480
 
-					color = { 79 171 209 }
+					color = { 214 78 49 }
+					
 				}
 				b_dawa_south = {
 					province = 8483
 
-					color = { 79 171 209 }
+					color = { 214 78 49 }
+					
 				}
 				b_kutulo = {
 					province = 8485
 
-					color = { 79 171 209 }
+					color = { 214 78 49 }
+					
 				}
 			}
 			c_lag_dera = {
-				color = { 78 179 207 }
-
+				color = { 216 81 51 }
+				
+			
 				b_lag_dera = {
 					province = 8481
 
-					color = { 78 179 207 }
+					color = { 216 81 51 }
+					
 				}
 				b_lower_jubba = {
 					province = 8482
 
-					color = { 78 179 207 }
+					color = { 216 81 51 }
+					
 				}
 				b_lower_kutulo = {
 					province = 8486
 
-					color = { 78 179 207 }
+					color = { 216 81 51 }
+					
 				}
 			}
 		}
 	}
+
 	k_zanj = {
 		color = { 252 209 22 }
 
@@ -71230,7 +71766,7 @@ k_vandals = {
 	}
 	d_hasdingi_vandals = {
 		capital = c_tunis
-		color = { 180 140 10 }
+		color = { 180 40 20 }
 		landless = yes
 	
 		definite_form = yes
@@ -71436,7 +71972,7 @@ d_skalvia = {
 	definite_form = yes
 }
 k_rugiland = {
-	capital = c_amstetten
+	capital = c_vienna
 	color = { 200 70 0 }
 
 	landless = yes
@@ -71444,7 +71980,7 @@ k_rugiland = {
 
 	d_rugians = {
 
-		capital = c_amstetten
+		capital = c_vienna
 		color = { 50 90 150 }
 		landless = yes
 	
@@ -72462,6 +72998,18 @@ e_west_slavia = { # West Slavia empire title, from vanilla
 					color = { 127 30 2 }
 					
 				}
+				b_garwolin = {
+					province = 4939
+
+					color = { 150 40 25 }
+					
+				}
+				b_liw = {
+					province = 4937
+
+					color = { 150 40 25 }
+					
+				}
 			}
 		}
 		
@@ -72853,24 +73401,6 @@ e_west_slavia = { # West Slavia empire title, from vanilla
 					color = { 150 40 25 }
 					
 				}
-				b_liw = {
-					province = 4937
-
-					color = { 150 40 25 }
-					
-				}
-				b_brodno = {
-					province = 4938
-
-					color = { 150 40 25 }
-					
-				}
-				b_garwolin = {
-					province = 4939
-
-					color = { 150 40 25 }
-					
-				}
 			}
 			c_gostyninska = {
 				color = { 137 30 18 }
@@ -72979,6 +73509,12 @@ e_west_slavia = { # West Slavia empire title, from vanilla
 					province = 4949
 
 					color = { 122 6 50 }
+					
+				}
+				b_brodno = {
+					province = 4938
+
+					color = { 150 40 25 }
 					
 				}
 			}
