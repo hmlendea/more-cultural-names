@@ -1,75 +1,132 @@
 #!/bin/bash
 
-if [ ! -f "/usr/bin/jq" ]; then
-    echo "Missing 'jq'! Please make sure it's present on the system in order to use this script!"
+set -euo pipefail
+
+if ! command -v jq >/dev/null 2>&1; then
+    echo "[ERROR] Missing 'jq'. Please make sure it is installed in order to use this script." >&2
     exit 1
 fi
 
 source "scripts/common/name_normalisation.sh"
 
-EXONYMSAPI_URL="https://api.nucilandia.ro/exonyms/Exonyms"
-GEONAMES_API_URL="http://api.geonames.org"
+EXONYMSAPI_URL="https://exonyms.nucilandia.ro"
+GEONAMES_API_URL="https://secure.geonames.org"
+GEONAMES_USERNAME="geonamesfreeaccountt"
 WIKIDATA_API_URL="https://www.wikidata.org"
 
 GEONAMES_ENABLED=false
 WIKIDATA_ENABLED=false
 
-while true; do
-    if [ "${1}" == "--geonamesid" ] || \
-       [ "${1}" == "--geonames" ] || \
-       [ "${1}" == "--gnid" ] || \
-       [ "${1}" == "--gn" ]; then
+while [[ $# -gt 0 ]]; do
+    if [[ "${1}" == "--geonamesid" ]] || \
+       [[ "${1}" == "--geonames" ]] || \
+       [[ "${1}" == "--gnid" ]] || \
+       [[ "${1}" == "--gn" ]]; then
         GEONAMES_ENABLED=true && shift
+
+        if [[ $# -lt 1 ]]; then
+            echo "[ERROR] Missing value for the '--geonamesid' argument." >&2
+            exit 1
+        fi
+
         GEONAMES_ID="${1}" && shift
-    elif [ "${1}" == "--wikidataid" ] || \
-         [ "${1}" == "--wikidata" ] || \
-         [ "${1}" == "--wdid" ] || \
-         [ "${1}" == "--wd" ]; then
+    elif [[ "${1}" == "--wikidataid" ]] || \
+         [[ "${1}" == "--wikidata" ]] || \
+         [[ "${1}" == "--wdid" ]] || \
+         [[ "${1}" == "--wd" ]]; then
         WIKIDATA_ENABLED=true && shift
+
+        if [[ $# -lt 1 ]]; then
+            echo "[ERROR] Missing value for the '--wikidataid' argument." >&2
+            exit 1
+        fi
+
         WIKIDATA_ID="${1}" && shift
     else
-        break
+        echo "[ERROR] Unknown argument: ${1}" >&2
+        exit 1
     fi
 done
+
+if ! ${GEONAMES_ENABLED} && ! ${WIKIDATA_ENABLED}; then
+    echo "[ERROR] At least one of --geonamesid or --wikidataid must be provided." >&2
+    exit 1
+fi
 
 if ! ${GEONAMES_ENABLED} && ${WIKIDATA_ENABLED}; then
     WIKIDATA_ENDPOINT="${WIKIDATA_API_URL}/wiki/Special:EntityData/${WIKIDATA_ID}.json"
     echo "Fetching ${WIKIDATA_ENDPOINT}..."
     WIKIDATA_DATA=$(curl -s "${WIKIDATA_ENDPOINT}")
 
-    WIKIDATA_GEONAMES_IDS_COUNT=$(jq '.entities.'"${WIKIDATA_ID}"'.claims.P1566' <<< "${WIKIDATA_DATA}" | grep -c "external-id")
+    if ! jq -e '.entities' >/dev/null 2>&1 <<< "${WIKIDATA_DATA}"; then
+        echo "[ERROR] Failed to retrieve the WikiData entity '${WIKIDATA_ID}'." >&2
+        exit 1
+    fi
 
-    if [ "${WIKIDATA_GEONAMES_IDS_COUNT}" == "1" ]; then
+    WIKIDATA_GEONAMES_IDS_COUNT=$(jq -r \
+        ".entities[\"${WIKIDATA_ID}\"].claims.P1566 // [] | map(select(.mainsnak.datavalue.value != null)) | length" \
+        <<< "${WIKIDATA_DATA}")
+
+    if [[ "${WIKIDATA_GEONAMES_IDS_COUNT}" == "1" ]]; then
         GEONAMES_ENABLED=true
         GEONAMES_ID=$(jq '.entities.'"${WIKIDATA_ID}"'.claims.P1566[0].mainsnak.datavalue.value' <<< "${WIKIDATA_DATA}" | sed 's/\"//g')
     else
         GEONAMES_SEARCH_ENDPOINT="${GEONAMES_API_URL}/searchJSON?username=${GEONAMES_USERNAME}&q=${WIKIDATA_ID}"
         echo "Fetching ${GEONAMES_SEARCH_ENDPOINT}..."
         GEONAMES_SEARCH_RESPONSE=$(curl -s "${GEONAMES_SEARCH_ENDPOINT}")
-        GEONAMES_SEARCH_RESULTS_COUNT=$(jq '.totalResultsCount' <<< "${GEONAMES_SEARCH_RESPONSE}")
+        GEONAMES_SEARCH_RESULTS_COUNT=$(jq -r '.totalResultsCount // 0' <<< "${GEONAMES_SEARCH_RESPONSE}" 2>/dev/null)
+        GEONAMES_SEARCH_RESULTS_COUNT=${GEONAMES_SEARCH_RESULTS_COUNT:-0}
 
-        if [ "${GEONAMES_SEARCH_RESULTS_COUNT}" == "1" ]; then
+        if [[ "${GEONAMES_SEARCH_RESULTS_COUNT}" == "1" ]]; then
             GEONAMES_ENABLED=true
             GEONAMES_ID=$(jq '.geonames[0].geonameId' <<< "${GEONAMES_SEARCH_RESPONSE}")
         fi
     fi
 fi
 
-EXONYMSAPI_ENDPOINT="${EXONYMSAPI_URL}?geoNamesId=${GEONAMES_ID}&wikiDataId=${WIKIDATA_ID}"
+EXONYMSAPI_QUERY=""
+
+if [[ -n "${GEONAMES_ID:-}" ]] && [[ "${GEONAMES_ID}" != "null" ]]; then
+    EXONYMSAPI_QUERY="geoNamesId=${GEONAMES_ID}"
+fi
+
+if [[ -n "${WIKIDATA_ID:-}" ]]; then
+    [[ -n "${EXONYMSAPI_QUERY}" ]] && EXONYMSAPI_QUERY+="&"
+    EXONYMSAPI_QUERY+="wikiDataId=${WIKIDATA_ID}"
+fi
+
+EXONYMSAPI_ENDPOINT="${EXONYMSAPI_URL}/Exonyms"
+
+if [[ -n "${EXONYMSAPI_QUERY}" ]]; then
+    EXONYMSAPI_ENDPOINT+="?${EXONYMSAPI_QUERY}"
+fi
 
 echo "Fetching ${EXONYMSAPI_ENDPOINT}..."
 EXONYMSAPI_RESPONSE=$(curl -s "${EXONYMSAPI_ENDPOINT}")
 
-MAIN_DEFAULT_NAME=$(echo "${EXONYMSAPI_RESPONSE}" | jq -r '.defaultName')
+if ! jq -e '.success == true' >/dev/null 2>&1 <<< "${EXONYMSAPI_RESPONSE}"; then
+    EXONYMSAPI_ERROR_MESSAGE=$(jq -r '.message // empty' <<< "${EXONYMSAPI_RESPONSE}" 2>/dev/null)
+    echo "[ERROR] Failed to gather the exonyms: ${EXONYMSAPI_ERROR_MESSAGE:-Unexpected response from the Exonyms API.}" >&2
+    exit 1
+fi
+
+MAIN_DEFAULT_NAME=$(jq -r '.defaultName // empty' <<< "${EXONYMSAPI_RESPONSE}")
+
+if [[ -z "${MAIN_DEFAULT_NAME}" ]]; then
+    echo "[ERROR] The Exonyms API did not return a default name." >&2
+    exit 1
+fi
 
 function get-name-for-language() {
     local LANGUAGE_CODE="${1}"
     local NAME=""
 
-    LANGUAGE_CODE=$(echo "${LANGUAGE_CODE}" | sed -E 's/([^\.]+)/"\1"/g; s/\./\./g')
-    NAME=$(echo "${EXONYMSAPI_RESPONSE}" | jq -r '.names.'"${LANGUAGE_CODE}"'.value')
+    NAME=$(jq -r \
+        --arg languageCode "${LANGUAGE_CODE}" \
+        '(.names // {})[$languageCode].value // empty' \
+        <<< "${EXONYMSAPI_RESPONSE}")
 
-    [ "${NAME}" == "null" ] && return
+    [[ -z "${NAME}" ]] && return
 
     echo "${NAME}"
 }
@@ -81,7 +138,7 @@ function get-name-line() {
 
     NAME=$(get-name-for-language "${LANGUAGE_CODE}")
 
-    [ -n "${NAME}" ] && echo "      <Name language=\"${LANGUAGE_MCN_ID}\" value=\"${NAME}\" />"
+    [[ -n "${NAME}" ]] && echo "      <Name language=\"${LANGUAGE_MCN_ID}\" value=\"${NAME}\" />"
 }
 
 function get-name-line-2codes() {
@@ -92,15 +149,13 @@ function get-name-line-2codes() {
     local LANGUAGE1_NAME=$(get-name-for-language "${LANGUAGE1_CODE}")
     local LANGUAGE2_NAME=""
 
-    if [ -n "${LANGUAGE1_NAME}" ]; then
+    if [[ -n "${LANGUAGE1_NAME}" ]]; then
         get-name-line "${LANGUAGE_MCN_ID}" "${LANGUAGE1_CODE}"
+    elif [[ "${LANGUAGE1_CODE}" == "grc" ]]; then
+        LANGUAGE2_NAME=$(get-name-for-language "${LANGUAGE2_CODE}")
+        [[ -n "${LANGUAGE2_NAME}" ]] && echo "      <Name language=\"${LANGUAGE_MCN_ID}\" value=\"${LANGUAGE2_NAME}\" />"
     else
-        if [ "${LANGUAGE1_CODE}" == "grc" ]; then
-            LANGUAGE2_NAME=$(get-name-for-language "${LANGUAGE2_CODE}")
-            [ -n "${LANGUAGE2_NAME}" ] && echo "      <Name language=\"${LANGUAGE_MCN_ID}\" value=\"${LANGUAGE2_NAME}\" />"
-        else
-            get-name-line "${LANGUAGE_MCN_ID}" "${LANGUAGE2_CODE}"
-        fi
+        get-name-line "${LANGUAGE_MCN_ID}" "${LANGUAGE2_CODE}"
     fi
 }
 
@@ -113,10 +168,10 @@ function get-name-line-2variants() {
     local LANGUAGE1_NAME=""
     local LANGUAGE2_NAME=""
 
-    LANGUAGE1_NAME=$(get-name-for-language "${LANGUAGE1_MCN_ID}" "${LANGUAGE1_CODE}")
-    LANGUAGE2_NAME=$(get-name-for-language "${LANGUAGE2_MCN_ID}" "${LANGUAGE2_CODE}")
+    LANGUAGE1_NAME=$(get-name-for-language "${LANGUAGE1_CODE}")
+    LANGUAGE2_NAME=$(get-name-for-language "${LANGUAGE2_CODE}")
 
-    if [ -n "${LANGUAGE1_NAME}" ] && [ "${LANGUAGE2_NAME}" != "${LANGUAGE1_NAME}" ]; then
+    if [[ -n "${LANGUAGE1_NAME}" ]] && [[ "${LANGUAGE2_NAME}" != "${LANGUAGE1_NAME}" ]]; then
         get-name-line "${LANGUAGE1_MCN_ID}" "${LANGUAGE1_CODE}"
     fi
 
@@ -125,14 +180,14 @@ function get-name-line-2variants() {
 
 function get_number_of_child_processes() {
     local PID=$$
-    local PROCESSES_COUNT=$(ps -eo ppid | grep -w "${PID}" | wc -l)
+    local PROCESSES_COUNT=$(ps -eo ppid | grep -w "${PID}" | wc -l || true)
 
     echo $((PROCESSES_COUNT-1))
 }
 
 function get_name_lines_in_parallel() {
-    if [ "$(( $# % 2))" -ne 0 ]; then
-        echo "ERROR: Invalid arguments (count: $#) for set_launcher_entries: ${*}" >&2
+    if [[ $(( $# % 2 )) -ne 0 ]]; then
+        echo "[ERROR] Invalid arguments (count: $#) for get_name_lines_in_parallel: ${*}" >&2
         exit 1
     fi
 
@@ -140,7 +195,7 @@ function get_name_lines_in_parallel() {
     local GROUP_SIZE=6
     local I=0
 
-    if [ -f "/usr/bin/nproc" ]; then
+    if command -v nproc >/dev/null 2>&1; then
         GROUP_SIZE=$(nproc)
         GROUP_SIZE=$((GROUP_SIZE*2-2))
     fi
@@ -149,14 +204,14 @@ function get_name_lines_in_parallel() {
         local LANGUAGE_ID="${1}" && shift
         local LANGUAGE_CODE="${1}" && shift
 
-        while [ "$(get_number_of_child_processes)" -ge "${GROUP_SIZE}" ]; do
+        while [[ "$(get_number_of_child_processes)" -ge "${GROUP_SIZE}" ]]; do
             sleep 0.1
         done
 
         get-name-line "${LANGUAGE_ID}" "${LANGUAGE_CODE}" &
     done
 
-    wait
+    wait || true
 }
 
 function get-name-lines() {
@@ -436,12 +491,12 @@ function get-name-lines() {
     get-name-line-2variants "Bosnian" "bs" "SerboCroatian" "sh" &
     get-name-line-2variants "Chinese" "zh-hans" "Chinese" "zh" &
     get-name-line-2variants "Croatian" "hr" "SerboCroatian" "sh" &
-    get-name-line-2variants "Kurdish" "ku" "Kurdish" "ckd" &
+    get-name-line-2variants "Kurdish_Central" "ckb" "Kurdish" "ku" &
     get-name-line-2variants "Norwegian_Nynorsk" "nn" "Norwegian" "nb" &
     get-name-line-2variants "Portuguese_Brazilian" "pt-br" "Portuguese" "pt" &
     get-name-line-2variants "Serbian" "sr-el" "SerboCroatian" "sh" &
     get-name-line-2variants "Serbian" "sr" "SerboCroatian" "sh" &
-    wait
+    wait || true
 }
 
 function get-location-entry() {
