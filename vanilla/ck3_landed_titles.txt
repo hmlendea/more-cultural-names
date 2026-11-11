@@ -42,10 +42,11 @@ h_dar_al_islam = {
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
-	
+
 	capital = c_mecca
 
 	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
 		has_global_variable = created_dar_al_islam
 	}
 	can_destroy = {
@@ -70,11 +71,21 @@ k_papal_state = {
 	ruler_uses_title_name = no
 	can_use_nomadic_naming = no
 	landless = yes
+	allow_domicile = no
+
+	disable_regnal_numbers = never
 
 	capital = c_roma
 
 	ai_primary_priority = {
 		add = @always_primary_score
+	}
+
+	can_destroy = {
+		custom_tooltip = {
+			text = the_christian_church.tt.forbid_title_destruction
+			NOT = { exists = situation:the_christian_church }
+		}
 	}
 
 	destroy_if_invalid_heir = yes
@@ -83,11 +94,22 @@ k_papal_state = {
 	de_jure_drift_disabled = yes
 	can_use_nomadic_naming = no
 
-	holding_regnal_male_names = { Alexander Anastasius Benedictus Caelestinus Callistus Clemens Eugenius Leo Gregorius Hadrianus Honorius Innocentius Ioannes Lucius Marinus Martinus Nicolaus Sergius Silvester Stephanus Urbanus Victor }
+	ignore_titularity_for_title_weighting = yes
+
+	holding_regnal_male_names = {
+		Alexander_regnal Anastasius_regnal Benedictus_regnal Bonifatius_regnal Caelestinus Callistus_regnal Clemens_regnal Eugenius_regnal Leo_regnal Gregorius_regnal
+		Hadrianus_regnal Honorius_regnal Innocentius Ioannes_regnal Lucius_regnal Marinus_regnal Martinus_regnal Nicolaus Sergius_regnal Silvester_regnal
+		Stephanus_regnal Urbanus_regnal Victor_regnal
+	}
+	holding_regnal_female_names = {
+		Alexandra Anastasia Benedicta Caelestina Clementia Eugenia Gregoria Honoria
+		Innocentia Ioanna Lucia Stephania Theodora Urbana Veronica Victoria
+	}
 }
 
 k_orthodox = {
 	landless = yes
+	allow_domicile = no
 	capital = c_byzantion # Constantinople
 	definite_form = yes
 	ruler_uses_title_name = no
@@ -119,6 +141,7 @@ k_fashion = { # Kingdom of Fashion from Establish a New Fashion at Court decisio
 
 d_iconoclast = {
 	landless = yes
+	allow_domicile = no
 	color = { 153 50 125 }
 	definite_form = yes
 	ruler_uses_title_name = no
@@ -136,8 +159,9 @@ d_patriarchate_in_the_east = {
 	definite_form = yes
 	ruler_uses_title_name = no
 	landless = yes
+	allow_domicile = no
 
-	capital = c_antiocheia
+	capital = c_baghdad
 
 	ai_primary_priority = {
 		add = @always_primary_score
@@ -154,6 +178,7 @@ d_coptic_papacy = {
 	definite_form = yes
 	ruler_uses_title_name = no
 	landless = yes
+	allow_domicile = no
 
 	capital = c_alexandria
 
@@ -172,6 +197,7 @@ d_apostolic_church = {
 	definite_form = yes
 	ruler_uses_title_name = no
 	landless = yes
+	allow_domicile = no
 
 	capital = c_hayk	#Etchmiadzin
 
@@ -190,6 +216,7 @@ d_conversos = {
 	definite_form = yes
 	ruler_uses_title_name = no
 	landless = yes
+	allow_domicile = no
 
 	capital = c_jerusalem
 
@@ -271,7 +298,7 @@ d_sunni = {
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
-	
+
 	capital = c_baghdad
 
 	can_destroy = {
@@ -291,7 +318,7 @@ d_shiite = {
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
-	
+
 	capital = c_cairo
 }
 
@@ -334,7 +361,7 @@ d_nizari = {
 		add = @always_primary_score
 	}
 
-	capital = c_qazwin #Alamut 
+	capital = c_qazwin #Alamut
 }
 
 d_zayidi = {
@@ -347,7 +374,7 @@ d_zayidi = {
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
 
-	capital = c_qazwin #Alamut 
+	capital = c_qazwin #Alamut
 }
 
 d_masmudi = {
@@ -370,7 +397,7 @@ d_muwalladi = {
 	destroy_if_invalid_heir = yes
 	can_be_named_after_dynasty = no
 	can_use_nomadic_naming = no
-	
+
 	capital = c_toledo
 }
 
@@ -505,7 +532,7 @@ e_great_yuan = {
 	can_use_nomadic_naming = no
 
 	definite_form = yes
-	
+
 	capital = c_youzhou
 
 	can_create = {
@@ -609,7 +636,15 @@ e_great_liao = { #aka Great Liao / Liao dynasty
 	can_use_nomadic_naming = no
 
 	capital = c_LIAO_linhuang
-	#Liao dynasty's capital is offmap, so this capital setup is just here mechanically
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				culture = { has_cultural_pillar = language_khitan }
+			}
+			add = @always_primary_score
+		}
+	}
 
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
@@ -905,28 +940,77 @@ k_toledo = {
 	}
 }
 
-# HOLY ORDERS
+# Military Orders
 
 d_knights_templar = {
 	color = { 230 230 230 }
 
 	capital = c_jerusalem
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_teutonic_order = {
-
 	color = { 50 50 50 }
 
 	capital = c_malbork
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
-d_knights_hospitaler = {
+d_knights_hospitaller = {
 
 	color = { 180 180 180 }
 
 	capital = c_jerusalem
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_knights_of_st_lazarus = {
+	color = { 40 125 21 }
+
+	capital = c_jerusalem
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_sword_brethren = {
+	color = { 135 16 54 }
+
+	capital = c_livs
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_knights_of_the_tau = {
+	color = { 66 66 66 }
+
+	capital = c_lucca
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_knights_of_the_holy_sepulchre = {
+	color = { 194 47 37 }
+
+	capital = c_jerusalem
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_hashshashin = {
@@ -934,6 +1018,10 @@ d_hashshashin = {
 	color = { 100 100 0 }
 
 	capital = c_shayzar
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 
 }
 
@@ -943,6 +1031,10 @@ d_bektashi = {
 
 	capital = c_kufa
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+
 }
 
 d_haruriyyah = {
@@ -950,6 +1042,10 @@ d_haruriyyah = {
 	color = { 150 200 80 }
 
 	capital = c_kufa
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 
 }
 
@@ -959,6 +1055,9 @@ d_jomsvikings = {
 
 	capital = c_kolobrzeg
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_immortals = {
@@ -967,6 +1066,9 @@ d_immortals = {
 
 	capital = c_kufa
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_zealots = {
@@ -975,6 +1077,9 @@ d_zealots = {
 
 	capital = c_jerusalem
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_holy_sepulchre = {
@@ -983,14 +1088,42 @@ d_holy_sepulchre = {
 
 	capital = c_jerusalem
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_knights_of_the_first_patriarchate = {
+
+	color = { 252 206 35 }
+
+	capital = c_antiocheia
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_order_of_the_holy_virgin = {
+
+	color = { 252 206 35 }
+
+	capital = c_antiocheia
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_saint_anthony = {
 
-	color = { 180 165 70 }
+	color = { 23 71 122 }
 
 	capital = c_tigre
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_saint_addai = {
@@ -999,6 +1132,20 @@ d_saint_addai = {
 
 	capital = c_edessa
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_saint_patrick = {
+
+	color = { 29 138 49 }
+
+	capital = c_oriel
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_sky_lords = {
@@ -1007,6 +1154,9 @@ d_sky_lords = {
 
 	capital = c_karakorum
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_spirit_guardians = {
@@ -1015,6 +1165,9 @@ d_spirit_guardians = {
 
 	capital = c_jenne
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_warriors_perun = {
@@ -1023,6 +1176,9 @@ d_warriors_perun = {
 
 	capital = c_kiev
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_chosen_perkunas = {
@@ -1030,6 +1186,9 @@ d_chosen_perkunas = {
 	color = { 200 45 45 }
 
 	capital = c_zemigalians
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_sons_kaleva = {
@@ -1038,6 +1197,9 @@ d_sons_kaleva = {
 
 	capital = c_kakisalmi
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_huitzilopochtli = {
@@ -1046,14 +1208,31 @@ d_huitzilopochtli = {
 
 	capital = c_roma
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_knights_santiago = {
 
 	color = { 255 130 0 }
 
-	capital = c_santiago
+	capital = c_merida
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_knights_alcantara = {
+
+	color = { 66 194 81 }
+
+	capital = c_caceres
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_knights_calatrava = {
@@ -1062,6 +1241,42 @@ d_knights_calatrava = {
 
 	capital = c_calatrava
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_knights_aviz = {
+
+	color = { 39 156 60 }
+
+	capital = c_alcacer_do_sal
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_knights_of_st_thomas = {
+
+	color = { 219 94 90 }
+
+	capital = c_acre
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_knights_of_the_red_star = {
+
+	color = { 135 32 28 }
+
+	capital = c_praha
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_followers_arjuna = {
@@ -1069,6 +1284,9 @@ d_followers_arjuna = {
 
 	capital = c_varanasi
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_ashokas_chosen = {
@@ -1076,6 +1294,9 @@ d_ashokas_chosen = {
 
 	capital = c_magadha
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_bulls_rishabha = {
@@ -1083,6 +1304,9 @@ d_bulls_rishabha = {
 
 	capital = c_kongu
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
 d_zun_warriors = {
@@ -1091,8 +1315,727 @@ d_zun_warriors = {
 
 	capital = c_kabul
 
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
 }
 
+d_safavid_order = {
+
+	color = { 121 232 242 }
+
+	capital = c_gilan
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+# Monastic Orders
+
+d_benedictine_order = {
+	color = { 20 74 222 }
+
+	capital = c_capua
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_cluniacs = {
+	color = { 245 231 37 }
+
+	capital = c_macon
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_camaldolese = {
+	color = { 76 102 199 }
+
+	capital = c_casentino
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_cistercians = {
+	color = { 10 72 196 }
+
+	capital = c_chalon
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_columban_benedictines = {
+	color = { 255 231 163 }
+
+	capital = c_sankt_gallen
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_pastoral_benedictines = {
+	color = { 181 170 132 }
+
+	capital = c_hertfordshire
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_eremetic_benedictines = {
+	color = { 250 245 92 }
+
+	capital = c_burgos
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_anianian_benedictines = {
+	color = { 210 173 237 }
+
+	capital = c_beziers
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_st_denis_benedictines = {
+	color = { 46 102 255 }
+
+	capital = c_ile_de_france
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_maurian_benedictines = {
+	color = { 5 117 46 }
+
+	capital = c_baden
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_gallic_benedictines = {
+	color = { 135 0 79 }
+
+	capital = c_roma
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_latin_benedictines = {
+	color = { 145 144 145 }
+
+	capital = c_modena
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_corbine_benedictines = {
+	color = { 166 222 216 }
+
+	capital = c_amiens
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+
+d_ulaid_monasteries = {
+	color = { 129 212 172 }
+
+	capital = c_oriel
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_gaelic_columbans = {
+	color = { 74 194 150 }
+
+	capital = c_ulster
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_brythonic_abbeys = {
+	color = { 177 230 103 }
+
+	capital = c_pembrokeshire
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_akritai_of_the_passes = {
+	color = { 160 109 168 }
+
+	capital = c_lycandus
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_fleurians = {
+	color = { 131 204 164 }
+
+	capital = c_orleans
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+
+d_imperial_canonesses = {
+	color = { 150 150 149 }
+
+	capital = c_frankfurt
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_vallombrosans = {
+	color = { 240 43 89 }
+
+	capital = c_arezzo
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_premonstratensians = {
+	color = { 255 253 115 }
+
+	capital = c_vermandois
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_carthusians = {
+	color = { 207 165 207 }
+
+	capital = c_viennois
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_tironensians = {
+	color = { 50 87 60 }
+
+	capital = c_angus
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_fontevraud_order = {
+	color = { 164 223 224 }
+
+	capital = c_poitiers
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_augustinian_canons = {
+	color = { 249 250 220 }
+
+	capital = c_somerset
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_sankt_gallen_benedictines = {
+	color = { 215 204 235 }
+
+	capital = c_sankt_gallen
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_ottonian_benedictines = {
+	color = { 237 123 66 }
+
+	capital = c_worms
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_guntherian_benedictines = {
+	color = { 219 202 123 }
+
+	capital = c_passau
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_hirsau_benedictines = {
+	color = { 212 182 188 }
+
+	capital = c_baden
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_princely_benedictines = {
+	color = { 168 168 168 }
+
+	capital = c_hildesheim
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_ripollese_benedictines = {
+	color = { 234 247 134 }
+
+	capital = c_barcelona
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_iberian_cluniacs = {
+	color = { 242 176 78 }
+
+	capital = c_burgos
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_gurloesian_benedictines = {
+	color = { 31 90 191 }
+
+	capital = c_cornouaille
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_ugo_benedictines = {
+	color = { 163 68 189 }
+
+	capital = c_roma
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_glagolitic_benedictines = {
+	color = { 82 179 140 }
+
+	capital = c_cetina
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_martinian_benedictines = {
+	color = { 207 120 141 }
+
+	capital = c_veszprem
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_eastern_cluniacs = {
+	color = { 207 162 120 }
+
+	capital = c_cieszyn
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_edgaric_benedictines = {
+	color = { 214 178 92 }
+
+	capital = c_somerset
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_norman_benedictines = {
+	color = { 250 50 5 }
+
+	capital = c_hertfordshire
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_norman_cistercians = {
+	color = { 81 111 245 }
+
+	capital = c_west_riding
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_baltic_cistercians = {
+	color = { 35 31 140 }
+
+	capital = c_narke
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_iberian_cistercians = {
+	color = { 162 214 235 }
+
+	capital = c_coimbra
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_eastern_cistercians = {
+	color = { 48 114 194 }
+
+	capital = c_vogtland
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_midlands_monasteries = {
+	color = { 107 184 90 }
+
+	capital = c_athlone
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_gaelic_abbeys = {
+	color = { 17 189 186 }
+
+	capital = c_inner_hebrides
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_carmelites = {
+	color = { 17 189 186 }
+
+	capital = c_tiberias
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_franciscans = {
+	color = { 122 100 17 }
+
+	capital = c_spoleto
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_dominicans = {
+	color = { 204 0 0 }
+
+	capital = c_toulouse
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_poor_clares = {
+	color = { 122 100 17 }
+
+	capital = c_spoleto
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_studites = {
+	color = { 148 32 146 }
+
+	capital = c_brysis
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_athonite_hermits = {
+	color = { 94 68 36 }
+
+	capital = c_chalkidike
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_bithynians = {
+	color = { 66 150 87 }
+
+	capital = c_prusa
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_latros_hesychasts = {
+	color = { 133 104 173 }
+
+	capital = c_ionia
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_sumelan_monks = {
+	color = { 209 178 62 }
+
+	capital = c_trebizond
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_georgian_monasteries = {
+	color = { 175 42 42 }
+
+	capital = c_kakheti
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_evergetine_cenobites = {
+	color = { 65 105 170 }
+
+	capital = c_brysis
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_klimentine_monasteries = {
+	color = { 116 173 106 }
+
+	capital = c_ohrid
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_kyivan_studites = {
+	color = { 182 142 60 }
+
+	capital = c_kiev
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_yurievs = {
+	color = { 84 130 178 }
+
+	capital = c_novgorod
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_boeotians = {
+	color = { 190 84 118 }
+
+	capital = c_boeotia
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_euphrosynians = {
+	color = { 158 194 224 }
+
+	capital = c_polotsk
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_sisters_of_the_nativity = {
+	color = { 205 155 180 }
+
+	capital = c_vladimir
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_bahitawi = {
+	color = { 226 184 66 }
+
+	capital = c_serae
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_desert_fathers = {
+	color = { 194 154 108 }
+
+	capital = c_alexandria
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_monks_of_hayk = {
+	color = { 146 44 56 }
+
+	capital = c_hayk
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_eastern_vardapets = {
+	color = { 96 64 124 }
+
+	capital = c_hayk
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_sons_of_the_covenant = {
+	color = { 76 126 102 }
+
+	capital = c_ninive
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_rightful_dayroye = {
+	color = { 118 70 132 }
+
+	capital = c_nasibin
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_community_of_st_catherine = {
+	color = { 126 92 58 }
+
+	capital = c_sinai
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_ghazis_of_al_thugur = {
+	color = { 212 214 217 }
+
+	capital = c_cilicia
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_ghazis_of_dar_al_harb = {
+	color = { 212 214 217 }
+
+	capital = c_melitene
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_ghazis_of_al_andalus = {
+	color = { 242 225 126 }
+
+	capital = c_sevilla
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_ghazis_of_sharq_al_andalus = {
+	color = { 137 212 127 }
+
+	capital = c_valencia
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_ghazis_of_gharb_al_andalus = {
+	color = { 219 152 86 }
+
+	capital = c_badajoz
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_turkic_ghazis = {
+	color = { 82 227 203 }
+
+	capital = c_maragha
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
+d_bahr_al_maghrib_raiders = {
+	color = { 137 111 222 }
+
+	capital = c_tunis
+
+	definite_form = yes
+	landless = yes
+	no_automatic_claims = yes
+}
 
 # TITULAR EMPIRES
 
@@ -1187,8 +2130,8 @@ e_carthage = {
 	color = { 45 0 11 }
 	definite_form = yes
 	can_be_named_after_dynasty = no
-	
-	capital = c_tunis #Tunis 
+
+	capital = c_tunis #Tunis
 
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
@@ -1204,7 +2147,7 @@ k_pechenegs = {
 }
 
 
-# Carthage 
+# Carthage
 k_carthage = {
 	color = { 0 33 60 }
 
@@ -1339,12 +2282,6 @@ e_britannia = {
 	color = { 172 22 22 }
 
 	capital = c_middlesex
-
-	cultural_names = {
-		name_list_pictish = cn_pictavia
-		name_list_irish = cn_alba
-		name_list_gaelic = cn_alba
-	}
 
 	can_create = {
 		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
@@ -4543,7 +5480,7 @@ e_britannia = {
 
 		d_cumbria = {
 			color = { 220 130 75 }
-			
+
 			capital = c_cumberland # Cumberland
 		}
 	}
@@ -7510,14 +8447,13 @@ e_germany = {
 			}
 			c_sankt_gallen = {
 				color = { 230 205 205 }
-
-				b_sankt_gallen = {
-					province = 2053
+				b_konstanz = {
+					province = 2054
 
 					color = { 230 205 205 }
 				}
-				b_konstanz = {
-					province = 2054
+				b_sankt_gallen = {
+					province = 2053
 
 					color = { 230 205 205 }
 				}
@@ -7768,6 +8704,11 @@ e_germany = {
 			c_furstenberg = {
 				color = { 208 198 198 }
 
+				b_nellenburg = {
+					province = 2762
+
+					color = { 208 198 198 }
+				}
 				b_furstenberg = {
 					province = 2757
 
@@ -7780,11 +8721,6 @@ e_germany = {
 				}
 				b_clettgau = {
 					province = 2760
-
-					color = { 208 198 198 }
-				}
-				b_nellenburg = {
-					province = 2762
 
 					color = { 208 198 198 }
 				}
@@ -8005,36 +8941,61 @@ e_illyria = {
 	color = { 180 35 0 }
 
 	capital = c_szerem
+
+	# Dynamic empire titles (Found a New Empire) use the same rule via found_empire_decision is_valid.
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_macedonia = {
 	color = hsv{ 0.65 0.65 0.73 } # For good ol' times sake
 
 	capital = c_thessalonika
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_anatolia = {
 	color = { 180 60 40 }
 
 	capital = c_nikaea
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_oriens = {
 	color = { 140 120 75 }
 
 	capital = c_antiocheia
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_aegyptus = {
 	color = { 20 240 80 }
 
 	capital = c_alexandria
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_africa = {
 	color = { 65 100 170 }
 
 	capital = c_tunis
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 }
 
 e_byzantium = {
@@ -8051,7 +9012,7 @@ e_byzantium = {
 			NOT = {
 				any_held_title = {
 					this = title:e_latin_empire
-				} 
+				}
 			}
 		}
 	}
@@ -8137,7 +9098,7 @@ e_byzantium = {
 							has_cultural_pillar = heritage_byzantine
 							has_cultural_pillar = heritage_caucasian
 						}
-					} 
+					}
 				}
 				add = @better_than_the_alternatives_score
 			}
@@ -9299,7 +10260,7 @@ e_byzantium = {
 				#roman = "Spalato"
 
 				cultural_names = {
-					name_list_roman = cn_spalato
+					name_list_roman = cn_spalatum
 					name_list_italian = cn_spalato
 					name_list_cisalpine = cn_spalato
 					name_list_sicilian = cn_spalato
@@ -9314,6 +10275,15 @@ e_byzantium = {
 				}
 				b_split = {
 					province = 467
+
+					cultural_names = {
+						name_list_roman = cn_spalatum
+						name_list_italian = cn_spalato
+						name_list_cisalpine = cn_spalato
+						name_list_sicilian = cn_spalato
+						name_list_sardinian = cn_spalato
+						name_list_greek = cn_spalathos
+					}
 
 					color = { 150 80 45 }
 				}
@@ -10219,6 +11189,30 @@ e_byzantium = {
 						culture = culture:croatian
 						culture = culture:serbian
 					}
+				}
+				add = @better_than_the_alternatives_score
+			}
+		}
+	}
+
+	k_albania = {
+		color = { 110 0 0 }
+
+		capital = c_dyrrachion # Dyrrachion / Durrës
+
+		#Titular: created by decision.
+
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = culture:albanian
+				}
+				add = @correct_culture_primary_score
+			}
+			if = {
+				limit = {
+					NOT = { culture = culture:albanian }
+					culture = { has_cultural_pillar = heritage_albanian }
 				}
 				add = @better_than_the_alternatives_score
 			}
@@ -11675,7 +12669,7 @@ e_byzantium = {
 					color = { 180 62 127 }
 
 					cultural_names = {
-						name_list_turkish = cn_krateia
+						name_list_greek = cn_krateia
 						name_list_turkish = cn_gerede
 					}
 				}
@@ -14137,7 +15131,7 @@ e_byzantium = {
 					name_list_maghrebi = cn_balarm
 					name_list_andalusian = cn_balarm
 					name_list_yemeni = cn_balarm
-					name_list_carthaginian = cn_panormus 
+					name_list_carthaginian = cn_panormus
 				}
 
 				b_palermo = {
@@ -14160,8 +15154,8 @@ e_byzantium = {
 
 					color = { 155 254 86 }
 
-					cultural_names = { 
-						name_list_carthaginian = cn_lilybaeum 
+					cultural_names = {
+						name_list_carthaginian = cn_lilybaeum
 					}
 				}
 				b_calatafimi = {
@@ -15468,7 +16462,7 @@ e_italy = {
 			cultural_names = {
 				name_list_carthaginian = cn_sardinia
 			}
-			
+
 
 			c_cagliari = {
 				color = { 220 160 250 }
@@ -26285,7 +27279,7 @@ e_caspian-pontic_steppe = {
 			cultural_names = {
 				name_list_greek = cn_scythia
 			}
-			
+
 			c_samar = {
 				color = { 180 180 90 }
 
@@ -26331,7 +27325,7 @@ e_caspian-pontic_steppe = {
 			}
 			c_lozova = {
 				color = { 130 70 0 }
-				
+
 				b_lozova = {
 					province = 5320
 
@@ -26344,7 +27338,7 @@ e_caspian-pontic_steppe = {
 				}
 			}
 		}
-		
+
 		d_red_levedia = {
 			color = { 196 140 49 }
 
@@ -26353,7 +27347,7 @@ e_caspian-pontic_steppe = {
 			cultural_names = {
 				name_list_greek = cn_southscythia
 			}
-			
+
 			c_khortytsia = {
 				color = { 180 130 50 }
 
@@ -26523,10 +27517,6 @@ e_caspian-pontic_steppe = {
 			}
 			c_kuzeytorg = {
 				color = { 240 230 60 }
-
-				cultural_names = {
-					name_list_greek = cn_tanais
-				}
 
 				b_kuzeytorg = {
 					province = 5328
@@ -39964,7 +40954,7 @@ e_persia = {
 	}
 
 	k_mesopotamia = {
-		color = { 55 135 90 } 
+		color = { 55 135 90 }
 
 		capital	= c_baghdad # Baghdad
 
@@ -47015,7 +48005,7 @@ e_spain = {
 					name_list_maghrebi = cn_burjanna
 					name_list_andalusian = cn_burjanna
 					name_list_yemeni = cn_burjanna
-					name_list_carthaginian = cn_cartalias 
+					name_list_carthaginian = cn_cartalias
 				}
 
 				b_castellon = {
@@ -49599,7 +50589,7 @@ e_maghreb = {
 					color = { 209 65 46 }
 					cultural_names = {
 						name_list_carthaginian = cn_tingis
-					}				
+					}
 				}
 				b_asila = {
 					province = 4684
@@ -49687,7 +50677,7 @@ e_maghreb = {
 			}
 
 			capital = c_canarias # Gran Canaria
-			
+
 			c_canarias = {
 				color = { 22 107 181 }
 
@@ -49695,30 +50685,30 @@ e_maghreb = {
 					province = 8713
 					color = { 22 107 181 }
 					cultural_names = {
-						name_list_andalusian = cn_tenerife 
-						name_list_basque = cn_tenerife 
-						name_list_castilian = cn_tenerife 
-						name_list_portuguese = cn_tenerife 
-						name_list_visigothic = cn_tenerife 
-						name_list_galician = cn_tenerife 
-						name_list_asturleonese = cn_tenerife 
-						name_list_aragonese = cn_tenerife 
-						name_list_suebi = cn_tenerife 
+						name_list_andalusian = cn_tenerife
+						name_list_basque = cn_tenerife
+						name_list_castilian = cn_tenerife
+						name_list_portuguese = cn_tenerife
+						name_list_visigothic = cn_tenerife
+						name_list_galician = cn_tenerife
+						name_list_asturleonese = cn_tenerife
+						name_list_aragonese = cn_tenerife
+						name_list_suebi = cn_tenerife
 					}
 				}
 				b_grancanaria = {
 					province = 849
 					color = { 22 107 181 }
 					cultural_names = {
-						name_list_andalusian = cn_canaria 
-						name_list_basque = cn_canaria 
-						name_list_castilian = cn_canaria 
-						name_list_portuguese = cn_canaria 
-						name_list_visigothic = cn_canaria 
-						name_list_galician = cn_canaria 
-						name_list_asturleonese = cn_canaria 
-						name_list_aragonese = cn_canaria 
-						name_list_suebi = cn_canaria 
+						name_list_andalusian = cn_canaria
+						name_list_basque = cn_canaria
+						name_list_castilian = cn_canaria
+						name_list_portuguese = cn_canaria
+						name_list_visigothic = cn_canaria
+						name_list_galician = cn_canaria
+						name_list_asturleonese = cn_canaria
+						name_list_aragonese = cn_canaria
+						name_list_suebi = cn_canaria
 					}
 				}
 			}
@@ -49737,7 +50727,7 @@ e_maghreb = {
 				}
 				b_fuerteventura = {
 					province = 8714
-					
+
 					color = { 22 127 161 }
 					cultural_names = {
 						name_list_andalusian = cn_fuerteventura
@@ -49753,27 +50743,27 @@ e_maghreb = {
 				}
 				b_lanzarote = {
 					province = 8715
-					
+
 					color = { 22 127 161 }
 					cultural_names = {
-						name_list_andalusian = cn_lanzarote 
-						name_list_basque = cn_lanzarote 
-						name_list_castilian = cn_lanzarote 
-						name_list_portuguese = cn_lanzarote 
-						name_list_visigothic = cn_lanzarote 
-						name_list_galician = cn_lanzarote 
-						name_list_asturleonese = cn_lanzarote 
-						name_list_aragonese = cn_lanzarote 
-						name_list_suebi = cn_lanzarote 
+						name_list_andalusian = cn_lanzarote
+						name_list_basque = cn_lanzarote
+						name_list_castilian = cn_lanzarote
+						name_list_portuguese = cn_lanzarote
+						name_list_visigothic = cn_lanzarote
+						name_list_galician = cn_lanzarote
+						name_list_asturleonese = cn_lanzarote
+						name_list_aragonese = cn_lanzarote
+						name_list_suebi = cn_lanzarote
 					}
 				}
 			}
 			c_madeira = {
 				color = { 42 87 151 }
-				
+
 				b_madeira = {
 					province = 8716
-					
+
 					color = { 42 107 161 }
 				}
 			}
@@ -49785,11 +50775,11 @@ e_maghreb = {
 		cultural_names = {
 			name_list_guanches = cn_guanac
 		}
-		
+
 		capital = c_canarias # Tenerife
 
 		#Titular: created by decision.
-		
+
 		ai_primary_priority = {
 			if = {
 				limit = {
@@ -50048,7 +51038,7 @@ e_maghreb = {
 					color = { 92 148 52 }
 					cultural_names = {
 						name_list_carthaginian = cn_icosium
-					}		
+					}
 				}
 				b_medea = {
 					province = 4648
@@ -50079,7 +51069,7 @@ e_maghreb = {
 					color = { 70 133 25 }
 					cultural_names = {
 						name_list_carthaginian = cn_iol
-					}					
+					}
 				}
 				b_sharshal = {
 					province = 4652
@@ -50507,7 +51497,7 @@ e_maghreb = {
 				color = { 122 140 196 }
 
 				cultural_names = {
-					name_list_carthaginian = cn_hadrumetum	
+					name_list_carthaginian = cn_hadrumetum
 				}
 
 				b_mahdiya = {
@@ -50516,8 +51506,8 @@ e_maghreb = {
 					color = { 122 140 196 }
 
 					cultural_names = {
-						name_list_carthaginian = cn_hadrumetum	
-					}					
+						name_list_carthaginian = cn_hadrumetum
+					}
 				}
 				b_monastir = {
 					province = 4579
@@ -50547,7 +51537,7 @@ e_maghreb = {
 				b_constantine = {
 					province = 4631
 
-					color = { 78 77 162 }			
+					color = { 78 77 162 }
 				}
 				b_qasr-al-ifriqi = {
 					province = 4620
@@ -50584,7 +51574,7 @@ e_maghreb = {
 
 					cultural_names = {
 						name_list_carthaginian = cn_hippo
-					}					
+					}
 				}
 				b_qalama = {
 					province = 4630
@@ -50987,7 +51977,7 @@ e_maghreb = {
 			}
 			c_azukki = { #AKA Azougi
 				color = { 77 76 76 }
-				
+
 				b_ijil = { #AKA Idjil
 					province = 6475
 
@@ -56753,7 +57743,7 @@ e_azania = {
 					province = 12806
 
 					color = { 203 135 16 }
-				}			
+				}
 			}
 			c_kilimanjaro = {
 				color = { 217 197 145 }
@@ -67238,7 +68228,7 @@ e_deccan = {
 			}
 			c_maldives = {
 				color = { 120 75 75 }
-				
+
 				definite_form = yes
 
 				b_mahal = {
@@ -69662,12 +70652,12 @@ e_tibet = {
 			c_aksay = {
 				color = { 125 91 93 }
 
-				b_gonghe = { 
+				b_gonghe = {
 					province = 9472
 
 					color = { 92 37 15 }
 				}
-				b_tuanjie = { 
+				b_tuanjie = {
 					province = 9471
 
 					color = { 94 79 107 }
@@ -69676,12 +70666,12 @@ e_tibet = {
 			c_haltang = {
 				color = { 65 99 111 }
 
-				b_dahaleteng = { 
+				b_dahaleteng = {
 					province = 9469
 
 					color = { 85 5 80 }
 				}
-				b_takoerpasitao = { 
+				b_takoerpasitao = {
 					province = 9470
 
 					color = { 58 16 11 }
@@ -71304,6 +72294,10 @@ e_andong = {
 
 	capital = c_LIAO_linhuang
 
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	cultural_names = {
         name_list_balhae = cn_yodong
         name_list_korean = cn_yodong
@@ -71311,7 +72305,7 @@ e_andong = {
 
     k_balhae = {
         color = { 95 105 170 }
-    
+
         capital = c_BAL_yongcheon
 
 		cultural_names = {
@@ -71320,12 +72314,12 @@ e_andong = {
 	        name_list_balhae = cn_balhae
 	        name_list_jurchen = cn_dazhen
 	    }
-    
+
         d_BAL_parhae = {
         	#this duchy mixes several "provinces" of Balhae for gameplay reasons, and thus doesn't have a proper historical name attached to it
         	#thus, we're using an alternate name for "Balhae" instead, for flavour and to nod at its "core territory" status
             color = { 105 95 160 }
-    
+
             capital = c_BAL_yongcheon
 
 			cultural_names = {
@@ -71335,7 +72329,7 @@ e_andong = {
 		        name_list_jurchen = cn_dazhen
 		        name_list_han = cn_longquan
 		    }
-    
+
             c_BAL_yongcheon = { #Longquan
                 color = { 95 85 150 }
 
@@ -71343,7 +72337,7 @@ e_andong = {
                     name_list_korean = cn_yongcheon
                     name_list_balhae = cn_yongcheon
                 }
-    
+
                 b_Liao_Shangjing = {
                     province = 11828
 
@@ -71352,31 +72346,31 @@ e_andong = {
                         name_list_balhae = cn_sanggyeong
                         name_list_han = cn_longzhou
                     }
-    
+
                     color = { 95 85 150 }
                 }
                 b_Liao_Bozhou = {
                     province = 11827
-    
+
                     color = { 95 85 150 }
-                } 
+                }
                 b_FIC_Liao_Daguokuishan = {
                     province = 11818
-    
+
                     color = { 95 85 150 }
                 }
                 b_FIC_Liao_Mudanjiang = {
                     province = 11825
-    
+
                     color = { 95 85 150 }
                 }
                 b_FIC_Liao_Qingquan = {
                     province = 11853
-    
+
                     color = { 95 85 150 }
                 }
             }
-    
+
             c_BAL_west_hyeondeok = { #West half of Xiande
                 color = { 105 75 185 }
 
@@ -71384,7 +72378,7 @@ e_andong = {
                     name_list_korean = cn_west_hyeondeok
                     name_list_balhae = cn_west_hyeondeok
                 }
-    
+
                 b_Liao_Zhongjing = {
                     province = 11834
 
@@ -71393,26 +72387,26 @@ e_andong = {
                         name_list_balhae = cn_junggyeong
                         name_list_han = cn_xianzhou
                     }
-    
+
                     color = { 105 75 185 }
                 }
                 b_Liao_Tangzhou2 = {
                     province = 11824
-    
+
                     color = { 105 75 185 }
                 }
                 b_FIC_Liao_Nansuan = {
                     province = 11822
-    
+
                     color = { 105 75 185 }
                 }
                 b_FIC_Liao_Erdaojiang = {
                     province = 11823
-    
+
                     color = { 105 75 185 }
                 }
             }
-    
+
             c_BAL_east_hyeondeok = { #East half of Xiande
                 color = { 135 105 215 }
 
@@ -71420,29 +72414,29 @@ e_andong = {
                     name_list_korean = cn_east_hyeondeok
                     name_list_balhae = cn_east_hyeondeok
                 }
-    
+
                 b_FIC_Liao_Helong = {
                     province = 11839
-    
+
                     color = { 135 105 215 }
                 }
                 b_Liao_Xingzhou = {
                     province = 11838
-    
+
                     color = { 135 105 215 }
                 }
                 b_FIC_Liao_Yanji = {
                     province = 11832
-    
+
                     color = { 135 105 215 }
                 }
                 b_Liao_Luzhou = {
                     province = 11833
-    
+
                     color = { 135 105 215 }
                 }
             }
-    
+
             c_BAL_dongju = {    #Tongzhou
                 color = { 160 150 185 }
 
@@ -71450,7 +72444,7 @@ e_andong = {
                     name_list_korean = cn_dongju
                     name_list_balhae = cn_dongju
                 }
-    
+
                 b_Liao_Tongzhou2 = {
                     province = 11830
 
@@ -71458,21 +72452,21 @@ e_andong = {
 	                    name_list_korean = cn_dongju
 	                    name_list_balhae = cn_dongju
 	                }
-    
+
                     color = { 160 150 185 }
                 }
                 b_FIC_Liao_Tongan = {
                     province = 11852
-    
+
                     color = { 160 150 185 }
                 }
                 b_Liao_Sushen = {
                     province = 11829
-    
+
                     color = { 160 150 185 }
                 }
             }
-    
+
             c_BAL_yeongju = {   #Yingzhou
                 color = { 65 60 85 }
 
@@ -71480,7 +72474,7 @@ e_andong = {
                     name_list_korean = cn_yeongju
                     name_list_balhae = cn_yeongju
                 }
-    
+
                 b_Liao_Yingzhou = {
                     province = 11817
 
@@ -71488,22 +72482,22 @@ e_andong = {
 	                    name_list_korean = cn_yeongju
 	                    name_list_balhae = cn_yeongju
 	                }
-    
+
                     color = { 65 60 85 }
                 }
                 b_FIC_Liao_Yingan = {
                     province = 11826
-    
+
                     color = { 65 60 85 }
                 }
             }
         }
-    
+
         d_BAL_moe_su = {    #Moe & Su/Makhil & Sokju
             color = { 195 115 205}
-    
+
             capital = c_BAL_makhil
-    
+
             c_BAL_makhil = {    #Moe
                 color = { 185 105 200 }
 
@@ -71512,29 +72506,29 @@ e_andong = {
                     name_list_balhae = cn_jeongju_2
                     name_list_han = cn_zhengzhou
                 }
-    
+
                 b_Liao_Mozhou = {
                     province = 11813
-    
+
                     color = { 185 105 200 }
                 }
                 b_Liao_Gaozhou2 = {
                     province = 11814
-    
+
                     color = { 185 105 200 }
                 }
                 b_FIC_Liao_Nanmoan = {
                     province = 11929
-    
+
                     color = { 185 105 200 }
                 }
                 b_FIC_Liao_Longfengshan = {
                     province = 11819
-    
+
                     color = { 185 105 200 }
                 }
             }
-    
+
             c_BAL_west_makhil = {   #western Moe
                 color = { 225 125 235 }
 
@@ -71543,24 +72537,24 @@ e_andong = {
                     name_list_balhae = cn_jeonghwa
                     name_list_han = cn_zhengjie
                 }
-    
+
                 b_Liao_Ningjiang = {
                     province = 11812
-    
+
                     color = { 225 125 235 }
                 }
                 b_FIC_Liao_Moedu = {
                     province = 11810
-    
+
                     color = { 225 125 235 }
                 }
                 b_FIC_Liao_Ximoan = {
                     province = 11811
-    
+
                     color = { 225 125 235 }
                 }
             }
-    
+
             c_BAL_sokju = { #Su
                 color = { 205 80 210 }
 
@@ -71568,35 +72562,35 @@ e_andong = {
                     name_list_korean = cn_jinju
                     name_list_balhae = cn_jinju
                 }
-    
+
                 b_Liao_Suzhou2 = {
                     province = 11821
-    
+
                     color = { 205 80 210 }
                 }
                 b_FIC_Liao_Suping = {
                     province = 11820
-    
+
                     color = { 205 80 210 }
                 }
                 b_Liao_Yongji = {
                     province = 11747
-    
+
                     color = { 205 80 210 }
                 }
             }
         }
-    
+
         d_BAL_buyeo = { #Fuyu
             color = { 90 90 240 }
-    
+
             capital = c_BAL_changchun
 
             cultural_names = {
                 name_list_korean = cn_buyeo
                 name_list_balhae = cn_buyeo
             }
-    
+
             c_BAL_changchun = {
                 color = { 65 65 215 }
 
@@ -71604,7 +72598,7 @@ e_andong = {
                     name_list_korean = cn_buyeo
                     name_list_balhae = cn_buyeo
                 }
-    
+
                 b_Liao_Changchun2 = {
                     province = 11746
 
@@ -71612,26 +72606,26 @@ e_andong = {
 	                    name_list_korean = cn_buyeo
 	                    name_list_balhae = cn_buyeoseong
 	                }
-    
+
                     color = { 65 65 215 }
                 }
                 b_Liao_Weizhou = {
                     province = 11743
-    
+
                     color = { 65 65 215 }
                 }
                 b_Liao_Binzhou = {
                     province = 11745
-    
+
                     color = { 65 65 215 }
                 }
                 b_Liao_Xiangzhou = {
                     province = 11744
-    
+
                     color = { 65 65 215 }
                 }
             }
-    
+
             c_BAL_fuzhou = {
                 color = { 80 80 230 }
 
@@ -71639,7 +72633,7 @@ e_andong = {
                     name_list_korean = cn_buju
                     name_list_balhae = cn_buju
                 }
-    
+
                 b_Liao_Fuzhou2 = {
                     province = 11779
 
@@ -71647,72 +72641,72 @@ e_andong = {
 	                    name_list_korean = cn_buju
 	                    name_list_balhae = cn_buju
 	                }
-    
+
                     color = { 80 80 230 }
                 }
                 b_Liao_Suzhou = {
                     province = 11777
-    
+
                     color = { 80 80 230 }
                 }
                 b_Liao_Tonghua = {
                     province = 11778
-    
+
                     color = { 80 80 230 }
                 }
                 b_Liao_Xianzhou2 = {
                     province = 11780
-    
+
                     color = { 80 80 230 }
                 }
             }
-    
+
             c_BAL_yizhou = {
                 color = { 50 50 200 }
-    
+
                 b_Liao_Yizhou = {
                     province = 11736
-    
+
                     color = { 50 50 200 }
                 }
                 b_Liao_Fengzhou3 = {
                     province = 11741
-    
+
                     color = { 50 50 200 }
                 }
                 b_Liao_Jizhou = {
                     province = 11742
-    
+
                     color = { 50 50 200 }
                 }
             }
-    
+
             c_BAL_xinzhou = {
                 color = { 55 30 200 }
-    
+
                 b_Liao_Xinzhou = {
                     province = 11752
-    
+
                     color = { 55 30 200 }
                 }
                 b_FIC_Liao_Fuyunan = {
                     province = 11749
-    
+
                     color = { 55 30 200 }
                 }
             }
         }
-    
+
         d_BAL_amnok_jangryeong = {   #Yalu-Changling (mix of Amnok & Jangryeong)
             color = { 135 35 135 }
-    
+
             capital = c_BAL_east_amnok
 
             cultural_names = {
                 name_list_korean = cn_amnok_jangryeong
                 name_list_balhae = cn_amnok_jangryeong
             }
-    
+
             c_BAL_east_amnok = {    #east part of Amnok/Yalu
                 color = { 125 25 125 }
 
@@ -71720,7 +72714,7 @@ e_andong = {
                     name_list_korean = cn_east_amnok
                     name_list_balhae = cn_east_amnok
                 }
-    
+
                 b_Liao_Xijing = {
                     province = 11806
 
@@ -71729,27 +72723,27 @@ e_andong = {
                         name_list_balhae = cn_seogyeong
                         name_list_han = cn_shenzhou
                     }
-    
+
                     color = { 125 25 125 }
                 }
                 b_Liao_Luzhou2 = {
                     province = 11840
-    
+
                     color = { 125 25 125 }
                 }
                 b_Liao_Fusong = {
                     province = 11835
-    
+
                     color = { 125 25 125 }
                 }
                 b_FIC_Liao_Changbaishan = {
                     province = 11836
-    
+
                     color = { 125 25 125 }
                 }
                 b_FIC_Liao_Tianchi = {
                     province = 11837
-    
+
                     color = { 125 25 125 }
                 }
             }
@@ -71760,29 +72754,29 @@ e_andong = {
                     name_list_korean = cn_west_amnok
                     name_list_balhae = cn_west_amnok
                 }
-    
+
                 b_Liao_Zhengzhou = {
                     province = 11802
-    
+
                     color = { 235 135 235 }
                 }
                 b_Liao_Kuandianzi = {
                     province = 11801
-    
+
                     color = { 235 135 235 }
                 }
                 b_Liao_Huanzhou = {
                     province = 11805
-    
+
                     color = { 250 150 250 }
                 }
                 b_FIC_Liao_Yaluan = {
                     province = 11807
-    
+
                     color = { 235 135 235 }
                 }
             }
-    
+
             c_BAL_east_jangryeong = {    #East Jangryeong/Changling
                 color = { 130 65 160 }
 
@@ -71790,7 +72784,7 @@ e_andong = {
                     name_list_korean = cn_east_jangryeong
                     name_list_balhae = cn_east_jangryeong
                 }
-    
+
                 b_Liao_Changling = {
                     province = 11809
 
@@ -71799,21 +72793,21 @@ e_andong = {
 	                	name_list_balhae = cn_haju
 	                	name_list_han = cn_xiazhou
 	                }
-    
+
                     color = { 130 65 160 }
                 }
                 b_FIC_Liao_Quliuan = {
                     province = 11748
-    
+
                     color = { 130 65 160 }
                 }
                 b_FIC_Liao_Beichang = {
                     province = 11750
-    
+
                     color = { 130 65 160 }
                 }
             }
-    
+
             c_BAL_west_jangryeong = {    #West Jangryeong/Changling
                 color = { 110 10 110 }
 
@@ -71821,35 +72815,35 @@ e_andong = {
                     name_list_korean = cn_west_jangryeong
                     name_list_balhae = cn_west_jangryeong
                 }
-    
+
                 b_Liao_Hezhou = {
                     province = 11808
-    
+
                     color = { 110 10 110 }
                 }
                 b_FIC_Liao_Hongfucun = {
                     province = 11751
-    
+
                     color = { 125 25 125 }
                 }
                 b_FIC_Liao_Baichang = {
                     province = 11804
-    
+
                     color = { 110 10 110 }
                 }
             }
         }
-    
+
         d_BAL_southern_balhae = {
             color = { 70 90 190 }
-    
+
             capital = c_BAL_namhae
 
             cultural_names = {
                 name_list_korean = cn_okjeo
                 name_list_balhae = cn_okjeo
             }
-    
+
             c_BAL_namhae = {    #Nanhai
                 color = { 60 80 180 }
 
@@ -71857,7 +72851,7 @@ e_andong = {
                     name_list_korean = cn_namhae
                     name_list_balhae = cn_namhae
                 }
-    
+
                 b_Liao_Nanjing = {
                     province = 11842
 
@@ -71866,21 +72860,21 @@ e_andong = {
                         name_list_balhae = cn_namgyeong
                     	name_list_han = cn_wozhou
                     }
-    
+
                     color = { 60 80 180 }
                 }
                 b_Liao_Tianqing = {
                     province = 11841
-    
+
                     color = { 60 80 180 }
                 }
                 b_FIC_Liao_Nanhaikou = {
                     province = 11843
-    
+
                     color = { 60 80 180 }
                 }
             }
-    
+
             c_BAL_fengzhou = {
                 color = { 55 105 215 }
 
@@ -71888,7 +72882,7 @@ e_andong = {
                     name_list_korean = cn_pungju
                     name_list_balhae = cn_pungju
                 }
-    
+
                 b_Liao_Fengzhou4 = {
                     province = 11844
 
@@ -71896,16 +72890,16 @@ e_andong = {
 	                    name_list_korean = cn_pungju
 	                    name_list_balhae = cn_pungju
 	                }
-    
+
                     color = { 55 105 215 }
                 }
                 b_FIC_Liao_Nandongkou = {
                     province = 11845
-    
+
                     color = { 55 105 215 }
                 }
             }
-    
+
             c_BAL_southyongwon = {  #Longyuan
                 color = { 25 45 140 }
 
@@ -71913,7 +72907,7 @@ e_andong = {
                     name_list_korean = cn_south_yongwon
                     name_list_balhae = cn_south_yongwon
                 }
-    
+
                 b_Liao_Dongjing = {
                     province = 11848
 
@@ -71922,21 +72916,21 @@ e_andong = {
                         name_list_balhae = cn_donggyeong
                         name_list_han = cn_qingzhou
                     }
-    
+
                     color = { 25 45 140 }
                 }
                 b_Liao_Helan = {
                     province = 11846
-    
+
                     color = { 25 45 140 }
                 }
                 b_Liao_Wanhaifu = {
                     province = 11847
-    
+
                     color = { 25 45 140 }
                 }
             }
-    
+
             c_BAL_northyongwon = {  #Longyuan
                 color = { 65 95 170 }
 
@@ -71944,20 +72938,20 @@ e_andong = {
                     name_list_korean = cn_north_yongwon
                     name_list_balhae = cn_north_yongwon
                 }
-    
+
                 b_Liao_Lungyuanfu = {
                     province = 11849
-    
+
                     color = { 65 95 170 }
                 }
                 b_FIC_Liao_Huanghekou = {
                     province = 11850
-    
+
                     color = { 65 95 170 }
                 }
                 b_FIC_Liao_Tumen = {
                     province = 11831
-    
+
                     color = { 65 95 170 }
                 }
             }
@@ -72266,7 +73260,7 @@ e_andong = {
 				}
 			}
 		}
-		
+
 		d_SW_lingxiguo = {
 			color = { 255 105 105 }
 
@@ -72610,7 +73604,7 @@ e_andong = {
 				}
 			}
 		}
-		
+
 		d_SW_heicheziguo = {
 			color = { 210 40 70 }
 
@@ -72741,7 +73735,7 @@ e_andong = {
 					color = { 160 80 130 }
 				}
 			}
-			
+
 			c_SW_mengwuo = {
 				color = { 120 20 20 }
 
@@ -72964,7 +73958,7 @@ e_andong = {
 				}
 			}
 		}
-		
+
 		d_LIAO_shangjing = {
 			color = { 90 145 35 }
 
@@ -73100,25 +74094,25 @@ e_andong = {
 			}
 		}
 	}
-	
+
 	k_luzhen = {
 		color = { 180 50 140 }
 
 		capital = c_BAL_dongpyeong_yizhou
-		
+
 		d_BAL_dongpyeong = {	#Dongping
 			color = { 75 95 225 }
-	
+
 			capital = c_BAL_dongpyeong_yizhou
 
 			cultural_names = {
 				name_list_korean = cn_dongpyeong
 				name_list_balhae = cn_dongpyeong
 			}
-	
+
 			c_BAL_dongpyeong_yizhou = {
 				color = { 65 85 215 }
-	
+
 				b_EMan_Yizhou = {
 					province = 11870
 
@@ -73126,42 +74120,42 @@ e_andong = {
 						name_list_korean = cn_iju
 						name_list_balhae = cn_iju
 					}
-	
+
 					color = { 65 85 215 }
 				}
 				b_FIC_EMan_Beidongan = {
 					province = 11869
-	
+
 					color = { 65 85 215 }
 				}
 				b_FIC_EMan_Heihubo = {
 					province = 11862
-	
+
 					color = { 65 85 215 }
 				}
 			}
-	
+
 			c_BAL_jixi = {
 				color = { 30 65 250 }
-	
+
 				b_EMan_Jixi = {
 					province = 11871
-	
+
 					color = { 30 65 250 }
 				}
 				b_FIC_EMan_Dongxian = {
 					province = 11872
-	
+
 					color = { 30 65 250 }
 				}
 				b_FIC_EMan_Dongying = {
 					province = 11856
-	
+
 					color = { 30 65 250 }
 				}
 			}
 		}
-		
+
 		d_BAL_cheolli = {	#Tieli
 			color = { 170 65 115}
 
@@ -73363,7 +74357,7 @@ e_andong = {
 				}
 			}
 		}
-		
+
 		d_BAL_yeojintang = {
 			#this duchy packages a lot of Balhae "provinces" together for gameplay reasons
 			#thus, we give it a name that should somewhat mean "land of the Jurchens", since they are more or less from there
@@ -73921,7 +74915,11 @@ e_amur = {
 	color = { 108 65 15 }
 
 	capital = c_eman_nurgan
-	
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
+
 	k_amur = {
 		color = { 0 85 65  }
 
@@ -74256,146 +75254,146 @@ e_amur = {
 				}
 			}
 		}
-		
+
 		d_eman_amar = {
 			color = { 0 75 90 }
 
 			capital = c_eman_murkonno
-			
+
 			c_eman_murkonno = {
 				color = { 10 90 110 }
-				
+
 				b_fic_eman_bira = {
 					province = 10493
-					
+
 					color = { 10 90 110 }
 				}
 				b_fic_eman_pichan = {
 					province = 10491
-					
+
 					color = { 10 90 110 }
 				}
 				b_fic_eman_khimin = {
 					province = 10492
-					
+
 					color = { 10 90 110 }
 				}
 				b_fic_eman_chulabira = {
 					province = 10494
-					
+
 					color = { 10 90 110 }
 				}
 			}
-			
+
 			c_eman_urmi = {
 				color = { 50 140 165 }
-				
+
 				b_fic_eman_urmi = {
 					province = 10495
-					
+
 					color = { 50 140 165 }
 				}
 				b_fic_eman_kirga = {
 					province = 10496
-					
+
 					color = { 50 140 165 }
 				}
 			}
-			
+
 			c_eman_vanda = {
 				color = { 75 115 135 }
-				
+
 				b_fic_eman_vandarin = {
 					province = 12439
-					
+
 					color = { 75 115 135 }
 				}
 				b_fic_eman_konnovanda = {
 					province = 10489
-					
+
 					color = { 75 115 135 }
 				}
 				b_fic_eman_hulavanda = {
 					province = 10490
-					
+
 					color = { 75 115 135 }
 				}
 			}
-			
+
 			c_eman_nimen = {
 				color = { 40 105 115 }
-				
+
 				b_fic_eman_nimen = {
 					province = 12437
-					
+
 					color = { 40 105 115 }
 				}
 				b_fic_eman_hara = {
 					province = 12438
-					
+
 					color = { 40 105 115 }
 				}
 				b_fic_eman_oronmu = {
 					province = 12436
-					
+
 					color = { 40 105 115 }
 				}
 			}
 		}
-		
+
 		d_eman_bureya = {
 			color = { 75 80 115 }
 
 			capital = c_eman_turma
-			
+
 			c_eman_turma = {
 				color = { 85 95 130 }
-				
+
 				b_fic_eman_turma = {
 					province = 12435
-					
+
 					color = { 85 95 130 }
 				}
 				b_fic_eman_uroure = {
 					province = 12434
-					
+
 					color = { 85 95 130 }
 				}
 				b_fic_eman_molamu = {
 					province = 10499
-					
+
 					color = { 85 95 130 }
 				}
 			}
-			
+
 			c_eman_birija = {
 				color = { 45 50 85 }
-				
+
 				b_fic_eman_birija = {
 					province = 12433
-					
+
 					color = { 45 50 85 }
 				}
 				b_fic_eman_birigugda = {
 					province = 12432
-					
+
 					color = { 45 50 85 }
 				}
 			}
-			
+
 			c_eman_urehokto = {
 				color = { 70 65 80 }
-				
+
 				b_fic_eman_umilimo = {
 					province = 10497
-					
+
 					color = { 70 65 80 }
 				}
 				b_fic_eman_kulikansiggu = {
 					province = 10500
-					
+
 					color = { 70 65 80 }
-				}	
+				}
 			}
 		}
 	}
@@ -74559,10 +75557,10 @@ e_amur = {
 				}
 			}
 		}
-		
+
 		d_menas = {
 			color = { 141 70 23 }
-			
+
 			capital = c_simenas
 
 			can_create = {
@@ -74573,7 +75571,7 @@ e_amur = {
 				name_list_yamato = cn_east_hokkaido
 				name_list_emishi = cn_east_oshima
 			}
-			
+
 			c_simenas = {
 				color = { 60 75 95 }
 
@@ -74679,7 +75677,7 @@ e_amur = {
 						name_list_yamato = cn_monbetsu
 						name_list_emishi = cn_monbetsu
 					}
-					
+
 					color = { 85 95 145 }
 				}
 				b_soya = {
@@ -74689,7 +75687,7 @@ e_amur = {
 						name_list_yamato = cn_soya
 						name_list_emishi = cn_soya
 					}
-					
+
 					color = { 85 95 145 }
 				}
 				b_nay_or = {
@@ -74699,7 +75697,7 @@ e_amur = {
 						name_list_yamato = cn_kamikawa
 						name_list_emishi = cn_kamikawa
 					}
-					
+
 					color = { 85 95 145 }
 				}
 				b_tes_uni = {
@@ -74709,7 +75707,7 @@ e_amur = {
 						name_list_yamato = cn_teshio
 						name_list_emishi = cn_teshio
 					}
-					
+
 					color = { 85 95 145 }
 				}
 			}
@@ -74729,7 +75727,7 @@ e_amur = {
 						name_list_yamato = cn_kunashiri
 						name_list_emishi = cn_kunashiri
 					}
-					
+
 					color = { 11 6 88 }
 				}
 				b_etuworop_sir = {
@@ -74739,7 +75737,7 @@ e_amur = {
 						name_list_yamato = cn_etorofu
 						name_list_emishi = cn_etorofu
 					}
-					
+
 					color = { 11 6 88 }
 				}
 			}
@@ -74747,7 +75745,7 @@ e_amur = {
 
 		d_sum = {
 			color = { 80 50 23 }
-			
+
 			capital = c_uskes
 
 			can_create = {
@@ -74758,7 +75756,7 @@ e_amur = {
 				name_list_yamato = cn_west_hokkaido
 				name_list_emishi = cn_west_oshima
 			}
-			
+
 			c_uskes = {
 				color = { 0 20 115 }
 
@@ -74774,7 +75772,7 @@ e_amur = {
 						name_list_yamato = cn_matsumae
 						name_list_emishi = cn_matsumae
 					}
-					
+
 					color = { 0 20 115 }
 				}
 				b_uskes = {
@@ -74784,7 +75782,7 @@ e_amur = {
 						name_list_yamato = cn_kameda
 						name_list_emishi = cn_kameda
 					}
-					
+
 					color = { 0 20 115 }
 				}
 				b_kayaunpesh = {
@@ -74794,7 +75792,7 @@ e_amur = {
 						name_list_yamato = cn_kayabe
 						name_list_emishi = cn_kayabe
 					}
-					
+
 					color = { 0 20 115 }
 				}
 				b_kumausi = {
@@ -74804,7 +75802,7 @@ e_amur = {
 						name_list_yamato = cn_nishi
 						name_list_emishi = cn_nishi
 					}
-					
+
 					color = { 0 20 115 }
 				}
 			}
@@ -74823,7 +75821,7 @@ e_amur = {
 						name_list_yamato = cn_yoichi
 						name_list_emishi = cn_yoichi
 					}
-					
+
 					color = { 30 40 90 }
 				}
 				b_setanay = {
@@ -74833,7 +75831,7 @@ e_amur = {
 						name_list_yamato = cn_setana
 						name_list_emishi = cn_setana
 					}
-					
+
 					color = { 30 40 90 }
 				}
 				b_otarunay = {
@@ -74843,7 +75841,7 @@ e_amur = {
 						name_list_yamato = cn_otaru
 						name_list_emishi = cn_otaru
 					}
-					
+
 					color = { 30 40 90 }
 				}
 				b_aptapet_ainu = {
@@ -74853,7 +75851,7 @@ e_amur = {
 						name_list_yamato = cn_abuta
 						name_list_emishi = cn_abuta
 					}
-					
+
 					color = { 30 40 90 }
 				}
 			}
@@ -74872,7 +75870,7 @@ e_amur = {
 						name_list_yamato = cn_ishikari
 						name_list_emishi = cn_ishikari
 					}
-					
+
 					color = { 5 40 200 }
 				}
 				b_rurmo_otpe = {
@@ -74882,7 +75880,7 @@ e_amur = {
 						name_list_yamato = cn_rumoi
 						name_list_emishi = cn_rumoi
 					}
-					
+
 					color = { 5 40 200 }
 				}
 				b_cup_pet = {
@@ -74892,7 +75890,7 @@ e_amur = {
 						name_list_yamato = cn_asahikawa
 						name_list_emishi = cn_asahikawa
 					}
-					
+
 					color = { 5 40 200 }
 				}
 				b_sorapci = {
@@ -74902,7 +75900,7 @@ e_amur = {
 						name_list_yamato = cn_sorachi
 						name_list_emishi = cn_sorachi
 					}
-					
+
 					color = { 5 40 200 }
 				}
 			}
@@ -74921,7 +75919,7 @@ e_amur = {
 						name_list_yamato = cn_saru
 						name_list_emishi = cn_saru
 					}
-					
+
 					color = { 60 80 150 }
 				}
 				b_iput = {
@@ -74931,7 +75929,7 @@ e_amur = {
 						name_list_yamato = cn_yufutsu
 						name_list_emishi = cn_yufutsu
 					}
-					
+
 					color = { 60 80 150 }
 				}
 				b_sipicar = {
@@ -74941,7 +75939,7 @@ e_amur = {
 						name_list_yamato = cn_shizunai
 						name_list_emishi = cn_shizunai
 					}
-					
+
 					color = { 60 80 150 }
 				}
 				b_moruran = {
@@ -74951,7 +75949,7 @@ e_amur = {
 						name_list_yamato = cn_muroran
 						name_list_emishi = cn_muroran
 					}
-					
+
 					color = { 60 80 150 }
 				}
 			}
@@ -74971,10 +75969,10 @@ e_amur = {
 		cultural_names = {
 			name_list_yamato = cn_michinoku
 		}
-		
+
 		d_hitakami = {
 			color = { 55 25 135 }
-			
+
 			capital = c_korehari # Taga
 
 			can_create = {
@@ -74994,7 +75992,7 @@ e_amur = {
 
 				b_taga = {
 					province = 10699
-					
+
 					color = { 35 10 95 }
 				}
 				b_korehari = {
@@ -75003,12 +76001,12 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_kurihara
 					}
-					
+
 					color = { 35 10 95 }
 				}
 				b_kesen = {
 					province = 10770
-					
+
 					color = { 35 10 95 }
 				}
 				b_momunofu = {
@@ -75017,7 +76015,7 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_motoyoshi
 					}
-					
+
 					color = { 35 10 95 }
 				}
 			}
@@ -75027,22 +76025,22 @@ e_amur = {
 
 				b_adachi = {
 					province = 10716
-					
+
 					color = { 70 40 150 }
 				}
 				b_yama_iwase = {
 					province = 10714
-					
+
 					color = { 70 40 150 }
 				}
 				b_aizu = {
 					province = 10712
-					
+
 					color = { 70 40 150 }
 				}
 				b_iwase = {
 					province = 10717
-					
+
 					color = { 70 40 150 }
 				}
 			}
@@ -75052,7 +76050,7 @@ e_amur = {
 
 				b_isawa = {
 					province = 10697
-					
+
 					color = { 55 40 130 }
 				}
 				b_nukanobu = {
@@ -75061,17 +76059,17 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_kunohe
 					}
-					
+
 					color = { 55 40 130 }
 				}
 				b_kuriyagawa = {
 					province = 10693
-					
+
 					color = { 55 40 130 }
 				}
 				b_hei = {
 					province = 10694
-					
+
 					color = { 55 40 130 }
 				}
 			}
@@ -75081,7 +76079,7 @@ e_amur = {
 
 				b_tsugaru = {
 					province = 10700
-					
+
 					color = { 63 69 176 }
 				}
 				b_tsumo = {
@@ -75090,7 +76088,7 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_sannohe
 					}
-					
+
 					color = { 63 69 176 }
 				}
 				b_usori = {
@@ -75099,7 +76097,7 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_kita
 					}
-					
+
 					color = { 63 69 176 }
 				}
 				b_nisattai = {
@@ -75108,7 +76106,7 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_ninohe
 					}
-					
+
 					color = { 63 69 176 }
 				}
 			}
@@ -75118,17 +76116,17 @@ e_amur = {
 
 				b_iwaki = {
 					province = 10719
-					
+
 					color = { 70 30 125 }
 				}
 				b_shirakawa = {
 					province = 10720
-					
+
 					color = { 70 30 125 }
 				}
 				b_namekata = {
 					province = 10718
-					
+
 					color = { 70 30 125 }
 				}
 			}
@@ -75136,7 +76134,7 @@ e_amur = {
 
 		d_nushiro = {
 			color = { 15 10 135 }
-			
+
 			capital = c_nushiro
 
 			can_create = {
@@ -75146,7 +76144,7 @@ e_amur = {
 			cultural_names = {
 				name_list_yamato = cn_dewa
 			}
-			
+
 			c_nushiro = {
 				color = { 40 30 195 }
 
@@ -75160,7 +76158,7 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_akita
 					}
-					
+
 					color = { 40 30 195 }
 				}
 				b_nushiro = {
@@ -75169,7 +76167,7 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_hiyama
 					}
-					
+
 					color = { 40 30 195 }
 				}
 				b_hotta = {
@@ -75178,7 +76176,7 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_yamamoto
 					}
-					
+
 					color = { 40 30 195 }
 				}
 				b_okachi = {
@@ -75187,7 +76185,7 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_ogachi
 					}
-					
+
 					color = { 40 30 195 }
 				}
 				b_yuri = {
@@ -75196,7 +76194,7 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_akumi
 					}
-					
+
 					color = { 40 30 195 }
 				}
 			}
@@ -75210,7 +76208,7 @@ e_amur = {
 
 				b_okitama = {
 					province = 10711
-					
+
 					color = { 5 0 125 }
 				}
 				b_tokisara = {
@@ -75219,12 +76217,12 @@ e_amur = {
 					cultural_names = {
 						name_list_yamato = cn_haguro
 					}
-					
+
 					color = { 5 0 125 }
 				}
 				b_mogami = {
 					province = 10710
-					
+
 					color = { 5 0 125 }
 				}
 			}
@@ -75236,6 +76234,10 @@ e_srivijaya = {
 	color = { 15 105 125 }
 
 	capital = c_JAV_mataram
+
+	can_create = {
+		rule_title_creation_imperial_power_projection_title_creation_trigger = yes
+	}
 
 	k_yavakadvipa = {
 		color = { 109 216 219 }
@@ -76374,6 +77376,8 @@ d_nf_ampelas = { # Ampelas (Khaldia)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76388,6 +77392,8 @@ d_nf_aplakes = { # Aplakes (Thessalonika)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76404,6 +77410,8 @@ d_nf_agelastos = { # Agelastos (Achaia)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76418,6 +77426,8 @@ d_nf_doukas = { # Doukas (Paphlagonia)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76434,6 +77444,8 @@ d_nf_gerontas = { # Gerontas (Dyrrachion)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76448,6 +77460,8 @@ d_nf_hexavoulis = { # Hexavoulis (Epirus)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76464,6 +77478,8 @@ d_nf_kardias = { # Kardias (Sebasteia)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76478,6 +77494,8 @@ d_nf_katakalitzes = { # Katakalitzes (Boukellarion)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76494,6 +77512,8 @@ d_nf_kourkouas = { # Kourkouas (Armeniac)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76508,6 +77528,8 @@ d_nf_krateros = { # Krateros (Ephesos)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76524,6 +77546,8 @@ d_nf_lachanodrakon = { # Lachanodrakon (Thrakesion)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76538,6 +77562,8 @@ d_nf_makedon = { # Makedon (Kappadokia)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76554,6 +77580,8 @@ d_nf_maleios = { # Maleios (Kappadokia)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76568,6 +77596,8 @@ d_nf_maleinos = { # Maleinos (Charsianon)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76584,6 +77614,8 @@ d_nf_maurikios = { # Maurikios (Opsikion)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76598,6 +77630,8 @@ d_nf_melissenos = { # Melissenos (Anatolikon)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76614,6 +77648,8 @@ d_nf_pastillas = { # Pastillas (Kibyrrhaiotai)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76628,6 +77664,8 @@ d_nf_ooryphas = { # Ooryphas (Aegean)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76644,6 +77682,8 @@ d_nf_sellokalas = { # Sellokalas (Optimatoi)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76658,6 +77698,8 @@ d_nf_skleros = { # Skleros (Athens)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76676,6 +77718,8 @@ d_nf_arcruni = { # Arcruni (Sebasteia)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76690,6 +77734,8 @@ d_nf_argyros = { # Argyros (Ephesos)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76706,6 +77752,8 @@ d_nf_basiliakos = { # Basiliakos (Thessalonika)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76720,6 +77768,8 @@ d_nf_botaneiates = { # Botaneiates (Antioch)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76736,6 +77786,8 @@ d_nf_bryennios = { # Bryennios (Kibyrrhaiotai)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76750,6 +77802,8 @@ d_nf_diogenes = { # Diogenes (Anatolikon)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76781,6 +77835,8 @@ d_nf_kamateros = { # Kamateros (Paphlagonia)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76795,6 +77851,8 @@ d_nf_karandenos = { # Karandenos (Bulgaria)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76811,6 +77869,8 @@ d_nf_kaukadenos = { # Kaukadenos (Opsikion)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76825,6 +77885,8 @@ d_nf_komnenos = { # Komnenos (Armeniac)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76841,6 +77903,8 @@ d_nf_makrembolites = { # Makrembolites (Aegean)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76855,6 +77919,8 @@ d_nf_murzuphlos = { # Murzuphlos (Achaia)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76871,6 +77937,8 @@ d_nf_ouranos = { # Ouranos (Krete)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76885,6 +77953,8 @@ d_nf_pahlavuni = { # Pahlavuni (Vaspurakan)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76901,6 +77971,8 @@ d_nf_palaiologos = { # Palaiologos (Epirus)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76915,6 +77987,8 @@ d_nf_pegonites = { # Pegonites (Cyprus)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76931,6 +78005,8 @@ d_nf_phokas = { # Phokas (Charsianon)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76945,6 +78021,8 @@ d_nf_pleustes = { # Pleustes (Strymon)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76961,6 +78039,8 @@ d_nf_synadenos = { # Synadenos (Dyrrachion)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -76975,6 +78055,8 @@ d_nf_tarchaneiotes = { # Tarchaneiotes (Kilikia)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -76991,6 +78073,8 @@ d_nf_taronites = { # Taronites (Khaldia)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77005,6 +78089,8 @@ d_nf_varajnuni = { # Varajnuni (Mesopotamia)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77021,6 +78107,8 @@ d_nf_saronites = { # Saronites (Constantinople)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77035,6 +78123,8 @@ d_nf_garidas = { # Garidas (Constantinople)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77051,6 +78141,8 @@ d_nf_areobindenos = { # Areobindenos (Constantinople)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77065,6 +78157,8 @@ d_nf_alopos = { # Alopos (Constantinople)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77098,6 +78192,8 @@ d_nf_angelos = { # Angelos
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77112,6 +78208,8 @@ d_nf_batatzes = { # Batatzes
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77128,6 +78226,8 @@ d_nf_branas = { # Branas
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77142,6 +78242,8 @@ d_nf_gabras = { # Gabras (Trebizond)
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77158,6 +78260,8 @@ d_nf_kamytzes = { # Kamytzes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77172,6 +78276,8 @@ d_nf_kantakouzenos = { # Kantakouzenos
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77188,6 +78294,8 @@ d_nf_komnenos_doukas = { # Komnenos Doukas
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77202,6 +78310,8 @@ d_nf_kontostephanos = { # Kontostephanos
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77218,6 +78328,8 @@ d_nf_lampardas = { # Lampardas
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77232,6 +78344,8 @@ d_nf_macrodoukas = { # Macrodoukas
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77248,6 +78362,8 @@ d_nf_petraliphas = { # Petraliphas
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77263,6 +78379,8 @@ d_nf_raoul = { # Raoul (Smyrna)
 	noble_family = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77277,6 +78395,8 @@ d_nf_rogerios = { # Rogerios
 	no_automatic_claims = yes
 	noble_family = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77296,6 +78416,8 @@ d_laamp_anangapida = { # Anangapida
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77309,6 +78431,8 @@ d_laamp_ziyar = { # Ziyar
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77324,6 +78448,8 @@ d_laamp_ahwazi = { # Husayn
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77337,6 +78463,8 @@ d_laamp_guttorm = { # Guttorm
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77352,6 +78480,8 @@ d_laamp_hrolfr = { # Hrolfr
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77365,6 +78495,8 @@ d_laamp_ubbe = { # Ubbe
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77380,6 +78512,8 @@ d_laamp_enian = { # Enian Qaghan
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77393,6 +78527,8 @@ d_laamp_sevener_caliph = { # Hussayn Fatimid
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77408,6 +78544,8 @@ d_laamp_twelver_caliph = { # Ali Fatimid
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77421,6 +78559,8 @@ d_laamp_qutid = { # Suleyman ibn Hakam Qutid.
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77438,6 +78578,8 @@ d_laamp_sabbah = { # Hassan-i Sabbah
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77451,6 +78593,8 @@ d_laamp_wake = { # Hereweard the Wake
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77466,6 +78610,8 @@ d_laamp_el_cid = { # El Cid
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77479,7 +78625,9 @@ d_laamp_henry_of_skalitz = { # Henry of Skalitz
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
-	disable_regnal_numbers = yes
+	disable_regnal_numbers = always
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77495,6 +78643,8 @@ d_laamp_crispin = { # Robert Crispin
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77508,6 +78658,8 @@ d_laamp_suleyman = { # Suleyman ibn Qutalmish
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77523,6 +78675,8 @@ d_laamp_wallada = { # Wallada bint al-Mustakfi
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77536,6 +78690,8 @@ d_laamp_danishmend = { # Danishmend Taylu
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77551,6 +78707,8 @@ d_laamp_voiteh = { # Georgi Voiteh
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77564,6 +78722,8 @@ d_laamp_aelfwine = { # Aelfwine Haroldson
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77579,6 +78739,8 @@ d_laamp_karatzas = { # Argyros Karatzas
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77593,6 +78755,8 @@ d_laamp_kalbid = { # Muhammad ibn Ibrahim Kalbid.
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77606,6 +78770,8 @@ d_laamp_du_leon = { # Ordonu du Leon.
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77623,6 +78789,8 @@ d_laamp_kizil_buga = { # Kızıl Buğa Kayı
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77636,6 +78804,8 @@ d_laamp_ali_ibn_reverter = { # Abu-l-Hasan Ali ibn Reverter
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 
@@ -77652,6 +78822,8 @@ d_laamp_andronikos_komnenos = { # Andronikos Komnenos
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77665,6 +78837,8 @@ d_laamp_asen = { # Theodor-Peter of Bulgaria
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77680,6 +78854,8 @@ d_laamp_mieszko = { # Mieszko the Old
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77693,6 +78869,8 @@ d_laamp_raimon_brun = { # Raimon-Brun de Gramont
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77708,6 +78886,8 @@ d_laamp_lalibela = { # Lalibela
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77722,6 +78902,8 @@ d_laamp_muhammad_bakhtiyar = { # Muhammad Bakhtiyar
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
 
+	dlc_feature = roads_to_power
+
 	ai_primary_priority = { add = @never_primary_score }
 }
 
@@ -77735,6 +78917,8 @@ d_laamp_raoul = { # Roger Raoul
 	ruler_uses_title_name = no
 	no_automatic_claims = yes
 	destroy_if_invalid_heir = yes
+
+	dlc_feature = roads_to_power
 
 	ai_primary_priority = { add = @never_primary_score }
 }
@@ -77764,9 +78948,9 @@ k_winideheim = {
 
 k_cossack = {
 	color = { 40 160 40 }
-	
+
 	definite_form = yes
-	
+
 	capital = c_tana
 
 	can_create = { always = no }
