@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 if ! command -v jq >/dev/null 2>&1; then
     echo "[ERROR] Missing 'jq'. Please make sure it is installed in order to use this script." >&2
     exit 1
@@ -15,21 +17,34 @@ WIKIDATA_API_URL="https://www.wikidata.org"
 GEONAMES_ENABLED=false
 WIKIDATA_ENABLED=false
 
-while true; do
-    if [ "${1}" == "--geonamesid" ] || \
-       [ "${1}" == "--geonames" ] || \
-       [ "${1}" == "--gnid" ] || \
-       [ "${1}" == "--gn" ]; then
+while [[ $# -gt 0 ]]; do
+    if [[ "${1}" == "--geonamesid" ]] || \
+       [[ "${1}" == "--geonames" ]] || \
+       [[ "${1}" == "--gnid" ]] || \
+       [[ "${1}" == "--gn" ]]; then
         GEONAMES_ENABLED=true && shift
+
+        if [[ $# -lt 1 ]]; then
+            echo "[ERROR] Missing value for the '--geonamesid' argument." >&2
+            exit 1
+        fi
+
         GEONAMES_ID="${1}" && shift
-    elif [ "${1}" == "--wikidataid" ] || \
-         [ "${1}" == "--wikidata" ] || \
-         [ "${1}" == "--wdid" ] || \
-         [ "${1}" == "--wd" ]; then
+    elif [[ "${1}" == "--wikidataid" ]] || \
+         [[ "${1}" == "--wikidata" ]] || \
+         [[ "${1}" == "--wdid" ]] || \
+         [[ "${1}" == "--wd" ]]; then
         WIKIDATA_ENABLED=true && shift
+
+        if [[ $# -lt 1 ]]; then
+            echo "[ERROR] Missing value for the '--wikidataid' argument." >&2
+            exit 1
+        fi
+
         WIKIDATA_ID="${1}" && shift
     else
-        break
+        echo "[ERROR] Unknown argument: ${1}" >&2
+        exit 1
     fi
 done
 
@@ -48,9 +63,11 @@ if ! ${GEONAMES_ENABLED} && ${WIKIDATA_ENABLED}; then
         exit 1
     fi
 
-    WIKIDATA_GEONAMES_IDS_COUNT=$(jq '.entities.'"${WIKIDATA_ID}"'.claims.P1566' <<< "${WIKIDATA_DATA}" | grep -c "external-id")
+    WIKIDATA_GEONAMES_IDS_COUNT=$(jq -r \
+        ".entities[\"${WIKIDATA_ID}\"].claims.P1566 // [] | map(select(.mainsnak.datavalue.value != null)) | length" \
+        <<< "${WIKIDATA_DATA}")
 
-    if [ "${WIKIDATA_GEONAMES_IDS_COUNT}" == "1" ]; then
+    if [[ "${WIKIDATA_GEONAMES_IDS_COUNT}" == "1" ]]; then
         GEONAMES_ENABLED=true
         GEONAMES_ID=$(jq '.entities.'"${WIKIDATA_ID}"'.claims.P1566[0].mainsnak.datavalue.value' <<< "${WIKIDATA_DATA}" | sed 's/\"//g')
     else
@@ -104,7 +121,10 @@ function get-name-for-language() {
     local LANGUAGE_CODE="${1}"
     local NAME=""
 
-    NAME=$(jq -r --arg languageCode "${LANGUAGE_CODE}" '(.names // {})[$languageCode].value // empty' <<< "${EXONYMSAPI_RESPONSE}")
+    NAME=$(jq -r \
+        --arg languageCode "${LANGUAGE_CODE}" \
+        '(.names // {})[$languageCode].value // empty' \
+        <<< "${EXONYMSAPI_RESPONSE}")
 
     [[ -z "${NAME}" ]] && return
 
@@ -160,14 +180,14 @@ function get-name-line-2variants() {
 
 function get_number_of_child_processes() {
     local PID=$$
-    local PROCESSES_COUNT=$(ps -eo ppid | grep -w "${PID}" | wc -l)
+    local PROCESSES_COUNT=$(ps -eo ppid | grep -w "${PID}" | wc -l || true)
 
     echo $((PROCESSES_COUNT-1))
 }
 
 function get_name_lines_in_parallel() {
-    if [ "$(( $# % 2))" -ne 0 ]; then
-        echo "ERROR: Invalid arguments (count: $#) for set_launcher_entries: ${*}" >&2
+    if [[ $(( $# % 2 )) -ne 0 ]]; then
+        echo "[ERROR] Invalid arguments (count: $#) for get_name_lines_in_parallel: ${*}" >&2
         exit 1
     fi
 
@@ -175,7 +195,7 @@ function get_name_lines_in_parallel() {
     local GROUP_SIZE=6
     local I=0
 
-    if [ -f "/usr/bin/nproc" ]; then
+    if command -v nproc >/dev/null 2>&1; then
         GROUP_SIZE=$(nproc)
         GROUP_SIZE=$((GROUP_SIZE*2-2))
     fi
@@ -184,14 +204,14 @@ function get_name_lines_in_parallel() {
         local LANGUAGE_ID="${1}" && shift
         local LANGUAGE_CODE="${1}" && shift
 
-        while [ "$(get_number_of_child_processes)" -ge "${GROUP_SIZE}" ]; do
+        while [[ "$(get_number_of_child_processes)" -ge "${GROUP_SIZE}" ]]; do
             sleep 0.1
         done
 
         get-name-line "${LANGUAGE_ID}" "${LANGUAGE_CODE}" &
     done
 
-    wait
+    wait || true
 }
 
 function get-name-lines() {
@@ -471,12 +491,12 @@ function get-name-lines() {
     get-name-line-2variants "Bosnian" "bs" "SerboCroatian" "sh" &
     get-name-line-2variants "Chinese" "zh-hans" "Chinese" "zh" &
     get-name-line-2variants "Croatian" "hr" "SerboCroatian" "sh" &
-    get-name-line-2variants "Kurdish" "ku" "Kurdish" "ckb" &
+    get-name-line-2variants "Kurdish_Central" "ckb" "Kurdish" "ku" &
     get-name-line-2variants "Norwegian_Nynorsk" "nn" "Norwegian" "nb" &
     get-name-line-2variants "Portuguese_Brazilian" "pt-br" "Portuguese" "pt" &
     get-name-line-2variants "Serbian" "sr-el" "SerboCroatian" "sh" &
     get-name-line-2variants "Serbian" "sr" "SerboCroatian" "sh" &
-    wait
+    wait || true
 }
 
 function get-location-entry() {
