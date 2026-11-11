@@ -8,18 +8,33 @@ on:
 
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   data:
     name: Data
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Check out the repository
+        uses: actions/checkout@v7
 
       - name: Install xmlstarlet
         run: |
-          sudo apt-get update
-          sudo apt-get install -y xmlstarlet
+          APT_OPTIONS=(-o Acquire::Retries=5 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30)
+
+          for ATTEMPT in 1 2 3; do
+              if sudo apt-get install -y --no-install-recommends "${APT_OPTIONS[@]}" xmlstarlet; then
+                  break
+              fi
+
+              echo "Failed to install xmlstarlet (attempt ${ATTEMPT}). Refreshing the package lists and retrying..."
+              sudo apt-get update "${APT_OPTIONS[@]}" || true
+              sleep 15
+          done
+
+          xmlstarlet --version
 
       - name: Validate the data
         run: |
@@ -28,12 +43,14 @@ jobs:
               echo "${VALIDATE_DATA_OUTPUT}"
               exit 1
           fi
+
   scripts:
     name: Scripts
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Check out the repository
+        uses: actions/checkout@v7
 
       - name: Shellcheck
         run: shopt -s globstar nullglob; shellcheck **/*.sh --severity error
