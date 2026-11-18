@@ -78654,6 +78654,7 @@
       <GameId game="CK2">b_kulm</GameId> <!-- Loza -->
       <GameId game="CK2HIP">b_loza</GameId> <!-- Loza -->
       <GameId game="CK2RoI">b_kulm</GameId> <!-- Loza -->
+      <GameId game="CK3">b_kulmsee</GameId> <!-- Łoza -->
       <GameId game="IR_ABW">2042</GameId> <!-- Chelmza -->
     </GameIds>
     <Names>
@@ -78668,6 +78669,7 @@
       <Name language="Latgalian" value="Helmza" />
       <Name language="Latvian" value="Helmža" />
       <Name language="Lithuanian_Medieval" value="Helmza" />
+      <Name language="Polish_Before1251" value="Łoza" />
       <Name language="Polish" value="Chełmża" />
       <Name language="Prussian_Old" value="Helmza" />
       <Name language="Russian" value="Khelmzha" />
@@ -122337,11 +122339,13 @@
       <GameId game="CK2">b_gaujiena</GameId> <!-- Gaujiena -->
       <GameId game="CK2HIP">b_gaujiena</GameId> <!-- Adsel -->
       <GameId game="CK2RoI">b_gaujiena</GameId> <!-- Gaujiena -->
+      <GameId game="CK3">b_gaujiena</GameId> <!-- Adzele -->
     </GameIds>
     <Names>
       <Name language="Estonian" value="Koivaliina" />
       <Name language="Finnish" value="Koivaliina" />
       <Name language="German_Middle_High" value="Adsel" adjective="Adselis" />
+      <Name language="German" value="Adsel" adjective="Adselisch" />
       <Name language="Karelian" value="Koivaliina" />
       <Name language="Khanty" value="Koivaliina" />
       <Name language="Komi" value="Koivaliina" />
@@ -415968,9 +415972,13 @@
   <LocationEntity>
     <Id>marsico</Id>
     <GameIds>
+      <GameId game="CK2HIP">b_marsico</GameId> <!-- Marsico -->
       <GameId game="CK2HIP">c_marsi</GameId> <!-- Marsico -->
-      <GameId game="CK3MBP">c_marsi</GameId> <!-- Marsica -->
+      <GameId game="CK2HIP">c_marsico</GameId> <!-- Marsico -->
       <GameId game="CK3">b_marsico</GameId> <!-- Marsico -->
+      <GameId game="CK3MBP">b_marsico</GameId> <!-- Marsico -->
+      <GameId game="CK3MBP">c_marsi</GameId> <!-- Marsica -->
+      <GameId game="CK3MBP">c_marsico</GameId> <!-- Marsicovetere -->
     </GameIds>
   </LocationEntity>
   <LocationEntity>
@@ -427249,15 +427257,6 @@
       <GameId game="CK3MBP">b_mansal-kharaz</GameId> <!-- Mansa'l-Kharaz -->
       <GameId game="CK3SoW">b_mansal-kharaz</GameId> <!-- Mansal Kharaz -->
       <GameId game="CK3TFE">b_mansal-kharaz</GameId> <!-- Mansal Kharaz -->
-    </GameIds>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>marsico</Id>
-    <GameIds>
-      <GameId game="CK2HIP">b_marsico</GameId> <!-- Marsico -->
-      <GameId game="CK2HIP">c_marsico</GameId> <!-- Marsico -->
-      <GameId game="CK3MBP">b_marsico</GameId> <!-- Marsico -->
-      <GameId game="CK3MBP">c_marsico</GameId> <!-- Marsicovetere -->
     </GameIds>
   </LocationEntity>
   <LocationEntity>
@@ -503283,9 +503282,11 @@
     <GameIds>
       <GameId game="CK2">b_aquila</GameId> <!-- Aquila -->
       <GameId game="CK2RoI">b_aquila</GameId> <!-- Aquila -->
+      <GameId game="CK3">b_aquila</GameId> <!-- Aquila -->
     </GameIds>
     <Names>
       <Name language="Greek" value="Amiternon" />
+      <Name language="Italian" value="Aquila" />
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -686662,6 +686663,395 @@
     </GameIds>
     <Names>
       <Name language="English" value="Sōhei of Kōfuku-ji" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>aibling</Id>
+    <GameIds>
+      <GameId game="CK3">b_aibling</GameId> <!-- Aibling -->
+    </GameIds>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>albidona</Id>
+    <GameIds>
+      <GameId game="CK3">b_albidona</GameId> <!-- Albidona -->
+    </GameIds>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>ales</Id>
+    <GameIds>
+      <GameId game="CK3">b_ales</GameId> <!-- Alès -->
+    </GameIds>
+    <Names>
+      <Name language="French" value="Alès" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>arbergen</Id>
+    <GameIds>
+      <GameId game="CK3">b_arbergen</GameId> <!-- Arbergen -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Arbergen" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>arbois</Id>
+    <GameIds>
+      <GameId game="CK3">b_arbois</GameId> <!-- Arbois -->
+    </GameIds>
+    <Names>
+      <Name language="French" value="Arbois" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bage_france</Id>
+    <GameIds>
+      <GameId game="CK3">b_bage</GameId> <!-- Bâgé -->
+    </GameIds>
+    <Names>
+      <Name language="French" value="Bâgé" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>creussen</Id>
+    <GameIds>
+      <GameId game="CK3">b_bayreuth</GameId> <!-- Creußen -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Creußen" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>beckum</Id>
+    <GameIds>
+      <GameId game="CK3">b_beckum</GameId> <!-- Beckum -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Beckum" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bobolice</Id>
+    <GameIds>
+      <GameId game="CK3">b_belgard</GameId> <!-- Bobolice -->
+    </GameIds>
+    <Names>
+      <Name language="Polish" value="Bobolice" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bergedorf</Id>
+    <GameIds>
+      <GameId game="CK3">b_bergedorf</GameId> <!-- Bergedorf -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Bergedorf" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>strowangen</Id>
+    <GameIds>
+      <GameId game="CK3">b_bischofstein</GameId> <!-- Strowangen -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Strowangen" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bivona</Id>
+    <GameIds>
+      <GameId game="CK3">b_bivona</GameId> <!-- Bivona -->
+    </GameIds>
+    <Names>
+      <Name language="Italian" value="Bivona" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bonneville</Id>
+    <GameIds>
+      <GameId game="CK3">b_bonneville</GameId> <!-- Bonneville -->
+    </GameIds>
+    <Names>
+      <Name language="French" value="Bonneville" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bordesholm</Id>
+    <GameIds>
+      <GameId game="CK3">b_bordesholm</GameId> <!-- Bordesholm -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Bordesholm" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>bouchain</Id>
+    <GameIds>
+      <GameId game="CK3">b_bouchain</GameId> <!-- Bouchain -->
+    </GameIds>
+    <Names>
+      <Name language="French" value="Bouchain" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>buccino</Id>
+    <GameIds>
+      <GameId game="CK3">b_buccino</GameId> <!-- Buccino -->
+    </GameIds>
+    <Names>
+      <Name language="Italian" value="Buccino" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>buis</Id>
+    <GameIds>
+      <GameId game="CK3">b_buis</GameId> <!-- Buis -->
+    </GameIds>
+    <Names>
+      <Name language="French" value="Buis" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>castroreale</Id>
+    <GameIds>
+      <GameId game="CK3">b_castroreale</GameId> <!-- Castroreale -->
+    </GameIds>
+    <Names>
+      <Name language="Italian" value="Castroreale" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>chiemsee</Id>
+    <GameIds>
+      <GameId game="CK3">b_chiemsee</GameId> <!-- Chiemsee -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Chiemsee" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>crest_france</Id>
+    <GameIds>
+      <GameId game="CK3">b_crest</GameId> <!-- Crest -->
+    </GameIds>
+    <Names>
+      <Name language="French" value="Crest" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>daugavgriva</Id>
+    <GameIds>
+      <GameId game="CK3">b_daugavgriva</GameId> <!-- Daugavgrīva -->
+    </GameIds>
+    <Names>
+      <Name language="Latvian" value="Daugavgrīva" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>drezdenko</Id>
+    <GameIds>
+      <GameId game="CK3">b_drezdenko</GameId> <!-- Drezdenko -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Driesen" />
+      <Name language="Polish" value="Drezdenko" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>durbe</Id>
+    <GameIds>
+      <GameId game="CK3">b_durbe</GameId> <!-- Durbe -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Durben" />
+      <Name language="Latvian" value="Durbe" />
+      <Name language="Lithuanian" value="Durbė" />
+      <Name language="Polish" value="Dorbiany" />
+      <Name language="Russian" value="Durbe" comment="Or Durben" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>fivizzano</Id>
+    <GameIds>
+      <GameId game="CK3">b_fivizzano</GameId> <!-- Fivizzano -->
+    </GameIds>
+    <Names>
+      <Name language="Italian" value="Fivizzano" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>frosinone</Id>
+    <GameIds>
+      <GameId game="CK3">b_frosinone</GameId> <!-- Frosinone -->
+    </GameIds>
+    <Names>
+      <Name language="Italian" value="Frosinone" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>gunzburg</Id>
+    <GameIds>
+      <GameId game="CK3">b_gunzburg</GameId> <!-- Günzburg -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Günzburg" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>nabburg</Id>
+    <GameIds>
+      <GameId game="CK3">b_hohenburg</GameId> <!-- Nabburg -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Nabburg" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>hulst</Id>
+    <GameIds>
+      <GameId game="CK3">b_hulst</GameId> <!-- Hulst -->
+    </GameIds>
+    <Names>
+      <Name language="Dutch" value="Hulst" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>hunsingo</Id>
+    <GameIds>
+      <GameId game="CK3">b_hunsingo</GameId> <!-- Hunsingo -->
+    </GameIds>
+    <Names>
+      <Name language="Dutch" value="Hunsingo" />
+      <Name language="Gronings" value="Hunzego" comment="Or Hunzengo" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>pissa_masuria</Id>
+    <GameIds>
+      <GameId game="CK3">b_johannisburg</GameId> <!-- Pissa -->
+    </GameIds>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>kimenava</Id>
+    <GameIds>
+      <GameId game="CK3">b_kimenava</GameId> <!-- Kimenava -->
+    </GameIds>
+    <Names>
+      <Name language="Lithuanian" value="Kimenava" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>kirsna</Id>
+    <GameIds>
+      <GameId game="CK3">b_kirsna</GameId> <!-- Kirsna -->
+    </GameIds>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>kysos</Id>
+    <GameIds>
+      <GameId game="CK3">b_kysos</GameId> <!-- Kysos -->
+    </GameIds>
+    <Names>
+      <Name language="Greek_Ancient" value="Kysos" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>laukuva</Id>
+    <GameIds>
+      <GameId game="CK3">b_laukuva</GameId> <!-- Laukuva -->
+    </GameIds>
+    <Names>
+      <Name language="Lithuanian" value="Laukuva" />
+      <Name language="Samogitian" value="Laukova" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>zarnowiec</Id>
+    <GameIds>
+      <GameId game="CK3">b_lebno</GameId> <!-- Żarnowiec -->
+    </GameIds>
+    <Names>
+      <Name language="Kashubian" value="Czarnowicz" comment="Or Sarnkow, Sarnowitz, Sarnowicz" />
+      <Name language="Polish" value="Żarnowiec" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>le_quesnoy</Id>
+    <GameIds>
+      <GameId game="CK3">b_le_quesnoy</GameId> <!-- Le Quesnoy -->
+    </GameIds>
+    <Names>
+      <Name language="French" value="Le Quesnoy" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>les_baux</Id>
+    <GameIds>
+      <GameId game="CK3">b_les_baux</GameId> <!-- Les Baux -->
+    </GameIds>
+    <Names>
+      <Name language="French" value="Les Baux" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>lesum</Id>
+    <GameIds>
+      <GameId game="CK3">b_lesum</GameId> <!-- Lesum -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Lesum" />
+      <Name language="Latin" value="Lesum" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>lobez</Id>
+    <GameIds>
+      <GameId game="CK3">b_lobez</GameId> <!-- Łobez -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Labes" />
+      <Name language="Kashubian" value="Łobéz" />
+      <Name language="Polish" value="Łobez" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>ottobeuren</Id>
+    <GameIds>
+      <GameId game="CK3">b_marsetten</GameId> <!-- Ottobeuren -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Ottobeuren" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>meruniskiai</Id>
+    <GameIds>
+      <GameId game="CK3">b_meruniskiai</GameId> <!-- Ottobeuren -->
+    </GameIds>
+    <Names>
+      <Name language="Lithuanian" value="Merūniškiai" />
+      <Name language="Polish" value="Mejroniszki" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>morbegno</Id>
+    <GameIds>
+      <GameId game="CK3">b_morbenno</GameId> <!-- Morbenno -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Morbend" />
+      <Name language="Italian" value="Morbegno" />
+      <Name language="Lombard" value="Morbegn" comment="Or Murbegn" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>monheim</Id>
+    <GameIds>
+      <GameId game="CK3">b_neue_weissenburg</GameId> <!-- Monheim -->
+    </GameIds>
+    <Names>
+      <Name language="German" value="Monheim" />
     </Names>
   </LocationEntity>
 </ArrayOfLocationEntity>
