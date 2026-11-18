@@ -11,8 +11,8 @@ function updateCk3LocationLinks() {
     sed -i 's/\t/    /g' "${OUTPUT_FILE}"
 
     for TITLE_ID in $(cat "${OUTPUT_FILE}" | \
-                            grep "^ *[ekdcb]_" | \
-                            sed 's/^ *\([ekdcb]_[^= ]*\).*/\1/g' | \
+                            grep "^ *[hekdcb]_" | \
+                            sed 's/^ *\([hekdcb]_[^= ]*\).*/\1/g' | \
                             sort | uniq); do
         TITLE_NAME=$(tac "${@}" | \
                         grep "^ *[a-zA-Z]_" | \
