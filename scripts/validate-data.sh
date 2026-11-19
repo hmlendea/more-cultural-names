@@ -84,7 +84,7 @@ function checkForMissingCkLocationLinks() {
                             else
                                 cat
                             fi | \
-                            grep -i "^\s*[ekdcb]_.*=" | \
+                            grep -i "^\s*[hekdcb]_.*=" | \
                             awk -F"=" '{print $1}' | \
                             sed 's/[^a-zA-Z0-9_\-]//g' | \
                             sort -u \
@@ -141,7 +141,7 @@ function checkForSurplusCkLocationLinks() {
                             else
                                 cat
                             fi | \
-                            grep -i "^\s*[ekdcb]_.*=" | \
+                            grep -i "^\s*[hekdcb]_.*=" | \
                             awk -F"=" '{print $1}' | \
                             sed 's/[^a-zA-Z0-9_\-]//g' | \
                             sort -u \
@@ -275,7 +275,7 @@ function checkDefaultCk3Localisations() {
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
                                     tac "${@}" | \
-                                    grep -a "^ *[ekdcb]_" | \
+                                    grep -a "^ *[hekdcb]_" | \
                                     grep -v "_adj:" | \
                                     sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     awk -F"=" '!seen[$1]++' | \
