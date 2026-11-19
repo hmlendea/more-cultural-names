@@ -22,28 +22,29 @@ jobs:
       max-parallel: 1
       matrix:
         config:
-          - { game_id: 'CK2',     file_id: '544069', file_name: 'more-cultural-names'      }
-          - { game_id: 'CK2HIP',  file_id: '545050', file_name: 'hip-more-cultural-names'  }
-          - { game_id: 'CK2RoI',  file_id: '861790', file_name: 'roi-more-cultural-names'  }
-          - { game_id: 'CK3',     file_id: '201385', file_name: 'more-cultural-names'      }
-          - { game_id: 'CK3AEP',  file_id: '634384', file_name: 'aep-more-cultural-names'  }
-          - { game_id: 'CK3ATHA', file_id: '981868', file_name: 'atha-more-cultural-names' }
-          - { game_id: 'CK3CE',   file_id: '676705', file_name: 'ce-more-cultural-names'   }
-          - { game_id: 'CK3CMH',  file_id: '517144', file_name: 'cmh-more-cultural-names'  }
-          - { game_id: 'CK3IBL',  file_id: '204496', file_name: 'ibl-more-cultural-names'  }
-          - { game_id: 'CK3MBP',  file_id: '262513', file_name: 'mbp-more-cultural-names'  }
-          - { game_id: 'CK3SoW',  file_id: '391957', file_name: 'sow-more-cultural-names'  }
-          - { game_id: 'CK3TBA',  file_id: '559057', file_name: 'tba-more-cultural-names'  }
-          - { game_id: 'CK3TFE',  file_id: '350593', file_name: 'tfe-more-cultural-names'  }
-          - { game_id: 'HOI4',    file_id: '891598', file_name: 'more-cultural-names'      }
-          - { game_id: 'HOI4MDM', file_id: '963964', file_name: 'mdm-more-cultural-names'  }
-          - { game_id: 'HOI4TGW', file_id: '924133', file_name: 'tgw-more-cultural-names'  }
-          - { game_id: 'IR',      file_id: '177820', file_name: 'more-cultural-names'      }
-          - { game_id: 'IR_ABW',  file_id: '180820', file_name: 'abw-more-cultural-names'  }
-          - { game_id: 'IR_AoE',  file_id: '183427', file_name: 'aoe-more-cultural-names'  }
-          - { game_id: 'IR_INV',  file_id: '186169', file_name: 'inv-more-cultural-names'  }
-          - { game_id: 'IR_TBA',  file_id: '189268', file_name: 'tba-more-cultural-names'  }
-          - { game_id: 'IR_TI',   file_id: '328441', file_name: 'ti-more-cultural-names'   }
+          - { game_id: 'CK2',     file_id: '544069',  file_name: 'more-cultural-names'      }
+          - { game_id: 'CK2HIP',  file_id: '545050',  file_name: 'hip-more-cultural-names'  }
+          - { game_id: 'CK2RoI',  file_id: '861790',  file_name: 'roi-more-cultural-names'  }
+          - { game_id: 'CK3',     file_id: '201385',  file_name: 'more-cultural-names'      }
+          - { game_id: 'CK3AEP',  file_id: '634384',  file_name: 'aep-more-cultural-names'  }
+          - { game_id: 'CK3ATHA', file_id: '981868',  file_name: 'atha-more-cultural-names' }
+          - { game_id: 'CK3CE',   file_id: '676705',  file_name: 'ce-more-cultural-names'   }
+          - { game_id: 'CK3CMH',  file_id: '517144',  file_name: 'cmh-more-cultural-names'  }
+          - { game_id: 'CK3IBL',  file_id: '204496',  file_name: 'ibl-more-cultural-names'  }
+          - { game_id: 'CK3MBP',  file_id: '262513',  file_name: 'mbp-more-cultural-names'  }
+          - { game_id: 'CK3SoW',  file_id: '391957',  file_name: 'sow-more-cultural-names'  }
+          - { game_id: 'CK3TBA',  file_id: '559057',  file_name: 'tba-more-cultural-names'  }
+          - { game_id: 'CK3TFE',  file_id: '350593',  file_name: 'tfe-more-cultural-names'  }
+          - { game_id: 'HOI4',    file_id: '891598',  file_name: 'more-cultural-names'      }
+          - { game_id: 'HOI4MDM', file_id: '963964',  file_name: 'mdm-more-cultural-names'  }
+          - { game_id: 'HOI4TGW', file_id: '924133',  file_name: 'tgw-more-cultural-names'  }
+          - { game_id: 'IR',      file_id: '177820',  file_name: 'more-cultural-names'      }
+          - { game_id: 'IR_ABW',  file_id: '180820',  file_name: 'abw-more-cultural-names'  }
+          - { game_id: 'IR_AoE',  file_id: '183427',  file_name: 'aoe-more-cultural-names'  }
+          - { game_id: 'IR_INV',  file_id: '186169',  file_name: 'inv-more-cultural-names'  }
+          - { game_id: 'IR_TBA',  file_id: '189268',  file_name: 'tba-more-cultural-names'  }
+          - { game_id: 'IR_TI',   file_id: '328441',  file_name: 'ti-more-cultural-names'   }
+          - { game_id: 'Vic3',    file_id: '8420367', file_name: 'more-cultural-names'      }
 
     steps:
     - name: Prepare
@@ -52,7 +53,7 @@ jobs:
         wget "https://github.com/hmlendea/more-cultural-names/releases/download/${VERSION}/${RELEASE_ASSET_NAME}" -O "${{matrix.config.game_id}}.zip"
 
     - name: Upload
-      uses: Nexus-Mods/upload-action@v1.0.0-beta.10
+      uses: Nexus-Mods/upload-action@v1.0.0-beta.11
       with:
         api_key: ${{ secrets.NEXUSMODS_API_KEY }}
         file_id: ${{matrix.config.file_id}}
