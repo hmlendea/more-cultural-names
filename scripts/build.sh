@@ -189,6 +189,10 @@ build-edition \
     "ti-more-cultural-names" "Terra Indomita: More Cultural Names" \
     "IR_TI" "2.0.*"
 
+build-edition \
+    'more-cultural-names' 'More Cultural Names' \
+    'Vic3' '1.15.*'
+
 cd "${REPO_DIR}"
 bash "${REPO_DIR}/scripts/count-localisations.sh"
 
