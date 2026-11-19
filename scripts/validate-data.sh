@@ -31,6 +31,28 @@ function getGameIds() {
         sort
 }
 
+EXCLUDED_LANDED_TITLE_PREFIXES=(
+    'd_laamp_'
+    'd_cd_'
+    'd_et_'
+    'k_minister_'
+    'k_mm_'
+    'd_siro_map_'
+    'd_map_'
+    'c_nf_'
+    'd_nf_'
+)
+
+function isExcludedLandedTitle() {
+    local LANDED_TITLE_ID="${1}"
+
+    for PREFIX in "${EXCLUDED_LANDED_TITLE_PREFIXES[@]}"; do
+        [[ ${LANDED_TITLE_ID} == ${PREFIX}* ]] && return 0
+    done
+
+    return 1
+}
+
 function checkForSurplusCk3LanguageLinks() {
     local GAME="${1}" && shift
 
@@ -92,6 +114,7 @@ function checkForMissingCkLocationLinks() {
                         grep "^>" | sed 's/^> //g'); do
 
         [[ ${LANDED_TITLE_ID} =~ _color$ ]] && continue
+        isExcludedLandedTitle "${LANDED_TITLE_ID}" && continue
 
         LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LANDED_TITLE_ID}")
         [ -n "${1}" ] && LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${LANDED_TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
@@ -255,6 +278,9 @@ function checkDefaultCk2Localisations() {
                             sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        GAMEID_TITLE_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${GAMEID_DEFINITION}")
+        isExcludedLandedTitle "${GAMEID_TITLE_ID}" && continue
+
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
     done
 }
@@ -285,6 +311,9 @@ function checkDefaultCk3Localisations() {
                             sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        GAMEID_TITLE_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${GAMEID_DEFINITION}")
+        isExcludedLandedTitle "${GAMEID_TITLE_ID}" && continue
+
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
     done
 }
@@ -554,6 +583,10 @@ done
 # Find multiple name definitions for the same language
 grep -Pzo "\n.* language=\"([^\"]*)\".*\n.*language=\"\1\".*\n" *.xml
 
+checkForMismatchingLocationLinks "CK3CE"    "${CK3CE_VANILLA_LANDED_TITLES_FILE}"   "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3CE"    "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
+exit
+
 validate_links 'HOI4'
 validate_links 'HOI4MDM'
 validate_links 'HOI4TGW'
@@ -573,7 +606,6 @@ checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"     "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3AEP"   "${CK3AEP_VANILLA_LANDED_TITLES_FILE}"  "${CK3AEP_LOCALISATIONS_DIR}/AEP_titles_l_english.yml" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}" "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
-checkForMismatchingLocationLinks "CK3CE"    "${CK3CE_VANILLA_LANDED_TITLES_FILE}"   "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"  "${CK3CE_VANILLA_LOCALISATION_FILE}" "${CK3Counterfactuals_VANILLA_LOCALISATION_FILE}" "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3SuccExp_VANILLA_LOCALISATION_FILE}" "${CK3Trinity_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"  "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"  "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
@@ -589,7 +621,6 @@ checkDefaultCk2Localisations "CK2TWK"   "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3AEP"   "${CK3AEP_LOCALISATIONS_DIR}"/AEP_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
-checkDefaultCk3Localisations "CK3CE"    "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3CMH"   "${CK3CE_VANILLA_LOCALISATION_FILE}" "${CK3Counterfactuals_VANILLA_LOCALISATION_FILE}" "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3SuccExp_VANILLA_LOCALISATION_FILE}" "${CK3Trinity_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
