@@ -94,7 +94,7 @@ function update-vic3-countries() {
     local COUNTRY_NAME=""
 
     for COUNTRY_ID in ${COUNTRY_IDS} ; do
-        COUNTRY_NAME=$(grep "^ ${COUNTRY_ID}:[0-9]\s*" "${LOCALISATIONS_DIR}"/*.yml | \
+        COUNTRY_NAME=$(grep "^ ${COUNTRY_ID}:[0-9]*\s*" "${LOCALISATIONS_DIR}"/*.yml | \
                                 sed 's/^[^\"]*\"\([^\"]*\)\".*/\1/g' | \
                                 tail -n 1)
         echo "${COUNTRY_ID}=${COUNTRY_NAME}" >> "${TARGET_FILE}"
@@ -118,7 +118,7 @@ function update-vic3-states() {
     local STATE_NAME=""
 
     for STATE_ID in ${STATE_IDS} ; do
-        STATE_NAME=$(grep "^ ${STATE_ID}:[0-9]\s*" "${LOCALISATIONS_DIR}/map"/*.yml | \
+        STATE_NAME=$(grep "^ ${STATE_ID}:[0-9]*\s*" "${LOCALISATIONS_DIR}/map"/*.yml | \
                                 sed 's/^[^\"]*\"\([^\"]*\)\".*/\1/g' | \
                                 tail -n 1)
         echo "${STATE_ID}=${STATE_NAME}" >> "${TARGET_FILE}"
@@ -141,7 +141,7 @@ function update-vic3-hubs() {
                     sort | uniq)
 
     for HUB_ID in ${HUB_IDS} ; do
-        HUB_NAME=$(grep "^ HUB_NAME_${HUB_ID}:[0-9]\s*" "${LOCALISATIONS_DIR}"/*.yml | \
+        HUB_NAME=$(grep "^ HUB_NAME_${HUB_ID}:[0-9]*\s*" "${LOCALISATIONS_DIR}"/*.yml | \
                     sed 's/^[^\"]*\"\([^\"]*\)\".*/\1/g' | \
                     tail -n 1)
         echo "${HUB_ID}=${HUB_NAME}" >> "${TARGET_FILE}"
