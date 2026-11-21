@@ -31,6 +31,28 @@ function getGameIds() {
         sort
 }
 
+EXCLUDED_LANDED_TITLE_PREFIXES=(
+    'd_laamp_'
+    'd_cd_'
+    'd_et_'
+    'k_minister_'
+    'k_mm_'
+    'd_siro_map_'
+    'd_map_'
+    'c_nf_'
+    'd_nf_'
+)
+
+function isExcludedLandedTitle() {
+    local LANDED_TITLE_ID="${1}"
+
+    for PREFIX in "${EXCLUDED_LANDED_TITLE_PREFIXES[@]}"; do
+        [[ ${LANDED_TITLE_ID} == ${PREFIX}* ]] && return 0
+    done
+
+    return 1
+}
+
 function checkForSurplusCk3LanguageLinks() {
     local GAME="${1}" && shift
 
@@ -84,7 +106,7 @@ function checkForMissingCkLocationLinks() {
                             else
                                 cat
                             fi | \
-                            grep -i "^\s*[ekdcb]_.*=" | \
+                            grep -i "^\s*[hekdcb]_.*=" | \
                             awk -F"=" '{print $1}' | \
                             sed 's/[^a-zA-Z0-9_\-]//g' | \
                             sort -u \
@@ -92,6 +114,7 @@ function checkForMissingCkLocationLinks() {
                         grep "^>" | sed 's/^> //g'); do
 
         [[ ${LANDED_TITLE_ID} =~ _color$ ]] && continue
+        isExcludedLandedTitle "${LANDED_TITLE_ID}" && continue
 
         LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LANDED_TITLE_ID}")
         [ -n "${1}" ] && LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${LANDED_TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
@@ -141,13 +164,13 @@ function checkForSurplusCkLocationLinks() {
                             else
                                 cat
                             fi | \
-                            grep -i "^\s*[ekdcb]_.*=" | \
+                            grep -i "^\s*[hekdcb]_.*=" | \
                             awk -F"=" '{print $1}' | \
                             sed 's/[^a-zA-Z0-9_\-]//g' | \
                             sort -u \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist"
+        echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist. Find it with ${GAME_ID}\"[^>]*>${LANDED_TITLE_ID}<"
     done
 }
 
@@ -195,7 +218,10 @@ function checkForMismatchingLocationLinks() {
     [[ ${GAME_ID} != HOI4* ]] && [[ ${GAME_ID} != Vic3* ]] && [ ! -f "${VANILLA_FILE}" ] && return
 
     if [[ ${GAME_ID} == CK* ]]; then
-        checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        if [[ "${GAME_ID}" != 'CK3CE' ]]; then
+            checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        fi
+
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == IR* ]]; then
         #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
@@ -217,8 +243,10 @@ function validate_links() {
         list_surplus_ir_provinces "${GAME_ID}"
         list_mismatching_ir_localisations "${GAME_ID}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
+        list_surplus_vic3_hubs "${GAME_ID}"
+        list_surplus_vic3_states "${GAME_ID}"
         #list_missing_vic3_hubs "${GAME_ID}"
-        list_missing_vic3_states "${GAME_ID}"
+        #list_missing_vic3_states "${GAME_ID}"
         checkDefaultVic3Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
     fi
 }
@@ -250,6 +278,9 @@ function checkDefaultCk2Localisations() {
                             sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        GAMEID_TITLE_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${GAMEID_DEFINITION}")
+        isExcludedLandedTitle "${GAMEID_TITLE_ID}" && continue
+
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
     done
 }
@@ -270,7 +301,7 @@ function checkDefaultCk3Localisations() {
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
                                     tac "${@}" | \
-                                    grep -a "^ *[ekdcb]_" | \
+                                    grep -a "^ *[hekdcb]_" | \
                                     grep -v "_adj:" | \
                                     sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     awk -F"=" '!seen[$1]++' | \
@@ -280,6 +311,9 @@ function checkDefaultCk3Localisations() {
                             sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        GAMEID_TITLE_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${GAMEID_DEFINITION}")
+        isExcludedLandedTitle "${GAMEID_TITLE_ID}" && continue
+
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
     done
 }
@@ -354,7 +388,7 @@ function validateHoi4Parentage() {
             local CITY_NAME=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
             local STATE_NAME=$(getHoi4StateName "${EXPECTED_STATE_ID}" "${LOCALISATIONS_DIR}")
 
-            echo "${GAME_ID}: City ${CITY_ID} (${CITY_NAME}) is not linked to the correct state. Correct parent: ${EXPECTED_STATE_ID} (${STATE_NAME})"
+            echo "${GAME_ID}: City ${CITY_ID} (${CITY_NAME}) is not linked to the correct state. Correct parent: ${EXPECTED_STATE_ID} (${STATE_NAME}) | Find it with ${GAME_ID}[^A-Z].*City.*>${CITY_ID}<"
         fi
     done < <(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}")
 }
@@ -512,6 +546,7 @@ grep -Pzo "\n\s*<Name .*\n\s*</GameId.*\n" *.xml # </GameId.* after <Name>
 grep -Pzo "\n\s*.*</[^<]*\n\s*<Name .*\n" *.xml # <Name> after closing tags
 grep -Pzo "</[a-zA-Z]*>\n\s*<Id>.*\n" *.xml # <Id> after a closing tag
 grep -Pzo "<Fallback(Languages|Locations)>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <FallbackLanguages> or <FallbackLocations>
+grep -Pzo "<Name>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <Name>
 grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
@@ -564,16 +599,16 @@ validate_links 'Vic3'
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"     "${CK2_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE}"  "${CK2HIP_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK2RoI"   "${CK2RoI_VANILLA_LANDED_TITLES_FILE}"  "${CK2RoI_LOCALISATIONS_DIR}"/*.csv
-#checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE}"  "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
+checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE}"  "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"     "${CK3_VANILLA_LOCALISATION_FILE}"
-#checkForMismatchingLocationLinks "CK3AEP"    "${CK3AEP_VANILLA_LANDED_TITLES_FILE}"   "${CK3AEP_LOCALISATIONS_DIR}/AEP_titles_l_english.yml" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3AEP"   "${CK3AEP_VANILLA_LANDED_TITLES_FILE}"  "${CK3AEP_LOCALISATIONS_DIR}/AEP_titles_l_english.yml" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}" "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
 checkForMismatchingLocationLinks "CK3CE"    "${CK3CE_VANILLA_LANDED_TITLES_FILE}"   "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
-checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"  "${CK3CE_VANILLA_LOCALISATION_FILE}" "${CK3Counterfactuals_VANILLA_LOCALISATION_FILE}" "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3RICE_VANILLA_LOCALISATION_FILE}" "${CK3SuccExp_VANILLA_LOCALISATION_FILE}" "${CK3Trinity_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"  "${CK3CE_VANILLA_LOCALISATION_FILE}" "${CK3Counterfactuals_VANILLA_LOCALISATION_FILE}" "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3SuccExp_VANILLA_LOCALISATION_FILE}" "${CK3Trinity_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"  "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"  "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"  "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
-checkForMismatchingLocationLinks 'CK3TBA'   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3TBA"   "${CK3TBA_VANILLA_LANDED_TITLES_FILE}"  "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3TFE"   "${CK3TFE_VANILLA_LANDED_TITLES_FILE}"  "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 
 # Validate default localisations
@@ -585,12 +620,12 @@ checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3AEP"   "${CK3AEP_LOCALISATIONS_DIR}"/AEP_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
 checkDefaultCk3Localisations "CK3CE"    "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3CMH"   "${CK3CE_VANILLA_LOCALISATION_FILE}" "${CK3Counterfactuals_VANILLA_LOCALISATION_FILE}" "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3RICE_VANILLA_LOCALISATION_FILE}" "${CK3SuccExp_VANILLA_LOCALISATION_FILE}" "${CK3Trinity_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3CMH"   "${CK3CE_VANILLA_LOCALISATION_FILE}" "${CK3Counterfactuals_VANILLA_LOCALISATION_FILE}" "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3SuccExp_VANILLA_LOCALISATION_FILE}" "${CK3Trinity_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 #checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3SoW"   "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3SoW"   "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
-#checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 
 # Find redundant names
 #findRedundantNames "Hungarian" "Hungarian_Old"
