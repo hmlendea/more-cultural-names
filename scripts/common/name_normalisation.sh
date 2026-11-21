@@ -41,7 +41,7 @@ function locationIdToSearcheableId() {
     local LOCATION_ID="${1}"
 
     echo "${LOCATION_ID}" | sed \
-        -e 's/^[ekdcb]_//g' \
+        -e 's/^[hekdcb]_//g' \
         -e 's/[_-]//g' \
         -e 's/\(baron\|castle\|church\|city\|fort\|temple\|town\)//g'
 }

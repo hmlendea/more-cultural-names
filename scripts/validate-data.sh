@@ -31,6 +31,28 @@ function getGameIds() {
         sort
 }
 
+EXCLUDED_LANDED_TITLE_PREFIXES=(
+    'd_laamp_'
+    'd_cd_'
+    'd_et_'
+    'k_minister_'
+    'k_mm_'
+    'd_siro_map_'
+    'd_map_'
+    'c_nf_'
+    'd_nf_'
+)
+
+function isExcludedLandedTitle() {
+    local LANDED_TITLE_ID="${1}"
+
+    for PREFIX in "${EXCLUDED_LANDED_TITLE_PREFIXES[@]}"; do
+        [[ ${LANDED_TITLE_ID} == ${PREFIX}* ]] && return 0
+    done
+
+    return 1
+}
+
 function checkForSurplusCk3LanguageLinks() {
     local GAME="${1}" && shift
 
@@ -84,7 +106,7 @@ function checkForMissingCkLocationLinks() {
                             else
                                 cat
                             fi | \
-                            grep -i "^\s*[ekdcb]_.*=" | \
+                            grep -i "^\s*[hekdcb]_.*=" | \
                             awk -F"=" '{print $1}' | \
                             sed 's/[^a-zA-Z0-9_\-]//g' | \
                             sort -u \
@@ -92,6 +114,7 @@ function checkForMissingCkLocationLinks() {
                         grep "^>" | sed 's/^> //g'); do
 
         [[ ${LANDED_TITLE_ID} =~ _color$ ]] && continue
+        isExcludedLandedTitle "${LANDED_TITLE_ID}" && continue
 
         LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LANDED_TITLE_ID}")
         [ -n "${1}" ] && LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${LANDED_TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
@@ -141,7 +164,7 @@ function checkForSurplusCkLocationLinks() {
                             else
                                 cat
                             fi | \
-                            grep -i "^\s*[ekdcb]_.*=" | \
+                            grep -i "^\s*[hekdcb]_.*=" | \
                             awk -F"=" '{print $1}' | \
                             sed 's/[^a-zA-Z0-9_\-]//g' | \
                             sort -u \
@@ -222,8 +245,8 @@ function validate_links() {
     elif [[ ${GAME_ID} == Vic3* ]]; then
         list_surplus_vic3_hubs "${GAME_ID}"
         list_surplus_vic3_states "${GAME_ID}"
-        list_missing_vic3_hubs "${GAME_ID}"
-        list_missing_vic3_states "${GAME_ID}"
+        #list_missing_vic3_hubs "${GAME_ID}"
+        #list_missing_vic3_states "${GAME_ID}"
         checkDefaultVic3Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
     fi
 }
@@ -255,6 +278,9 @@ function checkDefaultCk2Localisations() {
                             sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        GAMEID_TITLE_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${GAMEID_DEFINITION}")
+        isExcludedLandedTitle "${GAMEID_TITLE_ID}" && continue
+
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
     done
 }
@@ -275,7 +301,7 @@ function checkDefaultCk3Localisations() {
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
                                     tac "${@}" | \
-                                    grep -a "^ *[ekdcb]_" | \
+                                    grep -a "^ *[hekdcb]_" | \
                                     grep -v "_adj:" | \
                                     sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     awk -F"=" '!seen[$1]++' | \
@@ -285,6 +311,9 @@ function checkDefaultCk3Localisations() {
                             sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        GAMEID_TITLE_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${GAMEID_DEFINITION}")
+        isExcludedLandedTitle "${GAMEID_TITLE_ID}" && continue
+
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
     done
 }

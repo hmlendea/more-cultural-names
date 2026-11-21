@@ -28,8 +28,8 @@ sed -i '/^\s*[\{\}]*\s*$/d' "${FILE}"
 
 function remove-empty-titles {
     sed -i 's/\r//g' "${FILE}"
-    sed -i 's/^\s*\([ekdcb]_[^\t =]*\)\s*=\s*/\1 =/g' "${FILE}"
-    perl -i -p0e 's/\n( *([ekdcb]_[^\t =]*) *= *\n)+ *([ekdcb]_[^\t =]*) *= */\n\3 =/g' "${FILE}"
+    sed -i 's/^\s*\([hekdcb]_[^\t =]*\)\s*=\s*/\1 =/g' "${FILE}"
+    perl -i -p0e 's/\n( *([hekdcb]_[^\t =]*) *= *\n)+ *([hekdcb]_[^\t =]*) *= */\n\3 =/g' "${FILE}"
     sed -i 's/^ \+/      /g' "${FILE}"
 }
 
@@ -429,7 +429,7 @@ remove-empty-titles
 perl -i -p0e 's/      <Name language=\"([^\"]*)\" value=\"([^\"]*)\".*\n *<Name language=\"\1\" value=\"\2\".*/      <Name language=\"\1\" value=\"\2\" \/>/g' "${FILE}"
 
 perl -i -p0e 's/ =\n      <Name / =\n    <Names>\n      <Name /g' "${FILE}"
-perl -i -p0e 's/\/>\n([ekdcb])/\/>\n    <\/Names>\n\1/g' "${FILE}"
+perl -i -p0e 's/\/>\n([hekdcb])/\/>\n    <\/Names>\n\1/g' "${FILE}"
 
 sed -i 's/^ *<Names>/    <Names>/g' "${FILE}"
 sed -i 's/^ *<\/Names>/    <\/Names>/g' "${FILE}"
