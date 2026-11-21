@@ -215,6 +215,9 @@ update_hoi4_parentage_file \
     'HOI4MDM' \
     "${HOI4MDM_VANILLA_PARENTAGE_FILE}"
 update_hoi4_parentage_file \
+    'HOI4RT56' \
+    "${HOI4RT56_VANILLA_PARENTAGE_FILE}"
+update_hoi4_parentage_file \
     'HOI4TGW' \
     "${HOI4TGW_VANILLA_PARENTAGE_FILE}"
 update-vanilla-file \
