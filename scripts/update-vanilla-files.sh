@@ -159,6 +159,70 @@ function update-vic3-files() {
     update-vic3-hubs "${GAME_ID}" "${LOCALISATIONS_DIR}"
 }
 
+function update_eu5_locations_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_FILE="${EU5_LOCATION_NAMES_DIR}/location_names_l_english.yml"
+
+    [ ! -f "${SOURCE_FILE}" ] && return
+
+    grep -E '^ [a-z_0-9]+:\s*"' "${SOURCE_FILE}" | \
+        sed 's/^ \([a-z_0-9]*\):\s*"\([^"]*\)".*/\1=\2/g' | \
+        grep -v '^dummy=' | \
+        sort | uniq > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_provinces_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_FILE="${EU5_LOCALISATIONS_DIR}/province_names_l_english.yml"
+
+    [ ! -f "${SOURCE_FILE}" ] && return
+
+    grep -E '^ [a-z_0-9]+_province:\s*"' "${SOURCE_FILE}" | \
+        sed 's/^ \([a-z_0-9_]*\):\s*"\([^"]*\)".*/\1=\2/g' | \
+        sort | uniq > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_cultures_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_DIR="${EU5_CULTURES_DIR}"
+
+    [ ! -d "${SOURCE_DIR}" ] && return
+
+    grep -h -E '^[a-z_0-9]+ = \{' "${SOURCE_DIR}"/*.txt | \
+        sed 's/^\([a-z_0-9]*\) = {.*/\1/g' | \
+        sort | uniq > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_languages_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_DIR="${EU5_LANGUAGES_DIR}"
+
+    [ ! -d "${SOURCE_DIR}" ] && return
+
+    grep -h -E '^[a-z_0-9]+_(language|dialect) = \{' "${SOURCE_DIR}"/*.txt | \
+        sed 's/^\([a-z_0-9_]*\) = {.*/\1/g' | \
+        sort | uniq > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_files() {
+    update_eu5_locations_file "${EU5_VANILLA_LOCATIONS_FILE}"
+    update_eu5_provinces_file "${EU5_VANILLA_PROVINCES_FILE}"
+    update_eu5_cultures_file "${EU5_VANILLA_CULTURES_FILE}"
+    update_eu5_languages_file "${EU5_VANILLA_LANGUAGES_FILE}"
+}
+
 update-vanilla-file \
     "${CK2_LANDED_TITLES_DIR}/landed_titles.txt" \
     "${CK2_VANILLA_LANDED_TITLES_FILE}"
@@ -240,3 +304,4 @@ update-vic3-files 'Vic3' \
     "${Vic3_LOCALISATIONS_DIR}" \
     "${Vic3_COUNTRIES_DIR}" \
     "${Vic3_STATES_DIR}"
+update_eu5_files

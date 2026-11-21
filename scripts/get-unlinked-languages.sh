@@ -172,6 +172,42 @@ function getVic3Cultures() {
     done
 }
 
+function getEu5Languages() {
+    local GAME_ID="${1}" && shift
+    local CULTURES_DIR="${EU5_CULTURES_DIR}"
+    local LANGUAGES_DIR="${EU5_LANGUAGES_DIR}"
+    local CULTURE_ID=''
+    local LANGUAGE_ID=''
+
+    for CULTURE_ID in $(grep -h -E '^[a-z_0-9]+ = \{' "${CULTURES_DIR}"/*.txt | \
+                        sed 's/^\([a-z_0-9]*\) = {.*/\1/g' | \
+                        sort | uniq); do
+        if ! grep -q '<GameId game="'${GAME_ID}'">'${CULTURE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
+            if grep -qi 'Id>.*\b'"${CULTURE_ID}"'\b' "${LANGUAGES_FILE}"; then
+                echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing but it could potentially be linked to an existing one"
+            elif grep -qi 'Id>.*\b'"${CULTURE_ID}"'\b' "${UNUSED_LANGUAGES_FILE}"; then
+                echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing but it could potentially be linked to an existing unused one"
+            fi
+
+            echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
+        fi
+    done
+
+    for LANGUAGE_ID in $(grep -h -E '^[a-z_0-9]+_(language|dialect) = \{' "${LANGUAGES_DIR}"/*.txt | \
+                        sed 's/^\([a-z_0-9_]*\) = {.*/\1/g' | \
+                        sort | uniq); do
+        if ! grep -q '<GameId game="'${GAME_ID}'">'${LANGUAGE_ID}'</GameId>' "${LANGUAGES_FILE}"; then
+            if grep -qi 'Id>.*\b'"${LANGUAGE_ID}"'\b' "${LANGUAGES_FILE}"; then
+                echo "    > ${GAME_ID}: Language with GameId ${LANGUAGE_ID} is missing but it could potentially be linked to an existing one"
+            elif grep -qi 'Id>.*\b'"${LANGUAGE_ID}"'\b' "${UNUSED_LANGUAGES_FILE}"; then
+                echo "    > ${GAME_ID}: Language with GameId ${LANGUAGE_ID} is missing but it could potentially be linked to an existing unused one"
+            fi
+
+            echo "      <GameId game=\"${GAME_ID}\">${LANGUAGE_ID}</GameId>"
+        fi
+    done
+}
+
 echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
 echo "Crusader Kings 2 HIP:"    && getCk2Cultures       "CK2HIP"    "${CK2HIP_CULTURES_DIR}"
 echo "Crusader Kings 2 ROI:"    && getCk2Cultures       "CK2RoI"    "${CK2RoI_CULTURES_DIR}" && getCk2Cultures "CK2RoI" "${CK2_CULTURES_DIR}"
@@ -186,6 +222,7 @@ echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CU
 echo "Crusader Kings 3 SoW:"    && getCk3Cultures       "CK3SoW"    "${CK3SoW_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 TBA:"    && getCk3Cultures    "CK3TBA"    "${CK3TBA_CULTURES_DIR}"
 echo "Crusader Kings 3 TFE:"    && getCk3Cultures       "CK3TFE"    "${CK3TFE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
+echo "Europa Universalis 5:"    && getEu5Languages      "EU5"
 echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS_DIR}" "${HOI4_LOCALISATIONS_DIR}"
 echo "Hearts of Iron 4 MDM:"    && getHoi4Countries     "HOI4MDM"   "${HOI4MDM_TAGS_DIR}" "${HOI4MDM_LOCALISATIONS_DIR}"
 echo "Hearts of Iron 4 TGW:"    && getHoi4Countries     "HOI4TGW"   "${HOI4TGW_TAGS_DIR}" "${HOI4TGW_LOCALISATIONS_DIR}"
