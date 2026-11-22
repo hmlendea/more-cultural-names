@@ -9,8 +9,12 @@ declare -A EU5_LOCATION_GAMEID_COMMENTS=()
 declare -A EU5_UNUSED_LOCATION_GAMEID_COMMENTS=()
 declare -A EU5_LOCATION_NAME_VALUES=()
 declare -A EU5_UNUSED_LOCATION_NAME_VALUES=()
+declare -A EU5_LOCATION_PROVINCES=()
+declare -A EU5_PROVINCE_AREAS=()
+declare -A EU5_AREA_NAMES=()
 EU5_LOCATION_SETS_LOADED=''
 EU5_VANILLA_NAMES_LOADED=''
+EU5_PARENTAGE_LOADED=''
 
 function addLinesToEu5Set() {
     local -n TARGET_SET="${1}"
@@ -64,6 +68,69 @@ function loadEu5VanillaNames() {
     fi
 }
 
+function loadEu5Parentage() {
+    [ -n "${EU5_PARENTAGE_LOADED}" ] && return
+    EU5_PARENTAGE_LOADED=true
+
+    local SNAPSHOT_FILE=''
+    local ENTRY_KEY=''
+    local ENTRY_VALUE=''
+
+    SNAPSHOT_FILE="${EU5_VANILLA_PARENTAGE_FILE}"
+
+    if [ -f "${SNAPSHOT_FILE}" ]; then
+        while IFS='=' read -r ENTRY_KEY ENTRY_VALUE; do
+            [ -z "${ENTRY_KEY}" ] && continue
+
+            if [[ ${ENTRY_VALUE} == *_area ]]; then
+                EU5_PROVINCE_AREAS["${ENTRY_KEY}"]="${ENTRY_VALUE}"
+            else
+                EU5_LOCATION_PROVINCES["${ENTRY_KEY}"]="${ENTRY_VALUE}"
+            fi
+        done < "${SNAPSHOT_FILE}"
+    fi
+
+    SNAPSHOT_FILE="${EU5_VANILLA_AREAS_FILE}"
+
+    if [ -f "${SNAPSHOT_FILE}" ]; then
+        while IFS='=' read -r ENTRY_KEY ENTRY_VALUE; do
+            [ -n "${ENTRY_KEY}" ] && EU5_AREA_NAMES["${ENTRY_KEY}"]="${ENTRY_VALUE}"
+        done < "${SNAPSHOT_FILE}"
+    fi
+}
+
+function getEu5ContainerContext() {
+    local LOCATION_GAME_ID="${1}"
+    local LOCATION_TYPE="${2}"
+    local PROVINCE_ID=''
+    local PROVINCE_NAME=''
+    local AREA_ID=''
+    local AREA_NAME=''
+
+    if [ "${LOCATION_TYPE}" = 'Province' ]; then
+        AREA_ID="${EU5_PROVINCE_AREAS[${LOCATION_GAME_ID}]:-}"
+
+        [ -z "${AREA_ID}" ] && return
+
+        echo " (Area: ${EU5_AREA_NAMES[${AREA_ID}]:-${AREA_ID}})"
+        return
+    fi
+
+    PROVINCE_ID="${EU5_LOCATION_PROVINCES[${LOCATION_GAME_ID}]:-}"
+
+    [ -z "${PROVINCE_ID}" ] && return
+
+    PROVINCE_NAME="${EU5_PROVINCE_NAMES[${PROVINCE_ID}]:-${PROVINCE_ID}}"
+    AREA_ID="${EU5_PROVINCE_AREAS[${PROVINCE_ID}]:-}"
+
+    if [ -n "${AREA_ID}" ]; then
+        AREA_NAME="${EU5_AREA_NAMES[${AREA_ID}]:-${AREA_ID}}"
+        echo " (Province: ${PROVINCE_NAME}, Area: ${AREA_NAME})"
+    else
+        echo " (Province: ${PROVINCE_NAME})"
+    fi
+}
+
 function getEu5LocationName() {
     local LOCATION_ID="${1}"
 
@@ -90,8 +157,9 @@ function log_missing_eu5_location() {
     local LOCATION_GAME_ID="${3}"
     local LOCATION_NAME="${4}"
     local REASON="${5}"
+    local CONTAINER_CONTEXT="${6}"
 
-    echo "    > ${GAME_ID}: ${LOCATION_TYPE} ${LOCATION_GAME_ID} (${LOCATION_NAME}) could potentially be linked with ${REASON}"
+    echo "    > ${GAME_ID}: ${LOCATION_TYPE} ${LOCATION_GAME_ID} (${LOCATION_NAME})${CONTAINER_CONTEXT} could potentially be linked with ${REASON}"
     echo '    <GameIds>'
     echo "      <GameId game=\"${GAME_ID}\" type=\"${LOCATION_TYPE}\">${LOCATION_GAME_ID}</GameId> <!-- ${LOCATION_NAME} -->"
     echo '    </GameIds>'
@@ -103,25 +171,30 @@ function logLinkableEu5Location() {
     local LOCATION_TYPE="${2}"
     local LOCATION_GAME_ID="${3}"
     local LOCATION_NAME="${4}"
+    local CONTAINER_CONTEXT=''
 
     loadEu5LocationSets
+    loadEu5VanillaNames
+    loadEu5Parentage
+
+    CONTAINER_CONTEXT=$(getEu5ContainerContext "${LOCATION_GAME_ID}" "${LOCATION_TYPE}")
 
     local LOCATION_ID=$(nameToLocationId "${LOCATION_NAME}")
 
     if [ -n "${LOCATION_ID}" ] && [ -n "${EU5_LOCATION_IDS[${LOCATION_ID}]+x}" ]; then
-        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "location <Id>${LOCATION_ID}</Id>"
+        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "location <Id>${LOCATION_ID}</Id>" "${CONTAINER_CONTEXT}"
     elif [ -n "${LOCATION_ID}" ] && [ -n "${EU5_UNUSED_LOCATION_IDS[${LOCATION_ID}]+x}" ]; then
-        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "unused location <Id>${LOCATION_ID}</Id>"
+        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "unused location <Id>${LOCATION_ID}</Id>" "${CONTAINER_CONTEXT}"
     elif [ -n "${EU5_LOCATION_GAMEID_COMMENTS[${LOCATION_NAME}]+x}" ]; then
-        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "a location with a link with the same default name (${LOCATION_NAME})"
+        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "a location with a link with the same default name (${LOCATION_NAME})" "${CONTAINER_CONTEXT}"
     elif [ -n "${EU5_UNUSED_LOCATION_GAMEID_COMMENTS[${LOCATION_NAME}]+x}" ]; then
-        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "an unused location with a link with the same default name (${LOCATION_NAME})"
+        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "an unused location with a link with the same default name (${LOCATION_NAME})" "${CONTAINER_CONTEXT}"
     elif [ -n "${EU5_LOCATION_NAME_VALUES[${LOCATION_NAME}]+x}" ]; then
-        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "a location with a localisation with the same name (${LOCATION_NAME})"
+        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "a location with a localisation with the same name (${LOCATION_NAME})" "${CONTAINER_CONTEXT}"
     elif [ -n "${EU5_UNUSED_LOCATION_NAME_VALUES[${LOCATION_NAME}]+x}" ]; then
-        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "an unused location with a localisation with the same name (${LOCATION_NAME})"
+        log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" "an unused location with a localisation with the same name (${LOCATION_NAME})" "${CONTAINER_CONTEXT}"
     #else
-    #    log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" 'a new location'
+    #    log_missing_eu5_location "${GAME_ID}" "${LOCATION_TYPE}" "${LOCATION_GAME_ID}" "${LOCATION_NAME}" 'a new location' "${CONTAINER_CONTEXT}"
     fi
 }
 

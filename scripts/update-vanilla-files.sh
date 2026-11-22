@@ -180,7 +180,7 @@ function update_eu5_provinces_file() {
 
     [ ! -f "${SOURCE_FILE}" ] && return
 
-    grep -E '^ [a-z_0-9]+_province:\s*"' "${SOURCE_FILE}" | \
+    grep -E '^ [a-z_0-9]+:\s*"' "${SOURCE_FILE}" | \
         sed 's/^ \([a-z_0-9_]*\):\s*"\([^"]*\)".*/\1=\2/g' | \
         sort | uniq > "${TARGET_FILE}"
 
@@ -196,6 +196,62 @@ function update_eu5_cultures_file() {
 
     grep -h -E '^[a-z_0-9]+ = \{' "${SOURCE_DIR}"/*.txt | \
         sed 's/^\([a-z_0-9]*\) = {.*/\1/g' | \
+        sort | uniq > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_parentage_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_FILE="${EU5_MAP_DATA_DIR}/definitions.txt"
+
+    [ ! -f "${SOURCE_FILE}" ] && return
+
+    awk '
+        function trim(token) { gsub(/^[ \t]+/, "", token); gsub(/[ \t]+$/, "", token); return token }
+        function emit(token,   value) {
+            value = trim(token)
+            if (value == "" || value !~ /^[a-z0-9_]+$/) return
+            if (depth == 5 && levelName[5] != "") print value "=" levelName[5]
+        }
+        BEGIN { depth = 0 }
+        {
+            line = $0
+            sub(/#.*/, "", line)
+            gsub(/[A-Za-z0-9_]+[ \t]*=[ \t]*[A-Za-z0-9_]+/, "", line)
+            gsub(/[ \t]*=[ \t]*\{/, "{", line)
+            lineLength = length(line)
+            buffer = ""
+            for (position = 1; position <= lineLength; position++) {
+                character = substr(line, position, 1)
+                if (character == "{") {
+                    name = trim(buffer)
+                    buffer = ""
+                    if (depth == 4 && name != "" && levelName[4] != "") print name "=" levelName[4]
+                    depth++
+                    levelName[depth] = name
+                }
+                else if (character == "}") { emit(buffer); buffer = ""; levelName[depth] = ""; depth-- }
+                else if (character == " " || character == "\t") { emit(buffer); buffer = "" }
+                else { buffer = buffer character }
+            }
+            emit(buffer)
+        }
+    ' "${SOURCE_FILE}" | sort | uniq > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_areas_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_FILE="${EU5_LOCALISATIONS_DIR}/area_l_english.yml"
+
+    [ ! -f "${SOURCE_FILE}" ] && return
+
+    grep -E '^ [a-z_0-9]+_area:\s*"' "${SOURCE_FILE}" | \
+        sed 's/^ \([a-z_0-9_]*\):\s*"\([^"]*\)".*/\1=\2/g' | \
         sort | uniq > "${TARGET_FILE}"
 
     chmod 755 "${TARGET_FILE}"
@@ -219,6 +275,8 @@ function update_eu5_languages_file() {
 function update_eu5_files() {
     update_eu5_locations_file "${EU5_VANILLA_LOCATIONS_FILE}"
     update_eu5_provinces_file "${EU5_VANILLA_PROVINCES_FILE}"
+    update_eu5_areas_file "${EU5_VANILLA_AREAS_FILE}"
+    update_eu5_parentage_file "${EU5_VANILLA_PARENTAGE_FILE}"
     update_eu5_cultures_file "${EU5_VANILLA_CULTURES_FILE}"
     update_eu5_languages_file "${EU5_VANILLA_LANGUAGES_FILE}"
 }
