@@ -250,7 +250,8 @@ function validate_links() {
         #list_missing_vic3_states "${GAME_ID}"
         checkDefaultVic3Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
     elif [[ ${GAME_ID} == EU5* ]]; then
-        #list_missing_eu5_locations "${GAME_ID}"
+        list_missing_eu5_locations "${GAME_ID}"
+        list_missing_eu5_provinces "${GAME_ID}"
         list_surplus_eu5_locations "${GAME_ID}"
         list_surplus_eu5_provinces "${GAME_ID}"
         list_mismatching_eu5_localisations "${GAME_ID}"

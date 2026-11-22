@@ -129,8 +129,12 @@ function list_missing_eu5_locations() {
     local GAME_ID="${1}"
     local VANILLA_FILE="${EU5_VANILLA_LOCATIONS_FILE}"
     local LOCATION_TYPE='Location'
+    local LOCATION_ID=''
+    local LOCATION_NAME=''
 
     [ ! -f "${VANILLA_FILE}" ] && return
+
+    loadEu5VanillaNames
 
     for LOCATION_ID in $(diff \
                         <( \
@@ -142,7 +146,7 @@ function list_missing_eu5_locations() {
                             sort | uniq \
                         ) | \
                         grep "^>" | sed 's/^> //g'); do
-        local LOCATION_NAME=$(getEu5LocationName "${LOCATION_ID}")
+        LOCATION_NAME="${EU5_LOCATION_NAMES[${LOCATION_ID}]:-}"
 
         [ -z "${LOCATION_NAME}" ] && continue
 
@@ -168,6 +172,35 @@ function list_surplus_eu5_locations() {
                         ) | \
                         grep "^>" | sed 's/^> //g'); do
         echo "    > ${GAME_ID}: ${LOCATION_TYPE} ${LOCATION_ID} is defined but it does not exist. Find it with: ${GAME_ID}[^>]*type=\"${LOCATION_TYPE}\"[^>]*>${LOCATION_ID}<"
+    done
+}
+
+function list_missing_eu5_provinces() {
+    local GAME_ID="${1}"
+    local VANILLA_FILE="${EU5_VANILLA_PROVINCES_FILE}"
+    local LOCATION_TYPE='Province'
+    local PROVINCE_ID=''
+    local PROVINCE_NAME=''
+
+    [ ! -f "${VANILLA_FILE}" ] && return
+
+    loadEu5VanillaNames
+
+    for PROVINCE_ID in $(diff \
+                        <( \
+                            grep "GameId game=\"${GAME_ID}\" type=\"${LOCATION_TYPE}\"" "${LOCATIONS_FILE}" | \
+                            sed 's/[^>]*>\([^<]*\).*/\1/g' | \
+                            sort | uniq \
+                        ) <( \
+                            awk -F"=" '{print $1}' "${VANILLA_FILE}" | \
+                            sort | uniq \
+                        ) | \
+                        grep "^>" | sed 's/^> //g'); do
+        PROVINCE_NAME="${EU5_PROVINCE_NAMES[${PROVINCE_ID}]:-}"
+
+        [ -z "${PROVINCE_NAME}" ] && continue
+
+        logLinkableEu5Location "${GAME_ID}" "${LOCATION_TYPE}" "${PROVINCE_ID}" "${PROVINCE_NAME}"
     done
 }
 
@@ -199,10 +232,12 @@ function list_mismatching_eu5_localisations() {
     local LOCATION_NAME_ACTUAL=''
     local LOCATION_NAME_EXPECTED=''
 
+    loadEu5VanillaNames
+
     while IFS= read -r LOCATION_LINE; do
         LOCATION_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${LOCATION_LINE}")
         LOCATION_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${LOCATION_LINE}")
-        LOCATION_NAME_EXPECTED=$(getEu5LocationName "${LOCATION_ID}")
+        LOCATION_NAME_EXPECTED="${EU5_LOCATION_NAMES[${LOCATION_ID}]:-}"
 
         [ -z "${LOCATION_NAME_EXPECTED}" ] && continue
 
@@ -214,7 +249,7 @@ function list_mismatching_eu5_localisations() {
     while IFS= read -r LOCATION_LINE; do
         LOCATION_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${LOCATION_LINE}")
         LOCATION_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${LOCATION_LINE}")
-        LOCATION_NAME_EXPECTED=$(getEu5ProvinceName "${LOCATION_ID}")
+        LOCATION_NAME_EXPECTED="${EU5_PROVINCE_NAMES[${LOCATION_ID}]:-}"
 
         [ -z "${LOCATION_NAME_EXPECTED}" ] && continue
 
