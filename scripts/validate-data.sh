@@ -234,7 +234,13 @@ function validate_links() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
 
-    if [[ ${GAME_ID} == HOI4* ]]; then
+    if [[ ${GAME_ID} == EU5* ]]; then
+        #list_missing_eu5_locations "${GAME_ID}"
+        #list_missing_eu5_provinces "${GAME_ID}"
+        list_surplus_eu5_locations "${GAME_ID}"
+        list_surplus_eu5_provinces "${GAME_ID}"
+        list_mismatching_eu5_localisations "${GAME_ID}"
+    elif [[ ${GAME_ID} == HOI4* ]]; then
         #checkForMissingHoi4LocationLinks "${GAME_ID}"
         checkForSurplusHoi4LocationLinks "${GAME_ID}"
         validateHoi4Parentage "${GAME_ID}"
@@ -249,12 +255,6 @@ function validate_links() {
         #list_missing_vic3_hubs "${GAME_ID}"
         #list_missing_vic3_states "${GAME_ID}"
         checkDefaultVic3Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
-    elif [[ ${GAME_ID} == EU5* ]]; then
-        list_missing_eu5_locations "${GAME_ID}"
-        list_missing_eu5_provinces "${GAME_ID}"
-        list_surplus_eu5_locations "${GAME_ID}"
-        list_surplus_eu5_provinces "${GAME_ID}"
-        list_mismatching_eu5_localisations "${GAME_ID}"
     fi
 }
 
