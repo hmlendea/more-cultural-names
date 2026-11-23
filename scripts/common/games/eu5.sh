@@ -346,7 +346,7 @@ function list_surplus_eu5_languages() {
                             sort -u); do
         grep -Fxq "${GAME_ID_VALUE}" <<< "${LANGUAGE_IDS}" && continue
 
-        echo "    > ${GAME_ID}: Language ${GAME_ID_VALUE} is linked but it does not exist in the game"
+        echo "    > ${GAME_ID}: Language ${GAME_ID_VALUE} is linked but it does not exist in the game. Find it with: ${GAME_ID}[^>]*>${GAME_ID_VALUE}<"
     done
 }
 
@@ -359,6 +359,7 @@ function list_missing_eu5_languages() {
     local UNUSED_LANGUAGE_ID_WORDS=''
     local LANGUAGE_ID=''
     local LOOKUP_ID=''
+    local STORED_ID=''
 
     [ ! -f "${EU5_VANILLA_LANGUAGES_FILE}" ] && return
 
@@ -369,15 +370,15 @@ function list_missing_eu5_languages() {
     UNUSED_LINKED_GAME_IDS=$(grep "GameId game=\"${GAME_ID}\"" "${UNUSED_LANGUAGES_FILE}" | \
                         sed 's/[^>]*>\([^<]*\).*/\1/g' | \
                         sort -u)
+    # Stored verbatim, so that the suggested search pattern can spell the id
+    # exactly as the XML does, without needing a case-insensitive regex flag.
     LANGUAGE_ID_WORDS=$(grep "<Id>" "${LANGUAGES_FILE}" | \
                         sed 's/^\s*<Id>\(.*\)<\/Id>.*/\1/g' | \
                         grep -oE '[A-Za-z0-9_]+' | \
-                        tr '[:upper:]' '[:lower:]' | \
                         sort -u)
     UNUSED_LANGUAGE_ID_WORDS=$(grep "<Id>" "${UNUSED_LANGUAGES_FILE}" | \
                         sed 's/^\s*<Id>\(.*\)<\/Id>.*/\1/g' | \
                         grep -oE '[A-Za-z0-9_]+' | \
-                        tr '[:upper:]' '[:lower:]' | \
                         sort -u)
 
     for LANGUAGE_ID in ${LANGUAGE_IDS}; do
@@ -393,14 +394,23 @@ function list_missing_eu5_languages() {
         LOOKUP_ID="${LANGUAGE_ID%_language}"
         LOOKUP_ID="${LOOKUP_ID%_dialect}"
 
-        if grep -Fxq "${LOOKUP_ID,,}" <<< "${LANGUAGE_ID_WORDS}"; then
-            echo "    > ${GAME_ID}: Language ${LANGUAGE_ID} is missing (but a language with the same name exists)"
-        elif grep -Fxq "${LOOKUP_ID,,}" <<< "${UNUSED_LANGUAGE_ID_WORDS}"; then
-            echo "    > ${GAME_ID}: Language ${LANGUAGE_ID} is missing (but an unused language with the same name exists)"
-        else
-            echo "    > ${GAME_ID}: Language ${LANGUAGE_ID} is missing"
+        STORED_ID=$(LC_ALL=C grep -Fxi -m1 "${LOOKUP_ID}" <<< "${LANGUAGE_ID_WORDS}")
+
+        if [ -n "${STORED_ID}" ]; then
+            echo "    > ${GAME_ID}: Language ${LANGUAGE_ID} is missing (but a language with the same name exists). Find it with: <Id>[^<]*${STORED_ID}[^<]*</Id>"
+            echo "      <GameId game=\"${GAME_ID}\">${LANGUAGE_ID}</GameId>"
+            continue
         fi
 
+        STORED_ID=$(LC_ALL=C grep -Fxi -m1 "${LOOKUP_ID}" <<< "${UNUSED_LANGUAGE_ID_WORDS}")
+
+        if [ -n "${STORED_ID}" ]; then
+            echo "    > ${GAME_ID}: Language ${LANGUAGE_ID} is missing (but an unused language with the same name exists). Find it with: <Id>[^<]*${STORED_ID}[^<]*</Id>"
+            echo "      <GameId game=\"${GAME_ID}\">${LANGUAGE_ID}</GameId>"
+            continue
+        fi
+
+        echo "    > ${GAME_ID}: Language ${LANGUAGE_ID} is missing"
         echo "      <GameId game=\"${GAME_ID}\">${LANGUAGE_ID}</GameId>"
     done
 }
