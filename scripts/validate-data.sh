@@ -240,6 +240,7 @@ function validate_links() {
         list_surplus_eu5_locations "${GAME_ID}"
         list_surplus_eu5_provinces "${GAME_ID}"
         list_surplus_eu5_languages "${GAME_ID}"
+        list_missing_eu5_languages "${GAME_ID}"
         list_mismatching_eu5_localisations "${GAME_ID}"
     elif [[ ${GAME_ID} == HOI4* ]]; then
         #checkForMissingHoi4LocationLinks "${GAME_ID}"

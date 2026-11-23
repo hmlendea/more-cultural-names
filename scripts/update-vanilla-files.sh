@@ -188,20 +188,6 @@ function update_eu5_provinces_file() {
     chown "${USER}:${USER}" "${TARGET_FILE}"
 }
 
-function update_eu5_cultures_file() {
-    local TARGET_FILE="${1}"
-    local SOURCE_DIR="${EU5_CULTURES_DIR}"
-
-    [ ! -d "${SOURCE_DIR}" ] && return
-
-    grep -h -E '^[a-z_0-9]+ = \{' "${SOURCE_DIR}"/*.txt | \
-        sed 's/^\([a-z_0-9]*\) = {.*/\1/g' | \
-        sort | uniq > "${TARGET_FILE}"
-
-    chmod 755 "${TARGET_FILE}"
-    chown "${USER}:${USER}" "${TARGET_FILE}"
-}
-
 function update_eu5_parentage_file() {
     local TARGET_FILE="${1}"
     local SOURCE_FILE="${EU5_MAP_DATA_DIR}/definitions.txt"
@@ -264,9 +250,13 @@ function update_eu5_languages_file() {
 
     [ ! -d "${SOURCE_DIR}" ] && return
 
-    grep -h -E '^[a-z_0-9]+_(language|dialect) = \{' "${SOURCE_DIR}"/*.txt | \
-        sed 's/^\([a-z_0-9_]*\) = {.*/\1/g' | \
-        sort | uniq > "${TARGET_FILE}"
+    # Each file starts with a UTF-8 BOM and dialects are nested one level deeper
+    # than languages, so both the BOM and the indentation have to be tolerated.
+    grep -h -oP '^[\x{FEFF}]?[ \t]*[a-z_0-9]+_(language|dialect)[ \t]*= \{' "${SOURCE_DIR}"/*.txt | \
+        sed -e 's/^\xEF\xBB\xBF//' \
+            -e 's/^[ \t]*//' \
+            -e 's/[ \t]*= {.*//' | \
+        sort -u > "${TARGET_FILE}"
 
     chmod 755 "${TARGET_FILE}"
     chown "${USER}:${USER}" "${TARGET_FILE}"
@@ -277,7 +267,6 @@ function update_eu5_files() {
     update_eu5_provinces_file "${EU5_VANILLA_PROVINCES_FILE}"
     update_eu5_areas_file "${EU5_VANILLA_AREAS_FILE}"
     update_eu5_parentage_file "${EU5_VANILLA_PARENTAGE_FILE}"
-    update_eu5_cultures_file "${EU5_VANILLA_CULTURES_FILE}"
     update_eu5_languages_file "${EU5_VANILLA_LANGUAGES_FILE}"
 }
 

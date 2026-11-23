@@ -334,22 +334,73 @@ function list_mismatching_eu5_localisations() {
 
 function list_surplus_eu5_languages() {
     local GAME_ID="${1}"
-    local CULTURE_IDS=''
     local LANGUAGE_IDS=''
     local GAME_ID_VALUE=''
 
-    [ ! -f "${EU5_VANILLA_CULTURES_FILE}" ] && return
     [ ! -f "${EU5_VANILLA_LANGUAGES_FILE}" ] && return
 
-    CULTURE_IDS=$(awk -F"=" '{print $1}' "${EU5_VANILLA_CULTURES_FILE}")
     LANGUAGE_IDS=$(awk -F"=" '{print $1}' "${EU5_VANILLA_LANGUAGES_FILE}")
 
     for GAME_ID_VALUE in $(grep "GameId game=\"${GAME_ID}\"" "${LANGUAGES_FILE}" | \
                             sed 's/[^>]*>\([^<]*\).*/\1/g' | \
                             sort -u); do
-        grep -Fxq "${GAME_ID_VALUE}" <<< "${CULTURE_IDS}" && continue
         grep -Fxq "${GAME_ID_VALUE}" <<< "${LANGUAGE_IDS}" && continue
 
         echo "    > ${GAME_ID}: Language ${GAME_ID_VALUE} is linked but it does not exist in the game"
+    done
+}
+
+function list_missing_eu5_languages() {
+    local GAME_ID="${1}"
+    local LANGUAGE_IDS=''
+    local LINKED_GAME_IDS=''
+    local UNUSED_LINKED_GAME_IDS=''
+    local LANGUAGE_ID_WORDS=''
+    local UNUSED_LANGUAGE_ID_WORDS=''
+    local LANGUAGE_ID=''
+    local LOOKUP_ID=''
+
+    [ ! -f "${EU5_VANILLA_LANGUAGES_FILE}" ] && return
+
+    LANGUAGE_IDS=$(awk -F"=" '{print $1}' "${EU5_VANILLA_LANGUAGES_FILE}")
+    LINKED_GAME_IDS=$(grep "GameId game=\"${GAME_ID}\"" "${LANGUAGES_FILE}" | \
+                        sed 's/[^>]*>\([^<]*\).*/\1/g' | \
+                        sort -u)
+    UNUSED_LINKED_GAME_IDS=$(grep "GameId game=\"${GAME_ID}\"" "${UNUSED_LANGUAGES_FILE}" | \
+                        sed 's/[^>]*>\([^<]*\).*/\1/g' | \
+                        sort -u)
+    LANGUAGE_ID_WORDS=$(grep "<Id>" "${LANGUAGES_FILE}" | \
+                        sed 's/^\s*<Id>\(.*\)<\/Id>.*/\1/g' | \
+                        grep -oE '[A-Za-z0-9_]+' | \
+                        tr '[:upper:]' '[:lower:]' | \
+                        sort -u)
+    UNUSED_LANGUAGE_ID_WORDS=$(grep "<Id>" "${UNUSED_LANGUAGES_FILE}" | \
+                        sed 's/^\s*<Id>\(.*\)<\/Id>.*/\1/g' | \
+                        grep -oE '[A-Za-z0-9_]+' | \
+                        tr '[:upper:]' '[:lower:]' | \
+                        sort -u)
+
+    for LANGUAGE_ID in ${LANGUAGE_IDS}; do
+        grep -Fxq "${LANGUAGE_ID}" <<< "${LINKED_GAME_IDS}" && continue
+
+        if grep -Fxq "${LANGUAGE_ID}" <<< "${UNUSED_LINKED_GAME_IDS}"; then
+            continue
+        fi
+
+        # EU5 keys its location names by language and dialect, and the block name
+        # is what both the localisation keys and the script tokens use, so the
+        # suffix is stripped only to look for a matching MCN language.
+        LOOKUP_ID="${LANGUAGE_ID%_language}"
+        LOOKUP_ID="${LOOKUP_ID%_dialect}"
+
+        if grep -Fxq "${LOOKUP_ID,,}" <<< "${LANGUAGE_ID_WORDS}"; then
+            echo "    > ${GAME_ID}: Language ${LANGUAGE_ID} is missing (but a language with the same name exists)"
+        elif grep -Fxq "${LOOKUP_ID,,}" <<< "${UNUSED_LANGUAGE_ID_WORDS}"; then
+            echo "    > ${GAME_ID}: Language ${LANGUAGE_ID} is missing (but an unused language with the same name exists)"
+        else
+            echo "    > ${GAME_ID}: Language ${LANGUAGE_ID} is missing"
+        fi
+
+        echo "      <GameId game=\"${GAME_ID}\">${LANGUAGE_ID}</GameId>"
     done
 }

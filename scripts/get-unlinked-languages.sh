@@ -174,65 +174,40 @@ function getVic3Cultures() {
 
 function getEu5Languages() {
     local GAME_ID="${1}" && shift
-    local CULTURES_DIR="${EU5_CULTURES_DIR}"
     local LANGUAGES_DIR="${EU5_LANGUAGES_DIR}"
     local LINKED_GAME_IDS=''
     local UNUSED_LINKED_GAME_IDS=''
     local LANGUAGE_ID_WORDS=''
     local UNUSED_LANGUAGE_ID_WORDS=''
-    local CULTURE_ID=''
     local LANGUAGE_ID=''
-    local LOOKUP_ID=''
 
     LINKED_GAME_IDS=$(grep "GameId game=\"${GAME_ID}\"" "${LANGUAGES_FILE}" | \
                         sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' | \
-                        tr '[:upper:]' '[:lower:]' | \
                         sort -u)
     UNUSED_LINKED_GAME_IDS=$(grep "GameId game=\"${GAME_ID}\"" "${UNUSED_LANGUAGES_FILE}" | \
                         sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' | \
-                        tr '[:upper:]' '[:lower:]' | \
                         sort -u)
     LANGUAGE_ID_WORDS=$(grep "<Id>" "${LANGUAGES_FILE}" | \
                         sed 's/^\s*<Id>\(.*\)<\/Id>.*/\1/g' | \
                         grep -oE '[A-Za-z0-9_]+' | \
-                        tr '[:upper:]' '[:lower:]' | \
                         sort -u)
     UNUSED_LANGUAGE_ID_WORDS=$(grep "<Id>" "${UNUSED_LANGUAGES_FILE}" | \
                         sed 's/^\s*<Id>\(.*\)<\/Id>.*/\1/g' | \
                         grep -oE '[A-Za-z0-9_]+' | \
-                        tr '[:upper:]' '[:lower:]' | \
                         sort -u)
 
-    for CULTURE_ID in $(grep -h -E '^[a-z_0-9]+ = \{' "${CULTURES_DIR}"/*.txt | \
-                        sed 's/^\([a-z_0-9]*\) = {.*/\1/g' | \
-                        sort | uniq); do
-        # The emitted GameId must match the EU5 identifier verbatim, because EU5
-        # uses the block name as the culture, localisation key, and script token.
-        grep -Fxq "${CULTURE_ID,,}" <<< "${LINKED_GAME_IDS}" && continue
+    # EU5 keys its location names by language and dialect, never by culture, so
+    # only those two block types are offered as link candidates.
+    for LANGUAGE_ID in $(grep -h -oP '^[\x{FEFF}]?[ \t]*[a-z_0-9]+_(language|dialect)[ \t]*= \{' "${LANGUAGES_DIR}"/*.txt | \
+                        sed -e 's/^\xEF\xBB\xBF//' \
+                            -e 's/^[ \t]*//' \
+                            -e 's/[ \t]*= {.*//' | \
+                        sort -u); do
+        grep -Fxq "${LANGUAGE_ID}" <<< "${LINKED_GAME_IDS}" && continue
 
-        # Suggestions ignore the _culture suffix, since the same culture is
-        # referred to with and without it across the XML and the game data.
-        LOOKUP_ID="${CULTURE_ID%_culture}"
-
-        if grep -Fxq "${LOOKUP_ID,,}" <<< "${LANGUAGE_ID_WORDS}" || \
-           grep -Fxq "${LOOKUP_ID,,}_culture" <<< "${LANGUAGE_ID_WORDS}"; then
-            echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing but it could potentially be linked to an existing one"
-        elif grep -Fxq "${LOOKUP_ID,,}" <<< "${UNUSED_LANGUAGE_ID_WORDS}" || \
-             grep -Fxq "${LOOKUP_ID,,}_culture" <<< "${UNUSED_LANGUAGE_ID_WORDS}"; then
-            echo "    > ${GAME_ID}: Language with GameId ${CULTURE_ID} is missing but it could potentially be linked to an existing unused one"
-        fi
-
-        echo "      <GameId game=\"${GAME_ID}\">${CULTURE_ID}</GameId>"
-    done
-
-    for LANGUAGE_ID in $(grep -h -E '^[a-z_0-9]+_(language|dialect) = \{' "${LANGUAGES_DIR}"/*.txt | \
-                        sed 's/^\([a-z_0-9_]*\) = {.*/\1/g' | \
-                        sort | uniq); do
-        grep -Fxq "${LANGUAGE_ID,,}" <<< "${LINKED_GAME_IDS}" && continue
-
-        if grep -Fxq "${LANGUAGE_ID,,}" <<< "${LANGUAGE_ID_WORDS}"; then
+        if grep -Fxq "${LANGUAGE_ID}" <<< "${LANGUAGE_ID_WORDS}"; then
             echo "    > ${GAME_ID}: Language with GameId ${LANGUAGE_ID} is missing but it could potentially be linked to an existing one"
-        elif grep -Fxq "${LANGUAGE_ID,,}" <<< "${UNUSED_LANGUAGE_ID_WORDS}"; then
+        elif grep -Fxq "${LANGUAGE_ID}" <<< "${UNUSED_LANGUAGE_ID_WORDS}"; then
             echo "    > ${GAME_ID}: Language with GameId ${LANGUAGE_ID} is missing but it could potentially be linked to an existing unused one"
         fi
 
