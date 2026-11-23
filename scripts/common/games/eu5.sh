@@ -331,3 +331,25 @@ function list_mismatching_eu5_localisations() {
         fi
     done < <(grep "${GAME_ID}\" type=\"Province" "${LOCATIONS_FILE}")
 }
+
+function list_surplus_eu5_languages() {
+    local GAME_ID="${1}"
+    local CULTURE_IDS=''
+    local LANGUAGE_IDS=''
+    local GAME_ID_VALUE=''
+
+    [ ! -f "${EU5_VANILLA_CULTURES_FILE}" ] && return
+    [ ! -f "${EU5_VANILLA_LANGUAGES_FILE}" ] && return
+
+    CULTURE_IDS=$(awk -F"=" '{print $1}' "${EU5_VANILLA_CULTURES_FILE}")
+    LANGUAGE_IDS=$(awk -F"=" '{print $1}' "${EU5_VANILLA_LANGUAGES_FILE}")
+
+    for GAME_ID_VALUE in $(grep "GameId game=\"${GAME_ID}\"" "${LANGUAGES_FILE}" | \
+                            sed 's/[^>]*>\([^<]*\).*/\1/g' | \
+                            sort -u); do
+        grep -Fxq "${GAME_ID_VALUE}" <<< "${CULTURE_IDS}" && continue
+        grep -Fxq "${GAME_ID_VALUE}" <<< "${LANGUAGE_IDS}" && continue
+
+        echo "    > ${GAME_ID}: Language ${GAME_ID_VALUE} is linked but it does not exist in the game"
+    done
+}
