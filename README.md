@@ -28,19 +28,28 @@ This is a mod for various strategy games that adds new place names based on thei
 
 ## 🎮 Supported Games
 
-| Crusader Kings 2 | Crusader Kings 3 | Hearts of Iron 4 | Imperator: Rome | Victoria 3 |
-|:----------------:|:----------------:|:----------------:|:---------------:|:----------:|
-|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|![CK3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|![HOI4](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|![IR](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|![Vic3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/529340/da7eddaef804905207eaf0ba9580b5026385f041.jpg)|
-|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2459257386)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=3842537533)**|
-|[Historical Immersion Project](https://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)|[Apotheosis: The Hellenistic Age](https://steamcommunity.com/sharedfiles/filedetails/?id=3097513782)|[Millennium Dawn](https://steamcommunity.com/sharedfiles/filedetails/?id=2826972160)|[A Broken World](https://steamcommunity.com/sharedfiles/filedetails/?id=2829772740)||
-|[Rise of Islam](https://steamcommunity.com/sharedfiles/filedetails/?id=3262938172)|[Asia Expansion Project](https://steamcommunity.com/sharedfiles/filedetails/?id=2830250537)|[The Great War](https://steamcommunity.com/sharedfiles/filedetails/?id=2725885905)|[Ashes of Empire](https://steamcommunity.com/sharedfiles/filedetails/?id=2753371253)||
-||[Community Mods for Historicity](https://steamcommunity.com/sharedfiles/filedetails/?id=2813306520)||[Invictus](https://steamcommunity.com/sharedfiles/filedetails/?id=2827761791)||
-||[Culture Expanded](https://steamcommunity.com/sharedfiles/filedetails/?id=2834102740)||[The Bronze Age](https://steamcommunity.com/sharedfiles/filedetails/?id=2827468261)||
-||[Ibn Battuta's Legacy 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2490281800)||[Terra Indomita](https://steamcommunity.com/sharedfiles/filedetails/?id=3255448130)||
-||[More Bookmarks+](https://steamcommunity.com/sharedfiles/filedetails/?id=2630872947)||||
-||[Sinews of War](https://steamcommunity.com/sharedfiles/filedetails/?id=2724606810)||||
-||[The Bronze Age](https://steamcommunity.com/sharedfiles/filedetails/?id=2821052607)||||
-||[The Fallen Eagle](https://steamcommunity.com/sharedfiles/filedetails/?id=2690444295)||||
+| Crusader Kings 2 | Crusader Kings 3 | Hearts of Iron 4 |
+|:----------------:|:----------------:|:----------------:|
+|![CK2](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/203770/56e9c15cbeb6c1f873f7f1dc757bae7618861484.jpg)|![CK3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/1158310/8a0d88dfaff790ea1aa2b9fcf50d4e3b4f49cf56.jpg)|![HOI4](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/394360/134bcd93ec4d31ec4a6640d6bdd73f22f0a7619f.jpg)|
+|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2243430163)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2217534250)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2459257386)**|
+|[Historical Immersion Project](https://steamcommunity.com/sharedfiles/filedetails/?id=1175098675)|[Apotheosis: The Hellenistic Age](https://steamcommunity.com/sharedfiles/filedetails/?id=3097513782)|[Millennium Dawn](https://steamcommunity.com/sharedfiles/filedetails/?id=2826972160)|
+|[Rise of Islam](https://steamcommunity.com/sharedfiles/filedetails/?id=3262938172)|[Asia Expansion Project](https://steamcommunity.com/sharedfiles/filedetails/?id=2830250537)|[The Great War](https://steamcommunity.com/sharedfiles/filedetails/?id=2725885905)|
+||[Community Mods for Historicity](https://steamcommunity.com/sharedfiles/filedetails/?id=2813306520)||
+||[Culture Expanded](https://steamcommunity.com/sharedfiles/filedetails/?id=2834102740)||
+||[Ibn Battuta's Legacy 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2490281800)||
+||[More Bookmarks+](https://steamcommunity.com/sharedfiles/filedetails/?id=2630872947)||
+||[Sinews of War](https://steamcommunity.com/sharedfiles/filedetails/?id=2724606810)||
+||[The Bronze Age](https://steamcommunity.com/sharedfiles/filedetails/?id=2821052607)||
+||[The Fallen Eagle](https://steamcommunity.com/sharedfiles/filedetails/?id=2690444295)||
+
+| Europa Universalis 5 | Victoria 3 | Imperator: Rome |
+|:--------------------:|:----------:|:---------------:|
+|![EU5](https://shared.fastly.steamstatic.com/community_assets/images/apps/3450310/74c02ad3d65135d01305a879fe0672f399126089.jpg)|![Vic3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/529340/da7eddaef804905207eaf0ba9580b5026385f041.jpg)|![IR](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|
+|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=3844938409)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=3842537533)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)**|
+|[A Broken World](https://steamcommunity.com/sharedfiles/filedetails/?id=2829772740)||[Ashes of Empire](https://steamcommunity.com/sharedfiles/filedetails/?id=2753371253)||
+||[Invictus](https://steamcommunity.com/sharedfiles/filedetails/?id=2827761791)||
+||[The Bronze Age](https://steamcommunity.com/sharedfiles/filedetails/?id=2827468261)||
+||[Terra Indomita](https://steamcommunity.com/sharedfiles/filedetails/?id=3255448130)||
 
 ## 📦 Installation
 

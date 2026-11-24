@@ -154,6 +154,10 @@ build-edition \
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
+    'EU5' '1.4.*'
+
+build-edition \
+    'more-cultural-names' 'More Cultural Names' \
     'HOI4' '1.19.*'
 
 build-edition \

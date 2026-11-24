@@ -159,6 +159,117 @@ function update-vic3-files() {
     update-vic3-hubs "${GAME_ID}" "${LOCALISATIONS_DIR}"
 }
 
+function update_eu5_locations_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_FILE="${EU5_LOCATION_NAMES_DIR}/location_names_l_english.yml"
+
+    [ ! -f "${SOURCE_FILE}" ] && return
+
+    grep -E '^ [a-z_0-9]+:\s*"' "${SOURCE_FILE}" | \
+        sed 's/^ \([a-z_0-9]*\):\s*"\([^"]*\)".*/\1=\2/g' | \
+        grep -v '^dummy=' | \
+        sort | uniq > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_provinces_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_FILE="${EU5_LOCALISATIONS_DIR}/province_names_l_english.yml"
+
+    [ ! -f "${SOURCE_FILE}" ] && return
+
+    grep -E '^ [a-z_0-9]+:\s*"' "${SOURCE_FILE}" | \
+        sed 's/^ \([a-z_0-9_]*\):\s*"\([^"]*\)".*/\1=\2/g' | \
+        sort | uniq > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_parentage_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_FILE="${EU5_MAP_DATA_DIR}/definitions.txt"
+
+    [ ! -f "${SOURCE_FILE}" ] && return
+
+    awk '
+        function trim(token) { gsub(/^[ \t]+/, "", token); gsub(/[ \t]+$/, "", token); return token }
+        function emit(token,   value) {
+            value = trim(token)
+            if (value == "" || value !~ /^[a-z0-9_]+$/) return
+            if (depth == 5 && levelName[5] != "") print value "=" levelName[5]
+        }
+        BEGIN { depth = 0 }
+        {
+            line = $0
+            sub(/#.*/, "", line)
+            gsub(/[A-Za-z0-9_]+[ \t]*=[ \t]*[A-Za-z0-9_]+/, "", line)
+            gsub(/[ \t]*=[ \t]*\{/, "{", line)
+            lineLength = length(line)
+            buffer = ""
+            for (position = 1; position <= lineLength; position++) {
+                character = substr(line, position, 1)
+                if (character == "{") {
+                    name = trim(buffer)
+                    buffer = ""
+                    if (depth == 4 && name != "" && levelName[4] != "") print name "=" levelName[4]
+                    depth++
+                    levelName[depth] = name
+                }
+                else if (character == "}") { emit(buffer); buffer = ""; levelName[depth] = ""; depth-- }
+                else if (character == " " || character == "\t") { emit(buffer); buffer = "" }
+                else { buffer = buffer character }
+            }
+            emit(buffer)
+        }
+    ' "${SOURCE_FILE}" | sort | uniq > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_areas_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_FILE="${EU5_LOCALISATIONS_DIR}/area_l_english.yml"
+
+    [ ! -f "${SOURCE_FILE}" ] && return
+
+    grep -E '^ [a-z_0-9]+_area:\s*"' "${SOURCE_FILE}" | \
+        sed 's/^ \([a-z_0-9_]*\):\s*"\([^"]*\)".*/\1=\2/g' | \
+        sort | uniq > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_languages_file() {
+    local TARGET_FILE="${1}"
+    local SOURCE_DIR="${EU5_LANGUAGES_DIR}"
+
+    [ ! -d "${SOURCE_DIR}" ] && return
+
+    # Each file starts with a UTF-8 BOM and dialects are nested one level deeper
+    # than languages, so both the BOM and the indentation have to be tolerated.
+    grep -h -oP '^[\x{FEFF}]?[ \t]*[a-z_0-9]+_(language|dialect)[ \t]*= \{' "${SOURCE_DIR}"/*.txt | \
+        sed -e 's/^\xEF\xBB\xBF//' \
+            -e 's/^[ \t]*//' \
+            -e 's/[ \t]*= {.*//' | \
+        sort -u > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+}
+
+function update_eu5_files() {
+    update_eu5_locations_file "${EU5_VANILLA_LOCATIONS_FILE}"
+    update_eu5_provinces_file "${EU5_VANILLA_PROVINCES_FILE}"
+    update_eu5_areas_file "${EU5_VANILLA_AREAS_FILE}"
+    update_eu5_parentage_file "${EU5_VANILLA_PARENTAGE_FILE}"
+    update_eu5_languages_file "${EU5_VANILLA_LANGUAGES_FILE}"
+}
+
 update-vanilla-file \
     "${CK2_LANDED_TITLES_DIR}/landed_titles.txt" \
     "${CK2_VANILLA_LANDED_TITLES_FILE}"
@@ -240,3 +351,4 @@ update-vic3-files 'Vic3' \
     "${Vic3_LOCALISATIONS_DIR}" \
     "${Vic3_COUNTRIES_DIR}" \
     "${Vic3_STATES_DIR}"
+update_eu5_files
