@@ -50,6 +50,7 @@ jobs:
         itemid: ${{matrix.config.steam_item_id}}
         path: "${{matrix.config.mod_game_id}}/${{matrix.config.mod_dir_name}}/"
         changenote: "[url=https://github.com/hmlendea/more-cultural-names/releases/tag/${{github.ref_name}}]Version ${{github.ref_name}}[/url]"
+        icon: "${{matrix.config.mod_game_id}}/${{matrix.config.mod_dir_name}}/thumbnail.png"
       env:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
         STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
