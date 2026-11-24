@@ -154,6 +154,10 @@ build-edition \
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
+    'EU5' '1.4.*'
+
+build-edition \
+    'more-cultural-names' 'More Cultural Names' \
     'HOI4' '1.19.*'
 
 build-edition \
@@ -192,10 +196,6 @@ build-edition \
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
     'Vic3' '1.15.*'
-
-build-edition \
-    'more-cultural-names' 'More Cultural Names' \
-    'EU5' '1.4.*'
 
 cd "${REPO_DIR}"
 bash "${REPO_DIR}/scripts/count-localisations.sh"
