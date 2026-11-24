@@ -55,9 +55,3 @@ jobs:
         STEAM_USERNAME: ${{secrets.STEAM_USERNAME}}
         STEAM_PASSWORD: ${{secrets.STEAM_PASSWORD}}
         STEAM_2FASEED: ${{secrets.STEAM_2FASEED}}
-
-    - name: Cooldown
-      run: |
-          COOLDOWN_LENGTH_SEC=30
-          echo "Sleeping for ${COOLDOWN_LENGTH_SEC} to avoid Steam authentication rate-limiting..."
-          sleep ${COOLDOWN_LENGTH_SEC}

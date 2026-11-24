@@ -46,7 +46,7 @@ This is a mod for various strategy games that adds new place names based on thei
 |:--------------------:|:----------:|:---------------:|
 |![EU5](https://shared.fastly.steamstatic.com/community_assets/images/apps/3450310/74c02ad3d65135d01305a879fe0672f399126089.jpg)|![Vic3](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/529340/da7eddaef804905207eaf0ba9580b5026385f041.jpg)|![IR](https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/859580/2cf7114753a78cc067a250a5cbdbb6a34698ab0c.jpg)|
 |**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=3844938409)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=3842537533)**|**[Vanilla](https://steamcommunity.com/sharedfiles/filedetails/?id=2219177532)**|
-|[A Broken World](https://steamcommunity.com/sharedfiles/filedetails/?id=2829772740)||[Ashes of Empire](https://steamcommunity.com/sharedfiles/filedetails/?id=2753371253)||
+||[A Broken World](https://steamcommunity.com/sharedfiles/filedetails/?id=2829772740)|[Ashes of Empire](https://steamcommunity.com/sharedfiles/filedetails/?id=2753371253)||
 ||[Invictus](https://steamcommunity.com/sharedfiles/filedetails/?id=2827761791)||
 ||[The Bronze Age](https://steamcommunity.com/sharedfiles/filedetails/?id=2827468261)||
 ||[Terra Indomita](https://steamcommunity.com/sharedfiles/filedetails/?id=3255448130)||
