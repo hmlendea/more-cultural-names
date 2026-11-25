@@ -24,6 +24,40 @@ GAME_IDS_CK="$(xmlstarlet sel -t -m "//GameId[starts-with(@game, 'CK')]" -v "." 
 NAME_VALUES="$(xmlstarlet sel -t -m "//Name" -v "@value" -n "${LOCATIONS_FILE}" | sort -u)"
 DEFAULT_NAME_VALUES="$(grep "<GameId game=" "${LOCATIONS_FILE}" | sed 's/.*<\!-- \(.*\) -->$/\1/g' | sort -u)"
 
+# ---------------------------------------------------------------------------
+# O(1) lookup maps — built ONCE, single pipeline per map (no per-line subshells).
+# Keys are lowercased with separators stripped, mirroring the original sed/grep
+# normalisation exactly so results are bit-for-bit identical.
+# ---------------------------------------------------------------------------
+declare -A LOC_MAP=()              # normalised Id  -> 1   (locations.xml)
+declare -A UNUSED_LOC_MAP=()       # normalised Id  -> 1   (unused-data/locations.xml)
+declare -A CK_ID_MAP=()            # normalised GameId -> 1   (CK games in locations.xml)
+declare -A VAL_NAME_MAP=()         # localisation value -> 1  (locations.xml @value)
+declare -A DEF_NAME_MAP=()         # default-name comment -> 1   (GameId comments)
+
+while IFS= read -r ID; do
+    ID="${ID//[_-]/}"
+    ID="${ID,,}"
+    [ -n "${ID}" ] && LOC_MAP["${ID}"]=1
+done < <(printf '%s\n' "${LOCATION_IDS}")
+while IFS= read -r ID; do
+    ID="${ID//[_-]/}"
+    ID="${ID,,}"
+    [ -n "${ID}" ] && UNUSED_LOC_MAP["${ID}"]=1
+done < <(printf '%s\n' "${UNUSED_LOCATION_IDS}")
+while IFS= read -r ID; do
+    ID="${ID:2}"
+    ID="${ID//[_-]/}"
+    ID="${ID,,}"
+    [ -n "${ID}" ] && CK_ID_MAP["${ID}"]=1
+done < <(printf '%s\n' "${GAME_IDS_CK}")
+while IFS= read -r V; do
+    [ -n "${V}" ] && VAL_NAME_MAP["${V}"]=1
+done < <(printf '%s\n' "${NAME_VALUES}")
+while IFS= read -r V; do
+    [ -n "${V}" ] && DEF_NAME_MAP["${V}"]=1
+done < <(printf '%s\n' "${DEFAULT_NAME_VALUES}")
+
 function getGameIds() {
     local GAME="${1}"
 
@@ -98,47 +132,61 @@ function checkForMissingCkLocationLinks() {
     local GAME_ID="${1}" && shift
     local VANILLA_LANDED_TITLES="${1}" && shift
 
+    # Replicate `tac "${@}" | grep "^ *ID:" | head -n 1 | sed ...` with an exact,
+    # globally-last-match associative map built in ONE pass over all localisation
+    # files (titles are inserted in file order; a later definition overwrites a
+    # previous one, matching `tac ... | head -n 1`).
+    local -A NAME_MAP=()
+    local LINE
+    if [ "${#@}" -gt 0 ]; then
+        while IFS= read -r LINE; do
+            if [[ ${LINE} =~ ^[[:space:]]*([^:]+):[0-9]+[[:space:]]*\"([^\"]*)\" ]]; then
+                NAME_MAP["${BASH_REMATCH[1]}"]="${BASH_REMATCH[2]}"
+            fi
+        done < <(cat "${@}")
+    fi
+
     for LANDED_TITLE_ID in $(diff \
-                        <(getGameIds "${GAME_ID}") \
-                        <( \
-                            cat "${VANILLA_LANDED_TITLES}" | \
-                            if file "${VANILLA_LANDED_TITLES}" | grep -q 'Non-ISO\|ISO-8859'; then
-                                iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
-                            else
-                                cat
-                            fi | \
-                            grep -i "^\s*[hekdcb]_.*=" | \
-                            awk -F"=" '{print $1}' | \
-                            sed 's/[^a-zA-Z0-9_\-]//g' | \
-                            sort -u \
-                        ) | \
-                        grep "^>" | sed 's/^> //g'); do
+                    <(getGameIds "${GAME_ID}") \
+                    <( \
+                        cat "${VANILLA_LANDED_TITLES}" | \
+                        if file "${VANILLA_LANDED_TITLES}" | grep -q 'Non-ISO\|ISO-8859'; then
+                            iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
+                        else
+                            cat
+                        fi | \
+                        grep -i "^\s*[hekdcb]_.*=" | \
+                        awk -F"=" '{print $1}' | \
+                        sed 's/[^a-zA-Z0-9_\-]//g' | \
+                        sort -u \
+                    ) | \
+                    grep "^>" | sed 's/^> //g'); do
 
         [[ ${LANDED_TITLE_ID} =~ _color$ ]] && continue
         isExcludedLandedTitle "${LANDED_TITLE_ID}" && continue
 
-        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LANDED_TITLE_ID}")
-        [ -n "${1}" ] && LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${LANDED_TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
+        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LANDED_TITLE_ID}" | tr '[:upper:]' '[:lower:]')
+        LOCATION_DEFAULT_NAME=${NAME_MAP[${LANDED_TITLE_ID}]:-}
 
-        if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+        if [[ -n "${LOC_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
             echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-        elif $(echo "${UNUSED_LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+        elif [[ -n "${UNUSED_LOC_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
             echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but unused location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-        elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+        elif [[ -n "${CK_ID_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
             echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif [ -n "${LOCATION_DEFAULT_NAME}" ]; then
             LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
-            LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
+            LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}" | tr '[:upper:]' '[:lower:]')
 
-            if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            if [[ -n "${LOC_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-            elif $(echo "${UNUSED_LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            elif [[ -n "${UNUSED_LOC_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but unused location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-            elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            elif [[ -n "${CK_ID_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-            elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+            elif [[ -n "${VAL_NAME_MAP[${LOCATION_DEFAULT_NAME}]+x}" ]]; then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
-            elif $(echo "${DEFAULT_NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+            elif [[ -n "${DEF_NAME_MAP[${LOCATION_DEFAULT_NAME}]+x}" ]]; then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" default name exists)"
             else
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
@@ -327,19 +375,82 @@ function checkDefaultCk3Localisations() {
     done
 }
 
+# ---------------------------------------------------------------------------
+# HOI4 localisation name caches — built ONCE per localisation directory.
+# Mirrors getHoi4CityName / getHoi4StateName exactly: searches every *.yml in
+# ${DIR}, then falls back to the vanilla English state_names / victory_points
+# files if the entry is missing from the mod directory. The cache holds a single
+# directory at a time and reloads when it changes, so one game's values never
+# leak into another game's while still avoiding repeated scans of shared dirs.
+# ---------------------------------------------------------------------------
+declare -A HOI4_STATE_NAME=()
+declare -A HOI4_CITY_NAME=()
+HOI4_MAPS_DIR=""
+
+function load_hoi4_maps() {
+    local DIR="${1}"
+    local LINE
+
+    # Cache holds exactly one directory at a time; reload when it changes.
+    # Mirrors getHoi4CityName / getHoi4StateName, which recompute per call, so
+    # one game's values never leak into another game's.
+    [ "${HOI4_MAPS_DIR}" = "${DIR}" ] && return
+    HOI4_MAPS_DIR="${DIR}"
+
+    HOI4_STATE_NAME=()
+    HOI4_CITY_NAME=()
+
+    [ ! -d "${DIR}" ] && return
+
+    while IFS= read -r LINE; do
+        if [[ ${LINE} =~ ^[[:space:]]*STATE_([0-9]+):[0-9]*[[:space:]]*\"([^\\\"]*) ]]; then
+            [ -z "${HOI4_STATE_NAME[STATE_${BASH_REMATCH[1]}]+x}" ] && HOI4_STATE_NAME[STATE_${BASH_REMATCH[1]}]="${BASH_REMATCH[2]}"
+        fi
+    done < <(find "${DIR}" -name '*.yml' -exec cat {} + 2>/dev/null)
+
+    while IFS= read -r LINE; do
+        if [[ ${LINE} =~ ^[[:space:]]*VICTORY_POINTS_([0-9]+):[0-9]*[[:space:]]*\"([^\\\"]*) ]]; then
+            [ -z "${HOI4_CITY_NAME[${BASH_REMATCH[1]}]+x}" ] && HOI4_CITY_NAME[${BASH_REMATCH[1]}]="${BASH_REMATCH[2]}"
+        fi
+    done < <(find "${DIR}" -name '*.yml' -exec cat {} + 2>/dev/null)
+
+    # Fall back to the vanilla English directory for missing entries
+    if [ "${DIR}" != "${HOI4_LOCALISATIONS_DIR}" ] && [ -d "${HOI4_LOCALISATIONS_DIR}" ]; then
+        while IFS= read -r LINE; do
+            if [[ ${LINE} =~ ^[[:space:]]*STATE_([0-9]+):[0-9]*[[:space:]]*\"([^\\\"]*) ]]; then
+                [ -z "${HOI4_STATE_NAME[STATE_${BASH_REMATCH[1]}]+x}" ] && HOI4_STATE_NAME[STATE_${BASH_REMATCH[1]}]="${BASH_REMATCH[2]}"
+            fi
+        done < <(find "${HOI4_LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null)
+        while IFS= read -r LINE; do
+            if [[ ${LINE} =~ ^[[:space:]]*VICTORY_POINTS_([0-9]+):[0-9]*[[:space:]]*\"([^\\\"]*) ]]; then
+                [ -z "${HOI4_CITY_NAME[${BASH_REMATCH[1]}]+x}" ] && HOI4_CITY_NAME[${BASH_REMATCH[1]}]="${BASH_REMATCH[2]}"
+            fi
+        done < <(find "${HOI4_LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null)
+    fi
+}
+
 function checkDefaultHoi4Localisations() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR="${2}"
 
     [ ! -d "${LOCALISATIONS_DIR}" ] && return
 
-    while IFS= read -r CITY_LINE; do
-        CITY_ID=$(sed 's/.*>\([0-9][0-9]*\)<\/GameId>.*/\1/g' <<< "${CITY_LINE}")
+    # Replicate getHoi4CityName / getHoi4StateName: the directory must end in
+    # /english for the mod scan; missing entries then fall back to the vanilla
+    # HOI4 localisation files.
+    local DIR="${LOCALISATIONS_DIR}"
+    [[ ${DIR} != */english ]] && DIR="${DIR%/}/english"
 
-        local CITY_NAME_EXPECTED=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
+    load_hoi4_maps "${DIR}"
+
+    while IFS= read -r CITY_LINE; do
+        [[ ${CITY_LINE} =~ ^.*\>([0-9]+)\</GameId\>.*$ ]] && CITY_ID="${BASH_REMATCH[1]}"
+
+        local CITY_NAME_EXPECTED="${HOI4_CITY_NAME[${CITY_ID}]:-}"
 
         if [ -n "${CITY_NAME_EXPECTED}" ]; then
-            local CITY_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${CITY_LINE}")
+            local CITY_NAME_ACTUAL=""
+            [[ ${CITY_LINE} =~ ^.*\<\!--\ (.*)\ --\>.*$ ]] && CITY_NAME_ACTUAL="${BASH_REMATCH[1]}"
 
             if [ "${CITY_NAME_ACTUAL}" != "${CITY_NAME_EXPECTED}" ]; then
                 echo "Wrong default localisation for ${GAME_ID} city ${CITY_ID} ! Correct one is: ${CITY_NAME_EXPECTED} | Find it with ${GAME_ID}[^A-Z].*City.*>${CITY_ID}<"
@@ -348,12 +459,13 @@ function checkDefaultHoi4Localisations() {
     done < <(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}")
 
     while IFS= read -r STATE_LINE; do
-        STATE_ID=$(sed 's/.*>\([0-9][0-9]*\)<\/GameId>.*/\1/g' <<< "${STATE_LINE}")
+        [[ ${STATE_LINE} =~ ^.*\>([0-9]+)\</GameId\>.*$ ]] && STATE_ID="${BASH_REMATCH[1]}"
 
-        local STATE_NAME_EXPECTED=$(getHoi4StateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
+        local STATE_NAME_EXPECTED="${HOI4_STATE_NAME[STATE_${STATE_ID}]:-}"
 
         if [ -n "${STATE_NAME_EXPECTED}" ]; then
-            local STATE_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${STATE_LINE}")
+            local STATE_NAME_ACTUAL=""
+            [[ ${STATE_LINE} =~ ^.*\<\!--\ (.*)\ --\>.*$ ]] && STATE_NAME_ACTUAL="${BASH_REMATCH[1]}"
 
             if [ "${STATE_NAME_ACTUAL}" != "${STATE_NAME_EXPECTED}" ]; then
                 echo "Wrong default localisation for ${GAME_ID} state ${STATE_ID} ! Correct one is: ${STATE_NAME_EXPECTED} | Find it with ${GAME_ID}[^A-Z].*State.*>${STATE_ID}<"
@@ -369,12 +481,13 @@ function checkDefaultVic3Localisations() {
     [ ! -d "${LOCALISATIONS_DIR}" ] && return
 
     while IFS= read -r HUB_LINE; do
-        HUB_ID=$(sed 's/.*>\(STATE_[A-Z][A-Z_]*_[a-z][a-z]*\)<\/GameId>.*/\1/g' <<< "${HUB_LINE}")
+        [[ ${HUB_LINE} =~ ^.*\>(STATE_[A-Z][A-Z_]*_[a-z][a-z]*)\</GameId\>.*$ ]] && HUB_ID="${BASH_REMATCH[1]}"
 
         local HUB_NAME_EXPECTED=$(getVanillaVic3HubName "${HUB_ID}" "${LOCALISATIONS_DIR}")
 
         if [ -n "${HUB_NAME_EXPECTED}" ]; then
-            local HUB_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${HUB_LINE}")
+            local HUB_NAME_ACTUAL=""
+            [[ ${HUB_LINE} =~ ^.*\<\!--\ (.*)\ --\>.*$ ]] && HUB_NAME_ACTUAL="${BASH_REMATCH[1]}"
 
             if [ "${HUB_NAME_ACTUAL}" != "${HUB_NAME_EXPECTED}" ]; then
                 echo "Wrong default localisation for ${GAME_ID} hub ${HUB_ID} (${HUB_NAME_ACTUAL}) ! Correct one is: ${HUB_NAME_EXPECTED}"
@@ -388,14 +501,22 @@ function validateHoi4Parentage() {
     local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
 
+    load_hoi4_maps "${LOCALISATIONS_DIR}"
+
+    # Build vanilla city -> state parent map once
+    local -A PARENT_MAP=()
+    while IFS='=' read -r ID PARENT; do
+        [ -n "${ID}" ] && PARENT_MAP[${ID}]="${PARENT}"
+    done < "${VANILLA_FILE}"
+
     while IFS= read -r CITY_LINE; do
-        CITY_ID=$(sed 's/.*>\([0-9][0-9]*\)<\/GameId>.*/\1/g' <<< "${CITY_LINE}")
-        ACTUAL_STATE_ID=$(sed 's/.*parent=\"\([^\"]*\).*/\1/g' <<< "${CITY_LINE}")
-        EXPECTED_STATE_ID=$(grep "^${CITY_ID}=" "${VANILLA_FILE}" | head -n 1 | awk -F'=' '{print $2}')
+        [[ ${CITY_LINE} =~ ^.*\>([0-9]+)\</GameId\>.*$ ]] && CITY_ID="${BASH_REMATCH[1]}"
+        [[ ${CITY_LINE} =~ parent=\"([^\"]*)\" ]] && ACTUAL_STATE_ID="${BASH_REMATCH[1]}"
+        EXPECTED_STATE_ID=${PARENT_MAP[${CITY_ID}]:-}
 
         if [ "${ACTUAL_STATE_ID}" != "${EXPECTED_STATE_ID}" ]; then
-            local CITY_NAME=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
-            local STATE_NAME=$(getHoi4StateName "${EXPECTED_STATE_ID}" "${LOCALISATIONS_DIR}")
+            local CITY_NAME="${HOI4_CITY_NAME[${CITY_ID}]:-}"
+            local STATE_NAME="${HOI4_STATE_NAME[STATE_${EXPECTED_STATE_ID}]:-}"
 
             echo "${GAME_ID}: City ${CITY_ID} (${CITY_NAME}) is not linked to the correct state. Correct parent: ${EXPECTED_STATE_ID} (${STATE_NAME}) | Find it with ${GAME_ID}[^A-Z].*City.*>${CITY_ID}<"
         fi
