@@ -308,8 +308,8 @@ function list_mismatching_eu5_localisations() {
     loadEu5VanillaNames
 
     while IFS= read -r LOCATION_LINE; do
-        LOCATION_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${LOCATION_LINE}")
-        LOCATION_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${LOCATION_LINE}")
+        [[ ${LOCATION_LINE} =~ ^.*\>([^\<]*)\</GameId\>.*$ ]] && LOCATION_ID="${BASH_REMATCH[1]}"
+        [[ ${LOCATION_LINE} =~ ^.*\<\!--\ (.*)\ --\>.*$ ]] && LOCATION_NAME_ACTUAL="${BASH_REMATCH[1]}"
         LOCATION_NAME_EXPECTED="${EU5_LOCATION_NAMES[${LOCATION_ID}]:-}"
 
         [ -z "${LOCATION_NAME_EXPECTED}" ] && continue
@@ -320,8 +320,8 @@ function list_mismatching_eu5_localisations() {
     done < <(grep "${GAME_ID}\" type=\"Location" "${LOCATIONS_FILE}")
 
     while IFS= read -r LOCATION_LINE; do
-        LOCATION_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${LOCATION_LINE}")
-        LOCATION_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${LOCATION_LINE}")
+        [[ ${LOCATION_LINE} =~ ^.*\>([^\<]*)\</GameId\>.*$ ]] && LOCATION_ID="${BASH_REMATCH[1]}"
+        [[ ${LOCATION_LINE} =~ ^.*\<\!--\ (.*)\ --\>.*$ ]] && LOCATION_NAME_ACTUAL="${BASH_REMATCH[1]}"
         LOCATION_NAME_EXPECTED="${EU5_PROVINCE_NAMES[${LOCATION_ID}]:-}"
 
         [ -z "${LOCATION_NAME_EXPECTED}" ] && continue

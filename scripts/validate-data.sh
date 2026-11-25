@@ -389,7 +389,6 @@ HOI4_MAPS_DIR=""
 
 function load_hoi4_maps() {
     local DIR="${1}"
-    local LINE
 
     # Cache holds exactly one directory at a time; reload when it changes.
     # Mirrors getHoi4CityName / getHoi4StateName, which recompute per call, so
@@ -402,30 +401,41 @@ function load_hoi4_maps() {
 
     [ ! -d "${DIR}" ] && return
 
-    while IFS= read -r LINE; do
-        if [[ ${LINE} =~ ^[[:space:]]*STATE_([0-9]+):[0-9]*[[:space:]]*\"([^\\\"]*) ]]; then
-            [ -z "${HOI4_STATE_NAME[STATE_${BASH_REMATCH[1]}]+x}" ] && HOI4_STATE_NAME[STATE_${BASH_REMATCH[1]}]="${BASH_REMATCH[2]}"
+    # Single awk pass over every *.yml in ${DIR} extracting both STATE_ and
+    # VICTORY_POINTS_ entries (first definition wins, matching the per-key
+    # `${arr[key]+x}` guard the loop used). Values keep everything up to the
+    # first `"` or literal backslash, exactly like the original sed [^\"].
+    while IFS=$'\t' read -r KIND KEY VALUE; do
+        if [ "${KIND}" = S ]; then
+            [ -z "${HOI4_STATE_NAME[${KEY}]+x}" ] && HOI4_STATE_NAME[${KEY}]="${VALUE}"
+        else
+            [ -z "${HOI4_CITY_NAME[${KEY}]+x}" ] && HOI4_CITY_NAME[${KEY}]="${VALUE}"
         fi
-    done < <(find "${DIR}" -name '*.yml' -exec cat {} + 2>/dev/null)
-
-    while IFS= read -r LINE; do
-        if [[ ${LINE} =~ ^[[:space:]]*VICTORY_POINTS_([0-9]+):[0-9]*[[:space:]]*\"([^\\\"]*) ]]; then
-            [ -z "${HOI4_CITY_NAME[${BASH_REMATCH[1]}]+x}" ] && HOI4_CITY_NAME[${BASH_REMATCH[1]}]="${BASH_REMATCH[2]}"
-        fi
-    done < <(find "${DIR}" -name '*.yml' -exec cat {} + 2>/dev/null)
+    done < <(find "${DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | \
+        awk '
+            match($0, /^[ \t]*STATE_([0-9]+):[0-9]*[ \t]*"([^"\\]*)/, m) {
+                print "S\tSTATE_" m[1] "\t" m[2]
+            }
+            match($0, /^[ \t]*VICTORY_POINTS_([0-9]+):[0-9]*[ \t]*"([^"\\]*)/, m) {
+                print "C\t" m[1] "\t" m[2]
+            }')
 
     # Fall back to the vanilla English directory for missing entries
     if [ "${DIR}" != "${HOI4_LOCALISATIONS_DIR}" ] && [ -d "${HOI4_LOCALISATIONS_DIR}" ]; then
-        while IFS= read -r LINE; do
-            if [[ ${LINE} =~ ^[[:space:]]*STATE_([0-9]+):[0-9]*[[:space:]]*\"([^\\\"]*) ]]; then
-                [ -z "${HOI4_STATE_NAME[STATE_${BASH_REMATCH[1]}]+x}" ] && HOI4_STATE_NAME[STATE_${BASH_REMATCH[1]}]="${BASH_REMATCH[2]}"
+        while IFS=$'\t' read -r KIND KEY VALUE; do
+            if [ "${KIND}" = S ]; then
+                [ -z "${HOI4_STATE_NAME[${KEY}]+x}" ] && HOI4_STATE_NAME[${KEY}]="${VALUE}"
+            else
+                [ -z "${HOI4_CITY_NAME[${KEY}]+x}" ] && HOI4_CITY_NAME[${KEY}]="${VALUE}"
             fi
-        done < <(find "${HOI4_LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null)
-        while IFS= read -r LINE; do
-            if [[ ${LINE} =~ ^[[:space:]]*VICTORY_POINTS_([0-9]+):[0-9]*[[:space:]]*\"([^\\\"]*) ]]; then
-                [ -z "${HOI4_CITY_NAME[${BASH_REMATCH[1]}]+x}" ] && HOI4_CITY_NAME[${BASH_REMATCH[1]}]="${BASH_REMATCH[2]}"
-            fi
-        done < <(find "${HOI4_LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null)
+        done < <(find "${HOI4_LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | \
+            awk '
+                match($0, /^[ \t]*STATE_([0-9]+):[0-9]*[ \t]*"([^"\\]*)/, m) {
+                    print "S\tSTATE_" m[1] "\t" m[2]
+                }
+                match($0, /^[ \t]*VICTORY_POINTS_([0-9]+):[0-9]*[ \t]*"([^"\\]*)/, m) {
+                    print "C\t" m[1] "\t" m[2]
+                }')
     fi
 }
 
@@ -480,10 +490,25 @@ function checkDefaultVic3Localisations() {
 
     [ ! -d "${LOCALISATIONS_DIR}" ] && return
 
+    # For the vanilla Vic3 directory getVanillaVic3HubName returns entries from
+    # the cached VIC3_VANILLA_HUB_NAMES map, so load it once and read it
+    # directly instead of forking a subshell per hub. Any other directory keeps
+    # the original per-hub lookup path.
+    local USE_CACHED_HUBS=false
+    if [ "${LOCALISATIONS_DIR}" = "${Vic3_LOCALISATIONS_DIR}" ]; then
+        loadVanillaVic3HubNames
+        USE_CACHED_HUBS=true
+    fi
+
     while IFS= read -r HUB_LINE; do
         [[ ${HUB_LINE} =~ ^.*\>(STATE_[A-Z][A-Z_]*_[a-z][a-z]*)\</GameId\>.*$ ]] && HUB_ID="${BASH_REMATCH[1]}"
 
-        local HUB_NAME_EXPECTED=$(getVanillaVic3HubName "${HUB_ID}" "${LOCALISATIONS_DIR}")
+        local HUB_NAME_EXPECTED=""
+        if ${USE_CACHED_HUBS}; then
+            HUB_NAME_EXPECTED="${VIC3_VANILLA_HUB_NAMES[${HUB_ID}]:-}"
+        else
+            HUB_NAME_EXPECTED=$(getVanillaVic3HubName "${HUB_ID}" "${LOCALISATIONS_DIR}")
+        fi
 
         if [ -n "${HUB_NAME_EXPECTED}" ]; then
             local HUB_NAME_ACTUAL=""
