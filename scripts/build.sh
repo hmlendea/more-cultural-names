@@ -92,6 +92,10 @@ function build-edition {
 }
 
 build-edition \
+    'more-cultural-names' 'More Cultural Names' \
+    'Civ5' '1.0.*'
+
+build-edition \
     "more-cultural-names" "More Cultural Names" \
     "CK2" "3.3.5.1" \
     --landed-titles "${VANILLA_FILES_DIR}/ck2_landed_titles.txt" --landed-titles-name "landed_titles.txt"
@@ -157,10 +161,6 @@ build-edition \
     'tfe-more-cultural-names' 'The Fallen Eagle - More Cultural Names' \
     'CK3TFE' '1.19.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
-
-build-edition \
-    'more-cultural-names' 'More Cultural Names' \
-    'Civ5' '1.0.*'
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \

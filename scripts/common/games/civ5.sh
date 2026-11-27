@@ -10,16 +10,16 @@ function load_civ5_data() {
     [[ -n "${CIV5_DATA_LOADED}" ]] && return
     CIV5_DATA_LOADED=true
 
-    if [[ -f "${Civ5_VANILLA_CITY_NAMES_FILE}" ]]; then
+    if [[ -f "${CIV5_VANILLA_CITY_NAMES_FILE}" ]]; then
         while IFS='=' read -r CITY_KEY CITY_NAME; do
             [[ -n "${CITY_KEY}" ]] && CIV5_CITY_NAMES["${CITY_KEY}"]="${CITY_NAME}"
-        done < "${Civ5_VANILLA_CITY_NAMES_FILE}"
+        done < "${CIV5_VANILLA_CITY_NAMES_FILE}"
     fi
 
-    if [[ -f "${Civ5_VANILLA_CIVILIZATIONS_FILE}" ]]; then
+    if [[ -f "${CIV5_VANILLA_CIVILIZATIONS_FILE}" ]]; then
         while IFS= read -r CIVILIZATION_ID; do
             [[ -n "${CIVILIZATION_ID}" ]] && CIV5_CIVILIZATIONS["${CIVILIZATION_ID}"]=1
-        done < "${Civ5_VANILLA_CIVILIZATIONS_FILE}"
+        done < "${CIV5_VANILLA_CIVILIZATIONS_FILE}"
     fi
 }
 

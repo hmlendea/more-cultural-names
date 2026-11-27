@@ -184,18 +184,6 @@ function getCiv5Civilizations() {
     done < "${CIVILIZATIONS_FILE}"
 }
 
-function getCiv5Civilizations() {
-    local GAME_ID="${1}"
-    local CIVILIZATIONS_FILE="${Civ5_VANILLA_CIVILIZATIONS_FILE}"
-
-    [[ -f "${CIVILIZATIONS_FILE}" ]] || return
-
-    while IFS= read -r CIVILIZATION_ID; do
-        grep -q "<GameId game=\"${GAME_ID}\">${CIVILIZATION_ID}</GameId>" "${LANGUAGES_FILE}" || \
-            echo "      <GameId game=\"${GAME_ID}\">${CIVILIZATION_ID}</GameId>"
-    done < "${CIVILIZATIONS_FILE}"
-}
-
 function getEu5Languages() {
     local GAME_ID="${1}" && shift
     local LANGUAGES_DIR="${EU5_LANGUAGES_DIR}"

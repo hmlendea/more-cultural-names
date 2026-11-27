@@ -3,6 +3,17 @@ source "scripts/common/paths.sh"
 source "${SCRIPTS_COMMON_DIR}/utils.sh"
 source "${SCRIPTS_COMMON_GAMES_DIR}/hoi4.sh"
 
+function update_civ5_files() {
+    local CITY_NAMES_FILE="${CIV5_VANILLA_CITY_NAMES_FILE}"
+    local CIVILIZATIONS_FILE="${CIV5_VANILLA_CIVILIZATIONS_FILE}"
+    local CIV5_SOURCE_URL="https://raw.githubusercontent.com/Keith7287/Bob-s-Mod/main"
+
+    if [[ ! -f "${CITY_NAMES_FILE}" || ! -f "${CIVILIZATIONS_FILE}" ]]; then
+        echo "Civ5 snapshots are missing; provide the tracked snapshots or refresh them from the Bob's Mod mirror." >&2
+        return 1
+    fi
+}
+
 function update-vanilla-file() {
     local SOURCE_FILE="${1}"
     local TARGET_FILE="${2}"
@@ -352,3 +363,4 @@ update-vic3-files 'Vic3' \
     "${Vic3_COUNTRIES_DIR}" \
     "${Vic3_STATES_DIR}"
 update_eu5_files
+update_civ5_files
