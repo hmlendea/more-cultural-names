@@ -227,6 +227,7 @@ function getEu5Languages() {
     done
 }
 
+echo "Civilization 5:"          && getCiv5Civilizations "Civ5"
 echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
 echo "Crusader Kings 2 HIP:"    && getCk2Cultures       "CK2HIP"    "${CK2HIP_CULTURES_DIR}"
 echo "Crusader Kings 2 ROI:"    && getCk2Cultures       "CK2RoI"    "${CK2RoI_CULTURES_DIR}" && getCk2Cultures "CK2RoI" "${CK2_CULTURES_DIR}"
@@ -241,7 +242,6 @@ echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CU
 echo "Crusader Kings 3 SoW:"    && getCk3Cultures       "CK3SoW"    "${CK3SoW_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 TBA:"    && getCk3Cultures       "CK3TBA"    "${CK3TBA_CULTURES_DIR}"
 echo "Crusader Kings 3 TFE:"    && getCk3Cultures       "CK3TFE"    "${CK3TFE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
-echo "Civilization 5:"           && getCiv5Civilizations  "Civ5"
 echo "Europa Universalis 5:"    && getEu5Languages      "EU5"
 echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS_DIR}" "${HOI4_LOCALISATIONS_DIR}"
 echo "Hearts of Iron 4 MDM:"    && getHoi4Countries     "HOI4MDM"   "${HOI4MDM_TAGS_DIR}" "${HOI4MDM_LOCALISATIONS_DIR}"
