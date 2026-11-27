@@ -73,11 +73,17 @@ function build-edition {
     fi
 
     echo "   > Copying extras..."
-    cp -rf "${EXTRAS_DIR}/${GAME}"/* "${EDITION_DIR}/"
+    if [ -d "${EXTRAS_DIR}/${GAME}" ]; then
+        cp -rf "${EXTRAS_DIR}/${GAME}"/* "${EDITION_DIR}/"
+    fi
 
     echo "   > Building the package..."
     cd "${EDITION_DIR}"
-    zip -q -r "${PACKAGE_NAME}.zip" "./${ID}" "./${ID}.mod"
+    if [[ "${GAME}" == Civ5* ]]; then
+        zip -q -r "${PACKAGE_NAME}.zip" "./${ID}"
+    else
+        zip -q -r "${PACKAGE_NAME}.zip" "./${ID}" "./${ID}.mod"
+    fi
     mv "${PACKAGE_NAME}.zip" "${EDITION_PACKAGE}"
 
     cd "${ORIGINAL_WORKING_DIRECTORY}"
@@ -151,6 +157,10 @@ build-edition \
     'tfe-more-cultural-names' 'The Fallen Eagle - More Cultural Names' \
     'CK3TFE' '1.19.*' \
     --landed-titles "${VANILLA_FILES_DIR}/ck3tfe_landed_titles.txt" --landed-titles-name '873_MoreCulturalNames.txt'
+
+build-edition \
+    'more-cultural-names' 'More Cultural Names' \
+    'Civ5' '1.0.*'
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
