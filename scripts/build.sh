@@ -93,7 +93,7 @@ function build-edition {
 
 build-edition \
     'more-cultural-names' 'More Cultural Names' \
-    'Civ5' '1.0.*'
+    'Civ5' '1.0.3.279'
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \
