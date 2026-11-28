@@ -6246,7 +6246,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>adrar_algeria</Id>
     <Id>adrar_ghana</Id>
     <WikidataId>Q251181</WikidataId>
     <GameIds>
@@ -13143,8 +13142,6 @@
       <GameId game="CK2">b_aleppo</GameId> <!-- Aleppo -->
       <GameId game="CK2HIP">b_aleppo</GameId> <!-- Halab -->
       <GameId game="CK2RoI">b_aleppo</GameId> <!-- Aleppo -->
-      <GameId game="HOI4" type="City" parent="677">12473</GameId> <!-- Aleppo -->
-      <GameId game="HOI4MDM" type="City" parent="566">12473</GameId> <!-- Halab -->
       <GameId game="CK2RoI">c_aleppo</GameId> <!-- Aleppo -->
       <GameId game="CK2RoI">d_aleppo</GameId> <!-- Aleppo -->
       <GameId game="CK3">c_aleppo</GameId> <!-- Aleppo -->
@@ -13164,6 +13161,7 @@
       <GameId game="HOI4" type="City" parent="677">12473</GameId> <!-- Aleppo -->
       <GameId game="HOI4" type="State">677</GameId> <!-- Aleppo -->
       <GameId game="HOI4MDM" type="City" parent="566">12473</GameId> <!-- Aleppo -->
+      <GameId game="HOI4MDM" type="City" parent="566">12473</GameId> <!-- Halab -->
       <GameId game="HOI4MDM" type="State">566</GameId> <!-- Aleppo -->
       <GameId game="HOI4TGW" type="City" parent="677">12473</GameId> <!-- Aleppo -->
       <GameId game="IR_ABW">3979</GameId> <!-- Aleppo -->
@@ -18099,7 +18097,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>ancona</Id>
     <Id>ancona_italy</Id>
     <WikidataId>Q3415</WikidataId>
     <GameIds>
@@ -31172,7 +31169,6 @@
       <GameId game="CK3MBP">b_aurillac</GameId> <!-- Aurillac -->
       <GameId game="CK3SoW">b_aurillac</GameId> <!-- Aurillac -->
       <GameId game="CK3TFE">b_aurillac</GameId> <!-- Aureliacum -->
-      <GameId game="Vic3" type="Hub">STATE_AUVERGNE_wood</GameId> <!-- Aurillac -->
       <GameId game="IR_ABW">4030</GameId> <!-- Aurillac -->
     </GameIds>
     <Names>
@@ -34169,7 +34165,6 @@
       <GameId game="HOI4MDM" type="City" parent="968">11851</GameId> <!-- Badajoz -->
       <GameId game="HOI4TGW" type="City" parent="170">6902</GameId> <!-- Badajoz -->
       <GameId game="IR_ABW">1150</GameId> <!-- Badajoz -->
-      <GameId game="Vic3" type="Hub">STATE_BADAJOZ_city</GameId> <!-- Badajoz -->
       <GameId game="Vic3" type="Hub">STATE_EXTREMADURA_city</GameId> <!-- Badajoz -->
       <GameId game="Vic3" type="State">STATE_BADAJOZ</GameId> <!-- Badajoz -->
     </GameIds>
@@ -38517,7 +38512,6 @@
     <WikidataId>Q144983</WikidataId>
     <GameIds>
       <GameId game="CK2HIP">b_besztercebanya</GameId> <!-- Besztercebánya -->
-      <GameId game="Vic3" type="Hub">STATE_WEST_SLOVAKIA_wood</GameId> <!-- Banska Bystrica -->
       <GameId game="IR_ABW">660</GameId> <!-- Banska Bystrica -->
       <GameId game="Vic3" type="Hub">STATE_SLOVAKIA_mine</GameId> <!-- Banská Bystrica -->
     </GameIds>
@@ -48901,8 +48895,6 @@
     <GameIds>
       <GameId game="HOI4MDM" type="City" parent="438">2105</GameId> <!-- Bhopal -->
       <GameId game="IR_ABW">393</GameId> <!-- Bhopal -->
-      <GameId game="Vic3" type="Hub">STATE_CENTRAL_INDIA_wood</GameId> <!-- Bhopal -->
-      <GameId game="Vic3" type="Country">BHO</GameId> <!-- Bhopal -->
       <GameId game="Vic3" type="Hub">STATE_MALWA_mine</GameId> <!-- Bhopal -->
     </GameIds>
     <FallbackLocations>
@@ -63443,7 +63435,6 @@
       <GameId game="HOI4MDM" type="City" parent="90">9700</GameId> <!-- Burgos -->
       <GameId game="HOI4TGW" type="City" parent="176">885</GameId> <!-- Burgos -->
       <GameId game="HOI4TGW" type="State">176</GameId> <!-- Burgos -->
-      <GameId game="Vic3" type="Hub">STATE_CASTILE_city</GameId> <!-- Burgos -->
       <GameId game="IR_ABW">4602</GameId> <!-- Burgos -->
       <GameId game="Vic3" type="Hub">STATE_OLD_CASTILE_city</GameId> <!-- Burgos -->
     </GameIds>
@@ -65076,7 +65067,6 @@
       <GameId game="CK3SoW">c_caceres</GameId> <!-- Caceres -->
       <GameId game="CK3TFE">b_caceres</GameId> <!-- Norba Caeserina -->
       <GameId game="CK3TFE">c_caceres</GameId> <!-- Norba Caeserina -->
-      <GameId game="Vic3" type="Hub">STATE_BADAJOZ_wood</GameId> <!-- Cáceres -->
       <GameId game="IR_ABW">1945</GameId> <!-- Caceres -->
       <GameId game="Vic3" type="Hub">STATE_EXTREMADURA_wood</GameId> <!-- Caceres -->
     </GameIds>
@@ -70799,13 +70789,16 @@
     <Id>carpathians_south</Id>
     <WikidataId>Q217202</WikidataId>
     <GameIds>
+      <GameId game="IR_ABW">5652</GameId> <!-- Southern Carpathians -->
     </GameIds>
     <FallbackLocations>
       <LocationId>alps_transylvanian</LocationId>
     </FallbackLocations>
     <Names>
+      <Name language="Catalan" value="Carpats del Sud" />
       <Name language="English" value="Southern Carpathians" adjective="Southern Carpathian" />
       <Name language="Esperanto" value="Sudaj Karpatoj" />
+      <Name language="Ladin" value="Carpac dl Sud" />
       <Name language="Romanian" value="Carpații Meridionali" />
       <Name language="Spanish" value="Cárpatos Meridionales" />
     </Names>
@@ -88911,7 +88904,6 @@
       <GameId game="HOI4" type="City" parent="793">3945</GameId> <!-- Cuenca -->
       <GameId game="HOI4MDM" type="City" parent="906">11020</GameId> <!-- Cuenca -->
       <GameId game="HOI4TGW" type="City" parent="809">3945</GameId> <!-- Cuenca -->
-      <GameId game="Vic3" type="Hub">STATE_TOLEDO_wood</GameId> <!-- Cuenca -->
       <GameId game="IR_ABW">3485</GameId> <!-- Cuenca -->
       <GameId game="Vic3" type="Hub">STATE_NEW_CASTILE_wood</GameId> <!-- Cuenca -->
     </GameIds>
@@ -93154,7 +93146,6 @@
       <Name language="Khanty" value="Daugavpils" />
       <Name language="Komi" value="Daugavpils" />
       <Name language="Latgalian" value="Daugpiļs" />
-      <Name language="Latvian" value="Daugavpils" />
       <Name language="Latin" value="Duneburgum" adjective="Duneburgensis" />
       <Name language="Latvian" value="Daugavpils" />
       <Name language="Lithuanian" value="Daugpilis" />
@@ -111959,7 +111950,6 @@
       <GameId game="CK3IBL">b_falkirk</GameId> <!-- Falkirk -->
       <GameId game="CK3MBP">b_falkirk</GameId> <!-- Falkirk -->
       <GameId game="CK3SoW">b_falkirk</GameId> <!-- Falkirk -->
-      <GameId game="CK3TFE">b_falkirk</GameId> <!-- Falkirk -->
       <GameId game="IR_ABW">1021</GameId> <!-- Falkirk -->
     </GameIds>
     <Names>
@@ -120798,9 +120788,6 @@
     <Id>ganzhou_zhangye</Id>
     <WikidataId>Q539323</WikidataId>
     <GameIds>
-      <GameId game="CK3">b_ganzhou</GameId> <!-- Ganzhou -->
-      <GameId game="CK3">c_ganzhou</GameId> <!-- Ganzhou -->
-      <GameId game="CK3">d_ganzhou</GameId> <!-- Ganzhou -->
       <GameId game="CK3AEP">b_ganzhou</GameId> <!-- Ganzhou -->
       <GameId game="CK3AEP">c_ganzhou</GameId> <!-- Ganzhou -->
       <GameId game="CK3AEP">d_ganzhou</GameId> <!-- Ganzhou -->
@@ -131239,7 +131226,6 @@
       <GameId game="HOI4MDM" type="City" parent="855">7590</GameId> <!-- Guantánamo -->
       <GameId game="HOI4TGW" type="City" parent="315">7590</GameId> <!-- Guantánamo -->
       <GameId game="IR_ABW">2742</GameId> <!-- Guantanamo -->
-      <GameId game="Vic3" type="Hub">STATE_CUBA_mine</GameId> <!-- Guantanamo -->
     </GameIds>
     <Names>
       <Name language="Latvian" value="Gvantanamo" />
@@ -131266,7 +131252,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>guarda_portugal</Id>
     <Id>guanzhong</Id>
     <WikidataId>Q189923</WikidataId>
     <GameIds>
@@ -131279,7 +131264,7 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>guarda</Id>
+    <Id>guarda_portugal</Id>
     <WikidataId>Q750594</WikidataId>
     <GameIds>
       <GameId game="CK2">b_guarda</GameId> <!-- Guarda -->
@@ -131409,8 +131394,6 @@
     <GameIds>
       <GameId game="CK2">b_guazhou</GameId> <!-- Guazhou -->
       <GameId game="CK2RoI">b_guazhou</GameId> <!-- Guazhou -->
-      <GameId game="CK3">b_guazhou</GameId> <!-- Guazhou -->
-      <GameId game="CK3">c_guazhou</GameId> <!-- Guazhou -->
       <GameId game="CK3">d_guiyi</GameId> <!-- Guazhou -->
       <GameId game="CK2RoI">d_guiyi</GameId> <!-- Guiyi -->
       <GameId game="CK3AEP">b_guazhou</GameId> <!-- Guazhou -->
@@ -158564,7 +158547,6 @@
       <GameId game="HOI4MDM" type="City" parent="414">10737</GameId> <!-- Kabul -->
       <GameId game="HOI4TGW" type="City" parent="267">10737</GameId> <!-- Kabul -->
       <GameId game="HOI4TGW" type="State">267</GameId> <!-- Kabul -->
-      <GameId game="Vic3" type="Hub">STATE_EASTERN_AFGHANISTAN_city</GameId> <!-- Kabul -->
       <GameId game="IR_ABW">64</GameId> <!-- Kabul -->
       <GameId game="Vic3" type="Hub">STATE_KABUL_city</GameId> <!-- Kabul -->
     </GameIds>
@@ -164893,7 +164875,6 @@
       <GameId game="HOI4MDM" type="City" parent="109">6296</GameId> <!-- Kaunas -->
       <GameId game="HOI4TGW" type="City" parent="11">6296</GameId> <!-- Kaunas -->
       <GameId game="HOI4TGW" type="State">11</GameId> <!-- Kaunas -->
-      <GameId game="Vic3" type="Hub">STATE_KAUNAS_city</GameId> <!-- Kaunas -->
       <GameId game="IR_ABW">4512</GameId> <!-- Kaunas -->
       <GameId game="Vic3" type="Hub">STATE_LITHUANIA_city</GameId> <!-- Kaunas -->
     </GameIds>
@@ -175323,7 +175304,6 @@
       <GameId game="HOI4" type="City" parent="664">6573</GameId> <!-- Kosice -->
       <GameId game="HOI4MDM" type="City" parent="120">6573</GameId> <!-- Košice -->
       <GameId game="HOI4TGW" type="City" parent="664">6573</GameId> <!-- Kosice -->
-      <GameId game="Vic3" type="Hub">STATE_EAST_SLOVAKIA_city</GameId> <!-- Kosice -->
       <GameId game="IR_ABW">3426</GameId> <!-- Kosice -->
       <GameId game="Vic3" type="Hub">STATE_SLOVAKIA_farm</GameId> <!-- Kosice -->
     </GameIds>
@@ -181102,7 +181082,6 @@
     <GameIds>
       <GameId game="HOI4" type="City" parent="302">5230</GameId> <!-- La Paz -->
       <GameId game="HOI4MDM" type="City" parent="897">5230</GameId> <!-- La Paz -->
-      <GameId game="Vic3" type="Hub">STATE_BAJA_CALIFORNIA_city</GameId> <!-- La Paz -->
       <GameId game="IR_ABW">539</GameId> <!-- La Paz -->
       <GameId game="Vic3" type="Hub">STATE_LA_PAZ_city</GameId> <!-- La Paz -->
       <GameId game="Vic3" type="State">STATE_LA_PAZ</GameId> <!-- La Paz -->
@@ -183727,9 +183706,8 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>lancaster_england_duchy</Id>
-    <WikidataId>Q2914544</WikidataId>
     <Id>lancaster_northumbria_duchy</Id>
+    <WikidataId>Q2914544</WikidataId>
     <GameIds>
       <GameId game="CK2">d_lancaster</GameId> <!-- Lancaster -->
       <GameId game="CK2HIP">d_lancaster</GameId> <!-- Lancaster -->
@@ -194355,7 +194333,6 @@
       <GameId game="CK3SoW">b_logrono</GameId> <!-- Logrono -->
       <GameId game="CK3TFE">b_logrono</GameId> <!-- Illo Gronno -->
       <GameId game="HOI4MDM" type="City" parent="1042">6903</GameId> <!-- Logroño -->
-      <GameId game="Vic3" type="Hub">STATE_NAVARRA_mine</GameId> <!-- Logroño -->
       <GameId game="IR_ABW">4267</GameId> <!-- Logrono -->
       <GameId game="Vic3" type="Hub">STATE_OLD_CASTILE_mine</GameId> <!-- Logrono -->
     </GameIds>
@@ -214924,12 +214901,7 @@
       <GameId game="CK3MBP">b_mirpur_khas</GameId> <!-- Mirpur Khas -->
       <GameId game="CK3SoW">b_mirpur_khas</GameId> <!-- Mirpur Khas -->
       <GameId game="CK3TFE">b_mirpur_khas</GameId> <!-- Mirpur Khas -->
-      <GameId game="EU5" type="Location">umarkot</GameId> <!-- Umarkot -->
-      <GameId game="IR">4357</GameId> <!-- Umarkot -->
-      <GameId game="IR_AoE">4357</GameId> <!-- Umarkot -->
-      <GameId game="IR_INV">4357</GameId> <!-- Umarkot -->
-      <GameId game="IR_TI">4357</GameId> <!-- Umarkot -->
-      <GameId game="Vic3" type="Hub">STATE_SINDH_mine</GameId> <!-- Umarkot -->
+      <GameId game="IR_ABW">519</GameId> <!-- Mirpur Khas -->
     </GameIds>
     <Names>
       <Name language="Arabic_Egyptian" value="Mīrbaūr H̱ās" />
@@ -233183,8 +233155,6 @@
       <GameId game="CK3MBP">d_nizhny_novgorod</GameId> <!-- $c_nizhny_novgorod$ -->
       <GameId game="CK3SoW">c_nizhny_novgorod</GameId> <!-- Obran Osh -->
       <GameId game="CK3SoW">d_nizhny_novgorod</GameId> <!-- $c_nizhny_novgorod$ -->
-      <GameId game="CK3TFE">c_nizhny_novgorod</GameId> <!-- Obran Osh -->
-      <GameId game="CK3TFE">d_nizhny_novgorod</GameId> <!-- $c_nizhny_novgorod$ -->
       <GameId game="HOI4MDM" type="State">660</GameId> <!-- Nizhny Novgorod -->
     </GameIds>
     <FallbackLocations>
@@ -245619,7 +245589,6 @@
       <GameId game="CK3TFE">c_palanga</GameId> <!-- Palanga -->
       <GameId game="HOI4" type="City" parent="189">6314</GameId> <!-- Palanga -->
       <GameId game="HOI4TGW" type="City" parent="189">6314</GameId> <!-- Palanga -->
-      <GameId game="Vic3" type="Hub">STATE_KAUNAS_port</GameId> <!-- Palanga -->
       <GameId game="IR_ABW">4898</GameId> <!-- Palanga -->
       <GameId game="Vic3" type="Hub">STATE_LITHUANIA_port</GameId> <!-- Palanga -->
     </GameIds>
@@ -252869,7 +252838,6 @@
   </LocationEntity>
   <LocationEntity>
     <Id>phoenix_arizona</Id>
-    <Id>phoenix</Id>
     <WikidataId>Q16556</WikidataId>
     <GameIds>
       <GameId game="HOI4" type="City" parent="377">853</GameId> <!-- Phoenix -->
@@ -254208,7 +254176,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>pisa</Id>
     <Id>pisa_tuscany</Id>
     <WikidataId>Q13375</WikidataId>
     <GameIds>
@@ -254833,7 +254800,6 @@
       <GameId game="CK3IBL">b_hervas</GameId> <!-- Plasencia -->
       <GameId game="CK3TFE">b_hervas</GameId> <!-- Ambracensis -->
       <GameId game="IR_ABW">3946</GameId> <!-- Plasencia -->
-      <GameId game="Vic3" type="Hub">STATE_BADAJOZ_mine</GameId> <!-- Plasencia -->
       <GameId game="Vic3" type="Hub">STATE_EXTREMADURA_mine</GameId> <!-- Plasencia -->
     </GameIds>
     <Names>
@@ -258023,7 +257989,6 @@
       <GameId game="CK3MBP">b_nemetlipsce</GameId> <!-- Poprad -->
       <GameId game="CK3SoW">b_nemetlipsce</GameId> <!-- Poprad -->
       <GameId game="CK3TFE">b_nemetlipsce</GameId> <!-- Poprad -->
-      <GameId game="Vic3" type="Hub">STATE_EAST_SLOVAKIA_wood</GameId> <!-- Poprad -->
       <GameId game="IR_ABW">1174</GameId> <!-- Poprad -->
     </GameIds>
     <Names>
@@ -286235,9 +286200,7 @@
       <GameId game="IR_ABW">1189</GameId> <!-- Santo Domingo -->
       <GameId game="IR_ABW">5613</GameId> <!-- Santo Domingo -->
       <GameId game="Vic3" type="Hub">STATE_SANTO_DOMINGO_port</GameId> <!-- Santo Domingo -->
-      <GameId game="Vic3" type="Country">DOM</GameId> <!-- Santo Domingo -->
       <GameId game="Vic3" type="Hub">STATE_SANTO_DOMINGO_city</GameId> <!-- Santo Domingo -->
-      <GameId game="Vic3" type="State">STATE_SANTO_DOMINGO</GameId> <!-- Santo Domingo -->
     </GameIds>
     <FallbackLocations>
       <LocationId>santo_domingo_colony</LocationId>
@@ -297200,9 +297163,6 @@
   <LocationEntity>
     <Id>altava_kingdom</Id>
     <WikidataId>Q22948839</WikidataId>
-    <GameIds>
-      <GameId game="CK3TFE">k_mauro_roman_kingdom</GameId> <!-- Altava -->
-    </GameIds>
     <FallbackLocations>
       <LocationId>altava</LocationId>
     </FallbackLocations>
@@ -297223,7 +297183,6 @@
       <GameId game="CK3TFE">c_tlemcen</GameId> <!-- Altava -->
       <GameId game="HOI4MDM" type="City" parent="387">4150</GameId> <!-- Sidi bel Abbès -->
       <GameId game="IR_ABW">910</GameId> <!-- Sidi Bel Abbes -->
-      <GameId game="Vic3" type="Hub">STATE_TLEMCEN_mine</GameId> <!-- Sidi Bel Abbés -->
       <GameId game="IR_AoE">3089</GameId> <!-- Altava -->
       <GameId game="IR_INV">3089</GameId> <!-- Altava -->
       <GameId game="IR_TI">3089</GameId> <!-- Altava -->
@@ -302593,7 +302552,6 @@
       <GameId game="HOI4TGW" type="City" parent="233">9663</GameId> <!-- Sochi -->
       <GameId game="IR_ABW">4215</GameId> <!-- Sochi -->
       <GameId game="Vic3" type="Hub">STATE_KUBAN_farm</GameId> <!-- Sochi -->
-      <GameId game="Vic3" type="Hub">STATE_YEKATERINBURG_port</GameId> <!-- Sochi -->
     </GameIds>
     <Names>
       <Name language="Afrikaans" value="Sotsji" />
@@ -308518,7 +308476,6 @@
       <GameId game="CK3SoW">b_strumica</GameId> <!-- Strumica -->
       <GameId game="CK3SoW">c_strumica</GameId> <!-- Strumica -->
       <GameId game="CK3TFE">b_strumica</GameId> <!-- Strumica -->
-      <GameId game="CK3TFE">c_strumica</GameId> <!-- Strumica -->
       <GameId game="IR_ABW">2995</GameId> <!-- Strumica -->
     </GameIds>
     <Names>
@@ -327031,7 +326988,6 @@
       <GameId game="CK3SoW">k_toledo</GameId> <!-- Toledo -->
       <GameId game="CK3TFE">b_toledo</GameId> <!-- Toletum -->
       <GameId game="CK3TFE">c_toledo</GameId> <!-- Toletum -->
-      <GameId game="CK3TFE">d_toledo</GameId> <!-- Toledo -->
       <GameId game="CK3TFE">k_toledo</GameId> <!-- Toledo -->
       <GameId game="HOI4" type="City" parent="41">858</GameId> <!-- Toledo -->
       <GameId game="HOI4TGW" type="City" parent="41">858</GameId> <!-- Toledo -->
@@ -327040,9 +326996,7 @@
       <GameId game="IR_AoE">1024</GameId> <!-- Toledo -->
       <GameId game="IR_INV">1024</GameId> <!-- Toletum -->
       <GameId game="IR_TI">1024</GameId> <!-- Toletum -->
-      <GameId game="Vic3" type="Hub">STATE_TOLEDO_farm</GameId> <!-- Toledo -->
       <GameId game="Vic3" type="Hub">STATE_NEW_CASTILE_farm</GameId> <!-- Toledo -->
-      <GameId game="Vic3" type="State">STATE_TOLEDO</GameId> <!-- Toledo -->
     </GameIds>
     <FallbackLocations>
       <LocationId>toledo_province</LocationId>
@@ -337864,6 +337818,12 @@
       <GameId game="CK3MBP">b_amarkot</GameId> <!-- Amarkot -->
       <GameId game="CK3SoW">b_amarkot</GameId> <!-- Amarkot -->
       <GameId game="CK3TFE">b_amarkot</GameId> <!-- Amarkot -->
+      <GameId game="EU5" type="Location">umarkot</GameId> <!-- Umarkot -->
+      <GameId game="IR">4357</GameId> <!-- Umarkot -->
+      <GameId game="IR_AoE">4357</GameId> <!-- Umarkot -->
+      <GameId game="IR_INV">4357</GameId> <!-- Umarkot -->
+      <GameId game="IR_TI">4357</GameId> <!-- Umarkot -->
+      <GameId game="Vic3" type="Hub">STATE_SINDH_mine</GameId> <!-- Umarkot -->
     </GameIds>
     <Names>
       <Name language="Belarussian" value="Umierkot" />
@@ -340626,9 +340586,6 @@
   <LocationEntity>
     <Id>vainola</Id>
     <WikidataId>Q11869220</WikidataId>
-    <GameIds>
-      <GameId game="CK3TFE">d_vainola</GameId> <!-- Väinölä -->
-    </GameIds>
     <Names>
       <Name language="Finnish" value="Väinölä" />
     </Names>
@@ -345037,13 +344994,12 @@
       <GameId game="CK3MBP">c_vercelli</GameId> <!-- Vercelli -->
       <GameId game="CK3MBP">d_vercelli_republic</GameId> <!-- Republic of Vercelli -->
       <GameId game="CK3SoW">b_vercelli</GameId> <!-- Vercelli -->
-      <GameId game="CK3TFE">b_vercelli</GameId> <!-- Vercelli -->
-      <GameId game="IR">3562</GameId> <!-- Vercellae -->
       <GameId game="CK3TFE">b_vercelli</GameId> <!-- Vercellae -->
+      <GameId game="CK3TFE">b_vercelli</GameId> <!-- Vercelli -->
       <GameId game="EU5" type="Location">vercelli</GameId> <!-- Vercelli -->
+      <GameId game="IR">3562</GameId> <!-- Vercellae -->
       <GameId game="IR_ABW">2500</GameId> <!-- Vercelli -->
       <GameId game="IR_AoE">3562</GameId> <!-- Vercellae -->
-      <GameId game="IR">3562</GameId> <!-- Vercellae -->
       <GameId game="IR_INV">3562</GameId> <!-- Vercellae -->
       <GameId game="IR_TI">3562</GameId> <!-- Vercellae -->
     </GameIds>
@@ -350434,7 +350390,6 @@
       <GameId game="HOI4MDM" type="State">646</GameId> <!-- Vologda -->
       <GameId game="HOI4TGW" type="City" parent="351">9131</GameId> <!-- Vologda -->
       <GameId game="HOI4TGW" type="State">351</GameId> <!-- Vologda -->
-      <GameId game="Vic3" type="Hub">STATE_GALICH_city</GameId> <!-- Vologda -->
       <GameId game="IR_ABW">2311</GameId> <!-- Vologda -->
       <GameId game="Vic3" type="Hub">STATE_VOLOGDA_city</GameId> <!-- Vologda -->
     </GameIds>
@@ -352385,6 +352340,17 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>waitara_newzealand</Id>
+    <WikidataId>Q727199</WikidataId>
+    <GameIds>
+      <GameId game="IR_ABW">4927</GameId> <!-- Waitara -->
+    </GameIds>
+    <Names>
+      <Name language="Chinese" value="Wǎtǎlā" />
+      <Name language="English" value="Waitara" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>wakayama</Id>
     <WikidataId>Q200747</WikidataId>
     <GameIds>
@@ -352525,6 +352491,37 @@
       <Name language="SerboCroatian" value="Valbek" />
       <Name language="Slavonic_Church" value="Valĭbek" />
       <Name language="Ukrainian" value="Valbek" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>walbrzych</Id>
+    <WikidataId>Q110732</WikidataId>
+    <GameIds>
+      <GameId game="IR_ABW">3951</GameId> <!-- Walbrzych -->
+    </GameIds>
+    <Names>
+      <Name language="Czech" value="Valbřich" />
+      <Name language="German_Low" value="Waldenburg" />
+      <Name language="German" value="Waldenburg" />
+      <Name language="Latin" value="Waldberga" />
+      <Name language="Latvian" value="Valbžiha" />
+      <Name language="Lithuanian" value="Valbžychas" />
+      <Name language="Polish" value="Wałbrzych" />
+      <Name language="Silesian_Lower" value="Walmbrich" />
+      <Name language="Silesian" value="Wałbrzich" />
+      <Name language="Uzbek" value="Valbjix" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>walcourt</Id>
+    <WikidataId>Q497565</WikidataId>
+    <GameIds>
+      <GameId game="IR_ABW">3804</GameId> <!-- Walcourt -->
+    </GameIds>
+    <Names>
+      <Name language="French" value="Walcourt" />
+      <Name language="Latin" value="Villa Walcortensis" />
+      <Name language="Walloon" value="Walcoû" />
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -353689,6 +353686,18 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
+    <Id>warrenpoint</Id>
+    <WikidataId>Q2224481</WikidataId>
+    <GameIds>
+      <GameId game="IR_ABW">1670</GameId> <!-- Warrenpoint -->
+    </GameIds>
+    <Names>
+      <Name language="English" value="Warrenpoint" />
+      <Name language="Irish" value="An Pointe" />
+      <Name language="Lithuanian" value="Vorenpointas" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
     <Id>warri</Id>
     <WikidataId>Q574593</WikidataId>
     <GameIds>
@@ -353702,6 +353711,20 @@
     <Names>
       <Name language="Latvian" value="Varri" />
       <Name language="Lithuanian" value="Varis" />
+    </Names>
+  </LocationEntity>
+  <LocationEntity>
+    <Id>warrnambool</Id>
+    <WikidataId>Q705867</WikidataId>
+    <GameIds>
+      <GameId game="IR_ABW">994</GameId> <!-- Warrnambool -->
+      <GameId game="Vic3" type="Hub">STATE_VICTORIA_farm</GameId> <!-- Warrnambool -->
+    </GameIds>
+    <Names>
+      <Name language="Bigwurrung" value="Peetoop" />
+      <Name language="English" value="Warrnambool" />
+      <Name language="Latvian" value="Varnambula" />
+      <Name language="Lithuanian" value="Varnambulas" />
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -366482,14 +366505,11 @@
       <GameId game="CK3MBP">b_zhytomyr</GameId> <!-- Zhytomyr -->
       <GameId game="CK3SoW">b_zhytomyr</GameId> <!-- Zhytomyr -->
       <GameId game="CK3TFE">b_zhytomyr</GameId> <!-- Zhytomyr -->
-      <GameId game="HOI4" type="City" parent="201">6593</GameId> <!-- Zhytomyr -->
-      <GameId game="HOI4MDM" type="City" parent="699">9533</GameId> <!-- Zhytomyr -->
       <GameId game="CK3TFE">c_zhytomyr</GameId> <!-- Zhytomyr -->
       <GameId game="EU5" type="Province">zhytomyr_province</GameId> <!-- Zhytomyr -->
       <GameId game="HOI4" type="City" parent="201">6593</GameId> <!-- Zhytomyr -->
-      <GameId game="HOI4" type="State">201</GameId> <!-- Zhytomyr -->
       <GameId game="HOI4MDM" type="City" parent="1249">9533</GameId> <!-- Zhytomyr -->
-      <GameId game="HOI4MDM" type="State">1249</GameId> <!-- Zhytomyr -->
+      <GameId game="HOI4MDM" type="City" parent="699">9533</GameId> <!-- Zhytomyr -->
       <GameId game="HOI4TGW" type="City" parent="201">6593</GameId> <!-- Zhytomyr -->
       <GameId game="IR_ABW">3108</GameId> <!-- Zhytomyr -->
       <GameId game="Vic3" type="Hub">STATE_KIEV_farm</GameId> <!-- Zhytomyr -->
@@ -387101,7 +387121,6 @@
       <GameId game="CK3SoW">b_montauban</GameId> <!-- Montauban -->
       <GameId game="CK3TFE">b_montauban</GameId> <!-- Montauban -->
       <GameId game="IR_ABW">1761</GameId> <!-- Montauban -->
-      <GameId game="Vic3" type="Hub">STATE_ARMAGNAC_farm</GameId> <!-- Montauban -->
       <GameId game="Vic3" type="Hub">STATE_GUYENNE_city</GameId> <!-- Montauban -->
     </GameIds>
     <Names>
@@ -387171,7 +387190,6 @@
       <GameId game="CK2">b_castres</GameId> <!-- Castres -->
       <GameId game="CK2HIP">b_castres</GameId> <!-- Castrés -->
       <GameId game="CK2RoI">b_castres</GameId> <!-- Castres -->
-      <GameId game="Vic3" type="Hub">STATE_ARMAGNAC_wood</GameId> <!-- Castres -->
       <GameId game="IR_ABW">1108</GameId> <!-- Castres -->
     </GameIds>
     <Names>
@@ -388461,7 +388479,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>soria</Id>
     <Id>penyafiel</Id>
     <GameIds>
       <GameId game="CK2HIP">b_penyafiel</GameId> <!-- Peñafiel -->
@@ -396225,7 +396242,6 @@
     <Id>kreuzburg_natangia</Id>
     <GameIds>
       <GameId game="CK2HIP">b_kreuzburgnatangia</GameId> <!-- Kreuzburg -->
-      <GameId game="Vic3" type="Hub">STATE_SILESIA_wood</GameId> <!-- Kreuzburg -->
     </GameIds>
     <Names>
       <Name language="Dutch_Middle" value="Creuzburg" />
@@ -399936,6 +399952,7 @@
   <LocationEntity>
     <Id>bolton_greatermanchester</Id>
     <WikidataId>Q184579</WikidataId>
+    <GameIds>
       <GameId game="CK2">b_bolton</GameId> <!-- Bolton -->
       <GameId game="CK2RoI">b_bolton</GameId> <!-- Bolton -->
       <GameId game="CK3">b_bolton</GameId> <!-- Bolton -->
@@ -414150,7 +414167,6 @@
   <LocationEntity>
     <Id>kaiserslautern</Id>
     <WikidataId>Q3758</WikidataId>
-    <Id>lautern</Id>
     <GameIds>
       <GameId game="CK2HIP">b_lautern</GameId> <!-- Lautern -->
       <GameId game="CK3">b_kaiserslautern</GameId> <!-- Lautern -->
@@ -435821,9 +435837,8 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>umea</Id>
-    <WikidataId>Q25579</WikidataId>
     <Id>umea_norway</Id>
+    <WikidataId>Q25579</WikidataId>
     <GameIds>
       <GameId game="CK2">b_umea</GameId> <!-- Umeå -->
       <GameId game="CK2HIP">b_umea</GameId> <!-- Umeå -->
@@ -454330,10 +454345,10 @@
       <GameId game="HOI4MDM" type="City" parent="1146">10797</GameId> <!-- Bushehr -->
       <GameId game="HOI4MDM" type="State">1146</GameId> <!-- Bushehr -->
       <GameId game="HOI4TGW" type="City" parent="412">12832</GameId> <!-- Bushehr -->
+      <GameId game="IR">4787</GameId> <!-- Bushahr -->
       <GameId game="IR_AoE">4787</GameId> <!-- Bushahr -->
       <GameId game="IR_INV">4787</GameId> <!-- Bushahr -->
       <GameId game="IR_TI">4787</GameId> <!-- Bushahr -->
-      <GameId game="IR">4787</GameId> <!-- Bushahr -->
       <GameId game="Vic3" type="Hub">STATE_FARS_port</GameId> <!-- Bushehr -->
     </GameIds>
     <Names>
@@ -454540,9 +454555,8 @@
     </GameIds>
   </LocationEntity>
   <LocationEntity>
-    <Id>calabar</Id>
-    <WikidataId>Q844091</WikidataId>
     <Id>calabar_guinea</Id>
+    <WikidataId>Q844091</WikidataId>
     <GameIds>
       <GameId game="CK3">b_calabar</GameId> <!-- Calabar -->
       <GameId game="CK3AEP">b_calabar</GameId> <!-- Calabar -->
@@ -532524,15 +532538,21 @@
   </LocationEntity>
   <LocationEntity>
     <Id>merthyr_tydfil</Id>
+    <WikidataId>Q752762</WikidataId>
     <GameIds>
       <GameId game="CK2">b_merthyr_tydfil</GameId> <!-- Merthyr Tydfil -->
       <GameId game="CK2RoI">b_merthyr_tydfil</GameId> <!-- Merthyr Tydfil -->
       <GameId game="CK2TWK">b_ceredigiontown</GameId> <!-- Merthyr -->
+      <GameId game="IR_ABW">2206</GameId> <!-- Merthyr Tudful -->
       <GameId game="Vic3" type="Hub">STATE_WALES_mine</GameId> <!-- Merthyr Tydfil -->
     </GameIds>
     <Names>
       <Name language="Breton_Middle" value="Merzher Tudful" />
+      <Name language="English" value="Merthyr Tydfil" />
       <Name language="Latin" value="Martyr Tudfulus" />
+      <Name language="Latvian" value="Mērtirtidvila" />
+      <Name language="Lithuanian" value="Merter Tidvilis" />
+      <Name language="Welsh" value="Merthyr Tudful" />
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -547729,15 +547749,12 @@
       <GameId game="CK2RoI">b_traoyang</GameId> <!-- Traoyang -->
       <GameId game="CK3">b_Liao_Chaoyang</GameId> <!-- Chaoyang -->
       <GameId game="CK3">c_LIAO_chaoyang</GameId> <!-- Chaoyang -->
-      <GameId game="CK3AEP">b_Chaoyang_Swatow</GameId> <!-- Chaoyang -->
       <GameId game="CK3CE">b_chaoyang</GameId> <!-- Chaoyang -->
       <GameId game="CK3CMH">b_Liao_Chaoyang</GameId> <!-- Chaoyang -->
       <GameId game="CK3CMH">c_LIAO_chaoyang</GameId> <!-- Chaoyang -->
       <GameId game="CK3IBL">b_Liao_Chaoyang</GameId> <!-- Chaoyang -->
       <GameId game="CK3IBL">c_LIAO_chaoyang</GameId> <!-- Chaoyang -->
-      <GameId game="CK3MBP">b_chaoyang_swatow_china</GameId> <!-- Chaoyang -->
       <GameId game="HOI4" type="City" parent="610">934</GameId> <!-- Chaoyang -->
-      <GameId game="HOI4MDM" type="City" parent="1095">934</GameId> <!-- Chaoyang -->
       <GameId game="HOI4TGW" type="City" parent="610">934</GameId> <!-- Chaoyang -->
     </GameIds>
     <Names>
@@ -549510,9 +549527,8 @@
     </GameIds>
   </LocationEntity>
   <LocationEntity>
-    <Id>vasto</Id>
-    <WikidataId>Q51313</WikidataId>
     <Id>vasto_abruzzi</Id>
+    <WikidataId>Q51313</WikidataId>
     <GameIds>
       <GameId game="CK2">b_vasto</GameId> <!-- Vasto -->
       <GameId game="CK2RoI">b_vasto</GameId> <!-- Vasto -->
@@ -569265,7 +569281,6 @@
       <GameId game="CK3IBL">b_tamale</GameId> <!-- Tamale -->
       <GameId game="HOI4MDM" type="City" parent="348">8039</GameId> <!-- Tamale -->
       <GameId game="IR_ABW">323</GameId> <!-- Tamale -->
-      <GameId game="Vic3" type="Hub">STATE_GHANA_mine</GameId> <!-- Tamale -->
       <GameId game="Vic3" type="Hub">STATE_GOLD_COAST_mine</GameId> <!-- Tamale -->
     </GameIds>
     <Names>
@@ -569527,9 +569542,6 @@
   <LocationEntity>
     <Id>xiyu</Id>
     <WikidataId>Q1190423</WikidataId>
-    <GameIds>
-      <GameId game="CK3TFE">e_western_regions</GameId> <!-- Xiyu -->
-    </GameIds>
     <Names>
       <Name language="Chinese_Cantonese" value="Sai Wik" />
       <Name language="Chinese_Mandarin" value="Xīyù" />
@@ -584860,7 +584872,6 @@
       <GameId game="CK3AEP">b_chiba</GameId> <!-- Chiba -->
       <GameId game="CK3CE">b_chiba</GameId> <!-- Chiba -->
       <GameId game="CK3MBP">b_chiba</GameId> <!-- Chiba -->
-      <GameId game="EU4" type="Country">CBA</GameId> <!-- Chiba -->
       <GameId game="HOI3">5316</GameId> <!-- Chiba -->
       <GameId game="HOI4" type="City" parent="282">4188</GameId> <!-- Chiba -->
       <GameId game="HOI4MDM" type="City" parent="615">4188</GameId> <!-- Chiba -->
@@ -590810,8 +590821,6 @@
     <GameIds>
       <GameId game="CK3AEP">b_Mianyang_Fuzhou</GameId> <!-- Mianyang -->
       <GameId game="CK3MBP">b_mianyang_fuzhou_china</GameId> <!-- Mianyang -->
-      <GameId game="HOI4MDM" type="City" parent="586">1367</GameId> <!-- Mianyang -->
-      <GameId game="Vic3" type="Hub">STATE_CHONGQING_wood</GameId> <!-- Mianyang -->
     </GameIds>
   </LocationEntity>
   <LocationEntity>
@@ -594544,7 +594553,6 @@
     </GameIds>
   </LocationEntity>
   <LocationEntity>
-    <Id>shangjing_linhuang</Id>
     <Id>shanghai_wusong</Id>
     <GameIds>
       <GameId game="CK3MBP">b_shanghai_wusong_china</GameId> <!-- Shanghai -->
@@ -600739,7 +600747,6 @@
     <WikidataId>Q11523764</WikidataId>
     <GameIds>
       <GameId game="CK3AEP">c_hangzhou</GameId> <!-- Hangzhou -->
-      <GameId game="CK3MBP">c_hangzhou_china</GameId> <!-- Hangzhou -->
     </GameIds>
     <FallbackLocations>
       <LocationId>hangzhou_qiantang</LocationId>
@@ -603201,15 +603208,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>quanzhou_jinjiang</Id>
-    <GameIds>
-      <GameId game="CK3AEP">b_Quanzhou_Jinjiang</GameId> <!-- Quanzhou -->
-      <GameId game="CK3MBP">b_quanzhou_jinjiang_china</GameId> <!-- Quanzhou -->
-    </GameIds>
-      <Name language="Chinese_Mandarin" value="Quánzhōu" />
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>quy_chau</Id>
     <GameIds>
       <GameId game="CK3MBP">c_quy_chau</GameId> <!-- Quỳ Châu -->
@@ -604499,12 +604497,6 @@
       <GameId game="CK3AEP">c_xinhui</GameId> <!-- Xinhui -->
       <GameId game="CK3MBP">c_xinhui_china</GameId> <!-- Xinhui -->
       <GameId game="EU5" type="Province">xinhui_province</GameId> <!-- Xīnhuì -->
-    </GameIds>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>xiongshanzhou</Id>
-    <GameIds>
-      <GameId game="CK3MBP">c_xiongshanzhou</GameId> <!-- Xiongshanzhou -->
     </GameIds>
   </LocationEntity>
   <LocationEntity>
@@ -606266,12 +606258,6 @@
     <GameIds>
       <GameId game="CK3AEP">d_weisheng</GameId> <!-- Wei Sheng -->
       <GameId game="CK3MBP">d_weisheng</GameId> <!-- Wei Sheng -->
-    </GameIds>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>kanto_west</Id>
-    <GameIds>
-      <GameId game="CK3MBP">d_west_kanto</GameId> <!-- Nishi Kantō -->
     </GameIds>
   </LocationEntity>
   <LocationEntity>
@@ -657921,7 +657907,6 @@
   <LocationEntity>
     <Id>bangor_newengland</Id>
     <GameIds>
-      <GameId game="CK2TWK">b_bangor</GameId> <!-- Bangor -->
       <GameId game="HOI4MDM" type="City" parent="764">12459</GameId> <!-- Bangor -->
       <GameId game="HOI4TGW" type="City" parent="357">12459</GameId> <!-- Bangor -->
     </GameIds>
@@ -661045,7 +661030,6 @@
   <LocationEntity>
     <Id>corterate</Id>
     <GameIds>
-      <GameId game="CK2TWK">b_corteratecastle</GameId> <!-- Corterate -->
       <GameId game="IR_INV">2287</GameId> <!-- Corterate -->
     </GameIds>
   </LocationEntity>
@@ -670455,13 +670439,6 @@
     </GameIds>
   </LocationEntity>
   <LocationEntity>
-    <Id>ratiatensis</Id>
-    <GameIds>
-      <GameId game="CK2TWK">b_ratiatumtemple</GameId> <!-- Ratiatensis -->
-      <GameId game="CK2TWK">c_vetraria</GameId> <!-- Ratiatensis -->
-    </GameIds>
-  </LocationEntity>
-  <LocationEntity>
     <Id>ratiatum</Id>
     <GameIds>
       <GameId game="CK2TWK">b_ratiatumcastle</GameId> <!-- Ratiatum -->
@@ -674627,13 +674604,6 @@
     <Id>verlocio</Id>
     <GameIds>
       <GameId game="CK2TWK">b_verluciocastle</GameId> <!-- Verlocio -->
-    </GameIds>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>vernemetum</Id>
-    <GameIds>
-      <GameId game="CK2TWK">b_vernemetumcastle</GameId> <!-- Vernemetum -->
-      <GameId game="CK2TWK">c_vernemetum</GameId> <!-- Vernemetum -->
     </GameIds>
   </LocationEntity>
   <LocationEntity>
@@ -681931,7 +681901,6 @@
       <Name language="Haitian_Before1806" value="Kap-Fransè" />
       <Name language="Haitian_Before1820" value="Kap-Anri" />
       <Name language="Haitian" value="Kap Ayisyen" />
-      <Name language="Haitian_Before1773" value="Kap-Franswa" />
       <Name language="Lithuanian_Before1806" value="Kap Fransesas" />
       <Name language="Lithuanian_Before1820" value="Kap Anri" />
       <Name language="Lithuanian" value="Kap Haitjenas" />
@@ -683185,7 +683154,6 @@
       <GameId game="CK2">b_villareal</GameId> <!-- Villa Real -->
       <GameId game="CK2RoI">b_villareal</GameId> <!-- Villa Real -->
       <GameId game="IR_ABW">2972</GameId> <!-- Ciudad Real -->
-      <GameId game="Vic3" type="Hub">STATE_TOLEDO_mine</GameId> <!-- Ciudad Real -->
     </GameIds>
     <Names>
       <Name language="Asturian" value="Ciudá Real" />
@@ -691143,9 +691111,23 @@
   </LocationEntity>
   <LocationEntity>
     <Id>kingston_upon_hull</Id>
+    <WikidataId>Q128147</WikidataId>
     <GameIds>
       <GameId game="IR_ABW">3867</GameId> <!-- Kingston upon Hull -->
     </GameIds>
+    <FallbackLocations>
+      <LocationId>kingston___common</LocationId>
+      <LocationId>kingston_ontario</LocationId>
+      <LocationId>kingston_new-york</LocationId>
+      <LocationId>kingston_jamaica</LocationId>
+    </FallbackLocations>
+    <Names>
+      <Name language="English" value="Kingston upon Hull" />
+      <Name language="Latin" value="Kingstonium ad Hullum" />
+      <Name language="Latvian" value="Kingstona pie Hallas" />
+      <Name language="Lithuanian" value="Kingstonas prie Halo" />
+      <Name language="SerboCroatian" value="Kingston na Halu" comment="Or Kingston na Hullu" />
+    </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>kingstown_saintvincent</Id>
@@ -691912,7 +691894,6 @@
     <WikidataId>Q2074180</WikidataId>
     <GameIds>
       <GameId game="IR_ABW">4451</GameId> <!-- Kraljevo -->
-      <GameId game="Vic3" type="Hub">STATE_NORTHERN_SERBIA_wood</GameId> <!-- Kraljevo -->
     </GameIds>
     <Names>
       <Name language="Latvian_Before1949" value="Kraļeva" />
@@ -695559,19 +695540,6 @@
     </GameIds>
   </LocationEntity>
   <LocationEntity>
-    <Id>merthyr_tydfil</Id>
-    <WikidataId>Q752762</WikidataId>
-    <GameIds>
-      <GameId game="IR_ABW">2206</GameId> <!-- Merthyr Tudful -->
-    </GameIds>
-    <Names>
-      <Name language="English" value="Merthyr Tydfil" />
-      <Name language="Latvian" value="Mērtirtidvila" />
-      <Name language="Lithuanian" value="Merter Tidvilis" />
-      <Name language="Welsh" value="Merthyr Tudful" />
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>merzifon</Id>
     <GameIds>
       <GameId game="IR_ABW">2715</GameId> <!-- Merzifon -->
@@ -695743,8 +695711,9 @@
     <Id>mianyang_sichuan</Id>
     <WikidataId>Q426130</WikidataId>
     <GameIds>
+      <GameId game="HOI4MDM" type="City" parent="586">1367</GameId> <!-- Mianyang -->
       <GameId game="IR_ABW">1390</GameId> <!-- Mianyang -->
-      <GameId game="Vic3" type="Hub">TATE_CHONGQING_wood</GameId> <!-- Mianyang -->
+      <GameId game="Vic3" type="Hub">STATE_CHONGQING_wood</GameId> <!-- Mianyang -->
     </GameIds>
     <Names>
       <Name language="Chinese_Cantonese" value="Min Joeng" />
@@ -695997,12 +695966,6 @@
     <Id>mirnyy</Id>
     <GameIds>
       <GameId game="IR_ABW">640</GameId> <!-- Mirnyy -->
-    </GameIds>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>mirpur_khas</Id>
-    <GameIds>
-      <GameId game="IR_ABW">519</GameId> <!-- Mirpur Khas -->
     </GameIds>
   </LocationEntity>
   <LocationEntity>
@@ -706151,7 +706114,6 @@
     <WikidataId>Q117040</WikidataId>
     <GameIds>
       <GameId game="IR_ABW">1016</GameId> <!-- Santiago de Cuba -->
-      <GameId game="Vic3" type="Hub">STATE_CUBA_port</GameId> <!-- Santiago de Cuba -->
     </GameIds>
     <Names>
       <Name language="Italian" value="Santiago di Cuba" />
@@ -707860,18 +707822,6 @@
       <Name language="French" value="Alpes du Sud" />
       <Name language="German" value="Südalpen" />
       <Name language="Swedish" value="Sydalperna" />
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>carpathians_south</Id>
-    <WikidataId>Q217202</WikidataId>
-    <GameIds>
-      <GameId game="IR_ABW">5652</GameId> <!-- Southern Carpathians -->
-    </GameIds>
-    <Names>
-      <Name language="Catalan" value="Carpats del Sud" />
-      <Name language="Esperanto" value="Sudaj Karpatoj" />
-      <Name language="Ladin" value="Carpac dl Sud" />
     </Names>
   </LocationEntity>
   <LocationEntity>
@@ -721467,52 +721417,10 @@
     </GameIds>
   </LocationEntity>
   <LocationEntity>
-    <Id>waitara_newzealand</Id>
-    <WikidataId>Q727199</WikidataId>
-    <GameIds>
-      <GameId game="IR_ABW">4927</GameId> <!-- Waitara -->
-    </GameIds>
-    <Names>
-      <Name language="Chinese" value="Wǎtǎlā" />
-      <Name language="English" value="Waitara" />
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>wajir</Id>
     <GameIds>
       <GameId game="IR_ABW">313</GameId> <!-- Wajir -->
     </GameIds>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>walbrzych</Id>
-    <WikidataId>Q110732</WikidataId>
-    <GameIds>
-      <GameId game="IR_ABW">3951</GameId> <!-- Walbrzych -->
-    </GameIds>
-    <Names>
-      <Name language="Czech" value="Valbřich" />
-      <Name language="German_Low" value="Waldenburg" />
-      <Name language="German" value="Waldenburg" />
-      <Name language="Latin" value="Waldberga" />
-      <Name language="Latvian" value="Valbžiha" />
-      <Name language="Lithuanian" value="Valbžychas" />
-      <Name language="Polish" value="Wałbrzych" />
-      <Name language="Silesian_Lower" value="Walmbrich" />
-      <Name language="Silesian" value="Wałbrzich" />
-      <Name language="Uzbek" value="Valbjix" />
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>walcourt</Id>
-    <WikidataId>Q497565</WikidataId>
-    <GameIds>
-      <GameId game="IR_ABW">3804</GameId> <!-- Walcourt -->
-    </GameIds>
-    <Names>
-      <Name language="French" value="Walcourt" />
-      <Name language="Latin" value="Villa Walcortensis" />
-      <Name language="Walloon" value="Walcoû" />
-    </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>walcz</Id>
@@ -721554,32 +721462,6 @@
     <GameIds>
       <GameId game="IR_ABW">3379</GameId> <!-- Warka -->
     </GameIds>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>warrenpoint</Id>
-    <WikidataId>Q2224481</WikidataId>
-    <GameIds>
-      <GameId game="IR_ABW">1670</GameId> <!-- Warrenpoint -->
-    </GameIds>
-    <Names>
-      <Name language="English" value="Warrenpoint" />
-      <Name language="Irish" value="An Pointe" />
-      <Name language="Lithuanian" value="Vorenpointas" />
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>warrnambool</Id>
-    <WikidataId>Q705867</WikidataId>
-    <GameIds>
-      <GameId game="IR_ABW">994</GameId> <!-- Warrnambool -->
-      <GameId game="Vic3" type="Hub">STATE_VICTORIA_farm</GameId> <!-- Warrnambool -->
-    </GameIds>
-    <Names>
-      <Name language="Bigwurrung" value="Peetoop" />
-      <Name language="English" value="Warrnambool" />
-      <Name language="Latvian" value="Varnambula" />
-      <Name language="Lithuanian" value="Varnambulas" />
-    </Names>
   </LocationEntity>
   <LocationEntity>
     <Id>wau_southsudan</Id>
@@ -721937,7 +721819,6 @@
       <Name language="Hindi" value="Ksānthī" />
       <Name language="Japanese" value="Kusanti" />
       <Name language="Korean" value="Keusanti" />
-      <Name language="Latin" value="Xanthe" />
       <Name language="Latin" value="Xanthe" />
       <Name language="Latvian" value="Ksante" />
       <Name language="Lithuanian" value="Ksantė" />
@@ -728100,18 +727981,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>portsmouth_new-hampshire</Id>
-    <GameIds>
-      <GameId game="Vic3" type="Hub">STATE_NEW_HAMPSHIRE_port</GameId> <!-- Portsmouth -->
-    </GameIds>
-    <FallbackLocations>
-      <LocationId>portsmouth_sussex</LocationId>
-    </FallbackLocations>
-    <Names>
-      <Name language="English" value="Portsmouth" />
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>stafford_new-jersey</Id>
     <GameIds>
       <GameId game="Vic3" type="Hub">STATE_NEW_JERSEY_wood</GameId> <!-- Stafford -->
@@ -728137,15 +728006,6 @@
     </Names>
   </LocationEntity>
   <LocationEntity>
-    <Id>palmerston_north-island</Id>
-    <GameIds>
-      <GameId game="Vic3" type="Hub">STATE_NORTH_ISLAND_farm</GameId> <!-- Palmerston -->
-    </GameIds>
-    <Names>
-      <Name language="English" value="Palmerston" />
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
     <Id>athens_ohio</Id>
     <GameIds>
       <GameId game="Vic3" type="Hub">STATE_OHIO_mine</GameId> <!-- Athens -->
@@ -728164,15 +728024,6 @@
     </GameIds>
     <Names>
       <Name language="English" value="Providence" />
-    </Names>
-  </LocationEntity>
-  <LocationEntity>
-    <Id>jamestown_rhode-island</Id>
-    <GameIds>
-      <GameId game="Vic3" type="Hub">STATE_RHODE_ISLAND_farm</GameId> <!-- Jamestown -->
-    </GameIds>
-    <Names>
-      <Name language="English" value="Jamestown" />
     </Names>
   </LocationEntity>
   <LocationEntity>
