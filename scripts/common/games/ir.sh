@@ -5,8 +5,6 @@ function list_mismatching_ir_localisations() {
     local GAME_ID="${1}" && shift
     local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_FILE")
 
-    [ ! -f "${1}" ] && return
-
     for GAMEID_DEFINITION in $(diff \
                         <( \
                             grep "GameId game=\"${GAME_ID}\"" "${LOCATIONS_FILE}" | \
