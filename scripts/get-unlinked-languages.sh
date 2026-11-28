@@ -172,6 +172,18 @@ function getVic3Cultures() {
     done
 }
 
+function getCiv5Civilizations() {
+    local GAME_ID="${1}"
+    local CIVILIZATIONS_FILE="${CIV5_VANILLA_CIVILIZATIONS_FILE}"
+
+    [[ -f "${CIVILIZATIONS_FILE}" ]] || return
+
+    while IFS= read -r CIVILIZATION_ID; do
+        grep -q "<GameId game=\"${GAME_ID}\">${CIVILIZATION_ID}</GameId>" "${LANGUAGES_FILE}" || \
+            echo "      <GameId game=\"${GAME_ID}\">${CIVILIZATION_ID}</GameId>"
+    done < "${CIVILIZATIONS_FILE}"
+}
+
 function getEu5Languages() {
     local GAME_ID="${1}" && shift
     local LANGUAGES_DIR="${EU5_LANGUAGES_DIR}"
@@ -215,6 +227,7 @@ function getEu5Languages() {
     done
 }
 
+echo "Civilization 5:"          && getCiv5Civilizations "Civ5"
 echo "Crusader Kings 2:"        && getCk2Cultures       "CK2"       "${CK2_CULTURES_DIR}"
 echo "Crusader Kings 2 HIP:"    && getCk2Cultures       "CK2HIP"    "${CK2HIP_CULTURES_DIR}"
 echo "Crusader Kings 2 ROI:"    && getCk2Cultures       "CK2RoI"    "${CK2RoI_CULTURES_DIR}" && getCk2Cultures "CK2RoI" "${CK2_CULTURES_DIR}"
@@ -227,7 +240,7 @@ echo "Crusader Kings 3 CMH:"    && getCk3Cultures       "CK3CMH"    "${CK3CE_CUL
 echo "Crusader Kings 3 IBL:"    && getCk3Cultures       "CK3IBL"    "${CK3IBL_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 MBP:"    && getCk3Cultures       "CK3MBP"    "${CK3MBP_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
 echo "Crusader Kings 3 SoW:"    && getCk3Cultures       "CK3SoW"    "${CK3SoW_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
-echo "Crusader Kings 3 TBA:"    && getCk3Cultures    "CK3TBA"    "${CK3TBA_CULTURES_DIR}"
+echo "Crusader Kings 3 TBA:"    && getCk3Cultures       "CK3TBA"    "${CK3TBA_CULTURES_DIR}"
 echo "Crusader Kings 3 TFE:"    && getCk3Cultures       "CK3TFE"    "${CK3TFE_CULTURES_DIR}" "${CK3_CULTURES_DIR}"
 echo "Europa Universalis 5:"    && getEu5Languages      "EU5"
 echo "Hearts of Iron 4:"        && getHoi4Countries     "HOI4"      "${HOI4_TAGS_DIR}" "${HOI4_LOCALISATIONS_DIR}"
@@ -239,4 +252,4 @@ echo "Imperator Rome AoE:"      && getIrCultures        "IR_AoE"    "${IR_AoE_CU
 echo "Imperator Rome INV:"      && getIrCultures        "IR_INV"    "${IR_INV_CULTURES_DIR}"
 echo "Imperator Rome TBA:"      && getIrCultures        "IR_TBA"    "${IR_TBA_CULTURES_DIR}"
 echo "Imperator Rome TI:"       && getIrCultures        "IR_TI"     "${IR_TI_CULTURES_DIR}"
-echo "Victoria 3:"       && getVic3Cultures        "Vic3"     "${Vic3_CULTURES_DIR}"
+echo "Victoria 3:"              && getVic3Cultures      "Vic3"     "${Vic3_CULTURES_DIR}"

@@ -73,17 +73,27 @@ function build-edition {
     fi
 
     echo "   > Copying extras..."
-    cp -rf "${EXTRAS_DIR}/${GAME}"/* "${EDITION_DIR}/"
+    if [ -d "${EXTRAS_DIR}/${GAME}" ]; then
+        cp -rf "${EXTRAS_DIR}/${GAME}"/* "${EDITION_DIR}/"
+    fi
 
     echo "   > Building the package..."
     cd "${EDITION_DIR}"
-    zip -q -r "${PACKAGE_NAME}.zip" "./${ID}" "./${ID}.mod"
+    if [[ "${GAME}" == Civ5* ]]; then
+        zip -q -r "${PACKAGE_NAME}.zip" "./${ID}"
+    else
+        zip -q -r "${PACKAGE_NAME}.zip" "./${ID}" "./${ID}.mod"
+    fi
     mv "${PACKAGE_NAME}.zip" "${EDITION_PACKAGE}"
 
     cd "${ORIGINAL_WORKING_DIRECTORY}"
 
     echo "${CHECKSUM}" > "${EDITION_CHECKSUM_FILE}"
 }
+
+build-edition \
+    'more-cultural-names' 'More Cultural Names' \
+    'Civ5' '1.0.3.279'
 
 build-edition \
     "more-cultural-names" "More Cultural Names" \

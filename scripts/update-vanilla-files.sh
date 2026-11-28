@@ -3,6 +3,53 @@ source "scripts/common/paths.sh"
 source "${SCRIPTS_COMMON_DIR}/utils.sh"
 source "${SCRIPTS_COMMON_GAMES_DIR}/hoi4.sh"
 
+function update_civ5_city_names_file() {
+    local TARGET_FILE="${1}"
+    local ASSETS_DIR="${CIV5_DIR}/Assets"
+
+    [ ! -d "${ASSETS_DIR}" ] && return
+
+    # City names are keyed by four families only; the city-states and the
+    # Iroquois, Siamese and Songhai civilisations deviate from the default one.
+    grep -h -oP '<Row Tag="\K(TXT_KEY_(CITY_NAME_|IROQ_CITY_NAME_|SIAM_CITY_NAME_|SONG_CITY_NAME_|CITYSTATE_)[^"]*)' \
+        $(find "${ASSETS_DIR}" -name '*GameText*Cit*.xml' | sort) | \
+        sort -u > "${TARGET_FILE}.keys"
+
+    while IFS= read -r CITY_KEY; do
+        local CITY_NAME
+        CITY_NAME=$(grep -h -A1 "Tag=\"${CITY_KEY}\"" $(find "${ASSETS_DIR}" -name '*GameText*Cit*.xml' | sort) | \
+                        sed -n 's/.*<Text>\([^<]*\)<\/Text>.*/\1/p' | head -n 1)
+        echo "${CITY_KEY}=${CITY_NAME}"
+    done < "${TARGET_FILE}.keys" > "${TARGET_FILE}"
+
+    rm "${TARGET_FILE}.keys"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+    sed -i 's/\r$//' "${TARGET_FILE}"
+}
+
+function update_civ5_civilizations_file() {
+    local TARGET_FILE="${1}"
+    local ASSETS_DIR="${CIV5_DIR}/Assets"
+
+    [ ! -d "${ASSETS_DIR}" ] && return
+
+    grep -h -oP '<Type>\KCIVILIZATION_[A-Z_0-9]+' \
+        $(find "${ASSETS_DIR}" -name 'CIV5Civilization*.xml' | sort) | \
+        grep -vE '^CIVILIZATION_(BARBARIAN|MINOR)$' | \
+        sort -u > "${TARGET_FILE}"
+
+    chmod 755 "${TARGET_FILE}"
+    chown "${USER}:${USER}" "${TARGET_FILE}"
+    sed -i 's/\r$//' "${TARGET_FILE}"
+}
+
+function update_civ5_files() {
+    update_civ5_city_names_file "${CIV5_VANILLA_CITY_NAMES_FILE}"
+    update_civ5_civilizations_file "${CIV5_VANILLA_CIVILIZATIONS_FILE}"
+}
+
 function update-vanilla-file() {
     local SOURCE_FILE="${1}"
     local TARGET_FILE="${2}"
@@ -352,3 +399,4 @@ update-vic3-files 'Vic3' \
     "${Vic3_COUNTRIES_DIR}" \
     "${Vic3_STATES_DIR}"
 update_eu5_files
+update_civ5_files

@@ -3,6 +3,7 @@ source 'scripts/common/paths.sh'
 source "${SCRIPTS_COMMON_DIR}/utils.sh"
 source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
 source "${SCRIPTS_COMMON_DIR}/parser.sh"
+source "${SCRIPTS_COMMON_GAMES_DIR}/civ5.sh"
 source "${SCRIPTS_COMMON_GAMES_DIR}/eu5.sh"
 source "${SCRIPTS_COMMON_GAMES_DIR}/hoi4.sh"
 source "${SCRIPTS_COMMON_GAMES_DIR}/ir.sh"
@@ -282,7 +283,9 @@ function validate_links() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
 
-    if [[ ${GAME_ID} == EU5* ]]; then
+    if [[ ${GAME_ID} == Civ5* ]]; then
+        validate_civ5_links "${GAME_ID}"
+    elif [[ ${GAME_ID} == EU5* ]]; then
         #list_missing_eu5_locations "${GAME_ID}"
         #list_missing_eu5_provinces "${GAME_ID}"
         list_surplus_eu5_locations "${GAME_ID}"
@@ -749,6 +752,7 @@ validate_links 'IR_TBA'
 validate_links 'IR_TI'
 validate_links 'Vic3'
 validate_links 'EU5'
+validate_links 'Civ5'
 
 # Make sure all locations are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"     "${CK2_LOCALISATIONS_DIR}"/*.csv
