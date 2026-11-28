@@ -1,8 +1,9 @@
 #!/bin/bash
-source "scripts/common/paths.sh"
+source 'scripts/common/paths.sh'
 source "${SCRIPTS_COMMON_DIR}/utils.sh"
 source "${SCRIPTS_COMMON_DIR}/name_normalisation.sh"
 source "${SCRIPTS_COMMON_DIR}/parser.sh"
+source "${SCRIPTS_COMMON_GAMES_DIR}/eu5.sh"
 source "${SCRIPTS_COMMON_GAMES_DIR}/hoi4.sh"
 source "${SCRIPTS_COMMON_GAMES_DIR}/ir.sh"
 source "${SCRIPTS_COMMON_GAMES_DIR}/vic3.sh"
@@ -23,12 +24,68 @@ GAME_IDS_CK="$(xmlstarlet sel -t -m "//GameId[starts-with(@game, 'CK')]" -v "." 
 NAME_VALUES="$(xmlstarlet sel -t -m "//Name" -v "@value" -n "${LOCATIONS_FILE}" | sort -u)"
 DEFAULT_NAME_VALUES="$(grep "<GameId game=" "${LOCATIONS_FILE}" | sed 's/.*<\!-- \(.*\) -->$/\1/g' | sort -u)"
 
+# ---------------------------------------------------------------------------
+# O(1) lookup maps — built ONCE, single pipeline per map (no per-line subshells).
+# Keys are lowercased with separators stripped, mirroring the original sed/grep
+# normalisation exactly so results are bit-for-bit identical.
+# ---------------------------------------------------------------------------
+declare -A LOC_MAP=()              # normalised Id  -> 1   (locations.xml)
+declare -A UNUSED_LOC_MAP=()       # normalised Id  -> 1   (unused-data/locations.xml)
+declare -A CK_ID_MAP=()            # normalised GameId -> 1   (CK games in locations.xml)
+declare -A VAL_NAME_MAP=()         # localisation value -> 1  (locations.xml @value)
+declare -A DEF_NAME_MAP=()         # default-name comment -> 1   (GameId comments)
+
+while IFS= read -r ID; do
+    ID="${ID//[_-]/}"
+    ID="${ID,,}"
+    [ -n "${ID}" ] && LOC_MAP["${ID}"]=1
+done < <(printf '%s\n' "${LOCATION_IDS}")
+while IFS= read -r ID; do
+    ID="${ID//[_-]/}"
+    ID="${ID,,}"
+    [ -n "${ID}" ] && UNUSED_LOC_MAP["${ID}"]=1
+done < <(printf '%s\n' "${UNUSED_LOCATION_IDS}")
+while IFS= read -r ID; do
+    ID="${ID:2}"
+    ID="${ID//[_-]/}"
+    ID="${ID,,}"
+    [ -n "${ID}" ] && CK_ID_MAP["${ID}"]=1
+done < <(printf '%s\n' "${GAME_IDS_CK}")
+while IFS= read -r V; do
+    [ -n "${V}" ] && VAL_NAME_MAP["${V}"]=1
+done < <(printf '%s\n' "${NAME_VALUES}")
+while IFS= read -r V; do
+    [ -n "${V}" ] && DEF_NAME_MAP["${V}"]=1
+done < <(printf '%s\n' "${DEFAULT_NAME_VALUES}")
+
 function getGameIds() {
     local GAME="${1}"
 
     grep "GameId game=\"${GAME}\"" "${LOCATIONS_FILE}" | \
         sed 's/[^>]*>\([^<]*\).*/\1/g' | \
         sort
+}
+
+EXCLUDED_LANDED_TITLE_PREFIXES=(
+    'd_laamp_'
+    'd_cd_'
+    'd_et_'
+    'k_minister_'
+    'k_mm_'
+    'd_siro_map_'
+    'd_map_'
+    'c_nf_'
+    'd_nf_'
+)
+
+function isExcludedLandedTitle() {
+    local LANDED_TITLE_ID="${1}"
+
+    for PREFIX in "${EXCLUDED_LANDED_TITLE_PREFIXES[@]}"; do
+        [[ ${LANDED_TITLE_ID} == ${PREFIX}* ]] && return 0
+    done
+
+    return 1
 }
 
 function checkForSurplusCk3LanguageLinks() {
@@ -75,46 +132,61 @@ function checkForMissingCkLocationLinks() {
     local GAME_ID="${1}" && shift
     local VANILLA_LANDED_TITLES="${1}" && shift
 
+    # Replicate `tac "${@}" | grep "^ *ID:" | head -n 1 | sed ...` with an exact,
+    # globally-last-match associative map built in ONE pass over all localisation
+    # files (titles are inserted in file order; a later definition overwrites a
+    # previous one, matching `tac ... | head -n 1`).
+    local -A NAME_MAP=()
+    local LINE
+    if [ "${#@}" -gt 0 ]; then
+        while IFS= read -r LINE; do
+            if [[ ${LINE} =~ ^[[:space:]]*([^:]+):[0-9]+[[:space:]]*\"([^\"]*)\" ]]; then
+                NAME_MAP["${BASH_REMATCH[1]}"]="${BASH_REMATCH[2]}"
+            fi
+        done < <(cat "${@}")
+    fi
+
     for LANDED_TITLE_ID in $(diff \
-                        <(getGameIds "${GAME_ID}") \
-                        <( \
-                            cat "${VANILLA_LANDED_TITLES}" | \
-                            if file "${VANILLA_LANDED_TITLES}" | grep -q 'Non-ISO\|ISO-8859'; then
-                                iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
-                            else
-                                cat
-                            fi | \
-                            grep -i "^\s*[ekdcb]_.*=" | \
-                            awk -F"=" '{print $1}' | \
-                            sed 's/[^a-zA-Z0-9_\-]//g' | \
-                            sort -u \
-                        ) | \
-                        grep "^>" | sed 's/^> //g'); do
+                    <(getGameIds "${GAME_ID}") \
+                    <( \
+                        cat "${VANILLA_LANDED_TITLES}" | \
+                        if file "${VANILLA_LANDED_TITLES}" | grep -q 'Non-ISO\|ISO-8859'; then
+                            iconv -f WINDOWS-1252 -t UTF-8 2> /dev/null
+                        else
+                            cat
+                        fi | \
+                        grep -i "^\s*[hekdcb]_.*=" | \
+                        awk -F"=" '{print $1}' | \
+                        sed 's/[^a-zA-Z0-9_\-]//g' | \
+                        sort -u \
+                    ) | \
+                    grep "^>" | sed 's/^> //g'); do
 
         [[ ${LANDED_TITLE_ID} =~ _color$ ]] && continue
+        isExcludedLandedTitle "${LANDED_TITLE_ID}" && continue
 
-        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LANDED_TITLE_ID}")
-        [ -n "${1}" ] && LOCATION_DEFAULT_NAME=$(tac "${@}" | grep "^ *${LANDED_TITLE_ID}:" | head -n 1 | sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\2/g')
+        LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LANDED_TITLE_ID}" | tr '[:upper:]' '[:lower:]')
+        LOCATION_DEFAULT_NAME=${NAME_MAP[${LANDED_TITLE_ID}]:-}
 
-        if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+        if [[ -n "${LOC_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
             echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-        elif $(echo "${UNUSED_LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+        elif [[ -n "${UNUSED_LOC_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
             echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but unused location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-        elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+        elif [[ -n "${CK_ID_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
             echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
         elif [ -n "${LOCATION_DEFAULT_NAME}" ]; then
             LOCATION_ID=$(nameToLocationId "${LOCATION_DEFAULT_NAME}")
-            LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}")
+            LOCATION_ID_FOR_SEARCH=$(locationIdToSearcheableId "${LOCATION_ID}" | tr '[:upper:]' '[:lower:]')
 
-            if $(echo "${LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            if [[ -n "${LOC_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-            elif $(echo "${UNUSED_LOCATION_IDS}" | sed 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            elif [[ -n "${UNUSED_LOC_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but unused location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-            elif $(echo "${GAME_IDS_CK}" | sed -e 's/^..//g' -e 's/[_-]//g' | grep -Eioq "^${LOCATION_ID_FOR_SEARCH}$"); then
+            elif [[ -n "${CK_ID_MAP[${LOCATION_ID_FOR_SEARCH}]+x}" ]]; then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but location \"${LOCATION_ID_FOR_SEARCH}\" exists)"
-            elif $(echo "${NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+            elif [[ -n "${VAL_NAME_MAP[${LOCATION_DEFAULT_NAME}]+x}" ]]; then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" name exists)"
-            elif $(echo "${DEFAULT_NAME_VALUES}" | grep -Eioq "^${LOCATION_DEFAULT_NAME}$"); then
+            elif [[ -n "${DEF_NAME_MAP[${LOCATION_DEFAULT_NAME}]+x}" ]]; then
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing (but a location with the \"${LOCATION_DEFAULT_NAME}\" default name exists)"
             else
                 echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} (${LOCATION_DEFAULT_NAME}) is missing"
@@ -141,13 +213,13 @@ function checkForSurplusCkLocationLinks() {
                             else
                                 cat
                             fi | \
-                            grep -i "^\s*[ekdcb]_.*=" | \
+                            grep -i "^\s*[hekdcb]_.*=" | \
                             awk -F"=" '{print $1}' | \
                             sed 's/[^a-zA-Z0-9_\-]//g' | \
                             sort -u \
                         ) | \
                         grep "^<" | sed 's/^< //g'); do
-        echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist"
+        echo "    > ${GAME_ID}: ${LANDED_TITLE_ID} is defined but it does not exist. Find it with ${GAME_ID}\"[^>]*>${LANDED_TITLE_ID}<"
     done
 }
 
@@ -195,7 +267,10 @@ function checkForMismatchingLocationLinks() {
     [[ ${GAME_ID} != HOI4* ]] && [[ ${GAME_ID} != Vic3* ]] && [ ! -f "${VANILLA_FILE}" ] && return
 
     if [[ ${GAME_ID} == CK* ]]; then
-        checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        if [[ "${GAME_ID}" != 'CK3CE' ]]; then
+            checkForMissingCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}" "${@}"
+        fi
+
         checkForSurplusCkLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
     elif [[ ${GAME_ID} == IR* ]]; then
         #checkForMissingIrLocationLinks "${GAME_ID}" "${VANILLA_FILE}"
@@ -207,7 +282,15 @@ function validate_links() {
     local GAME_ID="${1}"
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
 
-    if [[ ${GAME_ID} == HOI4* ]]; then
+    if [[ ${GAME_ID} == EU5* ]]; then
+        #list_missing_eu5_locations "${GAME_ID}"
+        #list_missing_eu5_provinces "${GAME_ID}"
+        list_surplus_eu5_locations "${GAME_ID}"
+        list_surplus_eu5_provinces "${GAME_ID}"
+        list_surplus_eu5_languages "${GAME_ID}"
+        #list_missing_eu5_languages "${GAME_ID}"
+        list_mismatching_eu5_localisations "${GAME_ID}"
+    elif [[ ${GAME_ID} == HOI4* ]]; then
         #checkForMissingHoi4LocationLinks "${GAME_ID}"
         checkForSurplusHoi4LocationLinks "${GAME_ID}"
         validateHoi4Parentage "${GAME_ID}"
@@ -217,8 +300,10 @@ function validate_links() {
         list_surplus_ir_provinces "${GAME_ID}"
         list_mismatching_ir_localisations "${GAME_ID}"
     elif [[ ${GAME_ID} == Vic3* ]]; then
+        list_surplus_vic3_hubs "${GAME_ID}"
+        list_surplus_vic3_states "${GAME_ID}"
         #list_missing_vic3_hubs "${GAME_ID}"
-        list_missing_vic3_states "${GAME_ID}"
+        #list_missing_vic3_states "${GAME_ID}"
         checkDefaultVic3Localisations "${GAME_ID}" "${LOCALISATIONS_DIR}"
     fi
 }
@@ -250,6 +335,9 @@ function checkDefaultCk2Localisations() {
                             sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        GAMEID_TITLE_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${GAMEID_DEFINITION}")
+        isExcludedLandedTitle "${GAMEID_TITLE_ID}" && continue
+
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
     done
 }
@@ -270,7 +358,7 @@ function checkDefaultCk3Localisations() {
                                 <(getGameIds "${GAME_ID}") \
                                 <( \
                                     tac "${@}" | \
-                                    grep -a "^ *[ekdcb]_" | \
+                                    grep -a "^ *[hekdcb]_" | \
                                     grep -v "_adj:" | \
                                     sed 's/^ *\([^:]*\):[0-9]* *\"\([^\"]*\).*/\1=\2/g' | \
                                     awk -F"=" '!seen[$1]++' | \
@@ -280,8 +368,75 @@ function checkDefaultCk3Localisations() {
                             sort -u \
                         ) | \
                         grep "^>" | sed 's/^> //g' | sed 's/ /@/g'); do
+        GAMEID_TITLE_ID=$(sed 's/.*>\([^<]*\)<\/GameId>.*/\1/g' <<< "${GAMEID_DEFINITION}")
+        isExcludedLandedTitle "${GAMEID_TITLE_ID}" && continue
+
         echo "Wrong default localisation! Correct one is: ${GAMEID_DEFINITION}" | sed 's/@/ /g'
     done
+}
+
+# ---------------------------------------------------------------------------
+# HOI4 localisation name caches — built ONCE per localisation directory.
+# Mirrors getHoi4CityName / getHoi4StateName exactly: searches every *.yml in
+# ${DIR}, then falls back to the vanilla English state_names / victory_points
+# files if the entry is missing from the mod directory. The cache holds a single
+# directory at a time and reloads when it changes, so one game's values never
+# leak into another game's while still avoiding repeated scans of shared dirs.
+# ---------------------------------------------------------------------------
+declare -A HOI4_STATE_NAME=()
+declare -A HOI4_CITY_NAME=()
+HOI4_MAPS_DIR=""
+
+function load_hoi4_maps() {
+    local DIR="${1}"
+
+    # Cache holds exactly one directory at a time; reload when it changes.
+    # Mirrors getHoi4CityName / getHoi4StateName, which recompute per call, so
+    # one game's values never leak into another game's.
+    [ "${HOI4_MAPS_DIR}" = "${DIR}" ] && return
+    HOI4_MAPS_DIR="${DIR}"
+
+    HOI4_STATE_NAME=()
+    HOI4_CITY_NAME=()
+
+    [ ! -d "${DIR}" ] && return
+
+    # Single awk pass over every *.yml in ${DIR} extracting both STATE_ and
+    # VICTORY_POINTS_ entries (first definition wins, matching the per-key
+    # `${arr[key]+x}` guard the loop used). Values keep everything up to the
+    # first `"` or literal backslash, exactly like the original sed [^\"].
+    while IFS=$'\t' read -r KIND KEY VALUE; do
+        if [ "${KIND}" = S ]; then
+            [ -z "${HOI4_STATE_NAME[${KEY}]+x}" ] && HOI4_STATE_NAME[${KEY}]="${VALUE}"
+        else
+            [ -z "${HOI4_CITY_NAME[${KEY}]+x}" ] && HOI4_CITY_NAME[${KEY}]="${VALUE}"
+        fi
+    done < <(find "${DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | \
+        awk '
+            match($0, /^[ \t]*STATE_([0-9]+):[0-9]*[ \t]*"([^"\\]*)/, m) {
+                print "S\tSTATE_" m[1] "\t" m[2]
+            }
+            match($0, /^[ \t]*VICTORY_POINTS_([0-9]+):[0-9]*[ \t]*"([^"\\]*)/, m) {
+                print "C\t" m[1] "\t" m[2]
+            }')
+
+    # Fall back to the vanilla English directory for missing entries
+    if [ "${DIR}" != "${HOI4_LOCALISATIONS_DIR}" ] && [ -d "${HOI4_LOCALISATIONS_DIR}" ]; then
+        while IFS=$'\t' read -r KIND KEY VALUE; do
+            if [ "${KIND}" = S ]; then
+                [ -z "${HOI4_STATE_NAME[${KEY}]+x}" ] && HOI4_STATE_NAME[${KEY}]="${VALUE}"
+            else
+                [ -z "${HOI4_CITY_NAME[${KEY}]+x}" ] && HOI4_CITY_NAME[${KEY}]="${VALUE}"
+            fi
+        done < <(find "${HOI4_LOCALISATIONS_DIR}" -name '*.yml' -exec cat {} + 2>/dev/null | \
+            awk '
+                match($0, /^[ \t]*STATE_([0-9]+):[0-9]*[ \t]*"([^"\\]*)/, m) {
+                    print "S\tSTATE_" m[1] "\t" m[2]
+                }
+                match($0, /^[ \t]*VICTORY_POINTS_([0-9]+):[0-9]*[ \t]*"([^"\\]*)/, m) {
+                    print "C\t" m[1] "\t" m[2]
+                }')
+    fi
 }
 
 function checkDefaultHoi4Localisations() {
@@ -290,13 +445,22 @@ function checkDefaultHoi4Localisations() {
 
     [ ! -d "${LOCALISATIONS_DIR}" ] && return
 
-    while IFS= read -r CITY_LINE; do
-        CITY_ID=$(sed 's/.*>\([0-9][0-9]*\)<\/GameId>.*/\1/g' <<< "${CITY_LINE}")
+    # Replicate getHoi4CityName / getHoi4StateName: the directory must end in
+    # /english for the mod scan; missing entries then fall back to the vanilla
+    # HOI4 localisation files.
+    local DIR="${LOCALISATIONS_DIR}"
+    [[ ${DIR} != */english ]] && DIR="${DIR%/}/english"
 
-        local CITY_NAME_EXPECTED=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
+    load_hoi4_maps "${DIR}"
+
+    while IFS= read -r CITY_LINE; do
+        [[ ${CITY_LINE} =~ ^.*\>([0-9]+)\</GameId\>.*$ ]] && CITY_ID="${BASH_REMATCH[1]}"
+
+        local CITY_NAME_EXPECTED="${HOI4_CITY_NAME[${CITY_ID}]:-}"
 
         if [ -n "${CITY_NAME_EXPECTED}" ]; then
-            local CITY_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${CITY_LINE}")
+            local CITY_NAME_ACTUAL=""
+            [[ ${CITY_LINE} =~ ^.*\<\!--\ (.*)\ --\>.*$ ]] && CITY_NAME_ACTUAL="${BASH_REMATCH[1]}"
 
             if [ "${CITY_NAME_ACTUAL}" != "${CITY_NAME_EXPECTED}" ]; then
                 echo "Wrong default localisation for ${GAME_ID} city ${CITY_ID} ! Correct one is: ${CITY_NAME_EXPECTED} | Find it with ${GAME_ID}[^A-Z].*City.*>${CITY_ID}<"
@@ -305,12 +469,13 @@ function checkDefaultHoi4Localisations() {
     done < <(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}")
 
     while IFS= read -r STATE_LINE; do
-        STATE_ID=$(sed 's/.*>\([0-9][0-9]*\)<\/GameId>.*/\1/g' <<< "${STATE_LINE}")
+        [[ ${STATE_LINE} =~ ^.*\>([0-9]+)\</GameId\>.*$ ]] && STATE_ID="${BASH_REMATCH[1]}"
 
-        local STATE_NAME_EXPECTED=$(getHoi4StateName "${STATE_ID}" "${LOCALISATIONS_DIR}")
+        local STATE_NAME_EXPECTED="${HOI4_STATE_NAME[STATE_${STATE_ID}]:-}"
 
         if [ -n "${STATE_NAME_EXPECTED}" ]; then
-            local STATE_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${STATE_LINE}")
+            local STATE_NAME_ACTUAL=""
+            [[ ${STATE_LINE} =~ ^.*\<\!--\ (.*)\ --\>.*$ ]] && STATE_NAME_ACTUAL="${BASH_REMATCH[1]}"
 
             if [ "${STATE_NAME_ACTUAL}" != "${STATE_NAME_EXPECTED}" ]; then
                 echo "Wrong default localisation for ${GAME_ID} state ${STATE_ID} ! Correct one is: ${STATE_NAME_EXPECTED} | Find it with ${GAME_ID}[^A-Z].*State.*>${STATE_ID}<"
@@ -325,13 +490,29 @@ function checkDefaultVic3Localisations() {
 
     [ ! -d "${LOCALISATIONS_DIR}" ] && return
 
-    while IFS= read -r HUB_LINE; do
-        HUB_ID=$(sed 's/.*>\(STATE_[A-Z][A-Z_]*_[a-z][a-z]*\)<\/GameId>.*/\1/g' <<< "${HUB_LINE}")
+    # For the vanilla Vic3 directory getVanillaVic3HubName returns entries from
+    # the cached VIC3_VANILLA_HUB_NAMES map, so load it once and read it
+    # directly instead of forking a subshell per hub. Any other directory keeps
+    # the original per-hub lookup path.
+    local USE_CACHED_HUBS=false
+    if [ "${LOCALISATIONS_DIR}" = "${Vic3_LOCALISATIONS_DIR}" ]; then
+        loadVanillaVic3HubNames
+        USE_CACHED_HUBS=true
+    fi
 
-        local HUB_NAME_EXPECTED=$(getVanillaVic3HubName "${HUB_ID}" "${LOCALISATIONS_DIR}")
+    while IFS= read -r HUB_LINE; do
+        [[ ${HUB_LINE} =~ ^.*\>(STATE_[A-Z][A-Z_]*_[a-z][a-z]*)\</GameId\>.*$ ]] && HUB_ID="${BASH_REMATCH[1]}"
+
+        local HUB_NAME_EXPECTED=""
+        if ${USE_CACHED_HUBS}; then
+            HUB_NAME_EXPECTED="${VIC3_VANILLA_HUB_NAMES[${HUB_ID}]:-}"
+        else
+            HUB_NAME_EXPECTED=$(getVanillaVic3HubName "${HUB_ID}" "${LOCALISATIONS_DIR}")
+        fi
 
         if [ -n "${HUB_NAME_EXPECTED}" ]; then
-            local HUB_NAME_ACTUAL=$(sed 's/.*<!-- \(.*\) -->.*/\1/g' <<< "${HUB_LINE}")
+            local HUB_NAME_ACTUAL=""
+            [[ ${HUB_LINE} =~ ^.*\<\!--\ (.*)\ --\>.*$ ]] && HUB_NAME_ACTUAL="${BASH_REMATCH[1]}"
 
             if [ "${HUB_NAME_ACTUAL}" != "${HUB_NAME_EXPECTED}" ]; then
                 echo "Wrong default localisation for ${GAME_ID} hub ${HUB_ID} (${HUB_NAME_ACTUAL}) ! Correct one is: ${HUB_NAME_EXPECTED}"
@@ -345,16 +526,24 @@ function validateHoi4Parentage() {
     local VANILLA_FILE=$(get_variable "${GAME_ID}_VANILLA_PARENTAGE_FILE")
     local LOCALISATIONS_DIR=$(get_variable "${GAME_ID}_LOCALISATIONS_DIR")
 
+    load_hoi4_maps "${LOCALISATIONS_DIR}"
+
+    # Build vanilla city -> state parent map once
+    local -A PARENT_MAP=()
+    while IFS='=' read -r ID PARENT; do
+        [ -n "${ID}" ] && PARENT_MAP[${ID}]="${PARENT}"
+    done < "${VANILLA_FILE}"
+
     while IFS= read -r CITY_LINE; do
-        CITY_ID=$(sed 's/.*>\([0-9][0-9]*\)<\/GameId>.*/\1/g' <<< "${CITY_LINE}")
-        ACTUAL_STATE_ID=$(sed 's/.*parent=\"\([^\"]*\).*/\1/g' <<< "${CITY_LINE}")
-        EXPECTED_STATE_ID=$(grep "^${CITY_ID}=" "${VANILLA_FILE}" | head -n 1 | awk -F'=' '{print $2}')
+        [[ ${CITY_LINE} =~ ^.*\>([0-9]+)\</GameId\>.*$ ]] && CITY_ID="${BASH_REMATCH[1]}"
+        [[ ${CITY_LINE} =~ parent=\"([^\"]*)\" ]] && ACTUAL_STATE_ID="${BASH_REMATCH[1]}"
+        EXPECTED_STATE_ID=${PARENT_MAP[${CITY_ID}]:-}
 
         if [ "${ACTUAL_STATE_ID}" != "${EXPECTED_STATE_ID}" ]; then
-            local CITY_NAME=$(getHoi4CityName "${CITY_ID}" "${LOCALISATIONS_DIR}")
-            local STATE_NAME=$(getHoi4StateName "${EXPECTED_STATE_ID}" "${LOCALISATIONS_DIR}")
+            local CITY_NAME="${HOI4_CITY_NAME[${CITY_ID}]:-}"
+            local STATE_NAME="${HOI4_STATE_NAME[STATE_${EXPECTED_STATE_ID}]:-}"
 
-            echo "${GAME_ID}: City ${CITY_ID} (${CITY_NAME}) is not linked to the correct state. Correct parent: ${EXPECTED_STATE_ID} (${STATE_NAME})"
+            echo "${GAME_ID}: City ${CITY_ID} (${CITY_NAME}) is not linked to the correct state. Correct parent: ${EXPECTED_STATE_ID} (${STATE_NAME}) | Find it with ${GAME_ID}[^A-Z].*City.*>${CITY_ID}<"
         fi
     done < <(grep "${GAME_ID}\" type=\"City" "${LOCATIONS_FILE}")
 }
@@ -512,6 +701,7 @@ grep -Pzo "\n\s*<Name .*\n\s*</GameId.*\n" *.xml # </GameId.* after <Name>
 grep -Pzo "\n\s*.*</[^<]*\n\s*<Name .*\n" *.xml # <Name> after closing tags
 grep -Pzo "</[a-zA-Z]*>\n\s*<Id>.*\n" *.xml # <Id> after a closing tag
 grep -Pzo "<Fallback(Languages|Locations)>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <FallbackLanguages> or <FallbackLocations>
+grep -Pzo "<Name>.*\n\s*<GameId.*\n" *.xml # <GameId.* after <Name>
 grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*<GameId .*\n" *.xml # <GameId .* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "</(Id|GeoNamesId|PleiadesId|WikidataId)>.*\n\s*</GameId.*\n" *.xml # </GameId.* after </Id> or </GeoNamesId> or </PleiadesId> or </WikidataId>
 grep -Pzo "\s*([^=\s]*)\s*=\s*\"[^\"]*\"\s*\1\s*=\"[^\"]*\".*\n" *.xml # Double attributes
@@ -558,6 +748,7 @@ validate_links 'IR_INV'
 validate_links 'IR_TBA'
 validate_links 'IR_TI'
 validate_links 'Vic3'
+validate_links 'EU5'
 
 # Make sure all locations are defined and exist in the game
 checkForMismatchingLocationLinks "CK2"      "${CK2_VANILLA_LANDED_TITLES_FILE}"     "${CK2_LOCALISATIONS_DIR}"/*.csv
@@ -565,10 +756,10 @@ checkForMismatchingLocationLinks "CK2HIP"   "${CK2HIP_VANILLA_LANDED_TITLES_FILE
 checkForMismatchingLocationLinks "CK2RoI"   "${CK2RoI_VANILLA_LANDED_TITLES_FILE}"  "${CK2RoI_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK2TWK"   "${CK2TWK_VANILLA_LANDED_TITLES_FILE}"  "${CK2TWK_LOCALISATIONS_DIR}"/*.csv
 checkForMismatchingLocationLinks "CK3"      "${CK3_VANILLA_LANDED_TITLES_FILE}"     "${CK3_VANILLA_LOCALISATION_FILE}"
-checkForMismatchingLocationLinks "CK3AEP"    "${CK3AEP_VANILLA_LANDED_TITLES_FILE}"   "${CK3AEP_LOCALISATIONS_DIR}/AEP_titles_l_english.yml" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3AEP"   "${CK3AEP_VANILLA_LANDED_TITLES_FILE}"  "${CK3AEP_LOCALISATIONS_DIR}/AEP_titles_l_english.yml" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3ATHA"  "${CK3ATHA_VANILLA_LANDED_TITLES_FILE}" "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
 checkForMismatchingLocationLinks "CK3CE"    "${CK3CE_VANILLA_LANDED_TITLES_FILE}"   "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
-checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"  "${CK3CE_VANILLA_LOCALISATION_FILE}" "${CK3Counterfactuals_VANILLA_LOCALISATION_FILE}" "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3RICE_VANILLA_LOCALISATION_FILE}" "${CK3SuccExp_VANILLA_LOCALISATION_FILE}" "${CK3Trinity_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkForMismatchingLocationLinks "CK3CMH"   "${CK3CMH_VANILLA_LANDED_TITLES_FILE}"  "${CK3CE_VANILLA_LOCALISATION_FILE}" "${CK3Counterfactuals_VANILLA_LOCALISATION_FILE}" "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3SuccExp_VANILLA_LOCALISATION_FILE}" "${CK3Trinity_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3IBL"   "${CK3IBL_VANILLA_LANDED_TITLES_FILE}"  "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3MBP"   "${CK3MBP_VANILLA_LANDED_TITLES_FILE}"  "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkForMismatchingLocationLinks "CK3SoW"   "${CK3SoW_VANILLA_LANDED_TITLES_FILE}"  "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
@@ -584,9 +775,9 @@ checkDefaultCk3Localisations "CK3"      "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3AEP"   "${CK3AEP_LOCALISATIONS_DIR}"/AEP_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3ATHA"  "${CK3ATHA_LOCALISATIONS_DIR}"/ATHA_titles_*_l_english.yml
 checkDefaultCk3Localisations "CK3CE"    "${CK3CE_LOCALISATIONS_DIR}"/*_titles_l_english.yml "${CK3_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3CMH"   "${CK3CE_VANILLA_LOCALISATION_FILE}" "${CK3Counterfactuals_VANILLA_LOCALISATION_FILE}" "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3RICE_VANILLA_LOCALISATION_FILE}" "${CK3SuccExp_VANILLA_LOCALISATION_FILE}" "${CK3Trinity_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+checkDefaultCk3Localisations "CK3CMH"   "${CK3CE_VANILLA_LOCALISATION_FILE}" "${CK3Counterfactuals_VANILLA_LOCALISATION_FILE}" "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3SuccExp_VANILLA_LOCALISATION_FILE}" "${CK3Trinity_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3IBL"   "${CK3IBL_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
-checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
+#checkDefaultCk3Localisations "CK3MBP"   "${CK3MBP_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3SoW"   "${CK3SoW_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3TBA"   "${CK3TBA_VANILLA_LOCALISATION_FILE}"
 checkDefaultCk3Localisations "CK3TFE"   "${CK3TFE_VANILLA_LOCALISATION_FILE}" "${CK3_VANILLA_LOCALISATION_FILE}"
